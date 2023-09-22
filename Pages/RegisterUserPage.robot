@@ -60,7 +60,7 @@ Create random register first name
     wait until element is enabled       ${register_Fname}        60
     click element   ${register_Fname}
     Clear element text      ${register_Fname}
-    ${random_string} =    Generate Random String       3      [NUMBERS]
+    ${random_string} =    Generate Random String       5      [NUMBERS]
     ${generate_register_Fname}=    Catenate    FName${random_string}
     input text   ${register_Fname}   ${generate_register_Fname}
     set global variable    ${generate_register_Fname}
@@ -77,7 +77,7 @@ Create random register last name
     wait until element is enabled       ${register_Lname}        60
     click element   ${register_Lname}
     Clear element text      ${register_Lname}
-    ${random_string} =    Generate Random String       3      [NUMBERS]
+    ${random_string} =    Generate Random String       5      [NUMBERS]
     ${generate_register_Lname}=    Catenate    LName${random_string}
     input text   ${register_Lname}   ${generate_register_Lname}
     set global variable    ${generate_register_Lname}
