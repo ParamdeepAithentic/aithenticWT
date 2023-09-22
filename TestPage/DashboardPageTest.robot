@@ -37,6 +37,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Click the option from side drawer
+
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Dashboard
@@ -47,6 +48,13 @@ Click the option from side drawer
 Verify the drawer list
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+
+    ${StartTime1} =     Get Current Time in Milliseconds
+    Generic.Verify your current page location contains      home
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  24  ${pageHeading}   Page Load - Total Page Load Time of Home Page after login      24    ${pageTime}     ${ActualTime}    PageLoad_Time
+
     Generic.select the option from the side menu    Dashboard
     Generic.Verify your current page location contains      dashboard
     DashboardPage.Verify the drawer list parameters
@@ -156,6 +164,7 @@ Add Product Bulk Edit
     sleep       1
     Switch Window       aithentic | Product - List
     DashboardPage.Verify product added    ${generated_EditProductName}
+
 
 
 

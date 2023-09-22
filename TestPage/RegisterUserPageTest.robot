@@ -36,8 +36,13 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Register new user
+    ${StartTime1} =     Get Current Time in Milliseconds
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  23  ${pageHeading}   Page Load - Total Page Load Time of Register Page      23    ${pageTime}     ${ActualTime}    PageLoad_Time
+
     LoginAPI.Fetch the refresh token from the login api
     ReplaceDomainAPI.Replace Domain     ${refresh_Token}
     RegisterUserPage.Create random register first name
