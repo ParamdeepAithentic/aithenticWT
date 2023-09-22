@@ -157,4 +157,4 @@ Choose register user country
     input text     ${phone}     ${phoneNo}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  3  ${pageHeading}   PartnersPage - Choose register user country      3    ${pageTime}     ${ActualTime}    RegisterPage_Time
+    Calculate Running time  3  ${pageHeading}   RegisterUserPage - Choose register user country      3    ${pageTime}     ${ActualTime}    RegisterPage_Time

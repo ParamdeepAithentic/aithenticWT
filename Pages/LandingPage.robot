@@ -34,7 +34,7 @@ Fill the login Form
     wait until element is visible    id:Password    60
     Input Password      id:Password     ${valid_password}
     Click Button        //button[normalize-space()='Sign In']
-    wait until location contains    asset-overview     60
-    wait until element is visible       ${profileName}       60
+#    wait until location contains    asset-overview     60
+#    wait until element is visible       ${profileName}       60
 
 

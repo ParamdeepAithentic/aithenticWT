@@ -37,7 +37,6 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Compose Message invite user test
-
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     ${StartTime1} =     Get Current Time in Milliseconds
