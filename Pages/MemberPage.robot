@@ -51,11 +51,13 @@ ${teamMember_Email}     css:#Email
 
 
 
-${assignedUser_searchBar}     css:input.swarch-assignee-qa
+${assignedUser_searchBar}     css:.swarch-assignee-qa
 ${teamMember_searchBar}     css:.search-member-qa
 ${upload_Message_Text}     css:.ag-center-cols-container div[col-id='Upload']
 
 ${assignedUser_Edit_popUp}         css:#confirmUpload app-confirm-cancel-button
+
+${TeamMember_status}     //td[normalize-space()='Invited']
 
 
 
@@ -118,6 +120,10 @@ Save the add assignee
     click element      css:div[class='w-100 modal-footer'] button[type='submit']
     wait until element is not visible      ${loaderIcon}     60
 
+Click employee id box to scroll
+    wait until element is not visible      ${loaderIcon}     60
+    wait until element is visible       css:.ag-center-cols-container div[col-id='EmployeeId']      60
+    click element       css:.ag-center-cols-container div[col-id='EmployeeId']
 
 Verify the upload message text
     [Arguments]    ${option}    ${text}
@@ -194,13 +200,21 @@ Search by empID
      Fetch the assigned empID from the row   ${empID}
      should be equal    ${fetch_assignedUserEmpID}     ${empID}
 
-
 Fetch the assigned empID from the row
     [Arguments]    ${option}
     wait until element is visible       //td[normalize-space()='${option}']     60
     ${fetch_assignedUserEmpID} =    get text    //td[normalize-space()='${option}']
     set global variable    ${fetch_assignedUserEmpID}
     log to console     AssignedUser_EmpID=${fetch_assignedUserEmpID}
+
+
+
+Fetch the team member updated status from the row
+    [Arguments]    ${status}
+    wait until element is visible       //td[normalize-space()='${status}']     60
+    ${fetch_teamMemberStatus} =    get text    //td[normalize-space()='${status}']
+    should be equal    ${fetch_teamMemberStatus}     ${status}
+
 
 
 Enter the new value of assigned in the first name column
@@ -305,7 +319,7 @@ Enter the new value of team member in the phone number column
     [Arguments]    ${option}
     MemberPage.Double click    ${option}
     ${random_string} =    Generate Random String       5      [NUMBERS]
-    ${generated_assigneeFname}=    Catenate    FName${random_string}
+    ${generated_assigneeFname}=    Catenate    90000${random_string}
     wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assigneeFname}
     set global variable    ${generated_assigneeFname}
@@ -314,7 +328,7 @@ Enter the new value of team member in the email column
     [Arguments]    ${option}
     MemberPage.Double click    ${option}
     ${random_string} =    Generate Random String       5      [NUMBERS]
-    ${generated_assigneeLname}=    Catenate    LName${random_string}
+    ${generated_assigneeLname}=    Catenate    BusinessEmail${random_string}@mailinator.com
     wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assigneeLname}
     set global variable    ${generated_assigneeLname}

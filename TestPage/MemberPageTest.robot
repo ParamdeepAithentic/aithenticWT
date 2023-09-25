@@ -108,6 +108,17 @@ Team Member Bulk Edit
     MemberPage.Enter the new value of team member in the department column      DepartmentName
     MemberPage.Enter the new value of team member in the location column        LocationName
     MemberPage.Enter the new value of team member in the role column     UserRoleName
+    Generic.Click on the button     Update
+#    MemberPage.Click employee id box to scroll
+    MemberPage.Verify the upload message text    Upload       Upload Successful
+    Generic.Click on the button     Exit
+    MemberPage.Confirm the exit import process pop appers
+    Generic.Click on the button     Confirm
+    sleep       1
+    Switch Window       aithentic | Member - List
+    MemberPage.Search team member by first and last name    ${generate_teamMember_FirstName} ${generate_teamMember_LastName}
+    MemberPage.Fetch the team member updated status from the row        Invited
+
 
 
 
