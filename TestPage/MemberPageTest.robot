@@ -109,7 +109,7 @@ Team Member Bulk Edit
     MemberPage.Enter the new value of team member in the location column        LocationName
     MemberPage.Enter the new value of team member in the role column     UserRoleName
     Generic.Click on the button     Update
-#    MemberPage.Click employee id box to scroll
+    MemberPage.Click employee id box to scroll
     MemberPage.Verify the upload message text    Upload       Upload Successful
     Generic.Click on the button     Exit
     MemberPage.Confirm the exit import process pop appers
