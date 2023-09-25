@@ -52,18 +52,18 @@ Assigned Users Bulk Edit
     MemberPage.Create random assignee last name
     MemberPage.Create random assignee email
     MemberPage.Create random assignee ID
-    MemberPage.Save the add assignee
+    MemberPage.Save the add assignee    save
     Generic.Fetch alert message text and compare it with        Assigned Users created successfully
-    MemberPage.Search by first and last name    ${generated_assigneeFname} ${generated_assigneeLname}
+    MemberPage.Search assigned user by first and last name    ${generated_assigneeFname} ${generated_assigneeLname}
     MemberPage.Click on assigned user action button
     MemberPage.Choose the option from the action menu   Bulk Edit
     sleep   5
     Switch Window       aithentic | Data-Wizard
     Generic.Verify your current page location contains      assignee-bulk-edit
-    MemberPage.Enter the new value in the first name column    FirstName
-    MemberPage.Enter the new value in the last name column      LastName
-    MemberPage.Enter the new value in the email column      AssignedEmail
-    MemberPage.Enter the new value in the ID column     AssignedEmployeeId
+    MemberPage.Enter the new value of assigned in the first name column    FirstName
+    MemberPage.Enter the new value of assigned in the last name column      LastName
+    MemberPage.Enter the new value of assigned in the email column      AssignedEmail
+    MemberPage.Enter the new value of assigned in the ID column     AssignedEmployeeId
     Generic.Click on the button     Upload      #Check Data
     MemberPage.Verify the upload message text    Upload       Upload Successful
     Generic.Click on the button     Exit
@@ -71,7 +71,7 @@ Assigned Users Bulk Edit
     Generic.Click on the button     Confirm
     sleep       1
     Switch Window       aithentic | Member - List
-    MemberPage.Search by first and last name    ${generated_assigneeFname} ${generated_assigneeLname}
+    MemberPage.Search assigned user by first and last name    ${generated_assigneeFname} ${generated_assigneeLname}
     MemberPage.Search by empID  ${generated_assigneeEmpID}
 
 
@@ -88,12 +88,26 @@ Team Member Bulk Edit
     Generic.Verify your current page location contains      addmembers
     MemberPage.Enter team member first name
     MemberPage.Enter team member last name
+    Generic.Enter phone number      India   +91     9646289871
     MemberPage.Enter team member business email
     MemberPage.Enter team member department     HR
     MemberPage.Enter team member location    United States - Main Office - 21 - 2
     MemberPage.Enter team member role   Admin
+    MemberPage.Save new team member form    save
+    Generic.Fetch alert message text and compare it with        Team Member created successfully
+    MemberPage.Search team member by first and last name   ${generate_teamMember_FirstName} ${generate_teamMember_LastName}
+    MemberPage.Click on team member user action button
+    MemberPage.Choose the option from the action menu   Bulk Edit
+    sleep   5
+    Switch Window       aithentic | Edit - Members
+    Generic.Verify your current page location contains      member-bulk-edit
+#    Enter the new value of team member in the first name column
 
-
+    MemberPage.Enter the new value of team member in the phone number column    MobileNo
+    MemberPage.Enter the new value of team member in the email column      Email
+    MemberPage.Enter the new value of team member in the department column      DepartmentName
+    MemberPage.Enter the new value of team member in the location column        LocationName
+    MemberPage.Enter the new value of team member in the role column     UserRoleName
 
 
 

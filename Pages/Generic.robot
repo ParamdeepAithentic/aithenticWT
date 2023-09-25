@@ -53,7 +53,10 @@ ${loaderIcon}     //div[@role='status']
 
 ${yop_email_searchBar}     css:#login
 ${yop_email_searchBtn}      css:button[title='Check Inbox @yopmail.com']
-
+${click_Country}     css:#country
+${click_countryTag}     css:.iti__selected-flag.dropdown-toggle
+${contact_Country_search}     css:#country-search-box
+${phone}     css:#phone
 
 
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
@@ -253,3 +256,11 @@ Refresh the existing page
     sleep   5
 
 
+Enter phone number
+    [Arguments]    ${country}   ${code}     ${phoneNo}
+    click element   ${click_countryTag}
+    wait until element is visible   ${contact_Country_search}
+    click element   ${contact_Country_search}
+    input text  ${contact_Country_search}   ${country}
+    Generic.Select parameter      ${code}
+    input text     ${phone}     ${phoneNo}

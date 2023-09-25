@@ -52,6 +52,7 @@ ${teamMember_Email}     css:#Email
 
 
 ${assignedUser_searchBar}     css:input.swarch-assignee-qa
+${teamMember_searchBar}     css:.search-member-qa
 ${upload_Message_Text}     css:.ag-center-cols-container div[col-id='Upload']
 
 ${assignedUser_Edit_popUp}         css:#confirmUpload app-confirm-cancel-button
@@ -70,6 +71,11 @@ Click on assigned user action button
     Wait Until Element Is Visible       ${assignedUser_ActionBtn}    60
     Wait Until Element Is Enabled      ${assignedUser_ActionBtn}     60
     click element       ${assignedUser_ActionBtn}
+
+Click on team member user action button
+    Wait Until Element Is Visible       ${teamMember_ActionBtn}    60
+    Wait Until Element Is Enabled      ${teamMember_ActionBtn}     60
+    click element       ${teamMember_ActionBtn}
 
 Choose the option from the action menu
     [Arguments]    ${option}
@@ -94,7 +100,7 @@ Create random assignee last name
 
 Create random assignee email
     ${random_string} =    Generate Random String       5      [NUMBERS]
-    ${generated_assigneeEmail}=    Catenate    ${generated_assigneeFname}@yopmail.net
+    ${generated_assigneeEmail}=    Catenate    ${generated_assigneeFname}@mailinator.com
     wait until element is visible       ${assigneeEmail}    60
     input text   ${assigneeEmail}   ${generated_assigneeEmail}
     set global variable    ${generated_assigneeEmail}
@@ -107,8 +113,9 @@ Create random assignee ID
     set global variable    ${generated_assigneeEmpID}
 
 Save the add assignee
-    Wait Until Element Is Enabled    ${save_assigneeForm}      60
-    click element      ${save_assigneeForm}
+    [Arguments]    ${option}
+    Wait Until Element Is Enabled    css:div[class='w-100 modal-footer'] button[type='submit']    60
+    click element      css:div[class='w-100 modal-footer'] button[type='submit']
     wait until element is not visible      ${loaderIcon}     60
 
 
@@ -131,7 +138,7 @@ Confirm the exit import process pop appers
     Wait Until Element Is Visible    ${assignedUser_Edit_popUp}      60
 
 
-Search by first and last name
+Search assigned user by first and last name
      [Arguments]    ${name}
      Wait Until Element Is Not Visible    ${loaderIcon}      60
      wait until element is not visible      ${loaderIcon}     60
@@ -144,13 +151,34 @@ Search by first and last name
      Fetch the assigned user name from the row   ${name}
      should be equal    ${fetch_assignedUserFname}     ${name}
 
-
 Fetch the assigned user name from the row
     [Arguments]    ${option}
     wait until element is visible       //td[normalize-space()='${option}']     60
     ${fetch_assignedUserFname} =    get text    //td[normalize-space()='${option}']
     set global variable    ${fetch_assignedUserFname}
     log to console     AssignedUser_Name=${fetch_assignedUserFname}
+
+
+
+Search team member by first and last name
+     [Arguments]    ${name}
+     Wait Until Element Is Not Visible    ${loaderIcon}      60
+     wait until element is not visible      ${loaderIcon}     60
+     click element      ${teamMember_searchBar}
+     Clear Element Text      ${teamMember_searchBar}
+
+     input text   ${teamMember_searchBar}     ${name}
+     sleep   1
+     Wait Until Element Is Not Visible    ${loaderIcon}      60
+     Fetch the team member name from the row   ${name}
+     should be equal    ${fetch_teamMemberFname}     ${name}
+
+Fetch the team member name from the row
+    [Arguments]    ${option}
+    wait until element is visible       //td[normalize-space()='${option}']     60
+    ${fetch_teamMemberFname} =    get text    //td[normalize-space()='${option}']
+    set global variable    ${fetch_teamMemberFname}
+    log to console     TeamMember_Name=${fetch_teamMemberFname}
 
 
 Search by empID
@@ -175,7 +203,7 @@ Fetch the assigned empID from the row
     log to console     AssignedUser_EmpID=${fetch_assignedUserEmpID}
 
 
-Enter the new value in the first name column
+Enter the new value of assigned in the first name column
     [Arguments]    ${option}
     MemberPage.Double click    ${option}
     ${random_string} =    Generate Random String       5      [NUMBERS]
@@ -184,7 +212,7 @@ Enter the new value in the first name column
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assigneeFname}
     set global variable    ${generated_assigneeFname}
 
-Enter the new value in the last name column
+Enter the new value of assigned in the last name column
     [Arguments]    ${option}
     MemberPage.Double click    ${option}
     ${random_string} =    Generate Random String       5      [NUMBERS]
@@ -193,7 +221,9 @@ Enter the new value in the last name column
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assigneeLname}
     set global variable    ${generated_assigneeLname}
 
-Enter the new value in the email column
+
+
+Enter the new value of assigned in the email column
     [Arguments]    ${option}
     MemberPage.Double click    ${option}
     ${random_string} =    Generate Random String       5      [NUMBERS]
@@ -202,7 +232,7 @@ Enter the new value in the email column
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assigneeEmail}
     set global variable    ${generated_assigneeEmail}
 
-Enter the new value in the ID column
+Enter the new value of assigned in the ID column
     [Arguments]    ${option}
     MemberPage.Double click    ${option}
     ${random_string} =    Generate Random String       5      [NUMBERS]
@@ -219,7 +249,7 @@ Double click
     Press Keys    css:.ag-center-cols-container div[col-id='${option}']     CONTROL+A
     Press Keys    css:.ag-center-cols-container div[col-id='${option}']     DELETE
 
-
+#------------------------------------------------------------------------------------------------------------------
 Click on team member action button
     Wait Until Element Is Visible       ${teamMember_ActionBtn}    60
     Wait Until Element Is Enabled      ${teamMember_ActionBtn}     60
@@ -268,3 +298,39 @@ Save new team member form
     Wait Until Element Is Visible       css:.${option}-member-qa    60
     Wait Until Element Is Enabled      css:.${option}-member-qa     60
     click element      css:.${option}-member-qa
+
+
+#MobileNo,Email,DepartmentName,LocationName,UserRoleName
+Enter the new value of team member in the phone number column
+    [Arguments]    ${option}
+    MemberPage.Double click    ${option}
+    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${generated_assigneeFname}=    Catenate    FName${random_string}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assigneeFname}
+    set global variable    ${generated_assigneeFname}
+
+Enter the new value of team member in the email column
+    [Arguments]    ${option}
+    MemberPage.Double click    ${option}
+    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${generated_assigneeLname}=    Catenate    LName${random_string}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assigneeLname}
+    set global variable    ${generated_assigneeLname}
+
+Enter the new value of team member in the department column
+    [Arguments]    ${option}
+    MemberPage.Double click    ${option}
+    wait until element is visible       css:div[class='ag-theme-alpine ag-popup'] div:nth-child(3) div    60
+    click element   css:div[class='ag-theme-alpine ag-popup'] div:nth-child(3) div
+Enter the new value of team member in the location column
+    [Arguments]    ${option}
+    MemberPage.Double click    ${option}
+    wait until element is visible       css:div[class='ag-theme-alpine ag-popup'] div:nth-child(3) div    60
+    click element   css:div[class='ag-theme-alpine ag-popup'] div:nth-child(3) div
+Enter the new value of team member in the role column
+    [Arguments]    ${option}
+    MemberPage.Double click    ${option}
+    wait until element is visible       css:div[class='ag-theme-alpine ag-popup'] div:nth-child(3) div    60
+    click element   css:div[class='ag-theme-alpine ag-popup'] div:nth-child(3) div

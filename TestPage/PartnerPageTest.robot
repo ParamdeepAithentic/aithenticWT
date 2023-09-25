@@ -75,7 +75,8 @@ Compose Message invite user test
 
 #    PartnersPage.Enter contact business email    ${generate_PersonName}      ${generate_BusinessName}
     PartnersPage.Enter contact business email    ${generate_PersonName}     yopmail
-    PartnersPage.Choose contact country      India   +91     9646289871
+#    PartnersPage.Choose contact country      India   +91     9646289871
+    Generic.Enter phone number      India   +91     9646289871
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
@@ -368,7 +369,8 @@ Compose Message invite user test
     PartnersPage.Click on contact person button
     PartnersPage.Enter random contact person
     PartnersPage.Enter secondary contact business email    ${generate_PersonName}     yopmail
-    PartnersPage.Choose contact country      India   +91     9646289871
+#    PartnersPage.Choose contact country      India   +91     9646289871
+    Generic.Enter phone number      India   +91     9646289871
     PartnersPage.Enter contact location      Main Office
     PartnersPage.Save the secondary contact
     PartnersPage.Click on update button
