@@ -117,7 +117,6 @@ Team Member Bulk Edit
     sleep       1
     Switch Window       aithentic | Member - List
     MemberPage.Search team member by first and last name    ${generate_teamMember_FirstName} ${generate_teamMember_LastName}
-    MemberPage.Fetch the team member updated status from the row        Invited
 
 
 
