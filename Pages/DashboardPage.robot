@@ -363,19 +363,6 @@ Double click
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 Verify the side option list parameters
    wait until element is visible   ${side_options}
    @{expectedList} =    Create List        Aithentic logo    Dashboard       Messages        Location        Team Members      Partners      Contracts      Technology      #Asecure-Cloud-Login

@@ -136,8 +136,8 @@ Download agent for OCS
     Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
+    sleep   1
     Generic.click on the button    Yes, please!
-#    sleep   1
     Generic.click on the button    Linux
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
