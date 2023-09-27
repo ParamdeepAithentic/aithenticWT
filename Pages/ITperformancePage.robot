@@ -54,7 +54,7 @@ ${loaderIcon}     //div[@role='status']
 *** Keywords ***
 Verify sheet is downloaded
     [Arguments]    ${option}
-    wait until element is enabled       css:div[id='${option}'] a[title='Download the file']
+    wait until element is enabled       css:div[id='${option}'] a[title='Download the file']    60
 #sspslReport,brandReports,AssetReports
 
 Verify all tabs of supplier_partner_location and download sheet
