@@ -37,13 +37,13 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Click the option from side drawer
-
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Dashboard
     Generic.Verify your current page location contains      dashboard
     DashboardPage.select the option from the dashboard drawer   IT Performance
     Generic.Verify your current page location contains      it-performance
+
 
 Verify the drawer list
     Generic.click on the tab	Login
@@ -87,8 +87,8 @@ Create and verify new brand
     DashboardPage.Add business manufacturer URL       ${generated_BrandName}
     DashboardPage.Add brand manufacturer country      Australia
     DashboardPage.Save added brand details
-    DashboardPage.Click added brand main save button
     Generic.Fetch alert message text and compare it with        Brand created successfully.
+    DashboardPage.Click added brand main save button
     DashboardPage.Verify Brand added      ${generated_BrandName}
 
 
