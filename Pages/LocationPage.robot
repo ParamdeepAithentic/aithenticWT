@@ -26,7 +26,7 @@ Resource        ../Pages/LocationPage.robot
 
 *** Variables ***
 
-${location_Action}     css:#Location-Actions
+${location_Action}     css:.qa-location-actions
 ${location_country}     css:.qa-country-name input
 ${location_buildingName}     css:#buildingName
 ${location_floor}     css:#floor
