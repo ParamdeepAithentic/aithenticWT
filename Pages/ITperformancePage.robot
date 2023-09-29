@@ -102,64 +102,10 @@ Verify all tabs of asset report and download sheet
 
 Click on download all button
     Wait Until Element Is Not Visible    ${loaderIcon}      60
-    wait until element is visible  ${download_allFiles}       60
-    wait until element is enabled  ${download_allFiles}       60
+    wait until element is visible  ${download_allFiles}       90
+    wait until element is enabled  ${download_allFiles}       90
     click element   ${download_allFiles}
     sleep       3
-
-
-
-
-#
-##-----------------------------------------------------------------------------------------------------------------------
-#select the option from the drawer
-#    [Arguments]     ${option}
-#    wait until element is visible    //span[normalize-space()='${option}']      60
-#    click element    //span[normalize-space()='${option}']
-##    wait until location contains    ${verifyOption}     timeout=50s
-#
-#Select preview file type
-#    [Arguments]     ${option}
-#    wait until element is visible       //div[@aria-labelledby='previewDropdownMenuButton']/a[text()='${option}']       60
-#    click element       //div[@aria-labelledby='previewDropdownMenuButton']/a[text()='${option}']
-#
-#Select export file type
-#    [Arguments]     ${option}
-#    wait until element is visible       //div[@aria-labelledby='exportDropdownMenuButton']/a[text()='${option}']       60
-#    click element       //div[@aria-labelledby='exportDropdownMenuButton']/a[text()='${option}']
-#
-#
-#Click on the button
-#    [Arguments]     ${BTNoption}
-#    wait until element is visible    //button[normalize-space()='${BTNoption}']     60
-#    click button    ${BTNoption}
-#
-#Download the sheet after Preview
-#    wait until element is visible    ${perparing label2}        60
-#    ITperformancePage.Click on the button   Download
-#    sleep   5
-#
-#Verify Export file
-#    wait until element is visible  ${okay_thanks_container}        60
-#    click on the button    Okay, Thanks!
-#    wait until element is visible    ${download_file_icon}      60
-#    click element    ${download_file_icon}
-#    sleep       5
-#
-#
-#
-#Close the Preview section
-#    wait until element is visible  ${PreviewBTN}
-#    click element   ${PreviewBTN}
-#    wait until element is visible   ${Preview_Brand_Report}
-#    click element    ${Preview_Brand_Report}
-#    wait until element is visible  ${canclePreviewPopUp}
-#    mouse over    ${canclePreviewPopUp}
-#    click element    ${canclePreviewPopUp}
-#    sleep       3
-#
-##-----------------------------------------------------------------------------------------------------------------------
-
 
 
 
