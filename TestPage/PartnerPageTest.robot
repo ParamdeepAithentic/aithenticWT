@@ -482,6 +482,26 @@ Compose Message invite user test
 #    TwoFactorAuth.Click verification button
 
 
+Export Specificartner into Excel Doc CSV and TSV
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.select the option from the side menu    Partners
+    Generic.Verify your current page location contains      partner
+    PartnersPage.Click new partner button
+    Generic.Verify your current page location contains      addpartner
+    PartnersPage.Select partner type of new partner     Manufacturer
+    PartnersPage.Create partner random business name
+    PartnersPage.Enter partner business URL      ${generate_BusinessName}
+    PartnersPage.Select partner country       United States
+    PartnersPage.Click on add custome business URL icon
+    PartnersPage.Create partner random secondary business URL
+    PartnersPage.Click contact main save button
+    Generic.Verify your current page location contains      partner-listing
+    PartnersPage.Search by business name    ${generate_BusinessName}
+    PartnersPage.Confirm to export file
+    PartnersPage.Download the selected extension file      .xlsx
+    Generic.click on the button     Okay, Thanks!
+    PartnersPage.Verify that the selected extension file is downloaded       .xlsx
 
 
 
