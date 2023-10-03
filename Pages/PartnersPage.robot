@@ -296,3 +296,9 @@ Remove the file from downloaded list
 #    Wait Until Element Is Not Visible    ${loaderIcon}      60
     wait until element is visible       css:.fas.fa-times.dropDownProgressBar       60
     click element       css:.fas.fa-times.dropDownProgressBar
+
+Select the partner row
+    [Arguments]    ${option}
+    wait until element is visible       //td[normalize-space()='${option}']       60
+    click element       //td[normalize-space()='${option}']
+
