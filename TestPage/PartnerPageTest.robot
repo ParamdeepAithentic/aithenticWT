@@ -497,14 +497,38 @@ Export Specificartner into Excel Doc CSV and TSV
     PartnersPage.Create partner random secondary business URL
     PartnersPage.Click contact main save button
     Generic.Verify your current page location contains      partner-listing
+    Generic.Fetch alert message text and compare it with        Partner created successfully
     PartnersPage.Search by business name    ${generate_BusinessName}
-    PartnersPage.Confirm to export file
+    PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .xlsx
-    Generic.click on the button     Okay, Thanks!
+    PartnersPage.Confirm to export file
     PartnersPage.Verify that the selected extension file is downloaded       .xlsx
+    PartnersPage.Remove the file from downloaded list
+    Generic.click on the button     Okay, Thanks!
 
+    PartnersPage.Search by business name    ${generate_BusinessName}
+    PartnersPage.Click on the export Button
+    PartnersPage.Download the selected extension file      .ods
+    PartnersPage.Confirm to export file
+    PartnersPage.Verify that the selected extension file is downloaded       .ods
+    PartnersPage.Remove the file from downloaded list
+    Generic.click on the button     Okay, Thanks!
 
+    PartnersPage.Search by business name    ${generate_BusinessName}
+    PartnersPage.Click on the export Button
+    PartnersPage.Download the selected extension file      .csv
+    PartnersPage.Confirm to export file
+    PartnersPage.Verify that the selected extension file is downloaded       .csv
+    PartnersPage.Remove the file from downloaded list
+    Generic.click on the button     Okay, Thanks!
 
+    PartnersPage.Search by business name    ${generate_BusinessName}
+    PartnersPage.Click on the export Button
+    PartnersPage.Download the selected extension file      .tsv
+    PartnersPage.Confirm to export file
+    PartnersPage.Verify that the selected extension file is downloaded       .tsv
+    PartnersPage.Remove the file from downloaded list
+    Generic.click on the button     Okay, Thanks!
 
 
 

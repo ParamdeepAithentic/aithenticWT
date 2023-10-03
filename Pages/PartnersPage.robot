@@ -29,7 +29,7 @@ Resource        ../Pages/RegisterUserPage.robot
 
 *** Variables ***
 ${add_Partner}     css:a[title='Add New Partner']
-${export_btn}     //a[@id='dropdownMenuButton']
+${partner_export_btn}     //a[@id='dropdownMenuButton']
 ${click_Partner}     css:ng-select[placeholder='Select Partner Type'] div[role='combobox']
 ${click_businessName}     css:ng-select[placeholder='Select or Search a Business Name'] input[type='text']
 ${businessName}     css:div[aria-expanded='true'] input[type='text']
@@ -268,13 +268,16 @@ Save the new added contact
 
 Click on the export Button
     Wait Until Element Is Not Visible    ${loaderIcon}      60
-    wait until element is visible      ${export_btn}        60
-    click element   ${export_btn}
+    wait until element is visible      ${partner_export_btn}        60
+    wait until element is enabled      ${partner_export_btn}        60
+    click element   ${partner_export_btn}
 
 
 Confirm to export file
     wait until element is visible      css:.btn.button-green.m-2       60
+    sleep       1
     click element   css:.btn.button-green.m-2
+
 
 Download the selected extension file
     [Arguments]    ${option}
@@ -284,12 +287,12 @@ Download the selected extension file
 
 Verify that the selected extension file is downloaded
     [Arguments]    ${option}
-    Wait Until Element Is Not Visible    ${loaderIcon}      60
+#    Wait Until Element Is Not Visible    ${loaderIcon}      60
     wait until element is visible      //span[contains(text(),'${option}')]       60
     click element   css:.fa-file-download
     sleep       3
 
 Remove the file from downloaded list
-    Wait Until Element Is Not Visible    ${loaderIcon}      60
-    wait until element is visible       css:.ml-1.pointer       60
-    click element       css:.ml-1.pointer
+#    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    wait until element is visible       css:.fas.fa-times.dropDownProgressBar       60
+    click element       css:.fas.fa-times.dropDownProgressBar
