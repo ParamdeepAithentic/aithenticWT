@@ -482,9 +482,53 @@ Compose Message invite user test
 #    TwoFactorAuth.Click verification button
 
 
+Export Specificartner into Excel Doc CSV and TSV
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.select the option from the side menu    Partners
+    Generic.Verify your current page location contains      partner
+    PartnersPage.Click new partner button
+    Generic.Verify your current page location contains      addpartner
+    PartnersPage.Select partner type of new partner     Manufacturer
+    PartnersPage.Create partner random business name
+    PartnersPage.Enter partner business URL      ${generate_BusinessName}
+    PartnersPage.Select partner country       United States
+    PartnersPage.Click on add custome business URL icon
+    PartnersPage.Create partner random secondary business URL
+    PartnersPage.Click contact main save button
+    Generic.Verify your current page location contains      partner-listing
+    Generic.Fetch alert message text and compare it with        Partner created successfully
+    PartnersPage.Search by business name    ${generate_BusinessName}
+    PartnersPage.Click on the export Button
+    PartnersPage.Download the selected extension file      .xlsx
+    PartnersPage.Confirm to export file
+    PartnersPage.Verify that the selected extension file is downloaded       .xlsx
+    PartnersPage.Remove the file from downloaded list
+    Generic.click on the button     Okay, Thanks!
 
+    PartnersPage.Search by business name    ${generate_BusinessName}
+    PartnersPage.Click on the export Button
+    PartnersPage.Download the selected extension file      .ods
+    PartnersPage.Confirm to export file
+    PartnersPage.Verify that the selected extension file is downloaded       .ods
+    PartnersPage.Remove the file from downloaded list
+    Generic.click on the button     Okay, Thanks!
 
+    PartnersPage.Search by business name    ${generate_BusinessName}
+    PartnersPage.Click on the export Button
+    PartnersPage.Download the selected extension file      .csv
+    PartnersPage.Confirm to export file
+    PartnersPage.Verify that the selected extension file is downloaded       .csv
+    PartnersPage.Remove the file from downloaded list
+    Generic.click on the button     Okay, Thanks!
 
+    PartnersPage.Search by business name    ${generate_BusinessName}
+    PartnersPage.Click on the export Button
+    PartnersPage.Download the selected extension file      .tsv
+    PartnersPage.Confirm to export file
+    PartnersPage.Verify that the selected extension file is downloaded       .tsv
+    PartnersPage.Remove the file from downloaded list
+    Generic.click on the button     Okay, Thanks!
 
 
 

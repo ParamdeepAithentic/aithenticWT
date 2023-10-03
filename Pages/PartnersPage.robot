@@ -29,6 +29,7 @@ Resource        ../Pages/RegisterUserPage.robot
 
 *** Variables ***
 ${add_Partner}     css:a[title='Add New Partner']
+${partner_export_btn}     //a[@id='dropdownMenuButton']
 ${click_Partner}     css:ng-select[placeholder='Select Partner Type'] div[role='combobox']
 ${click_businessName}     css:ng-select[placeholder='Select or Search a Business Name'] input[type='text']
 ${businessName}     css:div[aria-expanded='true'] input[type='text']
@@ -52,8 +53,8 @@ ${main_Save}    css:form[autocomplete='off'] div div button[type='submit']
 ${main_update_btn}        //button[normalize-space()='Update']
 
 
-${add_custom_businessURL}     css:i[title='Add custom Business URL']
-${add_secondaryURL}     //div[@formarrayname='BusinessUrls']//div//input[@id='businessUrl']
+${add_custom_businessURL}     css:.fas.fa-plus.float-right
+${add_secondaryURL}     css:input[formcontrolname='Businessurl']
 
 
 
@@ -243,9 +244,16 @@ Click on add custome business URL icon
     wait until element is visible      ${add_custom_businessURL}        60
     click element   ${add_custom_businessURL}
 
-Create custome business URL
-    [Arguments]    ${option}
-    Generic.Enter value into field  ${add_secondaryURL}    ${option}
+
+
+Create partner random secondary business URL
+    wait until element is enabled       ${add_secondaryURL}        60
+    click element   ${add_secondaryURL}
+    Clear element text      ${add_secondaryURL}
+    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${generate_SecondaryBusinessName}=    Catenate    BusinessName${random_string}.net
+    input text   ${add_secondaryURL}   ${generate_SecondaryBusinessName}
+    set global variable    ${generate_SecondaryBusinessName}
 
 Click on update button
     Wait Until Element Is Not Visible    ${loaderIcon}      60
@@ -257,3 +265,34 @@ Save the new added contact
     click element   //form[@class='ng-untouched ng-dirty ng-valid']//button[@type='button'][normalize-space()='Add']
     wait until element is visible      ${loaderIcon}       60
     Wait Until Element Is Not Visible    ${loaderIcon}      60
+
+Click on the export Button
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    wait until element is visible      ${partner_export_btn}        60
+    wait until element is enabled      ${partner_export_btn}        60
+    click element   ${partner_export_btn}
+
+
+Confirm to export file
+    wait until element is visible      css:.btn.button-green.m-2       60
+    sleep       1
+    click element   css:.btn.button-green.m-2
+
+
+Download the selected extension file
+    [Arguments]    ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    wait until element is visible      //a[contains(text(),'${option}')]       60
+    click element   //a[contains(text(),'${option}')]
+
+Verify that the selected extension file is downloaded
+    [Arguments]    ${option}
+#    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    wait until element is visible      //span[contains(text(),'${option}')]       60
+    click element   css:.fa-file-download
+    sleep       3
+
+Remove the file from downloaded list
+#    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    wait until element is visible       css:.fas.fa-times.dropDownProgressBar       60
+    click element       css:.fas.fa-times.dropDownProgressBar
