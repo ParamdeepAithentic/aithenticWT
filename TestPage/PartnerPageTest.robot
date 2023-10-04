@@ -466,22 +466,6 @@ Compose Message invite user test
 
 
 
-######## UN comment when to use ##############
-#test2
-#    Generic.Open new window     yopmail
-#    Generic.Search yopmail emails for       qsed@yopmail.com
-#    Generic.Switch to iframe by ID      ifinbox
-#    Yopmail.Click on email of yopmail
-#    Unselect Frame
-#
-#
-#    Generic.Switch to iframe by ID      ifmail
-#
-#    Yopmail.Get verification OTP from email     Your passcode is
-#    TwoFactorAuth.Enter the otp     ${passcode}
-#    TwoFactorAuth.Click verification button
-
-
 Export Specificartner into Excel Doc CSV and TSV for manufacturer
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}

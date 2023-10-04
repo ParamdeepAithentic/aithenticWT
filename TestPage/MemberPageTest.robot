@@ -43,7 +43,7 @@ Assigned Users Bulk Edit
     Generic.Verify your current page location contains      memberslist
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  21  ${pageHeading}   Page Load - Total Page Load Time of Team Members     21    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  23  ${pageHeading}   Page Load - Total Page Load Time of Team Members     23    ${pageTime}     ${ActualTime}    PageLoad_Time
 
     MemberPage.Click on assigned user tab   Assigned Users
     MemberPage.Click on assigned user action button
