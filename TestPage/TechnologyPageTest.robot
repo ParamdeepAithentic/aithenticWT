@@ -314,14 +314,15 @@ Restore asset type one
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
-    Select an option from technology table actions      Remove
-    Remove asset from technology table
-    Fetch alert message text and compare it with        Technology Removed Successfully
-    Click on manage technology sub option       Removed Assets
-    Select an option from recovery table actions    Restore
-    Fetch alert message text and compare it with        Assets restored successfully.
-    Click on manage technology sub option       Technology List
-    Search by AssetId   ${generated_AssetID}
+    TechnologyPage.Select an option from technology table actions      Remove
+    TechnologyPage.Remove asset from technology table
+    Generic.Fetch alert message text and compare it with        Technology Removed Successfully
+    TechnologyPage.Click on manage technology sub option       Removed Assets
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Select an option from recovery table actions    Restore
+    Generic.Fetch alert message text and compare it with        Assets restored successfully.
+    TechnologyPage.Click on manage technology sub option       Technology List
+    TechnologyPage.Search by AssetId   ${generated_AssetID}
 
 
 Restore asset from removed asset details page
@@ -363,14 +364,15 @@ Restore asset from removed asset details page
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
-    Select an option from technology table actions      Remove
-    Remove asset from technology table
-    Fetch alert message text and compare it with        Technology Removed Successfully
-    Click on manage technology sub option       Removed Assets
-    Search by AssetId   ${generated_AssetID}
-    Select any asset to view assert details page        Restore
-    Click on manage technology sub option       Technology List
-    Search by AssetId   ${generated_AssetID}
+    TechnologyPage.Select an option from technology table actions      Remove
+    TechnologyPage.Remove asset from technology table
+    Generic.Fetch alert message text and compare it with        Technology Removed Successfully
+    TechnologyPage.Click on manage technology sub option       Removed Assets
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Select an option from recovery table actions    Restore
+    Generic.Fetch alert message text and compare it with        Assets restored successfully.
+    TechnologyPage.Click on manage technology sub option       Technology List
+    TechnologyPage.Search by AssetId   ${generated_AssetID}
 
 
 
@@ -414,15 +416,15 @@ Restore asset by selecting checkbox
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
-    Select an option from technology table actions      Remove
-    Remove asset from technology table
-    Fetch alert message text and compare it with        Technology Removed Successfully
-    Click on manage technology sub option       Removed Assets
-    Search by AssetId   ${generated_AssetID}
-    Click on first table row checkbox and restore
-    Fetch alert message text and compare it with    Assets restored successfully.
-    Click on manage technology sub option       Technology List
-    Search by AssetId   ${generated_AssetID}
+    TechnologyPage.Select an option from technology table actions      Remove
+    TechnologyPage.Remove asset from technology table
+    Generic.Fetch alert message text and compare it with        Technology Removed Successfully
+    TechnologyPage.Click on manage technology sub option       Removed Assets
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Select an option from recovery table actions    Restore
+    Generic.Fetch alert message text and compare it with        Assets restored successfully.
+    TechnologyPage.Click on manage technology sub option       Technology List
+    TechnologyPage.Search by AssetId   ${generated_AssetID}
 
 
 ######## UN comment when to use ##############
