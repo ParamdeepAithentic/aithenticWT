@@ -123,7 +123,7 @@ open the browser with the url
 
     ${StartTime1} =     Get Current Time in Milliseconds
     open browser    ${url}      ${browser_name}     #executable_path=E:/Aithentic/TestPage/resources
-    wait until element is visible    //a[normalize-space()='Login']
+    wait until element is visible    //a[normalize-space()='Login']     60
     Maximize Browser Window
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
