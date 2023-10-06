@@ -288,7 +288,7 @@ Enter team member last name
 Enter team member business email
     wait until element is visible      ${teamMember_Email}       60
     click element   ${teamMember_Email}
-    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${random_string} =    Generate Random String       7      [NUMBERS]
     ${generate_teamMember_email}=    Catenate    TMemail_${random_string}@mailinator.com
     input text   ${teamMember_Email}   ${generate_teamMember_email}
     set global variable    ${generate_teamMember_email}
