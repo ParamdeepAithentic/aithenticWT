@@ -102,14 +102,8 @@ Calculate Running time
 
 click on the tab
     [Arguments]    ${option}
-    wait until element is visible    //a[normalize-space()='${option}']
-#    ${StartTime1} =     Get Current Time in Milliseconds
+    wait until element is visible    //a[normalize-space()='${option}']     60
     click link          //a[normalize-space()='${option}']
-#    wait until element is visible   css:.heading-login.d-inline-block
-#    ${EndTime1} =     Get Current Time in Milliseconds
-#    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-#    Log to console   Current Time in Milliseconds: ${ActualTime}
-#    Calculate Running time  3  ${pageHeading}   Generic - click on the login tab      3    ${pageTime}     ${ActualTime}    Load_Time_tracking
 
 click on the button
     [Arguments]    ${option}

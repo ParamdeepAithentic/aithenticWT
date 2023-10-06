@@ -31,17 +31,17 @@ ${ExportBTN}     //button[@id='exportDropdownMenuButton']
 
 
 
-${ssplTab}     css:#supplier-support-partner-location-tab
-${ssplList}     css:#sspslReport ul a
-${download_ssplSheet}     css:#sspslReport i
+${forcastReport}     css:#spend-forecast-reports-tab
+${forcastList}     css:#SpendForecastsReports ul a
+${download_forcastReport}     css:#SpendForecastsReports i
 
-${brandReport_Tab}     css:#brand-reports-tab
-${brandReport_List}     css:#brandReports ul a
-${download_brandReportSheet}     css:#brandReports i
+${AgingReport}     css:#aging-analytics-tab
+${AgingList}     css:#AgingAnalyticsReports ul a
+${download_AgingReport}     css:#AgingAnalyticsReports i
 
-${assetReport_Tab}     css:#asset-reports-tab
-${assetReport_List}     css:#AssetReports ul a
-${download_assetReportSheet}     css:#AssetReports i
+${partnerInvestmentReport}     css:#investments-partners-tab
+${partnerInvestmentList}     css:#sspslReport ul a
+${download_partnerInvestmentReport}     css:#sspslReport i
 
 ${download_allFiles}     css:.download-all-btn a
 
@@ -59,45 +59,45 @@ Verify sheet is downloaded
 
 Verify all tabs of supplier_partner_location and download sheet
     Wait Until Element Is Not Visible    ${loaderIcon}      60
-    wait until element is visible  ${ssplTab}       60
-    click element   ${ssplTab}
-    wait until element is visible  ${ssplList}       60
-    ${elements} =    Get WebElements    ${ssplList}
+    wait until element is visible  ${forcastReport}       60
+    click element   ${forcastReport}
+    wait until element is visible  ${forcastList}       60
+    ${elements} =    Get WebElements    ${forcastList}
     FOR    ${element}    IN    @{elements}
         Click Element    ${element}
         Wait Until Element Is Not Visible    ${loaderIcon}      60
 
     END
-    wait until element is visible  ${download_ssplSheet}       60
-    click element   ${download_ssplSheet}
+    wait until element is visible  ${download_forcastReport}       60
+    click element   ${download_forcastReport}
 
 
 Verify all tabs of brand report and download sheet
     Wait Until Element Is Not Visible    ${loaderIcon}      60
-    wait until element is visible  ${brandReport_Tab}       60
-    click element   ${brandReport_Tab}
-    wait until element is visible  ${brandReport_List}       60
-    ${elements} =    Get WebElements    ${brandReport_List}
+    wait until element is visible  ${AgingReport}       60
+    click element   ${AgingReport}
+    wait until element is visible  ${AgingList}       60
+    ${elements} =    Get WebElements    ${AgingList}
     FOR    ${element}    IN    @{elements}
         Click Element    ${element}
         Wait Until Element Is Not Visible    ${loaderIcon}      60
     END
-    wait until element is visible  ${download_brandReportSheet}       60
-    click element   ${download_brandReportSheet}
+    wait until element is visible  ${download_AgingReport}       60
+    click element   ${download_AgingReport}
 
 
 Verify all tabs of asset report and download sheet
     Wait Until Element Is Not Visible    ${loaderIcon}      60
-    wait until element is visible  ${assetReport_Tab}       60
-    click element   ${assetReport_Tab}
-    wait until element is visible  ${assetReport_List}       60
-    ${elements} =    Get WebElements    ${assetReport_List}
+    wait until element is visible  ${partnerInvestmentReport}       60
+    click element   ${partnerInvestmentReport}
+    wait until element is visible  ${partnerInvestmentList}       60
+    ${elements} =    Get WebElements    ${partnerInvestmentList}
     FOR    ${element}    IN    @{elements}
         Click Element    ${element}
         Wait Until Element Is Not Visible    ${loaderIcon}      60
     END
-    wait until element is visible  ${download_assetReportSheet}       60
-    click element   ${download_assetReportSheet}
+    wait until element is visible  ${download_partnerInvestmentReport}       60
+    click element   ${download_partnerInvestmentReport}
 
 
 Click on download all button
