@@ -95,32 +95,32 @@ Test Teardown   Close Browser session
 #
 #
 ##-----------------------------------------------------------------------------------------------------------------------
-Download sheet for supplier partner and location
+Download sheet for Forecasts
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
     DashboardPage.select the option from the dashboard drawer     IT Performance
     Generic.Verify your current page location contains      it-performance
     ITperformancePage.Verify all tabs of supplier_partner_location and download sheet
-    Generic.Fetch alert message text and compare it with        Supplier, Support Partner and Supplier by Location Report will get download soon
-    ITperformancePage.Verify sheet is downloaded        sspslReport
+    Generic.Fetch alert message text and compare it with        Spend Forecasts sheets will get download soon
+    ITperformancePage.Verify sheet is downloaded        SpendForecastsReports
 
-Download sheet for brand report
+Download sheet for aging
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
     DashboardPage.select the option from the dashboard drawer     IT Performance
     Generic.Verify your current page location contains      it-performance
     ITperformancePage.Verify all tabs of brand report and download sheet
-    Generic.Fetch alert message text and compare it with        Brand Report will get download soon
-    ITperformancePage.Verify sheet is downloaded        brandReports
+    Generic.Fetch alert message text and compare it with        Aging Analytics sheets will get download soon
+    ITperformancePage.Verify sheet is downloaded        AgingAnalyticsReports
 
-Download sheet for asset report
+Download sheet for investments
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
     DashboardPage.select the option from the dashboard drawer     IT Performance
     Generic.Verify your current page location contains      it-performance
     ITperformancePage.Verify all tabs of asset report and download sheet
-    Generic.Fetch alert message text and compare it with        Asset Report will get download soon
-    ITperformancePage.Verify sheet is downloaded        AssetReports
+    Generic.Fetch alert message text and compare it with        Investment by Partners sheets will get download soon
+    ITperformancePage.Verify sheet is downloaded        sspslReport
 
 Download all sheets with download all button
     Generic.click on the tab	Login
