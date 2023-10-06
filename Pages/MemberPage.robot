@@ -336,8 +336,8 @@ Enter the new value of team member in the email column
 Enter the new value of team member in the department column
     [Arguments]    ${option}
     MemberPage.Double click    ${option}
-    wait until element is visible       css:div[class='ag-theme-alpine ag-popup'] div:nth-child(3) div    60
-    click element   css:div[class='ag-theme-alpine ag-popup'] div:nth-child(3) div
+    wait until element is visible       css:div[class='ag-theme-alpine ag-popup'] div:nth-child(5) div    60
+    click element   css:div[class='ag-theme-alpine ag-popup'] div:nth-child(5) div
 Enter the new value of team member in the location column
     [Arguments]    ${option}
     MemberPage.Double click    ${option}

@@ -514,6 +514,7 @@ Export Specificartner into Excel Doc CSV and TSV for manufacturer
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
 
+    PartnersPage.Search by business name    ${generate_BusinessName}
     PartnersPage.Select the partner row      ${generate_BusinessName}
     Generic.Verify your current page location contains      partner-details
 
@@ -572,6 +573,7 @@ Export Specificartner into Excel Doc CSV and TSV for Supplier
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
 
+    PartnersPage.Search by business name    ${generate_BusinessName}
     PartnersPage.Select the partner row      ${generate_BusinessName}
     Generic.Verify your current page location contains      partner-details
 
@@ -632,6 +634,7 @@ Export Specificartner into Excel Doc CSV and TSV for Support Partner
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
 
+    PartnersPage.Search by business name    ${generate_BusinessName}
     PartnersPage.Select the partner row      ${generate_BusinessName}
     Generic.Verify your current page location contains      partner-details
 

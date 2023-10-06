@@ -58,6 +58,12 @@ Click on add location button
     Wait Until Element Is Enabled      //a[@title='${option}']     60
     click element       //a[@title='${option}']
 
+#----------------------- only bulk edit location is not having title-----------------------
+Select the option from action menu
+    [Arguments]    ${option}
+    wait until element is visible       css:.qa-location-bulk-${option}     60
+    wait until element is enabled       css:.qa-location-bulk-${option}     60
+    click element   css:.qa-location-bulk-${option}
 
 Select location country
     [Arguments]    ${option}
@@ -189,3 +195,61 @@ Select option from change location status pop up
     Mouse over      css:.qa-update-location-status-${option}-action
     click element      css:.qa-update-location-status-${option}-action
 #    sleep       1
+
+#------------------------------------------------------------------------------------------------
+
+Select option from country column
+    [Arguments]    ${option}
+    wait until element is visible      css:.ag-center-cols-container div[col-id='${option}']    60
+    Double click element      css:.ag-center-cols-container div[col-id='${option}']
+    wait until element is visible      css:div[aria-label='List'] div:nth-child(4) div    60
+    click element       css:div[aria-label='List'] div:nth-child(4) div
+
+
+Enter the new value in the building name column
+    [Arguments]    ${option}    ${buildingName}
+    LocationPage.Double click    ${option}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${buildingName}
+
+Enter the new value in the floor number column
+    [Arguments]    ${option}    ${floorNumber}
+    LocationPage.Double click    ${option}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${floorNumber}
+
+Enter the new value in the room number column
+    [Arguments]    ${option}    ${roomNumber}
+    LocationPage.Double click    ${option}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${roomNumber}
+
+Enter the new value in the state column
+    [Arguments]    ${option}    ${state}
+    LocationPage.Double click    ${option}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${state}
+
+Enter the new value in the city column
+    [Arguments]    ${option}    ${city}
+    LocationPage.Double click    ${option}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${city}
+
+
+
+Enter the new value in the location name column
+    [Arguments]    ${option}
+    MemberPage.Double click    ${option}
+    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${generated_NewLocationName}=    Catenate    NewLocationName${random_string}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_NewLocationName}
+    set global variable    ${generated_NewLocationName}
+
+Double click
+    [Arguments]    ${option}
+    wait until element is visible      css:.ag-center-cols-container div[col-id='${option}']    60
+    Double click element      css:.ag-center-cols-container div[col-id='${option}']
+    Press Keys    css:.ag-center-cols-container div[col-id='${option}']     CONTROL+A
+    Press Keys    css:.ag-center-cols-container div[col-id='${option}']     DELETE

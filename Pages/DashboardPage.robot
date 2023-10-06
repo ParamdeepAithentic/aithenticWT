@@ -146,7 +146,7 @@ Create product name random
 
 Create product name self
     [Arguments]    ${option}
-    wait until element is visible   ${ProductName}
+    wait until element is visible   ${ProductName}      60
     input text   ${ProductName}   ${option}
 
 
@@ -198,7 +198,7 @@ Select product technology group
     wait until element is visible       ${select_technology_group}     60
     Mouse Over      ${select_technology_group}
     click element   ${select_technology_group}
-    wait until element is visible      //span[normalize-space()='${option}']       320
+    wait until element is visible      //span[normalize-space()='${option}']       60
     click element       //span[normalize-space()='${option}']
 
 Save added product details
@@ -265,7 +265,7 @@ Add brand manufacturer country
 
 
 Save added brand details
-    wait until element is visible       ${brand_saveBTN}
+    wait until element is visible       ${brand_saveBTN}        60
     click element   ${brand_saveBTN}
 
 Click added brand main save button
@@ -307,19 +307,19 @@ Click on complete setup button
 
 Select the asset ID checkbox
     [Arguments]     ${option}
-    wait until element is visible    css:.checkmark.qa-inner-customcheckbox-asset-id-${option}
+    wait until element is visible    css:.checkmark.qa-inner-customcheckbox-asset-id-${option}      60
     click element    css:.checkmark.qa-inner-customcheckbox-asset-id-${option}
 
 
 Select the employee ID checkbox
     [Arguments]     ${option}
-    wait until element is visible    css:.checkmark.qa-inner-customcheckbox-employee-id-${option}
+    wait until element is visible    css:.checkmark.qa-inner-customcheckbox-employee-id-${option}       60
     click element    css:.checkmark.qa-inner-customcheckbox-employee-id-${option}
 
 
 Select the location ID checkbox
     [Arguments]     ${option}
-    wait until element is visible    css:.checkmark.qa-inner-customcheckbox-location-id-${option}
+    wait until element is visible    css:.checkmark.qa-inner-customcheckbox-location-id-${option}       60
     click element    css:.checkmark.qa-inner-customcheckbox-location-id-${option}
 
 
@@ -364,7 +364,7 @@ Double click
 
 
 Verify the side option list parameters
-   wait until element is visible   ${side_options}
+   wait until element is visible   ${side_options}      60
    @{expectedList} =    Create List        Aithentic logo    Dashboard       Messages        Location        Team Members      Partners      Contracts      Technology      #Asecure-Cloud-Login
    ${elements} =  Get WebElements     ${side_options}
    @{actualList} =   Create List
@@ -376,7 +376,7 @@ Verify the side option list parameters
 
 
 Verify the drawer list parameters
-   wait until element is visible   ${drawerList}
+   wait until element is visible   ${drawerList}        60
    @{expectedList} =    Create List      Asset Overview     IT Performance       Subscription        Reports
    ${elements} =  Get WebElements     ${drawerList}
    @{actualList} =   Create List
@@ -389,7 +389,7 @@ Verify the drawer list parameters
 
 #####NOT WORKING#########
 Verify the profile option list parameters
-    wait until element is visible    ${profile_option}      timeout=30s
+    wait until element is visible    ${profile_option}      60
     click element    ${profile_option}
     sleep       2
     ${elements} =  Get WebElements     ${full_Profile_List}

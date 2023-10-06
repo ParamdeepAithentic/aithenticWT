@@ -30,8 +30,8 @@ Resource        ../Pages/DepartmentPage.robot
 
 *** Variables ***
 ${department_ActionBTN}      css:#Team-Member-Actions
-.qa-department-name input
-.qa-status input
+#.qa-department-name input
+#.qa-status input
 #costCenter
 
 
@@ -52,12 +52,18 @@ Choose the option from the action menu
 
 Enter the new value of department in the depatment name column
     [Arguments]    ${option}
-    MemberPage.Double click    ${option}
-    ${random_string} =    Generate Random String       5      [NUMBERS]
-    ${generated_assigneeFname}=    Catenate    90000${random_string}
+    DashboardPage.Double click    ${option}
+    ${random_string} =    Generate Random String       7      [NUMBERS]
+    ${generated_DeptName}=    Catenate    DepartmentName${random_string}
     wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
-    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assigneeFname}
-    set global variable    ${generated_assigneeFname}
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_DeptName}
+    set global variable    ${generated_DeptName}
 
 
+Double click
+    [Arguments]    ${option}
+    wait until element is visible      css:.ag-center-cols-container div[col-id='${option}']    60
+    Double click element      css:.ag-center-cols-container div[col-id='${option}']
+    Press Keys    css:.ag-center-cols-container div[col-id='${option}']     CONTROL+A
+    Press Keys    css:.ag-center-cols-container div[col-id='${option}']     DELETE
 
