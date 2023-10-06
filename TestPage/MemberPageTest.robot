@@ -90,7 +90,7 @@ Team Member Bulk Edit
     MemberPage.Enter team member last name
     Generic.Enter phone number      India   +91     9646289871
     MemberPage.Enter team member business email
-    MemberPage.Enter team member department     HR
+    MemberPage.Enter team member department     Do not Delete this Department
     MemberPage.Enter team member location    United States - Main Office - 21 - 2
     MemberPage.Enter team member role   Admin
     MemberPage.Save new team member form    save
