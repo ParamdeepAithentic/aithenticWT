@@ -39,7 +39,7 @@ ${url}                   https://uat-app.aithentic.com/
 #${url}                   https://qa-app.aithentic.com/
 ${browser_name}          Firefox
 ${email}                 testqa29j@mailinator.com       #UAT user
-${valid_password}        Test!@9859     #UAT user
+${valid_password}        Test!@5099     #UAT user
 #${valid_password}        Test@123     #QA user
 ${SheetLocationAndName}   LoadTimeSheet.xlsx
 ${SheetTabName}     Load_Time_tracking

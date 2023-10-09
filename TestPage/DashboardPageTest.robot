@@ -167,7 +167,20 @@ Add Product Bulk Edit
 
 
 
-
+Add Department Bulk Edit
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     Department
+    Generic.Verify your current page location contains      department-list
+    DashboardPage.Click on action button
+    DashboardPage.Click on add department
+    DashboardPage.Create unique department name random
+#    DashboardPage.Select department status    Active
+    DashboardPage.Select department cost center     1300
+    DashboardPage.Save the department       add
+    Generic.Fetch alert message text and compare it with        Department added successfully
+    DashboardPage.Verify department added       ${generated_DepartmentNumber}
 
 
 
