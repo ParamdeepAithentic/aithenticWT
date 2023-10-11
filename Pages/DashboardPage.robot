@@ -134,7 +134,14 @@ Select product from list
     Calculate Running time  4  ${pageHeading}   DashboardPage - Select product from list      4    ${pageTime}     ${ActualTime}    DashboardPage_Time
 
 
+Select an option from company details side list
+    [Arguments]    ${option}
+    Generic.Select parameter    ${option}
 
+Click on download agent button to download
+    [Arguments]    ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    Generic.click on the button     ${option}
 
 Create random productName
     ${random_string} =    Generate Random String       5      [NUMBERS]

@@ -198,8 +198,19 @@ Add Department Bulk Edit
 
 
 
-
-
+Download Agent from network discovery
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     Personal Details
+    Generic.Verify your current page location contains      personal-profile
+    Select an option from company details side list     Network Discovery
+    Generic.Verify your current page location contains      network-discovery
+    DashboardPage.Click on download agent button to download        Download Agent
+    Generic.click on the button    Yes, please!
+    Generic.click on the button    Linux
+    OCS.Verify that agent is ready to get download
+    Generic.click on the button link    Download
 
 
 
