@@ -135,6 +135,8 @@ ${loaderIcon}     //div[@role='status']
 ${alertMsg}     css:.text-white.font-weight-bold.position-relative.py-3.pl-3.pr-4
 ${back_To_List_Link}     css:span[class='back']
 
+${editIcon}     css:i[title='Click here edit product and brand']
+
 
 *** Keywords ***
 Fetch the Brand Name from the row
@@ -386,21 +388,31 @@ Select warranty end date
     Generic.Enter self date     ${warranty_enddt}       ${date}
 
 Select technology lifecycle status
-
-     [Arguments]    ${option1}
+    [Arguments]    ${option1}
     wait until element is visible    ${LifeCycleStatusId}      60
     click element       ${LifeCycleStatusId}
     wait until element is visible   //ng-select[@id='LifeCycleStatusId']//span[@title='Clear all']     60
     click element       //ng-select[@id='LifeCycleStatusId']//span[@title='Clear all']
+#    Clear Element Text      ${LifeCycleStatusId}
     Generic.Select parameter    ${option1}
 
+
+Select edited technology lifecycle status
+    [Arguments]    ${option1}
+    wait until element is visible    ${LifeCycleStatusId}      60
+    click element       ${LifeCycleStatusId}
+    wait until element is visible   xpath://span[normalize-space()='${option1}']     60
+    click element   xpath://span[normalize-space()='${option1}']
 
 Add technology lifecycle comment
     [Arguments]    ${option}
     wait until element is visible    ${comment}     60
     input text      ${comment}      ${option}       # Technology Lifecycle Information- comment
 
-
+Accept updated edited technology pop up
+    [Arguments]    ${option}
+     wait until element is visible     //div[@id='confirmUpdates']//button[normalize-space()='${option}']      60
+     click element      //div[@id='confirmUpdates']//button[normalize-space()='${option}']
 
 ###############Technology Cost Information#################
 Add order number of technology cost information
@@ -739,6 +751,21 @@ Search by assignee
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  22  ${pageHeading}   Technology Page - Search by assignee      22    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+
+
+Click on the first row of the technology table
+    wait until element is visible      ${fetch_assetID}     60
+    click element      ${fetch_assetID}
+
+Click on edit button on product details page
+    [Arguments]    ${option}
+    Generic.click on the button     ${option}
+    wait until element is not visible      ${loaderIcon}    60
+
+Click on the edit icon on the edit technology page
+    wait until element is visible      ${editIcon}     60
+    click element      ${editIcon}
+
 
 
 

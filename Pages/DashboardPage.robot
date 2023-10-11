@@ -69,26 +69,45 @@ ${save_product_modal}     css:button[class='btn button-green mt-0 mx-2 ng-star-i
 ${search_productName}     css:input[placeholder='Search by Product Name or Description']
 ${fetch_productName}    css:td:nth-child(2)
 
+${add_dept_btn}     //a[normalize-space()='Add Department']
+${add_dept_name}     css:.profile-section-department div ng-select#department-name input
+${add_dept_status}     css:.profile-section-department div ng-select.qa-add-department-status input
+${add_dept_costCenter}     css:.profile-section-department .qa-add-department-costCenter
 
-######## Welcome page #########
 
+${searchBar_department}     css:input[placeholder='Search by Department Name']
+${fetch_departmentName}     css:td:nth-child(2)
 
-#main-customcheckbox-employee-id-yes span
-#main-customcheckbox-employee-id-no span
-
-#.checkmark.qa-inner-customcheckbox-location-id-yes
-#.checkmark.qa-inner-customcheckbox-location-id-no
-
+################################### Network Discovery ######################################################
+#//button[normalize-space()='Download Agent']
 
 
 
 *** Keywords ***
+Click on add department
+    wait until element is visible      ${add_dept_btn}      60
+    wait until element is enabled      ${add_dept_btn}      60
+    click element      ${add_dept_btn}
+
+
+Save the department
+    [Arguments]    ${option}
+    wait until element is visible       css:.profile-section-department div button.qa-${option}-department-modal      60
+    click element       css:.profile-section-department div button.qa-${option}-department-modal
+#add, close
+
+
 Select the option from action menu
     [Arguments]    ${option}
     wait until element is visible       css:.qa-product-bulk-${option}     60
     wait until element is enabled       css:.qa-product-bulk-${option}     60
     click element   css:.qa-product-bulk-${option}
 
+Select the option from department action menu
+    [Arguments]    ${option}
+    wait until element is visible       css:a[title='${option}']     60
+    wait until element is enabled       css:a[title='${option}']     60
+    click element   css:a[title='${option}']
 
 Select brand from list
     [Arguments]    ${BrandName}
@@ -361,7 +380,80 @@ Double click
     Press Keys    css:.ag-center-cols-container div[col-id='${option}']     CONTROL+A
     Press Keys    css:.ag-center-cols-container div[col-id='${option}']     DELETE
 
+Create unique department name random
+    wait until element is visible       ${add_dept_name}        60
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_DepartmentNumber}=    Catenate    DeptNo_${random_string}
+    input text   ${add_dept_name}   ${generated_DepartmentNumber}
+    sleep       1
+    click element     css:div[role='option']
+    log to console      ${generated_DepartmentNumber}
+    set global variable    ${generated_DepartmentNumber}
 
+Select department status
+    [Arguments]    ${option}
+    wait until element is visible       ${add_dept_status}        60
+    click element     ${add_dept_status}
+    Clear Element Text      ${add_dept_status}
+    Generic.Select parameter    ${option}
+
+Select department cost center
+    [Arguments]    ${option}
+    wait until element is visible       ${add_dept_costCenter}        60
+    input text    ${add_dept_costCenter}   ${option}
+
+Verify department added
+   [Arguments]    ${departmentName}
+    wait until element is visible      ${searchBar_department}     60
+    click element      ${searchBar_department}
+    Clear Element Text      ${searchBar_department}
+#    ${StartTime1} =     Get Current Time in Milliseconds
+    input text   ${searchBar_department}   ${departmentName}
+    sleep      1
+    Wait Until Element Contains    //td[normalize-space()='${departmentName}']      ${departmentName}     60
+    ${get_departmentName} =    get text    ${fetch_departmentName}
+    log to console     ${get_departmentName}
+    should be equal    ${departmentName}     ${get_departmentName}
+#    ${EndTime1} =     Get Current Time in Milliseconds
+#    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+#    Calculate Running time  8  ${pageHeading}   DashboardPage - Verify product added      8    ${pageTime}     ${ActualTime}    DashboardPage_Time
+
+Enter the new value in the department name column
+    [Arguments]    ${option}
+    DashboardPage.Double click    ${option}
+    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${generated_EditDepartmentName}=    Catenate    DepartmentName${random_string}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_EditDepartmentName}
+    set global variable    ${generated_EditDepartmentName}
+
+Select option from department status column
+    [Arguments]    ${option}
+    wait until element is visible      css:.ag-center-cols-container div[col-id='${option}']    60
+    Double click element      css:.ag-center-cols-container div[col-id='${option}']
+    wait until element is visible      css:.ag-rich-select-row.ag-rich-select-row-selected    60
+    click element       css:.ag-rich-select-row.ag-rich-select-row-selected
+
+
+Enter the new value in the cost center column
+    [Arguments]    ${option}
+    DashboardPage.Double click    ${option}
+    ${random_string} =    Generate Random String       4      [NUMBERS]
+    ${generated_EditCostCenter}=    Catenate    ${random_string}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_EditCostCenter}
+    set global variable    ${generated_EditCostCenter}
+
+Verify the upload message text
+    [Arguments]    ${option}    ${text}
+    wait until element is not visible      ${loaderIcon}     60
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}']     60
+    ${fetch_text} =    get text    css:.ag-center-cols-container div[col-id='${option}']
+    log to console  uploadtext:${fetch_text}
+    should be equal    ${fetch_text}    ${text}
+
+Confirm the exit import process pop appers
+    Wait Until Element Is Visible    ${assignedUser_Edit_popUp}      60
 
 Verify the side option list parameters
    wait until element is visible   ${side_options}      60

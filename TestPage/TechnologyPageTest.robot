@@ -446,4 +446,52 @@ Restore asset by selecting checkbox
 #    Search by AssetId      ${self_searchId}
 
 
-
+Edit brand and product via details
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.click on add technology button
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Click technology product input field
+    TechnologyPage.Select parameter from technology dropdown list      Hardware
+    TechnologyPage.Create unique serial number random
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select purchase date
+    TechnologyPage.Select warranty end date    12/12/2028
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Add technology lifecycle comment    Technology Lifecycle Information- comment
+    TechnologyPage.Add order number of technology cost information     56
+    TechnologyPage.Add payment partner of technology cost information      testqa 20Feb
+    TechnologyPage.Add cost type of technology cost information        Purchased
+    TechnologyPage.Add payment type of technology cost information     FixedPayment
+    TechnologyPage.Add payment peroid of technology cost information       Monthly
+    TechnologyPage.Add first payment date of technology cost information       12/12/2028
+    TechnologyPage.Add budget payment of technology cost information       1100
+    TechnologyPage.Add actual payment of technology cost information       1050
+    TechnologyPage.Add expense type of technology cost information     Capex
+    TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
+    TechnologyPage.Add assignment information department name      TestQA Department Up31840619
+    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add support partner of partners information     QABusiness04191432
+    TechnologyPage.Add supplier of partners information        qabrand10050505
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+    TechnologyPage.Click on edit button on product details page        Edit
+    Generic.Verify your current page location contains      edit-technology
+    TechnologyPage.Click on the edit icon on the edit technology page
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       Panasonic
+    TechnologyPage.Click technology product input field
+    TechnologyPage.Select parameter from technology dropdown list      18781
+    TechnologyPage.Select edited technology lifecycle status      Active
+    TechnologyPage.Click on save technology form button
+    TechnologyPage.Accept updated edited technology pop up     Update
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
