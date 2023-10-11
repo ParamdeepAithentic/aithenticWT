@@ -111,6 +111,7 @@ click on the button
     wait until element is enabled      //button[normalize-space()='${option}']     60
     click element       //button[normalize-space()='${option}']
 
+
 click on the button link
     [Arguments]    ${option}
     wait until element is visible      //a[normalize-space()='${option}']     60

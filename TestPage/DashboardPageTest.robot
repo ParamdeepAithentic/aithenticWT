@@ -152,7 +152,6 @@ Add Product Bulk Edit
     DashboardPage.Select option from status column        ProductStatus
     DashboardPage.Select option from technology type column       TechType
 
-
     Generic.Click on the button     Update      #Check Data,Edit
     MemberPage.Confirm the exit import process pop appers
     Generic.Click on the button     Confirm
@@ -182,8 +181,20 @@ Add Department Bulk Edit
     Generic.Fetch alert message text and compare it with        Department added successfully
     DashboardPage.Verify department added       ${generated_DepartmentNumber}
 
+    DashboardPage.Click on action button
+    DashboardPage.Select the option from department action menu      Bulk Edit
+    sleep   5
+    Switch Window       aithentic | Data-Wizard
+    Generic.Verify your current page location contains      department-bulk-edit
+    DashboardPage.Enter the new value in the department name column     department_name
+    DashboardPage.Select option from department status column       DepartmentStatus
+    DashboardPage.Enter the new value in the cost center column     costCenter
 
-
+    Generic.Click on the button     Upload      #Check Data,Edit,Upload
+    DashboardPage.Verify the upload message text    Upload       Upload successful
+    Generic.Click on the button     Exit
+    DashboardPage.Confirm the exit import process pop appers
+    Generic.Click on the button     Confirm
 
 
 

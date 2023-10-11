@@ -78,6 +78,9 @@ ${add_dept_costCenter}     css:.profile-section-department .qa-add-department-co
 ${searchBar_department}     css:input[placeholder='Search by Department Name']
 ${fetch_departmentName}     css:td:nth-child(2)
 
+################################### Network Discovery ######################################################
+#//button[normalize-space()='Download Agent']
+
 
 
 *** Keywords ***
@@ -100,6 +103,11 @@ Select the option from action menu
     wait until element is enabled       css:.qa-product-bulk-${option}     60
     click element   css:.qa-product-bulk-${option}
 
+Select the option from department action menu
+    [Arguments]    ${option}
+    wait until element is visible       css:a[title='${option}']     60
+    wait until element is enabled       css:a[title='${option}']     60
+    click element   css:a[title='${option}']
 
 Select brand from list
     [Arguments]    ${BrandName}
@@ -410,7 +418,42 @@ Verify department added
 #    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
 #    Calculate Running time  8  ${pageHeading}   DashboardPage - Verify product added      8    ${pageTime}     ${ActualTime}    DashboardPage_Time
 
+Enter the new value in the department name column
+    [Arguments]    ${option}
+    DashboardPage.Double click    ${option}
+    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${generated_EditDepartmentName}=    Catenate    DepartmentName${random_string}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_EditDepartmentName}
+    set global variable    ${generated_EditDepartmentName}
 
+Select option from department status column
+    [Arguments]    ${option}
+    wait until element is visible      css:.ag-center-cols-container div[col-id='${option}']    60
+    Double click element      css:.ag-center-cols-container div[col-id='${option}']
+    wait until element is visible      css:.ag-rich-select-row.ag-rich-select-row-selected    60
+    click element       css:.ag-rich-select-row.ag-rich-select-row-selected
+
+
+Enter the new value in the cost center column
+    [Arguments]    ${option}
+    DashboardPage.Double click    ${option}
+    ${random_string} =    Generate Random String       4      [NUMBERS]
+    ${generated_EditCostCenter}=    Catenate    ${random_string}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_EditCostCenter}
+    set global variable    ${generated_EditCostCenter}
+
+Verify the upload message text
+    [Arguments]    ${option}    ${text}
+    wait until element is not visible      ${loaderIcon}     60
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}']     60
+    ${fetch_text} =    get text    css:.ag-center-cols-container div[col-id='${option}']
+    log to console  uploadtext:${fetch_text}
+    should be equal    ${fetch_text}    ${text}
+
+Confirm the exit import process pop appers
+    Wait Until Element Is Visible    ${assignedUser_Edit_popUp}      60
 
 Verify the side option list parameters
    wait until element is visible   ${side_options}      60
