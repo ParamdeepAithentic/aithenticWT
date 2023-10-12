@@ -225,7 +225,7 @@ Save the secondary contact
 Click contact main save button
     wait until element is visible      ${main_Save}       60
     click element   ${main_Save}
-    wait until element is visible      ${loaderIcon}       60
+#    wait until element is visible      ${loaderIcon}       60
     Wait Until Element Is Not Visible    ${loaderIcon}      60
 
 
