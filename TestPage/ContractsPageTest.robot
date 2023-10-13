@@ -123,20 +123,6 @@ Technology Auto removed from contract When edit Brand and product
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       ${generate_BusinessName}
-#
-#    TechnologyPage.Click on add product link        Click here to add
-#
-#    DashboardPage.Create random productName
-#    DashboardPage.Add product brand name      ${generate_BusinessName}
-#    DashboardPage.Add product description
-#    DashboardPage.Add product feature
-#    DashboardPage.Select product status   Active
-#    DashboardPage.Select product technology type     Hardware
-#    DashboardPage.Select product technology group     Applications
-#    DashboardPage.Save added product details
-#
-#    Generic.Fetch alert message text and compare it with        Product created successfully
-
     TechnologyPage.Click technology product input field
     TechnologyPage.Select parameter from technology dropdown list      ${generated_product}
     TechnologyPage.Create unique serial number random

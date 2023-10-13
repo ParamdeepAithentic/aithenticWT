@@ -248,6 +248,7 @@ Click on the first tab row
     click element    css:.table-row.text-left.ng-star-inserted td
 
 Verify technology is null
+    Wait Until Element Is Visible       ${pdf_modal}    60
     Wait Until Element Is Not Visible    ${loaderIcon}      60
     wait until element is visible       //span[normalize-space()='-']       60
 
