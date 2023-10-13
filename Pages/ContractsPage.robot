@@ -168,6 +168,7 @@ Select contract function
 
 Click on generate contract button on select asset page
     [Arguments]    ${option}
+#    Wait Until Element Is Not Visible    ${loaderIcon}      60
     Generic.click on the button link        ${option}
 
 Wait until PDF is loaded properly
@@ -176,13 +177,14 @@ Wait until PDF is loaded properly
 Click preview selection button on contact
      wait until element is visible    ${previewSelectionButton}      60
      click element      ${previewSelectionButton}
-     wait until element is visible       ${loaderIcon}       60
+#     wait until element is visible       ${loaderIcon}       60
      Wait Until Element Is Not Visible    ${loaderIcon}      60
 
 Enter contract description comment
      [Arguments]    ${option}
      Wait Until Element Is Not Visible    ${loaderIcon}      60
      Wait Until Element Is Enabled       ${contractDescription}    60
+     Wait Until Element Is Not Visible    ${loaderIcon}      60
      click element       ${contractDescription}
      input text  ${contractDescription}     ${option}
 
