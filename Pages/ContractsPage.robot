@@ -166,6 +166,13 @@ Select contract function
     Calculate Running time  7  ${pageHeading}   ContractPage - Select contract function      7    ${pageTime}     ${ActualTime}    ContractPage_Time
 
 
+Click on generate contract button on select asset page
+    [Arguments]    ${option}
+    Generic.click on the button link        ${option}
+
+Wait until PDF is loaded properly
+    wait until element is visible    ${pdf_modal}      60
+
 Click preview selection button on contact
      wait until element is visible    ${previewSelectionButton}      60
      click element      ${previewSelectionButton}
@@ -174,6 +181,7 @@ Click preview selection button on contact
 
 Enter contract description comment
      [Arguments]    ${option}
+     Wait Until Element Is Not Visible    ${loaderIcon}      60
      Wait Until Element Is Enabled       ${contractDescription}    60
      click element       ${contractDescription}
      input text  ${contractDescription}     ${option}
