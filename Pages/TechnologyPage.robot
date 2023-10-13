@@ -281,6 +281,10 @@ Select parameter from technology dropdown list
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  6  ${pageHeading}   Technology Page - Select parameter from technology dropdown list      6    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
+Click on add product link
+    [Arguments]      ${option}
+    Generic.click on the tab        ${option}
+
 
 ##############Technology Group Information for hardware#################
 Add mac address for technology group information for hardware
@@ -766,7 +770,9 @@ Click on the edit icon on the edit technology page
     wait until element is visible      ${editIcon}     60
     click element      ${editIcon}
 
-
+Click on technology Acknowledgement pop up
+    [Arguments]    ${option}
+    Generic.click on the button     ${option}
 
 
 

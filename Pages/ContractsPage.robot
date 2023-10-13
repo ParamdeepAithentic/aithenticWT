@@ -247,6 +247,9 @@ Click on the first tab row
     sleep    1
     click element    css:.table-row.text-left.ng-star-inserted td
 
+Verify technology is null
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    wait until element is visible       //span[normalize-space()='-']       60
 
 Save the contract details
     [Arguments]     ${option}

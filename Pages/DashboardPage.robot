@@ -57,7 +57,7 @@ ${add_Product}     css:a[title='Click here to Add Product']
 ${actionBTN}       css:#Team-Member-Actions
 ${add_Product_modal}     css:div[id='addProductPopup'] div[role='document'] div[role='document'] div[class='modal-content']
 ${ProductName}     css:#ProductName
-${enterAndSelect_Brand}     css:.qa-BrandName-v1 input
+${enterAndSelect_Brand}     css:.qa-BrandName input
 ${ProductDescription}     //div[@class='card-container themeScrollBar mt-1 p-2']//textarea[@id='ProductDescription']
 ${ProductFeatures}     css:#ProductFeatures
 
