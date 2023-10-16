@@ -137,6 +137,13 @@ ${back_To_List_Link}     css:span[class='back']
 
 ${editIcon}     css:i[title='Click here edit product and brand']
 
+#################### Compose message##############################
+${composeMessage_status}     css:#messageStatus
+${composeMessage_subject}     css:#ClientMessageSubject
+${composeMessage_Details}       //div[@for='messageBody']//textarea[@id='ClientMessageDetail']
+${composeMessage_sendBTN}       //div[@class='modal-footer']//button[@type='submit'][normalize-space()='Send']
+
+
 
 *** Keywords ***
 Fetch the Brand Name from the row
@@ -773,6 +780,80 @@ Click on the edit icon on the edit technology page
 Click on technology Acknowledgement pop up
     [Arguments]    ${option}
     Generic.click on the button     ${option}
+
+
+
+Click on the specific tab
+    [Arguments]    ${option}
+    wait until element is visible     //ul[@id='mynewTab']//li//a[@href='#${option}']        60
+    wait until element is enabled     //ul[@id='mynewTab']//li//a[@href='#${option}']        60
+    click element   //ul[@id='mynewTab']//li//a[@href='#${option}']
+
+#details, #partners, #location, #parent-components, #components, #messages, #history, #attachments, #inbox, #sent
+
+Verify assetID is visible
+    [Arguments]    ${option}
+    wait until element is visible       //b[normalize-space()='Asset Id : ${option}']       60
+
+Click on compose message button
+    [Arguments]    ${option}
+    Generic.click on the button     ${option}     #//button[normalize-space()='Compose Message']
+
+
+Enter Asset id in compose message
+    [Arguments]    ${option}
+    wait until element is visible      //div[@class='edit-bill-container']//input[@id='AssetId']        60
+    wait until element is enabled      //div[@class='edit-bill-container']//input[@id='AssetId']        60
+    input text       //div[@class='edit-bill-container']//input[@id='AssetId']      ${option}
+
+Click on TO of compose message
+    wait until element is visible     css:.qa-To input      60
+    wait until element is enabled     css:.qa-To input       60
+    click element   css:.qa-To input
+
+Select the first value of To dropdown of compose message
+    wait until element is visible     //div[contains (@id, '-0')]       60
+    wait until element is enabled     //div[contains (@id, '-0')]       60
+    click element   //div[contains (@id, '-0')]
+
+Select compose message status
+    [Arguments]    ${option4}
+    wait until element is enabled       ${composeMessage_status}       60
+    click element      ${composeMessage_status}
+    Clear Element Text      ${composeMessage_status}
+    input text      ${composeMessage_status}     ${option4}
+    Generic.Select parameter    ${option4}
+
+Enter subject of compose message
+    [Arguments]    ${option}
+    wait until element is visible     ${composeMessage_subject}       60
+    input text     ${composeMessage_subject}         ${option}      60
+    ${get_messageSubjectValue} =  Set Variable     ${option}
+    set global variable    ${get_messageSubjectValue}
+
+Enter message body of compose message
+    [Arguments]    ${option}
+    wait until element is visible     ${composeMessage_Details}       60
+    input text     ${composeMessage_Details}      ${option}      60
+    ${get_messageBodyValue} =  Set Variable     ${option}
+    set global variable    ${get_messageBodyValue}
+
+
+
+Click on the send button of compose message
+    wait until element is visible    ${composeMessage_sendBTN}       60
+    wait until element is enabled    ${composeMessage_sendBTN}       60
+    click element   ${composeMessage_sendBTN}
+
+Verify subject of recent added email
+    [Arguments]    ${option}
+    wait until element is visible         //label[normalize-space()='${option}']       60
+
+Verify message body of recent added email
+    [Arguments]    ${option}
+    wait until element is visible         //p[normalize-space()='${option}']       60
+
+
 
 
 
