@@ -224,6 +224,7 @@ Select product technology group
     wait until element is visible       ${select_technology_group}     60
     Mouse Over      ${select_technology_group}
     click element   ${select_technology_group}
+    Scroll Element Into View        //span[normalize-space()='${option}']
     wait until element is visible      //span[normalize-space()='${option}']       60
     click element       //span[normalize-space()='${option}']
 

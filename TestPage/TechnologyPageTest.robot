@@ -549,3 +549,140 @@ Sent Message should show in the Sent Tab
     Generic.Fetch alert message text and compare it with        Message sent successfully
     TechnologyPage.Verify subject of recent added email        ${get_messageSubjectValue}
     TechnologyPage.Verify message body of recent added email       ${get_messageBodyValue}
+
+
+Add Products with 10 combinations of Tech Type and Tech group
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     Product
+    Generic.Verify your current page location contains      product
+    DashboardPage.Click on action button
+    DashboardPage.Click add product button
+    DashboardPage.Create product name random
+    DashboardPage.Add product brand name      QABrand555
+    DashboardPage.Add product description
+    DashboardPage.Add product feature
+    DashboardPage.Select product status       Active
+    DashboardPage.Select product technology type      Hardware
+    DashboardPage.Select product technology group     Accessories
+    DashboardPage.Save added product details
+    Generic.Fetch alert message text and compare it with        Product created successfully
+    DashboardPage.Verify product added        ${generated_product}
+    #---------------------------------------------------------------------------------------
+    DashboardPage.Click on action button
+    DashboardPage.Click add product button
+    DashboardPage.Create product name random
+    DashboardPage.Add product brand name      QABrand555
+    DashboardPage.Add product description
+    DashboardPage.Add product feature
+    DashboardPage.Select product status       Active
+    DashboardPage.Select product technology type      Hardware
+    DashboardPage.Select product technology group     Applications
+    DashboardPage.Save added product details
+    Generic.Fetch alert message text and compare it with        Product created successfully
+    DashboardPage.Verify product added        ${generated_product}
+     #---------------------------------------------------------------------------------------
+    DashboardPage.Click on action button
+    DashboardPage.Click add product button
+    DashboardPage.Create product name random
+    DashboardPage.Add product brand name      QABrand555
+    DashboardPage.Add product description
+    DashboardPage.Add product feature
+    DashboardPage.Select product status       Active
+    DashboardPage.Select product technology type      License
+    DashboardPage.Select product technology group     Applications
+    DashboardPage.Save added product details
+    Generic.Fetch alert message text and compare it with        Product created successfully
+    DashboardPage.Verify product added        ${generated_product}
+     #---------------------------------------------------------------------------------------
+    DashboardPage.Click on action button
+    DashboardPage.Click add product button
+    DashboardPage.Create product name random
+    DashboardPage.Add product brand name      QABrand555
+    DashboardPage.Add product description
+    DashboardPage.Add product feature
+    DashboardPage.Select product status       Active
+    DashboardPage.Select product technology type      License
+    DashboardPage.Select product technology group     Cameras & Camcorders
+    DashboardPage.Save added product details
+    Generic.Fetch alert message text and compare it with        Product created successfully
+    DashboardPage.Verify product added        ${generated_product}
+     #---------------------------------------------------------------------------------------
+    DashboardPage.Click on action button
+    DashboardPage.Click add product button
+    DashboardPage.Create product name random
+    DashboardPage.Add product brand name      QABrand555
+    DashboardPage.Add product description
+    DashboardPage.Add product feature
+    DashboardPage.Select product status       Active
+    DashboardPage.Select product technology type      Subscription
+    DashboardPage.Select product technology group     Car Audio & Video
+    DashboardPage.Save added product details
+    Generic.Fetch alert message text and compare it with        Product created successfully
+    DashboardPage.Verify product added        ${generated_product}
+     #---------------------------------------------------------------------------------------
+    DashboardPage.Click on action button
+    DashboardPage.Click add product button
+    DashboardPage.Create product name random
+    DashboardPage.Add product brand name      QABrand555
+    DashboardPage.Add product description
+    DashboardPage.Add product feature
+    DashboardPage.Select product status       Active
+    DashboardPage.Select product technology type      Subscription
+    DashboardPage.Select product technology group     Home Audio
+    DashboardPage.Save added product details
+    Generic.Fetch alert message text and compare it with        Product created successfully
+    DashboardPage.Verify product added        ${generated_product}
+     #---------------------------------------------------------------------------------------
+    DashboardPage.Click on action button
+    DashboardPage.Click add product button
+    DashboardPage.Create product name random
+    DashboardPage.Add product brand name      QABrand555
+    DashboardPage.Add product description
+    DashboardPage.Add product feature
+    DashboardPage.Select product status       Active
+    DashboardPage.Select product technology type      Maintenance
+    DashboardPage.Select product technology group     Communication
+    DashboardPage.Save added product details
+    Generic.Fetch alert message text and compare it with        Product created successfully
+    DashboardPage.Verify product added        ${generated_product}
+     #---------------------------------------------------------------------------------------
+    DashboardPage.Click on action button
+    DashboardPage.Click add product button
+    DashboardPage.Create product name random
+    DashboardPage.Add product brand name      QABrand555
+    DashboardPage.Add product description
+    DashboardPage.Add product feature
+    DashboardPage.Select product status       Active
+    DashboardPage.Select product technology type      Maintenance
+    DashboardPage.Select product technology group     CRT TVs
+    DashboardPage.Save added product details
+    Generic.Fetch alert message text and compare it with        Product created successfully
+    DashboardPage.Verify product added        ${generated_product}
+     #---------------------------------------------------------------------------------------
+    DashboardPage.Click on action button
+    DashboardPage.Click add product button
+    DashboardPage.Create product name random
+    DashboardPage.Add product brand name      QABrand555
+    DashboardPage.Add product description
+    DashboardPage.Add product feature
+    DashboardPage.Select product status       Active
+    DashboardPage.Select product technology type      Virtual Machines
+    DashboardPage.Select product technology group     DVD / TV Combos
+    DashboardPage.Save added product details
+    Generic.Fetch alert message text and compare it with        Product created successfully
+    DashboardPage.Verify product added        ${generated_product}
+     #---------------------------------------------------------------------------------------
+    DashboardPage.Click on action button
+    DashboardPage.Click add product button
+    DashboardPage.Create product name random
+    DashboardPage.Add product brand name      QABrand555
+    DashboardPage.Add product description
+    DashboardPage.Add product feature
+    DashboardPage.Select product status       Active
+    DashboardPage.Select product technology type      Virtual Machines
+    DashboardPage.Select product technology group     Displays & Projectors
+    DashboardPage.Save added product details
+    Generic.Fetch alert message text and compare it with        Product created successfully
+    DashboardPage.Verify product added        ${generated_product}
