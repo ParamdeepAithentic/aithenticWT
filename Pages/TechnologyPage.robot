@@ -144,6 +144,9 @@ ${composeMessage_Details}       //div[@for='messageBody']//textarea[@id='ClientM
 ${composeMessage_sendBTN}       //div[@class='modal-footer']//button[@type='submit'][normalize-space()='Send']
 
 
+############################ Add department ##########################
+${add_tech_dept_name}        css:.qa-add-department-name input
+${add_tech_dept_costCenter}      css:#costCenter
 
 *** Keywords ***
 Fetch the Brand Name from the row
@@ -276,17 +279,23 @@ Click technology product input field
      wait until element is visible       ${product}        60
      wait until element is enabled       ${product}        60
      click element    ${product}
+#     TechnologyPage.Select the first value of To dropdown of product
+
+
+Select the first value of To dropdown of product
+    wait until element is visible     //div[contains (@id, '-0')]       60
+    wait until element is enabled     //div[contains (@id, '-0')]       60
+    click element   //div[contains (@id, '-0')]
 
 Select parameter from technology dropdown list
     [Arguments]      ${option2}
-     wait until element is visible        //span[contains(text(), '${option2}')]       60
      ${StartTime1} =     Get Current Time in Milliseconds
-     click element     //span[contains(text(), '${option2}')]
-#     wait until element is visible       ${loaderIcon}       60
+     Generic.Enter value into field     ${product}      ${option2}
+     TechnologyPage.Select the first value of To dropdown of product
      Wait Until Element Is Not Visible    ${loaderIcon}      60
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  6  ${pageHeading}   Technology Page - Select parameter from technology dropdown list      6    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+     ${EndTime1} =     Get Current Time in Milliseconds
+     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+     Calculate Running time  6  ${pageHeading}   Technology Page - Select parameter from technology dropdown list      6    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Click on add product link
     [Arguments]      ${option}
@@ -325,7 +334,7 @@ Add technology group information contract start date
 
 Add technology group information contract end date
     [Arguments]    ${date}
-     Generic.Enter self date       ${Contract_endDate}     ${date}
+    Generic.Enter self date       ${Contract_endDate}     ${date}
 
 
 
@@ -853,6 +862,86 @@ Verify message body of recent added email
     [Arguments]    ${option}
     wait until element is visible         //p[normalize-space()='${option}']       60
 
+
+
+
+Click on add location
+    wait until element is visible       css:span[title='Add new location'] a        60
+    click element       css:span[title='Add new location'] a
+
+Select country of the location
+    [Arguments]    ${option}
+    Generic.Enter value into field     css:#country     ${option}
+    Generic.Select parameter        ${option}
+
+Click on refresh location icon
+    wait until element is visible       //b[normalize-space()='click here to refresh the location list']       60
+    click element       //b[normalize-space()='click here to refresh the location list']
+    wait until element is visible       css:span[title='Add new location'] a       60
+
+Enter unique location name random
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_location}=    Catenate    location_${random_string}
+    Generic.Enter value into field      css:#locationName        ${generated_location}
+    set global variable    ${generated_location}
+
+Save the new added location
+    [Arguments]     ${option}
+    wait until element is visible       css:.qa-${option}-location       60
+    click element       css:.qa-${option}-location
+
+
+
+
+
+Click on add department
+    wait until element is visible       css:span[title='Add new department'] a        60
+    click element       css:span[title='Add new department'] a
+
+
+Create unique department name random
+    wait until element is visible       ${add_tech_dept_name}        60
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_DepartmentNumber}=    Catenate    DeptNo_${random_string}
+    input text   ${add_tech_dept_name}   ${generated_DepartmentNumber}
+    sleep       1
+    click element     css:div[role='option']
+    log to console      ${generated_DepartmentNumber}
+    set global variable    ${generated_DepartmentNumber}
+
+Select department cost center
+    [Arguments]    ${option}
+    wait until element is visible       ${add_tech_dept_costCenter}        60
+    input text    ${add_tech_dept_costCenter}   ${option}
+
+Save the department
+    [Arguments]    ${option}
+    wait until element is visible       css:.qa-${option}-department-modal        60
+    click element        css:.qa-${option}-department-modal
+
+
+
+Click on add assign to
+    wait until element is visible       css:span[title='Add new assignee'] a        60
+    click element       css:span[title='Add new assignee'] a
+
+
+Create unique assign to first name random
+    wait until element is visible       css:#AssignedFirstName        60
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_assignFname}=    Catenate    Fname_${random_string}
+    input text  css:#AssignedFirstName   ${generated_assignFname}
+
+Create unique assign to last name random
+    wait until element is visible       css:#AssignedLastName        60
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_assignLname}=    Catenate    Lname_${random_string}
+    input text   css:#AssignedLastName   ${generated_assignLname}
+
+Save the assign to
+    [Arguments]    ${option}
+    wait until element is visible       css:.qa-${option}-assignee-modal        60
+    click element        css:.qa-${option}-assignee-modal
 
 
 

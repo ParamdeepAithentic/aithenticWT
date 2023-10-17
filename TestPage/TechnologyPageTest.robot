@@ -45,8 +45,8 @@ Fill the technology form for license product
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Click technology product input field
-    TechnologyPage.Select parameter from technology dropdown list      License
+    #           TechnologyPage.Click technology product input field
+    TechnologyPage.Select parameter from technology dropdown list      QALicense
     TechnologyPage.Add random technology product version
     TechnologyPage.Add random technology product edition
     TechnologyPage.Add random technology hostOn
@@ -91,8 +91,8 @@ Fill the technology form for hardware product
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Click technology product input field
-    TechnologyPage.Select parameter from technology dropdown list      Hardware
+    #           TechnologyPage.Click technology product input field
+    TechnologyPage.Select parameter from technology dropdown list      QAHardware
     TechnologyPage.Create unique serial number random
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date
@@ -130,8 +130,8 @@ Fill the technology form for maintenance product
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Click technology product input field
-    TechnologyPage.Select parameter from technology dropdown list      Maintenance
+    #           TechnologyPage.Click technology product input field
+    TechnologyPage.Select parameter from technology dropdown list      QAMaintenance
     TechnologyPage.Add technology group information contract start date
     TechnologyPage.Add technology group information contract end date      12/12/2028
     TechnologyPage.Add assetID for technology lifecycle information random
@@ -170,8 +170,8 @@ Fill the technology form for subscription product
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Click technology product input field
-    TechnologyPage.Select parameter from technology dropdown list      Subscription
+    #           TechnologyPage.Click technology product input field
+    TechnologyPage.Select parameter from technology dropdown list      QASubscription
     TechnologyPage.Add technology group information contract start date
     TechnologyPage.Add technology group information contract end date     12/12/2028
     TechnologyPage.Add assetID for technology lifecycle information random
@@ -238,7 +238,7 @@ Create new asset with new brand and product
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       ${generated_BrandName}
-    TechnologyPage.Click technology product input field
+    #           TechnologyPage.Click technology product input field
     TechnologyPage.Select parameter from technology dropdown list      ${generated_product}
     TechnologyPage.Create unique serial number random
     TechnologyPage.Add assetID for technology lifecycle information random
@@ -284,8 +284,8 @@ Restore asset type one
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Click technology product input field
-    TechnologyPage.Select parameter from technology dropdown list      Subscription
+    #           TechnologyPage.Click technology product input field
+    TechnologyPage.Select parameter from technology dropdown list      QASubscription
     TechnologyPage.Add technology group information contract start date
     TechnologyPage.Add technology group information contract end date    12/12/2028
     TechnologyPage.Add assetID for technology lifecycle information random
@@ -334,8 +334,8 @@ Restore asset from removed asset details page
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Click technology product input field
-    TechnologyPage.Select parameter from technology dropdown list      Subscription
+    #           TechnologyPage.Click technology product input field
+    TechnologyPage.Select parameter from technology dropdown list      QASubscription
     TechnologyPage.Add technology group information contract start date
     TechnologyPage.Add technology group information contract end date      12/12/2028
     TechnologyPage.Add assetID for technology lifecycle information random
@@ -386,8 +386,8 @@ Restore asset by selecting checkbox
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Click technology product input field
-    TechnologyPage.Select parameter from technology dropdown list      Subscription
+    #           TechnologyPage.Click technology product input field
+    TechnologyPage.Select parameter from technology dropdown list      QASubscription
     TechnologyPage.Add technology group information contract start date
     TechnologyPage.Add technology group information contract end date      12/12/2028
     TechnologyPage.Add assetID for technology lifecycle information random
@@ -455,8 +455,8 @@ Edit brand and product via details
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Click technology product input field
-    TechnologyPage.Select parameter from technology dropdown list      Hardware
+    #           TechnologyPage.Click technology product input field
+    TechnologyPage.Select parameter from technology dropdown list      QAHardware
     TechnologyPage.Create unique serial number random
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date
@@ -489,8 +489,8 @@ Edit brand and product via details
     TechnologyPage.Click on the edit icon on the edit technology page
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       Panasonic
-    TechnologyPage.Click technology product input field
-    TechnologyPage.Select parameter from technology dropdown list      18781
+    #           TechnologyPage.Click technology product input field
+    TechnologyPage.Select the first value of To dropdown of product
     TechnologyPage.Select edited technology lifecycle status      Active
     TechnologyPage.Click on save technology form button
     TechnologyPage.Accept updated edited technology pop up     Update
@@ -506,8 +506,8 @@ Sent Message should show in the Sent Tab
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Click technology product input field
-    TechnologyPage.Select parameter from technology dropdown list      Hardware
+    #           TechnologyPage.Click technology product input field
+    TechnologyPage.Select parameter from technology dropdown list      QAHardware
     TechnologyPage.Create unique serial number random
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date
@@ -686,3 +686,39 @@ Add Products with 10 combinations of Tech Type and Tech group
     DashboardPage.Save added product details
     Generic.Fetch alert message text and compare it with        Product created successfully
     DashboardPage.Verify product added        ${generated_product}
+
+
+Add Technology Page - Add New location and assign that location
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.click on add technology button
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    #           TechnologyPage.Click technology product input field
+    TechnologyPage.Select parameter from technology dropdown list      QAMaintenance
+    TechnologyPage.Click on add location
+    sleep       3
+    Switch Window       aithentic | Add - Location
+    Generic.Verify your current page location contains      add-location
+    TechnologyPage.Select country of the location   United States
+    TechnologyPage.Enter unique location name random
+    TechnologyPage.Save the new added location         save
+    Switch Window       aithentic | Add - Technology
+    TechnologyPage.Click on refresh location icon
+    TechnologyPage.Add assignment information location     ${generated_location}
+
+    TechnologyPage.Click on add department
+    TechnologyPage.Create unique department name random
+    TechnologyPage.Select department cost center     1300
+    TechnologyPage.Save the department       add
+    Generic.Fetch alert message text and compare it with        Department added successfully
+    TechnologyPage.Add assignment information department name      ${generated_DepartmentNumber}
+
+    TechnologyPage.Click on add assign to
+    TechnologyPage.Create unique assign to first name random
+    TechnologyPage.Create unique assign to last name random
+    TechnologyPage.Save the assign to      save
+    Generic.Fetch alert message text and compare it with       Assigned Users created successfully
