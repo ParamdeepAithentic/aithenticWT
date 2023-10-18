@@ -222,7 +222,7 @@ Enter value into field
     [Arguments]    ${field}     ${data}
     wait until element is visible       ${field}       60
     Wait Until Element Is Enabled     ${field}     60
-    click element       ${field}
+#    click element       ${field}
     Clear Element Text      ${field}
     input text      ${field}     ${data}
 

@@ -144,7 +144,7 @@ Click on download agent button to download
     Generic.click on the button     ${option}
 
 Create random productName
-    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_product}=    Catenate    Product_${random_string}
     input text   ${ProductName}   ${generated_product}
     log to console      ${generated_product}
@@ -164,7 +164,7 @@ Click add product button
     wait until element is visible       ${ProductName}      60
 
 Create product name random
-    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_product}=    Catenate    Product_${random_string}
     input text   ${ProductName}   ${generated_product}
     log to console      ${generated_product}
@@ -258,7 +258,7 @@ Click add brand button
 
 
 Create random brandName
-    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_BrandName}=    Catenate    BrandName${random_string}
     input text   ${add_brandName}   ${generated_BrandName}
     log to console      ${generated_BrandName}
@@ -354,7 +354,7 @@ Select the location ID checkbox
 Enter the new value in the product name column
     [Arguments]    ${option}
     DashboardPage.Double click    ${option}
-    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_EditProductName}=    Catenate    ProductName${random_string}
     wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_EditProductName}
@@ -429,7 +429,7 @@ Verify department added
 Enter the new value in the department name column
     [Arguments]    ${option}
     DashboardPage.Double click    ${option}
-    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_EditDepartmentName}=    Catenate    DepartmentName${random_string}
     wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_EditDepartmentName}
