@@ -419,6 +419,7 @@ Select technology lifecycle status
 
 Select edited technology lifecycle status
     [Arguments]    ${option1}
+    wait until element is not visible    ${loaderIcon}      60
     wait until element is visible    ${LifeCycleStatusId}      60
     click element       ${LifeCycleStatusId}
     wait until element is visible   xpath://span[normalize-space()='${option1}']     60

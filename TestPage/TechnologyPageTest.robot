@@ -489,7 +489,7 @@ Edit brand and product via details
     TechnologyPage.Click on the edit icon on the edit technology page
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       Panasonic
-    #           TechnologyPage.Click technology product input field
+    TechnologyPage.Click technology product input field
     TechnologyPage.Select the first value of To dropdown of product
     TechnologyPage.Select edited technology lifecycle status      Active
     TechnologyPage.Click on save technology form button

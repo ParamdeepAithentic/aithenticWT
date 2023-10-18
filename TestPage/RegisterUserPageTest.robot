@@ -71,7 +71,7 @@ Register new user
 
     Yopmail.Click on sign In button in yopmail email
     Unselect Frame
-    sleep       3
+    sleep       5
     Switch Window       aithentic | Create - Account
     Generic.Verify your current page location contains     create-account
 
