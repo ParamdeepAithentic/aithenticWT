@@ -28,13 +28,14 @@ Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
 
 *** Variables ***
-${base_URL}=        https://uat-api.aithentic.com/api/v1
+#${base_URL}=        https://uat-api.aithentic.com/api/v1
+
 
 
 *** Keywords ***
 Fetch the refresh token from the login api
     ${body}=    Create Dictionary       Email=${email}      Password=${valid_password}
-    ${response}=    POST    ${base_URL}/login       json=${body}        expected_status=200
+    ${response}=    POST    ${apiURL}/login       json=${body}        expected_status=200
 #    log to console   ${response.json()}
 
     Dictionary Should Contain Key   ${response.json()}      data
