@@ -37,7 +37,7 @@ Resource        ../Pages/LocationPage.robot
 Replace Domain
     [Arguments]    ${option}
     # Set the base URL and endpoint
-    ${base_url}    Set Variable    https://uat-api.aithentic.com/api/v1/client-domains
+    ${base_url}    Set Variable    ${apiURL}/client-domains
 
     # Set the headers
     ${headers}    Create Dictionary

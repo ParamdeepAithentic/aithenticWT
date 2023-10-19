@@ -105,14 +105,16 @@ Enter contract with
 
 Enter contract brand
     [Arguments]    ${option}
-    Wait Until Element Is Visible       ${pleaseWaitValidation}    60
+#    Wait Until Element Is Visible       ${pleaseWaitValidation}    60
     Wait Until Element Is Not Visible       ${pleaseWaitValidation}    60
     click element       ${Contract_brand}
-    Clear Element Text      ${Contract_brand}
+#    Clear Element Text      ${Contract_brand}
     ${StartTime1} =     Get Current Time in Milliseconds
     input text      ${Contract_brand}      ${option}
 #    sleep       2
-    Press Keys      ${Contract_brand}      ENTER
+#    Press Keys      ${Contract_brand}      ENTER
+    Wait Until Element Is Visible       //ng-select[@labelforid='brand']//ng-dropdown-panel//span[normalize-space()='${option}']    60
+    click element       //ng-select[@labelforid='brand']//ng-dropdown-panel//span[normalize-space()='${option}']
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  5  ${pageHeading}   ContractPage - Enter contract brand      5    ${pageTime}     ${ActualTime}    ContractPage_Time

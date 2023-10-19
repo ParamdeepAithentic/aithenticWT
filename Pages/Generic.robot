@@ -37,6 +37,7 @@ ${user_name}             rahulshettyacademy
 ${invalid_password}      123445
 ${url}                   https://uat-app.aithentic.com/
 #${url}                   https://qa-app.aithentic.com/
+${apiURL}                 https://uat-api.aithentic.com/api/v1
 ${browser_name}          Firefox
 ${email}                 testqa29j@mailinator.com       #UAT user
 ${valid_password}        Test!@5099     #UAT user
