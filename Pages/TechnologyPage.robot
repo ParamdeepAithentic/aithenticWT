@@ -107,11 +107,11 @@ ${Yes_BTN}      //span[contains(text(),'Yes')]
 ####################### search asset id #####################
 ${asset_SearchBar}      css:input[placeholder='Search by Brand, Product, Asset ID, Serial number or Assignee']
 ${search_loader}     css:div[role='status']
-${fetch_assetID}     //td[@class='technology-asset-width pr-4']
-${fetch_productID}      css:tbody tr:nth-child(1) td:nth-child(4)
+${fetch_assetID}     //td[@class='technology-asset-width pr-4']//a
+${fetch_productID}      css:tbody tr:nth-child(1) td:nth-child(4) a
 ${fetch_serialNo}       //tbody/tr
 #${fetch_brandName}     css:tbody tr:nth-child(1) td:nth-child(3)
-${fetch_assignee}      css:tbody tr:nth-child(1) td:nth-child(9)
+${fetch_assignee}      css:tbody tr:nth-child(1) td:nth-child(9) a
 
 
 ${selectOption}     //div[@role='option']
@@ -147,6 +147,9 @@ ${composeMessage_sendBTN}       //div[@class='modal-footer']//button[@type='subm
 ############################ Add department ##########################
 ${add_tech_dept_name}        css:.qa-add-department-name input
 ${add_tech_dept_costCenter}      css:#costCenter
+
+############################### Assign partner ###########################
+
 
 *** Keywords ***
 Fetch the Brand Name from the row
@@ -777,6 +780,7 @@ Search by assignee
 Click on the first row of the technology table
     wait until element is visible      ${fetch_assetID}     60
     click element      ${fetch_assetID}
+    wait until element is not visible      ${loaderIcon}    60
 
 Click on edit button on product details page
     [Arguments]    ${option}
@@ -945,6 +949,52 @@ Save the assign to
     click element        css:.qa-${option}-assignee-modal
 
 
+
+Select tab under technology details
+    [Arguments]    ${option}
+    wait until element is not visible       ${loaderIcon}         60
+    wait until element is visible       css:a[href='#${option}']       60
+    wait until element is enabled       css:a[href='#${option}']        60
+    click element        css:a[href='#${option}']
+
+#details,partners,location,parent-components,components,messages,history,attachments
+
+
+Click on assign partner button under technology details page
+    [Arguments]     ${option}
+    Generic.click on the button     ${option}
+
+
+Click here to add support partner
+    wait until element is not visible    cs:.qa-assign-support-partner .ng-spinner-loader      60
+    click element       css:.qa-click-to-add-partner-support
+
+Click here to add supplier partner
+    wait until element is not visible    cs:.qa-assign-supplier-partner .ng-spinner-loader      60
+    click element       css:.qa-click-to-add-partner-supplier
+
+Click contact main save button
+    wait until element is visible      ${main_Save}       60
+    click element   ${main_Save}
+
+
+Wait till support partner get auto polute
+    [Arguments]     ${option}
+    wait until element is visible    //span[normalize-space()='${option}']      120
+Wait till supplier partner get auto polute
+    [Arguments]     ${option}
+    wait until element is visible    //span[normalize-space()='${option}']      120
+
+Verify that support partner is added in partner association
+    [Arguments]     ${option}
+    wait until element is visible    //td[normalize-space()='${option}']      120
+Verify that supplier partner is added in partner association
+    [Arguments]     ${option}
+    wait until element is visible    //td[normalize-space()='${option}']      120
+
+Submit the assign partner form
+    [Arguments]     ${option}
+    Generic.click on the button     ${option}
 
 
 
