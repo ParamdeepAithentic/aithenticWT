@@ -29,19 +29,21 @@ Resource        ../Pages/OCS.robot
 Resource        ../Pages/RegisterUserPage.robot
 
 *** Variables ***
-#${email}                 Person_23028@yopmail.net       #UAT user
-#${valid_password}        Paramdeep@112     #UAT user
-
 
 ${user_name}             rahulshettyacademy
 ${invalid_password}      123445
-${url}                   https://uat-app.aithentic.com/
-#${url}                   https://qa-app.aithentic.com/
-${apiURL}                 https://uat-api.aithentic.com/api/v1
+
+
+#${url}                   https://uat-app.aithentic.com/
+${url}                   https://qa-app.aithentic.com/
+#${apiURL}                 https://uat-api.aithentic.com/api/v1
+${apiURL}                 https://qa-api.aithentic.com/api/v1
+#${valid_password}        Test!@5099     #UAT user
+${valid_password}        Test@123       #QA User
+
+
 ${browser_name}          Firefox
 ${email}                 testqa29j@mailinator.com       #UAT user
-${valid_password}        Test!@5099     #UAT user
-#${valid_password}        Test@123     #QA user
 ${SheetLocationAndName}   LoadTimeSheet.xlsx
 ${SheetTabName}     Load_Time_tracking
 
@@ -174,6 +176,9 @@ Fetch alert message text and compare it with
     should be equal    ${get_alertMsg}     ${option}
     Wait Until Element Is Not Visible    ${alert_Msg}        60
 
+Verify alertify is visible
+       wait until element is visible    ${alert_Msg}        60
+
 Verify alert message of add team member of compose message
     [Arguments]    ${option}
     wait until element is visible    ${alert_Msg}        60
@@ -201,8 +206,8 @@ Click on the profile name
 
 Select option from profile list
      [Arguments]     ${option}
-    wait until element is visible    //a[normalize-space()='${option}']      60
-    click element    //a[normalize-space()='${option}']
+    wait until element is visible    //a[normalize-space()='${option}']//img      60
+    click element    //a[normalize-space()='${option}']//img
 
 Enter current date
     [Arguments]    ${option}
