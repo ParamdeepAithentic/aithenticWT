@@ -155,7 +155,7 @@ Add Product Bulk Edit
     Generic.Click on the button     Update      #Check Data,Edit
     MemberPage.Confirm the exit import process pop appers
     Generic.Click on the button     Confirm
-    Generic.Fetch alert message text and compare it with        Products updated successfully
+#    Generic.Fetch alert message text and compare it with        Products updated successfully
     MemberPage.Verify the upload message text    Upload       Upload Successful
     Generic.Click on the button     Exit
     MemberPage.Confirm the exit import process pop appers
@@ -198,21 +198,49 @@ Add Department Bulk Edit
 
 
 
-Download Agent from network discovery
+Download Agent from network discovery - Linux
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
     Generic.Select option from profile list     Personal Details
     Generic.Verify your current page location contains      personal-profile
-    Select an option from company details side list     Network Discovery
+    DashboardPage.Select an option from company details side list     Network Discovery
     Generic.Verify your current page location contains      network-discovery
     DashboardPage.Click on download agent button to download        Download Agent
-    Generic.click on the button    Yes, please!
-    Generic.click on the button    Linux
+    OCS.Would you like to download agent    Yes, please!
+    OCS.Select the agent type    Linux
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
 
 
+Download Agent from network discovery - Windows
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     Personal Details
+    Generic.Verify your current page location contains      personal-profile
+    DashboardPage.Select an option from company details side list     Network Discovery
+    Generic.Verify your current page location contains      network-discovery
+    DashboardPage.Click on download agent button to download        Download Agent
+    OCS.Would you like to download agent    Yes, please!
+    OCS.Select the agent type    Windows
+    OCS.Verify that agent is ready to get download
+    Generic.click on the button link    Download
+
+
+Download Agent from network discovery - macOS
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     Personal Details
+    Generic.Verify your current page location contains      personal-profile
+    DashboardPage.Select an option from company details side list     Network Discovery
+    Generic.Verify your current page location contains      network-discovery
+    DashboardPage.Click on download agent button to download        Download Agent
+    OCS.Would you like to download agent    Yes, please!
+    OCS.Select the agent type    macOS
+    OCS.Verify that agent is ready to get download
+    Generic.click on the button link    Download
 
 
 

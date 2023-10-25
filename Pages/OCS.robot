@@ -35,3 +35,15 @@ ${AgentReady_text}     //p[contains(text(),'File is ready, please download')]
 Verify that agent is ready to get download
     wait until element is not visible     ${preparingAgent_text}      60
     wait until element is visible     ${AgentReady_text}      60
+
+Would you like to download agent
+    [Arguments]    ${option}
+    wait until element is visible      //button[normalize-space()='${option}']     60
+    wait until element is enabled      //button[normalize-space()='${option}']     60
+    click element       //button[normalize-space()='${option}']
+
+Select the agent type
+    [Arguments]    ${option}
+    wait until element is visible      //button[normalize-space()='${option}']     60
+    wait until element is enabled      //button[normalize-space()='${option}']     60
+    click element       //button[normalize-space()='${option}']
