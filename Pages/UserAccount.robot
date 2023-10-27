@@ -27,6 +27,8 @@ Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
 Resource        ../Pages/OCS.robot
 Resource        ../Pages/RegisterUserPage.robot
+Resource        ../Pages/KeyClockPage.robot
+Resource        ../Pages/TeamMemberPage.robot
 
 
 

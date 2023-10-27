@@ -27,7 +27,8 @@ Resource        ../Pages/LocationPage.robot
 Resource        ../Pages/OCS.robot
 Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/MemberPage.robot
-
+Resource        ../Pages/KeyClockPage.robot
+Resource        ../Pages/TeamMemberPage.robot
 #Suite Setup    Get Current Date and Time
 #Test Setup      open the browser with the url
 #Test Teardown   Close Browser session

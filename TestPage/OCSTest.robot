@@ -26,6 +26,8 @@ Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
 Resource        ../Pages/OCS.robot
 Resource        ../Pages/RegisterUserPage.robot
+Resource        ../Pages/KeyClockPage.robot
+Resource        ../Pages/TeamMemberPage.robot
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
 
@@ -34,7 +36,7 @@ Test Teardown   Close Browser session
 
 
 *** Test Cases ***
-Download agent for OCS - Linux
+Download agent for OCS from signup - Linux
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     LoginAPI.Fetch the refresh token from the login api
@@ -49,14 +51,10 @@ Download agent for OCS - Linux
     RegisterUserPage.Select the checkbox
     RegisterUserPage.Save the register form
 
-
-
     Generic.Verify your current page location contains      update-email
     Generic.Open new window     yopmail
     Generic.Search yopmail emails for       ${generate_register_Email}
     Generic.Switch to iframe by ID      ifinbox
-
-
 
     Yopmail.Click on email of yopmail   Email Register Verification Required.
     Unselect Frame
@@ -89,7 +87,6 @@ Download agent for OCS - Linux
 
     Generic.Switch to iframe by ID      ifmail
 
-
     Yopmail.Get verification OTP from email    Your passcode is
     sleep       2
     Switch Window   aithentic | OTP
@@ -112,7 +109,6 @@ Download agent for OCS - Linux
     Generic.Fetch alert message text and compare it with       Profile saved successfully
 
     SubscriptionPage.Select plan of subscription
-
 
     SubscriptionPage.Select and move next with subscription
     Generic.Verify your current page location contains     subscription-payment
@@ -144,7 +140,7 @@ Download agent for OCS - Linux
 
 
 
-Download agent for OCS - Windows
+Download agent for OCS from signup - Windows
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     LoginAPI.Fetch the refresh token from the login api
@@ -159,14 +155,10 @@ Download agent for OCS - Windows
     RegisterUserPage.Select the checkbox
     RegisterUserPage.Save the register form
 
-
-
     Generic.Verify your current page location contains      update-email
     Generic.Open new window     yopmail
     Generic.Search yopmail emails for       ${generate_register_Email}
     Generic.Switch to iframe by ID      ifinbox
-
-
 
     Yopmail.Click on email of yopmail   Email Register Verification Required.
     Unselect Frame
@@ -199,7 +191,6 @@ Download agent for OCS - Windows
 
     Generic.Switch to iframe by ID      ifmail
 
-
     Yopmail.Get verification OTP from email    Your passcode is
     sleep       2
     Switch Window   aithentic | OTP
@@ -222,7 +213,6 @@ Download agent for OCS - Windows
     Generic.Fetch alert message text and compare it with       Profile saved successfully
 
     SubscriptionPage.Select plan of subscription
-
 
     SubscriptionPage.Select and move next with subscription
     Generic.Verify your current page location contains     subscription-payment
@@ -254,7 +244,7 @@ Download agent for OCS - Windows
 
 
 
-Download agent for OCS - macOS
+Download agent for OCS from signup - macOS
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     LoginAPI.Fetch the refresh token from the login api
@@ -269,14 +259,10 @@ Download agent for OCS - macOS
     RegisterUserPage.Select the checkbox
     RegisterUserPage.Save the register form
 
-
-
     Generic.Verify your current page location contains      update-email
     Generic.Open new window     yopmail
     Generic.Search yopmail emails for       ${generate_register_Email}
     Generic.Switch to iframe by ID      ifinbox
-
-
 
     Yopmail.Click on email of yopmail   Email Register Verification Required.
     Unselect Frame
@@ -309,7 +295,6 @@ Download agent for OCS - macOS
 
     Generic.Switch to iframe by ID      ifmail
 
-
     Yopmail.Get verification OTP from email    Your passcode is
     sleep       2
     Switch Window   aithentic | OTP
@@ -332,7 +317,6 @@ Download agent for OCS - macOS
     Generic.Fetch alert message text and compare it with       Profile saved successfully
 
     SubscriptionPage.Select plan of subscription
-
 
     SubscriptionPage.Select and move next with subscription
     Generic.Verify your current page location contains     subscription-payment
@@ -357,6 +341,85 @@ Download agent for OCS - macOS
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     sleep   1
+    OCS.Would you like to download agent    Yes, please!
+    OCS.Select the agent type    macOS
+    OCS.Verify that agent is ready to get download
+    Generic.click on the button link    Download
+
+
+
+Download Agent from network discovery - Linux
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    DashboardPage.Select an option from company details side list     Network Discovery
+    Generic.Verify your current page location contains      network-discovery
+    DashboardPage.Click on download agent button to download        Download Agent
+    OCS.Would you like to download agent    Yes, please!
+    OCS.Select the agent type    Linux
+    OCS.Verify that agent is ready to get download
+    Generic.click on the button link    Download
+
+
+Download Agent from network discovery - Windows
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    DashboardPage.Select an option from company details side list     Network Discovery
+    Generic.Verify your current page location contains      network-discovery
+    DashboardPage.Click on download agent button to download        Download Agent
+    OCS.Would you like to download agent    Yes, please!
+    OCS.Select the agent type    Windows
+    OCS.Verify that agent is ready to get download
+    Generic.click on the button link    Download
+
+
+Download Agent from network discovery - macOS
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    DashboardPage.Select an option from company details side list     Network Discovery
+    Generic.Verify your current page location contains      network-discovery
+    DashboardPage.Click on download agent button to download        Download Agent
+    OCS.Would you like to download agent    Yes, please!
+    OCS.Select the agent type    macOS
+    OCS.Verify that agent is ready to get download
+    Generic.click on the button link    Download
+
+
+Download Agent from asset discovery - Linux
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select other option from profile list     Asset Discovery
+    OCS.Would you like to download agent    Yes, please!
+    OCS.Select the agent type    Linux
+    OCS.Verify that agent is ready to get download
+    Generic.click on the button link    Download
+
+
+Download Agent from asset discovery - Windows
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select other option from profile list     Asset Discovery
+    OCS.Would you like to download agent    Yes, please!
+    OCS.Select the agent type    Windows
+    OCS.Verify that agent is ready to get download
+    Generic.click on the button link    Download
+
+
+Download Agent from asset discovery - macOS
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select other option from profile list     Asset Discovery
     OCS.Would you like to download agent    Yes, please!
     OCS.Select the agent type    macOS
     OCS.Verify that agent is ready to get download

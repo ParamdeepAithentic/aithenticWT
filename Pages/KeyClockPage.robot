@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation   To validate the Login form
+Documentation     Verify the Dashboard page test
 Library          SeleniumLibrary
 Library           ExcelLibrary
 Library         String
@@ -24,55 +24,23 @@ Resource        ../Pages/TwoFactorAuth.robot
 Resource        ../Pages/SubscriptionPage.robot
 Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
-Resource        ../Pages/MemberPage.robot
+Resource        ../Pages/OCS.robot
+Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/TeamMemberPage.robot
 
-#Suite Setup    Get Current Date and Time
-#Test Setup      open the browser with the url
-#Test Teardown   Close Browser session
-
-
 *** Variables ***
+${Error_Message_Login}      css:.alert.alert-danger.col-md-12
+#//a[@title='Asecure Cloud Login']
+#Sign in to Aithentic
+#username
+#password
+#kc-login
 
 
-*** Test Cases ***
-Replace the existing domain
-    LoginAPI.Fetch the refresh token from the login api
-    ReplaceDomainAPI.Replace Domain     ${refresh_Token}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*** Keywords ***
+Click on add department
+    wait until element is visible      ${add_dept_btn}      60
+    wait until element is enabled      ${add_dept_btn}      60
+    click element      ${add_dept_btn}
 

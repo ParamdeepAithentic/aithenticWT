@@ -27,6 +27,8 @@ Resource        ../Pages/LocationPage.robot
 Resource        ../Pages/OCS.robot
 Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/MemberPage.robot
+Resource        ../Pages/KeyClockPage.robot
+Resource        ../Pages/TeamMemberPage.robot
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
 
@@ -204,7 +206,7 @@ Create new asset with new brand and product
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
-    Generic.Select option from profile list     Brand
+    Generic.Select option from profile list     brand-dropdown
     Generic.Verify your current page location contains      brand
     DashboardPage.Click add brand button
     DashboardPage.Create random brandName
@@ -216,7 +218,7 @@ Create new asset with new brand and product
     DashboardPage.Verify Brand added      ${generated_BrandName}
 
     Generic.Click on the profile name
-    Generic.Select option from profile list     Product
+    Generic.Select option from profile list     product-dropdown
     Generic.Verify your current page location contains      product
     DashboardPage.Click on action button
     DashboardPage.Click add product button
@@ -555,7 +557,7 @@ Add Products with 10 combinations of Tech Type and Tech group
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
-    Generic.Select option from profile list     Product
+    Generic.Select option from profile list     product-dropdown
     Generic.Verify your current page location contains      product
     DashboardPage.Click on action button
     DashboardPage.Click add product button
