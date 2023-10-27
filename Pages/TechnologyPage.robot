@@ -786,7 +786,7 @@ Click on the first row of the technology table
 
 Click on edit button on product details page
     [Arguments]    ${option}
-    Generic.click on the button     ${option}
+    Generic.click on the button link     ${option}
     wait until element is not visible      ${loaderIcon}    60
 
 Click on the edit icon on the edit technology page
