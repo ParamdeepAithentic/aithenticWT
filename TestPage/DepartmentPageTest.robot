@@ -38,7 +38,7 @@ Department bulk edit
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
-    Generic.Select option from profile list     Department
+    Generic.Select option from profile list     department-dropdown
     Generic.Verify your current page location contains      department
     DepartmentPage.Click on added department action button
     DepartmentPage.Choose the option from the action menu   Add Department
