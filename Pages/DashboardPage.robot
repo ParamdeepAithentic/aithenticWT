@@ -26,6 +26,8 @@ Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
 Resource        ../Pages/OCS.robot
 Resource        ../Pages/RegisterUserPage.robot
+Resource        ../Pages/KeyClockPage.robot
+Resource        ../Pages/TeamMemberPage.robot
 
 *** Variables ***
 ${Error_Message_Login}      css:.alert.alert-danger.col-md-12

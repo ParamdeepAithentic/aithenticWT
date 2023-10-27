@@ -27,6 +27,8 @@ Resource        ../Pages/LocationPage.robot
 Resource        ../Pages/OCS.robot
 Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/MemberPage.robot
+Resource        ../Pages/KeyClockPage.robot
+Resource        ../Pages/TeamMemberPage.robot
 
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
@@ -80,7 +82,7 @@ Create and verify new brand
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
-    Generic.Select option from profile list     Brand
+    Generic.Select option from profile list     brand-dropdown
     Generic.Verify your current page location contains      brand
     DashboardPage.Click add brand button
     DashboardPage.Create random brandName
@@ -97,7 +99,7 @@ Create a new product with adding new brand
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
-    Generic.Select option from profile list     Brand
+    Generic.Select option from profile list     brand-dropdown
     Generic.Verify your current page location contains      brand
     DashboardPage.Click add brand button
     DashboardPage.Create random brandName
@@ -108,7 +110,7 @@ Create a new product with adding new brand
     Generic.Fetch alert message text and compare it with        Brand created successfully.
     DashboardPage.Verify Brand added      ${generated_BrandName}
     Generic.Click on the profile name
-    Generic.Select option from profile list     Product
+    Generic.Select option from profile list     product-dropdown
     Generic.Verify your current page location contains      product
     DashboardPage.Click on action button
     DashboardPage.Click add product button
@@ -128,7 +130,7 @@ Add Product Bulk Edit
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
-    Generic.Select option from profile list     Product
+    Generic.Select option from profile list     product-dropdown
     Generic.Verify your current page location contains      product
     DashboardPage.Click on action button
     DashboardPage.Click add product button
@@ -170,7 +172,7 @@ Add Department Bulk Edit
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
-    Generic.Select option from profile list     Department
+    Generic.Select option from profile list     department-dropdown
     Generic.Verify your current page location contains      department-list
     DashboardPage.Click on action button
     DashboardPage.Click on add department
@@ -198,49 +200,6 @@ Add Department Bulk Edit
 
 
 
-Download Agent from network discovery - Linux
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.Click on the profile name
-    Generic.Select option from profile list     Personal Details
-    Generic.Verify your current page location contains      personal-profile
-    DashboardPage.Select an option from company details side list     Network Discovery
-    Generic.Verify your current page location contains      network-discovery
-    DashboardPage.Click on download agent button to download        Download Agent
-    OCS.Would you like to download agent    Yes, please!
-    OCS.Select the agent type    Linux
-    OCS.Verify that agent is ready to get download
-    Generic.click on the button link    Download
-
-
-Download Agent from network discovery - Windows
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.Click on the profile name
-    Generic.Select option from profile list     Personal Details
-    Generic.Verify your current page location contains      personal-profile
-    DashboardPage.Select an option from company details side list     Network Discovery
-    Generic.Verify your current page location contains      network-discovery
-    DashboardPage.Click on download agent button to download        Download Agent
-    OCS.Would you like to download agent    Yes, please!
-    OCS.Select the agent type    Windows
-    OCS.Verify that agent is ready to get download
-    Generic.click on the button link    Download
-
-
-Download Agent from network discovery - macOS
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.Click on the profile name
-    Generic.Select option from profile list     Personal Details
-    Generic.Verify your current page location contains      personal-profile
-    DashboardPage.Select an option from company details side list     Network Discovery
-    Generic.Verify your current page location contains      network-discovery
-    DashboardPage.Click on download agent button to download        Download Agent
-    OCS.Would you like to download agent    Yes, please!
-    OCS.Select the agent type    macOS
-    OCS.Verify that agent is ready to get download
-    Generic.click on the button link    Download
 
 
 

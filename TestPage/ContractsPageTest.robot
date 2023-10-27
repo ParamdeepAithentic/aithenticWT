@@ -27,6 +27,8 @@ Resource        ../Pages/LocationPage.robot
 Resource        ../Pages/OCS.robot
 Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/MemberPage.robot
+Resource        ../Pages/KeyClockPage.robot
+Resource        ../Pages/TeamMemberPage.robot
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
 
@@ -100,7 +102,7 @@ Technology Auto removed from dynamic contract When edit Brand and product
 
 
     Generic.Click on the profile name
-    Generic.Select option from profile list     Product
+    Generic.Select option from profile list     product-dropdown
     Generic.Verify your current page location contains      product
     DashboardPage.Click on action button
     DashboardPage.Click add product button
@@ -252,7 +254,7 @@ Technology Auto removed from static contract When edit Brand and product
 
 
     Generic.Click on the profile name
-    Generic.Select option from profile list     Product
+    Generic.Select option from profile list     product-dropdown
     Generic.Verify your current page location contains      product
     DashboardPage.Click on action button
     DashboardPage.Click add product button

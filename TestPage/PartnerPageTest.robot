@@ -26,6 +26,8 @@ Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
 Resource        ../Pages/OCS.robot
 Resource        ../Pages/RegisterUserPage.robot
+Resource        ../Pages/KeyClockPage.robot
+Resource        ../Pages/TeamMemberPage.robot
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
 
@@ -85,7 +87,7 @@ Compose Message invite user test
 #-------------------------- PRODUCT-----newely added---------------------------------------------------------
     Generic.Click on the profile name
     ${StartTime1} =     Get Current Time in Milliseconds
-    Generic.Select option from profile list     Product
+    Generic.Select option from profile list     product-dropdown
     Generic.Verify your current page location contains      product
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
@@ -351,7 +353,7 @@ Compose Message invite user test
 #---------------------------------------------LOGOUT-------------------------------------------
     Generic.Click on the profile name
     ${StartTime1} =     Get Current Time in Milliseconds
-    Generic.Select option from profile list     Logout
+    Generic.Select other option from profile list     Logout
     Generic.Verify your current page location contains      login
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}

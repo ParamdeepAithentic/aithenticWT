@@ -27,6 +27,8 @@ Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
 Resource        ../Pages/OCS.robot
 Resource        ../Pages/RegisterUserPage.robot
+Resource        ../Pages/KeyClockPage.robot
+Resource        ../Pages/TeamMemberPage.robot
 
 *** Variables ***
 
@@ -203,11 +205,18 @@ Click on the profile name
     wait until element is visible       ${profileName}       60
     click element       ${profileName}
 
+###############################################################################################
+Select other option from profile list
+     [Arguments]     ${option}
+    wait until element is visible    //a[normalize-space()='${option}']      60
+    click element    //a[normalize-space()='${option}']
 
 Select option from profile list
      [Arguments]     ${option}
-    wait until element is visible    //a[normalize-space()='${option}']//img      60
-    click element    //a[normalize-space()='${option}']//img
+    wait until element is visible    css:.qa-${option} li      60
+    click element    css:.qa-${option} li
+
+###############################################################################################
 
 Enter current date
     [Arguments]    ${option}

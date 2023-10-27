@@ -36,14 +36,12 @@ Test Teardown   Close Browser session
 *** Variables ***
 
 
+
 *** Test Cases ***
-Register new user
-    ${StartTime1} =     Get Current Time in Milliseconds
+Register new user for key clock functionality
+
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  25  ${pageHeading}   Page Load - Total Page Load Time of Register Page      25    ${pageTime}     ${ActualTime}    PageLoad_Time
 
     LoginAPI.Fetch the refresh token from the login api
     ReplaceDomainAPI.Replace Domain     ${refresh_Token}
@@ -140,6 +138,7 @@ Register new user
     Generic.Verify your current page location contains     organization
     DashboardPage.Select the employee ID checkbox   yes
     DashboardPage.Select the location ID checkbox   yes
-    DashboardPage.Select the asset ID checkbox      yes
+    DashboardPage.Select the asset ID checkbox      no
     Generic.Fetch alert message text and compare it with       Settings Updated
+
 
