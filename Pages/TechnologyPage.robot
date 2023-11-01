@@ -676,8 +676,8 @@ Click on save technology form button
 Click on save technology form pop button
     wait until element is visible       ${savePOPup}       60
     click element       ${iamDone_BTN}
-    wait until element is visible       ${loaderIcon}       60
-    Wait Until Element Is Not Visible    ${loaderIcon}      60
+#    wait until element is visible       ${loaderIcon}       60
+#    Wait Until Element Is Not Visible    ${loaderIcon}      60
 
 Verify that after saving technology form user redirect to technology page
     wait until element is not visible    ${alert_Msg}       60

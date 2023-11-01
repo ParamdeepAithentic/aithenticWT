@@ -39,8 +39,8 @@ Resource        ../Pages/TeamMemberPage.robot
 *** Test Cases ***
 Replace the existing domain
     LoginAPI.Fetch the refresh token from the login api
-    ReplaceDomainAPI.Replace Domain     ${refresh_Token}
-
+#    ReplaceDomainAPI.Replace Domain     ${refresh_Token}
+    ReplaceDomainAPI.Replace Domain
 
 
 

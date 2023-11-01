@@ -24,16 +24,19 @@ Resource        ../Pages/MessagePage.robot
 ${Error_Message_Login}      css:.alert.alert-danger.col-md-12
 ${login_heading}        css:.heading-login.d-inline-block
 
+${Kc_username}     css:#username
+${Kc_password}      css:#password
+${Kc_loginBtn}     css:#kc-login
 
 *** Keywords ***
 
 Fill the login Form
     [Arguments]     ${email}     ${valid_password}
-    wait until element is visible    id:Email       60
-    Input Text          id:Email     ${email}
-    wait until element is visible    id:Password    60
-    Input Password      id:Password     ${valid_password}
-    Click Button        //button[normalize-space()='Sign In']
+    wait until element is visible    ${Kc_username}       60
+    Input Text          ${Kc_username}     ${email}
+    wait until element is visible    ${Kc_password}    60
+    Input Password      ${Kc_password}     ${valid_password}
+    Click Button        ${Kc_loginBtn}
 #    wait until location contains    asset-overview     60
 #    wait until element is visible       ${profileName}       60
 
