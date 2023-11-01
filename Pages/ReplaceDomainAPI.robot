@@ -37,7 +37,7 @@ Resource        ../Pages/TeamMemberPage.robot
 *** Keywords ***
 
 Replace Domain
-    [Arguments]    ${option}
+#    [Arguments]    ${option}
     # Set the base URL and endpoint
     ${base_url}    Set Variable    ${apiURL}/client-domains
 
@@ -49,7 +49,7 @@ Replace Domain
     ...    Connection=keep-alive
     ...    Content-Type=application/json
 #    ...    Authorization=Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzZXRDbGFpbXMiOnsiQ2xpZW50U3RhdHVzIjoiQWN0aXZlIn0sImlzcyI6Imh0dHBzOi8vdWF0LWFwaS5haXRoZW50aWMuY29tL2FwaS92MS9sb2dpbiIsImlhdCI6MTY5MjQyMjE0MiwiZXhwIjoxNjkyODU0MTQyLCJuYmYiOjE2OTI0MjIxNDIsImp0aSI6ImNRVFJ1bzBDQUVZeUNuMmMiLCJzdWIiOiIzOTAiLCJwcnYiOiJiOTEyNzk5NzhmMTFhYTdiYzU2NzA0ODdmZmYwMWUyMjgyNTNmZTQ4In0.X4Q9X-cr3BnII4X5CTQnzHKzMT7hWat5lIidkcXVcW0
-    ...    Authorization=Bearer ${option}
+#    ...    Authorization=Bearer ${option}
     ...    Content-Length=96
 
     # Generate new domain name

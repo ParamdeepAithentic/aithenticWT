@@ -142,3 +142,4 @@ Register new user for key clock functionality
     Generic.Fetch alert message text and compare it with       Settings Updated
 
 
+Login with Keyclock

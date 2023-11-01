@@ -33,14 +33,19 @@ Resource        ../Pages/TeamMemberPage.robot
 ${Error_Message_Login}      css:.alert.alert-danger.col-md-12
 #//a[@title='Asecure Cloud Login']
 #Sign in to Aithentic
-#username
-#password
-#kc-login
+${Kc_username}     css:#username
+${Kc_password}      css:#password
+${Kc_loginBtn}     css:#kc-login
 
 
 *** Keywords ***
-Click on add department
-    wait until element is visible      ${add_dept_btn}      60
-    wait until element is enabled      ${add_dept_btn}      60
-    click element      ${add_dept_btn}
-
+#Click on add department
+#    wait until element is visible      ${add_dept_btn}      60
+#    wait until element is enabled      ${add_dept_btn}      60
+#    click element      ${add_dept_btn}
+#
+#
+#Enter user name
+#    wait until element is visible      ${add_dept_btn}      60
+#    wait until element is enabled      ${add_dept_btn}      60
+#    click element      ${add_dept_btn}

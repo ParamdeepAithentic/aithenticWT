@@ -49,8 +49,8 @@ Compose Message invite user test
     Calculate Running time  3  ${pageHeading}   Page Load - Total Load Time of Partner Page      3    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 #-------------------------- PARTNER--------------------------------------------------------------
-    LoginAPI.Fetch the refresh token from the login api
-    ReplaceDomainAPI.Replace Domain     ${refresh_Token}
+#    LoginAPI.Fetch the refresh token from the login api
+    ReplaceDomainAPI.Replace Domain
 
     ${StartTime1} =     Get Current Time in Milliseconds
     PartnersPage.Click new partner button

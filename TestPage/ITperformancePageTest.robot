@@ -35,66 +35,6 @@ Test Teardown   Close Browser session
 
 
 *** Test Cases ***
-#Download the preview sheets for supplier
-#    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form    ${email}     ${valid_password}
-#    DashboardPage.select the option from the dashboard drawer     IT Performance
-#    Generic.Verify your current page location contains      it-performance
-#    ITperformancePage.Click on the button     Preview
-#    ITperformancePage.Select preview file type        Supplier, Support Partner and Supplier by Location Report
-#    ITperformancePage.Download the sheet after Preview
-#
-#Download the preview sheets for brand report
-#    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form    ${email}     ${valid_password}
-#    DashboardPage.select the option from the dashboard drawer     IT Performance
-#    Generic.Verify your current page location contains      it-performance
-#    ITperformancePage.Click on the button     Preview
-#    ITperformancePage.Select preview file type        Brand Report
-#    ITperformancePage.Download the sheet after Preview
-#
-#
-#Download the preview sheets for asset report
-#    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form    ${email}     ${valid_password}
-#    DashboardPage.select the option from the dashboard drawer     IT Performance
-#    Generic.Verify your current page location contains      it-performance
-#    ITperformancePage.Click on the button     Preview
-#    ITperformancePage.Select preview file type        Asset Report
-#    ITperformancePage.Download the sheet after Preview
-#
-#
-#
-#Export the sheets for asset supplier
-#    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form    ${email}     ${valid_password}
-#    DashboardPage.select the option from the dashboard drawer     IT Performance
-#    Generic.Verify your current page location contains      it-performance
-#    ITperformancePage.Click on the button     Export
-#    ITperformancePage.Select export file type        Supplier, Support Partner and Supplier by Location Report
-#    ITperformancePage.Verify Export file
-#
-#Export the sheets for asset brand report
-#    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form    ${email}     ${valid_password}
-#    DashboardPage.select the option from the dashboard drawer     IT Performance
-#    Generic.Verify your current page location contains      it-performance
-#    ITperformancePage.Click on the button     Export
-#    ITperformancePage.Select export file type        Brand Report
-#    ITperformancePage.Verify Export file
-#
-#Export the sheets for asset asset report
-#    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form    ${email}     ${valid_password}
-#    DashboardPage.select the option from the dashboard drawer     IT Performance
-#    Generic.Verify your current page location contains      it-performance
-#    ITperformancePage.Click on the button     Export
-#    ITperformancePage.Select export file type        Asset Report
-#    ITperformancePage.Verify Export file
-#
-#
-#
-##-----------------------------------------------------------------------------------------------------------------------
 Download sheet for Forecasts
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
