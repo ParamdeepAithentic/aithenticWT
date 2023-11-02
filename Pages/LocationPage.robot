@@ -1,7 +1,7 @@
 *** Settings ***
-Documentation     Verify the Dashboard page test
-Library          SeleniumLibrary
-Library           ExcelLibrary
+Documentation   Contains all keyword of Location page
+Library         SeleniumLibrary
+Library         ExcelLibrary
 Library         String
 Library         Collections
 Library         BuiltIn

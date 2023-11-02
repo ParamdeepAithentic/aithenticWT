@@ -1,7 +1,7 @@
 *** Settings ***
-Documentation     Verify the Login API test
-Library          SeleniumLibrary
-Library           ExcelLibrary
+Documentation   Contains all keyword of  Register member API
+Library         SeleniumLibrary
+Library         ExcelLibrary
 Library         String
 Library         Collections
 Library         BuiltIn

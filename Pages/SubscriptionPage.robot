@@ -1,8 +1,7 @@
 *** Settings ***
-Documentation     A resource file with reusable keywords and variables.
-
-Library          SeleniumLibrary
-Library           ExcelLibrary
+Documentation   Contains all keyword of Subscription page
+Library         SeleniumLibrary
+Library         ExcelLibrary
 Library         String
 Library         Collections
 Library         BuiltIn

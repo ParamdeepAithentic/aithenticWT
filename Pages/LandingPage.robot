@@ -1,7 +1,7 @@
 *** Settings ***
-Documentation     Verify the login page test
-Library          SeleniumLibrary
-Library           ExcelLibrary
+Documentation   Contains all keyword of Landing page
+Library         SeleniumLibrary
+Library         ExcelLibrary
 Library         String
 Library         Collections
 Library         BuiltIn
