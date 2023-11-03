@@ -164,6 +164,10 @@ Verify your current page location contains
     [Arguments]    ${verifyOption}
     wait until location contains    ${verifyOption}     60
 
+Verify your current page contains this text
+    [Arguments]    ${verifyOption}
+    wait until page contains    ${verifyOption}     60
+
 Get Current Time in Milliseconds
     ${time_in_milliseconds}=    Evaluate    int(time.time() * 1000)
     [Return]    ${time_in_milliseconds}
@@ -207,11 +211,13 @@ Click on the profile name
 ###############################################################################################
 Select other option from profile list
      [Arguments]     ${option}
+    wait until element is not visible      ${loaderIcon}
     wait until element is visible    //a[normalize-space()='${option}']      60
     click element    //a[normalize-space()='${option}']
 
 Select option from profile list
      [Arguments]     ${option}
+     wait until element is not visible      ${loaderIcon}
     wait until element is visible    css:.qa-${option} li      60
     click element    css:.qa-${option} li
 

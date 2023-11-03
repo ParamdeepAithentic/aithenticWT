@@ -77,3 +77,4 @@ Click create account button
     wait until element is visible       ${user_accountSubmitBTN}       60
     wait until element is enabled       ${user_accountSubmitBTN}       60
     click element       ${user_accountSubmitBTN}
+

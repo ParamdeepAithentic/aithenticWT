@@ -43,8 +43,8 @@ Register new user for key clock functionality
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
 
-    LoginAPI.Fetch the refresh token from the login api
-    ReplaceDomainAPI.Replace Domain     ${refresh_Token}
+#    LoginAPI.Fetch the refresh token from the login api
+    ReplaceDomainAPI.Replace Domain
     RegisterUserPage.Create random register first name
     RegisterUserPage.Create random register last name
     RegisterUserPage.Create random register company name
@@ -80,8 +80,11 @@ Register new user for key clock functionality
     UserAccount.Confirm the entered password    Paramdeep@112
     UserAccount.Click on term and condition checkbox
     UserAccount.Click create account button
-    Generic.Verify your current page location contains     login
     Generic.Fetch alert message text and compare it with       Account created successfully.
+    Generic.Verify your current page location contains     keycloak
+
+
+    LandingPage.Fill the login Form      ${generate_register_Email}    Paramdeep@112
 #    Generic.Fetch alert message text and compare it with       OTP sent successfully
 
     Switch Window    Inbox
