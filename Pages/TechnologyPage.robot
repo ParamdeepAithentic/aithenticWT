@@ -218,7 +218,6 @@ Select an option from recovery table actions
 Select an option from technology table actions
     [Arguments]    ${Option}
 #     Wait Until Element Is Not Visible    ${technology_threeDot}      60
-     wait until element is visible       css:thead tr       60
      Wait Until Element Is Enabled      ${technology_threeDot}       60
      click element      ${technology_threeDot}
      sleep      1
@@ -696,6 +695,7 @@ Search by AssetId
     ${StartTime1} =     Get Current Time in Milliseconds
     input text      ${asset_SearchBar}     ${AssetID}
     #    Generic.Enter value into field      ${asset_SearchBar}     ${AssetID}
+    sleep       1
     wait until element is visible       css:thead tr       60
     Wait Until Element Contains    ${fetch_assetID}     ${AssetID}    60
     ${get_assetID} =    get text    ${fetch_assetID}
@@ -726,15 +726,13 @@ Search by BrandName
      Clear Element Text      ${asset_SearchBar}
      ${StartTime1} =     Get Current Time in Milliseconds
      input text   ${asset_SearchBar}   ${BrandName}
-     #    Generic.Enter value into field      ${asset_SearchBar}     ${BrandName}
-##     wait until element is visible       ${loaderIcon}       60
-#     Wait Until Element Is Not Visible    ${loaderIcon}      60
-    wait until element is visible       css:thead tr       60
+     sleep      1
+     wait until element is visible       css:thead tr       60
      Fetch the Brand Name from the row   ${BrandName}
      should be equal    ${get_fetch_brandName}     ${BrandName}
      ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  19  ${pageHeading}   Technology Page - Search by BrandName      19    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+     Calculate Running time  19  ${pageHeading}   Technology Page - Search by BrandName      19    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Search by ProductName
     [Arguments]    ${product}
@@ -744,9 +742,7 @@ Search by ProductName
      Clear Element Text      ${asset_SearchBar}
      ${StartTime1} =     Get Current Time in Milliseconds
      input text   ${asset_SearchBar}   ${product}
-     #    Generic.Enter value into field      ${asset_SearchBar}     ${product}
-#     wait until element is visible       ${loaderIcon}       60
-#     Wait Until Element Is Not Visible    ${loaderIcon}      60
+     sleep      1
      wait until element is visible       css:thead tr       60
      Wait Until Element Contains    //td[normalize-space()='${product}']        ${product}     60
      ${get_productID} =    get text    ${fetch_productID}
@@ -764,7 +760,7 @@ Search by SerialNo
      Clear Element Text      ${asset_SearchBar}
      ${StartTime1} =     Get Current Time in Milliseconds
      input text      ${asset_SearchBar}     ${AssetID}
-     #    Generic.Enter value into field      ${asset_SearchBar}     ${serialNo}
+     sleep      1
      wait until element is visible       css:thead tr       60
      Wait Until Element Contains    ${fetch_assetID}     ${AssetID}    60
      ${EndTime1} =     Get Current Time in Milliseconds
@@ -779,7 +775,7 @@ Search by assignee
      Clear Element Text      ${asset_SearchBar}
      ${StartTime1} =     Get Current Time in Milliseconds
      input text   ${asset_SearchBar}   ${assignee}
-     #    Generic.Enter value into field      ${asset_SearchBar}     ${AssetID}
+     sleep      1
      wait until element is visible       css:thead tr       60
      Wait Until Element Contains    //td[normalize-space()='${assignee}']        ${assignee}     60
      ${get_assignee} =    get text    ${fetch_assignee}
