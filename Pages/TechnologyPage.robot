@@ -218,6 +218,7 @@ Select an option from recovery table actions
 Select an option from technology table actions
     [Arguments]    ${Option}
 #     Wait Until Element Is Not Visible    ${technology_threeDot}      60
+     wait until element is visible       css:thead tr       60
      Wait Until Element Is Enabled      ${technology_threeDot}       60
      click element      ${technology_threeDot}
      sleep      1
