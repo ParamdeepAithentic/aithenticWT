@@ -243,7 +243,7 @@ Compose Message invite user test
     Calculate Running time  13  ${pageHeading}   Page Load - Total Load Time of Create your user account Page from Yopmail Page      13    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 #----------------------------------------USER ACCOUNT---------------------------------------------------
-     UserAccount.Enter the password      Paramdeep@112
+    UserAccount.Enter the password      Paramdeep@112
     UserAccount.Confirm the entered password    Paramdeep@112
     UserAccount.Click on term and condition checkbox
     UserAccount.Click create account button

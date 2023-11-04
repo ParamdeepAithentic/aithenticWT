@@ -69,6 +69,7 @@ ${loaderIcon}     //div[@role='status']
 
 Search by business name
     [Arguments]    ${BusinessName}
+    wait until element is visible       css:thead tr       60
     wait until element is visible       ${partner_searchBar}       60
     Clear Element Text      ${partner_searchBar}
     ${StartTime1} =     Get Current Time in Milliseconds

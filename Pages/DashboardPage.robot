@@ -239,6 +239,7 @@ Save added product details
 
 Verify product added
    [Arguments]    ${productName}
+     wait until element is visible       css:thead tr       60
      wait until element is visible      ${search_productName}     60
      click element      ${search_productName}
      Clear Element Text      ${search_productName}
@@ -305,6 +306,7 @@ Click added brand main save button
 
 Verify Brand added
    [Arguments]    ${BrandName}
+     wait until element is visible       css:thead tr       60
      wait until element is visible      ${search_brandName}     60
      click element      ${search_brandName}
      Clear Element Text      ${search_brandName}
@@ -414,6 +416,7 @@ Select department cost center
 
 Verify department added
    [Arguments]    ${departmentName}
+    wait until element is visible       css:thead tr       60
     wait until element is visible      ${searchBar_department}     60
     click element      ${searchBar_department}
     Clear Element Text      ${searchBar_department}

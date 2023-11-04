@@ -146,8 +146,9 @@ Save location form
 
 Search by location name
     [Arguments]    ${LocationName}
-     Wait Until Element Is Not Visible    ${loaderIcon}      60
-     wait until element is not visible      ${loaderIcon}     60
+#     Wait Until Element Is Not Visible    ${loaderIcon}      60
+#     wait until element is not visible      ${loaderIcon}     60
+     wait until element is visible       css:thead tr       60
      click element      ${search_LocationName}
      Clear Element Text      ${search_LocationName}
      ${StartTime1} =     Get Current Time in Milliseconds

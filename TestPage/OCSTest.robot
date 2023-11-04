@@ -39,8 +39,8 @@ Test Teardown   Close Browser session
 Download agent for OCS from signup - Linux
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
-    LoginAPI.Fetch the refresh token from the login api
-    ReplaceDomainAPI.Replace Domain     ${refresh_Token}
+#    LoginAPI.Fetch the refresh token from the login api
+    ReplaceDomainAPI.Replace Domain
     RegisterUserPage.Create random register first name
     RegisterUserPage.Create random register last name
     RegisterUserPage.Create random register company name
@@ -72,9 +72,11 @@ Download agent for OCS from signup - Linux
     UserAccount.Confirm the entered password    Paramdeep@112
     UserAccount.Click on term and condition checkbox
     UserAccount.Click create account button
-    Generic.Verify your current page location contains     login
     Generic.Fetch alert message text and compare it with       Account created successfully.
+    Generic.Verify your current page location contains     keycloak
 #    Generic.Fetch alert message text and compare it with       OTP sent successfully
+
+    LandingPage.Fill the login Form      ${generate_register_Email}    Paramdeep@112
 
     Switch Window    Inbox
     Generic.Refresh the existing page
@@ -143,8 +145,8 @@ Download agent for OCS from signup - Linux
 Download agent for OCS from signup - Windows
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
-    LoginAPI.Fetch the refresh token from the login api
-    ReplaceDomainAPI.Replace Domain     ${refresh_Token}
+#    LoginAPI.Fetch the refresh token from the login api
+    ReplaceDomainAPI.Replace Domain
     RegisterUserPage.Create random register first name
     RegisterUserPage.Create random register last name
     RegisterUserPage.Create random register company name
@@ -176,9 +178,11 @@ Download agent for OCS from signup - Windows
     UserAccount.Confirm the entered password    Paramdeep@112
     UserAccount.Click on term and condition checkbox
     UserAccount.Click create account button
-    Generic.Verify your current page location contains     login
     Generic.Fetch alert message text and compare it with       Account created successfully.
+    Generic.Verify your current page location contains     keycloak
 #    Generic.Fetch alert message text and compare it with       OTP sent successfully
+
+    LandingPage.Fill the login Form      ${generate_register_Email}    Paramdeep@112
 
     Switch Window    Inbox
     Generic.Refresh the existing page
@@ -247,8 +251,8 @@ Download agent for OCS from signup - Windows
 Download agent for OCS from signup - macOS
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
-    LoginAPI.Fetch the refresh token from the login api
-    ReplaceDomainAPI.Replace Domain     ${refresh_Token}
+#    LoginAPI.Fetch the refresh token from the login api
+    ReplaceDomainAPI.Replace Domain
     RegisterUserPage.Create random register first name
     RegisterUserPage.Create random register last name
     RegisterUserPage.Create random register company name
@@ -280,9 +284,11 @@ Download agent for OCS from signup - macOS
     UserAccount.Confirm the entered password    Paramdeep@112
     UserAccount.Click on term and condition checkbox
     UserAccount.Click create account button
-    Generic.Verify your current page location contains     login
     Generic.Fetch alert message text and compare it with       Account created successfully.
+    Generic.Verify your current page location contains     keycloak
 #    Generic.Fetch alert message text and compare it with       OTP sent successfully
+
+    LandingPage.Fill the login Form      ${generate_register_Email}    Paramdeep@112
 
     Switch Window    Inbox
     Generic.Refresh the existing page
