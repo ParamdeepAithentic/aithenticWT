@@ -1,7 +1,7 @@
 *** Settings ***
-Documentation     Verify the Dashboard page test
-Library          SeleniumLibrary
-Library           ExcelLibrary
+Documentation   Contains all keyword of  Member page
+Library         SeleniumLibrary
+Library         ExcelLibrary
 Library         String
 Library         Collections
 Library         BuiltIn
@@ -189,8 +189,9 @@ Fetch the team member name from the row
 
 Search by empID
      [Arguments]    ${empID}
-     Wait Until Element Is Not Visible    ${loaderIcon}      60
-     wait until element is not visible      ${loaderIcon}     60
+#     Wait Until Element Is Not Visible    ${loaderIcon}      60
+#     wait until element is not visible      ${loaderIcon}     60
+     wait until element is visible       css:thead tr       60
      click element      ${assignedUser_searchBar}
      Clear Element Text      ${assignedUser_searchBar}
 #     ${StartTime1} =     Get Current Time in Milliseconds

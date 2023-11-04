@@ -1,8 +1,7 @@
 *** Settings ***
-Documentation     A resource file with reusable keywords and variables.
-
-Library          SeleniumLibrary
-Library           ExcelLibrary
+Documentation   A resource file with reusable keywords and variables.
+Library         SeleniumLibrary
+Library         ExcelLibrary
 Library         String
 Library         Collections
 Library         BuiltIn
@@ -36,12 +35,12 @@ ${user_name}             rahulshettyacademy
 ${invalid_password}      123445
 
 
-#${url}                   https://uat-app.aithentic.com/
-${url}                   https://qa-app.aithentic.com/
-#${apiURL}                 https://uat-api.aithentic.com/api/v1
-${apiURL}                 https://qa-api.aithentic.com/api/v1
-#${valid_password}        Test!@8191     #UAT user
-${valid_password}        Test@123       #QA User
+${url}                   https://uat-app.aithentic.com/
+#${url}                   https://qa-app.aithentic.com/
+${apiURL}                 https://uat-api.aithentic.com/api/v1
+#${apiURL}                 https://qa-api.aithentic.com/api/v1
+${valid_password}        Test!@8191     #UAT user
+#${valid_password}        Test@123       #QA User
 
 
 ${browser_name}          Firefox
@@ -165,6 +164,10 @@ Verify your current page location contains
     [Arguments]    ${verifyOption}
     wait until location contains    ${verifyOption}     60
 
+Verify your current page contains this text
+    [Arguments]    ${verifyOption}
+    wait until page contains    ${verifyOption}     60
+
 Get Current Time in Milliseconds
     ${time_in_milliseconds}=    Evaluate    int(time.time() * 1000)
     [Return]    ${time_in_milliseconds}
@@ -208,11 +211,13 @@ Click on the profile name
 ###############################################################################################
 Select other option from profile list
      [Arguments]     ${option}
+    wait until element is not visible      ${loaderIcon}
     wait until element is visible    //a[normalize-space()='${option}']      60
     click element    //a[normalize-space()='${option}']
 
 Select option from profile list
      [Arguments]     ${option}
+     wait until element is not visible      ${loaderIcon}
     wait until element is visible    css:.qa-${option} li      60
     click element    css:.qa-${option} li
 

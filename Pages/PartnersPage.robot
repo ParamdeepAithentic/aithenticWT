@@ -1,7 +1,7 @@
 *** Settings ***
-Documentation     Verify the Dashboard page test
-Library          SeleniumLibrary
-Library           ExcelLibrary
+Documentation   Contains all keyword of Partner page
+Library         SeleniumLibrary
+Library         ExcelLibrary
 Library         String
 Library         Collections
 Library         BuiltIn
@@ -69,6 +69,7 @@ ${loaderIcon}     //div[@role='status']
 
 Search by business name
     [Arguments]    ${BusinessName}
+    wait until element is visible       css:thead tr       60
     wait until element is visible       ${partner_searchBar}       60
     Clear Element Text      ${partner_searchBar}
     ${StartTime1} =     Get Current Time in Milliseconds
@@ -174,14 +175,18 @@ Enter contact business email
     click element   ${contactEmail}
     clear element text    ${contactEmail}
     input text   ${contactEmail}   ${Pname}@${Bname}.net
+    ${generate_ContactBusinessEmail}=    Catenate    ${Pname}@${Bname}.net
     log to console  ${Pname}@${Bname}.net
+    set global variable    ${generate_ContactBusinessEmail}
 
 Enter secondary contact business email
     [Arguments]    ${Pname}    ${email}
     click element   ${secondary_contactEmail}
     clear element text    ${secondary_contactEmail}
     input text   ${secondary_contactEmail}   ${Pname}@${email}.net
+    ${generate_SecondaryContactBusinessEmail}=    Catenate    ${Pname}@${email}.net
     log to console    secondary business email: ${Pname}@${email}.net
+    set global variable    ${generate_SecondaryContactBusinessEmail}
 
 Choose contact country
     [Arguments]    ${country}   ${code}     ${phoneNo}

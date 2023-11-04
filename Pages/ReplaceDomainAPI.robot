@@ -1,7 +1,7 @@
 *** Settings ***
-Documentation     Verify the Replace domain API test
-Library          SeleniumLibrary
-Library           ExcelLibrary
+Documentation   Contains all keyword of  Replace domain API
+Library         SeleniumLibrary
+Library         ExcelLibrary
 Library         String
 Library         Collections
 Library         BuiltIn

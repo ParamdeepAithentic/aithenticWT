@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation     A resource file with reusable keywords and variables.
+Documentation     Contains all keyword of yopmail page
 Library           SeleniumLibrary
 Library           ExcelLibrary
 Library           String

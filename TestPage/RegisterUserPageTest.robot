@@ -1,7 +1,7 @@
 *** Settings ***
-Documentation   To validate the Login form
-Library          SeleniumLibrary
-Library           ExcelLibrary
+Documentation   Contains all test cases of Register user page
+Library         SeleniumLibrary
+Library         ExcelLibrary
 Library         String
 Library         Collections
 Library         BuiltIn
@@ -45,8 +45,8 @@ Register new user
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  25  ${pageHeading}   Page Load - Total Page Load Time of Register Page      25    ${pageTime}     ${ActualTime}    PageLoad_Time
 
-    LoginAPI.Fetch the refresh token from the login api
-    ReplaceDomainAPI.Replace Domain     ${refresh_Token}
+#    LoginAPI.Fetch the refresh token from the login api
+    ReplaceDomainAPI.Replace Domain
     RegisterUserPage.Create random register first name
     RegisterUserPage.Create random register last name
     RegisterUserPage.Create random register company name
@@ -82,9 +82,11 @@ Register new user
     UserAccount.Confirm the entered password    Paramdeep@112
     UserAccount.Click on term and condition checkbox
     UserAccount.Click create account button
-    Generic.Verify your current page location contains     login
     Generic.Fetch alert message text and compare it with       Account created successfully.
+    Generic.Verify your current page location contains     keycloak
 #    Generic.Fetch alert message text and compare it with       OTP sent successfully
+
+    LandingPage.Fill the login Form      ${generate_register_Email}    Paramdeep@112
 
     Switch Window    Inbox
     Generic.Refresh the existing page

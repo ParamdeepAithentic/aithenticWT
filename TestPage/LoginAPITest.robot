@@ -1,7 +1,7 @@
 *** Settings ***
-Documentation   To validate the Login form
-Library          SeleniumLibrary
-Library           ExcelLibrary
+Documentation   Contains all test cases of Login API page
+Library         SeleniumLibrary
+Library         ExcelLibrary
 Library         String
 Library         Collections
 Library         BuiltIn
@@ -38,13 +38,6 @@ ${Shop_page_load}           css:.nav-link
 
 
 *** Test Cases ***
-Fetch login token
-    LoginAPI.Fetch the refresh token from the login api
-
-
-
-
-
 Testone
     Generic.Fix the column number
     Generic.Fix the row number

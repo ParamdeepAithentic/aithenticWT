@@ -1,9 +1,5 @@
 *** Settings ***
-Documentation     A resource file with reusable keywords and variables.
-...
-...               The system specific keywords created here form our own
-...               domain specific language. They utilize keywords provided
-...               by the imported SeleniumLibrary.
+Documentation     Contains all keyword of Two Factor Authentication page
 Library           SeleniumLibrary
 Library           ExcelLibrary
 Library           String

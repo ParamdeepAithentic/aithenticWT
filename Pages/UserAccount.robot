@@ -1,6 +1,5 @@
 *** Settings ***
-Documentation     A resource file with reusable keywords and variables.
-
+Documentation     Contains all keyword of user account page
 Library           SeleniumLibrary
 Library           ExcelLibrary
 Library           String
@@ -78,3 +77,4 @@ Click create account button
     wait until element is visible       ${user_accountSubmitBTN}       60
     wait until element is enabled       ${user_accountSubmitBTN}       60
     click element       ${user_accountSubmitBTN}
+

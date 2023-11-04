@@ -1,7 +1,7 @@
 *** Settings ***
-Documentation   To validate the Login form
-Library          SeleniumLibrary
-Library           ExcelLibrary
+Documentation   Contains all test cases of Replace domain page
+Library         SeleniumLibrary
+Library         ExcelLibrary
 Library         String
 Library         Collections
 Library         BuiltIn
@@ -38,7 +38,7 @@ Resource        ../Pages/TeamMemberPage.robot
 
 *** Test Cases ***
 Replace the existing domain
-    LoginAPI.Fetch the refresh token from the login api
+#    LoginAPI.Fetch the refresh token from the login api
 #    ReplaceDomainAPI.Replace Domain     ${refresh_Token}
     ReplaceDomainAPI.Replace Domain
 

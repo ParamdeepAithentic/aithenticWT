@@ -1,7 +1,7 @@
 *** Settings ***
-Documentation   To validate the Login form
-Library          SeleniumLibrary
-Library           ExcelLibrary
+Documentation   Contains all test cases of Partner page
+Library         SeleniumLibrary
+Library         ExcelLibrary
 Library         String
 Library         Collections
 Library         BuiltIn
@@ -208,7 +208,7 @@ Compose Message invite user test
     ${StartTime1} =     Get Current Time in Milliseconds
     Yopmail.Click on sign In button in yopmail email
     Unselect Frame
-    sleep       3
+    sleep       5
     Switch Window       aithentic | Register
 
     Generic.Verify your current page location contains      register
@@ -235,7 +235,7 @@ Compose Message invite user test
     ${StartTime1} =     Get Current Time in Milliseconds
     Yopmail.Click on sign In button in yopmail email
     Unselect Frame
-    sleep       3
+    sleep       5
     Switch Window       aithentic | Create - Account
     Generic.Verify your current page location contains     create-account
     ${EndTime1} =     Get Current Time in Milliseconds
@@ -247,8 +247,11 @@ Compose Message invite user test
     UserAccount.Confirm the entered password    Paramdeep@112
     UserAccount.Click on term and condition checkbox
     UserAccount.Click create account button
-    Generic.Verify your current page location contains     login
     Generic.Fetch alert message text and compare it with       Account created successfully.
+    Generic.Verify your current page location contains     keycloak
+
+
+    LandingPage.Fill the login Form      ${generate_ContactBusinessEmail}    Paramdeep@112
 #    Generic.Fetch alert message text and compare it with       OTP sent successfully
 
     Switch Window    Inbox
@@ -269,12 +272,12 @@ Compose Message invite user test
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  14  ${pageHeading}   Page Load - Total Load Time of Two-Factor Authentication Page from Yopmail Page      14    ${pageTime}     ${ActualTime}    PageLoad_Time
-
-    Switch Window   aithentic | Login
-    sleep       2
-    close window
-    sleep       2
-    Switch Window   aithentic | OTP
+#
+#    Switch Window   aithentic | Login
+#    sleep       2
+#    close window
+#    sleep       2
+#    Switch Window   aithentic | OTP
 
     TwoFactorAuth.Enter the otp     ${passcode}
     ${StartTime1} =     Get Current Time in Milliseconds
@@ -354,11 +357,13 @@ Compose Message invite user test
     Generic.Click on the profile name
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.Select other option from profile list     Logout
-    Generic.Verify your current page location contains      login
+    Generic.Fetch alert message text and compare it with       Successfully logged out
+    Generic.Verify your current page contains this text      Login
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  19  ${pageHeading}   Page Load - Total Page Load Time of Login Page from Logout Page      19    ${pageTime}     ${ActualTime}    PageLoad_Time
 
+    Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 
 #-------------------------- ADD NEW CONTACT----------------------------------------------------
@@ -394,7 +399,7 @@ Compose Message invite user test
     MessagePage.Enter Recipient list    ${generate_PersonName}
     MessagePage.Select compose message pop up option    yes
 
-    sleep       3
+    sleep       5
     Switch Window   aithentic | Add - Member
 
     Generic.Verify your current page location contains      addmembers
@@ -403,7 +408,7 @@ Compose Message invite user test
     MessagePage.Enter team member location      Main Office
     MessagePage.Save team member        save
     Generic.Verify alert message of add team member of compose message    Email sent successfully
-    sleep       3
+    sleep       5
     Switch Window   aithentic | Message - Compose
 
     MessagePage.Select message status       public
@@ -416,7 +421,8 @@ Compose Message invite user test
 #-------------------------- verigy new added contcat ---------------
 
     Generic.Open new window     yopmail
-    Generic.Search yopmail emails for       ${generate_PersonName}
+#    Generic.Search yopmail emails for       ${generate_PersonName}
+    Generic.Search yopmail emails for       ${generate_SecondaryContactBusinessEmail}
     Generic.Switch to iframe by ID      ifinbox
     Yopmail.Click on email of yopmail   Team Member Invitation
     Unselect Frame
@@ -424,7 +430,7 @@ Compose Message invite user test
     Generic.Switch to iframe by ID      ifmail
     Yopmail.Click on sign In button in yopmail email
     Unselect Frame
-    sleep       3
+    sleep       5
     Switch Window       aithentic | Create - Account
     Generic.Verify your current page location contains     create-account
 
@@ -433,12 +439,11 @@ Compose Message invite user test
     UserAccount.Confirm the entered password    Paramdeep@112
     UserAccount.Click on term and condition checkbox
     UserAccount.Click create account button
-
-
-    Generic.Verify your current page location contains     login
-
-
     Generic.Fetch alert message text and compare it with       Account created successfully.
+    Generic.Verify your current page location contains     keycloak
+
+
+    LandingPage.Fill the login Form      ${generate_SecondaryContactBusinessEmail}    Paramdeep@112
 #    Generic.Fetch alert message text and compare it with       OTP sent successfully
 
     Switch Window    Inbox
@@ -454,11 +459,11 @@ Compose Message invite user test
     Yopmail.Get verification OTP from email    Your passcode is
     sleep       2
     Switch Window   aithentic | OTP
-    Switch Window   aithentic | Login
-    sleep       2
-    close window
-    sleep       2
-    Switch Window   aithentic | OTP
+#    Switch Window   aithentic | Login
+#    sleep       2
+#    close window
+#    sleep       2
+#    Switch Window   aithentic | OTP
 
     TwoFactorAuth.Enter the otp     ${passcode}
     TwoFactorAuth.Click verification button

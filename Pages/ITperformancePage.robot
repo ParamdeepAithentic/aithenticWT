@@ -1,7 +1,13 @@
 *** Settings ***
-Documentation     Verify the login page test
-Library          SeleniumLibrary
-Library    String
+Documentation   Contains all keyword of ITperformance page
+Library         SeleniumLibrary
+Library         ExcelLibrary
+Library         String
+Library         Collections
+Library         BuiltIn
+Library         random
+Library         DateTime
+Library         OperatingSystem
 Resource        ../Pages/Generic.robot
 Resource        ../Pages/DashboardPage.robot
 Resource        ../Pages/ITperformancePage.robot

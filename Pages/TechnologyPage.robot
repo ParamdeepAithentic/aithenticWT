@@ -1,7 +1,7 @@
 *** Settings ***
-Documentation     Verify the Technology page test
-Library          SeleniumLibrary
-Library           ExcelLibrary
+Documentation   Contains all keyword of Technology page
+Library         SeleniumLibrary
+Library         ExcelLibrary
 Library         String
 Library         Collections
 Library         BuiltIn
@@ -274,6 +274,7 @@ Select parameter from brand dropdown list
     Clear Element Text      ${brand}
     ${StartTime1} =     Get Current Time in Milliseconds
     input text    ${brand}   ${option}
+    sleep       1
     Generic.Select parameter    ${option}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
@@ -296,6 +297,7 @@ Select parameter from technology dropdown list
     [Arguments]      ${option2}
      ${StartTime1} =     Get Current Time in Milliseconds
      Generic.Enter value into field     ${product}      ${option2}
+     sleep      1
      TechnologyPage.Select the first value of To dropdown of product
      Wait Until Element Is Not Visible    ${loaderIcon}      60
      ${EndTime1} =     Get Current Time in Milliseconds
@@ -687,12 +689,13 @@ Verify that after saving technology form user redirect to technology page
 ############ search item in technologies ########################
 Search by AssetId
     [Arguments]    ${AssetID}
+    wait until element is visible       css:thead tr       60
     wait until element is visible       ${asset_SearchBar}       60
     Clear Element Text      ${asset_SearchBar}
     ${StartTime1} =     Get Current Time in Milliseconds
     input text      ${asset_SearchBar}     ${AssetID}
     #    Generic.Enter value into field      ${asset_SearchBar}     ${AssetID}
-    sleep       1
+    wait until element is visible       css:thead tr       60
     Wait Until Element Contains    ${fetch_assetID}     ${AssetID}    60
     ${get_assetID} =    get text    ${fetch_assetID}
     log to console     ${get_assetID}
@@ -716,14 +719,16 @@ Search by AssetId
 
 Search by BrandName
     [Arguments]    ${BrandName}
+     wait until element is visible       css:thead tr       60
      wait until element is visible      ${asset_SearchBar}     60
      click element      ${asset_SearchBar}
      Clear Element Text      ${asset_SearchBar}
      ${StartTime1} =     Get Current Time in Milliseconds
      input text   ${asset_SearchBar}   ${BrandName}
      #    Generic.Enter value into field      ${asset_SearchBar}     ${BrandName}
-     wait until element is visible       ${loaderIcon}       60
-     Wait Until Element Is Not Visible    ${loaderIcon}      60
+##     wait until element is visible       ${loaderIcon}       60
+#     Wait Until Element Is Not Visible    ${loaderIcon}      60
+    wait until element is visible       css:thead tr       60
      Fetch the Brand Name from the row   ${BrandName}
      should be equal    ${get_fetch_brandName}     ${BrandName}
      ${EndTime1} =     Get Current Time in Milliseconds
@@ -732,14 +737,16 @@ Search by BrandName
 
 Search by ProductName
     [Arguments]    ${product}
+    wait until element is visible       css:thead tr       60
      wait until element is visible      ${asset_SearchBar}     60
      click element      ${asset_SearchBar}
      Clear Element Text      ${asset_SearchBar}
      ${StartTime1} =     Get Current Time in Milliseconds
      input text   ${asset_SearchBar}   ${product}
      #    Generic.Enter value into field      ${asset_SearchBar}     ${product}
-     wait until element is visible       ${loaderIcon}       60
-     Wait Until Element Is Not Visible    ${loaderIcon}      60
+#     wait until element is visible       ${loaderIcon}       60
+#     Wait Until Element Is Not Visible    ${loaderIcon}      60
+     wait until element is visible       css:thead tr       60
      Wait Until Element Contains    //td[normalize-space()='${product}']        ${product}     60
      ${get_productID} =    get text    ${fetch_productID}
      log to console     ${get_productID}
@@ -750,13 +757,14 @@ Search by ProductName
 
 Search by SerialNo
     [Arguments]    ${assertId}  ${serialNo}
+    wait until element is visible       css:thead tr       60
      wait until element is visible      ${asset_SearchBar}     60
      click element      ${asset_SearchBar}
      Clear Element Text      ${asset_SearchBar}
      ${StartTime1} =     Get Current Time in Milliseconds
      input text      ${asset_SearchBar}     ${AssetID}
      #    Generic.Enter value into field      ${asset_SearchBar}     ${serialNo}
-     sleep       1
+     wait until element is visible       css:thead tr       60
      Wait Until Element Contains    ${fetch_assetID}     ${AssetID}    60
      ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
@@ -764,12 +772,14 @@ Search by SerialNo
 
 Search by assignee
      [Arguments]    ${assignee}
+     wait until element is visible       css:thead tr       60
      wait until element is visible      ${asset_SearchBar}     60
      click element      ${asset_SearchBar}
      Clear Element Text      ${asset_SearchBar}
      ${StartTime1} =     Get Current Time in Milliseconds
      input text   ${asset_SearchBar}   ${assignee}
      #    Generic.Enter value into field      ${asset_SearchBar}     ${AssetID}
+     wait until element is visible       css:thead tr       60
      Wait Until Element Contains    //td[normalize-space()='${assignee}']        ${assignee}     60
      ${get_assignee} =    get text    ${fetch_assignee}
      log to console     ${get_assignee}
