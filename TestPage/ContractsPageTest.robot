@@ -73,8 +73,8 @@ Technology Auto removed from dynamic contract When edit Brand and product
     Generic.Verify your current page location contains      partner
 
 #-------------------------- PARTNER--------------------------------------------------------------
-    LoginAPI.Fetch the refresh token from the login api
-    ReplaceDomainAPI.Replace Domain     ${refresh_Token}
+#    LoginAPI.Fetch the refresh token from the login api
+    ReplaceDomainAPI.Replace Domain
 
     PartnersPage.Click new partner button
     Generic.Verify your current page location contains      addpartner
@@ -225,8 +225,8 @@ Technology Auto removed from static contract When edit Brand and product
     Generic.Verify your current page location contains      partner
 
 #-------------------------- PARTNER--------------------------------------------------------------
-    LoginAPI.Fetch the refresh token from the login api
-    ReplaceDomainAPI.Replace Domain     ${refresh_Token}
+#    LoginAPI.Fetch the refresh token from the login api
+    ReplaceDomainAPI.Replace Domain
 
     PartnersPage.Click new partner button
     Generic.Verify your current page location contains      addpartner

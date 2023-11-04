@@ -38,13 +38,6 @@ ${Shop_page_load}           css:.nav-link
 
 
 *** Test Cases ***
-Fetch login token
-    LoginAPI.Fetch the refresh token from the login api
-
-
-
-
-
 Testone
     Generic.Fix the column number
     Generic.Fix the row number
