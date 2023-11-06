@@ -61,6 +61,11 @@ ${payment_zipcode}     css:#ZipCode
 
 ${cardNumber}     css:input[placeholder='Card number']
 ${cardUserName}     //label[normalize-space()='Name on card']/following-sibling::input
+${accountNumber}     css:#accountNumber
+${routingNumber}     css:#routingNumber
+${accountType}     css:#accountType
+${accountHolderName}     css:#name
+
 
 ${payment_chk1}     css:div[class='terms-plan'] div:nth-child(1) label:nth-child(1)
 ${payment_chk2}     css:div[class='terms-plan'] div:nth-child(2) label:nth-child(1)
@@ -158,3 +163,59 @@ Click on complete process button
     wait until element is enabled       ${payment_completeProcessBTN}       60
     click element        ${payment_completeProcessBTN}
     Wait Until Element Is Not Visible    ${loaderIcon}      60
+
+Select if you want to change plan or asset
+    [Arguments]    ${option1}
+    wait until element is visible       css://button[normalize-space()='${option1}']       60
+    wait until element is enabled       css://button[normalize-space()='${option1}']       60
+    click element        css://button[normalize-space()='${option1}']
+
+Select different plan
+    wait until element is visible       (//button[@type='button'][normalize-space()='Select'])[2]       60
+    wait until element is enabled       (//button[@type='button'][normalize-space()='Select'])[2]       60
+    click element       (//button[@type='button'][normalize-space()='Select'])[2]
+
+Set asset range to
+    [Arguments]     ${option1}
+    wait until element is visible       //div[normalize-space()='${option1}']       60
+    wait until element is enabled       //div[normalize-space()='${option1}']       60
+    click element       //div[normalize-space()='${option1}']
+
+Update the asset range
+    [Arguments]     ${option1}
+    Generic.click on the button     ${option1}
+
+Select card type university
+    wait until element is visible       css:span .fa-university       60
+    wait until element is enabled       css:span .fa-university       60
+    Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    click element       css:span .fa-university
+
+#span .fa-credit-card
+
+Enter card account number
+    [Arguments]    ${option1}
+    Generic.Enter value into field      ${accountNumber}     ${option1}
+
+Enter card routing number
+    [Arguments]    ${option1}
+    Generic.Enter value into field      ${routingNumber}     ${option1}
+
+Click account type
+    wait until element is visible       ${accountType}       60
+    wait until element is enabled       ${accountType}        60
+    Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    click element      ${accountType}
+
+Select account type
+    [Arguments]    ${option1}
+    wait until element is visible      //option[normalize-space()='${option1}']        60
+    wait until element is enabled      //option[normalize-space()='${option1}']         60
+    Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    click element      //option[normalize-space()=' ${option1}']
+#Company, Individual
+Enter account holder name
+    [Arguments]    ${option1}
+    Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Generic.Enter value into field     ${accountHolderName}     ${option1}
+
