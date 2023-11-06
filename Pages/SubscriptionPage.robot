@@ -166,9 +166,9 @@ Click on complete process button
 
 Select if you want to change plan or asset
     [Arguments]    ${option1}
-    wait until element is visible       css://button[normalize-space()='${option1}']       60
-    wait until element is enabled       css://button[normalize-space()='${option1}']       60
-    click element        css://button[normalize-space()='${option1}']
+    wait until element is visible       //button[normalize-space()='${option1}']       60
+    wait until element is enabled       //button[normalize-space()='${option1}']       60
+    click element        //button[normalize-space()='${option1}']
 
 Select different plan
     wait until element is visible       (//button[@type='button'][normalize-space()='Select'])[2]       60
