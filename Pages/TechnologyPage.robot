@@ -274,7 +274,7 @@ Select parameter from brand dropdown list
     Clear Element Text      ${brand}
     ${StartTime1} =     Get Current Time in Milliseconds
     input text    ${brand}   ${option}
-    sleep       1
+    sleep       ${search_sleep}
     Generic.Select parameter    ${option}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
@@ -695,7 +695,7 @@ Search by AssetId
     ${StartTime1} =     Get Current Time in Milliseconds
     input text      ${asset_SearchBar}     ${AssetID}
     #    Generic.Enter value into field      ${asset_SearchBar}     ${AssetID}
-    sleep       1
+    sleep       ${search_sleep}
     wait until element is visible       css:thead tr       60
     Wait Until Element Contains    ${fetch_assetID}     ${AssetID}    60
     ${get_assetID} =    get text    ${fetch_assetID}
@@ -918,7 +918,7 @@ Create unique department name random
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_DepartmentNumber}=    Catenate    DeptNo_${random_string}
     input text   ${add_tech_dept_name}   ${generated_DepartmentNumber}
-    sleep       1
+    sleep       ${search_sleep}
     click element     css:div[role='option']
     log to console      ${generated_DepartmentNumber}
     set global variable    ${generated_DepartmentNumber}

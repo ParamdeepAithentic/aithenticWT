@@ -73,7 +73,7 @@ Register new user
 
     Yopmail.Click on sign In button in yopmail email
     Unselect Frame
-    sleep       ${sleep5}
+    sleep       ${yop_sleep}
     Switch Window       aithentic | Create - Account
     Generic.Verify your current page location contains     create-account
 
@@ -179,7 +179,7 @@ Signup with ACH payment method
 
     Yopmail.Click on sign In button in yopmail email
     Unselect Frame
-    sleep       ${sleep5}
+    sleep       ${yop_sleep}
     Switch Window       aithentic | Create - Account
     Generic.Verify your current page location contains     create-account
 
@@ -289,7 +289,7 @@ Change plan and Change asset limit with ACH Payment method
 
     Yopmail.Click on sign In button in yopmail email
     Unselect Frame
-    sleep       ${sleep5}
+    sleep       ${yop_sleep}
     Switch Window       aithentic | Create - Account
     Generic.Verify your current page location contains     create-account
 

@@ -74,7 +74,7 @@ Search by business name
     Clear Element Text      ${partner_searchBar}
     ${StartTime1} =     Get Current Time in Milliseconds
     input text      ${partner_searchBar}     ${BusinessName}
-    sleep       1
+    sleep       ${search_sleep}
 #    Wait Until Element Contains    ${fetch_assetID}     ${generate_BusinessName}    60
     wait until element is visible       //td[normalize-space()='${BusinessName}']     60
     ${get_businessName} =    get text    //td[normalize-space()='${BusinessName}']
@@ -280,7 +280,7 @@ Click on the export Button
 
 Confirm to export file
     wait until element is visible      css:.btn.button-green.m-2       60
-    sleep       1
+    sleep       ${search_sleep}
     click element   css:.btn.button-green.m-2
 
 
