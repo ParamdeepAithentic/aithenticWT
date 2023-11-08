@@ -39,8 +39,13 @@ ${register_FormCheckBox}   css:label[for='policy'] span     #checkbox
 ${register_FormSubmitBTN}   css:button[type='submit']
 ${loaderIcon}     //div[@role='status']
 
-#${preparingAgent_text}     //div[@id='downloadAgentOCSFile']//p[contains(text(),'File is preparing, please wait....')]
-#${AgentReady_text}     //p[contains(text(),'File is ready, please download')]
+${activeAssetPOPup}     //h5[normalize-space()='Available Inactive Assests']
+${}
+${}
+${}
+${}
+${}
+
 
 *** Keywords ***
 Download Agent popup

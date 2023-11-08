@@ -73,7 +73,7 @@ Register new user
 
     Yopmail.Click on sign In button in yopmail email
     Unselect Frame
-    sleep       5
+    sleep       ${sleep5}
     Switch Window       aithentic | Create - Account
     Generic.Verify your current page location contains     create-account
 
@@ -148,12 +148,8 @@ Register new user
 
 
 Signup with ACH payment method
-    ${StartTime1} =     Get Current Time in Milliseconds
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  25  ${pageHeading}   Page Load - Total Page Load Time of Register Page      25    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 #    LoginAPI.Fetch the refresh token from the login api
     ReplaceDomainAPI.Replace Domain
@@ -183,7 +179,7 @@ Signup with ACH payment method
 
     Yopmail.Click on sign In button in yopmail email
     Unselect Frame
-    sleep       5
+    sleep       ${sleep5}
     Switch Window       aithentic | Create - Account
     Generic.Verify your current page location contains     create-account
 
@@ -262,12 +258,8 @@ Signup with ACH payment method
 
 
 Change plan and Change asset limit with ACH Payment method
-    ${StartTime1} =     Get Current Time in Milliseconds
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  25  ${pageHeading}   Page Load - Total Page Load Time of Register Page      25    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 #    LoginAPI.Fetch the refresh token from the login api
     ReplaceDomainAPI.Replace Domain
@@ -297,7 +289,7 @@ Change plan and Change asset limit with ACH Payment method
 
     Yopmail.Click on sign In button in yopmail email
     Unselect Frame
-    sleep       5
+    sleep       ${sleep5}
     Switch Window       aithentic | Create - Account
     Generic.Verify your current page location contains     create-account
 
@@ -368,7 +360,7 @@ Change plan and Change asset limit with ACH Payment method
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
     Generic.Verify your current page location contains     organization
-    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the employee ID checkbox   no
     DashboardPage.Select the location ID checkbox   yes
     DashboardPage.Select the asset ID checkbox      yes
     Generic.Fetch alert message text and compare it with       Settings Updated

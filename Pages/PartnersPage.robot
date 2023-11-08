@@ -188,18 +188,18 @@ Enter secondary contact business email
     log to console    secondary business email: ${Pname}@${email}.net
     set global variable    ${generate_SecondaryContactBusinessEmail}
 
-Choose contact country
-    [Arguments]    ${country}   ${code}     ${phoneNo}
-    click element   ${click_countryTag}
-    wait until element is visible   ${contact_Country_search}
-    click element   ${contact_Country_search}
-    ${StartTime1} =     Get Current Time in Milliseconds
-    input text  ${contact_Country_search}   ${country}
-    Generic.Select parameter      ${code}
-    input text     ${phone}     ${phoneNo}
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  6  ${pageHeading}   PartnersPage - Choose contact country      6    ${pageTime}     ${ActualTime}    PatnersPage_Time
+#Choose contact country
+#    [Arguments]    ${country}   ${code}     ${phoneNo}
+#    click element   ${click_countryTag}
+#    wait until element is visible   ${contact_Country_search}
+#    click element   ${contact_Country_search}
+#    ${StartTime1} =     Get Current Time in Milliseconds
+#    input text  ${contact_Country_search}   ${country}
+#    Generic.Select parameter      ${code}
+#    input text     ${phone}     ${phoneNo}
+#    ${EndTime1} =     Get Current Time in Milliseconds
+#    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+#    Calculate Running time  6  ${pageHeading}   PartnersPage - Choose contact country      6    ${pageTime}     ${ActualTime}    PatnersPage_Time
 
 
 Enter contact location
@@ -212,7 +212,7 @@ Enter contact location
 #    Generic.Select parameter        ${select_loc}   #United States - Main Office - 21 - 2
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  7  ${pageHeading}   PartnersPage - Enter contact location      7    ${pageTime}     ${ActualTime}    PatnersPage_Time
+    Calculate Running time  6  ${pageHeading}   PartnersPage - Enter contact location      6    ${pageTime}     ${ActualTime}    PatnersPage_Time
 
 
 Save the new contact
