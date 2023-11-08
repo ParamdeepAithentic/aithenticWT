@@ -37,7 +37,7 @@ Test Teardown   Close Browser session
 Assigned Users Bulk Edit
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-
+    Generic.Verify your current page location contains      asset-overview
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist

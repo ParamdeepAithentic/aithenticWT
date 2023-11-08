@@ -146,7 +146,7 @@ Add Product Bulk Edit
     DashboardPage.Verify product added    ${generated_product}
     DashboardPage.Click on action button
     DashboardPage.Select the option from action menu      edit
-    sleep   5
+    sleep   ${sleep5}
     Switch Window       aithentic | Edit - Products
     Generic.Verify your current page location contains      product-bulk-edit
     DashboardPage.Enter the new value in the product name column      ProductId
@@ -185,7 +185,7 @@ Add Department Bulk Edit
 
     DashboardPage.Click on action button
     DashboardPage.Select the option from department action menu      Bulk Edit
-    sleep   5
+    sleep   ${sleep5}
     Switch Window       aithentic | Data-Wizard
     Generic.Verify your current page location contains      department-bulk-edit
     DashboardPage.Enter the new value in the department name column     department_name

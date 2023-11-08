@@ -39,7 +39,7 @@ ${url}                   https://uat-app.aithentic.com/
 #${url}                   https://qa-app.aithentic.com/
 ${apiURL}                 https://uat-api.aithentic.com/api/v1
 #${apiURL}                 https://qa-api.aithentic.com/api/v1
-${valid_password}        Test!@8191     #UAT user
+${valid_password}        Test!@5897     #UAT user
 #${valid_password}        Test@123       #QA User
 
 
@@ -62,7 +62,8 @@ ${click_countryTag}     css:.iti__selected-flag.dropdown-toggle
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
-
+${sleep5}       5
+${sleep3}       3
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
 
 
@@ -269,7 +270,7 @@ Switch to iframe by ID
 Refresh the existing page
     Wait Until Page Contains Element    css:body    60
     Reload Page
-    sleep   5
+    sleep   ${sleep5}
 
 
 Enter phone number
