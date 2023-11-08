@@ -40,11 +40,11 @@ ${register_FormSubmitBTN}   css:button[type='submit']
 ${loaderIcon}     //div[@role='status']
 
 ${activeAssetPOPup}     //h5[normalize-space()='Available Inactive Assests']
-${}
-${}
-${}
-${}
-${}
+#${}
+#${}
+#${}
+#${}
+#${}
 
 
 *** Keywords ***
