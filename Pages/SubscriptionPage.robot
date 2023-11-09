@@ -219,3 +219,23 @@ Enter account holder name
     Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
     Generic.Enter value into field     ${accountHolderName}     ${option1}
 
+Select the payment method
+    [Arguments]    ${option1}
+    wait until element is visible      css:.qa-payment-way-options-${option1}        60
+    wait until element is enabled      css:.qa-payment-way-options-${option1}          60
+    click element      css:.qa-payment-way-options-${option1}
+
+
+Select the account for payment
+    wait until element is visible      css:.check-mark.pointer        60
+    wait until element is enabled      css:.check-mark.pointer          60
+    click element      css:.check-mark.pointer
+
+Proceed the payment
+    [Arguments]    ${option1}
+    wait until element is visible      css:.qa-payment-method-${option1}        60
+    wait until element is enabled      css:.qa-payment-method-${option1}          60
+    click element      css:.qa-payment-method-${option1}
+
+
+
