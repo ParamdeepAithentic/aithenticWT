@@ -245,7 +245,7 @@ Verify product added
      Clear Element Text      ${search_productName}
      ${StartTime1} =     Get Current Time in Milliseconds
      input text   ${search_productName}   ${productName}
-     sleep      1
+     sleep       ${search_sleep}
      Wait Until Element Contains    //td[normalize-space()='${productName}']      ${productName}     60
      ${get_productName} =    get text    ${fetch_productName}
      log to console     ${get_productName}
@@ -312,7 +312,7 @@ Verify Brand added
      Clear Element Text      ${search_brandName}
      ${StartTime1} =     Get Current Time in Milliseconds
      input text   ${search_brandName}   ${BrandName}
-     sleep      1
+     sleep       ${search_sleep}
      Wait Until Element Contains    //td[normalize-space()='${BrandName}']      ${BrandName}     60
      ${get_brandName} =    get text    ${fetch_brandName}
      log to console     ${get_brandName}
@@ -422,7 +422,7 @@ Verify department added
     Clear Element Text      ${searchBar_department}
 #    ${StartTime1} =     Get Current Time in Milliseconds
     input text   ${searchBar_department}   ${departmentName}
-    sleep      1
+    sleep       ${search_sleep}
     Wait Until Element Contains    //td[normalize-space()='${departmentName}']      ${departmentName}     60
     ${get_departmentName} =    get text    ${fetch_departmentName}
     log to console     ${get_departmentName}

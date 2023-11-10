@@ -772,7 +772,7 @@ Add New Support Partner and Assign that Partner
     TechnologyPage.Click on assign partner button under technology details page        Assign Partner
 
     TechnologyPage.Click here to add support partner
-    sleep       ${sleep5}
+    sleep       ${yop_sleep}
     Switch Window       aithentic | Add - Partner
     Generic.Verify your current page location contains      addpartner
     PartnersPage.Create partner random business name
@@ -786,7 +786,7 @@ Add New Support Partner and Assign that Partner
 #    sleep       10
 
     TechnologyPage.Click here to add supplier partner
-    sleep       ${sleep5}
+    sleep       ${yop_sleep}
     Switch Window       aithentic | Add - Partner
     Generic.Verify your current page location contains      addpartner
     PartnersPage.Create partner random business name

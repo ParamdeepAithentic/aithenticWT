@@ -209,7 +209,7 @@ Compose Message invite user test
     ${StartTime1} =     Get Current Time in Milliseconds
     Yopmail.Click on sign In button in yopmail email
     Unselect Frame
-    sleep       ${sleep5}
+    sleep       ${yop_sleep}
     Switch Window       aithentic | Register
 
     Generic.Verify your current page location contains      register
@@ -236,7 +236,7 @@ Compose Message invite user test
     ${StartTime1} =     Get Current Time in Milliseconds
     Yopmail.Click on sign In button in yopmail email
     Unselect Frame
-    sleep       ${sleep5}
+    sleep       ${yop_sleep}
     Switch Window       aithentic | Create - Account
     Generic.Verify your current page location contains     create-account
     ${EndTime1} =     Get Current Time in Milliseconds
@@ -400,7 +400,7 @@ Compose Message invite user test
     MessagePage.Enter Recipient list    ${generate_PersonName}
     MessagePage.Select compose message pop up option    yes
 
-    sleep       ${sleep5}
+    sleep       ${yop_sleep}
     Switch Window   aithentic | Add - Member
 
     Generic.Verify your current page location contains      addmembers
@@ -409,7 +409,7 @@ Compose Message invite user test
     MessagePage.Enter team member location      Main Office
     MessagePage.Save team member        save
     Generic.Verify alert message of add team member of compose message    Email sent successfully
-    sleep       ${sleep5}
+    sleep       ${yop_sleep}
     Switch Window   aithentic | Message - Compose
 
     MessagePage.Select message status       public
@@ -431,7 +431,7 @@ Compose Message invite user test
     Generic.Switch to iframe by ID      ifmail
     Yopmail.Click on sign In button in yopmail email
     Unselect Frame
-    sleep       ${sleep5}
+    sleep       ${yop_sleep}
     Switch Window       aithentic | Create - Account
     Generic.Verify your current page location contains     create-account
 
