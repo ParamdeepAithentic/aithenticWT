@@ -177,6 +177,7 @@ Select different plan
 
 Set asset range to
     [Arguments]     ${option1}
+    Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
     wait until element is visible       //div[normalize-space()='${option1}']       60
     wait until element is enabled       //div[normalize-space()='${option1}']       60
     click element       //div[normalize-space()='${option1}']
@@ -237,5 +238,10 @@ Proceed the payment
     wait until element is enabled      css:.qa-payment-method-${option1}          60
     click element      css:.qa-payment-method-${option1}
 
+Update the payment of changed plan
+    [Arguments]    ${option1}
+    wait until element is visible      css:.qa-payment-update-${option1}        60
+    wait until element is enabled      css:.qa-payment-update-${option1}          60
+    click element      css:.qa-payment-update-${option1}
 
 
