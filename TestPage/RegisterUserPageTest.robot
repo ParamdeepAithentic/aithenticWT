@@ -380,6 +380,7 @@ Change plan and Change asset limit with ACH Payment method
 
     Generic.Verify your current page location contains      subscription
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
+    SubscriptionPage.Select the another plan
 
     SubscriptionPage.Update the payment of changed plan     proceed
     SubscriptionPage.Select the payment method    ach

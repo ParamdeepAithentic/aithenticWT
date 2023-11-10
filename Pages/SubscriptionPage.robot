@@ -164,6 +164,11 @@ Click on complete process button
     click element        ${payment_completeProcessBTN}
     Wait Until Element Is Not Visible    ${loaderIcon}      60
 
+Select the another plan
+    wait until element is visible       css:div[class='row justify-content-center'] div:nth-child(1) div:nth-child(1) div:nth-child(2)       60
+    wait until element is enabled       css:div[class='row justify-content-center'] div:nth-child(1) div:nth-child(1) div:nth-child(2)       60
+    click element        css:div[class='row justify-content-center'] div:nth-child(1) div:nth-child(1) div:nth-child(2)
+
 Select if you want to change plan or asset
     [Arguments]    ${option1}
     wait until element is visible       //button[normalize-space()='${option1}']       60
