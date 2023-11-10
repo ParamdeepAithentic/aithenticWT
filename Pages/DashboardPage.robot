@@ -79,6 +79,7 @@ ${add_dept_costCenter}     css:.profile-section-department .qa-add-department-co
 
 ${searchBar_department}     css:input[placeholder='Search by Department Name']
 ${fetch_departmentName}     css:td:nth-child(2)
+${share_toEmail}      css:#toEmail
 
 ################################### Network Discovery ######################################################
 #//button[normalize-space()='Download Agent']
@@ -504,3 +505,42 @@ Verify the profile option list parameters
       log to console    ${element.text}
       Append To List    ${actualList}     ${element.text}
     END
+
+click on share icon of dashboard page
+    wait until element is visible       css:.fa-share-alt              60
+    click element       css:.fa-share-alt
+
+Enter toEmail into popup
+    wait until element is visible      ${share_toEmail}         60
+    click element       ${share_toEmail}
+    ${random_string} =    Generate Random String       5      [LETTERS]
+    ${generate_sharetoEmail}=    Catenate    ${random_string}@yopmail.net
+    input text      ${share_toEmail}     ${generate_sharetoEmail}
+    log to console      ${generate_sharetoEmail}
+    set global variable    ${generate_sharetoEmail}
+
+Click on Send Invite button
+   Generic.click on the button     Send Invite
+
+Click on Register button in email
+    wait until element is visible       css:button[type='button']       60
+    click element       css:button[type='button']
+
+Switch to window
+    [Arguments]    ${option}
+     switch window           ${option}
+
+Enter business email
+    wait until element is enabled       ${register_Email}        60
+    click element   ${register_Email}
+    Clear element text      ${register_Email}
+    input text      ${register_Email}       ${generate_sharetoEmail}
+
+Enter account_holder_name
+    wait until element is visible       css:.ng-pristine .ng-touched        60
+    click element       css:.ng-pristine .ng-touched
+    input text      css:.ng-pristine .ng-touched        Tanisha
+
+
+
+
