@@ -216,7 +216,6 @@ Invite user into Aithentic
     DashboardPage.Click on Register button in email
     sleep       3
     DashboardPage.Switch to window        aithentic | Register
-
     RegisterUserPage.Create random register first name
     RegisterUserPage.Create random register last name
     RegisterUserPage.Create random register company name
@@ -258,15 +257,13 @@ Invite user into Aithentic
     Switch Window   aithentic | OTP
     TwoFactorAuth.Enter the otp     ${passcode}
     TwoFactorAuth.Click verification button
-
     Generic.Verify your current page location contains     subscription
-
-    SubscriptionPage.Select country of manufacturer profile     India
-    SubscriptionPage.Select state of manufacturer profile   Haryana
-    SubscriptionPage.Select city of manufacturer profile    Yamunanagar
-    SubscriptionPage.Input text into manufacturer address one       This is Ynr-1
-    SubscriptionPage.Input text into manufacturer address two       This is Ynr-2
-    SubscriptionPage.Input text into manufacturer zip code      135021
+    SubscriptionPage.Select country of manufacturer profile     United States
+    SubscriptionPage.Select state of manufacturer profile   Texas
+    SubscriptionPage.Select city of manufacturer profile    Abram
+    SubscriptionPage.Input text into manufacturer address one       This is address 1
+    SubscriptionPage.Input text into manufacturer address two       This is address 2
+    SubscriptionPage.Input text into manufacturer zip code     73301
     SubscriptionPage.Select department of manufacturer profile      Customer Support
     SubscriptionPage.Input text into manufacturer position/title    Agent
     SubscriptionPage.Save the manufacturer profile
@@ -275,13 +272,11 @@ Invite user into Aithentic
     SubscriptionPage.Select plan of subscription
     SubscriptionPage.Select and move next with subscription
     Generic.Verify your current page location contains     subscription-payment
-
     SubscriptionPage.Click on same billing address checkbox
     SubscriptionPage.Switch to card iframe
     SubscriptionPage.Enter cardnumber    42424242424242420424242
     Unselect Frame
     SubscriptionPage.Enter card user name    Paramdeep Singh
-
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
@@ -293,6 +288,39 @@ Invite user into Aithentic
     DashboardPage.Select the location ID checkbox   yes
     DashboardPage.Select the asset ID checkbox      yes
     Generic.Fetch alert message text and compare it with       Settings Updated
+
+Verify Help Center
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.select the option from the side menu    Dashboard
+    Generic.Verify your current page location contains      dashboard
+    DashboardPage.click on Help center icon of dashboard page
+    DashboardPage.Click on link of information center list      A Complete Guide
+    sleep       3
+    Switch Window       Get Started Guide - Jira Service Management
+    DashboardPage.Verify that user redirect to new page     servicedesk
+    Switch Window       main     #aithentic | Technology - Setting
+    DashboardPage.Click on link of information center list      Knowledge Base
+    sleep       3
+    Switch Window       Help Center Home - Jira Service Management
+    DashboardPage.Verify that user redirect to new page     servicedesk       #
+    Switch Window       main
+    DashboardPage.Click on link of information center list      What’s New!
+    sleep       3
+    Switch Window       What's New! - Jira Service Management
+    DashboardPage.Verify that user redirect to new page     servicedesk
+    Switch Window       main
+    DashboardPage.Click on link of information center list      Customer
+    sleep       3
+    Switch Window       Customer Service Desk - Jira Service Management
+    DashboardPage.Verify that user redirect to new page     servicedesk
+    Switch Window       main
+
+
+
+
+
+
 
 
 

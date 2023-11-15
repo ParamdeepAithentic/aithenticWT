@@ -448,7 +448,6 @@ Select option from department status column
     wait until element is visible      css:.ag-rich-select-row.ag-rich-select-row-selected    60
     click element       css:.ag-rich-select-row.ag-rich-select-row-selected
 
-
 Enter the new value in the cost center column
     [Arguments]    ${option}
     DashboardPage.Double click    ${option}
@@ -479,7 +478,6 @@ Verify the side option list parameters
       Append To List    ${actualList}     ${title}
    END
    lists should be equal    ${expectedList}    ${actualList}
-
 
 Verify the drawer list parameters
    wait until element is visible   ${drawerList}        60
@@ -540,6 +538,28 @@ Enter account_holder_name
     wait until element is visible       css:.ng-pristine .ng-touched        60
     click element       css:.ng-pristine .ng-touched
     input text      css:.ng-pristine .ng-touched        Tanisha
+
+click on Help center icon of dashboard page
+    wait until element is visible       css:.fa-question-circle
+    click element       css:.fa-question-circle
+
+Verify Help Center page is visible
+    Page Should Contain
+
+Click on link of information center list
+    [Arguments]     ${link_name}
+    wait until element is visible       //span[contains(text(),'${link_name}')]
+    click element       //span[contains(text(),'${link_name}')]
+
+Verify that user redirect to new page
+    [Arguments]    ${option}
+    wait until location contains         ${option}      60
+    Location should contain      ${option}
+
+
+
+
+
 
 
 
