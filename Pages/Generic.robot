@@ -62,7 +62,7 @@ ${click_countryTag}     css:.iti__selected-flag.dropdown-toggle
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
-${yop_sleep}       5
+${yop_sleep}       3
 ${search_sleep}       1
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
 
@@ -270,7 +270,9 @@ Switch to iframe by ID
 Refresh the existing page
     Wait Until Page Contains Element    css:body    60
     Reload Page
-    sleep   ${yop_sleep}
+    sleep       ${yop_sleep}
+
+
 
 Enter phone number
     [Arguments]    ${country}   ${code}     ${phoneNo}

@@ -369,5 +369,22 @@ Change plan and Change asset limit with ACH Payment method
     Generic.Select option from profile list     subscription-dropdown
     Generic.Verify your current page location contains      subscription
     SubscriptionPage.Select if you want to change plan or asset    Change Asset Limit
+
     SubscriptionPage.Set asset range to     900
     SubscriptionPage.Update the asset range     Update
+
+    SubscriptionPage.Select the payment method    ach
+    SubscriptionPage.Select the account for payment
+    SubscriptionPage.Proceed the payment     proceed
+    Generic.Fetch alert message text and compare it with      Payment Successful
+
+    Generic.Verify your current page location contains      subscription
+    SubscriptionPage.Select if you want to change plan or asset    Change Plan
+    SubscriptionPage.Select the another plan
+
+    SubscriptionPage.Update the payment of changed plan     proceed
+    SubscriptionPage.Select the payment method    ach
+    SubscriptionPage.Select the account for payment
+    SubscriptionPage.Proceed the payment     proceed
+    Generic.Fetch alert message text and compare it with      Payment Successful
+
