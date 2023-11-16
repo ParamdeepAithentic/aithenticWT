@@ -197,6 +197,9 @@ Add Department Bulk Edit
     Generic.Click on the button     Exit
     DashboardPage.Confirm the exit import process pop appers
     Generic.Click on the button     Confirm
+
+
+
 Add Brand
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}

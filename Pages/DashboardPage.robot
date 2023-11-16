@@ -318,7 +318,7 @@ Verify Brand added
      wait until element is visible      ${search_brandName}     60
      click element      ${search_brandName}
      Clear Element Text      ${search_brandName}
-#     ${StartTime1} =     Get Current Time in Milliseconds
+     ${StartTime1} =     Get Current Time in Milliseconds
      input text   ${search_brandName}   ${BrandName}
      sleep       ${search_sleep}
      Wait Until Element Contains    //td[normalize-space()='${BrandName}']      ${BrandName}     60
@@ -326,9 +326,9 @@ Verify Brand added
      log to console     ${get_brandName}
      should be equal    ${BrandName}     ${get_brandName}
      click element  css:.fas.fa-ellipsis-h.three-dots
-#     ${EndTime1} =     Get Current Time in Milliseconds
-#    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-#    Calculate Running time  10  ${pageHeading}   DashboardPage - Verify Brand added      10    ${pageTime}     ${ActualTime}    DashboardPage_Time
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  10  ${pageHeading}   DashboardPage - Verify Brand added      10    ${pageTime}     ${ActualTime}    DashboardPage_Time
 
 
 
