@@ -512,8 +512,6 @@ Verify the profile option list parameters
       Append To List    ${actualList}     ${element.text}
     END
 
-
-
 Select Technology from personal deatils section
     [Arguments]     ${option}
     wait until element is visible   xpath://span[normalize-space()='${option}']     60
@@ -576,9 +574,6 @@ Click on Edit address
     wait until element is visible   css:i[title='Click here to edit address']   60
     click element   css:i[title='Click here to edit address']
     wait until element is not visible       ${loaderIcon}    60
-
-#Loader Icon Invisible
-#    wait until element is not visible       ${loaderIcon}    60
 
 See added brand link
     wait until element is visible   //a[normalize-space()='View Your Added Brand List']   60
