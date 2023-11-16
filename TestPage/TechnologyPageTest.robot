@@ -800,4 +800,3 @@ Add New Support Partner and Assign that Partner
     Generic.Fetch alert message text and compare it with        Partners updated successfully
     TechnologyPage.Verify that support partner is added in partner association      Support Partner
     TechnologyPage.Verify that supplier partner is added in partner association     Supplier
-
