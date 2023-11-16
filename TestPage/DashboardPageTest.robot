@@ -296,25 +296,37 @@ Verify Help Center
     Generic.Verify your current page location contains      dashboard
     DashboardPage.click on Help center icon of dashboard page
     DashboardPage.Click on link of information center list      A Complete Guide
-    sleep       3
+    sleep       ${yop_sleep}
     Switch Window       Get Started Guide - Jira Service Management
-    DashboardPage.Verify that user redirect to new page     servicedesk
-    Switch Window       main     #aithentic | Technology - Setting
+    Generic.Verify your current page location contains     servicedesk
+    Generic.Verify your current page contains this text     Get Started Guide
+    Switch Window      aithentic | Asset - Overview
     DashboardPage.Click on link of information center list      Knowledge Base
-    sleep       3
+
+    sleep       ${yop_sleep}
     Switch Window       Help Center Home - Jira Service Management
-    DashboardPage.Verify that user redirect to new page     servicedesk       #
-    Switch Window       main
+    Generic.Verify your current page location contains     servicedesk
+    Generic.Verify your current page contains this text     SEARCH OUR KNOWLEDGE BASE
+    Switch Window       aithentic | Asset - Overview
     DashboardPage.Click on link of information center list      What’s New!
-    sleep       3
+
+    sleep       ${yop_sleep}
     Switch Window       What's New! - Jira Service Management
-    DashboardPage.Verify that user redirect to new page     servicedesk
-    Switch Window       main
-    DashboardPage.Click on link of information center list      Customer
-    sleep       3
+    Generic.Verify your current page location contains     servicedesk
+    Generic.Verify your current page contains this text     What's New!
+    Switch Window       aithentic | Asset - Overview
+    DashboardPage.Click on link of Support      Customer
+
+    sleep       ${yop_sleep}
     Switch Window       Customer Service Desk - Jira Service Management
-    DashboardPage.Verify that user redirect to new page     servicedesk
-    Switch Window       main
+    Generic.Verify your current page location contains      servicedesk
+    Generic.Verify your current page contains this text     Customer Service Desk
+    Switch Window       aithentic | Asset - Overview
+    DashboardPage.Search any keyword of FAQ section     How do I complete my account setup?
+    DashboardPage.Verify the keyword        How do I complete my account setup?
+    DashboardPage.Search any keyword of FAQ section     Testing
+    DashboardPage.Verify no result found with wrong FAQ
+
 
 
 

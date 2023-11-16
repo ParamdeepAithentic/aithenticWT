@@ -540,21 +540,38 @@ Enter account_holder_name
     input text      css:.ng-pristine .ng-touched        Tanisha
 
 click on Help center icon of dashboard page
-    wait until element is visible       css:.fa-question-circle
+    wait until element is visible       css:.fa-question-circle         60
     click element       css:.fa-question-circle
 
-Verify Help Center page is visible
-    Page Should Contain
+
 
 Click on link of information center list
     [Arguments]     ${link_name}
-    wait until element is visible       //span[contains(text(),'${link_name}')]
+    wait until element is visible       //span[contains(text(),'${link_name}')]     60
     click element       //span[contains(text(),'${link_name}')]
 
-Verify that user redirect to new page
+Click on link of Support
+    [Arguments]     ${link_name}
+    wait until element is visible       //span[contains(text(),'${link_name}')]     60
+    click element       //span[contains(text(),'${link_name}')]
+
+Search any keyword of FAQ section
     [Arguments]    ${option}
-    wait until location contains         ${option}      60
-    Location should contain      ${option}
+    Generic.Enter value into field      css:#questions      ${option}
+
+
+Verify the keyword
+    [Arguments]    ${option}
+    wait until element is visible    css:.d-inline-block div.artical-question-container       60
+    ${get_alertMsg} =    get text    css:.d-inline-block div.artical-question-container
+    log to console     ${get_alertMsg}
+    should be equal    ${get_alertMsg}     ${option}
+
+
+Verify no result found with wrong FAQ
+    wait until element is visible      //div[normalize-space()='No results found']        60
+
+
 
 
 
