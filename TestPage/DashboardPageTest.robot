@@ -214,8 +214,8 @@ Invite user into Aithentic
     Generic.Refresh the existing page
     Generic.Switch to iframe by ID      ifmail
     DashboardPage.Click on Register button in email
-    sleep       3
-    DashboardPage.Switch to window        aithentic | Register
+    sleep       ${yop_sleep}
+    Switch Window        aithentic | Register
     RegisterUserPage.Create random register first name
     RegisterUserPage.Create random register last name
     RegisterUserPage.Create random register company name
@@ -253,7 +253,7 @@ Invite user into Aithentic
     Unselect Frame
     Generic.Switch to iframe by ID      ifmail
     Yopmail.Get verification OTP from email    Your passcode is
-    sleep       2
+    sleep       ${yop_sleep}
     Switch Window   aithentic | OTP
     TwoFactorAuth.Enter the otp     ${passcode}
     TwoFactorAuth.Click verification button
@@ -326,39 +326,4 @@ Verify Help Center
     DashboardPage.Verify the keyword        How do I complete my account setup?
     DashboardPage.Search any keyword of FAQ section     Testing
     DashboardPage.Verify no result found with wrong FAQ
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
