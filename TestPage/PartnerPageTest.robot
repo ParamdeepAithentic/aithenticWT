@@ -652,6 +652,20 @@ Export Specificartner into Excel Doc CSV and TSV for Support Partner
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with        Partner updated successfully
 
+Add-Edit-Delete Manufacturer
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    DashboardPage.Click add brand button
+    DashboardPage.Create random brandName
+    DashboardPage.Add business manufacturer URL       ${generated_BrandName}
+    DashboardPage.Add brand manufacturer country      Australia
+    DashboardPage.Save added brand details
+    Generic.Fetch alert message text and compare it with        Brand created successfully.
+    DashboardPage.Click added brand main save button
+    DashboardPage.Verify Brand added      ${generated_BrandName}
 
 
 

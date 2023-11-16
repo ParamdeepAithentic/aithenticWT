@@ -93,8 +93,6 @@ Create and verify new brand
     DashboardPage.Click added brand main save button
     DashboardPage.Verify Brand added      ${generated_BrandName}
 
-
-
 Create a new product with adding new brand
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
