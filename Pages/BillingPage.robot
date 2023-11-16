@@ -75,7 +75,7 @@ Save the billing payment form
 
 Save the status of set as primary account
     [Arguments]    ${option}
-#    sleep       ${search_sleep}
+    sleep       ${search_sleep}
     Wait Until Element Is Visible       css:.qa-${option}-    60
     Wait Until Element Is Enabled       css:.qa-${option}-     60
     click element       css:.qa-${option}-
@@ -83,6 +83,7 @@ Save the status of set as primary account
 
 Confirm if you want to delect account
     [Arguments]    ${option}
+    sleep       ${search_sleep}
     Wait Until Element Is Visible       css:.qa-${option}-    60
     Wait Until Element Is Enabled       css:.qa-${option}-     60
     click element       css:.qa-${option}-
