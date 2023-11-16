@@ -63,7 +63,7 @@ ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
 ${yop_sleep}       3
-${search_sleep}       1
+${search_sleep}       1s
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
 
 
