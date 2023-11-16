@@ -327,4 +327,7 @@ Verify Help Center
     DashboardPage.Search any keyword of FAQ section     Testing
     DashboardPage.Verify no result found with wrong FAQ
 
+Edit Brand
+
+
 
