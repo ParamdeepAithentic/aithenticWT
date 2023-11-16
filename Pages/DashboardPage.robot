@@ -619,13 +619,7 @@ Click on main Save Button
     wait until element is visible   //button[@type='button'][normalize-space()='Save']    60
     click element   //button[@type='button'][normalize-space()='Save']
 
-#Click on Search Bar
-#    wait until element is visible   css:input[placeholder='Search by Brand Name']   60
-#    click element   css:input[placeholder='Search by Brand Name']
-#    input text      css:input[placeholder='Search by Brand Name']   ${generated_BrandName}
 
-Click on the edit option
-    wait until element is visible
 
 
 
