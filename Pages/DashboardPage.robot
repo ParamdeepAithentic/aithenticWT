@@ -512,15 +512,7 @@ Verify the profile option list parameters
       Append To List    ${actualList}     ${element.text}
     END
 
-<<<<<<< HEAD
-Click on Dropdown List
-    wait until element is visible   css:#user-name-nav  60
-    Click element   css:#user-name-nav
 
-Select option from Dashboard List
-    [Arguments]     ${option}
-    wait until element is visible   xpath://a[contains(text(),'${option}')]  60
-    click element   xpath://a[contains(text(),'${option}')]  60
 
 Select Technology from personal deatils section
     [Arguments]     ${option}
@@ -583,7 +575,7 @@ Zip code Input
 Click on Edit address
     wait until element is visible   css:i[title='Click here to edit address']   60
     click element   css:i[title='Click here to edit address']
-     wait until element is not visible       ${loaderIcon}    60
+    wait until element is not visible       ${loaderIcon}    60
 
 #Loader Icon Invisible
 #    wait until element is not visible       ${loaderIcon}    60
@@ -599,13 +591,11 @@ Enter Brand New Address Line one
     ${generate_newaddress}=    Catenate    ${random_string}
     input text      ${address_Line}     ${generate_newaddress}
     Press Keys  ${address_Line}            ENTER
-#    wait until element is visible   ${generate_newaddress}      60
-#    click element   ${generate_newaddress}
     log to console      ${generate_newaddress}
     set global variable    ${generate_newaddress}
 
 Enter Brand new address line two
-     wait until element is visible     ${address_line2}         60
+    wait until element is visible     ${address_line2}         60
     click element      ${address_line2}
     ${random_string} =    Generate Random String       10      [LETTERS]
     ${generate_newaddress}=    Catenate    ${random_string}
@@ -620,7 +610,7 @@ Enter Brand new address line two
 Click on main Save Button
     wait until element is visible   //button[@type='button'][normalize-space()='Save']    60
     click element   //button[@type='button'][normalize-space()='Save']
-=======
+
 click on share icon of dashboard page
     wait until element is visible       css:.fa-share-alt              60
     click element       css:.fa-share-alt
@@ -643,7 +633,7 @@ Click on Register button in email
 
 Switch to window
     [Arguments]    ${option}
-     switch window           ${option}
+     switch window      ${option}
 
 Enter business email
     wait until element is enabled       ${register_Email}        60

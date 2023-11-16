@@ -197,7 +197,9 @@ Add Department Bulk Edit
     Generic.Click on the button     Exit
     DashboardPage.Confirm the exit import process pop appers
     Generic.Click on the button     Confirm
-
+    sleep       1
+    Switch Window       aithentic | Department - List
+    DashboardPage.Verify department added     ${generated_EditDepartmentName}
 
 
 Add Brand
