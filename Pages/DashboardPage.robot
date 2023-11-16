@@ -80,10 +80,9 @@ ${add_dept_costCenter}     css:.profile-section-department .qa-add-department-co
 ${searchBar_department}     css:input[placeholder='Search by Department Name']
 ${fetch_departmentName}     css:td:nth-child(2)
 
-${address_Line}     xpath://input[@id='addressLine1']
-${address_line2}    xpath://input[@id='addressLine2']
-${table}        css:.table.table-hover.border-grey.bg-white
-${column}       1
+${address_Line}     css:#addressLine1
+${address_line2}    css:#addressLine2
+
 
 ${share_toEmail}      css:#toEmail
 
