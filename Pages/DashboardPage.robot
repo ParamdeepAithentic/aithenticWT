@@ -79,9 +79,14 @@ ${add_dept_costCenter}     css:.profile-section-department .qa-add-department-co
 
 ${searchBar_department}     css:input[placeholder='Search by Department Name']
 ${fetch_departmentName}     css:td:nth-child(2)
+${address_Line}     xpath://input[@id='addressLine1']
+${address_line2}    xpath://input[@id='addressLine2']
+${table}        css:.table.table-hover.border-grey.bg-white
+${column}       1
 
 ################################### Network Discovery ######################################################
 #//button[normalize-space()='Download Agent']
+
 
 
 
@@ -310,16 +315,17 @@ Verify Brand added
      wait until element is visible      ${search_brandName}     60
      click element      ${search_brandName}
      Clear Element Text      ${search_brandName}
-     ${StartTime1} =     Get Current Time in Milliseconds
+#     ${StartTime1} =     Get Current Time in Milliseconds
      input text   ${search_brandName}   ${BrandName}
      sleep       ${search_sleep}
      Wait Until Element Contains    //td[normalize-space()='${BrandName}']      ${BrandName}     60
      ${get_brandName} =    get text    ${fetch_brandName}
      log to console     ${get_brandName}
      should be equal    ${BrandName}     ${get_brandName}
-     ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  10  ${pageHeading}   DashboardPage - Verify Brand added      10    ${pageTime}     ${ActualTime}    DashboardPage_Time
+     click element  css:.fas.fa-ellipsis-h.three-dots
+#     ${EndTime1} =     Get Current Time in Milliseconds
+#    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+#    Calculate Running time  10  ${pageHeading}   DashboardPage - Verify Brand added      10    ${pageTime}     ${ActualTime}    DashboardPage_Time
 
 
 
@@ -504,3 +510,122 @@ Verify the profile option list parameters
       log to console    ${element.text}
       Append To List    ${actualList}     ${element.text}
     END
+
+Click on Dropdown List
+    wait until element is visible   css:#user-name-nav  60
+    Click element   css:#user-name-nav
+
+Select option from Dashboard List
+    [Arguments]     ${option}
+    wait until element is visible   xpath://a[contains(text(),'${option}')]  60
+    click element   xpath://a[contains(text(),'${option}')]  60
+
+Select Technology from personal deatils section
+    [Arguments]     ${option}
+    wait until element is visible   xpath://span[normalize-space()='${option}']     60
+    click element   xpath://span[normalize-space()='${option}']
+
+Click on View Your Added Brand List
+    wait until element is visible   xpath://a[normalize-space()='View Your Added Brand List']   60
+    click element   xpath://a[normalize-space()='View Your Added Brand List']
+
+Click on Add New Address
+    wait until element is visible   xpath://span[@title='Click here to add address']    60
+    click element   xpath://span[@title='Click here to add address']
+
+Enter Brand Address Line one
+    wait until element is visible     ${address_Line}         60
+    wait until element is enabled     ${address_Line}         60
+    click element      ${address_Line}
+    ${random_string} =    Generate Random String       10      [LETTERS]
+    ${generate_AddressLine}=    Catenate    ${random_string}
+    input text      ${address_Line}     ${generate_AddressLine}
+    log to console      ${generate_AddressLine}
+    set global variable    ${generate_AddressLine}
+
+Enter Brand address line two
+    wait until element is visible     ${address_line2}         60
+    wait until element is enabled     ${address_line2}         60
+    click element      ${address_line2}
+    ${random_string} =    Generate Random String       10      [LETTERS]
+    ${generate_AddressLine2}=    Catenate    ${random_string}
+    input text      ${address_line2}     ${generate_AddressLine2}
+    log to console      ${generate_AddressLine2}
+    set global variable    ${generate_AddressLine2}
+
+Select State
+    [Arguments]     ${country}
+    Wait until element is visible   css:#State  60
+    click element   css:#State
+    wait until element is visible   css:span[title='${country}']    60
+    click element   css:span[title='${country}']
+
+Select City
+    [Arguments]     ${city}
+    wait until element is not visible       ${loaderIcon}    60
+    wait until element is visible   css:#City   60
+    click element   css:#City
+    wait until element is visible   css:span[title='${city}']     60
+    click element   css:span[title='${city}']
+
+Click on Save Button
+    wait until element is visible   css:button[aria-label='Close'][type='submit']   60
+    click element   css:button[aria-label='Close'][type='submit']
+
+Zip code Input
+    [Arguments]     ${code}
+    wait until element is visible   css:#zip    60
+    click element   css:#zip
+    input text  css:#zip    ${code}
+
+Click on Edit address
+    wait until element is visible   css:i[title='Click here to edit address']   60
+    click element   css:i[title='Click here to edit address']
+     wait until element is not visible       ${loaderIcon}    60
+
+#Loader Icon Invisible
+#    wait until element is not visible       ${loaderIcon}    60
+
+See added brand link
+    wait until element is visible   //a[normalize-space()='View Your Added Brand List']   60
+    click element   //a[normalize-space()='View Your Added Brand List']
+
+Enter Brand New Address Line one
+    wait until element is visible     ${address_Line}         60
+    click element      ${address_Line}
+    ${random_string} =    Generate Random String       10      [LETTERS]
+    ${generate_newaddress}=    Catenate    ${random_string}
+    input text      ${address_Line}     ${generate_newaddress}
+    Press Keys  ${address_Line}            ENTER
+#    wait until element is visible   ${generate_newaddress}      60
+#    click element   ${generate_newaddress}
+    log to console      ${generate_newaddress}
+    set global variable    ${generate_newaddress}
+
+Enter Brand new address line two
+     wait until element is visible     ${address_line2}         60
+    click element      ${address_line2}
+    ${random_string} =    Generate Random String       10      [LETTERS]
+    ${generate_newaddress}=    Catenate    ${random_string}
+    input text      ${address_line2}     ${generate_newaddress}
+
+#    wait until element is visible   ${generate_newaddress}      60
+#    click element   ${generate_newaddress}
+    log to console      ${generate_newaddress}
+    set global variable    ${generate_newaddress}
+
+
+Click on main Save Button
+    wait until element is visible   //button[@type='button'][normalize-space()='Save']    60
+    click element   //button[@type='button'][normalize-space()='Save']
+
+#Click on Search Bar
+#    wait until element is visible   css:input[placeholder='Search by Brand Name']   60
+#    click element   css:input[placeholder='Search by Brand Name']
+#    input text      css:input[placeholder='Search by Brand Name']   ${generated_BrandName}
+
+Click on the edit option
+    wait until element is visible
+
+
+

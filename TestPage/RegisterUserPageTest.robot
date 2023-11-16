@@ -388,3 +388,4 @@ Change plan and Change asset limit with ACH Payment method
     SubscriptionPage.Proceed the payment     proceed
     Generic.Fetch alert message text and compare it with      Payment Successful
 
+

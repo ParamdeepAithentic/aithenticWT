@@ -197,6 +197,51 @@ Add Department Bulk Edit
     Generic.Click on the button     Exit
     DashboardPage.Confirm the exit import process pop appers
     Generic.Click on the button     Confirm
+Add Brand
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    DashboardPage.Select an option from company details side list   Technology
+    Generic.Verify your current page location contains  technology-settings
+#    Generic.Verify your current page location contains      brand
+    ReplaceDomainAPI.Replace Domain
+    DashboardPage.See added brand link
+    DashboardPage.Click add brand button
+    DashboardPage.Create random brandName
+    DashboardPage.Add business manufacturer URL     qwerty
+    DashboardPage.Add brand manufacturer country      United States
+    DashboardPage.Save added brand details
+    Generic.Fetch alert message text and compare it with        Brand created successfully.
+    DashboardPage.Click on Edit address
+    DashboardPage.Enter Brand Address Line one
+    DashboardPage.Enter Brand address line two
+    DashboardPage.Select State  Iowa
+    DashboardPage.Select City     Ackley
+    DashboardPage.Zip code Input    655432
+#    DashboardPage.Click On Save Button
+    DashboardPage.Click On Save Button
+    Generic.Fetch alert message text and compare it with        Address created successfully
+    DashboardPage.Click on Add New Address
+
+    DashboardPage.Enter Brand New Address Line one
+    DashboardPage.Enter Brand new address line two
+    DashboardPage.Select State    Alaska
+
+    DashboardPage.Select City     Aleutians East Borough
+    DashboardPage.Zip code Input    788654
+    DashboardPage.Click On Save Button
+    Generic.Fetch alert message text and compare it with        Address created successfully
+    DashboardPage.Click on main Save Button
+#    DashboardPage.Click On Search Bar
+    DashboardPage.Verify Brand added      ${generated_BrandName}
+
+
+
+
+
+
 
 
 
