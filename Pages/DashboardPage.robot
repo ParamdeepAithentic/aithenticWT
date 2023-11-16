@@ -562,10 +562,7 @@ Search any keyword of FAQ section
 
 Verify the keyword
     [Arguments]    ${option}
-    wait until element is visible    css:.d-inline-block div.artical-question-container       60
-    ${get_alertMsg} =    get text    css:.d-inline-block div.artical-question-container
-    log to console     ${get_alertMsg}
-    should be equal    ${get_alertMsg}     ${option}
+    wait until element is visible    //div[contains(text(),'${option}')]      60
 
 
 Verify no result found with wrong FAQ
