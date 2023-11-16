@@ -79,6 +79,7 @@ ${add_dept_costCenter}     css:.profile-section-department .qa-add-department-co
 
 ${searchBar_department}     css:input[placeholder='Search by Department Name']
 ${fetch_departmentName}     css:td:nth-child(2)
+${share_toEmail}      css:#toEmail
 
 ################################### Network Discovery ######################################################
 #//button[normalize-space()='Download Agent']
@@ -447,7 +448,6 @@ Select option from department status column
     wait until element is visible      css:.ag-rich-select-row.ag-rich-select-row-selected    60
     click element       css:.ag-rich-select-row.ag-rich-select-row-selected
 
-
 Enter the new value in the cost center column
     [Arguments]    ${option}
     DashboardPage.Double click    ${option}
@@ -479,7 +479,6 @@ Verify the side option list parameters
    END
    lists should be equal    ${expectedList}    ${actualList}
 
-
 Verify the drawer list parameters
    wait until element is visible   ${drawerList}        60
    @{expectedList} =    Create List      Asset Overview     IT Performance       Subscription        Reports
@@ -504,3 +503,78 @@ Verify the profile option list parameters
       log to console    ${element.text}
       Append To List    ${actualList}     ${element.text}
     END
+
+click on share icon of dashboard page
+    wait until element is visible       css:.fa-share-alt              60
+    click element       css:.fa-share-alt
+
+Enter toEmail into popup
+    wait until element is visible      ${share_toEmail}         60
+    click element       ${share_toEmail}
+    ${random_string} =    Generate Random String       5      [LETTERS]
+    ${generate_sharetoEmail}=    Catenate    ${random_string}@yopmail.net
+    input text      ${share_toEmail}     ${generate_sharetoEmail}
+    log to console      ${generate_sharetoEmail}
+    set global variable    ${generate_sharetoEmail}
+
+Click on Send Invite button
+   Generic.click on the button     Send Invite
+
+Click on Register button in email
+    wait until element is visible       css:button[type='button']       60
+    click element       css:button[type='button']
+
+Switch to window
+    [Arguments]    ${option}
+     switch window           ${option}
+
+Enter business email
+    wait until element is enabled       ${register_Email}        60
+    click element   ${register_Email}
+    Clear element text      ${register_Email}
+    input text      ${register_Email}       ${generate_sharetoEmail}
+
+Enter account_holder_name
+    wait until element is visible       css:.ng-pristine .ng-touched        60
+    click element       css:.ng-pristine .ng-touched
+    input text      css:.ng-pristine .ng-touched        Tanisha
+
+click on Help center icon of dashboard page
+    wait until element is visible       css:.fa-question-circle         60
+    click element       css:.fa-question-circle
+
+
+
+Click on link of information center list
+    [Arguments]     ${link_name}
+    wait until element is visible       //span[contains(text(),'${link_name}')]     60
+    click element       //span[contains(text(),'${link_name}')]
+
+Click on link of Support
+    [Arguments]     ${link_name}
+    wait until element is visible       //span[contains(text(),'${link_name}')]     60
+    click element       //span[contains(text(),'${link_name}')]
+
+Search any keyword of FAQ section
+    [Arguments]    ${option}
+    Generic.Enter value into field      css:#questions      ${option}
+
+
+Verify the keyword
+    [Arguments]    ${option}
+    wait until element is visible    //div[contains(text(),'${option}')]      60
+
+
+Verify no result found with wrong FAQ
+    wait until element is visible      //div[normalize-space()='No results found']        60
+
+
+
+
+
+
+
+
+
+
+

@@ -198,27 +198,132 @@ Add Department Bulk Edit
     DashboardPage.Confirm the exit import process pop appers
     Generic.Click on the button     Confirm
 
+Invite user into Aithentic
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.select the option from the side menu    Dashboard
+    Generic.Verify your current page location contains      dashboard
+    ReplaceDomainAPI.Replace Domain
+    DashboardPage.click on share icon of dashboard page
+    DashboardPage.Enter toEmail into popup
+    DashboardPage.Click on Send Invite button
+    Generic.Verify alertify is visible
+    Generic.Fetch alert message text and compare it with        Invite sent successfully
+    Generic.Open new window      yopmail
+    Generic.Search yopmail emails for       ${generate_sharetoEmail}
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifmail
+    DashboardPage.Click on Register button in email
+    sleep       ${yop_sleep}
+    Switch Window        aithentic | Register
+    RegisterUserPage.Create random register first name
+    RegisterUserPage.Create random register last name
+    RegisterUserPage.Create random register company name
+    RegisterUserPage.Click on member type
+    RegisterUserPage.Select the member type      End User
+    DashboardPage.Enter business email
+    RegisterUserPage.Choose register user country      India   +91     9050756099
+    RegisterUserPage.Select the checkbox
+    RegisterUserPage.Save the register form
+#    Generic.Verify your current page location contains      update-email
+    Generic.Open new window     yopmail
+    Generic.Search yopmail emails for       ${generate_sharetoEmail}
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   Email Register Verification Required.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Click on sign In button in yopmail email
+    Unselect Frame
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Create - Account
+    Generic.Verify your current page location contains     create-account
+    UserAccount.Enter the password      Tani@123
+    UserAccount.Confirm the entered password    Tani@123
+    UserAccount.Click on term and condition checkbox
+    UserAccount.Click create account button
+    Generic.Fetch alert message text and compare it with       Account created successfully.
+    Generic.Verify your current page location contains     keycloak
+    LandingPage.Fill the login Form      ${generate_sharetoEmail}    Tani@123
+    Switch Window    Inbox
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   OTP Verification.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Get verification OTP from email    Your passcode is
+    sleep       ${yop_sleep}
+    Switch Window   aithentic | OTP
+    TwoFactorAuth.Enter the otp     ${passcode}
+    TwoFactorAuth.Click verification button
+    Generic.Verify your current page location contains     subscription
+    SubscriptionPage.Select country of manufacturer profile     United States
+    SubscriptionPage.Select state of manufacturer profile   Texas
+    SubscriptionPage.Select city of manufacturer profile    Abram
+    SubscriptionPage.Input text into manufacturer address one       This is address 1
+    SubscriptionPage.Input text into manufacturer address two       This is address 2
+    SubscriptionPage.Input text into manufacturer zip code     73301
+    SubscriptionPage.Select department of manufacturer profile      Customer Support
+    SubscriptionPage.Input text into manufacturer position/title    Agent
+    SubscriptionPage.Save the manufacturer profile
+    Generic.Verify your current page location contains     subscription-menu
+    Generic.Fetch alert message text and compare it with       Profile saved successfully
+    SubscriptionPage.Select plan of subscription
+    SubscriptionPage.Select and move next with subscription
+    Generic.Verify your current page location contains     subscription-payment
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Switch to card iframe
+    SubscriptionPage.Enter cardnumber    42424242424242420424242
+    Unselect Frame
+    SubscriptionPage.Enter card user name    Paramdeep Singh
+    SubscriptionPage.Check the authorization checkbox
+    SubscriptionPage.Check the acknowledgement checkbox
+    SubscriptionPage.Click on complete process button
+    Generic.Verify your current page location contains     welcome
+    Generic.Fetch alert message text and compare it with       Payment Successful
+    DashboardPage.Click on complete setup button      Complete Setup
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the location ID checkbox   yes
+    DashboardPage.Select the asset ID checkbox      yes
+    Generic.Fetch alert message text and compare it with       Settings Updated
 
+Verify Help Center
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.select the option from the side menu    Dashboard
+    Generic.Verify your current page location contains      dashboard
+    DashboardPage.click on Help center icon of dashboard page
+    DashboardPage.Click on link of information center list      A Complete Guide
+    sleep       ${yop_sleep}
+    Switch Window       Get Started Guide - Jira Service Management
+    Generic.Verify your current page location contains     servicedesk
+    Generic.Verify your current page contains this text     Get Started Guide
+    Switch Window      aithentic | Asset - Overview
+    DashboardPage.Click on link of information center list      Knowledge Base
 
+    sleep       ${yop_sleep}
+    Switch Window       Help Center Home - Jira Service Management
+    Generic.Verify your current page location contains     servicedesk
+    Generic.Verify your current page contains this text     SEARCH OUR KNOWLEDGE BASE
+    Switch Window       aithentic | Asset - Overview
+    DashboardPage.Click on link of information center list      What’s New!
 
+    sleep       ${yop_sleep}
+    Switch Window       What's New! - Jira Service Management
+    Generic.Verify your current page location contains     servicedesk
+    Generic.Verify your current page contains this text     What's New!
+    Switch Window       aithentic | Asset - Overview
+    DashboardPage.Click on link of Support      Customer
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    sleep       ${yop_sleep}
+    Switch Window       Customer Service Desk - Jira Service Management
+    Generic.Verify your current page location contains      servicedesk
+    Generic.Verify your current page contains this text     Customer Service Desk
+    Switch Window       aithentic | Asset - Overview
+    DashboardPage.Search any keyword of FAQ section     How do I complete my account setup?
+    DashboardPage.Verify the keyword        How do I complete my account setup?
+    DashboardPage.Search any keyword of FAQ section     Testing
+    DashboardPage.Verify no result found with wrong FAQ
 
