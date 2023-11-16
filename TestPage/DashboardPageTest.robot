@@ -202,7 +202,7 @@ Add Department Bulk Edit
     DashboardPage.Verify department added     ${generated_EditDepartmentName}
 
 
-Add Brand
+Add Brand via personal detail under technology
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
