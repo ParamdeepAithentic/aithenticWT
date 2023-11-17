@@ -79,10 +79,17 @@ ${add_dept_costCenter}     css:.profile-section-department .qa-add-department-co
 
 ${searchBar_department}     css:input[placeholder='Search by Department Name']
 ${fetch_departmentName}     css:td:nth-child(2)
+
+${address_Line}     css:#addressLine1
+${address_line2}    css:#addressLine2
+
+
 ${share_toEmail}      css:#toEmail
+
 
 ################################### Network Discovery ######################################################
 #//button[normalize-space()='Download Agent']
+
 
 
 
@@ -319,8 +326,8 @@ Verify Brand added
      log to console     ${get_brandName}
      should be equal    ${BrandName}     ${get_brandName}
      ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  10  ${pageHeading}   DashboardPage - Verify Brand added      10    ${pageTime}     ${ActualTime}    DashboardPage_Time
+     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+     Calculate Running time  10  ${pageHeading}   DashboardPage - Verify Brand added      10    ${pageTime}     ${ActualTime}    DashboardPage_Time
 
 
 
@@ -504,6 +511,101 @@ Verify the profile option list parameters
       Append To List    ${actualList}     ${element.text}
     END
 
+Select Technology from personal deatils section
+    [Arguments]     ${option}
+    wait until element is visible   xpath://span[normalize-space()='${option}']     60
+    click element   xpath://span[normalize-space()='${option}']
+
+Click on View Your Added Brand List
+    wait until element is visible   xpath://a[normalize-space()='View Your Added Brand List']   60
+    click element   xpath://a[normalize-space()='View Your Added Brand List']
+
+Click on Add New Address
+    wait until element is visible   xpath://span[@title='Click here to add address']    60
+    click element   xpath://span[@title='Click here to add address']
+
+Enter Brand Address Line one
+    wait until element is visible     ${address_Line}         60
+    wait until element is enabled     ${address_Line}         60
+    click element      ${address_Line}
+    ${random_string} =    Generate Random String       10      [LETTERS]
+    ${generate_AddressLineone}=    Catenate    ${random_string}
+    input text      ${address_Line}     ${generate_AddressLine}
+    log to console      ${generate_AddressLineone}
+
+
+Enter Brand address line two
+    wait until element is visible     ${address_line2}         60
+    wait until element is enabled     ${address_line2}         60
+    click element      ${address_line2}
+    ${random_string} =    Generate Random String       10      [LETTERS]
+    ${generate_AddressLine2}=    Catenate    ${random_string}
+    input text      ${address_line2}     ${generate_AddressLine2}
+    log to console      ${generate_AddressLine2}
+    
+
+Select State
+    [Arguments]     ${country}
+    Wait until element is visible   css:#State  60
+    click element   css:#State
+    wait until element is visible   css:span[title='${country}']    60
+    click element   css:span[title='${country}']
+
+Select City
+    [Arguments]     ${city}
+    wait until element is not visible       ${loaderIcon}    60
+    wait until element is visible   css:#City   60
+    click element   css:#City
+    wait until element is visible   css:span[title='${city}']     60
+    click element   css:span[title='${city}']
+
+Click on Save Button
+    wait until element is visible   css:button[aria-label='Close'][type='submit']   60
+    click element   css:button[aria-label='Close'][type='submit']
+
+Zip code Input
+    [Arguments]     ${code}
+    wait until element is visible   css:#zip    60
+    click element   css:#zip
+    input text  css:#zip    ${code}
+
+Click on Edit address
+    wait until element is visible   css:i[title='Click here to edit address']   60
+    click element   css:i[title='Click here to edit address']
+    wait until element is not visible       ${loaderIcon}    60
+
+See added brand link
+    wait until element is visible   //a[normalize-space()='View Your Added Brand List']   60
+    click element   //a[normalize-space()='View Your Added Brand List']
+
+Enter Brand New Address Line one
+    wait until element is visible     ${address_Line}         60
+    click element      ${address_Line}
+    ${random_string} =    Generate Random String       10      [LETTERS]
+    ${generate_newaddressone}=    Catenate    ${random_string}
+    input text      ${address_Line}     ${generate_newaddressone}
+    Press Keys  ${address_Line}            ENTER
+    log to console      ${generate_newaddressone}
+
+
+Enter Brand new address line two
+    wait until element is visible     ${address_line2}         60
+    click element      ${address_line2}
+    ${random_string} =    Generate Random String       10      [LETTERS]
+    ${generate_newaddresstwo}=    Catenate    ${random_string}
+    input text      ${address_line2}     ${generate_newaddresstwo}
+    log to console  ${generate_newaddresstwo}
+
+#    wait until element is visible   ${generate_newaddress}      60
+#    click element   ${generate_newaddress}
+    log to console      ${generate_newaddress}
+    set global variable    ${generate_newaddress}
+
+
+Click on main Save Button
+    wait until element is visible   //button[@type='button'][normalize-space()='Save']    60
+    click element   //button[@type='button'][normalize-space()='Save']
+
 click on share icon of dashboard page
     wait until element is visible       css:.fa-share-alt              60
     click element       css:.fa-share-alt
@@ -526,7 +628,7 @@ Click on Register button in email
 
 Switch to window
     [Arguments]    ${option}
-     switch window           ${option}
+     switch window      ${option}
 
 Enter business email
     wait until element is enabled       ${register_Email}        60
@@ -567,11 +669,6 @@ Verify the keyword
 
 Verify no result found with wrong FAQ
     wait until element is visible      //div[normalize-space()='No results found']        60
-
-
-
-
-
 
 
 
