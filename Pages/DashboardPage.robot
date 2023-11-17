@@ -525,6 +525,7 @@ Click on Add New Address
     click element   xpath://span[@title='Click here to add address']
 
 Enter Brand Address Line one
+    wait until element is not visible   ${loaderIcon}    60
     wait until element is visible     ${address_Line}         60
     wait until element is enabled     ${address_Line}         60
     click element      ${address_Line}
@@ -587,7 +588,7 @@ Enter Brand New Address Line one
     input text      ${address_Line}     ${generate_newaddress}
     Press Keys  ${address_Line}            ENTER
     log to console      ${generate_newaddress}
-    set global variable    ${generate_newaddress}
+#    set global variable    ${generate_newaddress}
 
 Enter Brand new address line two
     wait until element is visible     ${address_line2}         60
@@ -595,11 +596,8 @@ Enter Brand new address line two
     ${random_string} =    Generate Random String       10      [LETTERS]
     ${generate_newaddress}=    Catenate    ${random_string}
     input text      ${address_line2}     ${generate_newaddress}
-
-#    wait until element is visible   ${generate_newaddress}      60
-#    click element   ${generate_newaddress}
     log to console      ${generate_newaddress}
-    set global variable    ${generate_newaddress}
+#    set global variable    ${generate_newaddress}
 
 
 Click on main Save Button
@@ -689,8 +687,8 @@ Add static Business Manufacturer URL
 
 Click on Update Button
     wait until element is not visible   ${loaderIcon}   60
-    wait until element is visible  css:button[title='Click here to Update']   60
-    click element   css:button[title='Click here to Update']
+    wait until element is visible  xpath://button[normalize-space()='Update']   60
+    click element   xpath://button[normalize-space()='Update']
 
 Click on edit button
     wait until element is not visible   ${loaderIcon}   60
@@ -700,6 +698,100 @@ Click on edit button
 Click on Cross Icon
     wait until element is visible   //div[@class='row no-gutters mb-1']//div[2]//div[1]//div[2]//span[1]    60
     click element   //div[@class='row no-gutters mb-1']//div[2]//div[1]//div[2]//span[1]
+
+Edit Brand Address Line one
+    wait until element is not visible   ${loaderIcon}    60
+    wait until element is visible   css:input[formcontrolname=StreetAddress1]           60
+    wait until element is enabled     css:input[formcontrolname=StreetAddress1]         60
+    click element      css:input[formcontrolname=StreetAddress1]
+    Clear Element Text  css:input[formcontrolname=StreetAddress1]
+    ${random_string} =    Generate Random String       10      [LETTERS]
+    ${generate_editAddressLine1}=    Catenate    ${random_string}
+    input text   css:input[formcontrolname=StreetAddress1]       ${generate_editAddressLine1}
+    log to console      ${generate_editAddressLine1}
+    set global variable    ${generate_editAddressLine1}
+
+edit Brand Address Line two
+    wait until element is not visible   ${loaderIcon}    60
+    wait until element is visible   css:input[formcontrolname=StreetAddress2]           60
+    wait until element is enabled     css:#StreetAddress2         60
+    click element      css:input[formcontrolname=StreetAddress2]
+    Clear Element Text  css:input[formcontrolname=StreetAddress2]
+    ${random_string} =    Generate Random String       10      [LETTERS]
+    ${generate_editAddressLine2}=    Catenate    ${random_string}
+    input text   css:input[formcontrolname=StreetAddress2]        ${generate_editAddressLine2}
+    log to console      ${generate_editAddressLine2}
+    set global variable    ${generate_editAddressLine2}
+
+Edit State while edit address
+    [Arguments]     ${city}
+    wait until element is not visible   ${loaderIcon}   60
+    wait until element is visible   css:#addressState   60
+    wait until element is enabled  css:#addressState   60
+#    click element   css:#addressState
+    click element  css:ng-select[placeholder='Select State'] span[title='Clear all']
+    click element   css:#addressState
+
+    wait until element is visible   css:span[title='${city}']   60
+    click element   css:span[title='${city}']
+
+Edit city while edit address
+    [Arguments]     ${city}
+    wait until element is not visible   ${loaderIcon}   60
+    wait until element is visible   css:#addressCity   60
+#    click element   css:#addressCity
+#    click element  css:ng-select[placeholder='Select City'] span[title='Clear all']
+    click element   css:#addressCity
+    wait until element is visible   css:span[title='${city}']   60
+    click element   css:span[title='${city}']
+
+Edit New Brand Address Line one
+    wait until element is not visible   ${loaderIcon}    60
+    wait until element is visible   css:#CompanyAddressId           60
+    wait until element is enabled     css:#CompanyAddressId         60
+    click element      css:#CompanyAddressId
+
+    ${random_string} =    Generate Random String       10      [LETTERS]
+    ${generateNew_editAddressLine1}=    Catenate    ${random_string}
+    input text   css:#CompanyAddressId       ${generateNew_editAddressLine1}
+    Press Keys  css:#CompanyAddressId             ENTER
+    log to console      ${generateNew_editAddressLine1}
+    set global variable    ${generateNew_editAddressLine1}
+
+edit New Brand Address Line two
+    wait until element is not visible   ${loaderIcon}    60
+    wait until element is visible   css:input[formcontrolname=StreetAddress2]           60
+    wait until element is enabled     css:#StreetAddress2         60
+    click element      css:input[formcontrolname=StreetAddress2]
+
+    ${random_string} =    Generate Random String       10      [LETTERS]
+    ${generateNew_editAddressLine2}=    Catenate    ${random_string}
+    input text   css:input[formcontrolname=StreetAddress2]        ${generateNew_editAddressLine2}
+    log to console      ${generateNew_editAddressLine2}
+    set global variable    ${generateNew_editAddressLine2}
+
+Select New Address State
+    [Arguments]     ${country}
+    Wait until element is visible   css:#addressState  60
+    click element   css:#addressState
+    wait until element is visible   css:span[title='${country}']    60
+    click element   css:span[title='${country}']
+
+Click on back to brand list link
+    wait until element is visible   css:.theme-blue.text-decoration-none.font-weight-bold   60
+    click element   css:.theme-blue.text-decoration-none.font-weight-bold
+
+Deactivate pop appears
+    wait until element is visible   ${select_remove_popUp_Yes}
+    click element   ${select_remove_popUp_Yes}
+
+Activate pop appears
+    wait until element is visible   ${select_remove_popUp_Yes}
+    click element   ${select_remove_popUp_Yes}
+
+Remove pop appears
+    wait until element is visible   ${select_remove_popUp_Yes}
+    click element   ${select_remove_popUp_Yes}
 
 
 

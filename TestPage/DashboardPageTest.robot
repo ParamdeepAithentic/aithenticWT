@@ -219,6 +219,7 @@ Add Brand via personal detail under technology
     DashboardPage.Add brand manufacturer country      United States
     DashboardPage.Save added brand details
     Generic.Fetch alert message text and compare it with        Brand created successfully.
+
     DashboardPage.Click on Edit address
     DashboardPage.Enter Brand Address Line one
     DashboardPage.Enter Brand address line two
@@ -228,12 +229,11 @@ Add Brand via personal detail under technology
 #    DashboardPage.Click On Save Button
     DashboardPage.Click On Save Button
     Generic.Fetch alert message text and compare it with        Address created successfully
-    DashboardPage.Click on Add New Address
 
+    DashboardPage.Click on Add New Address
     DashboardPage.Enter Brand New Address Line one
     DashboardPage.Enter Brand new address line two
     DashboardPage.Select State    Alaska
-
     DashboardPage.Select City     Aleutians East Borough
     DashboardPage.Zip code Input    788654
     DashboardPage.Click On Save Button
@@ -241,10 +241,6 @@ Add Brand via personal detail under technology
     DashboardPage.Click on main Save Button
 #    DashboardPage.Click On Search Bar
     DashboardPage.Verify Brand added      ${generated_BrandName}
-
-
-
-
 
 
 
@@ -339,6 +335,7 @@ Invite user into Aithentic
     DashboardPage.Select the asset ID checkbox      yes
     Generic.Fetch alert message text and compare it with       Settings Updated
 
+
 Verify Help Center
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
@@ -377,7 +374,7 @@ Verify Help Center
     DashboardPage.Search any keyword of FAQ section     Testing
     DashboardPage.Verify no result found with wrong FAQ
 
-Edit Brand and address via brand under profile list
+Edit and delete Brand and address via brand under profile list
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
@@ -386,9 +383,34 @@ Edit Brand and address via brand under profile list
     DashboardPage.Select an option from company details side list   Technology
     Generic.Verify your current page location contains  technology-settings
 #    Generic.Verify your current page location contains      brand
-#    ReplaceDomainAPI.Replace Domain
+    ReplaceDomainAPI.Replace Domain
     DashboardPage.See added brand link
-#    DashboardPage.Verify Brand added       ${get_brandName}
+    DashboardPage.Click add brand button
+    DashboardPage.Create random brandName
+    DashboardPage.Add business manufacturer URL     qwerty
+    DashboardPage.Add brand manufacturer country      United States
+    DashboardPage.Save added brand details
+    Generic.Fetch alert message text and compare it with        Brand created successfully.
+    DashboardPage.Click on Edit address
+    DashboardPage.Enter Brand Address Line one
+    DashboardPage.Enter Brand address line two
+    DashboardPage.Select State  Iowa
+    DashboardPage.Select City     Ackley
+    DashboardPage.Zip code Input    655432
+    DashboardPage.Click On Save Button
+    Generic.Fetch alert message text and compare it with        Address created successfully
+
+    DashboardPage.Click on Add New Address
+    DashboardPage.Enter Brand New Address Line one
+    DashboardPage.Enter Brand new address line two
+    DashboardPage.Select State    Alaska
+    DashboardPage.Select City     Aleutians East Borough
+    DashboardPage.Zip code Input    788654
+    DashboardPage.Click On Save Button
+    Generic.Fetch alert message text and compare it with        Address created successfully
+
+    DashboardPage.Click on main Save Button
+    DashboardPage.Verify Brand added      ${generated_BrandName}
     DashboardPage.Click on three dots
     Generic.Select other option from profile list   Edit
     DashboardPage.click on Plus icon
@@ -399,30 +421,35 @@ Edit Brand and address via brand under profile list
     DashboardPage.Click on Cross Icon
     Generic.Fetch alert message text and compare it with       Address deleted successfully
     DashboardPage.Click on Edit address
-    DashboardPage.Enter Brand Address Line one
-    DashboardPage.Enter Brand address line two
-    DashboardPage.Select State  Iowa
-    DashboardPage.Select City     Ackley
-    DashboardPage.Zip code Input    655432
+    DashboardPage.Edit Brand Address Line one
+    DashboardPage.edit Brand Address Line two
+    DashboardPage.Edit State while edit address  Arizona
+    DashboardPage.Edit city while edit address    Ajo
+    DashboardPage.Zip code Input    988765
 #    DashboardPage.Click On Save Button
     DashboardPage.Click On Save Button
     Generic.Fetch alert message text and compare it with        Address created successfully
+
     DashboardPage.Click on Add New Address
-
-    DashboardPage.Enter Brand New Address Line one
-    DashboardPage.Enter Brand new address line two
-    DashboardPage.Select State    American Samoa
-
-    DashboardPage.Select City     Aleutians East Borough
+    DashboardPage.Edit New Brand Address Line one
+    DashboardPage.edit New Brand Address Line two
+    DashboardPage.Select New Address State    Arkansas
+    DashboardPage.Edit city while edit address     Alma
     DashboardPage.Zip code Input    788654
     DashboardPage.Click On Save Button
     Generic.Fetch alert message text and compare it with        Address created successfully
-    DasboardPage.Click on update button
-    Generic.Fetch alert message text and compare it with      Brand updated successfully.
-
-
-
-
-
-
-
+    DashboardPage.Click On Update Button
+    Generic.Fetch alert message text and compare it with      Brand Updated Successfully.
+    DashboardPage.Click on back to brand list link
+    DashboardPage.Click on three dots
+    Generic.Select other option from profile list   Deactivate
+    DashboardPage.Deactivate pop appears
+    Generic.Fetch alert message text and compare it with      Brand deactivated successully
+    DashboardPage.Click on three dots
+    Generic.Select other option from profile list   Activate
+    DashboardPage.Activate pop appears
+    Generic.Fetch alert message text and compare it with      Brand activated successfully
+    DashboardPage.Click on three dots
+    Generic.Select other option from profile list   Remove
+    DashboardPage.Remove pop appears
+    Generic.Fetch alert message text and compare it with      Brand deleted successfully
