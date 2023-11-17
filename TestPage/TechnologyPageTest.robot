@@ -800,3 +800,110 @@ Add New Support Partner and Assign that Partner
     Generic.Fetch alert message text and compare it with        Partners updated successfully
     TechnologyPage.Verify that support partner is added in partner association      Support Partner
     TechnologyPage.Verify that supplier partner is added in partner association     Supplier
+
+
+Verify the history of added technology
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.click on add technology button
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    #           TechnologyPage.Click technology product input field
+    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+
+    TechnologyPage.Select tab under technology details      partners
+    TechnologyPage.Click on assign partner button under technology details page        Assign Partner
+
+    TechnologyPage.Click here to add support partner
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Add - Partner
+    Generic.Verify your current page location contains      addpartner
+    PartnersPage.Create partner random business name
+    PartnersPage.Enter partner business URL      ${generate_BusinessName}
+    PartnersPage.Select partner country       United States
+    TechnologyPage.Click contact main save button
+    Generic.Verify alertify is visible
+    sleep       2
+    Switch Window       aithentic | Technology - Details
+    TechnologyPage.Wait till support partner get auto polute        ${generate_BusinessName}
+#    sleep       10
+
+    TechnologyPage.Click here to add supplier partner
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Add - Partner
+    Generic.Verify your current page location contains      addpartner
+    PartnersPage.Create partner random business name
+    PartnersPage.Enter partner business URL      ${generate_BusinessName}
+    PartnersPage.Select partner country       United States
+    TechnologyPage.Click contact main save button
+    Generic.Verify alertify is visible
+    Switch Window       aithentic | Technology - Details
+    TechnologyPage.Wait till supplier partner get auto polute       ${generate_BusinessName}
+    TechnologyPage.Submit the assign partner form       Submit
+    Generic.Fetch alert message text and compare it with        Partners updated successfully
+
+    TechnologyPage.Select tab under technology details      history
+    TechnologyPage.Verify area changed under history tab     Supplier
+#    TechnologyPage.Confirm area changed with view under history tab    Supplier
+#    TechnologyPage.Close the view history pop up
+#
+    TechnologyPage.Verify area changed under history tab      Support Partner
+#    TechnologyPage.Confirm area changed with view under history tab     Support Partner
+#    TechnologyPage.Close the view history pop up
+#
+    TechnologyPage.Verify area changed under history tab       Created At
+    TechnologyPage.Confirm area changed with view under history tab      Created At
+    TechnologyPage.Close the view history pop up
+    TechnologyPage.Select tab under technology details      parent-components
+
+    TechnologyPage.Click on add new entry parent button under technology details page      Add New Entry
+    TechnologyPage.Select add new entry        New Asset
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    #           TechnologyPage.Click technology product input field
+    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+    TechnologyPage.Select tab under technology details      history
+
+    TechnologyPage.Verify area changed under history tab       New Parent
+
+    TechnologyPage.Select tab under technology details      components
+    TechnologyPage.Click on add new entry component button under technology details page       Add New Entry
+    TechnologyPage.Select add new entry        New Asset
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    #           TechnologyPage.Click technology product input field
+    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+    TechnologyPage.Select tab under technology details      history
+
+    TechnologyPage.Verify area changed under history tab        New Component
