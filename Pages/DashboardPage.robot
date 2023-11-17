@@ -529,10 +529,10 @@ Enter Brand Address Line one
     wait until element is enabled     ${address_Line}         60
     click element      ${address_Line}
     ${random_string} =    Generate Random String       10      [LETTERS]
-    ${generate_AddressLine}=    Catenate    ${random_string}
+    ${generate_AddressLineone}=    Catenate    ${random_string}
     input text      ${address_Line}     ${generate_AddressLine}
-    log to console      ${generate_AddressLine}
-    set global variable    ${generate_AddressLine}
+    log to console      ${generate_AddressLineone}
+
 
 Enter Brand address line two
     wait until element is visible     ${address_line2}         60
@@ -542,7 +542,7 @@ Enter Brand address line two
     ${generate_AddressLine2}=    Catenate    ${random_string}
     input text      ${address_line2}     ${generate_AddressLine2}
     log to console      ${generate_AddressLine2}
-    set global variable    ${generate_AddressLine2}
+    
 
 Select State
     [Arguments]     ${country}
@@ -582,18 +582,19 @@ Enter Brand New Address Line one
     wait until element is visible     ${address_Line}         60
     click element      ${address_Line}
     ${random_string} =    Generate Random String       10      [LETTERS]
-    ${generate_newaddress}=    Catenate    ${random_string}
-    input text      ${address_Line}     ${generate_newaddress}
+    ${generate_newaddressone}=    Catenate    ${random_string}
+    input text      ${address_Line}     ${generate_newaddressone}
     Press Keys  ${address_Line}            ENTER
-    log to console      ${generate_newaddress}
-    set global variable    ${generate_newaddress}
+    log to console      ${generate_newaddressone}
+
 
 Enter Brand new address line two
     wait until element is visible     ${address_line2}         60
     click element      ${address_line2}
     ${random_string} =    Generate Random String       10      [LETTERS]
-    ${generate_newaddress}=    Catenate    ${random_string}
-    input text      ${address_line2}     ${generate_newaddress}
+    ${generate_newaddresstwo}=    Catenate    ${random_string}
+    input text      ${address_line2}     ${generate_newaddresstwo}
+    log to console  ${generate_newaddresstwo}
 
 #    wait until element is visible   ${generate_newaddress}      60
 #    click element   ${generate_newaddress}
