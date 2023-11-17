@@ -577,6 +577,7 @@ Click on Edit address
 See added brand link
     wait until element is visible   //a[normalize-space()='View Your Added Brand List']   60
     click element   //a[normalize-space()='View Your Added Brand List']
+    wait until element is not visible   ${loaderIcon}   60
 
 Enter Brand New Address Line one
     wait until element is visible     ${address_Line}         60
@@ -668,6 +669,41 @@ Verify the keyword
 
 Verify no result found with wrong FAQ
     wait until element is visible      //div[normalize-space()='No results found']        60
+
+Click on three dots
+    wait until element is visible   css:.fas.fa-ellipsis-h.three-dots   60
+    click element   css:.fas.fa-ellipsis-h.three-dots
+
+click on Plus icon
+    wait until element is not visible   ${loaderIcon}   60
+    wait until element is visible   css:.fas.fa-plus.float-right  60
+    click element   css:.fas.fa-plus.float-right
+
+
+
+Add static Business Manufacturer URL
+    [Arguments]    ${option}
+    wait until element is visible       ${add_brand_mfc_URL}
+    click element       ${add_brand_mfc_URL}
+    input text      ${add_brand_mfc_URL}        ${option}
+
+Click on Update Button
+    wait until element is not visible   ${loaderIcon}   60
+    wait until element is visible  css:button[title='Click here to Update']   60
+    click element   css:button[title='Click here to Update']
+
+Click on edit button
+    wait until element is not visible   ${loaderIcon}   60
+    wait until element is visible  //button[normalize-space()='Edit']  60
+    click element   //button[normalize-space()='Edit']
+
+Click on Cross Icon
+    wait until element is visible   //div[@class='row no-gutters mb-1']//div[2]//div[1]//div[2]//span[1]    60
+    click element   //div[@class='row no-gutters mb-1']//div[2]//div[1]//div[2]//span[1]
+
+
+
+
 
 
 

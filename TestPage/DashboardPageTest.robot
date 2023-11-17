@@ -377,7 +377,52 @@ Verify Help Center
     DashboardPage.Search any keyword of FAQ section     Testing
     DashboardPage.Verify no result found with wrong FAQ
 
-Edit Brand
+Edit Brand and address via brand under profile list
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    DashboardPage.Select an option from company details side list   Technology
+    Generic.Verify your current page location contains  technology-settings
+#    Generic.Verify your current page location contains      brand
+#    ReplaceDomainAPI.Replace Domain
+    DashboardPage.See added brand link
+#    DashboardPage.Verify Brand added       ${get_brandName}
+    DashboardPage.Click on three dots
+    Generic.Select other option from profile list   Edit
+    DashboardPage.click on Plus icon
+    DashboardPage.Add static Business Manufacturer URL      yopmail.net
+    DashboardPage.Click On Update Button
+    Generic.Fetch alert message text and compare it with      Brand Updated Successfully.
+    DashboardPage.Click on edit button
+    DashboardPage.Click on Cross Icon
+    Generic.Fetch alert message text and compare it with       Address deleted successfully
+    DashboardPage.Click on Edit address
+    DashboardPage.Enter Brand Address Line one
+    DashboardPage.Enter Brand address line two
+    DashboardPage.Select State  Iowa
+    DashboardPage.Select City     Ackley
+    DashboardPage.Zip code Input    655432
+#    DashboardPage.Click On Save Button
+    DashboardPage.Click On Save Button
+    Generic.Fetch alert message text and compare it with        Address created successfully
+    DashboardPage.Click on Add New Address
+
+    DashboardPage.Enter Brand New Address Line one
+    DashboardPage.Enter Brand new address line two
+    DashboardPage.Select State    American Samoa
+
+    DashboardPage.Select City     Aleutians East Borough
+    DashboardPage.Zip code Input    788654
+    DashboardPage.Click On Save Button
+    Generic.Fetch alert message text and compare it with        Address created successfully
+    DasboardPage.Click on update button
+    Generic.Fetch alert message text and compare it with      Brand updated successfully.
+
+
+
+
 
 
 
