@@ -382,9 +382,10 @@ Edit and delete Brand and address via brand under profile list
     Generic.Verify your current page location contains      personal-profile
     DashboardPage.Select an option from company details side list   Technology
     Generic.Verify your current page location contains  technology-settings
-#    Generic.Verify your current page location contains      brand
+
     ReplaceDomainAPI.Replace Domain
-    DashboardPage.See added brand link
+
+    DashboardPage.Click on View Your Added Brand List
     DashboardPage.Click add brand button
     DashboardPage.Create random brandName
     DashboardPage.Add business manufacturer URL     qwerty
@@ -415,18 +416,18 @@ Edit and delete Brand and address via brand under profile list
     Generic.Select other option from profile list   Edit
     DashboardPage.click on Plus icon
     DashboardPage.Add static Business Manufacturer URL      yopmail.net
-    DashboardPage.Click On Update Button
+    Generic.click on the button   Update
     Generic.Fetch alert message text and compare it with      Brand Updated Successfully.
-    DashboardPage.Click on edit button
+    Generic.click on the button   Edit
     DashboardPage.Click on Cross Icon
     Generic.Fetch alert message text and compare it with       Address deleted successfully
     DashboardPage.Click on Edit address
     DashboardPage.Edit Brand Address Line one
-    DashboardPage.edit Brand Address Line two
+    DashboardPage.Edit Brand Address Line two
     DashboardPage.Edit State while edit address  Arizona
     DashboardPage.Edit city while edit address    Ajo
     DashboardPage.Zip code Input    988765
-#    DashboardPage.Click On Save Button
+
     DashboardPage.Click On Save Button
     Generic.Fetch alert message text and compare it with        Address created successfully
 
@@ -438,18 +439,19 @@ Edit and delete Brand and address via brand under profile list
     DashboardPage.Zip code Input    788654
     DashboardPage.Click On Save Button
     Generic.Fetch alert message text and compare it with        Address created successfully
-    DashboardPage.Click On Update Button
+
+    Generic.click on the button   Update
     Generic.Fetch alert message text and compare it with      Brand Updated Successfully.
     DashboardPage.Click on back to brand list link
     DashboardPage.Click on three dots
     Generic.Select other option from profile list   Deactivate
-    DashboardPage.Deactivate pop appears
+    DashboardPage.Select option from the pop up     yes
     Generic.Fetch alert message text and compare it with      Brand deactivated successully
     DashboardPage.Click on three dots
     Generic.Select other option from profile list   Activate
-    DashboardPage.Activate pop appears
+    DashboardPage.Select option from the pop up     yes
     Generic.Fetch alert message text and compare it with      Brand activated successfully
     DashboardPage.Click on three dots
     Generic.Select other option from profile list   Remove
-    DashboardPage.Remove pop appears
+    DashboardPage.Select option from the pop up     yes
     Generic.Fetch alert message text and compare it with      Brand deleted successfully
