@@ -525,6 +525,7 @@ Click on Add New Address
     click element   xpath://span[@title='Click here to add address']
 
 Enter Brand Address Line one
+
     wait until element is visible     ${address_Line}         60
     wait until element is enabled     ${address_Line}         60
     click element      ${address_Line}
@@ -579,6 +580,7 @@ See added brand link
     click element   //a[normalize-space()='View Your Added Brand List']
 
 Enter Brand New Address Line one
+    wait until element is not visible       ${loaderIcon}       60
     wait until element is visible     ${address_Line}         60
     click element      ${address_Line}
     ${random_string} =    Generate Random String       10      [LETTERS]
@@ -625,9 +627,6 @@ Click on Register button in email
     wait until element is visible       css:button[type='button']       60
     click element       css:button[type='button']
 
-Switch to window
-    [Arguments]    ${option}
-     switch window      ${option}
 
 Enter business email
     wait until element is enabled       ${register_Email}        60
@@ -643,7 +642,6 @@ Enter account_holder_name
 click on Help center icon of dashboard page
     wait until element is visible       css:.fa-question-circle         60
     click element       css:.fa-question-circle
-
 
 
 Click on link of information center list
@@ -668,6 +666,13 @@ Verify the keyword
 
 Verify no result found with wrong FAQ
     wait until element is visible      //div[normalize-space()='No results found']        60
+
+Add static Business Manufacturer URL
+    [Arguments]    ${option}
+    wait until element is visible       ${add_brand_mfc_URL}
+    click element       ${add_brand_mfc_URL}
+    input text      ${add_brand_mfc_URL}        ${option}
+
 
 
 

@@ -213,7 +213,7 @@ Add Brand
     DashboardPage.See added brand link
     DashboardPage.Click add brand button
     DashboardPage.Create random brandName
-    DashboardPage.Add business manufacturer URL     qwerty
+    DashboardPage.Add static Business Manufacturer URL      yopmail.net
     DashboardPage.Add brand manufacturer country      United States
     DashboardPage.Save added brand details
     Generic.Fetch alert message text and compare it with        Brand created successfully.
@@ -239,12 +239,6 @@ Add Brand
     DashboardPage.Click on main Save Button
 #    DashboardPage.Click On Search Bar
     DashboardPage.Verify Brand added      ${generated_BrandName}
-
-
-
-
-
-
 
 Invite user into Aithentic
     Generic.click on the tab	Login
