@@ -497,7 +497,7 @@ Confirm the exit import process pop appers
 
 Verify the side option list parameters
    wait until element is visible   ${side_options}      60
-   @{expectedList} =    Create List        Aithentic logo    Dashboard       Messages        Location        Team Members      Partners      Contracts      Technology      #Asecure-Cloud-Login
+   @{expectedList} =    Create List        Aithentic logo    Dashboard       Messages        Location        Team Members      Partners      Contracts      Technology      #Asecure Cloud Login
    ${elements} =  Get WebElements     ${side_options}
    @{actualList} =   Create List
    FOR  ${element}  IN      @{elements}
@@ -550,10 +550,10 @@ Enter Brand Address Line one
     wait until element is enabled     ${address_Line}         60
     click element      ${address_Line}
     ${random_string} =    Generate Random String       10      [NUMBERS]
-    ${generate_AddressLine}=    Catenate    Address_${random_string}
-    input text      ${address_Line}     ${generate_AddressLine}
-    log to console      ${generate_AddressLine}
-#    set global variable    ${generate_AddressLine}
+    ${generate_AddressLineone}=    Catenate    Address_${random_string}
+    input text      ${address_Line}     ${generate_AddressLineone}
+    log to console      ${generate_AddressLineone}
+#    set global variable    ${generate_AddressLineone}
 
 Enter Brand address line two
     wait until element is visible     ${address_line2}         60
@@ -599,21 +599,21 @@ Enter Brand New Address Line one
     wait until element is visible     ${address_Line}         60
     click element      ${address_Line}
     ${random_string} =    Generate Random String       10      [NUMBERS]
-    ${generate_newaddress}=    Catenate    Address_${random_string}
-    input text      ${address_Line}     ${generate_newaddress}
+    ${generate_newaddressone}=    Catenate    Address_${random_string}
+    input text      ${address_Line}     ${generate_newaddressone}
     Press Keys  ${address_Line}            ENTER
-    log to console      ${generate_newaddress}
+    log to console      ${generate_newaddressone}
 #    set global variable    ${generate_newaddress}
+
 
 Enter Brand new address line two
     wait until element is visible     ${address_line2}         60
     click element      ${address_line2}
     ${random_string} =    Generate Random String       10      [NUMBERS]
-    ${generate_newaddress}=    Catenate    Address_${random_string}
-    input text      ${address_line2}     ${generate_newaddress}
-    log to console      ${generate_newaddress}
+    ${generate_newaddresstwo}=    Catenate    Address_${random_string}
+    input text      ${address_line2}     ${generate_newaddresstwo}
+    log to console  ${generate_newaddresstwo}
 #    set global variable    ${generate_newaddress}
-
 
 Click on main Save Button
     wait until element is visible   ${brand_mainsaveButton}    60
