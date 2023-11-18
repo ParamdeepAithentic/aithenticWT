@@ -585,6 +585,10 @@ Activate Brand and address via brand under profile list
     Generic.Fetch alert message text and compare it with      Brand Updated Successfully.
     DashboardPage.Click on back to brand list link
     DashboardPage.Click on three dots
+    Generic.Select other option from profile list   Deactivate
+    DashboardPage.Select option from the pop up     yes
+    Generic.Fetch alert message text and compare it with      Brand deactivated successully
+    DashboardPage.Click on three dots
     Generic.Select other option from profile list   Activate
     DashboardPage.Select option from the pop up     yes
     Generic.Fetch alert message text and compare it with      Brand activated successfully
