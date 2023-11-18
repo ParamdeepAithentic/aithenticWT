@@ -212,7 +212,7 @@ Add Brand via personal detail under technology
     Generic.Verify your current page location contains  technology-settings
 #    Generic.Verify your current page location contains      brand
     ReplaceDomainAPI.Replace Domain
-    DashboardPage.See added brand link
+    DashboardPage.Click on View Your Added Brand List
     DashboardPage.Click add brand button
     DashboardPage.Create random brandName
     DashboardPage.Add business manufacturer URL     qwerty
