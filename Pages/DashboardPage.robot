@@ -613,7 +613,7 @@ Enter Brand new address line two
     ${generate_newaddresstwo}=    Catenate    Address_${random_string}
     input text      ${address_line2}     ${generate_newaddresstwo}
     log to console  ${generate_newaddresstwo}
-#    set global variable    ${generate_newaddress}
+#   set global variable    ${generate_newaddress}
 
 Click on main Save Button
     wait until element is visible   ${brand_mainsaveButton}    60
@@ -623,10 +623,10 @@ click on share icon of dashboard page
     wait until element is visible       css:.fa-share-alt              60
     click element       css:.fa-share-alt
 
-Enter toEmail into popup
+Enter to Email into popup
     wait until element is visible      ${share_toEmail}         60
     click element       ${share_toEmail}
-    ${random_string} =    Generate Random String       5      [LETTERS]
+    ${random_string} =    Generate Random String       10      [LETTERS]
     ${generate_sharetoEmail}=    Catenate    ${random_string}@yopmail.net
     input text      ${share_toEmail}     ${generate_sharetoEmail}
     log to console      ${generate_sharetoEmail}
