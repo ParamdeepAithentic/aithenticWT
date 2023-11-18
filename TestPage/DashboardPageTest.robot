@@ -93,8 +93,6 @@ Create and verify new brand
     DashboardPage.Click added brand main save button
     DashboardPage.Verify Brand added      ${generated_BrandName}
 
-
-
 Create a new product with adding new brand
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
@@ -215,7 +213,7 @@ Add Brand via personal detail under technology
     DashboardPage.Click on View Your Added Brand List
     DashboardPage.Click add brand button
     DashboardPage.Create random brandName
-    DashboardPage.Add business manufacturer URL     qwerty
+    DashboardPage.Add static Business Manufacturer URL      yopmail.net
     DashboardPage.Add brand manufacturer country      United States
     DashboardPage.Save added brand details
     Generic.Fetch alert message text and compare it with        Brand created successfully.
@@ -241,7 +239,6 @@ Add Brand via personal detail under technology
     DashboardPage.Click on main Save Button
 #    DashboardPage.Click On Search Bar
     DashboardPage.Verify Brand added      ${generated_BrandName}
-
 
 
 Invite user into Aithentic

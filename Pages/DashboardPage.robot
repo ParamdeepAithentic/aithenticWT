@@ -596,6 +596,7 @@ Click on Edit address
     wait until element is not visible       ${loaderIcon}    60
 
 Enter Brand New Address Line one
+    wait until element is not visible       ${loaderIcon}       60
     wait until element is visible     ${address_Line}         60
     click element      ${address_Line}
     ${random_string} =    Generate Random String       10      [NUMBERS]
@@ -639,9 +640,6 @@ Click on Register button in email
     wait until element is visible       css:button[type='button']       60
     click element       css:button[type='button']
 
-Switch to window
-    [Arguments]    ${option}
-     switch window      ${option}
 
 Enter business email
     wait until element is enabled       ${register_Email}        60
@@ -680,6 +678,7 @@ Verify the keyword
 
 Verify no result found with wrong FAQ
     wait until element is visible      //div[normalize-space()='No results found']        60
+
 
 Click on three dots
     wait until element is visible   ${Brand_threedots}   60
@@ -780,10 +779,6 @@ Select option from the pop up
     [Arguments]    ${option}
     wait until element is visible   css:.qa-brand-${option}   60
     click element   css:.qa-brand-${option}
-
-
-
-
 
 
 
