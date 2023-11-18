@@ -82,7 +82,27 @@ ${fetch_departmentName}     css:td:nth-child(2)
 
 ${address_Line}     css:#addressLine1
 ${address_line2}    css:#addressLine2
-
+${brand_linklist}   css:.qa-back-brand-list
+${brandnew_addressstate}    css:#addressState
+${editnew_brandaddressline2}    css:input[formcontrolname=StreetAddress2]
+${editnew_brandaddressline1}    css:#CompanyAddressId
+${editcity_edit}        css:#addressCity
+${editstate_edit}       css:#addressState
+${editbrand_addressline2}   css:input[formcontrolname=StreetAddress2]
+${editbrand_addressline1}   css:input[formcontrolname=StreetAddress1]
+${brand_crossicon}      //div[@class='row no-gutters mb-1']//div[2]//div[1]//div[2]//span[1]
+${brandadd_urlplusicon}     css:i[title='Click here to add Business url']
+${Brand_threedots}      css:.three-dots
+${brand_mainsaveButton}     //button[@type='button'][normalize-space()='Save']
+${Viewyour_addedbrandlist}      //a[normalize-space()='View Your Added Brand List']
+${Editaddress_icon}     css:i[title='Click here to edit address']
+${zipcode_input}        css:#zip
+${Brand_savebutton}     css:button[aria-label='Close'][type='submit']
+${add brand_link}   //a[normalize-space()='Add Brand']
+${Select_city while adding brand}   css:#City
+${Select_state while adding brand}  css:#State
+${clickadd_newaddress}  xpath://span[@title='Click here to add address']
+${select_click_popup_yes}   css:.qa-brand-${option}
 
 ${share_toEmail}      css:#toEmail
 
@@ -517,94 +537,87 @@ Select Technology from personal deatils section
     click element   xpath://span[normalize-space()='${option}']
 
 Click on View Your Added Brand List
-    wait until element is visible   xpath://a[normalize-space()='View Your Added Brand List']   60
-    click element   xpath://a[normalize-space()='View Your Added Brand List']
+    wait until element is visible   ${Viewyour_addedbrandlist}   60
+    click element   ${Viewyour_addedbrandlist}
 
 Click on Add New Address
-    wait until element is visible   xpath://span[@title='Click here to add address']    60
-    click element   xpath://span[@title='Click here to add address']
+    wait until element is visible   ${clickadd_newaddress}    60
+    click element   ${clickadd_newaddress}
 
 Enter Brand Address Line one
+    wait until element is not visible   ${loaderIcon}    60
     wait until element is visible     ${address_Line}         60
     wait until element is enabled     ${address_Line}         60
     click element      ${address_Line}
-    ${random_string} =    Generate Random String       10      [LETTERS]
-    ${generate_AddressLineone}=    Catenate    ${random_string}
-    input text      ${address_Line}     ${generate_AddressLine}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generate_AddressLineone}=    Catenate    Address_${random_string}
+    input text      ${address_Line}     ${generate_AddressLineone}
     log to console      ${generate_AddressLineone}
-
+#    set global variable    ${generate_AddressLineone}
 
 Enter Brand address line two
     wait until element is visible     ${address_line2}         60
     wait until element is enabled     ${address_line2}         60
     click element      ${address_line2}
-    ${random_string} =    Generate Random String       10      [LETTERS]
-    ${generate_AddressLine2}=    Catenate    ${random_string}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generate_AddressLine2}=    Catenate    Address_${random_string}
     input text      ${address_line2}     ${generate_AddressLine2}
     log to console      ${generate_AddressLine2}
-    
+#    set global variable    ${generate_AddressLine2}
 
 Select State
     [Arguments]     ${country}
-    Wait until element is visible   css:#State  60
-    click element   css:#State
+    Wait until element is visible   ${Select_state while adding brand}  60
+    click element   ${Select_state while adding brand}
     wait until element is visible   css:span[title='${country}']    60
     click element   css:span[title='${country}']
 
 Select City
     [Arguments]     ${city}
     wait until element is not visible       ${loaderIcon}    60
-    wait until element is visible   css:#City   60
-    click element   css:#City
+    wait until element is visible   ${Select_city while adding brand}   60
+    click element   ${Select_city while adding brand}
     wait until element is visible   css:span[title='${city}']     60
     click element   css:span[title='${city}']
 
 Click on Save Button
-    wait until element is visible   css:button[aria-label='Close'][type='submit']   60
-    click element   css:button[aria-label='Close'][type='submit']
+    wait until element is visible   ${Brand_savebutton}   60
+    click element   ${Brand_savebutton}
 
 Zip code Input
     [Arguments]     ${code}
-    wait until element is visible   css:#zip    60
-    click element   css:#zip
-    input text  css:#zip    ${code}
+    wait until element is visible   ${zipcode_input}    60
+    click element   ${zipcode_input}
+    input text  ${zipcode_input}    ${code}
 
 Click on Edit address
-    wait until element is visible   css:i[title='Click here to edit address']   60
-    click element   css:i[title='Click here to edit address']
+    wait until element is visible   ${Editaddress_icon}   60
+    click element   ${Editaddress_icon}
     wait until element is not visible       ${loaderIcon}    60
-
-See added brand link
-    wait until element is visible   //a[normalize-space()='View Your Added Brand List']   60
-    click element   //a[normalize-space()='View Your Added Brand List']
 
 Enter Brand New Address Line one
     wait until element is visible     ${address_Line}         60
     click element      ${address_Line}
-    ${random_string} =    Generate Random String       10      [LETTERS]
-    ${generate_newaddressone}=    Catenate    ${random_string}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generate_newaddressone}=    Catenate    Address_${random_string}
     input text      ${address_Line}     ${generate_newaddressone}
     Press Keys  ${address_Line}            ENTER
     log to console      ${generate_newaddressone}
+#    set global variable    ${generate_newaddress}
 
 
 Enter Brand new address line two
     wait until element is visible     ${address_line2}         60
     click element      ${address_line2}
-    ${random_string} =    Generate Random String       10      [LETTERS]
-    ${generate_newaddresstwo}=    Catenate    ${random_string}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generate_newaddresstwo}=    Catenate    Address_${random_string}
     input text      ${address_line2}     ${generate_newaddresstwo}
     log to console  ${generate_newaddresstwo}
-
-#    wait until element is visible   ${generate_newaddress}      60
-#    click element   ${generate_newaddress}
-    log to console      ${generate_newaddress}
-    set global variable    ${generate_newaddress}
-
+#    set global variable    ${generate_newaddress}
 
 Click on main Save Button
-    wait until element is visible   //button[@type='button'][normalize-space()='Save']    60
-    click element   //button[@type='button'][normalize-space()='Save']
+    wait until element is visible   ${brand_mainsaveButton}    60
+    click element   ${brand_mainsaveButton}
 
 click on share icon of dashboard page
     wait until element is visible       css:.fa-share-alt              60
@@ -645,8 +658,6 @@ click on Help center icon of dashboard page
     wait until element is visible       css:.fa-question-circle         60
     click element       css:.fa-question-circle
 
-
-
 Click on link of information center list
     [Arguments]     ${link_name}
     wait until element is visible       //span[contains(text(),'${link_name}')]     60
@@ -669,6 +680,110 @@ Verify the keyword
 
 Verify no result found with wrong FAQ
     wait until element is visible      //div[normalize-space()='No results found']        60
+
+Click on three dots
+    wait until element is visible   ${Brand_threedots}   60
+    click element   ${Brand_threedots}
+
+click on Plus icon
+    wait until element is not visible   ${loaderIcon}   60
+    wait until element is visible   ${brandadd_urlplusicon}   60
+    click element   ${brandadd_urlplusicon}
+
+Add static Business Manufacturer URL
+    [Arguments]    ${option}
+    wait until element is visible       ${add_brand_mfc_URL}
+    click element       ${add_brand_mfc_URL}
+    input text      ${add_brand_mfc_URL}        ${option}
+
+Click on Cross Icon
+    wait until element is visible   ${brand_crossicon}    60
+    click element   ${brand_crossicon}
+
+Edit Brand Address Line one
+    wait until element is not visible   ${loaderIcon}    60
+    wait until element is visible   ${editbrand_addressline1}           60
+    wait until element is enabled     ${editbrand_addressline1}         60
+    click element      ${editbrand_addressline1}
+    Clear Element Text  ${editbrand_addressline1}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generate_editAddressLine1}=    Catenate    Address_${random_string}
+    input text   ${editbrand_addressline1}       ${generate_editAddressLine1}
+    log to console      ${generate_editAddressLine1}
+#    set global variable    ${generate_editAddressLine1}
+
+Edit Brand Address Line two
+    wait until element is not visible   ${loaderIcon}    60
+    wait until element is visible   ${editbrand_addressline2}           60
+    wait until element is enabled     css:#StreetAddress2         60
+    click element      ${editbrand_addressline2}
+    Clear Element Text  ${editbrand_addressline2}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generate_editAddressLine2}=    Catenate    Address_${random_string}
+    input text   ${editbrand_addressline2}        ${generate_editAddressLine2}
+    log to console      ${generate_editAddressLine2}
+#   set global variable    ${generate_editAddressLine2}
+
+Edit State while edit address
+    [Arguments]     ${State}
+    wait until element is not visible   ${loaderIcon}   60
+    wait until element is visible  ${editstate_edit}   60
+    wait until element is enabled  ${editstate_edit}   60
+    click element  css:ng-select[placeholder='Select State'] span[title='Clear all']
+    click element   ${editstate_edit}
+    wait until element is visible   css:span[title='${State}']   60
+    click element   css:span[title='${State}']
+
+Edit city while edit address
+    [Arguments]     ${city}
+    wait until element is not visible   ${loaderIcon}   60
+    wait until element is visible   ${editcity_edit}   60
+    click element   ${editcity_edit}
+    wait until element is visible   css:span[title='${city}']   60
+    click element   css:span[title='${city}']
+
+Edit New Brand Address Line one
+    wait until element is not visible   ${loaderIcon}    60
+    wait until element is visible   ${editnew_brandaddressline1}           60
+    wait until element is enabled     ${editnew_brandaddressline1}         60
+    click element      ${editnew_brandaddressline1}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generateNew_editAddressLine1}=    Catenate    Address_${random_string}
+    input text   ${editnew_brandaddressline1}       ${generateNew_editAddressLine1}
+    Press Keys  ${editnew_brandaddressline1}             ENTER
+    log to console      ${generateNew_editAddressLine1}
+#    set global variable    ${generateNew_editAddressLine1}
+
+Edit New Brand Address Line two
+    wait until element is not visible   ${loaderIcon}    60
+    wait until element is visible   ${editnew_brandaddressline2}           60
+    wait until element is enabled     ${editnew_brandaddressline2}         60
+    click element      ${editnew_brandaddressline2}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generateNew_editAddressLine2}=    Catenate    Address_${random_string}
+    input text   ${editnew_brandaddressline2}        ${generateNew_editAddressLine2}
+    log to console      ${generateNew_editAddressLine2}
+#    set global variable    ${generateNew_editAddressLine2}
+
+Select New Address State
+    [Arguments]     ${country}
+    Wait until element is visible   ${brandnew_addressstate}  60
+    click element   ${brandnew_addressstate}
+    wait until element is visible   css:span[title='${country}']    60
+    click element   css:span[title='${country}']
+
+Click on back to brand list link
+    wait until element is visible   ${brand_linklist}   60
+    click element   ${brand_linklist}
+
+Select option from the pop up
+    [Arguments]    ${option}
+    wait until element is visible   css:.qa-brand-${option}   60
+    click element   css:.qa-brand-${option}
+
+
+
+
 
 
 
