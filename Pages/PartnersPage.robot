@@ -153,7 +153,7 @@ Select partner business_name
     click element       //span[@class='ng-option-label ng-star-inserted'][normalize-space()='${option}']
 
 Select partner business URL
-    sleep       ${search_sleep}
+#    sleep       ${search_sleep}
     wait until element is enabled       ${businessURL}        60
     click element   ${businessURL}
     wait until element is visible       xpath://span[@class='ng-option-label ng-star-inserted']     60

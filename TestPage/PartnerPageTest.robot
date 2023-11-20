@@ -486,7 +486,7 @@ Export Specificartner into Excel Doc CSV and TSV for manufacturer
     PartnersPage.Enter partner business URL      ${generate_BusinessName}
     PartnersPage.Select partner country       United States
     PartnersPage.Click on add custome business URL icon
-    PartnersPage.Click on add custome business URL icon
+#    PartnersPage.Click on add custome business URL icon
     PartnersPage.Create partner random secondary business URL
     PartnersPage.Click contact main save button
     Generic.Verify your current page location contains      partner-listing
