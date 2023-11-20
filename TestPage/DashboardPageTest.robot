@@ -668,6 +668,44 @@ Remove Brand and address via brand under profile list
     Generic.Fetch alert message text and compare it with      Brand deleted successfully
 
 Verify-adding-a-new-brand-from-profile-listing
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     brand-dropdown
+    ReplaceDomainAPI.Replace Domain
+    Generic.Verify your current page location contains  brand-list
+    ReplaceDomainAPI.Replace Domain
+    DashboardPage.Click add brand button
+    DashboardPage.Create random brandName
+    DashboardPage.Add brand manufacturer country      United States
+
+    DashboardPage.Add multiple brand URL as per index     1
+    DashboardPage.click on Plus icon
+
+    DashboardPage.Add multiple brand URL as per index     2
+    DashboardPage.click on Plus icon
+
+    DashboardPage.Add multiple brand URL as per index     3
+
+
+    DashboardPage.Save added brand details
+    Generic.Fetch alert message text and compare it with        Brand created successfully.
+    DashboardPage.Click added brand main save button
+    DashboardPage.Verify Brand added      ${generated_BrandName}
+    DashboardPage.Click on three dots
+    Generic.Select other option from profile list   Remove
+    DashboardPage.Select option from the pop up     yes
+    Generic.Fetch alert message text and compare it with      Brand deleted successfully
+
+
+
+
+
+
+
+
+
+
 
 
 
