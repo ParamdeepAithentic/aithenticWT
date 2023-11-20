@@ -667,6 +667,9 @@ Remove Brand and address via brand under profile list
     DashboardPage.Select option from the pop up     yes
     Generic.Fetch alert message text and compare it with      Brand deleted successfully
 
+Verify-adding-a-new-brand-from-profile-listing
+
+
 
 
 

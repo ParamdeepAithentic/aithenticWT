@@ -671,13 +671,14 @@ Add edit delete manufacturer
     DashboardPage.Save added brand details
     Generic.Fetch alert message text and compare it with        Brand created successfully.
     DashboardPage.Click on main Save Button
+    PartnersPage.Search by brand name  ${generated_BrandName}
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
     PartnersPage.Click new partner button
     Generic.Verify your current page location contains      addpartner
     PartnersPage.Select partner type of new partner     Manufacturer
     PartnersPage.Select partner business_name      ${generated_BrandName}
-    PartnersPage.Select partner business URL
+    PartnersPage.Select partner business URL    yopmail.net
     PartnersPage.Select partner country       United States
     PartnersPage.Click on Add new Address of partner        Add new Address
     PartnersPage.Add Unique address_one of partner

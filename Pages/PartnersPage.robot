@@ -36,7 +36,7 @@ ${businessName}     css:div[aria-expanded='true'] input[type='text']
 ${businessURL}     css:#businessUrl
 ${click_Country}     css:#country
 ${addContact}     //span[normalize-space()='Add new Contact']
-${contactPerson}     css:[formcontrolname=CompanyContactId] input
+${contactPerson}     css:[formcontrolSelect partner business_namename=CompanyContactId] input
 ${contactEmail}     css:#ContactEmail
 #${secondary_contactPerson}     css:[formcontrolname=CompanyContactId] input
 ${secondary_contactEmail}     css:#businessEmail
@@ -95,6 +95,24 @@ Search by business name
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  3  ${pageHeading}   PartnersPage - Search by business name      3    ${pageTime}     ${ActualTime}    PatnersPage_Time
 
+Search by brand name
+    [Arguments]    ${BrandName}
+    wait until element is visible       css:thead tr       60
+    wait until element is visible       //input[@placeholder='Search by Brand Name']       60
+    Clear Element Text      //input[@placeholder='Search by Brand Name']
+#    ${StartTime1} =     Get Current Time in Milliseconds
+    input text      //input[@placeholder='Search by Brand Name']     ${BrandName}
+    sleep       ${search_sleep}
+#    Wait Until Element Contains    ${fetch_assetID}     ${generate_BusinessName}    60
+    wait until element is visible       //td[normalize-space()='${BrandName}']     60
+    ${get_brandName} =    get text    //td[normalize-space()='${BrandName}']
+#    log to console     ${generate_BusinessName}
+    log to console     ${get_brandName}
+    should be equal    ${BrandName}     ${get_brandName}
+#    ${EndTime1} =     Get Current Time in Milliseconds
+#    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+#    Calculate Running time  3  ${pageHeading}   PartnersPage - Search by business name      3    ${pageTime}     ${ActualTime}    PatnersPage_Time
+
 
 Select partner type
     [Arguments]    ${option}
@@ -148,17 +166,15 @@ Select partner business_name
     click element   ${click_businessName}
     Clear element text      ${click_businessName}
     input text   ${businessName}   ${option}
-    wait until element is visible       //span[@class='ng-option-label ng-star-inserted'][normalize-space()='${option}']         60
-    wait until element is enabled        //span[@class='ng-option-label ng-star-inserted'][normalize-space()='${option}']       60
-    click element       //span[@class='ng-option-label ng-star-inserted'][normalize-space()='${option}']
+    Press Keys     ${businessName}       ENTER
 
 Select partner business URL
-#    sleep       ${search_sleep}
+    [Arguments]    ${option}
+    wait until element is visible       ${businessURL}        60
     wait until element is enabled       ${businessURL}        60
     click element   ${businessURL}
-    wait until element is visible       xpath://span[@class='ng-option-label ng-star-inserted']     60
-    wait until element is enabled       xpath://span[@class='ng-option-label ng-star-inserted']     60
-    click element       xpath://span[@class='ng-option-label ng-star-inserted']
+    input text  ${businessURL}    ${option}
+    Press Keys  ${businessURL}  ENTER
 
 Select partner country
     [Arguments]    ${country}
