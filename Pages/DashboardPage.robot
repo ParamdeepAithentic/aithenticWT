@@ -49,9 +49,10 @@ ${brand_country}    css:#brandCountry
 ${select_country}   css:.ng-option-label.ng-star-inserted
 
 ${brand_saveBTN}        //button[@title='Click here to Save']
-${brand_saveBtn_main}     css:button[class='btn button-green mt-0 m5px mr-0 add-brand-qa ng-star-inserted']
+${brand_saveBtn_main}     css:.add-brand-qa
 ${search_brandName}     css:input[placeholder='Search by Brand Name']
 ${fetch_brandName}    css:td:nth-child(2)
+
 
 ########## Add product #####
 
@@ -781,7 +782,20 @@ Select option from the pop up
     click element   css:.qa-brand-${option}
 
 
+Add multiple brand URL as per index
+    [Arguments]    ${option}
+    wait until element is visible   (//input[@placeholder='example.com'])[${option}]   60
+    wait until element is enabled   (//input[@placeholder='example.com'])[${option}]   60
+    click element   (//input[@placeholder='example.com'])[${option}]
+    Create random URL value for multiple brand addition     (//input[@placeholder='example.com'])[${option}]
 
 
+Create random URL value for multiple brand addition
+    [Arguments]    ${option}
+    ${random_string} =    Generate Random String       15      [NUMBERS]
+    ${generated_random_value}=    Catenate   ${random_string}.com
+    input text   ${option}   ${generated_random_value}
+    log to console      ${generated_random_value}
+#    set global variable    ${generated_random_value}
 
 
