@@ -63,7 +63,7 @@ ${partner_address_Line1}     css:#addressLine1
 ${partner_state}        css:#state
 ${partner_city}     css:#city
 ${zip_code}     css:#Zip
-${secondary_contactURL}     css:#businessUrl
+${secondary_contactURL}     css:input[formcontrolname='Businessurl']
 ${loaderIcon}     //div[@role='status']
 ${partner_newaddress_Line2}     css:#addressLine2
 ${new_zipcode}      css:#zip
@@ -486,8 +486,8 @@ Enter new_business_email of contact
     set global variable    ${generate_ContactBusinessEmail}
 
 Select option from the pop up
-    wait until element is visible   ${select_remove_popUp_Yes}
-    click element   ${select_remove_popUp_Yes}
+    [Arguments]    ${option}
+    Generic.click on the button         ${option}
 
 
 
