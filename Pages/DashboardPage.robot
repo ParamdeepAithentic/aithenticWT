@@ -62,12 +62,20 @@ ${add_Product_modal}     css:div[id='addProductPopup'] div[role='document'] div[
 ${ProductName}     css:#ProductName
 ${enterAndSelect_Brand}     css:.qa-BrandName input
 ${ProductDescription}     //div[@class='card-container themeScrollBar mt-1 p-2']//textarea[@id='ProductDescription']
+${ProductDescription_viaLink}     css:#ProductDescription
 ${ProductFeatures}     css:#ProductFeatures
+
+
+${ProductFeatures_viaLink}      css:#addProductFeat
+
+${ProductStatus}     //input[@id='ProductStatus']
+${ProductStatus_viaLink}        css:#addProductStatus
 
 
 ${ProductStatus}     //input[@id='ProductStatus']
 ${select_technology_group}     css:nz-tree-select[id='TechGroupId'] div nz-select-search
 ${select_technology_type}     //div[@class='ng-select-container'][normalize-space()='Select Technology Type']
+${select_technology_type_via link}  css:#addProductType
 ${save_product_modal}     css:button[class='btn button-green mt-0 mx-2 ng-star-inserted']
 ${search_productName}     css:input[placeholder='Search by Product Name or Description']
 ${fetch_productName}    css:td:nth-child(2)
@@ -218,15 +226,23 @@ Add product brand name
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  5  ${pageHeading}   DashboardPage - Add product brand name      5    ${pageTime}     ${ActualTime}    DashboardPage_Time
-
+    sleep   ${search_sleep}
 
 Add product description
     wait until element is visible       ${ProductDescription}     60
     input text   ${ProductDescription}   This is the description of new product added.
 
+Add product description via link
+    wait until element is visible       ${ProductDescription_viaLink}     60
+    input text   ${ProductDescription_viaLink}   This is the description of new product added.
+
 Add product feature
     wait until element is visible       ${ProductFeatures}     60
     input text   ${ProductFeatures}   This is the features of new product added.
+
+Add product feature via link
+    wait until element is visible       ${ProductFeatures_viaLink}     60
+    input text   ${ProductFeatures_viaLink}   This is the features of new product added.
 
 Select product status
     [Arguments]    ${option}
@@ -240,6 +256,15 @@ Select product status
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  6  ${pageHeading}   DashboardPage - Select product status      6    ${pageTime}     ${ActualTime}    DashboardPage_Time
 
+Select product status via link
+    [Arguments]    ${option}
+    scroll element into view    css:#addProductType
+    wait until element is visible       ${ProductStatus_viaLink}     60
+    click element   ${ProductStatus_viaLink}
+    Clear Element Text      ${ProductStatus_viaLink}
+    input text   ${ProductStatus_viaLink}   ${option}
+    Generic.Select parameter     ${option}
+
 Select product technology type
     [Arguments]    ${option}
     wait until element is visible       ${select_technology_type}     60
@@ -250,11 +275,27 @@ Select product technology type
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  7  ${pageHeading}   DashboardPage - Select product technology type      7    ${pageTime}     ${ActualTime}    DashboardPage_Time
 
+Select product technology type via link
+    [Arguments]    ${option}
+    scroll element into view    /html[1]/body[1]/app-root[1]/app-dashboard[1]/div[1]/div[3]/app-add-technology[1]/app-add-technology[1]/div[4]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[7]/ng-select[1]/div[1]/div[1]/div[2]/input[1]
+    wait until element is visible       ${select_technology_type_via link}     60
+    click element   ${select_technology_type_via link}
+    Generic.Select parameter     ${option}
+
 Select product technology group
     [Arguments]    ${option}
     wait until element is visible       ${select_technology_group}     60
     Mouse Over      ${select_technology_group}
     click element   ${select_technology_group}
+    Scroll Element Into View        //span[normalize-space()='${option}']
+    wait until element is visible      //span[normalize-space()='${option}']       60
+    click element       //span[normalize-space()='${option}']
+
+Select product technology group via link
+    [Arguments]    ${option}
+    wait until element is visible       css:nz-tree-select[formcontrolname=TechGroupId] input     60
+    Mouse Over      css:nz-tree-select[formcontrolname=TechGroupId] input
+    click element   css:nz-tree-select[formcontrolname=TechGroupId] input
     Scroll Element Into View        //span[normalize-space()='${option}']
     wait until element is visible      //span[normalize-space()='${option}']       60
     click element       //span[normalize-space()='${option}']

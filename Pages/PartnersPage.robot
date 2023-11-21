@@ -140,7 +140,7 @@ Create partner random business name
     wait until element is enabled       ${click_businessName}        60
     click element   ${click_businessName}
     Clear element text      ${click_businessName}
-    ${random_string} =    Generate Random String       8      [NUMBERS]
+    ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generate_BusinessName}=    Catenate    BusinessName${random_string}
     input text   ${businessName}   ${generate_BusinessName}
     set global variable    ${generate_BusinessName}
@@ -488,6 +488,15 @@ Enter new_business_email of contact
 Select option from the pop up
     [Arguments]    ${option}
     Generic.click on the button         ${option}
+
+Click on the save button
+    [Arguments]     ${option}
+    wait until element is visible   //button[normalize-space()='${option}']     60
+    click element   //button[normalize-space()='${option}']
+
+Click here to add link
+    wait until element is visible   //a[normalize-space()='Click here to add']  60
+    click element   //a[normalize-space()='Click here to add']
 
 
 

@@ -923,6 +923,42 @@ Remove manufacturer from partners
     Generic.Fetch alert message text and compare it with      Partner deleted successfully
     ReplaceDomainAPI.Replace Domain
 
+View Details and check the details
+    Generic.click on the tab	    Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    ReplaceDomainAPI.Replace Domain
+    Generic.select the option from the side menu    Partners
+    PartnersPage.Click new partner button
+    PartnersPage.Select partner type of new partner     Manufacturer
+    PartnersPage.Create partner random business name
+#   PartnersPage.Enter partner business URL      ${generate_BusinessName}
+    PartnersPage.Enter partner business URL     yopmail
+    PartnersPage.Select partner country       United States
+    PartnersPage.Click on the save button   Save
+    Generic.Fetch alert message text and compare it with    Partner created successfully
+    Generic.select the option from the side menu    Technology
+    TechnologyPage.click on add technology button
+    PartnersPage.Click here to add link
+    DashboardPage.Create random productName
+    DashboardPage.Add product brand name      ${generate_BusinessName}
+    DashboardPage.Add product description via link
+    DashboardPage.Add product feature via link
+
+    DashboardPage.Select product technology type     Hardware
+    DashboardPage.Select product technology group     Applications
+    DashboardPage.Save added product details
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
