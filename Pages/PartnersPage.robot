@@ -144,7 +144,7 @@ Create partner random business name
     wait until element is enabled       ${click_businessName}        60
     click element   ${click_businessName}
     Clear element text      ${click_businessName}
-    ${random_string} =    Generate Random String       8      [NUMBERS]
+    ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generate_BusinessName}=    Catenate    BusinessName${random_string}
     input text   ${businessName}   ${generate_BusinessName}
     set global variable    ${generate_BusinessName}
@@ -217,7 +217,7 @@ Enter random contact person
     wait until element is visible      ${contactPerson}       60
     wait until element is enabled      ${contactPerson}       60
     click element   ${contactPerson}
-    ${random_string} =    Generate Random String       8      [NUMBERS]
+    ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generate_PersonName}=    Catenate    Person_${random_string}
     input text   ${contactPerson}   ${generate_PersonName}
     wait until element is visible      css:div[role='option']       60
@@ -229,7 +229,7 @@ Enter random contact name
     wait until element is visible      ${contact_name}       60
     wait until element is enabled     ${contact_name}       60
     click element   ${contact_name}
-    ${random_string} =    Generate Random String       8      [NUMBERS]
+    ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generate_PersonName}=    Catenate    Person_${random_string}
     input text   ${contact_name}   ${generate_PersonName}
     wait until element is visible      css:div[role='option']       60
@@ -341,7 +341,7 @@ Create partner random secondary business URL
     wait until element is enabled       ${add_secondaryURL}        60
     click element   ${add_secondaryURL}
     Clear element text      ${add_secondaryURL}
-    ${random_string} =    Generate Random String       8      [NUMBERS]
+    ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generate_SecondaryBusinessName}=    Catenate    BusinessName${random_string}.net
     input text   ${add_secondaryURL}   ${generate_SecondaryBusinessName}
     set global variable    ${generate_SecondaryBusinessName}
