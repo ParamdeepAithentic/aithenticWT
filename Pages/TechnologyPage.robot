@@ -150,8 +150,9 @@ ${composeMessage_sendBTN}       //div[@class='modal-footer']//button[@type='subm
 ${add_tech_dept_name}        css:.qa-add-department-name input
 ${add_tech_dept_costCenter}      css:#costCenter
 
-############################### Assign partner ###########################
-
+############################### History tab ###########################
+${histortTab_ViewPopUp}     //div[@class='text-right']//button[normalize-space()='Cancel']
+${attachmentTab_UploadBTN}      css:input[type='file']
 
 *** Keywords ***
 Fetch the Brand Name from the row
@@ -973,6 +974,23 @@ Click on assign partner button under technology details page
     [Arguments]     ${option}
     Generic.click on the button     ${option}
 
+Click on add new entry parent button under technology details page
+    [Arguments]     ${option}
+    wait until element is visible    //div[@id='parent-components']//button[normalize-space()='${option}']      60
+    click element      //div[@id='parent-components']//button[normalize-space()='${option}']
+#Add New Entry, Export
+
+Click on add new entry component button under technology details page
+    [Arguments]     ${option}
+    wait until element is visible    //div[@id='components']//button[normalize-space()='${option}']      60
+    click element      //div[@id='components']//button[normalize-space()='${option}']
+
+
+Select add new entry
+    [Arguments]     ${option}
+    Generic.click on the button     ${option}
+#Existing Asset, New Asset
+
 
 Click here to add support partner
     wait until element is not visible    cs:.qa-assign-support-partner .ng-spinner-loader      60
@@ -1001,11 +1019,51 @@ Verify that supplier partner is added in partner association
     [Arguments]     ${option}
     wait until element is visible    //td[normalize-space()='${option}']      120
 
+Verify area changed under history tab
+    [Arguments]     ${option}
+    wait until element is visible    //tr[@class='ng-star-inserted']//td[@data-target='#historyViewPopUp'][normalize-space()='${option}']      60
+
+Confirm area changed with view under history tab
+    [Arguments]     ${option}
+    wait until element is visible       //td[normalize-space()='${option}']//following::a[normalize-space()='View']     60
+    wait until element is enabled       //td[normalize-space()='${option}']//following::a[normalize-space()='View']     60
+    click element   //td[normalize-space()='${option}']//following::a[normalize-space()='View']
+    sleep       ${search_sleep}
+
+
+Close the view history pop up
+    wait until element is visible       ${histortTab_ViewPopUp}      60
+    wait until element is enabled       ${histortTab_ViewPopUp}      60
+    click element   ${histortTab_ViewPopUp}
+    wait until element is not visible       ${histortTab_ViewPopUp}      60
+
 Submit the assign partner form
     [Arguments]     ${option}
     Generic.click on the button     ${option}
 
 
+Click on upload button under technology history tab
+    wait until element is visible       ${attachmentTab_UploadBTN}     60
+    wait until element is enabled       ${attachmentTab_UploadBTN}      60
+    click element   ${attachmentTab_UploadBTN}
+
+Upload File under technology attachments tab
+    wait until element is visible       ${attachmentTab_UploadBTN}     60
+    wait until element is enabled       ${attachmentTab_UploadBTN}      60
+#    Click element       ${attachmentTab_UploadBTN}
+    Choose File    ${attachmentTab_UploadBTN}    C:\Users\Paramdeep\Downloads\one.pdf
+#    Click Button    ${attachmentTab_UploadBTN}
+
+
+Click the add here link on supplier to add new supplier
+    wait until element is visible       css:.qa-add-here-supplier     60
+    wait until element is enabled       css:.qa-add-here-supplier      60
+    click element   css:.qa-add-here-supplier
+
+Click the add here link on support to add new support partner
+    wait until element is visible       css:.qa-add-here-support     60
+    wait until element is enabled       css:.qa-add-here-support      60
+    click element   css:.qa-add-here-support
 
 #Verify the search item2
 #    [Arguments]    ${assertId}      ${serialNo}

@@ -36,7 +36,7 @@ ${businessName}     css:div[aria-expanded='true'] input[type='text']
 ${businessURL}     css:#businessUrl
 ${click_Country}     css:#country
 ${addContact}     //span[normalize-space()='Add new Contact']
-${contactPerson}     css:[formcontrolname=CompanyContactId] input
+${contactPerson}     css:[formcontrolSelect partner business_namename=CompanyContactId] input
 ${contactEmail}     css:#ContactEmail
 #${secondary_contactPerson}     css:[formcontrolname=CompanyContactId] input
 ${secondary_contactEmail}     css:#businessEmail
@@ -55,14 +55,24 @@ ${main_update_btn}        //button[normalize-space()='Update']
 
 ${add_custom_businessURL}     css:.fas.fa-plus.float-right
 ${add_secondaryURL}     css:input[formcontrolname='Businessurl']
-
-
-
-
+${three_dots}       css:.three-dots
+${save_address}     css:button[class='btn button-green mt-0 ml-1 ng-star-inserted']
 ${partner_searchBar}    css:input[placeholder='Search by Business Name']
-
-
+${partner_address_Line2}     css:#StreetAddress2
+${partner_address_Line1}     css:#addressLine1
+${partner_state}        css:#state
+${partner_city}     css:#city
+${zip_code}     css:#Zip
+${secondary_contactURL}     css:input[formcontrolname='Businessurl']
 ${loaderIcon}     //div[@role='status']
+${partner_newaddress_Line2}     css:#addressLine2
+${new_zipcode}      css:#zip
+${new_contactEmail}     css:#businessEmail
+${update_button}        xpath://button[@type='button'][normalize-space()='Update']
+${select_remove_popUp_Yes}      xpath://button[normalize-space()='Yes']
+${clear_text}       css:ng-select[placeholder='Select State'] span[title='Clear all']
+${partner_edit_icon}        css:.fa-pencil-alt.pencil
+${contactP_country}     css:#country
 
 
 *** Keywords ***
@@ -85,7 +95,23 @@ Search by business name
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  3  ${pageHeading}   PartnersPage - Search by business name      3    ${pageTime}     ${ActualTime}    PatnersPage_Time
 
-
+Search by brand name
+    [Arguments]    ${BrandName}
+    wait until element is visible       css:thead tr       60
+    wait until element is visible       //input[@placeholder='Search by Brand Name']       60
+    Clear Element Text      //input[@placeholder='Search by Brand Name']
+#    ${StartTime1} =     Get Current Time in Milliseconds
+    input text      //input[@placeholder='Search by Brand Name']     ${BrandName}
+    sleep       ${search_sleep}
+#    Wait Until Element Contains    ${fetch_assetID}     ${generate_BusinessName}    60
+    wait until element is visible       //td[normalize-space()='${BrandName}']     60
+    ${get_brandName} =    get text    //td[normalize-space()='${BrandName}']
+#    log to console     ${generate_BusinessName}
+    log to console     ${get_brandName}
+    should be equal    ${BrandName}     ${get_brandName}
+#    ${EndTime1} =     Get Current Time in Milliseconds
+#    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+#    Calculate Running time  3  ${pageHeading}   PartnersPage - Search by business name      3    ${pageTime}     ${ActualTime}    PatnersPage_Time
 
 
 Select partner type
@@ -119,6 +145,7 @@ Create partner random business name
     input text   ${businessName}   ${generate_BusinessName}
     set global variable    ${generate_BusinessName}
 
+
 Create partner self business name
     [Arguments]    ${option}
     wait until element is enabled       ${click_businessName}        60
@@ -132,6 +159,22 @@ Enter partner business URL
     click element   ${businessURL}
     Clear element text      ${businessURL}
     input text   ${businessURL}   ${option}.net
+
+Select partner business_name
+    [Arguments]    ${option}
+    wait until element is enabled       ${click_businessName}        60
+    click element   ${click_businessName}
+    Clear element text      ${click_businessName}
+    input text   ${businessName}   ${option}
+    Press Keys     ${businessName}       ENTER
+
+Select partner business URL
+    [Arguments]    ${option}
+    wait until element is visible       ${businessURL}        60
+    wait until element is enabled       ${businessURL}        60
+    click element   ${businessURL}
+    input text  ${businessURL}    ${option}
+    Press Keys  ${businessURL}  ENTER
 
 Select partner country
     [Arguments]    ${country}
@@ -153,6 +196,7 @@ Click on contact person button
     Wait Until Element Is Not Visible    ${loaderIcon}      60
 
 Enter random contact person
+    wait until element is not visible   ${loaderIcon}       60
     wait until element is visible      ${contactPerson}       60
     click element   ${contactPerson}
     ${random_string} =    Generate Random String       8      [NUMBERS]
@@ -220,6 +264,7 @@ Save the new contact
     click element   ${save_addNewContact}
 #    wait until element is visible      ${loaderIcon}       60
     Wait Until Element Is Not Visible    ${loaderIcon}      60
+    sleep   ${search_sleep}
 
 Save the secondary contact
     wait until element is enabled   ${save_secondaryNewContact}
@@ -228,6 +273,7 @@ Save the secondary contact
     Wait Until Element Is Not Visible    ${loaderIcon}      60
 
 Click contact main save button
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
     wait until element is visible      ${main_Save}       60
     click element   ${main_Save}
 #    wait until element is visible      ${loaderIcon}       60
@@ -239,7 +285,6 @@ Click first row of table
     wait until element is enabled      css:td:nth-child(1)        60
     click element   css:td:nth-child(1)
 
-
 Click on edit button
     Wait Until Element Is Not Visible    ${loaderIcon}      60
     wait until element is visible      //button[normalize-space()='Edit']        60
@@ -248,8 +293,6 @@ Click on edit button
 Click on add custome business URL icon
     wait until element is visible      ${add_custom_businessURL}        60
     click element   ${add_custom_businessURL}
-
-
 
 Create partner random secondary business URL
     wait until element is enabled       ${add_secondaryURL}        60
@@ -306,4 +349,152 @@ Select the partner row
     [Arguments]    ${option}
     wait until element is visible       //td[normalize-space()='${option}']       60
     click element       //td[normalize-space()='${option}']
+
+Add Unique address_one of partner
+    wait until element is not visible       ${loaderIcon}    60
+    wait until element is visible     ${partner_address_Line1}         60
+    click element      ${partner_address_Line1}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generate_newaddress_one}=    Catenate    ${random_string}
+    input text      ${partner_address_Line1}     Address_${generate_newaddress_one}
+    Press Keys  ${partner_address_Line1}            ENTER
+    log to console      ${generate_newaddress_one}
+    set global variable    ${generate_newaddress_one}
+
+Add Unique address_two of partner
+    wait until element is visible     ${partner_address_Line2}         60
+    click element      ${partner_address_Line2}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generate_newaddress_two}=    Catenate    ${random_string}
+    input text      ${partner_address_Line2}     Address_${generate_newaddress_two}
+    Press Keys  ${partner_address_Line2}            ENTER
+    log to console      ${generate_newaddress_two}
+    set global variable    ${generate_newaddress_two}
+
+Select State
+    [Arguments]    ${address}
+    wait until element is not visible       ${loaderIcon}       60
+    wait until element is visible   ${partner_state}   60
+    click element   ${partner_state}
+    clear element text      ${partner_state}
+    Generic.Select parameter    ${address}
+#    wait until element is visible     //span[normalize-space()='${address}']        60
+#    wait until element is enabled       //span[normalize-space()='${address}']      60
+#    click element      //span[normalize-space()='${address}']
+
+Select City
+    [Arguments]    ${address}
+    wait until element is not visible       ${loaderIcon}       60
+    wait until element is visible   ${partner_city}   60
+    click element   ${partner_city}
+    clear element text      ${partner_city}
+    Generic.Select parameter    ${address}
+#    wait until element is visible     //span[normalize-space()='${address}']        60
+#    wait until element is enabled       //span[normalize-space()='${address}']      60
+#    click element      //span[normalize-space()='${address}']
+
+Zip code Input
+    [Arguments]     ${code}
+    wait until element is visible      ${zip_code}   60
+    click element    ${zip_code}
+    input text  ${zip_code}    ${code}
+
+Save new Address
+    wait until element is visible       ${save_address}     60
+    click element       ${save_address}
+    wait until element is not visible       ${loaderIcon}    60
+    sleep   ${search_sleep}
+
+Click on Add new Address of partner
+    [Arguments]     ${option}
+    Generic.select parameter    ${option}
+
+Click on Add new Contact of partner
+    [Arguments]     ${option}
+    Generic.select parameter    ${option}
+
+Click on three dots of partners listing
+    wait until element is visible   ${three_dots}   60
+    click element   ${three_dots}
+
+Select option from three dots of partner
+    [Arguments]     ${option}
+    Generic.Select other option from profile list       ${option}
+
+click on plus icon to add another business_url
+    wait until element is visible       css:.fas.fa-plus
+    click element       css:.fas.fa-plus
+
+Add second business_url
+    [Arguments]    ${name}
+    click element   ${secondary_contactURL}
+    clear element text    ${secondary_contactURL}
+    ${generate_SecondaryContactBusinessURL}=   Catenate    ${name}.com
+    input text   ${secondary_contactURL}   ${name}.com
+    log to console    secondary business URL: ${name}.com
+    set global variable     ${generate_SecondaryContactBusinessURL}
+
+Select country
+    [Arguments]    ${name}
+    wait until element is visible       ${contactP_country}       60
+    click element   ${contactP_country}
+    input text      ${contactP_country}        ${name}
+    Press Keys      ${contactP_country}       ENTER
+
+Add new address_two of partner
+    wait until element is visible     ${partner_newaddress_Line2}         60
+    click element      ${partner_newaddress_Line2}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generate_newaddress_two}=    Catenate    ${random_string}
+    input text      ${partner_newaddress_Line2}     Address_${generate_newaddress_two}
+    Press Keys  ${partner_newaddress_Line2}            ENTER
+    log to console      ${generate_newaddress_two}
+    set global variable    ${generate_newaddress_two}
+
+Add new zip code of partner
+    [Arguments]     ${code}
+    wait until element is visible      ${new_zipcode}    60
+    clear element text      ${new_zipcode}
+    click element    ${new_zipcode}
+    input text   ${new_zipcode}    ${code}
+
+
+click on edit icon
+    wait until element is not visible       ${loaderIcon}       60
+    sleep       ${search_sleep}
+    wait until element is visible   ${partner_edit_icon}   60
+    wait until element is enabled   ${partner_edit_icon}   60
+    click element       ${partner_edit_icon}
+
+Click on cross-icon for clearing text
+    wait until element is visible    ${clear_text}   60
+    click element       ${clear_text}
+
+Update the partner information
+    wait until element is not visible   ${loaderIcon}       60
+    wait until element is visible       ${update_button}        60
+    click element       ${update_button}
+    sleep   ${search_sleep}
+
+Enter new_business_email of contact
+    [Arguments]    ${Pname}    ${Bname}
+    click element   ${new_contactEmail}
+    clear element text    ${new_contactEmail}
+    input text   ${new_contactEmail}   ${Pname}@${Bname}.net
+    ${generate_ContactBusinessEmail}=    Catenate    ${Pname}@${Bname}.net
+    log to console  ${Pname}@${Bname}.net
+    set global variable    ${generate_ContactBusinessEmail}
+
+Select option from the pop up
+    [Arguments]    ${option}
+    Generic.click on the button         ${option}
+
+
+
+
+
+
+
+
+
 

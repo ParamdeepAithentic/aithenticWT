@@ -49,9 +49,10 @@ ${brand_country}    css:#brandCountry
 ${select_country}   css:.ng-option-label.ng-star-inserted
 
 ${brand_saveBTN}        //button[@title='Click here to Save']
-${brand_saveBtn_main}     css:button[class='btn button-green mt-0 m5px mr-0 add-brand-qa ng-star-inserted']
+${brand_saveBtn_main}     css:.add-brand-qa
 ${search_brandName}     css:input[placeholder='Search by Brand Name']
 ${fetch_brandName}    css:td:nth-child(2)
+
 
 ########## Add product #####
 
@@ -79,10 +80,37 @@ ${add_dept_costCenter}     css:.profile-section-department .qa-add-department-co
 
 ${searchBar_department}     css:input[placeholder='Search by Department Name']
 ${fetch_departmentName}     css:td:nth-child(2)
+
+${address_Line}     css:#addressLine1
+${address_line2}    css:#addressLine2
+${brand_linklist}   css:.qa-back-brand-list
+${brandnew_addressstate}    css:#addressState
+${editnew_brandaddressline2}    css:input[formcontrolname=StreetAddress2]
+${editnew_brandaddressline1}    css:#CompanyAddressId
+${editcity_edit}        css:#addressCity
+${editstate_edit}       css:#addressState
+${editbrand_addressline2}   css:input[formcontrolname=StreetAddress2]
+${editbrand_addressline1}   css:input[formcontrolname=StreetAddress1]
+${brand_crossicon}      //div[@class='row no-gutters mb-1']//div[2]//div[1]//div[2]//span[1]
+${brandadd_urlplusicon}     css:i[title='Click here to add Business url']
+${Brand_threedots}      css:.three-dots
+${brand_mainsaveButton}     //button[@type='button'][normalize-space()='Save']
+${Viewyour_addedbrandlist}      //a[normalize-space()='View Your Added Brand List']
+${Editaddress_icon}     css:i[title='Click here to edit address']
+${zipcode_input}        css:#zip
+${Brand_savebutton}     css:button[aria-label='Close'][type='submit']
+${add brand_link}   //a[normalize-space()='Add Brand']
+${Select_city while adding brand}   css:#City
+${Select_state while adding brand}  css:#State
+${clickadd_newaddress}  xpath://span[@title='Click here to add address']
+${select_click_popup_yes}   css:.qa-brand-${option}
+
 ${share_toEmail}      css:#toEmail
+
 
 ################################### Network Discovery ######################################################
 #//button[normalize-space()='Download Agent']
+
 
 
 
@@ -319,8 +347,8 @@ Verify Brand added
      log to console     ${get_brandName}
      should be equal    ${BrandName}     ${get_brandName}
      ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  10  ${pageHeading}   DashboardPage - Verify Brand added      10    ${pageTime}     ${ActualTime}    DashboardPage_Time
+     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+     Calculate Running time  10  ${pageHeading}   DashboardPage - Verify Brand added      10    ${pageTime}     ${ActualTime}    DashboardPage_Time
 
 
 
@@ -470,7 +498,7 @@ Confirm the exit import process pop appers
 
 Verify the side option list parameters
    wait until element is visible   ${side_options}      60
-   @{expectedList} =    Create List        Aithentic logo    Dashboard       Messages        Location        Team Members      Partners      Contracts      Technology      #Asecure-Cloud-Login
+   @{expectedList} =    Create List        Aithentic logo    Dashboard       Messages        Location        Team Members      Partners      Contracts      Technology      Asecure Cloud Login
    ${elements} =  Get WebElements     ${side_options}
    @{actualList} =   Create List
    FOR  ${element}  IN      @{elements}
@@ -504,11 +532,100 @@ Verify the profile option list parameters
       Append To List    ${actualList}     ${element.text}
     END
 
+Select Technology from personal deatils section
+    [Arguments]     ${option}
+    wait until element is visible   xpath://span[normalize-space()='${option}']     60
+    click element   xpath://span[normalize-space()='${option}']
+
+Click on View Your Added Brand List
+    wait until element is visible   ${Viewyour_addedbrandlist}   60
+    click element   ${Viewyour_addedbrandlist}
+
+Click on Add New Address
+    wait until element is visible   ${clickadd_newaddress}    60
+    click element   ${clickadd_newaddress}
+
+Enter Brand Address Line one
+    wait until element is not visible   ${loaderIcon}    60
+    wait until element is visible     ${address_Line}         60
+    wait until element is enabled     ${address_Line}         60
+    click element      ${address_Line}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generate_AddressLineone}=    Catenate    Address_${random_string}
+    input text      ${address_Line}     ${generate_AddressLineone}
+    log to console      ${generate_AddressLineone}
+#    set global variable    ${generate_AddressLineone}
+
+Enter Brand address line two
+    wait until element is visible     ${address_line2}         60
+    wait until element is enabled     ${address_line2}         60
+    click element      ${address_line2}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generate_AddressLine2}=    Catenate    Address_${random_string}
+    input text      ${address_line2}     ${generate_AddressLine2}
+    log to console      ${generate_AddressLine2}
+#    set global variable    ${generate_AddressLine2}
+
+Select State
+    [Arguments]     ${country}
+    Wait until element is visible   ${Select_state while adding brand}  60
+    click element   ${Select_state while adding brand}
+    wait until element is visible   css:span[title='${country}']    60
+    click element   css:span[title='${country}']
+
+Select City
+    [Arguments]     ${city}
+    wait until element is not visible       ${loaderIcon}    60
+    wait until element is visible   ${Select_city while adding brand}   60
+    click element   ${Select_city while adding brand}
+    wait until element is visible   css:span[title='${city}']     60
+    click element   css:span[title='${city}']
+
+Click on Save Button
+    wait until element is visible   ${Brand_savebutton}   60
+    click element   ${Brand_savebutton}
+
+Zip code Input
+    [Arguments]     ${code}
+    wait until element is visible   ${zipcode_input}    60
+    click element   ${zipcode_input}
+    input text  ${zipcode_input}    ${code}
+
+Click on Edit address
+    wait until element is visible   ${Editaddress_icon}   60
+    click element   ${Editaddress_icon}
+    wait until element is not visible       ${loaderIcon}    60
+
+Enter Brand New Address Line one
+    wait until element is not visible       ${loaderIcon}       60
+    wait until element is visible     ${address_Line}         60
+    click element      ${address_Line}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generate_newaddressone}=    Catenate    Address_${random_string}
+    input text      ${address_Line}     ${generate_newaddressone}
+    Press Keys  ${address_Line}            ENTER
+    log to console      ${generate_newaddressone}
+#    set global variable    ${generate_newaddress}
+
+
+Enter Brand new address line two
+    wait until element is visible     ${address_line2}         60
+    click element      ${address_line2}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generate_newaddresstwo}=    Catenate    Address_${random_string}
+    input text      ${address_line2}     ${generate_newaddresstwo}
+    log to console  ${generate_newaddresstwo}
+#   set global variable    ${generate_newaddress}
+
+Click on main Save Button
+    wait until element is visible   ${brand_mainsaveButton}    60
+    click element   ${brand_mainsaveButton}
+
 click on share icon of dashboard page
     wait until element is visible       css:.fa-share-alt              60
     click element       css:.fa-share-alt
 
-Enter toEmail into popup
+Enter to Email into popup
     wait until element is visible      ${share_toEmail}         60
     click element       ${share_toEmail}
     ${random_string} =    Generate Random String       10      [NUMBERS]
@@ -524,9 +641,6 @@ Click on Register button in email
     wait until element is visible       css:button[type='button']       60
     click element       css:button[type='button']
 
-Switch to window
-    [Arguments]    ${option}
-     switch window           ${option}
 
 Enter business email
     wait until element is enabled       ${register_Email}        60
@@ -542,8 +656,6 @@ Enter account_holder_name
 click on Help center icon of dashboard page
     wait until element is visible       css:.fa-question-circle         60
     click element       css:.fa-question-circle
-
-
 
 Click on link of information center list
     [Arguments]     ${link_name}
@@ -569,12 +681,121 @@ Verify no result found with wrong FAQ
     wait until element is visible      //div[normalize-space()='No results found']        60
 
 
+Click on three dots
+    wait until element is visible   ${Brand_threedots}   60
+    click element   ${Brand_threedots}
+
+click on Plus icon
+    wait until element is not visible   ${loaderIcon}   60
+    wait until element is visible   ${brandadd_urlplusicon}   60
+    click element   ${brandadd_urlplusicon}
+
+Add static Business Manufacturer URL
+    [Arguments]    ${option}
+    wait until element is visible       ${add_brand_mfc_URL}
+    click element       ${add_brand_mfc_URL}
+    input text      ${add_brand_mfc_URL}        ${option}
+
+Click on Cross Icon
+    wait until element is visible   ${brand_crossicon}    60
+    click element   ${brand_crossicon}
+
+Edit Brand Address Line one
+    wait until element is not visible   ${loaderIcon}    60
+    wait until element is visible   ${editbrand_addressline1}           60
+    wait until element is enabled     ${editbrand_addressline1}         60
+    click element      ${editbrand_addressline1}
+    Clear Element Text  ${editbrand_addressline1}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generate_editAddressLine1}=    Catenate    Address_${random_string}
+    input text   ${editbrand_addressline1}       ${generate_editAddressLine1}
+    log to console      ${generate_editAddressLine1}
+#    set global variable    ${generate_editAddressLine1}
+
+Edit Brand Address Line two
+    wait until element is not visible   ${loaderIcon}    60
+    wait until element is visible   ${editbrand_addressline2}           60
+    wait until element is enabled     css:#StreetAddress2         60
+    click element      ${editbrand_addressline2}
+    Clear Element Text  ${editbrand_addressline2}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generate_editAddressLine2}=    Catenate    Address_${random_string}
+    input text   ${editbrand_addressline2}        ${generate_editAddressLine2}
+    log to console      ${generate_editAddressLine2}
+#   set global variable    ${generate_editAddressLine2}
+
+Edit State while edit address
+    [Arguments]     ${State}
+    wait until element is not visible   ${loaderIcon}   60
+    wait until element is visible  ${editstate_edit}   60
+    wait until element is enabled  ${editstate_edit}   60
+    click element  css:ng-select[placeholder='Select State'] span[title='Clear all']
+    click element   ${editstate_edit}
+    wait until element is visible   css:span[title='${State}']   60
+    click element   css:span[title='${State}']
+
+Edit city while edit address
+    [Arguments]     ${city}
+    wait until element is not visible   ${loaderIcon}   60
+    wait until element is visible   ${editcity_edit}   60
+    click element   ${editcity_edit}
+    wait until element is visible   css:span[title='${city}']   60
+    click element   css:span[title='${city}']
+
+Edit New Brand Address Line one
+    wait until element is not visible   ${loaderIcon}    60
+    wait until element is visible   ${editnew_brandaddressline1}           60
+    wait until element is enabled     ${editnew_brandaddressline1}         60
+    click element      ${editnew_brandaddressline1}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generateNew_editAddressLine1}=    Catenate    Address_${random_string}
+    input text   ${editnew_brandaddressline1}       ${generateNew_editAddressLine1}
+    Press Keys  ${editnew_brandaddressline1}             ENTER
+    log to console      ${generateNew_editAddressLine1}
+#    set global variable    ${generateNew_editAddressLine1}
+
+Edit New Brand Address Line two
+    wait until element is not visible   ${loaderIcon}    60
+    wait until element is visible   ${editnew_brandaddressline2}           60
+    wait until element is enabled     ${editnew_brandaddressline2}         60
+    click element      ${editnew_brandaddressline2}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generateNew_editAddressLine2}=    Catenate    Address_${random_string}
+    input text   ${editnew_brandaddressline2}        ${generateNew_editAddressLine2}
+    log to console      ${generateNew_editAddressLine2}
+#    set global variable    ${generateNew_editAddressLine2}
+
+Select New Address State
+    [Arguments]     ${country}
+    Wait until element is visible   ${brandnew_addressstate}  60
+    click element   ${brandnew_addressstate}
+    wait until element is visible   css:span[title='${country}']    60
+    click element   css:span[title='${country}']
+
+Click on back to brand list link
+    wait until element is visible   ${brand_linklist}   60
+    click element   ${brand_linklist}
+
+Select option from the pop up
+    [Arguments]    ${option}
+    wait until element is visible   css:.qa-brand-${option}   60
+    click element   css:.qa-brand-${option}
 
 
+Add multiple brand URL as per index
+    [Arguments]    ${option}
+    wait until element is visible   (//input[@placeholder='example.com'])[${option}]   60
+    wait until element is enabled   (//input[@placeholder='example.com'])[${option}]   60
+    click element   (//input[@placeholder='example.com'])[${option}]
+    Create random URL value for multiple brand addition     (//input[@placeholder='example.com'])[${option}]
 
 
-
-
-
+Create random URL value for multiple brand addition
+    [Arguments]    ${option}
+    ${random_string} =    Generate Random String       15      [NUMBERS]
+    ${generated_random_value}=    Catenate   ${random_string}.com
+    input text   ${option}   ${generated_random_value}
+    log to console      ${generated_random_value}
+#    set global variable    ${generated_random_value}
 
 

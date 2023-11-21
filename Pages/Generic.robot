@@ -62,7 +62,7 @@ ${click_countryTag}     css:.iti__selected-flag.dropdown-toggle
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
-${yop_sleep}       3
+${yop_sleep}       5
 ${search_sleep}       1s
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
 
@@ -112,9 +112,11 @@ click on the tab
 
 click on the button
     [Arguments]    ${option}
+    wait until element is not visible   ${loaderIcon}       60
     wait until element is visible      //button[normalize-space()='${option}']     60
     wait until element is enabled      //button[normalize-space()='${option}']     60
     click element       //button[normalize-space()='${option}']
+    sleep   ${search_sleep}
 
 
 click on the button link
@@ -282,3 +284,7 @@ Enter phone number
     input text  ${contact_Country_search}   ${country}
     Generic.Select parameter      ${code}
     input text     ${phone}     ${phoneNo}
+
+Scroll the page till
+    [Arguments]    ${option}
+    Execute javascript      window.scrollTo(0,${option})
