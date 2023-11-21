@@ -910,7 +910,32 @@ Verify the history of added technology
 
 
 
-Upload the new attachment file
+#Upload the new attachment file
+#    Generic.click on the tab	Login
+#    LandingPage.Fill the login Form      ${email}    ${valid_password}
+#    Generic.select the option from the side menu    Technology
+#    Generic.Verify your current page location contains      technology
+#    TechnologyPage.click on add technology button
+#    Generic.Verify your current page location contains      addtechnology
+#    TechnologyPage.Click technology brand input field
+#    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+#    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+#    TechnologyPage.Add assetID for technology lifecycle information random
+#    TechnologyPage.Click on save technology form button
+#    Generic.Fetch alert message text and compare it with        Technology created successfully
+#    TechnologyPage.Click on save technology form pop button
+#    Generic.Verify your current page location contains      technology
+#    TechnologyPage.Search by AssetId       ${generated_AssetID}
+#    TechnologyPage.Click on the first row of the technology table
+#    Generic.Verify your current page location contains     technology-details
+#
+#    TechnologyPage.Select tab under technology details      attachments
+#    TechnologyPage.Upload File under technology attachments tab
+#    TechnologyPage.Click on upload button under technology history tab
+#    sleep       50000
+
+
+Add Technology Page - Add New Supplier and support partner and assign them
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
@@ -919,13 +944,36 @@ Upload the new attachment file
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    #           TechnologyPage.Click technology product input field
     TechnologyPage.Select parameter from technology dropdown list      QAHardware
     TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Click the add here link on supplier to add new supplier
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Add - Partner
+    Generic.Verify your current page location contains      addpartner
+    PartnersPage.Create partner random business name
+    PartnersPage.Enter partner business URL      ${generate_BusinessName}
+    PartnersPage.Select partner country       United States
+    TechnologyPage.Click contact main save button
+    Generic.Verify alertify is visible
+    sleep       2
+    Switch Window       aithentic | Add - Technology
+    TechnologyPage.Wait till supplier partner get auto polute       ${generate_BusinessName}
+
+    TechnologyPage.Click the add here link on support to add new support partner
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Add - Partner
+    Generic.Verify your current page location contains      addpartner
+    PartnersPage.Create partner random business name
+    PartnersPage.Enter partner business URL      ${generate_BusinessName}
+    PartnersPage.Select partner country       United States
+    TechnologyPage.Click contact main save button
+    Generic.Verify alertify is visible
+    sleep       2
+    Switch Window       aithentic | Add - Technology
+    TechnologyPage.Wait till support partner get auto polute        ${generate_BusinessName}
+
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
-    TechnologyPage.Click on the first row of the technology table
-    Generic.Verify your current page location contains     technology-details
