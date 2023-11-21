@@ -152,6 +152,7 @@ ${add_tech_dept_costCenter}      css:#costCenter
 
 ############################### History tab ###########################
 ${histortTab_ViewPopUp}     //div[@class='text-right']//button[normalize-space()='Cancel']
+${attachmentTab_UploadBTN}      css:input[type='file']
 
 *** Keywords ***
 Fetch the Brand Name from the row
@@ -991,9 +992,6 @@ Select add new entry
 #Existing Asset, New Asset
 
 
-
-
-
 Click here to add support partner
     wait until element is not visible    cs:.qa-assign-support-partner .ng-spinner-loader      60
     click element       css:.qa-click-to-add-partner-support
@@ -1044,6 +1042,28 @@ Submit the assign partner form
     Generic.click on the button     ${option}
 
 
+Click on upload button under technology history tab
+    wait until element is visible       ${attachmentTab_UploadBTN}     60
+    wait until element is enabled       ${attachmentTab_UploadBTN}      60
+    click element   ${attachmentTab_UploadBTN}
+
+Upload File under technology attachments tab
+    wait until element is visible       ${attachmentTab_UploadBTN}     60
+    wait until element is enabled       ${attachmentTab_UploadBTN}      60
+#    Click element       ${attachmentTab_UploadBTN}
+    Choose File    ${attachmentTab_UploadBTN}    C:\Users\Paramdeep\Downloads\one.pdf
+#    Click Button    ${attachmentTab_UploadBTN}
+
+
+Click the add here link on supplier to add new supplier
+    wait until element is visible       css:.qa-add-here-supplier     60
+    wait until element is enabled       css:.qa-add-here-supplier      60
+    click element   css:.qa-add-here-supplier
+
+Click the add here link on support to add new support partner
+    wait until element is visible       css:.qa-add-here-support     60
+    wait until element is enabled       css:.qa-add-here-support      60
+    click element   css:.qa-add-here-support
 
 #Verify the search item2
 #    [Arguments]    ${assertId}      ${serialNo}

@@ -53,6 +53,7 @@ ${brand_saveBtn_main}     css:button[class='btn button-green mt-0 m5px mr-0 add-
 ${search_brandName}     css:input[placeholder='Search by Brand Name']
 ${fetch_brandName}    css:td:nth-child(2)
 
+
 ########## Add product #####
 
 ${add_Product}     css:a[title='Click here to Add Product']
