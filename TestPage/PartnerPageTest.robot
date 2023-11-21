@@ -921,6 +921,8 @@ Remove manufacturer from partners
     PartnersPage.Select option from three dots of partner      Remove
     PartnersPage.Select option from the pop up      Yes
     Generic.Fetch alert message text and compare it with      Partner deleted successfully
+    ReplaceDomainAPI.Replace Domain
+
 
 
 
