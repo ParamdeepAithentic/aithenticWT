@@ -587,7 +587,7 @@ Activate Brand and address via brand under profile list
     DashboardPage.Click on three dots
     Generic.Select other option from profile list   Deactivate
     DashboardPage.Select option from the pop up     yes
-    Generic.Fetch alert message text and compare it with      Brand deactivated successully
+    Generic.Fetch alert message text and compare it with      Brand deactivated successfully
     DashboardPage.Click on three dots
     Generic.Select other option from profile list   Activate
     DashboardPage.Select option from the pop up     yes

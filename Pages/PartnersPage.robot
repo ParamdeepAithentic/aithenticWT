@@ -37,6 +37,8 @@ ${businessURL}     css:#businessUrl
 ${select_businessURL}     css:.qa-BusinessUrl
 ${click_Country}     css:#country
 ${addContact}     //span[normalize-space()='Add new Contact']
+
+#${contactPerson}     css:[formcontrolSelect partner business_namename=CompanyContactId] input
 ${contactPerson}     css:#contactPerson
 ${contactEmail}     css:#ContactEmail
 #${secondary_contactPerson}     css:[formcontrolname=CompanyContactId] input
