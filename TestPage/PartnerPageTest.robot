@@ -647,7 +647,6 @@ Export Specificartner into Excel Doc CSV and TSV for Support Partner
     PartnersPage.Search by business name    ${generate_BusinessName}
     PartnersPage.Select the partner row      ${generate_BusinessName}
     Generic.Verify your current page location contains      partner-details
-
     Generic.click on the button     Edit
     PartnersPage.Click on add custome business URL icon
     PartnersPage.Create partner random secondary business URL
@@ -670,16 +669,13 @@ Add Manufacturer via personal detail under technology and partner
     DashboardPage.Add static Business Manufacturer URL      yopmail.net
     DashboardPage.Add brand manufacturer country      United States
     DashboardPage.Save added brand details
-#    DashboardPage.Click on main Save Button
     Generic.Fetch alert message text and compare it with        Brand created successfully.
     DashboardPage.Click on main Save Button
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
     PartnersPage.Click new partner button
     Generic.Verify your current page location contains      addpartner
-#    sleep       5
     PartnersPage.Select partner type of new partner     Manufacturer
-#    sleep       3
     PartnersPage.Select partner business_name     ${generated_BrandName}
     PartnersPage.Select partner business URL        ${generated_BrandName}
     PartnersPage.Select partner country       United States
@@ -718,16 +714,13 @@ Edit Manufacturer via partner
     DashboardPage.Add static Business Manufacturer URL      yopmail.net
     DashboardPage.Add brand manufacturer country      United States
     DashboardPage.Save added brand details
-#    DashboardPage.Click on main Save Button
     Generic.Fetch alert message text and compare it with        Brand created successfully.
     DashboardPage.Click on main Save Button
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
     PartnersPage.Click new partner button
     Generic.Verify your current page location contains      addpartner
-#    sleep       5
     PartnersPage.Select partner type of new partner     Manufacturer
-#    sleep       3
     PartnersPage.Select partner business_name     ${generated_BrandName}
     PartnersPage.Select partner business URL        ${generated_BrandName}
     PartnersPage.Select partner country       United States
@@ -778,7 +771,6 @@ Edit Manufacturer via partner
     Generic.Enter phone number      India   +91     9646289871
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     Generic.click on the button     Add
-#    sleep   ${search_sleep}
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with    Partner updated successfully
     PartnersPage.Search by business name    ${generated_BrandName}
@@ -800,16 +792,13 @@ Deactivate Manufacturer via partner
     DashboardPage.Add static Business Manufacturer URL      yopmail.net
     DashboardPage.Add brand manufacturer country      United States
     DashboardPage.Save added brand details
-#    DashboardPage.Click on main Save Button
     Generic.Fetch alert message text and compare it with        Brand created successfully.
     DashboardPage.Click on main Save Button
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
     PartnersPage.Click new partner button
     Generic.Verify your current page location contains      addpartner
-#    sleep       5
     PartnersPage.Select partner type of new partner     Manufacturer
-#    sleep       3
     PartnersPage.Select partner business_name     ${generated_BrandName}
     PartnersPage.Select partner business URL        ${generated_BrandName}
     PartnersPage.Select partner country       United States
@@ -860,7 +849,6 @@ Deactivate Manufacturer via partner
     Generic.Enter phone number      India   +91     9646289871
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     Generic.click on the button     Add
-#    sleep   ${search_sleep}
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with    Partner updated successfully
     PartnersPage.Search by business name    ${generated_BrandName}
@@ -886,16 +874,13 @@ Activate Manufacturer via partner
     DashboardPage.Add static Business Manufacturer URL      yopmail.net
     DashboardPage.Add brand manufacturer country      United States
     DashboardPage.Save added brand details
-#    DashboardPage.Click on main Save Button
     Generic.Fetch alert message text and compare it with        Brand created successfully.
     DashboardPage.Click on main Save Button
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
     PartnersPage.Click new partner button
     Generic.Verify your current page location contains      addpartner
-#    sleep       5
     PartnersPage.Select partner type of new partner     Manufacturer
-#    sleep       3
     PartnersPage.Select partner business_name     ${generated_BrandName}
     PartnersPage.Select partner business URL        ${generated_BrandName}
     PartnersPage.Select partner country       United States
@@ -946,7 +931,6 @@ Activate Manufacturer via partner
     Generic.Enter phone number      India   +91     9646289871
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     Generic.click on the button     Add
-#    sleep   ${search_sleep}
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with    Partner updated successfully
     PartnersPage.Search by business name    ${generated_BrandName}
@@ -976,18 +960,15 @@ Remove Manufacturer from partner
     DashboardPage.Add static Business Manufacturer URL      yopmail.net
     DashboardPage.Add brand manufacturer country      United States
     DashboardPage.Save added brand details
-#    DashboardPage.Click on main Save Button
     Generic.Fetch alert message text and compare it with        Brand created successfully.
     DashboardPage.Click on main Save Button
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
     PartnersPage.Click new partner button
     Generic.Verify your current page location contains      addpartner
-#    sleep       5
     PartnersPage.Select partner type of new partner     Manufacturer
-#    sleep       3
     PartnersPage.Select partner business_name     ${generated_BrandName}
-    PartnersPage.Select partner business URL        ${generated_BrandName}
+    PartnersPage.Select partner business URL      ${generated_BrandName}
     PartnersPage.Select partner country       United States
     PartnersPage.Click on Add new Address of partner        Add new Address
     PartnersPage.Add Unique address_one of partner
@@ -1036,7 +1017,6 @@ Remove Manufacturer from partner
     Generic.Enter phone number      India   +91     9646289871
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     Generic.click on the button     Add
-#    sleep   ${search_sleep}
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with    Partner updated successfully
     PartnersPage.Search by business name    ${generated_BrandName}
