@@ -36,7 +36,8 @@ ${businessName}     css:div[aria-expanded='true'] input[type='text']
 ${businessURL}     css:#businessUrl
 ${click_Country}     css:#country
 ${addContact}     //span[normalize-space()='Add new Contact']
-${contactPerson}     css:[formcontrolSelect partner business_namename=CompanyContactId] input
+#${contactPerson}     css:[formcontrolSelect partner business_namename=CompanyContactId] input
+${contactPerson}     css:#contactPerson
 ${contactEmail}     css:#ContactEmail
 #${secondary_contactPerson}     css:[formcontrolname=CompanyContactId] input
 ${secondary_contactEmail}     css:#businessEmail
