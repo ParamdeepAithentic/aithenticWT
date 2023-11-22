@@ -277,7 +277,7 @@ Select product technology type
 
 Select product technology type via link
     [Arguments]    ${option}
-    scroll element into view    /html[1]/body[1]/app-root[1]/app-dashboard[1]/div[1]/div[3]/app-add-technology[1]/app-add-technology[1]/div[4]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[7]/ng-select[1]/div[1]/div[1]/div[2]/input[1]
+    Generic.Scroll the page till    900
     wait until element is visible       ${select_technology_type_via link}     60
     click element   ${select_technology_type_via link}
     Generic.Select parameter     ${option}
@@ -839,4 +839,44 @@ Create random URL value for multiple brand addition
     log to console      ${generated_random_value}
 #    set global variable    ${generated_random_value}
 
+Click on save button via link
+    wait until element is visible   css:div[class='modal-footer my-1'] button[type='submit']    60
+    click element   css:div[class='modal-footer my-1'] button[type='submit']
 
+Enter asset ID via link
+    wait until element is visible      css:#AssetId         60
+    click element       css:#AssetId
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generate_AssetID}=    Catenate    AssetID_${random_string}
+    input text      css:#AssetId     ${generate_AssetID}
+    log to console      ${generate_AssetID}
+    set global variable    ${generate_AssetID}
+
+Renewal Date via link under technology
+    wait until element is visible   css:#RenewalDate     60
+    click element   css:#RenewalDate
+    input text  css:#RenewalDate     03/26/2021
+
+Select cost center via link
+    [Arguments]    ${cost}
+    wait until element is visible   css:#CostCenter     60
+    click element   css:#CostCenter
+    wait until element is visible   //span[normalize-space()='12 - TestQA Department${cost}']   60
+    click element   //span[normalize-space()='12 - TestQA Department${cost}']
+
+Click on back to contract link
+    wait until element is not visible    ${loaderIcon}  60
+    wait until element is visible   //span[@class='back']   60
+    click element   //span[@class='back']
+
+Click on add new contract for this partner link
+    wait until element is visible   //span[normalize-space()='Add new Contact for this Partner']    60
+    click element   //span[normalize-space()='Add new Contact for this Partner']
+
+Enter contact name of contact person
+    [Arguments]     ${contact}
+    wait until element is not visible   ${loaderIcon}   60
+    wait until element is visible   css:#contactName    60
+    click element   css:#contactName
+    input text  css:#contactName    ${contact}
+    Press Keys   css:#contactName   ENTER

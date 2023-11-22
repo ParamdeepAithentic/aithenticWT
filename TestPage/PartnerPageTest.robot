@@ -944,9 +944,66 @@ View Details and check the details
     DashboardPage.Add product description via link
     DashboardPage.Add product feature via link
 
-    DashboardPage.Select product technology type     Hardware
-    DashboardPage.Select product technology group     Applications
-    DashboardPage.Save added product details
+    DashboardPage.Select product technology type via link     Hardware
+    DashboardPage.Select product technology group via link    Applications
+    DashboardPage.Click on save button via link
+    Generic.Fetch alert message text and compare it with    Product created successfully
+    DashboardPage.Enter asset ID via link
+
+    TechnologyPage.Select purchase date
+    DashboardPage.Renewal Date via link under technology
+    TechnologyPage.Select warranty end date    12/12/2028
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Add technology lifecycle comment    Technology Lifecycle Information- comment
+    TechnologyPage.Add order number of technology cost information     56
+    TechnologyPage.Add payment partner of technology cost information      testqa 20Feb
+    TechnologyPage.Add cost type of technology cost information        Purchased
+    TechnologyPage.Add payment type of technology cost information     FixedPayment
+    TechnologyPage.Add payment peroid of technology cost information       Monthly
+    DashboardPage.Select cost center via link     1008848
+    TechnologyPage.Add first payment date of technology cost information       12/12/2028
+    TechnologyPage.Add budget payment of technology cost information       1100
+    TechnologyPage.Add actual payment of technology cost information       1050
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+
+    Generic.Verify your current page location contains      technology-list
+    sleep   2
+    Generic.select the option from the side menu    Contracts
+    Generic.click on the button link    View Details
+    DashboardPage.Click on back to contract link
+    ContractsPage.Click on create new contract button
+    ContractsPage.Select type of contract     Dynamic Contract
+    Generic.Verify your current page location contains      generate-contract
+    ContractsPage.Enter contract type      SmartShare_Manufacturer
+    ContractsPage.Enter contract with     ${generate_BusinessName}
+    ContractsPage.Enter contract brand    ${generate_BusinessName}
+    ContractsPage.Enter contract location      United States - Main Office - 21 - 2
+    ContractsPage.Enter contract permission       Read/Write
+    ContractsPage.Select contract start date
+    ContractsPage.Select contract end date      12/12/2028
+    ContractsPage.Select contract function       Dynamic
+    ContractsPage.Click preview selection button on contact
+    ContractsPage.Enter contract description comment      Enter comment for contract description.
+    DashboardPage.Click on add new contract for this partner link
+    DashboardPage.Enter contact name of contact person      QA contact
+    PartnersPage.Enter contact business email    ${generate_PersonName}     ${generate_BusinessName}
+#    PartnersPage.Choose contact country      India   +91     9646289871
+    Generic.Enter phone number      India   +91     9646289871
+    PartnersPage.Enter contact location      United States - Main Office - 21 - 2
+    PartnersPage.Save the new contact
+    PartnersPage.Click contact main save button
+    Generic.Fetch alert message text and compare it with    Partner created successfully
+    PartnersPage.Search by business name    ${generate_BusinessName}
+
+#    ContractsPage.Select the checkboxes
+#    ContractsPage.Save create contract button
+#    ContractsPage.Save contract modal     Create Contract
+#    Generic.Fetch alert message text and compare it with        Contract created successfully
+
+#Search with Contract ID and the result should match
+
 
 
 
