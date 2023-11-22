@@ -153,7 +153,7 @@ Select contract start date
 
 Select contract end date
     [Arguments]    ${date}
-    Wait Until Element Is Visible       ${endDate}
+    Wait Until Element Is Visible       ${endDate}      60
     Generic.Enter self date     ${endDate}       ${date}
     Press Keys      ${location}      ENTER
 
@@ -227,6 +227,7 @@ Fetch the contract ID from the row
 
 Fetch the contract Brand Name from the row
     [Arguments]    ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
     wait until element is visible       //td[normalize-space()='${option}']     60
     ${fetch_contract_brandName} =    get text    //td[normalize-space()='${option}']
     set global variable    ${fetch_contract_brandName}
@@ -240,26 +241,25 @@ Search by contract BrandName
      Clear Element Text      ${contractID_SearchBar}
      ${StartTime1} =     Get Current Time in Milliseconds
      input text   ${contractID_SearchBar}   ${BrandName}
-     #    Generic.Enter value into field      ${asset_SearchBar}     ${BrandName}
-     wait until element is visible       ${loaderIcon}       60
-     Wait Until Element Is Not Visible    ${loaderIcon}      60
      Wait Until Element Is Not Visible    ${loaderIcon}      60
      Fetch the contract Brand Name from the row   ${BrandName}
      should be equal    ${fetch_Contract_BrandName}     ${BrandName}
      ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  8  ${pageHeading}   ContractPage - Search by contract BrandName      8    ${pageTime}     ${ActualTime}    ContractPage_Time
+     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+     Calculate Running time  8  ${pageHeading}   ContractPage - Search by contract BrandName      8    ${pageTime}     ${ActualTime}    ContractPage_Time
 
 
 
 #     //td[normalize-space()='BusinessName26100']
 
 Click on the first tab row
-#    [Arguments]     ${option}
+    [Arguments]     ${option}
     Wait Until Element Is Not Visible    ${loaderIcon}      60
-    wait until element is visible    css:.table-row.text-left.ng-star-inserted td        60
-    sleep    1
-    click element    css:.table-row.text-left.ng-star-inserted td
+    wait until element is visible    //td[normalize-space()='${option}']        60
+    click element    //td[normalize-space()='${option}']
+#    wait until element is visible    css:.table-row.text-left.ng-star-inserted td        60
+##    sleep    1
+#    click element    css:.table-row.text-left.ng-star-inserted td
 
 Verify technology is null
     Wait Until Element Is Visible       ${pdf_modal}    60

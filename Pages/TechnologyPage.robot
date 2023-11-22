@@ -298,7 +298,7 @@ Select parameter from technology dropdown list
     [Arguments]      ${option2}
      ${StartTime1} =     Get Current Time in Milliseconds
      Generic.Enter value into field     ${product}      ${option2}
-     sleep      1
+#     sleep      1
      TechnologyPage.Select the first value of To dropdown of product
      Wait Until Element Is Not Visible    ${loaderIcon}      60
      ${EndTime1} =     Get Current Time in Milliseconds
