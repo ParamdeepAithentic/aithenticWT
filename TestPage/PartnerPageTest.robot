@@ -347,7 +347,8 @@ Compose Message invite user test
     Generic.select the option from the side menu    Contracts
     Generic.Verify your current page location contains      contracts-list
 #    ContractsPage.Fetch the contract ID from the row
-    ContractsPage.Click on the first tab row
+#    ContractsPage.Click on the first tab row    ${generate_BusinessName}
+    ContractsPage.Click on the first row of contract table
     Generic.Verify your current page location contains      view-smartshare
     ContractsPage.Save the contract details     Accept
     ContractsPage.Select the contract form pop up checkboxes

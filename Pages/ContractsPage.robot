@@ -260,6 +260,15 @@ Click on the first tab row
 #    wait until element is visible    css:.table-row.text-left.ng-star-inserted td        60
 ##    sleep    1
 #    click element    css:.table-row.text-left.ng-star-inserted td
+Click on the first row of contract table
+#    [Arguments]     ${option}
+#    Wait Until Element Is Not Visible    ${loaderIcon}      60
+#    wait until element is visible    //td[normalize-space()='${option}']        60
+#    click element    //td[normalize-space()='${option}']
+    wait until element is visible    css:.table-row.text-left.ng-star-inserted td        60
+    wait until element is enabled    css:.table-row.text-left.ng-star-inserted td        60
+##    sleep    1
+    click element    css:.table-row.text-left.ng-star-inserted td
 
 Verify technology is null
     Wait Until Element Is Visible       ${pdf_modal}    60
