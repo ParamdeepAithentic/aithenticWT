@@ -628,8 +628,8 @@ click on share icon of dashboard page
 Enter to Email into popup
     wait until element is visible      ${share_toEmail}         60
     click element       ${share_toEmail}
-    ${random_string} =    Generate Random String       10      [LETTERS]
-    ${generate_sharetoEmail}=    Catenate    ${random_string}@yopmail.net
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generate_sharetoEmail}=    Catenate    ToEmail_${random_string}@yopmail.net
     input text      ${share_toEmail}     ${generate_sharetoEmail}
     log to console      ${generate_sharetoEmail}
     set global variable    ${generate_sharetoEmail}
