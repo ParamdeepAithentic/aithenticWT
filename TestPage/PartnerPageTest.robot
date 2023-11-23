@@ -1070,7 +1070,7 @@ View Details and check the details
     Generic.Fetch alert message text and compare it with    Partner created successfully
     Generic.select the option from the side menu    Technology
     TechnologyPage.click on add technology button
-    PartnersPage.Click here to add link of contract details
+    PartnersPage.Click here to add link of contract details     Click here to add
     DashboardPage.Create random productName
     DashboardPage.Add product brand name      ${generate_BusinessName}
     DashboardPage.Add product description via link
@@ -1119,21 +1119,32 @@ View Details and check the details
     ContractsPage.Click preview selection button on contact
     ContractsPage.Enter contract description comment      Enter comment for contract description.
     DashboardPage.Click on add new contract for this partner link
-    DashboardPage.Enter contact name of contact person      QA contact
-    PartnersPage.Enter contact business email    ${generate_PersonName}     ${generate_BusinessName}
+    PartnersPage.Enter Random Contact Person Via Link
+    PartnersPage.Enter contact business email via link    ${generate_contactPersonName}
 #    PartnersPage.Choose contact country      India   +91     9646289871
     Generic.Enter phone number      India   +91     9646289871
-    PartnersPage.Enter contact location      United States - Main Office - 21 - 2
-    PartnersPage.Save the new contact
-    PartnersPage.Click contact main save button
-    Generic.Fetch alert message text and compare it with    Partner created successfully
-    PartnersPage.Search by business name    ${generate_BusinessName}
+    PartnersPage.Enter contact location via link      United States - Main Office - 21 - 2
+    PartnersPage.Click on save button of contact via link
+    Generic.Fetch alert message text and compare it with    Contact created successfully
+    PartnersPage.Enter and select contact name via link
+    ContractsPage.Select the checkboxes
+    ContractsPage.Save create contract button
+    ContractsPage.Save contract modal     Create Contract
+    Generic.Fetch alert message text and compare it with        Contract created successfully
+    ContractsPage.Search by contract BrandName      ${generate_BusinessName}
+    ContractsPage.Fetch the contract ID from the row
+    ContractsPage.Fetch the contract Brand Name from the row      ${generate_BusinessName}
+    ContractsPage.Click on the first tab row    ${generate_BusinessName}
+    Generic.click on the button     Withdraw
+    Generic.Fetch alert message text and compare it with        Status updated successfully
+    PartnersPage.Click on back to contracts link via contract
+    Generic.Verify your current page location contains  contracts-list
+    ContractsPage.Search by contract BrandName      ${generate_BusinessName}
+    sleep   3
+    PartnersPage.Verify status after withdraw the contract
 
-#    ContractsPage.Select the checkboxes
-#    ContractsPage.Save create contract button
-#    ContractsPage.Save contract modal     Create Contract
-#    Generic.Fetch alert message text and compare it with        Contract created successfully
 
-#Search with Contract ID and the result should match
+
+
 
 

@@ -249,7 +249,7 @@ Enter self contact person
 
 Enter contact business email
     [Arguments]    ${Pname}    ${Bname}
-    wait until element is visible   ${contactEmail}     60
+    wait until element is visible   ${contactEmail}        60
     wait until element is enabled      ${contactEmail}       60
     click element   ${contactEmail}
     clear element text    ${contactEmail}
@@ -563,6 +563,63 @@ Click on the save button
 Click here to add link of contract details
     [Arguments]     ${option}
     Generic.click on the button link         ${option}
+
+Enter contact business email via link
+    [Arguments]    ${Pname}
+    wait until element is not visible   ${loaderIcon}   60
+    wait until element is visible   css:#businessEmail        60
+    wait until element is enabled      css:#businessEmail       60
+    click element   css:#businessEmail
+
+
+    ${generate_ContactBusinessEmailvialink}=    Catenate    ${Pname}@yopmail.net
+    input text   css:#businessEmail  ${generate_ContactBusinessEmailvialink}
+    log to console  ${generate_ContactBusinessEmailvialink}
+    set global variable    ${generate_ContactBusinessEmailvialink}
+
+Enter random contact person via link
+    wait until element is not visible   ${loaderIcon}       60
+    wait until element is visible      css:#contactName     60
+    wait until element is enabled      css:#contactName       60
+    click element   css:#contactName
+    ${random_string} =    Generate Random String       6      [NUMBERS]
+    ${generate_contactPersonName}=    Catenate    Person_${random_string}
+    input text   css:#contactName   ${generate_contactPersonName}
+    log to console  ${generate_contactPersonName}
+    set global variable      ${generate_contactPersonName}
+    Press Keys  css:#contactName    ENTER
+
+Enter contact location via link
+    [Arguments]    ${loc}
+    wait until element is visible       css:#forLcoations     60
+    wait until element is enabled       css:#forLcoations     60
+    click element   css:#forLcoations
+    input text  css:#forLcoations   ${loc}
+    Press Keys     css:#forLcoations       ENTER
+
+Click on save button of contact via link
+    wait until element is visible   css:button[class='btn button-green mt-0 ml-2']      60
+    click element   css:button[class='btn button-green mt-0 ml-2']
+
+Enter and select contact name via link
+    wait until element is not visible   ${loaderIcon}   60
+    wait until element is visible   css:#contName   60
+    click element   css:#contName
+    input text  css:#contName       ${generate_contactPersonName}
+    Press Keys  css:#contName   ENTER
+
+Click on back to contracts link via contract
+    wait until element is visible   css:.back.theme-blue    60
+    click element   css:.back.theme-blue
+
+Verify status after withdraw the contract
+    wait until element is visible   css:.table.table-hover.border-grey      60
+    Table column should contain     css:.table.table-hover.border-grey      7       Active
+
+
+
+
+
 
 
 

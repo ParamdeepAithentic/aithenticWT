@@ -875,3 +875,6 @@ Enter contact name of contact person
     click element   css:#contactName
     input text  css:#contactName    ${contact}
     Press Keys   css:#contactName   ENTER
+
+Enter contact business email
+    wait until element is visible   css:
