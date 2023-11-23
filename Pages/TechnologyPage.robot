@@ -154,6 +154,14 @@ ${add_tech_dept_costCenter}      css:#costCenter
 ${histortTab_ViewPopUp}     //div[@class='text-right']//button[normalize-space()='Cancel']
 ${attachmentTab_UploadBTN}      css:input[type='file']
 
+${technology_address_Lineone}       css:#strretAddress1
+${technology_address_Linetwo}       css:#strretAddress2
+${zip_code}     css:#zip
+${technology_employeeid}        css:#AssignedEmployeeId
+${businessEmail}        css:#AssignedEmail
+${generated_assignFname}=    Catenate    Fname_${random_string}
+
+
 *** Keywords ***
 Fetch the Brand Name from the row
     [Arguments]    ${option}
@@ -883,11 +891,94 @@ Verify message body of recent added email
 Click on add location
     wait until element is visible       css:span[title='Add new location'] a        60
     click element       css:span[title='Add new location'] a
+    sleep       ${yop_sleep}
 
 Select country of the location
     [Arguments]    ${option}
     Generic.Enter value into field     css:#country     ${option}
     Generic.Select parameter        ${option}
+
+Enter building_name of the location
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_buildingname}=    Catenate    Bldg_${random_string}
+    Generic.Enter value into field      css:#buildingName         ${generated_buildingname}
+    set global variable    ${generated_buildingname}
+
+Enter floor of the location
+    [Arguments]    ${option}
+    Generic.Enter value into field     css:#floor    ${option}
+
+Enter room of the location
+    [Arguments]    ${option}
+    Generic.Enter value into field     css:#room    ${option}
+
+Enter unique address_one of the location
+    wait until element is not visible       ${loaderIcon}    60
+    wait until element is visible     ${technology_address_Lineone}         60
+    wait until element is enabled     ${technology_address_Lineone}         60
+    click element      ${technology_address_Lineone}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generate_newaddress_one}=    Catenate    ${random_string}
+    input text      ${technology_address_Lineone}     Address_${generate_newaddress_one}
+    log to console      ${generate_newaddress_one}
+    set global variable    ${generate_newaddress_one}
+
+Enter unique address_two of the location
+    wait until element is not visible       ${loaderIcon}    60
+    wait until element is visible     ${technology_address_Linetwo}         60
+    wait until element is enabled     ${technology_address_Linetwo}         60
+    click element      ${technology_address_Linetwo}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generate_newaddress_one}=    Catenate    ${random_string}
+    input text      ${technology_address_Linetwo}     Address_${generate_newaddress_one}
+    log to console      ${generate_newaddress_one}
+    set global variable    ${generate_newaddress_one}
+
+Select city of location
+    [Arguments]    ${address}
+    wait until element is not visible       ${loaderIcon}       60
+    wait until element is visible       css:.qa-City input      60
+    wait until element is enabled   css:.qa-City input   60
+    click element   css:.qa-City input
+    Generic.Select parameter        ${address}
+
+Select state of location
+    [Arguments]    ${address}
+    wait until element is not visible       ${loaderIcon}       60
+    wait until element is visible       css:.qa-State input      60
+    wait until element is enabled   css:.qa-State input   60
+    click element   css:.qa-State input
+    Generic.Select parameter        ${address}
+
+Enter Zip_code
+    [Arguments]     ${code}
+    wait until element is visible      ${zip_code}   60
+    wait until element is enabled     ${zip_code}   60
+    click element    ${zip_code}
+    input text  ${zip_code}    ${code}
+
+Create unique assign to Business_email random
+    [Arguments]    ${Fname}    ${domain}
+    wait until element is visible       ${businessEmail}     60
+    wait until element is enabled       ${businessEmail}     60
+    click element   ${businessEmail}
+    clear element text    ${businessEmail}
+    input text   ${businessEmail}   ${Fname}@${domain}.net
+    ${generate_BusinessEmail}=    Catenate    ${Fname}@${Domain}.net
+    log to console  ${Fname}@${Domain}.net
+    set global variable    ${generate_BusinessEmail}
+
+Create unique assign to employee_ID random
+    wait until element is not visible       ${loaderIcon}    60
+    wait until element is visible     ${technology_employeeid}         60
+    wait until element is enabled     ${technology_employeeid}         60
+    click element      ${technology_employeeid}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generate_employeeid}=    Catenate    ${random_string}
+    input text      ${technology_employeeid}     E_ID${generate_employeeid}
+    log to console      ${generate_employeeid}
+    set global variable    ${generate_employeeid}
+
 
 Click on refresh location icon
     wait until element is visible       //b[normalize-space()='click here to refresh the location list']       60

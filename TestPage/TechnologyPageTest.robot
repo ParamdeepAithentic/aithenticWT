@@ -977,3 +977,61 @@ Add Technology Page - Add New Supplier and support partner and assign them
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+
+Add New location department assignee support partner and supplier during add new technology
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.click on add technology button
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Click on add location
+    Switch Window       aithentic | Add - Location
+    Generic.Verify your current page location contains      add-location
+    TechnologyPage.Select country of the location   United States
+    TechnologyPage.Enter building_name of the location
+    TechnologyPage.Enter floor of the location      6
+    TechnologyPage.Enter room of the location       30
+    TechnologyPage.Enter unique address_one of the location
+    TechnologyPage.Enter unique address_two of the location
+    TechnologyPage.Select state of location     Alaska
+    TechnologyPage.Select city of location      Akutan
+    TechnologyPage.Enter Zip_code       67540
+    TechnologyPage.Save the new added location         save
+    Generic.Verify alertify is visible
+    Switch Window       aithentic | Add - Technology
+    TechnologyPage.Click on refresh location icon
+    TechnologyPage.Add assignment information location     ${generated_buildingname}
+
+    TechnologyPage.Click on add department
+    TechnologyPage.Create unique department name random
+    TechnologyPage.Select department cost center     1300
+    TechnologyPage.Save the department       add
+    Generic.Fetch alert message text and compare it with        Department added successfully
+#    TechnologyPage.Click on refresh location icon
+    TechnologyPage.Add assignment information department name      ${generated_DepartmentNumber}
+
+    TechnologyPage.Click on add assign to
+    TechnologyPage.Create unique assign to first name random
+    TechnologyPage.Create unique assign to last name random
+    TechnologyPage.Create unique assign to Business_email random     ${generated_assignFname}        yopmail
+    TechnologyPage.Create unique assign to employee_ID random
+    TechnologyPage.Save the assign to      save
+    Generic.Fetch alert message text and compare it with       Assigned Users created successfully
+    TechnologyPage.Click on refresh location icon
+    TechnologyPage.Add assignment information assign to          ${generated_assignFname}
+
+
+#
+#
+#    TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
+#    TechnologyPage.Add assignment information department name      TestQA Department Up31840619
+#    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+
+
+
+
