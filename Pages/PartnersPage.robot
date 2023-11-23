@@ -556,7 +556,6 @@ Select option from the pop up
     [Arguments]    ${option}
     Generic.click on the button         ${option}
 
-
 Click on the save button
     [Arguments]     ${option}
     Generic.click on the button         ${option}
@@ -564,8 +563,6 @@ Click on the save button
 Click here to add link of contract details
     [Arguments]     ${option}
     Generic.click on the button link         ${option}
-
-
 
 
 
