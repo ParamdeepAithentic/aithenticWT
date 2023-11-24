@@ -613,9 +613,14 @@ Click on back to contracts link via contract
     click element   css:.back.theme-blue
 
 Verify status after withdraw the contract
-    wait until element is visible   css:.table.table-hover.border-grey      60
-    Table column should contain     css:.table.table-hover.border-grey      7       Active
+    [Arguments]    ${option}
+    wait until element is visible   //td[normalize-space()='${option}']      60
+#    Table column should contain     css:.table.table-hover.border-grey      7       Active
 
+Click on the three buttons link of contract via view smart details
+    [Arguments]     ${option}
+    wait until element is visible   //b[normalize-space()='${option}:']/../../..//a[@class='back pointer ng-star-inserted'][normalize-space()='1']      60
+    click element   //b[normalize-space()='${option}:']/../../..//a[@class='back pointer ng-star-inserted'][normalize-space()='1']
 
 
 

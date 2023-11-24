@@ -1140,8 +1140,14 @@ View Details and check the details
     PartnersPage.Click on back to contracts link via contract
     Generic.Verify your current page location contains  contracts-list
     ContractsPage.Search by contract BrandName      ${generate_BusinessName}
-    sleep   3
-    PartnersPage.Verify status after withdraw the contract
+    sleep   2
+    PartnersPage.Verify status after withdraw the contract  Inactive
+    ContractsPage.Click on the first tab row    ${generate_BusinessName}
+    PartnersPage.Click on the three buttons link of contract via view smart details     Brand
+    Generic.Verify your current page location contains    view-contract-brands
+    PartnersPage.Verify status after withdraw the contract      Active
+
+
 
 
 
