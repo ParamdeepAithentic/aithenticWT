@@ -521,6 +521,11 @@ Add first payment date of technology cost information
     [Arguments]    ${date}
      Generic.Enter self date       ${first_paymentdate}     ${date}
 
+Click on update button of edit_technology page
+    [Arguments]    ${option}
+    wait until element is visible       //button[@type='submit'][normalize-space()='${option}']
+    click element       //button[@type='submit'][normalize-space()='${option}']
+
 Add budget payment of technology cost information
     [Arguments]    ${option}
     wait until element is visible    ${budget_payment}      60
@@ -615,8 +620,8 @@ Add assignment information location
     click element       ${locationName}
     Clear Element Text      ${locationName}
     Generic.Enter value into field      ${locationName}     ${option1}
-    Generic.Select parameter    ${option1}
-#    Press Keys     ${locationName}       ENTER
+#    Generic.Select parameter    ${option1}
+    Press Keys     ${locationName}       ENTER
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  13  ${pageHeading}   Technology Page - Add assignment information location      13   ${pageTime}     ${ActualTime}    TechnologyPage_Time
@@ -628,10 +633,11 @@ Add assignment information department name
     click element       ${departmentName}
     Clear Element Text      ${departmentName}
     Generic.Enter value into field      ${departmentName}     ${option1}
-    Generic.Select parameter    ${option1}
+#    Generic.Select parameter    ${option1}
+    Press Keys     ${departmentName}       ENTER
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  14  ${pageHeading}   Technology Page - Add assignment information department name      14    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+    Calculate Running time  14  ${pageHeading}   Technology Page - Add assignment information location name      14    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Add assignment information assign to
     [Arguments]    ${option1}
@@ -1102,6 +1108,7 @@ Click contact main save button
 Wait till support partner get auto polute
     [Arguments]     ${option}
     wait until element is visible    //span[normalize-space()='${option}']      120
+
 Wait till supplier partner get auto polute
     [Arguments]     ${option}
     wait until element is visible    //span[normalize-space()='${option}']      120
