@@ -1022,15 +1022,40 @@ Add New location department assignee support partner and supplier during add new
     TechnologyPage.Create unique assign to employee_ID random
     TechnologyPage.Save the assign to      save
     Generic.Fetch alert message text and compare it with       Assigned Users created successfully
-    TechnologyPage.Click on refresh location icon
-    TechnologyPage.Add assignment information assign to          ${generated_assignFname}
+#    TechnologyPage.Click on refresh location icon
+    TechnologyPage.Add assignment information assign to          ${generated_assignFname} ${generated_assignLname}
 
 
-#
-#
-#    TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
-#    TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-#    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+
+    TechnologyPage.Click the add here link on supplier to add new supplier
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Add - Partner
+    Generic.Verify your current page location contains      addpartner
+    PartnersPage.Create partner random business name
+    PartnersPage.Enter partner business URL      ${generate_BusinessName}
+    PartnersPage.Select partner country       United States
+    TechnologyPage.Click contact main save button
+    Generic.Verify alertify is visible
+    sleep       2
+    Switch Window       aithentic | Add - Technology
+    TechnologyPage.Wait till supplier partner get auto polute       ${generate_BusinessName}
+
+    TechnologyPage.Click the add here link on support to add new support partner
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Add - Partner
+    Generic.Verify your current page location contains      addpartner
+    PartnersPage.Create partner random business name
+    PartnersPage.Enter partner business URL      ${generate_BusinessName}
+    PartnersPage.Select partner country       United States
+    TechnologyPage.Click contact main save button
+    Generic.Verify alertify is visible
+    sleep       2
+    Switch Window       aithentic | Add - Technology
+
+
+
+
+
 
 
 

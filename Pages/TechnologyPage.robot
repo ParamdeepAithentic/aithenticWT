@@ -159,8 +159,6 @@ ${technology_address_Linetwo}       css:#strretAddress2
 ${zip_code}     css:#zip
 ${technology_employeeid}        css:#AssignedEmployeeId
 ${businessEmail}        css:#AssignedEmail
-${generated_assignFname}=    Catenate    Fname_${random_string}
-
 
 *** Keywords ***
 Fetch the Brand Name from the row
@@ -283,7 +281,7 @@ Select parameter from brand dropdown list
     Clear Element Text      ${brand}
     ${StartTime1} =     Get Current Time in Milliseconds
     input text    ${brand}   ${option}
-    sleep       ${search_sleep}
+#    sleep       ${search_sleep}
     Generic.Select parameter    ${option}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
@@ -603,6 +601,7 @@ Add max contracted of contract information random
     input text   ${max_contracted}   ${generated_maxContracted}
     log to console      ${generated_maxContracted}
     set global variable    ${generated_maxContracted}
+
 Add max contracted of contract information self
     [Arguments]    ${option}
     wait until element is visible       ${max_contracted}        60
@@ -610,15 +609,14 @@ Add max contracted of contract information self
 
 ##############Assignment Information###############
 Add assignment information location
-
     [Arguments]    ${option1}
     wait until element is visible    ${locationName}      60
     ${StartTime1} =     Get Current Time in Milliseconds
     click element       ${locationName}
     Clear Element Text      ${locationName}
     Generic.Enter value into field      ${locationName}     ${option1}
-#    Generic.Select parameter    ${option1}
-    Press Keys     ${locationName}       ENTER
+    Generic.Select parameter    ${option1}
+#    Press Keys     ${locationName}       ENTER
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  13  ${pageHeading}   Technology Page - Add assignment information location      13   ${pageTime}     ${ActualTime}    TechnologyPage_Time
@@ -629,7 +627,7 @@ Add assignment information department name
     ${StartTime1} =     Get Current Time in Milliseconds
     click element       ${departmentName}
     Clear Element Text      ${departmentName}
-    #    Generic.Enter value into field      ${departmentName}     ${option1}
+    Generic.Enter value into field      ${departmentName}     ${option1}
     Generic.Select parameter    ${option1}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
@@ -641,7 +639,7 @@ Add assignment information assign to
     ${StartTime1} =     Get Current Time in Milliseconds
     click element       ${assignTo}
     Clear Element Text      ${assignTo}
-    #    Generic.Enter value into field      ${assignTo}     ${option1}
+    Generic.Enter value into field      ${assignTo}     ${option1}
     Generic.Select parameter    ${option1}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
@@ -962,7 +960,7 @@ Create unique assign to Business_email random
     wait until element is visible       ${businessEmail}     60
     wait until element is enabled       ${businessEmail}     60
     click element   ${businessEmail}
-    clear element text    ${businessEmail}
+#    clear element text    ${businessEmail}
     input text   ${businessEmail}   ${Fname}@${domain}.net
     ${generate_BusinessEmail}=    Catenate    ${Fname}@${Domain}.net
     log to console  ${Fname}@${Domain}.net
@@ -1037,12 +1035,17 @@ Create unique assign to first name random
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_assignFname}=    Catenate    Fname_${random_string}
     input text  css:#AssignedFirstName   ${generated_assignFname}
+    log to console       ${generated_assignFname}
+    set global variable    ${generated_assignFname}
+
 
 Create unique assign to last name random
     wait until element is visible       css:#AssignedLastName        60
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_assignLname}=    Catenate    Lname_${random_string}
     input text   css:#AssignedLastName   ${generated_assignLname}
+    log to console      ${generated_assignLname}
+    set global variable    ${generated_assignLname}
 
 Save the assign to
     [Arguments]    ${option}
