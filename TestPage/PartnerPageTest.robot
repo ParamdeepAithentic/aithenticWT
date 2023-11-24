@@ -1103,6 +1103,7 @@ View Details and check the details
     Generic.Verify your current page location contains      technology-list
     sleep   2
     Generic.select the option from the side menu    Contracts
+
     Generic.click on the button link    View Details
     DashboardPage.Click on back to contract link
     ContractsPage.Click on create new contract button
@@ -1132,9 +1133,10 @@ View Details and check the details
     ContractsPage.Save contract modal     Create Contract
     Generic.Fetch alert message text and compare it with        Contract created successfully
     ContractsPage.Search by contract BrandName      ${generate_BusinessName}
-    ContractsPage.Fetch the contract ID from the row
+#    ContractsPage.Fetch the contract ID from the row
     ContractsPage.Fetch the contract Brand Name from the row      ${generate_BusinessName}
     ContractsPage.Click on the first tab row    ${generate_BusinessName}
+    PartnersPage.Fetch the contract ID from the row via smart share details
     Generic.click on the button     Withdraw
     Generic.Fetch alert message text and compare it with        Status updated successfully
     PartnersPage.Click on back to contracts link via contract
@@ -1146,6 +1148,17 @@ View Details and check the details
     PartnersPage.Click on the three buttons link of contract via view smart details     Brand
     Generic.Verify your current page location contains    view-contract-brands
     PartnersPage.Verify status after withdraw the contract      Active
+    PartnersPage.Click on back to contract details button link
+    PartnersPage.Click on the three buttons link of contract via view smart details     Locations
+    Generic.Verify your current page location contains    view-location
+    PartnersPage.Verify status after withdraw the contract   Texas
+    PartnersPage.Click on back to contract details button link
+    PartnersPage.Click on the three buttons link of contract via view smart details     Technology
+    Generic.Verify your current page location contains    technology
+    PartnersPage.Verify status after withdraw the contract   Applications
+    PartnersPage.Click on back to contract details button link
+    PartnersPage.Download the contract pdf
+
 
 
 

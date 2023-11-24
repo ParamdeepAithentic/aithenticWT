@@ -622,6 +622,26 @@ Click on the three buttons link of contract via view smart details
     wait until element is visible   //b[normalize-space()='${option}:']/../../..//a[@class='back pointer ng-star-inserted'][normalize-space()='1']      60
     click element   //b[normalize-space()='${option}:']/../../..//a[@class='back pointer ng-star-inserted'][normalize-space()='1']
 
+Fetch the contract ID from the row via smart share details
+    wait until element is visible       css:div[class='welcome-main p10px mt-0'] div:nth-child(2) div:nth-child(2) p:nth-child(1)    60
+    ${fetch_contract_ID_via_smart_share} =    get text       css:div[class='welcome-main p10px mt-0'] div:nth-child(2) div:nth-child(2) p:nth-child(1)
+#     wait until element is visible       css:.login-form-right > div:nth-child(2) > div:nth-child(2) p    60
+#    ${fetch_contract_ID_via_smart_share} =    get text   css:.login-form-right > div:nth-child(2) > div:nth-child(2) p
+    log to console    Contract_ID=${fetch_contract_ID_via_smart_share}
+    set global variable    ${fetch_contract_ID_via_smart_share}
+
+Click on back to contract details button link
+    wait until element is not visible   ${loaderIcon}   60
+    wait until element is visible   css:.back.pointer.font-weight-bold    60
+    click element   css:.back.pointer.font-weight-bold
+
+Download the contract pdf
+    wait until element is not visible   ${loaderIcon}   60
+    wait until element is visible   //i[@title='Download PDF Version']      60
+    click element   //i[@title='Download PDF Version']
+
+
+
 
 
 
