@@ -1265,7 +1265,6 @@ Edit Technology Page - Add New Supplier and assign that Supplier
     Generic.Verify your current page location contains     technology-details
     TechnologyPage.Click on edit button on product details page        Edit
     Generic.Verify your current page location contains      edit-technology
-#    Generic.Scroll the page till        2000
     TechnologyPage.Click the add here link on supplier to edit new supplier
     sleep       ${yop_sleep}
     Switch Window       aithentic | Add - Partner
