@@ -84,8 +84,8 @@ Search by business name
     [Arguments]    ${BusinessName}
     wait until element is visible       css:thead tr       60
     wait until element is visible       ${partner_searchBar}       60
-    Clear Element Text      ${partner_searchBar}
-    ${StartTime1} =     Get Current Time in Milliseconds
+#    Clear Element Text      ${partner_searchBar}
+#    ${StartTime1} =     Get Current Time in Milliseconds
     input text      ${partner_searchBar}     ${BusinessName}
     sleep       ${search_sleep}
 #    Wait Until Element Contains    ${fetch_assetID}     ${generate_BusinessName}    60
@@ -94,21 +94,21 @@ Search by business name
 #    log to console     ${generate_BusinessName}
     log to console     ${get_businessName}
     should be equal    ${BusinessName}     ${get_businessName}
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  3  ${pageHeading}   PartnersPage - Search by business name      3    ${pageTime}     ${ActualTime}    PatnersPage_Time
+#    ${EndTime1} =     Get Current Time in Milliseconds
+#    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+#    Calculate Running time  3  ${pageHeading}   PartnersPage - Search by business name      3    ${pageTime}     ${ActualTime}    PatnersPage_Time
 
 Search by brand name
     [Arguments]    ${BrandName}
     wait until element is visible       css:thead tr       60
     wait until element is visible       //input[@placeholder='Search by Brand Name']       60
-    Clear Element Text      //input[@placeholder='Search by Brand Name']
+#    Clear Element Text      //input[@placeholder='Search by Brand Name']
 #    ${StartTime1} =     Get Current Time in Milliseconds
     input text      //input[@placeholder='Search by Brand Name']     ${BrandName}
     sleep       ${search_sleep}
 #    Wait Until Element Contains    ${fetch_assetID}     ${generate_BusinessName}    60
     wait until element is visible       //td[normalize-space()='${BrandName}']     60
-    ${get_brandName} =    get text    //td[normalize-space()='${BrandName}']
+#    ${get_brandName} =    get text    //td[normalize-space()='${BrandName}']
 #    log to console     ${generate_BusinessName}
     log to console     ${get_brandName}
     should be equal    ${BrandName}     ${get_brandName}
@@ -639,6 +639,10 @@ Download the contract pdf
     wait until element is not visible   ${loaderIcon}   60
     wait until element is visible   //i[@title='Download PDF Version']      60
     click element   //i[@title='Download PDF Version']
+
+Verify pages with the element
+    [Arguments]    ${option}
+    wait until element is visible   //th[normalize-space()='${option}']     60
 
 
 

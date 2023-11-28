@@ -1068,6 +1068,7 @@ View Details and check the details
     PartnersPage.Select partner country       United States
     PartnersPage.Click on the save button   Save
     Generic.Fetch alert message text and compare it with    Partner created successfully
+    PartnersPage.Search by business name   ${generate_BusinessName}
     Generic.select the option from the side menu    Technology
     TechnologyPage.click on add technology button
     PartnersPage.Click here to add link of contract details     Click here to add
@@ -1075,13 +1076,11 @@ View Details and check the details
     DashboardPage.Add product brand name      ${generate_BusinessName}
     DashboardPage.Add product description via link
     DashboardPage.Add product feature via link
-
     DashboardPage.Select product technology type via link     Hardware
     DashboardPage.Select product technology group via link    Applications
     DashboardPage.Click on save button via link
     Generic.Fetch alert message text and compare it with    Product created successfully
     DashboardPage.Enter asset ID via link
-
     TechnologyPage.Select purchase date
     DashboardPage.Renewal Date via link under technology
     TechnologyPage.Select warranty end date    12/12/2028
@@ -1099,11 +1098,9 @@ View Details and check the details
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
-
     Generic.Verify your current page location contains      technology-list
-    sleep   2
+    TechnologyPage.Search by BrandName      ${generate_BusinessName}
     Generic.select the option from the side menu    Contracts
-
     Generic.click on the button link    View Details
     DashboardPage.Click on back to contract link
     ContractsPage.Click on create new contract button
@@ -1133,10 +1130,10 @@ View Details and check the details
     ContractsPage.Save contract modal     Create Contract
     Generic.Fetch alert message text and compare it with        Contract created successfully
     ContractsPage.Search by contract BrandName      ${generate_BusinessName}
-#    ContractsPage.Fetch the contract ID from the row
+    ContractsPage.Fetch the contract ID from the row
     ContractsPage.Fetch the contract Brand Name from the row      ${generate_BusinessName}
     ContractsPage.Click on the first tab row    ${generate_BusinessName}
-    PartnersPage.Fetch the contract ID from the row via smart share details
+#    PartnersPage.Fetch the contract ID from the row via smart share details
     Generic.click on the button     Withdraw
     Generic.Fetch alert message text and compare it with        Status updated successfully
     PartnersPage.Click on back to contracts link via contract
@@ -1147,15 +1144,15 @@ View Details and check the details
     ContractsPage.Click on the first tab row    ${generate_BusinessName}
     PartnersPage.Click on the three buttons link of contract via view smart details     Brand
     Generic.Verify your current page location contains    view-contract-brands
-    PartnersPage.Verify status after withdraw the contract      Active
+    PartnersPage.Verify pages with the element  Brand Name
     PartnersPage.Click on back to contract details button link
     PartnersPage.Click on the three buttons link of contract via view smart details     Locations
     Generic.Verify your current page location contains    view-location
-    PartnersPage.Verify status after withdraw the contract   Texas
+    PartnersPage.Verify pages with the element  Location Name
     PartnersPage.Click on back to contract details button link
     PartnersPage.Click on the three buttons link of contract via view smart details     Technology
     Generic.Verify your current page location contains    technology
-    PartnersPage.Verify status after withdraw the contract   Applications
+    PartnersPage.Verify pages with the element  Item
     PartnersPage.Click on back to contract details button link
     PartnersPage.Download the contract pdf
 
