@@ -1161,10 +1161,20 @@ Click the add here link on supplier to add new supplier
     wait until element is enabled       css:.qa-add-here-supplier      60
     click element   css:.qa-add-here-supplier
 
+Click the add here link on supplier to edit new supplier
+    wait until element is visible       css:.theme-blue[routerlink='/dashboard/addpartner/3']    60
+    wait until element is enabled       css:.theme-blue[routerlink='/dashboard/addpartner/3']     60
+    click element   css:.theme-blue[routerlink='/dashboard/addpartner/3']
+
 Click the add here link on support to add new support partner
     wait until element is visible       css:.qa-add-here-support     60
     wait until element is enabled       css:.qa-add-here-support      60
     click element   css:.qa-add-here-support
+
+Click the add here link on support to edit new support
+    wait until element is visible       css:.theme-blue[routerlink='/dashboard/addpartner/4']     60
+    wait until element is enabled       css:.theme-blue[routerlink='/dashboard/addpartner/4']      60
+    click element   css:.theme-blue[routerlink='/dashboard/addpartner/4']
 
 #Verify the search item2
 #    [Arguments]    ${assertId}      ${serialNo}

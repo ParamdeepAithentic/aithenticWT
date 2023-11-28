@@ -780,7 +780,7 @@ Add New Support Partner and Assign that Partner
     PartnersPage.Select partner country       United States
     TechnologyPage.Click contact main save button
     Generic.Verify alertify is visible
-    sleep       2
+    sleep       ${yop_sleep}
     Switch Window       aithentic | Technology - Details
     TechnologyPage.Wait till support partner get auto polute        ${generate_BusinessName}
 #    sleep       10
@@ -834,7 +834,7 @@ Verify the history of added technology
     PartnersPage.Select partner country       United States
     TechnologyPage.Click contact main save button
     Generic.Verify alertify is visible
-    sleep       2
+    sleep       ${yop_sleep}
     Switch Window       aithentic | Technology - Details
     TechnologyPage.Wait till support partner get auto polute        ${generate_BusinessName}
 #    sleep       10
@@ -955,7 +955,7 @@ Add Technology Page - Add New Supplier and support partner and assign them
     PartnersPage.Select partner country       United States
     TechnologyPage.Click contact main save button
     Generic.Verify alertify is visible
-    sleep       2
+    sleep       ${yop_sleep}
     Switch Window       aithentic | Add - Technology
     TechnologyPage.Wait till supplier partner get auto polute       ${generate_BusinessName}
 
@@ -968,7 +968,7 @@ Add Technology Page - Add New Supplier and support partner and assign them
     PartnersPage.Select partner country       United States
     TechnologyPage.Click contact main save button
     Generic.Verify alertify is visible
-    sleep       2
+    sleep       ${yop_sleep}
     Switch Window       aithentic | Add - Technology
     TechnologyPage.Wait till support partner get auto polute        ${generate_BusinessName}
 
@@ -990,6 +990,7 @@ Add new Technology- Add New Location and assign that location
     TechnologyPage.Select parameter from technology dropdown list      QAHardware
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Click on add location
+    sleep       ${yop_sleep}
     Switch Window       aithentic | Add - Location
     Generic.Verify your current page location contains      add-location
     TechnologyPage.Select country of the location   United States
@@ -1003,6 +1004,7 @@ Add new Technology- Add New Location and assign that location
     TechnologyPage.Enter Zip_code       67540
     TechnologyPage.Save the new added location         save
     Generic.Verify alertify is visible
+    sleep       ${yop_sleep}
     Switch Window       aithentic | Add - Technology
     TechnologyPage.Click on refresh location icon
     TechnologyPage.Add assignment information location     ${generated_buildingname}
@@ -1088,7 +1090,7 @@ Add new Technology- Add New support-partner and assign that support partner
     PartnersPage.Select partner country       United States
     TechnologyPage.Click contact main save button
     Generic.Verify alertify is visible
-    sleep       2
+    sleep       ${yop_sleep}
     Switch Window       aithentic | Add - Technology
     TechnologyPage.Wait till support partner get auto polute       ${generate_BusinessName}
     TechnologyPage.Click on save technology form button
@@ -1120,7 +1122,7 @@ Add new Technology- Add New Supplier and assign that supplier
     PartnersPage.Select partner country       United States
     TechnologyPage.Click contact main save button
     Generic.Verify alertify is visible
-    sleep       2
+    sleep       ${yop_sleep}
     Switch Window       aithentic | Add - Technology
     TechnologyPage.Wait till supplier partner get auto polute       ${generate_BusinessName}
     TechnologyPage.Click on save technology form button
@@ -1153,6 +1155,7 @@ Edit Technology Page - Add New location and assign that location
     TechnologyPage.Click on edit button on product details page        Edit
     Generic.Verify your current page location contains      edit-technology
     TechnologyPage.Click on add location
+    sleep       ${yop_sleep}
     Switch Window       aithentic | Add - Location
     Generic.Verify your current page location contains      add-location
     TechnologyPage.Select country of the location   Albania
@@ -1166,6 +1169,7 @@ Edit Technology Page - Add New location and assign that location
     TechnologyPage.Enter Zip_code       203061
     TechnologyPage.Save the new added location         save
     Generic.Verify alertify is visible
+    sleep       ${yop_sleep}
     Switch Window       aithentic | Edit - Technology
     TechnologyPage.Click on refresh location icon
     TechnologyPage.Add assignment information location     ${generated_buildingname}
@@ -1261,7 +1265,8 @@ Edit Technology Page - Add New Supplier and assign that Supplier
     Generic.Verify your current page location contains     technology-details
     TechnologyPage.Click on edit button on product details page        Edit
     Generic.Verify your current page location contains      edit-technology
-    TechnologyPage.Click the add here link on supplier to add new supplier
+#    Generic.Scroll the page till        2000
+    TechnologyPage.Click the add here link on supplier to edit new supplier
     sleep       ${yop_sleep}
     Switch Window       aithentic | Add - Partner
     Generic.Verify your current page location contains      addpartner
@@ -1270,12 +1275,11 @@ Edit Technology Page - Add New Supplier and assign that Supplier
     PartnersPage.Select partner country       United States
     TechnologyPage.Click contact main save button
     Generic.Verify alertify is visible
-    sleep       2
+    sleep       ${yop_sleep}
     Switch Window       aithentic | Edit - Technology
     TechnologyPage.Wait till supplier partner get auto polute       ${generate_BusinessName}
     TechnologyPage.Click on update button of edit_technology page     Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
-
 
 Edit Technology Page - Add New Support Partner and assign that Support Partner
     Generic.click on the tab	Login
@@ -1300,7 +1304,7 @@ Edit Technology Page - Add New Support Partner and assign that Support Partner
     Generic.Verify your current page location contains     technology-details
     TechnologyPage.Click on edit button on product details page        Edit
     Generic.Verify your current page location contains      edit-technology
-    TechnologyPage.Click the add here link on support to add new support partner
+    TechnologyPage.Click the add here link on support to edit new support
     sleep       ${yop_sleep}
     Switch Window       aithentic | Add - Partner
     Generic.Verify your current page location contains      addpartner
@@ -1309,11 +1313,14 @@ Edit Technology Page - Add New Support Partner and assign that Support Partner
     PartnersPage.Select partner country       United States
     TechnologyPage.Click contact main save button
     Generic.Verify alertify is visible
-    sleep       2
+    sleep       ${yop_sleep}
     Switch Window       aithentic | Edit - Technology
     TechnologyPage.Wait till support partner get auto polute       ${generate_BusinessName}
     TechnologyPage.Click on update button of edit_technology page     Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
+
+
+
 
 
 

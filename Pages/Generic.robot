@@ -155,8 +155,6 @@ Get Current Date and Time
 Close Browser session
     close browser
 
-
-
 select the option from the side menu
     [Arguments]     ${option}
     wait until element is visible    //li[@title='${option}']      60
