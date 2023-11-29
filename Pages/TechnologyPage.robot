@@ -913,7 +913,6 @@ Click on add department
     wait until element is visible       css:span[title='Add new department'] a        60
     click element       css:span[title='Add new department'] a
 
-
 Create unique department name random
     wait until element is visible       ${add_tech_dept_name}        60
     ${random_string} =    Generate Random String       10      [NUMBERS]

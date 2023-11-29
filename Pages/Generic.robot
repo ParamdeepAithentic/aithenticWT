@@ -35,12 +35,12 @@ ${user_name}             rahulshettyacademy
 ${invalid_password}      123445
 
 
-#${url}                   https://uat-app.aithentic.com/
-${url}                   https://qa-app.aithentic.com/
-#${apiURL}                 https://uat-api.aithentic.com/api/v1
-${apiURL}                https://qa-api.aithentic.com/api/v1
-#${valid_password}        Test!@5897     #UAT user
-${valid_password}        Test@123       #QA User
+${url}                   https://uat-app.aithentic.com/
+#${url}                   https://qa-app.aithentic.com/
+${apiURL}                 https://uat-api.aithentic.com/api/v1
+#${apiURL}                https://qa-api.aithentic.com/api/v1
+${valid_password}        Test!@5897     #UAT user
+#${valid_password}        Test@123       #QA User
 
 
 ${browser_name}          Firefox
@@ -100,9 +100,6 @@ Calculate Running time
     Write Excel Cell     ${RowNum}   ${ColumnNum}   ${TimeTakenToLoginPage}     ${SheetTabName}
     Save Excel Document     ${SheetLocationAndName}
     Close All Excel Documents
-
-
-
 
 
 click on the tab
