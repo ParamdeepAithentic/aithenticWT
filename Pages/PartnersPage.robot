@@ -556,8 +556,6 @@ Select option from the pop up
     [Arguments]    ${option}
     Generic.click on the button         ${option}
 
-Click on main save button to save the brand
-    DashboardPage.Click on main Save Button
 
 
 
