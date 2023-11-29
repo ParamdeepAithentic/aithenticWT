@@ -1091,7 +1091,7 @@ View Details and check the details
     TechnologyPage.Add cost type of technology cost information        Purchased
     TechnologyPage.Add payment type of technology cost information     FixedPayment
     TechnologyPage.Add payment peroid of technology cost information       Monthly
-    DashboardPage.Select cost center via link     1008848
+    DashboardPage.Select cost center via link     1300
     TechnologyPage.Add first payment date of technology cost information       12/12/2028
     TechnologyPage.Add budget payment of technology cost information       1100
     TechnologyPage.Add actual payment of technology cost information       1050

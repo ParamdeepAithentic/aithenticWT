@@ -855,9 +855,7 @@ Renewal Date via link under technology
 Select cost center via link
     [Arguments]    ${cost}
     wait until element is visible   css:#CostCenter     60
-    click element   css:#CostCenter
-    wait until element is visible   //span[normalize-space()='12 - TestQA Department${cost}']   60
-    click element   //span[normalize-space()='12 - TestQA Department${cost}']
+    input text   css:#CostCenter    ${cost}
 
 Click on back to contract link
     wait until element is not visible    ${loaderIcon}  60
