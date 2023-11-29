@@ -103,7 +103,6 @@ ${add brand_link}   //a[normalize-space()='Add Brand']
 ${Select_city while adding brand}   css:#City
 ${Select_state while adding brand}  css:#State
 ${clickadd_newaddress}  xpath://span[@title='Click here to add address']
-${select_click_popup_yes}   css:.qa-brand-${option}
 
 ${share_toEmail}      css:#toEmail
 
