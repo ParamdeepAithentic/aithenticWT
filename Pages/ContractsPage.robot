@@ -271,3 +271,12 @@ Save the contract pop up details
 #    [Arguments]     ${option}
     wait until element is visible    css:#accept-contract-detail      60
     click element    css:#accept-contract-detail
+
+Click on add new contact for this partner link under contract
+    wait until element is visible   //span[normalize-space()='Add new Contact for this Partner']    60
+    click element   //span[normalize-space()='Add new Contact for this Partner']
+
+Click on back to contract link
+    wait until element is not visible    ${loaderIcon}  60
+    wait until element is visible   //span[@class='back']   60
+    click element   //span[@class='back']

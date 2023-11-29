@@ -1074,15 +1074,15 @@ View Details and check the details
     PartnersPage.Click here to add link of contract details     Click here to add
     DashboardPage.Create random productName
     DashboardPage.Add product brand name      ${generate_BusinessName}
-    DashboardPage.Add product description via link
-    DashboardPage.Add product feature via link
-    DashboardPage.Select product technology type via link     Hardware
-    DashboardPage.Select product technology group via link    Applications
-    DashboardPage.Click on save button via link
+    TechnologyPage.Add product description via technology
+    TechnologyPage.Add product feature via technology
+    TechnologyPage.Select product technology type via technology     Hardware
+    TechnologyPage.Select product technology group via technology   Applications
+    TechnologyPage.Click on save product pop inside technology page
     Generic.Fetch alert message text and compare it with    Product created successfully
-    DashboardPage.Enter asset ID via link
+    TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date
-    DashboardPage.Renewal Date via link under technology
+    TechnologyPage.Renewal Date via technology
     TechnologyPage.Select warranty end date    12/12/2028
     TechnologyPage.Select technology lifecycle status      Active
     TechnologyPage.Add technology lifecycle comment    Technology Lifecycle Information- comment
@@ -1102,7 +1102,7 @@ View Details and check the details
     TechnologyPage.Search by BrandName      ${generate_BusinessName}
     Generic.select the option from the side menu    Contracts
     Generic.click on the button link    View Details
-    DashboardPage.Click on back to contract link
+    ContractsPage.Click on back to contract link
     ContractsPage.Click on create new contract button
     ContractsPage.Select type of contract     Dynamic Contract
     Generic.Verify your current page location contains      generate-contract
@@ -1116,7 +1116,7 @@ View Details and check the details
     ContractsPage.Select contract function       Dynamic
     ContractsPage.Click preview selection button on contact
     ContractsPage.Enter contract description comment      Enter comment for contract description.
-    DashboardPage.Click on add new contract for this partner link
+    ContractsPage.Click on add new contact for this partner link under contract
     PartnersPage.Enter Random Contact Person Via Link
     PartnersPage.Enter contact business email via link    ${generate_contactPersonName}
 #    PartnersPage.Choose contact country      India   +91     9646289871

@@ -270,7 +270,7 @@ Select product technology type
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  7  ${pageHeading}   DashboardPage - Select product technology type      7    ${pageTime}     ${ActualTime}    DashboardPage_Time
 
-Select product technology type via link
+Select product technology type via technology
     [Arguments]    ${option}
     Generic.Scroll the page till    900
     wait until element is visible       ${select_technology_type_via link}     60
@@ -834,7 +834,7 @@ Create random URL value for multiple brand addition
     log to console      ${generated_random_value}
 #    set global variable    ${generated_random_value}
 
-Click on save button via link
+Click on save product pop inside technology page
     wait until element is visible   css:div[class='modal-footer my-1'] button[type='submit']    60
     click element   css:div[class='modal-footer my-1'] button[type='submit']
 
@@ -847,7 +847,7 @@ Enter asset ID via link
     log to console      ${generate_AssetID}
     set global variable    ${generate_AssetID}
 
-Renewal Date via link under technology
+Renewal Date via technology
     wait until element is visible   css:#RenewalDate     60
     click element   css:#RenewalDate
     input text  css:#RenewalDate     03/26/2021
@@ -862,7 +862,7 @@ Click on back to contract link
     wait until element is visible   //span[@class='back']   60
     click element   //span[@class='back']
 
-Click on add new contract for this partner link
+Click on add new contract for this partner link under contract
     wait until element is visible   //span[normalize-space()='Add new Contact for this Partner']    60
     click element   //span[normalize-space()='Add new Contact for this Partner']
 
