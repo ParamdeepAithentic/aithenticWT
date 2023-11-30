@@ -84,7 +84,7 @@ Register new user
     UserAccount.Click on term and condition checkbox
     UserAccount.Click create account button
     Generic.Fetch alert message text and compare it with       Account created successfully.
-    Generic.Verify your current page location contains     keycloak
+    Generic.Verify your current page location contains     auth
 #    Generic.Fetch alert message text and compare it with       OTP sent successfully
 
     LandingPage.Fill the login Form      ${generate_register_Email}    Paramdeep@112
@@ -190,7 +190,7 @@ Signup with ACH payment method
     UserAccount.Click on term and condition checkbox
     UserAccount.Click create account button
     Generic.Fetch alert message text and compare it with       Account created successfully.
-    Generic.Verify your current page location contains     keycloak
+    Generic.Verify your current page location contains     auth
 #    Generic.Fetch alert message text and compare it with       OTP sent successfully
 
     LandingPage.Fill the login Form      ${generate_register_Email}    Paramdeep@112
@@ -300,7 +300,7 @@ Change plan and Change asset limit with ACH Payment method
     UserAccount.Click on term and condition checkbox
     UserAccount.Click create account button
     Generic.Fetch alert message text and compare it with       Account created successfully.
-    Generic.Verify your current page location contains     keycloak
+    Generic.Verify your current page location contains     auth
 #    Generic.Fetch alert message text and compare it with       OTP sent successfully
 
     LandingPage.Fill the login Form      ${generate_register_Email}    Paramdeep@112
