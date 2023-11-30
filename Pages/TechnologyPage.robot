@@ -274,8 +274,6 @@ Click technology brand input field
     wait until element is enabled       ${brand}        60
     click element    ${brand}
 
-
-
 Select parameter from brand dropdown list
     [Arguments]    ${option}
     Clear Element Text      ${brand}
@@ -287,13 +285,11 @@ Select parameter from brand dropdown list
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  5  ${pageHeading}   Technology Page - Select parameter from brand dropdown list      5    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
-
 Click technology product input field
      wait until element is visible       ${product}        60
      wait until element is enabled       ${product}        60
      click element    ${product}
 #     TechnologyPage.Select the first value of To dropdown of product
-
 
 Select the first value of To dropdown of product
     wait until element is visible     //div[contains (@id, '-0')]       60
@@ -525,6 +521,7 @@ Click on update button of edit_technology page
     [Arguments]    ${option}
     wait until element is visible       //button[@type='submit'][normalize-space()='${option}']
     click element       //button[@type='submit'][normalize-space()='${option}']
+# option: Update, Cancel
 
 Add budget payment of technology cost information
     [Arguments]    ${option}
@@ -874,8 +871,6 @@ Enter message body of compose message
     ${get_messageBodyValue} =  Set Variable     ${option}
     set global variable    ${get_messageBodyValue}
 
-
-
 Click on the send button of compose message
     wait until element is visible    ${composeMessage_sendBTN}       60
     wait until element is enabled    ${composeMessage_sendBTN}       60
@@ -890,8 +885,6 @@ Verify message body of recent added email
     wait until element is visible         //p[normalize-space()='${option}']       60
 
 
-
-
 Click on add location
     wait until element is visible       css:span[title='Add new location'] a        60
     click element       css:span[title='Add new location'] a
@@ -904,7 +897,7 @@ Select country of the location
 
 Enter building_name of the location
     ${random_string} =    Generate Random String       10      [NUMBERS]
-    ${generated_buildingname}=    Catenate    Bldg_${random_string}
+    ${generated_buildingname}=    Catenate    Buildingname_${random_string}
     Generic.Enter value into field      css:#buildingName         ${generated_buildingname}
     set global variable    ${generated_buildingname}
 
@@ -979,10 +972,9 @@ Create unique assign to employee_ID random
     click element      ${technology_employeeid}
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generate_employeeid}=    Catenate    ${random_string}
-    input text      ${technology_employeeid}     E_ID${generate_employeeid}
+    input text      ${technology_employeeid}     EmployeeID_${generate_employeeid}
     log to console      ${generate_employeeid}
     set global variable    ${generate_employeeid}
-
 
 Click on refresh location icon
     wait until element is visible       //b[normalize-space()='click here to refresh the location list']       60
@@ -1000,14 +992,11 @@ Save the new added location
     wait until element is visible       css:.qa-${option}-location       60
     click element       css:.qa-${option}-location
 
-
-
-
+# option:    cancel, save
 
 Click on add department
     wait until element is visible       css:span[title='Add new department'] a        60
     click element       css:span[title='Add new department'] a
-
 
 Create unique department name random
     wait until element is visible       ${add_tech_dept_name}        60
@@ -1029,12 +1018,11 @@ Save the department
     wait until element is visible       css:.qa-${option}-department-modal        60
     click element        css:.qa-${option}-department-modal
 
-
+# option: add, close
 
 Click on add assign to
     wait until element is visible       css:span[title='Add new assignee'] a        60
     click element       css:span[title='Add new assignee'] a
-
 
 Create unique assign to first name random
     wait until element is visible       css:#AssignedFirstName        60
@@ -1043,7 +1031,6 @@ Create unique assign to first name random
     input text  css:#AssignedFirstName   ${generated_assignFname}
     log to console       ${generated_assignFname}
     set global variable    ${generated_assignFname}
-
 
 Create unique assign to last name random
     wait until element is visible       css:#AssignedLastName        60
@@ -1058,7 +1045,7 @@ Save the assign to
     wait until element is visible       css:.qa-${option}-assignee-modal        60
     click element        css:.qa-${option}-assignee-modal
 
-
+# option: save, cancel
 
 Select tab under technology details
     [Arguments]    ${option}
@@ -1068,7 +1055,6 @@ Select tab under technology details
     click element        css:a[href='#${option}']
 
 #details,partners,location,parent-components,components,messages,history,attachments
-
 
 Click on assign partner button under technology details page
     [Arguments]     ${option}
@@ -1084,7 +1070,6 @@ Click on add new entry component button under technology details page
     [Arguments]     ${option}
     wait until element is visible    //div[@id='components']//button[normalize-space()='${option}']      60
     click element      //div[@id='components']//button[normalize-space()='${option}']
-
 
 Select add new entry
     [Arguments]     ${option}
@@ -1142,7 +1127,6 @@ Submit the assign partner form
     [Arguments]     ${option}
     Generic.click on the button     ${option}
 
-
 Click on upload button under technology history tab
     wait until element is visible       ${attachmentTab_UploadBTN}     60
     wait until element is enabled       ${attachmentTab_UploadBTN}      60
@@ -1154,7 +1138,6 @@ Upload File under technology attachments tab
 #    Click element       ${attachmentTab_UploadBTN}
     Choose File    ${attachmentTab_UploadBTN}    C:\Users\Paramdeep\Downloads\one.pdf
 #    Click Button    ${attachmentTab_UploadBTN}
-
 
 Click the add here link on supplier to add new supplier
     wait until element is visible       css:.qa-add-here-supplier     60
@@ -1189,7 +1172,3 @@ Click the add here link on support to edit new support
 #    sleep       5
 #    ${fetchSerial} =     get text    //input[@id='Serial Number']
 #    log to console     ${fetchSerial}
-
-
-
-

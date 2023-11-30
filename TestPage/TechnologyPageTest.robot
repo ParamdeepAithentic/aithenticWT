@@ -958,7 +958,6 @@ Add Technology Page - Add New Supplier and support partner and assign them
     sleep       ${yop_sleep}
     Switch Window       aithentic | Add - Technology
     TechnologyPage.Wait till supplier partner get auto polute       ${generate_BusinessName}
-
     TechnologyPage.Click the add here link on support to add new support partner
     sleep       ${yop_sleep}
     Switch Window       aithentic | Add - Partner
@@ -971,7 +970,6 @@ Add Technology Page - Add New Supplier and support partner and assign them
     sleep       ${yop_sleep}
     Switch Window       aithentic | Add - Technology
     TechnologyPage.Wait till support partner get auto polute        ${generate_BusinessName}
-
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
@@ -1317,24 +1315,3 @@ Edit Technology Page - Add New Support Partner and assign that Support Partner
     TechnologyPage.Wait till support partner get auto polute       ${generate_BusinessName}
     TechnologyPage.Click on update button of edit_technology page     Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
