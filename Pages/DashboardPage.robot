@@ -111,11 +111,7 @@ ${Brand_savebutton}     css:button[aria-label='Close'][type='submit']
 ${add brand_link}   //a[normalize-space()='Add Brand']
 ${Select_city while adding brand}   css:#City
 ${Select_state while adding brand}  css:#State
-
-
 ${clickadd_newaddress}  //span[@title='Click here to add address']
-
-
 ${share_toEmail}      css:#toEmail
 
 

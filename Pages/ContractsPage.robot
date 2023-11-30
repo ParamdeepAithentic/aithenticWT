@@ -245,8 +245,8 @@ Click on the first tab row
     [Arguments]     ${option}
     Wait Until Element Is Not Visible    ${loaderIcon}      60
     wait until element is visible    //td[normalize-space()='${option}']        60
+    sleep       ${search_sleep}
     click element    //td[normalize-space()='${option}']
-
 
 Verify technology is null
     Wait Until Element Is Visible       ${pdf_modal}    60

@@ -57,7 +57,7 @@ Assigned Users Bulk Edit
     MemberPage.Search assigned user by first and last name    ${generated_assigneeFname} ${generated_assigneeLname}
     MemberPage.Click on assigned user action button
     MemberPage.Choose the option from the action menu   Bulk Edit
-    sleep   5
+    sleep      ${yop_sleep}
     Switch Window       aithentic | Data-Wizard
     Generic.Verify your current page location contains      assignee-bulk-edit
     MemberPage.Enter the new value of assigned in the first name column    FirstName
@@ -69,7 +69,7 @@ Assigned Users Bulk Edit
     Generic.Click on the button     Exit
     MemberPage.Confirm the exit import process pop appers
     Generic.Click on the button     Confirm
-    sleep       1
+    sleep       ${search_sleep}
     Switch Window       aithentic | Member - List
     MemberPage.Search assigned user by first and last name    ${generated_assigneeFname} ${generated_assigneeLname}
     MemberPage.Search by empID  ${generated_assigneeEmpID}
@@ -98,7 +98,7 @@ Team Member Bulk Edit
     MemberPage.Search team member by first and last name   ${generate_teamMember_FirstName} ${generate_teamMember_LastName}
     MemberPage.Click on team member user action button
     MemberPage.Choose the option from the action menu   Bulk Edit
-    sleep   5
+    sleep     ${yop_sleep}
     Switch Window       aithentic | Edit - Members
     Generic.Verify your current page location contains      member-bulk-edit
 #    Enter the new value of team member in the first name column
@@ -114,6 +114,6 @@ Team Member Bulk Edit
     Generic.Click on the button     Exit
     MemberPage.Confirm the exit import process pop appers
     Generic.Click on the button     Confirm
-    sleep       1
+    sleep       ${search_sleep}
     Switch Window       aithentic | Member - List
     MemberPage.Search team member by first and last name    ${generate_teamMember_FirstName} ${generate_teamMember_LastName}
