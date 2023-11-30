@@ -268,7 +268,7 @@ Compose Message invite user test
 
     ${StartTime1} =     Get Current Time in Milliseconds
     Yopmail.Get verification OTP from email    Your passcode is
-    sleep       2
+    sleep       ${yop_sleep}
     Switch Window   aithentic | OTP
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
@@ -371,7 +371,7 @@ Compose Message invite user test
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
     PartnersPage.Search by business name    ${generate_BusinessName}
-    sleep       2
+    sleep       ${search_sleep}
     PartnersPage.Click first row of table
     PartnersPage.Click on edit button
     PartnersPage.Click on contact person button
@@ -459,7 +459,7 @@ Compose Message invite user test
     Generic.Switch to iframe by ID      ifmail
 
     Yopmail.Get verification OTP from email    Your passcode is
-    sleep       2
+    sleep       ${yop_sleep}
     Switch Window   aithentic | OTP
 #    Switch Window   aithentic | Login
 #    sleep       2
@@ -1152,12 +1152,3 @@ View Details and check the details
     PartnersPage.Verify pages with the element  Item
     PartnersPage.Click on back to contract details button link
     PartnersPage.Download the contract pdf
-
-
-
-
-
-
-
-
-

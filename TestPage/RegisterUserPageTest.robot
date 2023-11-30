@@ -102,7 +102,7 @@ Register new user
 
 
     Yopmail.Get verification OTP from email    Your passcode is
-    sleep       2
+    sleep       ${yop_sleep}
     Switch Window   aithentic | OTP
 
     TwoFactorAuth.Enter the otp     ${passcode}
@@ -208,7 +208,7 @@ Signup with ACH payment method
 
 
     Yopmail.Get verification OTP from email    Your passcode is
-    sleep       2
+    sleep       ${yop_sleep}
     Switch Window   aithentic | OTP
 
     TwoFactorAuth.Enter the otp     ${passcode}
@@ -318,7 +318,7 @@ Change plan and Change asset limit with ACH Payment method
 
 
     Yopmail.Get verification OTP from email    Your passcode is
-    sleep       2
+    sleep       ${yop_sleep}
     Switch Window   aithentic | OTP
 
     TwoFactorAuth.Enter the otp     ${passcode}
@@ -413,32 +413,3 @@ Change plan and Change asset limit with ACH Payment method
     Generic.Fetch alert message text and compare it with      Bank removed successfully
 
     BillingPage.Close the billing payment options module
-####################################
-#test
-#    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    Generic.Verify your current page location contains      asset-overview
-#    Generic.Click on the profile name
-#    Generic.Select option from profile list     billing-dropdown
-#    Generic.Verify your current page location contains     billing
-#    BillingPage.Click on the arrow of billing details
-#    BillingPage.Click on add new card/bank
-#    BillingPage.Select the billing payment type     university
-#    BillingPage.Enter billing account number    000111111113
-#    BillingPage.Enter billing routing number    110000000
-#    BillingPage.Enter billing account type      Param
-#    BillingPage.Save the billing payment form   save
-#
-#    Generic.Fetch alert message text and compare it with      Card added successfully
-#    BillingPage.Click on future transaction link
-#    BillingPage.Save the status of set as primary account   confirm
-#    Generic.Fetch alert message text and compare it with      Payment Method updated successfully
-#
-#    BillingPage.Click on billing trash to remove card
-#    BillingPage.Confirm if you want to delect account   confirm
-#
-#    Generic.Fetch alert message text and compare it with      Bank removed successfully
-#
-#    BillingPage.Close the billing payment options module
-
-

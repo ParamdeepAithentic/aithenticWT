@@ -639,24 +639,5 @@ Download the contract pdf
 Verify pages with the element
     [Arguments]    ${option}
     wait until element is visible   //th[normalize-space()='${option}']     60
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
 # option: Yes, No
->>>>>>> 8ecb2abc4c1cad0b1dce2159ef7a2eb1f88a5c6c
+

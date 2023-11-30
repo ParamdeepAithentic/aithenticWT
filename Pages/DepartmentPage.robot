@@ -30,11 +30,6 @@ Resource        ../Pages/DepartmentPage.robot
 
 *** Variables ***
 ${department_ActionBTN}      css:#Team-Member-Actions
-#.qa-department-name input
-#.qa-status input
-#costCenter
-
-
 
 
 *** Keywords ***

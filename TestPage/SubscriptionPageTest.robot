@@ -39,39 +39,3 @@ Resource        ../Pages/LocationPage.robot
 Upload File Using AutoIt
     Run    path/to/FileUpload.au3    # Replace with the path to your AutoIt script
     # Perform other actions or verifications as needed
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
