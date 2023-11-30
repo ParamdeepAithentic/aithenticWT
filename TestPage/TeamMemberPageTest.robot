@@ -80,25 +80,43 @@ Add Team member page - Add New Department and assign that department to Team mem
     TeamMemberPage.Select team member location
     TeamMemberPage.Save the team member form   save
     Generic.Fetch alert message text and compare it with        Team Member created successfully
-#    TeamMemberPage.Search Team Member by name       ${generated_TMFname}
-#    TeamMemberPage.Click on three dots of Team Member listing
-#    TeamMemberPage.Select option from three dots of Team Member     Details
-#    TeamMemberPage.Click on the tab         details
-#    TeamMemberPage.Click on the button      Edit
-#    Generic.Verify your current page location contains      updatemembers
-#    TeamMemberPage.Click on add here in department field        Click here to add
-#    TechnologyPage.Create unique department name random
-#    TechnologyPage.Select department cost center     1300
-#    TechnologyPage.Save the department       add
-#    Generic.Fetch alert message text and compare it with        Department added successfully
-#    Generic.Verify your current page location contains      department-list
-#    TeamMemberPage.Search the department name       ${generated_DepartmentNumber}
-#    TeamMemberPage.Verify resulted row contains Dept_name
+    TeamMemberPage.Search Team Member by name       ${generated_TMFname}
 
-
-
-
-
-
-
-
+Edit Team member page - Edit New Department and assign that department to Team member
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Click on add team member action button
+    TeamMemberPage.Choose option after clicking on Action button        Add New Member
+    TeamMemberPage.Enter team member first name
+    TeamMemberPage.Enter team member last name
+    Generic.Enter phone number      India   +91     9646289871
+    TeamMemberPage.Enter team member business email_mailinator
+    TeamMemberPage.Enter the Position in member form        QA
+    sleep       ${yop_sleep}
+    TeamMemberPage.Click on add here in department field        Click here to add
+    TechnologyPage.Create unique department name random
+    TechnologyPage.Select department cost center     1300
+    TechnologyPage.Save the department       add
+    Generic.Fetch alert message text and compare it with        Department added successfully
+    TeamMemberPage.Select team member department        ${generated_DepartmentNumber}
+    TeamMemberPage.Select team member role     Admin
+    TeamMemberPage.Click on team member location
+    TeamMemberPage.Select team member location
+    TeamMemberPage.Save the team member form   save
+    Generic.Fetch alert message text and compare it with        Team Member created successfully
+    TeamMemberPage.Search Team Member by name       ${generated_TMFname}
+    TeamMemberPage.Click on three dots of Team Member listing
+    TeamMemberPage.Select option from three dots of Team Member     Details
+    TeamMemberPage.Click on the tab         details
+    TeamMemberPage.Click on the button      Edit
+    Generic.Verify your current page location contains      updatemembers
+    TeamMemberPage.Click on add here in department field        Click here to add
+    TechnologyPage.Create unique department name random
+    TechnologyPage.Select department cost center     1300
+    TechnologyPage.Save the department       add
+    Generic.Fetch alert message text and compare it with        Department added successfully
+    TeamMemberPage.Click on the button      Update
+    Generic.Fetch alert message text and compare it with        Team Member updated successfully
+    Generic.Verify your current page location contains          memberslist
