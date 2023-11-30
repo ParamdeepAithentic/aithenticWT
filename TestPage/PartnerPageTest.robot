@@ -1130,7 +1130,7 @@ View Details and check the details
     ContractsPage.Save contract modal     Create Contract
     Generic.Fetch alert message text and compare it with        Contract created successfully
     ContractsPage.Search by contract BrandName      ${generate_BusinessName}
-    ContractsPage.Fetch the contract ID from the row
+#    ContractsPage.Fetch the contract ID from the row
     ContractsPage.Fetch the contract Brand Name from the row      ${generate_BusinessName}
     ContractsPage.Click on the first tab row    ${generate_BusinessName}
 #    PartnersPage.Fetch the contract ID from the row via smart share details
