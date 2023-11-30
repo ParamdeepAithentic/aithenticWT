@@ -54,7 +54,7 @@ ${chkBoxOne}     //label[contains(text(),"I'm authorized")]
 ${chkBoxTwo}     //label[contains(text(),'I have read and acknowledged')]
 
 ${click_createContract_btn}     //button[normalize-space()='Create Contract']
-${save_contract_modal}     xpath://div[@id='createOrGenerateContract']//div//div//div//div
+${save_contract_modal}     css:div[id='createOrGenerateContract'] div div div div
 
 
 ${contractID_SearchBar}      css:#searchInput
