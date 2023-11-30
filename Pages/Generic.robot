@@ -95,9 +95,6 @@ Calculate Running time
     Close All Excel Documents
 
 
-
-
-
 click on the tab
     [Arguments]    ${option}
     wait until element is visible    //a[normalize-space()='${option}']     60

@@ -31,7 +31,6 @@ Resource        ../Pages/DepartmentPage.robot
 *** Variables ***
 ${department_ActionBTN}      css:#Team-Member-Actions
 
-
 *** Keywords ***
 Click on added department action button
     Wait Until Element Is Visible       ${department_ActionBTN}    60
@@ -61,4 +60,6 @@ Double click
     Double click element      css:.ag-center-cols-container div[col-id='${option}']
     Press Keys    css:.ag-center-cols-container div[col-id='${option}']     CONTROL+A
     Press Keys    css:.ag-center-cols-container div[col-id='${option}']     DELETE
+
+
 
