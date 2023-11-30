@@ -154,6 +154,12 @@ ${add_tech_dept_costCenter}      css:#costCenter
 ${histortTab_ViewPopUp}     //div[@class='text-right']//button[normalize-space()='Cancel']
 ${attachmentTab_UploadBTN}      css:input[type='file']
 
+${technology_address_Lineone}       css:#strretAddress1
+${technology_address_Linetwo}       css:#strretAddress2
+${zip_code}     css:#zip
+${technology_employeeid}        css:#AssignedEmployeeId
+${businessEmail}        css:#AssignedEmail
+
 *** Keywords ***
 Fetch the Brand Name from the row
     [Arguments]    ${option}
@@ -268,26 +274,22 @@ Click technology brand input field
     wait until element is enabled       ${brand}        60
     click element    ${brand}
 
-
-
 Select parameter from brand dropdown list
     [Arguments]    ${option}
     Clear Element Text      ${brand}
     ${StartTime1} =     Get Current Time in Milliseconds
     input text    ${brand}   ${option}
-    sleep       ${search_sleep}
+#    sleep       ${search_sleep}
     Generic.Select parameter    ${option}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  5  ${pageHeading}   Technology Page - Select parameter from brand dropdown list      5    ${pageTime}     ${ActualTime}    TechnologyPage_Time
-
 
 Click technology product input field
      wait until element is visible       ${product}        60
      wait until element is enabled       ${product}        60
      click element    ${product}
 #     TechnologyPage.Select the first value of To dropdown of product
-
 
 Select the first value of To dropdown of product
     wait until element is visible     //div[contains (@id, '-0')]       60
@@ -515,6 +517,12 @@ Add first payment date of technology cost information
     [Arguments]    ${date}
      Generic.Enter self date       ${first_paymentdate}     ${date}
 
+Click on update button of edit_technology page
+    [Arguments]    ${option}
+    wait until element is visible       //button[@type='submit'][normalize-space()='${option}']
+    click element       //button[@type='submit'][normalize-space()='${option}']
+# option: Update, Cancel
+
 Add budget payment of technology cost information
     [Arguments]    ${option}
     wait until element is visible    ${budget_payment}      60
@@ -595,6 +603,7 @@ Add max contracted of contract information random
     input text   ${max_contracted}   ${generated_maxContracted}
     log to console      ${generated_maxContracted}
     set global variable    ${generated_maxContracted}
+
 Add max contracted of contract information self
     [Arguments]    ${option}
     wait until element is visible       ${max_contracted}        60
@@ -602,7 +611,6 @@ Add max contracted of contract information self
 
 ##############Assignment Information###############
 Add assignment information location
-
     [Arguments]    ${option1}
     wait until element is visible    ${locationName}      60
     ${StartTime1} =     Get Current Time in Milliseconds
@@ -621,11 +629,12 @@ Add assignment information department name
     ${StartTime1} =     Get Current Time in Milliseconds
     click element       ${departmentName}
     Clear Element Text      ${departmentName}
-    #    Generic.Enter value into field      ${departmentName}     ${option1}
-    Generic.Select parameter    ${option1}
+    Generic.Enter value into field      ${departmentName}     ${option1}
+#    Generic.Select parameter    ${option1}
+    Press Keys     ${departmentName}       ENTER
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  14  ${pageHeading}   Technology Page - Add assignment information department name      14    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+    Calculate Running time  14  ${pageHeading}   Technology Page - Add assignment information location name      14    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Add assignment information assign to
     [Arguments]    ${option1}
@@ -633,7 +642,7 @@ Add assignment information assign to
     ${StartTime1} =     Get Current Time in Milliseconds
     click element       ${assignTo}
     Clear Element Text      ${assignTo}
-    #    Generic.Enter value into field      ${assignTo}     ${option1}
+    Generic.Enter value into field      ${assignTo}     ${option1}
     Generic.Select parameter    ${option1}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
@@ -862,8 +871,6 @@ Enter message body of compose message
     ${get_messageBodyValue} =  Set Variable     ${option}
     set global variable    ${get_messageBodyValue}
 
-
-
 Click on the send button of compose message
     wait until element is visible    ${composeMessage_sendBTN}       60
     wait until element is enabled    ${composeMessage_sendBTN}       60
@@ -878,16 +885,96 @@ Verify message body of recent added email
     wait until element is visible         //p[normalize-space()='${option}']       60
 
 
-
-
 Click on add location
     wait until element is visible       css:span[title='Add new location'] a        60
     click element       css:span[title='Add new location'] a
+    sleep       ${yop_sleep}
 
 Select country of the location
     [Arguments]    ${option}
     Generic.Enter value into field     css:#country     ${option}
     Generic.Select parameter        ${option}
+
+Enter building_name of the location
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_buildingname}=    Catenate    Buildingname_${random_string}
+    Generic.Enter value into field      css:#buildingName         ${generated_buildingname}
+    set global variable    ${generated_buildingname}
+
+Enter floor of the location
+    [Arguments]    ${option}
+    Generic.Enter value into field     css:#floor    ${option}
+
+Enter room of the location
+    [Arguments]    ${option}
+    Generic.Enter value into field     css:#room    ${option}
+
+Enter unique address_one of the location
+    wait until element is not visible       ${loaderIcon}    60
+    wait until element is visible     ${technology_address_Lineone}         60
+    wait until element is enabled     ${technology_address_Lineone}         60
+    click element      ${technology_address_Lineone}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generate_newaddress_one}=    Catenate    ${random_string}
+    input text      ${technology_address_Lineone}     Address_${generate_newaddress_one}
+    log to console      ${generate_newaddress_one}
+    set global variable    ${generate_newaddress_one}
+
+Enter unique address_two of the location
+    wait until element is not visible       ${loaderIcon}    60
+    wait until element is visible     ${technology_address_Linetwo}         60
+    wait until element is enabled     ${technology_address_Linetwo}         60
+    click element      ${technology_address_Linetwo}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generate_newaddress_one}=    Catenate    ${random_string}
+    input text      ${technology_address_Linetwo}     Address_${generate_newaddress_one}
+    log to console      ${generate_newaddress_one}
+    set global variable    ${generate_newaddress_one}
+
+Select city of location
+    [Arguments]    ${address}
+    wait until element is not visible       ${loaderIcon}       60
+    wait until element is visible       css:.qa-City input      60
+    wait until element is enabled   css:.qa-City input   60
+    click element   css:.qa-City input
+    Generic.Select parameter        ${address}
+
+Select state of location
+    [Arguments]    ${address}
+    wait until element is not visible       ${loaderIcon}       60
+    wait until element is visible       css:.qa-State input      60
+    wait until element is enabled   css:.qa-State input   60
+    click element   css:.qa-State input
+    Generic.Select parameter        ${address}
+
+Enter Zip_code
+    [Arguments]     ${code}
+    wait until element is visible      ${zip_code}   60
+    wait until element is enabled     ${zip_code}   60
+    click element    ${zip_code}
+    input text  ${zip_code}    ${code}
+
+Create unique assign to Business_email random
+    [Arguments]    ${Fname}    ${domain}
+    wait until element is visible       ${businessEmail}     60
+    wait until element is enabled       ${businessEmail}     60
+    click element   ${businessEmail}
+#    clear element text    ${businessEmail}
+    input text   ${businessEmail}   ${Fname}@${domain}.net
+    ${generate_BusinessEmail}=    Catenate    ${Fname}@${Domain}.net
+    log to console  ${Fname}@${Domain}.net
+    set global variable    ${generate_BusinessEmail}
+
+Create unique assign to employee_ID random
+    wait until element is not visible       ${loaderIcon}    60
+    wait until element is visible     ${technology_employeeid}         60
+    wait until element is enabled     ${technology_employeeid}         60
+    click element      ${technology_employeeid}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generate_employeeid}=    Catenate    ${random_string}
+    input text      ${technology_employeeid}     EmployeeID_${generate_employeeid}
+    log to console      ${generate_employeeid}
+    set global variable    ${generate_employeeid}
 
 Click on refresh location icon
     wait until element is visible       //b[normalize-space()='click here to refresh the location list']       60
@@ -905,14 +992,11 @@ Save the new added location
     wait until element is visible       css:.qa-${option}-location       60
     click element       css:.qa-${option}-location
 
-
-
-
+# option:    cancel, save
 
 Click on add department
     wait until element is visible       css:span[title='Add new department'] a        60
     click element       css:span[title='Add new department'] a
-
 
 Create unique department name random
     wait until element is visible       ${add_tech_dept_name}        60
@@ -934,31 +1018,34 @@ Save the department
     wait until element is visible       css:.qa-${option}-department-modal        60
     click element        css:.qa-${option}-department-modal
 
-
+# option: add, close
 
 Click on add assign to
     wait until element is visible       css:span[title='Add new assignee'] a        60
     click element       css:span[title='Add new assignee'] a
-
 
 Create unique assign to first name random
     wait until element is visible       css:#AssignedFirstName        60
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_assignFname}=    Catenate    Fname_${random_string}
     input text  css:#AssignedFirstName   ${generated_assignFname}
+    log to console       ${generated_assignFname}
+    set global variable    ${generated_assignFname}
 
 Create unique assign to last name random
     wait until element is visible       css:#AssignedLastName        60
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_assignLname}=    Catenate    Lname_${random_string}
     input text   css:#AssignedLastName   ${generated_assignLname}
+    log to console      ${generated_assignLname}
+    set global variable    ${generated_assignLname}
 
 Save the assign to
     [Arguments]    ${option}
     wait until element is visible       css:.qa-${option}-assignee-modal        60
     click element        css:.qa-${option}-assignee-modal
 
-
+# option: save, cancel
 
 Select tab under technology details
     [Arguments]    ${option}
@@ -968,7 +1055,6 @@ Select tab under technology details
     click element        css:a[href='#${option}']
 
 #details,partners,location,parent-components,components,messages,history,attachments
-
 
 Click on assign partner button under technology details page
     [Arguments]     ${option}
@@ -984,7 +1070,6 @@ Click on add new entry component button under technology details page
     [Arguments]     ${option}
     wait until element is visible    //div[@id='components']//button[normalize-space()='${option}']      60
     click element      //div[@id='components']//button[normalize-space()='${option}']
-
 
 Select add new entry
     [Arguments]     ${option}
@@ -1008,6 +1093,7 @@ Click contact main save button
 Wait till support partner get auto polute
     [Arguments]     ${option}
     wait until element is visible    //span[normalize-space()='${option}']      120
+
 Wait till supplier partner get auto polute
     [Arguments]     ${option}
     wait until element is visible    //span[normalize-space()='${option}']      120
@@ -1041,7 +1127,6 @@ Submit the assign partner form
     [Arguments]     ${option}
     Generic.click on the button     ${option}
 
-
 Click on upload button under technology history tab
     wait until element is visible       ${attachmentTab_UploadBTN}     60
     wait until element is enabled       ${attachmentTab_UploadBTN}      60
@@ -1054,16 +1139,25 @@ Upload File under technology attachments tab
     Choose File    ${attachmentTab_UploadBTN}    C:\Users\Paramdeep\Downloads\one.pdf
 #    Click Button    ${attachmentTab_UploadBTN}
 
-
 Click the add here link on supplier to add new supplier
     wait until element is visible       css:.qa-add-here-supplier     60
     wait until element is enabled       css:.qa-add-here-supplier      60
     click element   css:.qa-add-here-supplier
 
+Click the add here link on supplier to edit new supplier
+    wait until element is visible       css:.theme-blue[routerlink='/dashboard/addpartner/3']    60
+    wait until element is enabled       css:.theme-blue[routerlink='/dashboard/addpartner/3']     60
+    click element   css:.theme-blue[routerlink='/dashboard/addpartner/3']
+
 Click the add here link on support to add new support partner
     wait until element is visible       css:.qa-add-here-support     60
     wait until element is enabled       css:.qa-add-here-support      60
     click element   css:.qa-add-here-support
+
+Click the add here link on support to edit new support
+    wait until element is visible       css:.theme-blue[routerlink='/dashboard/addpartner/4']     60
+    wait until element is enabled       css:.theme-blue[routerlink='/dashboard/addpartner/4']      60
+    click element   css:.theme-blue[routerlink='/dashboard/addpartner/4']
 
 #Verify the search item2
 #    [Arguments]    ${assertId}      ${serialNo}

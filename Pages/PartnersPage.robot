@@ -479,6 +479,8 @@ Select option from three dots of partner
     [Arguments]     ${option}
     Generic.Select other option from profile list       ${option}
 
+#option: Edit, Deactivate, Activate, Remove
+
 click on plus icon to add another business_url
     wait until element is visible       css:.fas.fa-plus        60
     click element       css:.fas.fa-plus
@@ -655,3 +657,6 @@ Verify pages with the element
 
 
 
+=======
+# option: Yes, No
+>>>>>>> 8ecb2abc4c1cad0b1dce2159ef7a2eb1f88a5c6c
