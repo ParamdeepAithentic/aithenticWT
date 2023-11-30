@@ -808,7 +808,7 @@ Deactivate Manufacturer via partner
     PartnersPage.Add Unique address_two of partner
     PartnersPage.Select State       Alaska
     PartnersPage.Select City        Akutan
-    PartnersPage.Zip code Input     24015
+    PartnersPage.Zip code Input     24015           #css:#Zip
     PartnersPage.Save new Address
     Generic.Scroll the page till        700
     PartnersPage.Click on Add new Contact of partner        Add new Contact
