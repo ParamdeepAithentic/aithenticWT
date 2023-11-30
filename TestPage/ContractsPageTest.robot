@@ -369,7 +369,7 @@ Technology Auto removed from static contract When edit Brand and product
     Generic.select the option from the side menu    Contracts
     Generic.Verify your current page location contains      contracts
     ContractsPage.Search by contract BrandName      ${generate_BusinessName}
-    ContractsPage.Click on the first tab row
+    ContractsPage.Click on the first tab row    ${generate_BusinessName}
     ContractsPage.Verify technology is null
 
 
