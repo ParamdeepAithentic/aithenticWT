@@ -598,8 +598,9 @@ Enter contact location via link
     Press Keys     css:#forLcoations       ENTER
 
 Click on save button of contact via link
-    wait until element is visible   css:button[class='btn button-green mt-0 ml-2']      60
-    click element   css:button[class='btn button-green mt-0 ml-2']
+    [Arguments]     ${button}
+    wait until element is visible   //div[@id='contactModalContract']//button[normalize-space()='${button}']      60
+    click element   //div[@id='contactModalContract']//button[normalize-space()='${button}']
 
 Enter and select contact name via link
     wait until element is not visible   ${loaderIcon}   60
@@ -615,20 +616,13 @@ Click on back to contracts link via contract
 Verify status after withdraw the contract
     [Arguments]    ${option}
     wait until element is visible   //td[normalize-space()='${option}']      60
-#    Table column should contain     css:.table.table-hover.border-grey      7       Active
+# options: active, inactive, pending
 
 Click on the three buttons link of contract via view smart details
     [Arguments]     ${option}
     wait until element is visible   //b[normalize-space()='${option}:']/../../..//a[@class='back pointer ng-star-inserted'][normalize-space()='1']      60
     click element   //b[normalize-space()='${option}:']/../../..//a[@class='back pointer ng-star-inserted'][normalize-space()='1']
 
-Fetch the contract ID from the row via smart share details
-    wait until element is visible       css:div[class='welcome-main p10px mt-0'] div:nth-child(2) div:nth-child(2) p:nth-child(1)    60
-    ${fetch_contract_ID_via_smart_share} =    get text       css:div[class='welcome-main p10px mt-0'] div:nth-child(2) div:nth-child(2) p:nth-child(1)
-#     wait until element is visible       css:.login-form-right > div:nth-child(2) > div:nth-child(2) p    60
-#    ${fetch_contract_ID_via_smart_share} =    get text   css:.login-form-right > div:nth-child(2) > div:nth-child(2) p
-    log to console    Contract_ID=${fetch_contract_ID_via_smart_share}
-    set global variable    ${fetch_contract_ID_via_smart_share}
 
 Click on back to contract details button link
     wait until element is not visible   ${loaderIcon}   60

@@ -61,7 +61,8 @@ ${actionBTN}       css:#Team-Member-Actions
 ${add_Product_modal}     css:div[id='addProductPopup'] div[role='document'] div[role='document'] div[class='modal-content']
 ${ProductName}     css:#ProductName
 ${enterAndSelect_Brand}     css:.qa-BrandName input
-${ProductDescription}     //div[@class='card-container themeScrollBar mt-1 p-2']//textarea[@id='ProductDescription']
+#${ProductDescription}     //div[@class='card-container themeScrollBar mt-1 p-2']//textarea[@id='ProductDescription']
+${ProductDescription}       css:.qa-add-product-description
 ${ProductDescription_viaLink}     css:#ProductDescription
 ${ProductFeatures}     css:#ProductFeatures
 
@@ -836,37 +837,6 @@ Create random URL value for multiple brand addition
     log to console      ${generated_random_value}
 #    set global variable    ${generated_random_value}
 
-Click on save product pop inside technology page
-    wait until element is visible   css:div[class='modal-footer my-1'] button[type='submit']    60
-    click element   css:div[class='modal-footer my-1'] button[type='submit']
-
-Enter asset ID via link
-    wait until element is visible      css:#AssetId         60
-    click element       css:#AssetId
-    ${random_string} =    Generate Random String       10      [NUMBERS]
-    ${generate_AssetID}=    Catenate    AssetID_${random_string}
-    input text      css:#AssetId     ${generate_AssetID}
-    log to console      ${generate_AssetID}
-    set global variable    ${generate_AssetID}
-
-Renewal Date via technology
-    wait until element is visible   css:#RenewalDate     60
-    click element   css:#RenewalDate
-    input text  css:#RenewalDate     03/26/2021
-
-Select cost center via link
-    [Arguments]    ${cost}
-    wait until element is visible   css:#CostCenter     60
-    input text   css:#CostCenter    ${cost}
-
-Click on back to contract link
-    wait until element is not visible    ${loaderIcon}  60
-    wait until element is visible   //span[@class='back']   60
-    click element   //span[@class='back']
-
-Click on add new contract for this partner link under contract
-    wait until element is visible   //span[normalize-space()='Add new Contact for this Partner']    60
-    click element   //span[normalize-space()='Add new Contact for this Partner']
 
 Enter contact name of contact person
     [Arguments]     ${contact}
@@ -876,5 +846,4 @@ Enter contact name of contact person
     input text  css:#contactName    ${contact}
     Press Keys   css:#contactName   ENTER
 
-Enter contact business email
-    wait until element is visible   css:
+

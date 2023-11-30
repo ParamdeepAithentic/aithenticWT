@@ -1091,7 +1091,6 @@ View Details and check the details
     TechnologyPage.Add cost type of technology cost information        Purchased
     TechnologyPage.Add payment type of technology cost information     FixedPayment
     TechnologyPage.Add payment peroid of technology cost information       Monthly
-    DashboardPage.Select cost center via link     1300
     TechnologyPage.Add first payment date of technology cost information       12/12/2028
     TechnologyPage.Add budget payment of technology cost information       1100
     TechnologyPage.Add actual payment of technology cost information       1050
@@ -1122,7 +1121,7 @@ View Details and check the details
 #    PartnersPage.Choose contact country      India   +91     9646289871
     Generic.Enter phone number      India   +91     9646289871
     PartnersPage.Enter contact location via link      United States - Main Office - 21 - 2
-    PartnersPage.Click on save button of contact via link
+    PartnersPage.Click on save button of contact via link   Save
     Generic.Fetch alert message text and compare it with    Contact created successfully
     PartnersPage.Enter and select contact name via link
     ContractsPage.Select the checkboxes
@@ -1130,10 +1129,8 @@ View Details and check the details
     ContractsPage.Save contract modal     Create Contract
     Generic.Fetch alert message text and compare it with        Contract created successfully
     ContractsPage.Search by contract BrandName      ${generate_BusinessName}
-#    ContractsPage.Fetch the contract ID from the row
     ContractsPage.Fetch the contract Brand Name from the row      ${generate_BusinessName}
     ContractsPage.Click on the first tab row    ${generate_BusinessName}
-#    PartnersPage.Fetch the contract ID from the row via smart share details
     Generic.click on the button     Withdraw
     Generic.Fetch alert message text and compare it with        Status updated successfully
     PartnersPage.Click on back to contracts link via contract
