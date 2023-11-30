@@ -33,18 +33,12 @@ ${register_Fname}     css:#FirstName
 ${register_Lname}       css:#LastName
 ${register_CompanyName}   css:#companyName
 ${register_memberType}     css:.qa-RoleId
-
 ${register_Email}     css:#Email
 ${register_FormCheckBox}   css:label[for='policy'] span     #checkbox
 ${register_FormSubmitBTN}   css:button[type='submit']
 ${loaderIcon}     //div[@role='status']
-
 ${activeAssetPOPup}     //h5[normalize-space()='Available Inactive Assests']
-#${}
-#${}
-#${}
-#${}
-#${}
+
 
 
 *** Keywords ***

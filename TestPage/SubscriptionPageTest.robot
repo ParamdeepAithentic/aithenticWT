@@ -8,6 +8,7 @@ Library         BuiltIn
 Library         random
 Library         DateTime
 Library         OperatingSystem
+Library         AutoItLibrary
 Resource        ../Pages/Generic.robot
 Resource        ../Pages/DashboardPage.robot
 Resource        ../Pages/ITperformancePage.robot
@@ -35,40 +36,6 @@ Resource        ../Pages/LocationPage.robot
 
 *** Test Cases ***
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Upload File Using AutoIt
+    Run    path/to/FileUpload.au3    # Replace with the path to your AutoIt script
+    # Perform other actions or verifications as needed

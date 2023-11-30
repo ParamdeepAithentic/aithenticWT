@@ -667,7 +667,7 @@ Remove Brand and address via brand under profile list
     DashboardPage.Select option from the pop up     yes
     Generic.Fetch alert message text and compare it with      Brand deleted successfully
 
-Verify-adding-a-new-brand-from-profile-listing
+Verify adding a new brand from profile listing
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name

@@ -63,7 +63,7 @@ Download agent for OCS from signup - Linux
 
     Yopmail.Click on sign In button in yopmail email
     Unselect Frame
-    sleep       5
+    sleep       ${yop_sleep}
     Switch Window       aithentic | Create - Account
     Generic.Verify your current page location contains     create-account
 
@@ -90,7 +90,7 @@ Download agent for OCS from signup - Linux
     Generic.Switch to iframe by ID      ifmail
 
     Yopmail.Get verification OTP from email    Your passcode is
-    sleep       2
+    sleep       ${yop_sleep}
     Switch Window   aithentic | OTP
 
     TwoFactorAuth.Enter the otp     ${passcode}
@@ -134,7 +134,7 @@ Download agent for OCS from signup - Linux
     Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    sleep   1
+    sleep   ${search_sleep}
     OCS.Would you like to download agent    Yes, please!
     OCS.Select the agent type    Linux
     OCS.Verify that agent is ready to get download
@@ -169,7 +169,7 @@ Download agent for OCS from signup - Windows
 
     Yopmail.Click on sign In button in yopmail email
     Unselect Frame
-    sleep       5
+    sleep       ${yop_sleep}
     Switch Window       aithentic | Create - Account
     Generic.Verify your current page location contains     create-account
 
@@ -196,7 +196,7 @@ Download agent for OCS from signup - Windows
     Generic.Switch to iframe by ID      ifmail
 
     Yopmail.Get verification OTP from email    Your passcode is
-    sleep       2
+    sleep       ${yop_sleep}
     Switch Window   aithentic | OTP
 
     TwoFactorAuth.Enter the otp     ${passcode}
@@ -240,7 +240,7 @@ Download agent for OCS from signup - Windows
     Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    sleep   1
+    sleep   ${search_sleep}
     OCS.Would you like to download agent    Yes, please!
     OCS.Select the agent type    Windows
     OCS.Verify that agent is ready to get download
@@ -275,7 +275,7 @@ Download agent for OCS from signup - macOS
 
     Yopmail.Click on sign In button in yopmail email
     Unselect Frame
-    sleep       5
+    sleep       ${yop_sleep}
     Switch Window       aithentic | Create - Account
     Generic.Verify your current page location contains     create-account
 
@@ -302,7 +302,7 @@ Download agent for OCS from signup - macOS
     Generic.Switch to iframe by ID      ifmail
 
     Yopmail.Get verification OTP from email    Your passcode is
-    sleep       2
+    sleep       ${yop_sleep}
     Switch Window   aithentic | OTP
 
     TwoFactorAuth.Enter the otp     ${passcode}
@@ -346,7 +346,7 @@ Download agent for OCS from signup - macOS
     Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    sleep   1
+    sleep   ${search_sleep}
     OCS.Would you like to download agent    Yes, please!
     OCS.Select the agent type    macOS
     OCS.Verify that agent is ready to get download
