@@ -33,32 +33,43 @@ Resource        ../Pages/TeamMemberPage.robot
 
 ${user_name}             rahulshettyacademy
 ${invalid_password}      123445
+<<<<<<< HEAD
+${url}                   https://uat-app.aithentic.com/
+#${url}                   https://qa-app.aithentic.com/
+${apiURL}                 https://uat-api.aithentic.com/api/v1
+#${apiURL}                https://qa-api.aithentic.com/api/v1
+${valid_password}        Test!@5897     #UAT user
+#${valid_password}        Test@123       #QA User
+=======
 
+>>>>>>> 8ecb2abc4c1cad0b1dce2159ef7a2eb1f88a5c6c
 #${url}                   https://uat-app.aithentic.com/
 ${url}                   https://qa-app.aithentic.com/
 #${apiURL}                 https://uat-api.aithentic.com/api/v1
 ${apiURL}                 https://qa-api.aithentic.com/api/v1
 #${valid_password}        Test!@5897     #UAT user
 ${valid_password}        Test@123       #QA User
+<<<<<<< HEAD
+=======
 
+>>>>>>> 8ecb2abc4c1cad0b1dce2159ef7a2eb1f88a5c6c
 ${browser_name}          Firefox
 ${email}                 testqa29j@mailinator.com       #UAT user
 ${SheetLocationAndName}   LoadTimeSheet.xlsx
 ${SheetTabName}     Load_Time_tracking
+<<<<<<< HEAD
+=======
 
+>>>>>>> 8ecb2abc4c1cad0b1dce2159ef7a2eb1f88a5c6c
 ${alert_Msg}     css:.msg.d-inline-flex
 ${cross_alertMsg}   css:.close.position-absolute.text-white
-
 ${loaderIcon}     //div[@role='status']
-
-
 ${yop_email_searchBar}     css:#login
 ${yop_email_searchBtn}      css:button[title='Check Inbox @yopmail.com']
 ${click_Country}     css:#country
 ${click_countryTag}     css:.iti__selected-flag.dropdown-toggle
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
-
 ${yop_sleep}       5
 ${search_sleep}       1
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March

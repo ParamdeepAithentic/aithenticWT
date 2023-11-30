@@ -1172,3 +1172,37 @@ Click the add here link on support to edit new support
 #    sleep       5
 #    ${fetchSerial} =     get text    //input[@id='Serial Number']
 #    log to console     ${fetchSerial}
+
+Click on save product pop inside technology page
+    wait until element is visible   css:div[class='modal-footer my-1'] button[type='submit']    60
+    click element   css:div[class='modal-footer my-1'] button[type='submit']
+
+Select product technology group via technology
+    [Arguments]    ${option}
+    wait until element is visible       css:nz-tree-select[formcontrolname=TechGroupId] input     60
+    Mouse Over      css:nz-tree-select[formcontrolname=TechGroupId] input
+    click element   css:nz-tree-select[formcontrolname=TechGroupId] input
+    Scroll Element Into View        //span[normalize-space()='${option}']
+    wait until element is visible      //span[normalize-space()='${option}']       60
+    click element       //span[normalize-space()='${option}']
+
+Select product technology type via technology
+    [Arguments]    ${option}
+    Generic.Scroll the page till    900
+    wait until element is visible       ${select_technology_type_via link}     60
+    click element   ${select_technology_type_via link}
+    Generic.Select parameter     ${option}
+
+Add product description via technology
+    wait until element is visible       ${ProductDescription_viaLink}     60
+    input text   ${ProductDescription_viaLink}   This is the description of new product added.
+
+
+Add product feature via technology
+    wait until element is visible       ${ProductFeatures_viaLink}     60
+    input text   ${ProductFeatures_viaLink}   This is the features of new product added.
+
+Renewal Date via technology
+    wait until element is visible   css:#RenewalDate     60
+    click element   css:#RenewalDate
+    input text  css:#RenewalDate     03/26/2021
