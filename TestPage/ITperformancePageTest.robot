@@ -69,37 +69,3 @@ Download all sheets with download all button
     Generic.Verify your current page location contains      it-performance
     ITperformancePage.Click on download all button
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

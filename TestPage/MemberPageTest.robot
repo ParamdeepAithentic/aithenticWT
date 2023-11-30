@@ -117,30 +117,3 @@ Team Member Bulk Edit
     sleep       1
     Switch Window       aithentic | Member - List
     MemberPage.Search team member by first and last name    ${generate_teamMember_FirstName} ${generate_teamMember_LastName}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
