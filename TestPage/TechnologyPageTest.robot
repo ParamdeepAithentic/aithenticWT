@@ -968,7 +968,7 @@ Add Technology Page - Add New Supplier and support partner and assign them
     PartnersPage.Select partner country       United States
     TechnologyPage.Click contact main save button
     Generic.Verify alertify is visible
-    sleep       2
+    sleep       ${yop_sleep}
     Switch Window       aithentic | Add - Technology
     TechnologyPage.Wait till support partner get auto polute        ${generate_BusinessName}
 
