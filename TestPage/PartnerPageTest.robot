@@ -228,6 +228,7 @@ Compose Message invite user test
     Switch Window    Inbox
     Generic.Refresh the existing page
     Generic.Refresh the existing page
+    Generic.Refresh the existing page
     Generic.Switch to iframe by ID      ifinbox
     Yopmail.Click on email of yopmail   Email Register Verification Required.
     Unselect Frame
@@ -249,7 +250,7 @@ Compose Message invite user test
     UserAccount.Click on term and condition checkbox
     UserAccount.Click create account button
     Generic.Fetch alert message text and compare it with       Account created successfully.
-    Generic.Verify your current page location contains     keycloak
+    Generic.Verify your current page location contains     auth
 
 
     LandingPage.Fill the login Form      ${generate_ContactBusinessEmail}    Paramdeep@112
@@ -348,7 +349,8 @@ Compose Message invite user test
     Generic.Verify your current page location contains      contracts-list
 #    ContractsPage.Fetch the contract ID from the row
 #    ContractsPage.Click on the first tab row    ${generate_BusinessName}
-    ContractsPage.Click on the first row of contract table
+#    sleep   50000
+    ContractsPage.Click on the first tab row of contract list page table
     Generic.Verify your current page location contains      view-smartshare
     ContractsPage.Save the contract details     Accept
     ContractsPage.Select the contract form pop up checkboxes
@@ -413,7 +415,7 @@ Compose Message invite user test
     Generic.Verify alert message of add team member of compose message    Email sent successfully
     sleep       ${yop_sleep}
     Switch Window   aithentic | Message - Compose
-
+#    sleep       50000
     MessagePage.Select message status       public
     MessagePage.Enter message subject       This message is of compose message subject
     MessagePage.Enter message details       This message is of compose message description
@@ -443,7 +445,7 @@ Compose Message invite user test
     UserAccount.Click on term and condition checkbox
     UserAccount.Click create account button
     Generic.Fetch alert message text and compare it with       Account created successfully.
-    Generic.Verify your current page location contains     keycloak
+    Generic.Verify your current page location contains     auth
 
 
     LandingPage.Fill the login Form      ${generate_SecondaryContactBusinessEmail}    Paramdeep@112
@@ -883,7 +885,7 @@ Activate Manufacturer via partner
     Generic.Verify your current page location contains      addpartner
     PartnersPage.Select partner type of new partner     Manufacturer
     PartnersPage.Select partner business_name     ${generated_BrandName}
-    PartnersPage.Select partner business URL        ${generated_BrandName}
+    PartnersPage.Select partner business URL
     PartnersPage.Select partner country       United States
     PartnersPage.Click on Add new Address of partner        Add new Address
     PartnersPage.Add Unique address_one of partner
@@ -969,7 +971,7 @@ Remove Manufacturer from partner
     Generic.Verify your current page location contains      addpartner
     PartnersPage.Select partner type of new partner     Manufacturer
     PartnersPage.Select partner business_name     ${generated_BrandName}
-    PartnersPage.Select partner business URL      ${generated_BrandName}
+    PartnersPage.Select partner business URL
     PartnersPage.Select partner country       United States
     PartnersPage.Click on Add new Address of partner        Add new Address
     PartnersPage.Add Unique address_one of partner
@@ -1036,7 +1038,7 @@ Remove Manufacturer from partner
 
 
 
-View Details and check the details
+View Details and check the details of Contract
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     ReplaceDomainAPI.Replace Domain

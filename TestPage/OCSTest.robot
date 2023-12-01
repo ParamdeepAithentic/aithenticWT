@@ -73,7 +73,7 @@ Download agent for OCS from signup - Linux
     UserAccount.Click on term and condition checkbox
     UserAccount.Click create account button
     Generic.Fetch alert message text and compare it with       Account created successfully.
-    Generic.Verify your current page location contains     keycloak
+    Generic.Verify your current page location contains     auth
 #    Generic.Fetch alert message text and compare it with       OTP sent successfully
 
     LandingPage.Fill the login Form      ${generate_register_Email}    Paramdeep@112
@@ -179,7 +179,7 @@ Download agent for OCS from signup - Windows
     UserAccount.Click on term and condition checkbox
     UserAccount.Click create account button
     Generic.Fetch alert message text and compare it with       Account created successfully.
-    Generic.Verify your current page location contains     keycloak
+    Generic.Verify your current page location contains     auth
 #    Generic.Fetch alert message text and compare it with       OTP sent successfully
 
     LandingPage.Fill the login Form      ${generate_register_Email}    Paramdeep@112
@@ -285,7 +285,7 @@ Download agent for OCS from signup - macOS
     UserAccount.Click on term and condition checkbox
     UserAccount.Click create account button
     Generic.Fetch alert message text and compare it with       Account created successfully.
-    Generic.Verify your current page location contains     keycloak
+    Generic.Verify your current page location contains     auth
 #    Generic.Fetch alert message text and compare it with       OTP sent successfully
 
     LandingPage.Fill the login Form      ${generate_register_Email}    Paramdeep@112

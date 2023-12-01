@@ -156,7 +156,7 @@ ${attachmentTab_UploadBTN}      css:input[type='file']
 
 ${technology_address_Lineone}       css:#strretAddress1
 ${technology_address_Linetwo}       css:#strretAddress2
-${zip_code}     css:#zip
+${zip}     css:#zip
 ${technology_employeeid}        css:#AssignedEmployeeId
 ${businessEmail}        css:#AssignedEmail
 
@@ -949,10 +949,10 @@ Select state of location
 
 Enter Zip_code
     [Arguments]     ${code}
-    wait until element is visible      ${zip_code}   60
-    wait until element is enabled     ${zip_code}   60
-    click element    ${zip_code}
-    input text  ${zip_code}    ${code}
+    wait until element is visible      ${zip}   60
+    wait until element is enabled     ${zip}   60
+    click element    ${zip}
+    input text  ${zip}    ${code}
 
 Create unique assign to Business_email random
     [Arguments]    ${Fname}    ${domain}

@@ -241,11 +241,19 @@ Search by contract BrandName
      ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
      Calculate Running time  8  ${pageHeading}   ContractPage - Search by contract BrandName      8    ${pageTime}     ${ActualTime}    ContractPage_Time
 
+Click on the first tab row of contract list page table
+    [Arguments]
+    sleep   ${yop_sleep}
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    wait until element is visible    //tbody//tr//td[normalize-space()='View']        60
+    wait until element is enabled    //tbody//tr//td[normalize-space()='View']        60
+    click element    //tbody//tr//td[normalize-space()='View']
+
 Click on the first tab row
     [Arguments]     ${option}
     Wait Until Element Is Not Visible    ${loaderIcon}      60
-    wait until element is visible    //td[normalize-space()='${option}']        60
-    sleep       ${search_sleep}
+    wait until element is visible    //td[normalize-space()='${option}']       60
+    wait until element is enabled    //td[normalize-space()='${option}']        60
     click element    //td[normalize-space()='${option}']
 
 Verify technology is null
