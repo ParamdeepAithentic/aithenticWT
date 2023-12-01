@@ -72,8 +72,6 @@ ${ProductFeatures_viaLink}      css:#addProductFeat
 ${ProductStatus}     //input[@id='ProductStatus']
 ${ProductStatus_viaLink}        css:#addProductStatus
 
-
-${ProductStatus}     //input[@id='ProductStatus']
 ${select_technology_group}     css:nz-tree-select[id='TechGroupId'] div nz-select-search
 ${select_technology_type}     //div[@class='ng-select-container'][normalize-space()='Select Technology Type']
 ${select_technology_type_via link}  css:#addProductType

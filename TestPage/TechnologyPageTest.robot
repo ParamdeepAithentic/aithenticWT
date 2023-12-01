@@ -226,9 +226,9 @@ Create new asset with new brand and product
     DashboardPage.Add product brand name      ${generated_BrandName}
     DashboardPage.Add product description
     DashboardPage.Add product feature
-    DashboardPage.Select product status       Active
-    DashboardPage.Select product technology type      Hardware
+    DashboardPage.Select product technology type     Hardware
     DashboardPage.Select product technology group     Applications
+    DashboardPage.Select product status   Active
     DashboardPage.Save added product details
     Generic.Fetch alert message text and compare it with        Product created successfully
     DashboardPage.Verify product added        ${generated_product}
@@ -565,9 +565,9 @@ Add Products with 10 combinations of Tech Type and Tech group
     DashboardPage.Add product brand name      QABrand555
     DashboardPage.Add product description
     DashboardPage.Add product feature
-    DashboardPage.Select product status       Active
     DashboardPage.Select product technology type      Hardware
     DashboardPage.Select product technology group     Accessories
+    DashboardPage.Select product status       Active
     DashboardPage.Save added product details
     Generic.Fetch alert message text and compare it with        Product created successfully
     DashboardPage.Verify product added        ${generated_product}
@@ -578,9 +578,9 @@ Add Products with 10 combinations of Tech Type and Tech group
     DashboardPage.Add product brand name      QABrand555
     DashboardPage.Add product description
     DashboardPage.Add product feature
-    DashboardPage.Select product status       Active
     DashboardPage.Select product technology type      Hardware
     DashboardPage.Select product technology group     Applications
+    DashboardPage.Select product status       Active
     DashboardPage.Save added product details
     Generic.Fetch alert message text and compare it with        Product created successfully
     DashboardPage.Verify product added        ${generated_product}
@@ -591,9 +591,9 @@ Add Products with 10 combinations of Tech Type and Tech group
     DashboardPage.Add product brand name      QABrand555
     DashboardPage.Add product description
     DashboardPage.Add product feature
-    DashboardPage.Select product status       Active
     DashboardPage.Select product technology type      License
     DashboardPage.Select product technology group     Applications
+    DashboardPage.Select product status       Active
     DashboardPage.Save added product details
     Generic.Fetch alert message text and compare it with        Product created successfully
     DashboardPage.Verify product added        ${generated_product}
@@ -604,9 +604,9 @@ Add Products with 10 combinations of Tech Type and Tech group
     DashboardPage.Add product brand name      QABrand555
     DashboardPage.Add product description
     DashboardPage.Add product feature
-    DashboardPage.Select product status       Active
     DashboardPage.Select product technology type      License
     DashboardPage.Select product technology group     Cameras & Camcorders
+    DashboardPage.Select product status       Active
     DashboardPage.Save added product details
     Generic.Fetch alert message text and compare it with        Product created successfully
     DashboardPage.Verify product added        ${generated_product}
@@ -617,9 +617,9 @@ Add Products with 10 combinations of Tech Type and Tech group
     DashboardPage.Add product brand name      QABrand555
     DashboardPage.Add product description
     DashboardPage.Add product feature
-    DashboardPage.Select product status       Active
     DashboardPage.Select product technology type      Subscription
     DashboardPage.Select product technology group     Car Audio & Video
+    DashboardPage.Select product status       Active
     DashboardPage.Save added product details
     Generic.Fetch alert message text and compare it with        Product created successfully
     DashboardPage.Verify product added        ${generated_product}
@@ -630,9 +630,9 @@ Add Products with 10 combinations of Tech Type and Tech group
     DashboardPage.Add product brand name      QABrand555
     DashboardPage.Add product description
     DashboardPage.Add product feature
-    DashboardPage.Select product status       Active
     DashboardPage.Select product technology type      Subscription
     DashboardPage.Select product technology group     Home Audio
+    DashboardPage.Select product status       Active
     DashboardPage.Save added product details
     Generic.Fetch alert message text and compare it with        Product created successfully
     DashboardPage.Verify product added        ${generated_product}
@@ -643,9 +643,9 @@ Add Products with 10 combinations of Tech Type and Tech group
     DashboardPage.Add product brand name      QABrand555
     DashboardPage.Add product description
     DashboardPage.Add product feature
-    DashboardPage.Select product status       Active
     DashboardPage.Select product technology type      Maintenance
     DashboardPage.Select product technology group     Communication
+    DashboardPage.Select product status       Active
     DashboardPage.Save added product details
     Generic.Fetch alert message text and compare it with        Product created successfully
     DashboardPage.Verify product added        ${generated_product}
@@ -656,9 +656,9 @@ Add Products with 10 combinations of Tech Type and Tech group
     DashboardPage.Add product brand name      QABrand555
     DashboardPage.Add product description
     DashboardPage.Add product feature
-    DashboardPage.Select product status       Active
     DashboardPage.Select product technology type      Maintenance
     DashboardPage.Select product technology group     CRT TVs
+    DashboardPage.Select product status       Active
     DashboardPage.Save added product details
     Generic.Fetch alert message text and compare it with        Product created successfully
     DashboardPage.Verify product added        ${generated_product}
@@ -669,9 +669,9 @@ Add Products with 10 combinations of Tech Type and Tech group
     DashboardPage.Add product brand name      QABrand555
     DashboardPage.Add product description
     DashboardPage.Add product feature
-    DashboardPage.Select product status       Active
     DashboardPage.Select product technology type      Virtual Machines
     DashboardPage.Select product technology group     DVD / TV Combos
+    DashboardPage.Select product status       Active
     DashboardPage.Save added product details
     Generic.Fetch alert message text and compare it with        Product created successfully
     DashboardPage.Verify product added        ${generated_product}
@@ -682,9 +682,9 @@ Add Products with 10 combinations of Tech Type and Tech group
     DashboardPage.Add product brand name      QABrand555
     DashboardPage.Add product description
     DashboardPage.Add product feature
-    DashboardPage.Select product status       Active
     DashboardPage.Select product technology type      Virtual Machines
     DashboardPage.Select product technology group     Displays & Projectors
+    DashboardPage.Select product status       Active
     DashboardPage.Save added product details
     Generic.Fetch alert message text and compare it with        Product created successfully
     DashboardPage.Verify product added        ${generated_product}
@@ -814,6 +814,24 @@ Verify the history of added technology
     #           TechnologyPage.Click technology product input field
     TechnologyPage.Select parameter from technology dropdown list      QAHardware
     TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select purchase date
+    TechnologyPage.Select warranty end date    12/12/2028
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Add technology lifecycle comment    Technology Lifecycle Information- comment
+    TechnologyPage.Add order number of technology cost information     56
+    TechnologyPage.Add payment partner of technology cost information      testqa 20Feb
+    TechnologyPage.Add cost type of technology cost information        Purchased
+    TechnologyPage.Add payment type of technology cost information     FixedPayment
+    TechnologyPage.Add payment peroid of technology cost information       Monthly
+    TechnologyPage.Add first payment date of technology cost information       12/12/2028
+    TechnologyPage.Add budget payment of technology cost information       1100
+    TechnologyPage.Add actual payment of technology cost information       1050
+    TechnologyPage.Add expense type of technology cost information     Capex
+    TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
+    TechnologyPage.Add assignment information department name      TestQA Department Up31840619
+    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add support partner of partners information     QABusiness04191432
+    TechnologyPage.Add supplier of partners information        qabrand10050505
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
@@ -905,7 +923,6 @@ Verify the history of added technology
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
     TechnologyPage.Select tab under technology details      history
-
     TechnologyPage.Verify area changed under history tab        New Component
 
 

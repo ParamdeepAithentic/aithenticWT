@@ -65,7 +65,7 @@ ${partner_address_Line2}     css:#StreetAddress2
 ${partner_address_Line1}     css:#addressLine1
 ${partner_state}        css:#state
 ${partner_city}     css:#city
-${zip_code}     css:#Zip
+${zip_code}     css:.qa-Zip         #css:#Zip
 ${secondary_contactURL}     css:input[formcontrolname='Businessurl']
 ${loaderIcon}     //div[@role='status']
 ${partner_newaddress_Line2}     css:#addressLine2
@@ -178,17 +178,14 @@ Select partner business_name
     input text   ${businessName}   ${option}
     sleep   ${search_sleep}
     Press Keys     ${businessName}       ENTER
+    sleep   ${search_sleep}
 
 
 Select partner business URL
-    [Arguments]    ${option}
     wait until element is visible       ${select_businessURL}         60
     wait until element is enabled       ${select_businessURL}        60
     click element   ${select_businessURL}
-#    input text  ${select_businessURL}     ${option}
-##    Press Keys  ${select_businessURL}   ENTER
-#    Generic.Select parameter    ${option}
-
+    sleep      2
     wait until element is visible     //div[contains (@id, '-0')]       60
     wait until element is enabled     //div[contains (@id, '-0')]       60
     click element   //div[contains (@id, '-0')]

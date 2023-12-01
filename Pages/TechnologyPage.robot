@@ -156,7 +156,7 @@ ${attachmentTab_UploadBTN}      css:input[type='file']
 
 ${technology_address_Lineone}       css:#strretAddress1
 ${technology_address_Linetwo}       css:#strretAddress2
-${zip_code}     css:#zip
+${zip}     css:#zip
 ${technology_employeeid}        css:#AssignedEmployeeId
 ${businessEmail}        css:#AssignedEmail
 
@@ -443,6 +443,7 @@ Add technology lifecycle comment
 Accept updated edited technology pop up
     [Arguments]    ${option}
      wait until element is visible     //div[@id='confirmUpdates']//button[normalize-space()='${option}']      60
+     wait until element is enabled     //div[@id='confirmUpdates']//button[normalize-space()='${option}']      60
      click element      //div[@id='confirmUpdates']//button[normalize-space()='${option}']
 
 ###############Technology Cost Information#################
@@ -679,11 +680,10 @@ Add supplier of partners information
 
 
 Click on save technology form button
-
-#    ${StartTime1} =     Get Current Time in Milliseconds
-#    Scroll Element Into View        ${saveBTN}
     wait until element is visible       ${saveBTN}       60
+    wait until element is enabled       ${saveBTN}       60
     click element       ${saveBTN}
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
 
 Click on save technology form pop button
     wait until element is visible       ${savePOPup}       60
@@ -949,10 +949,10 @@ Select state of location
 
 Enter Zip_code
     [Arguments]     ${code}
-    wait until element is visible      ${zip_code}   60
-    wait until element is enabled     ${zip_code}   60
-    click element    ${zip_code}
-    input text  ${zip_code}    ${code}
+    wait until element is visible      ${zip}   60
+    wait until element is enabled     ${zip}   60
+    click element    ${zip}
+    input text  ${zip}    ${code}
 
 Create unique assign to Business_email random
     [Arguments]    ${Fname}    ${domain}
@@ -1122,6 +1122,7 @@ Close the view history pop up
     wait until element is enabled       ${histortTab_ViewPopUp}      60
     click element   ${histortTab_ViewPopUp}
     wait until element is not visible       ${histortTab_ViewPopUp}      60
+    sleep   ${search_sleep}
 
 Submit the assign partner form
     [Arguments]     ${option}
