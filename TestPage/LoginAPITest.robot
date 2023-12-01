@@ -41,33 +41,3 @@ ${Shop_page_load}           css:.nav-link
 Testone
     Generic.Fix the column number
     Generic.Fix the row number
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
