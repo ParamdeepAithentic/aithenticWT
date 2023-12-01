@@ -75,7 +75,9 @@ Select side option from message list
 
 Select compose message pop up option
     [Arguments]     ${option}
+    sleep   ${search_sleep}
     wait until element is visible    css:.qa-${option}-send-invite   60
+    wait until element is enabled    css:.qa-${option}-send-invite   60
     click element       css:.qa-${option}-send-invite
 #yes/no
 
@@ -93,9 +95,13 @@ Enter message details
     [Arguments]     ${option}
     Generic.Enter value into field  ${message_details}       ${option}
 
+
+
 Save compose message
     [Arguments]     ${option}
+#    sleep   ${search_sleep}
     wait until element is visible    css:.${option}-message-qa   60
+    wait until element is enabled    css:.${option}-message-qa   60
     click element       css:.${option}-message-qa
 #send/cancel
 

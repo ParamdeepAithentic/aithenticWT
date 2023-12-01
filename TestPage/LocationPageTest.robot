@@ -137,5 +137,3 @@ Location Bulk Edit
     sleep       1
     Switch Window       aithentic | Location - List
     LocationPage.Search by location name     ${generated_NewLocationName}
-
-

@@ -30,12 +30,6 @@ Resource        ../Pages/DepartmentPage.robot
 
 *** Variables ***
 ${department_ActionBTN}      css:#Team-Member-Actions
-#.qa-department-name input
-#.qa-status input
-#costCenter
-
-
-
 
 *** Keywords ***
 Click on added department action button
@@ -66,4 +60,6 @@ Double click
     Double click element      css:.ag-center-cols-container div[col-id='${option}']
     Press Keys    css:.ag-center-cols-container div[col-id='${option}']     CONTROL+A
     Press Keys    css:.ag-center-cols-container div[col-id='${option}']     DELETE
+
+
 

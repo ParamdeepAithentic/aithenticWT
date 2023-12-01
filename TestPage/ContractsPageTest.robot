@@ -201,6 +201,7 @@ Technology Auto removed from dynamic contract When edit Brand and product
     TechnologyPage.Select parameter from technology dropdown list      18781
     TechnologyPage.Select edited technology lifecycle status      Active
     TechnologyPage.Click on save technology form button
+    sleep       ${search_sleep}
     TechnologyPage.Accept updated edited technology pop up     Update
     TechnologyPage.Click on technology Acknowledgement pop up      Acknowledge
     Generic.Fetch alert message text and compare it with        Technology updated successfully
@@ -360,6 +361,7 @@ Technology Auto removed from static contract When edit Brand and product
     TechnologyPage.Select parameter from technology dropdown list      18781
     TechnologyPage.Select edited technology lifecycle status      Active
     TechnologyPage.Click on save technology form button
+    sleep   ${search_sleep}
     TechnologyPage.Accept updated edited technology pop up     Update
     TechnologyPage.Click on technology Acknowledgement pop up      Acknowledge
     Generic.Fetch alert message text and compare it with        Technology updated successfully
@@ -371,13 +373,4 @@ Technology Auto removed from static contract When edit Brand and product
     ContractsPage.Search by contract BrandName      ${generate_BusinessName}
     ContractsPage.Click on the first tab row    ${generate_BusinessName}
     ContractsPage.Verify technology is null
-
-
-
-
-
-
-
-
-
 

@@ -65,7 +65,7 @@ ${partner_address_Line2}     css:#StreetAddress2
 ${partner_address_Line1}     css:#addressLine1
 ${partner_state}        css:#state
 ${partner_city}     css:#city
-${zip_code}     css:#Zip
+${zip_code}     css:.qa-Zip         #css:#Zip
 ${secondary_contactURL}     css:input[formcontrolname='Businessurl']
 ${loaderIcon}     //div[@role='status']
 ${partner_newaddress_Line2}     css:#addressLine2
@@ -84,8 +84,8 @@ Search by business name
     [Arguments]    ${BusinessName}
     wait until element is visible       css:thead tr       60
     wait until element is visible       ${partner_searchBar}       60
-    Clear Element Text      ${partner_searchBar}
-    ${StartTime1} =     Get Current Time in Milliseconds
+#    Clear Element Text      ${partner_searchBar}
+#    ${StartTime1} =     Get Current Time in Milliseconds
     input text      ${partner_searchBar}     ${BusinessName}
     sleep       ${search_sleep}
 #    Wait Until Element Contains    ${fetch_assetID}     ${generate_BusinessName}    60
@@ -94,21 +94,21 @@ Search by business name
 #    log to console     ${generate_BusinessName}
     log to console     ${get_businessName}
     should be equal    ${BusinessName}     ${get_businessName}
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  3  ${pageHeading}   PartnersPage - Search by business name      3    ${pageTime}     ${ActualTime}    PatnersPage_Time
+#    ${EndTime1} =     Get Current Time in Milliseconds
+#    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+#    Calculate Running time  3  ${pageHeading}   PartnersPage - Search by business name      3    ${pageTime}     ${ActualTime}    PatnersPage_Time
 
 Search by brand name
     [Arguments]    ${BrandName}
     wait until element is visible       css:thead tr       60
     wait until element is visible       //input[@placeholder='Search by Brand Name']       60
-    Clear Element Text      //input[@placeholder='Search by Brand Name']
+#    Clear Element Text      //input[@placeholder='Search by Brand Name']
 #    ${StartTime1} =     Get Current Time in Milliseconds
     input text      //input[@placeholder='Search by Brand Name']     ${BrandName}
     sleep       ${search_sleep}
 #    Wait Until Element Contains    ${fetch_assetID}     ${generate_BusinessName}    60
     wait until element is visible       //td[normalize-space()='${BrandName}']     60
-    ${get_brandName} =    get text    //td[normalize-space()='${BrandName}']
+#    ${get_brandName} =    get text    //td[normalize-space()='${BrandName}']
 #    log to console     ${generate_BusinessName}
     log to console     ${get_brandName}
     should be equal    ${BrandName}     ${get_brandName}
@@ -178,17 +178,14 @@ Select partner business_name
     input text   ${businessName}   ${option}
     sleep   ${search_sleep}
     Press Keys     ${businessName}       ENTER
+    sleep   ${search_sleep}
 
 
 Select partner business URL
-    [Arguments]    ${option}
     wait until element is visible       ${select_businessURL}         60
     wait until element is enabled       ${select_businessURL}        60
     click element   ${select_businessURL}
-#    input text  ${select_businessURL}     ${option}
-##    Press Keys  ${select_businessURL}   ENTER
-#    Generic.Select parameter    ${option}
-
+    sleep      2
     wait until element is visible     //div[contains (@id, '-0')]       60
     wait until element is enabled     //div[contains (@id, '-0')]       60
     click element   //div[contains (@id, '-0')]
@@ -249,7 +246,7 @@ Enter self contact person
 
 Enter contact business email
     [Arguments]    ${Pname}    ${Bname}
-    wait until element is visible   ${contactEmail}     60
+    wait until element is visible   ${contactEmail}        60
     wait until element is enabled      ${contactEmail}       60
     click element   ${contactEmail}
     clear element text    ${contactEmail}
@@ -479,6 +476,8 @@ Select option from three dots of partner
     [Arguments]     ${option}
     Generic.Select other option from profile list       ${option}
 
+#option: Edit, Deactivate, Activate, Remove
+
 click on plus icon to add another business_url
     wait until element is visible       css:.fas.fa-plus        60
     click element       css:.fas.fa-plus
@@ -556,14 +555,86 @@ Select option from the pop up
     [Arguments]    ${option}
     Generic.click on the button         ${option}
 
+Click on the save button
+    [Arguments]     ${option}
+    Generic.click on the button         ${option}
+
+Click here to add link of contract details
+    [Arguments]     ${option}
+    Generic.click on the button link         ${option}
+
+Enter contact business email via link
+    [Arguments]    ${Pname}
+    wait until element is not visible   ${loaderIcon}   60
+    wait until element is visible   css:#businessEmail        60
+    wait until element is enabled      css:#businessEmail       60
+    click element   css:#businessEmail
 
 
+    ${generate_ContactBusinessEmailvialink}=    Catenate    ${Pname}@yopmail.net
+    input text   css:#businessEmail  ${generate_ContactBusinessEmailvialink}
+    log to console  ${generate_ContactBusinessEmailvialink}
+    set global variable    ${generate_ContactBusinessEmailvialink}
+
+Enter random contact person via link
+    wait until element is not visible   ${loaderIcon}       60
+    wait until element is visible      css:#contactName     60
+    wait until element is enabled      css:#contactName       60
+    click element   css:#contactName
+    ${random_string} =    Generate Random String       6      [NUMBERS]
+    ${generate_contactPersonName}=    Catenate    Person_${random_string}
+    input text   css:#contactName   ${generate_contactPersonName}
+    log to console  ${generate_contactPersonName}
+    set global variable      ${generate_contactPersonName}
+    Press Keys  css:#contactName    ENTER
+
+Enter contact location via link
+    [Arguments]    ${loc}
+    wait until element is visible       css:#forLcoations     60
+    wait until element is enabled       css:#forLcoations     60
+    click element   css:#forLcoations
+    input text  css:#forLcoations   ${loc}
+    Press Keys     css:#forLcoations       ENTER
+
+Click on save button of contact via link
+    [Arguments]     ${button}
+    wait until element is visible   //div[@id='contactModalContract']//button[normalize-space()='${button}']      60
+    click element   //div[@id='contactModalContract']//button[normalize-space()='${button}']
+
+Enter and select contact name via link
+    wait until element is not visible   ${loaderIcon}   60
+    wait until element is visible   css:#contName   60
+    click element   css:#contName
+    input text  css:#contName       ${generate_contactPersonName}
+    Press Keys  css:#contName   ENTER
+
+Click on back to contracts link via contract
+    wait until element is visible   css:.back.theme-blue    60
+    click element   css:.back.theme-blue
+
+Verify status after withdraw the contract
+    [Arguments]    ${option}
+    wait until element is visible   //td[normalize-space()='${option}']      60
+# options: active, inactive, pending
+
+Click on the three buttons link of contract via view smart details
+    [Arguments]     ${option}
+    wait until element is visible   //b[normalize-space()='${option}:']/../../..//a[@class='back pointer ng-star-inserted'][normalize-space()='1']      60
+    click element   //b[normalize-space()='${option}:']/../../..//a[@class='back pointer ng-star-inserted'][normalize-space()='1']
 
 
+Click on back to contract details button link
+    wait until element is not visible   ${loaderIcon}   60
+    wait until element is visible   css:.back.pointer.font-weight-bold    60
+    click element   css:.back.pointer.font-weight-bold
 
+Download the contract pdf
+    wait until element is not visible   ${loaderIcon}   60
+    wait until element is visible   //i[@title='Download PDF Version']      60
+    click element   //i[@title='Download PDF Version']
 
-
-
-
-
+Verify pages with the element
+    [Arguments]    ${option}
+    wait until element is visible   //th[normalize-space()='${option}']     60
+# option: Yes, No
 
