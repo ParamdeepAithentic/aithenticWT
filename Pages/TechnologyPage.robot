@@ -109,11 +109,11 @@ ${Yes_BTN}      //span[contains(text(),'Yes')]
 ####################### search asset id #####################
 ${asset_SearchBar}      css:input[placeholder='Search by Brand, Product, Asset ID, Serial number or Assignee']
 ${search_loader}     css:div[role='status']
-${fetch_assetID}     //td[@class='technology-asset-width pr-4']//a
-${fetch_productID}      css:tbody tr:nth-child(1) td:nth-child(4) a
+${fetch_assetID}     //td[@class='technology-asset-width pr-4']
+${fetch_productID}      css:tbody tr:nth-child(1) td:nth-child(4)
 ${fetch_serialNo}       //tbody/tr
 #${fetch_brandName}     css:tbody tr:nth-child(1) td:nth-child(3)
-${fetch_assignee}      css:tbody tr:nth-child(1) td:nth-child(9) a
+${fetch_assignee}      css:tbody tr:nth-child(1) td:nth-child(10)
 
 
 ${selectOption}     //div[@role='option']
