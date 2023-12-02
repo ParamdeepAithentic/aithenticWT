@@ -275,8 +275,6 @@ Create new asset with new brand and product
 #    TechnologyPage.Search by SerialNo   ${generated_serialNo}       #yet to cover
 
 
-
-
 Restore asset type one
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}

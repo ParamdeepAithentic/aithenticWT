@@ -680,7 +680,7 @@ Add Manufacturer via personal detail under technology and partner
     Generic.Verify your current page location contains      addpartner
     PartnersPage.Select partner type of new partner     Manufacturer
     PartnersPage.Select partner business_name     ${generated_BrandName}
-    PartnersPage.Select partner business URL        ${generated_BrandName}
+    PartnersPage.Select partner business URL
     PartnersPage.Select partner country       United States
     PartnersPage.Click on Add new Address of partner        Add new Address
     PartnersPage.Add Unique address_one of partner
@@ -725,7 +725,7 @@ Edit Manufacturer via partner
     Generic.Verify your current page location contains      addpartner
     PartnersPage.Select partner type of new partner     Manufacturer
     PartnersPage.Select partner business_name     ${generated_BrandName}
-    PartnersPage.Select partner business URL        ${generated_BrandName}
+    PartnersPage.Select partner business URL
     PartnersPage.Select partner country       United States
     PartnersPage.Click on Add new Address of partner        Add new Address
     PartnersPage.Add Unique address_one of partner
@@ -803,7 +803,7 @@ Deactivate Manufacturer via partner
     Generic.Verify your current page location contains      addpartner
     PartnersPage.Select partner type of new partner     Manufacturer
     PartnersPage.Select partner business_name     ${generated_BrandName}
-    PartnersPage.Select partner business URL        ${generated_BrandName}
+    PartnersPage.Select partner business URL
     PartnersPage.Select partner country       United States
     PartnersPage.Click on Add new Address of partner        Add new Address
     PartnersPage.Add Unique address_one of partner
