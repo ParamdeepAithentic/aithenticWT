@@ -8,6 +8,7 @@ Library         BuiltIn
 Library         random
 Library         DateTime
 Library         OperatingSystem
+Library         AutoItLibrary
 Resource        ../Pages/Generic.robot
 Resource        ../Pages/DashboardPage.robot
 Resource        ../Pages/ITperformancePage.robot
@@ -34,41 +35,3 @@ Resource        ../Pages/LocationPage.robot
 
 
 *** Test Cases ***
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

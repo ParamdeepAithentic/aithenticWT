@@ -116,9 +116,9 @@ Create a new product with adding new brand
     DashboardPage.Add product brand name      ${generated_BrandName}
     DashboardPage.Add product description
     DashboardPage.Add product feature
-    DashboardPage.Select product status   Active
     DashboardPage.Select product technology type     Hardware
     DashboardPage.Select product technology group     Applications
+    DashboardPage.Select product status   Active
     DashboardPage.Save added product details
     Generic.Fetch alert message text and compare it with        Product created successfully
     DashboardPage.Verify product added    ${generated_product}
@@ -136,9 +136,9 @@ Add Product Bulk Edit
     DashboardPage.Add product brand name      Getac
     DashboardPage.Add product description
     DashboardPage.Add product feature
-    DashboardPage.Select product status   Active
     DashboardPage.Select product technology type     Hardware
     DashboardPage.Select product technology group     Applications
+    DashboardPage.Select product status   Active
     DashboardPage.Save added product details
     Generic.Fetch alert message text and compare it with        Product created successfully
     DashboardPage.Verify product added    ${generated_product}
@@ -154,13 +154,15 @@ Add Product Bulk Edit
 
     Generic.Click on the button     Update      #Check Data,Edit
     MemberPage.Confirm the exit import process pop appers
+    sleep   ${search_sleep}
     Generic.Click on the button     Confirm
-#    Generic.Fetch alert message text and compare it with        Products updated successfully
+    sleep   ${search_sleep}
     MemberPage.Verify the upload message text    Upload       Upload Successful
     Generic.Click on the button     Exit
     MemberPage.Confirm the exit import process pop appers
+    sleep   ${search_sleep}
     Generic.Click on the button     Confirm
-    sleep       1
+    sleep       ${yop_sleep}
     Switch Window       aithentic | Product - List
     DashboardPage.Verify product added    ${generated_EditProductName}
 
@@ -285,7 +287,7 @@ Invite user into Aithentic
     UserAccount.Click on term and condition checkbox
     UserAccount.Click create account button
     Generic.Fetch alert message text and compare it with       Account created successfully.
-    Generic.Verify your current page location contains     keycloak
+    Generic.Verify your current page location contains     auth
     LandingPage.Fill the login Form      ${generate_sharetoEmail}    Tani@123
     Switch Window    Inbox
     Generic.Refresh the existing page
@@ -329,7 +331,7 @@ Invite user into Aithentic
     Generic.Verify your current page location contains     organization
     DashboardPage.Select the employee ID checkbox   yes
     DashboardPage.Select the location ID checkbox   yes
-    DashboardPage.Select the asset ID checkbox      yes
+    DashboardPage.Select the asset ID checkbox      no
     Generic.Fetch alert message text and compare it with       Settings Updated
 
 
@@ -667,7 +669,7 @@ Remove Brand and address via brand under profile list
     DashboardPage.Select option from the pop up     yes
     Generic.Fetch alert message text and compare it with      Brand deleted successfully
 
-Verify-adding-a-new-brand-from-profile-listing
+Verify adding a new brand from profile listing
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name

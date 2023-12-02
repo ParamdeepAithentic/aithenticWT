@@ -228,6 +228,7 @@ Compose Message invite user test
     Switch Window    Inbox
     Generic.Refresh the existing page
     Generic.Refresh the existing page
+    Generic.Refresh the existing page
     Generic.Switch to iframe by ID      ifinbox
     Yopmail.Click on email of yopmail   Email Register Verification Required.
     Unselect Frame
@@ -249,7 +250,7 @@ Compose Message invite user test
     UserAccount.Click on term and condition checkbox
     UserAccount.Click create account button
     Generic.Fetch alert message text and compare it with       Account created successfully.
-    Generic.Verify your current page location contains     keycloak
+    Generic.Verify your current page location contains     auth
 
 
     LandingPage.Fill the login Form      ${generate_ContactBusinessEmail}    Paramdeep@112
@@ -268,7 +269,7 @@ Compose Message invite user test
 
     ${StartTime1} =     Get Current Time in Milliseconds
     Yopmail.Get verification OTP from email    Your passcode is
-    sleep       2
+    sleep       ${yop_sleep}
     Switch Window   aithentic | OTP
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
@@ -347,7 +348,9 @@ Compose Message invite user test
     Generic.select the option from the side menu    Contracts
     Generic.Verify your current page location contains      contracts-list
 #    ContractsPage.Fetch the contract ID from the row
-    ContractsPage.Click on the first tab row
+#    ContractsPage.Click on the first tab row    ${generate_BusinessName}
+#    sleep   50000
+    ContractsPage.Click on the first tab row of contract list page table
     Generic.Verify your current page location contains      view-smartshare
     ContractsPage.Save the contract details     Accept
     ContractsPage.Select the contract form pop up checkboxes
@@ -371,7 +374,7 @@ Compose Message invite user test
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
     PartnersPage.Search by business name    ${generate_BusinessName}
-    sleep       2
+    sleep       ${search_sleep}
     PartnersPage.Click first row of table
     PartnersPage.Click on edit button
     PartnersPage.Click on contact person button
@@ -412,7 +415,7 @@ Compose Message invite user test
     Generic.Verify alert message of add team member of compose message    Email sent successfully
     sleep       ${yop_sleep}
     Switch Window   aithentic | Message - Compose
-
+#    sleep       50000
     MessagePage.Select message status       public
     MessagePage.Enter message subject       This message is of compose message subject
     MessagePage.Enter message details       This message is of compose message description
@@ -442,7 +445,7 @@ Compose Message invite user test
     UserAccount.Click on term and condition checkbox
     UserAccount.Click create account button
     Generic.Fetch alert message text and compare it with       Account created successfully.
-    Generic.Verify your current page location contains     keycloak
+    Generic.Verify your current page location contains     auth
 
 
     LandingPage.Fill the login Form      ${generate_SecondaryContactBusinessEmail}    Paramdeep@112
@@ -459,7 +462,7 @@ Compose Message invite user test
     Generic.Switch to iframe by ID      ifmail
 
     Yopmail.Get verification OTP from email    Your passcode is
-    sleep       2
+    sleep       ${yop_sleep}
     Switch Window   aithentic | OTP
 #    Switch Window   aithentic | Login
 #    sleep       2
@@ -647,7 +650,6 @@ Export Specificartner into Excel Doc CSV and TSV for Support Partner
     PartnersPage.Search by business name    ${generate_BusinessName}
     PartnersPage.Select the partner row      ${generate_BusinessName}
     Generic.Verify your current page location contains      partner-details
-
     Generic.click on the button     Edit
     PartnersPage.Click on add custome business URL icon
     PartnersPage.Create partner random secondary business URL
@@ -670,18 +672,15 @@ Add Manufacturer via personal detail under technology and partner
     DashboardPage.Add static Business Manufacturer URL      yopmail.net
     DashboardPage.Add brand manufacturer country      United States
     DashboardPage.Save added brand details
-#    DashboardPage.Click on main Save Button
     Generic.Fetch alert message text and compare it with        Brand created successfully.
     DashboardPage.Click on main Save Button
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
     PartnersPage.Click new partner button
     Generic.Verify your current page location contains      addpartner
-#    sleep       5
     PartnersPage.Select partner type of new partner     Manufacturer
-#    sleep       3
     PartnersPage.Select partner business_name     ${generated_BrandName}
-    PartnersPage.Select partner business URL        ${generated_BrandName}
+    PartnersPage.Select partner business URL
     PartnersPage.Select partner country       United States
     PartnersPage.Click on Add new Address of partner        Add new Address
     PartnersPage.Add Unique address_one of partner
@@ -718,18 +717,15 @@ Edit Manufacturer via partner
     DashboardPage.Add static Business Manufacturer URL      yopmail.net
     DashboardPage.Add brand manufacturer country      United States
     DashboardPage.Save added brand details
-#    DashboardPage.Click on main Save Button
     Generic.Fetch alert message text and compare it with        Brand created successfully.
     DashboardPage.Click on main Save Button
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
     PartnersPage.Click new partner button
     Generic.Verify your current page location contains      addpartner
-#    sleep       5
     PartnersPage.Select partner type of new partner     Manufacturer
-#    sleep       3
     PartnersPage.Select partner business_name     ${generated_BrandName}
-    PartnersPage.Select partner business URL        ${generated_BrandName}
+    PartnersPage.Select partner business URL
     PartnersPage.Select partner country       United States
     PartnersPage.Click on Add new Address of partner        Add new Address
     PartnersPage.Add Unique address_one of partner
@@ -778,7 +774,6 @@ Edit Manufacturer via partner
     Generic.Enter phone number      India   +91     9646289871
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     Generic.click on the button     Add
-#    sleep   ${search_sleep}
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with    Partner updated successfully
     PartnersPage.Search by business name    ${generated_BrandName}
@@ -800,25 +795,22 @@ Deactivate Manufacturer via partner
     DashboardPage.Add static Business Manufacturer URL      yopmail.net
     DashboardPage.Add brand manufacturer country      United States
     DashboardPage.Save added brand details
-#    DashboardPage.Click on main Save Button
     Generic.Fetch alert message text and compare it with        Brand created successfully.
     DashboardPage.Click on main Save Button
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
     PartnersPage.Click new partner button
     Generic.Verify your current page location contains      addpartner
-#    sleep       5
     PartnersPage.Select partner type of new partner     Manufacturer
-#    sleep       3
     PartnersPage.Select partner business_name     ${generated_BrandName}
-    PartnersPage.Select partner business URL        ${generated_BrandName}
+    PartnersPage.Select partner business URL
     PartnersPage.Select partner country       United States
     PartnersPage.Click on Add new Address of partner        Add new Address
     PartnersPage.Add Unique address_one of partner
     PartnersPage.Add Unique address_two of partner
     PartnersPage.Select State       Alaska
     PartnersPage.Select City        Akutan
-    PartnersPage.Zip code Input     24015
+    PartnersPage.Zip code Input     24015           #css:#Zip
     PartnersPage.Save new Address
     Generic.Scroll the page till        700
     PartnersPage.Click on Add new Contact of partner        Add new Contact
@@ -860,7 +852,6 @@ Deactivate Manufacturer via partner
     Generic.Enter phone number      India   +91     9646289871
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     Generic.click on the button     Add
-#    sleep   ${search_sleep}
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with    Partner updated successfully
     PartnersPage.Search by business name    ${generated_BrandName}
@@ -886,18 +877,15 @@ Activate Manufacturer via partner
     DashboardPage.Add static Business Manufacturer URL      yopmail.net
     DashboardPage.Add brand manufacturer country      United States
     DashboardPage.Save added brand details
-#    DashboardPage.Click on main Save Button
     Generic.Fetch alert message text and compare it with        Brand created successfully.
     DashboardPage.Click on main Save Button
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
     PartnersPage.Click new partner button
     Generic.Verify your current page location contains      addpartner
-#    sleep       5
     PartnersPage.Select partner type of new partner     Manufacturer
-#    sleep       3
     PartnersPage.Select partner business_name     ${generated_BrandName}
-    PartnersPage.Select partner business URL        ${generated_BrandName}
+    PartnersPage.Select partner business URL
     PartnersPage.Select partner country       United States
     PartnersPage.Click on Add new Address of partner        Add new Address
     PartnersPage.Add Unique address_one of partner
@@ -946,7 +934,6 @@ Activate Manufacturer via partner
     Generic.Enter phone number      India   +91     9646289871
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     Generic.click on the button     Add
-#    sleep   ${search_sleep}
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with    Partner updated successfully
     PartnersPage.Search by business name    ${generated_BrandName}
@@ -976,18 +963,15 @@ Remove Manufacturer from partner
     DashboardPage.Add static Business Manufacturer URL      yopmail.net
     DashboardPage.Add brand manufacturer country      United States
     DashboardPage.Save added brand details
-#    DashboardPage.Click on main Save Button
     Generic.Fetch alert message text and compare it with        Brand created successfully.
     DashboardPage.Click on main Save Button
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
     PartnersPage.Click new partner button
     Generic.Verify your current page location contains      addpartner
-#    sleep       5
     PartnersPage.Select partner type of new partner     Manufacturer
-#    sleep       3
     PartnersPage.Select partner business_name     ${generated_BrandName}
-    PartnersPage.Select partner business URL        ${generated_BrandName}
+    PartnersPage.Select partner business URL
     PartnersPage.Select partner country       United States
     PartnersPage.Click on Add new Address of partner        Add new Address
     PartnersPage.Add Unique address_one of partner
@@ -1036,7 +1020,6 @@ Remove Manufacturer from partner
     Generic.Enter phone number      India   +91     9646289871
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     Generic.click on the button     Add
-#    sleep   ${search_sleep}
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with    Partner updated successfully
     PartnersPage.Search by business name    ${generated_BrandName}
@@ -1053,3 +1036,102 @@ Remove Manufacturer from partner
     PartnersPage.Select option from the pop up  Yes
     Generic.Fetch alert message text and compare it with      Partner deleted successfully
 
+
+
+View Details and check the details of Contract
+    Generic.click on the tab	    Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    ReplaceDomainAPI.Replace Domain
+    Generic.select the option from the side menu    Partners
+    PartnersPage.Click new partner button
+    PartnersPage.Select partner type of new partner     Manufacturer
+    PartnersPage.Create partner random business name
+#   PartnersPage.Enter partner business URL      ${generate_BusinessName}
+    PartnersPage.Enter partner business URL     yopmail
+    PartnersPage.Select partner country       United States
+    PartnersPage.Click on the save button   Save
+    Generic.Fetch alert message text and compare it with    Partner created successfully
+    PartnersPage.Search by business name   ${generate_BusinessName}
+    Generic.select the option from the side menu    Technology
+    TechnologyPage.click on add technology button
+    PartnersPage.Click here to add link of contract details     Click here to add
+    DashboardPage.Create random productName
+    DashboardPage.Add product brand name      ${generate_BusinessName}
+    TechnologyPage.Add product description via technology
+    TechnologyPage.Add product feature via technology
+    TechnologyPage.Select product technology type via technology     Hardware
+    TechnologyPage.Select product technology group via technology   Applications
+    TechnologyPage.Click on save product pop inside technology page
+    Generic.Fetch alert message text and compare it with    Product created successfully
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select purchase date
+    TechnologyPage.Renewal Date via technology
+    TechnologyPage.Select warranty end date    12/12/2028
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Add technology lifecycle comment    Technology Lifecycle Information- comment
+    TechnologyPage.Add order number of technology cost information     56
+    TechnologyPage.Add payment partner of technology cost information      testqa 20Feb
+    TechnologyPage.Add cost type of technology cost information        Purchased
+    TechnologyPage.Add payment type of technology cost information     FixedPayment
+    TechnologyPage.Add payment peroid of technology cost information       Monthly
+    TechnologyPage.Add first payment date of technology cost information       12/12/2028
+    TechnologyPage.Add budget payment of technology cost information       1100
+    TechnologyPage.Add actual payment of technology cost information       1050
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology-list
+    TechnologyPage.Search by BrandName      ${generate_BusinessName}
+    Generic.select the option from the side menu    Contracts
+    Generic.click on the button link    View Details
+    ContractsPage.Click on back to contract link
+    ContractsPage.Click on create new contract button
+    ContractsPage.Select type of contract     Dynamic Contract
+    Generic.Verify your current page location contains      generate-contract
+    ContractsPage.Enter contract type      SmartShare_Manufacturer
+    ContractsPage.Enter contract with     ${generate_BusinessName}
+    ContractsPage.Enter contract brand    ${generate_BusinessName}
+    ContractsPage.Enter contract location      United States - Main Office - 21 - 2
+    ContractsPage.Enter contract permission       Read/Write
+    ContractsPage.Select contract start date
+    ContractsPage.Select contract end date      12/12/2028
+    ContractsPage.Select contract function       Dynamic
+    ContractsPage.Click preview selection button on contact
+    ContractsPage.Enter contract description comment      Enter comment for contract description.
+    ContractsPage.Click on add new contact for this partner link under contract
+    PartnersPage.Enter Random Contact Person Via Link
+    PartnersPage.Enter contact business email via link    ${generate_contactPersonName}
+#    PartnersPage.Choose contact country      India   +91     9646289871
+    Generic.Enter phone number      India   +91     9646289871
+    PartnersPage.Enter contact location via link      United States - Main Office - 21 - 2
+    PartnersPage.Click on save button of contact via link   Save
+    Generic.Fetch alert message text and compare it with    Contact created successfully
+    PartnersPage.Enter and select contact name via link
+    ContractsPage.Select the checkboxes
+    ContractsPage.Save create contract button
+    ContractsPage.Save contract modal     Create Contract
+    Generic.Fetch alert message text and compare it with        Contract created successfully
+    ContractsPage.Search by contract BrandName      ${generate_BusinessName}
+    ContractsPage.Fetch the contract Brand Name from the row      ${generate_BusinessName}
+    ContractsPage.Click on the first tab row    ${generate_BusinessName}
+    Generic.click on the button     Withdraw
+    Generic.Fetch alert message text and compare it with        Status updated successfully
+    PartnersPage.Click on back to contracts link via contract
+    Generic.Verify your current page location contains  contracts-list
+    ContractsPage.Search by contract BrandName      ${generate_BusinessName}
+    ContractsPage.Fetch the contract Brand Name from the row      ${generate_BusinessName}
+    PartnersPage.Verify status after withdraw the contract  Inactive
+    ContractsPage.Click on the first tab row    ${generate_BusinessName}
+    PartnersPage.Click on the three buttons link of contract via view smart details     Brand
+    Generic.Verify your current page location contains    view-contract-brands
+    PartnersPage.Verify pages with the element  Brand Name
+    PartnersPage.Click on back to contract details button link
+    PartnersPage.Click on the three buttons link of contract via view smart details     Locations
+    Generic.Verify your current page location contains    view-location
+    PartnersPage.Verify pages with the element  Location Name
+    PartnersPage.Click on back to contract details button link
+    PartnersPage.Click on the three buttons link of contract via view smart details     Technology
+    Generic.Verify your current page location contains    technology
+    PartnersPage.Verify pages with the element  Item
+    PartnersPage.Click on back to contract details button link
+    PartnersPage.Download the contract pdf
