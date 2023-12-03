@@ -109,7 +109,7 @@ ${Yes_BTN}      //span[contains(text(),'Yes')]
 ####################### search asset id #####################
 ${asset_SearchBar}      css:input[placeholder='Search by Brand, Product, Asset ID, Serial number or Assignee']
 ${search_loader}     css:div[role='status']
-${fetch_assetID}     //td[@class='technology-asset-width pr-4']
+${fetch_assetID}     //td[@class='technology-asset-width pr-4']//a
 ${fetch_productID}      css:tbody tr:nth-child(1) td:nth-child(4)
 ${fetch_serialNo}       //tbody/tr
 #${fetch_brandName}     css:tbody tr:nth-child(1) td:nth-child(3)
@@ -798,6 +798,7 @@ Search by assignee
 
 Click on the first row of the technology table
     wait until element is visible      ${fetch_assetID}     60
+    wait until element is enabled      ${fetch_assetID}     60
     click element      ${fetch_assetID}
     wait until element is not visible      ${loaderIcon}    60
 
@@ -808,6 +809,7 @@ Click on edit button on product details page
 
 Click on the edit icon on the edit technology page
     wait until element is visible      ${editIcon}     60
+    wait until element is enabled      ${editIcon}     60
     click element      ${editIcon}
 
 Click on technology Acknowledgement pop up
@@ -860,6 +862,7 @@ Select compose message status
 Enter subject of compose message
     [Arguments]    ${option}
     wait until element is visible     ${composeMessage_subject}       60
+    wait until element is enabled     ${composeMessage_subject}       60
     input text     ${composeMessage_subject}         ${option}      60
     ${get_messageSubjectValue} =  Set Variable     ${option}
     set global variable    ${get_messageSubjectValue}
@@ -867,6 +870,7 @@ Enter subject of compose message
 Enter message body of compose message
     [Arguments]    ${option}
     wait until element is visible     ${composeMessage_Details}       60
+    wait until element is enabled     ${composeMessage_Details}       60
     input text     ${composeMessage_Details}      ${option}      60
     ${get_messageBodyValue} =  Set Variable     ${option}
     set global variable    ${get_messageBodyValue}
@@ -887,6 +891,7 @@ Verify message body of recent added email
 
 Click on add location
     wait until element is visible       css:span[title='Add new location'] a        60
+    wait until element is enabled       css:span[title='Add new location'] a        60
     click element       css:span[title='Add new location'] a
     sleep       ${yop_sleep}
 
@@ -978,6 +983,7 @@ Create unique assign to employee_ID random
 
 Click on refresh location icon
     wait until element is visible       //b[normalize-space()='click here to refresh the location list']       60
+    wait until element is enabled       //b[normalize-space()='click here to refresh the location list']       60
     click element       //b[normalize-space()='click here to refresh the location list']
     wait until element is visible       css:span[title='Add new location'] a       60
 
@@ -990,16 +996,19 @@ Enter unique location name random
 Save the new added location
     [Arguments]     ${option}
     wait until element is visible       css:.qa-${option}-location       60
+    wait until element is enabled       css:.qa-${option}-location       60
     click element       css:.qa-${option}-location
 
 # option:    cancel, save
 
 Click on add department
     wait until element is visible       css:span[title='Add new department'] a        60
+    wait until element is enabled       css:span[title='Add new department'] a        60
     click element       css:span[title='Add new department'] a
 
 Create unique department name random
     wait until element is visible       ${add_tech_dept_name}        60
+    wait until element is enabled       ${add_tech_dept_name}        60
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_DepartmentNumber}=    Catenate    DeptNo_${random_string}
     input text   ${add_tech_dept_name}   ${generated_DepartmentNumber}
@@ -1016,16 +1025,19 @@ Select department cost center
 Save the department
     [Arguments]    ${option}
     wait until element is visible       css:.qa-${option}-department-modal        60
+    wait until element is enabled       css:.qa-${option}-department-modal        60
     click element        css:.qa-${option}-department-modal
 
 # option: add, close
 
 Click on add assign to
     wait until element is visible       css:span[title='Add new assignee'] a        60
+    wait until element is enabled       css:span[title='Add new assignee'] a        60
     click element       css:span[title='Add new assignee'] a
 
 Create unique assign to first name random
     wait until element is visible       css:#AssignedFirstName        60
+    wait until element is enabled       css:#AssignedFirstName        60
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_assignFname}=    Catenate    Fname_${random_string}
     input text  css:#AssignedFirstName   ${generated_assignFname}
@@ -1034,6 +1046,7 @@ Create unique assign to first name random
 
 Create unique assign to last name random
     wait until element is visible       css:#AssignedLastName        60
+    wait until element is enabled       css:#AssignedLastName        60
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_assignLname}=    Catenate    Lname_${random_string}
     input text   css:#AssignedLastName   ${generated_assignLname}
@@ -1043,6 +1056,7 @@ Create unique assign to last name random
 Save the assign to
     [Arguments]    ${option}
     wait until element is visible       css:.qa-${option}-assignee-modal        60
+    wait until element is enabled       css:.qa-${option}-assignee-modal        60
     click element        css:.qa-${option}-assignee-modal
 
 # option: save, cancel
@@ -1063,12 +1077,14 @@ Click on assign partner button under technology details page
 Click on add new entry parent button under technology details page
     [Arguments]     ${option}
     wait until element is visible    //div[@id='parent-components']//button[normalize-space()='${option}']      60
+    wait until element is enabled    //div[@id='parent-components']//button[normalize-space()='${option}']      60
     click element      //div[@id='parent-components']//button[normalize-space()='${option}']
 #Add New Entry, Export
 
 Click on add new entry component button under technology details page
     [Arguments]     ${option}
     wait until element is visible    //div[@id='components']//button[normalize-space()='${option}']      60
+    wait until element is enabled    //div[@id='components']//button[normalize-space()='${option}']      60
     click element      //div[@id='components']//button[normalize-space()='${option}']
 
 Select add new entry
@@ -1087,6 +1103,7 @@ Click here to add supplier partner
 
 Click contact main save button
     wait until element is visible      ${main_Save}       60
+    wait until element is enabled      ${main_Save}       60
     click element   ${main_Save}
 
 
@@ -1176,34 +1193,41 @@ Click the add here link on support to edit new support
 
 Click on save product pop inside technology page
     wait until element is visible   css:div[class='modal-footer my-1'] button[type='submit']    60
+    wait until element is enabled   css:div[class='modal-footer my-1'] button[type='submit']    60
     click element   css:div[class='modal-footer my-1'] button[type='submit']
 
 Select product technology group via technology
     [Arguments]    ${option}
     wait until element is visible       css:nz-tree-select[formcontrolname=TechGroupId] input     60
+    wait until element is enabled       css:nz-tree-select[formcontrolname=TechGroupId] input     60
     Mouse Over      css:nz-tree-select[formcontrolname=TechGroupId] input
     click element   css:nz-tree-select[formcontrolname=TechGroupId] input
     Scroll Element Into View        //span[normalize-space()='${option}']
     wait until element is visible      //span[normalize-space()='${option}']       60
+    wait until element is enabled      //span[normalize-space()='${option}']       60
     click element       //span[normalize-space()='${option}']
 
 Select product technology type via technology
     [Arguments]    ${option}
     Generic.Scroll the page till    900
     wait until element is visible       ${select_technology_type_via link}     60
+    wait until element is enabled       ${select_technology_type_via link}     60
     click element   ${select_technology_type_via link}
     Generic.Select parameter     ${option}
 
 Add product description via technology
     wait until element is visible       ${ProductDescription_viaLink}     60
+    wait until element is enabled       ${ProductDescription_viaLink}     60
     input text   ${ProductDescription_viaLink}   This is the description of new product added.
 
 
 Add product feature via technology
     wait until element is visible       ${ProductFeatures_viaLink}     60
+    wait until element is enabled       ${ProductFeatures_viaLink}     60
     input text   ${ProductFeatures_viaLink}   This is the features of new product added.
 
 Renewal Date via technology
     wait until element is visible   css:#RenewalDate     60
+    wait until element is enabled   css:#RenewalDate     60
     click element   css:#RenewalDate
     input text  css:#RenewalDate     03/26/2021
