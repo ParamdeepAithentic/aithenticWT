@@ -84,8 +84,8 @@ Search by business name
     [Arguments]    ${BusinessName}
     wait until element is visible       css:thead tr       60
     wait until element is visible       ${partner_searchBar}       60
-#    Clear Element Text      ${partner_searchBar}
-#    ${StartTime1} =     Get Current Time in Milliseconds
+
+    ${StartTime1} =     Get Current Time in Milliseconds
     input text      ${partner_searchBar}     ${BusinessName}
     sleep       ${search_sleep}
 #    Wait Until Element Contains    ${fetch_assetID}     ${generate_BusinessName}    60
@@ -110,7 +110,7 @@ Search by brand name
     should be equal    ${BrandName}     ${get_brandName}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  3  ${pageHeading}   PartnersPage - Search by business name      3    ${pageTime}     ${ActualTime}    PatnersPage_Time
+    Calculate Running time  3  ${pageHeading}   PartnersPage - Search by brand name      3    ${pageTime}     ${ActualTime}    PatnersPage_Time
 
 
 Select partner type
@@ -285,7 +285,6 @@ Enter contact location
     ${StartTime1} =     Get Current Time in Milliseconds
     input text  ${location}   ${loc}
     Press Keys     ${location}       ENTER
-#    Generic.Select parameter        ${select_loc}   #United States - Main Office - 21 - 2
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  6  ${pageHeading}   PartnersPage - Enter contact location      6    ${pageTime}     ${ActualTime}    PatnersPage_Time

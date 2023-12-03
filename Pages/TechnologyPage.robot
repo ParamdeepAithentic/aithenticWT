@@ -474,9 +474,8 @@ Add cost type of technology cost information
     wait until element is visible       ${costType}      60
     click element      ${costType}
     Clear Element Text      ${costType}
-    ${StartTime1} =     Get Current Time in Milliseconds
     input text      ${costType}       ${option2}
-    #    Generic.Enter value into field      ${costType}     ${option2}
+    ${StartTime1} =     Get Current Time in Milliseconds
     Generic.Select parameter    ${option2}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
@@ -627,11 +626,10 @@ Add assignment information location
 Add assignment information department name
     [Arguments]    ${option1}
     wait until element is visible    ${departmentName}      60
-    ${StartTime1} =     Get Current Time in Milliseconds
     click element       ${departmentName}
     Clear Element Text      ${departmentName}
+    ${StartTime1} =     Get Current Time in Milliseconds
     Generic.Enter value into field      ${departmentName}     ${option1}
-#    Generic.Select parameter    ${option1}
     Press Keys     ${departmentName}       ENTER
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
@@ -640,10 +638,10 @@ Add assignment information department name
 Add assignment information assign to
     [Arguments]    ${option1}
     wait until element is visible    ${assignTo}      60
-    ${StartTime1} =     Get Current Time in Milliseconds
     click element       ${assignTo}
     Clear Element Text      ${assignTo}
     Generic.Enter value into field      ${assignTo}     ${option1}
+    ${StartTime1} =     Get Current Time in Milliseconds
     Generic.Select parameter    ${option1}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
