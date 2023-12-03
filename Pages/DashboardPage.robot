@@ -125,7 +125,7 @@ Save the department
     [Arguments]    ${option}
     wait until element is visible       css:.profile-section-department div button.qa-${option}-department-modal      60
     click element       css:.profile-section-department div button.qa-${option}-department-modal
-#add, close
+#options: add, close
 
 
 Select the option from action menu
@@ -184,8 +184,6 @@ Create random productName
 Click on action button
     wait until element is visible       ${actionBTN}   60
     click element       ${actionBTN}
-#    wait until element is visible       ${add_Product_modal}    60
-#    wait until element is visible       ${ProductName}      60
 
 Click add product button
     wait until element is visible       ${add_Product}   60
@@ -295,9 +293,8 @@ Select product technology group via link
 Save added product details
     wait until element is visible      ${save_product_modal}       60
     click element   ${save_product_modal}
-#    wait until element is visible      ${loaderIcon}       60
     Wait Until Element Is Not Visible    ${loaderIcon}      60
-######---- verify pull on server
+
 
 Verify product added
    [Arguments]    ${productName}
@@ -355,7 +352,6 @@ Add brand manufacturer country
     Calculate Running time  9  ${pageHeading}   DashboardPage - Add brand manufacturer country      9    ${pageTime}     ${ActualTime}    DashboardPage_Time
 
 
-
 Save added brand details
     wait until element is visible       ${brand_saveBTN}        60
     click element   ${brand_saveBTN}
@@ -364,7 +360,6 @@ Click added brand main save button
     Wait Until Element Is Not Visible    ${loaderIcon}      60
     wait until element is visible       ${brand_saveBtn_main}
     click element   ${brand_saveBtn_main}
-#    wait until element is visible      ${search_brandName}     60
 
 Verify Brand added
    [Arguments]    ${BrandName}
@@ -414,9 +409,8 @@ Select the location ID checkbox
     [Arguments]     ${option}
     wait until element is visible    css:.checkmark.qa-inner-customcheckbox-location-id-${option}       60
     click element    css:.checkmark.qa-inner-customcheckbox-location-id-${option}
+#options: ProductId, BrandName, ProductStatus,TechType, GroupName, ProductDescription
 
-
-#ProductId, BrandName, ProductStatus,TechType, GroupName, ProductDescription
 Enter the new value in the product name column
     [Arguments]    ${option}
     DashboardPage.Double click    ${option}
@@ -482,16 +476,12 @@ Verify department added
     wait until element is visible      ${searchBar_department}     60
     click element      ${searchBar_department}
     Clear Element Text      ${searchBar_department}
-#    ${StartTime1} =     Get Current Time in Milliseconds
     input text   ${searchBar_department}   ${departmentName}
     sleep       ${search_sleep}
     Wait Until Element Contains    //td[normalize-space()='${departmentName}']      ${departmentName}     60
     ${get_departmentName} =    get text    ${fetch_departmentName}
     log to console     ${get_departmentName}
     should be equal    ${departmentName}     ${get_departmentName}
-#    ${EndTime1} =     Get Current Time in Milliseconds
-#    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-#    Calculate Running time  8  ${pageHeading}   DashboardPage - Verify product added      8    ${pageTime}     ${ActualTime}    DashboardPage_Time
 
 Enter the new value in the department name column
     [Arguments]    ${option}
@@ -587,7 +577,7 @@ Enter Brand Address Line one
     ${generate_AddressLineone}=    Catenate    Address_${random_string}
     input text      ${address_Line}     ${generate_AddressLineone}
     log to console      ${generate_AddressLineone}
-#    set global variable    ${generate_AddressLineone}
+
 
 Enter Brand address line two
     wait until element is visible     ${address_line2}         60
@@ -597,7 +587,7 @@ Enter Brand address line two
     ${generate_AddressLine2}=    Catenate    Address_${random_string}
     input text      ${address_line2}     ${generate_AddressLine2}
     log to console      ${generate_AddressLine2}
-#    set global variable    ${generate_AddressLine2}
+
 
 Select State
     [Arguments]     ${country}
@@ -638,7 +628,6 @@ Enter Brand New Address Line one
     input text      ${address_Line}     ${generate_newaddressone}
     Press Keys  ${address_Line}            ENTER
     log to console      ${generate_newaddressone}
-#    set global variable    ${generate_newaddress}
 
 
 Enter Brand new address line two
@@ -648,7 +637,7 @@ Enter Brand new address line two
     ${generate_newaddresstwo}=    Catenate    Address_${random_string}
     input text      ${address_line2}     ${generate_newaddresstwo}
     log to console  ${generate_newaddresstwo}
-#   set global variable    ${generate_newaddress}
+
 
 Click on main Save Button
     wait until element is visible   ${brand_mainsaveButton}    60
@@ -743,7 +732,7 @@ Edit Brand Address Line one
     ${generate_editAddressLine1}=    Catenate    Address_${random_string}
     input text   ${editbrand_addressline1}       ${generate_editAddressLine1}
     log to console      ${generate_editAddressLine1}
-#    set global variable    ${generate_editAddressLine1}
+
 
 Edit Brand Address Line two
     wait until element is not visible   ${loaderIcon}    60
@@ -755,7 +744,7 @@ Edit Brand Address Line two
     ${generate_editAddressLine2}=    Catenate    Address_${random_string}
     input text   ${editbrand_addressline2}        ${generate_editAddressLine2}
     log to console      ${generate_editAddressLine2}
-#   set global variable    ${generate_editAddressLine2}
+
 
 Edit State while edit address
     [Arguments]     ${State}
@@ -785,7 +774,7 @@ Edit New Brand Address Line one
     input text   ${editnew_brandaddressline1}       ${generateNew_editAddressLine1}
     Press Keys  ${editnew_brandaddressline1}             ENTER
     log to console      ${generateNew_editAddressLine1}
-#    set global variable    ${generateNew_editAddressLine1}
+
 
 Edit New Brand Address Line two
     wait until element is not visible   ${loaderIcon}    60
@@ -796,7 +785,7 @@ Edit New Brand Address Line two
     ${generateNew_editAddressLine2}=    Catenate    Address_${random_string}
     input text   ${editnew_brandaddressline2}        ${generateNew_editAddressLine2}
     log to console      ${generateNew_editAddressLine2}
-#    set global variable    ${generateNew_editAddressLine2}
+
 
 Select New Address State
     [Arguments]     ${country}
@@ -829,7 +818,6 @@ Create random URL value for multiple brand addition
     ${generated_random_value}=    Catenate   ${random_string}.com
     input text   ${option}   ${generated_random_value}
     log to console      ${generated_random_value}
-#    set global variable    ${generated_random_value}
 
 
 Enter contact name of contact person

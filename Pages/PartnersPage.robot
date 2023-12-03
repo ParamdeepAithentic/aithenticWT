@@ -38,10 +38,10 @@ ${select_businessURL}     css:.qa-BusinessUrl
 ${click_Country}     css:#country
 ${addContact}     //span[normalize-space()='Add new Contact']
 
-#${contactPerson}     css:[formcontrolSelect partner business_namename=CompanyContactId] input
+
 ${contactPerson}     css:#contactPerson
 ${contactEmail}     css:#ContactEmail
-#${secondary_contactPerson}     css:[formcontrolname=CompanyContactId] input
+
 ${secondary_contactEmail}     css:#businessEmail
 ${click_countryTag}     css:.iti__selected-flag.dropdown-toggle
 ${contact_Country_search}     css:#country-search-box
@@ -84,37 +84,26 @@ Search by business name
     [Arguments]    ${BusinessName}
     wait until element is visible       css:thead tr       60
     wait until element is visible       ${partner_searchBar}       60
-#    Clear Element Text      ${partner_searchBar}
-#    ${StartTime1} =     Get Current Time in Milliseconds
     input text      ${partner_searchBar}     ${BusinessName}
     sleep       ${search_sleep}
-#    Wait Until Element Contains    ${fetch_assetID}     ${generate_BusinessName}    60
     wait until element is visible       //td[normalize-space()='${BusinessName}']     60
     ${get_businessName} =    get text    //td[normalize-space()='${BusinessName}']
-#    log to console     ${generate_BusinessName}
     log to console     ${get_businessName}
     should be equal    ${BusinessName}     ${get_businessName}
-#    ${EndTime1} =     Get Current Time in Milliseconds
-#    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-#    Calculate Running time  3  ${pageHeading}   PartnersPage - Search by business name      3    ${pageTime}     ${ActualTime}    PatnersPage_Time
 
 Search by brand name
     [Arguments]    ${BrandName}
     wait until element is visible       css:thead tr       60
     wait until element is visible       //input[@placeholder='Search by Brand Name']       60
-#    Clear Element Text      //input[@placeholder='Search by Brand Name']
-#    ${StartTime1} =     Get Current Time in Milliseconds
+    ${StartTime1} =     Get Current Time in Milliseconds
     input text      //input[@placeholder='Search by Brand Name']     ${BrandName}
     sleep       ${search_sleep}
-#    Wait Until Element Contains    ${fetch_assetID}     ${generate_BusinessName}    60
     wait until element is visible       //td[normalize-space()='${BrandName}']     60
-#    ${get_brandName} =    get text    //td[normalize-space()='${BrandName}']
-#    log to console     ${generate_BusinessName}
     log to console     ${get_brandName}
     should be equal    ${BrandName}     ${get_brandName}
-#    ${EndTime1} =     Get Current Time in Milliseconds
-#    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-#    Calculate Running time  3  ${pageHeading}   PartnersPage - Search by business name      3    ${pageTime}     ${ActualTime}    PatnersPage_Time
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  3  ${pageHeading}   PartnersPage - Search by brand name      3    ${pageTime}     ${ActualTime}    PatnersPage_Time
 
 
 Select partner type
@@ -208,7 +197,6 @@ Click on contact person button
     wait until element is visible   ${addContact}       60
     wait until element is enabled   ${addContact}       60
     click element   ${addContact}
-#    wait until element is visible      ${loaderIcon}       60
     Wait Until Element Is Not Visible    ${loaderIcon}      60
 
 Enter random contact person
@@ -266,18 +254,6 @@ Enter secondary contact business email
     log to console    secondary business email: ${Pname}@${email}.net
     set global variable    ${generate_SecondaryContactBusinessEmail}
 
-#Choose contact country
-#    [Arguments]    ${country}   ${code}     ${phoneNo}
-#    click element   ${click_countryTag}
-#    wait until element is visible   ${contact_Country_search}
-#    click element   ${contact_Country_search}
-#    ${StartTime1} =     Get Current Time in Milliseconds
-#    input text  ${contact_Country_search}   ${country}
-#    Generic.Select parameter      ${code}
-#    input text     ${phone}     ${phoneNo}
-#    ${EndTime1} =     Get Current Time in Milliseconds
-#    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-#    Calculate Running time  6  ${pageHeading}   PartnersPage - Choose contact country      6    ${pageTime}     ${ActualTime}    PatnersPage_Time
 
 
 Enter contact location
@@ -289,7 +265,6 @@ Enter contact location
     ${StartTime1} =     Get Current Time in Milliseconds
     input text  ${location}   ${loc}
     Press Keys     ${location}       ENTER
-#    Generic.Select parameter        ${select_loc}   #United States - Main Office - 21 - 2
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  6  ${pageHeading}   PartnersPage - Enter contact location      6    ${pageTime}     ${ActualTime}    PatnersPage_Time
@@ -299,7 +274,6 @@ Save the new contact
     wait until element is visible   ${save_addNewContact}       60
     wait until element is enabled   ${save_addNewContact}       60
     click element   ${save_addNewContact}
-#    wait until element is visible      ${loaderIcon}       60
     Wait Until Element Is Not Visible    ${loaderIcon}      60
     sleep   ${search_sleep}
 
@@ -307,7 +281,6 @@ Save the secondary contact
     wait until element is visible   ${save_secondaryNewContact}     60
     wait until element is enabled   ${save_secondaryNewContact}     60
     click element   ${save_secondaryNewContact}
-#    wait until element is visible      ${loaderIcon}       60
     Wait Until Element Is Not Visible    ${loaderIcon}      60
 
 Click contact main save button
@@ -315,7 +288,6 @@ Click contact main save button
     wait until element is visible      ${main_Save}       60
     wait until element is enabled      ${main_Save}       60
     click element   ${main_Save}
-#    wait until element is visible      ${loaderIcon}       60
     Wait Until Element Is Not Visible    ${loaderIcon}      60
 
 
@@ -430,9 +402,6 @@ Select State
     click element   ${partner_state}
     clear element text      ${partner_state}
     Generic.Select parameter    ${address}
-#    wait until element is visible     //span[normalize-space()='${address}']        60
-#    wait until element is enabled       //span[normalize-space()='${address}']      60
-#    click element      //span[normalize-space()='${address}']
 
 Select City
     [Arguments]    ${address}
@@ -442,9 +411,7 @@ Select City
     click element   ${partner_city}
     clear element text      ${partner_city}
     Generic.Select parameter    ${address}
-#    wait until element is visible     //span[normalize-space()='${address}']        60
-#    wait until element is enabled       //span[normalize-space()='${address}']      60
-#    click element      //span[normalize-space()='${address}']
+
 
 Zip code Input
     [Arguments]     ${code}
@@ -569,8 +536,6 @@ Enter contact business email via link
     wait until element is visible   css:#businessEmail        60
     wait until element is enabled      css:#businessEmail       60
     click element   css:#businessEmail
-
-
     ${generate_ContactBusinessEmailvialink}=    Catenate    ${Pname}@yopmail.net
     input text   css:#businessEmail  ${generate_ContactBusinessEmailvialink}
     log to console  ${generate_ContactBusinessEmailvialink}

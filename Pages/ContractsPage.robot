@@ -65,7 +65,6 @@ ${fetch_Contract_BrandName}     css:tbody tr:nth-child(1) td:nth-child(2)
 *** Keywords ***
 
 Click on create new contract button
-#    wait until element is visible   ${Create_new_contact_button}      60
     Wait Until Element Is Enabled   ${Create_new_contact_button}        60
     click element       ${Create_new_contact_button}
     sleep       2
@@ -127,13 +126,10 @@ Enter contract location
     Clear Element Text      ${location}
     ${StartTime1} =     Get Current Time in Milliseconds
     input text      ${location}      ${option}
-#    sleep       2
     Press Keys      ${location}      ENTER
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  6  ${pageHeading}   ContractPage - Enter contract location      6    ${pageTime}     ${ActualTime}    ContractPage_Time
-
-
 
 Enter contract permission
     [Arguments]    ${option}
@@ -276,7 +272,6 @@ Select the contract form pop up checkboxes
     click element    css:label[for='acknowledged']
 
 Save the contract pop up details
-#    [Arguments]     ${option}
     wait until element is visible    css:#accept-contract-detail      60
     click element    css:#accept-contract-detail
 
