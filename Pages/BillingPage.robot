@@ -52,7 +52,7 @@ Select the billing payment type
     Wait Until Element Is Visible       css:.fa-${option}    60
     Wait Until Element Is Enabled       css:.fa-${option}     60
     click element       css:.fa-${option}
-#credit-card, university
+#options: credit-card, university
 
 Enter billing account number
     [Arguments]    ${option}
@@ -71,7 +71,7 @@ Save the billing payment form
     Wait Until Element Is Visible       css:.qa-payment-form-${option}    60
     Wait Until Element Is Enabled       css:.qa-payment-form-${option}     60
     click element       css:.qa-payment-form-${option}
-#save, cancel
+#options: save, cancel
 
 Save the status of set as primary account
     [Arguments]    ${option}
@@ -79,7 +79,7 @@ Save the status of set as primary account
     Wait Until Element Is Visible       css:.qa-${option}-    60
     Wait Until Element Is Enabled       css:.qa-${option}-     60
     click element       css:.qa-${option}-
-#cancel,confirm
+#options: cancel,confirm
 
 Confirm if you want to delect account
     [Arguments]    ${option}
@@ -87,7 +87,7 @@ Confirm if you want to delect account
     Wait Until Element Is Visible       css:.qa-${option}-    60
     Wait Until Element Is Enabled       css:.qa-${option}-     60
     click element       css:.qa-${option}-
-#cancel,confirm
+#options: cancel,confirm
 
 Close the billing payment options module
     Wait Until Element Is Visible       css:div[id='updateCard'] button[aria-label='Close'] span    60
