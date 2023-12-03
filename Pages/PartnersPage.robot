@@ -102,19 +102,15 @@ Search by brand name
     [Arguments]    ${BrandName}
     wait until element is visible       css:thead tr       60
     wait until element is visible       //input[@placeholder='Search by Brand Name']       60
-#    Clear Element Text      //input[@placeholder='Search by Brand Name']
-#    ${StartTime1} =     Get Current Time in Milliseconds
+    ${StartTime1} =     Get Current Time in Milliseconds
     input text      //input[@placeholder='Search by Brand Name']     ${BrandName}
     sleep       ${search_sleep}
-#    Wait Until Element Contains    ${fetch_assetID}     ${generate_BusinessName}    60
     wait until element is visible       //td[normalize-space()='${BrandName}']     60
-#    ${get_brandName} =    get text    //td[normalize-space()='${BrandName}']
-#    log to console     ${generate_BusinessName}
     log to console     ${get_brandName}
     should be equal    ${BrandName}     ${get_brandName}
-#    ${EndTime1} =     Get Current Time in Milliseconds
-#    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-#    Calculate Running time  3  ${pageHeading}   PartnersPage - Search by business name      3    ${pageTime}     ${ActualTime}    PatnersPage_Time
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  3  ${pageHeading}   PartnersPage - Search by business name      3    ${pageTime}     ${ActualTime}    PatnersPage_Time
 
 
 Select partner type
