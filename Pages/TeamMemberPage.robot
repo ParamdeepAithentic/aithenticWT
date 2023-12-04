@@ -94,6 +94,16 @@ Enter team member business email_mailinator
     log to console      ${generated_TMbusinessEmail}
 
 
+Enter team member business email_cool.fr.nf
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_TMbusinessEmail}=    Catenate    TMBusinessEmail_${random_string}@cool.fr.nf
+    wait until element is visible       ${TMBusinessEmail}    60
+    input text   ${TMBusinessEmail}   ${generated_TMbusinessEmail}
+    log to console      ${generated_TMbusinessEmail}
+    set global variable     ${generated_TMbusinessEmail}
+
+
+
 Click on team member department
     wait until element is enabled     ${TMDepartmentName}     60
     wait until element is visible     ${TMDepartmentName}      60
@@ -111,6 +121,7 @@ Select team member department
     wait until element is visible       ${TMDepartmentName}     60
     input text      ${TMDepartmentName}         ${option}
     Generic.Select parameter        ${option}
+
 
 Select team member role
     [Arguments]    ${option}
@@ -181,3 +192,16 @@ Verify resulted row contains Dept_name
     wait until element is visible       css:.table.department       60
     sleep       ${search_sleep}
     Table column should contain      css:.table.department      2       ${generated_DepartmentNumber}
+
+Select team member location with new domain
+    wait until element is visible     //div[contains (@id, '-0')]       60
+    wait until element is enabled     //div[contains (@id, '-0')]       60
+    click element   //div[contains (@id, '-0')]
+
+verify status of first name in member list
+    [Arguments]     ${option}
+    wait until element is visible   //td[normalize-space()='${option}']     60
+
+Click on back to member list of member list
+    wait until element is visible   css:span[class='back']      60
+    click element   css:span[class='back']
