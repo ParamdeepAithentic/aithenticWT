@@ -1180,3 +1180,8 @@ Click on Link inside pop-up
     wait until element is visible       css:a[title='Technology Overview Article']      60
     click link       css:a[title='Technology Overview Article']
     sleep       ${yop_sleep}
+
+Click on i-icon of cost_center in add technology
+    wait until element is visible       css:.qa-iIconSection-add-tech-cc        60
+    click element       css:.qa-iIconSection-add-tech-cc
+

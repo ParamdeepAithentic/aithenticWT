@@ -699,19 +699,3 @@ Verify adding a new brand from profile listing
     DashboardPage.Select option from the pop up     yes
     Generic.Fetch alert message text and compare it with      Brand deleted successfully
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

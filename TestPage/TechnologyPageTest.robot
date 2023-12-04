@@ -1344,3 +1344,15 @@ Verify all i-icon of Technology page
     Generic.Verify your current page contains this text     Technology Overview
     switch window       aithentic | Technology - List
     TechnologyPage.Click on i-icon of technology tab
+
+    TechnologyPage.click on add technology button
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Click on i-icon of cost_center in add technology
+    Generic.Verify pop-up is visible after clicking on i-icon
+
+
+
