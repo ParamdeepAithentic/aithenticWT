@@ -1330,3 +1330,17 @@ Edit Technology Page - Add New Support Partner and assign that Support Partner
     TechnologyPage.Wait till support partner get auto polute       ${generate_BusinessName}
     TechnologyPage.Click on update button of edit_technology page     Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
+
+Verify all i-icon of Technology page
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on i-icon of technology tab
+    Generic.Verify pop-up is visible after clicking on i-icon
+    TechnologyPage.Click on Link inside pop-up
+    switch window       Technology Overview - Jira Service Management
+    Generic.Verify your current page location contains      servicedesk
+    Generic.Verify your current page contains this text     Technology Overview
+    switch window       aithentic | Technology - List
+    TechnologyPage.Click on i-icon of technology tab

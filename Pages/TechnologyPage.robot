@@ -1171,3 +1171,12 @@ Renewal Date via technology
     wait until element is enabled   css:#RenewalDate     60
     click element   css:#RenewalDate
     input text  css:#RenewalDate     03/26/2021
+
+Click on i-icon of technology tab
+    wait until element is visible       css:#technology-list-Iicon      60
+    click element       css:#technology-list-Iicon
+
+Click on Link inside pop-up
+    wait until element is visible       css:a[title='Technology Overview Article']      60
+    click link       css:a[title='Technology Overview Article']
+    sleep       ${yop_sleep}
