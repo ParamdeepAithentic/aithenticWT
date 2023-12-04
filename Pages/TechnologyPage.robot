@@ -617,7 +617,7 @@ Add assignment information department name
     Press Keys     ${departmentName}       ENTER
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  14  ${pageHeading}   Technology Page - Add assignment information location name      14    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+    Calculate Running time  14  ${pageHeading}   Technology Page - Add assignment information department name      14    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Add assignment information assign to
     [Arguments]    ${option1}
