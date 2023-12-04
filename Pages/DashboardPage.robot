@@ -828,4 +828,23 @@ Enter contact name of contact person
     input text  css:#contactName    ${contact}
     Press Keys   css:#contactName   ENTER
 
+Click on i-icon of asset-overview tab
+    wait until element is visible       css:span[class='btn btn-link icon-btn activeIcon ng-star-inserted'] i       60
+    click element       css:span[class='btn btn-link icon-btn activeIcon ng-star-inserted'] i
+
+Verify i-icon popup is visible
+    wait until element is visible       css:.popover-content        60
+    Page should contain element         css:.popover-content
+    log to console      Yes,Pop-up is visible for i-icon content.
+
+Hover over i-icon of reports tab
+    wait until element is visible       css:.qa-technology-products-Iicon i     60
+    Mouse over       css:.qa-technology-products-Iicon i
+
+Verify hovering on i-icon shows message and compare it with
+    [Arguments]     ${option}
+    wait until element is visible       css:#technology-products-Iicon      60
+    ${title_value}    Get Element Attribute     css:#technology-products-Iicon        title
+    Log to console    Title is: ${title_value}
+    should be equal     ${title_value}        ${option}
 
