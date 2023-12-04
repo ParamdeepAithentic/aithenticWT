@@ -711,6 +711,3 @@ Verify all i-icon of Dashboard page
     Generic.Verify your current page location contains      reports
     DashboardPage.Hover over i-icon of reports tab
     DashboardPage.Verify hovering on i-icon shows message and compare it with       This data is shown of last 24hours
-
-
-
