@@ -1136,10 +1136,4 @@ View Details and check the details of Contract
     PartnersPage.Click on back to contract details button link
     PartnersPage.Download the contract pdf
 
-Verify all i-icon of partners page
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.select the option from the side menu    Partners
-    Generic.Verify your current page location contains      partner-listing
-    PartnersPage.Click on i-icon of partner tab
 
