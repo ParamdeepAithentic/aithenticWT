@@ -122,7 +122,6 @@ Edit Team member page - Edit New Department and assign that department to Team m
     Generic.Verify your current page location contains          memberslist
 
 
-
 Verify team member Asset history
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
@@ -206,9 +205,12 @@ Verify team member Asset history
     Generic.Verify your current page contains this text     Asset History
 
 
-
-
-
-
-
+Verify all i-icon of team member page
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Click on i-icon of team-members tab
+    Generic.Verify pop-up is visible after clicking on i-icon
+    TeamMemberPage.Click on i-icon of team-members tab
 

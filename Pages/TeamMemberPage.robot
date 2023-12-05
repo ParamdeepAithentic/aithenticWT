@@ -193,6 +193,7 @@ Verify resulted row contains Dept_name
     sleep       ${search_sleep}
     Table column should contain      css:.table.department      2       ${generated_DepartmentNumber}
 
+<<<<<<< HEAD
 Select team member location with new domain
     wait until element is visible     //div[contains (@id, '-0')]       60
     wait until element is enabled     //div[contains (@id, '-0')]       60
@@ -214,3 +215,8 @@ Click on search by brand, product and asset id of asset history via team member
 
 Verify table data with asset id in team member
     Table Column Should contain     css:.table-hover    2       ${generated_AssetID}
+=======
+Click on i-icon of team-members tab
+    wait until element is visible       css:#member-list-Iicon      60
+    click element       css:#member-list-Iicon
+>>>>>>> 6aa755b9c504b69a04f94fb0675bb5feea1eaeed
