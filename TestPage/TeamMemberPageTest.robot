@@ -208,3 +208,99 @@ Verify all i-icon of team member page
     TeamMemberPage.Click on i-icon of team-members tab
     Generic.Verify pop-up is visible after clicking on i-icon
     TeamMemberPage.Click on i-icon of team-members tab
+
+Search asset history with Asset ID
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Click on add team member action button
+    TeamMemberPage.Choose option after clicking on Action button        Add New Member
+    TeamMemberPage.Enter team member first name
+    TeamMemberPage.Enter team member last name
+    Generic.Enter phone number      India   +91     9646289871
+    TeamMemberPage.Enter team member business email with cool fr nf email
+    TeamMemberPage.Enter the Position in member form        QA
+    TeamMemberPage.Click on team member department
+    TeamMemberPage.Select team member department        DepartmentName0451927202
+    TeamMemberPage.Select team member role     Admin
+    TeamMemberPage.Click on team member location
+    TeamMemberPage.Select team member location with new domain
+    TeamMemberPage.Save the team member form   save
+    Generic.Fetch alert message text and compare it with        Team Member created successfully
+    TeamMemberPage.Search Team Member by name       ${generated_TMFname}
+    Generic.Open new window     yopmail
+    Generic.Search yopmail emails for   ${generated_TMbusinessEmail}
+    Generic.Switch to iframe by ID      ifmail
+    Generic.click on the button     Verify
+    Unselect Frame
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Create - Account
+    Generic.Verify your current page location contains     create-account
+    UserAccount.Enter the password      Test@456
+    UserAccount.Confirm the entered password    Test@456
+    UserAccount.Click on term and condition checkbox
+    UserAccount.Click create account button
+    Generic.Fetch alert message text and compare it with       Account created successfully.
+    Generic.Verify your current page location contains     auth
+    LandingPage.Fill the login Form      ${generated_TMbusinessEmail}    Test@456
+    Switch Window    Inbox
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Click on email of yopmail   OTP Verification.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Get verification OTP from email    Your passcode is
+    sleep       ${yop_sleep}
+    Switch Window   aithentic | OTP
+    TwoFactorAuth.Enter the otp     ${passcode}
+    TwoFactorAuth.Click verification button
+    Generic.Verify your current page location contains     asset-overview
+    Generic.Click on the profile name
+    Generic.Select other option from profile list     Logout
+    Generic.Fetch alert message text and compare it with        Successfully logged out
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Search Team Member by name   ${generated_TMFname}
+    TeamMemberPage.verify status of first name in member list   Active
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.click on add technology button
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Click technology product input field
+    TechnologyPage.Select the first value of To dropdown of product
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Add assignment information assign to   ${generated_TMFname}
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Search Team Member by name   ${generated_TMFname}
+    TeamMemberPage.Click on three dots of Team Member listing
+    TeamMemberPage.Select option from three dots of Team Member     Asset History
+    Generic.Verify your current page contains this text     TMFname_
+    TeamMemberPage.Click on back to member list of member list
+    TeamMemberPage.Search Team Member by name   ${generated_TMFname}
+    Generic.click on the tab    1
+    Generic.Verify your current page location contains      technology-list
+    TeamMemberPage.Click on three dots of Team Member listing
+    TeamMemberPage.Select option from three dots of Team Member     Edit
+    TechnologyPage.Add assignment information assign to   Member jh
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+    Generic.Verify your current page contains this text             Technology
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Search Team Member by name   ${generated_TMFname}
+    TeamMemberPage.Click on three dots of Team Member listing
+    TeamMemberPage.Select option from three dots of Team Member     Asset History
+    TeamMemberPage.Click on search by brand, product and asset id of asset history via team member  ${generated_AssetID}
+    TeamMemberPage.Verify table data with asset id in team member
