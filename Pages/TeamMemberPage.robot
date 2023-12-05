@@ -93,7 +93,6 @@ Enter team member business email_mailinator
     input text   ${TMBusinessEmail}   ${generated_TMbusinessEmail}
     log to console      ${generated_TMbusinessEmail}
 
-
 Enter team member business email with cool fr nf email
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_TMbusinessEmail}=    Catenate    TMBusinessEmail_${random_string}@cool.fr.nf
@@ -101,7 +100,6 @@ Enter team member business email with cool fr nf email
     input text   ${TMBusinessEmail}   ${generated_TMbusinessEmail}
     log to console      ${generated_TMbusinessEmail}
     set global variable     ${generated_TMbusinessEmail}
-
 
 
 Click on team member department
