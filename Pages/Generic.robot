@@ -59,8 +59,6 @@ ${yop_sleep}       3
 ${search_sleep}       1
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
 
-
-
 *** Keywords ***
 Fix the column number
     ${pageHeading}=   Catenate    2
@@ -278,3 +276,4 @@ Scroll the page till
 Verify pop-up is visible after clicking on i-icon
     wait until element is visible       css:.popover-content        60
     log to console      Yes, pop-up is visible for i-icon
+
