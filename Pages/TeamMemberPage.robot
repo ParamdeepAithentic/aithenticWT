@@ -94,7 +94,7 @@ Enter team member business email_mailinator
     log to console      ${generated_TMbusinessEmail}
 
 
-Enter team member business email_cool.fr.nf
+Enter team member business email with cool fr nf email
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_TMbusinessEmail}=    Catenate    TMBusinessEmail_${random_string}@cool.fr.nf
     wait until element is visible       ${TMBusinessEmail}    60
@@ -193,7 +193,6 @@ Verify resulted row contains Dept_name
     sleep       ${search_sleep}
     Table column should contain      css:.table.department      2       ${generated_DepartmentNumber}
 
-<<<<<<< HEAD
 Select team member location with new domain
     wait until element is visible     //div[contains (@id, '-0')]       60
     wait until element is enabled     //div[contains (@id, '-0')]       60
@@ -209,14 +208,13 @@ Click on back to member list of member list
 
 Click on search by brand, product and asset id of asset history via team member
     [Arguments]     ${option}
-    wait until element is visible   css:input[placeholder='Search by Brand, Product, Asset ID']     60
-    click element   css:input[placeholder='Search by Brand, Product, Asset ID']
-    input text  css:input[placeholder='Search by Brand, Product, Asset ID']     ${option}
+    wait until element is visible   css:.search-location-qa     60
+    click element   css:.search-location-qa
+    input text  css:.search-location-qa     ${option}
 
 Verify table data with asset id in team member
     Table Column Should contain     css:.table-hover    2       ${generated_AssetID}
-=======
+
 Click on i-icon of team-members tab
     wait until element is visible       css:#member-list-Iicon      60
     click element       css:#member-list-Iicon
->>>>>>> 6aa755b9c504b69a04f94fb0675bb5feea1eaeed

@@ -121,7 +121,6 @@ Edit Team member page - Edit New Department and assign that department to Team m
     Generic.Fetch alert message text and compare it with        Team Member updated successfully
     Generic.Verify your current page location contains          memberslist
 
-
 Verify team member Asset history
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
@@ -132,7 +131,7 @@ Verify team member Asset history
     TeamMemberPage.Enter team member first name
     TeamMemberPage.Enter team member last name
     Generic.Enter phone number      India   +91     9646289871
-    TeamMemberPage.Enter team member business email_cool.fr.nf
+    TeamMemberPage.Enter team member business email with cool fr nf email
     TeamMemberPage.Enter the Position in member form        QA
     TeamMemberPage.Click on team member department
     TeamMemberPage.Select team member department        DepartmentName0451927202
@@ -144,7 +143,6 @@ Verify team member Asset history
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
     Generic.Open new window     yopmail
     Generic.Search yopmail emails for   ${generated_TMbusinessEmail}
-    sleep   30sec
     Generic.Switch to iframe by ID      ifmail
     Generic.click on the button     Verify
     Unselect Frame
@@ -160,8 +158,6 @@ Verify team member Asset history
     LandingPage.Fill the login Form      ${generated_TMbusinessEmail}    Test@456
     Switch Window    Inbox
     Generic.Refresh the existing page
-#    Generic.Switch to iframe by ID      ifmail
-#    Yopmail.Click on sign In button in yopmail email
     Generic.Refresh the existing page
     Generic.Switch to iframe by ID      ifmail
     Yopmail.Click on email of yopmail   OTP Verification.
@@ -204,7 +200,6 @@ Verify team member Asset history
     TeamMemberPage.Select option from three dots of Team Member     Asset History
     Generic.Verify your current page contains this text     Asset History
 
-
 Verify all i-icon of team member page
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
@@ -213,4 +208,3 @@ Verify all i-icon of team member page
     TeamMemberPage.Click on i-icon of team-members tab
     Generic.Verify pop-up is visible after clicking on i-icon
     TeamMemberPage.Click on i-icon of team-members tab
-
