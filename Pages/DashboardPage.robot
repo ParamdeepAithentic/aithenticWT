@@ -833,7 +833,7 @@ Click on i-icon of asset-overview tab
     click element       css:span[class='btn btn-link icon-btn activeIcon ng-star-inserted'] i
 
 Verify i-icon popup is visible
-    Page should contain element         css:.popover-content
+    wait until element is visible        css:.popover-content       60
     log to console      Yes,Pop-up is visible for i-icon content.
 
 Hover over i-icon of reports tab
@@ -846,5 +846,3 @@ Verify hovering on i-icon shows message and compare it with
     ${title_value}    Get Element Attribute     css:#technology-products-Iicon        title
     Log to console    Title is: ${title_value}
     should be equal     ${title_value}        ${option}
-    
-
