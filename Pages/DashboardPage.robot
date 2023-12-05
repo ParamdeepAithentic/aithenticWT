@@ -833,7 +833,6 @@ Click on i-icon of asset-overview tab
     click element       css:span[class='btn btn-link icon-btn activeIcon ng-star-inserted'] i
 
 Verify i-icon popup is visible
-    wait until element is visible       css:.popover-content        60
     Page should contain element         css:.popover-content
     log to console      Yes,Pop-up is visible for i-icon content.
 
