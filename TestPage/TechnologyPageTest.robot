@@ -1368,20 +1368,3 @@ Verify all i-icon of Technology page
     TechnologyPage.Click on i-icon of cost_center in clone technology
     Generic.Verify pop-up is visible after clicking on i-icon
     TechnologyPage.Click on Back tab          Back to Manage Technology
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

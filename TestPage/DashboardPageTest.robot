@@ -680,16 +680,11 @@ Verify adding a new brand from profile listing
     DashboardPage.Click add brand button
     DashboardPage.Create random brandName
     DashboardPage.Add brand manufacturer country      United States
-
     DashboardPage.Add multiple brand URL as per index     1
     DashboardPage.click on Plus icon
-
     DashboardPage.Add multiple brand URL as per index     2
     DashboardPage.click on Plus icon
-
     DashboardPage.Add multiple brand URL as per index     3
-
-
     DashboardPage.Save added brand details
     Generic.Fetch alert message text and compare it with        Brand created successfully.
     DashboardPage.Click added brand main save button
@@ -698,4 +693,3 @@ Verify adding a new brand from profile listing
     Generic.Select other option from profile list   Remove
     DashboardPage.Select option from the pop up     yes
     Generic.Fetch alert message text and compare it with      Brand deleted successfully
-

@@ -1201,4 +1201,3 @@ Click on clone button on product details page
 Click on i-icon of cost_center in clone technology
     wait until element is visible       css:.qa-iIconSection-add-tech-cc        60
     click element       css:.qa-iIconSection-add-tech-cc
-
