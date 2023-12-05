@@ -603,3 +603,7 @@ Verify pages with the element
     wait until element is visible   //th[normalize-space()='${option}']     60
 # option: Yes, No
 
+Click on i-icon of partners tab
+    wait until element is visible    css:#partner-list-Iicon        60
+    click element       css:#partner-list-Iicon
+
