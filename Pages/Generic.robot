@@ -38,7 +38,7 @@ ${url}                   https://uat-app.aithentic.com/
 #${url}                   https://qa-app.aithentic.com/
 ${apiURL}                 https://uat-api.aithentic.com/api/v1
 #${apiURL}                 https://qa-api.aithentic.com/api/v1
-${valid_password}        Test!@5897     #UAT user
+${valid_password}        Test!@5897       #UAT user
 #${valid_password}        Test@123       #QA User
 
 ${browser_name}          Firefox
@@ -276,3 +276,9 @@ Enter phone number
 Scroll the page till
     [Arguments]    ${option}
     Execute javascript      window.scrollTo(0,${option})
+
+Verify pop-up is visible after clicking on i-icon
+    wait until element is visible       css:.popover-content        60
+    Page should contain element         css:.popover-content
+    log to console      Yes, pop-up is visible for i-icon
+
