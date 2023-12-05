@@ -181,3 +181,7 @@ Verify resulted row contains Dept_name
     wait until element is visible       css:.table.department       60
     sleep       ${search_sleep}
     Table column should contain      css:.table.department      2       ${generated_DepartmentNumber}
+
+Click on i-icon of team-members tab
+    wait until element is visible       css:#member-list-Iicon      60
+    click element       css:#member-list-Iicon
