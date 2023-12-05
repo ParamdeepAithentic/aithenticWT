@@ -819,7 +819,6 @@ Create random URL value for multiple brand addition
     input text   ${option}   ${generated_random_value}
     log to console      ${generated_random_value}
 
-
 Enter contact name of contact person
     [Arguments]     ${contact}
     wait until element is not visible   ${loaderIcon}   60
@@ -827,3 +826,37 @@ Enter contact name of contact person
     click element   css:#contactName
     input text  css:#contactName    ${contact}
     Press Keys   css:#contactName   ENTER
+
+Choose options inside personal_details
+    [Arguments]     ${option}
+    Generic.Select parameter    ${option}
+
+Choose tabs under organization
+    [Arguments]     ${option}
+    wait until element is visible       css:#nav-${option}-tab     60
+    click element       css:#nav-${option}-tab
+
+Click on i-icon of system configuration tab
+    wait until element is visible       css:#advance-search-add-technology-Iicon        60
+    click element       css:#advance-search-add-technology-Iicon
+
+Click on i-icon of industry under company financial information
+    wait until element is visible       css:.qa-company-information-financial-industry      60
+    click element       css:.qa-company-information-financial-industry
+
+Click on link inside industry i-icon
+    [Arguments]    ${link}
+    Generic.click on the button link    ${link}
+    sleep       ${yop_sleep}
+
+Click on i-icon of company department
+    wait until element is visible       css:.qa-company-department-Iicon        60
+    click element       css:.qa-company-department-Iicon
+
+Click on view added Departments list
+    [Arguments]     ${option}
+    Generic.click on the button link        ${option}
+
+Click on action menu button of department
+    wait until element is visible
+    click

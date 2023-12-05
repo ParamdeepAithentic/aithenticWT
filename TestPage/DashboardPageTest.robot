@@ -694,4 +694,26 @@ Verify adding a new brand from profile listing
     DashboardPage.Select option from the pop up     yes
     Generic.Fetch alert message text and compare it with      Brand deleted successfully
 
-Verify all i-icon of profile
+Verify all i-icon of profile-listing
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     Personal Details
+    DashboardPage.Choose options inside personal_details        Organization
+    DashboardPage.Choose tabs under organization        system
+    DashboardPage.Click on i-icon of system configuration tab
+    Generic.Verify pop-up is visible after clicking on i-icon
+    DashboardPage.Click on i-icon of system configuration tab
+    DashboardPage.Choose tabs under organization        company
+    DashboardPage.Click on i-icon of industry under company financial information
+    Generic.Verify pop-up is visible after clicking on i-icon
+    DashboardPage.Click on link inside industry i-icon      https://www.naics.com/search/
+    switch window       NAICS & SIC Identification Tools | NAICS Association
+    Generic.Verify your current page location contains      naics.com
+    Generic.Verify your current page contains this text     NAICS Identification Tools
+    switch window       aithentic | Organization
+    DashboardPage.Click on i-icon of company department
+    Generic.Verify pop-up is visible after clicking on i-icon
+    DashboardPage.Click on i-icon of company department
+    DashboardPage.Click on view added Departments list      View Your Added Departments List
+    Generic.Verify your current page location contains      department-list
