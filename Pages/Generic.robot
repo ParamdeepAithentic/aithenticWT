@@ -156,7 +156,6 @@ Verify your current page location contains
 Verify your current page contains this text
     [Arguments]    ${verifyOption}
     wait until page contains    ${verifyOption}     60
-    sleep     ${search_sleep}
 
 Get Current Time in Milliseconds
     ${time_in_milliseconds}=    Evaluate    int(time.time() * 1000)
