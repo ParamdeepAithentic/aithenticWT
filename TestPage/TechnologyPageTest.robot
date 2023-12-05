@@ -1344,7 +1344,6 @@ Verify all i-icon of Technology page
     Generic.Verify your current page contains this text     Technology Overview
     switch window       aithentic | Technology - List
     TechnologyPage.Click on i-icon of technology tab
-
     TechnologyPage.click on add technology button
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
@@ -1353,6 +1352,36 @@ Verify all i-icon of Technology page
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Click on i-icon of cost_center in add technology
     Generic.Verify pop-up is visible after clicking on i-icon
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+    TechnologyPage.Click on edit button on product details page        Edit
+    Generic.Verify your current page location contains      edit-technology
+    TechnologyPage.Click on i-icon of cost_center in edit technology
+    Generic.Verify pop-up is visible after clicking on i-icon
+    TechnologyPage.Click on i-icon of cost_center in edit technology
+    TechnologyPage.Click on Back tab          Back to Technology Details
+    TechnologyPage.Click on clone button on product details page        Clone
+    TechnologyPage.Click on i-icon of cost_center in clone technology
+    Generic.Verify pop-up is visible after clicking on i-icon
+    TechnologyPage.Click on Back tab          Back to Manage Technology
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

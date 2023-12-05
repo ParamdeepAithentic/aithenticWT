@@ -1185,3 +1185,20 @@ Click on i-icon of cost_center in add technology
     wait until element is visible       css:.qa-iIconSection-add-tech-cc        60
     click element       css:.qa-iIconSection-add-tech-cc
 
+Click on i-icon of cost_center in edit technology
+    wait until element is visible       css:.qa-iIconSection-edit-tech-cc       60
+    click element   css:.qa-iIconSection-edit-tech-cc
+
+Click on Back tab
+    [Arguments]     ${option}
+    Generic.Select parameter        ${option}
+
+Click on clone button on product details page
+    [Arguments]    ${option}
+    Generic.click on the button link     ${option}
+    wait until element is not visible      ${loaderIcon}    60
+
+Click on i-icon of cost_center in clone technology
+    wait until element is visible       css:.qa-iIconSection-add-tech-cc        60
+    click element       css:.qa-iIconSection-add-tech-cc
+

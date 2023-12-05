@@ -59,8 +59,6 @@ ${yop_sleep}       3
 ${search_sleep}       1
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
 
-
-
 *** Keywords ***
 Fix the column number
     ${pageHeading}=   Catenate    2
@@ -158,6 +156,7 @@ Verify your current page location contains
 Verify your current page contains this text
     [Arguments]    ${verifyOption}
     wait until page contains    ${verifyOption}     60
+    sleep     ${search_sleep}
 
 Get Current Time in Milliseconds
     ${time_in_milliseconds}=    Evaluate    int(time.time() * 1000)
