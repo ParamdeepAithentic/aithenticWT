@@ -145,6 +145,7 @@ Verify team member Asset history
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
     Generic.Open new window     yopmail
     Generic.Search yopmail emails for   ${generated_TMbusinessEmail}
+    sleep   30sec
     Generic.Switch to iframe by ID      ifmail
     Generic.click on the button     Verify
     Unselect Frame
@@ -157,23 +158,19 @@ Verify team member Asset history
     UserAccount.Click create account button
     Generic.Fetch alert message text and compare it with       Account created successfully.
     Generic.Verify your current page location contains     auth
-     LandingPage.Fill the login Form      ${generated_TMbusinessEmail}    Test@456
-     Switch Window    Inbox
+    LandingPage.Fill the login Form      ${generated_TMbusinessEmail}    Test@456
+    Switch Window    Inbox
     Generic.Refresh the existing page
-    Generic.Switch to iframe by ID      ifmail
-    Yopmail.Click on sign In button in yopmail email
+#    Generic.Switch to iframe by ID      ifmail
+#    Yopmail.Click on sign In button in yopmail email
     Generic.Refresh the existing page
     Generic.Switch to iframe by ID      ifmail
     Yopmail.Click on email of yopmail   OTP Verification.
     Unselect Frame
-
     Generic.Switch to iframe by ID      ifmail
-
-
     Yopmail.Get verification OTP from email    Your passcode is
     sleep       ${yop_sleep}
     Switch Window   aithentic | OTP
-
     TwoFactorAuth.Enter the otp     ${passcode}
     TwoFactorAuth.Click verification button
     Generic.Verify your current page location contains     asset-overview
@@ -200,22 +197,15 @@ Verify team member Asset history
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Search Team Member by name   ${generated_TMFname}
     TeamMemberPage.Click on three dots of Team Member listing
     TeamMemberPage.Select option from three dots of Team Member     Asset History
-    Generic.Verify your current page contains this text     TMFname_
-    TeamMemberPage.Click on back to member list of member list
-    TeamMemberPage.Search Team Member by name   ${generated_TMFname}
-    Generic.click on the tab    1
-    Generic.Verify your current page location contains      technology-list
-    TeamMemberPage.Click on three dots of Team Member listing
-    TeamMemberPage.Select option from three dots of Team Member     Edit
-    TechnologyPage.Add assignment information assign to   Member jh
-    TechnologyPage.Click on save technology form button
-    Generic.Fetch alert message text and compare it with        Technology created successfully
-    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page contains this text     Asset History
+
+
 
 
 

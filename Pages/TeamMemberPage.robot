@@ -205,3 +205,12 @@ verify status of first name in member list
 Click on back to member list of member list
     wait until element is visible   css:span[class='back']      60
     click element   css:span[class='back']
+
+Click on search by brand, product and asset id of asset history via team member
+    [Arguments]     ${option}
+    wait until element is visible   css:input[placeholder='Search by Brand, Product, Asset ID']     60
+    click element   css:input[placeholder='Search by Brand, Product, Asset ID']
+    input text  css:input[placeholder='Search by Brand, Product, Asset ID']     ${option}
+
+Verify table data with asset id in team member
+    Table Column Should contain     css:.table-hover    2       ${generated_AssetID}
