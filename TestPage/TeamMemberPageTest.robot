@@ -129,4 +129,3 @@ Verify all i-icon of team member page
     TeamMemberPage.Click on i-icon of team-members tab
     Generic.Verify pop-up is visible after clicking on i-icon
     TeamMemberPage.Click on i-icon of team-members tab
-
