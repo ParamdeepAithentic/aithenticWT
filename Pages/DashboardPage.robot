@@ -846,4 +846,5 @@ Verify hovering on i-icon shows message and compare it with
     ${title_value}    Get Element Attribute     css:#technology-products-Iicon        title
     Log to console    Title is: ${title_value}
     should be equal     ${title_value}        ${option}
+    
 
