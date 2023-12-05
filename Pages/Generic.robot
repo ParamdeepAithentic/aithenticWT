@@ -279,5 +279,4 @@ Scroll the page till
 
 Verify pop-up is visible after clicking on i-icon
     wait until element is visible       css:.popover-content        60
-    Page should contain element         css:.popover-content
     log to console      Yes, pop-up is visible for i-icon

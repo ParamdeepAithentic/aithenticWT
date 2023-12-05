@@ -693,3 +693,5 @@ Verify adding a new brand from profile listing
     Generic.Select other option from profile list   Remove
     DashboardPage.Select option from the pop up     yes
     Generic.Fetch alert message text and compare it with      Brand deleted successfully
+
+Verify all i-icon of profile
