@@ -693,3 +693,56 @@ Verify adding a new brand from profile listing
     Generic.Select other option from profile list   Remove
     DashboardPage.Select option from the pop up     yes
     Generic.Fetch alert message text and compare it with      Brand deleted successfully
+
+Verify Reports Key Data records count
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.select the option from the side menu    Dashboard
+    DashboardPage.select the option from the dashboard drawer       Reports
+    Generic.Verify your current page location contains          reports
+    Generic.Scroll the page till        7000
+    DashboardPage.Click on tab under key data       Departments
+    Generic.Verify your current page location contains          department-list
+    DashboardPage.Scroll Window To End
+    DashboardPage.Fetch the total count         Total Count :
+    DashboardPage.Verify that key_data is equals to total number of counts      Department
+    Go back
+    Generic.Verify your current page location contains          reports
+    Generic.Scroll the page till        7000
+    DashboardPage.Click on tab under key data       Locations
+    Generic.Verify your current page location contains          locationlist
+    DashboardPage.Scroll Window To End
+    DashboardPage.Fetch the total count         Total Count :
+    DashboardPage.Verify that key_data is equals to total number of counts      Location
+    Go back
+    Generic.Verify your current page location contains          reports
+    Generic.Scroll the page till        7000
+    DashboardPage.Click on tab under key data       Team Members
+    Generic.Verify your current page location contains          memberslist
+    DashboardPage.Scroll Window To End
+    DashboardPage.Fetch the total count         Total Count :
+    DashboardPage.Verify that key_data is equals to total number of counts      Team Members
+    Go back
+    Generic.Verify your current page location contains          reports
+    Generic.Scroll the page till        7000
+    DashboardPage.Click on tab under key data       Assigned Users
+    Generic.Verify your current page location contains          assignee-list
+    DashboardPage.Scroll Window To End
+    DashboardPage.Fetch the total count         Total Count :
+    DashboardPage.Verify that key_data is equals to total number of counts      Assigned_users
+    Go back
+    Generic.Verify your current page location contains          reports
+    Generic.Scroll the page till        7000
+    DashboardPage.Click on tab under key data       Partners
+    Generic.Verify your current page location contains          partner-listing
+    DashboardPage.Scroll Window To End
+    DashboardPage.Fetch the total count         Total Count :
+    DashboardPage.Verify that key_data is equals to total number of counts      Partners
+    Go back
+    Generic.Verify your current page location contains          reports
+    Generic.Scroll the page till        7000
+    DashboardPage.Click on tab under key data       Contracts
+    Generic.Verify your current page location contains          contracts-list
+    DashboardPage.Scroll Window To End
+    DashboardPage.Fetch the total count of contracts        Total Count :
+    DashboardPage.Verify that key_data is equals to total number of counts      Contracts
