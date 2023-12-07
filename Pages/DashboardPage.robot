@@ -900,8 +900,8 @@ Click on i-icon inside technology
     click element       css:#technology-products-Iicon
 
 Click on i-icon inside network discovery
-    wait until element is visible       css:span[class='btn btn-link icon-btn activeIcon ng-star-inserted']     60
-    click element       css:span[class='btn btn-link icon-btn activeIcon ng-star-inserted']
+    wait until element is visible       css:.qa-iIconSection-network-discovery     60
+    click element       css:.qa-iIconSection-network-discovery
 
 Click on link inside Network_discovery i-icon
     wait until element is visible       css:a[title='Network Discovery']        60

@@ -723,7 +723,7 @@ Verify all i-icon of profile-listing
     Generic.Verify pop-up is visible after clicking on i-icon
     DashboardPage.Click on i-icon of cost_center in department
     DashboardPage.Click on cancel add department        close
-    DashboardPage.Search by Department      Communications
+    DashboardPage.Search by Department      Customer Support
     DashboardPage.Click on three dots of Department list
     DashboardPage.Choose option from three_dots of Department     Details
     DashboardPage.Click on i-icon of cost_center in department
