@@ -111,7 +111,7 @@ ${Select_city while adding brand}   css:#City
 ${Select_state while adding brand}  css:#State
 ${clickadd_newaddress}  //span[@title='Click here to add address']
 ${share_toEmail}      css:#toEmail
-
+${Totalcount_field}        css:.qa-total-count-list
 
 
 *** Keywords ***
@@ -829,3 +829,26 @@ Enter contact name of contact person
     Press Keys   css:#contactName   ENTER
 
 
+Click on tab under Technology Types
+    [Arguments]     ${tab_name}
+    wait until element is not visible       ${loaderIcon}       60
+     Execute JavaScript    window.scrollTo(0, document.body.scrollHeight);
+    wait until element is visible     //p[normalize-space()='${tab_name}']//following-sibling::p     60
+    ${count}=       get text        //p[normalize-space()='${tab_name}']//following-sibling::p
+    log to console      Technology: ${count}
+    set global variable     ${count}
+    click element       //p[normalize-space()='${tab_name}']//following-sibling::p
+
+Fetch the total count
+    [Arguments]    ${data}
+    wait until element is visible   ${Totalcount_field}      60
+    ${text}=     get text   ${Totalcount_field}
+    ${parts}    Split String    ${text}    ${data}
+    ${total_count}    Get Substring    ${parts[1]}    3
+    Log to console  Total counts are:${total_count}
+    set global variable    ${total_count}
+
+Verify that key_data is equals to total number of counts
+    [Arguments]    ${option}
+    should be equal      ${count}    ${total_count}
+    log to console      The Key data of ${option} is equal to total counts in ${option}

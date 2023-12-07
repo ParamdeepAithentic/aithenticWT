@@ -34,12 +34,12 @@ Resource        ../Pages/TeamMemberPage.robot
 ${user_name}             rahulshettyacademy
 ${invalid_password}      123445
 
-${url}                   https://uat-app.aithentic.com/
-#${url}                   https://qa-app.aithentic.com/
-${apiURL}                 https://uat-api.aithentic.com/api/v1
-#${apiURL}                 https://qa-api.aithentic.com/api/v1
-${valid_password}        Test!@5897       #UAT user
-#${valid_password}        Test@123       #QA User
+#${url}                   https://uat-app.aithentic.com/
+${url}                   https://qa-app.aithentic.com/
+#${apiURL}                 https://uat-api.aithentic.com/api/v1
+${apiURL}                 https://qa-api.aithentic.com/api/v1
+#${valid_password}        Test!@5897       #UAT user
+${valid_password}        Test@123       #QA User
 
 ${browser_name}          Firefox
 ${email}                 testqa29j@mailinator.com       #UAT user
@@ -260,8 +260,6 @@ Refresh the existing page
     Reload Page
     sleep       ${yop_sleep}
 
-
-
 Enter phone number
     [Arguments]    ${country}   ${code}     ${phoneNo}
     click element   ${click_countryTag}
@@ -278,3 +276,6 @@ Scroll the page till
 Verify pop-up is visible after clicking on i-icon
     wait until element is visible       css:.popover-content        60
     log to console      Yes, pop-up is visible for i-icon
+
+Scroll Window To End
+    Execute JavaScript    window.scrollTo(0, document.body.scrollHeight);
