@@ -362,6 +362,110 @@ Verify user is able to export team member asset history list
     Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Search Team Member by name   ${generated_TMFname}
     TeamMemberPage.verify status of first name in member list   Active
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.click on add technology button
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       BrandName2994855826
+    TechnologyPage.Click technology product input field
+    TechnologyPage.Select the first value of To dropdown of product
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Add assignment information assign to   ${generated_TMFname}
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.click on the button link    Edit
+    TechnologyPage.Add assignment information assign to   Milan Johar
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+    Generic.Verify your current page contains this text             Technology
+    TeamMemberPage.Click on back to member list of member list
+    TechnologyPage.click on add technology button
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       BrandName6162258047
+    TechnologyPage.Click technology product input field
+    TechnologyPage.Select the first value of To dropdown of product
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Add assignment information assign to   ${generated_TMFname}
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.click on the button link    Edit
+    TechnologyPage.Add assignment information assign to   Milan Johar
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+    Generic.Verify your current page contains this text             Technology
+    TeamMemberPage.Click on back to member list of member list
+    TechnologyPage.click on add technology button
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       BrandName0743813679
+    TechnologyPage.Click technology product input field
+    TechnologyPage.Select the first value of To dropdown of product
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Add assignment information assign to   ${generated_TMFname}
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.click on the button link    Edit
+    TechnologyPage.Add assignment information assign to   Kenneth Frost
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+    Generic.Verify your current page contains this text             Technology
+    TeamMemberPage.Click on back to member list of member list
+    TechnologyPage.click on add technology button
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       BrandName1931299814
+    TechnologyPage.Click technology product input field
+    TechnologyPage.Select the first value of To dropdown of product
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Add assignment information assign to   ${generated_TMFname}
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.click on the button link    Edit
+    TechnologyPage.Add assignment information assign to   Kenneth Frost
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+    Generic.Verify your current page contains this text             Technology
+    TeamMemberPage.Click on back to member list of member list
+    TechnologyPage.click on add technology button
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       BrandName0914413211
+    TechnologyPage.Click technology product input field
+    TechnologyPage.Select the first value of To dropdown of product
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Add assignment information assign to   ${generated_TMFname}
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.click on the button link    Edit
+    TechnologyPage.Add assignment information assign to   Milan Johar
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+    Generic.Verify your current page contains this text             Technology
+     Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Search Team Member by name   ${generated_TMFname}
+    TeamMemberPage.Click on three dots of Team Member listing
+    TeamMemberPage.Select option from three dots of Team Member     Asset History
+    TeamMemberPage.Click on search by brand, product and asset id of asset history via team member  ${generated_AssetID}
+    TeamMemberPage.Verify table data with asset id in team member
 
 Verify asset history of assigned users
     Generic.click on the tab	Login
