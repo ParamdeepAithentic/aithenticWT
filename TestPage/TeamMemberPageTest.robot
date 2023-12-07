@@ -362,10 +362,54 @@ Verify user is able to export team member asset history list
     Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Search Team Member by name   ${generated_TMFname}
     TeamMemberPage.verify status of first name in member list   Active
+
+Verify asset history of assigned users
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    wait until element is not visible      ${loaderIcon}    60
+    Generic.Select parameter     Assigned Users
+    TeamMemberPage.Click on action button of assigned users
+    Generic.click on the button link    Add Assignee
+    TeamMemberPage.Enter first name of assigned users
+    TeamMemberPage.Enter last name of assigned users
+    TeamMemberPage.Enter business email of assigned users
+    TechnologyPage.Create unique assign to employee_ID random
+    TeamMemberPage.Click on save button of assigned user
+    Generic.Fetch alert message text and compare it with        Assigned Users created successfully
+    TeamMemberPage.Search assigned user by first name   ${generated_TMFname}
+    TeamMemberPage.Click on three dots of Team Member listing
+    TeamMemberPage.Select option from three dots of Team Member     Asset History
+    Generic.Verify your current page contains this text     Export
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.click on add technology button
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
-    TechnologyPage.Select parameter from brand dropdown list       BrandName2994855826
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Click technology product input field
+    TechnologyPage.Select the first value of To dropdown of product
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Add assignment information assign to   ${generated_TMFname}
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.click on the button link    Edit
+    TeamMemberPage.Enter assign to field        Dc Dc
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    wait until element is not visible      ${loaderIcon}    60
+    Generic.Select parameter     Assigned Users
+    TeamMemberPage.Search assigned user by first name   ${generated_TMFname}
+    TeamMemberPage.Click on three dots of Team Member listing
+    TeamMemberPage.Select option from three dots of Team Member     Asset History
+    Generic.Verify your current page location contains      asset-history
+    TeamMemberPage.Search assigned user by asset id     ${generated_AssetID}
+    TeamMemberPage.Click on view button link of assigned user
+    Generic.Verify your current page contains this text     Technology
