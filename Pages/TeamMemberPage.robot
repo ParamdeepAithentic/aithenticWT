@@ -155,7 +155,7 @@ Search Team Member by name
     Clear Element Text      ${name_SearchBar}
     ${StartTime1} =     Get Current Time in Milliseconds
     input text   ${name_SearchBar}   ${name}
-    sleep      1
+    sleep      ${search_sleep}
     wait until element is visible       css:thead tr       60
 
 Click on three dots of Team Member listing
@@ -254,7 +254,7 @@ Search assigned user by first name
     wait until element is visible      css:input[placeholder='Search by Assignee Name or Employee Id']     60
     click element      css:input[placeholder='Search by Assignee Name or Employee Id']
     input text   css:input[placeholder='Search by Assignee Name or Employee Id']   ${name}
-    sleep      1
+    sleep      ${search_sleep}
     wait until element is visible       css:thead tr       60
 
 Enter assign to field
@@ -272,7 +272,7 @@ Search assigned user by asset id
     wait until element is visible      css:.search-location-qa     60
     click element      css:.search-location-qa
     input text   css:.search-location-qa   ${name}
-    sleep      1
+    sleep      ${search_sleep}
     wait until element is not visible   ${loaderIcon}   60
     wait until element is visible       css:.table-hover tr       60
 

@@ -61,6 +61,7 @@ Replace Domain
     # Define the JSON object
     ${json_object} =    Create Dictionary
     ...    old=www.yopmail.net
+#     ...    old=www.cool.fr.nf
     ...    new=www.${NewDomain}.com
 
      # Define the JSON array
