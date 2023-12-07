@@ -276,3 +276,6 @@ Scroll the page till
 Verify pop-up is visible after clicking on i-icon
     wait until element is visible       css:.popover-content        60
     log to console      Yes, pop-up is visible for i-icon
+
+Scroll Window To End
+    Execute JavaScript    window.scrollTo(0, document.body.scrollHeight);

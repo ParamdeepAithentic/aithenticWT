@@ -111,9 +111,7 @@ ${Select_city while adding brand}   css:#City
 ${Select_state while adding brand}  css:#State
 ${clickadd_newaddress}  //span[@title='Click here to add address']
 ${share_toEmail}      css:#toEmail
-${Totalcount_field}        css:.mb-1.ng-star-inserted
-${Totalcount_contracts}        css:.pl-0.pb-0.lh-1.ng-star-inserted
-
+${Totalcount_field}        css:.qa-total-count-list
 
 *** Keywords ***
 Click on add department
@@ -848,20 +846,7 @@ Fetch the total count
     Log to console  Total counts are:${total_count}
     set global variable    ${total_count}
 
-Fetch the total count of Contracts
-    [Arguments]    ${data}
-    wait until element is visible   ${Totalcount_contracts}      60
-    ${text}=     get text   ${Totalcount_contracts}
-    ${parts}    Split String    ${text}    ${data}
-    ${total_count}    Get Substring    ${parts[1]}    3
-    Log to console  Total counts are:${total_count}
-    set global variable    ${total_count}
-
 Verify that key_data is equals to total number of counts
     [Arguments]    ${option}
     should be equal      ${count}    ${total_count}
     log to console      The Key data of ${option} is equal to total counts in ${option}
-
-Scroll Window To End
-    Execute JavaScript    window.scrollTo(0, document.body.scrollHeight);
-    sleep   ${yop_sleep}
