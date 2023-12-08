@@ -34,12 +34,12 @@ Resource        ../Pages/TeamMemberPage.robot
 ${user_name}             rahulshettyacademy
 ${invalid_password}      123445
 
-#${url}                   https://uat-app.aithentic.com/
-${url}                   https://qa-app.aithentic.com/
-#${apiURL}                 https://uat-api.aithentic.com/api/v1
-${apiURL}                 https://qa-api.aithentic.com/api/v1
-#${valid_password}        Test!@5897       #UAT user
-${valid_password}        Test@123       #QA User
+${url}                   https://uat-app.aithentic.com/
+#${url}                   https://qa-app.aithentic.com/
+${apiURL}                 https://uat-api.aithentic.com/api/v1
+#${apiURL}                 https://qa-api.aithentic.com/api/v1
+${valid_password}         Test!@5897     #UAT user
+#${valid_password}        Test@123       #QA User
 
 ${browser_name}          Firefox
 ${email}                 testqa29j@mailinator.com       #UAT user
@@ -178,7 +178,6 @@ Verify alert message of add team member of compose message
 Cross the text message alert
     wait until element is enabled    ${cross_alertMsg}        60
     click element       ${cross_alertMsg}
-
 
 Select parameter
     [Arguments]    ${address}

@@ -123,7 +123,6 @@ Create a new product with adding new brand
     Generic.Fetch alert message text and compare it with        Product created successfully
     DashboardPage.Verify product added    ${generated_product}
 
-
 Add Product Bulk Edit
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
@@ -733,6 +732,19 @@ Verify Reports Technology Types records count
     Generic.Scroll Window To End
     DashboardPage.Fetch the total count         Total Count :
     DashboardPage.Verify that key_data is equals to total number of counts      Subscription
+
+Verify all i-icon of Dashboard page
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.select the option from the side menu    Dashboard
+    Generic.Verify your current page location contains      asset-overview
+    DashboardPage.Click on i-icon of asset-overview tab
+    DashboardPage.Verify i-icon popup is visible
+    DashboardPage.Click on i-icon of asset-overview tab
+    DashboardPage.select the option from the dashboard drawer   Reports
+    Generic.Verify your current page location contains      reports
+    DashboardPage.Hover over i-icon of reports tab
+    DashboardPage.Verify hovering on i-icon shows message and compare it with       This data is shown of last 24hours
 
 Verify all i-icon of profile-listing
     Generic.click on the tab	Login
