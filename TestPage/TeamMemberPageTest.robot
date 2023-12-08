@@ -503,7 +503,7 @@ Verify user is able to export team member asset history list
 
 
     TeamMemberPage.Click on search by brand, product and asset id of asset history via team member  Product_9110561777
-    wait until element is not visible   ${loaderIcon}    60
+    TeamMemberPage.Verify the first row of asset history under team member
     TeamMemberPage.verify status of first name in member list   ${generated_AssetID}
 
 Verify asset history of assigned users
