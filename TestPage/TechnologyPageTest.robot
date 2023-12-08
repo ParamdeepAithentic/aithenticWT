@@ -871,13 +871,9 @@ Verify the history of added technology
 
     TechnologyPage.Select tab under technology details      history
     TechnologyPage.Verify area changed under history tab     Supplier
-#    TechnologyPage.Confirm area changed with view under history tab    Supplier
-#    TechnologyPage.Close the view history pop up
-#
+
     TechnologyPage.Verify area changed under history tab      Support Partner
-#    TechnologyPage.Confirm area changed with view under history tab     Support Partner
-#    TechnologyPage.Close the view history pop up
-#
+
     TechnologyPage.Verify area changed under history tab       Created At
     TechnologyPage.Confirm area changed with view under history tab      Created At
     TechnologyPage.Close the view history pop up
@@ -1339,9 +1335,11 @@ Verify all i-icon of Technology page
     TechnologyPage.Click on i-icon of technology tab
     Generic.Verify pop-up is visible after clicking on i-icon
     TechnologyPage.Click on Link inside pop-up
+    sleep   ${yop_sleep}
     switch window       Technology Overview - Jira Service Management
     Generic.Verify your current page location contains      servicedesk
     Generic.Verify your current page contains this text     Technology Overview
+    sleep   ${yop_sleep}
     switch window       aithentic | Technology - List
     TechnologyPage.Click on i-icon of technology tab
     TechnologyPage.click on add technology button

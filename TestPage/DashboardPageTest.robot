@@ -844,6 +844,7 @@ Verify all i-icon of profile-listing
     DashboardPage.Click on i-icon inside network discovery
     Generic.Verify pop-up is visible after clicking on i-icon
     DashboardPage.Click on link inside Network_discovery i-icon
+    sleep       ${yop_sleep}
     switch window       Network Discovery - Jira Service Management
     Generic.Verify your current page location contains      customer
     Generic.Verify your current page contains this text     Network Discovery
