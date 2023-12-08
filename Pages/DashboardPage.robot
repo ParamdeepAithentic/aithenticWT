@@ -111,13 +111,11 @@ ${Select_city while adding brand}   css:#City
 ${Select_state while adding brand}  css:#State
 ${clickadd_newaddress}  //span[@title='Click here to add address']
 ${share_toEmail}      css:#toEmail
-<<<<<<< HEAD
+
 ${Totalcount_field}        css:.qa-total-count-list
 
-=======
 ${dept_searchbar}       css:input[placeholder='Search by Department Name']
 ${three_dots_dept}      css:.three-dots
->>>>>>> 4070800d4ee5e4a7ef2129405279b3acb36cd427
 
 *** Keywords ***
 Click on add department
