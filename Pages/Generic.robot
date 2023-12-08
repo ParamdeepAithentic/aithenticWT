@@ -38,7 +38,7 @@ ${invalid_password}      123445
 ${url}                   https://qa-app.aithentic.com/
 #${apiURL}                 https://uat-api.aithentic.com/api/v1
 ${apiURL}                 https://qa-api.aithentic.com/api/v1
-#${valid_password}        Test!@5897       #UAT user
+#${valid_password}         Test!@5897     #UAT user
 ${valid_password}        Test@123       #QA User
 
 ${browser_name}          Firefox
@@ -81,8 +81,6 @@ Fetch Current Time
     Log to console  Current Time: ${current_time}
     [return]    ${current_time}
 
-
-
 Calculate Running time
     [Arguments]   ${RowNum_forText}   ${ColumnNum_forText}   ${module_name}     ${RowNum}   ${ColumnNum}      ${TimeTakenToLoginPage}   ${SheetTabName}
     Close All Excel Documents
@@ -91,7 +89,6 @@ Calculate Running time
     Write Excel Cell     ${RowNum}   ${ColumnNum}   ${TimeTakenToLoginPage}     ${SheetTabName}
     Save Excel Document     ${SheetLocationAndName}
     Close All Excel Documents
-
 
 click on the tab
     [Arguments]    ${option}
@@ -105,7 +102,6 @@ click on the button
     wait until element is enabled      //button[normalize-space()='${option}']     60
     click element       //button[normalize-space()='${option}']
     sleep   ${search_sleep}
-
 
 click on the button link
     [Arguments]    ${option}
@@ -161,7 +157,6 @@ Get Current Time in Milliseconds
     ${time_in_milliseconds}=    Evaluate    int(time.time() * 1000)
     [Return]    ${time_in_milliseconds}
 
-
 Fetch alert message text and compare it with
     [Arguments]    ${option}
     wait until element is visible    ${alert_Msg}        60
@@ -184,13 +179,11 @@ Cross the text message alert
     wait until element is enabled    ${cross_alertMsg}        60
     click element       ${cross_alertMsg}
 
-
 Select parameter
     [Arguments]    ${address}
     wait until element is visible     //span[normalize-space()='${address}']        60
     wait until element is enabled       //span[normalize-space()='${address}']      60
     click element      //span[normalize-space()='${address}']
-
 
 Click on the profile name
     wait until element is not visible      ${loaderIcon}
