@@ -260,8 +260,6 @@ Refresh the existing page
     Reload Page
     sleep       ${yop_sleep}
 
-
-
 Enter phone number
     [Arguments]    ${country}   ${code}     ${phoneNo}
     click element   ${click_countryTag}

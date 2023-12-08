@@ -111,8 +111,8 @@ ${Select_city while adding brand}   css:#City
 ${Select_state while adding brand}  css:#State
 ${clickadd_newaddress}  //span[@title='Click here to add address']
 ${share_toEmail}      css:#toEmail
-
-
+${dept_searchbar}       css:input[placeholder='Search by Department Name']
+${three_dots_dept}      css:.three-dots
 
 *** Keywords ***
 Click on add department
@@ -819,7 +819,6 @@ Create random URL value for multiple brand addition
     input text   ${option}   ${generated_random_value}
     log to console      ${generated_random_value}
 
-
 Enter contact name of contact person
     [Arguments]     ${contact}
     wait until element is not visible   ${loaderIcon}   60
@@ -828,4 +827,83 @@ Enter contact name of contact person
     input text  css:#contactName    ${contact}
     Press Keys   css:#contactName   ENTER
 
+Choose options inside personal_details
+    [Arguments]     ${option}
+    Generic.Select parameter    ${option}
 
+Choose tabs under organization
+    [Arguments]     ${option}
+    wait until element is visible       css:#nav-${option}-tab     60
+    click element       css:#nav-${option}-tab
+
+Click on i-icon of system configuration tab
+    wait until element is visible       css:#advance-search-add-technology-Iicon        60
+    click element       css:#advance-search-add-technology-Iicon
+
+Click on i-icon of industry under company financial information
+    wait until element is visible       css:.qa-company-information-financial-industry      60
+    click element       css:.qa-company-information-financial-industry
+
+Click on link inside industry i-icon
+    [Arguments]    ${link}
+    Generic.click on the button link    ${link}
+    sleep       ${yop_sleep}
+
+Click on i-icon of company department
+    wait until element is visible       css:.qa-company-department-Iicon        60
+    click element       css:.qa-company-department-Iicon
+
+Click on view added Departments list
+    [Arguments]     ${option}
+    Generic.click on the button link        ${option}
+
+Click on action menu button of department
+    wait until element is visible       css:#Team-Member-Actions        60
+    click element       css:#Team-Member-Actions
+
+Choose Add department from Action button options
+    [Arguments]    ${option}
+    Generic.click on the tab        ${option}
+
+Click on i-icon of cost_center in department
+    wait until element is visible       css:.qa-iIconSection-dept-cc        60
+    click element       css:.qa-iIconSection-dept-cc
+
+Click on cancel add department
+    [Arguments]    ${option}
+    wait until element is visible       css:.qa-${option}-department-modal        60
+    wait until element is enabled       css:.qa-${option}-department-modal        60
+    click element        css:.qa-${option}-department-modal
+    sleep       ${search_sleep}
+# option: add, close
+
+Search by Department
+    [Arguments]    ${option}
+    wait until element is visible       css:thead tr       60
+    wait until element is visible       ${dept_SearchBar}       60
+    Clear Element Text      ${dept_SearchBar}
+    ${StartTime1} =     Get Current Time in Milliseconds
+    input text      ${dept_SearchBar}   ${option}
+    wait until element is visible       css:thead tr       60
+
+Click on three dots of Department list
+    sleep       ${search_sleep}
+    wait until element is visible   ${three_dots_dept}   60
+    click element   ${three_dots_dept}
+
+Choose option from three_dots of Department
+    [Arguments]     ${option}
+    Generic.Select other option from profile list       ${option}
+
+Click on i-icon inside technology
+    wait until element is visible       css:#technology-products-Iicon      60
+    click element       css:#technology-products-Iicon
+
+Click on i-icon inside network discovery
+    wait until element is visible       css:.qa-iIconSection-network-discovery     60
+    click element       css:.qa-iIconSection-network-discovery
+
+Click on link inside Network_discovery i-icon
+    wait until element is visible       css:a[title='Network Discovery']        60
+    click element       css:a[title='Network Discovery']
+    sleep       ${yop_sleep}
