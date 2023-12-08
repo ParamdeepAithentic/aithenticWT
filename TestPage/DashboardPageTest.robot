@@ -123,7 +123,6 @@ Create a new product with adding new brand
     Generic.Fetch alert message text and compare it with        Product created successfully
     DashboardPage.Verify product added    ${generated_product}
 
-
 Add Product Bulk Edit
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
@@ -693,6 +692,19 @@ Verify adding a new brand from profile listing
     Generic.Select other option from profile list   Remove
     DashboardPage.Select option from the pop up     yes
     Generic.Fetch alert message text and compare it with      Brand deleted successfully
+
+Verify all i-icon of Dashboard page
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.select the option from the side menu    Dashboard
+    Generic.Verify your current page location contains      asset-overview
+    DashboardPage.Click on i-icon of asset-overview tab
+    DashboardPage.Verify i-icon popup is visible
+    DashboardPage.Click on i-icon of asset-overview tab
+    DashboardPage.select the option from the dashboard drawer   Reports
+    Generic.Verify your current page location contains      reports
+    DashboardPage.Hover over i-icon of reports tab
+    DashboardPage.Verify hovering on i-icon shows message and compare it with       This data is shown of last 24hours
 
 Verify all i-icon of profile-listing
     Generic.click on the tab	Login
