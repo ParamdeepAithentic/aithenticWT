@@ -93,6 +93,14 @@ Enter team member business email_mailinator
     input text   ${TMBusinessEmail}   ${generated_TMbusinessEmail}
     log to console      ${generated_TMbusinessEmail}
 
+Enter team member business email with cool fr nf email
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_TMbusinessEmail}=    Catenate    TMBusinessEmail_${random_string}@cool.fr.nf
+    wait until element is visible       ${TMBusinessEmail}    60
+    input text   ${TMBusinessEmail}   ${generated_TMbusinessEmail}
+    log to console      ${generated_TMbusinessEmail}
+    set global variable     ${generated_TMbusinessEmail}
+
 
 Click on team member department
     wait until element is enabled     ${TMDepartmentName}     60
@@ -111,6 +119,7 @@ Select team member department
     wait until element is visible       ${TMDepartmentName}     60
     input text      ${TMDepartmentName}         ${option}
     Generic.Select parameter        ${option}
+
 
 Select team member role
     [Arguments]    ${option}
@@ -146,7 +155,7 @@ Search Team Member by name
     Clear Element Text      ${name_SearchBar}
     ${StartTime1} =     Get Current Time in Milliseconds
     input text   ${name_SearchBar}   ${name}
-    sleep      1
+    sleep      ${search_sleep}
     wait until element is visible       css:thead tr       60
 
 Click on three dots of Team Member listing
@@ -181,3 +190,92 @@ Verify resulted row contains Dept_name
     wait until element is visible       css:.table.department       60
     sleep       ${search_sleep}
     Table column should contain      css:.table.department      2       ${generated_DepartmentNumber}
+
+Select team member location with new domain
+    wait until element is visible     //div[contains (@id, '-0')]       60
+    wait until element is enabled     //div[contains (@id, '-0')]       60
+    click element   //div[contains (@id, '-0')]
+
+verify status of first name in member list
+    [Arguments]     ${option}
+    wait until element is visible   //td[normalize-space()='${option}']     60
+
+Click on back to member list of member list
+    wait until element is visible   css:span[class='back']      60
+    click element   css:span[class='back']
+
+Click on search by brand, product and asset id of asset history via team member
+    [Arguments]     ${option}
+    wait until element is visible   css:.search-location-qa     60
+    click element   css:.search-location-qa
+    input text  css:.search-location-qa     ${option}
+
+Verify table data with asset id in team member
+    Table Column Should contain     css:.table-hover    2       ${generated_AssetID}
+
+Click on i-icon of team-members tab
+    wait until element is visible       css:#member-list-Iicon      60
+    click element       css:#member-list-Iicon
+
+Click on action button of assigned users
+    wait until element is not visible      ${loaderIcon}    60
+    wait until element is visible   css:#Assignee-Actions      60
+    click element   css:#Assignee-Actions
+
+Enter first name of assigned users
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_TMFname}=    Catenate    TMFname_${random_string}
+    wait until element is visible       css:.qa-AssignedFirstName     60
+    input text   css:.qa-AssignedFirstName    ${generated_TMFname}
+    log to console      ${generated_TMFname}
+    set global variable       ${generated_TMFname}
+
+Enter last name of assigned users
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_TMLname}=    Catenate    TMLast_${random_string}
+    wait until element is visible       css:.qa-AssignedLastName    60
+    input text   css:.qa-AssignedLastName   ${generated_TMLname}
+    log to console      ${generated_TMLname}
+
+Enter business email of assigned users
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_TMbusinessEmail}=    Catenate    TMBusinessEmail_${random_string}@yopmail.net
+    wait until element is visible       css:.qa-AssignedEmail    60
+    input text   css:.qa-AssignedEmail   ${generated_TMbusinessEmail}
+    log to console      ${generated_TMbusinessEmail}
+
+Click on save button of assigned user
+    wait until element is visible   css:.qa-save-assignee-modal     60
+    click element   css:.qa-save-assignee-modal
+
+Search assigned user by first name
+    [Arguments]    ${name}
+    wait until element is visible       css:thead tr       60
+    wait until element is visible      css:input[placeholder='Search by Assignee Name or Employee Id']     60
+    click element      css:input[placeholder='Search by Assignee Name or Employee Id']
+    input text   css:input[placeholder='Search by Assignee Name or Employee Id']   ${name}
+    sleep      ${search_sleep}
+    wait until element is visible       css:thead tr       60
+
+Enter assign to field
+    [Arguments]     ${option}
+    wait until element is visible   //ng-select[contains(@placeholder,'Select Assignee')]//span[contains(@title,'Clear all')]   60
+    click element   //ng-select[contains(@placeholder,'Select Assignee')]//span[contains(@title,'Clear all')]
+    click element   css:#assignTO
+    input text   css:#assignTO   ${option}
+    wait until element is visible  //span[normalize-space()='${option}']    60
+    click element   //span[normalize-space()='${option}']
+
+Search assigned user by asset id
+    [Arguments]    ${name}
+    wait until element is visible       css:.table-hover tr       60
+    wait until element is visible      css:.search-location-qa     60
+    click element      css:.search-location-qa
+    input text   css:.search-location-qa   ${name}
+    sleep      ${search_sleep}
+    wait until element is not visible   ${loaderIcon}   60
+    wait until element is visible       css:.table-hover tr       60
+
+Click on view button link of assigned user
+    wait until element is visible   //td[normalize-space()='View']      60
+    click element   //td[normalize-space()='View']

@@ -123,7 +123,6 @@ Create a new product with adding new brand
     Generic.Fetch alert message text and compare it with        Product created successfully
     DashboardPage.Verify product added    ${generated_product}
 
-
 Add Product Bulk Edit
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
@@ -680,16 +679,11 @@ Verify adding a new brand from profile listing
     DashboardPage.Click add brand button
     DashboardPage.Create random brandName
     DashboardPage.Add brand manufacturer country      United States
-
     DashboardPage.Add multiple brand URL as per index     1
     DashboardPage.click on Plus icon
-
     DashboardPage.Add multiple brand URL as per index     2
     DashboardPage.click on Plus icon
-
     DashboardPage.Add multiple brand URL as per index     3
-
-
     DashboardPage.Save added brand details
     Generic.Fetch alert message text and compare it with        Brand created successfully.
     DashboardPage.Click added brand main save button
@@ -711,3 +705,59 @@ Verify all i-icon of Dashboard page
     Generic.Verify your current page location contains      reports
     DashboardPage.Hover over i-icon of reports tab
     DashboardPage.Verify hovering on i-icon shows message and compare it with       This data is shown of last 24hours
+
+Verify all i-icon of profile-listing
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    DashboardPage.Choose options inside personal_details        Organization
+    DashboardPage.Choose tabs under organization        system
+    DashboardPage.Click on i-icon of system configuration tab
+    Generic.Verify pop-up is visible after clicking on i-icon
+    DashboardPage.Click on i-icon of system configuration tab
+    DashboardPage.Choose tabs under organization        company
+    DashboardPage.Click on i-icon of industry under company financial information
+    Generic.Verify pop-up is visible after clicking on i-icon
+    DashboardPage.Click on link inside industry i-icon      https://www.naics.com/search/
+    switch window       NAICS & SIC Identification Tools | NAICS Association
+    Generic.Verify your current page location contains      naics.com
+    Generic.Verify your current page contains this text     NAICS Identification Tools
+    Go back
+    DashboardPage.Click on i-icon of company department
+    Generic.Verify pop-up is visible after clicking on i-icon
+    DashboardPage.Click on i-icon of company department
+    DashboardPage.Click on view added Departments list      View Your Added Departments List
+    Generic.Verify your current page location contains      department-list
+    DashboardPage.Click on action menu button of department
+    DashboardPage.Choose Add department from Action button options          Add Department
+    DashboardPage.Click on i-icon of cost_center in department
+    Generic.Verify pop-up is visible after clicking on i-icon
+    DashboardPage.Click on i-icon of cost_center in department
+    DashboardPage.Click on cancel add department        close
+    DashboardPage.Search by Department      Customer Support
+    DashboardPage.Click on three dots of Department list
+    DashboardPage.Choose option from three_dots of Department     Details
+    DashboardPage.Click on i-icon of cost_center in department
+    Generic.Verify pop-up is visible after clicking on i-icon
+    DashboardPage.Click on i-icon of cost_center in department
+    DashboardPage.Click on cancel add department        close
+    DashboardPage.Click on three dots of Department list
+    DashboardPage.Choose option from three_dots of Department     Edit
+    DashboardPage.Click on i-icon of cost_center in department
+    Generic.Verify pop-up is visible after clicking on i-icon
+    DashboardPage.Click on i-icon of cost_center in department
+    DashboardPage.Click on cancel add department        close
+    Generic.Verify your current page location contains      department-list
+    DashboardPage.Choose options inside personal_details        Technology
+    DashboardPage.Click on i-icon inside technology
+    Generic.Verify pop-up is visible after clicking on i-icon
+    DashboardPage.Click on i-icon inside technology
+    DashboardPage.Choose options inside personal_details        Network Discovery
+    DashboardPage.Click on i-icon inside network discovery
+    Generic.Verify pop-up is visible after clicking on i-icon
+    DashboardPage.Click on link inside Network_discovery i-icon
+    switch window       Network Discovery - Jira Service Management
+    Generic.Verify your current page location contains      customer
+    Generic.Verify your current page contains this text     Network Discovery
+    switch window       aithentic | Network Discovery

@@ -59,8 +59,6 @@ ${yop_sleep}       3
 ${search_sleep}       1
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
 
-
-
 *** Keywords ***
 Fix the column number
     ${pageHeading}=   Catenate    2
@@ -186,13 +184,11 @@ Cross the text message alert
     wait until element is enabled    ${cross_alertMsg}        60
     click element       ${cross_alertMsg}
 
-
 Select parameter
     [Arguments]    ${address}
     wait until element is visible     //span[normalize-space()='${address}']        60
     wait until element is enabled       //span[normalize-space()='${address}']      60
     click element      //span[normalize-space()='${address}']
-
 
 Click on the profile name
     wait until element is not visible      ${loaderIcon}
@@ -274,3 +270,7 @@ Enter phone number
 Scroll the page till
     [Arguments]    ${option}
     Execute javascript      window.scrollTo(0,${option})
+
+Verify pop-up is visible after clicking on i-icon
+    wait until element is visible       css:.popover-content        60
+    log to console      Yes, pop-up is visible for i-icon
