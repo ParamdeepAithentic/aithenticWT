@@ -626,11 +626,6 @@ Add assignment information assign to
     Clear Element Text      ${assignTo}
     Generic.Enter value into field      ${assignTo}     ${option1}
     Press keys  ${assignTo}     ENTER
-#    ${StartTime1} =     Get Current Time in Milliseconds
-#    Generic.Select parameter    ${option1}
-#    ${EndTime1} =     Get Current Time in Milliseconds
-#    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-#    Calculate Running time  15  ${pageHeading}   Technology Page - Add assignment information assign to      15    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 #################Partners Information###############
 Add support partner of partners information

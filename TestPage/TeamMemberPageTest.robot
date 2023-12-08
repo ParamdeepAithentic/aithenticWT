@@ -293,7 +293,7 @@ Search asset history with Asset ID
     Generic.Verify your current page location contains      technology-list
     TeamMemberPage.Click on three dots of Team Member listing
     TeamMemberPage.Select option from three dots of Team Member     Edit
-    TechnologyPage.Add assignment information assign to   Member jh
+    TechnologyPage.Add assignment information assign to    Kenneth Frost
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     Generic.Verify your current page contains this text             Technology

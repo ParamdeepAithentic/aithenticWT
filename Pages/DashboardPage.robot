@@ -111,8 +111,9 @@ ${Select_city while adding brand}   css:#City
 ${Select_state while adding brand}  css:#State
 ${clickadd_newaddress}  //span[@title='Click here to add address']
 ${share_toEmail}      css:#toEmail
-
-
+${Totalcount_field}        css:.qa-total-count-list
+${dept_searchbar}       css:input[placeholder='Search by Department Name']
+${three_dots_dept}      css:.three-dots
 
 *** Keywords ***
 Click on add department
@@ -378,13 +379,10 @@ Verify Brand added
      ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
      Calculate Running time  10  ${pageHeading}   DashboardPage - Verify Brand added      10    ${pageTime}     ${ActualTime}    DashboardPage_Time
 
-
-
 select the option from the dashboard drawer
     [Arguments]     ${option}
     wait until element is visible    //span[normalize-space()='${option}']      60
     click element    //span[normalize-space()='${option}']
-
 
 ################################### WELCOME PAGE AND AHEAD ###############
 Click on complete setup button
@@ -392,18 +390,15 @@ Click on complete setup button
     wait until element is visible    //button[normalize-space()='${option}']        60
     click element    //button[normalize-space()='${option}']
 
-
 Select the asset ID checkbox
     [Arguments]     ${option}
     wait until element is visible    css:.checkmark.qa-inner-customcheckbox-asset-id-${option}      60
     click element    css:.checkmark.qa-inner-customcheckbox-asset-id-${option}
 
-
 Select the employee ID checkbox
     [Arguments]     ${option}
     wait until element is visible    css:.checkmark.qa-inner-customcheckbox-employee-id-${option}       60
     click element    css:.checkmark.qa-inner-customcheckbox-employee-id-${option}
-
 
 Select the location ID checkbox
     [Arguments]     ${option}
@@ -439,7 +434,6 @@ Select option from technology type column
     Double click element      css:.ag-center-cols-container div[col-id='${option}']
     wait until element is visible      css:div[aria-label='List'] div:nth-child(4) div    60
     click element       css:div[aria-label='List'] div:nth-child(4) div
-
 
 Double click
     [Arguments]    ${option}
@@ -541,7 +535,6 @@ Verify the drawer list parameters
    END
    lists should be equal    ${expectedList}    ${actualList}
 
-
 #####NOT WORKING#########
 Verify the profile option list parameters
     wait until element is visible    ${profile_option}      60
@@ -578,7 +571,6 @@ Enter Brand Address Line one
     input text      ${address_Line}     ${generate_AddressLineone}
     log to console      ${generate_AddressLineone}
 
-
 Enter Brand address line two
     wait until element is visible     ${address_line2}         60
     wait until element is enabled     ${address_line2}         60
@@ -587,7 +579,6 @@ Enter Brand address line two
     ${generate_AddressLine2}=    Catenate    Address_${random_string}
     input text      ${address_line2}     ${generate_AddressLine2}
     log to console      ${generate_AddressLine2}
-
 
 Select State
     [Arguments]     ${country}
@@ -629,7 +620,6 @@ Enter Brand New Address Line one
     Press Keys  ${address_Line}            ENTER
     log to console      ${generate_newaddressone}
 
-
 Enter Brand new address line two
     wait until element is visible     ${address_line2}         60
     click element      ${address_line2}
@@ -637,7 +627,6 @@ Enter Brand new address line two
     ${generate_newaddresstwo}=    Catenate    Address_${random_string}
     input text      ${address_line2}     ${generate_newaddresstwo}
     log to console  ${generate_newaddresstwo}
-
 
 Click on main Save Button
     wait until element is visible   ${brand_mainsaveButton}    60
@@ -662,7 +651,6 @@ Click on Send Invite button
 Click on Register button in email
     wait until element is visible       css:button[type='button']       60
     click element       css:button[type='button']
-
 
 Enter business email
     wait until element is enabled       ${register_Email}        60
@@ -733,7 +721,6 @@ Edit Brand Address Line one
     input text   ${editbrand_addressline1}       ${generate_editAddressLine1}
     log to console      ${generate_editAddressLine1}
 
-
 Edit Brand Address Line two
     wait until element is not visible   ${loaderIcon}    60
     wait until element is visible   ${editbrand_addressline2}           60
@@ -744,7 +731,6 @@ Edit Brand Address Line two
     ${generate_editAddressLine2}=    Catenate    Address_${random_string}
     input text   ${editbrand_addressline2}        ${generate_editAddressLine2}
     log to console      ${generate_editAddressLine2}
-
 
 Edit State while edit address
     [Arguments]     ${State}
@@ -775,7 +761,6 @@ Edit New Brand Address Line one
     Press Keys  ${editnew_brandaddressline1}             ENTER
     log to console      ${generateNew_editAddressLine1}
 
-
 Edit New Brand Address Line two
     wait until element is not visible   ${loaderIcon}    60
     wait until element is visible   ${editnew_brandaddressline2}           60
@@ -785,7 +770,6 @@ Edit New Brand Address Line two
     ${generateNew_editAddressLine2}=    Catenate    Address_${random_string}
     input text   ${editnew_brandaddressline2}        ${generateNew_editAddressLine2}
     log to console      ${generateNew_editAddressLine2}
-
 
 Select New Address State
     [Arguments]     ${country}
@@ -803,7 +787,6 @@ Select option from the pop up
     wait until element is visible   css:.qa-brand-${option}   60
     click element   css:.qa-brand-${option}
 
-
 Add multiple brand URL as per index
     [Arguments]    ${option}
     wait until element is visible   (//input[@placeholder='example.com'])[${option}]   60
@@ -811,14 +794,12 @@ Add multiple brand URL as per index
     click element   (//input[@placeholder='example.com'])[${option}]
     Create random URL value for multiple brand addition     (//input[@placeholder='example.com'])[${option}]
 
-
 Create random URL value for multiple brand addition
     [Arguments]    ${option}
     ${random_string} =    Generate Random String       15      [NUMBERS]
     ${generated_random_value}=    Catenate   ${random_string}.com
     input text   ${option}   ${generated_random_value}
     log to console      ${generated_random_value}
-
 
 Enter contact name of contact person
     [Arguments]     ${contact}
@@ -828,4 +809,136 @@ Enter contact name of contact person
     input text  css:#contactName    ${contact}
     Press Keys   css:#contactName   ENTER
 
+Click on tab under key data
+    [Arguments]     ${tab_name}
+    wait until element is not visible       ${loaderIcon}       60
+    Generic.Scroll the page till        7000
+    wait until element is visible     //p[normalize-space()='${tab_name}']//following-sibling::p     60
+    ${count}=       get text        //p[normalize-space()='${tab_name}']//following-sibling::p
+    log to console      key data: ${count}
+    set global variable     ${count}
+    click element       //p[normalize-space()='${tab_name}']//following-sibling::p
 
+Click on i-icon of asset-overview tab
+    wait until element is visible       css:.qa-dashboard-home-iIcon       60
+    click element       css:.qa-dashboard-home-iIcon
+
+Verify i-icon popup is visible
+    wait until element is visible        css:.popover-content       60
+    log to console      Yes,Pop-up is visible for i-icon content.
+
+Hover over i-icon of reports tab
+    wait until element is visible       css:.qa-technology-products-Iicon i     60
+    Mouse over       css:.qa-technology-products-Iicon i
+
+Verify hovering on i-icon shows message and compare it with
+    [Arguments]     ${option}
+    wait until element is visible       css:#technology-products-Iicon      60
+    ${title_value}    Get Element Attribute     css:#technology-products-Iicon        title
+    Log to console    Title is: ${title_value}
+    should be equal     ${title_value}        ${option}
+
+Choose options inside personal_details
+    [Arguments]     ${option}
+    Generic.Select parameter    ${option}
+
+Click on tab under Technology Types
+    [Arguments]     ${tab_name}
+    wait until element is not visible       ${loaderIcon}       60
+     Execute JavaScript    window.scrollTo(0, document.body.scrollHeight);
+    wait until element is visible     //p[normalize-space()='${tab_name}']//following-sibling::p     60
+    ${count}=       get text        //p[normalize-space()='${tab_name}']//following-sibling::p
+    log to console      Technology: ${count}
+    set global variable     ${count}
+    click element       //p[normalize-space()='${tab_name}']//following-sibling::p
+
+Fetch the total count
+    [Arguments]    ${data}
+    wait until element is visible   ${Totalcount_field}      60
+    ${text}=     get text   ${Totalcount_field}
+    ${parts}    Split String    ${text}    ${data}
+    ${total_count}    Get Substring    ${parts[1]}    3
+    Log to console  Total counts are:${total_count}
+    set global variable    ${total_count}
+
+Verify that key_data is equals to total number of counts
+    [Arguments]    ${option}
+    should be equal      ${count}    ${total_count}
+    log to console      The Key data of ${option} is equal to total counts in ${option}
+
+Choose tabs under organization
+    [Arguments]     ${option}
+    wait until element is visible       css:#nav-${option}-tab     60
+    click element       css:#nav-${option}-tab
+
+Click on i-icon of system configuration tab
+    wait until element is visible       css:#advance-search-add-technology-Iicon        60
+    click element       css:#advance-search-add-technology-Iicon
+
+Click on i-icon of industry under company financial information
+    wait until element is visible       css:.qa-company-information-financial-industry      60
+    click element       css:.qa-company-information-financial-industry
+
+Click on link inside industry i-icon
+    [Arguments]    ${link}
+    Generic.click on the button link    ${link}
+    sleep       ${yop_sleep}
+
+Click on i-icon of company department
+    wait until element is visible       css:.qa-company-department-Iicon        60
+    click element       css:.qa-company-department-Iicon
+
+Click on view added Departments list
+    [Arguments]     ${option}
+    Generic.click on the button link        ${option}
+
+Click on action menu button of department
+    wait until element is visible       css:#Team-Member-Actions        60
+    click element       css:#Team-Member-Actions
+
+Choose Add department from Action button options
+    [Arguments]    ${option}
+    Generic.click on the tab        ${option}
+
+Click on i-icon of cost_center in department
+    wait until element is visible       css:.qa-iIconSection-dept-cc        60
+    click element       css:.qa-iIconSection-dept-cc
+
+Click on cancel add department
+    [Arguments]    ${option}
+    wait until element is visible       css:.qa-${option}-department-modal        60
+    wait until element is enabled       css:.qa-${option}-department-modal        60
+    click element        css:.qa-${option}-department-modal
+    sleep       ${search_sleep}
+# option: add, close
+
+Search by Department
+    [Arguments]    ${option}
+    wait until element is visible       css:thead tr       60
+    wait until element is visible       ${dept_SearchBar}       60
+    Clear Element Text      ${dept_SearchBar}
+    ${StartTime1} =     Get Current Time in Milliseconds
+    input text      ${dept_SearchBar}   ${option}
+    wait until element is visible       css:thead tr       60
+
+Click on three dots of Department list
+    sleep       ${search_sleep}
+    wait until element is visible   ${three_dots_dept}   60
+    click element   ${three_dots_dept}
+
+Choose option from three_dots of Department
+    [Arguments]     ${option}
+    Generic.Select other option from profile list       ${option}
+
+Click on i-icon inside technology
+    wait until element is visible       css:#technology-products-Iicon      60
+    click element       css:#technology-products-Iicon
+
+Click on i-icon inside network discovery
+    wait until element is visible       css:.qa-iIconSection-network-discovery     60
+    click element       css:.qa-iIconSection-network-discovery
+
+Click on link inside Network_discovery i-icon
+    wait until element is visible       css:a[title='Network Discovery']        60
+    click element       css:a[title='Network Discovery']
+    sleep       ${yop_sleep}
