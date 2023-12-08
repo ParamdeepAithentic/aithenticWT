@@ -81,8 +81,6 @@ Fetch Current Time
     Log to console  Current Time: ${current_time}
     [return]    ${current_time}
 
-
-
 Calculate Running time
     [Arguments]   ${RowNum_forText}   ${ColumnNum_forText}   ${module_name}     ${RowNum}   ${ColumnNum}      ${TimeTakenToLoginPage}   ${SheetTabName}
     Close All Excel Documents
@@ -91,7 +89,6 @@ Calculate Running time
     Write Excel Cell     ${RowNum}   ${ColumnNum}   ${TimeTakenToLoginPage}     ${SheetTabName}
     Save Excel Document     ${SheetLocationAndName}
     Close All Excel Documents
-
 
 click on the tab
     [Arguments]    ${option}
@@ -105,7 +102,6 @@ click on the button
     wait until element is enabled      //button[normalize-space()='${option}']     60
     click element       //button[normalize-space()='${option}']
     sleep   ${search_sleep}
-
 
 click on the button link
     [Arguments]    ${option}
@@ -160,7 +156,6 @@ Verify your current page contains this text
 Get Current Time in Milliseconds
     ${time_in_milliseconds}=    Evaluate    int(time.time() * 1000)
     [Return]    ${time_in_milliseconds}
-
 
 Fetch alert message text and compare it with
     [Arguments]    ${option}
@@ -274,3 +269,6 @@ Scroll the page till
 Verify pop-up is visible after clicking on i-icon
     wait until element is visible       css:.popover-content        60
     log to console      Yes, pop-up is visible for i-icon
+
+Scroll Window To End
+    Execute JavaScript    window.scrollTo(0, document.body.scrollHeight);

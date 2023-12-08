@@ -693,6 +693,46 @@ Verify adding a new brand from profile listing
     DashboardPage.Select option from the pop up     yes
     Generic.Fetch alert message text and compare it with      Brand deleted successfully
 
+Verify Reports Technology Types records count
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.select the option from the side menu    Dashboard
+    DashboardPage.select the option from the dashboard drawer       Reports
+    Generic.Verify your current page location contains          reports
+    DashboardPage.Click on tab under Technology Types       Hardware
+    Generic.Verify your current page location contains          technology-list
+    Generic.Scroll Window To End
+    DashboardPage.Fetch the total count         Total Count :
+    DashboardPage.Verify that key_data is equals to total number of counts      Hardware
+    Go back
+    Generic.Verify your current page location contains          reports
+    DashboardPage.Click on tab under Technology Types       License
+    Generic.Verify your current page location contains          technology-list
+    Generic.Scroll Window To End
+    DashboardPage.Fetch the total count         Total Count :
+    DashboardPage.Verify that key_data is equals to total number of counts      License
+    Go back
+    Generic.Verify your current page location contains          reports
+    DashboardPage.Click on tab under Technology Types       Virtual Machines
+    Generic.Verify your current page location contains          technology-list
+    Generic.Scroll Window To End
+    DashboardPage.Fetch the total count         Total Count :
+    DashboardPage.Verify that key_data is equals to total number of counts      Virtual Machines
+    Go back
+    Generic.Verify your current page location contains          reports
+    DashboardPage.Click on tab under Technology Types      Maintenance
+    Generic.Verify your current page location contains          technology-list
+    Generic.Scroll Window To End
+    DashboardPage.Fetch the total count         Total Count :
+    DashboardPage.Verify that key_data is equals to total number of counts      Maintenance
+    Go back
+    Generic.Verify your current page location contains          reports
+    DashboardPage.Click on tab under Technology Types       Subscription
+    Generic.Verify your current page location contains          technology-list
+    Generic.Scroll Window To End
+    DashboardPage.Fetch the total count         Total Count :
+    DashboardPage.Verify that key_data is equals to total number of counts      Subscription
+
 Verify all i-icon of Dashboard page
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
