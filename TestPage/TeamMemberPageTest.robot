@@ -327,6 +327,7 @@ Verify user is able to export team member asset history list
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
     Generic.Open new window     yopmail
     Generic.Search yopmail emails for   ${generated_TMbusinessEmail}
+
     Generic.Switch to iframe by ID      ifmail
     Generic.click on the button     Verify
     Unselect Frame
@@ -417,7 +418,7 @@ Verify user is able to export team member asset history list
     TechnologyPage.Search by AssetId       ${generated_AssetID}
     TechnologyPage.Click on the first row of the technology table
     Generic.click on the button link    Edit
-    TechnologyPage.Add assignment information assign to   Kenneth Frost
+    TechnologyPage.Add assignment information assign to   Member jh
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     Generic.Verify your current page contains this text             Technology
@@ -436,7 +437,7 @@ Verify user is able to export team member asset history list
     TechnologyPage.Search by AssetId       ${generated_AssetID}
     TechnologyPage.Click on the first row of the technology table
     Generic.click on the button link    Edit
-    TechnologyPage.Add assignment information assign to   Kenneth Frost
+    TechnologyPage.Add assignment information assign to   Member jh
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     Generic.Verify your current page contains this text             Technology
@@ -464,8 +465,46 @@ Verify user is able to export team member asset history list
     TeamMemberPage.Search Team Member by name   ${generated_TMFname}
     TeamMemberPage.Click on three dots of Team Member listing
     TeamMemberPage.Select option from three dots of Team Member     Asset History
+    PartnersPage.Click on the export Button
+    PartnersPage.Download the selected extension file      .xlsx
+    PartnersPage.Confirm to export file
+    PartnersPage.Verify that the selected extension file is downloaded       .xlsx
+    PartnersPage.Remove the file from downloaded list
+    Generic.click on the button     Okay, Thanks!
+
+    PartnersPage.Click on the export Button
+    PartnersPage.Download the selected extension file      .ods
+    PartnersPage.Confirm to export file
+    PartnersPage.Verify that the selected extension file is downloaded       .ods
+    PartnersPage.Remove the file from downloaded list
+    Generic.click on the button     Okay, Thanks!
+
+    PartnersPage.Click on the export Button
+    PartnersPage.Download the selected extension file      .csv
+    PartnersPage.Confirm to export file
+    PartnersPage.Verify that the selected extension file is downloaded       .csv
+    PartnersPage.Remove the file from downloaded list
+    Generic.click on the button     Okay, Thanks!
+
+    PartnersPage.Click on the export Button
+    PartnersPage.Download the selected extension file      .tsv
+    PartnersPage.Confirm to export file
+    PartnersPage.Verify that the selected extension file is downloaded       .tsv
+    PartnersPage.Remove the file from downloaded list
+    Generic.click on the button     Okay, Thanks!
     TeamMemberPage.Click on search by brand, product and asset id of asset history via team member  ${generated_AssetID}
-    TeamMemberPage.Verify table data with asset id in team member
+    TeamMemberPage.Verify the first row of asset history under team member
+    TeamMemberPage.verify status of first name in member list   BrandName0914413211
+
+
+    TeamMemberPage.Click on search by brand, product and asset id of asset history via team member  BrandName0914413211
+    TeamMemberPage.Verify the first row of asset history under team member
+    TeamMemberPage.verify status of first name in member list   Product_9110561777
+
+
+    TeamMemberPage.Click on search by brand, product and asset id of asset history via team member  Product_9110561777
+    wait until element is not visible   ${loaderIcon}    60
+    TeamMemberPage.verify status of first name in member list   ${generated_AssetID}
 
 Verify asset history of assigned users
     Generic.click on the tab	Login
