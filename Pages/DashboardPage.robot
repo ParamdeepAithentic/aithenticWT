@@ -111,9 +111,7 @@ ${Select_city while adding brand}   css:#City
 ${Select_state while adding brand}  css:#State
 ${clickadd_newaddress}  //span[@title='Click here to add address']
 ${share_toEmail}      css:#toEmail
-
 ${Totalcount_field}        css:.qa-total-count-list
-
 ${dept_searchbar}       css:input[placeholder='Search by Department Name']
 ${three_dots_dept}      css:.three-dots
 
@@ -381,13 +379,10 @@ Verify Brand added
      ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
      Calculate Running time  10  ${pageHeading}   DashboardPage - Verify Brand added      10    ${pageTime}     ${ActualTime}    DashboardPage_Time
 
-
-
 select the option from the dashboard drawer
     [Arguments]     ${option}
     wait until element is visible    //span[normalize-space()='${option}']      60
     click element    //span[normalize-space()='${option}']
-
 
 ################################### WELCOME PAGE AND AHEAD ###############
 Click on complete setup button
@@ -395,18 +390,15 @@ Click on complete setup button
     wait until element is visible    //button[normalize-space()='${option}']        60
     click element    //button[normalize-space()='${option}']
 
-
 Select the asset ID checkbox
     [Arguments]     ${option}
     wait until element is visible    css:.checkmark.qa-inner-customcheckbox-asset-id-${option}      60
     click element    css:.checkmark.qa-inner-customcheckbox-asset-id-${option}
 
-
 Select the employee ID checkbox
     [Arguments]     ${option}
     wait until element is visible    css:.checkmark.qa-inner-customcheckbox-employee-id-${option}       60
     click element    css:.checkmark.qa-inner-customcheckbox-employee-id-${option}
-
 
 Select the location ID checkbox
     [Arguments]     ${option}
@@ -442,7 +434,6 @@ Select option from technology type column
     Double click element      css:.ag-center-cols-container div[col-id='${option}']
     wait until element is visible      css:div[aria-label='List'] div:nth-child(4) div    60
     click element       css:div[aria-label='List'] div:nth-child(4) div
-
 
 Double click
     [Arguments]    ${option}
@@ -544,7 +535,6 @@ Verify the drawer list parameters
    END
    lists should be equal    ${expectedList}    ${actualList}
 
-
 #####NOT WORKING#########
 Verify the profile option list parameters
     wait until element is visible    ${profile_option}      60
@@ -581,7 +571,6 @@ Enter Brand Address Line one
     input text      ${address_Line}     ${generate_AddressLineone}
     log to console      ${generate_AddressLineone}
 
-
 Enter Brand address line two
     wait until element is visible     ${address_line2}         60
     wait until element is enabled     ${address_line2}         60
@@ -590,7 +579,6 @@ Enter Brand address line two
     ${generate_AddressLine2}=    Catenate    Address_${random_string}
     input text      ${address_line2}     ${generate_AddressLine2}
     log to console      ${generate_AddressLine2}
-
 
 Select State
     [Arguments]     ${country}
@@ -632,7 +620,6 @@ Enter Brand New Address Line one
     Press Keys  ${address_Line}            ENTER
     log to console      ${generate_newaddressone}
 
-
 Enter Brand new address line two
     wait until element is visible     ${address_line2}         60
     click element      ${address_line2}
@@ -640,7 +627,6 @@ Enter Brand new address line two
     ${generate_newaddresstwo}=    Catenate    Address_${random_string}
     input text      ${address_line2}     ${generate_newaddresstwo}
     log to console  ${generate_newaddresstwo}
-
 
 Click on main Save Button
     wait until element is visible   ${brand_mainsaveButton}    60
@@ -665,7 +651,6 @@ Click on Send Invite button
 Click on Register button in email
     wait until element is visible       css:button[type='button']       60
     click element       css:button[type='button']
-
 
 Enter business email
     wait until element is enabled       ${register_Email}        60
@@ -736,7 +721,6 @@ Edit Brand Address Line one
     input text   ${editbrand_addressline1}       ${generate_editAddressLine1}
     log to console      ${generate_editAddressLine1}
 
-
 Edit Brand Address Line two
     wait until element is not visible   ${loaderIcon}    60
     wait until element is visible   ${editbrand_addressline2}           60
@@ -747,7 +731,6 @@ Edit Brand Address Line two
     ${generate_editAddressLine2}=    Catenate    Address_${random_string}
     input text   ${editbrand_addressline2}        ${generate_editAddressLine2}
     log to console      ${generate_editAddressLine2}
-
 
 Edit State while edit address
     [Arguments]     ${State}
@@ -778,7 +761,6 @@ Edit New Brand Address Line one
     Press Keys  ${editnew_brandaddressline1}             ENTER
     log to console      ${generateNew_editAddressLine1}
 
-
 Edit New Brand Address Line two
     wait until element is not visible   ${loaderIcon}    60
     wait until element is visible   ${editnew_brandaddressline2}           60
@@ -788,7 +770,6 @@ Edit New Brand Address Line two
     ${generateNew_editAddressLine2}=    Catenate    Address_${random_string}
     input text   ${editnew_brandaddressline2}        ${generateNew_editAddressLine2}
     log to console      ${generateNew_editAddressLine2}
-
 
 Select New Address State
     [Arguments]     ${country}
@@ -806,14 +787,12 @@ Select option from the pop up
     wait until element is visible   css:.qa-brand-${option}   60
     click element   css:.qa-brand-${option}
 
-
 Add multiple brand URL as per index
     [Arguments]    ${option}
     wait until element is visible   (//input[@placeholder='example.com'])[${option}]   60
     wait until element is enabled   (//input[@placeholder='example.com'])[${option}]   60
     click element   (//input[@placeholder='example.com'])[${option}]
     Create random URL value for multiple brand addition     (//input[@placeholder='example.com'])[${option}]
-
 
 Create random URL value for multiple brand addition
     [Arguments]    ${option}
@@ -829,6 +808,16 @@ Enter contact name of contact person
     click element   css:#contactName
     input text  css:#contactName    ${contact}
     Press Keys   css:#contactName   ENTER
+
+Click on tab under key data
+    [Arguments]     ${tab_name}
+    wait until element is not visible       ${loaderIcon}       60
+    Generic.Scroll the page till        7000
+    wait until element is visible     //p[normalize-space()='${tab_name}']//following-sibling::p     60
+    ${count}=       get text        //p[normalize-space()='${tab_name}']//following-sibling::p
+    log to console      key data: ${count}
+    set global variable     ${count}
+    click element       //p[normalize-space()='${tab_name}']//following-sibling::p
 
 Click on i-icon of asset-overview tab
     wait until element is visible       css:.qa-dashboard-home-iIcon       60

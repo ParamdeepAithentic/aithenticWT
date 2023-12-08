@@ -101,4 +101,3 @@ Get verification OTP from email
     Log to console  The passcode is:${passcode}
 
     set global variable    ${passcode}
-
