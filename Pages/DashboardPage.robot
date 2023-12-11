@@ -882,7 +882,6 @@ Click on i-icon of industry under company financial information
 Click on link inside industry i-icon
     [Arguments]    ${link}
     Generic.click on the button link    ${link}
-    sleep       ${yop_sleep}
 
 Click on i-icon of company department
     wait until element is visible       css:.qa-company-department-Iicon        60
@@ -941,4 +940,3 @@ Click on i-icon inside network discovery
 Click on link inside Network_discovery i-icon
     wait until element is visible       css:a[title='Network Discovery']        60
     click element       css:a[title='Network Discovery']
-    sleep       ${yop_sleep}
