@@ -348,8 +348,7 @@ Download the selected extension file
     [Arguments]    ${option}
     Wait Until Element Is Not Visible    ${loaderIcon}      60
     wait until element is visible      //a[contains(text(),'${option}')]       60
-        wait until element is enabled     //a[contains(text(),'${option}')]       60
-
+    wait until element is enabled     //a[contains(text(),'${option}')]       60
     click element   //a[contains(text(),'${option}')]
 
 Verify that the selected extension file is downloaded

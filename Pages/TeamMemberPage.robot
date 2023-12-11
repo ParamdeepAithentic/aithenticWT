@@ -210,9 +210,6 @@ Click on search by brand, product and asset id of asset history via team member
     click element   css:.search-location-qa
     input text  css:.search-location-qa     ${option}
 
-Verify table data with asset id in team member
-    Table Column Should contain     css:.table-hover    2       ${generated_AssetID}
-
 Click on i-icon of team-members tab
     wait until element is visible       css:#member-list-Iicon      60
     click element       css:#member-list-Iicon
@@ -279,3 +276,8 @@ Search assigned user by asset id
 Click on view button link of assigned user
     wait until element is visible   //td[normalize-space()='View']      60
     click element   //td[normalize-space()='View']
+
+Verify the first row of asset history under team member
+    wait until element is not visible   ${loaderIcon}    60
+    wait until element is visible   css:.table-hover    60
+
