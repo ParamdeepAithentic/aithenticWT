@@ -1334,7 +1334,7 @@ Verify all i-icon of Technology page
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on i-icon of technology tab
     Generic.Verify pop-up is visible after clicking on i-icon
-    TechnologyPage.Click on Link inside pop-up
+    TechnologyPage.Click on Link inside pop-up of technology
     sleep   ${yop_sleep}
     switch window       Technology Overview - Jira Service Management
     Generic.Verify your current page location contains      servicedesk

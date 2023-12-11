@@ -807,6 +807,7 @@ Verify all i-icon of profile-listing
     DashboardPage.Click on i-icon of industry under company financial information
     Generic.Verify pop-up is visible after clicking on i-icon
     DashboardPage.Click on link inside industry i-icon      https://www.naics.com/search/
+    sleep       ${yop_sleep}
     switch window       NAICS & SIC Identification Tools | NAICS Association
     Generic.Verify your current page location contains      naics.com
     Generic.Verify your current page contains this text     NAICS Identification Tools
@@ -848,4 +849,5 @@ Verify all i-icon of profile-listing
     switch window       Network Discovery - Jira Service Management
     Generic.Verify your current page location contains      customer
     Generic.Verify your current page contains this text     Network Discovery
+    sleep       ${yop_sleep}
     switch window       aithentic | Network Discovery

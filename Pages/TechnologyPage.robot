@@ -1170,10 +1170,9 @@ Click on i-icon of technology tab
     wait until element is visible       css:#technology-list-Iicon      60
     click element       css:#technology-list-Iicon
 
-Click on Link inside pop-up
+Click on Link inside pop-up of technology
     wait until element is visible       css:a[title='Technology Overview Article']      60
     click link       css:a[title='Technology Overview Article']
-    sleep       ${yop_sleep}
 
 Click on i-icon of cost_center in add technology
     wait until element is visible       css:.qa-iIconSection-add-tech-cc        60
