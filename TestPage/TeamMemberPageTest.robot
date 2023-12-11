@@ -303,7 +303,8 @@ Search asset history with Asset ID
     TeamMemberPage.Click on three dots of Team Member listing
     TeamMemberPage.Select option from three dots of Team Member     Asset History
     TeamMemberPage.Click on search by brand, product and asset id of asset history via team member  ${generated_AssetID}
-    TeamMemberPage.Verify table data with asset id in team member
+    TeamMemberPage.Verify the first row of asset history under team member
+    TeamMemberPage.verify status of first name in member list   ${generated_AssetID}
 
 Verify user is able to export team member asset history list
     Generic.click on the tab	Login
@@ -327,20 +328,19 @@ Verify user is able to export team member asset history list
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
     Generic.Open new window     yopmail
     Generic.Search yopmail emails for   ${generated_TMbusinessEmail}
-
     Generic.Switch to iframe by ID      ifmail
     Generic.click on the button     Verify
     Unselect Frame
     sleep       ${yop_sleep}
     Switch Window       aithentic | Create - Account
     Generic.Verify your current page location contains     create-account
-    UserAccount.Enter the password      Test@456
-    UserAccount.Confirm the entered password    Test@456
+    UserAccount.Enter the password      Paramdeep@112
+    UserAccount.Confirm the entered password    Paramdeep@112
     UserAccount.Click on term and condition checkbox
     UserAccount.Click create account button
     Generic.Fetch alert message text and compare it with       Account created successfully.
     Generic.Verify your current page location contains     auth
-    LandingPage.Fill the login Form      ${generated_TMbusinessEmail}    Test@456
+    LandingPage.Fill the login Form      ${generated_TMbusinessEmail}    Paramdeep@112
     Switch Window    Inbox
     Generic.Refresh the existing page
     Generic.Refresh the existing page
@@ -460,7 +460,7 @@ Verify user is able to export team member asset history list
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     Generic.Verify your current page contains this text             Technology
-     Generic.select the option from the side menu    Team Members
+    Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Search Team Member by name   ${generated_TMFname}
     TeamMemberPage.Click on three dots of Team Member listing
@@ -471,21 +471,18 @@ Verify user is able to export team member asset history list
     PartnersPage.Verify that the selected extension file is downloaded       .xlsx
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
-
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .ods
     PartnersPage.Confirm to export file
     PartnersPage.Verify that the selected extension file is downloaded       .ods
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
-
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .csv
     PartnersPage.Confirm to export file
     PartnersPage.Verify that the selected extension file is downloaded       .csv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
-
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .tsv
     PartnersPage.Confirm to export file
@@ -495,13 +492,9 @@ Verify user is able to export team member asset history list
     TeamMemberPage.Click on search by brand, product and asset id of asset history via team member  ${generated_AssetID}
     TeamMemberPage.Verify the first row of asset history under team member
     TeamMemberPage.verify status of first name in member list   BrandName0914413211
-
-
     TeamMemberPage.Click on search by brand, product and asset id of asset history via team member  BrandName0914413211
     TeamMemberPage.Verify the first row of asset history under team member
     TeamMemberPage.verify status of first name in member list   Product_9110561777
-
-
     TeamMemberPage.Click on search by brand, product and asset id of asset history via team member  Product_9110561777
     TeamMemberPage.Verify the first row of asset history under team member
     TeamMemberPage.verify status of first name in member list   ${generated_AssetID}
