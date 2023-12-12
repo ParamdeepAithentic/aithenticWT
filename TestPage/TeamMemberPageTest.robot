@@ -504,9 +504,9 @@ Verify asset history of assigned users
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
-    TeamMemberPage.Select option      Assigned Users
+    TeamMemberPage.Click on assigned user tab      Assigned Users
     TeamMemberPage.Click on action button of assigned users
-    TeamMemberPage.Click on button link of assigned user    Add Assignee
+    TeamMemberPage.Select option from action button of assigned user    Add Assignee
     TeamMemberPage.Enter first name of assigned users
     TeamMemberPage.Enter last name of assigned users
     TeamMemberPage.Enter business email of assigned users
@@ -539,8 +539,7 @@ Verify asset history of assigned users
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
-    wait until element is not visible      ${loaderIcon}    60
-    Generic.Select parameter     Assigned Users
+    TeamMemberPage.Click on assigned user tab   Assigned Users
     TeamMemberPage.Search assigned user by first name   ${generated_AssigneduserFirstName}
     TeamMemberPage.Click on three dots of Team Member listing
     TeamMemberPage.Select option from three dots of Team Member     Asset History
@@ -580,9 +579,9 @@ Search asset history with Asset ID of Assigned User
     DashboardPage.Verify product added    ${generated_product}
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
-    TeamMemberPage.Select option     Assigned Users
+    TeamMemberPage.Click on assigned user tab     Assigned Users
     TeamMemberPage.Click on action button of assigned users
-    TeamMemberPage.Click on button link of assigned user    Add Assignee
+    TeamMemberPage.Select option from action button of assigned user    Add Assignee
     TeamMemberPage.Enter first name of assigned users
     TeamMemberPage.Enter last name of assigned users
     TeamMemberPage.Enter business email of assigned users

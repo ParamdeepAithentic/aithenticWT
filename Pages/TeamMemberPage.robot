@@ -285,12 +285,12 @@ Click on refresh icon of asset history under assigned user
     wait until element is visible   css:.reset-search-qa    60
     click element   css:.reset-search-qa
 
-Select option
+Click on assigned user tab
     [Arguments]     ${option}
     wait until element is not visible      ${loaderIcon}    60
-    Generic.Select parameter    ${option}
+    wait until element is visible   //span[normalize-space()='${option}']   60
+    click element   //span[normalize-space()='${option}']
 
-Click on button link of assigned user
+Select option from action button of assigned user
     [Arguments]    ${option}
     Generic.click on the button link    ${option}
-
