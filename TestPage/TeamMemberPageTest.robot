@@ -632,7 +632,7 @@ Search asset history with Asset ID of Assigned User
 Export Assigned User Asset History list
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-     Generic.select the option from the side menu    Team Members
+    Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Click on assigned user tab     Assigned Users
     TeamMemberPage.Search assigned user by first name   Assign_Param Singh_Param
