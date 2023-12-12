@@ -851,3 +851,20 @@ Verify all i-icon of profile-listing
     Generic.Verify your current page contains this text     Network Discovery
     sleep       ${yop_sleep}
     switch window       aithentic | Network Discovery
+
+Verify reports modules data
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.select the option from the side menu    Dashboard
+    DashboardPage.select the option from the dashboard drawer       Reports
+    Generic.Verify your current page location contains          reports
+    DashboardPage.Click on tab under Modules       Manage Technology
+    Generic.Verify your current page location contains          technology-list
+    Generic.Scroll Window To End
+    DashboardPage.Fetch the total count         Total Count :
+    DashboardPage.Verify number of modules are equals to total counts     Manage Technology
+    Go back
+    DashboardPage.Click on tab under Modules       Network Discovery Agents
+    Generic.Verify your current page location contains          network-discovery
+    DashboardPage.Fetch total installed Agents      Installed Agents -
+    DashboardPage.Verify number of modules are equals to total counts       Network Discovery Agents
