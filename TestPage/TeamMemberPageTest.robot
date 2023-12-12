@@ -501,12 +501,12 @@ Verify user is able to export team member asset history list
 
 Verify asset history of assigned users
     Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
-    wait until element is not visible      ${loaderIcon}    60
-    Generic.Select parameter     Assigned Users
+    TeamMemberPage.Select option      Assigned Users
     TeamMemberPage.Click on action button of assigned users
-    Generic.click on the button link    Add Assignee
+    TeamMemberPage.Click on button link of assigned user    Add Assignee
     TeamMemberPage.Enter first name of assigned users
     TeamMemberPage.Enter last name of assigned users
     TeamMemberPage.Enter business email of assigned users
@@ -580,10 +580,9 @@ Search asset history with Asset ID of Assigned User
     DashboardPage.Verify product added    ${generated_product}
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
-    wait until element is not visible      ${loaderIcon}    60
-    Generic.Select parameter     Assigned Users
+    TeamMemberPage.Select option     Assigned Users
     TeamMemberPage.Click on action button of assigned users
-    Generic.click on the button link    Add Assignee
+    TeamMemberPage.Click on button link of assigned user    Add Assignee
     TeamMemberPage.Enter first name of assigned users
     TeamMemberPage.Enter last name of assigned users
     TeamMemberPage.Enter business email of assigned users
