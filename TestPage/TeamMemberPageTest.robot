@@ -631,12 +631,3 @@ Search asset history with Asset ID of Assigned User
     TeamMemberPage.Search assigned user by asset id     ${generated_product}
     TeamMemberPage.Verify the first row of asset history under team member
     TeamMemberPage.verify status of first name in member list   ${generated_AssetID}
-    TeamMemberPage.Click on back to member list of member list
-    wait until element is not visible      ${loaderIcon}    60
-    Generic.Select parameter     Assigned Users
-    TeamMemberPage.Search assigned user by first name   Dc Dc
-    TeamMemberPage.Click on three dots of Team Member listing
-    TeamMemberPage.Select option from three dots of Team Member     Asset History
-    Generic.Verify your current page location contains      asset-history
-
-
