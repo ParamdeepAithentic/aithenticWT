@@ -946,7 +946,6 @@ Activate Manufacturer via partner
     PartnersPage.Select option from the pop up  Yes
     Generic.Fetch alert message text and compare it with      Status updated successfully
 
-
 Remove Manufacturer from partner
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
@@ -1035,8 +1034,6 @@ Remove Manufacturer from partner
     PartnersPage.Select option from three dots of partner     Remove
     PartnersPage.Select option from the pop up  Yes
     Generic.Fetch alert message text and compare it with      Partner deleted successfully
-
-
 
 View Details and check the details of Contract
     Generic.click on the tab	    Login

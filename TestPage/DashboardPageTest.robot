@@ -807,6 +807,7 @@ Verify all i-icon of profile-listing
     DashboardPage.Click on i-icon of industry under company financial information
     Generic.Verify pop-up is visible after clicking on i-icon
     DashboardPage.Click on link inside industry i-icon      https://www.naics.com/search/
+    sleep       ${yop_sleep}
     switch window       NAICS & SIC Identification Tools | NAICS Association
     Generic.Verify your current page location contains      naics.com
     Generic.Verify your current page contains this text     NAICS Identification Tools
@@ -848,4 +849,22 @@ Verify all i-icon of profile-listing
     switch window       Network Discovery - Jira Service Management
     Generic.Verify your current page location contains      customer
     Generic.Verify your current page contains this text     Network Discovery
+    sleep       ${yop_sleep}
     switch window       aithentic | Network Discovery
+
+Verify reports modules data
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.select the option from the side menu    Dashboard
+    DashboardPage.select the option from the dashboard drawer       Reports
+    Generic.Verify your current page location contains          reports
+    DashboardPage.Click on tab under Modules       Manage Technology
+    Generic.Verify your current page location contains          technology-list
+    Generic.Scroll Window To End
+    DashboardPage.Fetch the total count         Total Count :
+    DashboardPage.Verify number of modules are equals to total counts     Manage Technology
+    Go back
+    DashboardPage.Click on tab under Modules       Network Discovery Agents
+    Generic.Verify your current page location contains          network-discovery
+    DashboardPage.Fetch total installed Agents      Installed Agents -
+    DashboardPage.Verify number of modules are equals to total counts       Network Discovery Agents

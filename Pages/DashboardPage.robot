@@ -845,7 +845,7 @@ Choose options inside personal_details
 Click on tab under Technology Types
     [Arguments]     ${tab_name}
     wait until element is not visible       ${loaderIcon}       60
-     Execute JavaScript    window.scrollTo(0, document.body.scrollHeight);
+    Execute JavaScript    window.scrollTo(0, document.body.scrollHeight);
     wait until element is visible     //p[normalize-space()='${tab_name}']//following-sibling::p     60
     ${count}=       get text        //p[normalize-space()='${tab_name}']//following-sibling::p
     log to console      Technology: ${count}
@@ -882,7 +882,6 @@ Click on i-icon of industry under company financial information
 Click on link inside industry i-icon
     [Arguments]    ${link}
     Generic.click on the button link    ${link}
-    sleep       ${yop_sleep}
 
 Click on i-icon of company department
     wait until element is visible       css:.qa-company-department-Iicon        60
@@ -941,4 +940,30 @@ Click on i-icon inside network discovery
 Click on link inside Network_discovery i-icon
     wait until element is visible       css:a[title='Network Discovery']        60
     click element       css:a[title='Network Discovery']
-    sleep       ${yop_sleep}
+
+Click on tab under Modules
+    [Arguments]     ${tab_name}
+    wait until element is not visible       ${loaderIcon}       60
+    Generic.Scroll the page till        7000
+    wait until element is visible     //p[normalize-space()='${tab_name}']//following-sibling::p     120
+    ${count}=       get text        //p[normalize-space()='${tab_name}']//following-sibling::p
+    ${parts}        split string        ${count}    /
+    ${first_part}=    set variable    ${parts[0]}
+    log to console      Modules: ${first_part}
+    set global variable     ${first_part}
+    click element       //p[normalize-space()='${tab_name}']//following-sibling::p
+
+Verify number of modules are equals to total counts
+    [Arguments]    ${option}
+    should be equal      ${first_part}    ${total_count}
+    log to console      The Modules of ${option} is equal to total counts in ${option}
+
+Fetch total installed Agents
+    [Arguments]     ${data}
+    wait until element is not visible      ${loaderIcon}       60
+    wait until element is visible       //p[contains(text(),'Installed Agents -')]      60
+    ${Agent}=       get text          //p[contains(text(),'Installed Agents -')]
+    ${parts}    Split String    ${Agent}    ${data}
+    ${total_count}    Get Substring    ${parts[1]}      1
+    log to console      ${total_count}
+    set global variable     ${total_count}
