@@ -549,6 +549,3 @@ Verify asset history of assigned users
     TeamMemberPage.Search assigned user by asset id     ${generated_AssetID}
     TeamMemberPage.Click on view button link of assigned user
     Generic.Verify your current page contains this text     Technology
-
-
-
