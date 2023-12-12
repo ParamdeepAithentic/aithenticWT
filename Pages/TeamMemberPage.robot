@@ -221,11 +221,11 @@ Click on action button of assigned users
 
 Enter first name of assigned users
     ${random_string} =    Generate Random String       10      [NUMBERS]
-    ${generated_TMFname}=    Catenate    TMFname_${random_string}
+    ${generated_AssigneduserFirstName}=    Catenate    TMFname_${random_string}
     wait until element is visible       css:.qa-AssignedFirstName     60
-    input text   css:.qa-AssignedFirstName    ${generated_TMFname}
-    log to console      ${generated_TMFname}
-    set global variable       ${generated_TMFname}
+    input text   css:.qa-AssignedFirstName    ${generated_AssigneduserFirstName}
+    log to console      ${generated_AssigneduserFirstName}
+    set global variable       ${generated_AssigneduserFirstName}
 
 Enter last name of assigned users
     ${random_string} =    Generate Random String       10      [NUMBERS]
@@ -280,4 +280,8 @@ Click on view button link of assigned user
 Verify the first row of asset history under team member
     wait until element is not visible   ${loaderIcon}    60
     wait until element is visible   css:.table-hover    60
+
+Click on refresh icon of asset history under assigned user
+    wait until element is visible   css:.reset-search-qa    60
+    click element   css:.reset-search-qa
 
