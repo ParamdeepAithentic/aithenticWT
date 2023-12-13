@@ -27,6 +27,8 @@ Resource        ../Pages/LocationPage.robot
 Resource        ../Pages/OCS.robot
 Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/DepartmentPage.robot
+Resource        ../Pages/ReportsPage.robot
+Resource        ../Pages/I_iconPage.robot
 
 *** Variables ***
 ${department_ActionBTN}      css:#Team-Member-Actions

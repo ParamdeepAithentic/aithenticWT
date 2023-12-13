@@ -29,6 +29,9 @@ Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/MemberPage.robot
 Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/TeamMemberPage.robot
+Resource        ../Pages/ReportsPage.robot
+Resource        ../Pages/I_iconPage.robot
+
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
 
@@ -199,15 +202,6 @@ Verify team member Asset history
     TeamMemberPage.Click on three dots of Team Member listing
     TeamMemberPage.Select option from three dots of Team Member     Asset History
     Generic.Verify your current page contains this text     Asset History
-
-Verify all i-icon of team member page
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.select the option from the side menu    Team Members
-    Generic.Verify your current page location contains      memberslist
-    TeamMemberPage.Click on i-icon of team-members tab
-    Generic.Verify pop-up is visible after clicking on i-icon
-    TeamMemberPage.Click on i-icon of team-members tab
 
 Search asset history with Asset ID
     Generic.click on the tab	Login

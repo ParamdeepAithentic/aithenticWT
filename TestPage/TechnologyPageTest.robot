@@ -29,6 +29,9 @@ Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/MemberPage.robot
 Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/TeamMemberPage.robot
+Resource        ../Pages/ReportsPage.robot
+Resource        ../Pages/I_iconPage.robot
+
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
 
@@ -1326,43 +1329,3 @@ Edit Technology Page - Add New Support Partner and assign that Support Partner
     TechnologyPage.Wait till support partner get auto polute       ${generate_BusinessName}
     TechnologyPage.Click on update button of edit_technology page     Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
-
-Verify all i-icon of Technology page
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.select the option from the side menu    Technology
-    Generic.Verify your current page location contains      technology
-    TechnologyPage.Click on i-icon of technology tab
-    Generic.Verify pop-up is visible after clicking on i-icon
-    TechnologyPage.Click on Link inside pop-up of technology
-    sleep   ${yop_sleep}
-    switch window       Technology Overview - Jira Service Management
-    Generic.Verify your current page location contains      servicedesk
-    Generic.Verify your current page contains this text     Technology Overview
-    sleep   ${yop_sleep}
-    switch window       aithentic | Technology - List
-    TechnologyPage.Click on i-icon of technology tab
-    TechnologyPage.click on add technology button
-    Generic.Verify your current page location contains      addtechnology
-    TechnologyPage.Click technology brand input field
-    TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Select parameter from technology dropdown list      QAHardware
-    TechnologyPage.Add assetID for technology lifecycle information random
-    TechnologyPage.Click on i-icon of cost_center in add technology
-    Generic.Verify pop-up is visible after clicking on i-icon
-    TechnologyPage.Click on save technology form button
-    Generic.Fetch alert message text and compare it with        Technology created successfully
-    TechnologyPage.Click on save technology form pop button
-    TechnologyPage.Search by AssetId       ${generated_AssetID}
-    TechnologyPage.Click on the first row of the technology table
-    Generic.Verify your current page location contains     technology-details
-    TechnologyPage.Click on edit button on product details page        Edit
-    Generic.Verify your current page location contains      edit-technology
-    TechnologyPage.Click on i-icon of cost_center in edit technology
-    Generic.Verify pop-up is visible after clicking on i-icon
-    TechnologyPage.Click on i-icon of cost_center in edit technology
-    TechnologyPage.Click on Back tab          Back to Technology Details
-    TechnologyPage.Click on clone button on product details page        Clone
-    TechnologyPage.Click on i-icon of cost_center in clone technology
-    Generic.Verify pop-up is visible after clicking on i-icon
-    TechnologyPage.Click on Back tab          Back to Manage Technology

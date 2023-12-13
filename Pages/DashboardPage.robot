@@ -28,6 +28,8 @@ Resource        ../Pages/OCS.robot
 Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/TeamMemberPage.robot
+Resource        ../Pages/ReportsPage.robot
+Resource        ../Pages/I_iconPage.robot
 
 *** Variables ***
 ${Error_Message_Login}      css:.alert.alert-danger.col-md-12
@@ -102,7 +104,7 @@ ${brand_crossicon}      //div[@class='row no-gutters mb-1']//div[2]//div[1]//div
 ${brandadd_urlplusicon}     css:i[title='Click here to add Business url']
 ${Brand_threedots}      css:.three-dots
 ${brand_mainsaveButton}     //button[@type='button'][normalize-space()='Save']
-${Viewyour_addedbrandlist}      //a[normalize-space()='View Your Added Brand List']
+${Viewyour_addedbranfdlist}      //a[normalize-space()='View Your Added Brand List']
 ${Editaddress_icon}     css:i[title='Click here to edit address']
 ${zipcode_input}        css:#zip
 ${Brand_savebutton}     css:button[aria-label='Close'][type='submit']
@@ -808,162 +810,3 @@ Enter contact name of contact person
     click element   css:#contactName
     input text  css:#contactName    ${contact}
     Press Keys   css:#contactName   ENTER
-
-Click on tab under key data
-    [Arguments]     ${tab_name}
-    wait until element is not visible       ${loaderIcon}       60
-    Generic.Scroll the page till        7000
-    wait until element is visible     //p[normalize-space()='${tab_name}']//following-sibling::p     60
-    ${count}=       get text        //p[normalize-space()='${tab_name}']//following-sibling::p
-    log to console      key data: ${count}
-    set global variable     ${count}
-    click element       //p[normalize-space()='${tab_name}']//following-sibling::p
-
-Click on i-icon of asset-overview tab
-    wait until element is visible       css:.qa-dashboard-home-iIcon       60
-    click element       css:.qa-dashboard-home-iIcon
-
-Verify i-icon popup is visible
-    wait until element is visible        css:.popover-content       60
-    log to console      Yes,Pop-up is visible for i-icon content.
-
-Hover over i-icon of reports tab
-    wait until element is visible       css:.qa-technology-products-Iicon i     60
-    Mouse over       css:.qa-technology-products-Iicon i
-
-Verify hovering on i-icon shows message and compare it with
-    [Arguments]     ${option}
-    wait until element is visible       css:#technology-products-Iicon      60
-    ${title_value}    Get Element Attribute     css:#technology-products-Iicon        title
-    Log to console    Title is: ${title_value}
-    should be equal     ${title_value}        ${option}
-
-Choose options inside personal_details
-    [Arguments]     ${option}
-    Generic.Select parameter    ${option}
-
-Click on tab under Technology Types
-    [Arguments]     ${tab_name}
-    wait until element is not visible       ${loaderIcon}       60
-    Execute JavaScript    window.scrollTo(0, document.body.scrollHeight);
-    wait until element is visible     //p[normalize-space()='${tab_name}']//following-sibling::p     60
-    ${count}=       get text        //p[normalize-space()='${tab_name}']//following-sibling::p
-    log to console      Technology: ${count}
-    set global variable     ${count}
-    click element       //p[normalize-space()='${tab_name}']//following-sibling::p
-
-Fetch the total count
-    [Arguments]    ${data}
-    wait until element is visible   ${Totalcount_field}      60
-    ${text}=     get text   ${Totalcount_field}
-    ${parts}    Split String    ${text}    ${data}
-    ${total_count}    Get Substring    ${parts[1]}    3
-    Log to console  Total counts are:${total_count}
-    set global variable    ${total_count}
-
-Verify that key_data is equals to total number of counts
-    [Arguments]    ${option}
-    should be equal      ${count}    ${total_count}
-    log to console      The Key data of ${option} is equal to total counts in ${option}
-
-Choose tabs under organization
-    [Arguments]     ${option}
-    wait until element is visible       css:#nav-${option}-tab     60
-    click element       css:#nav-${option}-tab
-
-Click on i-icon of system configuration tab
-    wait until element is visible       css:#advance-search-add-technology-Iicon        60
-    click element       css:#advance-search-add-technology-Iicon
-
-Click on i-icon of industry under company financial information
-    wait until element is visible       css:.qa-company-information-financial-industry      60
-    click element       css:.qa-company-information-financial-industry
-
-Click on link inside industry i-icon
-    [Arguments]    ${link}
-    Generic.click on the button link    ${link}
-
-Click on i-icon of company department
-    wait until element is visible       css:.qa-company-department-Iicon        60
-    click element       css:.qa-company-department-Iicon
-
-Click on view added Departments list
-    [Arguments]     ${option}
-    Generic.click on the button link        ${option}
-
-Click on action menu button of department
-    wait until element is visible       css:#Team-Member-Actions        60
-    click element       css:#Team-Member-Actions
-
-Choose Add department from Action button options
-    [Arguments]    ${option}
-    Generic.click on the tab        ${option}
-
-Click on i-icon of cost_center in department
-    wait until element is visible       css:.qa-iIconSection-dept-cc        60
-    click element       css:.qa-iIconSection-dept-cc
-
-Click on cancel add department
-    [Arguments]    ${option}
-    wait until element is visible       css:.qa-${option}-department-modal        60
-    wait until element is enabled       css:.qa-${option}-department-modal        60
-    click element        css:.qa-${option}-department-modal
-    sleep       ${search_sleep}
-# option: add, close
-
-Search by Department
-    [Arguments]    ${option}
-    wait until element is visible       css:thead tr       60
-    wait until element is visible       ${dept_SearchBar}       60
-    Clear Element Text      ${dept_SearchBar}
-    ${StartTime1} =     Get Current Time in Milliseconds
-    input text      ${dept_SearchBar}   ${option}
-    wait until element is visible       css:thead tr       60
-
-Click on three dots of Department list
-    sleep       ${search_sleep}
-    wait until element is visible   ${three_dots_dept}   60
-    click element   ${three_dots_dept}
-
-Choose option from three_dots of Department
-    [Arguments]     ${option}
-    Generic.Select other option from profile list       ${option}
-
-Click on i-icon inside technology
-    wait until element is visible       css:#technology-products-Iicon      60
-    click element       css:#technology-products-Iicon
-
-Click on i-icon inside network discovery
-    wait until element is visible       css:.qa-iIconSection-network-discovery     60
-    click element       css:.qa-iIconSection-network-discovery
-
-Click on link inside Network_discovery i-icon
-    wait until element is visible       css:a[title='Network Discovery']        60
-    click element       css:a[title='Network Discovery']
-
-Click on tab under Modules
-    [Arguments]     ${tab_name}
-    wait until element is not visible       ${loaderIcon}       60
-    Generic.Scroll the page till        7000
-    wait until element is visible     //p[normalize-space()='${tab_name}']//following-sibling::p     120
-    ${count}=       get text        //p[normalize-space()='${tab_name}']//following-sibling::p
-    ${parts}        split string        ${count}    /
-    ${first_part}=    set variable    ${parts[0]}
-    log to console      Modules: ${first_part}
-    set global variable     ${first_part}
-    click element       //p[normalize-space()='${tab_name}']//following-sibling::p
-
-Verify number of modules are equals to total counts
-    [Arguments]    ${option}
-    should be equal      ${first_part}    ${total_count}
-    log to console      The Modules of ${option} is equal to total counts in ${option}
-
-Fetch total installed Agents
-    [Arguments]     ${data}
-    wait until element is not visible      ${loaderIcon}       60
-    wait until element is visible       //p[contains(text(),'Installed Agents -')]      60
-    ${Agent}=       get text          //p[contains(text(),'Installed Agents -')]
-    ${parts}    Split String    ${Agent}    ${data}
-    ${total_count}    Get Substring    ${parts[1]}      1
-    log to console      ${total_count}
-    set global variable     ${total_count}

@@ -23,6 +23,8 @@ Resource        ../Pages/SubscriptionPage.robot
 Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
 Resource        ../Pages/BillingPage.robot
+Resource        ../Pages/ReportsPage.robot
+Resource        ../Pages/I_iconPage.robot
 
 *** Variables ***
 ${billing_details_arrow}     css:.fa.fa-chevron-right.ng-star-inserted
