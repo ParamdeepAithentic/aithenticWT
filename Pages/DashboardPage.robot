@@ -967,3 +967,4 @@ Fetch total installed Agents
     ${total_count}    Get Substring    ${parts[1]}      1
     log to console      ${total_count}
     set global variable     ${total_count}
+
