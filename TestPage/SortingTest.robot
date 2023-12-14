@@ -66,3 +66,27 @@ Test the sorting of technology page table
     SortingPage.Verify the sorting of the table     8       Asset ID
     SortingPage.Verify the sorting of the table     9       Location
     SortingPage.Verify the sorting of the table     10      Assignee
+
+Test the sorting of brand page table
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      jasdeep@15963.fr.nf    Paramdeep@112
+    Generic.Click on the profile name
+    Generic.Select option from profile list     brand-dropdown
+    Generic.Verify your current page location contains      brand
+    SortingPage.Verify the sorting of the table     2       Brand Name
+    SortingPage.Verify the sorting of the table     3       Status
+
+
+Test the sorting of product page table
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      jasdeep@15963.fr.nf    Paramdeep@112
+    Generic.Click on the profile name
+    Generic.Select option from profile list     product-dropdown
+    Generic.Verify your current page location contains      product
+    SortingPage.Verify the sorting of the table     2       Product Name
+    SortingPage.Verify the sorting of the table     3       Brand Name
+    SortingPage.Verify the sorting of the table     4       Description
+    SortingPage.Verify the sorting of the table     5       Technology Group
+    SortingPage.Verify the sorting of the table     6       Status
+
+
