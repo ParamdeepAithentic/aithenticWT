@@ -31,9 +31,12 @@ Resource        ../Pages/SortingPage.robot
 
 
 *** Keywords ***
-Sort Test
-    Wait Until Element Is Visible    //tbody//tr//td[2]    60
-    ${element_list}=    Get WebElements    //tbody//tr//td[2]
+Verify the sorting of the table
+    [Arguments]    ${columnNumber}      ${headingName}
+    wait until element is not visible      ${loaderIcon}       60
+    wait until element is visible       //tbody//tr//td[normalize-space()='1']     60
+    Wait Until Element Is Visible    //tbody//tr//td[${columnNumber}]    60
+    ${element_list}=    Get WebElements    //tbody//tr//td[${columnNumber}]
 
     @{text_list}=    Create List
     FOR    ${element}    IN    @{element_list}
@@ -48,12 +51,15 @@ Sort Test
     Sort List    ${sorted_text_list}
     Log to console  Sorted Text List (Ascending): ${sorted_text_list}
 
-    Wait Until Element Is Visible    //div[normalize-space()='Asset ID']//following-sibling::div//button    60
-    click element   //div[normalize-space()='Asset ID']//following-sibling::div//button
-    wait until element is not visible      ${loaderIcon}       60
+    Wait Until Element Is Visible    //div[normalize-space()='${headingName}']//following-sibling::div//button    60
+    click element   //div[normalize-space()='${headingName}']//following-sibling::div//button
 
-    Wait Until Element Is Visible    //tbody//tr//td[2]    60
-    ${element_list}=    Get WebElements    //tbody//tr//td[2]
+#    wait until element is not visible      css:#dropdownMenuButton.disabled-button       60
+    wait until element is not visible      ${loaderIcon}       60
+    wait until element is visible       //tbody//tr//td[normalize-space()='1']     60
+
+    Wait Until Element Is Visible    //tbody//tr//td[${columnNumber}]    60
+    ${element_list}=    Get WebElements    //tbody//tr//td[${columnNumber}]
 
 
     @{text_list_after_sort_asec}=    Create List
@@ -74,12 +80,14 @@ Sort Test
     Log to console  Sorted Text List (Decending): ${sorted_list}
 
 
-    Wait Until Element Is Visible    //div[normalize-space()='Asset ID']//following-sibling::div//button    60
-    click element   //div[normalize-space()='Asset ID']//following-sibling::div//button
+    Wait Until Element Is Visible    //div[normalize-space()='${headingName}']//following-sibling::div//button    60
+    click element   //div[normalize-space()='${headingName}']//following-sibling::div//button
     wait until element is not visible      ${loaderIcon}       60
+    wait until element is visible       //tbody//tr//td[normalize-space()='1']     60
 
-    Wait Until Element Is Visible    //tbody//tr//td[2]    60
-    ${element_list}=    Get WebElements    //tbody//tr//td[2]
+
+    Wait Until Element Is Visible    //tbody//tr//td[${columnNumber}]    60
+    ${element_list}=    Get WebElements    //tbody//tr//td[${columnNumber}]
 
 
     @{text_list_after_sort_desc}=    Create List

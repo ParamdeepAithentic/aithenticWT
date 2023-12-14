@@ -34,7 +34,7 @@ Test Teardown   Close Browser session
 
 
 *** Test Cases ***
-Testing sorting
+Test the sorting of assigned user asset history page table
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      jasdeep@15963.fr.nf    Paramdeep@112
     Generic.select the option from the side menu    Team Members
@@ -44,4 +44,25 @@ Testing sorting
     TeamMemberPage.Click on three dots of Team Member listing
     TeamMemberPage.Select option from three dots of Team Member     Asset History
     Generic.Verify your current page contains this text     Export
-    SortingPage.Sort Test
+    SortingPage.Verify the sorting of the table     2       Asset ID
+    SortingPage.Verify the sorting of the table     3       Group
+    SortingPage.Verify the sorting of the table     4       Brand
+#    SortingPage.Verify the sorting of the table     5       Product
+    SortingPage.Verify the sorting of the table     6       Product Description
+    SortingPage.Verify the sorting of the table     7       Assigned Date
+
+
+Test the sorting of technology page table
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      jasdeep@15963.fr.nf    Paramdeep@112
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    SortingPage.Verify the sorting of the table     2       Group
+    SortingPage.Verify the sorting of the table     3       Brand
+    SortingPage.Verify the sorting of the table     4       Product
+    SortingPage.Verify the sorting of the table     5       Product Description
+    SortingPage.Verify the sorting of the table     6       Created Date
+    SortingPage.Verify the sorting of the table     7       Status
+    SortingPage.Verify the sorting of the table     8       Asset ID
+    SortingPage.Verify the sorting of the table     9       Location
+    SortingPage.Verify the sorting of the table     10      Assignee
