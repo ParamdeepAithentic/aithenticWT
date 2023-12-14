@@ -439,6 +439,6 @@ Click on refresh icon of asset history under assigned user
     wait until element is visible   css:.reset-search-qa    60
     click element   css:.reset-search-qa
 
-verify status of first name in member list
+verify status of first name in member list of assigned user
     [Arguments]     ${option}
     wait until element is visible   //td[normalize-space()='${option}']     60

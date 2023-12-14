@@ -158,10 +158,10 @@ Verify asset history of assigned users
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
-    TeamMemberPage.Click on assigned user tab   Assigned Users
-    TeamMemberPage.Search assigned user by first name   ${generated_AssigneduserFirstName}
-    TeamMemberPage.Click on three dots of Team Member listing
-    TeamMemberPage.Select option from three dots of Team Member     Asset History
+    MemberPage.Click on assigned user tab   Assigned Users
+    MemberPage.Search assigned user by first name   ${generated_AssigneduserFirstName}
+    MemberPage.Click on three dots of Team Member listing
+    MemberPage.Select option from three dots of Team Member     Asset History
     Generic.Verify your current page location contains      asset-history
     MemberPage.Search assigned user by asset id     ${generated_AssetID}
     MemberPage.Click on view button link of assigned user
@@ -231,22 +231,22 @@ Search asset history with Asset ID of Assigned User
     Generic.Verify your current page contains this text             Technology
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
-    TeamMemberPage.Click on assigned user tab   Assigned Users
+    MemberPage.Click on assigned user tab   Assigned Users
     MemberPage.Search assigned user by first name   ${generated_AssigneduserFirstName}
     MemberPage.Click on three dots of Team Member listing
     MemberPage.Select option from three dots of Team Member     Asset History
     Generic.Verify your current page location contains      asset-history
     MemberPage.Search assigned user by asset id     ${generated_AssetID}
     MemberPage.Verify the first row of asset history under team member
-    MemberPage.verify status of first name in member list   ${generated_BrandName}
+    MemberPage.verify status of first name in member list of assigned user   ${generated_BrandName}
     MemberPage.Click on refresh icon of asset history under assigned user
     MemberPage.Search assigned user by asset id     ${generated_BrandName}
     MemberPage.Verify the first row of asset history under team member
-    MemberPage.verify status of first name in member list   ${generated_AssetID}
+    MemberPage.verify status of first name in member list of assigned user   ${generated_AssetID}
     MemberPage.Click on refresh icon of asset history under assigned user
     MemberPage.Search assigned user by asset id     ${generated_product}
     MemberPage.Verify the first row of asset history under team member
-    MemberPage.verify status of first name in member list   ${generated_AssetID}
+    MemberPage.verify status of first name in member list of assigned user   ${generated_AssetID}
 
 Export Assigned User Asset History list
     Generic.click on the tab	Login

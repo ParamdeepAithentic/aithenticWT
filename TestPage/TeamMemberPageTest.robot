@@ -399,7 +399,7 @@ Verify user is able to export team member asset history list
     TechnologyPage.Search by AssetId       ${generated_AssetID}
     TechnologyPage.Click on the first row of the technology table
     Generic.click on the button link    Edit
-    TechnologyPage.Add assignment information assign to   Milan Johar
+    TechnologyPage.Add assignment information assign to   Kenneth Frost
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     Generic.Verify your current page contains this text             Technology
@@ -437,7 +437,7 @@ Verify user is able to export team member asset history list
     TechnologyPage.Search by AssetId       ${generated_AssetID}
     TechnologyPage.Click on the first row of the technology table
     Generic.click on the button link    Edit
-    TechnologyPage.Add assignment information assign to   Member jh
+    TechnologyPage.Add assignment information assign to   Kenneth Frost
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     Generic.Verify your current page contains this text             Technology
@@ -498,5 +498,3 @@ Verify user is able to export team member asset history list
     TeamMemberPage.Click on search by brand, product and asset id of asset history via team member  Product_9110561777
     TeamMemberPage.Verify the first row of asset history under team member
     TeamMemberPage.verify status of first name in member list   ${generated_AssetID}
-
-

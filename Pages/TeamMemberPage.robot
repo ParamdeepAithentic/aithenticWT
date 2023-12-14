@@ -196,9 +196,6 @@ Select team member location with new domain
     wait until element is enabled     //div[contains (@id, '-0')]       60
     click element   //div[contains (@id, '-0')]
 
-verify status of first name in member list
-    [Arguments]     ${option}
-    wait until element is visible   //td[normalize-space()='${option}']     60
 
 Click on back to member list of member list
     wait until element is visible   css:span[class='back']      60
