@@ -231,6 +231,8 @@ Search asset history with Asset ID
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
     Generic.Open new window     yopmail
     Generic.Search yopmail emails for   ${generated_TMbusinessEmail}
+    sleep       ${search_sleep}
+    Generic.Refresh the existing page
     Generic.Switch to iframe by ID      ifmail
     Generic.click on the button     Verify
     Unselect Frame
