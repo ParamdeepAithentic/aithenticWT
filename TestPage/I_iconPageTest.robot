@@ -46,8 +46,9 @@ Verify all i-icon of Dashboard page
     I_iconPage.Click on i-icon of asset-overview tab
     DashboardPage.select the option from the dashboard drawer   Reports
     Generic.Verify your current page location contains      reports
-    I_iconPage.Hover over i-icon of reports tab
-    I_iconPage.Verify hovering on i-icon shows message and compare it with       This data is shown of last 24hours
+    I_iconPage.Click on i-icon of reports tab
+    Generic.Verify pop-up is visible after clicking on i-icon
+    I_iconPage.Click on i-icon of reports tab
 
 Verify all i-icon of profile-listing
     Generic.click on the tab	Login
@@ -79,7 +80,7 @@ Verify all i-icon of profile-listing
     Generic.Verify pop-up is visible after clicking on i-icon
     I_iconPage.Click on i-icon of cost_center in department
     I_iconPage.Click on cancel add department        close
-    I_iconPage.Search by Department      Customer Support
+    I_iconPage.Search by Department      Communications       #Customer Support
     I_iconPage.Click on three dots of Department list
     I_iconPage.Choose option from three_dots of Department     Details
     I_iconPage.Click on i-icon of cost_center in department
@@ -132,7 +133,8 @@ Verify all i-icon of Technology page
     sleep   ${yop_sleep}
     switch window       aithentic | Technology - List
     I_iconPage.Click on i-icon of technology tab
-    TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
