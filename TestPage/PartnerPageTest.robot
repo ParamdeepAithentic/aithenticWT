@@ -123,7 +123,9 @@ Compose Message invite user test
 
 
     ${StartTime1} =     Get Current Time in Milliseconds
-    TechnologyPage.click on add technology button
+#    TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
@@ -1050,7 +1052,9 @@ View Details and check the details of Contract
     Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name   ${generate_BusinessName}
     Generic.select the option from the side menu    Technology
-    TechnologyPage.click on add technology button
+#   TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     PartnersPage.Click here to add link of contract details     Click here to add
     DashboardPage.Create random productName
     DashboardPage.Add product brand name      ${generate_BusinessName}

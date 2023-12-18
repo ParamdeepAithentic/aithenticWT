@@ -143,6 +143,8 @@ Verify team member Asset history
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
     Generic.Open new window     yopmail
     Generic.Search yopmail emails for   ${generated_TMbusinessEmail}
+    sleep       ${search_sleep}
+    Generic.Refresh the existing page
     Generic.Switch to iframe by ID      ifmail
     Generic.click on the button     Verify
     Unselect Frame
@@ -180,7 +182,9 @@ Verify team member Asset history
     TeamMemberPage.verify status of first name in member list   Active
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.click on add technology button
+#   TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
@@ -270,7 +274,9 @@ Search asset history with Asset ID
     TeamMemberPage.verify status of first name in member list   Active
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.click on add technology button
+#   TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
@@ -330,6 +336,8 @@ Verify user is able to export team member asset history list
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
     Generic.Open new window     yopmail
     Generic.Search yopmail emails for   ${generated_TMbusinessEmail}
+    sleep       ${search_sleep}
+    Generic.Refresh the existing page
     Generic.Switch to iframe by ID      ifmail
     Generic.click on the button     Verify
     Unselect Frame
@@ -367,7 +375,9 @@ Verify user is able to export team member asset history list
     TeamMemberPage.verify status of first name in member list   Active
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.click on add technology button
+#   TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       BrandName2994855826
@@ -387,7 +397,9 @@ Verify user is able to export team member asset history list
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     Generic.Verify your current page contains this text             Technology
     TeamMemberPage.Click on back to member list of member list
-    TechnologyPage.click on add technology button
+#   TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       BrandName6162258047
     TechnologyPage.Click technology product input field
@@ -401,12 +413,14 @@ Verify user is able to export team member asset history list
     TechnologyPage.Search by AssetId       ${generated_AssetID}
     TechnologyPage.Click on the first row of the technology table
     Generic.click on the button link    Edit
-    TechnologyPage.Add assignment information assign to   Kenneth Frost
+    TechnologyPage.Add assignment information assign to   Milan Johar
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     Generic.Verify your current page contains this text             Technology
     TeamMemberPage.Click on back to member list of member list
-    TechnologyPage.click on add technology button
+#   TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       BrandName0743813679
     TechnologyPage.Click technology product input field
@@ -425,7 +439,9 @@ Verify user is able to export team member asset history list
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     Generic.Verify your current page contains this text             Technology
     TeamMemberPage.Click on back to member list of member list
-    TechnologyPage.click on add technology button
+#   TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       BrandName1931299814
     TechnologyPage.Click technology product input field
@@ -439,12 +455,14 @@ Verify user is able to export team member asset history list
     TechnologyPage.Search by AssetId       ${generated_AssetID}
     TechnologyPage.Click on the first row of the technology table
     Generic.click on the button link    Edit
-    TechnologyPage.Add assignment information assign to   Kenneth Frost
+    TechnologyPage.Add assignment information assign to   Milan Johar
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     Generic.Verify your current page contains this text             Technology
     TeamMemberPage.Click on back to member list of member list
-    TechnologyPage.click on add technology button
+#   TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       BrandName0914413211
     TechnologyPage.Click technology product input field
