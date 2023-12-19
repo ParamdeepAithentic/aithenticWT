@@ -141,6 +141,9 @@ Verify team member Asset history
     TeamMemberPage.Save the team member form   save
     Generic.Fetch alert message text and compare it with        Team Member created successfully
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
+    Generic.Click on the profile name
+    Generic.Select other option from profile list     Logout
+    Generic.Fetch alert message text and compare it with        Successfully logged out
     Generic.Open new window     yopmail
     Generic.Search yopmail emails for   ${generated_TMbusinessEmail}
     sleep       ${search_sleep}
@@ -233,6 +236,9 @@ Search asset history with Asset ID
     TeamMemberPage.Save the team member form   save
     Generic.Fetch alert message text and compare it with        Team Member created successfully
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
+    Generic.Click on the profile name
+    Generic.Select other option from profile list     Logout
+    Generic.Fetch alert message text and compare it with        Successfully logged out
     Generic.Open new window     yopmail
     Generic.Search yopmail emails for   ${generated_TMbusinessEmail}
     sleep       ${search_sleep}
@@ -301,7 +307,7 @@ Search asset history with Asset ID
     Generic.Verify your current page location contains      technology-list
     TeamMemberPage.Click on three dots of Team Member listing
     TeamMemberPage.Select option from three dots of Team Member     Edit
-    TechnologyPage.Add assignment information assign to    Kenneth Frost
+    TechnologyPage.Add assignment information assign to    Milan Johar
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     Generic.Verify your current page contains this text             Technology
@@ -334,6 +340,9 @@ Verify user is able to export team member asset history list
     TeamMemberPage.Save the team member form   save
     Generic.Fetch alert message text and compare it with        Team Member created successfully
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
+    Generic.Click on the profile name
+    Generic.Select other option from profile list     Logout
+    Generic.Fetch alert message text and compare it with        Successfully logged out
     Generic.Open new window     yopmail
     Generic.Search yopmail emails for   ${generated_TMbusinessEmail}
     sleep       ${search_sleep}
@@ -352,6 +361,7 @@ Verify user is able to export team member asset history list
     Generic.Verify your current page location contains     auth
     LandingPage.Fill the login Form      ${generated_TMbusinessEmail}    Paramdeep@112
     Switch Window    Inbox
+    Generic.Refresh the existing page
     Generic.Refresh the existing page
     Generic.Refresh the existing page
     Generic.Switch to iframe by ID      ifmail

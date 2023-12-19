@@ -1208,6 +1208,6 @@ Click on Bulk_edit under action button
     wait until element is visible       //a[@title="Bulk Edit"]         60
     click element       //a[@title="Bulk Edit"]
 
-Click on Bulk_edit under action button
+Click on Bulk_import under action button
     wait until element is visible       css:.add-bulk-member-qa     60
     click element         css:.add-bulk-member-qa

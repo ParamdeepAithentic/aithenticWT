@@ -967,3 +967,10 @@ Fetch total installed Agents
     ${total_count}    Get Substring    ${parts[1]}      1
     log to console      ${total_count}
     set global variable     ${total_count}
+
+Get and verify the text and compare it with
+    [Arguments]         ${option}
+    wait until element is visible       //p[normalize-space()='${option}']         60
+    ${text}=        get text       //p[normalize-space()='${option}']
+    log to console      ${text}
+    should be equal     ${text}     ${option}

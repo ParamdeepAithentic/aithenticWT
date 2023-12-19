@@ -868,3 +868,13 @@ Verify reports modules data
     Generic.Verify your current page location contains          network-discovery
     DashboardPage.Fetch total installed Agents      Installed Agents -
     DashboardPage.Verify number of modules are equals to total counts       Network Discovery Agents
+
+Verify Brand quick_links in profile settings Dropdown
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     brand-dropdown
+    Generic.Verify your current page location contains      brand-list
+    Generic.Verify your current page contains this text     Added Brands
+    DashboardPage.Get and verify the text and compare it with   Added Brands
+
