@@ -29,6 +29,7 @@ Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
+
 *** Variables ***
 ${Error_Message_Login}      css:.alert.alert-danger.col-md-12
 ${login_heading}        css:.heading-login.d-inline-block
@@ -44,7 +45,7 @@ Click on tab under Modules
     [Arguments]     ${tab_name}
     wait until element is not visible       ${loaderIcon}       60
     Generic.Scroll the page till        7000
-    wait until element is visible     //p[normalize-space()='${tab_name}']//following-sibling::p     120
+    wait until element is visible     //p[normalize-space()='${tab_name}']//following-sibling::p     300
     ${count}=       get text        //p[normalize-space()='${tab_name}']//following-sibling::p
     ${parts}        split string        ${count}    /
     ${first_part}=    set variable    ${parts[0]}
@@ -79,6 +80,7 @@ Click on tab under Technology Types
 
 Fetch the total count
     [Arguments]    ${data}
+    wait until element is enabled       ${Totalcount_field}      60
     wait until element is visible   ${Totalcount_field}      60
     ${text}=     get text   ${Totalcount_field}
     ${parts}    Split String    ${text}    ${data}

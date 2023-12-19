@@ -1011,6 +1011,7 @@ Save the assign to
     wait until element is visible       css:.qa-${option}-assignee-modal        60
     wait until element is enabled       css:.qa-${option}-assignee-modal        60
     click element        css:.qa-${option}-assignee-modal
+    wait until element is not visible        ${loaderIcon}         60
 # options: save, cancel
 
 Select tab under technology details
@@ -1167,3 +1168,20 @@ Renewal Date via technology
     wait until element is enabled   css:#RenewalDate     60
     click element   css:#RenewalDate
     input text  css:#RenewalDate     03/26/2021
+
+Click on action button of technology
+    wait until element is not visible      ${loaderIcon}    60
+    wait until element is visible   css:#Team-Member-Actions      60
+    click element   css:#Team-Member-Actions
+
+Choose add technology from action button of technology
+    wait until element is visible       css:.add-member-technology      60
+    click element       css:.add-member-technology
+
+Click on Bulk_edit under action button
+    wait until element is visible       //a[@title="Bulk Edit"]         60
+    click element       //a[@title="Bulk Edit"]
+
+Click on Bulk_import under action button
+    wait until element is visible       css:.add-bulk-member-qa     60
+    click element         css:.add-bulk-member-qa

@@ -81,16 +81,9 @@ Verify i-icon popup is visible
     wait until element is visible        css:.popover-content       60
     log to console      Yes,Pop-up is visible for i-icon content.
 
-Hover over i-icon of reports tab
-    wait until element is visible       css:.qa-technology-products-Iicon i     60
-    Mouse over       css:.qa-technology-products-Iicon i
-
-Verify hovering on i-icon shows message and compare it with
-    [Arguments]     ${option}
-    wait until element is visible       css:#technology-products-Iicon      60
-    ${title_value}    Get Element Attribute     css:#technology-products-Iicon        title
-    Log to console    Title is: ${title_value}
-    should be equal     ${title_value}        ${option}
+Click on i-icon of reports tab
+    wait until element is visible       css:.qa-dashboard-report-Iicon     60
+    click element       css:.qa-dashboard-report-Iicon
 
 Choose options inside personal_details
     [Arguments]     ${option}
@@ -166,6 +159,7 @@ Click on i-icon inside technology
 Click on i-icon inside network discovery
     wait until element is visible       css:.qa-iIconSection-network-discovery     60
     click element       css:.qa-iIconSection-network-discovery
+    sleep       ${search_sleep}
 
 Click on link inside Network_discovery i-icon
     wait until element is visible       css:a[title='Network Discovery']        60

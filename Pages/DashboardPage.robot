@@ -104,7 +104,7 @@ ${brand_crossicon}      //div[@class='row no-gutters mb-1']//div[2]//div[1]//div
 ${brandadd_urlplusicon}     css:i[title='Click here to add Business url']
 ${Brand_threedots}      css:.three-dots
 ${brand_mainsaveButton}     //button[@type='button'][normalize-space()='Save']
-${Viewyour_addedbranfdlist}      //a[normalize-space()='View Your Added Brand List']
+${Viewyour_addedbrandlist}      //a[normalize-space()='View Your Added Brand List']
 ${Editaddress_icon}     css:i[title='Click here to edit address']
 ${zipcode_input}        css:#zip
 ${Brand_savebutton}     css:button[aria-label='Close'][type='submit']
@@ -810,3 +810,10 @@ Enter contact name of contact person
     click element   css:#contactName
     input text  css:#contactName    ${contact}
     Press Keys   css:#contactName   ENTER
+
+Get and verify the text and compare it with
+    [Arguments]         ${option}
+    wait until element is visible       //p[normalize-space()='${option}']         60
+    ${text}=        get text       //p[normalize-space()='${option}']
+    log to console      ${text}
+    should be equal     ${text}     ${option}
