@@ -149,7 +149,7 @@ Verify team member Asset history
     Generic.Fetch alert message text and compare it with        Successfully logged out
     Generic.Open new window     yopmail
     Generic.Search yopmail emails for   ${generated_TMbusinessEmail}
-    sleep       ${search_sleep}
+    sleep       1
     Generic.Refresh the existing page
     Generic.Switch to iframe by ID      ifmail
     Generic.click on the button     Verify

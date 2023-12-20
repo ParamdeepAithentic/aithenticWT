@@ -209,8 +209,9 @@ Click on search by brand, product and asset id of asset history via team member
     click element   css:.search-location-qa
     input text  css:.search-location-qa     ${option}
 
-#verify status of first name in member list
-
+verify status of first name in member list
+    [Arguments]     ${option}
+    wait until element is visible   //td[normalize-space()='${option}']     60
 Enter assign to field
     [Arguments]     ${option}
     wait until element is visible   //td[normalize-space()='${option}']     60
