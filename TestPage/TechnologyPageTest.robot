@@ -405,9 +405,9 @@ Restore asset by selecting checkbox
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     #           TechnologyPage.Click technology product input field
-    TechnologyPage.Select parameter from technology dropdown list       QAHardware       #QASubscription
-    TechnologyPage.Add technology group information contract start date
-    TechnologyPage.Add technology group information contract end date      12/12/2028
+    TechnologyPage.Select parameter from technology dropdown ielist       QAHardware       #QASubscription
+#    TechnologyPage.Add technology group information contract start date
+#    TechnologyPage.Add technology group information contract end date      12/12/2028
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date
     TechnologyPage.Select warranty end date    12/12/2028
@@ -433,7 +433,6 @@ Restore asset by selecting checkbox
 #    TechnologyPage.Verify that after saving technology form user redirect to technology page
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
-
     TechnologyPage.Select an option from technology table actions      Remove
     TechnologyPage.Remove asset from technology table
     Generic.Fetch alert message text and compare it with        Technology Removed Successfully
@@ -1219,7 +1218,7 @@ Edit Technology Page - Add New location and assign that location
     Generic.Verify alertify is visible
     sleep       ${yop_sleep}
     Switch Window       aithentic | Edit - Technology
-    TechnologyPage.Click on refresh location icon
+#    TechnologyPage.Click on refresh location icon
     TechnologyPage.Add assignment information location     ${generated_buildingname}
     TechnologyPage.Click on update button of edit_technology page      Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully

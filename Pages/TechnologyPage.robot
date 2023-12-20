@@ -124,7 +124,7 @@ ${data_table}       css:.table-scrollable.mt-1.overflow-auto.table-column-common
 
 
 ################### Restore asset from remove asset ########
-${technology_threeDot}     css:.btn.dropdown-toggle.pointer
+${technology_threeDot}      css:.btn.dropdown-toggle.pointer
 ${removePopUp}     css:.text-center.ng-star-inserted
 ${select_remove_popUp_No}     //button[normalize-space()='No']
 ${select_remove_popUp_Yes}     //button[normalize-space()='Yes']

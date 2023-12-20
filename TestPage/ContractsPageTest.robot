@@ -102,8 +102,6 @@ Technology Auto removed from dynamic contract When edit Brand and product
     Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generate_BusinessName}
 
-
-
     Generic.Click on the profile name
     Generic.Select option from profile list     product-dropdown
     Generic.Verify your current page location contains      product
