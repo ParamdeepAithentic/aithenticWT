@@ -28,6 +28,8 @@ Resource        ../Pages/OCS.robot
 Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/TeamMemberPage.robot
+Resource        ../Pages/ReportsPage.robot
+Resource        ../Pages/I_iconPage.robot
 
 *** Variables ***
 ${TMFname}     css:#FirstName
@@ -207,15 +209,11 @@ Click on search by brand, product and asset id of asset history via team member
     click element   css:.search-location-qa
     input text  css:.search-location-qa     ${option}
 
-Click on i-icon of team-members tab
-    wait until element is visible       css:#member-list-Iicon      60
-    click element       css:#member-list-Iicon
+#verify status of first name in member list
 
-verify status of first name in member list
+Enter assign to field
     [Arguments]     ${option}
     wait until element is visible   //td[normalize-space()='${option}']     60
-
-
 
 Verify the first row of asset history under team member
     wait until element is not visible   ${loaderIcon}    60

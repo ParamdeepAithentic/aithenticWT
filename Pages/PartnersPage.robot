@@ -26,6 +26,8 @@ Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
 Resource        ../Pages/OCS.robot
 Resource        ../Pages/RegisterUserPage.robot
+Resource        ../Pages/ReportsPage.robot
+Resource        ../Pages/I_iconPage.robot
 
 *** Variables ***
 ${add_Partner}     css:a[title='Add New Partner']
@@ -601,8 +603,3 @@ Verify pages with the element
     [Arguments]    ${option}
     wait until element is visible   //th[normalize-space()='${option}']     60
 # option: Yes, No
-
-Click on i-icon of partners tab
-    wait until element is visible    css:#partner-list-Iicon        60
-    click element       css:#partner-list-Iicon
-

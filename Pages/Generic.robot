@@ -28,6 +28,8 @@ Resource        ../Pages/OCS.robot
 Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/TeamMemberPage.robot
+Resource        ../Pages/ReportsPage.robot
+Resource        ../Pages/I_iconPage.robot
 
 *** Variables ***
 
@@ -105,7 +107,7 @@ click on the button
 
 click on the button link
     [Arguments]    ${option}
-    wait until element is visible      //a[normalize-space()='${option}']     60
+    wait until element is visible        //a[normalize-space()='${option}']         60
     wait until element is enabled      //a[normalize-space()='${option}']     60
     click element       //a[normalize-space()='${option}']
 

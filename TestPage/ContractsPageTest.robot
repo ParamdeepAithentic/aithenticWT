@@ -29,6 +29,9 @@ Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/MemberPage.robot
 Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/TeamMemberPage.robot
+Resource        ../Pages/ReportsPage.robot
+Resource        ../Pages/I_iconPage.robot
+
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
 
@@ -98,8 +101,6 @@ Technology Auto removed from dynamic contract When edit Brand and product
     PartnersPage.Click contact main save button
     Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generate_BusinessName}
-
-
 
     Generic.Click on the profile name
     Generic.Select option from profile list     product-dropdown
