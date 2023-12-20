@@ -28,6 +28,8 @@ Resource        ../Pages/OCS.robot
 Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/TeamMemberPage.robot
+Resource        ../Pages/ReportsPage.robot
+Resource        ../Pages/I_iconPage.robot
 
 *** Variables ***
 
@@ -247,10 +249,12 @@ Click on the first tab row of contract list page table
 
 Click on the first tab row
     [Arguments]     ${option}
+    sleep   ${yop_sleep}
     Wait Until Element Is Not Visible    ${loaderIcon}      60
     wait until element is visible    //td[normalize-space()='${option}']       60
     wait until element is enabled    //td[normalize-space()='${option}']        60
     click element    //td[normalize-space()='${option}']
+
 
 Verify technology is null
     Wait Until Element Is Visible       ${pdf_modal}    60

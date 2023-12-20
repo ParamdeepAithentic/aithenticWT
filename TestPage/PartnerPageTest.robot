@@ -28,6 +28,9 @@ Resource        ../Pages/OCS.robot
 Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/TeamMemberPage.robot
+Resource        ../Pages/ReportsPage.robot
+Resource        ../Pages/I_iconPage.robot
+
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
 
@@ -123,7 +126,9 @@ Compose Message invite user test
 
 
     ${StartTime1} =     Get Current Time in Milliseconds
-    TechnologyPage.click on add technology button
+#    TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
@@ -1050,7 +1055,9 @@ View Details and check the details of Contract
     Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name   ${generate_BusinessName}
     Generic.select the option from the side menu    Technology
-    TechnologyPage.click on add technology button
+#   TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     PartnersPage.Click here to add link of contract details     Click here to add
     DashboardPage.Create random productName
     DashboardPage.Add product brand name      ${generate_BusinessName}
@@ -1132,12 +1139,3 @@ View Details and check the details of Contract
     PartnersPage.Verify pages with the element  Item
     PartnersPage.Click on back to contract details button link
     PartnersPage.Download the contract pdf
-
-Verify all i-icon of partners page
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.select the option from the side menu    Partners
-    Generic.Verify your current page location contains      partner-listing
-    PartnersPage.Click on i-icon of partners tab
-    Generic.Verify pop-up is visible after clicking on i-icon
-    PartnersPage.Click on i-icon of partners tab

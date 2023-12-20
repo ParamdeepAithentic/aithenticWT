@@ -28,6 +28,8 @@ Resource        ../Pages/OCS.robot
 Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/TeamMemberPage.robot
+Resource        ../Pages/ReportsPage.robot
+Resource        ../Pages/I_iconPage.robot
 
 *** Variables ***
 ${TMFname}     css:#FirstName
@@ -196,9 +198,6 @@ Select team member location with new domain
     wait until element is enabled     //div[contains (@id, '-0')]       60
     click element   //div[contains (@id, '-0')]
 
-verify status of first name in member list
-    [Arguments]     ${option}
-    wait until element is visible   //td[normalize-space()='${option}']     60
 
 Click on back to member list of member list
     wait until element is visible   css:span[class='back']      60
@@ -210,87 +209,13 @@ Click on search by brand, product and asset id of asset history via team member
     click element   css:.search-location-qa
     input text  css:.search-location-qa     ${option}
 
-Click on i-icon of team-members tab
-    wait until element is visible       css:#member-list-Iicon      60
-    click element       css:#member-list-Iicon
-
-Click on action button of assigned users
-    wait until element is not visible      ${loaderIcon}    60
-    wait until element is visible   css:#Assignee-Actions      60
-    click element   css:#Assignee-Actions
-
-Enter first name of assigned users
-    ${random_string} =    Generate Random String       10      [NUMBERS]
-    ${generated_AssigneduserFirstName}=    Catenate    TMFname_${random_string}
-    wait until element is visible       css:.qa-AssignedFirstName     60
-    input text   css:.qa-AssignedFirstName    ${generated_AssigneduserFirstName}
-    log to console      ${generated_AssigneduserFirstName}
-    set global variable       ${generated_AssigneduserFirstName}
-
-Enter last name of assigned users
-    ${random_string} =    Generate Random String       10      [NUMBERS]
-    ${generated_TMLname}=    Catenate    TMLast_${random_string}
-    wait until element is visible       css:.qa-AssignedLastName    60
-    input text   css:.qa-AssignedLastName   ${generated_TMLname}
-    log to console      ${generated_TMLname}
-
-Enter business email of assigned users
-    ${random_string} =    Generate Random String       10      [NUMBERS]
-    ${generated_TMbusinessEmail}=    Catenate    TMBusinessEmail_${random_string}@yopmail.net
-    wait until element is visible       css:.qa-AssignedEmail    60
-    input text   css:.qa-AssignedEmail   ${generated_TMbusinessEmail}
-    log to console      ${generated_TMbusinessEmail}
-
-Click on save button of assigned user
-    wait until element is visible   css:.qa-save-assignee-modal     60
-    click element   css:.qa-save-assignee-modal
-
-Search assigned user by first name
-    [Arguments]    ${name}
-    wait until element is visible       css:thead tr       60
-    wait until element is visible      css:input[placeholder='Search by Assignee Name or Employee Id']     60
-    click element      css:input[placeholder='Search by Assignee Name or Employee Id']
-    input text   css:input[placeholder='Search by Assignee Name or Employee Id']   ${name}
-    sleep      ${search_sleep}
-    wait until element is visible       css:thead tr       60
-
+verify status of first name in member list
+    [Arguments]     ${option}
+    wait until element is visible   //td[normalize-space()='${option}']     60
 Enter assign to field
     [Arguments]     ${option}
-    wait until element is visible   //ng-select[contains(@placeholder,'Select Assignee')]//span[contains(@title,'Clear all')]   60
-    click element   //ng-select[contains(@placeholder,'Select Assignee')]//span[contains(@title,'Clear all')]
-    click element   css:#assignTO
-    input text   css:#assignTO   ${option}
-    wait until element is visible  //span[normalize-space()='${option}']    60
-    click element   //span[normalize-space()='${option}']
-
-Search assigned user by asset id
-    [Arguments]    ${name}
-    wait until element is visible       css:.table-hover tr       60
-    wait until element is visible      css:.search-location-qa     60
-    click element      css:.search-location-qa
-    input text   css:.search-location-qa   ${name}
-    sleep      ${search_sleep}
-    wait until element is not visible   ${loaderIcon}   60
-    wait until element is visible       css:.table-hover tr       60
-
-Click on view button link of assigned user
-    wait until element is visible   //td[normalize-space()='View']      60
-    click element   //td[normalize-space()='View']
+    wait until element is visible   //td[normalize-space()='${option}']     60
 
 Verify the first row of asset history under team member
     wait until element is not visible   ${loaderIcon}    60
     wait until element is visible   css:.table-hover    60
-
-Click on refresh icon of asset history under assigned user
-    wait until element is visible   css:.reset-search-qa    60
-    click element   css:.reset-search-qa
-
-Click on assigned user tab
-    [Arguments]     ${option}
-    wait until element is not visible      ${loaderIcon}    60
-    wait until element is visible   //span[normalize-space()='${option}']   60
-    click element   //span[normalize-space()='${option}']
-
-Select option from action button of assigned user
-    [Arguments]    ${option}
-    Generic.click on the button link    ${option}
