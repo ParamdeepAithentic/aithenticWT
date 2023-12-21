@@ -28,6 +28,8 @@ Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
 Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/TeamMemberPage.robot
+Resource        ../Pages/ReportsPage.robot
+Resource        ../Pages/I_iconPage.robot
 
 
 *** Variables ***
@@ -61,6 +63,7 @@ Replace Domain
     # Define the JSON object
     ${json_object} =    Create Dictionary
     ...    old=www.yopmail.net
+#     ...    old=www.cool.fr.nf
     ...    new=www.${NewDomain}.com
 
      # Define the JSON array

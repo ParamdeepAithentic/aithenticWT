@@ -28,6 +28,8 @@ Resource        ../Pages/OCS.robot
 Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/TeamMemberPage.robot
+Resource        ../Pages/ReportsPage.robot
+Resource        ../Pages/I_iconPage.robot
 
 *** Variables ***
 ${TMFname}     css:#FirstName
@@ -93,6 +95,14 @@ Enter team member business email_mailinator
     input text   ${TMBusinessEmail}   ${generated_TMbusinessEmail}
     log to console      ${generated_TMbusinessEmail}
 
+Enter team member business email with cool fr nf email
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_TMbusinessEmail}=    Catenate    TMBusinessEmail_${random_string}@cool.fr.nf
+    wait until element is visible       ${TMBusinessEmail}    60
+    input text   ${TMBusinessEmail}   ${generated_TMbusinessEmail}
+    log to console      ${generated_TMbusinessEmail}
+    set global variable     ${generated_TMbusinessEmail}
+
 
 Click on team member department
     wait until element is enabled     ${TMDepartmentName}     60
@@ -111,6 +121,7 @@ Select team member department
     wait until element is visible       ${TMDepartmentName}     60
     input text      ${TMDepartmentName}         ${option}
     Generic.Select parameter        ${option}
+
 
 Select team member role
     [Arguments]    ${option}
@@ -146,7 +157,7 @@ Search Team Member by name
     Clear Element Text      ${name_SearchBar}
     ${StartTime1} =     Get Current Time in Milliseconds
     input text   ${name_SearchBar}   ${name}
-    sleep      1
+    sleep      ${search_sleep}
     wait until element is visible       css:thead tr       60
 
 Click on three dots of Team Member listing
@@ -181,3 +192,30 @@ Verify resulted row contains Dept_name
     wait until element is visible       css:.table.department       60
     sleep       ${search_sleep}
     Table column should contain      css:.table.department      2       ${generated_DepartmentNumber}
+
+Select team member location with new domain
+    wait until element is visible     //div[contains (@id, '-0')]       60
+    wait until element is enabled     //div[contains (@id, '-0')]       60
+    click element   //div[contains (@id, '-0')]
+
+
+Click on back to member list of member list
+    wait until element is visible   css:span[class='back']      60
+    click element   css:span[class='back']
+
+Click on search by brand, product and asset id of asset history via team member
+    [Arguments]     ${option}
+    wait until element is visible   css:.search-location-qa     60
+    click element   css:.search-location-qa
+    input text  css:.search-location-qa     ${option}
+
+verify status of first name in member list
+    [Arguments]     ${option}
+    wait until element is visible   //td[normalize-space()='${option}']     60
+Enter assign to field
+    [Arguments]     ${option}
+    wait until element is visible   //td[normalize-space()='${option}']     60
+
+Verify the first row of asset history under team member
+    wait until element is not visible   ${loaderIcon}    60
+    wait until element is visible   css:.table-hover    60

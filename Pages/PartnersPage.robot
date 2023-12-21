@@ -26,6 +26,8 @@ Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
 Resource        ../Pages/OCS.robot
 Resource        ../Pages/RegisterUserPage.robot
+Resource        ../Pages/ReportsPage.robot
+Resource        ../Pages/I_iconPage.robot
 
 *** Variables ***
 ${add_Partner}     css:a[title='Add New Partner']
@@ -348,8 +350,7 @@ Download the selected extension file
     [Arguments]    ${option}
     Wait Until Element Is Not Visible    ${loaderIcon}      60
     wait until element is visible      //a[contains(text(),'${option}')]       60
-        wait until element is enabled     //a[contains(text(),'${option}')]       60
-
+    wait until element is enabled     //a[contains(text(),'${option}')]       60
     click element   //a[contains(text(),'${option}')]
 
 Verify that the selected extension file is downloaded
@@ -602,4 +603,3 @@ Verify pages with the element
     [Arguments]    ${option}
     wait until element is visible   //th[normalize-space()='${option}']     60
 # option: Yes, No
-

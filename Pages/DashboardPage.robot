@@ -28,6 +28,8 @@ Resource        ../Pages/OCS.robot
 Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/TeamMemberPage.robot
+Resource        ../Pages/ReportsPage.robot
+Resource        ../Pages/I_iconPage.robot
 
 *** Variables ***
 ${Error_Message_Login}      css:.alert.alert-danger.col-md-12
@@ -111,7 +113,15 @@ ${Select_city while adding brand}   css:#City
 ${Select_state while adding brand}  css:#State
 ${clickadd_newaddress}  //span[@title='Click here to add address']
 ${share_toEmail}      css:#toEmail
+${Totalcount_field}        css:.qa-total-count-list
+${dept_searchbar}       css:input[placeholder='Search by Department Name']
+${three_dots_dept}      css:.three-dots
 
+
+${search_technology_group}     css:.qa-selectedTechnologyGroups input
+
+${search_technology_group}      (//div[@class='ng-input']//input)[2]
+${search_by_brand_name}            (//div[@class='ng-input']//input)[3]
 
 
 *** Keywords ***
@@ -378,13 +388,10 @@ Verify Brand added
      ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
      Calculate Running time  10  ${pageHeading}   DashboardPage - Verify Brand added      10    ${pageTime}     ${ActualTime}    DashboardPage_Time
 
-
-
 select the option from the dashboard drawer
     [Arguments]     ${option}
     wait until element is visible    //span[normalize-space()='${option}']      60
     click element    //span[normalize-space()='${option}']
-
 
 ################################### WELCOME PAGE AND AHEAD ###############
 Click on complete setup button
@@ -392,18 +399,15 @@ Click on complete setup button
     wait until element is visible    //button[normalize-space()='${option}']        60
     click element    //button[normalize-space()='${option}']
 
-
 Select the asset ID checkbox
     [Arguments]     ${option}
     wait until element is visible    css:.checkmark.qa-inner-customcheckbox-asset-id-${option}      60
     click element    css:.checkmark.qa-inner-customcheckbox-asset-id-${option}
 
-
 Select the employee ID checkbox
     [Arguments]     ${option}
     wait until element is visible    css:.checkmark.qa-inner-customcheckbox-employee-id-${option}       60
     click element    css:.checkmark.qa-inner-customcheckbox-employee-id-${option}
-
 
 Select the location ID checkbox
     [Arguments]     ${option}
@@ -439,7 +443,6 @@ Select option from technology type column
     Double click element      css:.ag-center-cols-container div[col-id='${option}']
     wait until element is visible      css:div[aria-label='List'] div:nth-child(4) div    60
     click element       css:div[aria-label='List'] div:nth-child(4) div
-
 
 Double click
     [Arguments]    ${option}
@@ -541,7 +544,6 @@ Verify the drawer list parameters
    END
    lists should be equal    ${expectedList}    ${actualList}
 
-
 #####NOT WORKING#########
 Verify the profile option list parameters
     wait until element is visible    ${profile_option}      60
@@ -578,7 +580,6 @@ Enter Brand Address Line one
     input text      ${address_Line}     ${generate_AddressLineone}
     log to console      ${generate_AddressLineone}
 
-
 Enter Brand address line two
     wait until element is visible     ${address_line2}         60
     wait until element is enabled     ${address_line2}         60
@@ -587,7 +588,6 @@ Enter Brand address line two
     ${generate_AddressLine2}=    Catenate    Address_${random_string}
     input text      ${address_line2}     ${generate_AddressLine2}
     log to console      ${generate_AddressLine2}
-
 
 Select State
     [Arguments]     ${country}
@@ -629,7 +629,6 @@ Enter Brand New Address Line one
     Press Keys  ${address_Line}            ENTER
     log to console      ${generate_newaddressone}
 
-
 Enter Brand new address line two
     wait until element is visible     ${address_line2}         60
     click element      ${address_line2}
@@ -637,7 +636,6 @@ Enter Brand new address line two
     ${generate_newaddresstwo}=    Catenate    Address_${random_string}
     input text      ${address_line2}     ${generate_newaddresstwo}
     log to console  ${generate_newaddresstwo}
-
 
 Click on main Save Button
     wait until element is visible   ${brand_mainsaveButton}    60
@@ -662,7 +660,6 @@ Click on Send Invite button
 Click on Register button in email
     wait until element is visible       css:button[type='button']       60
     click element       css:button[type='button']
-
 
 Enter business email
     wait until element is enabled       ${register_Email}        60
@@ -733,7 +730,6 @@ Edit Brand Address Line one
     input text   ${editbrand_addressline1}       ${generate_editAddressLine1}
     log to console      ${generate_editAddressLine1}
 
-
 Edit Brand Address Line two
     wait until element is not visible   ${loaderIcon}    60
     wait until element is visible   ${editbrand_addressline2}           60
@@ -744,7 +740,6 @@ Edit Brand Address Line two
     ${generate_editAddressLine2}=    Catenate    Address_${random_string}
     input text   ${editbrand_addressline2}        ${generate_editAddressLine2}
     log to console      ${generate_editAddressLine2}
-
 
 Edit State while edit address
     [Arguments]     ${State}
@@ -775,7 +770,6 @@ Edit New Brand Address Line one
     Press Keys  ${editnew_brandaddressline1}             ENTER
     log to console      ${generateNew_editAddressLine1}
 
-
 Edit New Brand Address Line two
     wait until element is not visible   ${loaderIcon}    60
     wait until element is visible   ${editnew_brandaddressline2}           60
@@ -785,7 +779,6 @@ Edit New Brand Address Line two
     ${generateNew_editAddressLine2}=    Catenate    Address_${random_string}
     input text   ${editnew_brandaddressline2}        ${generateNew_editAddressLine2}
     log to console      ${generateNew_editAddressLine2}
-
 
 Select New Address State
     [Arguments]     ${country}
@@ -803,7 +796,6 @@ Select option from the pop up
     wait until element is visible   css:.qa-brand-${option}   60
     click element   css:.qa-brand-${option}
 
-
 Add multiple brand URL as per index
     [Arguments]    ${option}
     wait until element is visible   (//input[@placeholder='example.com'])[${option}]   60
@@ -811,14 +803,12 @@ Add multiple brand URL as per index
     click element   (//input[@placeholder='example.com'])[${option}]
     Create random URL value for multiple brand addition     (//input[@placeholder='example.com'])[${option}]
 
-
 Create random URL value for multiple brand addition
     [Arguments]    ${option}
     ${random_string} =    Generate Random String       15      [NUMBERS]
     ${generated_random_value}=    Catenate   ${random_string}.com
     input text   ${option}   ${generated_random_value}
     log to console      ${generated_random_value}
-
 
 Enter contact name of contact person
     [Arguments]     ${contact}
@@ -828,4 +818,65 @@ Enter contact name of contact person
     input text  css:#contactName    ${contact}
     Press Keys   css:#contactName   ENTER
 
+Choose options inside personal_details
+    [Arguments]     ${option}
+    Generic.Select parameter    ${option}
 
+Click on view added Departments list
+    [Arguments]     ${option}
+    Generic.click on the button link        ${option}
+
+Click on action menu button of department
+    wait until element is visible       css:#Team-Member-Actions        60
+    click element       css:#Team-Member-Actions
+
+Choose Add department from Action button options
+    [Arguments]    ${option}
+    Generic.click on the tab        ${option}
+
+Click on cancel add department
+    [Arguments]    ${option}
+    wait until element is visible       css:.qa-${option}-department-modal        60
+    wait until element is enabled       css:.qa-${option}-department-modal        60
+    click element        css:.qa-${option}-department-modal
+    sleep       ${search_sleep}
+# option: add, close
+
+Search by Department
+    [Arguments]    ${option}
+    wait until element is visible       css:thead tr       60
+    wait until element is visible       ${dept_SearchBar}       60
+    Clear Element Text      ${dept_SearchBar}
+    ${StartTime1} =     Get Current Time in Milliseconds
+    input text      ${dept_SearchBar}   ${option}
+    wait until element is visible       css:thead tr       60
+
+Click on three dots of Department list
+    sleep       ${search_sleep}
+    wait until element is visible   ${three_dots_dept}   60
+    click element   ${three_dots_dept}
+
+Choose option from three_dots of Department
+    [Arguments]     ${option}
+    Generic.Select other option from profile list       ${option}
+
+Search by technology-group
+    [Arguments]    ${technology_group}
+    wait until element is visible    ${search_technology_group}           60
+    wait until element is enabled     ${search_technology_group}          60
+    click element       ${search_technology_group}
+    Clear Element Text          ${search_technology_group}
+    input text       ${search_technology_group}        ${technology_group}
+
+Check the value after search
+    wait until element is visible     //div[contains (@id, '-0')]       60
+    wait until element is enabled     //div[contains (@id, '-0')]       60
+    click element   //div[contains (@id, '-0')]
+
+Search by brand name
+    [Arguments]    ${brand_name}
+    wait until element is visible    ${search_by_brand_name}           60
+    wait until element is enabled     ${search_by_brand_name}          60
+    click element       ${search_by_brand_name}
+    Clear Element Text          ${search_by_brand_name}
+    input text       ${search_by_brand_name}        ${brand_name}

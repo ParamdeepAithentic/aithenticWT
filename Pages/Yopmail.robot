@@ -28,7 +28,8 @@ Resource        ../Pages/OCS.robot
 Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/TeamMemberPage.robot
-
+Resource        ../Pages/ReportsPage.robot
+Resource        ../Pages/I_iconPage.robot
 
 *** Variables ***
 ${user_name}             rahulshettyacademy
@@ -101,4 +102,3 @@ Get verification OTP from email
     Log to console  The passcode is:${passcode}
 
     set global variable    ${passcode}
-

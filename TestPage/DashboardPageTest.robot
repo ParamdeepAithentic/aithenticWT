@@ -29,6 +29,8 @@ Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/MemberPage.robot
 Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/TeamMemberPage.robot
+Resource        ../Pages/ReportsPage.robot
+Resource        ../Pages/I_iconPage.robot
 
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
@@ -122,7 +124,6 @@ Create a new product with adding new brand
     DashboardPage.Save added product details
     Generic.Fetch alert message text and compare it with        Product created successfully
     DashboardPage.Verify product added    ${generated_product}
-
 
 Add Product Bulk Edit
     Generic.click on the tab	Login
@@ -254,6 +255,9 @@ Invite user into Aithentic
     DashboardPage.Click on Send Invite button
     Generic.Verify alertify is visible
     Generic.Fetch alert message text and compare it with        Invite sent successfully
+    Generic.Click on the profile name
+    Generic.Select other option from profile list     Logout
+    Generic.Fetch alert message text and compare it with        Successfully logged out
     Generic.Open new window      yopmail
     Generic.Search yopmail emails for       ${generate_sharetoEmail}
     Generic.Refresh the existing page
@@ -680,16 +684,11 @@ Verify adding a new brand from profile listing
     DashboardPage.Click add brand button
     DashboardPage.Create random brandName
     DashboardPage.Add brand manufacturer country      United States
-
     DashboardPage.Add multiple brand URL as per index     1
     DashboardPage.click on Plus icon
-
     DashboardPage.Add multiple brand URL as per index     2
     DashboardPage.click on Plus icon
-
     DashboardPage.Add multiple brand URL as per index     3
-
-
     DashboardPage.Save added brand details
     Generic.Fetch alert message text and compare it with        Brand created successfully.
     DashboardPage.Click added brand main save button
@@ -699,19 +698,93 @@ Verify adding a new brand from profile listing
     DashboardPage.Select option from the pop up     yes
     Generic.Fetch alert message text and compare it with      Brand deleted successfully
 
+Verify Department quick_links in profile settings dropdown
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list      department-dropdown
+    Generic.Verify your current page location contains       department-list
+    Generic.Verify your current page contains this text    Added Departments
+    DashboardPage.Get and verify the text and compare it with     Added Departments
 
+Search By Technology Group in product list
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     brand-dropdown
+    Generic.Verify your current page location contains      brand
+    DashboardPage.Click add brand button
+    DashboardPage.Create random brandName
+    DashboardPage.Add business manufacturer URL       ${generated_BrandName}
+    DashboardPage.Add brand manufacturer country      United States
+    DashboardPage.Save added brand details
+    DashboardPage.Click added brand main save button
+    Generic.Fetch alert message text and compare it with        Brand created successfully.
+    DashboardPage.Verify Brand added      ${generated_BrandName}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     product-dropdown
+    Generic.Verify your current page location contains      product
+    DashboardPage.Click on action button
+    DashboardPage.Click add product button
+    DashboardPage.Create random productName
+    DashboardPage.Add product brand name      ${generated_BrandName}
+    DashboardPage.Add product description
+    DashboardPage.Add product feature
+    DashboardPage.Select product technology type     License
+    DashboardPage.Select product technology group     Applications
+    DashboardPage.Select product status   Active
+    DashboardPage.Save added product details
+    Generic.Fetch alert message text and compare it with        Product created successfully
+    DashboardPage.Search by technology-group        Applications
+    DashboardPage.Check the value after search
+    DashboardPage.Verify product added    ${generated_product}
 
+Verify Brand quick_links in profile settings Dropdown
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     brand-dropdown
+    Generic.Verify your current page location contains      brand-list
+    Generic.Verify your current page contains this text     Added Brands
+    DashboardPage.Get and verify the text and compare it with   Added Brands
 
+Verify Product quick_links in profile settings dropdown
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list      product-dropdown
+    Generic.Verify your current page location contains       product-list
+    Generic.Verify your current page contains this text    Added Products
+    DashboardPage.Get and verify the text and compare it with       Added Products
 
-
-
-
-
-
-
-
-
-
-
-
-
+Search By Brand name in product list
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     brand-dropdown
+    Generic.Verify your current page location contains      brand
+    DashboardPage.Click add brand button
+    DashboardPage.Create random brandName
+    DashboardPage.Add business manufacturer URL       ${generated_BrandName}
+    DashboardPage.Add brand manufacturer country      United States
+    DashboardPage.Save added brand details
+    DashboardPage.Click added brand main save button
+    Generic.Fetch alert message text and compare it with        Brand created successfully.
+    DashboardPage.Verify Brand added      ${generated_BrandName}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     product-dropdown
+    Generic.Verify your current page location contains      product
+    DashboardPage.Click on action button
+    DashboardPage.Click add product button
+    DashboardPage.Create random productName
+    DashboardPage.Add product brand name      ${generated_BrandName}
+    DashboardPage.Add product description
+    DashboardPage.Add product feature
+    DashboardPage.Select product technology type     License
+    DashboardPage.Select product technology group     Applications
+    DashboardPage.Select product status   Active
+    DashboardPage.Save added product details
+    Generic.Fetch alert message text and compare it with        Product created successfully
+    DashboardPage.Search by brand name      ${generated_BrandName}
+    DashboardPage.Check the value after search
+    DashboardPage.Verify product added    ${generated_product}

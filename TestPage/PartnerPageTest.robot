@@ -28,6 +28,9 @@ Resource        ../Pages/OCS.robot
 Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/TeamMemberPage.robot
+Resource        ../Pages/ReportsPage.robot
+Resource        ../Pages/I_iconPage.robot
+
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
 
@@ -123,7 +126,9 @@ Compose Message invite user test
 
 
     ${StartTime1} =     Get Current Time in Milliseconds
-    TechnologyPage.click on add technology button
+#    TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
@@ -195,6 +200,7 @@ Compose Message invite user test
     Generic.Fetch alert message text and compare it with        Contract created successfully
     ContractsPage.Search by contract BrandName      ${generate_BusinessName}
     ContractsPage.Fetch the contract ID from the row
+    ContractsPage.Search by contract BrandName      ${generate_BusinessName}
     ContractsPage.Fetch the contract Brand Name from the row      ${generate_BusinessName}
 #--------------------------------------YOP mail -----------------------------------------------------------
 
@@ -946,7 +952,6 @@ Activate Manufacturer via partner
     PartnersPage.Select option from the pop up  Yes
     Generic.Fetch alert message text and compare it with      Status updated successfully
 
-
 Remove Manufacturer from partner
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
@@ -1036,8 +1041,6 @@ Remove Manufacturer from partner
     PartnersPage.Select option from the pop up  Yes
     Generic.Fetch alert message text and compare it with      Partner deleted successfully
 
-
-
 View Details and check the details of Contract
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
@@ -1053,7 +1056,9 @@ View Details and check the details of Contract
     Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name   ${generate_BusinessName}
     Generic.select the option from the side menu    Technology
-    TechnologyPage.click on add technology button
+#   TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     PartnersPage.Click here to add link of contract details     Click here to add
     DashboardPage.Create random productName
     DashboardPage.Add product brand name      ${generate_BusinessName}
