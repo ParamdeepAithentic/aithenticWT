@@ -19,6 +19,8 @@ Resource        ../Pages/UserAccount.robot
 Resource        ../Pages/TwoFactorAuth.robot
 Resource        ../Pages/SubscriptionPage.robot
 Resource        ../Pages/MessagePage.robot
+Resource        ../Pages/ReportsPage.robot
+Resource        ../Pages/I_iconPage.robot
 
 *** Variables ***
 ${Error_Message_Login}      css:.alert.alert-danger.col-md-12

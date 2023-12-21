@@ -28,6 +28,8 @@ Resource        ../Pages/OCS.robot
 Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/TeamMemberPage.robot
+Resource        ../Pages/ReportsPage.robot
+Resource        ../Pages/I_iconPage.robot
 
 
 *** Variables ***
@@ -122,7 +124,7 @@ ${data_table}       css:.table-scrollable.mt-1.overflow-auto.table-column-common
 
 
 ################### Restore asset from remove asset ########
-${technology_threeDot}     css:.btn.dropdown-toggle.pointer
+${technology_threeDot}      css:.btn.dropdown-toggle.pointer
 ${removePopUp}     css:.text-center.ng-star-inserted
 ${select_remove_popUp_No}     //button[normalize-space()='No']
 ${select_remove_popUp_Yes}     //button[normalize-space()='Yes']
@@ -1009,6 +1011,7 @@ Save the assign to
     wait until element is visible       css:.qa-${option}-assignee-modal        60
     wait until element is enabled       css:.qa-${option}-assignee-modal        60
     click element        css:.qa-${option}-assignee-modal
+    wait until element is not visible        ${loaderIcon}         60
 # options: save, cancel
 
 Select tab under technology details
@@ -1166,31 +1169,19 @@ Renewal Date via technology
     click element   css:#RenewalDate
     input text  css:#RenewalDate     03/26/2021
 
-Click on i-icon of technology tab
-    wait until element is visible       css:#technology-list-Iicon      60
-    click element       css:#technology-list-Iicon
-
-Click on Link inside pop-up of technology
-    wait until element is visible       css:a[title='Technology Overview Article']      60
-    click link       css:a[title='Technology Overview Article']
-
-Click on i-icon of cost_center in add technology
-    wait until element is visible       css:.qa-iIconSection-add-tech-cc        60
-    click element       css:.qa-iIconSection-add-tech-cc
-
-Click on i-icon of cost_center in edit technology
-    wait until element is visible       css:.qa-iIconSection-edit-tech-cc       60
-    click element   css:.qa-iIconSection-edit-tech-cc
-
-Click on Back tab
-    [Arguments]     ${option}
-    Generic.Select parameter        ${option}
-
-Click on clone button on product details page
-    [Arguments]    ${option}
-    Generic.click on the button link     ${option}
+Click on action button of technology
     wait until element is not visible      ${loaderIcon}    60
+    wait until element is visible   css:#Team-Member-Actions      60
+    click element   css:#Team-Member-Actions
 
-Click on i-icon of cost_center in clone technology
-    wait until element is visible       css:.qa-iIconSection-add-tech-cc        60
-    click element       css:.qa-iIconSection-add-tech-cc
+Choose add technology from action button of technology
+    wait until element is visible   css:.add-member-technology      60
+    click element   css:.add-member-technology
+
+Click on Bulk_edit under action button
+    wait until element is visible       //a[@title="Bulk Edit"]         60
+    click element       //a[@title="Bulk Edit"]
+
+Click on Bulk_import under action button
+    wait until element is visible       css:.add-bulk-member-qa     60
+    click element         css:.add-bulk-member-qa
