@@ -117,7 +117,7 @@ ${Totalcount_field}        css:.qa-total-count-list
 ${dept_searchbar}       css:input[placeholder='Search by Department Name']
 ${three_dots_dept}      css:.three-dots
 
-${search_technology_group}     //div[@aria-expanded='true']//child::input
+${search_technology_group}     css:.qa-selectedTechnologyGroups input
 
 *** Keywords ***
 Click on add department
