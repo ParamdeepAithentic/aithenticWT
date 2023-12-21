@@ -405,7 +405,7 @@ Restore asset by selecting checkbox
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     #           TechnologyPage.Click technology product input field
-    TechnologyPage.Select parameter from technology dropdown ielist       QAHardware       #QASubscription
+    TechnologyPage.Select parameter from technology dropdown list     QASubscription
 #    TechnologyPage.Add technology group information contract start date
 #    TechnologyPage.Add technology group information contract end date      12/12/2028
     TechnologyPage.Add assetID for technology lifecycle information random
