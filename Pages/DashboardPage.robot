@@ -117,7 +117,12 @@ ${Totalcount_field}        css:.qa-total-count-list
 ${dept_searchbar}       css:input[placeholder='Search by Department Name']
 ${three_dots_dept}      css:.three-dots
 
+
 ${search_technology_group}     css:.qa-selectedTechnologyGroups input
+
+${search_technology_group}      (//div[@class='ng-input']//input)[2]
+${search_by_brand_name}            (//div[@class='ng-input']//input)[3]
+
 
 *** Keywords ***
 Click on add department
@@ -860,7 +865,7 @@ Search by technology-group
     wait until element is visible    ${search_technology_group}           60
     wait until element is enabled     ${search_technology_group}          60
     click element       ${search_technology_group}
-#    Clear Element Text          ${search_technology_group}
+    Clear Element Text          ${search_technology_group}
     input text       ${search_technology_group}        ${technology_group}
 
 Check the value after search
@@ -868,9 +873,10 @@ Check the value after search
     wait until element is enabled     //div[contains (@id, '-0')]       60
     click element   //div[contains (@id, '-0')]
 
-Get and verify the text and compare it with
-    [Arguments]         ${option}
-    wait until element is visible       //p[normalize-space()='${option}']         60
-    ${text}=        get text       //p[normalize-space()='${option}']
-    log to console      ${text}
-    should be equal     ${text}     ${option}
+Search by brand name
+    [Arguments]    ${brand_name}
+    wait until element is visible    ${search_by_brand_name}           60
+    wait until element is enabled     ${search_by_brand_name}          60
+    click element       ${search_by_brand_name}
+    Clear Element Text          ${search_by_brand_name}
+    input text       ${search_by_brand_name}        ${brand_name}
