@@ -707,6 +707,38 @@ Verify Department quick_links in profile settings dropdown
     Generic.Verify your current page contains this text    Added Departments
     DashboardPage.Get and verify the text and compare it with     Added Departments
 
+Search By Technology Group in product list
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     brand-dropdown
+    Generic.Verify your current page location contains      brand
+    DashboardPage.Click add brand button
+    DashboardPage.Create random brandName
+    DashboardPage.Add business manufacturer URL       ${generated_BrandName}
+    DashboardPage.Add brand manufacturer country      United States
+    DashboardPage.Save added brand details
+    DashboardPage.Click added brand main save button
+    Generic.Fetch alert message text and compare it with        Brand created successfully.
+    DashboardPage.Verify Brand added      ${generated_BrandName}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     product-dropdown
+    Generic.Verify your current page location contains      product
+    DashboardPage.Click on action button
+    DashboardPage.Click add product button
+    DashboardPage.Create random productName
+    DashboardPage.Add product brand name      ${generated_BrandName}
+    DashboardPage.Add product description
+    DashboardPage.Add product feature
+    DashboardPage.Select product technology type     License
+    DashboardPage.Select product technology group     Applications
+    DashboardPage.Select product status   Active
+    DashboardPage.Save added product details
+    Generic.Fetch alert message text and compare it with        Product created successfully
+    DashboardPage.Search by technology-group        Applications
+    DashboardPage.Check the value after search
+    DashboardPage.Verify product added    ${generated_product}
+
 Verify Brand quick_links in profile settings Dropdown
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
