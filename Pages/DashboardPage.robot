@@ -117,6 +117,8 @@ ${Totalcount_field}        css:.qa-total-count-list
 ${dept_searchbar}       css:input[placeholder='Search by Department Name']
 ${three_dots_dept}      css:.three-dots
 
+${search_technology_group}     //div[@aria-expanded='true']//child::input
+
 *** Keywords ***
 Click on add department
     wait until element is visible      ${add_dept_btn}      60
@@ -852,6 +854,19 @@ Click on three dots of Department list
 Choose option from three_dots of Department
     [Arguments]     ${option}
     Generic.Select other option from profile list       ${option}
+
+Search by technology-group
+    [Arguments]    ${technology_group}
+    wait until element is visible    ${search_technology_group}           60
+    wait until element is enabled     ${search_technology_group}          60
+    click element       ${search_technology_group}
+#    Clear Element Text          ${search_technology_group}
+    input text       ${search_technology_group}        ${technology_group}
+
+Check the value after search
+    wait until element is visible     //div[contains (@id, '-0')]       60
+    wait until element is enabled     //div[contains (@id, '-0')]       60
+    click element   //div[contains (@id, '-0')]
 
 Get and verify the text and compare it with
     [Arguments]         ${option}
