@@ -117,7 +117,7 @@ ${Totalcount_field}        css:.qa-total-count-list
 ${dept_searchbar}       css:input[placeholder='Search by Department Name']
 ${three_dots_dept}      css:.three-dots
 
-${search_technology_group}      (//div[@class='ng-input']//input)[2]
+${search_technology_group}     //div[@aria-expanded='true']//child::input
 
 *** Keywords ***
 Click on add department
@@ -860,7 +860,7 @@ Search by technology-group
     wait until element is visible    ${search_technology_group}           60
     wait until element is enabled     ${search_technology_group}          60
     click element       ${search_technology_group}
-    Clear Element Text          ${search_technology_group}
+#    Clear Element Text          ${search_technology_group}
     input text       ${search_technology_group}        ${technology_group}
 
 Check the value after search
