@@ -1185,3 +1185,18 @@ Click on Bulk_edit under action button
 Click on Bulk_import under action button
     wait until element is visible       css:.add-bulk-member-qa     60
     click element         css:.add-bulk-member-qa
+
+Click on Location tab of technology- list page
+    wait until element is visible   css:#location-tab   60
+    click element   css:#location-tab
+
+Get text from Assignment Information
+#    [Arguments]         ${option}
+    wait until element is visible      //label[normalize-space()='Location Name']         60
+    ${text}=        get text            //label[normalize-space()='Location Name']   #css:#${option}
+    set global variable     ${text}
+    log to console      ${text}
+
+verify Text from Assignment Information
+    [Arguments]     ${option}
+    should be equal     ${text}     ${option}
