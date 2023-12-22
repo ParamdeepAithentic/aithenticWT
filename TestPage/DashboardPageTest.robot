@@ -167,8 +167,6 @@ Add Product Bulk Edit
     Switch Window       aithentic | Product - List
     DashboardPage.Verify product added    ${generated_EditProductName}
 
-
-
 Add Department Bulk Edit
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
