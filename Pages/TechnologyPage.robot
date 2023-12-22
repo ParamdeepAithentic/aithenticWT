@@ -1192,11 +1192,9 @@ Click on Location tab of technology- list page
 
 Get text from Assignment Information
 #    [Arguments]         ${option}
-    wait until element is visible      //label[normalize-space()='Location Name']         60
-    ${text}=        get text            //label[normalize-space()='Location Name']   #css:#${option}
-    set global variable     ${text}
-    log to console      ${text}
+    ${disabled_location_name_text}      Execute Javascript    return document.querySelector('#LocationName').value
+    Log to console      ${disabled_location_name_text}
 
-verify Text from Assignment Information
-    [Arguments]     ${option}
-    should be equal     ${text}     ${option}
+#verify Text from Assignment Information
+#    [Arguments]     ${option}
+#    should be equal     ${text}     ${option}

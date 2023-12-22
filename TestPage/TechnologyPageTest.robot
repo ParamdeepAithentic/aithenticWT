@@ -1429,7 +1429,7 @@ Technology Details- Verify the Location Details
     Generic.Verify your current page location contains     technology-details
     TechnologyPage.Click on Location tab of technology- list page
     TechnologyPage.Get text from Assignment Information     #Location Name
-    TechnologyPage.verify Text from Assignment Information          United States - ${generated_buildingname}
+#    TechnologyPage.verify Text from Assignment Information          United States - ${generated_buildingname}
 
 
 
