@@ -200,6 +200,7 @@ Compose Message invite user test
     Generic.Fetch alert message text and compare it with        Contract created successfully
     ContractsPage.Search by contract BrandName      ${generate_BusinessName}
     ContractsPage.Fetch the contract ID from the row
+    ContractsPage.Search by contract BrandName      ${generate_BusinessName}
     ContractsPage.Fetch the contract Brand Name from the row      ${generate_BusinessName}
 #--------------------------------------YOP mail -----------------------------------------------------------
 
