@@ -1195,6 +1195,6 @@ Get text from Assignment Information
     ${disabled_location_name_text}      Execute Javascript    return document.querySelector('#LocationName').value
     Log to console      ${disabled_location_name_text}
 
-#verify Text from Assignment Information
-#    [Arguments]     ${option}
-#    should be equal     ${text}     ${option}
+verify Text from Assignment Information
+    [Arguments]     ${option}
+    should be equal     ${text}     ${option}
