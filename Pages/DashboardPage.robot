@@ -880,3 +880,10 @@ Search by brand name
     click element       ${search_by_brand_name}
     Clear Element Text          ${search_by_brand_name}
     input text       ${search_by_brand_name}        ${brand_name}
+
+Get and verify the text and compare it with
+    [Arguments]         ${option}
+    wait until element is visible       //p[normalize-space()='${option}']         60
+    ${text}=        get text       //p[normalize-space()='${option}']
+    log to console      ${text}
+    should be equal     ${text}     ${option}
