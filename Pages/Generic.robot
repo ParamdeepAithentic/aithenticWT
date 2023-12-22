@@ -188,20 +188,20 @@ Select parameter
     click element      //span[normalize-space()='${address}']
 
 Click on the profile name
-    wait until element is not visible      ${loaderIcon}
+    wait until element is not visible      ${loaderIcon}        60
     wait until element is visible       ${profileName}       60
     click element       ${profileName}
 
 ###############################################################################################
 Select other option from profile list
      [Arguments]     ${option}
-    wait until element is not visible      ${loaderIcon}
+    wait until element is not visible      ${loaderIcon}        60
     wait until element is visible    //a[normalize-space()='${option}']      60
     click element    //a[normalize-space()='${option}']
 
 Select option from profile list
      [Arguments]     ${option}
-     wait until element is not visible      ${loaderIcon}
+     wait until element is not visible      ${loaderIcon}       60
     wait until element is visible    css:.qa-${option} li      60
     click element    css:.qa-${option} li
 
@@ -258,7 +258,7 @@ Refresh the existing page
 Enter phone number
     [Arguments]    ${country}   ${code}     ${phoneNo}
     click element   ${click_countryTag}
-    wait until element is visible   ${contact_Country_search}
+    wait until element is visible   ${contact_Country_search}       60
     click element   ${contact_Country_search}
     input text  ${contact_Country_search}   ${country}
     Generic.Select parameter      ${code}
