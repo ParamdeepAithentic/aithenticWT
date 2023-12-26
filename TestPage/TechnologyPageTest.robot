@@ -1335,6 +1335,7 @@ Edit Technology Page - Add New Supplier and assign that Supplier
     Generic.Fetch alert message text and compare it with        Technology updated successfully
 
 Edit Technology Page - Add New Support Partner and assign that Support Partner
+    [Tags]  smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
@@ -1375,6 +1376,7 @@ Edit Technology Page - Add New Support Partner and assign that Support Partner
     Generic.Fetch alert message text and compare it with        Technology updated successfully
 
 Technology Details- Verify the Location Details
+    [Tags]  smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
