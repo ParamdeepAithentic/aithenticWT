@@ -36,7 +36,7 @@ Resource        ../Pages/I_iconPage.robot
 ${user_name}             rahulshettyacademy
 ${invalid_password}      123445
 
-${url}                   https://uat-app.aithentic.com/
+${url}                    https://uat-app.aithentic.com/
 #${url}                    https://qa-app.aithentic.com/
 ${apiURL}                 https://uat-api.aithentic.com/api/v1
 #${apiURL}                 https://qa-api.aithentic.com/api/v1

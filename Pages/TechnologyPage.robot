@@ -1192,8 +1192,11 @@ Click on Location tab of technology- list page
 
 Get text from Assignment Information
 #    [Arguments]         ${option}
-    ${disabled_location_name_text}      Execute Javascript    return document.querySelector('#LocationName').value
-    Log to console      ${disabled_location_name_text}
+#    ${field_value}=  Execute JavaScript  return document.getElementById("AssignTo").value;
+        ${field_value}=  Execute JavaScript  return document.querySelector('#AssignTo').value
+        Log To Console  this text is:${field_value}
+
+
 
 verify Text from Assignment Information
     [Arguments]     ${option}
