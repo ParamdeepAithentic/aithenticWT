@@ -134,7 +134,7 @@ Click on I_m_done button when popup appears
      wait until element is visible       //button[normalize-space()="${option}"]    60
      click element      //button[normalize-space()="${option}"]
 
-Verify product added using bulk_import
+Verify product added using bulk_import_export
    [Arguments]    ${productName}
      wait until element is visible       css:thead tr       60
      wait until element is visible      ${search_productName}     60
@@ -146,3 +146,37 @@ Verify product added using bulk_import
      ${get_productName} =    get text    ${fetch_productName}
      log to console     ${get_productName}
      should be equal    ${productName}     ${get_productName}
+
+Enter the new value in the product name column in bulk_edit
+    [Arguments]    ${option}
+    DashboardPage.Double click    ${option}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_EditProductName}=    Catenate    ProductName${random_string}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_EditProductName}
+    set global variable    ${generated_EditProductName}
+
+Enter the new value in the brand name column in bulk_edit
+    [Arguments]    ${option}    ${brandName}
+    DashboardPage.Double click    ${option}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${brandName}
+
+Select option from status column in bulk_edit
+    [Arguments]    ${option}
+    wait until element is visible      css:.ag-center-cols-container div[col-id='${option}']    60
+    Double click element      css:.ag-center-cols-container div[col-id='${option}']
+    wait until element is visible      css:div[class='ag-rich-select-row']    60
+    click element       css:div[class='ag-rich-select-row']
+
+Select option from technology type column in bulk_edit
+    [Arguments]    ${option}
+    wait until element is visible      css:.ag-center-cols-container div[col-id='${option}']    60
+    Double click element      css:.ag-center-cols-container div[col-id='${option}']
+    wait until element is visible      css:div[aria-label='List'] div:nth-child(4) div    60
+    click element       css:div[aria-label='List'] div:nth-child(4) div
+
+Click on Refresh icon of product-list page
+    wait until element is visible       css:.reset-product-qa        60
+    click element       css:.reset-product-qa
+    wait until element is not visible      ${loaderIcon}     60
