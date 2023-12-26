@@ -225,9 +225,10 @@ Select an option from recovery table actions
 
 Select an option from technology table actions
     [Arguments]    ${Option}
+     sleep      ${search_sleep}
      Wait Until Element Is Enabled      ${technology_threeDot}       60
      click element      ${technology_threeDot}
-     sleep      1
+     sleep      ${search_sleep}
      wait until element is visible       //a[normalize-space()='${Option}']       60
      click element      //a[normalize-space()='${Option}']
 #options: Details, Edit, Clone , Remove, Disposal

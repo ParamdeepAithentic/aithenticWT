@@ -202,6 +202,12 @@ Compose Message invite user test
     ContractsPage.Fetch the contract ID from the row
     ContractsPage.Search by contract BrandName      ${generate_BusinessName}
     ContractsPage.Fetch the contract Brand Name from the row      ${generate_BusinessName}
+
+    Generic.Click on the profile name
+    Generic.Select other option from profile list     Logout
+    Generic.Verify your current page location contains      logout
+    Generic.Fetch alert message text and compare it with       Successfully logged out
+
 #--------------------------------------YOP mail -----------------------------------------------------------
 
     Generic.Open new window     yopmail
