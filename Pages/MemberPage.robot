@@ -29,6 +29,7 @@ Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/MemberPage.robot
 Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
+Resource        ../Pages/Bulk_Import_ExportPage.robot
 
 
 *** Variables ***

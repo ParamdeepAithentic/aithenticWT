@@ -36,12 +36,13 @@ Resource        ../Pages/I_iconPage.robot
 ${user_name}             rahulshettyacademy
 ${invalid_password}      123445
 
-${url}                   https://uat-app.aithentic.com/
-#${url}                    https://qa-app.aithentic.com/
-${apiURL}                 https://uat-api.aithentic.com/api/v1
-#${apiURL}                 https://qa-api.aithentic.com/api/v1
-${valid_password}         Test!@5897     #UAT user
-#${valid_password}          Test@123       #QA User
+#${url}                   https://uat-app.aithentic.com/
+${url}                    https://qa-app.aithentic.com/
+#${apiURL}                 https://uat-api.aithentic.com/api/v1
+${apiURL}                 https://qa-api.aithentic.com/api/v1
+#${valid_password}         Test!@5897     #UAT user
+${valid_password}          Test@123       #QA User
+
 
 ${browser_name}          Firefox
 ${email}                 testqa29j@mailinator.com       #UAT user
@@ -57,7 +58,7 @@ ${click_Country}     css:#country
 ${click_countryTag}     css:.iti__selected-flag.dropdown-toggle
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
-${yop_sleep}       3
+${yop_sleep}       5
 ${search_sleep}       1
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
 
