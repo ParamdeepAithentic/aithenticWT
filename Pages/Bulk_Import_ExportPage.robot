@@ -180,3 +180,69 @@ Click on Refresh icon of product-list page
     wait until element is visible       css:.reset-product-qa        60
     click element       css:.reset-product-qa
     wait until element is not visible      ${loaderIcon}     60
+
+Enter the new value in the department name column in bulk_import
+    [Arguments]    ${option}
+    DashboardPage.Double click    ${option}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_addDepartmentName}=    Catenate    DepartmentName${random_string}
+    wait until element is visible       xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]     60
+    input text   xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]//input     ${generated_addDepartmentName}
+    set global variable    ${generated_addDepartmentName}
+
+Select option from department status column in bulk_import
+    [Arguments]    ${option}
+    wait until element is visible      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]    60
+    Double click element      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]
+    wait until element is visible      //div[@class='ag-virtual-list-item ag-rich-select-virtual-list-item']//div[normalize-space()='Inactive']    60
+    click element       //div[@class='ag-virtual-list-item ag-rich-select-virtual-list-item']//div[normalize-space()='Inactive']
+
+Enter the new value in the cost center column in bulk_import
+    [Arguments]    ${option}
+    DashboardPage.Double click    ${option}
+    ${random_string} =    Generate Random String       4      [NUMBERS]
+    ${generated_addCostCenter}=    Catenate    ${random_string}
+    wait until element is visible       xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]    60
+    input text   xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]//input   ${generated_addCostCenter}
+    set global variable    ${generated_addCostCenter}
+
+Verify department added using bulk_import_export
+   [Arguments]    ${departmentName}
+    wait until element is visible       css:thead tr       60
+    wait until element is visible      ${searchBar_department}     60
+    click element      ${searchBar_department}
+    Clear Element Text      ${searchBar_department}
+    input text   ${searchBar_department}   ${departmentName}
+    sleep       ${search_sleep}
+    Wait Until Element Contains    //td[normalize-space()='${departmentName}']      ${departmentName}     60
+    ${get_departmentName} =    get text    ${fetch_departmentName}
+    log to console     ${get_departmentName}
+    should be equal    ${departmentName}     ${get_departmentName}
+
+Enter the new value in the department name column in bulk_edit
+    [Arguments]    ${option}
+    DashboardPage.Double click    ${option}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_EditDepartmentName}=    Catenate    DepartmentName${random_string}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_EditDepartmentName}
+    set global variable    ${generated_EditDepartmentName}
+
+Select option from department status column in bulk_edit
+    [Arguments]    ${option}
+    wait until element is visible      css:.ag-center-cols-container div[col-id='${option}']    60
+    Double click element      css:.ag-center-cols-container div[col-id='${option}']
+    wait until element is visible      css:.ag-rich-select-row.ag-rich-select-row-selected    60
+    click element       css:.ag-rich-select-row.ag-rich-select-row-selected
+
+Enter the new value in the cost center column in bulk_edit
+    [Arguments]    ${option}
+    DashboardPage.Double click    ${option}
+    ${random_string} =    Generate Random String       4      [NUMBERS]
+    ${generated_EditCostCenter}=    Catenate    ${random_string}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_EditCostCenter}
+    set global variable    ${generated_EditCostCenter}
+
+Confirm the exit import process pop appears
+    Wait Until Element Is Visible    ${assignedUser_Edit_popUp}      60

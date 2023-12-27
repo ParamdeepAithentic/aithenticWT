@@ -64,6 +64,7 @@ Product Bulk import
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
     Generic.Click on the button     Finish
     Bulk_Import_ExportPage.Click on I_m_done button when popup appears     No, I'm done.
+    Sleep       ${yop_sleep}
     Switch Window       aithentic | Product - List
     Bulk_Import_ExportPage.Verify product added using bulk_import   ${generated_addProductName}
 
@@ -108,6 +109,69 @@ Product Bulk Edit
     Generic.Click on the button     Exit
     MemberPage.Confirm the exit import process pop appers
     Generic.Click on the button     Confirm
+    Sleep       ${yop_sleep}
     Switch Window       aithentic | Product - List
     Bulk_Import_ExportPage.Click on Refresh icon of product-list page
     Bulk_Import_ExportPage.Verify product added using bulk_import_export   ${generated_EditProductName}
+
+Department Bulk Import
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     department-dropdown
+    Generic.Verify your current page location contains      department-list
+    DashboardPage.Click on action button
+    DashboardPage.Select the option from department action menu      Bulk Import
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Data-Wizard
+    Generic.Verify your current page location contains     add-department-grid
+    Bulk_Import_ExportPage.Enter the new value in the department name column in bulk_import     department_name
+    Bulk_Import_ExportPage.Select option from department status column in bulk_import      status
+    Bulk_Import_ExportPage.Enter the new value in the cost center column in bulk_import     costCenter
+    Generic.Click on the button     Check Data      #Update,Edit
+    Generic.Click on the button     Upload
+    Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload successful
+    Generic.Click on the button     Finish
+    Bulk_Import_ExportPage.Click on I_m_done button when popup appears     No, I'm done.
+    Sleep       ${yop_sleep}
+    Switch Window       aithentic | Department - List
+    Bulk_Import_ExportPage.Verify department added using bulk_import_export   ${generated_addDepartmentName}
+
+Department Bulk Edit
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     department-dropdown
+    Generic.Verify your current page location contains      department-list
+    DashboardPage.Click on action button
+    DashboardPage.Select the option from department action menu      Bulk Import
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Data-Wizard
+    Generic.Verify your current page location contains     add-department-grid
+    Bulk_Import_ExportPage.Enter the new value in the department name column in bulk_import     department_name
+    Bulk_Import_ExportPage.Select option from department status column in bulk_import      status
+    Bulk_Import_ExportPage.Enter the new value in the cost center column in bulk_import     costCenter
+    Generic.Click on the button     Check Data      #Update,Edit
+    Generic.Click on the button     Upload
+    Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload successful
+    Generic.Click on the button     Finish
+    Bulk_Import_ExportPage.Click on I_m_done button when popup appears     No, I'm done.
+    Sleep       ${yop_sleep}
+    Switch Window       aithentic | Department - List
+    Bulk_Import_ExportPage.Verify department added using bulk_import_export   ${generated_addDepartmentName}
+    DashboardPage.Click on action button
+    DashboardPage.Select the option from department action menu      Bulk Edit
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Data-Wizard
+    Generic.Verify your current page location contains     department-bulk-edit
+    Bulk_Import_ExportPage.Enter the new value in the department name column in bulk_edit     department_name
+    Bulk_Import_ExportPage.Select option from department status column in bulk_edit      DepartmentStatus
+    Bulk_Import_ExportPage.Enter the new value in the cost center column in bulk_edit     costCenter
+    Generic.Click on the button     Upload      #Check Data,Edit,Upload
+    Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload successful
+    Generic.Click on the button     Exit
+    Bulk_Import_ExportPage.Confirm the exit import process pop appears
+    Generic.Click on the button     Confirm
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Department - List
+    Bulk_Import_ExportPage.Verify department added using bulk_import_export     ${generated_EditDepartmentName}
