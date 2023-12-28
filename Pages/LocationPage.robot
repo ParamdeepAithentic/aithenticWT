@@ -45,8 +45,6 @@ ${search_LocationName}     css:.search-location-qa
 ${rowMenu}     css:.three-dots
 
 
-
-
 *** Keywords ***
 
 Click on Location action button
@@ -146,23 +144,6 @@ Save location form
     click element       css:.qa-${option}-location
     Wait Until Element Is Not Visible    ${loaderIcon}      60
 
-Search by location name
-    [Arguments]    ${LocationName}
-#     Wait Until Element Is Not Visible    ${loaderIcon}      60
-#     wait until element is not visible      ${loaderIcon}     60
-     wait until element is visible       css:thead tr       60
-     click element      ${search_LocationName}
-     Clear Element Text      ${search_LocationName}
-     ${StartTime1} =     Get Current Time in Milliseconds
-     input text   ${search_LocationName}   ${LocationName}
-     sleep   1
-     Wait Until Element Is Not Visible    ${loaderIcon}      60
-     Fetch the location Name from the row   ${LocationName}
-     should be equal    ${fetch_locationName}     ${LocationName}
-     ${EndTime1} =     Get Current Time in Milliseconds
-     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-     Calculate Running time    3    ${pageHeading}   Location Page - Search location name in the table    3    ${pageTime}     ${ActualTime}    LocationPage_Time
-
 Fetch the location Name from the row
     [Arguments]    ${option}
     wait until element is visible       //td[normalize-space()='${option}']     60
@@ -177,7 +158,6 @@ Fetch and verify the location status from the row
     set global variable    ${fetch_locationStatus}
     log to console     Location_Status=${fetch_locationStatus}
     should be equal    ${fetch_locationStatus}     ${option}
-
 
 
 Click on three dots on row
@@ -207,48 +187,6 @@ Select option from country column
     Double click element      css:.ag-center-cols-container div[col-id='${option}']
     wait until element is visible      css:div[aria-label='List'] div:nth-child(4) div    60
     click element       css:div[aria-label='List'] div:nth-child(4) div
-
-
-Enter the new value in the building name column
-    [Arguments]    ${option}    ${buildingName}
-    LocationPage.Double click    ${option}
-    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
-    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${buildingName}
-
-Enter the new value in the floor number column
-    [Arguments]    ${option}    ${floorNumber}
-    LocationPage.Double click    ${option}
-    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
-    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${floorNumber}
-
-Enter the new value in the room number column
-    [Arguments]    ${option}    ${roomNumber}
-    LocationPage.Double click    ${option}
-    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
-    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${roomNumber}
-
-Enter the new value in the state column
-    [Arguments]    ${option}    ${state}
-    LocationPage.Double click    ${option}
-    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
-    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${state}
-
-Enter the new value in the city column
-    [Arguments]    ${option}    ${city}
-    LocationPage.Double click    ${option}
-    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
-    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${city}
-
-
-
-Enter the new value in the location name column
-    [Arguments]    ${option}
-    MemberPage.Double click    ${option}
-    ${random_string} =    Generate Random String       5      [NUMBERS]
-    ${generated_NewLocationName}=    Catenate    NewLocationName${random_string}
-    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
-    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_NewLocationName}
-    set global variable    ${generated_NewLocationName}
 
 Double click
     [Arguments]    ${option}

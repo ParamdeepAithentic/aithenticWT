@@ -415,34 +415,6 @@ Select the location ID checkbox
     click element    css:.checkmark.qa-inner-customcheckbox-location-id-${option}
 #options: ProductId, BrandName, ProductStatus,TechType, GroupName, ProductDescription
 
-Enter the new value in the product name column
-    [Arguments]    ${option}
-    DashboardPage.Double click    ${option}
-    ${random_string} =    Generate Random String       10      [NUMBERS]
-    ${generated_EditProductName}=    Catenate    ProductName${random_string}
-    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
-    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_EditProductName}
-    set global variable    ${generated_EditProductName}
-
-Enter the new value in the brand name column
-    [Arguments]    ${option}    ${brandName}
-    DashboardPage.Double click    ${option}
-    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
-    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${brandName}
-
-Select option from status column
-    [Arguments]    ${option}
-    wait until element is visible      css:.ag-center-cols-container div[col-id='${option}']    60
-    Double click element      css:.ag-center-cols-container div[col-id='${option}']
-    wait until element is visible      css:div[class='ag-rich-select-row']    60
-    click element       css:div[class='ag-rich-select-row']
-
-Select option from technology type column
-    [Arguments]    ${option}
-    wait until element is visible      css:.ag-center-cols-container div[col-id='${option}']    60
-    Double click element      css:.ag-center-cols-container div[col-id='${option}']
-    wait until element is visible      css:div[aria-label='List'] div:nth-child(4) div    60
-    click element       css:div[aria-label='List'] div:nth-child(4) div
 
 Double click
     [Arguments]    ${option}
@@ -486,41 +458,6 @@ Verify department added
     log to console     ${get_departmentName}
     should be equal    ${departmentName}     ${get_departmentName}
 
-Enter the new value in the department name column
-    [Arguments]    ${option}
-    DashboardPage.Double click    ${option}
-    ${random_string} =    Generate Random String       10      [NUMBERS]
-    ${generated_EditDepartmentName}=    Catenate    DepartmentName${random_string}
-    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
-    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_EditDepartmentName}
-    set global variable    ${generated_EditDepartmentName}
-
-Select option from department status column
-    [Arguments]    ${option}
-    wait until element is visible      css:.ag-center-cols-container div[col-id='${option}']    60
-    Double click element      css:.ag-center-cols-container div[col-id='${option}']
-    wait until element is visible      css:.ag-rich-select-row.ag-rich-select-row-selected    60
-    click element       css:.ag-rich-select-row.ag-rich-select-row-selected
-
-Enter the new value in the cost center column
-    [Arguments]    ${option}
-    DashboardPage.Double click    ${option}
-    ${random_string} =    Generate Random String       4      [NUMBERS]
-    ${generated_EditCostCenter}=    Catenate    ${random_string}
-    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
-    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_EditCostCenter}
-    set global variable    ${generated_EditCostCenter}
-
-Verify the upload message text
-    [Arguments]    ${option}    ${text}
-    wait until element is not visible      ${loaderIcon}     60
-    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}']     60
-    ${fetch_text} =    get text    css:.ag-center-cols-container div[col-id='${option}']
-    log to console  uploadtext:${fetch_text}
-    should be equal    ${fetch_text}    ${text}
-
-Confirm the exit import process pop appers
-    Wait Until Element Is Visible    ${assignedUser_Edit_popUp}      60
 
 Verify the side option list parameters
    wait until element is visible   ${side_options}      60
