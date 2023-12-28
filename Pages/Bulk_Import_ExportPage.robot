@@ -200,7 +200,7 @@ Select option from department status column in bulk_import
 Enter the new value in the cost center column in bulk_import
     [Arguments]    ${option}
     DashboardPage.Double click    ${option}
-    ${random_string} =    Generate Random String       4      [NUMBERS]
+    ${random_string} =    Generate Random String       5      [NUMBERS]
     ${generated_addCostCenter}=    Catenate    ${random_string}
     wait until element is visible       xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]    60
     input text   xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]//input   ${generated_addCostCenter}
@@ -238,7 +238,7 @@ Select option from department status column in bulk_edit
 Enter the new value in the cost center column in bulk_edit
     [Arguments]    ${option}
     DashboardPage.Double click    ${option}
-    ${random_string} =    Generate Random String       4      [NUMBERS]
+    ${random_string} =    Generate Random String       10     [NUMBERS]
     ${generated_EditCostCenter}=    Catenate    ${random_string}
     wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_EditCostCenter}
@@ -280,7 +280,7 @@ Enter the new value in the city column
 Enter the new value in the location name column
     [Arguments]    ${option}
     MemberPage.Double click    ${option}
-    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_NewLocationName}=    Catenate    NewLocationName${random_string}
     wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_NewLocationName}
@@ -306,7 +306,7 @@ Search by location name
 Enter the new value of assigned in the first name column
     [Arguments]    ${option}
     MemberPage.Double click    ${option}
-    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_assigneeFname}=    Catenate    FName${random_string}
     wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assigneeFname}
@@ -315,7 +315,7 @@ Enter the new value of assigned in the first name column
 Enter the new value of assigned in the last name column
     [Arguments]    ${option}
     MemberPage.Double click    ${option}
-    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_assigneeLname}=    Catenate    LName${random_string}
     wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assigneeLname}
@@ -324,7 +324,7 @@ Enter the new value of assigned in the last name column
 Enter the new value of assigned in the email column
     [Arguments]    ${option}
     MemberPage.Double click    ${option}
-    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_assigneeEmail}=    Catenate    ${generated_assigneeFname}@yopmail.net
     wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assigneeEmail}
@@ -341,12 +341,10 @@ Enter the new value of assigned in the ID column
 
 Search by empID
      [Arguments]    ${empID}
-#     Wait Until Element Is Not Visible    ${loaderIcon}      60
-#     wait until element is not visible      ${loaderIcon}     60
+     wait until element is not visible      ${loaderIcon}     60
      wait until element is visible       css:thead tr       60
      click element      ${assignedUser_searchBar}
      Clear Element Text      ${assignedUser_searchBar}
-#     ${StartTime1} =     Get Current Time in Milliseconds
      input text   ${assignedUser_searchBar}     ${empID}
      sleep   1
      Wait Until Element Is Not Visible    ${loaderIcon}      60
@@ -359,7 +357,6 @@ Search assigned user by first and last name
      wait until element is not visible      ${loaderIcon}     60
      click element      ${assignedUser_searchBar}
      Clear Element Text      ${assignedUser_searchBar}
-#     ${StartTime1} =     Get Current Time in Milliseconds
      input text   ${assignedUser_searchBar}     ${name}
      sleep   1
      Wait Until Element Is Not Visible    ${loaderIcon}      60
@@ -369,7 +366,7 @@ Search assigned user by first and last name
 Enter the new value of team member in the phone number column
     [Arguments]    ${option}
     MemberPage.Double click    ${option}
-    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${random_string} =    Generate Random String       8      [NUMBERS]
     ${generated_assigneeFname}=    Catenate    90000${random_string}
     wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assigneeFname}
@@ -378,7 +375,7 @@ Enter the new value of team member in the phone number column
 Enter the new value of team member in the email column
     [Arguments]    ${option}
     MemberPage.Double click    ${option}
-    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_assigneeLname}=    Catenate    BusinessEmail${random_string}@mailinator.com
     wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assigneeLname}

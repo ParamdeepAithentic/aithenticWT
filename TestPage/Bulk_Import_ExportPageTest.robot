@@ -145,7 +145,6 @@ Department Bulk Edit
     DashboardPage.Click on action button
     DashboardPage.Select the option from department action menu      Bulk Import
     sleep   ${yop_sleep}
-    sleep   ${yop_sleep}
     Switch Window       aithentic | Data-Wizard
     Generic.Verify your current page location contains     add-department-grid
     Bulk_Import_ExportPage.Enter the new value in the department name column in bulk_import     department_name
@@ -197,7 +196,6 @@ Add Product Bulk Edit
     DashboardPage.Click on action button
     DashboardPage.Select the option from action menu      edit
     sleep   ${yop_sleep}
-    sleep   ${yop_sleep}
     Switch Window       aithentic | Edit - Products
     Generic.Verify your current page location contains      product-bulk-edit
     Bulk_Import_ExportPage.Enter the new value in the product name column in bulk_edit      ProductId
@@ -215,7 +213,6 @@ Add Product Bulk Edit
     sleep   ${search_sleep}
     Generic.Click on the button     Confirm
     sleep       ${yop_sleep}
-    sleep       ${yop_sleep}
     Switch Window       aithentic | Product - List
     Bulk_Import_ExportPage.Verify product added using bulk_import_export    ${generated_EditProductName}
 
@@ -228,14 +225,12 @@ Add Department Bulk Edit
     DashboardPage.Click on action button
     DashboardPage.Click on add department
     DashboardPage.Create unique department name random
-#    DashboardPage.Select department status    Active
     DashboardPage.Select department cost center     1300
     DashboardPage.Save the department       add
     Generic.Fetch alert message text and compare it with        Department added successfully
     DashboardPage.Verify department added       ${generated_DepartmentNumber}
     DashboardPage.Click on action button
     DashboardPage.Select the option from department action menu      Bulk Edit
-    sleep   ${yop_sleep}
     sleep   ${yop_sleep}
     Switch Window       aithentic | Data-Wizard
     Generic.Verify your current page location contains      department-bulk-edit
@@ -247,7 +242,7 @@ Add Department Bulk Edit
     Generic.Click on the button     Exit
     Bulk_Import_ExportPage.Confirm the exit import process pop appears
     Generic.Click on the button     Confirm
-    sleep       1
+    sleep       ${search_sleep}
     Switch Window       aithentic | Department - List
     Bulk_Import_ExportPage.Verify department added using bulk_import_export     ${generated_EditDepartmentName}
 
@@ -276,7 +271,6 @@ Location Bulk Edit
     LocationPage.Click on Location action button
     LocationPage.Select the option from action menu      edit
     sleep   ${yop_sleep}
-    sleep   ${yop_sleep}
     Switch Window       aithentic | Edit - Locations
     Generic.Verify your current page location contains      location-bulk-edit
     LocationPage.Select option from country column       Country
@@ -287,14 +281,11 @@ Location Bulk Edit
     Bulk_Import_ExportPage.Enter the new value in the city column     City        Adana
     Bulk_Import_ExportPage.Enter the new value in the location name column     LocationTypeName
     Generic.Click on the button     Update      #Check Data,Edit
-#    MemberPage.Confirm the exit import process pop appers
-#    Generic.Click on the button     Confirm
-#    Generic.Fetch alert message text and compare it with        Products updated successfully
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
     Generic.Click on the button     Exit
     MemberPage.Confirm the exit import process pop appers
     Generic.Click on the button     Confirm
-    sleep       1
+    sleep      ${search_sleep}
     Switch Window       aithentic | Location - List
     Bulk_Import_ExportPage.Search by location name     ${generated_NewLocationName}
 
@@ -321,7 +312,6 @@ Assigned Users Bulk Edit
     Bulk_Import_ExportPage.Search assigned user by first and last name    ${generated_assigneeFname} ${generated_assigneeLname}
     MemberPage.Click on assigned user action button
     MemberPage.Choose the option from the action menu   Bulk Edit
-    sleep      ${yop_sleep}
     sleep      ${yop_sleep}
     Switch Window       aithentic | Data-Wizard
     Generic.Verify your current page location contains      assignee-bulk-edit
@@ -363,7 +353,6 @@ Team Member Bulk Edit
     sleep     ${yop_sleep}
     Switch Window       aithentic | Edit - Members
     Generic.Verify your current page location contains      member-bulk-edit
-#   Enter the new value of team member in the first name column
     Bulk_Import_ExportPage.Enter the new value of team member in the phone number column    MobileNo
     Bulk_Import_ExportPage.Enter the new value of team member in the email column      Email
     Bulk_Import_ExportPage.Enter the new value of team member in the department column      DepartmentName
