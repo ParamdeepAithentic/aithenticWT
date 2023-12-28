@@ -246,3 +246,176 @@ Enter the new value in the cost center column in bulk_edit
 
 Confirm the exit import process pop appears
     Wait Until Element Is Visible    ${assignedUser_Edit_popUp}      60
+
+Enter the new value in the building name column
+    [Arguments]    ${option}    ${buildingName}
+    LocationPage.Double click    ${option}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input
+
+Enter the new value in the floor number column
+    [Arguments]    ${option}    ${floorNumber}
+    LocationPage.Double click    ${option}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${floorNumber}
+
+Enter the new value in the room number column
+    [Arguments]    ${option}    ${roomNumber}
+    LocationPage.Double click    ${option}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${roomNumber}
+
+Enter the new value in the state column
+    [Arguments]    ${option}    ${state}
+    LocationPage.Double click    ${option}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${state}
+
+Enter the new value in the city column
+    [Arguments]    ${option}    ${city}
+    LocationPage.Double click    ${option}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${city}
+
+
+Enter the new value in the location name column
+    [Arguments]    ${option}
+    MemberPage.Double click    ${option}
+    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${generated_NewLocationName}=    Catenate    NewLocationName${random_string}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_NewLocationName}
+    set global variable    ${generated_NewLocationName}
+
+Search by location name
+    [Arguments]    ${LocationName}
+#     Wait Until Element Is Not Visible    ${loaderIcon}      60
+#     wait until element is not visible      ${loaderIcon}     60
+     wait until element is visible       css:thead tr       60
+     click element      ${search_LocationName}
+     Clear Element Text      ${search_LocationName}
+     ${StartTime1} =     Get Current Time in Milliseconds
+     input text   ${search_LocationName}   ${LocationName}
+     sleep   1
+     Wait Until Element Is Not Visible    ${loaderIcon}      60
+     Fetch the location Name from the row   ${LocationName}
+     should be equal    ${fetch_locationName}     ${LocationName}
+     ${EndTime1} =     Get Current Time in Milliseconds
+     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+     Calculate Running time    3    ${pageHeading}   Location Page - Search location name in the table    3    ${pageTime}     ${ActualTime}    LocationPage_Time
+
+Enter the new value of assigned in the first name column
+    [Arguments]    ${option}
+    MemberPage.Double click    ${option}
+    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${generated_assigneeFname}=    Catenate    FName${random_string}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assigneeFname}
+    set global variable    ${generated_assigneeFname}
+
+Enter the new value of assigned in the last name column
+    [Arguments]    ${option}
+    MemberPage.Double click    ${option}
+    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${generated_assigneeLname}=    Catenate    LName${random_string}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assigneeLname}
+    set global variable    ${generated_assigneeLname}
+
+Enter the new value of assigned in the email column
+    [Arguments]    ${option}
+    MemberPage.Double click    ${option}
+    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${generated_assigneeEmail}=    Catenate    ${generated_assigneeFname}@yopmail.net
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assigneeEmail}
+    set global variable    ${generated_assigneeEmail}
+
+Enter the new value of assigned in the ID column
+    [Arguments]    ${option}
+    MemberPage.Double click    ${option}
+    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${generated_assigneeEmpID}=    Catenate    ${random_string}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assigneeEmpID}
+    set global variable    ${generated_assigneeEmpID}
+
+Search by empID
+     [Arguments]    ${empID}
+#     Wait Until Element Is Not Visible    ${loaderIcon}      60
+#     wait until element is not visible      ${loaderIcon}     60
+     wait until element is visible       css:thead tr       60
+     click element      ${assignedUser_searchBar}
+     Clear Element Text      ${assignedUser_searchBar}
+#     ${StartTime1} =     Get Current Time in Milliseconds
+     input text   ${assignedUser_searchBar}     ${empID}
+     sleep   1
+     Wait Until Element Is Not Visible    ${loaderIcon}      60
+     Fetch the assigned empID from the row   ${empID}
+     should be equal    ${fetch_assignedUserEmpID}     ${empID}
+
+Search assigned user by first and last name
+     [Arguments]    ${name}
+     Wait Until Element Is Not Visible    ${loaderIcon}      60
+     wait until element is not visible      ${loaderIcon}     60
+     click element      ${assignedUser_searchBar}
+     Clear Element Text      ${assignedUser_searchBar}
+#     ${StartTime1} =     Get Current Time in Milliseconds
+     input text   ${assignedUser_searchBar}     ${name}
+     sleep   1
+     Wait Until Element Is Not Visible    ${loaderIcon}      60
+     Fetch the assigned user name from the row   ${name}
+     should be equal    ${fetch_assignedUserFname}     ${name}
+
+Enter the new value of team member in the phone number column
+    [Arguments]    ${option}
+    MemberPage.Double click    ${option}
+    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${generated_assigneeFname}=    Catenate    90000${random_string}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assigneeFname}
+    set global variable    ${generated_assigneeFname}
+
+Enter the new value of team member in the email column
+    [Arguments]    ${option}
+    MemberPage.Double click    ${option}
+    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${generated_assigneeLname}=    Catenate    BusinessEmail${random_string}@mailinator.com
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assigneeLname}
+    set global variable    ${generated_assigneeLname}
+
+Enter the new value of team member in the department column
+    [Arguments]    ${option}
+    MemberPage.Double click    ${option}
+    wait until element is visible       css:div[class='ag-theme-alpine ag-popup'] div:nth-child(5) div    60
+    click element   css:div[class='ag-theme-alpine ag-popup'] div:nth-child(5) div
+
+Enter the new value of team member in the location column
+    [Arguments]    ${option}
+    MemberPage.Double click    ${option}
+    wait until element is visible       css:div[class='ag-theme-alpine ag-popup'] div:nth-child(3) div    60
+    click element   css:div[class='ag-theme-alpine ag-popup'] div:nth-child(3) div
+
+Enter the new value of team member in the role column
+    [Arguments]    ${option}
+    MemberPage.Double click    ${option}
+    wait until element is visible       css:div[class='ag-theme-alpine ag-popup'] div:nth-child(3) div    60
+    click element   css:div[class='ag-theme-alpine ag-popup'] div:nth-child(3) div
+
+Click employee id box to scroll
+    wait until element is not visible      ${loaderIcon}     60
+    wait until element is visible       css:.ag-center-cols-container div[col-id='EmployeeId']      60
+    click element       css:.ag-center-cols-container div[col-id='EmployeeId']
+
+Search team member by first and last name
+     [Arguments]    ${name}
+     Wait Until Element Is Not Visible    ${loaderIcon}      60
+     wait until element is not visible      ${loaderIcon}     60
+     click element      ${teamMember_searchBar}
+     Clear Element Text      ${teamMember_searchBar}
+
+     input text   ${teamMember_searchBar}     ${name}
+     sleep   1
+     Wait Until Element Is Not Visible    ${loaderIcon}      60
+     Fetch the team member name from the row   ${name}
+     should be equal    ${fetch_teamMemberFname}     ${name}
