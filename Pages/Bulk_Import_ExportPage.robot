@@ -288,14 +288,13 @@ Enter the new value in the location name column
 
 Search by location name
     [Arguments]    ${LocationName}
-#     Wait Until Element Is Not Visible    ${loaderIcon}      60
-#     wait until element is not visible      ${loaderIcon}     60
+     wait until element is not visible      ${loaderIcon}     60
      wait until element is visible       css:thead tr       60
      click element      ${search_LocationName}
      Clear Element Text      ${search_LocationName}
      ${StartTime1} =     Get Current Time in Milliseconds
      input text   ${search_LocationName}   ${LocationName}
-     sleep   1
+     sleep   ${search_sleep}
      Wait Until Element Is Not Visible    ${loaderIcon}      60
      Fetch the location Name from the row   ${LocationName}
      should be equal    ${fetch_locationName}     ${LocationName}
@@ -346,7 +345,7 @@ Search by empID
      click element      ${assignedUser_searchBar}
      Clear Element Text      ${assignedUser_searchBar}
      input text   ${assignedUser_searchBar}     ${empID}
-     sleep   1
+     sleep   ${search_sleep}
      Wait Until Element Is Not Visible    ${loaderIcon}      60
      Fetch the assigned empID from the row   ${empID}
      should be equal    ${fetch_assignedUserEmpID}     ${empID}
@@ -354,11 +353,10 @@ Search by empID
 Search assigned user by first and last name
      [Arguments]    ${name}
      Wait Until Element Is Not Visible    ${loaderIcon}      60
-     wait until element is not visible      ${loaderIcon}     60
      click element      ${assignedUser_searchBar}
      Clear Element Text      ${assignedUser_searchBar}
      input text   ${assignedUser_searchBar}     ${name}
-     sleep   1
+     sleep   ${search_sleep}
      Wait Until Element Is Not Visible    ${loaderIcon}      60
      Fetch the assigned user name from the row   ${name}
      should be equal    ${fetch_assignedUserFname}     ${name}
@@ -367,7 +365,7 @@ Enter the new value of team member in the phone number column
     [Arguments]    ${option}
     MemberPage.Double click    ${option}
     ${random_string} =    Generate Random String       8      [NUMBERS]
-    ${generated_assigneeFname}=    Catenate    90000${random_string}
+    ${generated_assigneeFname}=    Catenate    90${random_string}
     wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assigneeFname}
     set global variable    ${generated_assigneeFname}
@@ -407,12 +405,11 @@ Click employee id box to scroll
 Search team member by first and last name
      [Arguments]    ${name}
      Wait Until Element Is Not Visible    ${loaderIcon}      60
-     wait until element is not visible      ${loaderIcon}     60
      click element      ${teamMember_searchBar}
      Clear Element Text      ${teamMember_searchBar}
 
      input text   ${teamMember_searchBar}     ${name}
-     sleep   1
+     sleep   ${search_sleep}
      Wait Until Element Is Not Visible    ${loaderIcon}      60
      Fetch the team member name from the row   ${name}
      should be equal    ${fetch_teamMemberFname}     ${name}
