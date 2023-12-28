@@ -77,9 +77,6 @@ Assigned Users Bulk Edit
     MemberPage.Search assigned user by first and last name    ${generated_assigneeFname} ${generated_assigneeLname}
     MemberPage.Search by empID  ${generated_assigneeEmpID}
 
-
-
-
 Team Member Bulk Edit
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
