@@ -357,7 +357,6 @@ Download agent for OCS from signup - macOS
     Generic.click on the button link    Download
 
 Download Agent from network discovery - Linux
-    [Tags]  OCS
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Discovery Assets
@@ -369,7 +368,6 @@ Download Agent from network discovery - Linux
     Generic.click on the button link    Download
 
 Download Agent from network discovery - Windows
-    [Tags]  OCS
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Discovery Assets
@@ -381,7 +379,6 @@ Download Agent from network discovery - Windows
     Generic.click on the button link    Download
 
 Download Agent from network discovery - macOS
-    [Tags]  OCS
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Discovery Assets
@@ -393,7 +390,6 @@ Download Agent from network discovery - macOS
     Generic.click on the button link    Download
 
 Download Agent from asset discovery - Linux
-    [Tags]  OCS
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
@@ -406,7 +402,6 @@ Download Agent from asset discovery - Linux
     Generic.click on the button link    Download
 
 Download Agent from asset discovery - Windows
-    [Tags]  OCS
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
@@ -419,7 +414,6 @@ Download Agent from asset discovery - Windows
     Generic.click on the button link    Download
 
 Download Agent from asset discovery - macOS
-    [Tags]  OCS
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
