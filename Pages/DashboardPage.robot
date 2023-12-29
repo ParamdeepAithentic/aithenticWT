@@ -34,7 +34,7 @@ Resource        ../Pages/I_iconPage.robot
 *** Variables ***
 ${Error_Message_Login}      css:.alert.alert-danger.col-md-12
 ${login_heading}        css:.heading-login.d-inline-block
-${drawerList}       //ul[@class='list-unstyled w-100 d-inline-block mt-3 pt-0']/li
+${drawerList}        css:.profileContainer .list-unstyled li       #//ul[@class='list-unstyled w-100 d-inline-block mt-3 pt-0']/li
 ${side_options}     //ul[@id='common-side-bar-left']//li
 ${profile_option}        //img[@alt='icon']
 ${loaderIcon}     //div[@role='status']
@@ -472,7 +472,7 @@ Verify the side option list parameters
 
 Verify the drawer list parameters
    wait until element is visible   ${drawerList}        60
-   @{expectedList} =    Create List      Asset Overview     IT Performance       Subscription        Reports
+   @{expectedList} =    Create List     Account Overview      Asset Overview     IT Performances     Subscription
    ${elements} =  Get WebElements     ${drawerList}
    @{actualList} =   Create List
    FOR  ${element}  IN      @{elements}

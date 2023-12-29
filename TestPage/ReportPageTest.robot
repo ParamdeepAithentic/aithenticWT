@@ -40,43 +40,43 @@ Verify Reports Key Data records count
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Dashboard
-    DashboardPage.select the option from the dashboard drawer       Reports
-    Generic.Verify your current page location contains          reports
+    DashboardPage.select the option from the dashboard drawer       Account Overview
+    Generic.Verify your current page location contains          account-overview
     ReportsPage.Click on tab under key data       Departments
     Generic.Verify your current page location contains          department-list
     Generic.Scroll Window To End
     ReportsPage.Fetch the total count         Total Count :
     ReportsPage.Verify that key_data is equals to total number of counts      Department
     Go back
-    Generic.Verify your current page location contains          reports
+    Generic.Verify your current page location contains          account-overview
     ReportsPage.Click on tab under key data       Locations
     Generic.Verify your current page location contains          locationlist
     Generic.Scroll Window To End
     ReportsPage.Fetch the total count         Total Count :
     ReportsPage.Verify that key_data is equals to total number of counts      Location
     Go back
-    Generic.Verify your current page location contains          reports
+    Generic.Verify your current page location contains          account-overview
     ReportsPage.Click on tab under key data       Team Members
     Generic.Verify your current page location contains          memberslist
     Generic.Scroll Window To End
     ReportsPage.Fetch the total count         Total Count :
     ReportsPage.Verify that key_data is equals to total number of counts      Team Members
     Go back
-    Generic.Verify your current page location contains          reports
+    Generic.Verify your current page location contains          account-overview
     ReportsPage.Click on tab under key data       Assigned Users
     Generic.Verify your current page location contains          assignee-list
     Generic.Scroll Window To End
     ReportsPage.Fetch the total count         Total Count :
     ReportsPage.Verify that key_data is equals to total number of counts      Assigned_users
     Go back
-    Generic.Verify your current page location contains          reports
+    Generic.Verify your current page location contains          account-overview
     ReportsPage.Click on tab under key data       Partners
     Generic.Verify your current page location contains          partner-listing
     Generic.Scroll Window To End
     ReportsPage.Fetch the total count         Total Count :
     ReportsPage.Verify that key_data is equals to total number of counts      Partners
     Go back
-    Generic.Verify your current page location contains          reports
+    Generic.Verify your current page location contains          account-overview
     ReportsPage.Click on tab under key data       Contracts
     Generic.Verify your current page location contains          contracts-list
     Generic.Scroll Window To End
@@ -87,36 +87,36 @@ Verify Reports Technology Types records count
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Dashboard
-    DashboardPage.select the option from the dashboard drawer       Reports
-    Generic.Verify your current page location contains          reports
+    DashboardPage.select the option from the dashboard drawer       Account Overview
+    Generic.Verify your current page location contains          account-overview
     ReportsPage.Click on tab under Technology Types       Hardware
     Generic.Verify your current page location contains          technology-list
     Generic.Scroll Window To End
     ReportsPage.Fetch the total count         Total Count :
     ReportsPage.Verify that key_data is equals to total number of counts      Hardware
     Go back
-    Generic.Verify your current page location contains          reports
+    Generic.Verify your current page location contains          account-overview
     ReportsPage.Click on tab under Technology Types       License
     Generic.Verify your current page location contains          technology-list
     Generic.Scroll Window To End
     ReportsPage.Fetch the total count         Total Count :
     ReportsPage.Verify that key_data is equals to total number of counts      License
     Go back
-    Generic.Verify your current page location contains          reports
+    Generic.Verify your current page location contains          account-overview
     ReportsPage.Click on tab under Technology Types       Virtual Machines
     Generic.Verify your current page location contains          technology-list
     Generic.Scroll Window To End
     ReportsPage.Fetch the total count         Total Count :
     ReportsPage.Verify that key_data is equals to total number of counts      Virtual Machines
     Go back
-    Generic.Verify your current page location contains          reports
+    Generic.Verify your current page location contains          account-overview
     ReportsPage.Click on tab under Technology Types      Maintenance
     Generic.Verify your current page location contains          technology-list
     Generic.Scroll Window To End
     ReportsPage.Fetch the total count         Total Count :
     ReportsPage.Verify that key_data is equals to total number of counts      Maintenance
     Go back
-    Generic.Verify your current page location contains          reports
+    Generic.Verify your current page location contains         account-overview
     ReportsPage.Click on tab under Technology Types       Subscription
     Generic.Verify your current page location contains          technology-list
     Generic.Scroll Window To End
@@ -127,8 +127,8 @@ Verify reports modules data
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Dashboard
-    DashboardPage.select the option from the dashboard drawer       Reports
-    Generic.Verify your current page location contains          reports
+    DashboardPage.select the option from the dashboard drawer       Account Overview
+    Generic.Verify your current page location contains          account-overview
     ReportsPage.Click on tab under Modules       Manage Technology
     Generic.Verify your current page location contains          technology-list
     Generic.Scroll Window To End
@@ -136,6 +136,6 @@ Verify reports modules data
     ReportsPage.Verify number of modules are equals to total counts     Manage Technology
     Go back
     ReportsPage.Click on tab under Modules       Network Discovery Agents
-    Generic.Verify your current page location contains          network-discovery
+    Generic.Verify your current page location contains          discovery-assets
     ReportsPage.Fetch total installed Agents      Installed Agents -
     ReportsPage.Verify number of modules are equals to total counts       Network Discovery Agents
