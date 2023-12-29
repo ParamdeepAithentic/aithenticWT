@@ -43,9 +43,21 @@ Would you like to download agent
     wait until element is visible      //button[normalize-space()='${option}']     60
     wait until element is enabled      //button[normalize-space()='${option}']     60
     click element       //button[normalize-space()='${option}']
+    wait until element is not visible   ${loaderIcon}   60
 
 Select the agent type
     [Arguments]    ${option}
     wait until element is visible      //button[normalize-space()='${option}']     60
     wait until element is enabled      //button[normalize-space()='${option}']     60
     click element       //button[normalize-space()='${option}']
+
+Click on Asset Discovery Under Profile List
+    Wait until element is visible   //a[contains(text(),'Asset Discovery')]     60
+    click element   //a[contains(text(),'Asset Discovery')]
+    sleep   ${search_sleep}
+
+Choose tab under Discovery Assets
+    [Arguments]     ${option}
+    wait until element is not visible   ${loaderIcon}        60
+    wait until element is visible       css:.qa-${option}-discovery-tab       60
+    click element       css:.qa-${option}-discovery-tab

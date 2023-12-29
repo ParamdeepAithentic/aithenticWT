@@ -356,80 +356,76 @@ Download agent for OCS from signup - macOS
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
 
-
-
 Download Agent from network discovery - Linux
+    [Tags]  OCS
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.Click on the profile name
-    Generic.Select option from profile list     personal-details
-    Generic.Verify your current page location contains      personal-profile
-    DashboardPage.Select an option from company details side list     Network Discovery
-    Generic.Verify your current page location contains      network-discovery
+    Generic.select the option from the side menu    Discovery Assets
+    Generic.Verify your current page location contains      discovery-assets
     DashboardPage.Click on download agent button to download        Download Agent
     OCS.Would you like to download agent    Yes, please!
     OCS.Select the agent type    Linux
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
 
-
 Download Agent from network discovery - Windows
+    [Tags]  OCS
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.Click on the profile name
-    Generic.Select option from profile list     personal-details
-    Generic.Verify your current page location contains      personal-profile
-    DashboardPage.Select an option from company details side list     Network Discovery
-    Generic.Verify your current page location contains      network-discovery
+    Generic.select the option from the side menu    Discovery Assets
+    Generic.Verify your current page location contains      discovery-assets
     DashboardPage.Click on download agent button to download        Download Agent
     OCS.Would you like to download agent    Yes, please!
     OCS.Select the agent type    Windows
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
 
-
 Download Agent from network discovery - macOS
+    [Tags]  OCS
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.Click on the profile name
-    Generic.Select option from profile list     personal-details
-    Generic.Verify your current page location contains      personal-profile
-    DashboardPage.Select an option from company details side list     Network Discovery
-    Generic.Verify your current page location contains      network-discovery
+    Generic.select the option from the side menu    Discovery Assets
+    Generic.Verify your current page location contains      discovery-assets
     DashboardPage.Click on download agent button to download        Download Agent
     OCS.Would you like to download agent    Yes, please!
     OCS.Select the agent type    macOS
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
 
-
 Download Agent from asset discovery - Linux
+    [Tags]  OCS
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Asset Discovery
+    OCS.Click on Asset Discovery Under Profile List
+    OCS.Choose tab under Discovery Assets   agent
+    DashboardPage.Click on download agent button to download        Download Agent
     OCS.Would you like to download agent    Yes, please!
     OCS.Select the agent type    Linux
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
 
-
 Download Agent from asset discovery - Windows
+    [Tags]  OCS
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Asset Discovery
+    OCS.Click on Asset Discovery Under Profile List
+    OCS.Choose tab under Discovery Assets   agent
+    DashboardPage.Click on download agent button to download        Download Agent
     OCS.Would you like to download agent    Yes, please!
     OCS.Select the agent type    Windows
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
 
-
 Download Agent from asset discovery - macOS
+    [Tags]  OCS
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Asset Discovery
+    OCS.Click on Asset Discovery Under Profile List
+    OCS.Choose tab under Discovery Assets   agent
+    DashboardPage.Click on download agent button to download        Download Agent
     OCS.Would you like to download agent    Yes, please!
     OCS.Select the agent type    macOS
     OCS.Verify that agent is ready to get download
