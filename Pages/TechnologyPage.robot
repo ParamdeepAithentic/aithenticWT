@@ -1191,18 +1191,15 @@ Click on Location tab of technology- list page
     wait until element is visible   css:#location-tab   60
     click element   css:#location-tab
 
-Get text from Assignment Information
-#    [Arguments]         ${option}
-#    ${field_value}=  Execute JavaScript  return document.getElementById("AssignTo").value;
-        ${field_value}=  Execute JavaScript  return document.querySelector('#AssignTo').value
-        Log To Console  this text is:${field_value}
-
-Get Value of Disabled Field
-    [Arguments]     ${option}
-    ${input_value}   get element attribute    css:#LocationName     ${option}
-    log to console      ${option}
-    set global variable  ${option}
+Get Value of Assignment Information Location Name
+    [Arguments]          ${option}
+    wait until element is visible   css:#LocationName   60
+    ${Location_Name} =  get element attribute    css:#LocationName     ${option}
+#    set global variable  ${Location_Name}
+    log to console     ${Location_Name}
 
 verify Text from Assignment Information
     [Arguments]     ${text}
     should be equal     ${text}     ${option}
+
+

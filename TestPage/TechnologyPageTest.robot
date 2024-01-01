@@ -1428,8 +1428,25 @@ Technology Details- Verify the Location Details
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
     TechnologyPage.Click on Location tab of technology- list page
-    TechnologyPage.Get Value of Disabled Field     ${generated_buildingname}
-#    TechnologyPage.verify Text from Assignment Information          United States - ${generated_buildingname}
+    TechnologyPage.Get Value of Assignment Information Location Name     ${generated_buildingname}
+#    TechnologyPage.verify Text from Assignment Information           ${generated_buildingname}
+    TechnologyPage.Get Value of Disabled Field    DepartmentName   ${generated_DepartmentNumber}
+    TechnologyPage.verify Text from Assignment Information      ${generated_DepartmentNumber}
+    TechnologyPage.Get Value of Disabled Field    AssignTo      ${generated_assignFname}
+    TechnologyPage.verify Text from Assignment Information      ${generated_assignFname}
+    TechnologyPage.Get Value of Disabled Field      EmployeeId     ${generate_employeeid}
+    TechnologyPage.verify Text from Assignment Information      ${generate_employeeid}
+    TechnologyPage.Click on edit button on product details page        Edit
+    Generic.Verify your current page location contains      edit-technology
+    TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
+    TechnologyPage.Add assignment information department name      TestQA Department Up31840619
+    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Click on update button of edit_technology page      Update
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+    Generic.Verify your current page location contains     technology-details
+    TechnologyPage.Click on Location tab of technology- list page
+
+
 
 
 
