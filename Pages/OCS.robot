@@ -52,8 +52,8 @@ Select the agent type
     click element       //button[normalize-space()='${option}']
 
 Click on Asset Discovery Under Profile List
-    Wait until element is visible   //a[contains(text(),'Asset Discovery')]     60
-    click element   //a[contains(text(),'Asset Discovery')]
+    Wait until element is visible    css:.qa-view-discovery li   60
+    click element   css:.qa-view-discovery li
     sleep   ${search_sleep}
 
 Choose tab under Discovery Assets
