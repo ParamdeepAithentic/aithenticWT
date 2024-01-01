@@ -51,11 +51,6 @@ Select the agent type
     wait until element is enabled      //button[normalize-space()='${option}']     60
     click element       //button[normalize-space()='${option}']
 
-Click on Asset Discovery Under Profile List
-    Wait until element is visible    css:.qa-view-discovery li   60
-    click element   css:.qa-view-discovery li
-    sleep   ${search_sleep}
-
 Choose tab under Discovery Assets
     [Arguments]     ${option}
     wait until element is not visible   ${loaderIcon}        60

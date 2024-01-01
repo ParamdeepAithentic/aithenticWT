@@ -393,7 +393,8 @@ Download Agent from asset discovery - Linux
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
-    OCS.Click on Asset Discovery Under Profile List
+    Generic.Select option from profile list     view-discovery
+    sleep   ${search_sleep}
     OCS.Choose tab under Discovery Assets   agent
     DashboardPage.Click on download agent button to download        Download Agent
     OCS.Would you like to download agent    Yes, please!
@@ -405,7 +406,8 @@ Download Agent from asset discovery - Windows
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
-    OCS.Click on Asset Discovery Under Profile List
+    Generic.Select option from profile list     view-discovery
+    sleep   ${search_sleep}
     OCS.Choose tab under Discovery Assets   agent
     DashboardPage.Click on download agent button to download        Download Agent
     OCS.Would you like to download agent    Yes, please!
@@ -417,7 +419,8 @@ Download Agent from asset discovery - macOS
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
-    OCS.Click on Asset Discovery Under Profile List
+    Generic.Select option from profile list     view-discovery
+    sleep   ${search_sleep}
     OCS.Choose tab under Discovery Assets   agent
     DashboardPage.Click on download agent button to download        Download Agent
     OCS.Would you like to download agent    Yes, please!
