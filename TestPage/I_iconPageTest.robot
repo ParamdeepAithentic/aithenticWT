@@ -44,11 +44,11 @@ Verify all i-icon of Dashboard page
     I_iconPage.Click on i-icon of asset-overview tab
     Generic.Verify pop-up is visible after clicking on i-icon
     I_iconPage.Click on i-icon of asset-overview tab
-    DashboardPage.select the option from the dashboard drawer   Reports
-    Generic.Verify your current page location contains      reports
-    I_iconPage.Click on i-icon of reports tab
+    DashboardPage.select the option from the dashboard drawer   Account Overview
+    Generic.Verify your current page location contains      account-overview
+    I_iconPage.Click on i-icon of account_overview tab
     Generic.Verify pop-up is visible after clicking on i-icon
-    I_iconPage.Click on i-icon of reports tab
+    I_iconPage.Click on i-icon of account_overview tab
 
 Verify all i-icon of profile-listing
     Generic.click on the tab	Login
