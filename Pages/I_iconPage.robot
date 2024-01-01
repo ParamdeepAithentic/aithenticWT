@@ -81,7 +81,7 @@ Verify i-icon popup is visible
     wait until element is visible        css:.popover-content       60
     log to console      Yes,Pop-up is visible for i-icon content.
 
-Click on i-icon of reports tab
+Click on i-icon of account_overview tab
     wait until element is visible       css:.qa-dashboard-report-Iicon     60
     click element       css:.qa-dashboard-report-Iicon
 
