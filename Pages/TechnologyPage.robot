@@ -1197,8 +1197,12 @@ Get text from Assignment Information
         ${field_value}=  Execute JavaScript  return document.querySelector('#AssignTo').value
         Log To Console  this text is:${field_value}
 
-
+Get Value of Disabled Field
+    [Arguments]     ${option}
+    ${input_value}   get element attribute    css:#LocationName     ${option}
+    log to console      ${option}
+    set global variable  ${option}
 
 verify Text from Assignment Information
-    [Arguments]     ${option}
+    [Arguments]     ${text}
     should be equal     ${text}     ${option}

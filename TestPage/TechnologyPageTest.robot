@@ -1428,7 +1428,7 @@ Technology Details- Verify the Location Details
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
     TechnologyPage.Click on Location tab of technology- list page
-    TechnologyPage.Get text from Assignment Information     #Location Name
+    TechnologyPage.Get Value of Disabled Field     ${generated_buildingname}
 #    TechnologyPage.verify Text from Assignment Information          United States - ${generated_buildingname}
 
 
