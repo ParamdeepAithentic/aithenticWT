@@ -158,8 +158,9 @@ Click on i-icon inside technology
 
 Click on i-icon inside agent discovery
     Wait Until Page Contains Element        //button[normalize-space()='Download Agent']        60
-    wait until element is visible       css:#nav-system-configuration .qa-iIconSection-network-discovery     60
-    click element       css:#nav-system-configuration .qa-iIconSection-network-discovery
+#   wait until element is visible       css:#nav-system-configuration .qa-iIconSection-network-discovery     60
+    wait until element is visible   css:.qa-agent-discovery     60
+    click element       css:.qa-agent-discovery
     sleep       ${search_sleep}
 
 Click on link inside agent_discovery i-icon
