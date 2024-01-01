@@ -640,7 +640,7 @@ Add support partner of partners information
     Generic.Select parameter    ${option1}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  16  ${pageHeading}   Technology Page - Add support partner of partners information      16    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+    Calculate Running time  15  ${pageHeading}   Technology Page - Add support partner of partners information      16    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Add supplier of partners information
     [Arguments]    ${option1}
@@ -651,7 +651,7 @@ Add supplier of partners information
     Generic.Select parameter    ${option1}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  17  ${pageHeading}   Technology Page - Add supplier of partners information      17   ${pageTime}     ${ActualTime}    TechnologyPage_Time
+    Calculate Running time  16  ${pageHeading}   Technology Page - Add supplier of partners information      17   ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 
 Click on save technology form button
@@ -686,7 +686,7 @@ Search by AssetId
     should be equal    ${get_assetID}     ${AssetID}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  18  ${pageHeading}   Technology Page - Search by AssetId     18    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+    Calculate Running time  17  ${pageHeading}   Technology Page - Search by AssetId     18    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Search by BrandName
     [Arguments]    ${BrandName}
@@ -696,13 +696,13 @@ Search by BrandName
      Clear Element Text      ${asset_SearchBar}
      ${StartTime1} =     Get Current Time in Milliseconds
      input text   ${asset_SearchBar}   ${BrandName}
-     sleep      1
+     sleep      ${search_sleep}
      wait until element is visible       css:thead tr       60
      Fetch the Brand Name from the row   ${BrandName}
      should be equal    ${get_fetch_brandName}     ${BrandName}
      ${EndTime1} =     Get Current Time in Milliseconds
      ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-     Calculate Running time  19  ${pageHeading}   Technology Page - Search by BrandName      19    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+     Calculate Running time  18  ${pageHeading}   Technology Page - Search by BrandName      19    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Search by ProductName
     [Arguments]    ${product}
@@ -712,7 +712,7 @@ Search by ProductName
      Clear Element Text      ${asset_SearchBar}
      ${StartTime1} =     Get Current Time in Milliseconds
      input text   ${asset_SearchBar}   ${product}
-     sleep      1
+     sleep      ${search_sleep}
      wait until element is visible       css:thead tr       60
      Wait Until Element Contains    //td[normalize-space()='${product}']        ${product}     60
      ${get_productID} =    get text    ${fetch_productID}
@@ -720,7 +720,7 @@ Search by ProductName
      should be equal    ${product}     ${get_productID}
      ${EndTime1} =     Get Current Time in Milliseconds
      ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-     Calculate Running time  20  ${pageHeading}   Technology Page - Search by ProductName      20    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+     Calculate Running time  19  ${pageHeading}   Technology Page - Search by ProductName      20    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Search by SerialNo
     [Arguments]    ${assertId}  ${serialNo}
@@ -730,12 +730,12 @@ Search by SerialNo
      Clear Element Text      ${asset_SearchBar}
      ${StartTime1} =     Get Current Time in Milliseconds
      input text      ${asset_SearchBar}     ${AssetID}
-     sleep      1
+     sleep      ${search_sleep}
      wait until element is visible       css:thead tr       60
      Wait Until Element Contains    ${fetch_assetID}     ${AssetID}    60
      ${EndTime1} =     Get Current Time in Milliseconds
      ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-     Calculate Running time  21  ${pageHeading}   Technology Page - Search by SerialNo      21    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+     Calculate Running time  20  ${pageHeading}   Technology Page - Search by SerialNo      21    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Search by assignee
      [Arguments]    ${assignee}
@@ -745,7 +745,7 @@ Search by assignee
      Clear Element Text      ${asset_SearchBar}
      ${StartTime1} =     Get Current Time in Milliseconds
      input text   ${asset_SearchBar}   ${assignee}
-     sleep      1
+     sleep      ${search_sleep}
      wait until element is visible       css:thead tr       60
      Wait Until Element Contains    //td[normalize-space()='${assignee}']        ${assignee}     60
      ${get_assignee} =    get text    ${fetch_assignee}
@@ -753,7 +753,7 @@ Search by assignee
      should be equal    ${assignee}     ${get_assignee}
      ${EndTime1} =     Get Current Time in Milliseconds
      ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-     Calculate Running time  22  ${pageHeading}   Technology Page - Search by assignee      22    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+     Calculate Running time  21  ${pageHeading}   Technology Page - Search by assignee      22    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 
 Click on the first row of the technology table
