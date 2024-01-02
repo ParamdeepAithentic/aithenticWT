@@ -171,7 +171,7 @@ Choose tab under Discovery Assets
     [Arguments]     ${option}
     wait until element is not visible       ${loaderIcon}       60
     wait until element is visible       css:.qa-${option}-tab       60
-    click element       css:.qa-${option}-discovery-tab
+    click element       css:.qa-${option}-tab
 #option: agent-discovery, network-discovery
 
 Click on i_icon under network_discovery tab
