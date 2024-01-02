@@ -194,3 +194,19 @@ Double click
     Double click element      css:.ag-center-cols-container div[col-id='${option}']
     Press Keys    css:.ag-center-cols-container div[col-id='${option}']     CONTROL+A
     Press Keys    css:.ag-center-cols-container div[col-id='${option}']     DELETE
+
+Search by location name
+    [Arguments]    ${LocationName}
+     wait until element is not visible      ${loaderIcon}     60
+     wait until element is visible       css:thead tr       60
+     click element      ${search_LocationName}
+     Clear Element Text      ${search_LocationName}
+     ${StartTime1} =     Get Current Time in Milliseconds
+     input text   ${search_LocationName}   ${LocationName}
+     sleep   ${search_sleep}
+     Wait Until Element Is Not Visible    ${loaderIcon}      60
+     Fetch the location Name from the row   ${LocationName}
+     should be equal    ${fetch_locationName}     ${LocationName}
+     ${EndTime1} =     Get Current Time in Milliseconds
+     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+     Calculate Running time    3    ${pageHeading}   Location Page - Search location name in the table    3    ${pageTime}     ${ActualTime}    LocationPage_Time
