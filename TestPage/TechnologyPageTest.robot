@@ -1290,7 +1290,7 @@ Edit Technology Page - Add New Assignee and assign that Assignee
     TechnologyPage.Create unique assign to employee_ID random
     TechnologyPage.Save the assign to      save
     Generic.Fetch alert message text and compare it with       Assigned Users created successfully
-    TechnologyPage.Add assignment information assign to       ${generated_assignFname}
+    TechnologyPage.Add assignment information assign to       ${generated_assignFname} ${generated_assignLname}
     TechnologyPage.Click on update button of edit_technology page     Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
 

@@ -170,9 +170,9 @@ Click on link inside agent_discovery i-icon
 Choose tab under Discovery Assets
     [Arguments]     ${option}
     wait until element is not visible       ${loaderIcon}       60
-    wait until element is visible       css:.qa-${option}-discovery-tab       60
+    wait until element is visible       css:.qa-${option}-tab       60
     click element       css:.qa-${option}-discovery-tab
-#option: agent,network
+#option: agent-discovery, network-discovery
 
 Click on i_icon under network_discovery tab
     Wait Until Page Contains element       //p[normalize-space()='Discovered Assets List']     60

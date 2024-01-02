@@ -45,7 +45,7 @@ Click the option from side drawer
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Dashboard
     Generic.Verify your current page location contains      dashboard
-    DashboardPage.select the option from the dashboard drawer   IT Performance
+    DashboardPage.select the option from the dashboard drawer   IT Performances
     Generic.Verify your current page location contains      it-performance
 
 
