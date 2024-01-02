@@ -165,6 +165,7 @@ ${businessEmail}        css:#AssignedEmail
 Fetch the Brand Name from the row
     [Arguments]    ${option}
     wait until element is visible       //td[normalize-space()='${option}']     60
+    wait until element is enabled        //td[normalize-space()='${option}']     60
     ${get_fetch_brandName} =    get text    //td[normalize-space()='${option}']
     set global variable    ${get_fetch_brandName}
     log to console     ${get_fetch_brandName}
@@ -173,6 +174,7 @@ Fetch the Brand Name from the row
 
 Click on first table row checkbox and restore
     wait until element is visible       ${restore_asset_chkbox}     60
+    wait until element is enabled       ${restore_asset_chkbox}     60
     click element   ${restore_asset_chkbox}
     click element   ${restore_BTN}
 #    wait until element is visible       ${loaderIcon}       60
@@ -194,6 +196,7 @@ Create self unique serial number
 
 Select and restore asset
     wait until element is visible       ${fetch_assetID}        60
+    wait until element is enabled       ${fetch_assetID}        60
     click element   ${removedTechnology_chkBox}
     Wait Until Element Is Enabled      ${restore_BTN}       60
     click element   ${restore_BTN}
@@ -204,6 +207,7 @@ Select and restore asset
 Select any asset to view assert details page
     [Arguments]    ${option}
     Wait Until Element is visible    ${fetch_assetID}       60
+    wait until element is enabled    ${fetch_assetID}       60
     click element       ${fetch_assetID}
     wait until element is visible       ${loaderIcon}       60
     Wait Until Element Is Not Visible    ${loaderIcon}      60
@@ -230,6 +234,7 @@ Select an option from technology table actions
      click element      ${technology_threeDot}
      sleep      ${search_sleep}
      wait until element is visible       //a[normalize-space()='${Option}']       60
+     wait until element is enabled       //a[normalize-space()='${Option}']       60
      click element      //a[normalize-space()='${Option}']
 #options: Details, Edit, Clone , Remove, Disposal
 
@@ -241,6 +246,7 @@ Click on manage technology sub option
 Inactive or Removed technology
     [Arguments]    ${assetId}
     wait until element is visible       ${asset_SearchBar}       60
+    wait until element is enabled        ${asset_SearchBar}       60
     Clear Element Text      ${asset_SearchBar}
     input text      ${asset_SearchBar}     ${assetId}
     Wait Until Element is visible    ${fetch_assetID}       60
@@ -248,7 +254,8 @@ Inactive or Removed technology
     click element      ${removedTechnology_threeDot}
 
 Remove asset from technology table
-     wait until element is visible    ${removePopUp}        60
+     wait until element is visible      ${removePopUp}        60
+     wait until element is enabled       ${removePopUp}        60
      Wait Until Element Is Enabled      ${select_remove_popUp_Yes}      60
      click element      ${select_remove_popUp_Yes}
 
@@ -266,6 +273,7 @@ Search and remove asset
 click on add technology button
     Wait Until Element Is Not Visible    ${assetTableLoader}        60
     wait until element is visible    ${AddTechnologyButton}     60
+    wait until element is enabled       ${AddTechnologyButton}     60
     click element    ${AddTechnologyButton}
 
 Click technology brand input field
@@ -311,17 +319,20 @@ Click on add product link
 ##############Technology Group Information for hardware#################
 Add mac address for technology group information for hardware
     wait until element is visible       ${mac_addess}        60
+    wait until element is enabled       ${mac_addess}        60
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${result}=    Catenate    MacAddress_${random_string}
     input text   ${mac_addess}   ${result}
 
 Add host name for technology group information for hardware
     wait until element is visible       ${host_name}        60
+    wait until element is enabled       ${host_name}        60
     input text   ${host_name}   125.66
 
 #================================ CREATE SERIAL NUMBER ==========================
 Create unique serial number random
     wait until element is visible       ${serial_number}        60
+    wait until element is enabled       ${serial_number}        60
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_SerialNumber}=    Catenate    SerialNumber_${random_string}
     input text   ${serial_number}   ${generated_SerialNumber}
@@ -331,6 +342,7 @@ Create unique serial number random
 Create unique serial number self
     [Arguments]    ${option}
     wait until element is visible       ${serial_number}        60
+    wait until element is enabled        ${serial_number}        60
     input text   ${serial_number}   ${option}
 
 
@@ -351,6 +363,7 @@ Add technology group information contract end date
 ###############Technology Group Information for License#################
 Add random technology product version
     wait until element is visible       ${product_version}        60
+    wait until element is enabled       ${product_version}        60
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${result}=    Catenate    productVersion_${random_string}
     input text   ${product_version}   ${result}
@@ -358,10 +371,12 @@ Add random technology product version
 Add self technology product version
     [Arguments]    ${result}
     wait until element is visible       ${product_version}        60
+    wait until element is enabled       ${product_version}        60
     input text   ${product_version}   ${result}
 
 Add random technology product edition
     wait until element is visible       ${product_edition}        60
+    wait until element is enabled       ${product_edition}        60
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${result}=    Catenate    productEdition_${random_string}
     input text   ${product_edition}   ${result}
@@ -369,10 +384,12 @@ Add random technology product edition
 Add self technology product edition
     [Arguments]    ${result}
     wait until element is visible       ${product_edition}        60
+    wait until element is enabled       ${product_edition}        60
     input text   ${product_edition}   ${result}
 
 Add random technology hostOn
     wait until element is visible       ${enter_hosted}        60
+    wait until element is enabled        ${enter_hosted}        60
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${result}=    Catenate    hostedOn_${random_string}
     input text   ${enter_hosted}   ${result}
@@ -380,16 +397,20 @@ Add random technology hostOn
 Add self technology hostOn
     [Arguments]    ${result}
     wait until element is visible       ${enter_hosted}        60
+    wait until element is enabled        ${enter_hosted}        60
     input text   ${enter_hosted}   ${result}
 
 Add random technology idKey
     wait until element is visible       ${enter_id_key}        60
+    wait until element is enabled        ${enter_id_key}        60
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${result}=    Catenate    idKey_${random_string}
     input text   ${enter_id_key}   ${result}
+
 Add self technology idKey
     [Arguments]    ${result}
     wait until element is visible       ${enter_id_key}        60
+    wait until element is enabled       ${enter_id_key}        60
     input text   ${enter_id_key}   ${result}
 
 
@@ -406,6 +427,7 @@ Add assetID for technology lifecycle information random
 Add assetID for technology lifecycle information self
     [Arguments]    ${option}
     wait until element is visible       ${asset_id}        60
+    wait until element is enabled       ${asset_id}        60
     input text   ${asset_id}   ${option}
 
 Select purchase date
@@ -418,6 +440,7 @@ Select warranty end date
 Select technology lifecycle status
     [Arguments]    ${option1}
     wait until element is visible    ${LifeCycleStatusId}      60
+    wait until element is enabled    ${LifeCycleStatusId}      60
     click element       ${LifeCycleStatusId}
     wait until element is visible   //ng-select[@id='LifeCycleStatusId']//span[@title='Clear all']     60
     click element       //ng-select[@id='LifeCycleStatusId']//span[@title='Clear all']
@@ -600,10 +623,10 @@ Add max contracted of contract information self
 ##############Assignment Information###############
 Add assignment information location
     [Arguments]    ${option1}
-    wait until element is visible    ${locationName}      60
+#    wait until element is visible    ${locationName}      60
     ${StartTime1} =     Get Current Time in Milliseconds
     click element       ${locationName}
-    Clear Element Text      ${locationName}
+#    Clear Element Text      ${locationName}
     Generic.Enter value into field      ${locationName}     ${option1}
     Press Keys     ${locationName}       ENTER
     ${EndTime1} =     Get Current Time in Milliseconds
@@ -612,9 +635,9 @@ Add assignment information location
 
 Add assignment information department name
     [Arguments]    ${option1}
-    wait until element is visible    ${departmentName}      60
+#    wait until element is visible    ${departmentName}      60
     click element       ${departmentName}
-    Clear Element Text      ${departmentName}
+#    Clear Element Text      ${departmentName}
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.Enter value into field      ${departmentName}     ${option1}
     Press Keys     ${departmentName}       ENTER
@@ -623,11 +646,11 @@ Add assignment information department name
     Calculate Running time  14  ${pageHeading}   Technology Page - Add assignment information department name      14    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Add assignment information assign to
-    [Arguments]    ${option1}
-    wait until element is visible    ${assignTo}      60
+    [Arguments]    ${option1}   ${option2}
     click element       ${assignTo}
-    Clear Element Text      ${assignTo}
+    sleep     5
     Generic.Enter value into field      ${assignTo}     ${option1}
+    wait until element is visible     //span[normalize-space()='${option1} ${option2}']      60
     Press keys  ${assignTo}     ENTER
 
 #################Partners Information###############
@@ -640,18 +663,19 @@ Add support partner of partners information
     Generic.Select parameter    ${option1}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  16  ${pageHeading}   Technology Page - Add support partner of partners information      16    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+    Calculate Running time  15  ${pageHeading}   Technology Page - Add support partner of partners information      16    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Add supplier of partners information
     [Arguments]    ${option1}
     wait until element is visible    ${supplierPartner}      60
+    wait until element is enabled    ${supplierPartner}      60
     ${StartTime1} =     Get Current Time in Milliseconds
     click element       ${supplierPartner}
     Clear Element Text      ${supplierPartner}
     Generic.Select parameter    ${option1}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  17  ${pageHeading}   Technology Page - Add supplier of partners information      17   ${pageTime}     ${ActualTime}    TechnologyPage_Time
+    Calculate Running time  16  ${pageHeading}   Technology Page - Add supplier of partners information      17   ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 
 Click on save technology form button
@@ -662,11 +686,13 @@ Click on save technology form button
 
 Click on save technology form pop button
     wait until element is visible       ${savePOPup}       60
+    wait until element is enabled        ${savePOPup}       60
     click element       ${iamDone_BTN}
 
 
 Verify that after saving technology form user redirect to technology page
     wait until element is not visible    ${alert_Msg}       60
+    wait until element is enabled       ${alert_Msg}       60
     wait until location contains      technology      60
 
 
@@ -686,7 +712,7 @@ Search by AssetId
     should be equal    ${get_assetID}     ${AssetID}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  18  ${pageHeading}   Technology Page - Search by AssetId     18    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+    Calculate Running time  17  ${pageHeading}   Technology Page - Search by AssetId     18    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Search by BrandName
     [Arguments]    ${BrandName}
@@ -696,13 +722,13 @@ Search by BrandName
      Clear Element Text      ${asset_SearchBar}
      ${StartTime1} =     Get Current Time in Milliseconds
      input text   ${asset_SearchBar}   ${BrandName}
-     sleep      1
+     sleep      ${search_sleep}
      wait until element is visible       css:thead tr       60
      Fetch the Brand Name from the row   ${BrandName}
      should be equal    ${get_fetch_brandName}     ${BrandName}
      ${EndTime1} =     Get Current Time in Milliseconds
      ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-     Calculate Running time  19  ${pageHeading}   Technology Page - Search by BrandName      19    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+     Calculate Running time  18  ${pageHeading}   Technology Page - Search by BrandName      19    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Search by ProductName
     [Arguments]    ${product}
@@ -712,7 +738,7 @@ Search by ProductName
      Clear Element Text      ${asset_SearchBar}
      ${StartTime1} =     Get Current Time in Milliseconds
      input text   ${asset_SearchBar}   ${product}
-     sleep      1
+     sleep      ${search_sleep}
      wait until element is visible       css:thead tr       60
      Wait Until Element Contains    //td[normalize-space()='${product}']        ${product}     60
      ${get_productID} =    get text    ${fetch_productID}
@@ -720,7 +746,7 @@ Search by ProductName
      should be equal    ${product}     ${get_productID}
      ${EndTime1} =     Get Current Time in Milliseconds
      ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-     Calculate Running time  20  ${pageHeading}   Technology Page - Search by ProductName      20    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+     Calculate Running time  19  ${pageHeading}   Technology Page - Search by ProductName      20    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Search by SerialNo
     [Arguments]    ${assertId}  ${serialNo}
@@ -730,12 +756,12 @@ Search by SerialNo
      Clear Element Text      ${asset_SearchBar}
      ${StartTime1} =     Get Current Time in Milliseconds
      input text      ${asset_SearchBar}     ${AssetID}
-     sleep      1
+     sleep      ${search_sleep}
      wait until element is visible       css:thead tr       60
      Wait Until Element Contains    ${fetch_assetID}     ${AssetID}    60
      ${EndTime1} =     Get Current Time in Milliseconds
      ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-     Calculate Running time  21  ${pageHeading}   Technology Page - Search by SerialNo      21    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+     Calculate Running time  20  ${pageHeading}   Technology Page - Search by SerialNo      21    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Search by assignee
      [Arguments]    ${assignee}
@@ -745,7 +771,7 @@ Search by assignee
      Clear Element Text      ${asset_SearchBar}
      ${StartTime1} =     Get Current Time in Milliseconds
      input text   ${asset_SearchBar}   ${assignee}
-     sleep      1
+     sleep      ${search_sleep}
      wait until element is visible       css:thead tr       60
      Wait Until Element Contains    //td[normalize-space()='${assignee}']        ${assignee}     60
      ${get_assignee} =    get text    ${fetch_assignee}
@@ -753,7 +779,7 @@ Search by assignee
      should be equal    ${assignee}     ${get_assignee}
      ${EndTime1} =     Get Current Time in Milliseconds
      ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-     Calculate Running time  22  ${pageHeading}   Technology Page - Search by assignee      22    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+     Calculate Running time  21  ${pageHeading}   Technology Page - Search by assignee      22    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 
 Click on the first row of the technology table
@@ -975,6 +1001,7 @@ Create unique department name random
 Select department cost center
     [Arguments]    ${option}
     wait until element is visible       ${add_tech_dept_costCenter}        60
+    wait until element is enabled       ${add_tech_dept_costCenter}        60
     input text    ${add_tech_dept_costCenter}   ${option}
 
 Save the department
@@ -1063,21 +1090,27 @@ Click contact main save button
 Wait till support partner get auto polute
     [Arguments]     ${option}
     wait until element is visible    //span[normalize-space()='${option}']      120
+    wait until element is enabled       //span[normalize-space()='${option}']      120
 
 Wait till supplier partner get auto polute
     [Arguments]     ${option}
     wait until element is visible    //span[normalize-space()='${option}']      120
+    wait until element is enabled   //span[normalize-space()='${option}']      120
 
 Verify that support partner is added in partner association
     [Arguments]     ${option}
     wait until element is visible    //td[normalize-space()='${option}']      120
+    waait until element is enabled      //td[normalize-space()='${option}']      120
+
 Verify that supplier partner is added in partner association
     [Arguments]     ${option}
     wait until element is visible    //td[normalize-space()='${option}']      120
+    wait until element is enabled   //td[normalize-space()='${option}']      120
 
 Verify area changed under history tab
     [Arguments]     ${option}
     wait until element is visible    //tr[@class='ng-star-inserted']//td[@data-target='#historyViewPopUp'][normalize-space()='${option}']      60
+    wait until element is enabled       //tr[@class='ng-star-inserted']//td[@data-target='#historyViewPopUp'][normalize-space()='${option}']      60
 
 Confirm area changed with view under history tab
     [Arguments]     ${option}
@@ -1173,16 +1206,36 @@ Renewal Date via technology
 Click on action button of technology
     wait until element is not visible      ${loaderIcon}    60
     wait until element is visible   css:#Team-Member-Actions      60
+    wait until element is enabled   css:#Team-Member-Actions      60
     click element   css:#Team-Member-Actions
 
 Choose add technology from action button of technology
     wait until element is visible   css:.add-member-technology      60
+    wait until element is enabled   css:.add-member-technology      60
     click element   css:.add-member-technology
 
 Click on Bulk_edit under action button
     wait until element is visible       //a[@title="Bulk Edit"]         60
+    wait until element is enabled       //a[@title="Bulk Edit"]         60
     click element       //a[@title="Bulk Edit"]
 
 Click on Bulk_import under action button
     wait until element is visible       css:.add-bulk-member-qa     60
+    wait until element is enabled        css:.add-bulk-member-qa     60
     click element         css:.add-bulk-member-qa
+
+Click on Location tab of technology- list page
+    wait until element is visible   css:#location-tab   60
+    click element   css:#location-tab
+
+Get Value of Assignment Information Location Name
+    [Arguments]          ${value}
+    wait until element is visible   css:#LocationName   60
+    ${input_value}=   get element attribute    css:#LocationName      ${value}
+    set global variable     ${input_value}
+    log to console  ${input_value}
+
+verify Text from Assignment Information
+    [Arguments]     ${text}
+    should be equal     ${text}     ${option}
+

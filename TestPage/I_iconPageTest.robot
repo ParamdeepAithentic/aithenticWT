@@ -44,11 +44,11 @@ Verify all i-icon of Dashboard page
     I_iconPage.Click on i-icon of asset-overview tab
     Generic.Verify pop-up is visible after clicking on i-icon
     I_iconPage.Click on i-icon of asset-overview tab
-    DashboardPage.select the option from the dashboard drawer   Reports
-    Generic.Verify your current page location contains      reports
-    I_iconPage.Click on i-icon of reports tab
+    DashboardPage.select the option from the dashboard drawer   Account Overview
+    Generic.Verify your current page location contains      account-overview
+    I_iconPage.Click on i-icon of account_overview tab
     Generic.Verify pop-up is visible after clicking on i-icon
-    I_iconPage.Click on i-icon of reports tab
+    I_iconPage.Click on i-icon of account_overview tab
 
 Verify all i-icon of profile-listing
     Generic.click on the tab	Login
@@ -98,16 +98,6 @@ Verify all i-icon of profile-listing
     I_iconPage.Click on i-icon inside technology
     Generic.Verify pop-up is visible after clicking on i-icon
     I_iconPage.Click on i-icon inside technology
-    I_iconPage.Choose options inside personal_details        Network Discovery
-    I_iconPage.Click on i-icon inside network discovery
-    Generic.Verify pop-up is visible after clicking on i-icon
-    I_iconPage.Click on link inside Network_discovery i-icon
-    sleep       ${yop_sleep}
-    switch window       Network Discovery - Jira Service Management
-    Generic.Verify your current page location contains      customer
-    Generic.Verify your current page contains this text     Network Discovery
-    sleep       ${yop_sleep}
-    switch window       aithentic | Network Discovery
 
 Verify all i-icon of team member page
     Generic.click on the tab	Login
@@ -167,3 +157,20 @@ Verify all i-icon of partners page
     I_iconPage.Click on i-icon of partners tab
     Generic.Verify pop-up is visible after clicking on i-icon
     I_iconPage.Click on i-icon of partners tab
+
+Verify all i-icon of Discovery assets
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.select the option from the side menu        Discovery Assets
+    Generic.Verify your current page location contains      discovery-assets
+    I_iconPage.Choose tab under Discovery Assets       agent-discovery
+    I_iconPage.Click on i-icon inside agent discovery
+    I_iconPage.Click on link inside agent_discovery i-icon
+    sleep       ${yop_sleep}
+    switch window       Network Discovery - Jira Service Management
+    Generic.Verify your current page location contains      customer
+    Generic.Verify your current page contains this text     Network Discovery
+    sleep       ${yop_sleep}
+    switch window       aithentic | Asset - Discovery
+    I_iconPage.Choose tab under Discovery Assets       network-discovery
+    I_iconPage.Click on i_icon under network_discovery tab

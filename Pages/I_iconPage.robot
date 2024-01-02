@@ -81,7 +81,7 @@ Verify i-icon popup is visible
     wait until element is visible        css:.popover-content       60
     log to console      Yes,Pop-up is visible for i-icon content.
 
-Click on i-icon of reports tab
+Click on i-icon of account_overview tab
     wait until element is visible       css:.qa-dashboard-report-Iicon     60
     click element       css:.qa-dashboard-report-Iicon
 
@@ -156,11 +156,28 @@ Click on i-icon inside technology
     wait until element is visible       css:#technology-products-Iicon      60
     click element       css:#technology-products-Iicon
 
-Click on i-icon inside network discovery
-    wait until element is visible       css:.qa-iIconSection-network-discovery     60
-    click element       css:.qa-iIconSection-network-discovery
+Click on i-icon inside agent discovery
+    Wait Until Page Contains Element        //button[normalize-space()='Download Agent']        60
+#   wait until element is visible       css:#nav-system-configuration .qa-iIconSection-network-discovery     60
+    wait until element is visible   css:.qa-agent-discovery     60
+    click element       css:.qa-agent-discovery
     sleep       ${search_sleep}
 
-Click on link inside Network_discovery i-icon
+Click on link inside agent_discovery i-icon
     wait until element is visible       css:a[title='Network Discovery']        60
     click element       css:a[title='Network Discovery']
+
+Choose tab under Discovery Assets
+    [Arguments]     ${option}
+    wait until element is not visible       ${loaderIcon}       60
+    wait until element is visible       css:.qa-${option}-tab       60
+    click element       css:.qa-${option}-tab
+#option: agent-discovery, network-discovery
+
+Click on i_icon under network_discovery tab
+    Wait Until Page Contains element       //p[normalize-space()='Discovered Assets List']     60
+    wait until element is visible       css:#nav-company-infomation .qa-iIconSection-network-discovery      60
+    click element       css:#nav-company-infomation .qa-iIconSection-network-discovery
+
+
+

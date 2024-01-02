@@ -397,6 +397,7 @@ Verify user is able to export team member asset history list
     TechnologyPage.Click on the first row of the technology table
     Generic.click on the button link    Edit
     TechnologyPage.Add assignment information assign to   Milan Johar
+#    sleep       ${search_sleep}
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     Generic.Verify your current page contains this text             Technology
@@ -418,6 +419,7 @@ Verify user is able to export team member asset history list
     TechnologyPage.Click on the first row of the technology table
     Generic.click on the button link    Edit
     TechnologyPage.Add assignment information assign to   Milan Johar
+#    sleep       ${search_sleep}
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     Generic.Verify your current page contains this text             Technology
@@ -439,6 +441,7 @@ Verify user is able to export team member asset history list
     TechnologyPage.Click on the first row of the technology table
     Generic.click on the button link    Edit
     TechnologyPage.Add assignment information assign to   Milan Johar
+#    sleep       ${search_sleep}
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     Generic.Verify your current page contains this text             Technology
@@ -460,6 +463,7 @@ Verify user is able to export team member asset history list
     TechnologyPage.Click on the first row of the technology table
     Generic.click on the button link    Edit
     TechnologyPage.Add assignment information assign to   Milan Johar
+#    sleep       ${search_sleep}
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     Generic.Verify your current page contains this text             Technology
@@ -481,6 +485,7 @@ Verify user is able to export team member asset history list
     TechnologyPage.Click on the first row of the technology table
     Generic.click on the button link    Edit
     TechnologyPage.Add assignment information assign to   Milan Johar
+#    sleep       ${search_sleep}
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     Generic.Verify your current page contains this text             Technology
