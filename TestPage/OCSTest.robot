@@ -395,7 +395,7 @@ Download Agent from asset discovery - Linux
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     sleep   ${search_sleep}
-    OCS.Choose tab under Discovery Assets   agent
+    OCS.Choose tab under Discovery Assets   agent-discovery
     DashboardPage.Click on download agent button to download        Download Agent
     OCS.Would you like to download agent    Yes, please!
     OCS.Select the agent type    Linux
@@ -408,7 +408,7 @@ Download Agent from asset discovery - Windows
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     sleep   ${search_sleep}
-    OCS.Choose tab under Discovery Assets   agent
+    OCS.Choose tab under Discovery Assets   agent-discovery
     DashboardPage.Click on download agent button to download        Download Agent
     OCS.Would you like to download agent    Yes, please!
     OCS.Select the agent type    Windows
@@ -421,7 +421,7 @@ Download Agent from asset discovery - macOS
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     sleep   ${search_sleep}
-    OCS.Choose tab under Discovery Assets   agent
+    OCS.Choose tab under Discovery Assets   agent-discovery
     DashboardPage.Click on download agent button to download        Download Agent
     OCS.Would you like to download agent    Yes, please!
     OCS.Select the agent type    macOS

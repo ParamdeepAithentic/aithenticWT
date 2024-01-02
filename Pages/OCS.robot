@@ -54,5 +54,6 @@ Select the agent type
 Choose tab under Discovery Assets
     [Arguments]     ${option}
     wait until element is not visible   ${loaderIcon}        60
-    wait until element is visible       css:.qa-${option}-discovery-tab       60
-    click element       css:.qa-${option}-discovery-tab
+    wait until element is visible       css:.qa-${option}-tab       60
+    click element       css:.qa-${option}-tab
+#option: network-discovery, agent-discovery
