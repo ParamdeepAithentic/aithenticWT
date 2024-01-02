@@ -623,10 +623,10 @@ Add max contracted of contract information self
 ##############Assignment Information###############
 Add assignment information location
     [Arguments]    ${option1}
-    wait until element is visible    ${locationName}      60
+#    wait until element is visible    ${locationName}      60
     ${StartTime1} =     Get Current Time in Milliseconds
     click element       ${locationName}
-    Clear Element Text      ${locationName}
+#    Clear Element Text      ${locationName}
     Generic.Enter value into field      ${locationName}     ${option1}
     Press Keys     ${locationName}       ENTER
     ${EndTime1} =     Get Current Time in Milliseconds
@@ -635,9 +635,9 @@ Add assignment information location
 
 Add assignment information department name
     [Arguments]    ${option1}
-    wait until element is visible    ${departmentName}      60
+#    wait until element is visible    ${departmentName}      60
     click element       ${departmentName}
-    Clear Element Text      ${departmentName}
+#    Clear Element Text      ${departmentName}
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.Enter value into field      ${departmentName}     ${option1}
     Press Keys     ${departmentName}       ENTER
@@ -646,12 +646,11 @@ Add assignment information department name
     Calculate Running time  14  ${pageHeading}   Technology Page - Add assignment information department name      14    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Add assignment information assign to
-    [Arguments]    ${option1}
-    wait until element is visible    ${assignTo}      60
-    wait until element is enabled    ${assignTo}      60
+    [Arguments]    ${option1}   ${option2}
     click element       ${assignTo}
-    Clear Element Text      ${assignTo}
+    sleep     5
     Generic.Enter value into field      ${assignTo}     ${option1}
+    wait until element is visible     //span[normalize-space()='${option1} ${option2}']      60
     Press keys  ${assignTo}     ENTER
 
 #################Partners Information###############
@@ -1224,3 +1223,19 @@ Click on Bulk_import under action button
     wait until element is visible       css:.add-bulk-member-qa     60
     wait until element is enabled        css:.add-bulk-member-qa     60
     click element         css:.add-bulk-member-qa
+
+Click on Location tab of technology- list page
+    wait until element is visible   css:#location-tab   60
+    click element   css:#location-tab
+
+Get Value of Assignment Information Location Name
+    [Arguments]          ${value}
+    wait until element is visible   css:#LocationName   60
+    ${input_value}=   get element attribute    css:#LocationName      ${value}
+    set global variable     ${input_value}
+    log to console  ${input_value}
+
+verify Text from Assignment Information
+    [Arguments]     ${text}
+    should be equal     ${text}     ${option}
+
