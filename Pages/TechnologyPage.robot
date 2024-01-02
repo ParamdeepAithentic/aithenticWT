@@ -1192,12 +1192,11 @@ Click on Location tab of technology- list page
     click element   css:#location-tab
 
 Get Value of Assignment Information Location Name
-    [Arguments]          ${option}
+    [Arguments]          ${value}
     wait until element is visible   css:#LocationName   60
-    ${Location_Name} =  get element attribute    css:#LocationName     ${option}
-#    set global variable  ${Location_Name}
-    log to console     ${Location_Name}
-
+    ${input_value}=   get element attribute    css:#LocationName      ${value}
+    set global variable     ${input_value}
+    log to console  ${input_value}
 verify Text from Assignment Information
     [Arguments]     ${text}
     should be equal     ${text}     ${option}
