@@ -163,7 +163,7 @@ Verify all i-icon of Discovery assets
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu        Discovery Assets
     Generic.Verify your current page location contains      discovery-assets
-    I_iconPage.Choose tab under Discovery Assets       agent
+    I_iconPage.Choose tab under Discovery Assets       agent-discovery
     I_iconPage.Click on i-icon inside agent discovery
     I_iconPage.Click on link inside agent_discovery i-icon
     sleep       ${yop_sleep}
@@ -172,5 +172,5 @@ Verify all i-icon of Discovery assets
     Generic.Verify your current page contains this text     Network Discovery
     sleep       ${yop_sleep}
     switch window       aithentic | Asset - Discovery
-    I_iconPage.Choose tab under Discovery Assets       network
+    I_iconPage.Choose tab under Discovery Assets       network-discovery
     I_iconPage.Click on i_icon under network_discovery tab
