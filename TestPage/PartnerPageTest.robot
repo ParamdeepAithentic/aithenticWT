@@ -155,7 +155,7 @@ Compose Message invite user test
     TechnologyPage.Add expense type of technology cost information     Capex
     TechnologyPage.Add assignment information location     United States - Main Office - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Add support partner of partners information     QABusiness04191432
     TechnologyPage.Add supplier of partners information        qabrand10050505
     TechnologyPage.Click on save technology form button

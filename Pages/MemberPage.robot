@@ -248,6 +248,7 @@ Enter last name of assigned users
     wait until element is visible       css:.qa-AssignedLastName    60
     input text   css:.qa-AssignedLastName   ${generated_TMLname}
     log to console      ${generated_TMLname}
+    set global variable     ${generated_TMLname}
 
 Enter business email of assigned users
     ${random_string} =    Generate Random String       10      [NUMBERS]

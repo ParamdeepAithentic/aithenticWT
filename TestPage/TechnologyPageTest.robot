@@ -78,7 +78,7 @@ Fill the technology form for license product
     TechnologyPage.Add max contracted of contract information random
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Add support partner of partners information     QABusiness04191432
     TechnologyPage.Add supplier of partners information        qabrand10050505
     TechnologyPage.Click on save technology form button
@@ -119,7 +119,7 @@ Fill the technology form for hardware product
     TechnologyPage.Add expense type of technology cost information     Capex
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Add support partner of partners information     QABusiness04191432
     TechnologyPage.Add supplier of partners information        qabrand10050505
     TechnologyPage.Click on save technology form button
@@ -161,7 +161,7 @@ Fill the technology form for maintenance product
     TechnologyPage.Add expense type of technology cost information     Capex
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Add support partner of partners information     QABusiness04191432
     TechnologyPage.Add supplier of partners information        qabrand10050505
     TechnologyPage.Click on save technology form button
@@ -202,7 +202,7 @@ Fill the technology form for subscription product
     TechnologyPage.Add expense type of technology cost information     Capex
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Add support partner of partners information     QABusiness04191432
     TechnologyPage.Add supplier of partners information        qabrand10050505
     TechnologyPage.Click on save technology form button
@@ -271,7 +271,7 @@ Create new asset with new brand and product
     TechnologyPage.Add expense type of technology cost information     Capex
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Add support partner of partners information     QABusiness04191432
     TechnologyPage.Add supplier of partners information        qabrand10050505
     TechnologyPage.Click on save technology form button
@@ -283,7 +283,7 @@ Create new asset with new brand and product
     TechnologyPage.Search by AssetId       ${generated_AssetID}
     TechnologyPage.Search by BrandName   ${generated_BrandName}
     TechnologyPage.Search by ProductName   ${generated_product}
-#    TechnologyPage.Search by assignee      Testqaup94590327 QA
+#    TechnologyPage.Search by assignee      Testqaup94590327      QA
 #    TechnologyPage.Search by SerialNo   ${generated_serialNo}       #yet to cover
 
 
@@ -318,7 +318,7 @@ Restore asset type one
     TechnologyPage.Add expense type of technology cost information     Capex
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Add support partner of partners information     QABusiness04191432
     TechnologyPage.Add supplier of partners information        qabrand10050505
     TechnologyPage.Click on save technology form button
@@ -370,7 +370,7 @@ Restore asset from removed asset details page
     TechnologyPage.Add expense type of technology cost information     Capex
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Add support partner of partners information     QABusiness04191432
     TechnologyPage.Add supplier of partners information        qabrand10050505
     TechnologyPage.Click on save technology form button
@@ -424,7 +424,7 @@ Restore asset by selecting checkbox
     TechnologyPage.Add expense type of technology cost information     Capex
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Add support partner of partners information     QABusiness04191432
     TechnologyPage.Add supplier of partners information        qabrand10050505
     TechnologyPage.Click on save technology form button
@@ -494,7 +494,7 @@ Edit brand and product via details
     TechnologyPage.Add expense type of technology cost information     Capex
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Add support partner of partners information     QABusiness04191432
     TechnologyPage.Add supplier of partners information        qabrand10050505
     TechnologyPage.Click on save technology form button
@@ -547,7 +547,7 @@ Sent Message should show in the Sent Tab
     TechnologyPage.Add expense type of technology cost information     Capex
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Add support partner of partners information     QABusiness04191432
     TechnologyPage.Add supplier of partners information        qabrand10050505
     TechnologyPage.Click on save technology form button
@@ -777,7 +777,7 @@ Add New Support Partner and Assign that Partner
     TechnologyPage.Add expense type of technology cost information     Capex
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
 #    TechnologyPage.Add support partner of partners information     QABusiness04191432
 #    TechnologyPage.Add supplier of partners information        qabrand10050505
     TechnologyPage.Click on save technology form button
@@ -853,7 +853,7 @@ Verify the history of added technology
     TechnologyPage.Add expense type of technology cost information     Capex
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Add support partner of partners information     QABusiness04191432
     TechnologyPage.Add supplier of partners information        qabrand10050505
     TechnologyPage.Click on save technology form button
@@ -1046,7 +1046,7 @@ Add new Technology- Add New Location and assign that location
     TechnologyPage.Click on refresh location icon
     TechnologyPage.Add assignment information location     ${generated_buildingname}
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
@@ -1073,7 +1073,7 @@ Add new Technology- Add New Department and assign that department
     TechnologyPage.Save the department       add
     Generic.Fetch alert message text and compare it with        Department added successfully
     TechnologyPage.Add assignment information department name      ${generated_DepartmentNumber}
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
@@ -1123,7 +1123,7 @@ Add new Technology- Add New support-partner and assign that support partner
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Click the add here link on support to add new support partner
     sleep       ${yop_sleep}
     Switch Window       aithentic | Add - Partner
@@ -1157,7 +1157,7 @@ Add new Technology- Add New Supplier and assign that supplier
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Click the add here link on supplier to add new supplier
     sleep       ${yop_sleep}
     Switch Window       aithentic | Add - Partner
@@ -1191,7 +1191,7 @@ Edit Technology Page - Add New location and assign that location
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
@@ -1239,7 +1239,7 @@ Edit Technology Page - Add New Department and assign that Department
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
@@ -1273,7 +1273,7 @@ Edit Technology Page - Add New Assignee and assign that Assignee
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
@@ -1290,7 +1290,7 @@ Edit Technology Page - Add New Assignee and assign that Assignee
     TechnologyPage.Create unique assign to employee_ID random
     TechnologyPage.Save the assign to      save
     Generic.Fetch alert message text and compare it with       Assigned Users created successfully
-    TechnologyPage.Add assignment information assign to       ${generated_assignFname}
+    TechnologyPage.Add assignment information assign to       ${generated_assignFname}      ${generated_assignLname}
     TechnologyPage.Click on update button of edit_technology page     Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
 
@@ -1309,7 +1309,7 @@ Edit Technology Page - Add New Supplier and assign that Supplier
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
@@ -1349,7 +1349,7 @@ Edit Technology Page - Add New Support Partner and assign that Support Partner
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
@@ -1440,7 +1440,7 @@ Technology Details- Verify the Location Details
     Generic.Verify your current page location contains      edit-technology
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Click on update button of edit_technology page      Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     Generic.Verify your current page location contains     technology-details

@@ -67,7 +67,7 @@ Verify asset history of assigned users
     TechnologyPage.Click technology product input field
     TechnologyPage.Select the first value of To dropdown of product
     TechnologyPage.Add assetID for technology lifecycle information random
-    TechnologyPage.Add assignment information assign to   ${generated_AssigneduserFirstName}
+    TechnologyPage.Add assignment information assign to   ${generated_AssigneduserFirstName}    ${generated_TMLname}
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
@@ -142,7 +142,7 @@ Search asset history with Asset ID of Assigned User
     TechnologyPage.Click technology product input field
     TechnologyPage.Select the first value of To dropdown of product
     TechnologyPage.Add assetID for technology lifecycle information random
-    TechnologyPage.Add assignment information assign to   ${generated_AssigneduserFirstName}
+    TechnologyPage.Add assignment information assign to   ${generated_AssigneduserFirstName}       ${generated_TMLname}
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
