@@ -283,7 +283,7 @@ Search asset history with Asset ID
     TechnologyPage.Click technology product input field
     TechnologyPage.Select the first value of To dropdown of product
     TechnologyPage.Add assetID for technology lifecycle information random
-    TechnologyPage.Add assignment information assign to   ${generated_TMFname}
+    TechnologyPage.Add assignment information assign to   ${generated_TMFname}       ${generated_TMLname}
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
