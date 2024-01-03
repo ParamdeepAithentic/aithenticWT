@@ -359,7 +359,7 @@ Download agent for OCS from signup - macOS
 Download Agent from network discovery - Linux
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.select the option from the side menu    Discovery Assets
+    Generic.select the option from the side menu    Asset Discovery
     Generic.Verify your current page location contains      discovery-assets
     DashboardPage.Click on download agent button to download        Download Agent
     OCS.Would you like to download agent    Yes, please!
@@ -370,7 +370,7 @@ Download Agent from network discovery - Linux
 Download Agent from network discovery - Windows
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.select the option from the side menu    Discovery Assets
+    Generic.select the option from the side menu    Asset Discovery
     Generic.Verify your current page location contains      discovery-assets
     DashboardPage.Click on download agent button to download        Download Agent
     OCS.Would you like to download agent    Yes, please!
@@ -381,7 +381,7 @@ Download Agent from network discovery - Windows
 Download Agent from network discovery - macOS
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.select the option from the side menu    Discovery Assets
+    Generic.select the option from the side menu    Asset Discovery
     Generic.Verify your current page location contains      discovery-assets
     DashboardPage.Click on download agent button to download        Download Agent
     OCS.Would you like to download agent    Yes, please!

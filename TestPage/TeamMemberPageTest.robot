@@ -197,7 +197,7 @@ Verify team member Asset history
     TechnologyPage.Click technology product input field
     TechnologyPage.Select the first value of To dropdown of product
     TechnologyPage.Add assetID for technology lifecycle information random
-    TechnologyPage.Add assignment information assign to   ${generated_TMFname}
+    TechnologyPage.Add assignment information assign to   ${generated_TMFname}       ${generated_TMLname}
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
@@ -283,7 +283,7 @@ Search asset history with Asset ID
     TechnologyPage.Click technology product input field
     TechnologyPage.Select the first value of To dropdown of product
     TechnologyPage.Add assetID for technology lifecycle information random
-    TechnologyPage.Add assignment information assign to   ${generated_TMFname}
+    TechnologyPage.Add assignment information assign to   ${generated_TMFname}       ${generated_TMLname}
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
@@ -301,7 +301,8 @@ Search asset history with Asset ID
     Generic.Verify your current page location contains      technology-list
     TeamMemberPage.Click on three dots of Team Member listing
     TeamMemberPage.Select option from three dots of Team Member     Edit
-    TechnologyPage.Add assignment information assign to    Milan Johar
+    Generic.Verify your current page location contains     edit-technology
+    TechnologyPage.Add assignment information assign to    Milan     Johar
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     Generic.Verify your current page contains this text             Technology
@@ -388,7 +389,7 @@ Verify user is able to export team member asset history list
     TechnologyPage.Click technology product input field
     TechnologyPage.Select the first value of To dropdown of product
     TechnologyPage.Add assetID for technology lifecycle information random
-    TechnologyPage.Add assignment information assign to   ${generated_TMFname}
+    TechnologyPage.Add assignment information assign to   ${generated_TMFname}       ${generated_TMLname}
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
@@ -396,7 +397,7 @@ Verify user is able to export team member asset history list
     TechnologyPage.Search by AssetId       ${generated_AssetID}
     TechnologyPage.Click on the first row of the technology table
     Generic.click on the button link    Edit
-    TechnologyPage.Add assignment information assign to   Milan Johar
+    TechnologyPage.Add assignment information assign to   Milan     Johar
 #    sleep       ${search_sleep}
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology updated successfully
@@ -410,7 +411,7 @@ Verify user is able to export team member asset history list
     TechnologyPage.Click technology product input field
     TechnologyPage.Select the first value of To dropdown of product
     TechnologyPage.Add assetID for technology lifecycle information random
-    TechnologyPage.Add assignment information assign to   ${generated_TMFname}
+    TechnologyPage.Add assignment information assign to   ${generated_TMFname}       ${generated_TMLname}
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
@@ -418,7 +419,7 @@ Verify user is able to export team member asset history list
     TechnologyPage.Search by AssetId       ${generated_AssetID}
     TechnologyPage.Click on the first row of the technology table
     Generic.click on the button link    Edit
-    TechnologyPage.Add assignment information assign to   Milan Johar
+    TechnologyPage.Add assignment information assign to   Milan     Johar
 #    sleep       ${search_sleep}
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology updated successfully
@@ -432,7 +433,7 @@ Verify user is able to export team member asset history list
     TechnologyPage.Click technology product input field
     TechnologyPage.Select the first value of To dropdown of product
     TechnologyPage.Add assetID for technology lifecycle information random
-    TechnologyPage.Add assignment information assign to   ${generated_TMFname}
+    TechnologyPage.Add assignment information assign to   ${generated_TMFname}       ${generated_TMLname}
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
@@ -440,7 +441,7 @@ Verify user is able to export team member asset history list
     TechnologyPage.Search by AssetId       ${generated_AssetID}
     TechnologyPage.Click on the first row of the technology table
     Generic.click on the button link    Edit
-    TechnologyPage.Add assignment information assign to   Milan Johar
+    TechnologyPage.Add assignment information assign to   Milan     Johar
 #    sleep       ${search_sleep}
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology updated successfully
@@ -454,7 +455,7 @@ Verify user is able to export team member asset history list
     TechnologyPage.Click technology product input field
     TechnologyPage.Select the first value of To dropdown of product
     TechnologyPage.Add assetID for technology lifecycle information random
-    TechnologyPage.Add assignment information assign to   ${generated_TMFname}
+    TechnologyPage.Add assignment information assign to   ${generated_TMFname}       ${generated_TMLname}
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
@@ -462,7 +463,7 @@ Verify user is able to export team member asset history list
     TechnologyPage.Search by AssetId       ${generated_AssetID}
     TechnologyPage.Click on the first row of the technology table
     Generic.click on the button link    Edit
-    TechnologyPage.Add assignment information assign to   Milan Johar
+    TechnologyPage.Add assignment information assign to   Milan     Johar
 #    sleep       ${search_sleep}
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology updated successfully
@@ -476,7 +477,7 @@ Verify user is able to export team member asset history list
     TechnologyPage.Click technology product input field
     TechnologyPage.Select the first value of To dropdown of product
     TechnologyPage.Add assetID for technology lifecycle information random
-    TechnologyPage.Add assignment information assign to   ${generated_TMFname}
+    TechnologyPage.Add assignment information assign to   ${generated_TMFname}       ${generated_TMLname}
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
@@ -484,7 +485,7 @@ Verify user is able to export team member asset history list
     TechnologyPage.Search by AssetId       ${generated_AssetID}
     TechnologyPage.Click on the first row of the technology table
     Generic.click on the button link    Edit
-    TechnologyPage.Add assignment information assign to   Milan Johar
+    TechnologyPage.Add assignment information assign to   Milan     Johar
 #    sleep       ${search_sleep}
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology updated successfully
