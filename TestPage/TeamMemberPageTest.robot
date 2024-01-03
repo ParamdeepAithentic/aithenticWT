@@ -358,6 +358,7 @@ Verify user is able to export team member asset history list
     Generic.Refresh the existing page
     Generic.Refresh the existing page
     Generic.Refresh the existing page
+    Generic.Refresh the existing page
     Generic.Switch to iframe by ID      ifmail
     Yopmail.Click on email of yopmail   OTP Verification.
     Unselect Frame
