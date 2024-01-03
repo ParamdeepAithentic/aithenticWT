@@ -666,7 +666,7 @@ Add support partner of partners information
     Generic.Select parameter    ${option1}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  15  ${pageHeading}   Technology Page - Add support partner of partners information      16    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+    Calculate Running time  15  ${pageHeading}   Technology Page - Add support partner of partners information      15    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Add supplier of partners information
     [Arguments]    ${option1}
@@ -678,7 +678,7 @@ Add supplier of partners information
     Generic.Select parameter    ${option1}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  16  ${pageHeading}   Technology Page - Add supplier of partners information      17   ${pageTime}     ${ActualTime}    TechnologyPage_Time
+    Calculate Running time  16  ${pageHeading}   Technology Page - Add supplier of partners information      16   ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 
 Click on save technology form button
@@ -715,7 +715,7 @@ Search by AssetId
     should be equal    ${get_assetID}     ${AssetID}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  17  ${pageHeading}   Technology Page - Search by AssetId     18    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+    Calculate Running time  17  ${pageHeading}   Technology Page - Search by AssetId     17    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Search by BrandName
     [Arguments]    ${BrandName}
@@ -731,7 +731,7 @@ Search by BrandName
      should be equal    ${get_fetch_brandName}     ${BrandName}
      ${EndTime1} =     Get Current Time in Milliseconds
      ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-     Calculate Running time  18  ${pageHeading}   Technology Page - Search by BrandName      19    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+     Calculate Running time  18  ${pageHeading}   Technology Page - Search by BrandName      18    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Search by ProductName
     [Arguments]    ${product}
@@ -749,7 +749,7 @@ Search by ProductName
      should be equal    ${product}     ${get_productID}
      ${EndTime1} =     Get Current Time in Milliseconds
      ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-     Calculate Running time  19  ${pageHeading}   Technology Page - Search by ProductName      20    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+     Calculate Running time  19  ${pageHeading}   Technology Page - Search by ProductName      19    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Search by SerialNo
     [Arguments]    ${assertId}  ${serialNo}
@@ -764,7 +764,7 @@ Search by SerialNo
      Wait Until Element Contains    ${fetch_assetID}     ${AssetID}    60
      ${EndTime1} =     Get Current Time in Milliseconds
      ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-     Calculate Running time  20  ${pageHeading}   Technology Page - Search by SerialNo      21    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+     Calculate Running time  20  ${pageHeading}   Technology Page - Search by SerialNo      20    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Search by assignee
      [Arguments]    ${assignee}
@@ -782,7 +782,7 @@ Search by assignee
      should be equal    ${assignee}     ${get_assignee}
      ${EndTime1} =     Get Current Time in Milliseconds
      ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-     Calculate Running time  21  ${pageHeading}   Technology Page - Search by assignee      22    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+     Calculate Running time  21  ${pageHeading}   Technology Page - Search by assignee      21    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 
 Click on the first row of the technology table
