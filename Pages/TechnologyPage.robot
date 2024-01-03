@@ -230,6 +230,7 @@ Select an option from recovery table actions
 Select an option from technology table actions
     [Arguments]    ${Option}
      sleep      ${search_sleep}
+     Wait Until Element Is visible      ${technology_threeDot}       60
      Wait Until Element Is Enabled      ${technology_threeDot}       60
      click element      ${technology_threeDot}
      sleep      ${search_sleep}
