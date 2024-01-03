@@ -79,6 +79,7 @@ Enter team member last name
     wait until element is visible       ${TMLname}    60
     input text   ${TMLname}   ${generated_TMLname}
     log to console      ${generated_TMLname}
+    set global variable  ${generated_TMLname}
 
 
 Enter team member business email

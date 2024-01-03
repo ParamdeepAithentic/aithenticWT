@@ -230,6 +230,7 @@ Select an option from recovery table actions
 Select an option from technology table actions
     [Arguments]    ${Option}
      sleep      ${search_sleep}
+     Wait Until Element Is visible      ${technology_threeDot}       60
      Wait Until Element Is Enabled      ${technology_threeDot}       60
      click element      ${technology_threeDot}
      sleep      ${search_sleep}
@@ -532,7 +533,7 @@ Add first payment date of technology cost information
 
 Click on update button of edit_technology page
     [Arguments]    ${option}
-    wait until element is visible       //button[@type='submit'][normalize-space()='${option}']
+    wait until element is visible       //button[@type='submit'][normalize-space()='${option}']         60
     click element       //button[@type='submit'][normalize-space()='${option}']
 # option: Update, Cancel
 
@@ -647,6 +648,8 @@ Add assignment information department name
 
 Add assignment information assign to
     [Arguments]    ${option1}   ${option2}
+    wait until element is visible   ${assignTo}     60
+    wait until element is enabled   ${assignTo}     60
     click element       ${assignTo}
     sleep     5
     Generic.Enter value into field      ${assignTo}     ${option1}
@@ -1100,7 +1103,7 @@ Wait till supplier partner get auto polute
 Verify that support partner is added in partner association
     [Arguments]     ${option}
     wait until element is visible    //td[normalize-space()='${option}']      120
-    waait until element is enabled      //td[normalize-space()='${option}']      120
+    wait until element is enabled      //td[normalize-space()='${option}']      120
 
 Verify that supplier partner is added in partner association
     [Arguments]     ${option}
