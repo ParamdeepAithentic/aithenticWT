@@ -512,7 +512,8 @@ Edit brand and product via details
     TechnologyPage.Click technology product input field
     TechnologyPage.Select the first value of To dropdown of product
     TechnologyPage.Select edited technology lifecycle status      Active
-    TechnologyPage.Click on save technology form button
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
+    TechnologyPage.Click on update button of edit_technology page       Update
     TechnologyPage.Accept updated edited technology pop up     Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
 

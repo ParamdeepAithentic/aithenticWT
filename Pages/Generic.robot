@@ -188,7 +188,7 @@ Select parameter
     click element      //span[normalize-space()='${address}']
 
 Click on the profile name
-    wait until element is not visible      ${loaderIcon}        60
+    wait until element is not visible      ${loaderIcon}        120
     wait until element is visible       ${profileName}       60
     click element       ${profileName}
 

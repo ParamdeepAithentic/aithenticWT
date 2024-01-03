@@ -161,7 +161,7 @@ Verify all i-icon of partners page
 Verify all i-icon of Discovery assets
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.select the option from the side menu        Discovery Assets
+    Generic.select the option from the side menu        Asset Discovery
     Generic.Verify your current page location contains      discovery-assets
     I_iconPage.Choose tab under Discovery Assets       agent-discovery
     I_iconPage.Click on i-icon inside agent discovery
