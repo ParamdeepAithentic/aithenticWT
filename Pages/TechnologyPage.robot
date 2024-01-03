@@ -624,7 +624,7 @@ Add max contracted of contract information self
 ##############Assignment Information###############
 Add assignment information location
     [Arguments]    ${option1}
-#    wait until element is visible    ${locationName}      60
+    wait until element is visible    ${locationName}      60
     ${StartTime1} =     Get Current Time in Milliseconds
     click element       ${locationName}
 #    Clear Element Text      ${locationName}
@@ -1233,15 +1233,20 @@ Click on Location tab of technology- list page
     wait until element is visible   css:#location-tab   60
     click element   css:#location-tab
 
-Get Value of Assignment Information Location Name
-    wait until element is visible   css:#LocationName   60
-#    wait until element is enabled   css:#LocationName   60
-    ${input_value} =    Get Value    css:#LocationName
+Get Value of Assignment Information Location_Department_AssginTo_IDFields
+    [Arguments]     ${value}
+    wait until element is visible   css:#${value}   60
+    ${input_value} =    Get Value    css:#${value}
     Set Global Variable    ${input_value}
     Log To Console    ${input_value}
 
-
 verify Text from Assignment Information
-    [Arguments]     ${text}
-    should be equal     ${text}     ${option}
+    [Arguments]     ${option}
+    should be equal     ${input_value}     ${option}
+
+Verify Building name of past location
+    [Arguments]     ${building}
+    wait until element is visible   //td[normalize-space()='${building}']   60
+
+
 
