@@ -57,7 +57,7 @@ ${click_Country}     css:#country
 ${click_countryTag}     css:.iti__selected-flag.dropdown-toggle
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
-${yop_sleep}       10
+${yop_sleep}       6
 ${search_sleep}       1
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
 
@@ -188,7 +188,7 @@ Select parameter
     click element      //span[normalize-space()='${address}']
 
 Click on the profile name
-    wait until element is not visible      ${loaderIcon}        60
+    wait until element is not visible      ${loaderIcon}        120
     wait until element is visible       ${profileName}       60
     click element       ${profileName}
 
