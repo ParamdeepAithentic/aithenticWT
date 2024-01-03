@@ -649,6 +649,7 @@ Add assignment information department name
 Add assignment information assign to
     [Arguments]    ${option1}   ${option2}
     wait until element is visible   ${assignTo}     60
+    wait until element is enabled   ${assignTo}     60
     click element       ${assignTo}
     sleep     5
     Generic.Enter value into field      ${assignTo}     ${option1}
