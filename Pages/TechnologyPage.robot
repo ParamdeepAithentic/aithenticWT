@@ -1228,15 +1228,18 @@ Click on Bulk_import under action button
     click element         css:.add-bulk-member-qa
 
 Click on Location tab of technology- list page
+    wait until element is visible   css:#PrintQrButton   60
+    wait until element is enabled   css:#PrintQrButton   60
     wait until element is visible   css:#location-tab   60
     click element   css:#location-tab
 
 Get Value of Assignment Information Location Name
-    [Arguments]          ${value}
     wait until element is visible   css:#LocationName   60
-    ${input_value}=   get element attribute    css:#LocationName      ${value}
-    set global variable     ${input_value}
-    log to console  ${input_value}
+#    wait until element is enabled   css:#LocationName   60
+    ${input_value} =    Get Value    css:#LocationName
+    Set Global Variable    ${input_value}
+    Log To Console    ${input_value}
+
 
 verify Text from Assignment Information
     [Arguments]     ${text}

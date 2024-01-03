@@ -1428,7 +1428,7 @@ Technology Details- Verify the Location Details
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
     TechnologyPage.Click on Location tab of technology- list page
-#    TechnologyPage.Get Value of Assignment Information Location Name     ${generated_buildingname}
+    TechnologyPage.Get Value of Assignment Information Location Name
 #    TechnologyPage.verify Text from Assignment Information           ${generated_buildingname}
 #    TechnologyPage.Get Value of Disabled Field    DepartmentName   ${generated_DepartmentNumber}
 #    TechnologyPage.verify Text from Assignment Information      ${generated_DepartmentNumber}
@@ -1446,7 +1446,17 @@ Technology Details- Verify the Location Details
 #    Generic.Verify your current page location contains     technology-details
 #    TechnologyPage.Click on Location tab of technology- list page
 
-
+Technology Details- Verify the Location Details-2
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    sleep   6
+    TechnologyPage.Search by AssetId       AssetID_3480632009
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+    TechnologyPage.Click on Location tab of technology- list page
+    TechnologyPage.Get Value of Assignment Information Location Name
 
 
 
