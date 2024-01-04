@@ -90,6 +90,7 @@ Fill the technology form for license product
 
 
 Fill the technology form for hardware product
+    [Tags]      Sanity      Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
@@ -213,6 +214,7 @@ Fill the technology form for subscription product
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
 Create new asset with new brand and product
+    [Tags]      Sanity      Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
@@ -288,6 +290,7 @@ Create new asset with new brand and product
 
 
 Restore asset type one
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
@@ -519,6 +522,7 @@ Edit brand and product via details
 
 
 Sent Message should show in the Sent Tab
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
@@ -712,6 +716,7 @@ Add Products with 10 combinations of Tech Type and Tech group
 
 
 Add Technology Page - Add New location and assign that location
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
@@ -749,6 +754,7 @@ Add Technology Page - Add New location and assign that location
     Generic.Fetch alert message text and compare it with       Assigned Users created successfully
 
 Add New Support Partner and Assign that Partner
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
@@ -826,6 +832,7 @@ Add New Support Partner and Assign that Partner
 
 
 Verify the history of added technology
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
@@ -1336,6 +1343,7 @@ Edit Technology Page - Add New Supplier and assign that Supplier
     Generic.Fetch alert message text and compare it with        Technology updated successfully
 
 Edit Technology Page - Add New Support Partner and assign that Support Partner
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
@@ -1429,25 +1437,3 @@ Technology Details- Verify the Location Details
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
     TechnologyPage.Click on Location tab of technology- list page
-#    TechnologyPage.Get Value of Assignment Information Location Name     ${generated_buildingname}
-#    TechnologyPage.verify Text from Assignment Information           ${generated_buildingname}
-#    TechnologyPage.Get Value of Disabled Field    DepartmentName   ${generated_DepartmentNumber}
-#    TechnologyPage.verify Text from Assignment Information      ${generated_DepartmentNumber}
-#    TechnologyPage.Get Value of Disabled Field    AssignTo      ${generated_assignFname}
-#    TechnologyPage.verify Text from Assignment Information      ${generated_assignFname}
-#    TechnologyPage.Get Value of Disabled Field      EmployeeId     ${generate_employeeid}
-#    TechnologyPage.verify Text from Assignment Information      ${generate_employeeid}
-#    TechnologyPage.Click on edit button on product details page        Edit
-#    Generic.Verify your current page location contains      edit-technology
-#    TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
-#    TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-#    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
-#    TechnologyPage.Click on update button of edit_technology page      Update
-#    Generic.Fetch alert message text and compare it with        Technology updated successfully
-#    Generic.Verify your current page location contains     technology-details
-#    TechnologyPage.Click on Location tab of technology- list page
-
-
-
-
-
