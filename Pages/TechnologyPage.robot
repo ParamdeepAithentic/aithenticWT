@@ -624,7 +624,7 @@ Add max contracted of contract information self
 ##############Assignment Information###############
 Add assignment information location
     [Arguments]    ${option1}
-#    wait until element is visible    ${locationName}      60
+    wait until element is visible    ${locationName}      60
     ${StartTime1} =     Get Current Time in Milliseconds
     click element       ${locationName}
 #    Clear Element Text      ${locationName}
@@ -961,10 +961,11 @@ Create unique assign to employee_ID random
     wait until element is enabled     ${technology_employeeid}         60
     click element      ${technology_employeeid}
     ${random_string} =    Generate Random String       10      [NUMBERS]
-    ${generate_employeeid}=    Catenate    ${random_string}
-    input text      ${technology_employeeid}     EmployeeID_${generate_employeeid}
-    log to console      ${generate_employeeid}
+    ${generate_employeeid}=    Catenate    EmployeeID_${random_string}
     set global variable    ${generate_employeeid}
+    input text      ${technology_employeeid}     ${generate_employeeid}
+    log to console      ${generate_employeeid}
+#    set global variable    ${generate_employeeid}
 
 Click on refresh location icon
     wait until element is visible       //b[normalize-space()='click here to refresh the location list']       60
@@ -1228,17 +1229,25 @@ Click on Bulk_import under action button
     click element         css:.add-bulk-member-qa
 
 Click on Location tab of technology- list page
+    wait until element is visible   css:#PrintQrButton   60
+    wait until element is enabled   css:#PrintQrButton   60
     wait until element is visible   css:#location-tab   60
     click element   css:#location-tab
 
-Get Value of Assignment Information Location Name
-    [Arguments]          ${value}
-    wait until element is visible   css:#LocationName   60
-    ${input_value}=   get element attribute    css:#LocationName      ${value}
-    set global variable     ${input_value}
-    log to console  ${input_value}
+Get Value of Assignment Information Location_Department_AssginTo_IDFields
+    [Arguments]     ${value}
+    wait until element is visible   css:#${value}   60
+    ${assign_loc_input_value} =    Get Value    css:#${value}
+    Set Global Variable    ${assign_loc_input_value}
+    Log To Console    ${assign_loc_input_value}
 
 verify Text from Assignment Information
-    [Arguments]     ${text}
-    should be equal     ${text}     ${option}
+    [Arguments]     ${original}     ${compared}
+    should be equal     ${original}     ${compared}
+
+Verify parameter from past location table
+    [Arguments]     ${option}
+    wait until element is visible   //td[normalize-space()='${option}']        60
+
+
 
