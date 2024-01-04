@@ -1430,13 +1430,13 @@ Technology Details- Verify the Location Details
     Generic.Verify your current page location contains     technology-details
     TechnologyPage.Click on Location tab of technology- list page
     TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     LocationName
-    TechnologyPage.verify Text from Assignment Information           United States - ${generated_buildingname} - 6 - 30
+    TechnologyPage.verify Text from Assignment Information     ${assign_loc_input_value}          United States - ${generated_buildingname} - 6 - 30
     TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     DepartmentName
-    TechnologyPage.verify Text from Assignment Information      ${generated_DepartmentNumber}
+    TechnologyPage.verify Text from Assignment Information      ${assign_loc_input_value}       ${generated_DepartmentNumber}
     TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     AssignTo
-    TechnologyPage.verify Text from Assignment Information      ${generated_assignFname} ${generated_assignLname}
+    TechnologyPage.verify Text from Assignment Information      ${assign_loc_input_value}       ${generated_assignFname} ${generated_assignLname}
     TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     EmployeeId
-    TechnologyPage.verify Text from Assignment Information      EmployeeID_${generate_employeeid}
+    TechnologyPage.verify Text from Assignment Information      ${assign_loc_input_value}       ${generate_employeeid}
     TechnologyPage.Click on edit button on product details page        Edit
     Generic.Verify your current page location contains      edit-technology
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
@@ -1447,21 +1447,21 @@ Technology Details- Verify the Location Details
     Generic.Verify your current page location contains     technology-details
     TechnologyPage.Click on Location tab of technology- list page
     TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     LocationName
-    TechnologyPage.verify Text from Assignment Information           United States - Test qa Up50260220 - 21 - 2
+    TechnologyPage.verify Text from Assignment Information      ${assign_loc_input_value}         United States - Test qa Up50260220 - 21 - 2
     Generic.Verify your current page contains this text     Past Location
-    TechnologyPage.Verify Building name of past location    ${generated_buildingname}
+    TechnologyPage.Verify parameter from past location table    ${generated_buildingname}
 
-Technology Details- Verify the Location Details-2
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.select the option from the side menu    Technology
-    Generic.Verify your current page location contains      technology
-    sleep   6
-    TechnologyPage.Search by AssetId       AssetID_3480632009
-    TechnologyPage.Click on the first row of the technology table
-    Generic.Verify your current page location contains     technology-details
-    TechnologyPage.Click on Location tab of technology- list page
-    TechnologyPage.Get Value of Assignment Information Location Name
+#Technology Details- Verify the Location Details-2
+#    Generic.click on the tab	Login
+#    LandingPage.Fill the login Form      ${email}    ${valid_password}
+#    Generic.select the option from the side menu    Technology
+#    Generic.Verify your current page location contains      technology
+#    sleep   6
+#    TechnologyPage.Search by AssetId       AssetID_3480632009
+#    TechnologyPage.Click on the first row of the technology table
+#    Generic.Verify your current page location contains     technology-details
+#    TechnologyPage.Click on Location tab of technology- list page
+#    TechnologyPage.Get Value of Assignment Information Location Name
 
 
 

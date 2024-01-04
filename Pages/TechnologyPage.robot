@@ -961,10 +961,11 @@ Create unique assign to employee_ID random
     wait until element is enabled     ${technology_employeeid}         60
     click element      ${technology_employeeid}
     ${random_string} =    Generate Random String       10      [NUMBERS]
-    ${generate_employeeid}=    Catenate    ${random_string}
-    input text      ${technology_employeeid}     EmployeeID_${generate_employeeid}
-    log to console      ${generate_employeeid}
+    ${generate_employeeid}=    Catenate    EmployeeID_${random_string}
     set global variable    ${generate_employeeid}
+    input text      ${technology_employeeid}     ${generate_employeeid}
+    log to console      ${generate_employeeid}
+#    set global variable    ${generate_employeeid}
 
 Click on refresh location icon
     wait until element is visible       //b[normalize-space()='click here to refresh the location list']       60
@@ -1236,17 +1237,17 @@ Click on Location tab of technology- list page
 Get Value of Assignment Information Location_Department_AssginTo_IDFields
     [Arguments]     ${value}
     wait until element is visible   css:#${value}   60
-    ${input_value} =    Get Value    css:#${value}
-    Set Global Variable    ${input_value}
-    Log To Console    ${input_value}
+    ${assign_loc_input_value} =    Get Value    css:#${value}
+    Set Global Variable    ${assign_loc_input_value}
+    Log To Console    ${assign_loc_input_value}
 
 verify Text from Assignment Information
-    [Arguments]     ${option}
-    should be equal     ${input_value}     ${option}
+    [Arguments]     ${original}     ${compared}
+    should be equal     ${original}     ${compared}
 
-Verify Building name of past location
-    [Arguments]     ${building}
-    wait until element is visible   //td[normalize-space()='${building}']   60
+Verify parameter from past location table
+    [Arguments]     ${option}
+    wait until element is visible   //td[normalize-space()='${option}']        60
 
 
 
