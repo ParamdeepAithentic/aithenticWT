@@ -336,6 +336,7 @@ Restore asset type one
     Generic.Fetch alert message text and compare it with        Technology Removed Successfully
     TechnologyPage.Click on manage technology sub option       Removed Assets
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on three dots of action button
     TechnologyPage.Select an option from recovery table actions    Restore
     Generic.Fetch alert message text and compare it with        Assets restored successfully.
     TechnologyPage.Click on manage technology sub option       Technology List
@@ -388,6 +389,7 @@ Restore asset from removed asset details page
     Generic.Fetch alert message text and compare it with        Technology Removed Successfully
     TechnologyPage.Click on manage technology sub option       Removed Assets
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on three dots of action button
     TechnologyPage.Select an option from recovery table actions    Restore
     Generic.Fetch alert message text and compare it with        Assets restored successfully.
     TechnologyPage.Click on manage technology sub option       Technology List
@@ -441,6 +443,8 @@ Restore asset by selecting checkbox
     Generic.Fetch alert message text and compare it with        Technology Removed Successfully
     TechnologyPage.Click on manage technology sub option       Removed Assets
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Select and restore asset
+    TechnologyPage.Click on three dots of action button
     TechnologyPage.Select an option from recovery table actions    Restore
     Generic.Fetch alert message text and compare it with        Assets restored successfully.
     TechnologyPage.Click on manage technology sub option       Technology List
@@ -1472,3 +1476,74 @@ Technology Details- Verify the Location Details
 #    Generic.Verify your current page location contains     technology-details
 #    TechnologyPage.Click on Location tab of technology- list page
 #    TechnologyPage.Get Value of Assignment Information Location Name
+
+
+Technology-Inactive asset and Restore asset
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form     chirag@dmts.fr.nf    Test@789
+    Generic.Click on the profile name
+    Generic.Select option from profile list     subscription-dropdown
+    Generic.Verify your current page location contains      subscription
+    SubscriptionPage.Select if you want to change plan or asset    Change Plan
+    TechnologyPage.Click on current plan of subscription
+    Generic.Scroll the page till    200
+#    sleep   3
+    SubscriptionPage.Set asset range to     200
+    SubscriptionPage.Update the payment of changed plan     proceed
+    TechnologyPage.Click on pop up of subscription  cancel
+    SubscriptionPage.Select the payment method    ach
+    SubscriptionPage.Select the account for payment
+    SubscriptionPage.Proceed the payment     proceed
+    Generic.Fetch alert message text and compare it with      Payment Successful
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+#    TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    #           TechnologyPage.Click technology product input field
+    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select purchase date
+    TechnologyPage.Select warranty end date    12/12/2028
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Add technology lifecycle comment    Technology Lifecycle Information- comment
+    TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
+    TechnologyPage.Add assignment information department name      TestQA Department Up31840619
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology-list
+    sleep   2
+    Generic.Click on the profile name
+    Generic.Select option from profile list     subscription-dropdown
+    Generic.Verify your current page location contains      subscription
+    SubscriptionPage.Select if you want to change plan or asset    Change Plan
+    TechnologyPage.Click on current plan of subscription
+    Generic.Scroll the page till    200
+
+    SubscriptionPage.Set asset range to     100
+    SubscriptionPage.Update the payment of changed plan     proceed
+    TechnologyPage.Click on asset limit exceeded pop up
+    Sleep   1
+    Generic.Verify your current page location contains      technology-list
+    Sleep   1
+    TechnologyPage.Search by AssetId       1162-70
+    TechnologyPage.Select and restore asset
+    SubscriptionPage.Update the payment of changed plan     proceed
+    SubscriptionPage.Select the payment method    ach
+    SubscriptionPage.Select the account for payment
+    SubscriptionPage.Proceed the payment     proceed
+    Generic.Fetch alert message text and compare it with      Payment Successful
+    Generic.Click on the profile name
+    Generic.Select option from profile list     subscription-dropdown
+    Generic.Verify your current page location contains      subscription
+    SubscriptionPage.Select if you want to change plan or asset    Change Plan
+    TechnologyPage.Click on current plan of subscription
+    Generic.Scroll the page till    200
+
+
+
