@@ -277,3 +277,4 @@ Scroll Window To End
 
 Wait until table get load
     wait until element is visible      (//table//td)[1]          60
+    sleep   1
