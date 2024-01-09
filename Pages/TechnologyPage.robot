@@ -196,10 +196,12 @@ Create self unique serial number
 
 
 Select and restore asset
-#    sleep       3
-
     wait until element is visible       ${fetch_assetID}        60
     wait until element is enabled       ${fetch_assetID}        60
+    wait until element is visible   ${removedTechnology_chkBox}     60
+    wait until element is enabled   ${removedTechnology_chkBox}     60
+    sleep   3
+   Wait Until Element Is not Visible  xpath=//div[@class='fade-shadow']  60s
     click element   ${removedTechnology_chkBox}
 #    Wait Until Element Is Enabled      ${restore_BTN}       60
 #    click element   ${restore_BTN}
@@ -1266,10 +1268,6 @@ Click on pop up of subscription
     wait until element is enabled   css:.qa-available-inactive-assests-${option}   60
     click element   css:.qa-available-inactive-assests-${option}
 
-Click on checkbox to remove technology
-    wait until element is visible  //tbody/tr[1]/td[1]/label[1]/span[1]    60
-    click element   //tbody/tr[1]/td[1]/label[1]/span[1]
-
 Click on removed assets option of technology filters
     wait until element is visible   css:.qa-removed-aasets-section  60
     click element   css:.qa-removed-aasets-section
@@ -1278,5 +1276,11 @@ Click on asset limit exceeded pop up
     wait until element is visible   css:.qa-asset-limit-exceede-technology      60
     click element   css:.qa-asset-limit-exceede-technology
 
+Click on proceed button of technology list page
+    wait until element is visible   css:.btn.button-cyan.mt-0.ng-star-inserted      60
+    click element   css:.btn.button-cyan.mt-0.ng-star-inserted
 
+Click on Available Inactive asset Pop up
+    wait until element is visible   css:.qa-available-inactive-assests-technology       60
+    click element   css:.qa-available-inactive-assests-technology
 

@@ -274,3 +274,6 @@ Verify pop-up is visible after clicking on i-icon
 
 Scroll Window To End
     Execute JavaScript    window.scrollTo(0, document.body.scrollHeight);
+
+Wait until table get load
+    wait until element is visible      (//table//td)[1]          60

@@ -1517,23 +1517,26 @@ Technology-Inactive asset and Restore asset
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology-list
-    sleep   2
+    Generic.Wait until table get load
+    sleep   1
     Generic.Click on the profile name
     Generic.Select option from profile list     subscription-dropdown
     Generic.Verify your current page location contains      subscription
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     TechnologyPage.Click on current plan of subscription
     Generic.Scroll the page till    200
-
     SubscriptionPage.Set asset range to     100
     SubscriptionPage.Update the payment of changed plan     proceed
+    Sleep   2
     TechnologyPage.Click on asset limit exceeded pop up
-    Sleep   1
+
     Generic.Verify your current page location contains      technology-list
-    Sleep   1
-    TechnologyPage.Search by AssetId       1162-70
+
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+
     TechnologyPage.Select and restore asset
-    SubscriptionPage.Update the payment of changed plan     proceed
+
+    TechnologyPage.Click on proceed button of technology list page
     SubscriptionPage.Select the payment method    ach
     SubscriptionPage.Select the account for payment
     SubscriptionPage.Proceed the payment     proceed
@@ -1544,6 +1547,19 @@ Technology-Inactive asset and Restore asset
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     TechnologyPage.Click on current plan of subscription
     Generic.Scroll the page till    200
+    SubscriptionPage.Set asset range to     200
+    SubscriptionPage.Update the payment of changed plan     proceed
+    Sleep   2
+    TechnologyPage.Click on Available Inactive asset Pop up
 
+    Generic.Verify your current page location contains      manage-technology-list
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
 
+    TechnologyPage.Select and restore asset
+
+    Generic.click on the button     Restore
+    SubscriptionPage.Select the payment method    ach
+    SubscriptionPage.Select the account for payment
+    SubscriptionPage.Proceed the payment     proceed
+    Generic.Fetch alert message text and compare it with      Payment Successful
 
