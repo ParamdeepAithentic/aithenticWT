@@ -1490,7 +1490,7 @@ Technology-Inactive asset and Restore asset
 
     SubscriptionPage.Set asset range to     200
     SubscriptionPage.Update the payment of changed plan     proceed
-    TechnologyPage.Click on pop up of subscription  cancel
+    TechnologyPage.Click on pop up of available Inactive Asset   cancel
     SubscriptionPage.Select the payment method    ach
     SubscriptionPage.Select the account for payment
     SubscriptionPage.Proceed the payment     proceed
@@ -1549,7 +1549,7 @@ Technology-Inactive asset and Restore asset
     SubscriptionPage.Set asset range to     200
     SubscriptionPage.Update the payment of changed plan     proceed
     Sleep   2
-    TechnologyPage.Click on Available Inactive asset Pop up
+    TechnologyPage.Click on pop up of available Inactive Asset       technology
 
     Generic.Verify your current page location contains      manage-technology-list
     TechnologyPage.Search by AssetId       ${generated_AssetID}

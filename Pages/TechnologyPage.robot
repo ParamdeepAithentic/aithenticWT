@@ -1262,7 +1262,7 @@ Click on current plan of subscription
     wait until element is visible   //button[normalize-space()='Current Plan']  60
     click element   //button[normalize-space()='Current Plan']
 
-Click on pop up of subscription
+Click on pop up of available Inactive Asset
     [Arguments]     ${option}
     wait until element is visible   css:.qa-available-inactive-assests-${option}   60
     wait until element is enabled   css:.qa-available-inactive-assests-${option}   60
@@ -1279,8 +1279,4 @@ Click on asset limit exceeded pop up
 Click on proceed button of technology list page
     wait until element is visible   css:.btn.button-cyan.mt-0.ng-star-inserted      60
     click element   css:.btn.button-cyan.mt-0.ng-star-inserted
-
-Click on Available Inactive asset Pop up
-    wait until element is visible   css:.qa-available-inactive-assests-technology       60
-    click element   css:.qa-available-inactive-assests-technology
 
