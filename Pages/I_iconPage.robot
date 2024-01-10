@@ -159,8 +159,8 @@ Click on i-icon inside technology
 Click on i-icon inside agent discovery
     Wait Until Page Contains Element        //button[normalize-space()='Download Agent']        60
 #   wait until element is visible       css:#nav-system-configuration .qa-iIconSection-network-discovery     60
-    wait until element is visible   css:.qa-agent-discovery     60
-    click element       css:.qa-agent-discovery
+    wait until element is visible   css:.qa-iIconSection-agent-discovery     60
+    click element       css:.qa-iIconSection-agent-discovery
     sleep       ${search_sleep}
 
 Click on link inside agent_discovery i-icon
@@ -176,8 +176,8 @@ Choose tab under Discovery Assets
 
 Click on i_icon under network_discovery tab
     Wait Until Page Contains element       //p[normalize-space()='Discovered Assets List']     60
-    wait until element is visible       css:#nav-company-infomation .qa-iIconSection-network-discovery      60
-    click element       css:#nav-company-infomation .qa-iIconSection-network-discovery
+    wait until element is visible       css:.qa-iIconSection-network-discovery      60
+    click element       css:.qa-iIconSection-network-discovery
 
 
 
