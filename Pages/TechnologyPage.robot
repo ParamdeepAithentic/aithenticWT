@@ -1218,14 +1218,14 @@ Renewal Date via technology
 
 Click on action button of technology
     wait until element is not visible      ${loaderIcon}    60
-    wait until element is visible   css:#Team-Member-Actions      60
-    wait until element is enabled   css:#Team-Member-Actions      60
-    click element   css:#Team-Member-Actions
+    wait until element is visible   css:.qa-technology-list-actions      60
+    wait until element is enabled   css:.qa-technology-list-actions      60
+    click element   css:.qa-technology-list-actions
 
 Choose add technology from action button of technology
-    wait until element is visible   css:.add-member-technology      60
-    wait until element is enabled   css:.add-member-technology      60
-    click element   css:.add-member-technology
+    wait until element is visible   css:.qa-add-new-technology      60
+    wait until element is enabled   css:.qa-add-new-technology      60
+    click element   css:.qa-add-new-technology
 
 Click on Bulk_edit under action button
     wait until element is visible       //a[@title="Bulk Edit"]         60
@@ -1270,13 +1270,27 @@ Click on pop up of available Inactive Asset
 
 Click on removed assets option of technology filters
     wait until element is visible   css:.qa-removed-aasets-section  60
+    wait until element is enabled   css:.qa-removed-aasets-section  60
     click element   css:.qa-removed-aasets-section
 
 Click on asset limit exceeded pop up
     wait until element is visible   css:.qa-asset-limit-exceede-technology      60
+    wait until element is enabled   css:.qa-asset-limit-exceede-technology      60
     click element   css:.qa-asset-limit-exceede-technology
 
 Click on proceed button of technology list page
-    wait until element is visible   css:.btn.button-cyan.mt-0.ng-star-inserted      60
-    click element   css:.btn.button-cyan.mt-0.ng-star-inserted
+    wait until element is visible   css:.qa-proceed-retore-asset-technology-list      60
+    wait until element is enabled   css:.qa-proceed-retore-asset-technology-list      60
+    click element   css:.qa-proceed-retore-asset-technology-list
+
+Click on restore button of technology Details Page
+    wait until element is visible   css:.qa-restore-assets      60
+    wait until element is enabled   css:.qa-restore-assets      60
+    click element   css:.qa-restore-assets
+    wait until element is not visible   ${loaderIcon}     60
+
+Click on back to list of technology
+    wait until element is visible   ${back_To_List_Link}    60
+    wait until element is enabled   ${back_To_List_Link}    60
+    click element   ${back_To_List_Link}
 
