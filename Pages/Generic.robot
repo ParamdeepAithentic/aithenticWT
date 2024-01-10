@@ -36,6 +36,11 @@ Resource        ../Pages/I_iconPage.robot
 ${user_name}             rahulshettyacademy
 ${invalid_password}      123445
 
+${admin_url}        https://qa-admin.aithentic.com/
+${admin_url}        https://uat-admin.aithentic.com/
+${admin_name}        aithentic@yopmail.com
+${admin_password}       Admin@123
+
 #${url}                  https://uat-app.aithentic.com/
 ${url}                  https://qa-app.aithentic.com/
 #${apiURL}               https://uat-api.aithentic.com/api/v1
