@@ -1433,6 +1433,7 @@ Technology Details- Verify the Location Details
     TechnologyPage.Create unique assign to employee_ID random
     TechnologyPage.Save the assign to      save
     Generic.Fetch alert message text and compare it with       Assigned Users created successfully
+    TechnologyPage.Add assignment information assign to        ${generated_assignFname}  ${generated_assignLname}
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
 
