@@ -29,6 +29,9 @@ Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/MemberPage.robot
 Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/TeamMemberPage.robot
+Resource        ../Pages/ReportsPage.robot
+Resource        ../Pages/I_iconPage.robot
+
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
 
@@ -67,6 +70,7 @@ Test Teardown   Close Browser session
 
 
 Technology Auto removed from dynamic contract When edit Brand and product
+    [Tags]      Sanity      Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Partners
@@ -99,8 +103,6 @@ Technology Auto removed from dynamic contract When edit Brand and product
     Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generate_BusinessName}
 
-
-
     Generic.Click on the profile name
     Generic.Select option from profile list     product-dropdown
     Generic.Verify your current page location contains      product
@@ -121,7 +123,8 @@ Technology Auto removed from dynamic contract When edit Brand and product
 
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       ${generate_BusinessName}
@@ -144,7 +147,7 @@ Technology Auto removed from dynamic contract When edit Brand and product
     TechnologyPage.Add expense type of technology cost information     Capex
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Add support partner of partners information     QABusiness04191432
     TechnologyPage.Add supplier of partners information        qabrand10050505
     TechnologyPage.Click on save technology form button
@@ -183,6 +186,7 @@ Technology Auto removed from dynamic contract When edit Brand and product
     Generic.Fetch alert message text and compare it with        Contract created successfully
     ContractsPage.Search by contract BrandName      ${generate_BusinessName}
     ContractsPage.Fetch the contract ID from the row
+    ContractsPage.Search by contract BrandName      ${generate_BusinessName}
     ContractsPage.Fetch the contract Brand Name from the row      ${generate_BusinessName}
 
 #----------------------------------------- EDIT TECHNOLOGY -------------------------------------
@@ -220,6 +224,7 @@ Technology Auto removed from dynamic contract When edit Brand and product
 
 
 Technology Auto removed from static contract When edit Brand and product
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Partners
@@ -274,7 +279,8 @@ Technology Auto removed from static contract When edit Brand and product
 
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       ${generate_BusinessName}
@@ -297,7 +303,7 @@ Technology Auto removed from static contract When edit Brand and product
     TechnologyPage.Add expense type of technology cost information     Capex
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Add support partner of partners information     QABusiness04191432
     TechnologyPage.Add supplier of partners information        qabrand10050505
     TechnologyPage.Click on save technology form button
@@ -343,6 +349,7 @@ Technology Auto removed from static contract When edit Brand and product
     Generic.Fetch alert message text and compare it with        Contract created successfully
     ContractsPage.Search by contract BrandName      ${generate_BusinessName}
     ContractsPage.Fetch the contract ID from the row
+    ContractsPage.Search by contract BrandName      ${generate_BusinessName}
     ContractsPage.Fetch the contract Brand Name from the row      ${generate_BusinessName}
 
 #----------------------------------------- EDIT TECHNOLOGY -------------------------------------

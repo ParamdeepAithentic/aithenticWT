@@ -28,6 +28,9 @@ Resource        ../Pages/OCS.robot
 Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/TeamMemberPage.robot
+Resource        ../Pages/ReportsPage.robot
+Resource        ../Pages/I_iconPage.robot
+
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
 
@@ -39,6 +42,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Compose Message invite user test
+    [Tags]      Sanity      Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      asset-overview
@@ -123,7 +127,9 @@ Compose Message invite user test
 
 
     ${StartTime1} =     Get Current Time in Milliseconds
-    TechnologyPage.click on add technology button
+#    TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
@@ -150,7 +156,7 @@ Compose Message invite user test
     TechnologyPage.Add expense type of technology cost information     Capex
     TechnologyPage.Add assignment information location     United States - Main Office - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Add support partner of partners information     QABusiness04191432
     TechnologyPage.Add supplier of partners information        qabrand10050505
     TechnologyPage.Click on save technology form button
@@ -195,7 +201,14 @@ Compose Message invite user test
     Generic.Fetch alert message text and compare it with        Contract created successfully
     ContractsPage.Search by contract BrandName      ${generate_BusinessName}
     ContractsPage.Fetch the contract ID from the row
+    ContractsPage.Search by contract BrandName      ${generate_BusinessName}
     ContractsPage.Fetch the contract Brand Name from the row      ${generate_BusinessName}
+
+    Generic.Click on the profile name
+    Generic.Select other option from profile list     Logout
+    Generic.Verify your current page location contains      logout
+    Generic.Fetch alert message text and compare it with       Successfully logged out
+
 #--------------------------------------YOP mail -----------------------------------------------------------
 
     Generic.Open new window     yopmail
@@ -539,6 +552,7 @@ Export Specificartner into Excel Doc CSV and TSV for manufacturer
 
 
 Export Specificartner into Excel Doc CSV and TSV for Supplier
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Partners
@@ -600,6 +614,7 @@ Export Specificartner into Excel Doc CSV and TSV for Supplier
 
 
 Export Specificartner into Excel Doc CSV and TSV for Support Partner
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Partners
@@ -702,6 +717,7 @@ Add Manufacturer via personal detail under technology and partner
 
 
 Edit Manufacturer via partner
+    [Tags]      Sanity
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
@@ -780,6 +796,7 @@ Edit Manufacturer via partner
 
 
 Deactivate Manufacturer via partner
+    [Tags]      Sanity
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
@@ -1050,7 +1067,9 @@ View Details and check the details of Contract
     Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name   ${generate_BusinessName}
     Generic.select the option from the side menu    Technology
-    TechnologyPage.click on add technology button
+#   TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     PartnersPage.Click here to add link of contract details     Click here to add
     DashboardPage.Create random productName
     DashboardPage.Add product brand name      ${generate_BusinessName}
@@ -1132,12 +1151,3 @@ View Details and check the details of Contract
     PartnersPage.Verify pages with the element  Item
     PartnersPage.Click on back to contract details button link
     PartnersPage.Download the contract pdf
-
-Verify all i-icon of partners page
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.select the option from the side menu    Partners
-    Generic.Verify your current page location contains      partner-listing
-    PartnersPage.Click on i-icon of partners tab
-    Generic.Verify pop-up is visible after clicking on i-icon
-    PartnersPage.Click on i-icon of partners tab

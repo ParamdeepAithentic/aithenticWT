@@ -26,6 +26,8 @@ Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
 Resource        ../Pages/OCS.robot
 Resource        ../Pages/RegisterUserPage.robot
+Resource        ../Pages/ReportsPage.robot
+Resource        ../Pages/I_iconPage.robot
 
 *** Variables ***
 ${preparingAgent_text}     //div[@id='downloadAgentOCSFile']//p[contains(text(),'File is preparing, please wait....')]
@@ -41,9 +43,17 @@ Would you like to download agent
     wait until element is visible      //button[normalize-space()='${option}']     60
     wait until element is enabled      //button[normalize-space()='${option}']     60
     click element       //button[normalize-space()='${option}']
+    wait until element is not visible   ${loaderIcon}   60
 
 Select the agent type
     [Arguments]    ${option}
     wait until element is visible      //button[normalize-space()='${option}']     60
     wait until element is enabled      //button[normalize-space()='${option}']     60
     click element       //button[normalize-space()='${option}']
+
+Choose tab under Discovery Assets
+    [Arguments]     ${option}
+    wait until element is not visible   ${loaderIcon}        60
+    wait until element is visible       css:.qa-${option}-tab       60
+    click element       css:.qa-${option}-tab
+#option: network-discovery, agent-discovery

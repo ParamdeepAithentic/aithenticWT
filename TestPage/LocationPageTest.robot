@@ -27,6 +27,9 @@ Resource        ../Pages/LocationPage.robot
 Resource        ../Pages/OCS.robot
 Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/MemberPage.robot
+Resource        ../Pages/ReportsPage.robot
+Resource        ../Pages/I_iconPage.robot
+
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
 
@@ -82,58 +85,3 @@ Activate and deactivate the location
     Generic.Fetch alert message text and compare it with    Status updated successfully
     LocationPage.Search by location name     ${generated_location}
     LocationPage.Fetch and verify the location status from the row   Active
-
-
-
-Location Bulk Edit
-     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
-
-    Generic.select the option from the side menu    Location
-    Generic.Verify your current page location contains      locationlist
-
-    LocationPage.Click on Location action button
-
-    LocationPage.Click on add location button    Add New Location
-    Generic.Verify your current page location contains      add-location
-
-
-    LocationPage.Select location country     United States
-    LocationPage.Select location building name   Trump tower
-    LocationPage.Select location floor   second
-    LocationPage.Select location room    203
-    LocationPage.Select location address one     this address one of the location
-    LocationPage.Select location address two     this address two of the location
-    LocationPage.Select location state       Texas
-    LocationPage.Select location city        Austin
-    LocationPage.Select location zip     147001
-    LocationPage.Create random location name
-    LocationPage.Save location form     save
-    Generic.Fetch alert message text and compare it with    Location created successfully
-    LocationPage.Search by location name     ${generated_location}
-    LocationPage.Fetch the location Name from the row       ${generated_location}
-
-    LocationPage.Click on Location action button
-    LocationPage.Select the option from action menu      edit
-    sleep   5
-    Switch Window       aithentic | Edit - Locations
-    Generic.Verify your current page location contains      location-bulk-edit
-    LocationPage.Select option from country column       Country
-    LocationPage.Enter the new value in the building name column     BuildingName        Phelps tower
-    LocationPage.Enter the new value in the floor number column      Floor       first
-    LocationPage.Enter the new value in the room number column       Room        303
-    LocationPage.Enter the new value in the state column    State       Adana
-    LocationPage.Enter the new value in the city column     City        Adana
-    LocationPage.Enter the new value in the location name column     LocationTypeName
-
-    Generic.Click on the button     Update      #Check Data,Edit
-#    MemberPage.Confirm the exit import process pop appers
-#    Generic.Click on the button     Confirm
-#    Generic.Fetch alert message text and compare it with        Products updated successfully
-    MemberPage.Verify the upload message text    Upload       Upload Successful
-    Generic.Click on the button     Exit
-    MemberPage.Confirm the exit import process pop appers
-    Generic.Click on the button     Confirm
-    sleep       1
-    Switch Window       aithentic | Location - List
-    LocationPage.Search by location name     ${generated_NewLocationName}

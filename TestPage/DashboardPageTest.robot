@@ -29,6 +29,8 @@ Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/MemberPage.robot
 Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/TeamMemberPage.robot
+Resource        ../Pages/ReportsPage.robot
+Resource        ../Pages/I_iconPage.robot
 
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
@@ -43,7 +45,7 @@ Click the option from side drawer
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Dashboard
     Generic.Verify your current page location contains      dashboard
-    DashboardPage.select the option from the dashboard drawer   IT Performance
+    DashboardPage.select the option from the dashboard drawer   IT Performances
     Generic.Verify your current page location contains      it-performance
 
 
@@ -123,83 +125,6 @@ Create a new product with adding new brand
     Generic.Fetch alert message text and compare it with        Product created successfully
     DashboardPage.Verify product added    ${generated_product}
 
-Add Product Bulk Edit
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.Click on the profile name
-    Generic.Select option from profile list     product-dropdown
-    Generic.Verify your current page location contains      product
-    DashboardPage.Click on action button
-    DashboardPage.Click add product button
-    DashboardPage.Create random productName
-    DashboardPage.Add product brand name      Getac
-    DashboardPage.Add product description
-    DashboardPage.Add product feature
-    DashboardPage.Select product technology type     Hardware
-    DashboardPage.Select product technology group     Applications
-    DashboardPage.Select product status   Active
-    DashboardPage.Save added product details
-    Generic.Fetch alert message text and compare it with        Product created successfully
-    DashboardPage.Verify product added    ${generated_product}
-    DashboardPage.Click on action button
-    DashboardPage.Select the option from action menu      edit
-    sleep   ${yop_sleep}
-    Switch Window       aithentic | Edit - Products
-    Generic.Verify your current page location contains      product-bulk-edit
-    DashboardPage.Enter the new value in the product name column      ProductId
-    DashboardPage.Enter the new value in the brand name column       BrandName    QABrand555
-    DashboardPage.Select option from status column        ProductStatus
-    DashboardPage.Select option from technology type column       TechType
-
-    Generic.Click on the button     Update      #Check Data,Edit
-    MemberPage.Confirm the exit import process pop appers
-    sleep   ${search_sleep}
-    Generic.Click on the button     Confirm
-    sleep   ${search_sleep}
-    MemberPage.Verify the upload message text    Upload       Upload Successful
-    Generic.Click on the button     Exit
-    MemberPage.Confirm the exit import process pop appers
-    sleep   ${search_sleep}
-    Generic.Click on the button     Confirm
-    sleep       ${yop_sleep}
-    Switch Window       aithentic | Product - List
-    DashboardPage.Verify product added    ${generated_EditProductName}
-
-
-
-Add Department Bulk Edit
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.Click on the profile name
-    Generic.Select option from profile list     department-dropdown
-    Generic.Verify your current page location contains      department-list
-    DashboardPage.Click on action button
-    DashboardPage.Click on add department
-    DashboardPage.Create unique department name random
-#    DashboardPage.Select department status    Active
-    DashboardPage.Select department cost center     1300
-    DashboardPage.Save the department       add
-    Generic.Fetch alert message text and compare it with        Department added successfully
-    DashboardPage.Verify department added       ${generated_DepartmentNumber}
-
-    DashboardPage.Click on action button
-    DashboardPage.Select the option from department action menu      Bulk Edit
-    sleep   ${yop_sleep}
-    Switch Window       aithentic | Data-Wizard
-    Generic.Verify your current page location contains      department-bulk-edit
-    DashboardPage.Enter the new value in the department name column     department_name
-    DashboardPage.Select option from department status column       DepartmentStatus
-    DashboardPage.Enter the new value in the cost center column     costCenter
-
-    Generic.Click on the button     Upload      #Check Data,Edit,Upload
-    DashboardPage.Verify the upload message text    Upload       Upload successful
-    Generic.Click on the button     Exit
-    DashboardPage.Confirm the exit import process pop appers
-    Generic.Click on the button     Confirm
-    sleep       1
-    Switch Window       aithentic | Department - List
-    DashboardPage.Verify department added     ${generated_EditDepartmentName}
-
 
 Add Brand via personal detail under technology
     Generic.click on the tab	Login
@@ -253,6 +178,9 @@ Invite user into Aithentic
     DashboardPage.Click on Send Invite button
     Generic.Verify alertify is visible
     Generic.Fetch alert message text and compare it with        Invite sent successfully
+    Generic.Click on the profile name
+    Generic.Select other option from profile list     Logout
+    Generic.Fetch alert message text and compare it with        Successfully logged out
     Generic.Open new window      yopmail
     Generic.Search yopmail emails for       ${generate_sharetoEmail}
     Generic.Refresh the existing page
@@ -335,6 +263,7 @@ Invite user into Aithentic
 
 
 Verify Help Center
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Dashboard
@@ -669,6 +598,7 @@ Remove Brand and address via brand under profile list
     Generic.Fetch alert message text and compare it with      Brand deleted successfully
 
 Verify adding a new brand from profile listing
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
@@ -693,178 +623,93 @@ Verify adding a new brand from profile listing
     DashboardPage.Select option from the pop up     yes
     Generic.Fetch alert message text and compare it with      Brand deleted successfully
 
-Verify Reports Key Data records count
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.select the option from the side menu    Dashboard
-    DashboardPage.select the option from the dashboard drawer       Reports
-    Generic.Verify your current page location contains          reports
-    DashboardPage.Click on tab under key data       Departments
-    Generic.Verify your current page location contains          department-list
-    Generic.Scroll Window To End
-    DashboardPage.Fetch the total count         Total Count :
-    DashboardPage.Verify that key_data is equals to total number of counts      Department
-    Go back
-    Generic.Verify your current page location contains          reports
-    DashboardPage.Click on tab under key data       Locations
-    Generic.Verify your current page location contains          locationlist
-    Generic.Scroll Window To End
-    DashboardPage.Fetch the total count         Total Count :
-    DashboardPage.Verify that key_data is equals to total number of counts      Location
-    Go back
-    Generic.Verify your current page location contains          reports
-    DashboardPage.Click on tab under key data       Team Members
-    Generic.Verify your current page location contains          memberslist
-    Generic.Scroll Window To End
-    DashboardPage.Fetch the total count         Total Count :
-    DashboardPage.Verify that key_data is equals to total number of counts      Team Members
-    Go back
-    Generic.Verify your current page location contains          reports
-    DashboardPage.Click on tab under key data       Assigned Users
-    Generic.Verify your current page location contains          assignee-list
-    Generic.Scroll Window To End
-    DashboardPage.Fetch the total count         Total Count :
-    DashboardPage.Verify that key_data is equals to total number of counts      Assigned_users
-    Go back
-    Generic.Verify your current page location contains          reports
-    DashboardPage.Click on tab under key data       Partners
-    Generic.Verify your current page location contains          partner-listing
-    Generic.Scroll Window To End
-    DashboardPage.Fetch the total count         Total Count :
-    DashboardPage.Verify that key_data is equals to total number of counts      Partners
-    Go back
-    Generic.Verify your current page location contains          reports
-    DashboardPage.Click on tab under key data       Contracts
-    Generic.Verify your current page location contains          contracts-list
-    Generic.Scroll Window To End
-    DashboardPage.Fetch the total count        Total Count :
-    DashboardPage.Verify that key_data is equals to total number of counts      Contracts
-
-Verify Reports Technology Types records count
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.select the option from the side menu    Dashboard
-    DashboardPage.select the option from the dashboard drawer       Reports
-    Generic.Verify your current page location contains          reports
-    DashboardPage.Click on tab under Technology Types       Hardware
-    Generic.Verify your current page location contains          technology-list
-    Generic.Scroll Window To End
-    DashboardPage.Fetch the total count         Total Count :
-    DashboardPage.Verify that key_data is equals to total number of counts      Hardware
-    Go back
-    Generic.Verify your current page location contains          reports
-    DashboardPage.Click on tab under Technology Types       License
-    Generic.Verify your current page location contains          technology-list
-    Generic.Scroll Window To End
-    DashboardPage.Fetch the total count         Total Count :
-    DashboardPage.Verify that key_data is equals to total number of counts      License
-    Go back
-    Generic.Verify your current page location contains          reports
-    DashboardPage.Click on tab under Technology Types       Virtual Machines
-    Generic.Verify your current page location contains          technology-list
-    Generic.Scroll Window To End
-    DashboardPage.Fetch the total count         Total Count :
-    DashboardPage.Verify that key_data is equals to total number of counts      Virtual Machines
-    Go back
-    Generic.Verify your current page location contains          reports
-    DashboardPage.Click on tab under Technology Types      Maintenance
-    Generic.Verify your current page location contains          technology-list
-    Generic.Scroll Window To End
-    DashboardPage.Fetch the total count         Total Count :
-    DashboardPage.Verify that key_data is equals to total number of counts      Maintenance
-    Go back
-    Generic.Verify your current page location contains          reports
-    DashboardPage.Click on tab under Technology Types       Subscription
-    Generic.Verify your current page location contains          technology-list
-    Generic.Scroll Window To End
-    DashboardPage.Fetch the total count         Total Count :
-    DashboardPage.Verify that key_data is equals to total number of counts      Subscription
-
-Verify all i-icon of Dashboard page
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.select the option from the side menu    Dashboard
-    Generic.Verify your current page location contains      asset-overview
-    DashboardPage.Click on i-icon of asset-overview tab
-    DashboardPage.Verify i-icon popup is visible
-    DashboardPage.Click on i-icon of asset-overview tab
-    DashboardPage.select the option from the dashboard drawer   Reports
-    Generic.Verify your current page location contains      reports
-    DashboardPage.Hover over i-icon of reports tab
-    DashboardPage.Verify hovering on i-icon shows message and compare it with       This data is shown of last 24hours
-
-Verify all i-icon of profile-listing
+Verify Department quick_links in profile settings dropdown
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
-    Generic.Select option from profile list     personal-details
-    DashboardPage.Choose options inside personal_details        Organization
-    DashboardPage.Choose tabs under organization        system
-    DashboardPage.Click on i-icon of system configuration tab
-    Generic.Verify pop-up is visible after clicking on i-icon
-    DashboardPage.Click on i-icon of system configuration tab
-    DashboardPage.Choose tabs under organization        company
-    DashboardPage.Click on i-icon of industry under company financial information
-    Generic.Verify pop-up is visible after clicking on i-icon
-    DashboardPage.Click on link inside industry i-icon      https://www.naics.com/search/
-    sleep       ${yop_sleep}
-    switch window       NAICS & SIC Identification Tools | NAICS Association
-    Generic.Verify your current page location contains      naics.com
-    Generic.Verify your current page contains this text     NAICS Identification Tools
-    Go back
-    DashboardPage.Click on i-icon of company department
-    Generic.Verify pop-up is visible after clicking on i-icon
-    DashboardPage.Click on i-icon of company department
-    DashboardPage.Click on view added Departments list      View Your Added Departments List
-    Generic.Verify your current page location contains      department-list
-    DashboardPage.Click on action menu button of department
-    DashboardPage.Choose Add department from Action button options          Add Department
-    DashboardPage.Click on i-icon of cost_center in department
-    Generic.Verify pop-up is visible after clicking on i-icon
-    DashboardPage.Click on i-icon of cost_center in department
-    DashboardPage.Click on cancel add department        close
-    DashboardPage.Search by Department      Customer Support
-    DashboardPage.Click on three dots of Department list
-    DashboardPage.Choose option from three_dots of Department     Details
-    DashboardPage.Click on i-icon of cost_center in department
-    Generic.Verify pop-up is visible after clicking on i-icon
-    DashboardPage.Click on i-icon of cost_center in department
-    DashboardPage.Click on cancel add department        close
-    DashboardPage.Click on three dots of Department list
-    DashboardPage.Choose option from three_dots of Department     Edit
-    DashboardPage.Click on i-icon of cost_center in department
-    Generic.Verify pop-up is visible after clicking on i-icon
-    DashboardPage.Click on i-icon of cost_center in department
-    DashboardPage.Click on cancel add department        close
-    Generic.Verify your current page location contains      department-list
-    DashboardPage.Choose options inside personal_details        Technology
-    DashboardPage.Click on i-icon inside technology
-    Generic.Verify pop-up is visible after clicking on i-icon
-    DashboardPage.Click on i-icon inside technology
-    DashboardPage.Choose options inside personal_details        Network Discovery
-    DashboardPage.Click on i-icon inside network discovery
-    Generic.Verify pop-up is visible after clicking on i-icon
-    DashboardPage.Click on link inside Network_discovery i-icon
-    sleep       ${yop_sleep}
-    switch window       Network Discovery - Jira Service Management
-    Generic.Verify your current page location contains      customer
-    Generic.Verify your current page contains this text     Network Discovery
-    sleep       ${yop_sleep}
-    switch window       aithentic | Network Discovery
+    Generic.Select option from profile list      department-dropdown
+    Generic.Verify your current page location contains       department-list
+    Generic.Verify your current page contains this text    Added Departments
+    DashboardPage.Get and verify the text and compare it with     Added Departments
 
-Verify reports modules data
+Search By Technology Group in product list
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.select the option from the side menu    Dashboard
-    DashboardPage.select the option from the dashboard drawer       Reports
-    Generic.Verify your current page location contains          reports
-    DashboardPage.Click on tab under Modules       Manage Technology
-    Generic.Verify your current page location contains          technology-list
-    Generic.Scroll Window To End
-    DashboardPage.Fetch the total count         Total Count :
-    DashboardPage.Verify number of modules are equals to total counts     Manage Technology
-    Go back
-    DashboardPage.Click on tab under Modules       Network Discovery Agents
-    Generic.Verify your current page location contains          network-discovery
-    DashboardPage.Fetch total installed Agents      Installed Agents -
-    DashboardPage.Verify number of modules are equals to total counts       Network Discovery Agents
+    Generic.Click on the profile name
+    Generic.Select option from profile list     brand-dropdown
+    Generic.Verify your current page location contains      brand
+    DashboardPage.Click add brand button
+    DashboardPage.Create random brandName
+    DashboardPage.Add business manufacturer URL       ${generated_BrandName}
+    DashboardPage.Add brand manufacturer country      United States
+    DashboardPage.Save added brand details
+    DashboardPage.Click added brand main save button
+    Generic.Fetch alert message text and compare it with        Brand created successfully.
+    DashboardPage.Verify Brand added      ${generated_BrandName}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     product-dropdown
+    Generic.Verify your current page location contains      product
+    DashboardPage.Click on action button
+    DashboardPage.Click add product button
+    DashboardPage.Create random productName
+    DashboardPage.Add product brand name      ${generated_BrandName}
+    DashboardPage.Add product description
+    DashboardPage.Add product feature
+    DashboardPage.Select product technology type     License
+    DashboardPage.Select product technology group     Applications
+    DashboardPage.Select product status   Active
+    DashboardPage.Save added product details
+    Generic.Fetch alert message text and compare it with        Product created successfully
+    DashboardPage.Search by technology-group        Applications
+    DashboardPage.Check the value after search
+    DashboardPage.Verify product added    ${generated_product}
+
+Verify Brand quick_links in profile settings Dropdown
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     brand-dropdown
+    Generic.Verify your current page location contains      brand-list
+    Generic.Verify your current page contains this text     Added Brands
+    DashboardPage.Get and verify the text and compare it with   Added Brands
+
+Verify Product quick_links in profile settings dropdown
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list      product-dropdown
+    Generic.Verify your current page location contains       product-list
+    Generic.Verify your current page contains this text    Added Products
+    DashboardPage.Get and verify the text and compare it with       Added Products
+
+Search By Brand name in product list
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     brand-dropdown
+    Generic.Verify your current page location contains      brand
+    DashboardPage.Click add brand button
+    DashboardPage.Create random brandName
+    DashboardPage.Add business manufacturer URL       ${generated_BrandName}
+    DashboardPage.Add brand manufacturer country      United States
+    DashboardPage.Save added brand details
+    DashboardPage.Click added brand main save button
+    Generic.Fetch alert message text and compare it with        Brand created successfully.
+    DashboardPage.Verify Brand added      ${generated_BrandName}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     product-dropdown
+    Generic.Verify your current page location contains      product
+    DashboardPage.Click on action button
+    DashboardPage.Click add product button
+    DashboardPage.Create random productName
+    DashboardPage.Add product brand name      ${generated_BrandName}
+    DashboardPage.Add product description
+    DashboardPage.Add product feature
+    DashboardPage.Select product technology type     License
+    DashboardPage.Select product technology group     Applications
+    DashboardPage.Select product status   Active
+    DashboardPage.Save added product details
+    Generic.Fetch alert message text and compare it with        Product created successfully
+    DashboardPage.Search by brand name      ${generated_BrandName}
+    DashboardPage.Check the value after search
+    DashboardPage.Verify product added    ${generated_product}

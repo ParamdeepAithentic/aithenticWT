@@ -29,6 +29,9 @@ Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/MemberPage.robot
 Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/TeamMemberPage.robot
+Resource        ../Pages/ReportsPage.robot
+Resource        ../Pages/I_iconPage.robot
+
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
 
@@ -43,7 +46,9 @@ Fill the technology form for license product
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.click on add technology button
+#    TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
@@ -73,7 +78,7 @@ Fill the technology form for license product
     TechnologyPage.Add max contracted of contract information random
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Add support partner of partners information     QABusiness04191432
     TechnologyPage.Add supplier of partners information        qabrand10050505
     TechnologyPage.Click on save technology form button
@@ -85,11 +90,14 @@ Fill the technology form for license product
 
 
 Fill the technology form for hardware product
+    [Tags]      Sanity      Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.click on add technology button
+#    TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
@@ -112,7 +120,7 @@ Fill the technology form for hardware product
     TechnologyPage.Add expense type of technology cost information     Capex
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Add support partner of partners information     QABusiness04191432
     TechnologyPage.Add supplier of partners information        qabrand10050505
     TechnologyPage.Click on save technology form button
@@ -128,7 +136,9 @@ Fill the technology form for maintenance product
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.click on add technology button
+#    TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
@@ -152,7 +162,7 @@ Fill the technology form for maintenance product
     TechnologyPage.Add expense type of technology cost information     Capex
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Add support partner of partners information     QABusiness04191432
     TechnologyPage.Add supplier of partners information        qabrand10050505
     TechnologyPage.Click on save technology form button
@@ -162,13 +172,14 @@ Fill the technology form for maintenance product
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
-
 Fill the technology form for subscription product
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.click on add technology button
+#    TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
@@ -192,7 +203,7 @@ Fill the technology form for subscription product
     TechnologyPage.Add expense type of technology cost information     Capex
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Add support partner of partners information     QABusiness04191432
     TechnologyPage.Add supplier of partners information        qabrand10050505
     TechnologyPage.Click on save technology form button
@@ -203,6 +214,7 @@ Fill the technology form for subscription product
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
 Create new asset with new brand and product
+    [Tags]      Sanity      Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
@@ -236,7 +248,9 @@ Create new asset with new brand and product
 
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.click on add technology button
+#    TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       ${generated_BrandName}
@@ -259,7 +273,7 @@ Create new asset with new brand and product
     TechnologyPage.Add expense type of technology cost information     Capex
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Add support partner of partners information     QABusiness04191432
     TechnologyPage.Add supplier of partners information        qabrand10050505
     TechnologyPage.Click on save technology form button
@@ -271,16 +285,19 @@ Create new asset with new brand and product
     TechnologyPage.Search by AssetId       ${generated_AssetID}
     TechnologyPage.Search by BrandName   ${generated_BrandName}
     TechnologyPage.Search by ProductName   ${generated_product}
-#    TechnologyPage.Search by assignee      Testqaup94590327 QA
+#    TechnologyPage.Search by assignee      Testqaup94590327      QA
 #    TechnologyPage.Search by SerialNo   ${generated_serialNo}       #yet to cover
 
 
 Restore asset type one
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.click on add technology button
+#    TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
@@ -304,7 +321,7 @@ Restore asset type one
     TechnologyPage.Add expense type of technology cost information     Capex
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Add support partner of partners information     QABusiness04191432
     TechnologyPage.Add supplier of partners information        qabrand10050505
     TechnologyPage.Click on save technology form button
@@ -319,6 +336,7 @@ Restore asset type one
     Generic.Fetch alert message text and compare it with        Technology Removed Successfully
     TechnologyPage.Click on manage technology sub option       Removed Assets
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on three dots of action button
     TechnologyPage.Select an option from recovery table actions    Restore
     Generic.Fetch alert message text and compare it with        Assets restored successfully.
     TechnologyPage.Click on manage technology sub option       Technology List
@@ -330,11 +348,13 @@ Restore asset from removed asset details page
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.click on add technology button
+
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    #           TechnologyPage.Click technology product input field
+
     TechnologyPage.Select parameter from technology dropdown list      QASubscription
     TechnologyPage.Add technology group information contract start date
     TechnologyPage.Add technology group information contract end date      12/12/2028
@@ -354,7 +374,7 @@ Restore asset from removed asset details page
     TechnologyPage.Add expense type of technology cost information     Capex
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Add support partner of partners information     QABusiness04191432
     TechnologyPage.Add supplier of partners information        qabrand10050505
     TechnologyPage.Click on save technology form button
@@ -369,6 +389,7 @@ Restore asset from removed asset details page
     Generic.Fetch alert message text and compare it with        Technology Removed Successfully
     TechnologyPage.Click on manage technology sub option       Removed Assets
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on three dots of action button
     TechnologyPage.Select an option from recovery table actions    Restore
     Generic.Fetch alert message text and compare it with        Assets restored successfully.
     TechnologyPage.Click on manage technology sub option       Technology List
@@ -382,14 +403,16 @@ Restore asset by selecting checkbox
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.click on add technology button
+#    TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     #           TechnologyPage.Click technology product input field
-    TechnologyPage.Select parameter from technology dropdown list      QASubscription
-    TechnologyPage.Add technology group information contract start date
-    TechnologyPage.Add technology group information contract end date      12/12/2028
+    TechnologyPage.Select parameter from technology dropdown list     QASubscription
+#    TechnologyPage.Add technology group information contract start date
+#    TechnologyPage.Add technology group information contract end date      12/12/2028
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date
     TechnologyPage.Select warranty end date    12/12/2028
@@ -406,7 +429,7 @@ Restore asset by selecting checkbox
     TechnologyPage.Add expense type of technology cost information     Capex
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Add support partner of partners information     QABusiness04191432
     TechnologyPage.Add supplier of partners information        qabrand10050505
     TechnologyPage.Click on save technology form button
@@ -415,16 +438,18 @@ Restore asset by selecting checkbox
 #    TechnologyPage.Verify that after saving technology form user redirect to technology page
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
-
     TechnologyPage.Select an option from technology table actions      Remove
     TechnologyPage.Remove asset from technology table
     Generic.Fetch alert message text and compare it with        Technology Removed Successfully
     TechnologyPage.Click on manage technology sub option       Removed Assets
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Select and restore asset
+    TechnologyPage.Click on three dots of action button
     TechnologyPage.Select an option from recovery table actions    Restore
     Generic.Fetch alert message text and compare it with        Assets restored successfully.
     TechnologyPage.Click on manage technology sub option       Technology List
     TechnologyPage.Search by AssetId   ${generated_AssetID}
+
 
 
 ######## UN comment when to use ##############
@@ -451,7 +476,9 @@ Edit brand and product via details
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.click on add technology button
+#    TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
@@ -474,7 +501,7 @@ Edit brand and product via details
     TechnologyPage.Add expense type of technology cost information     Capex
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Add support partner of partners information     QABusiness04191432
     TechnologyPage.Add supplier of partners information        qabrand10050505
     TechnologyPage.Click on save technology form button
@@ -492,17 +519,21 @@ Edit brand and product via details
     TechnologyPage.Click technology product input field
     TechnologyPage.Select the first value of To dropdown of product
     TechnologyPage.Select edited technology lifecycle status      Active
-    TechnologyPage.Click on save technology form button
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
+    TechnologyPage.Click on update button of edit_technology page       Update
     TechnologyPage.Accept updated edited technology pop up     Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
 
 
 Sent Message should show in the Sent Tab
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.click on add technology button
+#    TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
@@ -525,7 +556,7 @@ Sent Message should show in the Sent Tab
     TechnologyPage.Add expense type of technology cost information     Capex
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Add support partner of partners information     QABusiness04191432
     TechnologyPage.Add supplier of partners information        qabrand10050505
     TechnologyPage.Click on save technology form button
@@ -689,18 +720,21 @@ Add Products with 10 combinations of Tech Type and Tech group
 
 
 Add Technology Page - Add New location and assign that location
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.click on add technology button
+#    TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     #           TechnologyPage.Click technology product input field
     TechnologyPage.Select parameter from technology dropdown list      QAMaintenance
     TechnologyPage.Click on add location
-    sleep       3
+    sleep       ${yop_sleep}
     Switch Window       aithentic | Add - Location
     Generic.Verify your current page location contains      add-location
     TechnologyPage.Select country of the location   United States
@@ -723,14 +757,15 @@ Add Technology Page - Add New location and assign that location
     TechnologyPage.Save the assign to      save
     Generic.Fetch alert message text and compare it with       Assigned Users created successfully
 
-
-
 Add New Support Partner and Assign that Partner
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.click on add technology button
+#    TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
@@ -753,7 +788,7 @@ Add New Support Partner and Assign that Partner
     TechnologyPage.Add expense type of technology cost information     Capex
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
 #    TechnologyPage.Add support partner of partners information     QABusiness04191432
 #    TechnologyPage.Add supplier of partners information        qabrand10050505
     TechnologyPage.Click on save technology form button
@@ -801,11 +836,14 @@ Add New Support Partner and Assign that Partner
 
 
 Verify the history of added technology
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.click on add technology button
+#    TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
@@ -827,7 +865,7 @@ Verify the history of added technology
     TechnologyPage.Add expense type of technology cost information     Capex
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Add support partner of partners information     QABusiness04191432
     TechnologyPage.Add supplier of partners information        qabrand10050505
     TechnologyPage.Click on save technology form button
@@ -919,8 +957,6 @@ Verify the history of added technology
     TechnologyPage.Select tab under technology details      history
     TechnologyPage.Verify area changed under history tab        New Component
 
-
-
 #Upload the new attachment file
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      ${email}    ${valid_password}
@@ -951,7 +987,9 @@ Add Technology Page - Add New Supplier and support partner and assign them
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.click on add technology button
+#    TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
@@ -992,7 +1030,9 @@ Add new Technology- Add New Location and assign that location
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.click on add technology button
+#    TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
@@ -1018,7 +1058,7 @@ Add new Technology- Add New Location and assign that location
     TechnologyPage.Click on refresh location icon
     TechnologyPage.Add assignment information location     ${generated_buildingname}
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
@@ -1030,7 +1070,9 @@ Add new Technology- Add New Department and assign that department
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.click on add technology button
+#    TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
@@ -1043,7 +1085,7 @@ Add new Technology- Add New Department and assign that department
     TechnologyPage.Save the department       add
     Generic.Fetch alert message text and compare it with        Department added successfully
     TechnologyPage.Add assignment information department name      ${generated_DepartmentNumber}
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
@@ -1055,7 +1097,9 @@ Add new Technology- Add New Assignee and assign that Assignee
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.click on add technology button
+#    TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
@@ -1081,7 +1125,9 @@ Add new Technology- Add New support-partner and assign that support partner
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.click on add technology button
+#    TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
@@ -1089,7 +1135,7 @@ Add new Technology- Add New support-partner and assign that support partner
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Click the add here link on support to add new support partner
     sleep       ${yop_sleep}
     Switch Window       aithentic | Add - Partner
@@ -1113,7 +1159,9 @@ Add new Technology- Add New Supplier and assign that supplier
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.click on add technology button
+#    TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
@@ -1121,7 +1169,7 @@ Add new Technology- Add New Supplier and assign that supplier
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Click the add here link on supplier to add new supplier
     sleep       ${yop_sleep}
     Switch Window       aithentic | Add - Partner
@@ -1145,7 +1193,9 @@ Edit Technology Page - Add New location and assign that location
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.click on add technology button
+#    TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
@@ -1153,7 +1203,7 @@ Edit Technology Page - Add New location and assign that location
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
@@ -1180,7 +1230,7 @@ Edit Technology Page - Add New location and assign that location
     Generic.Verify alertify is visible
     sleep       ${yop_sleep}
     Switch Window       aithentic | Edit - Technology
-    TechnologyPage.Click on refresh location icon
+#    TechnologyPage.Click on refresh location icon
     TechnologyPage.Add assignment information location     ${generated_buildingname}
     TechnologyPage.Click on update button of edit_technology page      Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
@@ -1191,7 +1241,9 @@ Edit Technology Page - Add New Department and assign that Department
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.click on add technology button
+#    TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
@@ -1199,7 +1251,7 @@ Edit Technology Page - Add New Department and assign that Department
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
@@ -1223,7 +1275,9 @@ Edit Technology Page - Add New Assignee and assign that Assignee
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.click on add technology button
+#    TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
@@ -1231,7 +1285,7 @@ Edit Technology Page - Add New Assignee and assign that Assignee
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
@@ -1248,6 +1302,7 @@ Edit Technology Page - Add New Assignee and assign that Assignee
     TechnologyPage.Create unique assign to employee_ID random
     TechnologyPage.Save the assign to      save
     Generic.Fetch alert message text and compare it with       Assigned Users created successfully
+    TechnologyPage.Add assignment information assign to       ${generated_assignFname}      ${generated_assignLname}
     TechnologyPage.Click on update button of edit_technology page     Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
 
@@ -1256,7 +1311,9 @@ Edit Technology Page - Add New Supplier and assign that Supplier
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.click on add technology button
+#    TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
@@ -1264,7 +1321,7 @@ Edit Technology Page - Add New Supplier and assign that Supplier
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
@@ -1290,11 +1347,14 @@ Edit Technology Page - Add New Supplier and assign that Supplier
     Generic.Fetch alert message text and compare it with        Technology updated successfully
 
 Edit Technology Page - Add New Support Partner and assign that Support Partner
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.click on add technology button
+#    TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
@@ -1302,7 +1362,7 @@ Edit Technology Page - Add New Support Partner and assign that Support Partner
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327 QA
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
@@ -1327,42 +1387,269 @@ Edit Technology Page - Add New Support Partner and assign that Support Partner
     TechnologyPage.Click on update button of edit_technology page     Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
 
-Verify all i-icon of Technology page
+Technology Details- Verify the Location Details
+    [Tags]      sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.Click on i-icon of technology tab
-    Generic.Verify pop-up is visible after clicking on i-icon
-    TechnologyPage.Click on Link inside pop-up of technology
-    sleep   ${yop_sleep}
-    switch window       Technology Overview - Jira Service Management
-    Generic.Verify your current page location contains      servicedesk
-    Generic.Verify your current page contains this text     Technology Overview
-    sleep   ${yop_sleep}
-    switch window       aithentic | Technology - List
-    TechnologyPage.Click on i-icon of technology tab
-    TechnologyPage.click on add technology button
+#    TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Select parameter from technology dropdown list      QAHardware
     TechnologyPage.Add assetID for technology lifecycle information random
-    TechnologyPage.Click on i-icon of cost_center in add technology
-    Generic.Verify pop-up is visible after clicking on i-icon
+    TechnologyPage.Click on add location
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Add - Location
+    Generic.Verify your current page location contains      add-location
+    TechnologyPage.Select country of the location   United States
+    TechnologyPage.Enter building_name of the location
+    TechnologyPage.Enter floor of the location      6
+    TechnologyPage.Enter room of the location       30
+    TechnologyPage.Enter unique address_one of the location
+    TechnologyPage.Enter unique address_two of the location
+    TechnologyPage.Select state of location     Alaska
+    TechnologyPage.Select city of location      Akutan
+    TechnologyPage.Enter Zip_code       67540
+    TechnologyPage.Save the new added location         save
+    Generic.Verify alertify is visible
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Add - Technology
+    TechnologyPage.Click on refresh location icon
+    TechnologyPage.Add assignment information location     ${generated_buildingname}
+    TechnologyPage.Click on add department
+    TechnologyPage.Create unique department name random
+    TechnologyPage.Select department cost center     1300
+    TechnologyPage.Save the department       add
+    Generic.Fetch alert message text and compare it with        Department added successfully
+    TechnologyPage.Add assignment information department name      ${generated_DepartmentNumber}
+    TechnologyPage.Click on add assign to
+    TechnologyPage.Create unique assign to first name random
+    TechnologyPage.Create unique assign to last name random
+    TechnologyPage.Create unique assign to Business_email random     ${generated_assignFname}        yopmail
+    TechnologyPage.Create unique assign to employee_ID random
+    TechnologyPage.Save the assign to      save
+    Generic.Fetch alert message text and compare it with       Assigned Users created successfully
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
+
     TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
+
+    TechnologyPage.Click on Location tab of technology- list page
+    TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     LocationName
+    TechnologyPage.verify Text from Assignment Information     ${assign_loc_input_value}          United States - ${generated_buildingname} - 6 - 30
+    TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     DepartmentName
+    TechnologyPage.verify Text from Assignment Information      ${assign_loc_input_value}       ${generated_DepartmentNumber}
+    TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     AssignTo
+    TechnologyPage.verify Text from Assignment Information      ${assign_loc_input_value}       ${generated_assignFname} ${generated_assignLname}
+    TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     EmployeeId
+    TechnologyPage.verify Text from Assignment Information      ${assign_loc_input_value}       ${generate_employeeid}
     TechnologyPage.Click on edit button on product details page        Edit
     Generic.Verify your current page location contains      edit-technology
-    TechnologyPage.Click on i-icon of cost_center in edit technology
-    Generic.Verify pop-up is visible after clicking on i-icon
-    TechnologyPage.Click on i-icon of cost_center in edit technology
-    TechnologyPage.Click on Back tab          Back to Technology Details
-    TechnologyPage.Click on clone button on product details page        Clone
-    TechnologyPage.Click on i-icon of cost_center in clone technology
-    Generic.Verify pop-up is visible after clicking on i-icon
-    TechnologyPage.Click on Back tab          Back to Manage Technology
+    TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
+    TechnologyPage.Add assignment information department name      TestQA Department Up31840619
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
+    TechnologyPage.Click on update button of edit_technology page      Update
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+    Generic.Verify your current page location contains     technology-details
+    TechnologyPage.Click on Location tab of technology- list page
+    TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     LocationName
+    TechnologyPage.verify Text from Assignment Information      ${assign_loc_input_value}         United States - Test qa Up50260220 - 21 - 2
+    Generic.Verify your current page contains this text     Past Location
+    TechnologyPage.Verify parameter from past location table    ${generated_buildingname}
+
+#Technology Details- Verify the Location Details-2
+#    Generic.click on the tab	Login
+#    LandingPage.Fill the login Form      ${email}    ${valid_password}
+#    Generic.select the option from the side menu    Technology
+#    Generic.Verify your current page location contains      technology
+#    sleep   6
+#    TechnologyPage.Search by AssetId       AssetID_3480632009
+#    TechnologyPage.Click on the first row of the technology table
+#    Generic.Verify your current page location contains     technology-details
+#    TechnologyPage.Click on Location tab of technology- list page
+#    TechnologyPage.Get Value of Assignment Information Location Name
+
+
+Technology-Inactive asset and Restore asset
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form     chirag@dmts.fr.nf    Test@789
+    Generic.Click on the profile name
+    Generic.Select option from profile list     subscription-dropdown
+    Generic.Verify your current page location contains      subscription
+    SubscriptionPage.Select if you want to change plan or asset    Change Plan
+    TechnologyPage.Click on current plan of subscription
+    Generic.Scroll the page till    200
+
+    SubscriptionPage.Set asset range to     200
+    SubscriptionPage.Update the payment of changed plan     proceed
+    TechnologyPage.Click on pop up of available Inactive Asset   cancel
+    SubscriptionPage.Select the payment method    ach
+    SubscriptionPage.Select the account for payment
+    SubscriptionPage.Proceed the payment     proceed
+    Generic.Fetch alert message text and compare it with      Payment Successful
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+
+    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select purchase date
+    TechnologyPage.Select warranty end date    12/12/2028
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Add technology lifecycle comment    Technology Lifecycle Information- comment
+    TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
+    TechnologyPage.Add assignment information department name      TestQA Department Up31840619
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology-list
+    Generic.Wait until table get load
+    Generic.Click on the profile name
+    Generic.Select option from profile list     subscription-dropdown
+    Generic.Verify your current page location contains      subscription
+    SubscriptionPage.Select if you want to change plan or asset    Change Plan
+    TechnologyPage.Click on current plan of subscription
+    Generic.Scroll the page till    200
+    SubscriptionPage.Set asset range to     100
+    SubscriptionPage.Update the payment of changed plan     proceed
+    Sleep   ${yop_sleep}
+    TechnologyPage.Click on asset limit exceeded pop up
+
+    Generic.Verify your current page location contains      technology-list
+
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+
+    TechnologyPage.Select and restore asset
+
+    TechnologyPage.Click on proceed button of technology list page
+    SubscriptionPage.Select the payment method    ach
+    SubscriptionPage.Select the account for payment
+    SubscriptionPage.Proceed the payment     proceed
+    Generic.Fetch alert message text and compare it with      Payment Successful
+    Generic.Click on the profile name
+    Generic.Select option from profile list     subscription-dropdown
+    Generic.Verify your current page location contains      subscription
+    SubscriptionPage.Select if you want to change plan or asset    Change Plan
+    TechnologyPage.Click on current plan of subscription
+    Generic.Scroll the page till    200
+    SubscriptionPage.Set asset range to     200
+    SubscriptionPage.Update the payment of changed plan     proceed
+    Sleep   ${yop_sleep}
+    TechnologyPage.Click on pop up of available Inactive Asset       technology
+
+    Generic.Verify your current page location contains      manage-technology-list
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+
+    TechnologyPage.Select and restore asset
+
+    Generic.click on the button     Restore
+    SubscriptionPage.Select the payment method    ach
+    SubscriptionPage.Select the account for payment
+    SubscriptionPage.Proceed the payment     proceed
+    Generic.Fetch alert message text and compare it with      Payment Successful
+
+
+Inactive asset - Restore asset from Technology Details page
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form     chirag@dmts.fr.nf    Test@789
+    Generic.Click on the profile name
+    Generic.Select option from profile list     subscription-dropdown
+    Generic.Verify your current page location contains      subscription
+    SubscriptionPage.Select if you want to change plan or asset    Change Plan
+    TechnologyPage.Click on current plan of subscription
+    Generic.Scroll the page till    200
+
+    SubscriptionPage.Set asset range to     200
+    SubscriptionPage.Update the payment of changed plan     proceed
+    TechnologyPage.Click on pop up of available Inactive Asset   cancel
+    SubscriptionPage.Select the payment method    ach
+    SubscriptionPage.Select the account for payment
+    SubscriptionPage.Proceed the payment     proceed
+    Generic.Fetch alert message text and compare it with      Payment Successful
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+
+    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select purchase date
+    TechnologyPage.Select warranty end date    12/12/2028
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Add technology lifecycle comment    Technology Lifecycle Information- comment
+    TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
+    TechnologyPage.Add assignment information department name      TestQA Department Up31840619
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology-list
+    Generic.Wait until table get load
+    Generic.Click on the profile name
+    Generic.Select option from profile list     subscription-dropdown
+    Generic.Verify your current page location contains      subscription
+    SubscriptionPage.Select if you want to change plan or asset    Change Plan
+    TechnologyPage.Click on current plan of subscription
+    Generic.Scroll the page till    200
+    SubscriptionPage.Set asset range to     100
+    SubscriptionPage.Update the payment of changed plan     proceed
+    Sleep   ${yop_sleep}
+    TechnologyPage.Click on asset limit exceeded pop up
+
+    Generic.Verify your current page location contains      technology-list
+
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+
+    TechnologyPage.Select and restore asset
+
+    TechnologyPage.Click on proceed button of technology list page
+    SubscriptionPage.Select the payment method    ach
+    SubscriptionPage.Select the account for payment
+    SubscriptionPage.Proceed the payment     proceed
+    Generic.Fetch alert message text and compare it with      Payment Successful
+    Generic.Click on the profile name
+    Generic.Select option from profile list     subscription-dropdown
+    Generic.Verify your current page location contains      subscription
+    SubscriptionPage.Select if you want to change plan or asset    Change Plan
+    TechnologyPage.Click on current plan of subscription
+    Generic.Scroll the page till    200
+    SubscriptionPage.Set asset range to     200
+    SubscriptionPage.Update the payment of changed plan     proceed
+    Sleep   ${yop_sleep}
+    TechnologyPage.Click on pop up of available Inactive Asset      cancel
+    SubscriptionPage.Select the payment method    ach
+    SubscriptionPage.Select the account for payment
+    SubscriptionPage.Proceed the payment     proceed
+    Generic.Fetch alert message text and compare it with      Payment Successful
+    Generic.select the option from the side menu    Technology
+    TechnologyPage.Click on manage technology sub option      Removed Assets
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+    TechnologyPage.Click on restore button of technology Details Page
+    TechnologyPage.Click on back to list of technology
+    Generic.Verify your current page location contains      technology-list
+    TechnologyPage.Click on manage technology sub option       Technology List
+    TechnologyPage.Search by AssetId   ${generated_AssetID}
+
+
+
+

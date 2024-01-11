@@ -28,11 +28,13 @@ Resource        ../Pages/OCS.robot
 Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/TeamMemberPage.robot
+Resource        ../Pages/ReportsPage.robot
+Resource        ../Pages/I_iconPage.robot
 
 *** Variables ***
 ${Error_Message_Login}      css:.alert.alert-danger.col-md-12
 ${login_heading}        css:.heading-login.d-inline-block
-${drawerList}       //ul[@class='list-unstyled w-100 d-inline-block mt-3 pt-0']/li
+${drawerList}        css:.profileContainer .list-unstyled li       #//ul[@class='list-unstyled w-100 d-inline-block mt-3 pt-0']/li
 ${side_options}     //ul[@id='common-side-bar-left']//li
 ${profile_option}        //img[@alt='icon']
 ${loaderIcon}     //div[@role='status']
@@ -114,6 +116,13 @@ ${share_toEmail}      css:#toEmail
 ${Totalcount_field}        css:.qa-total-count-list
 ${dept_searchbar}       css:input[placeholder='Search by Department Name']
 ${three_dots_dept}      css:.three-dots
+
+
+${search_technology_group}     css:.qa-selectedTechnologyGroups input
+
+${search_technology_group}      (//div[@class='ng-input']//input)[2]
+${search_by_brand_name}            (//div[@class='ng-input']//input)[3]
+
 
 *** Keywords ***
 Click on add department
@@ -406,34 +415,6 @@ Select the location ID checkbox
     click element    css:.checkmark.qa-inner-customcheckbox-location-id-${option}
 #options: ProductId, BrandName, ProductStatus,TechType, GroupName, ProductDescription
 
-Enter the new value in the product name column
-    [Arguments]    ${option}
-    DashboardPage.Double click    ${option}
-    ${random_string} =    Generate Random String       10      [NUMBERS]
-    ${generated_EditProductName}=    Catenate    ProductName${random_string}
-    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
-    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_EditProductName}
-    set global variable    ${generated_EditProductName}
-
-Enter the new value in the brand name column
-    [Arguments]    ${option}    ${brandName}
-    DashboardPage.Double click    ${option}
-    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
-    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${brandName}
-
-Select option from status column
-    [Arguments]    ${option}
-    wait until element is visible      css:.ag-center-cols-container div[col-id='${option}']    60
-    Double click element      css:.ag-center-cols-container div[col-id='${option}']
-    wait until element is visible      css:div[class='ag-rich-select-row']    60
-    click element       css:div[class='ag-rich-select-row']
-
-Select option from technology type column
-    [Arguments]    ${option}
-    wait until element is visible      css:.ag-center-cols-container div[col-id='${option}']    60
-    Double click element      css:.ag-center-cols-container div[col-id='${option}']
-    wait until element is visible      css:div[aria-label='List'] div:nth-child(4) div    60
-    click element       css:div[aria-label='List'] div:nth-child(4) div
 
 Double click
     [Arguments]    ${option}
@@ -477,45 +458,10 @@ Verify department added
     log to console     ${get_departmentName}
     should be equal    ${departmentName}     ${get_departmentName}
 
-Enter the new value in the department name column
-    [Arguments]    ${option}
-    DashboardPage.Double click    ${option}
-    ${random_string} =    Generate Random String       10      [NUMBERS]
-    ${generated_EditDepartmentName}=    Catenate    DepartmentName${random_string}
-    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
-    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_EditDepartmentName}
-    set global variable    ${generated_EditDepartmentName}
-
-Select option from department status column
-    [Arguments]    ${option}
-    wait until element is visible      css:.ag-center-cols-container div[col-id='${option}']    60
-    Double click element      css:.ag-center-cols-container div[col-id='${option}']
-    wait until element is visible      css:.ag-rich-select-row.ag-rich-select-row-selected    60
-    click element       css:.ag-rich-select-row.ag-rich-select-row-selected
-
-Enter the new value in the cost center column
-    [Arguments]    ${option}
-    DashboardPage.Double click    ${option}
-    ${random_string} =    Generate Random String       4      [NUMBERS]
-    ${generated_EditCostCenter}=    Catenate    ${random_string}
-    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
-    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_EditCostCenter}
-    set global variable    ${generated_EditCostCenter}
-
-Verify the upload message text
-    [Arguments]    ${option}    ${text}
-    wait until element is not visible      ${loaderIcon}     60
-    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}']     60
-    ${fetch_text} =    get text    css:.ag-center-cols-container div[col-id='${option}']
-    log to console  uploadtext:${fetch_text}
-    should be equal    ${fetch_text}    ${text}
-
-Confirm the exit import process pop appers
-    Wait Until Element Is Visible    ${assignedUser_Edit_popUp}      60
 
 Verify the side option list parameters
    wait until element is visible   ${side_options}      60
-   @{expectedList} =    Create List        Aithentic logo    Dashboard       Messages        Location        Team Members      Partners      Contracts      Technology      Asecure Cloud Login
+   @{expectedList} =    Create List        Aithentic logo    Dashboard       Messages        Location        Team Members      Partners      Contracts      Technology      Asecure Cloud Login     Asset Discovery
    ${elements} =  Get WebElements     ${side_options}
    @{actualList} =   Create List
    FOR  ${element}  IN      @{elements}
@@ -526,7 +472,7 @@ Verify the side option list parameters
 
 Verify the drawer list parameters
    wait until element is visible   ${drawerList}        60
-   @{expectedList} =    Create List      Asset Overview     IT Performance       Subscription        Reports
+   @{expectedList} =    Create List     Account Overview      Asset Overview     IT Performances     Subscription
    ${elements} =  Get WebElements     ${drawerList}
    @{actualList} =   Create List
    FOR  ${element}  IN      @{elements}
@@ -809,83 +755,9 @@ Enter contact name of contact person
     input text  css:#contactName    ${contact}
     Press Keys   css:#contactName   ENTER
 
-Click on tab under key data
-    [Arguments]     ${tab_name}
-    wait until element is not visible       ${loaderIcon}       60
-    Generic.Scroll the page till        7000
-    wait until element is visible     //p[normalize-space()='${tab_name}']//following-sibling::p     60
-    ${count}=       get text        //p[normalize-space()='${tab_name}']//following-sibling::p
-    log to console      key data: ${count}
-    set global variable     ${count}
-    click element       //p[normalize-space()='${tab_name}']//following-sibling::p
-
-Click on i-icon of asset-overview tab
-    wait until element is visible       css:.qa-dashboard-home-iIcon       60
-    click element       css:.qa-dashboard-home-iIcon
-
-Verify i-icon popup is visible
-    wait until element is visible        css:.popover-content       60
-    log to console      Yes,Pop-up is visible for i-icon content.
-
-Hover over i-icon of reports tab
-    wait until element is visible       css:.qa-technology-products-Iicon i     60
-    Mouse over       css:.qa-technology-products-Iicon i
-
-Verify hovering on i-icon shows message and compare it with
-    [Arguments]     ${option}
-    wait until element is visible       css:#technology-products-Iicon      60
-    ${title_value}    Get Element Attribute     css:#technology-products-Iicon        title
-    Log to console    Title is: ${title_value}
-    should be equal     ${title_value}        ${option}
-
 Choose options inside personal_details
     [Arguments]     ${option}
     Generic.Select parameter    ${option}
-
-Click on tab under Technology Types
-    [Arguments]     ${tab_name}
-    wait until element is not visible       ${loaderIcon}       60
-    Execute JavaScript    window.scrollTo(0, document.body.scrollHeight);
-    wait until element is visible     //p[normalize-space()='${tab_name}']//following-sibling::p     60
-    ${count}=       get text        //p[normalize-space()='${tab_name}']//following-sibling::p
-    log to console      Technology: ${count}
-    set global variable     ${count}
-    click element       //p[normalize-space()='${tab_name}']//following-sibling::p
-
-Fetch the total count
-    [Arguments]    ${data}
-    wait until element is visible   ${Totalcount_field}      60
-    ${text}=     get text   ${Totalcount_field}
-    ${parts}    Split String    ${text}    ${data}
-    ${total_count}    Get Substring    ${parts[1]}    3
-    Log to console  Total counts are:${total_count}
-    set global variable    ${total_count}
-
-Verify that key_data is equals to total number of counts
-    [Arguments]    ${option}
-    should be equal      ${count}    ${total_count}
-    log to console      The Key data of ${option} is equal to total counts in ${option}
-
-Choose tabs under organization
-    [Arguments]     ${option}
-    wait until element is visible       css:#nav-${option}-tab     60
-    click element       css:#nav-${option}-tab
-
-Click on i-icon of system configuration tab
-    wait until element is visible       css:#advance-search-add-technology-Iicon        60
-    click element       css:#advance-search-add-technology-Iicon
-
-Click on i-icon of industry under company financial information
-    wait until element is visible       css:.qa-company-information-financial-industry      60
-    click element       css:.qa-company-information-financial-industry
-
-Click on link inside industry i-icon
-    [Arguments]    ${link}
-    Generic.click on the button link    ${link}
-
-Click on i-icon of company department
-    wait until element is visible       css:.qa-company-department-Iicon        60
-    click element       css:.qa-company-department-Iicon
 
 Click on view added Departments list
     [Arguments]     ${option}
@@ -898,10 +770,6 @@ Click on action menu button of department
 Choose Add department from Action button options
     [Arguments]    ${option}
     Generic.click on the tab        ${option}
-
-Click on i-icon of cost_center in department
-    wait until element is visible       css:.qa-iIconSection-dept-cc        60
-    click element       css:.qa-iIconSection-dept-cc
 
 Click on cancel add department
     [Arguments]    ${option}
@@ -929,17 +797,26 @@ Choose option from three_dots of Department
     [Arguments]     ${option}
     Generic.Select other option from profile list       ${option}
 
-Click on i-icon inside technology
-    wait until element is visible       css:#technology-products-Iicon      60
-    click element       css:#technology-products-Iicon
+Search by technology-group
+    [Arguments]    ${technology_group}
+    wait until element is visible    ${search_technology_group}           60
+    wait until element is enabled     ${search_technology_group}          60
+    click element       ${search_technology_group}
+    Clear Element Text          ${search_technology_group}
+    input text       ${search_technology_group}        ${technology_group}
 
-Click on i-icon inside network discovery
-    wait until element is visible       css:.qa-iIconSection-network-discovery     60
-    click element       css:.qa-iIconSection-network-discovery
+Check the value after search
+    wait until element is visible     //div[contains (@id, '-0')]       60
+    wait until element is enabled     //div[contains (@id, '-0')]       60
+    click element   //div[contains (@id, '-0')]
 
-Click on link inside Network_discovery i-icon
-    wait until element is visible       css:a[title='Network Discovery']        60
-    click element       css:a[title='Network Discovery']
+Search by brand name
+    [Arguments]    ${brand_name}
+    wait until element is visible    ${search_by_brand_name}           60
+    wait until element is enabled     ${search_by_brand_name}          60
+    click element       ${search_by_brand_name}
+    Clear Element Text          ${search_by_brand_name}
+    input text       ${search_by_brand_name}        ${brand_name}
 
 Click on tab under Modules
     [Arguments]     ${tab_name}
@@ -968,3 +845,10 @@ Fetch total installed Agents
     log to console      ${total_count}
     set global variable     ${total_count}
 
+
+Get and verify the text and compare it with
+    [Arguments]         ${option}
+    wait until element is visible       //p[normalize-space()='${option}']         60
+    ${text}=        get text       //p[normalize-space()='${option}']
+    log to console      ${text}
+    should be equal     ${text}     ${option}
