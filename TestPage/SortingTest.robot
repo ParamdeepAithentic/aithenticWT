@@ -47,7 +47,7 @@ Test the sorting of assigned user asset history page table
     SortingPage.Verify the sorting of the table     2       Asset ID
     SortingPage.Verify the sorting of the table     3       Group
     SortingPage.Verify the sorting of the table     4       Brand
-#    SortingPage.Verify the sorting of the table     5       Product
+#    SortingPage.Verify the sorting of the table     5       Product        # Filter now working fine
     SortingPage.Verify the sorting of the table     6       Product Description
     SortingPage.Verify the sorting of the table     7       Assigned Date
 
@@ -73,8 +73,8 @@ Test the sorting of brand page table
     Generic.Click on the profile name
     Generic.Select option from profile list     brand-dropdown
     Generic.Verify your current page location contains      brand
-    SortingPage.Verify the sorting of the table other method     3       Status
-    SortingPage.Verify the sorting of the table other method     2       Brand Name
+    SortingPage.Verify the sorting of the table method two     3       Status
+    SortingPage.Verify the sorting of the table method two     2       Brand Name
 
 
 Test the sorting of brand page table
@@ -83,8 +83,8 @@ Test the sorting of brand page table
     Generic.Click on the profile name
     Generic.Select option from profile list     brand-dropdown
     Generic.Verify your current page location contains      brand
-    SortingPage.Verify the sorting of the table other method     3       Status
-    SortingPage.Verify the sorting of the table other method     2       Brand Name
+    SortingPage.Verify the sorting of the table method two     3       Status
+    SortingPage.Verify the sorting of the table method two     2       Brand Name
 
 Test the sorting of product page table
     Generic.click on the tab	Login
@@ -92,11 +92,11 @@ Test the sorting of product page table
     Generic.Click on the profile name
     Generic.Select option from profile list     product-dropdown
     Generic.Verify your current page location contains      product
-    SortingPage.Verify the sorting of the table other method     3       Brand Name
-    SortingPage.Verify the sorting of the table other method     2       Product Name
-    SortingPage.Verify the sorting of the table other method     4       Description
-    SortingPage.Verify the sorting of the table other method     5       Technology Group
-    SortingPage.Verify the sorting of the table other method     6       Status
+    SortingPage.Verify the sorting of the table method two     3       Brand Name
+    SortingPage.Verify the sorting of the table method two     2       Product Name
+    SortingPage.Verify the sorting of the table method two     4       Description
+    SortingPage.Verify the sorting of the table method two     5       Technology Group
+    SortingPage.Verify the sorting of the table method two     6       Status
 
 
 Test the sorting of location page table
@@ -105,9 +105,22 @@ Test the sorting of location page table
     Generic.select the option from the side menu    Location
     Generic.Verify your current page location contains      locationlist
     Generic.Wait until table get load
-    SortingPage.Verify the sorting of the table other method     3       Country
-    SortingPage.Verify the sorting of the table other method     2       Location Name
-    SortingPage.Verify the sorting of the table other method     4       State
-    SortingPage.Verify the sorting of the table other method     5       City
-    SortingPage.Verify the sorting of the table other method     6       Technology
-    SortingPage.Verify the sorting of the table other method     7       Status
+    SortingPage.Verify the sorting of the table method three     3       Country
+    SortingPage.Verify the sorting of the table method three     2       Location Name
+    SortingPage.Verify the sorting of the table method three     4       State
+    SortingPage.Verify the sorting of the table method three     5       City
+#    SortingPage.Verify the sorting of the table method three     6       Technology        #clicking on complete word
+    SortingPage.Verify the sorting of the table method three     7       Status
+
+
+Test the sorting of team member page table
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      jasdeep@15963.fr.nf    Paramdeep@112
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    Generic.Wait until table get load
+    SortingPage.Verify the sorting of the table method two     3       Location
+    SortingPage.Verify the sorting of the table method two     2       Name
+    SortingPage.Verify the sorting of the table method two     4       Role
+    SortingPage.Verify the sorting of the table method two     5       Assigned Assets
+    SortingPage.Verify the sorting of the table method two     6       Status

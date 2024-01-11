@@ -105,7 +105,7 @@ Verify the sorting of the table
 
 
 
-Verify the sorting of the table other method
+Verify the sorting of the table method two
     [Arguments]    ${columnNumber}      ${headingName}
     wait until element is not visible      ${loaderIcon}       60
     wait until element is visible       //tbody//tr//td[normalize-space()='1']     60
@@ -147,6 +147,46 @@ Verify the sorting of the table other method
     Lists Should Be Equal    ${text_list_after_sort_asec}    ${sorted_text_list}
 
 
+Verify the sorting of the table method three
+    [Arguments]    ${columnNumber}      ${headingName}
+    wait until element is not visible      ${loaderIcon}       60
+    wait until element is visible       //tbody//tr//td[normalize-space()='1']     60
+    Wait Until Element Is Visible    //tbody//tr//td[${columnNumber}]    60
+    ${element_list}=    Get WebElements    //tbody//tr//td[${columnNumber}]
+
+    @{text_list}=    Create List
+    FOR    ${element}    IN    @{element_list}
+        ${text}=    Get Text    ${element}
+        Append To List    ${text_list}    ${text}
+        Log To Console    Original List: ${text}
+        Log To Console    ---------------------
+    END
+
+#sort in ascending order
+    ${sorted_text_list}=    Copy List    ${text_list}
+    Sort List    ${sorted_text_list}
+    Log to console  Sorted Text List (Ascending): ${sorted_text_list}
+
+    Wait Until Element Is Visible    //div[normalize-space()='${headingName}']//div[contains(@class,'sortingIcon')]    60
+    click element   //div[normalize-space()='${headingName}']//div[contains(@class,'sortingIcon')]
+
+#    wait until element is not visible      css:#dropdownMenuButton.disabled-button       60
+    wait until element is not visible      ${loaderIcon}       60
+    wait until element is visible       //tbody//tr//td[normalize-space()='1']     60
+
+    Wait Until Element Is Visible    //tbody//tr//td[${columnNumber}]    60
+    ${element_list}=    Get WebElements    //tbody//tr//td[${columnNumber}]
+
+
+    @{text_list_after_sort_asec}=    Create List
+    FOR    ${element}    IN    @{element_list}
+        ${text}=    Get Text    ${element}
+        Append To List    ${text_list_after_sort_asec}    ${text}
+        Log To Console    Ascending List: ${text}
+        Log To Console    ---------------------
+    END
+
+    Lists Should Be Equal    ${text_list_after_sort_asec}    ${sorted_text_list}
 
 
     ${sorted_descending_list}=    Copy List    ${text_list}
@@ -154,8 +194,8 @@ Verify the sorting of the table other method
     Log to console  Sorted Text List (Decending): ${sorted_list}
 
 
-    Wait Until Element Is Visible    //div[normalize-space()='${headingName}']//app-sort-button    60
-    click element   //div[normalize-space()='${headingName}']//app-sort-button
+    Wait Until Element Is Visible    //div[normalize-space()='${headingName}']//div[contains(@class,'sortingIcon')]    60
+    click element   //div[normalize-space()='${headingName}']//div[contains(@class,'sortingIcon')]
     wait until element is not visible      ${loaderIcon}       60
     wait until element is visible       //tbody//tr//td[normalize-space()='1']     60
 
@@ -173,3 +213,6 @@ Verify the sorting of the table other method
     END
 
     Lists Should Be Equal    ${text_list_after_sort_desc}    ${sorted_list}
+
+
+
