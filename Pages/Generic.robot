@@ -188,7 +188,7 @@ Select parameter
     click element      //span[normalize-space()='${address}']
 
 Click on the profile name
-    wait until element is not visible      ${loaderIcon}        120
+    wait until element is not visible      ${loaderIcon}        60
     wait until element is visible       ${profileName}       60
     click element       ${profileName}
 
@@ -274,3 +274,7 @@ Verify pop-up is visible after clicking on i-icon
 
 Scroll Window To End
     Execute JavaScript    window.scrollTo(0, document.body.scrollHeight);
+
+Wait until table get load
+    wait until element is visible      (//table//td)[1]          60
+    wait until element is enabled      (//table//td)[1]          60
