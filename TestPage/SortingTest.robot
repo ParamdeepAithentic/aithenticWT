@@ -46,7 +46,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Test the sorting of assigned user asset history page table
-    [Tags]    Rerun
+    [Tags]    Exclude
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Team Members
@@ -65,7 +65,7 @@ Test the sorting of assigned user asset history page table
 
 
 Test the sorting of technology page table
-    [Tags]    Rerun
+    [Tags]    Exclude
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
@@ -81,7 +81,7 @@ Test the sorting of technology page table
     SortingPage.Verify the sorting of the table     10      Assignee
 
 Test the sorting of brand page table
-    [Tags]    Rerun
+    [Tags]    Exclude
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
@@ -92,7 +92,7 @@ Test the sorting of brand page table
 
 
 Test the sorting of product page table
-    [Tags]    Rerun
+    [Tags]    Exclude
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
@@ -106,7 +106,7 @@ Test the sorting of product page table
 
 
 Test the sorting of location page table
-    [Tags]    Rerun
+    [Tags]    Exclude
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Location
@@ -121,7 +121,7 @@ Test the sorting of location page table
 
 
 Test the sorting of team member page table
-    [Tags]    Rerun
+    [Tags]    Exclude
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Team Members
@@ -135,7 +135,7 @@ Test the sorting of team member page table
 
 
 Test the sorting of partners page table
-    [Tags]    Rerun
+    [Tags]    Exclude
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Partners
@@ -149,7 +149,7 @@ Test the sorting of partners page table
 
 
 Test the sorting of department page table
-    [Tags]    Rerun
+    [Tags]    Exclude
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
@@ -162,7 +162,7 @@ Test the sorting of department page table
 
 
 Test the sorting of Assigned user page table inside department page
-    [Tags]    Rerun
+    [Tags]    Exclude
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
@@ -179,7 +179,7 @@ Test the sorting of Assigned user page table inside department page
 
 
 Test the sorting of team members page table inside department page
-    [Tags]    Rerun
+    [Tags]    Exclude
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
@@ -196,7 +196,7 @@ Test the sorting of team members page table inside department page
     SortingPage.Verify the sorting of the table method two     6       Status
 
 #Test the sorting of message page table - inbox
-#    [Tags]    Rerun
+#    [Tags]    Exclude
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      ${email}     ${valid_password}
 #    Generic.select the option from the side menu    Messages
