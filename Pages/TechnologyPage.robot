@@ -129,8 +129,9 @@ ${removePopUp}     css:.text-center.ng-star-inserted
 ${select_remove_popUp_No}     //button[normalize-space()='No']
 ${select_remove_popUp_Yes}     //button[normalize-space()='Yes']
 ${removedTechnology_threeDot}     css:.btn.dropdown-toggle.pointer
-${removedTechnology_chkBox}     css:.checkmark
-${restore_BTN}     css:.btn.button-cyan.mt-0.mx-1.qa-restore-assets.ng-star-inserted
+#${removedTechnology_chkBox}     css:.checkmark
+${removedTechnology_chkBox}     //span[@class='checkmark']
+${restore_BTN}     css:.qa-restore-assets
 ${restore_asset_chkbox}     //span[@class='checkmark']
 
 ${loaderIcon}     //div[@role='status']
@@ -197,11 +198,15 @@ Create self unique serial number
 Select and restore asset
     wait until element is visible       ${fetch_assetID}        60
     wait until element is enabled       ${fetch_assetID}        60
+    wait until element is visible   ${removedTechnology_chkBox}     60
+    wait until element is enabled   ${removedTechnology_chkBox}     60
+    sleep   3
+   Wait Until Element Is not Visible  xpath=//div[@class='fade-shadow']  60s
     click element   ${removedTechnology_chkBox}
-    Wait Until Element Is Enabled      ${restore_BTN}       60
-    click element   ${restore_BTN}
-    wait until element is visible       ${loaderIcon}       60
-    Wait Until Element Is Not Visible    ${loaderIcon}      60
+#    Wait Until Element Is Enabled      ${restore_BTN}       60
+#    click element   ${restore_BTN}
+#    wait until element is visible       ${loaderIcon}       60
+#    Wait Until Element Is Not Visible    ${loaderIcon}      60
 
 
 Select any asset to view assert details page
@@ -216,11 +221,15 @@ Select any asset to view assert details page
     sleep       2
     click element       ${back_To_List_Link}
 
-Select an option from recovery table actions
-    [Arguments]    ${Option}
+Click on three dots of action button
+    Wait Until Element Is visible      ${removedTechnology_threeDot}       60
     Wait Until Element Is Enabled      ${removedTechnology_threeDot}       60
     click element      ${removedTechnology_threeDot}
+
+Select an option from recovery table actions
+    [Arguments]    ${Option}
     wait until element is visible       //a[@class='dropdown-item ng-star-inserted'][normalize-space()='${Option}']        60
+    wait until element is enabled       //a[@class='dropdown-item ng-star-inserted'][normalize-space()='${Option}']        60
     click element       //a[@class='dropdown-item ng-star-inserted'][normalize-space()='${Option}']
      #Restore, Details
 #    wait until element is visible       ${loaderIcon}       60
@@ -1209,14 +1218,14 @@ Renewal Date via technology
 
 Click on action button of technology
     wait until element is not visible      ${loaderIcon}    60
-    wait until element is visible   css:#Team-Member-Actions      60
-    wait until element is enabled   css:#Team-Member-Actions      60
-    click element   css:#Team-Member-Actions
+    wait until element is visible   css:.qa-technology-list-actions      60
+    wait until element is enabled   css:.qa-technology-list-actions      60
+    click element   css:.qa-technology-list-actions
 
 Choose add technology from action button of technology
-    wait until element is visible   css:.add-member-technology      60
-    wait until element is enabled   css:.add-member-technology      60
-    click element   css:.add-member-technology
+    wait until element is visible   css:.qa-add-new-technology      60
+    wait until element is enabled   css:.qa-add-new-technology      60
+    click element   css:.qa-add-new-technology
 
 Click on Bulk_edit under action button
     wait until element is visible       //a[@title="Bulk Edit"]         60
@@ -1249,5 +1258,39 @@ Verify parameter from past location table
     [Arguments]     ${option}
     wait until element is visible   //td[normalize-space()='${option}']        60
 
+Click on current plan of subscription
+    wait until element is visible   //button[normalize-space()='Current Plan']  60
+    click element   //button[normalize-space()='Current Plan']
 
+Click on pop up of available Inactive Asset
+    [Arguments]     ${option}
+    wait until element is visible   css:.qa-available-inactive-assests-${option}   60
+    wait until element is enabled   css:.qa-available-inactive-assests-${option}   60
+    click element   css:.qa-available-inactive-assests-${option}
+
+Click on removed assets option of technology filters
+    wait until element is visible   css:.qa-removed-aasets-section  60
+    wait until element is enabled   css:.qa-removed-aasets-section  60
+    click element   css:.qa-removed-aasets-section
+
+Click on asset limit exceeded pop up
+    wait until element is visible   css:.qa-asset-limit-exceede-technology      60
+    wait until element is enabled   css:.qa-asset-limit-exceede-technology      60
+    click element   css:.qa-asset-limit-exceede-technology
+
+Click on proceed button of technology list page
+    wait until element is visible   css:.qa-proceed-retore-asset-technology-list      60
+    wait until element is enabled   css:.qa-proceed-retore-asset-technology-list      60
+    click element   css:.qa-proceed-retore-asset-technology-list
+
+Click on restore button of technology Details Page
+    wait until element is visible   css:.qa-restore-assets      60
+    wait until element is enabled   css:.qa-restore-assets      60
+    click element   css:.qa-restore-assets
+    wait until element is not visible   ${loaderIcon}     60
+
+Click on back to list of technology
+    wait until element is visible   ${back_To_List_Link}    60
+    wait until element is enabled   ${back_To_List_Link}    60
+    click element   ${back_To_List_Link}
 

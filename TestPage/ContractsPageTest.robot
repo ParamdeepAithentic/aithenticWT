@@ -201,11 +201,18 @@ Technology Auto removed from dynamic contract When edit Brand and product
     TechnologyPage.Click on the edit icon on the edit technology page
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       Panasonic
+
     TechnologyPage.Click technology product input field
+
     TechnologyPage.Select parameter from technology dropdown list      18781
+
     TechnologyPage.Select edited technology lifecycle status      Active
+
+    Generic.Scroll Window To End
+    sleep   ${yop_sleep}
     TechnologyPage.Click on save technology form button
     sleep       ${search_sleep}
+
     TechnologyPage.Accept updated edited technology pop up     Update
     TechnologyPage.Click on technology Acknowledgement pop up      Acknowledge
     Generic.Fetch alert message text and compare it with        Technology updated successfully
@@ -367,8 +374,11 @@ Technology Auto removed from static contract When edit Brand and product
     TechnologyPage.Click technology product input field
     TechnologyPage.Select parameter from technology dropdown list      18781
     TechnologyPage.Select edited technology lifecycle status      Active
+    Generic.Scroll Window To End
+    sleep   ${yop_sleep}
     TechnologyPage.Click on save technology form button
     sleep   ${search_sleep}
+
     TechnologyPage.Accept updated edited technology pop up     Update
     TechnologyPage.Click on technology Acknowledgement pop up      Acknowledge
     Generic.Fetch alert message text and compare it with        Technology updated successfully
