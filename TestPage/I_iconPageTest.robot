@@ -80,7 +80,7 @@ Verify all i-icon of profile-listing
     Generic.Verify pop-up is visible after clicking on i-icon
     I_iconPage.Click on i-icon of cost_center in department
     I_iconPage.Click on cancel add department        close
-    I_iconPage.Search by Department      Communications       #Customer Support
+    I_iconPage.Search by Department             Customer Support        #Communications
     I_iconPage.Click on three dots of Department list
     I_iconPage.Choose option from three_dots of Department     Details
     I_iconPage.Click on i-icon of cost_center in department
