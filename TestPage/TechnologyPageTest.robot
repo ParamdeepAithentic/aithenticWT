@@ -1437,6 +1437,7 @@ Technology Details- Verify the Location Details
     TechnologyPage.Create unique assign to employee_ID random
     TechnologyPage.Save the assign to      save
     Generic.Fetch alert message text and compare it with       Assigned Users created successfully
+    TechnologyPage.Add assignment information assign to        ${generated_assignFname}  ${generated_assignLname}
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
 
@@ -1481,7 +1482,6 @@ Technology Details- Verify the Location Details
 #    TechnologyPage.Click on Location tab of technology- list page
 #    TechnologyPage.Get Value of Assignment Information Location Name
 
-
 Technology-Inactive asset and Restore asset
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     chirag@dmts.fr.nf    Test@789
@@ -1491,7 +1491,6 @@ Technology-Inactive asset and Restore asset
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     TechnologyPage.Click on current plan of subscription
     Generic.Scroll the page till    200
-
     SubscriptionPage.Set asset range to     200
     SubscriptionPage.Update the payment of changed plan     proceed
     TechnologyPage.Click on pop up of available Inactive Asset   cancel
@@ -1501,13 +1500,11 @@ Technology-Inactive asset and Restore asset
     Generic.Fetch alert message text and compare it with      Payment Successful
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-
     TechnologyPage.Select parameter from technology dropdown list      QAHardware
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date
@@ -1532,13 +1529,9 @@ Technology-Inactive asset and Restore asset
     SubscriptionPage.Update the payment of changed plan     proceed
     Sleep   ${yop_sleep}
     TechnologyPage.Click on asset limit exceeded pop up
-
     Generic.Verify your current page location contains      technology-list
-
     TechnologyPage.Search by AssetId       ${generated_AssetID}
-
     TechnologyPage.Select and restore asset
-
     TechnologyPage.Click on proceed button of technology list page
     SubscriptionPage.Select the payment method    ach
     SubscriptionPage.Select the account for payment
@@ -1554,18 +1547,14 @@ Technology-Inactive asset and Restore asset
     SubscriptionPage.Update the payment of changed plan     proceed
     Sleep   ${yop_sleep}
     TechnologyPage.Click on pop up of available Inactive Asset       technology
-
     Generic.Verify your current page location contains      manage-technology-list
     TechnologyPage.Search by AssetId       ${generated_AssetID}
-
     TechnologyPage.Select and restore asset
-
     Generic.click on the button     Restore
     SubscriptionPage.Select the payment method    ach
     SubscriptionPage.Select the account for payment
     SubscriptionPage.Proceed the payment     proceed
     Generic.Fetch alert message text and compare it with      Payment Successful
-
 
 Inactive asset - Restore asset from Technology Details page
     Generic.click on the tab	Login
@@ -1576,7 +1565,6 @@ Inactive asset - Restore asset from Technology Details page
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     TechnologyPage.Click on current plan of subscription
     Generic.Scroll the page till    200
-
     SubscriptionPage.Set asset range to     200
     SubscriptionPage.Update the payment of changed plan     proceed
     TechnologyPage.Click on pop up of available Inactive Asset   cancel
@@ -1586,13 +1574,11 @@ Inactive asset - Restore asset from Technology Details page
     Generic.Fetch alert message text and compare it with      Payment Successful
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-
     TechnologyPage.Select parameter from technology dropdown list      QAHardware
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date
@@ -1617,13 +1603,9 @@ Inactive asset - Restore asset from Technology Details page
     SubscriptionPage.Update the payment of changed plan     proceed
     Sleep   ${yop_sleep}
     TechnologyPage.Click on asset limit exceeded pop up
-
     Generic.Verify your current page location contains      technology-list
-
     TechnologyPage.Search by AssetId       ${generated_AssetID}
-
     TechnologyPage.Select and restore asset
-
     TechnologyPage.Click on proceed button of technology list page
     SubscriptionPage.Select the payment method    ach
     SubscriptionPage.Select the account for payment
