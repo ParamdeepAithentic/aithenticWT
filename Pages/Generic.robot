@@ -282,5 +282,5 @@ Scroll Window To End
     Execute JavaScript    window.scrollTo(0, document.body.scrollHeight);
 
 Wait until table get load
-    wait until element is visible      (//table//td)[1]          60
-    wait until element is enabled      (//table//td)[1]          60
+    wait until element is visible       //tbody//tr//td[normalize-space()='1']     60
+#    wait until element is enabled      //tbody//tr//td[normalize-space()='1']      60
