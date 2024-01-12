@@ -818,6 +818,34 @@ Search by brand name
     Clear Element Text          ${search_by_brand_name}
     input text       ${search_by_brand_name}        ${brand_name}
 
+Click on tab under Modules
+    [Arguments]     ${tab_name}
+    wait until element is not visible       ${loaderIcon}       60
+    Generic.Scroll the page till        7000
+    wait until element is visible     //p[normalize-space()='${tab_name}']//following-sibling::p     120
+    ${count}=       get text        //p[normalize-space()='${tab_name}']//following-sibling::p
+    ${parts}        split string        ${count}    /
+    ${first_part}=    set variable    ${parts[0]}
+    log to console      Modules: ${first_part}
+    set global variable     ${first_part}
+    click element       //p[normalize-space()='${tab_name}']//following-sibling::p
+
+Verify number of modules are equals to total counts
+    [Arguments]    ${option}
+    should be equal      ${first_part}    ${total_count}
+    log to console      The Modules of ${option} is equal to total counts in ${option}
+
+Fetch total installed Agents
+    [Arguments]     ${data}
+    wait until element is not visible      ${loaderIcon}       60
+    wait until element is visible       //p[contains(text(),'Installed Agents -')]      60
+    ${Agent}=       get text          //p[contains(text(),'Installed Agents -')]
+    ${parts}    Split String    ${Agent}    ${data}
+    ${total_count}    Get Substring    ${parts[1]}      1
+    log to console      ${total_count}
+    set global variable     ${total_count}
+
+
 Get and verify the text and compare it with
     [Arguments]         ${option}
     wait until element is visible       //p[normalize-space()='${option}']         60
