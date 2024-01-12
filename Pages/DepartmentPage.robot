@@ -64,4 +64,10 @@ Double click
     Press Keys    css:.ag-center-cols-container div[col-id='${option}']     DELETE
 
 
+Select option from side menu in department list
+    [Arguments]    ${option}
+    wait until element is visible      //span[normalize-space()='${option}']    60
+    wait until element is enabled      //span[normalize-space()='${option}']    60
+    click element      //span[normalize-space()='${option}']
+
 
