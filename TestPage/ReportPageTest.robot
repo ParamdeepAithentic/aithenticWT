@@ -37,6 +37,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Verify Reports Key Data records count
+    [Tags]      Sanity      Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Dashboard
@@ -84,6 +85,7 @@ Verify Reports Key Data records count
     ReportsPage.Verify that key_data is equals to total number of counts      Contracts
 
 Verify Reports Technology Types records count
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Dashboard
@@ -124,6 +126,7 @@ Verify Reports Technology Types records count
     ReportsPage.Verify that key_data is equals to total number of counts      Subscription
 
 Verify reports modules data
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Dashboard
