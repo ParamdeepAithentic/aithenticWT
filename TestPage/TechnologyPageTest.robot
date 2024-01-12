@@ -294,7 +294,7 @@ Create new asset with new brand and product
 
 
 Restore asset type one
-    [Tags]      Sanity
+    [Tags]      Sanity      Rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
@@ -530,7 +530,7 @@ Edit brand and product via details
 
 
 Sent Message should show in the Sent Tab
-    [Tags]      Sanity
+    [Tags]      Sanity      Rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
@@ -1483,6 +1483,7 @@ Technology Details- Verify the Location Details
 #    TechnologyPage.Get Value of Assignment Information Location Name
 
 Technology-Inactive asset and Restore asset
+    [Tags]      Rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     chirag@dmts.fr.nf    Test@789
     Generic.Click on the profile name
@@ -1557,6 +1558,7 @@ Technology-Inactive asset and Restore asset
     Generic.Fetch alert message text and compare it with      Payment Successful
 
 Inactive asset - Restore asset from Technology Details page
+    [Tags]      Rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     chirag@dmts.fr.nf    Test@789
     Generic.Click on the profile name
