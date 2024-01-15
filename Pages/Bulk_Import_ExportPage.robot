@@ -31,6 +31,10 @@ Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
 Resource        ../Pages/Bulk_Import_ExportPage.robot
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/Admin_PanelPage.robot
+
 
 
 *** Variables ***
