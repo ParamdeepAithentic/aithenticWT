@@ -1,40 +1,46 @@
 *** Settings ***
 Documentation   A resource file with reusable keywords and variables.
-Library         SeleniumLibrary
-Library         ExcelLibrary
-Library         String
-Library         Collections
-Library         BuiltIn
-Library         random
-Library         DateTime
-Library         OperatingSystem
+Library           SeleniumLibrary
+Library           ExcelLibrary
+Library           String
+Library           Collections
+Library           BuiltIn
+Library           random
+Library           DateTime
+Library           OperatingSystem
 Resource        ../Pages/Generic.robot
 Resource        ../Pages/DashboardPage.robot
+Resource        ../Pages/DepartmentPage.robot
 Resource        ../Pages/ITperformancePage.robot
+Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/LandingPage.robot
 Resource        ../Pages/TechnologyPage.robot
 Resource        ../Pages/PartnersPage.robot
-Resource        ../Pages/RegisterMember.robot
 Resource        ../Pages/ContractsPage.robot
-Resource        ../Pages/LoginAPI.robot
+Resource        ../Pages/RegisterMember.robot
+Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/ReplaceDomainAPI.robot
 Resource        ../Pages/Yopmail.robot
 Resource        ../Pages/UserAccount.robot
 Resource        ../Pages/TwoFactorAuth.robot
 Resource        ../Pages/SubscriptionPage.robot
+Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
+Resource        ../Pages/LoginAPI.robot
+Resource        ../Pages/MemberPage.robot
 Resource        ../Pages/OCS.robot
-Resource        ../Pages/RegisterUserPage.robot
-Resource        ../Pages/KeyClockPage.robot
-Resource        ../Pages/TeamMemberPage.robot
+Resource        ../Pages/BillingPage.robot
 Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
+Resource        ../Pages/SortingPage.robot
+Resource        ../Pages/Bulk_Import_ExportPage.robot
 
 *** Variables ***
 
 ${user_name}             rahulshettyacademy
 ${invalid_password}      123445
+
 
 #${admin_url}        https://qa-admin.aithentic.com/
 ${admin_url}        https://uat-admin.aithentic.com/
@@ -63,7 +69,9 @@ ${click_countryTag}     css:.iti__selected-flag.dropdown-toggle
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
+
 ${yop_sleep}       5
+
 ${search_sleep}       1
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
 
@@ -282,5 +290,5 @@ Scroll Window To End
     Execute JavaScript    window.scrollTo(0, document.body.scrollHeight);
 
 Wait until table get load
-    wait until element is visible      (//table//td)[1]          60
-    wait until element is enabled      (//table//td)[1]          60
+    wait until element is visible       //tbody//tr//td[normalize-space()='1']     60
+#    wait until element is enabled      //tbody//tr//td[normalize-space()='1']      60

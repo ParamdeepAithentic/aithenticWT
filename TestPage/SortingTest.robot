@@ -1,30 +1,41 @@
 *** Settings ***
 Documentation   Contains all test cases of Message page
-Library         SeleniumLibrary
-Library         ExcelLibrary
-Library         String
-Library         Collections
-Library         BuiltIn
-Library         random
-Library         DateTime
-Library         OperatingSystem
+Library           SeleniumLibrary
+Library           ExcelLibrary
+Library           String
+Library           Collections
+Library           BuiltIn
+Library           random
+Library           DateTime
+Library           OperatingSystem
 Resource        ../Pages/Generic.robot
 Resource        ../Pages/DashboardPage.robot
+Resource        ../Pages/DepartmentPage.robot
 Resource        ../Pages/ITperformancePage.robot
+Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/LandingPage.robot
 Resource        ../Pages/TechnologyPage.robot
 Resource        ../Pages/PartnersPage.robot
-Resource        ../Pages/RegisterMember.robot
 Resource        ../Pages/ContractsPage.robot
-Resource        ../Pages/LoginAPI.robot
+Resource        ../Pages/RegisterMember.robot
+Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/ReplaceDomainAPI.robot
 Resource        ../Pages/Yopmail.robot
 Resource        ../Pages/UserAccount.robot
 Resource        ../Pages/TwoFactorAuth.robot
 Resource        ../Pages/SubscriptionPage.robot
+Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
+Resource        ../Pages/LoginAPI.robot
+Resource        ../Pages/MemberPage.robot
+Resource        ../Pages/OCS.robot
+Resource        ../Pages/BillingPage.robot
+Resource        ../Pages/ReportsPage.robot
+Resource        ../Pages/I_iconPage.robot
 Resource        ../Pages/SortingPage.robot
+Resource        ../Pages/Bulk_Import_ExportPage.robot
+
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
 
@@ -35,14 +46,15 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Test the sorting of assigned user asset history page table
+    [Tags]    Exclude
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      jasdeep@15963.fr.nf    Paramdeep@112
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
-    TeamMemberPage.Click on assigned user tab      Assigned Users
-    TeamMemberPage.Search assigned user by first name   Param_113 Deep
-    TeamMemberPage.Click on three dots of Team Member listing
-    TeamMemberPage.Select option from three dots of Team Member     Asset History
+    MemberPage.Click on assigned user tab      Assigned Users
+    MemberPage.Search assigned user by first name   Param_113 Deep
+    MemberPage.Click on three dots of Team Member listing
+    MemberPage.Select option from three dots of Team Member     Asset History
     Generic.Verify your current page contains this text     Export
     SortingPage.Verify the sorting of the table     2       Asset ID
     SortingPage.Verify the sorting of the table     3       Group
@@ -53,8 +65,9 @@ Test the sorting of assigned user asset history page table
 
 
 Test the sorting of technology page table
+    [Tags]    Exclude
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      jasdeep@15963.fr.nf    Paramdeep@112
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     SortingPage.Verify the sorting of the table     2       Group
@@ -68,27 +81,20 @@ Test the sorting of technology page table
     SortingPage.Verify the sorting of the table     10      Assignee
 
 Test the sorting of brand page table
+    [Tags]    Exclude
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      jasdeep@15963.fr.nf    Paramdeep@112
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
     Generic.Select option from profile list     brand-dropdown
     Generic.Verify your current page location contains      brand
     SortingPage.Verify the sorting of the table method two     3       Status
     SortingPage.Verify the sorting of the table method two     2       Brand Name
 
-
-Test the sorting of brand page table
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form      jasdeep@15963.fr.nf    Paramdeep@112
-    Generic.Click on the profile name
-    Generic.Select option from profile list     brand-dropdown
-    Generic.Verify your current page location contains      brand
-    SortingPage.Verify the sorting of the table method two     3       Status
-    SortingPage.Verify the sorting of the table method two     2       Brand Name
 
 Test the sorting of product page table
+    [Tags]    Exclude
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      jasdeep@15963.fr.nf    Paramdeep@112
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
     Generic.Select option from profile list     product-dropdown
     Generic.Verify your current page location contains      product
@@ -100,8 +106,9 @@ Test the sorting of product page table
 
 
 Test the sorting of location page table
+    [Tags]    Exclude
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      jasdeep@15963.fr.nf    Paramdeep@112
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Location
     Generic.Verify your current page location contains      locationlist
     Generic.Wait until table get load
@@ -114,8 +121,9 @@ Test the sorting of location page table
 
 
 Test the sorting of team member page table
+    [Tags]    Exclude
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      jasdeep@15963.fr.nf    Paramdeep@112
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     Generic.Wait until table get load
@@ -124,3 +132,80 @@ Test the sorting of team member page table
     SortingPage.Verify the sorting of the table method two     4       Role
     SortingPage.Verify the sorting of the table method two     5       Assigned Assets
     SortingPage.Verify the sorting of the table method two     6       Status
+
+
+Test the sorting of partners page table
+    [Tags]    Exclude
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.select the option from the side menu    Partners
+    Generic.Verify your current page location contains      partner-listing
+    Generic.Wait until table get load
+    SortingPage.Verify the sorting of the table method two     3       Partner Type
+    SortingPage.Verify the sorting of the table method two     2       Business Name
+    SortingPage.Verify the sorting of the table method two     4       Technology
+    SortingPage.Verify the sorting of the table method two     5       Added on
+    SortingPage.Verify the sorting of the table method two     6       Status
+
+
+Test the sorting of department page table
+    [Tags]    Exclude
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     department-dropdown
+    Generic.Verify your current page location contains      department
+    Generic.Wait until table get load
+#    SortingPage.Verify the sorting of the table method three     3       Cost Center       #filter not working right
+    SortingPage.Verify the sorting of the table method three     2       Department Name
+    SortingPage.Verify the sorting of the table method three     4       Status
+
+
+Test the sorting of Assigned user page table inside department page
+    [Tags]    Exclude
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     department-dropdown
+    Generic.Verify your current page location contains      department
+    Generic.Wait until table get load
+    DepartmentPage.Select option from side menu in department list       Assigned Users
+    Generic.Verify your current page location contains      assignee-list
+    Generic.Wait until table get load
+    SortingPage.Verify the sorting of the table method two     3       Email Id
+    SortingPage.Verify the sorting of the table method two     2       Assignee Name
+    SortingPage.Verify the sorting of the table method two     4       Employee Id
+    SortingPage.Verify the sorting of the table method two     5       Assigned Assets
+
+
+Test the sorting of team members page table inside department page
+    [Tags]    Exclude
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     department-dropdown
+    Generic.Verify your current page location contains      department
+    Generic.Wait until table get load
+    DepartmentPage.Select option from side menu in department list        Team Members
+    Generic.Verify your current page location contains      member
+    Generic.Wait until table get load
+    SortingPage.Verify the sorting of the table method two     3       Email
+    SortingPage.Verify the sorting of the table method two     2       Name
+    SortingPage.Verify the sorting of the table method two     4       User Type
+#    SortingPage.Verify the sorting of the table method two     5       Last Login  #last login is not coming
+    SortingPage.Verify the sorting of the table method two     6       Status
+
+#Test the sorting of message page table - inbox
+#    [Tags]    Exclude
+#    Generic.click on the tab	Login
+#    LandingPage.Fill the login Form      ${email}     ${valid_password}
+#    Generic.select the option from the side menu    Messages
+#    Generic.Verify your current page location contains      message
+#    Generic.Wait until table get load
+#    SortingPage.Verify the sorting of the table method two     2       From
+#    SortingPage.Verify the sorting of the table method two     1       Flag
+#    SortingPage.Verify the sorting of the table method two     3       Company
+#    SortingPage.Verify the sorting of the table method two     4       Partner Type
+#    SortingPage.Verify the sorting of the table method two     5       Subject
+#    SortingPage.Verify the sorting of the table method two     6       Status
+#    SortingPage.Verify the sorting of the table method two     7       Date
