@@ -1556,6 +1556,21 @@ Technology-Inactive asset and Restore asset
     SubscriptionPage.Select the account for payment
     SubscriptionPage.Proceed the payment     proceed
     Generic.Fetch alert message text and compare it with      Payment Successful
+    SubscriptionPage.Select if you want to change plan or asset    Change Plan
+    TechnologyPage.Click on current plan of subscription
+    Generic.Scroll the page till    200
+    SubscriptionPage.Set asset range to     100
+    SubscriptionPage.Update the payment of changed plan     proceed
+    Sleep   ${yop_sleep}
+    TechnologyPage.Click on asset limit exceeded pop up
+    Generic.Verify your current page location contains      technology-list
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Select and restore asset
+    TechnologyPage.Click on proceed button of technology list page
+    SubscriptionPage.Select the payment method    ach
+    SubscriptionPage.Select the account for payment
+    SubscriptionPage.Proceed the payment     proceed
+    Generic.Fetch alert message text and compare it with      Payment Successful
 
 Inactive asset - Restore asset from Technology Details page
     [Tags]      Rerun
@@ -1637,6 +1652,24 @@ Inactive asset - Restore asset from Technology Details page
     Generic.Verify your current page location contains      technology-list
     TechnologyPage.Click on manage technology sub option       Technology List
     TechnologyPage.Search by AssetId   ${generated_AssetID}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     subscription-dropdown
+    Generic.Verify your current page location contains      subscription
+    SubscriptionPage.Select if you want to change plan or asset    Change Plan
+    TechnologyPage.Click on current plan of subscription
+    Generic.Scroll the page till    200
+    SubscriptionPage.Set asset range to     100
+    SubscriptionPage.Update the payment of changed plan     proceed
+    Sleep   ${yop_sleep}
+    TechnologyPage.Click on asset limit exceeded pop up
+    Generic.Verify your current page location contains      technology-list
+    TechnologyPage.Search by AssetId      ${generated_AssetID}
+    TechnologyPage.Select and restore asset
+    TechnologyPage.Click on proceed button of technology list page
+    SubscriptionPage.Select the payment method    ach
+    SubscriptionPage.Select the account for payment
+    SubscriptionPage.Proceed the payment     proceed
+    Generic.Fetch alert message text and compare it with      Payment Successful
 
 
 
