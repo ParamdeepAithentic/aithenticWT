@@ -48,14 +48,16 @@ ${admin_alert_msg}      css:.toast-message
 
 Fetch text from current Plan
     wait until element is visible           css:.rounded-right h4       60
+    Sleep    ${yop_sleep}
     ${text}=        get text        css:.rounded-right h4
     Log To Console    ${text}
     Set Global Variable    ${text}
 
 Verify text from current plan after changing subscription
+    [Arguments]      ${option}
     wait until element is visible       css:.rounded-right h4
-    should not be equal        ${text}     Commercial-com end
-
+    should be equal        ${text}     ${option}
+#    wait until element is not visible           //a[normalize-space()='Manage Subscription']        60
 
 Choose option from side menu of Admin_panel
     [Arguments]     ${option}
@@ -130,6 +132,22 @@ Get alert message and compare it with
     should be equal    ${get_alertMsg}     ${option}
     Wait Until Element Is Not Visible    ${admin_alert_msg}        60
 
-Click on Manage subscription
-    wait until element is visible           //a[normalize-space()='Manage Subscription']        60
-    click element           //a[normalize-space()='Manage Subscription']
+Open Admin panel
+#    [Arguments]    ${url}
+    Execute JavaScript    window.open('about:blank','_blank')
+    Switch Window    NEW    # Switch to the new tab
+    Go To       ${admin_url}
+
+Select option from profile list
+    wait until element is visible       css:.qa-subscription-dropdown       60
+    click element       css:.qa-subscription-dropdown
+
+click on confirm button to change plan
+    [Arguments]     ${option}
+    wait until element is not visible      ${loaderIcon}        60
+    wait until element is visible       //button[@type='button'][normalize-space()='${option}']   60
+    click element       //button[@type='button'][normalize-space()='${option}']
+
+
+
+

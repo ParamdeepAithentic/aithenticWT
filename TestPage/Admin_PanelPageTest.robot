@@ -31,14 +31,15 @@ Test Setup      open the browser with the url
 Test Teardown   Close Browser session
 
 *** Test Cases ***
-Change plan Assign commercial plan
+
+Change plan- Assign commercial plan
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
+    LandingPage.Fill the login Form     mehak@mynes.com     Test@123
     Generic.Click on the profile name
     Generic.Select option from profile list     billing-dropdown
     Generic.Verify your current page location contains      billing
     Admin_PanelPage.Fetch text from current Plan
-    Go To       ${admin_url}
+    Admin_PanelPage.Open Admin panel
     LandingPage.Fill the login form of Admin panel     ${admin_name}       ${admin_password}
     Generic.Open new window     yopmail
     Generic.Search yopmail emails for       ${admin_name}
@@ -55,32 +56,64 @@ Change plan Assign commercial plan
     Admin_PanelPage.Choose option from side menu of Admin_panel    Manage Subscriptions
     Admin_PanelPage.Select option under side menu       Subscribed Companies
     Generic.Verify your current page contains this text         Subscribed Companies
-    Admin_PanelPage.Search the end user under subscribed companies      debut@cool.fr.nf
+    Admin_PanelPage.Search the end user under subscribed companies      mehak@mynes.com
     Admin_PanelPage.Scroll table horizontaly
     Admin_PanelPage.Click on the three_dots of the table
-#    Admin_PanelPage.scroll table vertically         Assign Commercial Plan
     Admin_PanelPage.Choose option by clicking on three_dots         Assign Commercial Plan
-    Admin_PanelPage.Change the plan from Plan Name field        Commercial-com end
+    Admin_PanelPage.Change the plan from Plan Name field        Commercial-Debut BETA Promo
     Admin_PanelPage.Click on the button inside assign commercial plan modal         Confirm
     Admin_PanelPage.Get alert message and compare it with           Subscription Updated Successfully
-    Go To       https://qa-app.aithentic.com/dashboard/billing/billing-details
-    Admin_PanelPage.Verify text from current plan after changing subscription
-    Sleep    ${yop_sleep}
+    Switch window       aithentic | Billing
+    Admin_PanelPage.Fetch text from current Plan
+    Admin_PanelPage.Verify text from current plan after changing subscription       Debut BETA Promo
+
+Change plan- commercial to slotted
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form     mehak@mynes.com     Test@123
     Generic.Click on the profile name
-    Generic.Select option from profile list     subscription-dropdown
-#    Generic.Verify your current page location contains      subscription
-#    SubscriptionPage.Select if you want to change plan or asset    Change Asset Limit
-    Generic.click on the button     Confirm
+    Generic.Select option from profile list     billing-dropdown
+    Generic.Verify your current page location contains      billing
+    Admin_PanelPage.Fetch text from current Plan
+    Admin_PanelPage.Open Admin panel
+    LandingPage.Fill the login form of Admin panel     ${admin_name}       ${admin_password}
+    Generic.Open new window     yopmail
+    Generic.Search yopmail emails for       ${admin_name}
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail       Admin OTP Access
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Admin_PanelPage.Get Admin OTP acess from email      Here is your authorized OTP access code:
+    sleep       ${yop_sleep}
+    Switch Window    aithentic | Two factor authentication
+    TwoFactorAuth.Enter the Admin Access OTP     ${passcode}
+    TwoFactorAuth.Click on the verify button
+    Generic.Verify your current page contains this text         Manage Subscriptions
+    Admin_PanelPage.Choose option from side menu of Admin_panel    Manage Subscriptions
+    Admin_PanelPage.Select option under side menu       Subscribed Companies
+    Generic.Verify your current page contains this text         Subscribed Companies
+    Admin_PanelPage.Search the end user under subscribed companies      mehak@mynes.com
+    Admin_PanelPage.Scroll table horizontaly
+    Admin_PanelPage.Click on the three_dots of the table
+    Admin_PanelPage.Choose option by clicking on three_dots         Assign Commercial Plan
+    Admin_PanelPage.Change the plan from Plan Name field        Commercial-Debut BETA Promo
+    Admin_PanelPage.Click on the button inside assign commercial plan modal         Confirm
+    Admin_PanelPage.Get alert message and compare it with           Subscription Updated Successfully
+    switch window       aithentic | Billing
+    Admin_PanelPage.Fetch text from current Plan
+    Admin_PanelPage.Verify text from current plan after changing subscription       Debut BETA Promo
+    Generic.Click on the profile name
+    Admin_PanelPage.Select option from profile list
+    Sleep   ${yop_sleep}
+    Admin_PanelPage.click on confirm button to change plan     Confirm
     SubscriptionPage.Select plan of subscription
-#    SubscriptionPage.Select and move next with subscription
     SubscriptionPage.Set asset range to     200
     SubscriptionPage.Update the payment of changed plan    proceed
-    Generic.Verify your current page location contains     subscription-payment
-#    SubscriptionPage.Set asset range to     200
-#    SubscriptionPage.Update the asset rang
     SubscriptionPage.Select the payment method    ach
     SubscriptionPage.Select the account for payment
     SubscriptionPage.Proceed the payment     proceed
     Generic.Fetch alert message text and compare it with      Payment Successful
-
-
+    Generic.Click on the profile name
+    Generic.Select option from profile list     billing-dropdown
+    Generic.Verify your current page location contains      billing
+    Admin_PanelPage.Fetch text from current Plan
+    Admin_PanelPage.Verify text from current plan after changing subscription       Premium
