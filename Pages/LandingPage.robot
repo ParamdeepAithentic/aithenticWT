@@ -30,6 +30,11 @@ ${Kc_username}     css:#username
 ${Kc_password}      css:#password
 ${Kc_loginBtn}     css:#kc-login
 
+${Admin_username_field}     css:#email
+${Admin_password_field}     css:#password
+${Admin_loginBtn}          //button[normalize-space()='Log In']
+
+
 *** Keywords ***
 
 Fill the login Form
@@ -41,5 +46,14 @@ Fill the login Form
     Click Button        ${Kc_loginBtn}
 #    wait until location contains    asset-overview     60
 #    wait until element is visible       ${profileName}       60
+
+Fill the login form of Admin panel
+    [Arguments]     ${email}     ${valid_password}
+    wait until element is visible    ${Admin_username_field}       60
+    Input Text          ${Admin_username_field}     ${email}
+    wait until element is visible    ${Admin_password_field}    60
+    Input Password      ${Admin_password_field}     ${valid_password}
+    Click Button        ${Admin_loginBtn}
+
 
 

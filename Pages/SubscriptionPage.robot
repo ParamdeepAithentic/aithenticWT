@@ -124,6 +124,7 @@ Save the manufacturer profile
     click element        ${save_manufacturer_BTN}
 
 Select plan of subscription
+    wait until element is not visible      ${loaderIcon}        60
     wait until element is visible       ${select_subscription_type}       60
     wait until element is enabled       ${select_subscription_type}       60
     click element        ${select_subscription_type}
