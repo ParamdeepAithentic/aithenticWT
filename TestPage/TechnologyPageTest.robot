@@ -1670,7 +1670,3 @@ Inactive asset - Restore asset from Technology Details page
     SubscriptionPage.Select the account for payment
     SubscriptionPage.Proceed the payment     proceed
     Generic.Fetch alert message text and compare it with      Payment Successful
-
-
-
-
