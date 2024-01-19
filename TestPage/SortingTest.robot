@@ -201,7 +201,7 @@ Test the sorting of team members page table inside department page
 #    SortingPage.Verify the sorting of the table method two     7       Date
 
 Test the sorting of team member asset history page table
-    [Tags]    Exclude
+
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      jasdeep@15963.fr.nf    Paramdeep@112
     Generic.select the option from the side menu    Team Members
