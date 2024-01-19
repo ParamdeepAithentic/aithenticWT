@@ -293,3 +293,20 @@ Test the sorting of department page list via bulk import of technology table
 #//div[normalize-space()='${headingName}']//following-sibling::div//button
 #//div[normalize-space()='${headingName}']//app-sort-button
 #//div[normalize-space()='${headingName}']//div[contains(@class,'sortingIcon')]
+
+Test the sorting of removed technology page
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      jasdeep@15963.fr.nf     Paramdeep@112
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology-list
+    TechnologyPage.Click on removed assets option of technology filters
+    sleep   ${yop_sleep}
+    SortingPage.Verify the sorting of the table     3       Group
+    SortingPage.Verify the sorting of the table     4       Brand
+    SortingPage.Verify the sorting of the table     5       Product
+    SortingPage.Verify the sorting of the table     6       Product Description
+    SortingPage.Verify the sorting of the table     7       Created Date
+    SortingPage.Verify the sorting of the table     8       Record Status
+    SortingPage.Verify the sorting of the table     9       Asset ID
+    SortingPage.Verify the sorting of the table     10       Location
+    SortingPage.Verify the sorting of the table     11      Assignee
