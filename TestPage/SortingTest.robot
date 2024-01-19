@@ -209,3 +209,20 @@ Test the sorting of team members page table inside department page
 #    SortingPage.Verify the sorting of the table method two     5       Subject
 #    SortingPage.Verify the sorting of the table method two     6       Status
 #    SortingPage.Verify the sorting of the table method two     7       Date
+
+Test the sorting of team member asset history page table
+    [Tags]    Exclude
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      jasdeep@15963.fr.nf    Paramdeep@112
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Search Team Member by name    Param113 Deep
+    TeamMemberPage.Click on three dots of Team Member listing
+    MemberPage.Select option from three dots of Team Member     Asset History
+    Generic.Verify your current page contains this text     Export
+    SortingPage.Verify the sorting of the table     2       Asset ID
+    SortingPage.Verify the sorting of the table     3       Group
+    SortingPage.Verify the sorting of the table     4       Brand
+    SortingPage.Verify the sorting of the table     5       Product        # Filter now working fine
+    SortingPage.Verify the sorting of the table     6       Product Description
+    SortingPage.Verify the sorting of the table     7       Assigned Date
