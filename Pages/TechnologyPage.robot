@@ -1298,3 +1298,9 @@ Click on back to list of technology
     wait until element is enabled   ${back_To_List_Link}    60
     click element   ${back_To_List_Link}
 
+
+Select the check box option from asset wizard
+    [Arguments]    ${option}
+    wait until element is visible   //b[normalize-space()='${option}']    60
+    wait until element is enabled   //b[normalize-space()='${option}']    60
+    click element   //b[normalize-space()='${option}']

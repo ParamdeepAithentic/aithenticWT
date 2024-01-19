@@ -46,11 +46,7 @@ ${url}                  https://uat-app.aithentic.com/
 #${url}                  https://qa-app.aithentic.com/
 ${apiURL}               https://uat-api.aithentic.com/api/v1
 #${apiURL}               https://qa-api.aithentic.com/api/v1
-<<<<<<< HEAD
 ${valid_password}         Test!@5897     #UAT user
-=======
-${valid_password}         Paramdeep@112     #UAT user
->>>>>>> 1b28af36cfe4ee6d97ff1339c4821685559a1009
 #${valid_password}         Test@123       #QA User
 
 

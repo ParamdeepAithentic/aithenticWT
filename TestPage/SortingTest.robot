@@ -180,9 +180,9 @@ Test the sorting of team members page table inside department page
     Generic.Verify your current page location contains      member
     Generic.Wait until table get load
     SortingPage.Verify the sorting of the table method two     4       User Type
-#    SortingPage.Verify the sorting of the table method two     3       Email       Not working
+#    SortingPage.Verify the sorting of the table method two     3       Email       Not working - one emial starts with small rest all are with big
     SortingPage.Verify the sorting of the table method two     2       Name
-#    SortingPage.Verify the sorting of the table method two     5       Last Login  #last login is not coming
+#    SortingPage.Verify the sorting of the table method two     5       Last Login  #last login is not coming - bug need to be fixed
     SortingPage.Verify the sorting of the table method two     6       Status
 
 #Test the sorting of message page table - inbox
@@ -201,7 +201,6 @@ Test the sorting of team members page table inside department page
 #    SortingPage.Verify the sorting of the table method two     7       Date
 
 Test the sorting of team member asset history page table
-    [Tags]    Exclude
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      jasdeep@15963.fr.nf    Paramdeep@112
     Generic.select the option from the side menu    Team Members
@@ -213,7 +212,7 @@ Test the sorting of team member asset history page table
     SortingPage.Verify the sorting of the table     2       Asset ID
     SortingPage.Verify the sorting of the table     3       Group
     SortingPage.Verify the sorting of the table     4       Brand
-    SortingPage.Verify the sorting of the table     5       Product        # Filter now working fine
+    SortingPage.Verify the sorting of the table     5       Product
     SortingPage.Verify the sorting of the table     6       Product Description
     SortingPage.Verify the sorting of the table     7       Assigned Date
 
@@ -232,3 +231,65 @@ Test the sorting of contract page table
     SortingPage.Verify the sorting of the table method two     8       Status
     SortingPage.Verify the sorting of the table method two     9       Permissions
     SortingPage.Verify the sorting of the table method two     10      Technology
+
+
+
+
+Test the sorting of department page list via bulk import of technology table
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      jasdeep@15963.fr.nf     Paramdeep@112
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Click on Bulk_import under action button
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Data-Wizard
+    TechnologyPage.Select the check box option from asset wizard        Departments
+    TechnologyPage.Select the check box option from asset wizard        Locations
+    TechnologyPage.Select the check box option from asset wizard        Team Members
+    TechnologyPage.Select the check box option from asset wizard        Brands
+    TechnologyPage.Select the check box option from asset wizard        Products
+    TechnologyPage.Select the check box option from asset wizard        Partners
+    Generic.click on the button      Next
+    Generic.Verify your current page location contains      department-list
+    Generic.Wait until table get load
+#    SortingPage.Verify the sorting of the table method two     3       Cost Center
+#    SortingPage.Verify the sorting of the table method two     2       Department Name
+#    SortingPage.Verify the sorting of the table method two     4       Status          #Departments table contains 4th code
+    Generic.click on the button      Next
+    SortingPage.Verify the sorting of the table method three     4       State
+    SortingPage.Verify the sorting of the table method three     3       Country
+    SortingPage.Verify the sorting of the table method three     2       Location Name
+    SortingPage.Verify the sorting of the table method three     5       City
+    SortingPage.Verify the sorting of the table method three     6       Technology
+    SortingPage.Verify the sorting of the table method three     7       Status
+
+    Generic.click on the button      Next
+    SortingPage.Verify the sorting of the table method two     3       Location
+    SortingPage.Verify the sorting of the table method two     2       Name
+    SortingPage.Verify the sorting of the table method two     4       Role
+    SortingPage.Verify the sorting of the table method two     5       Assigned Assets
+    SortingPage.Verify the sorting of the table method two     6       Status
+#
+    Generic.click on the button      Next
+#    SortingPage.Verify the sorting of the table method two     3       Status
+#    SortingPage.Verify the sorting of the table method two     2       Brand Name       #Data is more than 10
+
+    Generic.click on the button      Next
+    SortingPage.Verify the sorting of the table method two     3       Brand Name
+    SortingPage.Verify the sorting of the table method two     2       Product Name
+    SortingPage.Verify the sorting of the table method two     4       Description
+    SortingPage.Verify the sorting of the table method two     5       Technology Group
+    SortingPage.Verify the sorting of the table method two     6       Status
+
+    Generic.click on the button      Next
+    SortingPage.Verify the sorting of the table method two     3       Partner Type
+    SortingPage.Verify the sorting of the table method two     2       Business Name
+    SortingPage.Verify the sorting of the table method two     4       Technology
+    SortingPage.Verify the sorting of the table method two     5       Added on
+    SortingPage.Verify the sorting of the table method two     6       Status
+
+
+#//div[normalize-space()='${headingName}']//following-sibling::div//button
+#//div[normalize-space()='${headingName}']//app-sort-button
+#//div[normalize-space()='${headingName}']//div[contains(@class,'sortingIcon')]
