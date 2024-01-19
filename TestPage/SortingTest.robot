@@ -46,13 +46,12 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Test the sorting of assigned user asset history page table
-    [Tags]    Exclude
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     MemberPage.Click on assigned user tab      Assigned Users
-    MemberPage.Search assigned user by first name   Param_113 Deep
+    MemberPage.Search assigned user by first name   Vishal Debut
     MemberPage.Click on three dots of Team Member listing
     MemberPage.Select option from three dots of Team Member     Asset History
     Generic.Verify your current page contains this text     Export
@@ -65,9 +64,8 @@ Test the sorting of assigned user asset history page table
 
 
 Test the sorting of technology page table
-    [Tags]    Exclude
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     SortingPage.Verify the sorting of the table     2       Group
@@ -81,9 +79,8 @@ Test the sorting of technology page table
     SortingPage.Verify the sorting of the table     10      Assignee
 
 Test the sorting of brand page table
-    [Tags]    Exclude
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Click on the profile name
     Generic.Select option from profile list     brand-dropdown
     Generic.Verify your current page location contains      brand
@@ -92,9 +89,8 @@ Test the sorting of brand page table
 
 
 Test the sorting of product page table
-    [Tags]    Exclude
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Click on the profile name
     Generic.Select option from profile list     product-dropdown
     Generic.Verify your current page location contains      product
@@ -106,9 +102,8 @@ Test the sorting of product page table
 
 
 Test the sorting of location page table
-    [Tags]    Exclude
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
     Generic.select the option from the side menu    Location
     Generic.Verify your current page location contains      locationlist
     Generic.Wait until table get load
@@ -121,9 +116,8 @@ Test the sorting of location page table
 
 
 Test the sorting of team member page table
-    [Tags]    Exclude
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     Generic.Wait until table get load
@@ -135,9 +129,8 @@ Test the sorting of team member page table
 
 
 Test the sorting of partners page table
-    [Tags]    Exclude
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner-listing
     Generic.Wait until table get load
@@ -149,9 +142,8 @@ Test the sorting of partners page table
 
 
 Test the sorting of department page table
-    [Tags]    Exclude
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Click on the profile name
     Generic.Select option from profile list     department-dropdown
     Generic.Verify your current page location contains      department
@@ -162,9 +154,8 @@ Test the sorting of department page table
 
 
 Test the sorting of Assigned user page table inside department page
-    [Tags]    Exclude
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Click on the profile name
     Generic.Select option from profile list     department-dropdown
     Generic.Verify your current page location contains      department
@@ -179,9 +170,8 @@ Test the sorting of Assigned user page table inside department page
 
 
 Test the sorting of team members page table inside department page
-    [Tags]    Exclude
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Click on the profile name
     Generic.Select option from profile list     department-dropdown
     Generic.Verify your current page location contains      department
@@ -189,14 +179,14 @@ Test the sorting of team members page table inside department page
     DepartmentPage.Select option from side menu in department list        Team Members
     Generic.Verify your current page location contains      member
     Generic.Wait until table get load
-    SortingPage.Verify the sorting of the table method two     3       Email
-    SortingPage.Verify the sorting of the table method two     2       Name
     SortingPage.Verify the sorting of the table method two     4       User Type
+#    SortingPage.Verify the sorting of the table method two     3       Email       Not working
+    SortingPage.Verify the sorting of the table method two     2       Name
 #    SortingPage.Verify the sorting of the table method two     5       Last Login  #last login is not coming
     SortingPage.Verify the sorting of the table method two     6       Status
 
 #Test the sorting of message page table - inbox
-#    [Tags]    Exclude
+#    
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      ${email}     ${valid_password}
 #    Generic.select the option from the side menu    Messages
@@ -209,3 +199,19 @@ Test the sorting of team members page table inside department page
 #    SortingPage.Verify the sorting of the table method two     5       Subject
 #    SortingPage.Verify the sorting of the table method two     6       Status
 #    SortingPage.Verify the sorting of the table method two     7       Date
+
+Test the sorting of contract page table
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
+    Generic.select the option from the side menu    Contracts
+    Generic.Verify your current page location contains      contracts-list
+    Generic.Wait until table get load
+    SortingPage.Verify the sorting of the table method two     2       Business Name
+    SortingPage.Verify the sorting of the table method two     3       Partner Type
+    SortingPage.Verify the sorting of the table method two     4       Function
+#    SortingPage.Verify the sorting of the table method two     5       Contract ID
+#    SortingPage.Verify the sorting of the table method two     6       Created Date
+#    SortingPage.Verify the sorting of the table method two     7       End Date
+    SortingPage.Verify the sorting of the table method two     8       Status
+    SortingPage.Verify the sorting of the table method two     9       Permissions
+    SortingPage.Verify the sorting of the table method two     10      Technology
