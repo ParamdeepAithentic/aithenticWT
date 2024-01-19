@@ -417,3 +417,11 @@ Search team member by first and last name
      Wait Until Element Is Not Visible    ${loaderIcon}      60
      Fetch the team member name from the row   ${name}
      should be equal    ${fetch_teamMemberFname}     ${name}
+
+Enter input under product of bulk edit of technology
+    [Arguments]     ${Text}
+    wait until element is not visible   ${loaderIcon}   60
+    wait until element is visible    css:#ag-101-input   60
+    Double click element   css:#ag-101-input
+    clear element text      css:#ag-101-input
+    input text  css:#ag-101-input       ${Text}

@@ -370,3 +370,22 @@ Team Member Bulk Edit
     sleep       ${search_sleep}
     Switch Window       aithentic | Member - List
     Bulk_Import_ExportPage.Search team member by first and last name    ${generate_teamMember_FirstName} ${generate_teamMember_LastName}
+
+Technology Bulk edit
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    Generic.Verify your current page location contains     technology-list
+    TechnologyPage.Search by AssetId       AssetID_6991619602
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Click on Bulk_edit under action button
+    sleep     ${yop_sleep}
+    switch window     aithentic | Edit - Assets
+    Generic.Verify your current page location contains      data-wizard
+    Bulk_Import_ExportPage.Enter input under product of bulk edit of technology     Product_9727560935
+
+
+
+
+
