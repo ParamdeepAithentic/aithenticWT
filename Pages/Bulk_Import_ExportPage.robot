@@ -370,7 +370,7 @@ Enter the new value of team member in the phone number column
     MemberPage.Double click    ${option}
     ${random_string} =    Generate Random String       8      [NUMBERS]
     ${generated_assigneeFname}=    Catenate    90${random_string}
-    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
+    wait until element is visible       css:.ag-center-cols-container   input    60
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assigneeFname}
     set global variable    ${generated_assigneeFname}
 
@@ -418,10 +418,49 @@ Search team member by first and last name
      Fetch the team member name from the row   ${name}
      should be equal    ${fetch_teamMemberFname}     ${name}
 
-Enter input under product of bulk edit of technology
-    [Arguments]     ${Text}
-    wait until element is not visible   ${loaderIcon}   60
-    wait until element is visible    css:#ag-101-input   60
-    Double click element   css:#ag-101-input
-    clear element text      css:#ag-101-input
-    input text  css:#ag-101-input       ${Text}
+
+
+click on the arrow of product
+    wait until element is not visible   ${loaderIcon}       60
+    wait until element is visible    css:div[class='ag-pinned-left-header'] span[class='ag-header-icon ag-header-expand-icon ag-header-expand-icon-collapsed'] span[role='presentation']      60
+    wait until element is enabled   css:div[class='ag-pinned-left-header'] span[class='ag-header-icon ag-header-expand-icon ag-header-expand-icon-collapsed'] span[role='presentation']      60
+    click element   css:div[class='ag-pinned-left-header'] span[class='ag-header-icon ag-header-expand-icon ag-header-expand-icon-collapsed'] span[role='presentation']
+
+Enter the new value in the product, brand, group and type value in bulk_edit of technology
+    [Arguments]     ${option}   ${text}
+    wait until element is not visible   ${loaderIcon}       60
+    wait until element is visible   (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]   60
+    wait until element is enabled   (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]   60
+    double click element    (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]
+    Press Keys    (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]//input     CONTROL+A
+    Press Keys    (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]//input     DELETE
+    input text    (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]//input     ${text}
+    Press Keys      (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]       ENTER
+
+Select the new value of technology group in bulk edit of technology
+    [Arguments]     ${option}   ${text}
+    wait until element is not visible   ${loaderIcon}       60
+    wait until element is visible   (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]   60
+    wait until element is enabled   (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]   60
+    double click element    (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]
+    wait until element is visible   //div[contains(text(),'${text}')]   60
+    Press Keys      //div[contains(text(),'${text}')]       ENTER
+
+Enter the new value of asset id of bulk edit of technology
+    [Arguments]    ${option}
+    MemberPage.Double click    ${option}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_assetidbulkedit}=    Catenate    AssetID_${random_string}
+    wait until element is visible       (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]//input    60
+    input text   (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]//input   ${generated_assetidbulkedit}
+    Press Keys      (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]       ENTER
+    set global variable    ${generated_assetidbulkedit}
+
+Click on confirm pop up of update button
+    wait until element is visible  //div[@id='warning']//button[@class='button-green ml-1 mt-0'][normalize-space()='Confirm']  60
+    click element   //div[@id='warning']//button[@class='button-green ml-1 mt-0'][normalize-space()='Confirm']
+
+Click on confirm button under pop up of finish button of bulk edit
+    wait until element is visible  //div[@id='finishUpload']//button[@class='button-green ml-1 mt-0'][normalize-space()='Confirm']     60
+    click element   //div[@id='finishUpload']//button[@class='button-green ml-1 mt-0'][normalize-space()='Confirm']
+

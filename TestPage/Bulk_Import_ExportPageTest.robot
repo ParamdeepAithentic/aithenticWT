@@ -377,13 +377,31 @@ Technology Bulk edit
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     Generic.Verify your current page location contains     technology-list
-    TechnologyPage.Search by AssetId       AssetID_6991619602
+    TechnologyPage.Search by AssetId       AssetID12355
     TechnologyPage.Click on action button of technology
     TechnologyPage.Click on Bulk_edit under action button
     sleep     ${yop_sleep}
     switch window     aithentic | Edit - Assets
-    Generic.Verify your current page location contains      data-wizard
-    Bulk_Import_ExportPage.Enter input under product of bulk edit of technology     Product_9727560935
+    Generic.Verify your current page location contains      technology-bulk-edit
+    sleep   2
+    Bulk_Import_ExportPage.click on the arrow of product
+    Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology    ModelProductName_1     Product_2589283776
+    Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology    Brand      BrandName2556763617
+    Select the new value of technology group in bulk edit of technology    TechnologyType      Hardware
+    Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology    TechnologyGroup      Applications
+    Bulk_Import_ExportPage.Enter the new value of asset id of bulk edit of technology   AssetId
+
+    Generic.Click on the button     Check data      #Update,Edit
+    Generic.Click on the button     Update
+
+#    MemberPage.Confirm the exit import process pop appers
+    sleep   ${search_sleep}
+    Bulk_Import_ExportPage.Click on confirm pop up of update button
+     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
+    Generic.Click on the button     Finish
+    sleep   ${search_sleep}
+    Bulk_Import_ExportPage.Click on confirm button under pop up of finish button of bulk edit
+
 
 
 
