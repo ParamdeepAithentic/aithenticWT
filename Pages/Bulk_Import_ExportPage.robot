@@ -456,12 +456,14 @@ Enter the new value of asset id of bulk edit of technology
     set global variable    ${generated_assetidbulkedit}
 
 Click on confirm pop up of update button
-    wait until element is visible  //div[@id='warning']//button[@class='button-green ml-1 mt-0'][normalize-space()='Confirm']  60
-    click element   //div[@id='warning']//button[@class='button-green ml-1 mt-0'][normalize-space()='Confirm']
+    wait until element is visible  css:.qa-confirm-technology-bulk-edit-warning  60
+    click element   css:.qa-confirm-technology-bulk-edit-warning
     sleep   2
 
 Click on confirm button under pop up of finish button of bulk edit
-    [Arguments]     ${button}
-    wait until element is visible  //div[@id='${button}']//button[@class='button-green ml-1 mt-0'][normalize-space()='Confirm']     60
-    click element   //div[@id='${button}']//button[@class='button-green ml-1 mt-0'][normalize-space()='Confirm']
+    wait until element is visible  css:.qa-confirm-technology-bulk-edit-finish      60
+    click element   css:.qa-confirm-technology-bulk-edit-finish
 
+Click on confirm button under pop up of exit button of bulk edit
+    wait until element is visible   //div[@id='confirmUpload']//button[@class='button-green ml-1 mt-0'][normalize-space()='Confirm']    60
+    click element   //div[@id='confirmUpload']//button[@class='button-green ml-1 mt-0'][normalize-space()='Confirm']

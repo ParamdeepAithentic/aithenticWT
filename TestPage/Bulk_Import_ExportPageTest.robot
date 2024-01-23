@@ -408,7 +408,7 @@ Technology Bulk edit
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
     Generic.Click on the button     Finish
     sleep   ${search_sleep}
-    Bulk_Import_ExportPage.Click on confirm button under pop up of finish button of bulk edit   finishUpload
+    Bulk_Import_ExportPage.Click on confirm button under pop up of finish button of bulk edit
     sleep       ${search_sleep}
     Switch Window       aithentic | Technology - List
     TechnologyPage.Search by AssetId       ${generated_assetidbulkedit}
@@ -419,7 +419,7 @@ Technology Bulk edit
     Generic.Verify your current page location contains      technology-bulk-edit
     Generic.Click on the button     Exit
     sleep   ${search_sleep}
-    Bulk_Import_ExportPage.Click on confirm button under pop up of finish button of bulk edit   confirmUpload
+    Bulk_Import_ExportPage.Click on confirm button under pop up of exit button of bulk edit
     sleep       ${search_sleep}
     Switch Window       aithentic | Technology - List
     TechnologyPage.Search by AssetId       ${generated_assetidbulkedit}
