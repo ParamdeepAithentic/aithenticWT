@@ -30,6 +30,7 @@ Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
+Resource        ../Pages/UnselectAssetAPI.robot
 
 
 Test Setup      open the browser with the url
@@ -463,32 +464,24 @@ Match Discovery and Existing Asset
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
+    OCS.Hover Existing Agent
+    OCS.Get text from MAC Address      MacAddress:
     OCS.Select any Discovered asset
     OCS.Select any existing asset
     OCS.Verify that line appears between selected assets
     OCS.Click on Confirm Button     Confirm Matches
     Generic.Fetch alert message text and compare it with      Matched Assets updated successfully
-    Generic.Refresh the existing page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       1162-7
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains    technology-details
-    OCS.Get Value of MAC-Address
-    OCS.Get Value of Serial no.
-    OCS.Get Value of Host-Name
+    OCS.Get Value of MAC-Address and compare it with       ${MAC_Address}
     TechnologyPage.Click on edit button on product details page        Edit
     Generic.Verify your current page location contains      edit-technology
-    OCS.Edit the MAC_Address of Asset       ${mac_address_value}23
-    OCS.Edit the Serial_No. of Asset        ${serial_no.}1f
-    OCS.Edit The Host_Name of Asset         ${host_value}55
+    OCS.Edit the MAC_Address of Asset
+    OCS.Edit the Serial_No. of Asset
+    OCS.Edit The Host_Name of Asset
     TechnologyPage.Click on update button of edit_technology page       Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
-
-
-
-
-
-    
-
-
+    UnselectAssetAPI.Hit API Endpoint

@@ -806,6 +806,7 @@ Click on the first row of the technology table
 
 Click on edit button on product details page
     [Arguments]    ${option}
+    wait until element is not visible      ${loaderIcon}    60
     Generic.click on the button link     ${option}
     wait until element is not visible      ${loaderIcon}    60
 

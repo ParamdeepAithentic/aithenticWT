@@ -28,6 +28,8 @@ Resource        ../Pages/OCS.robot
 Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
+Resource        ../Pages/UnselectAssetAPI.robot
+
 
 *** Variables ***
 ${preparingAgent_text}     //div[@id='downloadAgentOCSFile']//p[contains(text(),'File is preparing, please wait....')]
@@ -116,45 +118,89 @@ Click on Confirm Button
     [Arguments]     ${option}
     Generic.click on the button     ${option}
 
-Get Value of MAC-Address
+Get Value of MAC-Address and compare it with
+    [Arguments]     ${text}
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
     wait until element is visible    //input[@id='Mac Address']   60
     ${mac_address_value} =    Get Value    //input[@id='Mac Address']
     Set Global Variable    ${mac_address_value}
     Log To Console    MAC Address is: ${mac_address_value}
+    Should Be Equal    ${mac_address_value}   ${text}
+    Log To Console    Yes, MAC_Address are equal.
 
-Get Value of Serial no.
+Get Value of Serial no. and compare it with
+    [Arguments]     ${text}
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
     wait until element is visible   //input[@id='Serial Number']   60
     ${serial_no.} =    Get Value    //input[@id='Serial Number']
     Set Global Variable    ${serial_no.}
     Log To Console    Serial No. is: ${serial_no.}
+    Should Be Equal    ${serial_no.}    ${text}
 
-Get Value of Host-Name
-#    [Arguments]     ${value}
+Get Value of Host-Name and compare it with
+    [Arguments]     ${text}
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
     wait until element is visible   //input[@id='Computer/Host Name']   60
     ${host_value} =    Get Value    //input[@id='Computer/Host Name']
     Set Global Variable    ${host_value}
     Log To Console    Host Name is: ${host_value}
-
-verify Text from Assignment Information
-    [Arguments]     ${original}     ${compared}
-    should be equal     ${original}     ${compared}
+    Should Be Equal    ${host_value}    ${text}
 
 Edit the MAC_Address of Asset
-    [Arguments]     ${option}
+#    [Arguments]     ${option}
     Wait Until Element Is Not Visible    ${loaderIcon}      60
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_macaddress}=    Catenate    MAC_${random_string}
     Wait Until Element Is Visible    css:#DYNA_14   60
-    Input Text   css:#DYNA_14     ${option}
+    Input Text   css:#DYNA_14     ${generated_macaddress}
 
 Edit the Serial_No. of Asset
-    [Arguments]     ${option}
+#    [Arguments]     ${option}
     Wait Until Element Is Not Visible    ${loaderIcon}      60
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_serailnumber}=    Catenate    S_No_${random_string}
     Wait Until Element Is Visible    css:#DYNA_21   60
-    Input Text   css:#DYNA_21     ${option}
+    Input Text   css:#DYNA_21     ${generated_serailnumber}
 
 Edit The Host_Name of Asset
-    [Arguments]     ${option}
+#    [Arguments]     ${option}
     Wait Until Element Is Not Visible    ${loaderIcon}      60
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_hostname}=    Catenate    Host_${random_string}
     Wait Until Element Is Visible    css:#DYNA_24   60
-    Input Text   css:#DYNA_24     ${option}
+    Input Text   css:#DYNA_24     ${generated_hostname}
 
- 
+Hover Existing Agent
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    Wait Until Element Is Visible    css:.right-text     60
+    Wait Until Element Is Enabled    css:.right-text     60
+    Mouse Over    css:.right-text
+
+Get text from MAC Address
+    [Arguments]     ${text}
+    Wait Until Element Is Visible   css:.right-text
+    ${MAC_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'MacAddress:')]//ancestor::li
+    ${parts}    Split String    ${MAC_text}    ${text}
+    ${MAC_Address}    Get Substring    ${parts[1]}    1
+    Log to console      ${MAC_Address}
+    set global variable     ${MAC_Address}
+
+Get text from serial_no.
+    [Arguments]     ${text}
+    Wait Until Element Is Visible    css:.right-text         60
+    ${serial_no_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'Serial Number:')]//ancestor::li
+    ${parts}    Split String    ${serial_no_text}    ${text}
+    ${serial_no_}    Get Substring    ${parts[1]}    1
+    Log to console      ${serial_no_}
+    set global variable     ${serial_no_}
+
+Get text from Host_name
+    [Arguments]     ${text}
+    Wait Until Element Is Visible    css:.right-text         60
+    ${Host_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'Host name:')]//ancestor::li
+    ${parts}    Split String    ${Host_text}    ${text}
+    ${host_Address}    Get Substring    ${parts[1]}    1
+    Log to console      ${host_Address}
+    set global variable     ${host_Address}
+
+
