@@ -377,30 +377,42 @@ Technology Bulk edit
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     Generic.Verify your current page location contains     technology-list
-    TechnologyPage.Search by AssetId       AssetID12355
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
     TechnologyPage.Click on action button of technology
     TechnologyPage.Click on Bulk_edit under action button
     sleep     ${yop_sleep}
     switch window     aithentic | Edit - Assets
     Generic.Verify your current page location contains      technology-bulk-edit
     sleep   2
-    Bulk_Import_ExportPage.click on the arrow of product
+    Bulk_Import_ExportPage.click on the arrow of product    collapsed
     Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology    ModelProductName_1     Product_2589283776
     Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology    Brand      BrandName2556763617
     Select the new value of technology group in bulk edit of technology    TechnologyType      Hardware
     Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology    TechnologyGroup      Applications
     Bulk_Import_ExportPage.Enter the new value of asset id of bulk edit of technology   AssetId
-
     Generic.Click on the button     Check data      #Update,Edit
     Generic.Click on the button     Update
-
-#    MemberPage.Confirm the exit import process pop appers
     sleep   ${search_sleep}
     Bulk_Import_ExportPage.Click on confirm pop up of update button
-     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
+    Bulk_Import_ExportPage.click on the arrow of product    expanded
+    Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
     Generic.Click on the button     Finish
     sleep   ${search_sleep}
     Bulk_Import_ExportPage.Click on confirm button under pop up of finish button of bulk edit
+    sleep       ${search_sleep}
+    Switch Window       aithentic | Technology - List
+    TechnologyPage.Search by AssetId       ${generated_assetidbulkedit}
 
 
 
