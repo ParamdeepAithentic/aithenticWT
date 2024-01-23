@@ -370,7 +370,7 @@ Enter the new value of team member in the phone number column
     MemberPage.Double click    ${option}
     ${random_string} =    Generate Random String       8      [NUMBERS]
     ${generated_assigneeFname}=    Catenate    90${random_string}
-    wait until element is visible       css:.ag-center-cols-container   input    60
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assigneeFname}
     set global variable    ${generated_assigneeFname}
 
@@ -418,8 +418,6 @@ Search team member by first and last name
      Fetch the team member name from the row   ${name}
      should be equal    ${fetch_teamMemberFname}     ${name}
 
-
-
 click on the arrow of product
     [Arguments]     ${option}
     wait until element is not visible   ${loaderIcon}       60
@@ -463,6 +461,7 @@ Click on confirm pop up of update button
     sleep   2
 
 Click on confirm button under pop up of finish button of bulk edit
-    wait until element is visible  //div[@id='finishUpload']//button[@class='button-green ml-1 mt-0'][normalize-space()='Confirm']     60
-    click element   //div[@id='finishUpload']//button[@class='button-green ml-1 mt-0'][normalize-space()='Confirm']
+    [Arguments]     ${button}
+    wait until element is visible  //div[@id='${button}']//button[@class='button-green ml-1 mt-0'][normalize-space()='Confirm']     60
+    click element   //div[@id='${button}']//button[@class='button-green ml-1 mt-0'][normalize-space()='Confirm']
 
