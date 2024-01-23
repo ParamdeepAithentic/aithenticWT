@@ -436,3 +436,13 @@ Download Agent from asset discovery - macOS
     OCS.Select the agent type    macOS
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
+
+Apply filters on Discovered assets
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      chirag@dmts.fr.nf      Test@789
+    Generic.Click on the profile name
+    Generic.Select option from profile list     view-discovery
+     sleep   ${search_sleep}
+    OCS.Choose tab under Discovery Assets   network-discovery
+    OCS.click on filter icon of discovered assets
+    sleep  2

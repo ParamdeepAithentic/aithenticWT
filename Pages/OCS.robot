@@ -57,3 +57,8 @@ Choose tab under Discovery Assets
     wait until element is visible       css:.qa-${option}-tab       60
     click element       css:.qa-${option}-tab
 #option: network-discovery, agent-discovery
+
+click on filter icon of discovered assets
+    wait until element is visible  css:i[title='Filter: Agent/Network - Discovered Assets']    60
+    wait until element is enabled   css:i[title='Filter: Agent/Network - Discovered Assets']    60
+    click element   css:i[title='Filter: Agent/Network - Discovered Assets']
