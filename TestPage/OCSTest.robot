@@ -445,4 +445,10 @@ Apply filters on Discovered assets
     sleep   ${search_sleep}
     OCS.Choose tab under Discovery Assets   network-discovery
     OCS.click on filter icon of discovered assets
+    sleep   3
+    OCS.Choose filters for discovered asset     Select Brand
+    sleep   2
+    Select brand , mac address and agent from dropdown of discovered asset filter   LENOVO
+    Generic.click on the button     Apply
+
 

@@ -62,3 +62,18 @@ click on filter icon of discovered assets
     wait until element is visible  css:i[title='Filter: Agent/Network - Discovered Assets']    60
     wait until element is enabled   css:i[title='Filter: Agent/Network - Discovered Assets']    60
     click element   css:i[title='Filter: Agent/Network - Discovered Assets']
+
+Choose filters for discovered asset
+    [Arguments]     ${option}
+    wait until element is visible   //div[contains(text(), '${option}')]   60
+    wait until element is enabled   //div[contains(text(), '${option}')]   60
+    click element   //div[contains(text(), '${option}')]
+
+Select brand , mac address and agent from dropdown of discovered asset filter
+    [Arguments]     ${option}
+    wait until element is visible   //div[@class='ng-dropdown-panel-items scroll-host']//span[normalize-space()='${option}']    60
+    wait until element is enabled   //div[@class='ng-dropdown-panel-items scroll-host']//span[normalize-space()='${option}']    60
+    click element   //div[@class='ng-dropdown-panel-items scroll-host']//span[normalize-space()='${option}']
+
+
+
