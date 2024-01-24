@@ -54,7 +54,7 @@ ${admin_name}        aithentic@yopmail.com
 ${admin_password}       Admin@123
 
 ${browser_name}          Firefox
-${email}                 testqa29j@mailinator.com       #UAT user
+${email}                 jasdeep@15963.fr.nf       #UAT user
 ${SheetLocationAndName}   LoadTimeSheet.xlsx
 ${SheetTabName}     Load_Time_tracking
 
