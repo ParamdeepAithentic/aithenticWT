@@ -185,20 +185,6 @@ Test the sorting of team members page table inside department page
 #    SortingPage.Verify the sorting of the table method two     5       Last Login  #last login is not coming - bug need to be fixed
     SortingPage.Verify the sorting of the table method two     6       Status
 
-#Test the sorting of message page table - inbox
-#    
-#    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form      ${email}     ${valid_password}
-#    Generic.select the option from the side menu    Messages
-#    Generic.Verify your current page location contains      message
-#    Generic.Wait until table get load
-#    SortingPage.Verify the sorting of the table method two     2       From
-#    SortingPage.Verify the sorting of the table method two     1       Flag
-#    SortingPage.Verify the sorting of the table method two     3       Company
-#    SortingPage.Verify the sorting of the table method two     4       Partner Type
-#    SortingPage.Verify the sorting of the table method two     5       Subject
-#    SortingPage.Verify the sorting of the table method two     6       Status
-#    SortingPage.Verify the sorting of the table method two     7       Date
 
 Test the sorting of team member asset history page table
     Generic.click on the tab	Login
@@ -207,6 +193,7 @@ Test the sorting of team member asset history page table
     Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Search Team Member by name    Param113 Deep
     TeamMemberPage.Click on three dots of Team Member listing
+    sleep       ${search_sleep}
     MemberPage.Select option from three dots of Team Member     Asset History
     Generic.Verify your current page contains this text     Export
     SortingPage.Verify the sorting of the table     2       Asset ID
@@ -236,6 +223,7 @@ Test the sorting of contract page table
 
 
 Test the sorting of department page list via bulk import of technology table
+    [Tags]    Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      jasdeep@15963.fr.nf     Paramdeep@112
     Generic.select the option from the side menu    Technology
@@ -300,7 +288,6 @@ Test the sorting of removed technology page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology-list
     TechnologyPage.Click on removed assets option of technology filters
-#    sleep   ${yop_sleep}
     SortingPage.Verify the sorting of the table     3       Group
     SortingPage.Verify the sorting of the table     4       Brand
     SortingPage.Verify the sorting of the table     5       Product
@@ -312,7 +299,6 @@ Test the sorting of removed technology page
     SortingPage.Verify the sorting of the table     11      Assignee
 
 Test the sorting of inbox table page under message page
-    [Tags]    rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      jasdeep@15963.fr.nf     Paramdeep@112
     Generic.select the option from the side menu    Messages
@@ -329,7 +315,7 @@ Test the sorting of inbox table page under message page
 
 
 Test the sorting of sent table page under message page
-    [Tags]    rerun
+    [Tags]    Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      jasdeep@15963.fr.nf     Paramdeep@112
     Generic.select the option from the side menu    Messages
@@ -340,4 +326,3 @@ Test the sorting of sent table page under message page
     SortingPage.Verify the sorting of the table method four    3       Subject
     SortingPage.Verify the sorting of the table method four    4       Status
     SortingPage.Verify the sorting of the table method four    5       Date
-    SortingPage.Verify the sorting of the table method four    1       Flag
