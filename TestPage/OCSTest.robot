@@ -447,6 +447,14 @@ Search Discovered Assets
     OCS.Click on search icon of discovery assets
     OCS.Enter text to search discovery assest    1162-2
     OCS.Verify Searched discovery asset    1162-2
+    OCS.Hover over searched Discovered Asset
+    OCS.Get text from MAC Address    MacAddress:
+    OCS.Get text from serial_no.    Serial Number:
+    OCS.Get text from Host_name    Host name:
+    OCS.Click on Searched Discovered asset
+    Generic.Verify your current page location contains    discovery-asset-detail
+    OCS.Click on tab under dicovery_asset_detail page    Hardware
+
 
 Search Existing Assets
     Generic.click on the tab	Login
@@ -493,3 +501,13 @@ Match Discovery and Existing Asset
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
     OCS.Verify that line does not appears between selected assets
+
+Add Discovery Asset
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       chirag@dmts.fr.nf         Test@789
+    Generic.Click on the profile name
+    Generic.Select option from profile list     view-discovery
+    Generic.Verify your current page location contains    ocs
+    OCS.Choose Tab under Asset Discovery    agent-discovery
+    OCS.Click on Plus icon under table
+    Sleep       20

@@ -210,4 +210,34 @@ Get text from Host_name
     Log to console      ${host_Address}
     set global variable     ${host_Address}
 
+Hover over searched Discovered Asset
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    Wait Until Element Is Visible    css:.left-text     60
+    Wait Until Element Is Enabled    css:.left-text     60
+    Mouse Over    css:.left-text
 
+Click on Searched Discovered asset
+   Wait Until Element Is Not Visible    ${loaderIcon}      60
+   Wait Until Element Is Visible    css:.left-text     60
+   Wait Until Element Is Enabled    css:.left-text     60
+   Click element    css:.left-text
+
+Click on tab under dicovery_asset_detail page
+    [Arguments]     ${option}
+    Generic.click on the tab    ${option}
+
+Choose Tab under Asset Discovery
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    Wait Until Element Is Visible    css:#nav-agent-discovery-tab       60
+    Click Element    css:#nav-${option}-tab
+
+Click on Plus icon under table
+#    Sleep    ${search_sleep}
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    wait until element is visible     //h5[normalize-space()='Tag Name - chirag_infotech-1162-2']         60
+    wait until element is enabled     //h5[normalize-space()='Tag Name - chirag_infotech-1162-2']         60
+    Execute JavaScript  window.scrollBy(10000, 0)
+    Wait Until Element Is Visible     (//i[@title='Add as an Asset'])[1]         60
+    wait until element is enabled     (//i[@title='Add as an Asset'])[1]        60
+    Click Element    (//i[@title='Add as an Asset'])[1]
