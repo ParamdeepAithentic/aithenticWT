@@ -300,7 +300,7 @@ Test the sorting of removed technology page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology-list
     TechnologyPage.Click on removed assets option of technology filters
-    sleep   ${yop_sleep}
+#    sleep   ${yop_sleep}
     SortingPage.Verify the sorting of the table     3       Group
     SortingPage.Verify the sorting of the table     4       Brand
     SortingPage.Verify the sorting of the table     5       Product
@@ -310,3 +310,34 @@ Test the sorting of removed technology page
     SortingPage.Verify the sorting of the table     9       Asset ID
     SortingPage.Verify the sorting of the table     10       Location
     SortingPage.Verify the sorting of the table     11      Assignee
+
+Test the sorting of inbox table page under message page
+    [Tags]    rerun
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      jasdeep@15963.fr.nf     Paramdeep@112
+    Generic.select the option from the side menu    Messages
+    Generic.Verify your current page location contains      message
+    MessagePage.Save compose message     inbox
+    Generic.Verify your current page location contains      inbox
+    SortingPage.Verify the sorting of the table method four    2       From
+    SortingPage.Verify the sorting of the table method four    3       Company
+    SortingPage.Verify the sorting of the table method four    4       Partner Type
+    SortingPage.Verify the sorting of the table method four    5       Subject
+    SortingPage.Verify the sorting of the table method four    6       Status
+    SortingPage.Verify the sorting of the table method four    7       Date
+    SortingPage.Verify the sorting of the table method four    1       Flag
+
+
+Test the sorting of sent table page under message page
+    [Tags]    rerun
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      jasdeep@15963.fr.nf     Paramdeep@112
+    Generic.select the option from the side menu    Messages
+    Generic.Verify your current page location contains      message
+    MessagePage.Save compose message     sent
+    Generic.Verify your current page location contains      sent
+    SortingPage.Verify the sorting of the table method four    2       To
+    SortingPage.Verify the sorting of the table method four    3       Subject
+    SortingPage.Verify the sorting of the table method four    4       Status
+    SortingPage.Verify the sorting of the table method four    5       Date
+    SortingPage.Verify the sorting of the table method four    1       Flag
