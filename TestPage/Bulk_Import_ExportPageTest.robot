@@ -394,7 +394,7 @@ Technology Bulk edit
     sleep     ${yop_sleep}
     switch window     aithentic | Edit - Assets
     Generic.Verify your current page location contains      technology-bulk-edit
-    Bulk_Import_ExportPage.click on the arrow of product    collapsed
+    Bulk_Import_ExportPage.click on the arrow of product    Product Information     2
     Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology    ModelProductName_1     Product_2589283776
     Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology    Brand      BrandName2556763617
     Select the new value of technology group in bulk edit of technology    TechnologyType      Hardware
@@ -404,7 +404,7 @@ Technology Bulk edit
     Generic.Click on the button     Update
     sleep   ${search_sleep}
     Bulk_Import_ExportPage.Click on confirm pop up of update button
-    Bulk_Import_ExportPage.click on the arrow of product    expanded
+    Bulk_Import_ExportPage.click on the arrow of product    Product Information     1
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
     Generic.Click on the button     Finish
     sleep   ${search_sleep}

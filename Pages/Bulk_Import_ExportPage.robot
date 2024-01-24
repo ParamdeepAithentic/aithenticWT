@@ -419,11 +419,11 @@ Search team member by first and last name
      should be equal    ${fetch_teamMemberFname}     ${name}
 
 click on the arrow of product
-    [Arguments]     ${option}
+    [Arguments]     ${text}     ${number}
     wait until element is not visible   ${loaderIcon}       60
-    wait until element is visible    css:div[class='ag-pinned-left-header'] span[class='ag-header-icon ag-header-expand-icon ag-header-expand-icon-${option}'] span[role='presentation']      60
-    wait until element is enabled   css:div[class='ag-pinned-left-header'] span[class='ag-header-icon ag-header-expand-icon ag-header-expand-icon-${option}'] span[role='presentation']      60
-    click element   css:div[class='ag-pinned-left-header'] span[class='ag-header-icon ag-header-expand-icon ag-header-expand-icon-${option}'] span[role='presentation']
+    wait until element is visible    (//span[normalize-space()='${text}']//following-sibling::span)[${number}]     60
+    wait until element is enabled   (//span[normalize-space()='${text}']//following-sibling::span)[${number}]      60
+    click element   (//span[normalize-space()='${text}']//following-sibling::span)[${number}]
 
 Enter the new value in the product, brand, group and type value in bulk_edit of technology
     [Arguments]     ${option}   ${text}
@@ -465,5 +465,5 @@ Click on confirm button under pop up of finish button of bulk edit
     click element   css:.qa-confirm-technology-bulk-edit-finish
 
 Click on confirm button under pop up of exit button of bulk edit
-    wait until element is visible   //div[@id='confirmUpload']//button[@class='button-green ml-1 mt-0'][normalize-space()='Confirm']    60
-    click element   //div[@id='confirmUpload']//button[@class='button-green ml-1 mt-0'][normalize-space()='Confirm']
+    wait until element is visible  css:.qa-confirm-technology-bulk-edit-exit    60
+    click element   css:.qa-confirm-technology-bulk-edit-exit
