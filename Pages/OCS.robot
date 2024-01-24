@@ -89,8 +89,10 @@ Verify Searched discovery asset
 Verify searched existing asset
     [Arguments]     ${option}
     wait until element is not visible   ${loaderIcon}        60
+    Sleep    ${yop_sleep}
     Wait Until Element Is Visible    css:.right-text
     Element Should Contain    css:.right-text    ${option}
+
 
 Click on search icon of Existing assets
     wait until element is not visible   ${loaderIcon}        60
@@ -113,6 +115,11 @@ Select any existing asset
 Verify that line appears between selected assets
     Wait Until Element Is Not Visible    ${loaderIcon}      60
     Page Should Contain Element    //div[@title='Double click here to unmatch asset']       60
+
+Verify that line does not appears between selected assets
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    Sleep    ${yop_sleep}
+    Page Should not Contain Element    //div[@title='Double click here to unmatch asset']       60
 
 Click on Confirm Button
     [Arguments]     ${option}

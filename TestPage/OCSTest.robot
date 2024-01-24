@@ -464,8 +464,12 @@ Match Discovery and Existing Asset
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
+    OCS.Click on search icon of Existing assets
+    OCS.Enter text to search existing assest    1162-7
+    OCS.Verify searched existing asset    1162-7
     OCS.Hover Existing Agent
     OCS.Get text from MAC Address      MacAddress:
+    OCS.Click on search icon of Existing assets
     OCS.Select any Discovered asset
     OCS.Select any existing asset
     OCS.Verify that line appears between selected assets
@@ -485,3 +489,7 @@ Match Discovery and Existing Asset
     TechnologyPage.Click on update button of edit_technology page       Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     UnselectAssetAPI.Hit API Endpoint
+    Generic.Click on the profile name
+    Generic.Select option from profile list     view-discovery
+    Generic.Verify your current page location contains    ocs
+    OCS.Verify that line does not appears between selected assets
