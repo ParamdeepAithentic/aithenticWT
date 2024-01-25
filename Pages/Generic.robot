@@ -50,11 +50,16 @@ ${valid_password}         Test!@5897     #UAT user
 #${valid_password}         Test@123       #QA User
 
 
+${admin_url}        https://uat-admin.aithentic.com/
+#${admin_url}        https://qa-admin.aithentic.com/
+
 ${admin_name}        aithentic@yopmail.com
 ${admin_password}       Admin@123
 
 ${browser_name}          Firefox
+
 ${email}                 testqa29j@mailinator.com       #UAT user
+
 ${SheetLocationAndName}   LoadTimeSheet.xlsx
 ${SheetTabName}     Load_Time_tracking
 

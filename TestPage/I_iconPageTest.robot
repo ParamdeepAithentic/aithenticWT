@@ -51,6 +51,7 @@ Verify all i-icon of Dashboard page
     I_iconPage.Click on i-icon of account_overview tab
 
 Verify all i-icon of profile-listing
+    [Tags]    just
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name

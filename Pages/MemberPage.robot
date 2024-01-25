@@ -92,6 +92,7 @@ Create random assignee first name
     ${random_string} =    Generate Random String       5      [NUMBERS]
     ${generated_assigneeFname}=    Catenate    FName${random_string}
     wait until element is visible       ${assigneeFname}    60
+    wait until element is enabled       ${assigneeFname}    60
     input text   ${assigneeFname}   ${generated_assigneeFname}
     set global variable    ${generated_assigneeFname}
 
@@ -99,6 +100,7 @@ Create random assignee last name
     ${random_string} =    Generate Random String       5      [NUMBERS]
     ${generated_assigneeLname}=    Catenate    LName${random_string}
     wait until element is visible       ${assigneeLname}    60
+    wait until element is enabled       ${assigneeLname}    60
     input text   ${assigneeLname}   ${generated_assigneeLname}
     set global variable    ${generated_assigneeLname}
 
@@ -106,6 +108,7 @@ Create random assignee email
     ${random_string} =    Generate Random String       5      [NUMBERS]
     ${generated_assigneeEmail}=    Catenate    ${generated_assigneeFname}@mailinator.com
     wait until element is visible       ${assigneeEmail}    60
+    wait until element is enabled       ${assigneeEmail}    60
     input text   ${assigneeEmail}   ${generated_assigneeEmail}
     set global variable    ${generated_assigneeEmail}
 
@@ -113,11 +116,13 @@ Create random assignee ID
     ${random_string} =    Generate Random String       5      [NUMBERS]
     ${generated_assigneeEmpID}=    Catenate    ${random_string}
     wait until element is visible       ${assigneeEmpID}    60
+    wait until element is enabled       ${assigneeEmpID}    60
     input text   ${assigneeEmpID}   ${generated_assigneeEmpID}
     set global variable    ${generated_assigneeEmpID}
 
 Save the add assignee
     [Arguments]    ${option}
+    Wait Until Element Is visible    css:div[class='w-100 modal-footer'] button[type='submit']    60
     Wait Until Element Is Enabled    css:div[class='w-100 modal-footer'] button[type='submit']    60
     click element      css:div[class='w-100 modal-footer'] button[type='submit']
     wait until element is not visible      ${loaderIcon}     60
@@ -134,6 +139,7 @@ Confirm the exit import process pop appers
 Fetch the assigned user name from the row
     [Arguments]    ${option}
     wait until element is visible       //td[normalize-space()='${option}']     60
+    wait until element is enabled       //td[normalize-space()='${option}']     60
     ${fetch_assignedUserFname} =    get text    //td[normalize-space()='${option}']
     set global variable    ${fetch_assignedUserFname}
     log to console     AssignedUser_Name=${fetch_assignedUserFname}
@@ -141,6 +147,7 @@ Fetch the assigned user name from the row
 Fetch the team member name from the row
     [Arguments]    ${option}
     wait until element is visible       //td[normalize-space()='${option}']     60
+    wait until element is enabled       //td[normalize-space()='${option}']     60
     ${fetch_teamMemberFname} =    get text    //td[normalize-space()='${option}']
     set global variable    ${fetch_teamMemberFname}
     log to console     TeamMember_Name=${fetch_teamMemberFname}
@@ -148,6 +155,7 @@ Fetch the team member name from the row
 Fetch the assigned empID from the row
     [Arguments]    ${option}
     wait until element is visible       //td[normalize-space()='${option}']     60
+    wait until element is enabled       //td[normalize-space()='${option}']     60
     ${fetch_assignedUserEmpID} =    get text    //td[normalize-space()='${option}']
     set global variable    ${fetch_assignedUserEmpID}
     log to console     AssignedUser_EmpID=${fetch_assignedUserEmpID}
@@ -155,6 +163,7 @@ Fetch the assigned empID from the row
 Fetch the team member updated status from the row
     [Arguments]    ${status}
     wait until element is visible       //td[normalize-space()='${status}']     60
+    wait until element is enabled       //td[normalize-space()='${status}']     60
     ${fetch_teamMemberStatus} =    get text    //td[normalize-space()='${status}']
     should be equal    ${fetch_teamMemberStatus}     ${status}
 
@@ -162,6 +171,7 @@ Fetch the team member updated status from the row
 Double click
     [Arguments]    ${option}
     wait until element is visible      css:.ag-center-cols-container div[col-id='${option}']    60
+    wait until element is enabled      css:.ag-center-cols-container div[col-id='${option}']    60
     Double click element      css:.ag-center-cols-container div[col-id='${option}']
     Press Keys    css:.ag-center-cols-container div[col-id='${option}']     CONTROL+A
     Press Keys    css:.ag-center-cols-container div[col-id='${option}']     DELETE
@@ -174,6 +184,7 @@ Click on team member action button
 
 Enter team member first name
     wait until element is visible      ${teamMember_FirstName}       60
+    wait until element is enabled      ${teamMember_FirstName}       60
     click element   ${teamMember_FirstName}
     ${random_string} =    Generate Random String       5      [NUMBERS]
     ${generate_teamMember_FirstName}=    Catenate    TMfirstName_${random_string}
@@ -182,6 +193,7 @@ Enter team member first name
 
 Enter team member last name
     wait until element is visible      ${teamMember_LastName}       60
+    wait until element is enabled      ${teamMember_LastName}       60
     click element   ${teamMember_LastName}
     ${random_string} =    Generate Random String       5      [NUMBERS]
     ${generate_teamMember_LastName}=    Catenate    TMlastName_${random_string}
@@ -190,6 +202,7 @@ Enter team member last name
 
 Enter team member business email
     wait until element is visible      ${teamMember_Email}       60
+    wait until element is enabled      ${teamMember_Email}       60
     click element   ${teamMember_Email}
     ${random_string} =    Generate Random String       7      [NUMBERS]
     ${generate_teamMember_email}=    Catenate    TMemail_${random_string}@mailinator.com
@@ -223,11 +236,13 @@ Click on assigned user tab under team member
     [Arguments]     ${option}
     wait until element is not visible      ${loaderIcon}    60
     wait until element is visible   //span[normalize-space()='${option}']   60
+    wait until element is enabled   //span[normalize-space()='${option}']   60
     click element   //span[normalize-space()='${option}']
 
 Click on action button of assigned users
     wait until element is not visible      ${loaderIcon}    60
     wait until element is visible   css:#Assignee-Actions      60
+    wait until element is enabled   css:#Assignee-Actions      60
     click element   css:#Assignee-Actions
 
 Select option from action button of assigned user
@@ -238,6 +253,7 @@ Enter first name of assigned users
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_AssigneduserFirstName}=    Catenate    TMFname_${random_string}
     wait until element is visible       css:.qa-AssignedFirstName     60
+    wait until element is enabled       css:.qa-AssignedFirstName     60
     input text   css:.qa-AssignedFirstName    ${generated_AssigneduserFirstName}
     log to console      ${generated_AssigneduserFirstName}
     set global variable       ${generated_AssigneduserFirstName}
@@ -246,6 +262,7 @@ Enter last name of assigned users
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_TMLname}=    Catenate    TMLast_${random_string}
     wait until element is visible       css:.qa-AssignedLastName    60
+    wait until element is enabled       css:.qa-AssignedLastName    60
     input text   css:.qa-AssignedLastName   ${generated_TMLname}
     log to console      ${generated_TMLname}
     set global variable     ${generated_TMLname}
@@ -259,12 +276,14 @@ Enter business email of assigned users
 
 Click on save button of assigned user
     wait until element is visible   css:.qa-save-assignee-modal     60
+    wait until element is enabled   css:.qa-save-assignee-modal     60
     click element   css:.qa-save-assignee-modal
 
 Search assigned user by first name
     [Arguments]    ${name}
     wait until element is visible       css:thead tr       60
     wait until element is visible      css:input[placeholder='Search by Assignee Name or Employee Id']     60
+    wait until element is enabled      css:input[placeholder='Search by Assignee Name or Employee Id']     60
     click element      css:input[placeholder='Search by Assignee Name or Employee Id']
     input text   css:input[placeholder='Search by Assignee Name or Employee Id']   ${name}
     sleep      ${search_sleep}
@@ -272,6 +291,7 @@ Search assigned user by first name
 
 Click on three dots of Team Member listing
     wait until element is visible   ${three_dots}   60
+    wait until element is enabled   ${three_dots}   60
     click element   ${three_dots}
 
 Select option from three dots of Team Member
@@ -281,6 +301,7 @@ Select option from three dots of Team Member
 Enter assign to field
     [Arguments]     ${option}
     wait until element is visible   //ng-select[contains(@placeholder,'Select Assignee')]//span[contains(@title,'Clear all')]   60
+    wait until element is enabled   //ng-select[contains(@placeholder,'Select Assignee')]//span[contains(@title,'Clear all')]   60
     click element   //ng-select[contains(@placeholder,'Select Assignee')]//span[contains(@title,'Clear all')]
     click element   css:#assignTO
     input text   css:#assignTO   ${option}
@@ -291,6 +312,7 @@ Search assigned user by asset id
     [Arguments]    ${name}
     wait until element is visible       css:.table-hover tr       60
     wait until element is visible      css:.search-location-qa     60
+    wait until element is enabled      css:.search-location-qa     60
     click element      css:.search-location-qa
     input text   css:.search-location-qa   ${name}
     sleep      ${search_sleep}
@@ -299,6 +321,7 @@ Search assigned user by asset id
 
 Click on view button link of assigned user
     wait until element is visible   //td[normalize-space()='View']      60
+    wait until element is enabled   //td[normalize-space()='View']      60
     click element   //td[normalize-space()='View']
 
 Verify the first row of asset history under team member
@@ -307,8 +330,10 @@ Verify the first row of asset history under team member
 
 Click on refresh icon of asset history under assigned user
     wait until element is visible   css:.reset-search-qa    60
+    wait until element is enabled   css:.reset-search-qa    60
     click element   css:.reset-search-qa
 
 verify status of first name in member list of assigned user
     [Arguments]     ${option}
     wait until element is visible   //td[normalize-space()='${option}']     60
+    wait until element is enabled   //td[normalize-space()='${option}']     60

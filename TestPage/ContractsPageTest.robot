@@ -70,9 +70,9 @@ Test Teardown   Close Browser session
 
 
 Technology Auto removed from dynamic contract When edit Brand and product
-    [Tags]      Sanity      Smoke       fail
+    [Tags]      Sanity      Smoke
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form    jasdeep@15963.fr.nf      Paramdeep@112
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
 
