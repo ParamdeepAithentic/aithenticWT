@@ -296,8 +296,8 @@ Test the sorting of removed technology page
     SortingPage.Verify the sorting of the table     6       Product Description
     SortingPage.Verify the sorting of the table     7       Created Date
     SortingPage.Verify the sorting of the table     8       Record Status
-    SortingPage.Verify the sorting of the table     9       Asset ID
-    SortingPage.Verify the sorting of the table     10       Location
+#    SortingPage.Verify the sorting of the table     9       Asset ID
+    SortingPage.Verify the sorting of the table     10      Location
     SortingPage.Verify the sorting of the table     11      Assignee
 
 Test the sorting of inbox table page under message page

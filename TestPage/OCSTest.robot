@@ -122,7 +122,6 @@ Download agent for OCS from signup - Linux
     Generic.Verify your current page location contains     subscription-payment
 
     SubscriptionPage.Click on same billing address checkbox
-    SubscriptionPage.Click on same billing address checkbox
     SubscriptionPage.Switch to card iframe
     SubscriptionPage.Enter cardnumber    42424242424242420424242
     Unselect Frame
@@ -230,7 +229,6 @@ Download agent for OCS from signup - Windows
     Generic.Verify your current page location contains     subscription-payment
 
     SubscriptionPage.Click on same billing address checkbox
-    SubscriptionPage.Click on same billing address checkbox
     SubscriptionPage.Switch to card iframe
     SubscriptionPage.Enter cardnumber    42424242424242420424242
     Unselect Frame
@@ -337,7 +335,6 @@ Download agent for OCS from signup - macOS
     SubscriptionPage.Select and move next with subscription
     Generic.Verify your current page location contains     subscription-payment
 
-    SubscriptionPage.Click on same billing address checkbox
     SubscriptionPage.Click on same billing address checkbox
     SubscriptionPage.Switch to card iframe
     SubscriptionPage.Enter cardnumber    42424242424242420424242
