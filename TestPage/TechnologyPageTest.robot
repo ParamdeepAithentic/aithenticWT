@@ -476,7 +476,6 @@ Restore asset by selecting checkbox
 
 
 Edit brand and product via details
-    [Tags]    rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
