@@ -74,6 +74,7 @@ Click on create new contract button
 Select type of contract
     [Arguments]    ${option}
     wait until element is visible       (//button[contains(text(),'${option}')])[1]     60
+    wait until element is enabled       (//button[contains(text(),'${option}')])[1]     60
     click element   (//button[contains(text(),'${option}')])[1]
     wait until element is visible       ${contactType}   60
 
@@ -114,6 +115,7 @@ Enter contract brand
     ${StartTime1} =     Get Current Time in Milliseconds
     input text      ${Contract_brand}      ${option}
     Wait Until Element Is Visible       //ng-select[@labelforid='brand']//ng-dropdown-panel//span[normalize-space()='${option}']    60
+    Wait Until Element Is enabled       //ng-select[@labelforid='brand']//ng-dropdown-panel//span[normalize-space()='${option}']    60
     click element       //ng-select[@labelforid='brand']//ng-dropdown-panel//span[normalize-space()='${option}']
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
@@ -154,6 +156,7 @@ Select contract function
     [Arguments]    ${option}
     wait until element is visible    ${contractFunction}      60
     wait until element is visible   css:ng-select[placeholder='Select Contract Function'] span[title='Clear all']     60
+    wait until element is enabled   css:ng-select[placeholder='Select Contract Function'] span[title='Clear all']     60
     ${StartTime1} =     Get Current Time in Milliseconds
     click element       css:ng-select[placeholder='Select Contract Function'] span[title='Clear all']
     click element       ${contractFunction}
@@ -172,6 +175,7 @@ Wait until PDF is loaded properly
 
 Click preview selection button on contact
      wait until element is visible    ${previewSelectionButton}      60
+     wait until element is enabled    ${previewSelectionButton}      60
      click element      ${previewSelectionButton}
      Wait Until Element Is Not Visible    ${loaderIcon}      60
 
@@ -187,6 +191,7 @@ Enter contract description comment
 Enter contract name
     [Arguments]    ${option}
      Wait Until Element Is Visible       ${contractName}    60
+     Wait Until Element Is enabled       ${contractName}    60
      click element       ${contractName}
      input text  ${contractName}     ${option}
      Press Keys      ${contractName}      ENTER
@@ -220,6 +225,7 @@ Fetch the contract Brand Name from the row
     [Arguments]    ${option}
     Wait Until Element Is Not Visible    ${loaderIcon}      60
     wait until element is visible       //td[normalize-space()='${option}']     60
+    wait until element is enabled       //td[normalize-space()='${option}']     60
     ${fetch_contract_brandName} =    get text    //td[normalize-space()='${option}']
     set global variable    ${fetch_contract_brandName}
     log to console     Contract_BrandName=${fetch_contract_brandName}
@@ -228,6 +234,7 @@ Search by contract BrandName
     [Arguments]    ${BrandName}
      Wait Until Element Is Not Visible    ${loaderIcon}      60
      wait until element is visible      ${contractID_SearchBar}     60
+     wait until element is enabled      ${contractID_SearchBar}     60
      click element      ${contractID_SearchBar}
      Clear Element Text      ${contractID_SearchBar}
      ${StartTime1} =     Get Current Time in Milliseconds
@@ -266,24 +273,29 @@ Save the contract details
     Wait Until Element Is Not Visible    ${loaderIcon}      60
     Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
     wait until element is visible    //button[@data-target="#${option}Contract"]        60
+    wait until element is enabled    //button[@data-target="#${option}Contract"]        60
     click element    //button[@data-target="#${option}Contract"]
 
 Select the contract form pop up checkboxes
     wait until element is visible    css:form[class='ng-untouched ng-pristine ng-invalid ng-star-inserted']     60
     wait until element is visible    css:label[for='authorize']     60
     wait until element is visible    css:label[for='acknowledged']      60
+    wait until element is enabled    css:label[for='acknowledged']      60
     click element    css:label[for='authorize']
     click element    css:label[for='acknowledged']
 
 Save the contract pop up details
     wait until element is visible    css:#accept-contract-detail      60
+    wait until element is enabled    css:#accept-contract-detail      60
     click element    css:#accept-contract-detail
 
 Click on add new contact for this partner link under contract
     wait until element is visible   //span[normalize-space()='Add new Contact for this Partner']    60
+    wait until element is enabled   //span[normalize-space()='Add new Contact for this Partner']    60
     click element   //span[normalize-space()='Add new Contact for this Partner']
 
 Click on back to contract link
     wait until element is not visible    ${loaderIcon}  60
     wait until element is visible   //span[@class='back']   60
+    wait until element is enabled   //span[@class='back']   60
     click element   //span[@class='back']

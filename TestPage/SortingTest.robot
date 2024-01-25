@@ -46,6 +46,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Test the sorting of assigned user asset history page table
+    [Tags]    just
     Generic.click on the tab	Login
     LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
     Generic.select the option from the side menu    Team Members
@@ -283,6 +284,7 @@ Test the sorting of department page list via bulk import of technology table
 #//div[normalize-space()='${headingName}']//div[contains(@class,'sortingIcon')]
 
 Test the sorting of removed technology page
+    [Tags]    rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      jasdeep@15963.fr.nf     Paramdeep@112
     Generic.select the option from the side menu    Technology

@@ -48,13 +48,16 @@ ${apiURL}               https://uat-api.aithentic.com/api/v1
 #${apiURL}               https://qa-api.aithentic.com/api/v1
 ${valid_password}         Test!@5897     #UAT user
 #${valid_password}         Test@123       #QA User
-
+${admin_url}        https://uat-admin.aithentic.com/
+#${admin_url}        https://qa-admin.aithentic.com/
 
 ${admin_name}        aithentic@yopmail.com
 ${admin_password}       Admin@123
 
 ${browser_name}          Firefox
-${email}                 jasdeep@15963.fr.nf       #UAT user
+${email}                 testqa29j@mailinator.com
+
+
 ${SheetLocationAndName}   LoadTimeSheet.xlsx
 ${SheetTabName}     Load_Time_tracking
 
@@ -68,7 +71,7 @@ ${click_countryTag}     css:.iti__selected-flag.dropdown-toggle
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
-${yop_sleep}       3
+${yop_sleep}       10
 ${search_sleep}       1
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
 
