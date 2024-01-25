@@ -51,6 +51,7 @@ Verify all i-icon of Dashboard page
     I_iconPage.Click on i-icon of account_overview tab
 
 Verify all i-icon of profile-listing
+    [Tags]    just
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
@@ -80,7 +81,7 @@ Verify all i-icon of profile-listing
     Generic.Verify pop-up is visible after clicking on i-icon
     I_iconPage.Click on i-icon of cost_center in department
     I_iconPage.Click on cancel add department        close
-    I_iconPage.Search by Department      Communications       #Customer Support
+    I_iconPage.Search by Department             Customer Support        #Communications
     I_iconPage.Click on three dots of Department list
     I_iconPage.Choose option from three_dots of Department     Details
     I_iconPage.Click on i-icon of cost_center in department

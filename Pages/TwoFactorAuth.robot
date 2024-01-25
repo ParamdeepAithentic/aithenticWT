@@ -32,7 +32,8 @@ ${account_OTP_alert_Msg}     //span[normalize-space()='OTP sent successfully']
 ${otp_Input}     css:.inputs.ng-untouched.ng-pristine.ng-invalid[formcontrolname='digit1']
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
 ${twoFA_verify_btn}     css:button[type='submit']
-
+${admin_otp_Input}      //input[@name='one']
+${admin_verify_btn}     //button[normalize-space()='Verify']
 
 *** Keywords ***
 Enter the otp
@@ -41,7 +42,18 @@ Enter the otp
      wait until element is enabled      ${otp_Input}       60
      input text     ${otp_Input}    ${otp}
 
+Enter the Admin Access OTP
+     [Arguments]    ${otp}
+     wait until element is visible      ${admin_otp_Input}       60
+     wait until element is enabled      ${admin_otp_Input}       60
+     input text     ${admin_otp_Input}    ${otp}
+
 Click verification button
     wait until element is visible      ${twoFA_verify_btn}       60
     wait until element is enabled      ${twoFA_verify_btn}       60
     click element   ${twoFA_verify_btn}
+
+Click on the verify button
+    wait until element is visible       ${admin_verify_btn}     60
+    Wait until element is enabled       ${admin_verify_btn}     60
+    click element       ${admin_verify_btn}

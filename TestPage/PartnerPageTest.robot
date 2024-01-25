@@ -883,7 +883,6 @@ Deactivate Manufacturer via partner
 
 
 Activate Manufacturer via partner
-    [Tags]      Rerun
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name

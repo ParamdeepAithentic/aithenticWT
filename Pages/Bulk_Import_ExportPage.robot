@@ -31,6 +31,10 @@ Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
 Resource        ../Pages/Bulk_Import_ExportPage.robot
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/Admin_PanelPage.robot
+
 
 
 *** Variables ***
@@ -72,6 +76,7 @@ Enter the value in the product name column in bulk_import
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_addProductName}=    Catenate    ProductName${random_string}
     wait until element is visible       xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]     60
+    wait until element is enabled       xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]     60
     input text      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]//input      ${generated_addProductName}
     set global variable    ${generated_addProductName}
 
@@ -79,44 +84,54 @@ Enter the new value in the brand name column in bulk_import
     [Arguments]    ${option}    ${brandName}
     Bulk_Import_ExportPage.Double click    ${option}
     wait until element is visible       xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]    60
+    wait until element is enabled       xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]    60
     input text   xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]//input   ${brandName}
 
 Select option from status column in bulk_import
     [Arguments]    ${option}
     wait until element is visible      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]    60
+    wait until element is enabled      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]    60
     Double click element      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]
     wait until element is visible      css:div[class='ag-rich-select-row']    60
+    wait until element is enabled      css:div[class='ag-rich-select-row']    60
     click element       css:div[class='ag-rich-select-row']
 
 Select option from technology type column in bulk_import
     [Arguments]    ${option}
     wait until element is visible      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]    60
+    wait until element is enabled      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]    60
     Double click element      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]
     wait until element is visible      css:div[aria-label='List'] div:nth-child(4) div    60
+    wait until element is enabled      css:div[aria-label='List'] div:nth-child(4) div    60
     click element       css:div[aria-label='List'] div:nth-child(4) div
 
 Select option from technology group column in bulk_import
     [Arguments]    ${option}
     wait until element is visible      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]    60
+    wait until element is enabled      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]    60
     Double click element      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]
     wait until element is visible      css:div[aria-label='List'] div:nth-child(4) div    60
+    wait until element is enabled      css:div[aria-label='List'] div:nth-child(4) div    60
     click element       css:div[aria-label='List'] div:nth-child(4) div
 
 Enter the value in the product_description column in bulk_import
     [Arguments]    ${option}
     Bulk_Import_ExportPage.Double click    ${option}
     wait until element is visible       xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]     60
+    wait until element is enabled       xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]     60
     input text      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]//input      This is product Description
 
 Enter the value in the product_feature column in bulk_import
     [Arguments]    ${option}
     Bulk_Import_ExportPage.Double click    ${option}
     wait until element is visible       xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]     60
+    wait until element is enabled       xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]     60
     input text      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]//input      This is the Feature of product
 
 Double click
     [Arguments]    ${option}
     wait until element is visible      css:.ag-center-cols-container div[col-id='${option}']    60
+    wait until element is enabled      css:.ag-center-cols-container div[col-id='${option}']    60
     Double click element      css:.ag-center-cols-container div[col-id='${option}']
     Press Keys    css:.ag-center-cols-container div[col-id='${option}']     CONTROL+A
     Press Keys    css:.ag-center-cols-container div[col-id='${option}']     DELETE
@@ -125,19 +140,22 @@ Verify the upload message text
     [Arguments]    ${option}    ${text}
     wait until element is not visible      ${loaderIcon}     60
     wait until element is visible       css:.ag-center-cols-container div[col-id='${option}']     60
+    wait until element is enabled       css:.ag-center-cols-container div[col-id='${option}']     60
     ${fetch_text} =    get text    css:.ag-center-cols-container div[col-id='${option}']
     log to console  uploadtext:${fetch_text}
     should be equal    ${fetch_text}    ${text}
 
 Click on I_m_done button when popup appears
     [Arguments]     ${option}
-     wait until element is visible       //button[normalize-space()="${option}"]    60
+     wait until element is visible       css:.ag-center-cols-container div[col-id='${option}']     60
+     wait until element is enabled       css:.ag-center-cols-container div[col-id='${option}']     60
      click element      //button[normalize-space()="${option}"]
 
 Verify product added using bulk_import_export
    [Arguments]    ${productName}
      wait until element is visible       css:thead tr       60
      wait until element is visible      ${search_productName}     60
+     wait until element is enabled      ${search_productName}     60
      click element      ${search_productName}
      Clear Element Text      ${search_productName}
      input text   ${search_productName}   ${productName}
@@ -413,3 +431,53 @@ Search team member by first and last name
      Wait Until Element Is Not Visible    ${loaderIcon}      60
      Fetch the team member name from the row   ${name}
      should be equal    ${fetch_teamMemberFname}     ${name}
+
+click on the arrow of product
+    [Arguments]     ${text}     ${number}
+    wait until element is not visible   ${loaderIcon}       60
+    wait until element is visible    (//span[normalize-space()='${text}']//following-sibling::span)[${number}]     60
+    wait until element is enabled   (//span[normalize-space()='${text}']//following-sibling::span)[${number}]      60
+    click element   (//span[normalize-space()='${text}']//following-sibling::span)[${number}]
+
+Enter the new value in the product, brand, group and type value in bulk_edit of technology
+    [Arguments]     ${option}   ${text}
+    wait until element is not visible   ${loaderIcon}       60
+    wait until element is visible   (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]   60
+    wait until element is enabled   (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]   60
+    double click element    (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]
+    Press Keys    (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]//input     CONTROL+A
+    Press Keys    (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]//input     DELETE
+    input text    (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]//input     ${text}
+    Press Keys      (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]       ENTER
+
+Select the new value of technology group in bulk edit of technology
+    [Arguments]     ${option}   ${text}
+    wait until element is not visible   ${loaderIcon}       60
+    wait until element is visible   (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]   60
+    wait until element is enabled   (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]   60
+    double click element    (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]
+    wait until element is visible   //div[contains(text(),'${text}')]   60
+    Press Keys      //div[contains(text(),'${text}')]       ENTER
+
+Enter the new value of asset id of bulk edit of technology
+    [Arguments]    ${option}
+    MemberPage.Double click    ${option}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_assetidbulkedit}=    Catenate    AssetID_${random_string}
+    wait until element is visible       (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]//input    60
+    input text   (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]//input   ${generated_assetidbulkedit}
+    Press Keys      (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]       ENTER
+    set global variable    ${generated_assetidbulkedit}
+
+Click on confirm pop up of update button
+    wait until element is visible  css:.qa-confirm-technology-bulk-edit-warning  60
+    click element   css:.qa-confirm-technology-bulk-edit-warning
+    sleep   2
+
+Click on confirm button under pop up of finish button of bulk edit
+    wait until element is visible  css:.qa-confirm-technology-bulk-edit-finish      60
+    click element   css:.qa-confirm-technology-bulk-edit-finish
+
+Click on confirm button under pop up of exit button of bulk edit
+    wait until element is visible  css:.qa-confirm-technology-bulk-edit-exit    60
+    click element   css:.qa-confirm-technology-bulk-edit-exit

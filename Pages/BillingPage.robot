@@ -35,9 +35,11 @@ Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
 Resource        ../Pages/SortingPage.robot
 Resource        ../Pages/Bulk_Import_ExportPage.robot
+Resource        ../Pages/Admin_PanelPage.robot
+
 
 *** Variables ***
-${billing_details_arrow}     css:.fa.fa-chevron-right.ng-star-inserted
+${billing_details_arrow}     css:.d-block span i
 ${billing_add_new_card}     css:.qa-add-new-card-bank
 ${ach_account_number}     css:#accountNumber
 ${ach_routing_number}     css:#routingNumber
@@ -88,17 +90,17 @@ Save the billing payment form
 Save the status of set as primary account
     [Arguments]    ${option}
     sleep       ${search_sleep}
-    Wait Until Element Is Visible       css:.qa-${option}-    60
-    Wait Until Element Is Enabled       css:.qa-${option}-     60
-    click element       css:.qa-${option}-
+    Wait Until Element Is Visible       css:.qa-${option}-cancel-make-card-primary    60
+    Wait Until Element Is Enabled       css:.qa-${option}-cancel-make-card-primary    60
+    click element       css:.qa-${option}-cancel-make-card-primary
 #options: cancel,confirm
 
 Confirm if you want to delect account
     [Arguments]    ${option}
     sleep       ${search_sleep}
-    Wait Until Element Is Visible       css:.qa-${option}-    60
-    Wait Until Element Is Enabled       css:.qa-${option}-     60
-    click element       css:.qa-${option}-
+    Wait Until Element Is Visible       css:.qa-${option}-cancel-make-card-primary    60
+    Wait Until Element Is Enabled       css:.qa-${option}-cancel-make-card-primary     60
+    click element       css:.qa-${option}-cancel-make-card-primary
 #options: cancel,confirm
 
 Close the billing payment options module
