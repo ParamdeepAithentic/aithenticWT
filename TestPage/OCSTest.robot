@@ -448,11 +448,14 @@ Search Discovered Assets
     OCS.Enter text to search discovery assest    1162-2
     OCS.Verify Searched discovery asset    1162-2
     OCS.Hover over searched Discovered Asset
-    OCS.Get text from MAC Address    MacAddress:
-    OCS.Get text from serial_no.    Serial Number:
-    OCS.Get text from Host_name    Host name:
+    OCS.Get text from MAC Address of discovered assets    MacAddress:
+    OCS.Get text from serial_no. of discovered assets    Serial Number:
+    OCS.Get text from Host_name of discovered assets    Host name:
     OCS.Click on Searched Discovered asset
+#    Sleep    ${yop_sleep}
+#    Switch Window       aithentic | Asset - Discovery
     Generic.Verify your current page location contains    discovery-asset-detail
+    Generic.Verify your current page contains this text    Asset Infomation
     OCS.Click on tab under dicovery_asset_detail page    Hardware
 
 
@@ -476,7 +479,7 @@ Match Discovery and Existing Asset
     OCS.Enter text to search existing assest    1162-7
     OCS.Verify searched existing asset    1162-7
     OCS.Hover Existing Agent
-    OCS.Get text from MAC Address      MacAddress:
+    OCS.Get text from MAC Address of existing assets    MacAddress:
     OCS.Click on search icon of Existing assets
     OCS.Select any Discovered asset
     OCS.Select any existing asset
@@ -510,4 +513,7 @@ Add Discovery Asset
     Generic.Verify your current page location contains    ocs
     OCS.Choose Tab under Asset Discovery    agent-discovery
     OCS.Click on Plus icon under table
-    Sleep       20
+#    Generic.Verify your current page location contains    add-discovered-asset
+    Generic.Verify your current page contains this text    Add Technology
+    OCS.Choose option from brand on Add technology Page        Gigabyte Technology Co., Ltd.
+    OCS.Choose option from product on Add technology Page

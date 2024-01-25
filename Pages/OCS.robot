@@ -183,7 +183,7 @@ Hover Existing Agent
     Wait Until Element Is Enabled    css:.right-text     60
     Mouse Over    css:.right-text
 
-Get text from MAC Address
+Get text from MAC Address of existing assets
     [Arguments]     ${text}
     Wait Until Element Is Visible   css:.right-text
     ${MAC_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'MacAddress:')]//ancestor::li
@@ -192,7 +192,7 @@ Get text from MAC Address
     Log to console      ${MAC_Address}
     set global variable     ${MAC_Address}
 
-Get text from serial_no.
+Get text from serial_no. of existing assets
     [Arguments]     ${text}
     Wait Until Element Is Visible    css:.right-text         60
     ${serial_no_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'Serial Number:')]//ancestor::li
@@ -201,7 +201,7 @@ Get text from serial_no.
     Log to console      ${serial_no_}
     set global variable     ${serial_no_}
 
-Get text from Host_name
+Get text from Host_name of existing assets
     [Arguments]     ${text}
     Wait Until Element Is Visible    css:.right-text         60
     ${Host_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'Host name:')]//ancestor::li
@@ -235,9 +235,59 @@ Choose Tab under Asset Discovery
 Click on Plus icon under table
 #    Sleep    ${search_sleep}
     Wait Until Element Is Not Visible    ${loaderIcon}      60
-    wait until element is visible     //h5[normalize-space()='Tag Name - chirag_infotech-1162-2']         60
-    wait until element is enabled     //h5[normalize-space()='Tag Name - chirag_infotech-1162-2']         60
+    wait until element is visible    //h5[normalize-space()='Tag Name - chirag_infotech-1162-2']//parent::div//div//table//td        60
+    wait until element is enabled     //h5[normalize-space()='Tag Name - chirag_infotech-1162-2']//parent::div//div//table//td         60
     Execute JavaScript  window.scrollBy(10000, 0)
-    Wait Until Element Is Visible     (//i[@title='Add as an Asset'])[1]         60
-    wait until element is enabled     (//i[@title='Add as an Asset'])[1]        60
-    Click Element    (//i[@title='Add as an Asset'])[1]
+    Wait Until Element Is Visible     //h5[normalize-space()='Tag Name - chirag_infotech-1162-2']//parent::div//div//table//td//i         60
+    wait until element is enabled     //h5[normalize-space()='Tag Name - chirag_infotech-1162-2']//parent::div//div//table//td//i      60
+    Click Element   //h5[normalize-space()='Tag Name - chirag_infotech-1162-2']//parent::div//div//table//td//i
+
+Choose option from brand on Add technology Page
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    Wait Until Element Is Visible    css:#BrandName     60
+    Wait Until Element Is Enabled    css:#BrandName     60
+    Click Element    css:#BrandName
+    Generic.Select parameter    ${option}
+
+Choose option from product on Add technology Page
+#    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    Wait Until Element Is Visible    //div[contains(text(),'Select or Search Product')]     60
+    Wait Until Element Is Enabled    //div[contains(text(),'Select or Search Product')]     60
+    Click Element    //div[contains(text(),'Select or Search Product')]
+    wait until element is visible     //div[contains (@id, '-0')]       60
+    wait until element is enabled     //div[contains (@id, '-0')]       60
+    click element   //div[contains (@id, '-0')]
+
+Get text from MAC Address of discovered assets
+    [Arguments]     ${text}
+    Wait Until Element Is Visible    ${loaderIcon}      60
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    Wait Until Element Is Visible   css:.left-text      60
+    Wait Until Element Is Enabled   css:.left-text      60
+    sleep       ${search_sleep}
+    ${MAC_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'MacAddress:')]//ancestor::li
+    ${parts}    Split String    ${MAC_text}    ${text}
+    ${MAC_Address}    Get Substring    ${parts[1]}    1
+    Log to console      ${MAC_Address}
+    set global variable     ${MAC_Address}
+
+Get text from serial_no. of discovered assets
+    [Arguments]     ${text}
+    Wait Until Element Is Visible    css:.left-text         60
+    ${serial_no_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'Serial Number:')]//ancestor::li
+    ${parts}    Split String    ${serial_no_text}    ${text}
+    ${serial_no_}    Get Substring    ${parts[1]}    1
+    Log to console      ${serial_no_}
+    set global variable     ${serial_no_}
+
+Get text from Host_name of discovered assets
+    [Arguments]     ${text}
+    Wait Until Element Is Visible    css:.left-text         60
+    ${Host_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'Host name:')]//ancestor::li
+    ${parts}    Split String    ${Host_text}    ${text}
+    ${host_Address}    Get Substring    ${parts[1]}    1
+    Log to console      ${host_Address}
+    set global variable     ${host_Address}
+
