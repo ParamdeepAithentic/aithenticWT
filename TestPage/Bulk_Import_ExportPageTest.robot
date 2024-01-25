@@ -372,6 +372,7 @@ Team Member Bulk Edit
     Bulk_Import_ExportPage.Search team member by first and last name    ${generate_teamMember_FirstName} ${generate_teamMember_LastName}
 
 Technology Bulk edit
+    [Tags]    just
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology

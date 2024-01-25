@@ -161,4 +161,5 @@ click on confirm button to change plan
     [Arguments]     ${option}
     wait until element is not visible      ${loaderIcon}        60
     wait until element is visible       //button[@type='button'][normalize-space()='${option}']   60
+    wait until element is enabled       //button[@type='button'][normalize-space()='${option}']   60
     click element       //button[@type='button'][normalize-space()='${option}']

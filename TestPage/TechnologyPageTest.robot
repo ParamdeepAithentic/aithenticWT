@@ -296,7 +296,7 @@ Create new asset with new brand and product
 
 
 Restore asset type one
-    [Tags]      Sanity
+    [Tags]      Sanity      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
@@ -478,6 +478,7 @@ Restore asset by selecting checkbox
 
 
 Edit brand and product via details
+    [Tags]    rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
@@ -1485,7 +1486,7 @@ Technology Details- Verify the Location Details
 #    TechnologyPage.Get Value of Assignment Information Location Name
 
 Technology-Inactive asset and Restore asset
-    [Tags]      smoke
+    [Tags]      smoke       just
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     chirag@dmts.fr.nf    Test@789
     Generic.Click on the profile name

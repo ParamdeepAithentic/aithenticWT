@@ -70,7 +70,7 @@ Test Teardown   Close Browser session
 
 
 Technology Auto removed from dynamic contract When edit Brand and product
-    [Tags]      Sanity      Smoke
+    [Tags]      Sanity      Smoke       rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    jasdeep@15963.fr.nf      Paramdeep@112
     Generic.select the option from the side menu    Partners

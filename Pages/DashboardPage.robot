@@ -139,6 +139,7 @@ Click on add department
 Save the department
     [Arguments]    ${option}
     wait until element is visible       css:.profile-section-department div button.qa-${option}-department-modal      60
+    wait until element is enabled       css:.profile-section-department div button.qa-${option}-department-modal      60
     click element       css:.profile-section-department div button.qa-${option}-department-modal
 #options: add, close
 
@@ -158,6 +159,7 @@ Select the option from department action menu
 Select brand from list
     [Arguments]    ${BrandName}
     wait until element is visible       ${enterAndSelect_Brand}     60
+    wait until element is enabled       ${enterAndSelect_Brand}     60
     click element   ${enterAndSelect_Brand}
     Clear Element Text      ${enterAndSelect_Brand}
     ${StartTime1} =     Get Current Time in Milliseconds
@@ -170,6 +172,7 @@ Select brand from list
 Select product from list
     [Arguments]    ${ProductName}
     wait until element is visible       ${enterAndSelect_Brand}     60
+    wait until element is enabled       ${enterAndSelect_Brand}     60
     click element   ${enterAndSelect_Brand}
     Clear Element Text      ${enterAndSelect_Brand}
     ${StartTime1} =     Get Current Time in Milliseconds
@@ -198,6 +201,7 @@ Create random productName
 
 Click on action button
     wait until element is visible       ${actionBTN}   60
+    wait until element is enabled       ${actionBTN}   60
     click element       ${actionBTN}
 
 Click add product button
@@ -217,6 +221,7 @@ Create product name random
 Create product name self
     [Arguments]    ${option}
     wait until element is visible   ${ProductName}      60
+    wait until element is enabled   ${ProductName}      60
     input text   ${ProductName}   ${option}
 
 
@@ -235,14 +240,17 @@ Add product brand name
 
 Add product description
     wait until element is visible       ${ProductDescription}     60
+    wait until element is enabled       ${ProductDescription}     60
     input text   ${ProductDescription}   This is the description of new product added.
 
 Add product description via link
     wait until element is visible       ${ProductDescription_viaLink}     60
+    wait until element is enabled       ${ProductDescription_viaLink}     60
     input text   ${ProductDescription_viaLink}   This is the description of new product added.
 
 Add product feature
     wait until element is visible       ${ProductFeatures}     60
+    wait until element is enabled       ${ProductFeatures}     60
     input text   ${ProductFeatures}   This is the features of new product added.
 
 Add product feature via link
