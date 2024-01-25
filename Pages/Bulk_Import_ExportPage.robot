@@ -417,3 +417,53 @@ Search team member by first and last name
      Wait Until Element Is Not Visible    ${loaderIcon}      60
      Fetch the team member name from the row   ${name}
      should be equal    ${fetch_teamMemberFname}     ${name}
+
+click on the arrow of product
+    [Arguments]     ${text}     ${number}
+    wait until element is not visible   ${loaderIcon}       60
+    wait until element is visible    (//span[normalize-space()='${text}']//following-sibling::span)[${number}]     60
+    wait until element is enabled   (//span[normalize-space()='${text}']//following-sibling::span)[${number}]      60
+    click element   (//span[normalize-space()='${text}']//following-sibling::span)[${number}]
+
+Enter the new value in the product, brand, group and type value in bulk_edit of technology
+    [Arguments]     ${option}   ${text}
+    wait until element is not visible   ${loaderIcon}       60
+    wait until element is visible   (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]   60
+    wait until element is enabled   (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]   60
+    double click element    (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]
+    Press Keys    (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]//input     CONTROL+A
+    Press Keys    (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]//input     DELETE
+    input text    (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]//input     ${text}
+    Press Keys      (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]       ENTER
+
+Select the new value of technology group in bulk edit of technology
+    [Arguments]     ${option}   ${text}
+    wait until element is not visible   ${loaderIcon}       60
+    wait until element is visible   (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]   60
+    wait until element is enabled   (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]   60
+    double click element    (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]
+    wait until element is visible   //div[contains(text(),'${text}')]   60
+    Press Keys      //div[contains(text(),'${text}')]       ENTER
+
+Enter the new value of asset id of bulk edit of technology
+    [Arguments]    ${option}
+    MemberPage.Double click    ${option}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_assetidbulkedit}=    Catenate    AssetID_${random_string}
+    wait until element is visible       (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]//input    60
+    input text   (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]//input   ${generated_assetidbulkedit}
+    Press Keys      (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]       ENTER
+    set global variable    ${generated_assetidbulkedit}
+
+Click on confirm pop up of update button
+    wait until element is visible  css:.qa-confirm-technology-bulk-edit-warning  60
+    click element   css:.qa-confirm-technology-bulk-edit-warning
+    sleep   2
+
+Click on confirm button under pop up of finish button of bulk edit
+    wait until element is visible  css:.qa-confirm-technology-bulk-edit-finish      60
+    click element   css:.qa-confirm-technology-bulk-edit-finish
+
+Click on confirm button under pop up of exit button of bulk edit
+    wait until element is visible  css:.qa-confirm-technology-bulk-edit-exit    60
+    click element   css:.qa-confirm-technology-bulk-edit-exit
