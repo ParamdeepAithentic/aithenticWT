@@ -46,7 +46,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Compose Message invite user test
-    [Tags]      Sanity      Smoke
+    [Tags]      Sanity      Smoke       failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      asset-overview
@@ -496,6 +496,7 @@ Compose Message invite user test
 
 
 Export Specificartner into Excel Doc CSV and TSV for manufacturer
+    [Tags]    failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Partners
@@ -556,7 +557,7 @@ Export Specificartner into Excel Doc CSV and TSV for manufacturer
 
 
 Export Specificartner into Excel Doc CSV and TSV for Supplier
-    [Tags]      Sanity
+    [Tags]      Sanity      failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Partners
@@ -618,7 +619,7 @@ Export Specificartner into Excel Doc CSV and TSV for Supplier
 
 
 Export Specificartner into Excel Doc CSV and TSV for Support Partner
-    [Tags]      Sanity
+    [Tags]      Sanity      failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Partners
