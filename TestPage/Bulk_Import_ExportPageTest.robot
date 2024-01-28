@@ -44,7 +44,6 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Product Bulk import
-    [Tags]    failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
@@ -66,13 +65,12 @@ Product Bulk import
     Generic.Click on the button     Upload
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
     Generic.Click on the button     Finish
-    Bulk_Import_ExportPage.Click on I_m_done button when popup appears     No, I'm done.
+    Bulk_Import_ExportPage.Click on I_m_done button when popup appears     no-im-done
     Sleep       ${yop_sleep}
     Switch Window       aithentic | Product - List
     Bulk_Import_ExportPage.Verify product added using bulk_import_export   ${generated_addProductName}
 
 Product Bulk Edit
-    [Tags]    failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
@@ -94,7 +92,7 @@ Product Bulk Edit
     Generic.Click on the button     Upload
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
     Generic.Click on the button     Finish
-    Bulk_Import_ExportPage.Click on I_m_done button when popup appears     No, I'm done.
+    Bulk_Import_ExportPage.Click on I_m_done button when popup appears     no-im-done
     Switch Window       aithentic | Product - List
     Bulk_Import_ExportPage.Verify product added using bulk_import_export   ${generated_addProductName}
     DashboardPage.Click on action button
@@ -119,7 +117,6 @@ Product Bulk Edit
     Bulk_Import_ExportPage.Verify product added using bulk_import_export   ${generated_EditProductName}
 
 Department Bulk Import
-    [Tags]    failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
@@ -137,13 +134,12 @@ Department Bulk Import
     Generic.Click on the button     Upload
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload successful
     Generic.Click on the button     Finish
-    Bulk_Import_ExportPage.Click on I_m_done button when popup appears     No, I'm done.
+    Bulk_Import_ExportPage.Click on I_m_done button when popup appears     no-im-done
     Sleep       ${yop_sleep}
     Switch Window       aithentic | Department - List
     Bulk_Import_ExportPage.Verify department added using bulk_import_export   ${generated_addDepartmentName}
 
 Department Bulk Edit
-    [Tags]    failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
@@ -161,7 +157,7 @@ Department Bulk Edit
     Generic.Click on the button     Upload
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload successful
     Generic.Click on the button     Finish
-    Bulk_Import_ExportPage.Click on I_m_done button when popup appears     No, I'm done.
+    Bulk_Import_ExportPage.Click on I_m_done button when popup appears     no-im-done
     Sleep       ${yop_sleep}
     Switch Window       aithentic | Department - List
     Bulk_Import_ExportPage.Verify department added using bulk_import_export   ${generated_addDepartmentName}
@@ -337,7 +333,6 @@ Assigned Users Bulk Edit
     Bulk_Import_ExportPage.Search by empID  ${generated_assigneeEmpID}
 
 Team Member Bulk Edit
-    [Tags]    failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Team Members

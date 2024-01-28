@@ -147,9 +147,9 @@ Verify the upload message text
 
 Click on I_m_done button when popup appears
     [Arguments]     ${option}
-     wait until element is visible       css:.ag-center-cols-container div[col-id='${option}']     60
-     wait until element is enabled       css:.ag-center-cols-container div[col-id='${option}']     60
-     click element      //button[normalize-space()="${option}"]
+     wait until element is visible       css:.${option}-qa     60
+     wait until element is enabled       css:.${option}-qa     60
+     click element      css:.${option}-qa
 
 Verify product added using bulk_import_export
    [Arguments]    ${productName}
