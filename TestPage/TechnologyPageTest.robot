@@ -476,7 +476,6 @@ Restore asset by selecting checkbox
 
 
 Edit brand and product via details
-    [Tags]    rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
@@ -822,7 +821,6 @@ Add New Support Partner and Assign that Partner
     Switch Window       aithentic | Technology - Details
     TechnologyPage.Wait till support partner get auto polute        ${generate_BusinessName}
 #    sleep       10
-
     TechnologyPage.Click here to add supplier partner
     sleep       ${yop_sleep}
     Switch Window       aithentic | Add - Partner
@@ -1484,7 +1482,7 @@ Technology Details- Verify the Location Details
 #    TechnologyPage.Get Value of Assignment Information Location Name
 
 Technology-Inactive asset and Restore asset
-    [Tags]      smoke       just
+    [Tags]      smoke       failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     chirag@dmts.fr.nf    Test@789
     Generic.Click on the profile name
@@ -1574,7 +1572,7 @@ Technology-Inactive asset and Restore asset
     Generic.Fetch alert message text and compare it with      Payment Successful
 
 Inactive asset - Restore asset from Technology Details page
-    [Tags]      smoke
+    [Tags]      smoke       failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     chirag@dmts.fr.nf    Test@789
     Generic.Click on the profile name

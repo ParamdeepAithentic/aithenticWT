@@ -318,7 +318,7 @@ Search asset history with Asset ID
     TeamMemberPage.verify status of first name in member list   ${generated_AssetID}
 
 Verify user is able to export team member asset history list
-    [Tags]      Sanity      Smoke       just
+    [Tags]      Sanity      Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
     Generic.select the option from the side menu    Team Members

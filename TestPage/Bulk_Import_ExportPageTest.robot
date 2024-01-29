@@ -65,7 +65,7 @@ Product Bulk import
     Generic.Click on the button     Upload
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
     Generic.Click on the button     Finish
-    Bulk_Import_ExportPage.Click on I_m_done button when popup appears     No, I'm done.
+    Bulk_Import_ExportPage.Click on I_m_done button when popup appears     no-im-done
     Sleep       ${yop_sleep}
     Switch Window       aithentic | Product - List
     Bulk_Import_ExportPage.Verify product added using bulk_import_export   ${generated_addProductName}
@@ -92,7 +92,7 @@ Product Bulk Edit
     Generic.Click on the button     Upload
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
     Generic.Click on the button     Finish
-    Bulk_Import_ExportPage.Click on I_m_done button when popup appears     No, I'm done.
+    Bulk_Import_ExportPage.Click on I_m_done button when popup appears     no-im-done
     Switch Window       aithentic | Product - List
     Bulk_Import_ExportPage.Verify product added using bulk_import_export   ${generated_addProductName}
     DashboardPage.Click on action button
@@ -134,7 +134,7 @@ Department Bulk Import
     Generic.Click on the button     Upload
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload successful
     Generic.Click on the button     Finish
-    Bulk_Import_ExportPage.Click on I_m_done button when popup appears     No, I'm done.
+    Bulk_Import_ExportPage.Click on I_m_done button when popup appears     no-im-done
     Sleep       ${yop_sleep}
     Switch Window       aithentic | Department - List
     Bulk_Import_ExportPage.Verify department added using bulk_import_export   ${generated_addDepartmentName}
@@ -157,7 +157,7 @@ Department Bulk Edit
     Generic.Click on the button     Upload
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload successful
     Generic.Click on the button     Finish
-    Bulk_Import_ExportPage.Click on I_m_done button when popup appears     No, I'm done.
+    Bulk_Import_ExportPage.Click on I_m_done button when popup appears     no-im-done
     Sleep       ${yop_sleep}
     Switch Window       aithentic | Department - List
     Bulk_Import_ExportPage.Verify department added using bulk_import_export   ${generated_addDepartmentName}
@@ -372,7 +372,6 @@ Team Member Bulk Edit
     Bulk_Import_ExportPage.Search team member by first and last name    ${generate_teamMember_FirstName} ${generate_teamMember_LastName}
 
 Technology Bulk edit
-    [Tags]    just
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
