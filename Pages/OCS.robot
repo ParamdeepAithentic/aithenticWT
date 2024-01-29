@@ -88,6 +88,7 @@ Get text from Brand
 
 Hover over searched Discovered Asset
     Wait Until Element Is Not Visible    ${loaderIcon}      60
+    sleep   5
     Wait Until Element Is Visible    css:.left-text     60
     Wait Until Element Is Enabled    css:.left-text     60
     Mouse Over    css:.left-text

@@ -460,8 +460,19 @@ Apply filters on Discovered assets
     OCS.Get text of selected brand, mac address and agent of discovered assets  1
     Select brand , mac address and agent from dropdown of discovered asset filter   1
     Generic.click on the button     Apply
+
     OCS.Hover over searched Discovered Asset
-    sleep   2
+
+    OCS.Get text from mac address     MacAddress:
+    OCS.verify Text from brand  ${MAC_Address}       ${selected_brand}
+    OCS.Choose filters for discovered asset     Select Agent Tags
+     sleep   1
+    OCS.Get text of selected brand, mac address and agent of discovered assets  1
+    Select brand , mac address and agent from dropdown of discovered asset filter   1
+    Generic.click on the button     Apply
+
+    OCS.Hover over searched Discovered Asset
+
     OCS.Get text from mac address     MacAddress:
     OCS.verify Text from brand  ${MAC_Address}       ${selected_brand}
 
