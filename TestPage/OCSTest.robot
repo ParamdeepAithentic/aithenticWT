@@ -438,42 +438,53 @@ Download Agent from asset discovery - macOS
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
 
-Apply filters on Discovered assets
+Apply filters and clear filter on Discovered Asset
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      chirag@dmts.fr.nf      Test@789
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
-    sleep   ${search_sleep}
     OCS.Choose tab under Discovery Assets   network-discovery
     OCS.click on filter icon of discovered assets
-    sleep   1
     OCS.Choose filters for discovered asset     Select Brand
-    sleep   1
     OCS.Get text of selected brand, mac address and agent of discovered assets  1
-    Select brand , mac address and agent from dropdown of discovered asset filter   1
+    OCS.Select brand , mac address and agent from dropdown of discovered asset filter   1
     Generic.click on the button     Apply
     OCS.Hover over searched Discovered Asset
-    OCS.Get text from Brand     Brand:
-    OCS.verify Text from brand  ${brand}       ${selected_brand}
+    OCS.Get text by hovering over assets    Brand:
+    OCS.verify Text by hovering over assets  ${substring}       ${selected_brand}
+
     OCS.Choose filters for discovered asset     Select MAC Address
-     sleep   1
     OCS.Get text of selected brand, mac address and agent of discovered assets  1
-    Select brand , mac address and agent from dropdown of discovered asset filter   1
+    OCS.Select brand , mac address and agent from dropdown of discovered asset filter   1
     Generic.click on the button     Apply
 
     OCS.Hover over searched Discovered Asset
-
-    OCS.Get text from mac address     MacAddress:
-    OCS.verify Text from brand  ${MAC_Address}       ${selected_brand}
+    OCS.Get text by hovering over assets     MacAddress:
+    OCS.verify Text by hovering over assets  ${substring}       ${selected_brand}
     OCS.Choose filters for discovered asset     Select Agent Tags
-     sleep   1
     OCS.Get text of selected brand, mac address and agent of discovered assets  1
-    Select brand , mac address and agent from dropdown of discovered asset filter   1
+    OCS.Select brand , mac address and agent from dropdown of discovered asset filter   1
     Generic.click on the button     Apply
-
     OCS.Hover over searched Discovered Asset
+    OCS.Get text by hovering over assets    Tag:
+    OCS.verify Text by hovering over assets  ${substring}       ${selected_brand}
+    OCS.Click on clear filter button link of discovered assets
+    OCS.Hover over searched Discovered Asset
+    OCS.Get text by hovering over assets     Brand:
 
-    OCS.Get text from mac address     MacAddress:
-    OCS.verify Text from brand  ${MAC_Address}       ${selected_brand}
+Apply filters and clear filter on Existing Assets
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      chirag@dmts.fr.nf      Test@789
+    Generic.Click on the profile name
+    Generic.Select option from profile list     view-discovery
+    OCS.Choose tab under Discovery Assets   network-discovery
+    OCS.click on filter icon of existing assets
+    OCS.Choose filters for discovered asset     Select Brand
+    OCS.Get text of selected brand, mac address and agent of discovered assets  1
+    OCS.Select brand , mac address and agent from dropdown of discovered asset filter   1
+
+
+
+
 
 

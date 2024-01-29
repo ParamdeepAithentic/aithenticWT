@@ -55,6 +55,7 @@ Choose tab under Discovery Assets
     [Arguments]     ${option}
     wait until element is not visible   ${loaderIcon}        60
     wait until element is visible       css:.qa-${option}-tab       60
+    wait until element is enabled       css:.qa-${option}-tab       60
     click element       css:.qa-${option}-tab
 #option: network-discovery, agent-discovery
 
@@ -76,45 +77,47 @@ Select brand , mac address and agent from dropdown of discovered asset filter
     wait until element is enabled     //div[contains (@id, '-${number}')]       60
     click element   //div[contains (@id, '-${number}')]
 
-Get text from Brand
-   [Arguments]     ${text}
-   wait until element is not visible    ${loaderIcon}      60
-    Wait Until Element Is Visible   css:.left-text
-    ${MAC_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'Brand:')]//ancestor::li
-    ${parts}    Split String    ${MAC_text}    ${text}
-    ${brand}    Get Substring    ${parts[1]}    1
-    Log to console      ${brand}
-    set global variable     ${brand}
+Get text by hovering over assets
+    [Arguments]     ${option}
+    wait until element is not visible    ${loaderIcon}      60
+    Wait Until Element Is Visible   css:.left-text      60
+    ${text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${option}')]//ancestor::li
+    ${parts}    Split String    ${text}    ${option}
+    ${substring}    Get Substring    ${parts[1]}    1
+    Log to console      ${substring}
+    set global variable     ${substring}
 
 Hover over searched Discovered Asset
     Wait Until Element Is Not Visible    ${loaderIcon}      60
-    sleep   5
+    sleep   2
     Wait Until Element Is Visible    css:.left-text     60
     Wait Until Element Is Enabled    css:.left-text     60
     Mouse Over    css:.left-text
 
 
 Get text of selected brand, mac address and agent of discovered assets
-     [Arguments]     ${number}
-     Wait Until Element Is Visible  //div[contains (@id, -'${number}')]       60
+    [Arguments]     ${number}
+    Wait Until Element Is Visible  //div[contains (@id, -'${number}')]       60
     ${selected_brand}=        Get Text    //div[contains (@id, -'${number}')]
     Log to console      ${selected_brand}
     set global variable     ${selected_brand}
 
-verify Text from brand
+verify Text by hovering over assets
     [Arguments]     ${original}     ${compared}
     should be equal     ${original}     ${compared}
 
+Click on clear filter button link of discovered assets
+    wait until element is visible   //span[normalize-space()='Clear Filters']   60
+    wait until element is enabled   //span[normalize-space()='Clear Filters']   60
+    click element   //span[normalize-space()='Clear Filters']
+    wait until element is not visible    ${loaderIcon}      60
 
-Get text from mac address
-   [Arguments]     ${text}
-   wait until element is not visible    ${loaderIcon}      60
-   Wait Until Element Is Visible   css:.left-text      60
-    ${MAC_text}=        Get Text         //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'MacAddress:')]//ancestor::li
-    ${parts}    Split String    ${MAC_text}    ${text}
-    ${MAC_Address}    Get Substring    ${parts[1]}    1
-    Log to console      ${MAC_Address}
-    set global variable     ${MAC_Address}
+click on filter icon of existing assets
+    wait until element is visible  css:i[title='Filter: My Exiting Aithentic Assets']    60
+    wait until element is enabled   css:i[title='Filter: My Exiting Aithentic Assets']    60
+    click element   css:i[title='Filter: My Exiting Aithentic Assets']
+
+
 
 
 
