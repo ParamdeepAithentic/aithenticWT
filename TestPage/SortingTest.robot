@@ -64,7 +64,6 @@ Test the sorting of assigned user asset history page table
 
 
 Test the sorting of technology page table
-    [Tags]      failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
     Generic.select the option from the side menu    Technology

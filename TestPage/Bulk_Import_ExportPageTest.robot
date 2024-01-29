@@ -333,7 +333,6 @@ Assigned Users Bulk Edit
     Bulk_Import_ExportPage.Search by empID  ${generated_assigneeEmpID}
 
 Team Member Bulk Edit
-    [Tags]    failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Team Members
