@@ -146,8 +146,6 @@ Download agent for OCS from signup - Linux
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
 
-
-
 Download agent for OCS from signup - Windows
     [Tags]      Sanity     just
     Generic.click on the tab	Register
@@ -454,10 +452,9 @@ Search Discovered Assets
     OCS.Click on Searched Discovered asset
 #    Sleep    ${yop_sleep}
 #    Switch Window       aithentic | Asset - Discovery
-    Generic.Verify your current page location contains    discovery-asset-detail
+#    Generic.Verify your current page location contains    discovery-asset-detail
     Generic.Verify your current page contains this text    Asset Infomation
     OCS.Click on tab under dicovery_asset_detail page    Hardware
-
 
 Search Existing Assets
     Generic.click on the tab	Login

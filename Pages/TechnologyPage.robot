@@ -297,7 +297,7 @@ Click technology brand input field
 Select parameter from brand dropdown list
     [Arguments]    ${option}
     Clear Element Text      ${brand}
-    ${StartTime1} pro=     Get Current Time in Milliseconds
+    ${StartTime1} =     Get Current Time in Milliseconds
     input text    ${brand}   ${option}
     Generic.Select parameter    ${option}
     ${EndTime1} =     Get Current Time in Milliseconds
