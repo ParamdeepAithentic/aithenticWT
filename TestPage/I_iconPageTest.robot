@@ -168,9 +168,9 @@ Verify all i-icon of Discovery assets
     I_iconPage.Click on i-icon inside agent discovery
     I_iconPage.Click on link inside agent_discovery i-icon
     sleep       ${yop_sleep}
-    switch window       aithentic | Asset - Discovery
+    switch window       Asset Discovery - Jira Service Management
     Generic.Verify your current page location contains      customer
-    Generic.Verify your current page contains this text     Network Discovery
+    Generic.Verify your current page contains this text     Asset Discovery
     sleep       ${yop_sleep}
     switch window       aithentic | Asset - Discovery
     I_iconPage.Choose tab under Discovery Assets       network-discovery
