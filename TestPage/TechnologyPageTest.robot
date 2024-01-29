@@ -177,6 +177,7 @@ Fill the technology form for maintenance product
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
 Fill the technology form for subscription product
+    [Tags]      failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
@@ -986,6 +987,7 @@ Verify the history of added technology
 
 
 Add Technology Page - Add New Supplier and support partner and assign them
+    [Tags]      failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
@@ -1484,7 +1486,7 @@ Technology Details- Verify the Location Details
 Technology-Inactive asset and Restore asset
     [Tags]      smoke       failed
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form     chirag@dmts.fr.nf    Test@789
+    LandingPage.Fill the login Form     chirag@dmts.fr.nf    Test@001
     Generic.Click on the profile name
     Generic.Select option from profile list     subscription-dropdown
     Generic.Verify your current page location contains      subscription
@@ -1574,7 +1576,7 @@ Technology-Inactive asset and Restore asset
 Inactive asset - Restore asset from Technology Details page
     [Tags]      smoke       failed
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form     chirag@dmts.fr.nf    Test@789
+    LandingPage.Fill the login Form     chirag@dmts.fr.nf    Test@001
     Generic.Click on the profile name
     Generic.Select option from profile list     subscription-dropdown
     Generic.Verify your current page location contains      subscription

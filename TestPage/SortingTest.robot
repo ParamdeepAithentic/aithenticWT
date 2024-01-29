@@ -64,6 +64,7 @@ Test the sorting of assigned user asset history page table
 
 
 Test the sorting of technology page table
+    [Tags]      failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
     Generic.select the option from the side menu    Technology
@@ -73,10 +74,11 @@ Test the sorting of technology page table
     SortingPage.Verify the sorting of the table     4       Product
     SortingPage.Verify the sorting of the table     5       Product Description
     SortingPage.Verify the sorting of the table     6       Created Date
-    SortingPage.Verify the sorting of the table     7       Status
-    SortingPage.Verify the sorting of the table     8       Asset ID
-    SortingPage.Verify the sorting of the table     9       Location
-    SortingPage.Verify the sorting of the table     10      Assignee
+    SortingPage.Verify the sorting of the table     7       Agent
+    SortingPage.Verify the sorting of the table     8       Status
+    SortingPage.Verify the sorting of the table     9       Asset ID
+    SortingPage.Verify the sorting of the table     10       Location
+    SortingPage.Verify the sorting of the table     11      Assignee
 
 Test the sorting of brand page table
     Generic.click on the tab	Login
@@ -293,6 +295,7 @@ Test the sorting of removed technology page
     SortingPage.Verify the sorting of the table     5       Product
     SortingPage.Verify the sorting of the table     6       Product Description
     SortingPage.Verify the sorting of the table     7       Created Date
+    SortingPage.Verify the sorting of the table     8       Agent
     SortingPage.Verify the sorting of the table     9       Record Status
     SortingPage.Verify the sorting of the table     10      Asset ID
     SortingPage.Verify the sorting of the table     11      Location
