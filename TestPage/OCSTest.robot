@@ -438,19 +438,22 @@ Download Agent from asset discovery - macOS
 
 Search Discovered Assets
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       chirag@dmts.fr.nf         Test@789
+    LandingPage.Fill the login Form       chirag@dmts.fr.nf         Test@001
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
+    OCS.Choose tab under Discovery Assets   agent-discovery
+    OCS.Get value of Tag_name from Agent discovery      chirag_infotech-
+    OCS.Choose tab under Discovery Assets   network-discovery
     OCS.Click on search icon of discovery assets
-    OCS.Enter text to search discovery assest    1162-2
-    OCS.Verify Searched discovery asset    1162-2
+    OCS.Enter text to search discovery asset    ${asset_details}
+    OCS.Verify Searched discovery asset    ${asset_details}
 #    OCS.Hover over searched Discovered Asset
-#    OCS.Get text from MAC Address of discovered assets    MacAddress:
-#    OCS.Get text from serial_no. of discovered assets    Serial Number:
-#    OCS.Get text from Host_name of discovered assets    Host name:
+#    OCS.Get text by hovering over discovered assets    MacAddress:
+#    OCS.Get text by hovering over discovered assets    Serial Number:
+#    OCS.Get text by hovering over discovered assets    Host name:
 #    OCS.Click on Searched Discovered asset
-#    Sleep    ${yop_sleep}
+#    Sleep    ${yop_sleep
 #    Switch Window       aithentic | Asset - Discovery
 #    Generic.Verify your current page location contains    discovery-asset-detail
 #    Generic.Verify your current page contains this text    Asset Infomation
@@ -458,25 +461,70 @@ Search Discovered Assets
 
 Search Existing Assets
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       chirag@dmts.fr.nf         Test@789
+    LandingPage.Fill the login Form       chirag@dmts.fr.nf         Test@001
+    Generic.Click on the profile name
+    Generic.Select option from profile list     subscription-dropdown
+    Generic.Verify your current page location contains      subscription
+    SubscriptionPage.Select if you want to change plan or asset    Change Plan
+    TechnologyPage.Click on current plan of subscription
+    Generic.Scroll the page till    200
+    SubscriptionPage.Set asset range to     200
+    SubscriptionPage.Update the payment of changed plan     proceed
+    TechnologyPage.Click on pop up of available Inactive Asset   cancel
+    SubscriptionPage.Select the payment method    ach
+    SubscriptionPage.Select the account for payment
+    SubscriptionPage.Proceed the payment     proceed
+    Generic.Fetch alert message text and compare it with      Payment Successful
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology-list
+    Generic.Wait until table get load
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
     OCS.Click on search icon of Existing assets
-    OCS.Enter text to search existing assest    1162-7
-    OCS.Verify searched existing asset    1162-7
-    
+    OCS.Enter text to search existing asset    ${generated_AssetID}
+    OCS.Verify searched existing asset    ${generated_AssetID}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     subscription-dropdown
+    Generic.Verify your current page location contains      subscription
+    SubscriptionPage.Select if you want to change plan or asset    Change Plan
+    TechnologyPage.Click on current plan of subscription
+    Generic.Scroll the page till    200
+    SubscriptionPage.Set asset range to     100
+    SubscriptionPage.Update the payment of changed plan     proceed
+    Sleep   ${yop_sleep}
+    TechnologyPage.Click on asset limit exceeded pop up
+    Generic.Verify your current page location contains      technology-list
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Select and restore asset
+    TechnologyPage.Click on proceed button of technology list page
+    SubscriptionPage.Select the payment method    ach
+    SubscriptionPage.Select the account for payment
+    SubscriptionPage.Proceed the payment     proceed
+    Generic.Fetch alert message text and compare it with      Payment Successful
+
 Match Discovery and Existing Asset  
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       chirag@dmts.fr.nf         Test@789
+    LandingPage.Fill the login Form       chirag@dmts.fr.nf         Test@001
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
     OCS.Click on search icon of Existing assets
-    OCS.Enter text to search existing assest    1162-7
+    OCS.Enter text to search existing asset    1162-7
     OCS.Verify searched existing asset    1162-7
     OCS.Hover Existing Agent
-    OCS.Get text from MAC Address of existing assets    MacAddress:
+    OCS.Get text by hovering over existing assets    MacAddress:
     OCS.Click on search icon of Existing assets
     OCS.Select any Discovered asset
     OCS.Select any existing asset
@@ -485,10 +533,10 @@ Match Discovery and Existing Asset
     Generic.Fetch alert message text and compare it with      Matched Assets updated successfully
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.Search by AssetId       1162-7
+    TechnologyPage.Search by AssetId       ${asset_details}
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains    technology-details
-    OCS.Get Value of MAC-Address and compare it with       ${MAC_Address}
+    OCS.Get Value of MAC-Address from technology details and compare it with      ${hover_details}
     TechnologyPage.Click on edit button on product details page        Edit
     Generic.Verify your current page location contains      edit-technology
     OCS.Edit the MAC_Address of Asset
@@ -504,7 +552,7 @@ Match Discovery and Existing Asset
 
 Add Discovery Asset
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       chirag@dmts.fr.nf         Test@789
+    LandingPage.Fill the login Form       chirag@dmts.fr.nf         Test@001
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs

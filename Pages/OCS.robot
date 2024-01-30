@@ -66,14 +66,14 @@ Click on search icon of discovery assets
     Wait Until Element Is enabled       //i[@title='Search: Agent/Network - Discovered Assets']     60
     Click Element    //i[@title='Search: Agent/Network - Discovered Assets']
 
-Enter text to search discovery assest
+Enter text to search discovery asset
     [Arguments]     ${option}
     wait until element is not visible   ${loaderIcon}        60
     Wait Until Element Is Visible    //input[@placeholder='Search OCS Discovered Assets']       60
     Wait Until Element Is enabled    //input[@placeholder='Search OCS Discovered Assets']       60
     Input Text    //input[@placeholder='Search OCS Discovered Assets']    ${option}
 
-Enter text to search existing assest
+Enter text to search existing asset
     [Arguments]     ${option}
     wait until element is not visible   ${loaderIcon}        60
     Wait Until Element Is Visible    //input[@placeholder='Search Existing Assets']       60
@@ -125,7 +125,7 @@ Click on Confirm Button
     [Arguments]     ${option}
     Generic.click on the button     ${option}
 
-Get Value of MAC-Address and compare it with
+Get Value of MAC-Address from technology details and compare it with
     [Arguments]     ${text}
     Wait Until Element Is Not Visible    ${loaderIcon}      60
     wait until element is visible    //input[@id='Mac Address']   60
@@ -183,32 +183,14 @@ Hover Existing Agent
     Wait Until Element Is Enabled    css:.right-text     60
     Mouse Over    css:.right-text
 
-Get text from MAC Address of existing assets
+Get text by hovering over existing assets
     [Arguments]     ${text}
     Wait Until Element Is Visible   css:.right-text
-    ${MAC_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'MacAddress:')]//ancestor::li
-    ${parts}    Split String    ${MAC_text}    ${text}
-    ${MAC_Address}    Get Substring    ${parts[1]}    1
-    Log to console      ${MAC_Address}
-    set global variable     ${MAC_Address}
-
-Get text from serial_no. of existing assets
-    [Arguments]     ${text}
-    Wait Until Element Is Visible    css:.right-text         60
-    ${serial_no_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'Serial Number:')]//ancestor::li
-    ${parts}    Split String    ${serial_no_text}    ${text}
-    ${serial_no_}    Get Substring    ${parts[1]}    1
-    Log to console      ${serial_no_}
-    set global variable     ${serial_no_}
-
-Get text from Host_name of existing assets
-    [Arguments]     ${text}
-    Wait Until Element Is Visible    css:.right-text         60
-    ${Host_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'Host name:')]//ancestor::li
-    ${parts}    Split String    ${Host_text}    ${text}
-    ${host_Address}    Get Substring    ${parts[1]}    1
-    Log to console      ${host_Address}
-    set global variable     ${host_Address}
+    ${hover_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
+    ${parts}    Split String    ${hover_text}    ${text}
+    ${hover_details}    Get Substring    ${parts[1]}    1
+    Log to console      ${hover_details}
+    set global variable     ${hover_details}
 
 Hover over searched Discovered Asset
     Wait Until Element Is Not Visible    ${loaderIcon}      60
@@ -260,34 +242,28 @@ Choose option from product on Add technology Page
     wait until element is enabled     //div[contains (@id, '-0')]       60
     click element   //div[contains (@id, '-0')]
 
-Get text from MAC Address of discovered assets
+Get text by hovering over discovered assets
     [Arguments]     ${text}
     Wait Until Element Is Visible    ${loaderIcon}      60
     Wait Until Element Is Not Visible    ${loaderIcon}      60
     Wait Until Element Is Visible   css:.left-text      60
     Wait Until Element Is Enabled   css:.left-text      60
     sleep       ${search_sleep}
-    ${MAC_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'MacAddress:')]//ancestor::li
-    ${parts}    Split String    ${MAC_text}    ${text}
-    ${MAC_Address}    Get Substring    ${parts[1]}    1
-    Log to console      ${MAC_Address}
-    set global variable     ${MAC_Address}
+    ${hover_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
+    ${parts}    Split String    ${hover_text}    ${text}
+    ${hover_details}    Get Substring    ${parts[1]}    1
+    Log to console      ${hover_details}
+    set global variable     ${hover_details}
 
-Get text from serial_no. of discovered assets
-    [Arguments]     ${text}
-    Wait Until Element Is Visible    css:.left-text         60
-    ${serial_no_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'Serial Number:')]//ancestor::li
-    ${parts}    Split String    ${serial_no_text}    ${text}
-    ${serial_no_}    Get Substring    ${parts[1]}    1
-    Log to console      ${serial_no_}
-    set global variable     ${serial_no_}
+Get value of Tag_name from Agent discovery
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    Wait Until Element Is Visible    (//tbody//span)[1]         60
+    Wait Until Element Is enabled    (//tbody//span)[1]         60
+    ${text}=      Get Text    (//tbody//span)[1]
+    ${parts}    Split String    ${text}    ${option}
+    ${asset_details}    Get Substring    ${parts[1]}    0
+    Log To Console    Tag_name:${asset_details}
+    Set global variable     ${asset_details}
 
-Get text from Host_name of discovered assets
-    [Arguments]     ${text}
-    Wait Until Element Is Visible    css:.left-text         60
-    ${Host_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'Host name:')]//ancestor::li
-    ${parts}    Split String    ${Host_text}    ${text}
-    ${host_Address}    Get Substring    ${parts[1]}    1
-    Log to console      ${host_Address}
-    set global variable     ${host_Address}
 
