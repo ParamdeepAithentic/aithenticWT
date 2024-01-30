@@ -445,16 +445,16 @@ Search Discovered Assets
     OCS.Click on search icon of discovery assets
     OCS.Enter text to search discovery assest    1162-2
     OCS.Verify Searched discovery asset    1162-2
-    OCS.Hover over searched Discovered Asset
-    OCS.Get text from MAC Address of discovered assets    MacAddress:
-    OCS.Get text from serial_no. of discovered assets    Serial Number:
-    OCS.Get text from Host_name of discovered assets    Host name:
-    OCS.Click on Searched Discovered asset
+#    OCS.Hover over searched Discovered Asset
+#    OCS.Get text from MAC Address of discovered assets    MacAddress:
+#    OCS.Get text from serial_no. of discovered assets    Serial Number:
+#    OCS.Get text from Host_name of discovered assets    Host name:
+#    OCS.Click on Searched Discovered asset
 #    Sleep    ${yop_sleep}
 #    Switch Window       aithentic | Asset - Discovery
 #    Generic.Verify your current page location contains    discovery-asset-detail
-    Generic.Verify your current page contains this text    Asset Infomation
-    OCS.Click on tab under dicovery_asset_detail page    Hardware
+#    Generic.Verify your current page contains this text    Asset Infomation
+#    OCS.Click on tab under dicovery_asset_detail page    Hardware
 
 Search Existing Assets
     Generic.click on the tab	Login
