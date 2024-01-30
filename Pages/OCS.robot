@@ -110,15 +110,31 @@ Click on clear filter button link of discovered assets
     wait until element is visible   //span[normalize-space()='Clear Filters']   60
     wait until element is enabled   //span[normalize-space()='Clear Filters']   60
     click element   //span[normalize-space()='Clear Filters']
-    wait until element is not visible    ${loaderIcon}      60
 
 click on filter icon of existing assets
     wait until element is visible  css:i[title='Filter: My Exiting Aithentic Assets']    60
     wait until element is enabled   css:i[title='Filter: My Exiting Aithentic Assets']    60
     click element   css:i[title='Filter: My Exiting Aithentic Assets']
 
+Hover over searched existing Asset
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+#    sleep   2
+    Wait Until Element Is Visible    css:.right-text     60
+    Wait Until Element Is Enabled    css:.right-text     60
+    Mouse Over    css:.right-text
 
+Get text by hovering over existing assets
+    [Arguments]     ${option}
+    wait until element is not visible    ${loaderIcon}      60
+    Wait Until Element Is Visible   css:.right-text      60
+    ${text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${option}')]//ancestor::li
+    ${parts}    Split String    ${text}    ${option}
+    ${substring1}    Get Substring    ${parts[1]}    1
+    Log to console      ${substring1}
+    set global variable     ${substring1}
 
-
-
-
+click on the right text asset result of existing asset
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    wait until element is visible  css:.right-text     60
+    wait until element is enabled  css:.right-text     60
+    click element   css:.right-text
