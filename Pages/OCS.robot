@@ -71,7 +71,7 @@ Choose filters for discovered asset
     wait until element is enabled   //ng-select[@placeholder='${option}']//input[@type='text']
     click element   //ng-select[@placeholder='${option}']//input[@type='text']
 
-Select brand , mac address and agent from dropdown of discovered asset filter
+Select brand_macaddres_agent from dropdown of discovered asset filter
     [Arguments]     ${number}
     wait until element is visible     //div[contains (@id, '-${number}')]       60
     wait until element is enabled     //div[contains (@id, '-${number}')]       60

@@ -446,21 +446,21 @@ Apply filters and clear filter on Discovered Asset
     OCS.click on filter icon of discovered assets
     OCS.Choose filters for discovered asset     Select Brand
     OCS.Get text of selected brand, mac address and agent of discovered assets  1
-    OCS.Select brand , mac address and agent from dropdown of discovered asset filter   1
+    OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   1
     Generic.click on the button     Apply
     OCS.Hover over searched Discovered Asset
     OCS.Get text by hovering over assets    Brand:
     OCS.verify Text by hovering over assets  ${substring}       ${selected_brand}
     OCS.Choose filters for discovered asset     Select MAC Address
     OCS.Get text of selected brand, mac address and agent of discovered assets  1
-    OCS.Select brand , mac address and agent from dropdown of discovered asset filter   1
+    OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   1
     Generic.click on the button     Apply
     OCS.Hover over searched Discovered Asset
     OCS.Get text by hovering over assets     MacAddress:
     OCS.verify Text by hovering over assets  ${substring}       ${selected_brand}
     OCS.Choose filters for discovered asset     Select Agent Tags
     OCS.Get text of selected brand, mac address and agent of discovered assets  1
-    OCS.Select brand , mac address and agent from dropdown of discovered asset filter   1
+    OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   1
     Generic.click on the button     Apply
     OCS.Hover over searched Discovered Asset
     OCS.Get text by hovering over assets    Tag:
@@ -478,7 +478,7 @@ Apply filters and clear filter on Existing Assets
     OCS.click on filter icon of existing assets
     OCS.Choose filters for discovered asset     Select Brand
     OCS.Get text of selected brand, mac address and agent of discovered assets  0
-    OCS.Select brand , mac address and agent from dropdown of discovered asset filter   0
+    OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   0
     Generic.click on the button     Apply
     OCS.Hover over searched existing Asset
     OCS.Get text by hovering over existing assets   Brand:
@@ -486,7 +486,7 @@ Apply filters and clear filter on Existing Assets
     OCS.Click on clear filter button link of discovered assets      Clear Filters
     OCS.Choose filters for discovered asset     Select Product
     OCS.Get text of selected brand, mac address and agent of discovered assets  0
-    OCS.Select brand , mac address and agent from dropdown of discovered asset filter   0
+    OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   0
     Generic.click on the button     Apply
     OCS.Hover over searched existing Asset
     OCS.Get text by hovering over existing assets   ProductId:
@@ -494,7 +494,7 @@ Apply filters and clear filter on Existing Assets
     OCS.Click on clear filter button link of discovered assets  Clear Filters
     OCS.Choose filters for discovered asset    Select Department
     OCS.Get text of selected brand, mac address and agent of discovered assets  0
-    OCS.Select brand , mac address and agent from dropdown of discovered asset filter   0
+    OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   0
     Generic.click on the button     Apply
     OCS.click on the right text asset result of existing asset
     sleep       ${yop_sleep}
@@ -507,7 +507,7 @@ Apply filters and clear filter on Existing Assets
     OCS.Click on clear filter button link of discovered assets  Clear Filters
     OCS.Choose filters for discovered asset    Select Location
     OCS.Get text of selected brand, mac address and agent of discovered assets  0
-    OCS.Select brand , mac address and agent from dropdown of discovered asset filter   0
+    OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   0
     Generic.click on the button     Apply
     OCS.click on the right text asset result of existing asset
     sleep       ${yop_sleep}
