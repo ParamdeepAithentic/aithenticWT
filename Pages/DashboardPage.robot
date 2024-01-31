@@ -557,7 +557,6 @@ Select City
 Click on Save Button
     wait until element is visible   ${Brand_savebutton}   60
     click element   ${Brand_savebutton}
-    wait until element is not visible   ${loaderIcon}   60
 
 Zip code Input
     [Arguments]     ${code}

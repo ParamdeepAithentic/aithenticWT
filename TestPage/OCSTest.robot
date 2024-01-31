@@ -343,7 +343,6 @@ Download agent for OCS from signup - macOS
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
-#    sleep   500s
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -466,7 +465,7 @@ Apply filters and clear filter on Discovered Asset
     OCS.Hover over searched Discovered Asset
     OCS.Get text by hovering over assets    Tag:
     OCS.verify Text by hovering over assets  ${substring}       ${selected_brand}
-    OCS.Click on clear filter button link of discovered assets
+    OCS.Click on clear filter button link of discovered assets    Clear Filters
     OCS.Hover over searched Discovered Asset
     OCS.Get text by hovering over assets     Brand:
 
@@ -484,7 +483,7 @@ Apply filters and clear filter on Existing Assets
     OCS.Hover over searched existing Asset
     OCS.Get text by hovering over existing assets   Brand:
     OCS.verify Text by hovering over assets  ${substring1}       ${selected_brand}
-    OCS.Click on clear filter button link of discovered assets
+    OCS.Click on clear filter button link of discovered assets      Clear Filters
     OCS.Choose filters for discovered asset     Select Product
     OCS.Get text of selected brand, mac address and agent of discovered assets  0
     OCS.Select brand , mac address and agent from dropdown of discovered asset filter   0
@@ -492,7 +491,7 @@ Apply filters and clear filter on Existing Assets
     OCS.Hover over searched existing Asset
     OCS.Get text by hovering over existing assets   ProductId:
     OCS.verify Text by hovering over assets  ${substring1}       ${selected_brand}
-    OCS.Click on clear filter button link of discovered assets
+    OCS.Click on clear filter button link of discovered assets  Clear Filters
     OCS.Choose filters for discovered asset    Select Department
     OCS.Get text of selected brand, mac address and agent of discovered assets  0
     OCS.Select brand , mac address and agent from dropdown of discovered asset filter   0
@@ -505,7 +504,7 @@ Apply filters and clear filter on Existing Assets
     OCS.verify Text by hovering over assets  ${assign_loc_input_value}       ${selected_brand}
     sleep       ${yop_sleep}
     Switch Window   aithentic | Asset - Discovery
-    OCS.Click on clear filter button link of discovered assets
+    OCS.Click on clear filter button link of discovered assets  Clear Filters
     OCS.Choose filters for discovered asset    Select Location
     OCS.Get text of selected brand, mac address and agent of discovered assets  0
     OCS.Select brand , mac address and agent from dropdown of discovered asset filter   0
@@ -518,6 +517,6 @@ Apply filters and clear filter on Existing Assets
     OCS.verify Text by hovering over assets  ${assign_loc_input_value}       ${selected_brand}
     sleep       ${yop_sleep}
     Switch Window   aithentic | Asset - Discovery
-    OCS.Click on clear filter button link of discovered assets
+    OCS.Click on clear filter button link of discovered assets      Clear Filters
     OCS.Hover over searched existing Asset
     OCS.Get text by hovering over existing assets  ProductId:

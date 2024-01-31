@@ -89,7 +89,7 @@ Get text by hovering over assets
 
 Hover over searched Discovered Asset
     Wait Until Element Is Not Visible    ${loaderIcon}      60
-    sleep   1
+    sleep   ${search_sleep}
     Wait Until Element Is Visible    css:.left-text     60
     Wait Until Element Is Enabled    css:.left-text     60
     Mouse Over    css:.left-text
@@ -107,9 +107,8 @@ verify Text by hovering over assets
     should be equal     ${original}     ${compared}
 
 Click on clear filter button link of discovered assets
-    wait until element is visible   //span[normalize-space()='Clear Filters']   60
-    wait until element is enabled   //span[normalize-space()='Clear Filters']   60
-    click element   //span[normalize-space()='Clear Filters']
+    [Arguments]     ${option}
+    Generic.Select parameter    ${option}
 
 click on filter icon of existing assets
     wait until element is visible  css:i[title='Filter: My Exiting Aithentic Assets']    60
