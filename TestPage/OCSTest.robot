@@ -521,4 +521,3 @@ Apply filters and clear filter on Existing Assets
     OCS.Click on clear filter button link of discovered assets
     OCS.Hover over searched existing Asset
     OCS.Get text by hovering over existing assets  ProductId:
-    

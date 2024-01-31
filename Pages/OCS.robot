@@ -89,10 +89,11 @@ Get text by hovering over assets
 
 Hover over searched Discovered Asset
     Wait Until Element Is Not Visible    ${loaderIcon}      60
-    sleep   2
+    sleep   1
     Wait Until Element Is Visible    css:.left-text     60
     Wait Until Element Is Enabled    css:.left-text     60
     Mouse Over    css:.left-text
+    Execute JavaScript    var element = document.querySelector('.left-text'); var event = new MouseEvent('mouseover', { bubbles: true }); element.dispatchEvent(event);
 
 
 Get text of selected brand, mac address and agent of discovered assets
@@ -118,14 +119,14 @@ click on filter icon of existing assets
 
 Hover over searched existing Asset
     Wait Until Element Is Not Visible    ${loaderIcon}      60
-#    sleep   2
+    sleep   2
     Wait Until Element Is Visible    css:.right-text     60
     Wait Until Element Is Enabled    css:.right-text     60
     Mouse Over    css:.right-text
-
+    Execute JavaScript    var element = document.querySelector('.right-text'); var event = new MouseEvent('mouseover', { bubbles: true }); element.dispatchEvent(event);
 Get text by hovering over existing assets
     [Arguments]     ${option}
-    wait until element is not visible    ${loaderIcon}      60
+#    wait until element is not visible    ${loaderIcon}      60
     Wait Until Element Is Visible   css:.right-text      60
     ${text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${option}')]//ancestor::li
     ${parts}    Split String    ${text}    ${option}
