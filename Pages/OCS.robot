@@ -143,6 +143,8 @@ Get Value of Serial no. and compare it with
     Set Global Variable    ${serial_no.}
     Log To Console    Serial No. is: ${serial_no.}
     Should Be Equal    ${serial_no.}    ${text}
+    Log To Console    Yes, Serial number are equal.
+
 
 Get Value of Host-Name and compare it with
     [Arguments]     ${text}
@@ -152,12 +154,14 @@ Get Value of Host-Name and compare it with
     Set Global Variable    ${host_value}
     Log To Console    Host Name is: ${host_value}
     Should Be Equal    ${host_value}    ${text}
+    Log To Console    Yes, Host name are equal.
 
 Edit the MAC_Address of Asset
 #    [Arguments]     ${option}
     Wait Until Element Is Not Visible    ${loaderIcon}      60
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_macaddress}=    Catenate    MAC_${random_string}
+    Wait Until Element Is Visible    css:#DYNA_14   60
     Wait Until Element Is Visible    css:#DYNA_14   60
     Input Text   css:#DYNA_14     ${generated_macaddress}
 
@@ -185,7 +189,7 @@ Hover Existing Agent
 
 Get text by hovering over existing assets
     [Arguments]     ${text}
-    Wait Until Element Is Visible   css:.right-text
+    Wait Until Element Is Visible   css:.right-text     60
     ${hover_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
     ${parts}    Split String    ${hover_text}    ${text}
     ${hover_details}    Get Substring    ${parts[1]}    1
@@ -242,18 +246,41 @@ Choose option from product on Add technology Page
     wait until element is enabled     //div[contains (@id, '-0')]       60
     click element   //div[contains (@id, '-0')]
 
-Get text by hovering over discovered assets
+Get MAC_Address by hovering over discovered assets
     [Arguments]     ${text}
-    Wait Until Element Is Visible    ${loaderIcon}      60
     Wait Until Element Is Not Visible    ${loaderIcon}      60
     Wait Until Element Is Visible   css:.left-text      60
     Wait Until Element Is Enabled   css:.left-text      60
     sleep       ${search_sleep}
     ${hover_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
     ${parts}    Split String    ${hover_text}    ${text}
-    ${hover_details}    Get Substring    ${parts[1]}    1
-    Log to console      ${hover_details}
-    set global variable     ${hover_details}
+    ${hover_MAC_address}    Get Substring    ${parts[1]}    1
+    Log to console      ${hover_MAC_address}
+    set global variable     ${hover_MAC_address}
+
+Get Serial number by hovering over discovered assets
+    [Arguments]     ${text}
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    Wait Until Element Is Visible   css:.left-text      60
+    Wait Until Element Is Enabled   css:.left-text      60
+    sleep       ${search_sleep}
+    ${hover_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
+    ${parts}    Split String    ${hover_text}    ${text}
+    ${hover_serial_number}    Get Substring    ${parts[1]}    1
+    Log to console      ${hover_serial_number}
+    set global variable     ${hover_serial_number}
+
+Get Host name by hovering over discovered assets
+    [Arguments]     ${text}
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    Wait Until Element Is Visible   css:.left-text      60
+    Wait Until Element Is Enabled   css:.left-text      60
+    sleep       ${search_sleep}
+    ${hover_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
+    ${parts}    Split String    ${hover_text}    ${text}
+    ${hover_host name}    Get Substring    ${parts[1]}    1
+    Log to console      ${hover_host name}
+    set global variable     ${hover_host name}
 
 Get value of Tag_name from Agent discovery
     [Arguments]     ${option}
