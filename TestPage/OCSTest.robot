@@ -593,7 +593,6 @@ Match Discovery and Existing Asset
     SubscriptionPage.Proceed the payment     proceed
     Generic.Fetch alert message text and compare it with      Payment Successful
 
-
 Add Discovery Asset
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       chirag@dmts.fr.nf         Test@001
@@ -606,3 +605,88 @@ Add Discovery Asset
     Generic.Verify your current page contains this text    Add Technology
     OCS.Choose option from brand on Add technology Page        Gigabyte Technology Co., Ltd.
     OCS.Choose option from product on Add technology Page
+
+Apply filters and clear filter on Discovered Asset
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      chirag@dmts.fr.nf      Test@001
+    Generic.Click on the profile name
+    Generic.Select option from profile list     view-discovery
+    OCS.Choose tab under Discovery Assets   network-discovery
+    OCS.click on filter icon of discovered assets
+    OCS.Choose filters for discovered asset     Select Brand
+    OCS.Get text of selected brand, mac address and agent of discovered assets  1
+    OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   1
+    Generic.click on the button     Apply
+    OCS.Hover over searched Discovered Asset
+    OCS.Get text by hovering over assets    Brand:
+    OCS.verify Text by hovering over assets  ${substring}       ${selected_brand}
+    OCS.Choose filters for discovered asset     Select MAC Address
+    OCS.Get text of selected brand, mac address and agent of discovered assets  1
+    OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   1
+    Generic.click on the button     Apply
+    OCS.Hover over searched Discovered Asset
+    OCS.Get text by hovering over assets     MacAddress:
+    OCS.verify Text by hovering over assets  ${substring}       ${selected_brand}
+    OCS.Choose filters for discovered asset     Select Agent Tags
+    OCS.Get text of selected brand, mac address and agent of discovered assets  1
+    OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   1
+    Generic.click on the button     Apply
+    OCS.Hover over searched Discovered Asset
+    OCS.Get text by hovering over assets    Tag:
+    OCS.verify Text by hovering over assets  ${substring}       ${selected_brand}
+    OCS.Click on clear filter button link of discovered assets    Clear Filters
+    OCS.Hover over searched Discovered Asset
+    OCS.Get text by hovering over assets     Brand:
+
+Apply filters and clear filter on Existing Assets
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      chirag@dmts.fr.nf      Test@001
+    Generic.Click on the profile name
+    Generic.Select option from profile list     view-discovery
+    OCS.Choose tab under Discovery Assets   network-discovery
+    OCS.click on filter icon of existing assets
+    OCS.Choose filters for discovered asset     Select Brand
+    OCS.Get text of selected brand, mac address and agent of discovered assets  0
+    OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   0
+    Generic.click on the button     Apply
+    OCS.Hover over searched existing Asset
+    OCS.Get text by hovering over existing assets   Brand:
+    OCS.verify Text by hovering over assets  ${substring1}       ${selected_brand}
+    OCS.Click on clear filter button link of discovered assets      Clear Filters
+    OCS.Choose filters for discovered asset     Select Product
+    OCS.Get text of selected brand, mac address and agent of discovered assets  0
+    OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   0
+    Generic.click on the button     Apply
+    OCS.Hover over searched existing Asset
+    OCS.Get text by hovering over existing assets   ProductId:
+    OCS.verify Text by hovering over assets  ${substring1}       ${selected_brand}
+    OCS.Click on clear filter button link of discovered assets  Clear Filters
+    OCS.Choose filters for discovered asset    Select Department
+    OCS.Get text of selected brand, mac address and agent of discovered assets  0
+    OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   0
+    Generic.click on the button     Apply
+    OCS.click on the right text asset result of existing asset
+    sleep       ${yop_sleep}
+    Switch Window   aithentic | Technology - Details
+    TechnologyPage.Click on Location tab of technology- list page
+    TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     DepartmentName
+    OCS.verify Text by hovering over assets  ${assign_loc_input_value}       ${selected_brand}
+    sleep       ${yop_sleep}
+    Switch Window   aithentic | Asset - Discovery
+    OCS.Click on clear filter button link of discovered assets  Clear Filters
+    OCS.Choose filters for discovered asset    Select Location
+    OCS.Get text of selected brand, mac address and agent of discovered assets  0
+    OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   0
+    Generic.click on the button     Apply
+    OCS.click on the right text asset result of existing asset
+    sleep       ${yop_sleep}
+    Switch Window   aithentic | Technology - Details
+    TechnologyPage.Click on Location tab of technology- list page
+    TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     LocationName
+    OCS.verify Text by hovering over assets  ${assign_loc_input_value}       ${selected_brand}
+    sleep       ${yop_sleep}
+    Switch Window   aithentic | Asset - Discovery
+    OCS.Click on clear filter button link of discovered assets      Clear Filters
+    OCS.Hover over searched existing Asset
+    OCS.Get text by hovering over existing assets  ProductId:
+

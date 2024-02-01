@@ -1243,8 +1243,8 @@ Click on Bulk_import under action button
     click element         css:.add-bulk-member-qa
 
 Click on Location tab of technology- list page
-    wait until element is visible   css:#PrintQrButton   60
-    wait until element is enabled   css:#PrintQrButton   60
+#    wait until element is visible   css:#PrintQrButton   60
+#    wait until element is enabled   css:#PrintQrButton   60
     wait until element is visible   css:#location-tab   60
     click element   css:#location-tab
 

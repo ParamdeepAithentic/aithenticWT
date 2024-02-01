@@ -57,6 +57,7 @@ Choose tab under Discovery Assets
     [Arguments]     ${option}
     wait until element is not visible   ${loaderIcon}        60
     wait until element is visible       css:.qa-${option}-tab       60
+    wait until element is enabled       css:.qa-${option}-tab       60
     click element       css:.qa-${option}-tab
 #option: network-discovery, agent-discovery
 
@@ -157,7 +158,6 @@ Get Value of Host-Name and compare it with
     Log To Console    Yes, Host name are equal.
 
 Edit the MAC_Address of Asset
-#    [Arguments]     ${option}
     Wait Until Element Is Not Visible    ${loaderIcon}      60
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_macaddress}=    Catenate    MAC_${random_string}
@@ -166,7 +166,6 @@ Edit the MAC_Address of Asset
     Input Text   css:#DYNA_14     ${generated_macaddress}
 
 Edit the Serial_No. of Asset
-#    [Arguments]     ${option}
     Wait Until Element Is Not Visible    ${loaderIcon}      60
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_serailnumber}=    Catenate    S_No_${random_string}
@@ -174,7 +173,6 @@ Edit the Serial_No. of Asset
     Input Text   css:#DYNA_21     ${generated_serailnumber}
 
 Edit The Host_Name of Asset
-#    [Arguments]     ${option}
     Wait Until Element Is Not Visible    ${loaderIcon}      60
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_hostname}=    Catenate    Host_${random_string}
@@ -237,7 +235,6 @@ Choose option from brand on Add technology Page
     Generic.Select parameter    ${option}
 
 Choose option from product on Add technology Page
-#    [Arguments]     ${option}
     Wait Until Element Is Not Visible    ${loaderIcon}      60
     Wait Until Element Is Visible    //div[contains(text(),'Select or Search Product')]     60
     Wait Until Element Is Enabled    //div[contains(text(),'Select or Search Product')]     60
@@ -293,4 +290,81 @@ Get value of Tag_name from Agent discovery
     Log To Console    Tag_name:${asset_details}
     Set global variable     ${asset_details}
 
+click on filter icon of discovered assets
+    wait until element is visible  css:i[title='Filter: Agent/Network - Discovered Assets']    60
+    wait until element is enabled   css:i[title='Filter: Agent/Network - Discovered Assets']    60
+    click element   css:i[title='Filter: Agent/Network - Discovered Assets']
 
+Choose filters for discovered asset
+    [Arguments]     ${option}
+    wait until element is not visible   ${loaderIcon}        60
+    wait until element is visible   //ng-select[@placeholder='${option}']//input[@type='text']
+    wait until element is enabled   //ng-select[@placeholder='${option}']//input[@type='text']
+    click element   //ng-select[@placeholder='${option}']//input[@type='text']
+
+Select brand_macaddres_agent from dropdown of discovered asset filter
+    [Arguments]     ${number}
+    wait until element is visible     //div[contains (@id, '-${number}')]       60
+    wait until element is enabled     //div[contains (@id, '-${number}')]       60
+    click element   //div[contains (@id, '-${number}')]
+
+Get text by hovering over assets
+    [Arguments]     ${option}
+    wait until element is not visible    ${loaderIcon}      60
+    Wait Until Element Is Visible   css:.left-text      60
+    ${text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${option}')]//ancestor::li
+    ${parts}    Split String    ${text}    ${option}
+    ${substring}    Get Substring    ${parts[1]}    1
+    Log to console      ${substring}
+    set global variable     ${substring}
+
+Hover over searched Discovered Asset
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    sleep   ${search_sleep}
+    Wait Until Element Is Visible    css:.left-text     60
+    Wait Until Element Is Enabled    css:.left-text     60
+    Mouse Over    css:.left-text
+    Execute JavaScript    var element = document.querySelector('.left-text'); var event = new MouseEvent('mouseover', { bubbles: true }); element.dispatchEvent(event);
+
+Get text of selected brand, mac address and agent of discovered assets
+    [Arguments]     ${number}
+    Wait Until Element Is Visible  //div[contains (@id, -'${number}')]       60
+    ${selected_brand}=        Get Text    //div[contains (@id, -'${number}')]
+    Log to console      ${selected_brand}
+    set global variable     ${selected_brand}
+
+verify Text by hovering over assets
+    [Arguments]     ${original}     ${compared}
+    should be equal     ${original}     ${compared}
+
+Click on clear filter button link of discovered assets
+    [Arguments]     ${option}
+    Generic.Select parameter    ${option}
+
+click on filter icon of existing assets
+    wait until element is visible  css:i[title='Filter: My Exiting Aithentic Assets']    60
+    wait until element is enabled   css:i[title='Filter: My Exiting Aithentic Assets']    60
+    click element   css:i[title='Filter: My Exiting Aithentic Assets']
+
+Hover over searched existing Asset
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    sleep   2
+    Wait Until Element Is Visible    css:.right-text     60
+    Wait Until Element Is Enabled    css:.right-text     60
+    Mouse Over    css:.right-text
+    Execute JavaScript    var element = document.querySelector('.right-text'); var event = new MouseEvent('mouseover', { bubbles: true }); element.dispatchEvent(event);
+
+Get text by hovering over existing assets
+    [Arguments]     ${option}
+    Wait Until Element Is Visible   css:.right-text      60
+    ${text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${option}')]//ancestor::li
+    ${parts}    Split String    ${text}    ${option}
+    ${substring1}    Get Substring    ${parts[1]}    1
+    Log to console      ${substring1}
+    set global variable     ${substring1}
+
+click on the right text asset result of existing asset
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    wait until element is visible  css:.right-text     60
+    wait until element is enabled  css:.right-text     60
+    click element   css:.right-text
