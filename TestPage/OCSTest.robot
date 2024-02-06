@@ -442,16 +442,18 @@ Search Discovered Assets
     OCS.Click on search icon of discovery assets
     OCS.Enter text to search discovery asset    ${asset_details}
     OCS.Verify Searched discovery asset    ${asset_details}
-#    OCS.Hover over searched Discovered Asset
-#    OCS.Get text by hovering over discovered assets    MacAddress:
-#    OCS.Get text by hovering over discovered assets    Serial Number:
-#    OCS.Get text by hovering over discovered assets    Host name:
-#    OCS.Click on Searched Discovered asset
-#    Sleep    ${yop_sleep
-#    Switch Window       aithentic | Asset - Discovery
-#    Generic.Verify your current page location contains    discovery-asset-detail
-#    Generic.Verify your current page contains this text    Asset Infomation
-#    OCS.Click on tab under dicovery_asset_detail page    Hardware
+    OCS.Hover over searched Discovered Asset
+    OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
+    OCS.Get Serial number by hovering over discovered assets     Serial Number:
+    OCS.Get Host name by hovering over discovered assets     Host name:
+    OCS.Click on Searched Discovered asset
+    Sleep    ${yop_sleep
+    Switch Window       aithentic | Discovery Asset Detail
+    Generic.Verify your current page contains this text    Asset Infomation
+    OCS.Click on tab under dicovery_asset_detail page    Hardware
+    Generic.Verify your current page contains this text     ${hover_serial_number}
+    OCS.Click on tab under dicovery_asset_detail page    Network
+    Generic.Verify your current page contains this text    ${hover_MAC_address}
 
 Search Existing Assets
     Generic.click on the tab	Login
@@ -552,7 +554,7 @@ Match Discovery and Existing Asset
     OCS.Select any existing asset
     OCS.Click on search icon of Existing assets
     OCS.Verify that line appears between selected assets
-    OCS.Click on Confirm Button     Confirm Matches
+    OCS.Click on Button inside Network Discovery Page     Confirm Matches
     Generic.Fetch alert message text and compare it with      Matched Assets updated successfully
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
@@ -592,19 +594,6 @@ Match Discovery and Existing Asset
     SubscriptionPage.Select the account for payment
     SubscriptionPage.Proceed the payment     proceed
     Generic.Fetch alert message text and compare it with      Payment Successful
-
-Add Discovery Asset
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form       chirag@dmts.fr.nf         Test@001
-    Generic.Click on the profile name
-    Generic.Select option from profile list     view-discovery
-    Generic.Verify your current page location contains    ocs
-    OCS.Choose Tab under Asset Discovery    agent-discovery
-    OCS.Click on Plus icon under table
-#    Generic.Verify your current page location contains    add-discovered-asset
-    Generic.Verify your current page contains this text    Add Technology
-    OCS.Choose option from brand on Add technology Page        Gigabyte Technology Co., Ltd.
-    OCS.Choose option from product on Add technology Page
 
 Apply filters and clear filter on Discovered Asset
     Generic.click on the tab	Login
@@ -690,3 +679,167 @@ Apply filters and clear filter on Existing Assets
     OCS.Hover over searched existing Asset
     OCS.Get text by hovering over existing assets  ProductId:
 
+Add Discovery Asset
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       chirag@dmts.fr.nf         Test@001
+    Generic.Click on the profile name
+    Generic.Select option from profile list     view-discovery
+    Generic.Verify your current page location contains    ocs
+    OCS.Hover over searched Agent/Discovered Asset
+    OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
+    OCS.Get Serial number by hovering over discovered assets     Serial Number:
+    OCS.Get Host name by hovering over discovered assets     Host name:
+    OCS.Choose Tab under Asset Discovery    agent-discovery
+    OCS.Click on Plus icon under table
+    Sleep    ${Yop_Sleep}
+    Switch Window       aithentic | Add Discovery Asset                         #Not updated on QA
+    Generic.Verify your current page location contains    add-discovered-asset
+    Generic.Verify your current page contains this text    Add Technology
+    OCS.Choose option from brand on Add technology Page
+    OCS.Clear the text of Product field
+    OCS.Choose option from product on Add technology Page
+    OCS.Enter The Asset_id in Add Technology Page
+    OCS.Click on save button of Add Technology Page
+    OCS.Wait for the invisiblity of alert msg        Technology created successfully
+    Sleep    ${yop_sleep}
+    Switch Window       aithentic | Asset - Discovery
+    Generic.Verify your current page contains this text    ${generated_AssetID}
+    Generic.select the option from the side menu        Technology
+    Generic.Verify your current page location contains      technology-list
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains    technology-details
+    OCS.Get Value of MAC-Address from technology details and compare it with      ${hover_MAC_address}
+    OCS.Get Value of Host-Name and compare it with    ${hover_host name}
+    OCS.Verify Page should contain Element     discovery-info-tab
+    OCS.Click on Discovery_info tab on Technology details Page
+    OCS.Verify Discovery_info contains following tab    hardware-tab
+    OCS.Verify Discovery_info contains following tab    software-tab
+    OCS.Verify Discovery_info contains following tab    network-tab
+    OCS.Verify Discovery_info contains following tab    devices-tab
+    TechnologyPage.Click on edit button on product details page        Edit
+    Generic.Verify your current page location contains      edit-technology
+    OCS.Edit the MAC_Address of Asset
+    OCS.Edit The Host_Name of Asset
+    TechnologyPage.Click on update button of edit_technology page       Update
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+    UnselectAssetAPI.Hit API Endpoint
+
+Create Asset from Add Assets Page
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       chirag@dmts.fr.nf         Test@001
+    Generic.Click on the profile name
+    Generic.Select option from profile list     view-discovery
+    Generic.Verify your current page location contains    ocs
+    OCS.Mark check-box of Agent/Discovered Asset
+    OCS.Click on Button inside Network Discovery Page       Add Assets
+    Generic.Verify your current page location contains    add-assets
+    OCS.Click on three-dots inside table of add assets
+    OCS.Select option inside three-dots    More Details
+    Sleep    ${yop_sleep}
+    Switch Window       aithentic | Discovery Asset Detail
+    Generic.Verify your current page location contains    discovery-asset-detail
+    switch window    aithentic | Asset - Discovery
+    Generic.Verify your current page location contains    add-assets
+    OCS.Click on three-dots inside table of add assets
+    OCS.Select option inside three-dots    View Component
+    Sleep    ${yop_sleep}
+    Switch Window       aithentic | Discovery Asset Detail
+    Generic.Verify your current page location contains    discovery-asset-detail
+    Switch Window       aithentic | Asset - Discovery
+    Generic.Verify your current page location contains    add-assets
+    OCS.Click on three-dots inside table of add assets
+    OCS.Select option inside three-dots    Create Asset
+    Sleep    ${yop_sleep}
+    Switch Window       aithentic | Add Discovery Asset
+    Generic.Verify your current page contains this text    Add Technology
+    OCS.Choose option from brand on Add technology Page
+    OCS.Clear the text of Product field
+    OCS.Choose option from product on Add technology Page
+    OCS.Enter The Asset_id in Add Technology Page
+    OCS.Click on save button of Add Technology Page
+    OCS.Wait for the invisiblity of alert msg        Technology created successfully
+    Sleep    ${yop_sleep}
+    Switch Window       aithentic | Asset - Discovery
+    Generic.Verify your current page location contains    add-assets
+    Generic.Verify your current page contains this text    ${generated_AssetID}
+    Generic.select the option from the side menu        Technology
+    Generic.Verify your current page location contains      technology-list
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains    technology-details
+    TechnologyPage.Click on edit button on product details page        Edit
+    Generic.Verify your current page location contains      edit-technology
+    OCS.Edit the MAC_Address of Asset
+    OCS.Edit the Serial_No. of Asset
+    OCS.Edit The Host_Name of Asset
+    TechnologyPage.Click on update button of edit_technology page       Update
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+    UnselectAssetAPI.Hit API Endpoint
+
+Add component as an asset after Adding OCS asset
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       chirag@dmts.fr.nf         Test@001
+    Generic.Click on the profile name
+    Generic.Select option from profile list     view-discovery
+    Generic.Verify your current page location contains    ocs
+    OCS.Mark check-box of Agent/Discovered Asset
+    OCS.Click on Button inside Network Discovery Page       Add Assets
+    Generic.Verify your current page location contains    add-assets
+    OCS.Click on three-dots inside table of add assets
+    OCS.Select option inside three-dots    More Details
+    Sleep    ${yop_sleep}
+    Switch Window       aithentic | Discovery Asset Detail
+    Generic.Verify your current page location contains    discovery-asset-detail
+    Close Window
+    switch window    aithentic | Asset - Discovery
+    Generic.Verify your current page location contains    add-assets
+    OCS.Click on three-dots inside table of add assets
+    OCS.Select option inside three-dots    Create Asset
+    Sleep    ${yop_sleep}
+    Switch Window       aithentic | Add Discovery Asset
+    Generic.Verify your current page contains this text    Add Technology
+    OCS.Choose option from brand on Add technology Page
+    OCS.Clear the text of Product field
+    OCS.Choose option from product on Add technology Page
+    OCS.Enter The Asset_id in Add Technology Page
+    OCS.Click on save button of Add Technology Page
+    OCS.Wait for the invisiblity of alert msg        Technology created successfully
+    Sleep    ${yop_sleep}
+    switch window    aithentic | Asset - Discovery
+
+    Generic.Verify your current page location contains    add-assets
+    Generic.Verify your current page contains this text    ${generated_AssetID}
+#    OCS.Verify Discovery_info contains following tab    software-tab
+    OCS.Click on three-dots inside table of add assets
+    OCS.Select option inside three-dots    View Component
+    Sleep    ${yop_sleep}
+    Switch Window       aithentic | Discovery Asset Detail
+    Generic.Verify your current page location contains    discovery-asset-detail
+    OCS.Verify Discovery_info contains following tab    software-tab
+    OCS.Hover Over Add component button and verify text         Please click on the 'plus' icon to add component
+    OCS.Click on plus icon of any component
+    Sleep    ${yop_sleep}
+    Switch Window       aithentic | Add Discovery Asset
+    Generic.Verify your current page contains this text    Add Technology
+    OCS.Choose option from brand on Add technology Page
+    OCS.Clear the text of Product field
+    OCS.Choose option from product on Add technology Page
+    OCS.Enter The Asset_id in Add Technology Page
+    OCS.Click on save button of Add Technology Page
+    OCS.Wait for the invisiblity of alert msg        Technology created successfully
+    Sleep    ${yop_sleep}
+    Switch Window       aithentic | Discovery Asset Detail
+    OCS.Verify Software tab Should contain Element
+    Generic.select the option from the side menu        Technology
+    Generic.Verify your current page location contains      technology-list
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains    technology-details
+    TechnologyPage.Click on edit button on product details page        Edit
+    Generic.Verify your current page location contains      edit-technology
+    OCS.Edit the MAC_Address of Asset
+    OCS.Edit The Host_Name of Asset
+    TechnologyPage.Click on update button of edit_technology page       Update
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+    UnselectAssetAPI.Hit API Endpoint

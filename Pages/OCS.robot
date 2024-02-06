@@ -35,6 +35,12 @@ Resource        ../Pages/UnselectAssetAPI.robot
 ${preparingAgent_text}     //div[@id='downloadAgentOCSFile']//p[contains(text(),'File is preparing, please wait....')]
 ${AgentReady_text}     //p[contains(text(),'File is ready, please download')]
 
+${Add_technology_product}       //div[contains(text(),'Select or Search Product')]//following-sibling::div//input
+${Add_technology_brand}         css:#BrandName
+${plus_icon}    (//tbody//td//i)[1]
+${Discovery_Assets}     css:.left-text
+${Existing_Assets}      css:.right-text
+
 *** Keywords ***
 Verify that agent is ready to get download
     wait until element is not visible     ${preparingAgent_text}      60
@@ -84,15 +90,15 @@ Enter text to search existing asset
 Verify Searched discovery asset
     [Arguments]     ${option}
     wait until element is not visible   ${loaderIcon}        60
-    Wait Until Element Is Visible    css:.left-text
-    Element Should Contain    css:.left-text    ${option}
+    Wait Until Element Is Visible    ${Discovery_Assets}
+    Element Should Contain   ${Discovery_Assets}   ${option}
 
 Verify searched existing asset
     [Arguments]     ${option}
     wait until element is not visible   ${loaderIcon}        60
     Sleep    ${yop_sleep}
-    Wait Until Element Is Visible    css:.right-text
-    Element Should Contain    css:.right-text    ${option}
+    Wait Until Element Is Visible    ${Existing_Assets}
+    Element Should Contain   ${Existing_Assets}    ${option}
 
 
 Click on search icon of Existing assets
@@ -122,7 +128,7 @@ Verify that line does not appears between selected assets
     Sleep    ${yop_sleep}
     Page Should not Contain Element    //div[@title='Double click here to unmatch asset']       60
 
-Click on Confirm Button
+Click on Button inside Network Discovery Page
     [Arguments]     ${option}
     Generic.click on the button     ${option}
 
@@ -181,11 +187,11 @@ Edit The Host_Name of Asset
 
 Hover Existing Agent
     Wait Until Element Is Not Visible    ${loaderIcon}      60
-    Wait Until Element Is Visible    css:.right-text     60
+    Wait Until Element Is Visible    ${Existing_Assets}     60
     Wait Until Element Is Enabled    css:.right-text     60
     Mouse Over    css:.right-text
 
-Get text by hovering over existing assets
+Get text by hovering over existing assets of technology
     [Arguments]     ${text}
     Wait Until Element Is Visible   css:.right-text     60
     ${hover_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
@@ -194,17 +200,17 @@ Get text by hovering over existing assets
     Log to console      ${hover_details}
     set global variable     ${hover_details}
 
-Hover over searched Discovered Asset
+Hover over searched Agent/Discovered Asset
     Wait Until Element Is Not Visible    ${loaderIcon}      60
-    Wait Until Element Is Visible    css:.left-text     60
-    Wait Until Element Is Enabled    css:.left-text     60
-    Mouse Over    css:.left-text
+    Wait Until Element Is Visible   ${Discovery_Assets}     60
+    Wait Until Element Is Enabled    ${Discovery_Assets}     60
+    Mouse Over    ${Discovery_Assets}
 
 Click on Searched Discovered asset
    Wait Until Element Is Not Visible    ${loaderIcon}      60
-   Wait Until Element Is Visible    css:.left-text     60
-   Wait Until Element Is Enabled    css:.left-text     60
-   Click element    css:.left-text
+   Wait Until Element Is Visible    ${Discovery_Assets}     60
+   Wait Until Element Is Enabled    ${Discovery_Assets}     60
+   Click element    ${Discovery_Assets}
 
 Click on tab under dicovery_asset_detail page
     [Arguments]     ${option}
@@ -218,36 +224,54 @@ Choose Tab under Asset Discovery
 
 Click on Plus icon under table
 #    Sleep    ${search_sleep}
-    Wait Until Element Is Not Visible    ${loaderIcon}      60
-    wait until element is visible    //h5[normalize-space()='Tag Name - chirag_infotech-1162-2']//parent::div//div//table//td        60
-    wait until element is enabled     //h5[normalize-space()='Tag Name - chirag_infotech-1162-2']//parent::div//div//table//td         60
-    Execute JavaScript  window.scrollBy(10000, 0)
-    Wait Until Element Is Visible     //h5[normalize-space()='Tag Name - chirag_infotech-1162-2']//parent::div//div//table//td//i         60
-    wait until element is enabled     //h5[normalize-space()='Tag Name - chirag_infotech-1162-2']//parent::div//div//table//td//i      60
-    Click Element   //h5[normalize-space()='Tag Name - chirag_infotech-1162-2']//parent::div//div//table//td//i
+#    Wait Until Element Is Not Visible    ${loaderIcon}      60
+#    wait until element is visible    (//tbody)[1]        60
+#    wait until element is enabled     (//tbody)[1]        60
+#    Execute JavaScript  window.scrollBy(10000, 0)
+    Wait Until Element Is Visible     ${plus_icon}         60
+    wait until element is enabled     ${plus_icon}      60
+    Click Element   ${plus_icon}
 
 Choose option from brand on Add technology Page
-    [Arguments]     ${option}
     Wait Until Element Is Not Visible    ${loaderIcon}      60
-    Wait Until Element Is Visible    css:#BrandName     60
-    Wait Until Element Is Enabled    css:#BrandName     60
-    Click Element    css:#BrandName
-    Generic.Select parameter    ${option}
-
-Choose option from product on Add technology Page
-    Wait Until Element Is Not Visible    ${loaderIcon}      60
-    Wait Until Element Is Visible    //div[contains(text(),'Select or Search Product')]     60
-    Wait Until Element Is Enabled    //div[contains(text(),'Select or Search Product')]     60
-    Click Element    //div[contains(text(),'Select or Search Product')]
+    Wait Until Element Is Visible    ${Add_technology_brand}      60
+    Wait Until Element Is Enabled    ${Add_technology_brand}      60
+    Click Element    ${Add_technology_brand}
+#    Clear Element Text    ${Add_technology_brand}
     wait until element is visible     //div[contains (@id, '-0')]       60
     wait until element is enabled     //div[contains (@id, '-0')]       60
     click element   //div[contains (@id, '-0')]
 
+Clear the text of Product field
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    Wait Until Element Is Visible    //div[contains(text(),'Select or Search Product')]//following-sibling::div//parent::div//following-sibling::span[@title='Clear all']       60
+    Wait Until Element Is Enabled    //div[contains(text(),'Select or Search Product')]//following-sibling::div//parent::div//following-sibling::span[@title='Clear all']       60
+    Click Element    //div[contains(text(),'Select or Search Product')]//following-sibling::div//parent::div//following-sibling::span[@title='Clear all']
+
+Choose option from product on Add technology Page
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    Wait Until Element Is Visible    ${Add_technology_product}      60
+    Wait Until Element Is Enabled    ${Add_technology_product}      60
+    Click Element    ${Add_technology_product}
+    wait until element is visible     //div[contains (@id, '-0')]       60
+    wait until element is enabled     //div[contains (@id, '-0')]       60
+    click element   //div[contains (@id, '-0')]
+    Sleep    ${yop_sleep}
+
+Enter The Asset_id in Add Technology Page
+    wait until element is not visible       ${loaderIcon}        60
+    wait until element is visible       //input[@formcontrolname="AssetId"]        60
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_AssetID}=    Catenate    AssetID_${random_string}
+    input text   //input[@formcontrolname="AssetId"]       ${generated_AssetID}
+    log to console      ${generated_AssetID}
+    Set Global Variable   ${generated_AssetID}
+
 Get MAC_Address by hovering over discovered assets
     [Arguments]     ${text}
     Wait Until Element Is Not Visible    ${loaderIcon}      60
-    Wait Until Element Is Visible   css:.left-text      60
-    Wait Until Element Is Enabled   css:.left-text      60
+    Wait Until Element Is Visible   ${Discovery_Assets}      60
+    Wait Until Element Is Enabled   ${Discovery_Assets}      60
     sleep       ${search_sleep}
     ${hover_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
     ${parts}    Split String    ${hover_text}    ${text}
@@ -258,8 +282,8 @@ Get MAC_Address by hovering over discovered assets
 Get Serial number by hovering over discovered assets
     [Arguments]     ${text}
     Wait Until Element Is Not Visible    ${loaderIcon}      60
-    Wait Until Element Is Visible   css:.left-text      60
-    Wait Until Element Is Enabled   css:.left-text      60
+    Wait Until Element Is Visible   ${Discovery_Assets}      60
+    Wait Until Element Is Enabled   ${Discovery_Assets}      60
     sleep       ${search_sleep}
     ${hover_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
     ${parts}    Split String    ${hover_text}    ${text}
@@ -270,8 +294,8 @@ Get Serial number by hovering over discovered assets
 Get Host name by hovering over discovered assets
     [Arguments]     ${text}
     Wait Until Element Is Not Visible    ${loaderIcon}      60
-    Wait Until Element Is Visible   css:.left-text      60
-    Wait Until Element Is Enabled   css:.left-text      60
+    Wait Until Element Is Visible   ${Discovery_Assets}      60
+    Wait Until Element Is Enabled   ${Discovery_Assets}      60
     sleep       ${search_sleep}
     ${hover_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
     ${parts}    Split String    ${hover_text}    ${text}
@@ -368,3 +392,67 @@ click on the right text asset result of existing asset
     wait until element is visible  css:.right-text     60
     wait until element is enabled  css:.right-text     60
     click element   css:.right-text
+    
+Click on save button of Add Technology Page
+    wait until element is visible  //button[@class='btn button-green']    60
+    wait until element is enabled  //button[@class='btn button-green']     60
+    click element   //button[@class='btn button-green']
+    Wait Until Element Is Visible    ${loaderIcon}      60
+
+Verify Page should contain Element
+    [Arguments]     ${element}
+    Wait Until Element Is Not Visible    ${loaderIcon}  60
+    Page Should Contain Element    css:#${element}
+
+Click on Discovery_info tab on Technology details Page
+    Wait Until Element Is Not Visible    ${loaderIcon}  60
+    Wait Until Element Is Visible    css:#discovery-info-tab        60
+    Wait Until Element Is Enabled    css:#discovery-info-tab    60
+    Click Element    css:#discovery-info-tab
+
+Verify Discovery_info contains following tab
+    [Arguments]     ${tab}
+    Wait Until Element Is Not Visible    ${loaderIcon}    60
+    Wait Until Element Is Visible    css:#${tab}      60
+    Wait Until Element Is Enabled   css:#${tab}        60
+    Click Element    css:#${tab}
+
+Wait for the invisiblity of alert msg
+    [Arguments]    ${option}
+    wait until element is visible    ${alert_Msg}        60
+    ${get_alertMsg} =    get text    ${alert_Msg}
+    log to console     ${get_alertMsg}
+    should be equal    ${get_alertMsg}     ${option}
+    
+Mark check-box of Agent/Discovered Asset
+    Wait Until Element Is Not Visible    ${loaderIcon}  60
+    Wait Until Element Is Visible    (//div[contains(@class,'left-text')]//following-sibling::div//span)[1]        60
+    Wait Until Element Is Enabled    (//div[contains(@class,'left-text')]//following-sibling::div//span)[1]      60
+    Click Element    (//div[contains(@class,'left-text')]//following-sibling::div//span)[1]
+
+Click on three-dots inside table of add assets
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    Wait Until Element Is Visible    css:.table .three-dots        60
+    Wait Until Element Is Enabled    css:.table .three-dots        60
+    Click Element    css:.table .three-dots
+
+Select option inside three-dots
+    [Arguments]     ${options}
+    Generic.click on the button link    ${options}
+
+Hover Over Add component button and verify text 
+    [Arguments]     ${option}
+    Wait Until Element Is Visible    //div[@id='software']//button[normalize-space()='Add as a Component']      60
+    Wait Until Element Is Enabled    //div[@id='software']//button[normalize-space()='Add as a Component']      60
+    Mouse Over    //div[@id='software']//button[normalize-space()='Add as a Component']
+    ${text}=    Get Element attribute       //div[@id='software']//button[normalize-space()='Add as a Component']        title
+    Should Be Equal    ${text}   ${option}
+    
+Click on plus icon of any component
+    Wait Until Element Is Visible    (//i[contains(@class,'fa-plus-circle')])[1]       60
+    Wait Until Element Is Enabled    (//i[contains(@class,'fa-plus-circle')])[1]       60
+    Click Element    (//i[contains(@class,'fa-plus-circle')])[1]
+
+Verify Software tab Should contain Element
+    Wait Until Element Is Visible       css:.fa-check-circle        60
+    Page Should Contain Element         css:.fa-check-circle
