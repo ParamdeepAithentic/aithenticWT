@@ -38,7 +38,7 @@ Resource        ../Pages/UnselectAssetAPI.robot
 #${base_URL}        https://uat-api.aithentic.com
 #${API_URL}          https://qa-api.aithentic.com/api/v1
 #${HEADERS}          Content-Type=application/json
-${Email_ID}          chirag@dmts.fr.nf
+${Email_ID}          johns@mai.25u.com
 
 
 *** Keywords ***

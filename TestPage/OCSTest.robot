@@ -432,12 +432,12 @@ Download Agent from asset discovery - macOS
 
 Search Discovered Assets
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       chirag@dmts.fr.nf         Test@001
+    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
     OCS.Choose tab under Discovery Assets   agent-discovery
-    OCS.Get value of Tag_name from Agent discovery      chirag_infotech-
+    OCS.Get value of Tag_name from Agent discovery      johnsoftwaresolutions-
     OCS.Choose tab under Discovery Assets   network-discovery
     OCS.Click on search icon of discovery assets
     OCS.Enter text to search discovery asset    ${asset_details}
@@ -447,7 +447,7 @@ Search Discovered Assets
     OCS.Get Serial number by hovering over discovered assets     Serial Number:
     OCS.Get Host name by hovering over discovered assets     Host name:
     OCS.Click on Searched Discovered asset
-    Sleep    ${yop_sleep
+    Sleep    ${yop_sleep}
     Switch Window       aithentic | Discovery Asset Detail
     Generic.Verify your current page contains this text    Asset Infomation
     OCS.Click on tab under dicovery_asset_detail page    Hardware
@@ -457,20 +457,7 @@ Search Discovered Assets
 
 Search Existing Assets
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       chirag@dmts.fr.nf         Test@001
-    Generic.Click on the profile name
-    Generic.Select option from profile list     subscription-dropdown
-    Generic.Verify your current page location contains      subscription
-    SubscriptionPage.Select if you want to change plan or asset    Change Plan
-    TechnologyPage.Click on current plan of subscription
-    Generic.Scroll the page till    200
-    SubscriptionPage.Set asset range to     200
-    SubscriptionPage.Update the payment of changed plan     proceed
-    TechnologyPage.Click on pop up of available Inactive Asset   cancel
-    SubscriptionPage.Select the payment method    ach
-    SubscriptionPage.Select the account for payment
-    SubscriptionPage.Proceed the payment     proceed
-    Generic.Fetch alert message text and compare it with      Payment Successful
+    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -491,41 +478,10 @@ Search Existing Assets
     OCS.Click on search icon of Existing assets
     OCS.Enter text to search existing asset    ${generated_AssetID}
     OCS.Verify searched existing asset    ${generated_AssetID}
-    Generic.Click on the profile name
-    Generic.Select option from profile list     subscription-dropdown
-    Generic.Verify your current page location contains      subscription
-    SubscriptionPage.Select if you want to change plan or asset    Change Plan
-    TechnologyPage.Click on current plan of subscription
-    Generic.Scroll the page till    200
-    SubscriptionPage.Set asset range to     100
-    SubscriptionPage.Update the payment of changed plan     proceed
-    Sleep   ${yop_sleep}
-    TechnologyPage.Click on asset limit exceeded pop up
-    Generic.Verify your current page location contains      technology-list
-    TechnologyPage.Search by AssetId       ${generated_AssetID}
-    TechnologyPage.Select and restore asset
-    TechnologyPage.Click on proceed button of technology list page
-    SubscriptionPage.Select the payment method    ach
-    SubscriptionPage.Select the account for payment
-    SubscriptionPage.Proceed the payment     proceed
-    Generic.Fetch alert message text and compare it with      Payment Successful
 
 Match Discovery and Existing Asset  
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       chirag@dmts.fr.nf         Test@001
-    Generic.Click on the profile name
-    Generic.Select option from profile list     subscription-dropdown
-    Generic.Verify your current page location contains      subscription
-    SubscriptionPage.Select if you want to change plan or asset    Change Plan
-    TechnologyPage.Click on current plan of subscription
-    Generic.Scroll the page till    200
-    SubscriptionPage.Set asset range to     200
-    SubscriptionPage.Update the payment of changed plan     proceed
-    TechnologyPage.Click on pop up of available Inactive Asset   cancel
-    SubscriptionPage.Select the payment method    ach
-    SubscriptionPage.Select the account for payment
-    SubscriptionPage.Proceed the payment     proceed
-    Generic.Fetch alert message text and compare it with      Payment Successful
+    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -572,53 +528,31 @@ Match Discovery and Existing Asset
     TechnologyPage.Click on update button of edit_technology page       Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     UnselectAssetAPI.Hit API Endpoint
-    Generic.Click on the profile name
-    Generic.Select option from profile list     view-discovery
-    Generic.Verify your current page location contains    ocs
-    OCS.Verify that line does not appears between selected assets
-    Generic.Click on the profile name
-    Generic.Select option from profile list     subscription-dropdown
-    Generic.Verify your current page location contains      subscription
-    SubscriptionPage.Select if you want to change plan or asset    Change Plan
-    TechnologyPage.Click on current plan of subscription
-    Generic.Scroll the page till    200
-    SubscriptionPage.Set asset range to     100
-    SubscriptionPage.Update the payment of changed plan     proceed
-    Sleep   ${yop_sleep}
-    TechnologyPage.Click on asset limit exceeded pop up
-    Generic.Verify your current page location contains      technology-list
-    TechnologyPage.Search by AssetId       ${generated_AssetID}
-    TechnologyPage.Select and restore asset
-    TechnologyPage.Click on proceed button of technology list page
-    SubscriptionPage.Select the payment method    ach
-    SubscriptionPage.Select the account for payment
-    SubscriptionPage.Proceed the payment     proceed
-    Generic.Fetch alert message text and compare it with      Payment Successful
 
 Apply filters and clear filter on Discovered Asset
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      chirag@dmts.fr.nf      Test@001
+    LandingPage.Fill the login Form      johns@mai.25u.com      Test@123
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     OCS.Choose tab under Discovery Assets   network-discovery
     OCS.click on filter icon of discovered assets
     OCS.Choose filters for discovered asset     Select Brand
-    OCS.Get text of selected brand, mac address and agent of discovered assets  1
-    OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   1
+    OCS.Get text of selected brand, mac address and agent of discovered assets  0
+    OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   0
     Generic.click on the button     Apply
     OCS.Hover over searched Discovered Asset
     OCS.Get text by hovering over assets    Brand:
     OCS.verify Text by hovering over assets  ${substring}       ${selected_brand}
     OCS.Choose filters for discovered asset     Select MAC Address
-    OCS.Get text of selected brand, mac address and agent of discovered assets  1
-    OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   1
+    OCS.Get text of selected brand, mac address and agent of discovered assets  0
+    OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   0
     Generic.click on the button     Apply
     OCS.Hover over searched Discovered Asset
     OCS.Get text by hovering over assets     MacAddress:
     OCS.verify Text by hovering over assets  ${substring}       ${selected_brand}
     OCS.Choose filters for discovered asset     Select Agent Tags
-    OCS.Get text of selected brand, mac address and agent of discovered assets  1
-    OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   1
+    OCS.Get text of selected brand, mac address and agent of discovered assets  0
+    OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   0
     Generic.click on the button     Apply
     OCS.Hover over searched Discovered Asset
     OCS.Get text by hovering over assets    Tag:
@@ -629,7 +563,7 @@ Apply filters and clear filter on Discovered Asset
 
 Apply filters and clear filter on Existing Assets
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      chirag@dmts.fr.nf      Test@001
+    LandingPage.Fill the login Form     johns@mai.25u.com     Test@123
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     OCS.Choose tab under Discovery Assets   network-discovery
@@ -681,7 +615,7 @@ Apply filters and clear filter on Existing Assets
 
 Add Discovery Asset
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       chirag@dmts.fr.nf         Test@001
+    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
@@ -695,7 +629,6 @@ Add Discovery Asset
     Switch Window       aithentic | Add Discovery Asset                         #Not updated on QA
     Generic.Verify your current page location contains    add-discovered-asset
     Generic.Verify your current page contains this text    Add Technology
-    OCS.Choose option from brand on Add technology Page
     OCS.Clear the text of Product field
     OCS.Choose option from product on Add technology Page
     OCS.Enter The Asset_id in Add Technology Page
@@ -727,7 +660,7 @@ Add Discovery Asset
 
 Create Asset from Add Assets Page
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       chirag@dmts.fr.nf         Test@001
+    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
@@ -753,7 +686,6 @@ Create Asset from Add Assets Page
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Add Discovery Asset
     Generic.Verify your current page contains this text    Add Technology
-    OCS.Choose option from brand on Add technology Page
     OCS.Clear the text of Product field
     OCS.Choose option from product on Add technology Page
     OCS.Enter The Asset_id in Add Technology Page
@@ -779,7 +711,7 @@ Create Asset from Add Assets Page
 
 Add component as an asset after Adding OCS asset
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       chirag@dmts.fr.nf         Test@001
+    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
@@ -799,7 +731,6 @@ Add component as an asset after Adding OCS asset
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Add Discovery Asset
     Generic.Verify your current page contains this text    Add Technology
-    OCS.Choose option from brand on Add technology Page
     OCS.Clear the text of Product field
     OCS.Choose option from product on Add technology Page
     OCS.Enter The Asset_id in Add Technology Page
@@ -807,10 +738,8 @@ Add component as an asset after Adding OCS asset
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
     Sleep    ${yop_sleep}
     switch window    aithentic | Asset - Discovery
-
     Generic.Verify your current page location contains    add-assets
     Generic.Verify your current page contains this text    ${generated_AssetID}
-#    OCS.Verify Discovery_info contains following tab    software-tab
     OCS.Click on three-dots inside table of add assets
     OCS.Select option inside three-dots    View Component
     Sleep    ${yop_sleep}
@@ -822,10 +751,9 @@ Add component as an asset after Adding OCS asset
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Add Discovery Asset
     Generic.Verify your current page contains this text    Add Technology
-    OCS.Choose option from brand on Add technology Page
     OCS.Clear the text of Product field
     OCS.Choose option from product on Add technology Page
-    OCS.Enter The Asset_id in Add Technology Page
+    OCS.Create Asset_id for software component
     OCS.Click on save button of Add Technology Page
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
     Sleep    ${yop_sleep}
@@ -839,6 +767,7 @@ Add component as an asset after Adding OCS asset
     TechnologyPage.Click on edit button on product details page        Edit
     Generic.Verify your current page location contains      edit-technology
     OCS.Edit the MAC_Address of Asset
+    OCS.Edit the Serial_No. of Asset
     OCS.Edit The Host_Name of Asset
     TechnologyPage.Click on update button of edit_technology page       Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully

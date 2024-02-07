@@ -309,8 +309,8 @@ Get value of Tag_name from Agent discovery
     Wait Until Element Is Visible    (//tbody//span)[1]         60
     Wait Until Element Is enabled    (//tbody//span)[1]         60
     ${text}=      Get Text    (//tbody//span)[1]
-    ${parts}    Split String    ${text}    ${option}
-    ${asset_details}    Get Substring    ${parts[1]}    0
+    ${tag_parts}    Split String    ${text}    ${option}
+    ${asset_details}    Get Substring    ${tag_parts[1]}    0
     Log To Console    Tag_name:${asset_details}
     Set global variable     ${asset_details}
 
@@ -456,3 +456,12 @@ Click on plus icon of any component
 Verify Software tab Should contain Element
     Wait Until Element Is Visible       css:.fa-check-circle        60
     Page Should Contain Element         css:.fa-check-circle
+
+Create Asset_id for software component
+    wait until element is visible       //input[@formcontrolname="AssetId"]        60
+    Wait Until Element Is Enabled      //input[@formcontrolname="AssetId"]        60
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${component_AssetID}=    Catenate    Component_Asset_${random_string}
+    input text   //input[@formcontrolname="AssetId"]       ${component_AssetID}
+    log to console      Componenet_Asset_id:${component_AssetID}
+    Set Global Variable   ${component_AssetID}
