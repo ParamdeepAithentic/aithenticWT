@@ -51,7 +51,7 @@ ${select_product}       //*[contains(text(), 'QASubscription')]
 ##############Technology Group Information for Hardware#################
 ${mac_addess}        css:#DYNA_14
 ${host_name}      css:#DYNA_24
-${serial_number}      css:#DYNA_21z
+${serial_number}      css:#DYNA_21
 
 
 ##############Technology Group Information for License#################
