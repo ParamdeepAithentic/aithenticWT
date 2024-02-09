@@ -479,7 +479,8 @@ Search Existing Assets
     OCS.Enter text to search existing asset    ${generated_AssetID}
     OCS.Verify searched existing asset    ${generated_AssetID}
 
-Match Discovery and Existing Asset  
+Match Discovery and Existing Asset
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.select the option from the side menu    Technology
@@ -531,7 +532,7 @@ Match Discovery and Existing Asset
 
 Apply filters and clear filter on Discovered Asset
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      johns@mai.25u.com      Test@123
+    LandingPage.Fill the login Form     johns@mai.25u.com         Test@123
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     OCS.Choose tab under Discovery Assets   network-discovery
@@ -562,6 +563,7 @@ Apply filters and clear filter on Discovered Asset
     OCS.Get text by hovering over assets     Brand:
 
 Apply filters and clear filter on Existing Assets
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     johns@mai.25u.com     Test@123
     Generic.Click on the profile name
@@ -604,7 +606,7 @@ Apply filters and clear filter on Existing Assets
     OCS.click on the right text asset result of existing asset
     sleep       ${yop_sleep}
     Switch Window   aithentic | Technology - Details
-    TechnologyPage.Click on Location tab of technology- list page
+    Generic.Verify your current page location contains    technology-details
     TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     LocationName
     OCS.verify Text by hovering over assets  ${assign_loc_input_value}       ${selected_brand}
     sleep       ${yop_sleep}
@@ -626,7 +628,7 @@ Add Discovery Asset
     OCS.Choose Tab under Asset Discovery    agent-discovery
     OCS.Click on Plus icon under table
     Sleep    ${Yop_Sleep}
-    Switch Window       aithentic | Add Discovery Asset                         #Not updated on QA
+    Switch Window       aithentic | Add Discovery Asset
     Generic.Verify your current page location contains    add-discovered-asset
     Generic.Verify your current page contains this text    Add Technology
     OCS.Clear the text of Product field
@@ -636,6 +638,7 @@ Add Discovery Asset
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Asset - Discovery
+    Generic.Refresh the existing page
     Generic.Verify your current page contains this text    ${generated_AssetID}
     Generic.select the option from the side menu        Technology
     Generic.Verify your current page location contains      technology-list
@@ -710,6 +713,7 @@ Create Asset from Add Assets Page
     UnselectAssetAPI.Hit API Endpoint
 
 Add component as an asset after Adding OCS asset
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.Click on the profile name
