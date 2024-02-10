@@ -296,7 +296,7 @@ Create new asset with new brand and product
 
 
 Restore asset type one
-    [Tags]      Sanity      failed
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
