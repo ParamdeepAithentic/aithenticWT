@@ -213,7 +213,6 @@ Verify team member Asset history
     Generic.Verify your current page contains this text     Asset History
 
 Search asset history with Asset ID
-    [Tags]      failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
     Generic.select the option from the side menu    Team Members
@@ -319,7 +318,7 @@ Search asset history with Asset ID
     TeamMemberPage.verify status of first name in member list   ${generated_AssetID}
 
 Verify user is able to export team member asset history list
-    [Tags]      Sanity      Smoke       failed
+    [Tags]      Sanity      Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
     Generic.select the option from the side menu    Team Members
@@ -446,7 +445,7 @@ Verify user is able to export team member asset history list
     TechnologyPage.Search by AssetId       ${generated_AssetID}
     TechnologyPage.Click on the first row of the technology table
     Generic.click on the button link    Edit
-    TechnologyPage.Add assignment information assign to   Milan     Johar
+    TechnologyPage.Add assignment information assign to   Milan       Johar
 #    sleep       ${search_sleep}
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology updated successfully

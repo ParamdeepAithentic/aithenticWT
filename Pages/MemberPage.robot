@@ -287,6 +287,7 @@ Search assigned user by first name
     click element      css:input[placeholder='Search by Assignee Name or Employee Id']
     input text   css:input[placeholder='Search by Assignee Name or Employee Id']   ${name}
     sleep      ${search_sleep}
+    wait until element is visible      //td[normalize-space()='1']
     wait until element is visible       css:thead tr       60
 
 Click on three dots of Team Member listing

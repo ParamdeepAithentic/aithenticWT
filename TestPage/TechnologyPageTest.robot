@@ -35,6 +35,8 @@ Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
 Resource        ../Pages/SortingPage.robot
 Resource        ../Pages/Bulk_Import_ExportPage.robot
+Resource        ../Pages/UnselectAssetAPI.robot
+
 
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
