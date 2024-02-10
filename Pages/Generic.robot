@@ -109,6 +109,7 @@ Calculate Running time
 click on the tab
     [Arguments]    ${option}
     wait until element is visible    //a[normalize-space()='${option}']     60
+    wait until element is enabled    //a[normalize-space()='${option}']     60
     click link          //a[normalize-space()='${option}']
 
 click on the button
@@ -132,6 +133,7 @@ open the browser with the url
     ${StartTime1} =     Get Current Time in Milliseconds
     open browser    ${url}      ${browser_name}     #executable_path=E:/Aithentic/TestPage/resources
     wait until element is visible    //a[normalize-space()='Login']     60
+    wait until element is enabled    //a[normalize-space()='Login']     60
     Maximize Browser Window
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
@@ -158,6 +160,7 @@ Close Browser session
 select the option from the side menu
     [Arguments]     ${option}
     wait until element is visible    //li[@title='${option}']      60
+    wait until element is enabled    //li[@title='${option}']      60
     click element       //li[@title='${option}']
 #    wait until location contains    ${verifyOption}     timeout=50s
 
@@ -204,6 +207,7 @@ Select parameter
 Click on the profile name
     wait until element is not visible      ${loaderIcon}        60
     wait until element is visible       ${profileName}       60
+    wait until element is enabled       ${profileName}       60
     click element       ${profileName}
 
 ###############################################################################################
@@ -211,13 +215,15 @@ Select other option from profile list
      [Arguments]     ${option}
     wait until element is not visible      ${loaderIcon}        60
     wait until element is visible    //a[normalize-space()='${option}']      60
+    wait until element is enabled    //a[normalize-space()='${option}']      60
     click element    //a[normalize-space()='${option}']
 
 Select option from profile list
      [Arguments]     ${option}
      wait until element is not visible      ${loaderIcon}       60
-    wait until element is visible    css:.qa-${option} li      60
-    click element    css:.qa-${option} li
+     wait until element is visible    css:.qa-${option} li      60
+     wait until element is enabled    css:.qa-${option} li      60
+     click element    css:.qa-${option} li
 
 ###############################################################################################
 
@@ -273,6 +279,7 @@ Enter phone number
     [Arguments]    ${country}   ${code}     ${phoneNo}
     click element   ${click_countryTag}
     wait until element is visible   ${contact_Country_search}       60
+    wait until element is enabled   ${contact_Country_search}       60
     click element   ${contact_Country_search}
     input text  ${contact_Country_search}   ${country}
     Generic.Select parameter      ${code}
