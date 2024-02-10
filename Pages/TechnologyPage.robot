@@ -739,6 +739,7 @@ Search by BrandName
      ${StartTime1} =     Get Current Time in Milliseconds
      input text   ${asset_SearchBar}   ${BrandName}
      sleep      ${search_sleep}
+     wait until element is visible      //td[normalize-space()='1']
      wait until element is visible       css:thead tr       60
      Fetch the Brand Name from the row   ${BrandName}
      should be equal    ${get_fetch_brandName}     ${BrandName}
@@ -755,6 +756,7 @@ Search by ProductName
      ${StartTime1} =     Get Current Time in Milliseconds
      input text   ${asset_SearchBar}   ${product}
      sleep      ${search_sleep}
+     wait until element is visible      //td[normalize-space()='1']
      wait until element is visible       css:thead tr       60
      Wait Until Element Contains    //td[normalize-space()='${product}']        ${product}     60
      ${get_productID} =    get text    ${fetch_productID}
@@ -773,6 +775,7 @@ Search by SerialNo
      ${StartTime1} =     Get Current Time in Milliseconds
      input text      ${asset_SearchBar}     ${AssetID}
      sleep      ${search_sleep}
+     wait until element is visible      //td[normalize-space()='1']
      wait until element is visible       css:thead tr       60
      Wait Until Element Contains    ${fetch_assetID}     ${AssetID}    60
      ${EndTime1} =     Get Current Time in Milliseconds
@@ -788,6 +791,7 @@ Search by assignee
      ${StartTime1} =     Get Current Time in Milliseconds
      input text   ${asset_SearchBar}   ${assignee}
      sleep      ${search_sleep}
+     wait until element is visible      //td[normalize-space()='1']
      wait until element is visible       css:thead tr       60
      Wait Until Element Contains    //td[normalize-space()='${assignee}']        ${assignee}     60
      ${get_assignee} =    get text    ${fetch_assignee}
