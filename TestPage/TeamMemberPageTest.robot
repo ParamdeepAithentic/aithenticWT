@@ -148,7 +148,7 @@ Verify team member Asset history
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
     Generic.Click on the profile name
     Generic.Select other option from profile list     Logout
-    Generic.Fetch alert message text and compare it with        Successfully logged out
+    Generic.Fetch log_out alert message
     Generic.Open new window     yopmail
     Generic.Search yopmail emails for   ${generated_TMbusinessEmail}
     sleep       ${search_sleep}
@@ -181,7 +181,7 @@ Verify team member Asset history
     Generic.Verify your current page location contains     asset-overview
     Generic.Click on the profile name
     Generic.Select other option from profile list     Logout
-    Generic.Fetch alert message text and compare it with        Successfully logged out
+    Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
     Generic.select the option from the side menu    Team Members
@@ -235,7 +235,7 @@ Search asset history with Asset ID
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
     Generic.Click on the profile name
     Generic.Select other option from profile list     Logout
-    Generic.Fetch alert message text and compare it with        Successfully logged out
+    Generic.Fetch log_out alert message
     Generic.Open new window     yopmail
     Generic.Search yopmail emails for   ${generated_TMbusinessEmail}
     sleep       ${search_sleep}
@@ -268,7 +268,7 @@ Search asset history with Asset ID
     Generic.Verify your current page location contains     asset-overview
     Generic.Click on the profile name
     Generic.Select other option from profile list     Logout
-    Generic.Fetch alert message text and compare it with        Successfully logged out
+    Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
     Generic.select the option from the side menu    Team Members
@@ -341,7 +341,7 @@ Verify user is able to export team member asset history list
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
     Generic.Click on the profile name
     Generic.Select other option from profile list     Logout
-    Generic.Fetch alert message text and compare it with        Successfully logged out
+    Generic.Fetch log_out alert message
     Generic.Open new window     yopmail
     Generic.Search yopmail emails for   ${generated_TMbusinessEmail}
     sleep       ${search_sleep}
@@ -376,7 +376,7 @@ Verify user is able to export team member asset history list
     Generic.Verify your current page location contains     asset-overview
     Generic.Click on the profile name
     Generic.Select other option from profile list     Logout
-    Generic.Fetch alert message text and compare it with        Successfully logged out
+    Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
     Generic.select the option from the side menu    Team Members

@@ -179,7 +179,7 @@ Export Assigned User Asset History list
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     MemberPage.Click on assigned user tab     Assigned Users
-    MemberPage.Search assigned user by first name   Assign_Param
+    MemberPage.Search assigned user by first name   Assign_Param Deep
     MemberPage.Click on three dots of Team Member listing
     MemberPage.Select option from three dots of Team Member     Asset History
     Generic.Verify your current page location contains      asset-history

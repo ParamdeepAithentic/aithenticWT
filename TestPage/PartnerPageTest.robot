@@ -46,7 +46,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Compose Message invite user test
-    [Tags]      Sanity      Smoke       failed
+    [Tags]      Sanity      Smoke       failed   tani
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      asset-overview
@@ -426,6 +426,7 @@ Compose Message invite user test
 
     Generic.Verify your current page location contains      addmembers
     MessagePage.Enter team member last name     phelps
+    Generic.Enter phone number      India   +91     9646289871
     MessagePage.Enter team member department ID     Customer Support
     MessagePage.Enter team member location      Main Office
     MessagePage.Save team member        save

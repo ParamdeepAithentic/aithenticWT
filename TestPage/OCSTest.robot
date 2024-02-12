@@ -42,7 +42,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Download agent for OCS from signup - Linux
-    [Tags]      Sanity      Smoke     failed
+    [Tags]      Sanity      Smoke     failed    tani
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
 #    LoginAPI.Fetch the refresh token from the login api
