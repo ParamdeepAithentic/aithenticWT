@@ -211,7 +211,7 @@ Compose Message invite user test
     Generic.Click on the profile name
     Generic.Select other option from profile list     Logout
     Generic.Verify your current page location contains      logout
-    Generic.Fetch alert message text and compare it with       Successfully logged out
+    Generic.Fetch log_out alert message
 
 #--------------------------------------YOP mail -----------------------------------------------------------
 
@@ -378,7 +378,7 @@ Compose Message invite user test
     Generic.Click on the profile name
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.Select other option from profile list     Logout
-    Generic.Fetch alert message text and compare it with       Successfully logged out
+    Generic.Fetch log_out alert message
     Generic.Verify your current page contains this text      Login
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
