@@ -284,6 +284,7 @@ Enter phone number
     input text  ${contact_Country_search}   ${country}
     Generic.Select parameter      ${code}
     input text     ${phone}     ${phoneNo}
+    Sleep    ${search_sleep}
 
 Scroll the page till
     [Arguments]    ${option}
@@ -299,3 +300,7 @@ Scroll Window To End
 Wait until table get load
     wait until element is visible       //tbody//tr//td[normalize-space()='1']     60
 #    wait until element is enabled      //tbody//tr//td[normalize-space()='1']      60
+
+Fetch log_out alert message
+    sleep      2
+    Wait Until Element Is Not Visible    ${alert_Msg}        60

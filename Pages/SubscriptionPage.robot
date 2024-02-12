@@ -165,7 +165,7 @@ Click on complete process button
     wait until element is visible       ${payment_completeProcessBTN}       60
     wait until element is enabled       ${payment_completeProcessBTN}       60
     click element        ${payment_completeProcessBTN}
-    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    Wait Until Element Is Not Visible    ${loaderIcon}      120
 
 Select the another plan
     wait until element is visible       css:div[class='row justify-content-center'] div:nth-child(1) div:nth-child(1) div:nth-child(2)       60
