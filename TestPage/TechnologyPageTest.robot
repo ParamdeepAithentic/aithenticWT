@@ -296,7 +296,7 @@ Create new asset with new brand and product
 
 
 Restore asset type one
-    [Tags]      Sanity      failed
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
@@ -1493,6 +1493,7 @@ Technology-Inactive asset and Restore asset
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     TechnologyPage.Click on current plan of subscription
     Generic.Scroll the page till    200
+    SubscriptionPage.Set asset range to     500
     SubscriptionPage.Set asset range to     200
     SubscriptionPage.Update the payment of changed plan     proceed
     TechnologyPage.Click on pop up of available Inactive Asset   cancel
@@ -1583,6 +1584,7 @@ Inactive asset - Restore asset from Technology Details page
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     TechnologyPage.Click on current plan of subscription
     Generic.Scroll the page till    200
+    SubscriptionPage.Set asset range to     500
     SubscriptionPage.Set asset range to     200
     SubscriptionPage.Update the payment of changed plan     proceed
     TechnologyPage.Click on pop up of available Inactive Asset   cancel

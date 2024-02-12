@@ -185,7 +185,7 @@ Invite user into Aithentic
     Generic.Fetch alert message text and compare it with        Invite sent successfully
     Generic.Click on the profile name
     Generic.Select other option from profile list     Logout
-    Generic.Fetch alert message text and compare it with        Successfully logged out
+    Generic.Fetch log_out alert message
     Generic.Open new window      yopmail
     Generic.Search yopmail emails for       ${generate_sharetoEmail}
     Generic.Refresh the existing page
@@ -606,7 +606,7 @@ Remove Brand and address via brand under profile list
     Generic.Fetch alert message text and compare it with      Brand deleted successfully
 
 Verify adding a new brand from profile listing
-    [Tags]      Sanity     failed
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name

@@ -85,7 +85,7 @@ Verify Reports Key Data records count
     ReportsPage.Verify that key_data is equals to total number of counts      Contracts
 
 Verify Reports Technology Types records count
-    [Tags]      Sanity      failed
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}       ${valid_password}
     Generic.select the option from the side menu    Dashboard
