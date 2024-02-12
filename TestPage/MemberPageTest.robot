@@ -173,7 +173,7 @@ Search asset history with Asset ID of Assigned User
     MemberPage.verify status of first name in member list of assigned user   ${generated_AssetID}
 
 Export Assigned User Asset History list
-   [Tags]   smoke       failed
+   [Tags]   smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Team Members

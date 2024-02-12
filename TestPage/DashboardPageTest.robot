@@ -172,7 +172,6 @@ Add Brand via personal detail under technology
 
 
 Invite user into Aithentic
-    [Tags]    failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Dashboard
