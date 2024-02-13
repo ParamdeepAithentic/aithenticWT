@@ -631,5 +631,37 @@ Convert Assignee to Team Member
     TeamMemberPage.Click on search by brand, product and asset id of asset history via team member      ${generated_AssetID}
     Generic.Wait until table get load
 
+Check the validation of business email id
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    MemberPage.Click on assigned user tab     Assigned Users
+    MemberPage.Click on action button of assigned users
+    MemberPage.Select option from action button of assigned user    Add Assignee
+    MemberPage.Enter first name of assigned users
+    MemberPage.Enter last name of assigned users
+    MemberPage.Enter business email of assigned users
+    TechnologyPage.Create unique assign to employee_ID random
+    MemberPage.Click on save button of assigned user
+    Generic.Fetch alert message text and compare it with        Assigned Users created successfully
+    MemberPage.Click on three dots of Team Member listing
+    MemberPage.Select option from three dots of Team Member     Convert to TM
+    TeamMemberPage.Click on convert to team member confirm pop up
+    Sleep   ${yop_sleep}
+    switch window   aithentic | Update - Member
+    Generic.Verify your current page location contains      convertmember
+    TeamMemberPage.Select team member department        DepartmentName09041
+    TeamMemberPage.Enter the Position in member form while converting assignee to team member        QA
+    Select team member status while converting assignee to team member  Active
+    Generic.Enter phone number      India   +91     9646289871
+    TeamMemberPage.Click on team member location
+    TeamMemberPage.Select team member location
+    TeamMemberPage.Select team member role while converting assignee to team member    Admin
+    TeamMemberPage.Create random employee id
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Team Member created successfully
+
+
 
 
