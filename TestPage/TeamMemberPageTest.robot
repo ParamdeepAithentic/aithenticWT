@@ -532,3 +532,104 @@ Verify user is able to export team member asset history list
     TeamMemberPage.Click on search by brand, product and asset id of asset history via team member  Product_9110561777
     TeamMemberPage.Verify the first row of asset history under team member
     TeamMemberPage.verify status of first name in member list   ${generated_AssetID}
+
+Convert Assignee to Team Member
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    MemberPage.Click on assigned user tab     Assigned Users
+    MemberPage.Click on action button of assigned users
+    MemberPage.Select option from action button of assigned user    Add Assignee
+    MemberPage.Enter first name of assigned users
+    MemberPage.Enter last name of assigned users
+    MemberPage.Enter business email of assigned users
+    TechnologyPage.Create unique assign to employee_ID random
+    MemberPage.Click on save button of assigned user
+    Generic.Fetch alert message text and compare it with        Assigned Users created successfully
+    MemberPage.Search assigned user by first name   ${generated_AssigneduserFirstName}
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list    QABrand555
+    TechnologyPage.Click technology product input field
+    TechnologyPage.Select the first value of To dropdown of product
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Add assignment information assign to   ${generated_AssigneduserFirstName}       ${generated_TMLname}
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.click on the button link    Edit
+    MemberPage.Enter assign to field   Dc Dc
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+    Generic.Verify your current page contains this text             Technology
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    MemberPage.Click on assigned user tab   Assigned Users
+    MemberPage.Search assigned user by first name   ${generated_AssigneduserFirstName}
+    MemberPage.Click on three dots of Team Member listing
+    MemberPage.Select option from three dots of Team Member     Asset History
+    Generic.Verify your current page location contains      asset-history
+    MemberPage.Search assigned user by asset id     ${generated_AssetID}
+    TeamMemberPage.Click on back to member list of member list
+    MemberPage.Search assigned user by first name   ${generated_AssigneduserFirstName}
+    MemberPage.Click on three dots of Team Member listing
+    MemberPage.Select option from three dots of Team Member     Convert to TM
+    TeamMemberPage.Click on convert to team member confirm pop up
+    Sleep   ${yop_sleep}
+    switch window   aithentic | Update - Member
+    Generic.Verify your current page location contains      convertmember
+    TeamMemberPage.Select team member department        DepartmentName09041
+    TeamMemberPage.Enter team member business email_mailinator while converting assignee to team member
+    TeamMemberPage.Enter the Position in member form while converting assignee to team member        QA
+    Select team member status while converting assignee to team member  Active
+    Generic.Enter phone number      India   +91     9646289871
+    TeamMemberPage.Click on team member location
+    TeamMemberPage.Select team member location
+    TeamMemberPage.Select team member role while converting assignee to team member    Admin
+    TeamMemberPage.Create random employee id
+    TeamMemberpage.Click on asset history tab under team member
+    PartnersPage.Click on the export Button
+    PartnersPage.Download the selected extension file      .xlsx
+    PartnersPage.Confirm to export file
+    PartnersPage.Verify that the selected extension file is downloaded       .xlsx
+    PartnersPage.Remove the file from downloaded list
+    Generic.click on the button     Okay, Thanks!
+    PartnersPage.Click on the export Button
+    PartnersPage.Download the selected extension file      .ods
+    PartnersPage.Confirm to export file
+    PartnersPage.Verify that the selected extension file is downloaded       .ods
+    PartnersPage.Remove the file from downloaded list
+    Generic.click on the button     Okay, Thanks!
+    PartnersPage.Click on the export Button
+    PartnersPage.Download the selected extension file      .csv
+    PartnersPage.Confirm to export file
+    PartnersPage.Verify that the selected extension file is downloaded       .csv
+    PartnersPage.Remove the file from downloaded list
+    Generic.click on the button     Okay, Thanks!
+    PartnersPage.Click on the export Button
+    PartnersPage.Download the selected extension file      .tsv
+    PartnersPage.Confirm to export file
+    PartnersPage.Verify that the selected extension file is downloaded       .tsv
+    PartnersPage.Remove the file from downloaded list
+    Generic.click on the button     Okay, Thanks!
+    TeamMemberpage.Click on details tab under team member
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Team Member created successfully
+    Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Search Team Member by name   ${generated_AssigneduserFirstName}
+    TeamMemberPage.Click on three dots of Team Member listing
+    TeamMemberPage.Select option from three dots of Team Member     Asset History
+    Generic.Verify your current page contains this text     Asset History
+    TeamMemberPage.Click on search by brand, product and asset id of asset history via team member      ${generated_AssetID}
+    Generic.Wait until table get load
+
+
+
