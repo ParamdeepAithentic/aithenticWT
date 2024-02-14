@@ -594,7 +594,8 @@ Convert Assignee to Team Member
     TeamMemberPage.Click on team member location
     TeamMemberPage.Select team member location
     TeamMemberPage.Select team member role while converting assignee to team member    Admin
-    TeamMemberPage.Create random employee id
+    TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields    employeeId
+    TechnologyPage.verify Text from Assignment Information      ${assign_loc_input_value}       ${generate_employeeid}
     TeamMemberpage.Click on asset history tab under team member
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .xlsx
@@ -626,8 +627,12 @@ Convert Assignee to Team Member
     Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Search Team Member by name   ${generated_AssigneduserFirstName}
     TeamMemberPage.Click on three dots of Team Member listing
-    TeamMemberPage.Select option from three dots of Team Member     Asset History
-    Generic.Verify your current page contains this text     Asset History
+    TeamMemberPage.Select option from three dots of Team Member     Details
+    Generic.Verify your current page contains this text    Team Member Details
+    TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields    employeeId
+    TechnologyPage.verify Text from Assignment Information      ${assign_loc_input_value}       ${generate_employeeid}
+    TeamMemberPage.Click on asset history tab under team member
+    Generic.Verify your current page contains this text     Previously Assigned Assets
     TeamMemberPage.Click on search by brand, product and asset id of asset history via team member      ${generated_AssetID}
     Generic.Wait until table get load
 
@@ -658,9 +663,60 @@ Check the validation of business email id
     TeamMemberPage.Click on team member location
     TeamMemberPage.Select team member location
     TeamMemberPage.Select team member role while converting assignee to team member    Admin
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        The Email Address must end with one of the following: mailinator.com automationqa2023090514421014.com, milton1.com, sahilnulla.com.
+
+Convert Assignee to team member in case of employee id is not system generated
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the employee ID checkbox   no
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    MemberPage.Click on assigned user tab     Assigned Users
+    MemberPage.Click on action button of assigned users
+    MemberPage.Select option from action button of assigned user    Add Assignee
+    MemberPage.Enter first name of assigned users
+    MemberPage.Enter last name of assigned users
+    MemberPage.Enter business email of assigned users
+    MemberPage.Click on save button of assigned user
+    Generic.Fetch alert message text and compare it with        Assigned Users created successfully
+    MemberPage.Search assigned user by first name   ${generated_AssigneduserFirstName}
+    MemberPage.Click on three dots of Team Member listing
+    MemberPage.Select option from three dots of Team Member     Convert to TM
+    TeamMemberPage.Click on convert to team member confirm pop up
+    Sleep   ${yop_sleep}
+    switch window   aithentic | Update - Member
+    Generic.Verify your current page location contains      convertmember
+    TeamMemberPage.Select team member department        DepartmentName09041
+    TeamMemberPage.Enter team member business email_mailinator while converting assignee to team member
+    TeamMemberPage.Enter the Position in member form while converting assignee to team member        QA
+    Select team member status while converting assignee to team member  Active
+    Generic.Enter phone number      India   +91     9646289871
+    TeamMemberPage.Click on team member location
+    TeamMemberPage.Select team member location
+    TeamMemberPage.Select team member role while converting assignee to team member    Admin
     TeamMemberPage.Create random employee id
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with        Team Member created successfully
+    Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Search Team Member by name   ${generated_AssigneduserFirstName}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the employee ID checkbox   yes
+    Generic.Fetch alert message text and compare it with       Settings Updated
+
+
+
+
+
+
 
 
 
