@@ -304,3 +304,4 @@ Wait until table get load
 Fetch log_out alert message
     sleep      2
     Wait Until Element Is Not Visible    ${alert_Msg}        60
+

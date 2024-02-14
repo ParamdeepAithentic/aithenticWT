@@ -1309,3 +1309,23 @@ Select the check box option from asset wizard
     wait until element is visible   //b[normalize-space()='${option}']    60
     wait until element is enabled   //b[normalize-space()='${option}']    60
     click element   //b[normalize-space()='${option}']
+
+Choose filter from Technology Page
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    wait until element is visible   //b[normalize-space()='${option}']    60
+    wait until element is enabled   //b[normalize-space()='${option}']    60
+    click element   //b[normalize-space()='${option}']
+
+Select checkbox from Agent Filters
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    wait until element is visible   //label[normalize-space()='${option}']//span    60
+    wait until element is enabled   //label[normalize-space()='${option}']//span    60
+    click element   //label[normalize-space()='${option}']//span
+
+Verify that Agent column should contain text
+    [Arguments]     ${option}
+    wait until element is visible       css:thead tr       60
+    Wait Until Element Contains       css:.table-row    ${option}   60
+

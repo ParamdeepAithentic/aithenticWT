@@ -776,3 +776,14 @@ Add component as an asset after Adding OCS asset
     TechnologyPage.Click on update button of edit_technology page       Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     UnselectAssetAPI.Hit API Endpoint
+
+Network Discovery in case of no records
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       raghu@yopmail.com         Test@001
+    Generic.Click on the profile name
+    Generic.Select option from profile list     view-discovery
+    Generic.Verify your current page location contains    ocs
+    OCS.Fetch text from Agent/Discovered assets column and compare it with      No records
+    OCS.Fetch text from Existing assets column and compare it with     No records
+    OCS.Choose Tab under Asset Discovery    agent-discovery
+    OCS.Fetch text from Agent Discovery tab and compare it with    No record found

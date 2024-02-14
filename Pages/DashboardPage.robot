@@ -865,3 +865,19 @@ Get and verify the text and compare it with
     ${text}=        get text       //p[normalize-space()='${option}']
     log to console      ${text}
     should be equal     ${text}     ${option}
+
+
+Verify the text from recent notifications and compare with
+    [Arguments]     ${option}
+    Wait Until Page Contains     Billing Details            60
+    Wait Until Element Is Visible    (//tbody//td)[1]       60
+    Wait Until Element Is Enabled    (//tbody//td)[1]       60
+    ${alert_text}=   get text        (//tbody//td)[1]
+    Log To Console    ${alert_text}
+    Set Global Variable    ${alert_text}
+    Should Be Equal    ${alert_text}    ${option}
+
+Wait until alert is visible for deleted asset_id
+    [Arguments]     ${option}
+    wait until page contains        //td[contains(text(),'You deleted Asset ID ${generated_AssetID}.')]     60
+
