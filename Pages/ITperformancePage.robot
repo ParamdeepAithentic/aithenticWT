@@ -115,5 +115,43 @@ Click on download all button
     click element   ${download_allFiles}
     sleep       3
 
+Click on tabs under it perfomance
+    [Arguments]     ${option}
+    wait until element is not visible   ${loaderIcon}       60
+    wait until element is visible   css:.qa-${option}-tab      60
+    wait until element is enabled   css:.qa-${option}-tab      60
+    click element   css:.qa-${option}-tab
+    sleep   2
+
+Click on data quality button link under it perfomance
+    wait until element is visible   css:.qa-data-quality-1 h4   60
+    wait until element is enabled   css:.qa-data-quality-1 h4     60
+    sleep   3
+    click element   css:.qa-data-quality-1 h4
+
+click on fiscal year forecast
+    wait until element is visible   css:#totalitassetsspendfy-tab   60
+    wait until element is enabled   css:#totalitassetsspendfy-tab   60
+    click element   css:#totalitassetsspendfy-tab
+    wait until element is not visible   ${loaderIcon}       60
+
+click on values under data quality
+    [Arguments]     ${option}
+    wait until element is visible   //div[@id="${option}"]//tbody//td[2]     60
+    wait until element is enabled   //div[@id="${option}"]//tbody//td[2]     60
+    click element   //div[@id="${option}"]//tbody//td[2]
+
+Fetch the value under data quality
+    [Arguments]    ${option}
+    wait until element is visible       //div[@id="${option}"]//tbody//td[2]     60
+    wait until element is enabled        //div[@id="${option}"]//tbody//td[2]     60
+    ${get_fetch_value} =    get text    //div[@id="${option}"]//tbody//td[2]
+    set global variable    ${get_fetch_value}
+    log to console     ${get_fetch_value}
+
+Verify the value with the value we get
+
+
+
 
 

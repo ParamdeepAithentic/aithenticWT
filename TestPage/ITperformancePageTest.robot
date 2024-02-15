@@ -78,3 +78,23 @@ Download all sheets with download all button
     Generic.Verify your current page location contains      it-performance
     ITperformancePage.Click on download all button
 
+IT perfomance drill down data quality
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form    ${email}     ${valid_password}
+    DashboardPage.select the option from the dashboard drawer     IT Performances
+    Generic.Verify your current page location contains      it-performance
+    ITperformancePage.Click on tabs under it perfomance      spend-forecast-reports
+    ITperformancePage.Click on data quality button link under it perfomance
+    ITperformancePage.Fetch the value under data quality   dataquality1
+    ITperformancePage.click on values under data quality    dataquality1
+    Generic.Verify your current page location contains      technology-it-performance
+    ReportsPage.Fetch the total count         Total Count :
+    TechnologyPage.verify Text from Assignment Information     ${get_fetch_value}          ${total_count}
+    ContractsPage.Click on back to contract link
+    ITperformancePage.Click on data quality button link under it perfomance
+    ITperformancePage.Fetch the value under data quality   dataquality1
+    ITperformancePage.click on values under data quality    dataquality1
+    Generic.Verify your current page location contains      technology-it-performance
+    ReportsPage.Fetch the total count         Total Count :
+    TechnologyPage.verify Text from Assignment Information     ${get_fetch_value}          ${total_count}
+
