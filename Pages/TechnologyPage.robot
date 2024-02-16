@@ -1328,4 +1328,3 @@ Verify that Agent column should contain text
     [Arguments]     ${option}
     wait until element is visible       css:thead tr       60
     Wait Until Element Contains       css:.table-row    ${option}   60
-

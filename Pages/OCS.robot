@@ -507,5 +507,3 @@ Fetch text from Agent Discovery tab and compare it with
     Log To Console    ${fetch_agenttext}
     Set Global Variable    ${fetch_agenttext}
     Should be equal   ${fetch_agenttext}     ${option}
-    
-
