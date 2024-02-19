@@ -675,6 +675,7 @@ Create Asset from Add Assets Page
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Discovery Asset Detail
     Generic.Verify your current page location contains    discovery-asset-detail
+    close window
     switch window    aithentic | Asset - Discovery
     Generic.Verify your current page location contains    add-assets
     OCS.Click on three-dots inside table of add assets
@@ -682,6 +683,7 @@ Create Asset from Add Assets Page
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Discovery Asset Detail
     Generic.Verify your current page location contains    discovery-asset-detail
+    close window
     Switch Window       aithentic | Asset - Discovery
     Generic.Verify your current page location contains    add-assets
     OCS.Click on three-dots inside table of add assets

@@ -211,6 +211,7 @@ Click on Searched Discovered asset
    Wait Until Element Is Visible    ${Discovery_Assets}     60
    Wait Until Element Is Enabled    ${Discovery_Assets}     60
    Click element    ${Discovery_Assets}
+   Sleep    ${search sleep}
 
 Click on tab under dicovery_asset_detail page
     [Arguments]     ${option}
