@@ -78,3 +78,11 @@ Download all sheets with download all button
     Generic.Verify your current page location contains      it-performance
     ITperformancePage.Click on download all button
 
+It performnace drill down agging analytics
+     Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}     ${valid_password}
+    DashboardPage.select the option from the dashboard drawer     IT Performances
+    Generic.Verify your current page location contains      it-performance
+    ITperformancePage.Click on aging analytics tab
+    ITperformancePage.Click on tab under aging analytics     criticalagedassetsreport
+    ITperformancePage.Get and verify the count of aging analytics table

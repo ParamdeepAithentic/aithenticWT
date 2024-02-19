@@ -55,6 +55,7 @@ ${download_allFiles}     css:.download-all-btn a
 
 
 ${loaderIcon}     //div[@role='status']
+${aging_analytics_tablelocator}    (//h4[normalize-space()='Critical Aged Assets']//following::tr)[2]//td
 
 
 
@@ -114,6 +115,41 @@ Click on download all button
     wait until element is enabled  ${download_allFiles}       90
     click element   ${download_allFiles}
     sleep       3
+
+Skip Action
+    Log    Skipping action as the element value is 0
+
+Get and verify the count of aging analytics table
+    ${element_count}=    Get Element Count    ${aging_analytics_tablelocator}
+    log to console      ${element_count}
+    FOR    ${index}    IN RANGE    5    ${element_count + 1}
+        ${element}=    Get Text    (//h4[normalize-space()='Critical Aged Assets']//following::tr)[2]//td[${index}]
+        Log    Element ${index}: ${element}
+        ${element_as_number}=   Convert To Integer   ${element}
+        log  converted Test:${element_as_number}
+        Run Keyword If    ${element_as_number} == 0    Skip Action
+        ...    ELSE IF    ${element_as_number} > 0
+        ...   Run Keywords      Click Element    (//h4[normalize-space()='Critical Aged Assets']//following::tr)[2]//td[${index}]     AND       sleep   10s
+        ...   Run Keywords     AND    Click Element    css:span[class='back']  AND  Sleep    10s
+        ...    ELSE    Log    Custom action for element ${index} with value ${element}
+    END
+
+
+
+Click on aging analytics tab
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    wait until element is visible  ${AgingReport}       60
+    wait until element is enabled   ${AgingReport}       60
+    click element   ${AgingReport}
+
+Click on tab under aging analytics
+    [Arguments]     ${tab}
+    wait until element is visible   css:#${tab}-tab   60
+    wait until element is enabled   css:#${tab}-tab   60
+    sleep   2
+    click element   css:#${tab}-tab
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+
 
 
 
