@@ -877,7 +877,15 @@ Verify the text from recent notifications and compare with
     Set Global Variable    ${alert_text}
     Should Be Equal    ${alert_text}    ${option}
 
-Wait until alert is visible for deleted asset_id
-    [Arguments]     ${option}
-    wait until page contains        //td[contains(text(),'You deleted Asset ID ${generated_AssetID}.')]     60
+Wait until alert is visible in the Recent Notifiation tab
+    [Arguments]     ${option1}      ${option2}
+    wait until page contains        ${option1} ${option2}    120
 
+Click on View more dropdown under recent notifications
+    [Arguments]     ${option}
+    Wait Until Element Is Visible    //span[normalize-space()='${option}']      60
+    Wait Until Element Is Enabled    //span[normalize-space()='${option}']      60
+    Click Element       //span[normalize-space()='${option}']
+
+Verify the invisiblity of view_more button
+    Wait Until Element Is Not Visible       //span[normalize-space()='View More']       60

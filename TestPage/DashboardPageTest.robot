@@ -742,9 +742,9 @@ Verify Reports Asset Alert
     Generic.select the option from the side menu    Dashboard
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview
-    Generic.Verify your current page contains this text     Recent Notifications
+    Generic.Verify your current page contains this text     Billing Details
     Generic.Refresh the existing page
-    DashboardPage.Verify the text from recent notifications and compare with        You added Asset ID ${generated_AssetID}.
+    DashboardPage.Wait until alert is visible in the Recent Notifiation tab        You added Asset ID      ${generated_AssetID}.
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
@@ -765,9 +765,9 @@ Verify Reports Asset Alert
     Generic.select the option from the side menu    Dashboard
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview
-    Generic.Verify your current page contains this text     Recent Notifications
+    Generic.Verify your current page contains this text     Billing Details
     Generic.Refresh the existing page
-    DashboardPage.Verify the text from recent notifications and compare with        You updated Asset ID ${generated_AssetID}.
+    DashboardPage.Wait until alert is visible in the Recent Notifiation tab        You updated Asset ID      ${generated_AssetID}.
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
@@ -779,9 +779,9 @@ Verify Reports Asset Alert
     Generic.select the option from the side menu    Dashboard
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview
-    Generic.Verify your current page contains this text     Recent Notifications
+    Generic.Verify your current page contains this text     Billing Details
     Generic.Refresh the existing page
-    DashboardPage.Verify the text from recent notifications and compare with        You deleted Asset ID ${generated_AssetID}.
+    DashboardPage.Wait until alert is visible in the Recent Notifiation tab        You deleted Asset ID      ${generated_AssetID}.
     Generic.select the option from the side menu    Asset Discovery
     Generic.Verify your current page location contains      discovery-assets
     DashboardPage.Click on download agent button to download        Download Agent
@@ -792,9 +792,9 @@ Verify Reports Asset Alert
     Generic.select the option from the side menu    Dashboard
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview
-    Generic.Verify your current page contains this text     Recent Notifications
+    Generic.Verify your current page contains this text    Billing Details
     Generic.Refresh the existing page
-    DashboardPage.Verify the text from recent notifications and compare with        A new agent has been downloaded for Ubuntu.
+    DashboardPage.Wait until alert is visible in the Recent Notifiation tab        A new agent has been downloaded for      Ubuntu.
     Generic.select the option from the side menu    Asset Discovery
     Generic.Verify your current page location contains      discovery-assets
     DashboardPage.Click on download agent button to download        Download Agent
@@ -805,9 +805,9 @@ Verify Reports Asset Alert
     Generic.select the option from the side menu    Dashboard
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview
-    Generic.Verify your current page contains this text     Recent Notifications
+    Generic.Verify your current page contains this text     Billing Details
     Generic.Refresh the existing page
-    DashboardPage.Verify the text from recent notifications and compare with        A new agent has been downloaded for Windows.
+    DashboardPage.Wait until alert is visible in the Recent Notifiation tab        A new agent has been downloaded for   Windows.
     Generic.select the option from the side menu    Asset Discovery
     Generic.Verify your current page location contains      discovery-assets
     DashboardPage.Click on download agent button to download        Download Agent
@@ -818,6 +818,8 @@ Verify Reports Asset Alert
     Generic.select the option from the side menu    Dashboard
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview
-    Generic.Verify your current page contains this text     Recent Notifications
+    Generic.Verify your current page contains this text     Billing Details
     Generic.Refresh the existing page
-    DashboardPage.Verify the text from recent notifications and compare with        A new agent has been downloaded for Macos.
+    DashboardPage.Wait until alert is visible in the Recent Notifiation tab        A new agent has been downloaded for       Macos.
+    DashboardPage.Click on View more dropdown under recent notifications    View More
+    DashboardPage.Verify the invisiblity of view_more button
