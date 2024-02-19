@@ -131,6 +131,7 @@ Get and verify the count of aging analytics table
         ...    ELSE IF    ${element_as_number} > 0
         ...   Run Keywords      Click Element    (//h4[normalize-space()='Critical Aged Assets']//following::tr)[2]//td[${index}]     AND       sleep   10s
         ...   Run Keywords     AND    Click Element    css:span[class='back']  AND  Sleep    10s
+        ...   Run Keywords     AND    Click Element    css:#aging-analytics-tab  AND  Sleep    10s
         ...    ELSE    Log    Custom action for element ${index} with value ${element}
     END
 
