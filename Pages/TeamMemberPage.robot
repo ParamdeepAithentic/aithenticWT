@@ -225,3 +225,51 @@ Enter assign to field
 Verify the first row of asset history under team member
     wait until element is not visible   ${loaderIcon}    60
     wait until element is visible   css:.table-hover    60
+
+Click on convert to team member confirm pop up
+    wait until element is visible   css:.qa-convert-assignee-tm-confirm     60
+    wait until element is enabled   css:.qa-convert-assignee-tm-confirm     60
+    sleep   ${search_sleep}
+    click element   css:.qa-convert-assignee-tm-confirm
+
+Click on asset history tab under team member
+    wait until element is visible    css:.asset-history-qa   60
+    wait until element is enabled  css:.asset-history-qa   60
+    click element    css:.asset-history-qa
+
+Enter team member business email_mailinator while converting assignee to team member
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_TMbusinessemail}=    Catenate    TMBusinessEmail_${random_string}@mailinator.com
+    wait until element is visible       css:#businessEmail    60
+    input text   css:#businessEmail   ${generated_TMbusinessemail}
+    log to console      ${generated_TMbusinessemail}
+
+Enter the Position in member form while converting assignee to team member
+    [Arguments]    ${option}
+    wait until element is visible       css:#position       60
+    input text      css:#position       ${option}
+
+Select team member role while converting assignee to team member
+    [Arguments]    ${option}
+    Generic.Enter value into field  css:#userRole     ${option}
+    Generic.Select parameter        ${option}
+
+Click on details tab under team member
+    wait until element is visible   css:.member-details-qa      60
+    wait until element is enabled   css:.member-details-qa      60
+    click element   css:.member-details-qa
+
+Select team member status while converting assignee to team member
+    [Arguments]    ${option}
+    wait until element is visible       css:#status     60
+    click element   css:#status
+    input text   css:#status   ${option}
+    Generic.Select parameter     ${option}
+
+Create random employee id
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_memberEmpID}=    Catenate    ${random_string}
+    wait until element is visible       css:#employeeId    60
+    wait until element is enabled       css:#employeeId    60
+    input text   css:#employeeId   ${generated_memberEmpID}
+    set global variable    ${generated_memberEmpID}
