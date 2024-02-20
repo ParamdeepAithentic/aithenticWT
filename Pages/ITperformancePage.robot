@@ -113,4 +113,3 @@ Click on download all button
     wait until element is enabled  ${download_allFiles}       90
     click element   ${download_allFiles}
     sleep       3
-

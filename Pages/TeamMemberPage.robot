@@ -267,7 +267,7 @@ Select team member status while converting assignee to team member
     Generic.Select parameter     ${option}
 
 Create random employee id
-    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_memberEmpID}=    Catenate    ${random_string}
     wait until element is visible       css:#employeeId    60
     wait until element is enabled       css:#employeeId    60
