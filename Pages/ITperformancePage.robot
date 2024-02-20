@@ -112,4 +112,93 @@ Click on download all button
     wait until element is visible  ${download_allFiles}       90
     wait until element is enabled  ${download_allFiles}       90
     click element   ${download_allFiles}
-    sleep       3
+    sleep       ${search_sleep}
+
+Click on tabs under it perfomance
+    [Arguments]     ${option}
+    wait until element is not visible   ${loaderIcon}       60
+    wait until element is visible   css:.qa-${option}-tab      60
+    wait until element is enabled   css:.qa-${option}-tab      60
+    click element   css:.qa-${option}-tab
+    sleep   ${search_sleep}
+
+Click on data quality button link under it perfomance
+    [Arguments]     ${option}
+    wait until element is visible   css:.qa-data-quality-${option} h4   60
+    wait until element is enabled   css:.qa-data-quality-${option} h4     60
+    sleep   ${search_sleep}
+    click element   css:.qa-data-quality-${option} h4
+
+click on fiscal year forecast
+    wait until element is visible   css:#totalitassetsspendfy-tab   60
+    wait until element is enabled   css:#totalitassetsspendfy-tab   60
+    click element   css:#totalitassetsspendfy-tab
+    wait until element is not visible   ${loaderIcon}       60
+
+click on values under data quality
+    [Arguments]     ${option1}      ${option2}
+    wait until element is visible   //div[@id="${option1}"]//tbody//tr[${option2}]//td[2]     60
+    wait until element is enabled   //div[@id="${option1}"]//tbody//tr[${option2}]//td[2]     60
+    click element   //div[@id="${option1}"]//tbody//tr[${option2}]//td[2]
+
+Fetch the value under data quality
+    [Arguments]    ${option1}       ${option2}
+    wait until element is visible       //div[@id="${option1}"]//tbody//tr[${option2}]//td[2]     60
+    wait until element is enabled        //div[@id="${option1}"]//tbody//tr[${option2}]//td[2]     60
+    ${get_fetch_value} =    get text    //div[@id="${option1}"]//tbody//tr[${option2}]//td[2]
+    set global variable    ${get_fetch_value}
+    log to console     ${get_fetch_value}
+
+Click on refresh icon of technolofy it performance page
+    wait until element is visible   css:.reset-search-qa    60
+    wait until element is enabled   css:.reset-search-qa    60
+    click element   css:.reset-search-qa
+    wait until element is not visible   ${loaderIcon}       60
+    Generic.Wait until table get load
+
+Click on current and previous year tab under spend forecast
+    wait until element is not visible   ${loaderIcon}       60
+    wait until element is visible   css:#totalitassetsspendfyq-tab      60
+    wait until element is enabled   css:#totalitassetsspendfyq-tab      60
+    click element   css:#totalitassetsspendfyq-tab
+
+Click on five year forecast tab under spend forecast
+    wait until element is not visible   ${loaderIcon}       60
+    wait until element is visible   css:#technologyspendforecast-tab      60
+    wait until element is enabled   css:#technologyspendforecast-tab      60
+    click element   css:#technologyspendforecast-tab
+
+Click on data quality button link under investments by partner tab
+    [Arguments]     ${option}
+    wait until element is visible   css:.qa-data-quality-partner-${option} h4   60
+    wait until element is enabled   css:.qa-data-quality-partner-${option} h4     60
+    sleep   ${search_sleep}
+    click element   css:.qa-data-quality-partner-${option} h4
+
+click on values under data quality of investment by partner tab
+    [Arguments]     ${option1}      ${option2}
+    wait until element is visible   //div[@id="dataquality-partner-${option1}"]//tbody//tr[${option2}]//td[2]     60
+    wait until element is enabled   //div[@id="dataquality-partner-${option1}"]//tbody//tr[${option2}]//td[2]     60
+    click element   //div[@id="dataquality-partner-${option1}"]//tbody//tr[${option2}]//td[2]
+
+Fetch the value under data quality of investment by partner tab
+    [Arguments]    ${option1}       ${option2}
+    wait until element is visible      //div[@id="dataquality-partner-${option1}"]//tbody//tr[${option2}]//td[2]     60
+    wait until element is enabled        //div[@id="dataquality-partner-${option1}"]//tbody//tr[${option2}]//td[2]     60
+    ${get_fetch_valueinvestment} =    get text    //div[@id="dataquality-partner-${option1}"]//tbody//tr[${option2}]//td[2]
+    set global variable    ${get_fetch_valueinvestment}
+    log to console     ${get_fetch_valueinvestment}
+
+Click on tabs under investment by partner tab
+    [Arguments]     ${tab}
+    wait until element is visible   css:#${tab}-tab    60
+    wait until element is enabled   css:#${tab}-tab    60
+    click element   css:#${tab}-tab
+    wait until element is not visible    ${loaderIcon}       60
+
+Search by brand, asset id , product and assignee
+    [Arguments]    ${AssetID}
+    wait until element is visible       css:input[placeholder='Search by Brand, Product, Asset ID and Assignee']       60
+    Clear Element Text      css:input[placeholder='Search by Brand, Product, Asset ID and Assignee']
+    input text      css:input[placeholder='Search by Brand, Product, Asset ID and Assignee']     ${AssetID}
+    sleep       ${search_sleep}
