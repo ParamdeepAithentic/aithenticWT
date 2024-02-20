@@ -138,15 +138,15 @@ click on fiscal year forecast
 
 click on values under data quality
     [Arguments]     ${option1}      ${option2}
-    wait until element is visible   //div[@id="${option1}"]//tbody//tr${option2}//td[2]     60
-    wait until element is enabled   //div[@id="${option1}"]//tbody//tr${option2}//td[2]     60
-    click element   //div[@id="${option1}"]//tbody//tr${option2}//td[2]
+    wait until element is visible   //div[@id="${option1}"]//tbody//tr[${option2}]//td[2]     60
+    wait until element is enabled   //div[@id="${option1}"]//tbody//tr[${option2}]//td[2]     60
+    click element   //div[@id="${option1}"]//tbody//tr[${option2}]//td[2]
 
 Fetch the value under data quality
     [Arguments]    ${option1}       ${option2}
-    wait until element is visible       //div[@id="${option1}"]//tbody//tr${option2}//td[2]     60
-    wait until element is enabled        //div[@id="${option1}"]//tbody//tr${option2}//td[2]     60
-    ${get_fetch_value} =    get text    //div[@id="${option1}"]//tbody//tr${option2}//td[2]
+    wait until element is visible       //div[@id="${option1}"]//tbody//tr[${option2}]//td[2]     60
+    wait until element is enabled        //div[@id="${option1}"]//tbody//tr[${option2}]//td[2]     60
+    ${get_fetch_value} =    get text    //div[@id="${option1}"]//tbody//tr[${option2}]//td[2]
     set global variable    ${get_fetch_value}
     log to console     ${get_fetch_value}
 
@@ -178,15 +178,15 @@ Click on data quality button link under investments by partner tab
 
 click on values under data quality of investment by partner tab
     [Arguments]     ${option1}      ${option2}
-    wait until element is visible   //div[@id="dataquality-partner-${option1}"]//tbody//tr${option2}//td[2]     60
-    wait until element is enabled   //div[@id="dataquality-partner-${option1}"]//tbody//tr${option2}//td[2]     60
-    click element   //div[@id="dataquality-partner-${option1}"]//tbody//tr${option2}//td[2]
+    wait until element is visible   //div[@id="dataquality-partner-${option1}"]//tbody//tr[${option2}]//td[2]     60
+    wait until element is enabled   //div[@id="dataquality-partner-${option1}"]//tbody//tr[${option2}]//td[2]     60
+    click element   //div[@id="dataquality-partner-${option1}"]//tbody//tr[${option2}]//td[2]
 
 Fetch the value under data quality of investment by partner tab
     [Arguments]    ${option1}       ${option2}
-    wait until element is visible      //div[@id="dataquality-partner-${option1}"]//tbody//tr${option2}//td[2]     60
-    wait until element is enabled        //div[@id="dataquality-partner-${option1}"]//tbody//tr${option2}//td[2]     60
-    ${get_fetch_valueinvestment} =    get text    //div[@id="dataquality-partner-${option1}"]//tbody//tr${option2}//td[2]
+    wait until element is visible      //div[@id="dataquality-partner-${option1}"]//tbody//tr[${option2}]//td[2]     60
+    wait until element is enabled        //div[@id="dataquality-partner-${option1}"]//tbody//tr[${option2}]//td[2]     60
+    ${get_fetch_valueinvestment} =    get text    //div[@id="dataquality-partner-${option1}"]//tbody//tr[${option2}]//td[2]
     set global variable    ${get_fetch_valueinvestment}
     log to console     ${get_fetch_valueinvestment}
 
