@@ -55,7 +55,7 @@ ${download_allFiles}     css:.download-all-btn a
 
 
 ${loaderIcon}     //div[@role='status']
-${aging_analytics_tablelocator}    (//h4[normalize-space()='Critical Aged Assets']//following::tr)[2]//td
+${aging_analytics_tablelocator}    (//h4[normalize-space()='Critical Aged Assets']//following::tr)[3]//td
 
 
 
@@ -119,22 +119,27 @@ Click on download all button
 Skip Action
     Log    Skipping action as the element value is 0
 
+Empty Action
+    Log    Skipping empty action as the element value is null
+
 Get and verify the count of aging analytics table
+    [Arguments]     ${option}       ${tab}
     ${element_count}=    Get Element Count    ${aging_analytics_tablelocator}
-    log to console      ${element_count}
+    log      ${element_count}
     FOR    ${index}    IN RANGE    5    ${element_count + 1}
-        ${element}=    Get Text    (//h4[normalize-space()='Critical Aged Assets']//following::tr)[2]//td[${index}]
+        Wait Until Element Is Visible   (//h4[normalize-space()='${option}']//following::tr)[3]//td[${index}]       60
+        Wait Until Element Is Enabled   (//h4[normalize-space()='${option}']//following::tr)[3]//td[${index}]       60
+        ${element}=    Get Text    (//h4[normalize-space()='${option}']//following::tr)[3]//td[${index}]
         Log    Element ${index}: ${element}
         ${element_as_number}=   Convert To Integer   ${element}
         log  converted Test:${element_as_number}
         Run Keyword If    ${element_as_number} == 0    Skip Action
         ...    ELSE IF    ${element_as_number} > 0
-        ...   Run Keywords      Click Element    (//h4[normalize-space()='Critical Aged Assets']//following::tr)[2]//td[${index}]     AND       sleep   10s
-        ...   Run Keywords     AND    Click Element    css:span[class='back']  AND  Sleep    10s
-        ...   Run Keywords     AND    Click Element    css:#aging-analytics-tab  AND  Sleep    10s
+        ...   Run Keywords      Click Element    (//h4[normalize-space()='${option}']//following::tr)[3]//td[${index}]     AND       sleep   ${yop_sleep}
+        ...   Run Keywords     AND    Click Element    css:span[class='back']  AND  Sleep    ${yop_sleep}
+        ...   Run Keywords     AND    Click Element    css:#aging-analytics-tab  AND  Sleep    ${yop_sleep}     AND       Click Element   css:#${tab}-tab   AND  Sleep    ${yop_sleep}
         ...    ELSE    Log    Custom action for element ${index} with value ${element}
     END
-
 
 
 Click on aging analytics tab
@@ -150,7 +155,3 @@ Click on tab under aging analytics
     sleep   2
     click element   css:#${tab}-tab
     Wait Until Element Is Not Visible    ${loaderIcon}      60
-
-
-
-
