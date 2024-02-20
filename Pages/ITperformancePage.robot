@@ -203,11 +203,3 @@ Search by brand, asset id , product and assignee
     Clear Element Text      css:input[placeholder='Search by Brand, Product, Asset ID and Assignee']
     input text      css:input[placeholder='Search by Brand, Product, Asset ID and Assignee']     ${AssetID}
     sleep       ${search_sleep}
-
-
-
-
-
-
-
-
