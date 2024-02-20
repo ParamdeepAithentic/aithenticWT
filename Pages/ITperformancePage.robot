@@ -107,7 +107,6 @@ Verify all tabs of asset report and download sheet
     wait until element is visible  ${download_partnerInvestmentReport}       60
     click element   ${download_partnerInvestmentReport}
 
-
 Click on download all button
     Wait Until Element Is Not Visible    ${loaderIcon}      60
     wait until element is visible  ${download_allFiles}       90
