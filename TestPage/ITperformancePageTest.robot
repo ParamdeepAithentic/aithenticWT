@@ -260,7 +260,6 @@ IT perfomance drill down data quality
     ReportsPage.Fetch the total count         Total Count :
     TechnologyPage.verify Text from Assignment Information     ${get_fetch_value}          ${total_count}
 
-
 IT perfomance drill down data quality of Investments by partner tab
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
@@ -498,10 +497,3 @@ IT perfomance drill down data quality of Investments by partner tab
     Generic.Scroll Window To End
     ReportsPage.Fetch the total count         Total Count :
     TechnologyPage.verify Text from Assignment Information     ${get_fetch_valueinvestment}          ${total_count}
-
-
-
-
-
-
-

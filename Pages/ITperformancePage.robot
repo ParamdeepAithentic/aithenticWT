@@ -113,7 +113,7 @@ Click on download all button
     wait until element is visible  ${download_allFiles}       90
     wait until element is enabled  ${download_allFiles}       90
     click element   ${download_allFiles}
-    sleep       3
+    sleep       ${search_sleep}
 
 Click on tabs under it perfomance
     [Arguments]     ${option}
@@ -121,13 +121,13 @@ Click on tabs under it perfomance
     wait until element is visible   css:.qa-${option}-tab      60
     wait until element is enabled   css:.qa-${option}-tab      60
     click element   css:.qa-${option}-tab
-    sleep   2
+    sleep   ${search_sleep}
 
 Click on data quality button link under it perfomance
     [Arguments]     ${option}
     wait until element is visible   css:.qa-data-quality-${option} h4   60
     wait until element is enabled   css:.qa-data-quality-${option} h4     60
-    sleep   3
+    sleep   ${search_sleep}
     click element   css:.qa-data-quality-${option} h4
 
 click on fiscal year forecast
@@ -149,8 +149,6 @@ Fetch the value under data quality
     ${get_fetch_value} =    get text    //div[@id="${option1}"]//tbody//tr${option2}//td[2]
     set global variable    ${get_fetch_value}
     log to console     ${get_fetch_value}
-
-
 
 Click on refresh icon of technolofy it performance page
     wait until element is visible   css:.reset-search-qa    60
@@ -175,7 +173,7 @@ Click on data quality button link under investments by partner tab
     [Arguments]     ${option}
     wait until element is visible   css:.qa-data-quality-partner-${option} h4   60
     wait until element is enabled   css:.qa-data-quality-partner-${option} h4     60
-    sleep   3
+    sleep   ${search_sleep}
     click element   css:.qa-data-quality-partner-${option} h4
 
 click on values under data quality of investment by partner tab
