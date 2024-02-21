@@ -125,15 +125,15 @@ Get and verify the count of aging analytics table
     ${element_count}=    Get Element Count    ${aging_analytics_tablelocator}
     log      ${element_count}
     FOR    ${index}    IN RANGE    5    ${element_count + 1}
-        Wait Until Element Is Visible   (//h4[normalize-space()='${option}']//following::tr)[3]//td[${index}]       60
-        Wait Until Element Is Enabled   (//h4[normalize-space()='${option}']//following::tr)[3]//td[${index}]       60
-        ${element}=    Get Text    (//h4[normalize-space()='${option}']//following::tr)[3]//td[${index}]
+        Wait Until Element Is Visible   (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]       60
+        Wait Until Element Is Enabled   (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]       60
+        ${element}=    Get Text    (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]
         Log    Element ${index}: ${element}
         ${element_as_number}=   Convert To Integer   ${element}
         log  converted Test:${element_as_number}
         Run Keyword If    ${element_as_number} == 0    Skip Action
         ...    ELSE IF    ${element_as_number} > 0
-        ...   Run Keywords      Click Element    (//h4[normalize-space()='${option}']//following::tr)[3]//td[${index}]     AND       sleep   ${yop_sleep}
+        ...   Run Keywords      Click Element    (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]     AND       sleep   ${yop_sleep}
         ...   Run Keywords     AND    Click Element    css:span[class='back']  AND  Sleep    ${yop_sleep}
         ...   Run Keywords     AND    Click Element    css:#aging-analytics-tab  AND  Sleep    ${yop_sleep}     AND       Click Element   css:#${tab}-tab   AND  Sleep    ${yop_sleep}
         ...    ELSE    Log    Custom action for element ${index} with value ${element}
@@ -166,7 +166,7 @@ Click on tab under aging analytics
     [Arguments]     ${tab}
     wait until element is visible   css:#${tab}-tab   60
     wait until element is enabled   css:#${tab}-tab   60
-    sleep   2
+    sleep   ${search_sleep}
     click element   css:#${tab}-tab
     Wait Until Element Is Not Visible    ${loaderIcon}      60
 
