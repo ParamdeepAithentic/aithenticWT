@@ -1328,3 +1328,17 @@ Verify that Agent column should contain text
     [Arguments]     ${option}
     wait until element is visible       css:thead tr       60
     Wait Until Element Contains       css:.table-row    ${option}   60
+
+Enter the value inside the Technology Product field
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    wait until element is visible   //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input      60
+    wait until element is enabled   //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input     60
+    Input Text    //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input    ${option}
+
+Select the product from the table
+    [Arguments]     ${option}
+    Wait Until Element Is Visible    //td[normalize-space()='${option}']    60
+    Wait Until Element Is Visible    //td[normalize-space()='${option}']
+    Click Element       //td[normalize-space()='${option}']
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
