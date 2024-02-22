@@ -132,8 +132,7 @@ Get and verify the count of aging analytics table
         ${element}=    Get Text    (//h4[normalize-space()='${option}']//following::tr)[3]//td[${index}]
         Log    Element ${index}: ${element}
         Run Keyword If    '${element}' == '${EMPTY}'
-        ...     Run Keywords    Empty Action
-        ...     Continue For Loop
+        ...     Run Keywords    Empty Action   AND     Continue For Loop
         ${element}=    Remove Special Characters    ${element}
         Log     Element after removing special characters: ${element}
         ${element_as_number}=   Convert To Integer   ${element}
