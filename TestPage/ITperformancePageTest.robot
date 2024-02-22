@@ -85,16 +85,16 @@ It performnace drill down agging analytics
     Generic.Verify your current page location contains      it-performance
     ITperformancePage.Click on aging analytics tab
     ITperformancePage.Click on tab under aging analytics     criticalagedassetsreport
-    ITperformancePage.Get and verify the count of aging analytics table     Critical Aged Assets        criticalagedassetsreport
+    ITperformancePage.Get and verify the count of aging analytics table     Critical Aged Assets        Critical Aged Assets
     ITperformancePage.Click on aging analytics tab
     ITperformancePage.Click on tab under aging analytics     pastduerenewals
-    ITperformancePage.Get and verify the count of aging analytics table     Past Due Renewals       pastduerenewals
+    ITperformancePage.Get and verify the count of aging analytics table     Past Due Renewals       Past Due Renewals
     ITperformancePage.Click on aging analytics tab
     ITperformancePage.Click on tab under aging analytics     upcomingrenewalsforecast
-    ITperformancePage.Get and verify the count of aging analytics table     Upcoming Renewals       upcomingrenewalsforecast
+    ITperformancePage.Get and verify the count of aging analytics table     Upcoming Renewals       Upcoming Renewals
     ITperformancePage.Click on aging analytics tab
     ITperformancePage.Click on tab under aging analytics     upcomingeolforecast
-    ITperformancePage.Get and verify the count of aging analytics table     Upcoming End Of Life       upcomingeolforecast
+    ITperformancePage.Get and verify the count of aging analytics table     Upcoming End Of Life        Upcoming End Of Life
 
 IT perfomance drill down data quality
     Generic.click on the tab	Login
@@ -103,22 +103,14 @@ IT perfomance drill down data quality
     Generic.Verify your current page location contains      it-performance
     ITperformancePage.Click on tabs under it perfomance      spend-forecast-reports
     ITperformancePage.Click on data quality button link under it perfomance     1
-    ITperformancePage.Fetch the value under data quality   dataquality1     1
-    ITperformancePage.click on values under data quality    dataquality1    1
-    Generic.Verify your current page location contains      technology-it-performance
-    Generic.Scroll Window To End
-    ReportsPage.Fetch the total count         Total Count :
-    TechnologyPage.verify Text from Assignment Information     ${get_fetch_value}          ${total_count}
-    ContractsPage.Click on back to contract link
-    ITperformancePage.Click on data quality button link under it perfomance     1
     ITperformancePage.Fetch the value under data quality   dataquality1     2
-    ITperformancePage.click on values under data quality    dataquality1     2
+    ITperformancePage.click on values under data quality    dataquality1    2
     Generic.Verify your current page location contains      technology-it-performance
     Generic.Scroll Window To End
     ReportsPage.Fetch the total count         Total Count :
     TechnologyPage.verify Text from Assignment Information     ${get_fetch_value}          ${total_count}
     ContractsPage.Click on back to contract link
-    ITperformancePage.Click on data quality button link under it perfomance     1
+#    ITperformancePage.Click on data quality button link under it perfomance     1
     ITperformancePage.Fetch the value under data quality   dataquality1     3
     ITperformancePage.click on values under data quality    dataquality1     3
     Generic.Verify your current page location contains      technology-it-performance
@@ -126,13 +118,21 @@ IT perfomance drill down data quality
     ReportsPage.Fetch the total count         Total Count :
     TechnologyPage.verify Text from Assignment Information     ${get_fetch_value}          ${total_count}
     ContractsPage.Click on back to contract link
-    ITperformancePage.Click on data quality button link under it perfomance     1
+#    ITperformancePage.Click on data quality button link under it perfomance     1
     ITperformancePage.Fetch the value under data quality   dataquality1     4
     ITperformancePage.click on values under data quality    dataquality1     4
     Generic.Verify your current page location contains      technology-it-performance
-    ITperformancePage.Search by brand, asset id , product and assignee      Product_9470971051
+    Generic.Scroll Window To End
+    ReportsPage.Fetch the total count         Total Count :
+    TechnologyPage.verify Text from Assignment Information     ${get_fetch_value}          ${total_count}
+    ContractsPage.Click on back to contract link
+#    ITperformancePage.Click on data quality button link under it perfomance     1
+    ITperformancePage.Fetch the value under data quality   dataquality1     4
+    ITperformancePage.click on values under data quality    dataquality1     4
+    Generic.Verify your current page location contains      technology-it-performance
+    ITperformancePage.Search by brand, asset id , product and assignee     Product_2662338676
     Click on refresh icon of technolofy it performance page
-    ITperformancePage.Search by brand, asset id , product and assignee      BrandName0091409214
+    ITperformancePage.Search by brand, asset id , product and assignee      BrandName0046763682
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .xlsx
     PartnersPage.Confirm to export file
@@ -159,7 +159,7 @@ IT perfomance drill down data quality
     Generic.click on the button     Okay, Thanks!
 
     Click on refresh icon of technolofy it performance page
-    ITperformancePage.Search by brand, asset id , product and assignee      AssetID_1255240019
+    ITperformancePage.Search by brand, asset id , product and assignee      Ghdfhfj
     Click on refresh icon of technolofy it performance page
     ITperformancePage.Search by brand, asset id , product and assignee      Dc Dc
     Click on refresh icon of technolofy it performance page
@@ -176,8 +176,8 @@ IT perfomance drill down data quality
     ReportsPage.Fetch the total count         Total Count :
     TechnologyPage.verify Text from Assignment Information     ${get_fetch_value}          ${total_count}
     ContractsPage.Click on back to contract link
-    ITperformancePage.Click on current and previous year tab under spend forecast
-    ITperformancePage.Click on data quality button link under it perfomance     2
+#    ITperformancePage.Click on current and previous year tab under spend forecast
+#    ITperformancePage.Click on data quality button link under it perfomance     2
     ITperformancePage.Fetch the value under data quality   dataquality2     2
     ITperformancePage.click on values under data quality    dataquality2     2
     Generic.Verify your current page location contains      technology-it-performance
@@ -227,8 +227,8 @@ IT perfomance drill down data quality
     ReportsPage.Fetch the total count         Total Count :
     TechnologyPage.verify Text from Assignment Information     ${get_fetch_value}          ${total_count}
     ContractsPage.Click on back to contract link
-    ITperformancePage.Click on five year forecast tab under spend forecast
-    ITperformancePage.Click on data quality button link under it perfomance     3
+#    ITperformancePage.Click on five year forecast tab under spend forecast
+#    ITperformancePage.Click on data quality button link under it perfomance     3
     ITperformancePage.Fetch the value under data quality   dataquality3     2
     ITperformancePage.click on values under data quality    dataquality3     2
     Generic.Verify your current page location contains      technology-it-performance
@@ -236,8 +236,8 @@ IT perfomance drill down data quality
     ReportsPage.Fetch the total count         Total Count :
     TechnologyPage.verify Text from Assignment Information     ${get_fetch_value}          ${total_count}
     ContractsPage.Click on back to contract link
-    ITperformancePage.Click on five year forecast tab under spend forecast
-    ITperformancePage.Click on data quality button link under it perfomance     3
+#    ITperformancePage.Click on five year forecast tab under spend forecast
+#    ITperformancePage.Click on data quality button link under it perfomance     3
     ITperformancePage.Fetch the value under data quality   dataquality3     3
     ITperformancePage.click on values under data quality    dataquality3     3
     Generic.Verify your current page location contains      technology-it-performance

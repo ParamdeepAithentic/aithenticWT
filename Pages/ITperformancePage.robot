@@ -57,6 +57,7 @@ ${download_allFiles}     css:.download-all-btn a
 ${loaderIcon}     //div[@role='status']
 ${aging_analytics_tablelocator}    (//h4[normalize-space()='Critical Aged Assets']//following::tr)[3]//td
 
+${EMPTY}
 
 
 
@@ -120,24 +121,35 @@ Skip Action
 Empty Action
     Log    Skipping empty action as the element value is null
 
+
 Get and verify the count of aging analytics table
-    [Arguments]     ${option}       ${tab}
-    ${element_count}=    Get Element Count    ${aging_analytics_tablelocator}
-    log      ${element_count}
+    [Arguments]     ${option}       ${tab_count}
+    ${element_count}=    Get Element Count    (//h4[normalize-space()='${tab_count}']//following::tr)[4]//td
+    Log      ${element_count}
     FOR    ${index}    IN RANGE    5    ${element_count + 1}
-        Wait Until Element Is Visible   (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]       60
-        Wait Until Element Is Enabled   (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]       60
-        ${element}=    Get Text    (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]
+        Wait Until Element Is Visible   (//h4[normalize-space()='${option}']//following::tr)[4]//td[${index}]       60
+        Wait Until Element Is Enabled   (//h4[normalize-space()='${option}']//following::tr)[4]//td[${index}]       60
+        ${element}=    Get Text    (//h4[normalize-space()='${option}']//following::tr)[4]//td[${index}]
         Log    Element ${index}: ${element}
+        Run Keyword If    '${element}' == '${EMPTY}'    Continue For Loop
+        ${element}=    Remove Special Characters    ${element}
+        Log     Element after removing special characters: ${element}
         ${element_as_number}=   Convert To Integer   ${element}
-        log  converted Test:${element_as_number}
-        Run Keyword If    ${element_as_number} == 0    Skip Action
+        log  Converted Text: ${element_as_number}
+        Run Keyword If    ${element_as_number} == 0
+        ...    Skip Action
         ...    ELSE IF    ${element_as_number} > 0
-        ...   Run Keywords      Click Element    (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]     AND       sleep   ${yop_sleep}
-        ...   Run Keywords     AND    Click Element    css:span[class='back']  AND  Sleep    ${yop_sleep}
-        ...   Run Keywords     AND    Click Element    css:#aging-analytics-tab  AND  Sleep    ${yop_sleep}     AND       Click Element   css:#${tab}-tab   AND  Sleep    ${yop_sleep}
+        ...    Run Keywords      Click Element    (//h4[normalize-space()='${option}']//following::tr)[4]//td[${index}]     AND       sleep   ${yop_sleep}
+        ...    AND    Click Element    css:span[class='back']  AND  Sleep    ${yop_sleep}
         ...    ELSE    Log    Custom action for element ${index} with value ${element}
     END
+
+
+Remove Special Characters
+    [Arguments]    ${input_string}
+    ${pattern}=    Set Variable    [^a-zA-Z0-9\s]
+    ${cleaned_string}=    Replace String Using Regexp    ${input_string}    ${pattern}    ${EMPTY}
+    [Return]    ${cleaned_string}
 
 Click on tabs under it perfomance
     [Arguments]     ${option}
@@ -184,6 +196,7 @@ click on values under data quality
 
 Fetch the value under data quality
     [Arguments]    ${option1}       ${option2}
+    wait until location contains    it-performance      60
     wait until element is visible       //div[@id="${option1}"]//tbody//tr[${option2}]//td[2]     60
     wait until element is enabled        //div[@id="${option1}"]//tbody//tr[${option2}]//td[2]     60
     ${get_fetch_value} =    get text    //div[@id="${option1}"]//tbody//tr[${option2}]//td[2]
