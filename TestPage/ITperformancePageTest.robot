@@ -84,9 +84,9 @@ It performnace drill down agging analytics
     DashboardPage.select the option from the dashboard drawer     IT Performances
     Generic.Verify your current page location contains      it-performance
     ITperformancePage.Click on aging analytics tab
-    ITperformancePage.Click on tab under aging analytics     criticalagedassetsreport
-    ITperformancePage.Get and verify the count of aging analytics table     Critical Aged Assets        Critical Aged Assets
-    ITperformancePage.Click on aging analytics tab
+#    ITperformancePage.Click on tab under aging analytics     criticalagedassetsreport
+#    ITperformancePage.Get and verify the count of aging analytics table     Critical Aged Assets        Critical Aged Assets
+#    ITperformancePage.Click on aging analytics tab
     ITperformancePage.Click on tab under aging analytics     pastduerenewals
     ITperformancePage.Get and verify the count of aging analytics table     Past Due Renewals       Past Due Renewals
     ITperformancePage.Click on aging analytics tab

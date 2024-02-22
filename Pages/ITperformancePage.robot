@@ -124,14 +124,16 @@ Empty Action
 
 Get and verify the count of aging analytics table
     [Arguments]     ${option}       ${tab_count}
-    ${element_count}=    Get Element Count    (//h4[normalize-space()='${tab_count}']//following::tr)[4]//td
+    ${element_count}=    Get Element Count    (//h4[normalize-space()='${tab_count}']//following::tr)[3]//td
     Log      ${element_count}
     FOR    ${index}    IN RANGE    5    ${element_count + 1}
-        Wait Until Element Is Visible   (//h4[normalize-space()='${option}']//following::tr)[4]//td[${index}]       60
-        Wait Until Element Is Enabled   (//h4[normalize-space()='${option}']//following::tr)[4]//td[${index}]       60
-        ${element}=    Get Text    (//h4[normalize-space()='${option}']//following::tr)[4]//td[${index}]
+        Wait Until Element Is Visible   (//h4[normalize-space()='${option}']//following::tr)[3]//td[${index}]       60
+        Wait Until Element Is Enabled   (//h4[normalize-space()='${option}']//following::tr)[3]//td[${index}]       60
+        ${element}=    Get Text    (//h4[normalize-space()='${option}']//following::tr)[3]//td[${index}]
         Log    Element ${index}: ${element}
-        Run Keyword If    '${element}' == '${EMPTY}'    Continue For Loop
+        Run Keyword If    '${element}' == '${EMPTY}'
+        ...     Run Keywords    Empty Action
+        ...     Continue For Loop
         ${element}=    Remove Special Characters    ${element}
         Log     Element after removing special characters: ${element}
         ${element_as_number}=   Convert To Integer   ${element}
@@ -139,7 +141,7 @@ Get and verify the count of aging analytics table
         Run Keyword If    ${element_as_number} == 0
         ...    Skip Action
         ...    ELSE IF    ${element_as_number} > 0
-        ...    Run Keywords      Click Element    (//h4[normalize-space()='${option}']//following::tr)[4]//td[${index}]     AND       sleep   ${yop_sleep}
+        ...    Run Keywords      Click Element    (//h4[normalize-space()='${option}']//following::tr)[3]//td[${index}]     AND       sleep   ${yop_sleep}
         ...    AND    Click Element    css:span[class='back']  AND  Sleep    ${yop_sleep}
         ...    ELSE    Log    Custom action for element ${index} with value ${element}
     END
