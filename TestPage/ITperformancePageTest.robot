@@ -110,7 +110,6 @@ IT perfomance drill down data quality
     ReportsPage.Fetch the total count         Total Count :
     TechnologyPage.verify Text from Assignment Information     ${get_fetch_value}          ${total_count}
     ContractsPage.Click on back to contract link
-#    ITperformancePage.Click on data quality button link under it perfomance     1
     ITperformancePage.Fetch the value under data quality   dataquality1     3
     ITperformancePage.click on values under data quality    dataquality1     3
     Generic.Verify your current page location contains      technology-it-performance
@@ -118,7 +117,6 @@ IT perfomance drill down data quality
     ReportsPage.Fetch the total count         Total Count :
     TechnologyPage.verify Text from Assignment Information     ${get_fetch_value}          ${total_count}
     ContractsPage.Click on back to contract link
-#    ITperformancePage.Click on data quality button link under it perfomance     1
     ITperformancePage.Fetch the value under data quality   dataquality1     4
     ITperformancePage.click on values under data quality    dataquality1     4
     Generic.Verify your current page location contains      technology-it-performance
@@ -126,13 +124,12 @@ IT perfomance drill down data quality
     ReportsPage.Fetch the total count         Total Count :
     TechnologyPage.verify Text from Assignment Information     ${get_fetch_value}          ${total_count}
     ContractsPage.Click on back to contract link
-#    ITperformancePage.Click on data quality button link under it perfomance     1
     ITperformancePage.Fetch the value under data quality   dataquality1     4
     ITperformancePage.click on values under data quality    dataquality1     4
     Generic.Verify your current page location contains      technology-it-performance
-    ITperformancePage.Search by brand, asset id , product and assignee     Product_2662338676
+    ITperformancePage.Search by brand, asset id , product and assignee     Product_9470971051
     Click on refresh icon of technolofy it performance page
-    ITperformancePage.Search by brand, asset id , product and assignee      BrandName0046763682
+    ITperformancePage.Search by brand, asset id , product and assignee      BrandName0091409214
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .xlsx
     PartnersPage.Confirm to export file
@@ -159,7 +156,7 @@ IT perfomance drill down data quality
     Generic.click on the button     Okay, Thanks!
 
     Click on refresh icon of technolofy it performance page
-    ITperformancePage.Search by brand, asset id , product and assignee      Ghdfhfj
+    ITperformancePage.Search by brand, asset id , product and assignee      AssetID_1255240019
     Click on refresh icon of technolofy it performance page
     ITperformancePage.Search by brand, asset id , product and assignee      Dc Dc
     Click on refresh icon of technolofy it performance page
@@ -176,8 +173,6 @@ IT perfomance drill down data quality
     ReportsPage.Fetch the total count         Total Count :
     TechnologyPage.verify Text from Assignment Information     ${get_fetch_value}          ${total_count}
     ContractsPage.Click on back to contract link
-#    ITperformancePage.Click on current and previous year tab under spend forecast
-#    ITperformancePage.Click on data quality button link under it perfomance     2
     ITperformancePage.Fetch the value under data quality   dataquality2     2
     ITperformancePage.click on values under data quality    dataquality2     2
     Generic.Verify your current page location contains      technology-it-performance
@@ -227,8 +222,6 @@ IT perfomance drill down data quality
     ReportsPage.Fetch the total count         Total Count :
     TechnologyPage.verify Text from Assignment Information     ${get_fetch_value}          ${total_count}
     ContractsPage.Click on back to contract link
-#    ITperformancePage.Click on five year forecast tab under spend forecast
-#    ITperformancePage.Click on data quality button link under it perfomance     3
     ITperformancePage.Fetch the value under data quality   dataquality3     2
     ITperformancePage.click on values under data quality    dataquality3     2
     Generic.Verify your current page location contains      technology-it-performance
@@ -236,8 +229,6 @@ IT perfomance drill down data quality
     ReportsPage.Fetch the total count         Total Count :
     TechnologyPage.verify Text from Assignment Information     ${get_fetch_value}          ${total_count}
     ContractsPage.Click on back to contract link
-#    ITperformancePage.Click on five year forecast tab under spend forecast
-#    ITperformancePage.Click on data quality button link under it perfomance     3
     ITperformancePage.Fetch the value under data quality   dataquality3     3
     ITperformancePage.click on values under data quality    dataquality3     3
     Generic.Verify your current page location contains      technology-it-performance
@@ -325,7 +316,6 @@ IT perfomance drill down data quality of Investments by partner tab
     ReportsPage.Fetch the total count         Total Count :
     TechnologyPage.verify Text from Assignment Information     ${get_fetch_valueinvestment}          ${total_count}
     ContractsPage.Click on back to contract link
-    ITperformancePage.Click on tabs under it perfomance     investments-partners
     ITperformancePage.Click on tabs under investment by partner tab     supplierbudget
     ITperformancePage.Click on data quality button link under investments by partner tab    2
     ITperformancePage.Fetch the value under data quality of investment by partner tab  2   1
@@ -335,9 +325,6 @@ IT perfomance drill down data quality of Investments by partner tab
     ReportsPage.Fetch the total count         Total Count :
     TechnologyPage.verify Text from Assignment Information     ${get_fetch_valueinvestment}          ${total_count}
     ContractsPage.Click on back to contract link
-    ITperformancePage.Click on tabs under it perfomance     investments-partners
-    ITperformancePage.Click on tabs under investment by partner tab     supplierbudget
-    ITperformancePage.Click on data quality button link under investments by partner tab    2
     ITperformancePage.Fetch the value under data quality of investment by partner tab  2   2
     ITperformancePage.click on values under data quality of investment by partner tab   2   2
     Generic.Verify your current page location contains      technology-it-performance
@@ -345,9 +332,6 @@ IT perfomance drill down data quality of Investments by partner tab
     ReportsPage.Fetch the total count         Total Count :
     TechnologyPage.verify Text from Assignment Information     ${get_fetch_valueinvestment}          ${total_count}
     ContractsPage.Click on back to contract link
-    ITperformancePage.Click on tabs under it perfomance     investments-partners
-    ITperformancePage.Click on tabs under investment by partner tab     supplierbudget
-    ITperformancePage.Click on data quality button link under investments by partner tab    2
     ITperformancePage.Fetch the value under data quality of investment by partner tab  2   3
     ITperformancePage.click on values under data quality of investment by partner tab   2   3
     Generic.Verify your current page location contains      technology-it-performance
@@ -387,7 +371,6 @@ IT perfomance drill down data quality of Investments by partner tab
     ReportsPage.Fetch the total count         Total Count :
     TechnologyPage.verify Text from Assignment Information     ${get_fetch_valueinvestment}          ${total_count}
     ContractsPage.Click on back to contract link
-    ITperformancePage.Click on tabs under it perfomance     investments-partners
     ITperformancePage.Click on tabs under investment by partner tab     brandsupplierbudget
     ITperformancePage.Click on data quality button link under investments by partner tab    3
     ITperformancePage.Fetch the value under data quality of investment by partner tab  3   2
@@ -397,9 +380,6 @@ IT perfomance drill down data quality of Investments by partner tab
     ReportsPage.Fetch the total count         Total Count :
     TechnologyPage.verify Text from Assignment Information     ${get_fetch_valueinvestment}          ${total_count}
     ContractsPage.Click on back to contract link
-    ITperformancePage.Click on tabs under it perfomance     investments-partners
-    ITperformancePage.Click on tabs under investment by partner tab     brandsupplierbudget
-    ITperformancePage.Click on data quality button link under investments by partner tab    3
     ITperformancePage.Fetch the value under data quality of investment by partner tab  3   3
     ITperformancePage.click on values under data quality of investment by partner tab   3   3
     Generic.Verify your current page location contains      technology-it-performance
@@ -407,9 +387,6 @@ IT perfomance drill down data quality of Investments by partner tab
     ReportsPage.Fetch the total count         Total Count :
     TechnologyPage.verify Text from Assignment Information     ${get_fetch_valueinvestment}          ${total_count}
     ContractsPage.Click on back to contract link
-    ITperformancePage.Click on tabs under it perfomance     investments-partners
-    ITperformancePage.Click on tabs under investment by partner tab     brandsupplierbudget
-    ITperformancePage.Click on data quality button link under investments by partner tab    3
     ITperformancePage.Fetch the value under data quality of investment by partner tab  3   6
     ITperformancePage.click on values under data quality of investment by partner tab   3   6
     Generic.Verify your current page location contains      technology-it-performance
@@ -451,7 +428,6 @@ IT perfomance drill down data quality of Investments by partner tab
     ReportsPage.Fetch the total count         Total Count :
     TechnologyPage.verify Text from Assignment Information     ${get_fetch_valueinvestment}          ${total_count}
     ContractsPage.Click on back to contract link
-    ITperformancePage.Click on tabs under it perfomance     investments-partners
     ITperformancePage.Click on tabs under investment by partner tab     supportlocationbudget
     ITperformancePage.Click on data quality button link under investments by partner tab    4
     ITperformancePage.Fetch the value under data quality of investment by partner tab  4   1
@@ -461,9 +437,6 @@ IT perfomance drill down data quality of Investments by partner tab
     ReportsPage.Fetch the total count         Total Count :
     TechnologyPage.verify Text from Assignment Information     ${get_fetch_valueinvestment}          ${total_count}
     ContractsPage.Click on back to contract link
-    ITperformancePage.Click on tabs under it perfomance     investments-partners
-    ITperformancePage.Click on tabs under investment by partner tab     supportlocationbudget
-    ITperformancePage.Click on data quality button link under investments by partner tab    4
     ITperformancePage.Fetch the value under data quality of investment by partner tab  4   3
     ITperformancePage.click on values under data quality of investment by partner tab   4   3
     Generic.Verify your current page location contains      technology-it-performance
@@ -471,9 +444,6 @@ IT perfomance drill down data quality of Investments by partner tab
     ReportsPage.Fetch the total count         Total Count :
     TechnologyPage.verify Text from Assignment Information     ${get_fetch_valueinvestment}          ${total_count}
     ContractsPage.Click on back to contract link
-    ITperformancePage.Click on tabs under it perfomance     investments-partners
-    ITperformancePage.Click on tabs under investment by partner tab     supportlocationbudget
-    ITperformancePage.Click on data quality button link under investments by partner tab    4
     ITperformancePage.Fetch the value under data quality of investment by partner tab  4   4
     ITperformancePage.click on values under data quality of investment by partner tab   4   4
     Generic.Verify your current page location contains      technology-it-performance
