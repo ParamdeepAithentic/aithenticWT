@@ -188,21 +188,6 @@ click on fiscal year forecast
     click element   css:#totalitassetsspendfy-tab
     wait until element is not visible   ${loaderIcon}       60
 
-click on values under data quality
-    [Arguments]     ${option1}      ${option2}
-    wait until element is visible   //div[@id="${option1}"]//tbody//tr[${option2}]//td[2]     60
-    wait until element is enabled   //div[@id="${option1}"]//tbody//tr[${option2}]//td[2]     60
-    click element   //div[@id="${option1}"]//tbody//tr[${option2}]//td[2]
-
-Fetch the value under data quality
-    [Arguments]    ${option1}       ${option2}
-    wait until location contains    it-performance      60
-    wait until element is visible       //div[@id="${option1}"]//tbody//tr[${option2}]//td[2]     60
-    wait until element is enabled        //div[@id="${option1}"]//tbody//tr[${option2}]//td[2]     60
-    ${get_fetch_value} =    get text    //div[@id="${option1}"]//tbody//tr[${option2}]//td[2]
-    set global variable    ${get_fetch_value}
-    log to console     ${get_fetch_value}
-
 Click on refresh icon of technolofy it performance page
     wait until element is visible   css:.reset-search-qa    60
     wait until element is enabled   css:.reset-search-qa    60
@@ -229,19 +214,6 @@ Click on data quality button link under investments by partner tab
     sleep   ${search_sleep}
     click element   css:.qa-data-quality-partner-${option} h4
 
-click on values under data quality of investment by partner tab
-    [Arguments]     ${option1}      ${option2}
-    wait until element is visible   //div[@id="dataquality-partner-${option1}"]//tbody//tr[${option2}]//td[2]     60
-    wait until element is enabled   //div[@id="dataquality-partner-${option1}"]//tbody//tr[${option2}]//td[2]     60
-    click element   //div[@id="dataquality-partner-${option1}"]//tbody//tr[${option2}]//td[2]
-
-Fetch the value under data quality of investment by partner tab
-    [Arguments]    ${option1}       ${option2}
-    wait until element is visible      //div[@id="dataquality-partner-${option1}"]//tbody//tr[${option2}]//td[2]     60
-    wait until element is enabled        //div[@id="dataquality-partner-${option1}"]//tbody//tr[${option2}]//td[2]     60
-    ${get_fetch_valueinvestment} =    get text    //div[@id="dataquality-partner-${option1}"]//tbody//tr[${option2}]//td[2]
-    set global variable    ${get_fetch_valueinvestment}
-    log to console     ${get_fetch_valueinvestment}
 
 Click on tabs under investment by partner tab
     [Arguments]     ${tab}
@@ -291,8 +263,25 @@ Fetch and compare the total count
     set global variable    ${total_count}
     should be equal    ${number}     ${value}
 
-click on values under data quality of spend forecast
-    [Arguments]     ${option1}      ${option2}
-    wait until element is visible   //div[@id="dataquality3"]//tbody//tr//td[2]     60
-    wait until element is enabled   //div[@id="dataquality3"]//tbody//tr//td[2]     60
-    click element   //div[@id="${option1}"]//tbody//tr[${option2}]//td[2]
+
+Get And Verify The Count Of Data Quality Under Investment by partner tab
+    [Arguments]     ${option}       ${tab_count}
+    ${element_count}=    Get Element Count    //div[@id="${tab_count}"]//tbody//tr//td[2]
+    Log      ${element_count}
+    FOR    ${index}    IN RANGE    1    ${element_count}
+        Wait Until Element Is Visible   //div[@id="${option}"]//tbody//tr[${index}]//td[2]       60
+        Wait Until Element Is Enabled   //div[@id="${option}"]//tbody//tr[${index}]//td[2]        60
+        ${element}=    Get Text    //div[@id="${option}"]//tbody//tr[${index}]//td[2]
+        Log    Element ${index}: ${element}
+        Run Keyword If    '${element}' == '${EMPTY}'    Run Keywords    Empty Action   AND     Continue For Loop
+        ${element}=    Remove Special Characters    ${element}
+        Log     Element after removing special characters: ${element}
+        ${element_as_number}=   Convert To Integer   ${element}
+        log  Converted Text: ${element_as_number}
+        Run Keyword If    ${element_as_number} == 0
+        ...    Skip Action
+        ...    ELSE IF    ${element_as_number} > 0
+        ...    Run Keywords      Click Element    //div[@id="${option}"]//tbody//tr[${index}]//td[2]      AND       sleep   ${yop_sleep}        AND       ITperformancePage.Fetch and compare the total count  ${element_as_number}
+        ...    AND    Click Element    css:span[class='back']  AND  Sleep    ${yop_sleep}
+        ...    ELSE    Log    Custom action for element ${index} with value ${element}
+    END
