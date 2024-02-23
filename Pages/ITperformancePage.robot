@@ -256,3 +256,43 @@ Search by brand, asset id , product and assignee
     Clear Element Text      css:input[placeholder='Search by Brand, Product, Asset ID and Assignee']
     input text      css:input[placeholder='Search by Brand, Product, Asset ID and Assignee']     ${AssetID}
     sleep       ${search_sleep}
+
+Get And Verify The Count Of Data Quality Under Tabs
+    [Arguments]     ${option}       ${tab_count}
+    ${element_count}=    Get Element Count    //div[@id="${tab_count}"]//tbody//tr//td[2]
+    Log      ${element_count}
+    FOR    ${index}    IN RANGE    1    ${element_count + 1}
+        Wait Until Element Is Visible   //div[@id="${option}"]//tbody//tr[${index}]//td[2]       60
+        Wait Until Element Is Enabled   //div[@id="${option}"]//tbody//tr[${index}]//td[2]        60
+        ${element}=    Get Text    //div[@id="${option}"]//tbody//tr[${index}]//td[2]
+        Log    Element ${index}: ${element}
+        Run Keyword If    '${element}' == '${EMPTY}'    Run Keywords    Empty Action   AND     Continue For Loop
+        ${element}=    Remove Special Characters    ${element}
+        Log     Element after removing special characters: ${element}
+        ${element_as_number}=   Convert To Integer   ${element}
+        log  Converted Text: ${element_as_number}
+        Run Keyword If    ${element_as_number} == 0
+        ...    Skip Action
+        ...    ELSE IF    ${element_as_number} > 0
+        ...    Run Keywords      Click Element    //div[@id="${option}"]//tbody//tr[${index}]//td[2]      AND       sleep   ${yop_sleep}        AND       ITperformancePage.Fetch and compare the total count  ${element_as_number}
+        ...    AND    Click Element    css:span[class='back']  AND  Sleep    ${yop_sleep}
+        ...    ELSE    Log    Custom action for element ${index} with value ${element}
+    END
+
+Fetch and compare the total count
+    [Arguments]  ${value}
+    wait until element is enabled       ${Totalcount_field}      60
+    wait until element is visible   ${Totalcount_field}      60
+    ${text}=     get text   ${Totalcount_field}
+    ${parts}    Split String    ${text}    Total Count :
+    ${total_count}    Get Substring    ${parts[1]}    3
+    ${number}=   Convert To Integer   ${total_count}
+    Log to console  Total count is :${total_count}
+    set global variable    ${total_count}
+    should be equal    ${number}     ${value}
+
+click on values under data quality of spend forecast
+    [Arguments]     ${option1}      ${option2}
+    wait until element is visible   //div[@id="dataquality3"]//tbody//tr//td[2]     60
+    wait until element is enabled   //div[@id="dataquality3"]//tbody//tr//td[2]     60
+    click element   //div[@id="${option1}"]//tbody//tr[${option2}]//td[2]
