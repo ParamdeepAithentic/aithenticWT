@@ -104,11 +104,9 @@ IT perfomance drill down data quality
     ITperformancePage.Click on tabs under it perfomance      spend-forecast-reports
     ITperformancePage.Click on data quality button link under it perfomance     1
     ITperformancePage.Get And Verify The Count Of Data Quality Under Tabs   dataquality1        dataquality1
-
     ITperformancePage.Click on current and previous year tab under spend forecast
     ITperformancePage.Click on data quality button link under it perfomance     2
     ITperformancePage.Get And Verify The Count Of Data Quality Under Tabs   dataquality2        dataquality2
-
     ITperformancePage.Click on five year forecast tab under spend forecast
     ITperformancePage.Click on data quality button link under it perfomance     3
     ITperformancePage.Get And Verify The Count Of Data Quality Under Tabs   dataquality3        dataquality3
