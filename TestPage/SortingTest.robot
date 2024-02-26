@@ -330,3 +330,5 @@ Test the sorting of sent table page under message page
     SortingPage.Verify the sorting of the table method four    3       Subject
     SortingPage.Verify the sorting of the table method four    4       Status
     SortingPage.Verify the sorting of the table method four    5       Date
+
+Discovered Assets Sorting

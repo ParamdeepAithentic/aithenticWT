@@ -211,6 +211,7 @@ Click on Searched Discovered asset
    Wait Until Element Is Visible    ${Discovery_Assets}     60
    Wait Until Element Is Enabled    ${Discovery_Assets}     60
    Click element    ${Discovery_Assets}
+   Sleep    ${search sleep}
 
 Click on tab under dicovery_asset_detail page
     [Arguments]     ${option}
@@ -290,6 +291,18 @@ Get Serial number by hovering over discovered assets
     ${hover_serial_number}    Get Substring    ${parts[1]}    1
     Log to console      ${hover_serial_number}
     set global variable     ${hover_serial_number}
+
+Get Tagname by hovering over discovered assets
+    [Arguments]     ${text}
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    Wait Until Element Is Visible   ${Discovery_Assets}      60
+    Wait Until Element Is Enabled   ${Discovery_Assets}      60
+    sleep       ${search_sleep}
+    ${hover_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
+    ${parts}    Split String    ${hover_text}    ${text}
+    ${hover_tagname}    Get Substring    ${parts[1]}    1
+    Log to console      ${hover_tagname}
+    set global variable     ${hover_tagname}
 
 Get Host name by hovering over discovered assets
     [Arguments]     ${text}
@@ -465,3 +478,33 @@ Create Asset_id for software component
     input text   //input[@formcontrolname="AssetId"]       ${component_AssetID}
     log to console      Componenet_Asset_id:${component_AssetID}
     Set Global Variable   ${component_AssetID}
+    
+Fetch text from Agent/Discovered assets column and compare it with
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}  60
+    Wait Until Element Is Visible    css:.qa-assets-boxes-left      60
+    Wait Until Element Is Enabled    css:.qa-assets-boxes-left  60
+    ${fetch_lefttext}=  Get Text    css:.qa-assets-boxes-left
+    Log To Console    ${fetch_lefttext}
+    Set Global Variable    ${fetch_lefttext}
+    Should be equal   ${fetch_lefttext}     ${option}
+
+Fetch text from Existing assets column and compare it with
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}  60
+    Wait Until Element Is Visible    css:.qa-assets-boxes-right     60
+    Wait Until Element Is Enabled    css:.qa-assets-boxes-right  60
+    ${fetch_righttext}=  Get Text    css:.qa-assets-boxes-right
+    Log To Console    ${fetch_righttext}
+    Set Global Variable    ${fetch_righttext}
+    Should be equal   ${fetch_righttext}     ${option}
+
+Fetch text from Agent Discovery tab and compare it with
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}  60
+    Wait Until Element Is Visible    css:.count-section h4     60
+    Wait Until Element Is Enabled    css:.count-section h4     60
+    ${fetch_agenttext}=  Get Text    css:.count-section h4
+    Log To Console    ${fetch_agenttext}
+    Set Global Variable    ${fetch_agenttext}
+    Should be equal   ${fetch_agenttext}     ${option}
