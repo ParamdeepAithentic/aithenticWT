@@ -1328,3 +1328,19 @@ Verify that Agent column should contain text
     [Arguments]     ${option}
     wait until element is visible       css:thead tr       60
     Wait Until Element Contains       css:.table-row    ${option}   60
+
+Select parameter from technology dropdown list of technology
+    [Arguments]      ${option}
+    ${StartTime1} =     Get Current Time in Milliseconds
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    wait until element is visible   //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input      60
+    wait until element is enabled   //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input     60
+    Clear Element Text    //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input
+    Input Text    //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input    ${option}
+    Wait Until Element Is Visible    //td[normalize-space()='${option}']
+    Wait Until Element Is enabled    //td[normalize-space()='${option}']
+    Click Element       //td[normalize-space()='${option}']
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  6  ${pageHeading}   Technology Page - Select parameter from technology dropdown list      6    ${pageTime}     ${ActualTime}    TechnologyPage_Time

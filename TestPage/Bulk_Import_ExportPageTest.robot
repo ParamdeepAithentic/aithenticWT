@@ -382,7 +382,7 @@ Technology Bulk edit
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+    TechnologyPage.Select parameter from technology dropdown list of technology     OPMR815277
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
@@ -399,12 +399,30 @@ Technology Bulk edit
     Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology    Brand      BrandName2556763617
     Select the new value of technology group in bulk edit of technology    TechnologyType      Hardware
     Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology    TechnologyGroup      Applications
+    sleep   2
+    Bulk_Import_ExportPage.click on the arrow of product    Product Information     1
     Bulk_Import_ExportPage.Enter the new value of asset id of bulk edit of technology   AssetId
+    Bulk_Import_ExportPage.click on the arrow of product    Technology Lifecycle Information     2
+    Bulk_Import_ExportPage.Click on the department_Location_Assignto_fields of technology bulik edit        Status
+    Bulk_Import_ExportPage.click on the arrow of product    Technology Lifecycle Information     1
+    Bulk_Import_ExportPage.click on the arrow of product    Assignment Information     2
+    Bulk_Import_ExportPage.Click on the department_Location_Assignto_fields of technology bulik edit    LocationTypeName_1
+    Bulk_Import_ExportPage.Click on the department_Location_Assignto_fields of technology bulik edit    DepartmentName
+    Bulk_Import_ExportPage.Click on the department_Location_Assignto_fields of technology bulik edit    AssignedName
+    Bulk_Import_ExportPage.click on the arrow of product    Assignment Information     1
+    Bulk_Import_ExportPage.click on the arrow of product    Partners Information     2
+    Bulk_Import_ExportPage.Click on the department_Location_Assignto_fields of technology bulik edit        SupportPartnerName_1
+    Bulk_Import_ExportPage.Click on the department_Location_Assignto_fields of technology bulik edit        SupplierName
+    Bulk_Import_ExportPage.click on the arrow of product    Partners Information     1
+    Bulk_Import_ExportPage.click on the arrow of product    Technology Cost Information    2
+    Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology       CostTypeName       Open Ended Contract
+    Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology       CostCenter      123456
+    Bulk_Import_ExportPage.click on the arrow of product    Technology Cost Information    1
     Generic.Click on the button     Check data      #Update,Edit
     Generic.Click on the button     Update
     sleep   ${search_sleep}
     Bulk_Import_ExportPage.Click on confirm pop up of update button
-    Bulk_Import_ExportPage.click on the arrow of product    Product Information     1
+#    Bulk_Import_ExportPage.click on the arrow of product    Product Information     1
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
     Generic.Click on the button     Finish
     sleep   ${search_sleep}
