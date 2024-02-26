@@ -398,6 +398,7 @@ Technology Bulk edit
     Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology    ModelProductName_1     Product_2589283776
     Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology    Brand      BrandName2556763617
     Select the new value of technology group in bulk edit of technology    TechnologyType      Hardware
+    sleep   1
     Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology    TechnologyGroup      Applications
     sleep   2
     Bulk_Import_ExportPage.click on the arrow of product    Product Information     1
@@ -415,7 +416,8 @@ Technology Bulk edit
     Bulk_Import_ExportPage.Click on the department_Location_Assignto_fields of technology bulik edit        SupplierName
     Bulk_Import_ExportPage.click on the arrow of product    Partners Information     1
     Bulk_Import_ExportPage.click on the arrow of product    Technology Cost Information    2
-    Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology       CostTypeName       Open Ended Contract
+#    Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology       CostTypeName      Fixed Length Contract
+
     Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology       CostCenter      123456
     Bulk_Import_ExportPage.click on the arrow of product    Technology Cost Information    1
     Generic.Click on the button     Check data      #Update,Edit
