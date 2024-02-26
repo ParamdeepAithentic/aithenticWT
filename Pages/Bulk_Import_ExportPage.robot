@@ -472,7 +472,7 @@ Enter the new value of asset id of bulk edit of technology
 Click on confirm pop up of update button
     wait until element is visible  css:.qa-confirm-technology-bulk-edit-warning  60
     click element   css:.qa-confirm-technology-bulk-edit-warning
-    sleep   2
+    sleep   ${search_sleep}
 
 Click on confirm button under pop up of finish button of bulk edit
     wait until element is visible  css:.qa-confirm-technology-bulk-edit-finish      60
