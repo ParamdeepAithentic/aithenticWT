@@ -384,6 +384,11 @@ Technology Bulk edit
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Select parameter from technology dropdown list of technology     OPMR815277
     TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Add cost type of technology cost information         Open Ended Contract
+    TechnologyPage.Add payment type of technology cost information     FixedPayment
+    TechnologyPage.Add payment peroid of technology cost information       Monthly
+    sleep   ${search_sleep}
+    TechnologyPage.Add payment partner of technology cost information      testqa 20Feb
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
@@ -398,9 +403,7 @@ Technology Bulk edit
     Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology    ModelProductName_1     Product_2589283776
     Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology    Brand      BrandName2556763617
     Select the new value of technology group in bulk edit of technology    TechnologyType      Hardware
-    sleep   1
     Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology    TechnologyGroup      Applications
-    sleep   2
     Bulk_Import_ExportPage.click on the arrow of product    Product Information     1
     Bulk_Import_ExportPage.Enter the new value of asset id of bulk edit of technology   AssetId
     Bulk_Import_ExportPage.click on the arrow of product    Technology Lifecycle Information     2
@@ -416,15 +419,15 @@ Technology Bulk edit
     Bulk_Import_ExportPage.Click on the department_Location_Assignto_fields of technology bulik edit        SupplierName
     Bulk_Import_ExportPage.click on the arrow of product    Partners Information     1
     Bulk_Import_ExportPage.click on the arrow of product    Technology Cost Information    2
-#    Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology       CostTypeName      Fixed Length Contract
-
+    Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology       PaymentPartnerName      Dell
+    Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology       CostTypeName      Purchased
+    Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology       PaymentPeriod      Once
     Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology       CostCenter      123456
     Bulk_Import_ExportPage.click on the arrow of product    Technology Cost Information    1
     Generic.Click on the button     Check data      #Update,Edit
     Generic.Click on the button     Update
     sleep   ${search_sleep}
-    Bulk_Import_ExportPage.Click on confirm pop up of update button
-#    Bulk_Import_ExportPage.click on the arrow of product    Product Information     1
+#    Bulk_Import_ExportPage.Click on confirm pop up of update button
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
     Generic.Click on the button     Finish
     sleep   ${search_sleep}

@@ -449,6 +449,7 @@ Enter the new value in the product, brand, group and type value in bulk_edit of 
     Press Keys    (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]//input     DELETE
     input text    (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]//input     ${text}
     Press Keys      (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]       ENTER
+    sleep   ${search_sleep}
 
 Select the new value of technology group in bulk edit of technology
     [Arguments]     ${option}   ${text}
@@ -490,3 +491,4 @@ Click on the department_Location_Assignto_fields of technology bulik edit
     double click element    css:.ag-center-cols-container div[col-id='${option}']
     wait until element is visible   css:div[class='ag-theme-alpine ag-popup'] div:nth-child(2) div      60
     click element   css:div[class='ag-theme-alpine ag-popup'] div:nth-child(2) div
+    sleep   ${search_sleep}
