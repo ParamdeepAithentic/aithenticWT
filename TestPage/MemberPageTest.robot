@@ -64,8 +64,7 @@ Verify asset history of assigned users
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Click technology product input field
-    TechnologyPage.Select the first value of To dropdown of product
+    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Add assignment information assign to   ${generated_AssigneduserFirstName}    ${generated_TMLname}
     TechnologyPage.Click on save technology form button
@@ -138,8 +137,9 @@ Search asset history with Asset ID of Assigned User
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list    ${generated_BrandName}
-    TechnologyPage.Click technology product input field
-    TechnologyPage.Select the first value of To dropdown of product
+#    TechnologyPage.Click technology product input field
+#    TechnologyPage.Select the first value of To dropdown of product
+    TechnologyPage.Select parameter from technology dropdown list       ${generated_product}
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Add assignment information assign to   ${generated_AssigneduserFirstName}       ${generated_TMLname}
     TechnologyPage.Click on save technology form button

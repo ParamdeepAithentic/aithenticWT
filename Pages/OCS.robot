@@ -251,12 +251,12 @@ Clear the text of Product field
 
 Choose option from product on Add technology Page
     Wait Until Element Is Not Visible    ${loaderIcon}      60
-    Wait Until Element Is Visible    ${Add_technology_product}      60
-    Wait Until Element Is Enabled    ${Add_technology_product}      60
-    Click Element    ${Add_technology_product}
-    wait until element is visible     //div[contains (@id, '-0')]       60
-    wait until element is enabled     //div[contains (@id, '-0')]       60
-    click element   //div[contains (@id, '-0')]
+#    Wait Until Element Is Visible    ${Add_technology_product}      60
+#    Wait Until Element Is Enabled    ${Add_technology_product}      60
+#    Click Element    ${Add_technology_product}
+    wait until element is visible     (//tbody//tr)[1]       60
+    wait until element is enabled     (//tbody//tr)[1]       60
+    click element   (//tbody//tr)[1]
     Sleep    ${yop_sleep}
 
 Enter The Asset_id in Add Technology Page
@@ -407,10 +407,11 @@ click on the right text asset result of existing asset
     click element   css:.right-text
     
 Click on save button of Add Technology Page
+    Sleep    ${search_sleep}
     wait until element is visible  //button[@class='btn button-green']    60
     wait until element is enabled  //button[@class='btn button-green']     60
     click element   //button[@class='btn button-green']
-    Wait Until Element Is Visible    ${loaderIcon}      60
+#    Wait Until Element Is not Visible    ${loaderIcon}      60
 
 Verify Page should contain Element
     [Arguments]     ${element}

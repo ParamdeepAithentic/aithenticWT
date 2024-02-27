@@ -465,7 +465,7 @@ Search Existing Assets
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+    TechnologyPage.Select parameter from technology dropdown list      Product_0033761232
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
@@ -490,7 +490,7 @@ Match Discovery and Existing Asset
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+    TechnologyPage.Select parameter from technology dropdown list      Product_0033761232
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
@@ -631,8 +631,7 @@ Add Discovery Asset
     Switch Window       aithentic | Add Discovery Asset
     Generic.Verify your current page location contains    add-discovered-asset
     Generic.Verify your current page contains this text    Add Technology
-    OCS.Clear the text of Product field
-    OCS.Choose option from product on Add technology Page
+    TechnologyPage.Select parameter from technology dropdown list      Product_0033761232
     OCS.Enter The Asset_id in Add Technology Page
     OCS.Click on save button of Add Technology Page
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
@@ -691,8 +690,7 @@ Create Asset from Add Assets Page
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Add Discovery Asset
     Generic.Verify your current page contains this text    Add Technology
-    OCS.Clear the text of Product field
-    OCS.Choose option from product on Add technology Page
+    TechnologyPage.Select parameter from technology dropdown list      Product_0033761232
     OCS.Enter The Asset_id in Add Technology Page
     OCS.Click on save button of Add Technology Page
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
@@ -737,8 +735,7 @@ Add component as an asset after Adding OCS asset
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Add Discovery Asset
     Generic.Verify your current page contains this text    Add Technology
-    OCS.Clear the text of Product field
-    OCS.Choose option from product on Add technology Page
+    TechnologyPage.Select parameter from technology dropdown list      Product_0033761232
     OCS.Enter The Asset_id in Add Technology Page
     OCS.Click on save button of Add Technology Page
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
@@ -757,8 +754,7 @@ Add component as an asset after Adding OCS asset
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Add Discovery Asset
     Generic.Verify your current page contains this text    Add Technology
-    OCS.Clear the text of Product field
-    OCS.Choose option from product on Add technology Page
+    TechnologyPage.Select parameter from technology dropdown list      Product_0033761232
     OCS.Create Asset_id for software component
     OCS.Click on save button of Add Technology Page
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
@@ -806,8 +802,7 @@ Add component as an asset from Agent Discovery page
     Switch Window       aithentic | Add Discovery Asset
     Generic.Verify your current page location contains    add-discovered-asset
     Generic.Verify your current page contains this text    Add Technology
-    OCS.Clear the text of Product field
-    OCS.Choose option from product on Add technology Page
+    TechnologyPage.Select parameter from technology dropdown list      Product_0033761232
     OCS.Enter The Asset_id in Add Technology Page
     OCS.Click on save button of Add Technology Page
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
@@ -831,8 +826,7 @@ Add component as an asset from Agent Discovery page
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Add Discovery Asset
     Generic.Verify your current page contains this text    Add Technology
-    OCS.Clear the text of Product field
-    OCS.Choose option from product on Add technology Page
+    TechnologyPage.Select parameter from technology dropdown list      Product_0033761232
     OCS.Create Asset_id for software component
     OCS.Click on save button of Add Technology Page
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
