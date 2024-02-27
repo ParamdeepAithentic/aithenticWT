@@ -338,3 +338,9 @@ verify status of first name in member list of assigned user
     [Arguments]     ${option}
     wait until element is visible   //td[normalize-space()='${option}']     60
     wait until element is enabled   //td[normalize-space()='${option}']     60
+
+Double click team member bulk import
+    [Arguments]    ${option}
+    wait until element is visible      css:.ag-pinned-left-cols-container div[col-id='${option}']   60
+    wait until element is enabled      css:.ag-pinned-left-cols-container div[col-id='${option}']    60
+    Double click element      css:.ag-pinned-left-cols-container div[col-id='${option}']

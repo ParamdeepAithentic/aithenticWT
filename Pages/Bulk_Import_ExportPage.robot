@@ -188,11 +188,11 @@ Select option from status column in bulk_edit
     click element       css:div[class='ag-rich-select-row']
 
 Select option from technology type column in bulk_edit
-    [Arguments]    ${option}
+    [Arguments]    ${option}    ${option2}
     wait until element is visible      css:.ag-center-cols-container div[col-id='${option}']    60
     Double click element      css:.ag-center-cols-container div[col-id='${option}']
-    wait until element is visible      css:div[aria-label='List'] div:nth-child(4) div    60
-    click element       css:div[aria-label='List'] div:nth-child(4) div
+    wait until element is visible      css:div[aria-label='List'] div:nth-child(${option2}) div    60
+    click element       css:div[aria-label='List'] div:nth-child(${option2}) div
 
 Click on Refresh icon of product-list page
     wait until element is visible       css:.reset-product-qa        60
@@ -481,3 +481,36 @@ Click on confirm button under pop up of finish button of bulk edit
 Click on confirm button under pop up of exit button of bulk edit
     wait until element is visible  css:.qa-confirm-technology-bulk-edit-exit    60
     click element   css:.qa-confirm-technology-bulk-edit-exit
+
+
+Enter the new value of first name in bulk import of team member
+    [Arguments]    ${option}
+    MemberPage.Double click team member bulk import    ${option}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_Firstname}=    Catenate    FName_${random_string}
+    wait until element is visible       css:.ag-pinned-left-cols-container div[col-id='${option}']    60
+
+    input text  css:.ag-pinned-left-cols-container div[col-id='${option}'] input    ${generated_Firstname}
+    set global variable    ${generated_Firstname}
+
+Enter the new value of last name in bulk import of team member
+    [Arguments]    ${option}
+    MemberPage.Double click team member bulk import    ${option}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_lastname}=    Catenate    LName_${random_string}
+    wait until element is visible       css:.ag-pinned-left-cols-container div[col-id='${option}']    60
+    input text  css:.ag-pinned-left-cols-container div[col-id='${option}'] input    ${generated_lastname}
+    set global variable    ${generated_lastname}
+
+Enter position and title of team member bulk import
+    [Arguments]     ${option}
+    wait until element is visible   css:.ag-center-cols-container div[col-id='Position']    60
+    wait until element is enabled   css:.ag-center-cols-container div[col-id='Position']    60
+    double click element    css:.ag-center-cols-container div[col-id='Position']
+    input text      css:.ag-center-cols-container div[col-id='Position'] input      ${option}
+    Press Keys      css:.ag-center-cols-container div[col-id='Position']       ENTER
+
+Scroll Vertically
+    [Arguments]  ${scrollDistance}
+    wait until element is not visible       ${loaderIcon}       60
+    Execute JavaScript  window.scrollBy(${scrollDistance}, 0)
