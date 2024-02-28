@@ -402,7 +402,7 @@ Technology Bulk edit
     Bulk_Import_ExportPage.click on the arrow of product    Product Information     2
     Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology    ModelProductName_1     Product_2589283776
     Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology    Brand      BrandName2556763617
-    Select the new value of technology group in bulk edit of technology    TechnologyType      Hardware
+    Bulk_Import_ExportPage.Select the new value of technology group in bulk edit of technology    TechnologyType      Hardware
     Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology    TechnologyGroup      Applications
     Bulk_Import_ExportPage.click on the arrow of product    Product Information     1
     Bulk_Import_ExportPage.Enter the new value of asset id of bulk edit of technology   AssetId
