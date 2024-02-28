@@ -372,6 +372,7 @@ Team Member Bulk Edit
     Bulk_Import_ExportPage.Search team member by first and last name    ${generate_teamMember_FirstName} ${generate_teamMember_LastName}
 
 Technology Bulk edit
+    [Tags]       sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
@@ -382,7 +383,7 @@ Technology Bulk edit
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Select parameter from technology dropdown list of technology     OPMR815277
+    TechnologyPage.Select parameter from technology dropdown list      OPMR815277
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Add cost type of technology cost information         Open Ended Contract
     TechnologyPage.Add payment type of technology cost information     FixedPayment

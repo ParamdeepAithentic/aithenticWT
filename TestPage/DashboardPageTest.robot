@@ -785,7 +785,7 @@ Verify Reports Asset Alert
     Generic.select the option from the side menu    Asset Discovery
     Generic.Verify your current page location contains      discovery-assets
     DashboardPage.Click on download agent button to download        Download Agent
-    OCS.Would you like to download agent    Yes, please!
+    OCS.Choose options to install from download agent button    single
     OCS.Select the agent type    Linux
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
@@ -798,7 +798,7 @@ Verify Reports Asset Alert
     Generic.select the option from the side menu    Asset Discovery
     Generic.Verify your current page location contains      discovery-assets
     DashboardPage.Click on download agent button to download        Download Agent
-    OCS.Would you like to download agent    Yes, please!
+    OCS.Choose options to install from download agent button    single
     OCS.Select the agent type    Windows
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
@@ -811,7 +811,7 @@ Verify Reports Asset Alert
     Generic.select the option from the side menu    Asset Discovery
     Generic.Verify your current page location contains      discovery-assets
     DashboardPage.Click on download agent button to download        Download Agent
-    OCS.Would you like to download agent    Yes, please!
+    OCS.Choose options to install from download agent button    single
     OCS.Select the agent type    macOS
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download

@@ -141,7 +141,7 @@ Download agent for OCS from signup - Linux
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     sleep   ${search_sleep}
-    OCS.Would you like to download agent    Yes, please!
+    OCS.Choose options to install from download agent button    single
     OCS.Select the agent type    Linux
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
@@ -246,7 +246,7 @@ Download agent for OCS from signup - Windows
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     sleep   ${search_sleep}
-    OCS.Would you like to download agent    Yes, please!
+    OCS.Choose options to install from download agent button    single
     OCS.Select the agent type    Windows
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
@@ -347,7 +347,7 @@ Download agent for OCS from signup - macOS
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     sleep   ${search_sleep}
-    OCS.Would you like to download agent    Yes, please!
+    OCS.Choose options to install from download agent button    single
     OCS.Select the agent type    macOS
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
@@ -359,7 +359,7 @@ Download Agent from network discovery - Linux
     Generic.select the option from the side menu    Asset Discovery
     Generic.Verify your current page location contains      discovery-assets
     DashboardPage.Click on download agent button to download        Download Agent
-    OCS.Would you like to download agent    Yes, please!
+    OCS.Choose options to install from download agent button    single
     OCS.Select the agent type    Linux
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
@@ -371,7 +371,7 @@ Download Agent from network discovery - Windows
     Generic.select the option from the side menu    Asset Discovery
     Generic.Verify your current page location contains      discovery-assets
     DashboardPage.Click on download agent button to download        Download Agent
-    OCS.Would you like to download agent    Yes, please!
+    OCS.Choose options to install from download agent button    single
     OCS.Select the agent type    Windows
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
@@ -383,7 +383,7 @@ Download Agent from network discovery - macOS
     Generic.select the option from the side menu    Asset Discovery
     Generic.Verify your current page location contains      discovery-assets
     DashboardPage.Click on download agent button to download        Download Agent
-    OCS.Would you like to download agent    Yes, please!
+    OCS.Choose options to install from download agent button    single
     OCS.Select the agent type    macOS
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
@@ -397,7 +397,7 @@ Download Agent from asset discovery - Linux
     sleep   ${search_sleep}
     OCS.Choose tab under Discovery Assets   agent-discovery
     DashboardPage.Click on download agent button to download        Download Agent
-    OCS.Would you like to download agent    Yes, please!
+    OCS.Choose options to install from download agent button    single
     OCS.Select the agent type    Linux
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
@@ -411,7 +411,7 @@ Download Agent from asset discovery - Windows
     sleep   ${search_sleep}
     OCS.Choose tab under Discovery Assets   agent-discovery
     DashboardPage.Click on download agent button to download        Download Agent
-    OCS.Would you like to download agent    Yes, please!
+    OCS.Choose options to install from download agent button    single
     OCS.Select the agent type    Windows
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
@@ -425,7 +425,7 @@ Download Agent from asset discovery - macOS
     sleep   ${search_sleep}
     OCS.Choose tab under Discovery Assets   agent-discovery
     DashboardPage.Click on download agent button to download        Download Agent
-    OCS.Would you like to download agent    Yes, please!
+    OCS.Choose options to install from download agent button    single
     OCS.Select the agent type    macOS
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download

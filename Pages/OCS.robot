@@ -46,11 +46,11 @@ Verify that agent is ready to get download
     wait until element is not visible     ${preparingAgent_text}      60
     wait until element is visible     ${AgentReady_text}      60
 
-Would you like to download agent
+Choose options to install from download agent button
     [Arguments]    ${option}
-    wait until element is visible      //button[normalize-space()='${option}']     60
-    wait until element is enabled      //button[normalize-space()='${option}']     60
-    click element       //button[normalize-space()='${option}']
+    wait until element is visible      css:.qa-${option}-install     60
+    wait until element is enabled      css:.qa-${option}-install     60
+    click element       css:.qa-${option}-install
     wait until element is not visible   ${loaderIcon}   60
 
 Select the agent type
