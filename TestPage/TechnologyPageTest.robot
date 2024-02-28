@@ -1672,7 +1672,7 @@ Verify the technology data while applying agent Filters
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
+    TechnologyPage.Select parameter from technology dropdown list       Product_00337612322
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully

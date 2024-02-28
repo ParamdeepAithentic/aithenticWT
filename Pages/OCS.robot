@@ -90,14 +90,14 @@ Enter text to search existing asset
 Verify Searched discovery asset
     [Arguments]     ${option}
     wait until element is not visible   ${loaderIcon}        60
-    Wait Until Element Is Visible    ${Discovery_Assets}
+    Wait Until Element Is Visible    ${Discovery_Assets}        60
     Element Should Contain   ${Discovery_Assets}   ${option}
 
 Verify searched existing asset
     [Arguments]     ${option}
     wait until element is not visible   ${loaderIcon}        60
     Sleep    ${yop_sleep}
-    Wait Until Element Is Visible    ${Existing_Assets}
+    Wait Until Element Is Visible    ${Existing_Assets}     60
     Element Should Contain   ${Existing_Assets}    ${option}
 
 

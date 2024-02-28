@@ -131,14 +131,11 @@ Search asset history with Asset ID of Assigned User
     MemberPage.Search assigned user by first name   ${generated_AssigneduserFirstName}
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-#   TechnologyPage.click on add technology button
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list    ${generated_BrandName}
-#    TechnologyPage.Click technology product input field
-#    TechnologyPage.Select the first value of To dropdown of product
     TechnologyPage.Select parameter from technology dropdown list       ${generated_product}
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Add assignment information assign to   ${generated_AssigneduserFirstName}       ${generated_TMLname}

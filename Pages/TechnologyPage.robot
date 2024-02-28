@@ -323,8 +323,8 @@ Select parameter from technology dropdown list
     wait until element is enabled   //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input     60
     Clear Element Text    //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input
     Input Text    //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input    ${option}
-    Wait Until Element Is Visible    //td[normalize-space()='${option}']
-    Wait Until Element Is enabled    //td[normalize-space()='${option}']
+    Wait Until Element Is Visible    //td[normalize-space()='${option}']        60
+    Wait Until Element Is enabled    //td[normalize-space()='${option}']        60
     Click Element       //td[normalize-space()='${option}']
     Wait Until Element Is Not Visible    ${loaderIcon}      60
     ${EndTime1} =     Get Current Time in Milliseconds
