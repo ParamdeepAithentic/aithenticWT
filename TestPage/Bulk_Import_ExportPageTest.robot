@@ -322,7 +322,7 @@ Assigned Users Bulk Edit
     Bulk_Import_ExportPage.Enter the new value of assigned in the last name column      LastName
     Bulk_Import_ExportPage.Enter the new value of assigned in the email column      AssignedEmail
     Bulk_Import_ExportPage.Enter the new value of assigned in the ID column     AssignedEmployeeId
-    Generic.Click on the button     Upload      #Check Data
+    Generic.Click on the button     Update      #Check Data
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
     Generic.Click on the button     Exit
     MemberPage.Confirm the exit import process pop appers

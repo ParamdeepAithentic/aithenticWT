@@ -74,6 +74,7 @@ Verify asset history of assigned users
     TechnologyPage.Search by AssetId       ${generated_AssetID}
     TechnologyPage.Click on the first row of the technology table
     Generic.click on the button link    Edit
+    TechnologyPage.Select technology lifecycle status      Active
     MemberPage.Enter assign to field        Dc Dc
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology updated successfully
@@ -146,6 +147,7 @@ Search asset history with Asset ID of Assigned User
     TechnologyPage.Search by AssetId       ${generated_AssetID}
     TechnologyPage.Click on the first row of the technology table
     Generic.click on the button link    Edit
+    TechnologyPage.Select technology lifecycle status      Active
     MemberPage.Enter assign to field   Dc Dc
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology updated successfully

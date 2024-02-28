@@ -141,7 +141,6 @@ Compose Message invite user test
 
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       ${generate_BusinessName}
-    TechnologyPage.Click technology product input field
     TechnologyPage.Select parameter from technology dropdown list      ${generated_product}
     TechnologyPage.Create unique serial number random
     TechnologyPage.Add assetID for technology lifecycle information random
