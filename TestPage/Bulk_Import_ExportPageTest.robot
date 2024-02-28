@@ -427,7 +427,6 @@ Technology Bulk edit
     Generic.Click on the button     Check data      #Update,Edit
     Generic.Click on the button     Update
     sleep   ${search_sleep}
-#    Bulk_Import_ExportPage.Click on confirm pop up of update button
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
     Generic.Click on the button     Finish
     sleep   ${search_sleep}
