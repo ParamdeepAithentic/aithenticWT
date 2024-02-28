@@ -200,12 +200,8 @@ Technology Auto removed from dynamic contract When edit Brand and product
     Generic.Verify your current page location contains      edit-technology
     TechnologyPage.Click on the edit icon on the edit technology page
     TechnologyPage.Click technology brand input field
-    TechnologyPage.Select parameter from brand dropdown list       Panasonic
-
+    TechnologyPage.Select parameter from brand dropdown list        QABrand555
     TechnologyPage.Select parameter from technology dropdown list     Product_0033761232
-
-#    TechnologyPage.Select parameter from technology dropdown list      18781
-
     TechnologyPage.Select edited technology lifecycle status      Active
 
     Generic.Scroll Window To End
@@ -369,7 +365,7 @@ Technology Auto removed from static contract When edit Brand and product
     Generic.Verify your current page location contains      edit-technology
     TechnologyPage.Click on the edit icon on the edit technology page
     TechnologyPage.Click technology brand input field
-    TechnologyPage.Select parameter from brand dropdown list       Panasonic
+    TechnologyPage.Select parameter from brand dropdown list        QABrand555
     TechnologyPage.Select parameter from technology dropdown list     Product_0033761232
     TechnologyPage.Select edited technology lifecycle status      Active
     Generic.Scroll Window To End
