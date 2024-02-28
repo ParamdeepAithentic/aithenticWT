@@ -731,7 +731,7 @@ Verify Reports Asset Alert
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select technology lifecycle status      Active
     TechnologyPage.Click on save technology form button

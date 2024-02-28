@@ -128,8 +128,8 @@ Technology Auto removed from dynamic contract When edit Brand and product
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       ${generate_BusinessName}
-    TechnologyPage.Click technology product input field
-    TechnologyPage.Select parameter from technology dropdown list      ${generated_product}
+#    TechnologyPage.Click technology product input field
+    TechnologyPage.Select parameter from technology dropdown list       ${generated_product}
     TechnologyPage.Create unique serial number random
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date
@@ -291,8 +291,7 @@ Technology Auto removed from static contract When edit Brand and product
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       ${generate_BusinessName}
-    TechnologyPage.Click technology product input field
-    TechnologyPage.Select parameter from technology dropdown list      ${generated_product}
+    TechnologyPage.Select parameter from technology dropdown list        ${generated_product}
     TechnologyPage.Create unique serial number random
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date

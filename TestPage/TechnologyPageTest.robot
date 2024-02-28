@@ -58,8 +58,7 @@ Fill the technology form for license product
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    #           TechnologyPage.Click technology product input field
-    TechnologyPage.Select parameter from technology dropdown list      QALicense
+    TechnologyPage.Select parameter from technology dropdown list      OPMR815309
     TechnologyPage.Add random technology product version
     TechnologyPage.Add random technology product edition
     TechnologyPage.Add random technology hostOn
@@ -101,15 +100,12 @@ Fill the technology form for hardware product
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-#    TechnologyPage.click on add technology button
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    #           TechnologyPage.Click technology product input field
-    TechnologyPage.Select parameter from technology dropdown list      QAHardware
-    TechnologyPage.Create unique serial number random
+    TechnologyPage.Select parameter from technology dropdown list       OPMR815274
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date
     TechnologyPage.Select warranty end date    12/12/2028
@@ -142,14 +138,12 @@ Fill the technology form for maintenance product
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-#    TechnologyPage.click on add technology button
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    #           TechnologyPage.Click technology product input field
-    TechnologyPage.Select parameter from technology dropdown list      QAMaintenance
+    TechnologyPage.Select parameter from technology dropdown list       OPMR815324
     TechnologyPage.Add technology group information contract start date
     TechnologyPage.Add technology group information contract end date      12/12/2028
     TechnologyPage.Add assetID for technology lifecycle information random
@@ -183,14 +177,12 @@ Fill the technology form for subscription product
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-#    TechnologyPage.click on add technology button
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    #           TechnologyPage.Click technology product input field
-    TechnologyPage.Select parameter from technology dropdown list      QASubscription
+    TechnologyPage.Select parameter from technology dropdown list       OPMR815277
     TechnologyPage.Add technology group information contract start date
     TechnologyPage.Add technology group information contract end date     12/12/2028
     TechnologyPage.Add assetID for technology lifecycle information random
@@ -254,14 +246,12 @@ Create new asset with new brand and product
 
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-#    TechnologyPage.click on add technology button
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       ${generated_BrandName}
-    #           TechnologyPage.Click technology product input field
-    TechnologyPage.Select parameter from technology dropdown list      ${generated_product}
+    TechnologyPage.Select parameter from technology dropdown list       ${generated_product}
     TechnologyPage.Create unique serial number random
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date
@@ -301,14 +291,12 @@ Restore asset type one
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-#    TechnologyPage.click on add technology button
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    #           TechnologyPage.Click technology product input field
-    TechnologyPage.Select parameter from technology dropdown list      QASubscription
+    TechnologyPage.Select parameter from technology dropdown list       OPMR815324
     TechnologyPage.Add technology group information contract start date
     TechnologyPage.Add technology group information contract end date    12/12/2028
     TechnologyPage.Add assetID for technology lifecycle information random
@@ -361,7 +349,7 @@ Restore asset from removed asset details page
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
 
-    TechnologyPage.Select parameter from technology dropdown list      QASubscription
+    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
     TechnologyPage.Add technology group information contract start date
     TechnologyPage.Add technology group information contract end date      12/12/2028
     TechnologyPage.Add assetID for technology lifecycle information random
@@ -416,7 +404,7 @@ Restore asset by selecting checkbox
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     #           TechnologyPage.Click technology product input field
-    TechnologyPage.Select parameter from technology dropdown list     QASubscription
+    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
 #    TechnologyPage.Add technology group information contract start date
 #    TechnologyPage.Add technology group information contract end date      12/12/2028
     TechnologyPage.Add assetID for technology lifecycle information random
@@ -489,7 +477,7 @@ Edit brand and product via details
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     #           TechnologyPage.Click technology product input field
-    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
     TechnologyPage.Create unique serial number random
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date
@@ -544,7 +532,7 @@ Sent Message should show in the Sent Tab
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     #           TechnologyPage.Click technology product input field
-    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
     TechnologyPage.Create unique serial number random
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date
@@ -738,7 +726,7 @@ Add Technology Page - Add New location and assign that location
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     #           TechnologyPage.Click technology product input field
-    TechnologyPage.Select parameter from technology dropdown list      QAMaintenance
+    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
     TechnologyPage.Click on add location
     sleep       ${yop_sleep}
     Switch Window       aithentic | Add - Location
@@ -776,7 +764,7 @@ Add New Support Partner and Assign that Partner
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     #           TechnologyPage.Click technology product input field
-    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
     TechnologyPage.Create unique serial number random
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date
@@ -853,7 +841,7 @@ Verify the history of added technology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     #           TechnologyPage.Click technology product input field
-    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date
     TechnologyPage.Select warranty end date    12/12/2028
@@ -927,8 +915,8 @@ Verify the history of added technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    #           TechnologyPage.Click technology product input field
-    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+#    TechnologyPage.Click technology product input field
+    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
@@ -948,8 +936,8 @@ Verify the history of added technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    #           TechnologyPage.Click technology product input field
-    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+    TechnologyPage.Click technology product input field
+    #         TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
@@ -971,7 +959,7 @@ Verify the history of added technology
 #    Generic.Verify your current page location contains      addtechnology
 #    TechnologyPage.Click technology brand input field
 #    TechnologyPage.Select parameter from brand dropdown list       QABrand555
-#    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+#    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
 #    TechnologyPage.Add assetID for technology lifecycle information random
 #    TechnologyPage.Click on save technology form button
 #    Generic.Fetch alert message text and compare it with        Technology created successfully
@@ -998,7 +986,7 @@ Add Technology Page - Add New Supplier and support partner and assign them
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Click the add here link on supplier to add new supplier
     sleep       ${yop_sleep}
@@ -1041,7 +1029,7 @@ Add new Technology- Add New Location and assign that location
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Click on add location
     sleep       ${yop_sleep}
@@ -1081,7 +1069,7 @@ Add new Technology- Add New Department and assign that department
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Click on add department
@@ -1108,7 +1096,7 @@ Add new Technology- Add New Assignee and assign that Assignee
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
@@ -1136,7 +1124,7 @@ Add new Technology- Add New support-partner and assign that support partner
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
@@ -1170,7 +1158,7 @@ Add new Technology- Add New Supplier and assign that supplier
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
@@ -1204,7 +1192,7 @@ Edit Technology Page - Add New location and assign that location
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
@@ -1252,7 +1240,7 @@ Edit Technology Page - Add New Department and assign that Department
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
@@ -1286,7 +1274,7 @@ Edit Technology Page - Add New Assignee and assign that Assignee
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
@@ -1322,7 +1310,7 @@ Edit Technology Page - Add New Supplier and assign that Supplier
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
@@ -1363,7 +1351,7 @@ Edit Technology Page - Add New Support Partner and assign that Support Partner
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
@@ -1404,7 +1392,7 @@ Technology Details- Verify the Location Details
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Click on add location
     sleep       ${yop_sleep}
@@ -1508,7 +1496,7 @@ Technology-Inactive asset and Restore asset
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date
     TechnologyPage.Select warranty end date    12/12/2028
@@ -1599,7 +1587,7 @@ Inactive asset - Restore asset from Technology Details page
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date
     TechnologyPage.Select warranty end date    12/12/2028
@@ -1684,7 +1672,7 @@ Verify the technology data while applying agent Filters
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+    TechnologyPage.Select parameter from technology dropdown list       Product_00337612322
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully

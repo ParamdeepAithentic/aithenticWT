@@ -483,7 +483,7 @@ Click on confirm button under pop up of exit button of bulk edit
     wait until element is visible  css:.qa-confirm-technology-bulk-edit-exit    60
     click element   css:.qa-confirm-technology-bulk-edit-exit
 
-Click on the department_Location_Assignto_fields of technology bulik edit
+Click on the fields and select value from dropdown of technology bulk edit
     [Arguments]     ${option}
     wait until element is not visible       ${loaderIcon}       60
     wait until element is visible   css:.ag-center-cols-container div[col-id='${option}']      60
