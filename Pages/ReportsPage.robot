@@ -79,13 +79,12 @@ Click on tab under Technology Types
     click element       //p[normalize-space()='${tab_name}']//following-sibling::p
 
 Fetch the total count
-    [Arguments]    ${data}
     wait until element is enabled       ${Totalcount_field}      60
     wait until element is visible   ${Totalcount_field}      60
     ${text}=     get text   ${Totalcount_field}
-    ${parts}    Split String    ${text}    ${data}
+    ${parts}    Split String    ${text}    Total Count :
     ${total_count}    Get Substring    ${parts[1]}    3
-    Log to console  Total counts are:${total_count}
+    Log to console  Total count is :${total_count}
     set global variable    ${total_count}
 
 Verify that key_data is equals to total number of counts

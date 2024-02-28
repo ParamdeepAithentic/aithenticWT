@@ -299,3 +299,4 @@ Click on back to contract link
     wait until element is visible   //span[@class='back']   60
     wait until element is enabled   //span[@class='back']   60
     click element   //span[@class='back']
+    wait until element is not visible    ${loaderIcon}  60
