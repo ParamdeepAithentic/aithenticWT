@@ -402,21 +402,21 @@ Technology Bulk edit
     Bulk_Import_ExportPage.click on the arrow of product    Product Information     2
     Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology    ModelProductName_1     Product_2589283776
     Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology    Brand      BrandName2556763617
-    Bulk_Import_ExportPage.Select the new value of technology group in bulk edit of technology    TechnologyType      Hardware
     Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology    TechnologyGroup      Applications
+    Bulk_Import_ExportPage.Select the new value of technology group in bulk edit of technology    TechnologyType      Hardware
     Bulk_Import_ExportPage.click on the arrow of product    Product Information     1
     Bulk_Import_ExportPage.Enter the new value of asset id of bulk edit of technology   AssetId
     Bulk_Import_ExportPage.click on the arrow of product    Technology Lifecycle Information     2
-    Bulk_Import_ExportPage.Click on the department_Location_Assignto_fields of technology bulik edit        Status
+    Bulk_Import_ExportPage.Click on the fields and select value from dropdown of technology bulk edit        Status
     Bulk_Import_ExportPage.click on the arrow of product    Technology Lifecycle Information     1
     Bulk_Import_ExportPage.click on the arrow of product    Assignment Information     2
-    Bulk_Import_ExportPage.Click on the department_Location_Assignto_fields of technology bulik edit    LocationTypeName_1
-    Bulk_Import_ExportPage.Click on the department_Location_Assignto_fields of technology bulik edit    DepartmentName
-    Bulk_Import_ExportPage.Click on the department_Location_Assignto_fields of technology bulik edit    AssignedName
+    Bulk_Import_ExportPage.Click on the fields and select value from dropdown of technology bulk edit    LocationTypeName_1
+    Bulk_Import_ExportPage.Click on the fields and select value from dropdown of technology bulk edit    DepartmentName
+    Bulk_Import_ExportPage.Click on the fields and select value from dropdown of technology bulk edit    AssignedName
     Bulk_Import_ExportPage.click on the arrow of product    Assignment Information     1
     Bulk_Import_ExportPage.click on the arrow of product    Partners Information     2
-    Bulk_Import_ExportPage.Click on the department_Location_Assignto_fields of technology bulik edit        SupportPartnerName_1
-    Bulk_Import_ExportPage.Click on the department_Location_Assignto_fields of technology bulik edit        SupplierName
+    Bulk_Import_ExportPage.Click on the fields and select value from dropdown of technology bulk edit        SupportPartnerName_1
+    Bulk_Import_ExportPage.Click on the fields and select value from dropdown of technology bulk edit        SupplierName
     Bulk_Import_ExportPage.click on the arrow of product    Partners Information     1
     Bulk_Import_ExportPage.click on the arrow of product    Technology Cost Information    2
     Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology       PaymentPartnerName      Dell
