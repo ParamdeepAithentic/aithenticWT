@@ -509,9 +509,8 @@ Edit brand and product via details
     Generic.Verify your current page location contains      edit-technology
     TechnologyPage.Click on the edit icon on the edit technology page
     TechnologyPage.Click technology brand input field
-    TechnologyPage.Select parameter from brand dropdown list       Panasonic
-    TechnologyPage.Click technology product input field
-    TechnologyPage.Select the first value of To dropdown of product
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPageSelect parameter from technology dropdown list      Product_0033761232
     TechnologyPage.Select edited technology lifecycle status      Active
     TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
     TechnologyPage.Click on update button of edit_technology page       Update
