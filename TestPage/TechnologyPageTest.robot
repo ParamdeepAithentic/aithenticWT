@@ -466,6 +466,7 @@ Restore asset by selecting checkbox
 
 
 Edit brand and product via details
+    [Tags]      Rerunn
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
@@ -477,7 +478,7 @@ Edit brand and product via details
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     #           TechnologyPage.Click technology product input field
-    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
+    TechnologyPage.Select parameter from technology dropdown list       OPMR815274
     TechnologyPage.Create unique serial number random
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date
@@ -508,8 +509,8 @@ Edit brand and product via details
     TechnologyPage.Click on edit button on product details page        Edit
     Generic.Verify your current page location contains      edit-technology
     TechnologyPage.Click on the edit icon on the edit technology page
-    TechnologyPage.Click technology brand input field
-    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+#    TechnologyPage.Click technology brand input field
+#    TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPageSelect parameter from technology dropdown list      Product_0033761232
     TechnologyPage.Select edited technology lifecycle status      Active
     TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
@@ -531,7 +532,7 @@ Sent Message should show in the Sent Tab
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     #           TechnologyPage.Click technology product input field
-    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
+    TechnologyPage.Select parameter from technology dropdown list       OPMR815274
     TechnologyPage.Create unique serial number random
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date
@@ -763,7 +764,7 @@ Add New Support Partner and Assign that Partner
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     #           TechnologyPage.Click technology product input field
-    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
+    TechnologyPage.Select parameter from technology dropdown list       OPMR815274
     TechnologyPage.Create unique serial number random
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date
@@ -828,7 +829,7 @@ Add New Support Partner and Assign that Partner
 
 
 Verify the history of added technology
-    [Tags]      Sanity
+    [Tags]      Sanity      Rerunn
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
@@ -848,7 +849,7 @@ Verify the history of added technology
     TechnologyPage.Add technology lifecycle comment    Technology Lifecycle Information- comment
     TechnologyPage.Add order number of technology cost information     56
     TechnologyPage.Add payment partner of technology cost information      testqa 20Feb
-    TechnologyPage.Add cost type of technology cost information        Purchased
+    TechnologyPage.Add cost type of technology cost information        Open Ended Contract
     TechnologyPage.Add payment type of technology cost information     FixedPayment
     TechnologyPage.Add payment peroid of technology cost information       Monthly
     TechnologyPage.Add first payment date of technology cost information       12/12/2028

@@ -46,7 +46,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Compose Message invite user test
-    [Tags]      Sanity      Smoke       failed
+    [Tags]      Sanity      Smoke       Rerunn
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      asset-overview
@@ -556,7 +556,7 @@ Export Specificartner into Excel Doc CSV and TSV for manufacturer
 
 
 Export Specificartner into Excel Doc CSV and TSV for Supplier
-    [Tags]      Sanity
+    [Tags]      Sanity      Rerunn
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Partners
@@ -1057,6 +1057,7 @@ Remove Manufacturer from partner
     Generic.Fetch alert message text and compare it with      Partner deleted successfully
 
 View Details and check the details of Contract
+    [Tags]      Rerunn
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     ReplaceDomainAPI.Replace Domain

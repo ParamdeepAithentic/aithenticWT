@@ -42,7 +42,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Download agent for OCS from signup - Linux
-    [Tags]      Sanity      Smoke
+    [Tags]      Sanity      Smoke       Rerunn
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
 #    LoginAPI.Fetch the refresh token from the login api
@@ -141,13 +141,12 @@ Download agent for OCS from signup - Linux
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     sleep   ${search_sleep}
-    OCS.Choose options to install from download agent button    single
     OCS.Select the agent type    Linux
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
 
 Download agent for OCS from signup - Windows
-    [Tags]      Sanity     just
+    [Tags]      Sanity     just     Rerunn
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
 #    LoginAPI.Fetch the refresh token from the login api
@@ -246,13 +245,12 @@ Download agent for OCS from signup - Windows
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     sleep   ${search_sleep}
-    OCS.Choose options to install from download agent button    single
     OCS.Select the agent type    Windows
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
 
 Download agent for OCS from signup - macOS
-    [Tags]      Sanity     just
+    [Tags]      Sanity     just     Rerunn
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
 #    LoginAPI.Fetch the refresh token from the login api
@@ -347,7 +345,6 @@ Download agent for OCS from signup - macOS
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     sleep   ${search_sleep}
-    OCS.Choose options to install from download agent button    single
     OCS.Select the agent type    macOS
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
@@ -456,6 +453,7 @@ Search Discovered Assets
     Generic.Verify your current page contains this text    ${hover_MAC_address}
 
 Search Existing Assets
+
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.select the option from the side menu    Technology
@@ -464,7 +462,7 @@ Search Existing Assets
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
-#    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Click on save technology form button
@@ -489,7 +487,7 @@ Match Discovery and Existing Asset
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
-#    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Click on save technology form button
@@ -565,7 +563,7 @@ Apply filters and clear filter on Discovered Asset
     OCS.Get text by hovering over assets     Brand:
 
 Apply filters and clear filter on Existing Assets
-    [Tags]      Sanity
+    [Tags]      Sanity      Rerunn
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     johns@mai.25u.com     Test@123
     Generic.Click on the profile name
@@ -592,6 +590,7 @@ Apply filters and clear filter on Existing Assets
     OCS.Get text of selected brand, mac address and agent of discovered assets  0
     OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   0
     Generic.click on the button     Apply
+    OCS.Hover over searched existing Asset
     OCS.click on the right text asset result of existing asset
     sleep       ${yop_sleep}
     Switch Window   aithentic | Technology - Details
@@ -605,6 +604,7 @@ Apply filters and clear filter on Existing Assets
     OCS.Get text of selected brand, mac address and agent of discovered assets  0
     OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   0
     Generic.click on the button     Apply
+    OCS.Hover over searched existing Asset
     OCS.click on the right text asset result of existing asset
     sleep       ${yop_sleep}
     Switch Window   aithentic | Technology - Details
@@ -618,6 +618,7 @@ Apply filters and clear filter on Existing Assets
     OCS.Get text by hovering over existing assets  ProductId:
 
 Add Discovery Asset
+
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.Click on the profile name
@@ -664,6 +665,7 @@ Add Discovery Asset
     UnselectAssetAPI.Hit API Endpoint
 
 Create Asset from Add Assets Page
+    [Tags]      Failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.Click on the profile name
@@ -717,7 +719,7 @@ Create Asset from Add Assets Page
     UnselectAssetAPI.Hit API Endpoint
 
 Add component as an asset after Adding OCS asset
-    [Tags]      Sanity      smoke
+    [Tags]      Sanity      smoke       Rerunn
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.Click on the profile name
@@ -794,6 +796,7 @@ Network Discovery in case of no records
     OCS.Fetch text from Agent Discovery tab and compare it with    No record found
 
 Add component as an asset from Agent Discovery page
+    [Tags]      Rerunn
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.Click on the profile name

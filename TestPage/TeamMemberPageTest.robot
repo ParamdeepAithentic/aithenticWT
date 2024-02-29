@@ -126,7 +126,7 @@ Edit Team member page - Edit New Department and assign that department to Team m
     Generic.Verify your current page location contains          memberslist
 
 Verify team member Asset history
-    [Tags]      Sanity
+    [Tags]      Sanity      Rerunn
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
     Generic.select the option from the side menu    Team Members
@@ -196,8 +196,7 @@ Verify team member Asset history
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Click technology product input field
-    TechnologyPage.Select the first value of To dropdown of product
+    TechnologyPage.Select parameter from technology dropdown list       OPMR815274
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Add assignment information assign to   ${generated_TMFname}       ${generated_TMLname}
     TechnologyPage.Click on save technology form button
@@ -213,6 +212,7 @@ Verify team member Asset history
     Generic.Verify your current page contains this text     Asset History
 
 Search asset history with Asset ID
+    [Tags]      Rerunn
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
     Generic.select the option from the side menu    Team Members
@@ -282,8 +282,7 @@ Search asset history with Asset ID
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Click technology product input field
-    TechnologyPage.Select the first value of To dropdown of product
+    TechnologyPage.Select parameter from technology dropdown list       OPMR815274
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Add assignment information assign to   ${generated_TMFname}       ${generated_TMLname}
     TechnologyPage.Click on save technology form button
@@ -319,9 +318,9 @@ Search asset history with Asset ID
     TeamMemberPage.verify status of first name in member list   ${generated_AssetID}
 
 Verify user is able to export team member asset history list
-    [Tags]      Sanity      Smoke
+    [Tags]      Sanity      Smoke       Rerunn
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
+    LandingPage.Fill the login Form   debut@cool.fr.nf    Test@123
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Click on add team member action button
@@ -390,9 +389,9 @@ Verify user is able to export team member asset history list
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
-    TechnologyPage.Select parameter from brand dropdown list       BrandName2994855826
-    TechnologyPage.Click technology product input field
-    TechnologyPage.Select the first value of To dropdown of product
+    TechnologyPage.Select parameter from brand dropdown list       BrandName2994855827
+
+    TechnologyPage.Select parameter from technology dropdown list     Product_321654
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Add assignment information assign to   ${generated_TMFname}       ${generated_TMLname}
     TechnologyPage.Click on save technology form button
@@ -413,9 +412,9 @@ Verify user is able to export team member asset history list
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     TechnologyPage.Click technology brand input field
-    TechnologyPage.Select parameter from brand dropdown list       BrandName6162258047
-    TechnologyPage.Click technology product input field
-    TechnologyPage.Select the first value of To dropdown of product
+    TechnologyPage.Select parameter from brand dropdown list       BrandName6162258049
+
+    TechnologyPage.Select parameter from technology dropdown list     Product_00123
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Add assignment information assign to   ${generated_TMFname}       ${generated_TMLname}
     TechnologyPage.Click on save technology form button
@@ -436,9 +435,8 @@ Verify user is able to export team member asset history list
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     TechnologyPage.Click technology brand input field
-    TechnologyPage.Select parameter from brand dropdown list       BrandName0743813679
-    TechnologyPage.Click technology product input field
-    TechnologyPage.Select the first value of To dropdown of product
+    TechnologyPage.Select parameter from brand dropdown list       BrandName07438136700
+    TechnologyPage.Select parameter from technology dropdown list     Product_0089
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Add assignment information assign to   ${generated_TMFname}       ${generated_TMLname}
     TechnologyPage.Click on save technology form button
@@ -459,9 +457,8 @@ Verify user is able to export team member asset history list
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     TechnologyPage.Click technology brand input field
-    TechnologyPage.Select parameter from brand dropdown list       BrandName1931299814
-    TechnologyPage.Click technology product input field
-    TechnologyPage.Select the first value of To dropdown of product
+    TechnologyPage.Select parameter from brand dropdown list       BrandName19312998123
+    TechnologyPage.Select parameter from technology dropdown list     Product_00456
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Add assignment information assign to   ${generated_TMFname}       ${generated_TMLname}
     TechnologyPage.Click on save technology form button
@@ -482,9 +479,8 @@ Verify user is able to export team member asset history list
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     TechnologyPage.Click technology brand input field
-    TechnologyPage.Select parameter from brand dropdown list       BrandName0914413211
-    TechnologyPage.Click technology product input field
-    TechnologyPage.Select the first value of To dropdown of product
+    TechnologyPage.Select parameter from brand dropdown list       BrandName0914413203
+    TechnologyPage.Select parameter from technology dropdown list    Product_78965
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Add assignment information assign to   ${generated_TMFname}       ${generated_TMLname}
     TechnologyPage.Click on save technology form button
@@ -531,11 +527,11 @@ Verify user is able to export team member asset history list
     Generic.click on the button     Okay, Thanks!
     TeamMemberPage.Click on search by brand, product and asset id of asset history via team member  ${generated_AssetID}
     TeamMemberPage.Verify the first row of asset history under team member
-    TeamMemberPage.verify status of first name in member list   BrandName0914413211
-    TeamMemberPage.Click on search by brand, product and asset id of asset history via team member  BrandName0914413211
+    TeamMemberPage.verify status of first name in member list   BrandName0914413203
+    TeamMemberPage.Click on search by brand, product and asset id of asset history via team member  BrandName0914413203
     TeamMemberPage.Verify the first row of asset history under team member
-    TeamMemberPage.verify status of first name in member list   Product_9110561777
-    TeamMemberPage.Click on search by brand, product and asset id of asset history via team member  Product_9110561777
+    TeamMemberPage.verify status of first name in member list   Product_78965
+    TeamMemberPage.Click on search by brand, product and asset id of asset history via team member   Product_78965
     TeamMemberPage.Verify the first row of asset history under team member
     TeamMemberPage.verify status of first name in member list   ${generated_AssetID}
 
@@ -670,7 +666,8 @@ Check the validation of business email id
     TeamMemberPage.Select team member location
     TeamMemberPage.Select team member role while converting assignee to team member    Admin
     Generic.click on the button     Update
-    Generic.Fetch alert message text and compare it with        The Email Address must end with one of the following: mailinator.com automationqa2023090514421014.com, milton1.com, sahilnulla.com.
+    Generic.Fetch alert message text and compare it with        The Email Address must end with one of the following: mailinator.com automationqa2023090514421014.com.
+
 
 Convert Assignee to team member in case of employee id is not system generated
     Generic.click on the tab	Login
