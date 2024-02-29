@@ -1334,3 +1334,8 @@ Verify that Agent column should contain text
     [Arguments]     ${option}
     wait until element is visible       css:thead tr       60
     Wait Until Element Contains       css:.table-row    ${option}   60
+
+Click on the cross icon of product
+    wait until element is visible   css:.cross-product      60
+    wait until element is visible   css:.cross-product      60
+    click element   css:.cross-product

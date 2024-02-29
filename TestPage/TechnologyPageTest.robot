@@ -511,6 +511,7 @@ Edit brand and product via details
     TechnologyPage.Click on the edit icon on the edit technology page
 #    TechnologyPage.Click technology brand input field
 #    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Click on the cross icon of product
     TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
     TechnologyPage.Select edited technology lifecycle status      Active
     TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
@@ -849,7 +850,7 @@ Verify the history of added technology
     TechnologyPage.Add technology lifecycle comment    Technology Lifecycle Information- comment
     TechnologyPage.Add order number of technology cost information     56
     TechnologyPage.Add payment partner of technology cost information      testqa 20Feb
-    TechnologyPage.Add cost type of technology cost information        Open Ended Contract
+    TechnologyPage.Add cost type of technology cost information        Purchased
     TechnologyPage.Add payment type of technology cost information     FixedPayment
     TechnologyPage.Add payment peroid of technology cost information       Monthly
     TechnologyPage.Add first payment date of technology cost information       12/12/2028
