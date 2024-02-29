@@ -42,7 +42,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Download agent for OCS from signup - Linux
-    [Tags]      Sanity      Smoke       Rerunn
+    [Tags]      Sanity      Smoke
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
 #    LoginAPI.Fetch the refresh token from the login api
@@ -146,7 +146,7 @@ Download agent for OCS from signup - Linux
     Generic.click on the button link    Download
 
 Download agent for OCS from signup - Windows
-    [Tags]      Sanity     just     Rerunn
+    [Tags]      Sanity     just
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
 #    LoginAPI.Fetch the refresh token from the login api
@@ -250,7 +250,7 @@ Download agent for OCS from signup - Windows
     Generic.click on the button link    Download
 
 Download agent for OCS from signup - macOS
-    [Tags]      Sanity     just     Rerunn
+    [Tags]      Sanity     just     
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
 #    LoginAPI.Fetch the refresh token from the login api
@@ -563,7 +563,7 @@ Apply filters and clear filter on Discovered Asset
     OCS.Get text by hovering over assets     Brand:
 
 Apply filters and clear filter on Existing Assets
-    [Tags]      Sanity      Rerunn
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     johns@mai.25u.com     Test@123
     Generic.Click on the profile name
@@ -719,7 +719,7 @@ Create Asset from Add Assets Page
     UnselectAssetAPI.Hit API Endpoint
 
 Add component as an asset after Adding OCS asset
-    [Tags]      Sanity      smoke       Rerunn
+    [Tags]      Sanity      smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.Click on the profile name
