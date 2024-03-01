@@ -242,8 +242,6 @@ Create new asset with new brand and product
     DashboardPage.Save added product details
     Generic.Fetch alert message text and compare it with        Product created successfully
     DashboardPage.Verify product added        ${generated_product}
-
-
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -523,13 +521,11 @@ Sent Message should show in the Sent Tab
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-#    TechnologyPage.click on add technology button
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    #           TechnologyPage.Click technology product input field
     TechnologyPage.Select parameter from technology dropdown list       OPMR815274
     TechnologyPage.Create unique serial number random
     TechnologyPage.Add assetID for technology lifecycle information random
@@ -559,7 +555,6 @@ Sent Message should show in the Sent Tab
     TechnologyPage.Search by AssetId       ${generated_AssetID}
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
-
     TechnologyPage.Verify assetID is visible       ${generated_AssetID}
     TechnologyPage.Click on the specific tab    messages
     TechnologyPage.Click on compose message button     Compose Message
