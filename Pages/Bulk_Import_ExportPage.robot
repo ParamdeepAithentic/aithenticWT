@@ -447,7 +447,8 @@ Enter the new value in the product, brand, group and type value in bulk_edit of 
     double click element    (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]
     Press Keys    (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]//input     CONTROL+A
     Press Keys    (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]//input     DELETE
-    sleep   ${search_sleep}
+    sleep   2
+    double click element    (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]
     input text    (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]//input     ${text}
     Press Keys      (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]       ENTER
     sleep   ${search_sleep}
