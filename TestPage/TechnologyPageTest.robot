@@ -344,7 +344,6 @@ Restore asset from removed asset details page
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-
     TechnologyPage.Select parameter from technology dropdown list       Product_00337612322
     TechnologyPage.Add technology group information contract start date
     TechnologyPage.Add technology group information contract end date      12/12/2028
@@ -410,7 +409,7 @@ Restore asset by selecting checkbox
     TechnologyPage.Add technology lifecycle comment    Technology Lifecycle Information- comment
     TechnologyPage.Add order number of technology cost information     56
     TechnologyPage.Add payment partner of technology cost information      testqa 20Feb
-    TechnologyPage.Add cost type of technology cost information        Open Ended Contract
+    TechnologyPage.Add cost type of technology cost information        Purchased
     TechnologyPage.Add payment type of technology cost information     FixedPayment
     TechnologyPage.Add payment peroid of technology cost information       Monthly
     TechnologyPage.Add first payment date of technology cost information       12/12/2028
