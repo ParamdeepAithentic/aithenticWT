@@ -865,3 +865,27 @@ Get and verify the text and compare it with
     ${text}=        get text       //p[normalize-space()='${option}']
     log to console      ${text}
     should be equal     ${text}     ${option}
+
+
+Verify the text from recent notifications and compare with
+    [Arguments]     ${option}
+    Wait Until Page Contains     Billing Details            60
+    Wait Until Element Is Visible    (//tbody//td)[1]       60
+    Wait Until Element Is Enabled    (//tbody//td)[1]       60
+    ${alert_text}=   get text        (//tbody//td)[1]
+    Log To Console    ${alert_text}
+    Set Global Variable    ${alert_text}
+    Should Be Equal    ${alert_text}    ${option}
+
+Wait until alert is visible in the Recent Notifiation tab
+    [Arguments]     ${option1}      ${option2}
+    wait until page contains        ${option1} ${option2}    120
+
+Click on View more dropdown under recent notifications
+    [Arguments]     ${option}
+    Wait Until Element Is Visible    //span[normalize-space()='${option}']      60
+    Wait Until Element Is Enabled    //span[normalize-space()='${option}']      60
+    Click Element       //span[normalize-space()='${option}']
+
+Verify the invisiblity of view_more button
+    Wait Until Element Is Not Visible       //span[normalize-space()='View More']       60

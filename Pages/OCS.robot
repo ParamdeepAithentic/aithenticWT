@@ -46,11 +46,11 @@ Verify that agent is ready to get download
     wait until element is not visible     ${preparingAgent_text}      60
     wait until element is visible     ${AgentReady_text}      60
 
-Would you like to download agent
+Choose options to install from download agent button
     [Arguments]    ${option}
-    wait until element is visible      //button[normalize-space()='${option}']     60
-    wait until element is enabled      //button[normalize-space()='${option}']     60
-    click element       //button[normalize-space()='${option}']
+    wait until element is visible      css:.qa-${option}-install     60
+    wait until element is enabled      css:.qa-${option}-install     60
+    click element       css:.qa-${option}-install
     wait until element is not visible   ${loaderIcon}   60
 
 Select the agent type
@@ -90,14 +90,14 @@ Enter text to search existing asset
 Verify Searched discovery asset
     [Arguments]     ${option}
     wait until element is not visible   ${loaderIcon}        60
-    Wait Until Element Is Visible    ${Discovery_Assets}
+    Wait Until Element Is Visible    ${Discovery_Assets}        60
     Element Should Contain   ${Discovery_Assets}   ${option}
 
 Verify searched existing asset
     [Arguments]     ${option}
     wait until element is not visible   ${loaderIcon}        60
     Sleep    ${yop_sleep}
-    Wait Until Element Is Visible    ${Existing_Assets}
+    Wait Until Element Is Visible    ${Existing_Assets}     60
     Element Should Contain   ${Existing_Assets}    ${option}
 
 
@@ -211,6 +211,7 @@ Click on Searched Discovered asset
    Wait Until Element Is Visible    ${Discovery_Assets}     60
    Wait Until Element Is Enabled    ${Discovery_Assets}     60
    Click element    ${Discovery_Assets}
+   Sleep    ${search sleep}
 
 Click on tab under dicovery_asset_detail page
     [Arguments]     ${option}
@@ -250,12 +251,12 @@ Clear the text of Product field
 
 Choose option from product on Add technology Page
     Wait Until Element Is Not Visible    ${loaderIcon}      60
-    Wait Until Element Is Visible    ${Add_technology_product}      60
-    Wait Until Element Is Enabled    ${Add_technology_product}      60
-    Click Element    ${Add_technology_product}
-    wait until element is visible     //div[contains (@id, '-0')]       60
-    wait until element is enabled     //div[contains (@id, '-0')]       60
-    click element   //div[contains (@id, '-0')]
+#    Wait Until Element Is Visible    ${Add_technology_product}      60
+#    Wait Until Element Is Enabled    ${Add_technology_product}      60
+#    Click Element    ${Add_technology_product}
+    wait until element is visible     (//tbody//tr)[1]       60
+    wait until element is enabled     (//tbody//tr)[1]       60
+    click element   (//tbody//tr)[1]
     Sleep    ${yop_sleep}
 
 Enter The Asset_id in Add Technology Page
@@ -290,6 +291,18 @@ Get Serial number by hovering over discovered assets
     ${hover_serial_number}    Get Substring    ${parts[1]}    1
     Log to console      ${hover_serial_number}
     set global variable     ${hover_serial_number}
+
+Get Tagname by hovering over discovered assets
+    [Arguments]     ${text}
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    Wait Until Element Is Visible   ${Discovery_Assets}      60
+    Wait Until Element Is Enabled   ${Discovery_Assets}      60
+    sleep       ${search_sleep}
+    ${hover_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
+    ${parts}    Split String    ${hover_text}    ${text}
+    ${hover_tagname}    Get Substring    ${parts[1]}    1
+    Log to console      ${hover_tagname}
+    set global variable     ${hover_tagname}
 
 Get Host name by hovering over discovered assets
     [Arguments]     ${text}
@@ -394,10 +407,11 @@ click on the right text asset result of existing asset
     click element   css:.right-text
     
 Click on save button of Add Technology Page
+    Sleep    ${search_sleep}
     wait until element is visible  //button[@class='btn button-green']    60
     wait until element is enabled  //button[@class='btn button-green']     60
     click element   //button[@class='btn button-green']
-    Wait Until Element Is Visible    ${loaderIcon}      60
+#    Wait Until Element Is not Visible    ${loaderIcon}      60
 
 Verify Page should contain Element
     [Arguments]     ${element}
@@ -465,3 +479,33 @@ Create Asset_id for software component
     input text   //input[@formcontrolname="AssetId"]       ${component_AssetID}
     log to console      Componenet_Asset_id:${component_AssetID}
     Set Global Variable   ${component_AssetID}
+    
+Fetch text from Agent/Discovered assets column and compare it with
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}  60
+    Wait Until Element Is Visible    css:.qa-assets-boxes-left      60
+    Wait Until Element Is Enabled    css:.qa-assets-boxes-left  60
+    ${fetch_lefttext}=  Get Text    css:.qa-assets-boxes-left
+    Log To Console    ${fetch_lefttext}
+    Set Global Variable    ${fetch_lefttext}
+    Should be equal   ${fetch_lefttext}     ${option}
+
+Fetch text from Existing assets column and compare it with
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}  60
+    Wait Until Element Is Visible    css:.qa-assets-boxes-right     60
+    Wait Until Element Is Enabled    css:.qa-assets-boxes-right  60
+    ${fetch_righttext}=  Get Text    css:.qa-assets-boxes-right
+    Log To Console    ${fetch_righttext}
+    Set Global Variable    ${fetch_righttext}
+    Should be equal   ${fetch_righttext}     ${option}
+
+Fetch text from Agent Discovery tab and compare it with
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}  60
+    Wait Until Element Is Visible    css:.count-section h4     60
+    Wait Until Element Is Enabled    css:.count-section h4     60
+    ${fetch_agenttext}=  Get Text    css:.count-section h4
+    Log To Console    ${fetch_agenttext}
+    Set Global Variable    ${fetch_agenttext}
+    Should be equal   ${fetch_agenttext}     ${option}

@@ -316,14 +316,20 @@ Select the first value of To dropdown of product
     click element   //div[contains (@id, '-0')]
 
 Select parameter from technology dropdown list
-    [Arguments]      ${option2}
-     ${StartTime1} =     Get Current Time in Milliseconds
-     Generic.Enter value into field     ${product}      ${option2}
-     TechnologyPage.Select the first value of To dropdown of product
-     Wait Until Element Is Not Visible    ${loaderIcon}      60
-     ${EndTime1} =     Get Current Time in Milliseconds
-     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-     Calculate Running time  6  ${pageHeading}   Technology Page - Select parameter from technology dropdown list      6    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+    [Arguments]      ${option}
+    ${StartTime1} =     Get Current Time in Milliseconds
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    wait until element is visible   //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input      60
+    wait until element is enabled   //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input     60
+    Clear Element Text    //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input
+    Input Text    //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input    ${option}
+    Wait Until Element Is Visible    //td[normalize-space()='${option}']        60
+    Wait Until Element Is enabled    //td[normalize-space()='${option}']        60
+    Click Element       //td[normalize-space()='${option}']
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  6  ${pageHeading}   Technology Page - Select parameter from technology dropdown list      6    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Click on add product link
     [Arguments]      ${option}
@@ -1309,3 +1315,28 @@ Select the check box option from asset wizard
     wait until element is visible   //b[normalize-space()='${option}']    60
     wait until element is enabled   //b[normalize-space()='${option}']    60
     click element   //b[normalize-space()='${option}']
+
+Choose filter from Technology Page
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    wait until element is visible   //b[normalize-space()='${option}']    60
+    wait until element is enabled   //b[normalize-space()='${option}']    60
+    click element   //b[normalize-space()='${option}']
+
+Select checkbox from Agent Filters
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    wait until element is visible   //label[normalize-space()='${option}']//span    60
+    wait until element is enabled   //label[normalize-space()='${option}']//span    60
+    click element   //label[normalize-space()='${option}']//span
+
+Verify that Agent column should contain text
+    [Arguments]     ${option}
+    wait until element is visible       css:thead tr       60
+    Wait Until Element Contains       css:.table-row    ${option}   60
+
+
+Click on cross icon of product while editing technology
+    wait until element is visible   css:.cross-product      60
+    wait until element is enabled   css:.cross-product      60
+    click element   css:.cross-product

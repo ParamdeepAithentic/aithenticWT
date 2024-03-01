@@ -64,8 +64,7 @@ Verify asset history of assigned users
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Click technology product input field
-    TechnologyPage.Select the first value of To dropdown of product
+    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Add assignment information assign to   ${generated_AssigneduserFirstName}    ${generated_TMLname}
     TechnologyPage.Click on save technology form button
@@ -75,6 +74,7 @@ Verify asset history of assigned users
     TechnologyPage.Search by AssetId       ${generated_AssetID}
     TechnologyPage.Click on the first row of the technology table
     Generic.click on the button link    Edit
+    TechnologyPage.Select technology lifecycle status      Active
     MemberPage.Enter assign to field        Dc Dc
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology updated successfully
@@ -132,14 +132,12 @@ Search asset history with Asset ID of Assigned User
     MemberPage.Search assigned user by first name   ${generated_AssigneduserFirstName}
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-#   TechnologyPage.click on add technology button
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list    ${generated_BrandName}
-    TechnologyPage.Click technology product input field
-    TechnologyPage.Select the first value of To dropdown of product
+    TechnologyPage.Select parameter from technology dropdown list       ${generated_product}
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Add assignment information assign to   ${generated_AssigneduserFirstName}       ${generated_TMLname}
     TechnologyPage.Click on save technology form button
@@ -149,6 +147,7 @@ Search asset history with Asset ID of Assigned User
     TechnologyPage.Search by AssetId       ${generated_AssetID}
     TechnologyPage.Click on the first row of the technology table
     Generic.click on the button link    Edit
+    TechnologyPage.Select technology lifecycle status      Active
     MemberPage.Enter assign to field   Dc Dc
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology updated successfully
