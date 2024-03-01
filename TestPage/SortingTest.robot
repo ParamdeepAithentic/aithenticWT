@@ -188,7 +188,6 @@ Test the sorting of team members page table inside department page
 
 
 Test the sorting of team member asset history page table
-
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      jasdeep@15963.fr.nf    Paramdeep@112
     Generic.select the option from the side menu    Team Members
@@ -285,7 +284,6 @@ Test the sorting of department page list via bulk import of technology table
 #//div[normalize-space()='${headingName}']//div[contains(@class,'sortingIcon')]
 
 Test the sorting of removed technology page
-
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      jasdeep@15963.fr.nf     Paramdeep@112
     Generic.select the option from the side menu    Technology

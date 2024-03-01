@@ -146,7 +146,7 @@ Download agent for OCS from signup - Linux
     Generic.click on the button link    Download
 
 Download agent for OCS from signup - Windows
-    [Tags]      Sanity     just
+    [Tags]      Sanity
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
 #    LoginAPI.Fetch the refresh token from the login api
@@ -250,7 +250,7 @@ Download agent for OCS from signup - Windows
     Generic.click on the button link    Download
 
 Download agent for OCS from signup - macOS
-    [Tags]      Sanity     just     
+    [Tags]      Sanity
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
 #    LoginAPI.Fetch the refresh token from the login api
@@ -453,7 +453,6 @@ Search Discovered Assets
     Generic.Verify your current page contains this text    ${hover_MAC_address}
 
 Search Existing Assets
-
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.select the option from the side menu    Technology
@@ -618,7 +617,6 @@ Apply filters and clear filter on Existing Assets
     OCS.Get text by hovering over existing assets  ProductId:
 
 Add Discovery Asset
-
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.Click on the profile name
@@ -634,7 +632,6 @@ Add Discovery Asset
     Switch Window       aithentic | Add Discovery Asset
     Generic.Verify your current page location contains    add-discovered-asset
     Generic.Verify your current page contains this text    Add Technology
-#    TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
     OCS.Enter The Asset_id in Add Technology Page
     OCS.Click on save button of Add Technology Page
@@ -665,7 +662,6 @@ Add Discovery Asset
     UnselectAssetAPI.Hit API Endpoint
 
 Create Asset from Add Assets Page
-    [Tags]      Failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.Click on the profile name
@@ -695,7 +691,6 @@ Create Asset from Add Assets Page
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Add Discovery Asset
     Generic.Verify your current page contains this text    Add Technology
-#    TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
     OCS.Enter The Asset_id in Add Technology Page
     OCS.Click on save button of Add Technology Page
@@ -741,7 +736,6 @@ Add component as an asset after Adding OCS asset
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Add Discovery Asset
     Generic.Verify your current page contains this text    Add Technology
-#    TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
     OCS.Enter The Asset_id in Add Technology Page
     OCS.Click on save button of Add Technology Page
@@ -761,7 +755,6 @@ Add component as an asset after Adding OCS asset
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Add Discovery Asset
     Generic.Verify your current page contains this text    Add Technology
-#    TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
     OCS.Create Asset_id for software component
     OCS.Click on save button of Add Technology Page
@@ -796,7 +789,6 @@ Network Discovery in case of no records
     OCS.Fetch text from Agent Discovery tab and compare it with    No record found
 
 Add component as an asset from Agent Discovery page
-
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.Click on the profile name

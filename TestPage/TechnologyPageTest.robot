@@ -132,7 +132,6 @@ Fill the technology form for hardware product
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
-
 Fill the technology form for maintenance product
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
@@ -281,7 +280,6 @@ Create new asset with new brand and product
     TechnologyPage.Search by ProductName   ${generated_product}
 #    TechnologyPage.Search by assignee      Testqaup94590327      QA
 #    TechnologyPage.Search by SerialNo   ${generated_serialNo}       #yet to cover
-
 
 Restore asset type one
     [Tags]      Sanity
@@ -912,16 +910,13 @@ Verify the history of added technology
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
-
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
     TechnologyPage.Select tab under technology details      history
-
     TechnologyPage.Verify area changed under history tab       New Parent
-
     TechnologyPage.Select tab under technology details      components
     TechnologyPage.Click on add new entry component button under technology details page       Add New Entry
     TechnologyPage.Select add new entry        New Asset
