@@ -136,7 +136,7 @@ Download agent for OCS from signup - Linux
     Generic.Verify your current page location contains     organization
     DashboardPage.Select the employee ID checkbox   yes
     DashboardPage.Select the location ID checkbox   yes
-    DashboardPage.Select the asset ID checkbox      yes
+    DashboardPage.Select the asset ID checkbox      no
     Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
@@ -240,7 +240,7 @@ Download agent for OCS from signup - Windows
     Generic.Verify your current page location contains     organization
     DashboardPage.Select the employee ID checkbox   yes
     DashboardPage.Select the location ID checkbox   yes
-    DashboardPage.Select the asset ID checkbox      yes
+    DashboardPage.Select the asset ID checkbox      no
     Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
@@ -340,7 +340,7 @@ Download agent for OCS from signup - macOS
     Generic.Verify your current page location contains     organization
     DashboardPage.Select the employee ID checkbox   yes
     DashboardPage.Select the location ID checkbox   yes
-    DashboardPage.Select the asset ID checkbox      yes
+    DashboardPage.Select the asset ID checkbox      no
     Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
