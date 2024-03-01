@@ -322,7 +322,7 @@ Assigned Users Bulk Edit
     Bulk_Import_ExportPage.Enter the new value of assigned in the last name column      LastName
     Bulk_Import_ExportPage.Enter the new value of assigned in the email column      AssignedEmail
     Bulk_Import_ExportPage.Enter the new value of assigned in the ID column     AssignedEmployeeId
-    Generic.Click on the button     Upload      #Check Data
+    Generic.Click on the button     Update      #Check Data
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
     Generic.Click on the button     Exit
     MemberPage.Confirm the exit import process pop appers
@@ -372,6 +372,7 @@ Team Member Bulk Edit
     Bulk_Import_ExportPage.Search team member by first and last name    ${generate_teamMember_FirstName} ${generate_teamMember_LastName}
 
 Technology Bulk edit
+    [Tags]       sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
@@ -382,8 +383,13 @@ Technology Bulk edit
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+    TechnologyPage.Select parameter from technology dropdown list      OPMR815277
     TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Add cost type of technology cost information         Open Ended Contract
+    TechnologyPage.Add payment type of technology cost information     FixedPayment
+    TechnologyPage.Add payment peroid of technology cost information       Monthly
+    sleep   ${search_sleep}
+    TechnologyPage.Add payment partner of technology cost information      testqa 20Feb
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
@@ -397,14 +403,31 @@ Technology Bulk edit
     Bulk_Import_ExportPage.click on the arrow of product    Product Information     2
     Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology    ModelProductName_1     Product_2589283776
     Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology    Brand      BrandName2556763617
-    Select the new value of technology group in bulk edit of technology    TechnologyType      Hardware
     Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology    TechnologyGroup      Applications
+    Bulk_Import_ExportPage.Select the new value of technology group in bulk edit of technology    TechnologyType      Hardware
+    Bulk_Import_ExportPage.click on the arrow of product    Product Information     1
     Bulk_Import_ExportPage.Enter the new value of asset id of bulk edit of technology   AssetId
+    Bulk_Import_ExportPage.click on the arrow of product    Technology Lifecycle Information     2
+    Bulk_Import_ExportPage.Click on the fields and select value from dropdown of technology bulk edit        Status
+    Bulk_Import_ExportPage.click on the arrow of product    Technology Lifecycle Information     1
+    Bulk_Import_ExportPage.click on the arrow of product    Assignment Information     2
+    Bulk_Import_ExportPage.Click on the fields and select value from dropdown of technology bulk edit    LocationTypeName_1
+    Bulk_Import_ExportPage.Click on the fields and select value from dropdown of technology bulk edit    DepartmentName
+    Bulk_Import_ExportPage.Click on the fields and select value from dropdown of technology bulk edit    AssignedName
+    Bulk_Import_ExportPage.click on the arrow of product    Assignment Information     1
+    Bulk_Import_ExportPage.click on the arrow of product    Partners Information     2
+    Bulk_Import_ExportPage.Click on the fields and select value from dropdown of technology bulk edit        SupportPartnerName_1
+    Bulk_Import_ExportPage.Click on the fields and select value from dropdown of technology bulk edit        SupplierName
+    Bulk_Import_ExportPage.click on the arrow of product    Partners Information     1
+    Bulk_Import_ExportPage.click on the arrow of product    Technology Cost Information    2
+    Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology       PaymentPartnerName      Dell
+    Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology       CostTypeName      Purchased
+    Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology       PaymentPeriod      Once
+    Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology       CostCenter      123456
+    Bulk_Import_ExportPage.click on the arrow of product    Technology Cost Information    1
     Generic.Click on the button     Check data      #Update,Edit
     Generic.Click on the button     Update
     sleep   ${search_sleep}
-    Bulk_Import_ExportPage.Click on confirm pop up of update button
-    Bulk_Import_ExportPage.click on the arrow of product    Product Information     1
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
     Generic.Click on the button     Finish
     sleep   ${search_sleep}

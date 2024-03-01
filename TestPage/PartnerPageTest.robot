@@ -46,7 +46,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Compose Message invite user test
-    [Tags]      Sanity      Smoke       failed
+    [Tags]      Sanity      Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      asset-overview
@@ -141,7 +141,6 @@ Compose Message invite user test
 
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       ${generate_BusinessName}
-    TechnologyPage.Click technology product input field
     TechnologyPage.Select parameter from technology dropdown list      ${generated_product}
     TechnologyPage.Create unique serial number random
     TechnologyPage.Add assetID for technology lifecycle information random
@@ -1058,6 +1057,7 @@ Remove Manufacturer from partner
     Generic.Fetch alert message text and compare it with      Partner deleted successfully
 
 View Details and check the details of Contract
+
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     ReplaceDomainAPI.Replace Domain
@@ -1075,7 +1075,7 @@ View Details and check the details of Contract
 #   TechnologyPage.click on add technology button
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
-    PartnersPage.Click here to add link of contract details     Click here to add
+    PartnersPage.Click here to add link of contract details
     DashboardPage.Create random productName
     DashboardPage.Add product brand name      ${generate_BusinessName}
     TechnologyPage.Add product description via technology

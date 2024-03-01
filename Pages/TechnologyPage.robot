@@ -316,14 +316,20 @@ Select the first value of To dropdown of product
     click element   //div[contains (@id, '-0')]
 
 Select parameter from technology dropdown list
-    [Arguments]      ${option2}
-     ${StartTime1} =     Get Current Time in Milliseconds
-     Generic.Enter value into field     ${product}      ${option2}
-     TechnologyPage.Select the first value of To dropdown of product
-     Wait Until Element Is Not Visible    ${loaderIcon}      60
-     ${EndTime1} =     Get Current Time in Milliseconds
-     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-     Calculate Running time  6  ${pageHeading}   Technology Page - Select parameter from technology dropdown list      6    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+    [Arguments]      ${option}
+    ${StartTime1} =     Get Current Time in Milliseconds
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    wait until element is visible   //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input      60
+    wait until element is enabled   //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input     60
+    Clear Element Text    //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input
+    Input Text    //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input    ${option}
+    Wait Until Element Is Visible    //td[normalize-space()='${option}']        60
+    Wait Until Element Is enabled    //td[normalize-space()='${option}']        60
+    Click Element       //td[normalize-space()='${option}']
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  6  ${pageHeading}   Technology Page - Select parameter from technology dropdown list      6    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Click on add product link
     [Arguments]      ${option}
@@ -1328,3 +1334,8 @@ Verify that Agent column should contain text
     [Arguments]     ${option}
     wait until element is visible       css:thead tr       60
     Wait Until Element Contains       css:.table-row    ${option}   60
+
+Click on the cross icon of product
+    wait until element is visible   css:.cross-product      60
+    wait until element is visible   css:.cross-product      60
+    click element   css:.cross-product

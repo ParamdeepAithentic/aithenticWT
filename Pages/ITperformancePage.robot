@@ -57,6 +57,7 @@ ${download_allFiles}     css:.download-all-btn a
 ${loaderIcon}     //div[@role='status']
 ${aging_analytics_tablelocator}    (//h4[normalize-space()='Critical Aged Assets']//following::tr)[3]//td
 
+${EMPTY}
 
 
 
@@ -120,24 +121,35 @@ Skip Action
 Empty Action
     Log    Skipping empty action as the element value is null
 
+
 Get and verify the count of aging analytics table
-    [Arguments]     ${option}       ${tab}
-    ${element_count}=    Get Element Count    ${aging_analytics_tablelocator}
-    log      ${element_count}
+    [Arguments]     ${option}       ${tab_count}
+    ${element_count}=    Get Element Count    (//h4[normalize-space()='${tab_count}']//following::tr)[2]//td
+    Log      ${element_count}
     FOR    ${index}    IN RANGE    5    ${element_count + 1}
         Wait Until Element Is Visible   (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]       60
         Wait Until Element Is Enabled   (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]       60
         ${element}=    Get Text    (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]
         Log    Element ${index}: ${element}
+        Run Keyword If    '${element}' == '${EMPTY}'    Run Keywords    Empty Action   AND     Continue For Loop
+        ${element}=    Remove Special Characters    ${element}
+        Log     Element after removing special characters: ${element}
         ${element_as_number}=   Convert To Integer   ${element}
-        log  converted Test:${element_as_number}
-        Run Keyword If    ${element_as_number} == 0    Skip Action
+        log  Converted Text: ${element_as_number}
+        Run Keyword If    ${element_as_number} == 0
+        ...    Skip Action
         ...    ELSE IF    ${element_as_number} > 0
-        ...   Run Keywords      Click Element    (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]     AND       sleep   ${yop_sleep}
-        ...   Run Keywords     AND    Click Element    css:span[class='back']  AND  Sleep    ${yop_sleep}
-        ...   Run Keywords     AND    Click Element    css:#aging-analytics-tab  AND  Sleep    ${yop_sleep}     AND       Click Element   css:#${tab}-tab   AND  Sleep    ${yop_sleep}
+        ...    Run Keywords      Click Element    (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]     AND       sleep   ${yop_sleep}
+        ...    AND    Click Element    css:span[class='back']  AND  Sleep    ${yop_sleep}
         ...    ELSE    Log    Custom action for element ${index} with value ${element}
     END
+
+
+Remove Special Characters
+    [Arguments]    ${input_string}
+    ${pattern}=    Set Variable    [^a-zA-Z0-9\s]
+    ${cleaned_string}=    Replace String Using Regexp    ${input_string}    ${pattern}    ${EMPTY}
+    [Return]    ${cleaned_string}
 
 Click on tabs under it perfomance
     [Arguments]     ${option}
@@ -176,20 +188,6 @@ click on fiscal year forecast
     click element   css:#totalitassetsspendfy-tab
     wait until element is not visible   ${loaderIcon}       60
 
-click on values under data quality
-    [Arguments]     ${option1}      ${option2}
-    wait until element is visible   //div[@id="${option1}"]//tbody//tr[${option2}]//td[2]     60
-    wait until element is enabled   //div[@id="${option1}"]//tbody//tr[${option2}]//td[2]     60
-    click element   //div[@id="${option1}"]//tbody//tr[${option2}]//td[2]
-
-Fetch the value under data quality
-    [Arguments]    ${option1}       ${option2}
-    wait until element is visible       //div[@id="${option1}"]//tbody//tr[${option2}]//td[2]     60
-    wait until element is enabled        //div[@id="${option1}"]//tbody//tr[${option2}]//td[2]     60
-    ${get_fetch_value} =    get text    //div[@id="${option1}"]//tbody//tr[${option2}]//td[2]
-    set global variable    ${get_fetch_value}
-    log to console     ${get_fetch_value}
-
 Click on refresh icon of technolofy it performance page
     wait until element is visible   css:.reset-search-qa    60
     wait until element is enabled   css:.reset-search-qa    60
@@ -216,19 +214,6 @@ Click on data quality button link under investments by partner tab
     sleep   ${search_sleep}
     click element   css:.qa-data-quality-partner-${option} h4
 
-click on values under data quality of investment by partner tab
-    [Arguments]     ${option1}      ${option2}
-    wait until element is visible   //div[@id="dataquality-partner-${option1}"]//tbody//tr[${option2}]//td[2]     60
-    wait until element is enabled   //div[@id="dataquality-partner-${option1}"]//tbody//tr[${option2}]//td[2]     60
-    click element   //div[@id="dataquality-partner-${option1}"]//tbody//tr[${option2}]//td[2]
-
-Fetch the value under data quality of investment by partner tab
-    [Arguments]    ${option1}       ${option2}
-    wait until element is visible      //div[@id="dataquality-partner-${option1}"]//tbody//tr[${option2}]//td[2]     60
-    wait until element is enabled        //div[@id="dataquality-partner-${option1}"]//tbody//tr[${option2}]//td[2]     60
-    ${get_fetch_valueinvestment} =    get text    //div[@id="dataquality-partner-${option1}"]//tbody//tr[${option2}]//td[2]
-    set global variable    ${get_fetch_valueinvestment}
-    log to console     ${get_fetch_valueinvestment}
 
 Click on tabs under investment by partner tab
     [Arguments]     ${tab}
@@ -243,3 +228,60 @@ Search by brand, asset id , product and assignee
     Clear Element Text      css:input[placeholder='Search by Brand, Product, Asset ID and Assignee']
     input text      css:input[placeholder='Search by Brand, Product, Asset ID and Assignee']     ${AssetID}
     sleep       ${search_sleep}
+
+Get And Verify The Count Of Data Quality Under Tabs
+    [Arguments]     ${option}       ${tab_count}
+    ${element_count}=    Get Element Count    //div[@id="${tab_count}"]//tbody//tr//td[2]
+    Log      ${element_count}
+    FOR    ${index}    IN RANGE    1    ${element_count + 1}
+        Wait Until Element Is Visible   //div[@id="${option}"]//tbody//tr[${index}]//td[2]       60
+        Wait Until Element Is Enabled   //div[@id="${option}"]//tbody//tr[${index}]//td[2]        60
+        ${element}=    Get Text    //div[@id="${option}"]//tbody//tr[${index}]//td[2]
+        Log    Element ${index}: ${element}
+        Run Keyword If    '${element}' == '${EMPTY}'    Run Keywords    Empty Action   AND     Continue For Loop
+        ${element}=    Remove Special Characters    ${element}
+        Log     Element after removing special characters: ${element}
+        ${element_as_number}=   Convert To Integer   ${element}
+        log  Converted Text: ${element_as_number}
+        Run Keyword If    ${element_as_number} == 0
+        ...    Skip Action
+        ...    ELSE IF    ${element_as_number} > 0
+        ...    Run Keywords      Click Element    //div[@id="${option}"]//tbody//tr[${index}]//td[2]      AND       sleep   ${yop_sleep}        AND       ITperformancePage.Fetch and compare the total count  ${element_as_number}
+        ...    AND    Click Element    css:span[class='back']  AND  Sleep    ${yop_sleep}
+        ...    ELSE    Log    Custom action for element ${index} with value ${element}
+    END
+
+Fetch and compare the total count
+    [Arguments]  ${value}
+    wait until element is enabled       ${Totalcount_field}      60
+    wait until element is visible   ${Totalcount_field}      60
+    ${text}=     get text   ${Totalcount_field}
+    ${parts}    Split String    ${text}    Total Count :
+    ${total_count}    Get Substring    ${parts[1]}    3
+    ${number}=   Convert To Integer   ${total_count}
+    Log to console  Total count is :${total_count}
+    set global variable    ${total_count}
+    should be equal    ${number}     ${value}
+
+
+Get And Verify The Count Of Data Quality Under Investment by partner tab
+    [Arguments]     ${option}       ${tab_count}
+    ${element_count}=    Get Element Count    //div[@id="${tab_count}"]//tbody//tr//td[2]
+    Log      ${element_count}
+    FOR    ${index}    IN RANGE    1    ${element_count}
+        Wait Until Element Is Visible   //div[@id="${option}"]//tbody//tr[${index}]//td[2]       60
+        Wait Until Element Is Enabled   //div[@id="${option}"]//tbody//tr[${index}]//td[2]        60
+        ${element}=    Get Text    //div[@id="${option}"]//tbody//tr[${index}]//td[2]
+        Log    Element ${index}: ${element}
+        Run Keyword If    '${element}' == '${EMPTY}'    Run Keywords    Empty Action   AND     Continue For Loop
+        ${element}=    Remove Special Characters    ${element}
+        Log     Element after removing special characters: ${element}
+        ${element_as_number}=   Convert To Integer   ${element}
+        log  Converted Text: ${element_as_number}
+        Run Keyword If    ${element_as_number} == 0
+        ...    Skip Action
+        ...    ELSE IF    ${element_as_number} > 0
+        ...    Run Keywords      Click Element    //div[@id="${option}"]//tbody//tr[${index}]//td[2]      AND       sleep   ${yop_sleep}        AND       ITperformancePage.Fetch and compare the total count  ${element_as_number}
+        ...    AND    Click Element    css:span[class='back']  AND  Sleep    ${yop_sleep}
+        ...    ELSE    Log    Custom action for element ${index} with value ${element}
+    END
