@@ -466,7 +466,6 @@ Restore asset by selecting checkbox
 
 
 Edit brand and product via details
-    [Tags]      Rerunn
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
@@ -509,8 +508,7 @@ Edit brand and product via details
     TechnologyPage.Click on edit button on product details page        Edit
     Generic.Verify your current page location contains      edit-technology
     TechnologyPage.Click on the edit icon on the edit technology page
-#    TechnologyPage.Click technology brand input field
-#    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Click on cross icon of product while editing technology
     TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
     TechnologyPage.Select edited technology lifecycle status      Active
     TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
@@ -829,7 +827,7 @@ Add New Support Partner and Assign that Partner
 
 
 Verify the history of added technology
-    [Tags]      Sanity      Rerunn
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
@@ -849,7 +847,7 @@ Verify the history of added technology
     TechnologyPage.Add technology lifecycle comment    Technology Lifecycle Information- comment
     TechnologyPage.Add order number of technology cost information     56
     TechnologyPage.Add payment partner of technology cost information      testqa 20Feb
-    TechnologyPage.Add cost type of technology cost information        Open Ended Contract
+    TechnologyPage.Add cost type of technology cost information        Purchased
     TechnologyPage.Add payment type of technology cost information     FixedPayment
     TechnologyPage.Add payment peroid of technology cost information       Monthly
     TechnologyPage.Add first payment date of technology cost information       12/12/2028
@@ -915,7 +913,6 @@ Verify the history of added technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-#    TechnologyPage.Click technology product input field
     TechnologyPage.Select parameter from technology dropdown list       Product_00337612322
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Click on save technology form button
@@ -936,12 +933,11 @@ Verify the history of added technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Click technology product input field
-    #         TechnologyPage.Select parameter from technology dropdown list       Product_00337612322
+#    TechnologyPage.Click technology product input field
+    TechnologyPage.Select parameter from technology dropdown list       Product_00337612322
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
-
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
