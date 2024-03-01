@@ -74,6 +74,7 @@ Change plan- Assign commercial plan and change it to slotted
     Admin_PanelPage.Change the plan from Plan Name field        Commercial-Debut BETA Promo
     Admin_PanelPage.Click on the button inside assign commercial plan modal         Confirm
     Admin_PanelPage.Get alert message and compare it with           Subscription Updated Successfully
+    Sleep    ${yop_sleep}
     switch window       aithentic | Billing
     Admin_PanelPage.Fetch text from current Plan
     Admin_PanelPage.Verify text from current plan after changing subscription       Debut BETA Promo
