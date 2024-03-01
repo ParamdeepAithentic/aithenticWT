@@ -722,7 +722,7 @@ Search By Brand name in product list
     DashboardPage.Verify product added    ${generated_product}
 
 Verify Reports Asset Alert
-    [Tags]      Rerunn
+
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}       ${valid_password}
     Generic.select the option from the side menu    Technology
@@ -730,8 +730,7 @@ Verify Reports Asset Alert
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
-#    TechnologyPage.Click technology brand input field
-#    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+
     TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select technology lifecycle status      Active
@@ -754,8 +753,8 @@ Verify Reports Asset Alert
     TechnologyPage.Click on edit button on product details page        Edit
     Generic.Verify your current page location contains      edit-technology
     TechnologyPage.Click on the edit icon on the edit technology page
-#    TechnologyPage.Click technology brand input field
-#    TechnologyPage.Select parameter from brand dropdown list      QABrand555
+    TechnologyPage.Click on cross icon of product while editing technology
+
     TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
     TechnologyPage.Select edited technology lifecycle status      Active
     TechnologyPage.Click on update button of edit_technology page       Update
@@ -794,7 +793,7 @@ Verify Reports Asset Alert
     Generic.Verify your current page location contains          account-overview
     Generic.Verify your current page contains this text    Billing Details
     Generic.Refresh the existing page
-    DashboardPage.Wait until alert is visible in the Recent Notifiation tab        A new agent has been downloaded for      Ubuntu.
+    DashboardPage.Wait until alert is visible in the Recent Notifiation tab        A new agent has been downloaded for      Linux.
     Generic.select the option from the side menu    Asset Discovery
     Generic.Verify your current page location contains      discovery-assets
     DashboardPage.Click on download agent button to download        Download Agent

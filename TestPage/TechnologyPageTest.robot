@@ -242,8 +242,6 @@ Create new asset with new brand and product
     DashboardPage.Save added product details
     Generic.Fetch alert message text and compare it with        Product created successfully
     DashboardPage.Verify product added        ${generated_product}
-
-
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -466,7 +464,6 @@ Restore asset by selecting checkbox
 
 
 Edit brand and product via details
-    [Tags]      Rerunn
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
@@ -509,9 +506,7 @@ Edit brand and product via details
     TechnologyPage.Click on edit button on product details page        Edit
     Generic.Verify your current page location contains      edit-technology
     TechnologyPage.Click on the edit icon on the edit technology page
-#    TechnologyPage.Click technology brand input field
-#    TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Click on the cross icon of product
+    TechnologyPage.Click on cross icon of product while editing technology
     TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
     TechnologyPage.Select edited technology lifecycle status      Active
     TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
@@ -526,13 +521,11 @@ Sent Message should show in the Sent Tab
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-#    TechnologyPage.click on add technology button
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    #           TechnologyPage.Click technology product input field
     TechnologyPage.Select parameter from technology dropdown list       OPMR815274
     TechnologyPage.Create unique serial number random
     TechnologyPage.Add assetID for technology lifecycle information random
@@ -562,7 +555,6 @@ Sent Message should show in the Sent Tab
     TechnologyPage.Search by AssetId       ${generated_AssetID}
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
-
     TechnologyPage.Verify assetID is visible       ${generated_AssetID}
     TechnologyPage.Click on the specific tab    messages
     TechnologyPage.Click on compose message button     Compose Message
@@ -830,7 +822,7 @@ Add New Support Partner and Assign that Partner
 
 
 Verify the history of added technology
-    [Tags]      Sanity      Rerunn
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
@@ -916,7 +908,6 @@ Verify the history of added technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-#    TechnologyPage.Click technology product input field
     TechnologyPage.Select parameter from technology dropdown list       Product_00337612322
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Click on save technology form button
@@ -937,12 +928,11 @@ Verify the history of added technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Click technology product input field
-    #         TechnologyPage.Select parameter from technology dropdown list       Product_00337612322
+#    TechnologyPage.Click technology product input field
+    TechnologyPage.Select parameter from technology dropdown list       Product_00337612322
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
-
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
