@@ -344,7 +344,7 @@ Restore asset from removed asset details page
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Select parameter from technology dropdown list       Product_00337612322
+    TechnologyPage.Select parameter from technology dropdown list       Product_2727984358
     TechnologyPage.Add technology group information contract start date
     TechnologyPage.Add technology group information contract end date      12/12/2028
     TechnologyPage.Add assetID for technology lifecycle information random
