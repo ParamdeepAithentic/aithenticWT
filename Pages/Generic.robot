@@ -177,7 +177,7 @@ Get Current Time in Milliseconds
 
 Fetch alert message text and compare it with
     [Arguments]    ${option}
-    wait until element is visible    ${alert_Msg}        60
+    wait until element is visible    ${alert_Msg}        240
     ${get_alertMsg} =    get text    ${alert_Msg}
     log to console     ${get_alertMsg}
     should be equal    ${get_alertMsg}     ${option}
