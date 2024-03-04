@@ -459,21 +459,25 @@ Team member Bulk Import
     Generic.Verify your current page location contains      add-member-grid
     Bulk_Import_ExportPage.Enter the new value of first name in bulk import of team member      FirstName
     Bulk_Import_ExportPage.Enter the new value of last name in bulk import of team member       LastName
+    Bulk_Import_ExportPage.Enter random employee id of bulk import      EmployeeId
     Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       CountryCode     1
     Bulk_Import_ExportPage.Enter the new value of team member in the phone number column        MobileNo
     Bulk_Import_ExportPage.Enter the new value of team member in the email column       BusinessEmail
     Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       DepartmentName      3
-    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       MemberLocation      2
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       MemberLocation      3
+    Bulk_Import_ExportPage.Perform the keyboard action      MemberLocation
     Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       MemberRole     2
+    Bulk_Import_ExportPage.Perform the keyboard action      MemberRole
     Bulk_Import_ExportPage.Enter position and title of team member bulk import      QA
     Generic.Click on the button     Check Data      #Update,Edit
     Generic.Click on the button     Upload
-    Generic.Scroll the page till      400
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
     Generic.Click on the button     Finish
     Bulk_Import_ExportPage.Click on I_m_done button when popup appears     no-im-done
     Sleep      ${yop_sleep}
     Switch Window       aithentic | Member - List
+    TeamMemberPage.Search Team Member by name       ${generated_Firstname}
+    Generic.Wait until table get load
 
 
 

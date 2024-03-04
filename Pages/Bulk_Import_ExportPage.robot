@@ -513,10 +513,11 @@ Enter position and title of team member bulk import
     input text      css:.ag-center-cols-container div[col-id='Position'] input      ${option}
     Press Keys      css:.ag-center-cols-container div[col-id='Position']       ENTER
 
-Scroll Vertically
-    [Arguments]  ${scrollDistance}
+Scroll Element
+    [Arguments]  ${option}
     wait until element is not visible       ${loaderIcon}       60
-    Execute JavaScript  window.scrollBy(${scrollDistance}, 0)
+    scroll element into view    (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]
+
 
 Click on the fields and select value from dropdown of technology bulk edit
     [Arguments]     ${option}
@@ -527,3 +528,17 @@ Click on the fields and select value from dropdown of technology bulk edit
     wait until element is visible   css:div[class='ag-theme-alpine ag-popup'] div:nth-child(2) div      60
     click element   css:div[class='ag-theme-alpine ag-popup'] div:nth-child(2) div
     sleep   ${search_sleep}
+
+Enter random employee id of bulk import
+     [Arguments]    ${option}
+    MemberPage.Double click team member bulk import    ${option}
+    ${random_string} =    Generate Random String       7      [NUMBERS]
+    ${generated_employeeid}=    Catenate    EmployeeID_${random_string}
+    wait until element is visible       css:.ag-pinned-left-cols-container div[col-id='${option}']    60
+    input text  css:.ag-pinned-left-cols-container div[col-id='${option}'] input     ${generated_employeeid}
+    set global variable    ${generated_employeeid}
+
+
+Perform the keyboard action
+    [Arguments]  ${option}
+    Generic.Click keyboard button   css:.ag-center-cols-container div[col-id='${option}']       TAB
