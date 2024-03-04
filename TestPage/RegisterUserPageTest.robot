@@ -127,7 +127,7 @@ Register new user
     Generic.Verify your current page location contains     organization
     DashboardPage.Select the employee ID checkbox   yes
     DashboardPage.Select the location ID checkbox   yes
-    DashboardPage.Select the asset ID checkbox      yes
+    DashboardPage.Select the asset ID checkbox      no
     Generic.Fetch alert message text and compare it with       Settings Updated
 
 
@@ -210,7 +210,7 @@ Signup with ACH payment method
     Generic.Verify your current page location contains     organization
     DashboardPage.Select the employee ID checkbox   yes
     DashboardPage.Select the location ID checkbox   yes
-    DashboardPage.Select the asset ID checkbox      yes
+    DashboardPage.Select the asset ID checkbox     no
     Generic.Fetch alert message text and compare it with       Settings Updated
 
 
@@ -294,7 +294,7 @@ Change plan and Change asset limit with ACH Payment method
     Generic.Verify your current page location contains     organization
     DashboardPage.Select the employee ID checkbox   no
     DashboardPage.Select the location ID checkbox   yes
-    DashboardPage.Select the asset ID checkbox      yes
+    DashboardPage.Select the asset ID checkbox      no
     Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.Click on the profile name
     Generic.Select option from profile list     subscription-dropdown

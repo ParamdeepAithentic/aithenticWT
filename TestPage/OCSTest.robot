@@ -136,18 +136,17 @@ Download agent for OCS from signup - Linux
     Generic.Verify your current page location contains     organization
     DashboardPage.Select the employee ID checkbox   yes
     DashboardPage.Select the location ID checkbox   yes
-    DashboardPage.Select the asset ID checkbox      yes
+    DashboardPage.Select the asset ID checkbox      no
     Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     sleep   ${search_sleep}
-    OCS.Would you like to download agent    Yes, please!
     OCS.Select the agent type    Linux
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
 
 Download agent for OCS from signup - Windows
-    [Tags]      Sanity     just
+    [Tags]      Sanity
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
 #    LoginAPI.Fetch the refresh token from the login api
@@ -241,18 +240,17 @@ Download agent for OCS from signup - Windows
     Generic.Verify your current page location contains     organization
     DashboardPage.Select the employee ID checkbox   yes
     DashboardPage.Select the location ID checkbox   yes
-    DashboardPage.Select the asset ID checkbox      yes
+    DashboardPage.Select the asset ID checkbox      no
     Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     sleep   ${search_sleep}
-    OCS.Would you like to download agent    Yes, please!
     OCS.Select the agent type    Windows
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
 
 Download agent for OCS from signup - macOS
-    [Tags]      Sanity     just
+    [Tags]      Sanity
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
 #    LoginAPI.Fetch the refresh token from the login api
@@ -342,12 +340,11 @@ Download agent for OCS from signup - macOS
     Generic.Verify your current page location contains     organization
     DashboardPage.Select the employee ID checkbox   yes
     DashboardPage.Select the location ID checkbox   yes
-    DashboardPage.Select the asset ID checkbox      yes
+    DashboardPage.Select the asset ID checkbox      no
     Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     sleep   ${search_sleep}
-    OCS.Would you like to download agent    Yes, please!
     OCS.Select the agent type    macOS
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
@@ -359,7 +356,7 @@ Download Agent from network discovery - Linux
     Generic.select the option from the side menu    Asset Discovery
     Generic.Verify your current page location contains      discovery-assets
     DashboardPage.Click on download agent button to download        Download Agent
-    OCS.Would you like to download agent    Yes, please!
+    OCS.Choose options to install from download agent button    single
     OCS.Select the agent type    Linux
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
@@ -371,7 +368,7 @@ Download Agent from network discovery - Windows
     Generic.select the option from the side menu    Asset Discovery
     Generic.Verify your current page location contains      discovery-assets
     DashboardPage.Click on download agent button to download        Download Agent
-    OCS.Would you like to download agent    Yes, please!
+    OCS.Choose options to install from download agent button    single
     OCS.Select the agent type    Windows
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
@@ -383,7 +380,7 @@ Download Agent from network discovery - macOS
     Generic.select the option from the side menu    Asset Discovery
     Generic.Verify your current page location contains      discovery-assets
     DashboardPage.Click on download agent button to download        Download Agent
-    OCS.Would you like to download agent    Yes, please!
+    OCS.Choose options to install from download agent button    single
     OCS.Select the agent type    macOS
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
@@ -397,7 +394,7 @@ Download Agent from asset discovery - Linux
     sleep   ${search_sleep}
     OCS.Choose tab under Discovery Assets   agent-discovery
     DashboardPage.Click on download agent button to download        Download Agent
-    OCS.Would you like to download agent    Yes, please!
+    OCS.Choose options to install from download agent button    single
     OCS.Select the agent type    Linux
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
@@ -411,7 +408,7 @@ Download Agent from asset discovery - Windows
     sleep   ${search_sleep}
     OCS.Choose tab under Discovery Assets   agent-discovery
     DashboardPage.Click on download agent button to download        Download Agent
-    OCS.Would you like to download agent    Yes, please!
+    OCS.Choose options to install from download agent button    single
     OCS.Select the agent type    Windows
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
@@ -425,7 +422,7 @@ Download Agent from asset discovery - macOS
     sleep   ${search_sleep}
     OCS.Choose tab under Discovery Assets   agent-discovery
     DashboardPage.Click on download agent button to download        Download Agent
-    OCS.Would you like to download agent    Yes, please!
+    OCS.Choose options to install from download agent button    single
     OCS.Select the agent type    macOS
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
@@ -465,7 +462,7 @@ Search Existing Assets
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+    TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
@@ -490,7 +487,7 @@ Match Discovery and Existing Asset
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Select parameter from technology dropdown list      QAHardware
+    TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
@@ -544,6 +541,7 @@ Apply filters and clear filter on Discovered Asset
     OCS.Hover over searched Discovered Asset
     OCS.Get text by hovering over assets    Brand:
     OCS.verify Text by hovering over assets  ${substring}       ${selected_brand}
+    OCS.Click on clear filter button link of discovered assets    Clear Filters
     OCS.Choose filters for discovered asset     Select MAC Address
     OCS.Get text of selected brand, mac address and agent of discovered assets  0
     OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   0
@@ -551,6 +549,7 @@ Apply filters and clear filter on Discovered Asset
     OCS.Hover over searched Discovered Asset
     OCS.Get text by hovering over assets     MacAddress:
     OCS.verify Text by hovering over assets  ${substring}       ${selected_brand}
+    OCS.Click on clear filter button link of discovered assets    Clear Filters
     OCS.Choose filters for discovered asset     Select Agent Tags
     OCS.Get text of selected brand, mac address and agent of discovered assets  0
     OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   0
@@ -590,6 +589,7 @@ Apply filters and clear filter on Existing Assets
     OCS.Get text of selected brand, mac address and agent of discovered assets  0
     OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   0
     Generic.click on the button     Apply
+    OCS.Hover over searched existing Asset
     OCS.click on the right text asset result of existing asset
     sleep       ${yop_sleep}
     Switch Window   aithentic | Technology - Details
@@ -603,6 +603,7 @@ Apply filters and clear filter on Existing Assets
     OCS.Get text of selected brand, mac address and agent of discovered assets  0
     OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   0
     Generic.click on the button     Apply
+    OCS.Hover over searched existing Asset
     OCS.click on the right text asset result of existing asset
     sleep       ${yop_sleep}
     Switch Window   aithentic | Technology - Details
@@ -631,8 +632,7 @@ Add Discovery Asset
     Switch Window       aithentic | Add Discovery Asset
     Generic.Verify your current page location contains    add-discovered-asset
     Generic.Verify your current page contains this text    Add Technology
-    OCS.Clear the text of Product field
-    OCS.Choose option from product on Add technology Page
+    TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
     OCS.Enter The Asset_id in Add Technology Page
     OCS.Click on save button of Add Technology Page
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
@@ -691,8 +691,7 @@ Create Asset from Add Assets Page
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Add Discovery Asset
     Generic.Verify your current page contains this text    Add Technology
-    OCS.Clear the text of Product field
-    OCS.Choose option from product on Add technology Page
+    TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
     OCS.Enter The Asset_id in Add Technology Page
     OCS.Click on save button of Add Technology Page
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
@@ -715,7 +714,7 @@ Create Asset from Add Assets Page
     UnselectAssetAPI.Hit API Endpoint
 
 Add component as an asset after Adding OCS asset
-    [Tags]      Sanity
+    [Tags]      Sanity      smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.Click on the profile name
@@ -737,8 +736,7 @@ Add component as an asset after Adding OCS asset
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Add Discovery Asset
     Generic.Verify your current page contains this text    Add Technology
-    OCS.Clear the text of Product field
-    OCS.Choose option from product on Add technology Page
+    TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
     OCS.Enter The Asset_id in Add Technology Page
     OCS.Click on save button of Add Technology Page
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
@@ -757,13 +755,13 @@ Add component as an asset after Adding OCS asset
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Add Discovery Asset
     Generic.Verify your current page contains this text    Add Technology
-    OCS.Clear the text of Product field
-    OCS.Choose option from product on Add technology Page
+    TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
     OCS.Create Asset_id for software component
     OCS.Click on save button of Add Technology Page
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Discovery Asset Detail
+
     OCS.Verify Software tab Should contain Element
     Generic.select the option from the side menu        Technology
     Generic.Verify your current page location contains      technology-list
@@ -806,8 +804,8 @@ Add component as an asset from Agent Discovery page
     Switch Window       aithentic | Add Discovery Asset
     Generic.Verify your current page location contains    add-discovered-asset
     Generic.Verify your current page contains this text    Add Technology
-    OCS.Clear the text of Product field
-    OCS.Choose option from product on Add technology Page
+#    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
     OCS.Enter The Asset_id in Add Technology Page
     OCS.Click on save button of Add Technology Page
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
@@ -831,8 +829,8 @@ Add component as an asset from Agent Discovery page
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Add Discovery Asset
     Generic.Verify your current page contains this text    Add Technology
-    OCS.Clear the text of Product field
-    OCS.Choose option from product on Add technology Page
+#    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
     OCS.Create Asset_id for software component
     OCS.Click on save button of Add Technology Page
     OCS.Wait for the invisiblity of alert msg        Technology created successfully

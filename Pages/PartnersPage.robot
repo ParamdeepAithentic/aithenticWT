@@ -528,8 +528,9 @@ Click on the save button
     Generic.click on the button         ${option}
 
 Click here to add link of contract details
-    [Arguments]     ${option}
-    Generic.click on the button link         ${option}
+    wait until element is visible   (//a[normalize-space()='Click here to add'])[2]        60
+    wait until element is enabled      (//a[normalize-space()='Click here to add'])[2]       60
+    click element   (//a[normalize-space()='Click here to add'])[2]
 
 Enter contact business email via link
     [Arguments]    ${Pname}

@@ -447,8 +447,11 @@ Enter the new value in the product, brand, group and type value in bulk_edit of 
     double click element    (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]
     Press Keys    (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]//input     CONTROL+A
     Press Keys    (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]//input     DELETE
+    sleep   2
+    double click element    (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]
     input text    (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]//input     ${text}
     Press Keys      (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]       ENTER
+    sleep   ${search_sleep}
 
 Select the new value of technology group in bulk edit of technology
     [Arguments]     ${option}   ${text}
@@ -472,7 +475,7 @@ Enter the new value of asset id of bulk edit of technology
 Click on confirm pop up of update button
     wait until element is visible  css:.qa-confirm-technology-bulk-edit-warning  60
     click element   css:.qa-confirm-technology-bulk-edit-warning
-    sleep   2
+    sleep   ${search_sleep}
 
 Click on confirm button under pop up of finish button of bulk edit
     wait until element is visible  css:.qa-confirm-technology-bulk-edit-finish      60
@@ -514,3 +517,13 @@ Scroll Vertically
     [Arguments]  ${scrollDistance}
     wait until element is not visible       ${loaderIcon}       60
     Execute JavaScript  window.scrollBy(${scrollDistance}, 0)
+
+Click on the fields and select value from dropdown of technology bulk edit
+    [Arguments]     ${option}
+    wait until element is not visible       ${loaderIcon}       60
+    wait until element is visible   css:.ag-center-cols-container div[col-id='${option}']      60
+    wait until element is enabled   css:.ag-center-cols-container div[col-id='${option}']      60
+    double click element    css:.ag-center-cols-container div[col-id='${option}']
+    wait until element is visible   css:div[class='ag-theme-alpine ag-popup'] div:nth-child(2) div      60
+    click element   css:div[class='ag-theme-alpine ag-popup'] div:nth-child(2) div
+    sleep   ${search_sleep}
