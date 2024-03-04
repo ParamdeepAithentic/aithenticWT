@@ -1697,3 +1697,16 @@ Verify the technology data while applying agent Filters
     TechnologyPage.Click on update button of edit_technology page       Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     UnselectAssetAPI.Hit API Endpoint
+
+
+Click on the attachment tab under technology
+     Generic.click on the tab	Login
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       AssetID_1800698663
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+    TechnologyPage.Click on attachment tab
+    TechnologyPage.Upload file      UploadFile.txt
+    Generic.Fetch alert message text and compare it with        Technology documents uploaded successfully

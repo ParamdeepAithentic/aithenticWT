@@ -1340,3 +1340,20 @@ Click on cross icon of product while editing technology
     wait until element is visible   css:.cross-product      60
     wait until element is enabled   css:.cross-product      60
     click element   css:.cross-product
+
+
+Click on attachment tab
+    wait until element is visible   css:#PrintQrButton   60
+    wait until element is enabled   css:#PrintQrButton   60
+    wait until element is visible   css:#attachments-tab   60
+    click element   css:#attachments-tab
+    wait until element is visible   //label[normalize-space()='Upload File']        60
+    wait until element is enabled   //label[normalize-space()='Upload File']        60
+#    click element   //label[normalize-space()='Upload File']
+
+Upload file
+    [Arguments]    ${fileName}
+    Execute JavaScript    document.querySelector('input[type="file"]').style.display = 'block';
+    Choose File    css=input[type="file"]    ${CURDIR}\\${fileName}
+
+#    Input Text    //input[@type='file']    ${CURDIR}\\UploadFile.txt
