@@ -268,7 +268,8 @@ Confirm the exit import process pop appears
 Enter the new value in the building name column
     [Arguments]    ${option}    ${buildingName}
     LocationPage.Double click    ${option}
-    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input     60
+    input text      css:.ag-center-cols-container div[col-id='${option}'] input     ${buildingName}
 
 Enter the new value in the floor number column
     [Arguments]    ${option}    ${floorNumber}
@@ -294,12 +295,11 @@ Enter the new value in the city column
     wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${city}
 
-
 Enter the new value in the location name column
     [Arguments]    ${option}
     MemberPage.Double click    ${option}
     ${random_string} =    Generate Random String       10      [NUMBERS]
-    ${generated_NewLocationName}=    Catenate    NewLocationName${random_string}
+    ${generated_NewLocationName}=    Catenate    LocationName${random_string}
     wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_NewLocationName}
     set global variable    ${generated_NewLocationName}
@@ -324,7 +324,7 @@ Enter the new value of assigned in the first name column
     [Arguments]    ${option}
     MemberPage.Double click    ${option}
     ${random_string} =    Generate Random String       10      [NUMBERS]
-    ${generated_assigneeFname}=    Catenate    FName${random_string}
+    ${generated_assigneeFname}=    Catenate    FName_${random_string}
     wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assigneeFname}
     set global variable    ${generated_assigneeFname}
@@ -333,7 +333,7 @@ Enter the new value of assigned in the last name column
     [Arguments]    ${option}
     MemberPage.Double click    ${option}
     ${random_string} =    Generate Random String       10      [NUMBERS]
-    ${generated_assigneeLname}=    Catenate    LName${random_string}
+    ${generated_assigneeLname}=    Catenate    LName_${random_string}
     wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assigneeLname}
     set global variable    ${generated_assigneeLname}
@@ -350,8 +350,8 @@ Enter the new value of assigned in the email column
 Enter the new value of assigned in the ID column
     [Arguments]    ${option}
     MemberPage.Double click    ${option}
-    ${random_string} =    Generate Random String       5      [NUMBERS]
-    ${generated_assigneeEmpID}=    Catenate    ${random_string}
+    ${random_string} =    Generate Random String       6      [NUMBERS]
+    ${generated_assigneeEmpID}=    Catenate    EmployeeID_${random_string}
     wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assigneeEmpID}
     set global variable    ${generated_assigneeEmpID}
@@ -538,7 +538,22 @@ Enter random employee id of bulk import
     input text  css:.ag-pinned-left-cols-container div[col-id='${option}'] input     ${generated_employeeid}
     set global variable    ${generated_employeeid}
 
-
 Perform the keyboard action
     [Arguments]  ${option}
     Generic.Click keyboard button   css:.ag-center-cols-container div[col-id='${option}']       TAB
+
+
+Enter the new value in the first address column
+    [Arguments]    ${option}    ${address}
+    LocationPage.Double click    ${option}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${address}
+
+Enter random zip code of bulk import of loaction
+     [Arguments]    ${option}
+    LocationPage.Double click    ${option}
+    ${random_string} =    Generate Random String       7      [NUMBERS]
+    ${generated_zipcode}=    Catenate    ${random_string}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}']    60
+    input text  css:.ag-center-cols-container div[col-id='${option}'] input     ${generated_zipcode}
+    set global variable    ${generated_zipcode}

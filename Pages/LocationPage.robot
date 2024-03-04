@@ -185,8 +185,8 @@ Select option from country column
     [Arguments]    ${option}
     wait until element is visible      css:.ag-center-cols-container div[col-id='${option}']    60
     Double click element      css:.ag-center-cols-container div[col-id='${option}']
-    wait until element is visible      css:div[aria-label='List'] div:nth-child(4) div    60
-    click element       css:div[aria-label='List'] div:nth-child(4) div
+    wait until element is visible      css:div[aria-label='List'] div:nth-child(3) div    60
+    click element       css:div[aria-label='List'] div:nth-child(3) div
 
 Double click
     [Arguments]    ${option}

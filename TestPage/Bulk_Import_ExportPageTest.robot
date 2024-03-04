@@ -479,6 +479,65 @@ Team member Bulk Import
     TeamMemberPage.Search Team Member by name       ${generated_Firstname}
     Generic.Wait until table get load
 
+Assigned User Bulk Import
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.select the option from the side menu    Team Members
+    MemberPage.Click on assigned user tab      Assigned Users
+    MemberPage.Click on action button of assigned users
+    MemberPage.Choose the option from the action menu   Bulk Import
+    sleep     ${yop_sleep}
+    switch window     aithentic | Data-Wizard
+    Generic.Verify your current page location contains      add-assignee-grid
+    Bulk_Import_ExportPage.Enter the new value of assigned in the first name column    FirstName
+    Bulk_Import_ExportPage.Enter the new value of assigned in the last name column      LastName
+    Bulk_Import_ExportPage.Enter the new value of assigned in the email column      AssignedEmail
+    Bulk_Import_ExportPage.Enter the new value of assigned in the ID column     AssignedEmployeeId
+    Generic.Click on the button     Check Data      #Update,Edit
+    Generic.Click on the button     Upload
+    Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
+    Generic.Click on the button     Finish
+    Bulk_Import_ExportPage.Click on I_m_done button when popup appears     no-im-done
+    Sleep      ${yop_sleep}
+    Switch Window       aithentic | Member - List
+    MemberPage.Click on assigned user tab      Assigned Users
+    MemberPage.Search assigned user by first name   ${generated_assigneeFname}
+    Generic.Wait until table get load
+
+
+Location Bulk Import
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Click on Location action button
+    LocationPage.Select the option from action menu      import
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Add - Locations
+    Generic.Verify your current page location contains      add-location-grid
+    LocationPage.Select option from country column       Country
+    Bulk_Import_ExportPage.Enter the new value in the building name column     BuildingName        Phelps Tower
+    Bulk_Import_ExportPage.Enter the new value in the floor number column      Floor      1
+    Bulk_Import_ExportPage.Enter the new value in the room number column       Room        204
+    Bulk_Import_ExportPage.Enter the new value in the first address column      StreetAddress1      This is address1
+    Bulk_Import_ExportPage.Enter the new value in the first address column      StreetAddress2      This is address2
+    Bulk_Import_ExportPage.Enter the new value in the state column    State       Berat District
+    Bulk_Import_ExportPage.Enter the new value in the city column     City        Banaj
+    Bulk_Import_ExportPage.Enter random zip code of bulk import of loaction     Zip
+    Bulk_Import_ExportPage.Enter the new value in the location name column     LocationTypeName
+    Generic.Click on the button     Check Data      #Update,Edit
+    Generic.Click on the button     Upload
+    Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
+    Generic.Click on the button     Finish
+    Bulk_Import_ExportPage.Click on I_m_done button when popup appears     no-im-done
+    Sleep      ${yop_sleep}
+    Switch Window       aithentic | Location - List
+    Generic.Verify your current page location contains      locationlist
+    Bulk_Import_ExportPage.Search by location name   ${generated_NewLocationName}
+    Generic.Wait until table get load
+
+
+
 
 
 
