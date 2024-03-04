@@ -1351,4 +1351,7 @@ Click on attachment tab
     wait until element is enabled   //label[normalize-space()='Upload File']        60
     click element   //label[normalize-space()='Upload File']
 
-
+Upload file
+    [Arguments]    ${fileName}
+    Execute JavaScript    document.querySelector('input[type="file"]').style.display = 'block';
+    Choose File    css=input[type="file"]    ${CURDIR}\\${fileName}
