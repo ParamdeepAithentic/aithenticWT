@@ -1355,7 +1355,6 @@ Upload file
     [Arguments]    ${fileName}
     Execute JavaScript    document.querySelector('input[type="file"]').style.display = 'block';
     Choose File    css=input[type="file"]    D:\\aithentic-rfw\\Files\\${fileName}
-
 #    Input Text    //input[@type='file']    ${CURDIR}\\UploadFile.txt
 
 Click on Upload File button

@@ -1725,7 +1725,6 @@ Upload file while adding Technology
     TechnologyPage.Add assetID for technology lifecycle information random
     Generic.Scroll Window To End
     TechnologyPage.Upload file      UploadFile.txt
-
     Generic.Fetch alert message text and compare it with        Technology documents uploaded successfully
     TechnologyPage.View the file by clicking on view icon over file     .txt
     TechnologyPage.Click on cross icon to close the document
