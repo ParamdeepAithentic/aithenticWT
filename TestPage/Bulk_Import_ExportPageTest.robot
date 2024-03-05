@@ -103,7 +103,7 @@ Product Bulk Edit
     Bulk_Import_ExportPage.Enter the new value in the product name column in bulk_edit     ProductId
     Bulk_Import_ExportPage.Enter the new value in the brand name column in bulk_edit       BrandName    QABrand555
     Bulk_Import_ExportPage.Select option from status column in bulk_edit        ProductStatus
-    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       TechType
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       TechType    1
     Generic.Click on the button     Update      #Check Data,Edit
     MemberPage.Confirm the exit import process pop appers
     Generic.Click on the button     Confirm
@@ -204,7 +204,7 @@ Add Product Bulk Edit
     Bulk_Import_ExportPage.Enter the new value in the product name column in bulk_edit      ProductId
     Bulk_Import_ExportPage.Enter the new value in the brand name column in bulk_edit       BrandName    QABrand555
     Bulk_Import_ExportPage.Select option from status column in bulk_edit        ProductStatus
-    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       TechType
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       TechType       1
     Generic.Click on the button     Update      #Check Data,Edit
     MemberPage.Confirm the exit import process pop appers
     sleep   ${search_sleep}
@@ -535,6 +535,100 @@ Location Bulk Import
     Generic.Verify your current page location contains      locationlist
     Bulk_Import_ExportPage.Search by location name   ${generated_NewLocationName}
     Generic.Wait until table get load
+
+Technology Bulk import
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains     technology-list
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.click on bulk import under action button of technology
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Data-Wizard
+    Bulk_Import_ExportPage.click on checkbox under technology bulk import
+    Generic.click on the button     Next
+    Generic.Verify your current page location contains     add-technology
+    Bulk_Import_ExportPage.Enter the new value in the brand name column in bulk_edit       Brand        QABrand555
+    Bulk_Import_ExportPage.Enter the new value in the brand name column in bulk_edit     Product        Product_00337612322
+    Bulk_Import_Exportpage.Enter the new value in the first address column      ItemTechCount         1
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       Supplier        1
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       SupportPartner        1
+    Generic.Click on the button     Check Data      #Update,Edit
+    Generic.Click on the button     Upload
+    Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload is prepared
+    Generic.click on the button     Next
+    Generic.Verify your current page location contains     add-technology-templates
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       LocationName        1
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       DepartmentName        1
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       AssignTo        1
+    Bulk_Import_Exportpage.Enter the new value of asset id of technology bulk import      AssetId
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       Status        1
+    Bulk_Import_ExportPage.Perform the keyboard action      Status
+    Bulk_Import_Exportpage.Enter the new value in the first address column      PurchaseOrderNo         25
+     Bulk_Import_ExportPage.Perform the keyboard action      PurchaseOrderNo
+    Bulk_Import_Exportpage.Enter the new value in the first address column      PurchaseDt         01/21/2021
+    Bulk_Import_ExportPage.Perform the keyboard action      PurchaseDt
+    Bulk_Import_Exportpage.Enter the new value in the first address column      WarrantyEndDt         03/23/2025
+    Bulk_Import_ExportPage.Perform the keyboard action      WarrantyEndDt
+    Bulk_Import_Exportpage.Enter the new value in the first address column      Comment         Testing
+    Bulk_Import_ExportPage.Perform the keyboard action      Comment
+    Bulk_Import_Exportpage.Enter the new value in the first address column      CostType        Purchased
+    Bulk_Import_ExportPage.Perform the keyboard action      CostType
+    Bulk_Import_Exportpage.Enter the new value in the first address column      PaymentPartner        testqa 20Feb
+    Bulk_Import_ExportPage.Perform the keyboard action      PaymentPartner
+    Bulk_Import_Exportpage.Enter the new value in the first address column      PaymentType        FixedPayment
+    Bulk_Import_ExportPage.Perform the keyboard action      PaymentType
+    Bulk_Import_Exportpage.Enter the new value in the first address column      PaymentPeriod      Monthly
+    Bulk_Import_ExportPage.Perform the keyboard action      PaymentPeriod
+    Bulk_Import_Exportpage.Select option from technology type column in bulk_edit      BudgetCurrency      1
+    Bulk_Import_ExportPage.Perform the keyboard action      BudgetCurrency
+    Bulk_Import_Exportpage.Enter the new value in the first address column      BudgetPaymentValue      2500
+    Bulk_Import_ExportPage.Perform the keyboard action      BudgetPaymentValue
+    Bulk_Import_Exportpage.Select option from technology type column in bulk_edit      ActualPaymentCurrency      1
+    Bulk_Import_ExportPage.Perform the keyboard action      ActualPaymentCurrency
+    Bulk_Import_Exportpage.Enter the new value in the first address column      LastActualPaymentValue      2000
+    Bulk_Import_ExportPage.Perform the keyboard action      LastActualPaymentValue
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       CostCenter        1
+    Bulk_Import_ExportPage.Perform the keyboard action      CostCenter
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       Supplier        1
+    Bulk_Import_ExportPage.Perform the keyboard action      Supplier
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       SupportPartner        1
+    Bulk_Import_ExportPage.Perform the keyboard action      SupportPartner
+    Bulk_Import_Exportpage.Enter the new value of serial number of technology bulk import      DYNA_21
+    Bulk_Import_ExportPage.Perform the keyboard action      DYNA_21
+    Bulk_Import_Exportpage.Enter the new value in the first address column      TECHDYNA_2      Capex
+    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_2
+    Bulk_Import_Exportpage.Enter the new value in the first address column      TECHDYNA_3      1654
+    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_3
+    Bulk_Import_Exportpage.Enter the new value in the first address column      TECHDYNA_4      1100
+    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_4
+    Bulk_Import_Exportpage.Enter the new value in the first address column      TECHDYNA_7      100
+    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_7
+    Bulk_Import_Exportpage.Enter the new value in the first address column      TECHDYNA_8      12
+    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_8
+    Bulk_Import_Exportpage.Enter the new value in the first address column      RenewalDate      02/11/2024
+    Bulk_Import_ExportPage.Perform the keyboard action      RenewalDate
+    Bulk_Import_Exportpage.Enter the new value in the first address column      LastPaymentDate     03/12/2024
+    Generic.Click on the button     Check Data      #Update,Edit
+    Generic.Click on the button     Upload
+    Bulk_Import_ExportPage.Verify the upload message text   UploadMessage       Upload Successful
+    Generic.click on the button     Next
+    Bulk_Import_ExportPage.Click on I_m_done button when popup appears     no-im-done
+    Sleep      ${yop_sleep}
+    Switch Window       aithentic | Technology - List
+    Generic.Verify your current page location contains     technology-list
+    TechnologyPage.Search by AssetId       ${generated_assetid}
+    Generic.Wait until table get load
+
+
+
+
+
+
+
+
+
+
 
 
 
