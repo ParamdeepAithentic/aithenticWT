@@ -1354,6 +1354,57 @@ Click on attachment tab
 Upload file
     [Arguments]    ${fileName}
     Execute JavaScript    document.querySelector('input[type="file"]').style.display = 'block';
-    Choose File    css=input[type="file"]    ${CURDIR}\\${fileName}
+    Choose File    css=input[type="file"]    D:\\aithentic-rfw\\Files\\${fileName}
 
 #    Input Text    //input[@type='file']    ${CURDIR}\\UploadFile.txt
+
+Click on Upload File button
+    wait until element is visible   //label[normalize-space()='Upload File']        60
+    wait until element is enabled   //label[normalize-space()='Upload File']        60
+    click element       //label[normalize-space()='Upload File']
+
+View the file by clicking on view icon over file
+    [Arguments]     ${format}
+    wait until element is visible     //p[contains(text(),'${format}')]//parent::div     60
+    Mouse Over    //p[contains(text(),'${format}')]//parent::div
+    wait until element is visible       //p[contains(text(),'${format}')]//parent::div//i    60
+    wait until element is enabled       //p[contains(text(),'${format}')]//parent::div//i    60
+    click element       //p[contains(text(),'${format}')]//parent::div//i
+
+Zoom the Image
+    [Arguments]     ${option}
+    wait until element is visible       css:.${option}-QA     60
+    wait until element is enabled       css:.${option}-QA     60
+    Click Element        css:.${option}-QA
+
+Get and Verify the size of the image after zoom
+    [Arguments]     ${size}
+    Wait Until Element Is Visible       //img[@alt='Asset Image']       60
+    Wait Until Element Is enabled       //img[@alt='Asset Image']       60
+    ${text}=       Get Element Attribute     //img[@alt='Asset Image']       style
+    ${parts}    Split String    ${text}    width:
+    ${original_width}    Get Substring    ${parts[1]}    1       4
+    Log To Console      ${original_width}
+    Zoom the Image      ${size}
+
+    ${text}=       Get Element Attribute     //img[@alt='Asset Image']       style
+    ${parts}    Split String    ${text}    width:
+    ${changed_width}    Get Substring    ${parts[1]}    1       4
+    Log To Console      ${changed_width}
+
+   Run Keyword If    ${original_width} < ${changed_width}  Log to console    Image width increased after zoom_in
+    ...    ELSE IF    ${original_width} > ${changed_width}    Log to console   Image width decreased after zoom_out
+    ...    ELSE    Log to console    Image width remained the same after zoom
+
+Click on cross icon to close the document
+    Wait Until Element Is Visible    //a[normalize-space()='×']     60
+    Wait Until Element Is Enabled    //a[normalize-space()='×']     60
+    click element    //a[normalize-space()='×']
+
+
+
+
+
+
+
+
