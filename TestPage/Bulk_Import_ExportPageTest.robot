@@ -548,9 +548,9 @@ Technology Bulk import
     Bulk_Import_ExportPage.click on checkbox under technology bulk import
     Generic.click on the button     Next
     Generic.Verify your current page location contains     add-technology
-    Bulk_Import_ExportPage.Enter the new value in the brand name column in bulk_edit       Brand        QABrand555
-    Bulk_Import_ExportPage.Enter the new value in the brand name column in bulk_edit     Product        Product_00337612322
-    Bulk_Import_Exportpage.Enter the new value in the first address column      ItemTechCount         1
+    Bulk_Import_ExportPage.Enter the new value in the fields of technology bulk import       Brand        QABrand555
+    Bulk_Import_ExportPage.Enter the new value in the fields of technology bulk import     Product        Product_00337612322
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      ItemTechCount         1
     Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       Supplier        1
     Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       SupportPartner        1
     Generic.Click on the button     Check Data      #Update,Edit
@@ -564,29 +564,29 @@ Technology Bulk import
     Bulk_Import_Exportpage.Enter the new value of asset id of technology bulk import      AssetId
     Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       Status        1
     Bulk_Import_ExportPage.Perform the keyboard action      Status
-    Bulk_Import_Exportpage.Enter the new value in the first address column      PurchaseOrderNo         25
-     Bulk_Import_ExportPage.Perform the keyboard action      PurchaseOrderNo
-    Bulk_Import_Exportpage.Enter the new value in the first address column      PurchaseDt         01/21/2021
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      PurchaseOrderNo         25
+    Bulk_Import_ExportPage.Perform the keyboard action      PurchaseOrderNo
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import     PurchaseDt         01/21/2021
     Bulk_Import_ExportPage.Perform the keyboard action      PurchaseDt
-    Bulk_Import_Exportpage.Enter the new value in the first address column      WarrantyEndDt         03/23/2025
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import     WarrantyEndDt         03/23/2025
     Bulk_Import_ExportPage.Perform the keyboard action      WarrantyEndDt
-    Bulk_Import_Exportpage.Enter the new value in the first address column      Comment         Testing
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      Comment         Testing
     Bulk_Import_ExportPage.Perform the keyboard action      Comment
-    Bulk_Import_Exportpage.Enter the new value in the first address column      CostType        Purchased
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      CostType        Purchased
     Bulk_Import_ExportPage.Perform the keyboard action      CostType
-    Bulk_Import_Exportpage.Enter the new value in the first address column      PaymentPartner        testqa 20Feb
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      PaymentPartner        testqa 20Feb
     Bulk_Import_ExportPage.Perform the keyboard action      PaymentPartner
-    Bulk_Import_Exportpage.Enter the new value in the first address column      PaymentType        FixedPayment
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      PaymentType        FixedPayment
     Bulk_Import_ExportPage.Perform the keyboard action      PaymentType
-    Bulk_Import_Exportpage.Enter the new value in the first address column      PaymentPeriod      Monthly
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      PaymentPeriod      Monthly
     Bulk_Import_ExportPage.Perform the keyboard action      PaymentPeriod
     Bulk_Import_Exportpage.Select option from technology type column in bulk_edit      BudgetCurrency      1
     Bulk_Import_ExportPage.Perform the keyboard action      BudgetCurrency
-    Bulk_Import_Exportpage.Enter the new value in the first address column      BudgetPaymentValue      2500
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      BudgetPaymentValue      2500
     Bulk_Import_ExportPage.Perform the keyboard action      BudgetPaymentValue
     Bulk_Import_Exportpage.Select option from technology type column in bulk_edit      ActualPaymentCurrency      1
     Bulk_Import_ExportPage.Perform the keyboard action      ActualPaymentCurrency
-    Bulk_Import_Exportpage.Enter the new value in the first address column      LastActualPaymentValue      2000
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      LastActualPaymentValue      2000
     Bulk_Import_ExportPage.Perform the keyboard action      LastActualPaymentValue
     Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       CostCenter        1
     Bulk_Import_ExportPage.Perform the keyboard action      CostCenter
@@ -596,19 +596,19 @@ Technology Bulk import
     Bulk_Import_ExportPage.Perform the keyboard action      SupportPartner
     Bulk_Import_Exportpage.Enter the new value of serial number of technology bulk import      DYNA_21
     Bulk_Import_ExportPage.Perform the keyboard action      DYNA_21
-    Bulk_Import_Exportpage.Enter the new value in the first address column      TECHDYNA_2      Capex
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_2      Capex
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_2
-    Bulk_Import_Exportpage.Enter the new value in the first address column      TECHDYNA_3      1654
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_3      1654
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_3
-    Bulk_Import_Exportpage.Enter the new value in the first address column      TECHDYNA_4      1100
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_4      1100
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_4
-    Bulk_Import_Exportpage.Enter the new value in the first address column      TECHDYNA_7      100
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_7      100
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_7
-    Bulk_Import_Exportpage.Enter the new value in the first address column      TECHDYNA_8      12
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_8      12
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_8
-    Bulk_Import_Exportpage.Enter the new value in the first address column      RenewalDate      02/11/2024
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      RenewalDate      02/11/2024
     Bulk_Import_ExportPage.Perform the keyboard action      RenewalDate
-    Bulk_Import_Exportpage.Enter the new value in the first address column      LastPaymentDate     03/12/2024
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      LastPaymentDate     03/12/2024
     Generic.Click on the button     Check Data      #Update,Edit
     Generic.Click on the button     Upload
     Bulk_Import_ExportPage.Verify the upload message text   UploadMessage       Upload Successful
