@@ -844,3 +844,33 @@ Add component as an asset from Agent Discovery page
     TechnologyPage.Click on update button of edit_technology page       Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     UnselectAssetAPI.Hit API Endpoint
+
+Network discovery search on discovered asset list with MAC address
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+    Generic.select the option from the side menu    Asset Discovery
+    Generic.Verify your current page location contains     discovery-assets
+    OCS.click on the value of IP discovered devices of inside table
+    Sleep    ${yop_sleep}
+    Switch Window       aithentic | Discovered Assets
+    Generic.Verify your current page location contains     discovery-assets-list
+    OCS.Search with MAC address and IP Address on the search bar of Discovered Asset List        10:7B:44:62:66:87
+    sleep   ${search_sleep}
+    Generic.Wait until table get load
+    Generic.Verify your current page contains this text     10:7B:44:62:66:87
+
+Network discovery search on discovered asset list with IP address
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+    Generic.select the option from the side menu    Asset Discovery
+    Generic.Verify your current page location contains     discovery-assets
+    OCS.click on the value of IP discovered devices of inside table
+    Sleep    ${yop_sleep}
+    Switch Window       aithentic | Discovered Assets
+    Generic.Verify your current page location contains     discovery-assets-list
+    OCS.Search with MAC address and IP Address on the search bar of Discovered Asset List         192.168.0.137
+    sleep   ${search_sleep}
+    Generic.Wait until table get load
+    Generic.Verify your current page contains this text      192.168.0.137
+
+
