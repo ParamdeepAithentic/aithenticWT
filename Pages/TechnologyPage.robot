@@ -1352,10 +1352,13 @@ Click on attachment tab
 #    click element   //label[normalize-space()='Upload File']
 
 Upload file
-    [Arguments]    ${fileName}
-    Execute JavaScript    document.querySelector('input[type="file"]').style.display = 'block';
-    Choose File    css=input[type="file"]    D:\\aithentic-rfw\\Files\\${fileName}
-#    Input Text    //input[@type='file']    ${CURDIR}\\UploadFile.txt
+    [Arguments]    @{fileNames}
+    FOR    ${fileName}    IN    @{fileNames}
+        Execute JavaScript    document.querySelector('input[type="file"]').style.display = 'block';
+        Choose File    css=input[type="file"]    D:\\aithentic-rfw\\Files\\${fileName}
+        Execute JavaScript    document.querySelector('input[type="file"]').value = '';
+    END
+
 
 Click on Upload File button
     wait until element is visible   //label[normalize-space()='Upload File']        60
