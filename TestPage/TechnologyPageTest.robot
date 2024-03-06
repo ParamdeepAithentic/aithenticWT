@@ -511,7 +511,6 @@ Edit brand and product via details
     TechnologyPage.Accept updated edited technology pop up     Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
 
-
 Sent Message should show in the Sent Tab
     [Tags]      Sanity
     Generic.click on the tab	Login

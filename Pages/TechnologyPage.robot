@@ -332,9 +332,9 @@ Select parameter from technology dropdown list
     Calculate Running time  6  ${pageHeading}   Technology Page - Select parameter from technology dropdown list      6    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Click on add product link
-    [Arguments]      ${option}
-    Generic.click on the tab        ${option}
-
+    wait until element is visible   css:.qa-product-add-assets      60
+    wait until element is enabled   css:.qa-product-add-assets      60
+    click element   css:.qa-product-add-assets
 
 ##############Technology Group Information for hardware#################
 Add mac address for technology group information for hardware
