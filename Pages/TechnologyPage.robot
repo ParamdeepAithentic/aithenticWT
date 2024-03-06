@@ -335,9 +335,9 @@ Select parameter from technology dropdown list
     Calculate Running time  6  ${pageHeading}   Technology Page - Select parameter from technology dropdown list      6    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Click on add product link
-    [Arguments]      ${option}
-    Generic.click on the tab        ${option}
-
+    wait until element is visible   css:.qa-product-add-assets      60
+    wait until element is enabled   css:.qa-product-add-assets      60
+    click element   css:.qa-product-add-assets
 
 ##############Technology Group Information for hardware#################
 Add mac address for technology group information for hardware
@@ -1352,7 +1352,7 @@ Click on attachment tab
     click element   css:#attachments-tab
     wait until element is visible   //label[normalize-space()='Upload File']        60
     wait until element is enabled   //label[normalize-space()='Upload File']        60
-#    click element   //label[normalize-space()='Upload File']
+    click element   //label[normalize-space()='Upload File']
 
 Upload file
     [Arguments]    @{fileNames}
@@ -1417,7 +1417,8 @@ Download the file by clicking on download icon over file
     wait until element is enabled       //p[contains(text(),'${format}')]//parent::div//i[contains(@class,"open-image-download-QA")]   60
     click element       //p[contains(text(),'${format}')]//parent::div//i[contains(@class,"open-image-download-QA")]
 
-
-
-
+click on bulk import under action button of technology
+    wait until element is visible       css:.add-bulk-member-qa     60
+    wait until element is enabled       css:.add-bulk-member-qa     60
+    click element   css:.add-bulk-member-qa
 
