@@ -509,3 +509,19 @@ Fetch text from Agent Discovery tab and compare it with
     Log To Console    ${fetch_agenttext}
     Set Global Variable    ${fetch_agenttext}
     Should be equal   ${fetch_agenttext}     ${option}
+
+click on the value of IP discovered devices of inside table
+    wait until element is not visible    ${loaderIcon}    60
+    wait until element is visible   //h5[normalize-space()='Tag Name - johnsoftwaresolutions-1428-3']//parent::div//div//table//td[7]   60
+    wait until element is enabled   //h5[normalize-space()='Tag Name - johnsoftwaresolutions-1428-3']//parent::div//div//table//td[7]   60
+    click element   //h5[normalize-space()='Tag Name - johnsoftwaresolutions-1428-3']//parent::div//div//table//td[7]
+
+Search with MAC address and IP Address on the search bar of Discovered Asset List
+    [Arguments]     ${MAC_Address}
+    wait until element is not visible    ${loaderIcon}    60
+    wait until element is visible       css:thead tr       60
+    wait until element is visible   css:input[placeholder='Search by Tag Name, MAC Address, IP Address...']     60
+    wait until element is enabled   css:input[placeholder='Search by Tag Name, MAC Address, IP Address...']     60
+    input text  css:input[placeholder='Search by Tag Name, MAC Address, IP Address...']     ${MAC_Address}
+    sleep       ${search_sleep}
+    wait until element is visible       css:thead tr       60
