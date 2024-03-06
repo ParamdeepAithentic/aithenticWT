@@ -1698,9 +1698,8 @@ Verify the technology data while applying agent Filters
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     UnselectAssetAPI.Hit API Endpoint
 
-
 Click on the attachment tab under technology
-     Generic.click on the tab	Login
+    Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology

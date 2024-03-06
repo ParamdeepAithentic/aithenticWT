@@ -70,6 +70,7 @@ ${click_Country}     css:#country
 ${click_countryTag}     css:.iti__selected-flag.dropdown-toggle
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
+
 ${yop_sleep}       10
 ${search_sleep}       1
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
@@ -303,3 +304,7 @@ Wait until table get load
 Fetch log_out alert message
     sleep      2
     Wait Until Element Is Not Visible    ${alert_Msg}        60
+
+Click keyboard button
+    [Arguments]     ${locator}      ${button}
+    Press keys      ${locator}      ${button}
