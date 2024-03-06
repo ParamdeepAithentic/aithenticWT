@@ -1355,3 +1355,8 @@ Upload file
     [Arguments]    ${fileName}
     Execute JavaScript    document.querySelector('input[type="file"]').style.display = 'block';
     Choose File    css=input[type="file"]    ${CURDIR}\\${fileName}
+
+click on bulk import under action button of technology
+    wait until element is visible       css:.add-bulk-member-qa     60
+    wait until element is enabled       css:.add-bulk-member-qa     60
+    click element   css:.add-bulk-member-qa

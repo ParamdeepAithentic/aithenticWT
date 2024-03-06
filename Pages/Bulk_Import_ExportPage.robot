@@ -557,3 +557,33 @@ Enter random zip code of bulk import of loaction
     wait until element is visible       css:.ag-center-cols-container div[col-id='${option}']    60
     input text  css:.ag-center-cols-container div[col-id='${option}'] input     ${generated_zipcode}
     set global variable    ${generated_zipcode}
+
+click on checkbox under technology bulk import
+    wait until element is visible   //label[contains(text(),'- Create new assets as well as update data on exis')]      60
+    wait until element is enabled   //label[contains(text(),'- Create new assets as well as update data on exis')]      60
+    click element   //label[contains(text(),'- Create new assets as well as update data on exis')]
+    wait until element is not visible       ${loaderIcon}       60
+
+Enter the new value of serial number of technology bulk import
+    [Arguments]    ${option}
+    MemberPage.Double click    ${option}
+    ${random_string} =    Generate Random String       8      [NUMBERS]
+    ${generated_serialnumber}=    Catenate    SerialNumber_${random_string}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_serialnumber}
+    set global variable    ${generated_serialnumber}
+
+Enter the new value of asset id of technology bulk import
+    [Arguments]    ${option}
+    MemberPage.Double click    ${option}
+    ${random_string} =    Generate Random String       8      [NUMBERS]
+    ${generated_assetid}=    Catenate    AssetID_${random_string}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assetid}
+    set global variable    ${generated_assetid}
+
+Enter the new value in the fields of technology bulk import
+    [Arguments]    ${option}    ${address}
+    LocationPage.Double click    ${option}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${address}
