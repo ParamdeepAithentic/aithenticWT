@@ -1711,7 +1711,7 @@ Click on the attachment tab under technology
     TechnologyPage.Upload file      UploadFile.txt
     Generic.Fetch alert message text and compare it with        Technology documents uploaded successfully
 
-Upload file while adding Technology
+Upload file: Image files while adding Technology
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
@@ -1724,26 +1724,26 @@ Upload file while adding Technology
     TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
     TechnologyPage.Add assetID for technology lifecycle information random
     Generic.Scroll Window To End
-    TechnologyPage.Upload file      UploadFile.txt
+    TechnologyPage.Upload file      Image_01.jpg       Image_02.png     Image_04.avif
     Generic.Fetch alert message text and compare it with        Technology documents uploaded successfully
-    TechnologyPage.View the file by clicking on view icon over file     .txt
-    TechnologyPage.Click on cross icon to close the document
-    sleep   ${yop_sleep}
-#    TechnologyPage.Upload file      Jpegimage.jpg
-#    Generic.Fetch alert message text and compare it with        Technology documents uploaded successfully
     TechnologyPage.View the file by clicking on view icon over file     .jpg
     TechnologyPage.Get and Verify the size of the image after zoom      zoom-in
     TechnologyPage.Get and Verify the size of the image after zoom      zoom-out
     TechnologyPage.Click on cross icon to close the document
-    sleep     ${yop_sleep}
-#    TechnologyPage.Upload file      pdf.pdf
-#    Generic.Fetch alert message text and compare it with        Technology documents uploaded successfully
-    TechnologyPage.View the file by clicking on view icon over file     .pdf
+    TechnologyPage.View the file by clicking on view icon over file     .png
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-in
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-out
     TechnologyPage.Click on cross icon to close the document
-#    TechnologyPage.Click on save technology form button
-#    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.View the file by clicking on view icon over file     .avif
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-in
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-out
+    TechnologyPage.Click on cross icon to close the document
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
 
-Upload file while edit technology
+
+Upload file: Image files while Edit Technology
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
@@ -1755,9 +1755,21 @@ Upload file while edit technology
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
     TechnologyPage.Add assetID for technology lifecycle information random
-#    TechnologyPage.Click on Upload File button
-    TechnologyPage.Upload file      UploadFile.txt
+    Generic.Scroll Window To End
+    TechnologyPage.Upload file      Image_01.jpg       Image_02.png     Image_04.avif
     Generic.Fetch alert message text and compare it with        Technology documents uploaded successfully
+    TechnologyPage.View the file by clicking on view icon over file     .jpg
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-in
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-out
+    TechnologyPage.Click on cross icon to close the document
+    TechnologyPage.View the file by clicking on view icon over file     .png
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-in
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-out
+    TechnologyPage.Click on cross icon to close the document
+    TechnologyPage.View the file by clicking on view icon over file     .avif
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-in
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-out
+    TechnologyPage.Click on cross icon to close the document
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
@@ -1767,4 +1779,17 @@ Upload file while edit technology
     Generic.Verify your current page location contains     technology-details
     TechnologyPage.Click on edit button on product details page        Edit
     Generic.Verify your current page location contains      edit-technology
+    Generic.Scroll Window To End
+    TechnologyPage.Remove the document by clicking on cross-icon    .png
+    TechnologyPage.Upload file      Image_05.gif
+    Generic.Fetch alert message text and compare it with        Technology documents uploaded successfully
+    TechnologyPage.View the file by clicking on view icon over file     .gif
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-in
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-out
+    TechnologyPage.Click on cross icon to close the document
+    TechnologyPage.Click on update button of edit_technology page      Update
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+
+
+
 

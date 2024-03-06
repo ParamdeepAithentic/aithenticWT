@@ -1352,11 +1352,12 @@ Click on attachment tab
 #    click element   //label[normalize-space()='Upload File']
 
 Upload file
-    [Arguments]    ${fileName}
-    Execute JavaScript    document.querySelector('input[type="file"]').style.display = 'block';
-    Choose File    css=input[type="file"]    D:\\aithentic-rfw\\Files\\${fileName}
-#    Input Text    //input[@type='file']    ${CURDIR}\\UploadFile.txt
-
+    [Arguments]    @{fileNames}
+    FOR    ${fileName}    IN    @{fileNames}
+        Execute JavaScript    document.querySelector('input[type="file"]').style.display = 'block';
+        Choose File    css=input[type="file"]    D:\\aithentic-rfw\\Files\\${fileName}
+        Execute JavaScript    document.querySelector('input[type="file"]').value = '';
+    END
 
 View the file by clicking on view icon over file
     [Arguments]     ${format}
@@ -1373,19 +1374,22 @@ Zoom the Image
     Click Element        css:.${option}-QA
 
 Get and Verify the size of the image after zoom
-    [Arguments]     ${size}
+    [Arguments]     ${zoom_type}
     Wait Until Element Is Visible       //img[@alt='Asset Image']       60
     Wait Until Element Is enabled       //img[@alt='Asset Image']       60
     ${text}=       Get Element Attribute     //img[@alt='Asset Image']       style
-    ${parts}    Split String    ${text}    width:
-    ${original_width}    Get Substring    ${parts[1]}    1       4
+    ${width}    Split String    ${text}    width:
+    ${original_width}    Split String From Right    ${width[1][:-3]}
+#    ${original_width}    Get Substring    ${parts[1]}    1       4
     Log To Console      ${original_width}
-    Zoom the Image      ${size}
+    Zoom the Image      ${zoom_type}
 
-    ${text}=       Get Element Attribute     //img[@alt='Asset Image']       style
-    ${parts}    Split String    ${text}    width:
-    ${changed_width}    Get Substring    ${parts[1]}    1       4
+    ${text}=    Get Element Attribute     //img[@alt='Asset Image']       style
+    ${width}    Split String    ${text}    width:
+    ${changed_width}    Split String From Right    ${width[1][:-3]}
+#    ${changed_width}    Get Substring    ${parts[1]}    1       4
     Log To Console      ${changed_width}
+    Zoom the Image      ${zoom_type}
 
    Run Keyword If    ${original_width} < ${changed_width}  Log to console    Image width increased after zoom_in
    ...      ELSE IF    ${original_width} > ${changed_width}    Log to console   Image width decreased after zoom_out
@@ -1395,6 +1399,13 @@ Click on cross icon to close the document
     Wait Until Element Is Visible    //a[normalize-space()='×']     60
     Wait Until Element Is Enabled    //a[normalize-space()='×']     60
     click element    //a[normalize-space()='×']
+
+Remove the document by clicking on cross-icon
+    [Arguments]     ${option}
+    Wait Until Element Is Visible    //p[contains(text(),'${option}')]//parent::div//span    60
+    Wait Until Element Is Visible    //p[contains(text(),'${option}')]//parent::div//span    60
+    Click Element    //p[contains(text(),'${option}')]//parent::div//span
+
 
 
 
