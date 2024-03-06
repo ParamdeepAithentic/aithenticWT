@@ -872,5 +872,3 @@ Network discovery search on discovered asset list with IP address
     sleep   ${search_sleep}
     Generic.Wait until table get load
     Generic.Verify your current page contains this text      192.168.0.137
-
-
