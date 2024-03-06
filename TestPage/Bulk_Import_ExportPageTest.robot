@@ -504,7 +504,6 @@ Assigned User Bulk Import
     MemberPage.Search assigned user by first name   ${generated_assigneeFname}
     Generic.Wait until table get load
 
-
 Location Bulk Import
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
@@ -619,7 +618,6 @@ Technology Bulk import
     Generic.Verify your current page location contains     technology-list
     TechnologyPage.Search by AssetId       ${generated_assetid}
     Generic.Wait until table get load
-
 
 
 
