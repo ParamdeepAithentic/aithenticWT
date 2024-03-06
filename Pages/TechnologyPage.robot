@@ -1357,10 +1357,6 @@ Upload file
     Choose File    css=input[type="file"]    D:\\aithentic-rfw\\Files\\${fileName}
 #    Input Text    //input[@type='file']    ${CURDIR}\\UploadFile.txt
 
-Click on Upload File button
-    wait until element is visible   //label[normalize-space()='Upload File']        60
-    wait until element is enabled   //label[normalize-space()='Upload File']        60
-    click element       //label[normalize-space()='Upload File']
 
 View the file by clicking on view icon over file
     [Arguments]     ${format}
@@ -1392,8 +1388,8 @@ Get and Verify the size of the image after zoom
     Log To Console      ${changed_width}
 
    Run Keyword If    ${original_width} < ${changed_width}  Log to console    Image width increased after zoom_in
-    ...    ELSE IF    ${original_width} > ${changed_width}    Log to console   Image width decreased after zoom_out
-    ...    ELSE    Log to console    Image width remained the same after zoom
+   ...      ELSE IF    ${original_width} > ${changed_width}    Log to console   Image width decreased after zoom_out
+   ...      ELSE    Log to console    Image width remained the same after zoom
 
 Click on cross icon to close the document
     Wait Until Element Is Visible    //a[normalize-space()='×']     60
