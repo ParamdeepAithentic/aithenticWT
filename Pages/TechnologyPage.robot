@@ -166,6 +166,9 @@ ${zip}     css:#zip
 ${technology_employeeid}        css:#AssignedEmployeeId
 ${businessEmail}        css:#AssignedEmail
 
+#${view_icon_file}       //p[contains(text(),'${format}')]//parent::div//i[contains(@class,"open-image-preview-QA")]
+#${download_icon_file}   //p[contains(text(),'.jpg')]//parent::div//i[contains(@class,"open-image-download-QA")]
+
 *** Keywords ***
 Fetch the Brand Name from the row
     [Arguments]    ${option}
@@ -1363,9 +1366,9 @@ View the file by clicking on view icon over file
     [Arguments]     ${format}
     wait until element is visible     //p[contains(text(),'${format}')]//parent::div     60
     Mouse Over    //p[contains(text(),'${format}')]//parent::div
-    wait until element is visible       //p[contains(text(),'${format}')]//parent::div//i    60
-    wait until element is enabled       //p[contains(text(),'${format}')]//parent::div//i    60
-    click element       //p[contains(text(),'${format}')]//parent::div//i
+    wait until element is visible       //p[contains(text(),'${format}')]//parent::div//i[contains(@class,"open-image-preview-QA")]    60
+    wait until element is enabled       //p[contains(text(),'${format}')]//parent::div//i[contains(@class,"open-image-preview-QA")]    60
+    click element       //p[contains(text(),'${format}')]//parent::div//i[contains(@class,"open-image-preview-QA")]
 
 Zoom the Image
     [Arguments]     ${option}
@@ -1406,9 +1409,13 @@ Remove the document by clicking on cross-icon
     Wait Until Element Is Visible    //p[contains(text(),'${option}')]//parent::div//span    60
     Click Element    //p[contains(text(),'${option}')]//parent::div//span
 
-
-
-
+Download the file by clicking on download icon over file
+    [Arguments]     ${format}
+    wait until element is visible     //p[contains(text(),'${format}')]//parent::div//img    60
+    Mouse Over    //p[contains(text(),'${format}')]//parent::div//img
+    wait until element is visible       //p[contains(text(),'${format}')]//parent::div//i[contains(@class,"open-image-download-QA")]    60
+    wait until element is enabled       //p[contains(text(),'${format}')]//parent::div//i[contains(@class,"open-image-download-QA")]   60
+    click element       //p[contains(text(),'${format}')]//parent::div//i[contains(@class,"open-image-download-QA")]
 
 
 
