@@ -618,9 +618,3 @@ Technology Bulk import
     Generic.Verify your current page location contains     technology-list
     TechnologyPage.Search by AssetId       ${generated_assetid}
     Generic.Wait until table get load
-
-
-
-
-
-
