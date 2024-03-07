@@ -463,9 +463,9 @@ Hover Over Add component button and verify text
     Should Be Equal    ${text}   ${option}
     
 Click on plus icon of any component
-    Wait Until Element Is Visible    (//i[contains(@class,'fa-plus-circle')])[1]       60
-    Wait Until Element Is Enabled    (//i[contains(@class,'fa-plus-circle')])[1]       60
-    Click Element    (//i[contains(@class,'fa-plus-circle')])[1]
+    Wait Until Element Is Visible    (//div[@id='software']//tbody//i)[1]       60
+    Wait Until Element Is Enabled    (//div[@id='software']//tbody//i)[1]       60
+    Click Element    (//div[@id='software']//tbody//i)[1]
 
 Verify Software tab Should contain Element
     Wait Until Element Is Visible       css:.fa-check-circle        60
