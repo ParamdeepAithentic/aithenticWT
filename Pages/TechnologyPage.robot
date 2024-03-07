@@ -1350,9 +1350,9 @@ Click on attachment tab
     wait until element is enabled   css:#PrintQrButton   60
     wait until element is visible   css:#attachments-tab   60
     click element   css:#attachments-tab
-    wait until element is visible   //label[normalize-space()='Upload File']        60
-    wait until element is enabled   //label[normalize-space()='Upload File']        60
-    click element   //label[normalize-space()='Upload File']
+#    wait until element is visible   //label[normalize-space()='Upload File']        60
+#    wait until element is enabled   //label[normalize-space()='Upload File']        60
+#    click element   //label[normalize-space()='Upload File']
 
 Upload file
     [Arguments]    @{fileNames}
@@ -1422,3 +1422,8 @@ click on bulk import under action button of technology
     wait until element is enabled       css:.add-bulk-member-qa     60
     click element   css:.add-bulk-member-qa
 
+Click on clone button on techonology details page
+    [Arguments]    ${option}
+    wait until element is not visible      ${loaderIcon}    60
+    Generic.click on the button link     ${option}
+    wait until element is not visible      ${loaderIcon}    60
