@@ -266,7 +266,9 @@ Location Bulk Edit
     LocationPage.Select location state       Texas
     LocationPage.Select location city        Austin
     LocationPage.Select location zip     147001
+    LocationPage.Enter random cost center value
     LocationPage.Create random location name
+    LocationPage.Create random IP subnet
     LocationPage.Save location form     save
     Generic.Fetch alert message text and compare it with    Location created successfully
     Bulk_Import_ExportPage.Search by location name     ${generated_location}
@@ -280,12 +282,18 @@ Location Bulk Edit
     Bulk_Import_ExportPage.Enter the new value in the building name column     BuildingName        Phelps tower
     Bulk_Import_ExportPage.Enter the new value in the floor number column      Floor       first
     Bulk_Import_ExportPage.Enter the new value in the room number column       Room        303
-    Bulk_Import_ExportPage.Enter the new value in the state column    State       Adana
-    Bulk_Import_ExportPage.Enter the new value in the city column     City        Adana
+    Bulk_Import_ExportPage.Enter the new value in the state column    State        Kassrine
+    Bulk_Import_ExportPage.Enter the new value in the city column     City         Tabursuq
+    Bulk_Import_ExportPage.Perform the keyboard action      City
+    Bulk_Import_ExportPage.Enter random zip code of bulk import of loaction     Zip
+    Bulk_Import_ExportPage.Perform the keyboard action      Zip
+    Bulk_Import_ExportPage.Enter the new value of cost center in location bulk edit     CostCenter
+    Bulk_Import_ExportPage.Perform the keyboard action      CostCenter
     Bulk_Import_ExportPage.Enter the new value in the location name column     LocationTypeName
+
     Generic.Click on the button     Update      #Check Data,Edit
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
-    Generic.Click on the button     Exit
+    Generic.Click on the button     Finish
     MemberPage.Confirm the exit import process pop appers
     Generic.Click on the button     Confirm
     sleep      ${search_sleep}
@@ -514,7 +522,7 @@ Location Bulk Import
     sleep   ${yop_sleep}
     Switch Window       aithentic | Add - Locations
     Generic.Verify your current page location contains      add-location-grid
-    LocationPage.Select option from country column       Country
+    Bulk_Import_ExportPage.Enter the new value of country in location bulk import       Country       Albania
     Bulk_Import_ExportPage.Enter the new value in the building name column     BuildingName        Phelps Tower
     Bulk_Import_ExportPage.Enter the new value in the floor number column      Floor      1
     Bulk_Import_ExportPage.Enter the new value in the room number column       Room        204
@@ -523,11 +531,14 @@ Location Bulk Import
     Bulk_Import_ExportPage.Enter the new value in the state column    State       Berat District
     Bulk_Import_ExportPage.Enter the new value in the city column     City        Banaj
     Bulk_Import_ExportPage.Enter random zip code of bulk import of loaction     Zip
+    Bulk_Import_ExportPage.Enter the new value of cost center in location bulk edit     CostCenter
     Bulk_Import_ExportPage.Enter the new value in the location name column     LocationTypeName
+    Bulk_Import_ExportPage.Perform the keyboard action      LocationTypeName
+    Bulk_Import_ExportPage.Create random IP subnet in location bulk import      IPSubnets
     Generic.Click on the button     Check Data      #Update,Edit
     Generic.Click on the button     Upload
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
-    Generic.Click on the button     Finish
+    Generic.Click on the button     Finish         #Finish
     Bulk_Import_ExportPage.Click on I_m_done button when popup appears     no-im-done
     Sleep      ${yop_sleep}
     Switch Window       aithentic | Location - List
