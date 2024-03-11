@@ -628,5 +628,3 @@ Click on the confirm button of finish pop up
 
 
 
-
-
