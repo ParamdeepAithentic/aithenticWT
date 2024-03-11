@@ -41,13 +41,13 @@ Resource        ../Pages/Bulk_Import_ExportPage.robot
 ${user_name}             rahulshettyacademy
 ${invalid_password}      123445
 
-${url}                 https://uat-app.aithentic.com/
-#${url}                  https://qa-app.aithentic.com/
-${apiURL}              https://uat-api.aithentic.com/api/v1
-#${apiURL}               https://qa-api.aithentic.com/api/v1
-${valid_password}        Test!@5897     #UAT user
-#${valid_password}         Test@123       #QA User
-
+#${url}                 https://uat-app.aithentic.com/
+${url}                  https://qa-app.aithentic.com/
+#${apiURL}              https://uat-api.aithentic.com/api/v1
+${apiURL}               https://qa-api.aithentic.com/api/v1
+#${valid_password}        Test!@5897     #UAT user
+${valid_password}         Test@123       #QA User
+#
 ${admin_url}        https://uat-admin.aithentic.com/
 #${admin_url}        https://qa-admin.aithentic.com/
 
@@ -70,6 +70,7 @@ ${click_Country}     css:#country
 ${click_countryTag}     css:.iti__selected-flag.dropdown-toggle
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
+
 ${yop_sleep}       10
 ${search_sleep}       1
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
@@ -303,3 +304,7 @@ Wait until table get load
 Fetch log_out alert message
     sleep      2
     Wait Until Element Is Not Visible    ${alert_Msg}        60
+
+Click keyboard button
+    [Arguments]     ${locator}      ${button}
+    Press keys      ${locator}      ${button}

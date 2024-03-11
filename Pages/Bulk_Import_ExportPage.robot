@@ -188,11 +188,11 @@ Select option from status column in bulk_edit
     click element       css:div[class='ag-rich-select-row']
 
 Select option from technology type column in bulk_edit
-    [Arguments]    ${option}
+    [Arguments]    ${option}    ${option2}
     wait until element is visible      css:.ag-center-cols-container div[col-id='${option}']    60
     Double click element      css:.ag-center-cols-container div[col-id='${option}']
-    wait until element is visible      css:div[aria-label='List'] div:nth-child(4) div    60
-    click element       css:div[aria-label='List'] div:nth-child(4) div
+    wait until element is visible      css:div[aria-label='List'] div:nth-child(${option2}) div    60
+    click element       css:div[aria-label='List'] div:nth-child(${option2}) div
 
 Click on Refresh icon of product-list page
     wait until element is visible       css:.reset-product-qa        60
@@ -268,7 +268,8 @@ Confirm the exit import process pop appears
 Enter the new value in the building name column
     [Arguments]    ${option}    ${buildingName}
     LocationPage.Double click    ${option}
-    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input     60
+    input text      css:.ag-center-cols-container div[col-id='${option}'] input     ${buildingName}
 
 Enter the new value in the floor number column
     [Arguments]    ${option}    ${floorNumber}
@@ -294,12 +295,22 @@ Enter the new value in the city column
     wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${city}
 
+Enter the new value of cost center in location bulk edit
+    [Arguments]    ${option}
+    MemberPage.Double click    ${option}
+    ${random_string} =    Generate Random String       6      [NUMBERS]
+    ${generated_costcenter}=    Catenate    ${random_string}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}']    60
+    Double click element    css:.ag-center-cols-container div[col-id='${option}']
+    input text   //textarea[@aria-label='Input Editor']   ${generated_costcenter}
+    Press Keys  //textarea[@aria-label='Input Editor']    ENTER
+    set global variable    ${generated_costcenter}
 
 Enter the new value in the location name column
     [Arguments]    ${option}
     MemberPage.Double click    ${option}
     ${random_string} =    Generate Random String       10      [NUMBERS]
-    ${generated_NewLocationName}=    Catenate    NewLocationName${random_string}
+    ${generated_NewLocationName}=    Catenate    LocationName${random_string}
     wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_NewLocationName}
     set global variable    ${generated_NewLocationName}
@@ -324,7 +335,7 @@ Enter the new value of assigned in the first name column
     [Arguments]    ${option}
     MemberPage.Double click    ${option}
     ${random_string} =    Generate Random String       10      [NUMBERS]
-    ${generated_assigneeFname}=    Catenate    FName${random_string}
+    ${generated_assigneeFname}=    Catenate    FName_${random_string}
     wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assigneeFname}
     set global variable    ${generated_assigneeFname}
@@ -333,7 +344,7 @@ Enter the new value of assigned in the last name column
     [Arguments]    ${option}
     MemberPage.Double click    ${option}
     ${random_string} =    Generate Random String       10      [NUMBERS]
-    ${generated_assigneeLname}=    Catenate    LName${random_string}
+    ${generated_assigneeLname}=    Catenate    LName_${random_string}
     wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assigneeLname}
     set global variable    ${generated_assigneeLname}
@@ -350,8 +361,8 @@ Enter the new value of assigned in the email column
 Enter the new value of assigned in the ID column
     [Arguments]    ${option}
     MemberPage.Double click    ${option}
-    ${random_string} =    Generate Random String       5      [NUMBERS]
-    ${generated_assigneeEmpID}=    Catenate    ${random_string}
+    ${random_string} =    Generate Random String       6      [NUMBERS]
+    ${generated_assigneeEmpID}=    Catenate    EmployeeID_${random_string}
     wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assigneeEmpID}
     set global variable    ${generated_assigneeEmpID}
@@ -485,6 +496,40 @@ Click on confirm button under pop up of exit button of bulk edit
     wait until element is visible  css:.qa-confirm-technology-bulk-edit-exit    60
     click element   css:.qa-confirm-technology-bulk-edit-exit
 
+
+Enter the new value of first name in bulk import of team member
+    [Arguments]    ${option}
+    MemberPage.Double click team member bulk import    ${option}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_Firstname}=    Catenate    FName_${random_string}
+    wait until element is visible       css:.ag-pinned-left-cols-container div[col-id='${option}']    60
+
+    input text  css:.ag-pinned-left-cols-container div[col-id='${option}'] input    ${generated_Firstname}
+    set global variable    ${generated_Firstname}
+
+Enter the new value of last name in bulk import of team member
+    [Arguments]    ${option}
+    MemberPage.Double click team member bulk import    ${option}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_lastname}=    Catenate    LName_${random_string}
+    wait until element is visible       css:.ag-pinned-left-cols-container div[col-id='${option}']    60
+    input text  css:.ag-pinned-left-cols-container div[col-id='${option}'] input    ${generated_lastname}
+    set global variable    ${generated_lastname}
+
+Enter position and title of team member bulk import
+    [Arguments]     ${option}
+    wait until element is visible   css:.ag-center-cols-container div[col-id='Position']    60
+    wait until element is enabled   css:.ag-center-cols-container div[col-id='Position']    60
+    double click element    css:.ag-center-cols-container div[col-id='Position']
+    input text      css:.ag-center-cols-container div[col-id='Position'] input      ${option}
+    Press Keys      css:.ag-center-cols-container div[col-id='Position']       ENTER
+
+Scroll Element
+    [Arguments]  ${option}
+    wait until element is not visible       ${loaderIcon}       60
+    scroll element into view    (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]
+
+
 Click on the fields and select value from dropdown of technology bulk edit
     [Arguments]     ${option}
     wait until element is not visible       ${loaderIcon}       60
@@ -494,3 +539,92 @@ Click on the fields and select value from dropdown of technology bulk edit
     wait until element is visible   css:div[class='ag-theme-alpine ag-popup'] div:nth-child(2) div      60
     click element   css:div[class='ag-theme-alpine ag-popup'] div:nth-child(2) div
     sleep   ${search_sleep}
+
+Enter random employee id of bulk import
+     [Arguments]    ${option}
+    MemberPage.Double click team member bulk import    ${option}
+    ${random_string} =    Generate Random String       7      [NUMBERS]
+    ${generated_employeeid}=    Catenate    EmployeeID_${random_string}
+    wait until element is visible       css:.ag-pinned-left-cols-container div[col-id='${option}']    60
+    input text  css:.ag-pinned-left-cols-container div[col-id='${option}'] input     ${generated_employeeid}
+    set global variable    ${generated_employeeid}
+
+Perform the keyboard action
+    [Arguments]  ${option}
+    Generic.Click keyboard button   css:.ag-center-cols-container div[col-id='${option}']       TAB
+
+
+Enter the new value in the first address column
+    [Arguments]    ${option}    ${address}
+    LocationPage.Double click    ${option}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${address}
+
+Enter random zip code of bulk import of loaction
+     [Arguments]    ${option}
+    LocationPage.Double click    ${option}
+    ${random_string} =    Generate Random String       7      [NUMBERS]
+    ${generated_zipcode}=    Catenate    ${random_string}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}']    60
+    input text  css:.ag-center-cols-container div[col-id='${option}'] input     ${generated_zipcode}
+    set global variable    ${generated_zipcode}
+
+click on checkbox under technology bulk import
+    wait until element is visible   //label[contains(text(),'- Create new assets as well as update data on exis')]      60
+    wait until element is enabled   //label[contains(text(),'- Create new assets as well as update data on exis')]      60
+    click element   //label[contains(text(),'- Create new assets as well as update data on exis')]
+    wait until element is not visible       ${loaderIcon}       60
+
+Enter the new value of serial number of technology bulk import
+    [Arguments]    ${option}
+    MemberPage.Double click    ${option}
+    ${random_string} =    Generate Random String       8      [NUMBERS]
+    ${generated_serialnumber}=    Catenate    SerialNumber_${random_string}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_serialnumber}
+    set global variable    ${generated_serialnumber}
+
+Enter the new value of asset id of technology bulk import
+    [Arguments]    ${option}
+    MemberPage.Double click    ${option}
+    ${random_string} =    Generate Random String       8      [NUMBERS]
+    ${generated_assetid}=    Catenate    AssetID_${random_string}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assetid}
+    set global variable    ${generated_assetid}
+
+Enter the new value in the fields of technology bulk import
+    [Arguments]    ${option}    ${address}
+    LocationPage.Double click    ${option}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${address}
+
+Enter the new value of country in location bulk import
+    [Arguments]    ${option}    ${option1}
+    MemberPage.Double click    ${option}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}']    60
+    wait until element is enabled       css:.ag-center-cols-container div[col-id='${option}']    60
+    Double click element    css:.ag-center-cols-container div[col-id='${option}']
+    input text   //textarea[@aria-label='Input Editor']     ${option1}
+    Press Keys  //textarea[@aria-label='Input Editor']    ENTER
+
+Create random IP subnet in location bulk import
+    [Arguments]    ${option}
+    MemberPage.Double click    ${option}
+    ${random_string1} =     Evaluate    random.randint(1, 255)
+    ${random_string2} =     Evaluate    random.randint(1, 255)
+    ${random_string3} =     Evaluate    random.randint(1, 255)
+    ${random_string4} =     Evaluate    random.randint(1, 255)
+    ${generated_SubnetIp}=    Catenate    ${random_string1}.${random_string2}.${random_string3}.${random_string4}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}']    60
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_SubnetIp}
+    set global variable    ${generated_SubnetIp}
+
+Click on the confirm button of finish pop up
+    wait until element is visible   css:.qa-confirm-finish-bulk-edit       60
+    wait until element is enabled   css:.qa-confirm-finish-bulk-edit       60
+    click element   css:.qa-confirm-finish-bulk-edit
+
+
+
+
