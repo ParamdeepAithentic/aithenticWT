@@ -219,13 +219,24 @@ Enter random cost center value
     input text   css:.qa-cost-center   ${generated_location}
     set global variable    ${generated_location}
 
-Create random IP subnet
-    ${random_string1} =    Generate Random String       3      [NUMBERS]
-    ${random_string2} =    Generate Random String       3      [NUMBERS]
-    ${random_string3} =    Generate Random String       3      [NUMBERS]
-    ${random_string4} =    Generate Random String       3      [NUMBERS]
-    ${generated_SubnetIP}=    Catenate    ${random_string1}.${random_string2}.${random_string3}.${random_string4}
-    wait until element is visible       css:input[formcontrolname='IPSubnets']    60
-    wait until element is enabled       css:input[formcontrolname='IPSubnets']    60
-    input text   css:input[formcontrolname='IPSubnets']   ${generated_SubnetIP}
+#Create random IP subnet
+#    ${random_string1} =    Generate Random String       3      [NUMBERS]
+#    ${random_string2} =    Generate Random String       3      [NUMBERS]
+#    ${random_string3} =    Generate Random String       3      [NUMBERS]
+#    ${random_string4} =    Generate Random String       3      [NUMBERS]
+#    ${generated_SubnetIP}=    Catenate    ${random_string1}.${random_string2}.${random_string3}.${random_string4}
+#    wait until element is visible       css:input[formcontrolname='IPSubnets']    60
+#    wait until element is enabled       css:input[formcontrolname='IPSubnets']    60
+#    input text   css:input[formcontrolname='IPSubnets']   ${generated_SubnetIP}
+#    set global variable    ${generated_SubnetIP}
+
+Create Random IP Subnet
+    ${random_string1} =     Evaluate    random.randint(1, 255)
+    ${random_string2} =     Evaluate    random.randint(1, 255)
+    ${random_string3} =     Evaluate    random.randint(1, 255)
+    ${random_string4} =     Evaluate    random.randint(1, 255)
+    ${generated_SubnetIP} =    Catenate    ${random_string1}.${random_string2}.${random_string3}.${random_string4}
+    Wait Until Element Is Visible    css:input[formcontrolname='IPSubnets']    60
+    Wait Until Element Is Enabled    css:input[formcontrolname='IPSubnets']    60
+    Input Text    css:input[formcontrolname='IPSubnets']    ${generated_SubnetIP}
     set global variable    ${generated_SubnetIP}

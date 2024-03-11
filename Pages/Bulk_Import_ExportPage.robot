@@ -611,15 +611,20 @@ Enter the new value of country in location bulk import
 Create random IP subnet in location bulk import
     [Arguments]    ${option}
     MemberPage.Double click    ${option}
-    ${random_string1} =    Generate Random String       3      [NUMBERS]
-    ${random_string2} =    Generate Random String       3      [NUMBERS]
-    ${random_string3} =    Generate Random String       3      [NUMBERS]
-    ${random_string4} =    Generate Random String       3      [NUMBERS]
+    ${random_string1} =     Evaluate    random.randint(1, 255)
+    ${random_string2} =     Evaluate    random.randint(1, 255)
+    ${random_string3} =     Evaluate    random.randint(1, 255)
+    ${random_string4} =     Evaluate    random.randint(1, 255)
     ${generated_SubnetIp}=    Catenate    ${random_string1}.${random_string2}.${random_string3}.${random_string4}
     wait until element is visible       css:.ag-center-cols-container div[col-id='${option}']    60
-
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_SubnetIp}
     set global variable    ${generated_SubnetIp}
+
+Click on the confirm button of finish pop up
+    wait until element is visible   css:.qa-confirm-finish-bulk-edit       60
+    wait until element is enabled   css:.qa-confirm-finish-bulk-edit       60
+    click element   css:.qa-confirm-finish-bulk-edit
+
 
 
 

@@ -290,12 +290,14 @@ Location Bulk Edit
     Bulk_Import_ExportPage.Enter the new value of cost center in location bulk edit     CostCenter
     Bulk_Import_ExportPage.Perform the keyboard action      CostCenter
     Bulk_Import_ExportPage.Enter the new value in the location name column     LocationTypeName
-
+    Bulk_Import_ExportPage.Perform the keyboard action       LocationTypeName
+    Bulk_Import_ExportPage.Create random IP subnet in location bulk import      IPSubnets
+    Bulk_Import_ExportPage.Perform the keyboard action        IPSubnets
+    Generic.Click on the button     Check Data
     Generic.Click on the button     Update      #Check Data,Edit
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
     Generic.Click on the button     Finish
-    MemberPage.Confirm the exit import process pop appers
-    Generic.Click on the button     Confirm
+    Bulk_Import_ExportPage.Click on the confirm button of finish pop up
     sleep      ${search_sleep}
     Switch Window       aithentic | Location - List
     Bulk_Import_ExportPage.Search by location name     ${generated_NewLocationName}
@@ -522,7 +524,7 @@ Location Bulk Import
     sleep   ${yop_sleep}
     Switch Window       aithentic | Add - Locations
     Generic.Verify your current page location contains      add-location-grid
-    Bulk_Import_ExportPage.Enter the new value of country in location bulk import       Country       Albania
+    LocationPage.Select option from country column       Country
     Bulk_Import_ExportPage.Enter the new value in the building name column     BuildingName        Phelps Tower
     Bulk_Import_ExportPage.Enter the new value in the floor number column      Floor      1
     Bulk_Import_ExportPage.Enter the new value in the room number column       Room        204
