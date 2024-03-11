@@ -104,13 +104,13 @@ Product Bulk Edit
     Bulk_Import_ExportPage.Enter the new value in the brand name column in bulk_edit       BrandName    QABrand555
     Bulk_Import_ExportPage.Select option from status column in bulk_edit        ProductStatus
     Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       TechType    1
+    Generic.Click on the button     Check Data
     Generic.Click on the button     Update      #Check Data,Edit
     MemberPage.Confirm the exit import process pop appers
     Generic.Click on the button     Confirm
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
-    Generic.Click on the button     Exit
-    MemberPage.Confirm the exit import process pop appers
-    Generic.Click on the button     Confirm
+    Generic.Click on the button     Finish
+    Bulk_Import_ExportPage.Click on the confirm button of finish pop up
     Sleep       ${yop_sleep}
     Switch Window       aithentic | Product - List
     Bulk_Import_ExportPage.Click on Refresh icon of product-list page
@@ -169,11 +169,11 @@ Department Bulk Edit
     Bulk_Import_ExportPage.Enter the new value in the department name column in bulk_edit     department_name
     Bulk_Import_ExportPage.Select option from department status column in bulk_edit      DepartmentStatus
     Bulk_Import_ExportPage.Enter the new value in the cost center column in bulk_edit     costCenter
-    Generic.Click on the button     Upload      #Check Data,Edit,Upload
+    Generic.Click on the button     Check Data
+    Generic.Click on the button     Update      #Check Data,Edit,Upload
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload successful
-    Generic.Click on the button     Exit
-    Bulk_Import_ExportPage.Confirm the exit import process pop appears
-    Generic.Click on the button     Confirm
+    Generic.Click on the button     Finish
+    Bulk_Import_ExportPage.Click on the confirm button of finish pop up
     sleep       ${yop_sleep}
     Switch Window       aithentic | Department - List
     Bulk_Import_ExportPage.Verify department added using bulk_import_export     ${generated_EditDepartmentName}
@@ -211,10 +211,9 @@ Add Product Bulk Edit
     Generic.Click on the button     Confirm
     sleep   ${search_sleep}
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
-    Generic.Click on the button     Exit
-    MemberPage.Confirm the exit import process pop appers
+    Generic.Click on the button     Finish
     sleep   ${search_sleep}
-    Generic.Click on the button     Confirm
+    Bulk_Import_ExportPage.Click on the confirm button of finish pop up
     sleep       ${yop_sleep}
     Switch Window       aithentic | Product - List
     Bulk_Import_ExportPage.Verify product added using bulk_import_export    ${generated_EditProductName}
@@ -240,11 +239,11 @@ Add Department Bulk Edit
     Bulk_Import_ExportPage.Enter the new value in the department name column in bulk_edit     department_name
     Bulk_Import_ExportPage.Select option from department status column in bulk_edit       DepartmentStatus
     Bulk_Import_ExportPage.Enter the new value in the cost center column in bulk_edit     costCenter
-    Generic.Click on the button     Upload      #Check Data,Edit,Upload
+    Generic.Click on the button     Check Data
+    Generic.Click on the button     Update      #Check Data,Edit      #Check Data,Edit,Upload
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload successful
-    Generic.Click on the button     Exit
-    Bulk_Import_ExportPage.Confirm the exit import process pop appears
-    Generic.Click on the button     Confirm
+    Generic.Click on the button     Finish
+    Bulk_Import_ExportPage.Click on the confirm button of finish pop up
     sleep       ${search_sleep}
     Switch Window       aithentic | Department - List
     Bulk_Import_ExportPage.Verify department added using bulk_import_export     ${generated_EditDepartmentName}
@@ -334,9 +333,8 @@ Assigned Users Bulk Edit
     Bulk_Import_ExportPage.Enter the new value of assigned in the ID column     AssignedEmployeeId
     Generic.Click on the button     Update      #Check Data
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
-    Generic.Click on the button     Exit
-    MemberPage.Confirm the exit import process pop appers
-    Generic.Click on the button     Confirm
+    Generic.Click on the button     Finish
+    Bulk_Import_ExportPage.Click on the confirm button of finish pop up
     sleep       ${search_sleep}
     Switch Window       aithentic | Member - List
     Bulk_Import_ExportPage.Search assigned user by first and last name    ${generated_assigneeFname} ${generated_assigneeLname}
@@ -353,12 +351,15 @@ Team Member Bulk Edit
     Generic.Verify your current page location contains      addmembers
     MemberPage.Enter team member first name
     MemberPage.Enter team member last name
-    Generic.Enter phone number      India   +91     9646289871
     MemberPage.Enter team member business email
+    TeamMemberPage.Enter the Position in member form        QA
     MemberPage.Enter team member department     Do not Delete this Department
     MemberPage.Enter team member location    United States - Main Office - 21 - 2
     MemberPage.Enter team member role   Admin
+    TeamMemberPage.Create random employee id
+    Generic.Enter phone number      India   +91     9646289871
     MemberPage.Save new team member form    save
+    sleep   ${search_sleep}
     Generic.Fetch alert message text and compare it with        Team Member created successfully
     Bulk_Import_ExportPage.Search team member by first and last name   ${generate_teamMember_FirstName} ${generate_teamMember_LastName}
     MemberPage.Click on team member user action button
@@ -366,17 +367,19 @@ Team Member Bulk Edit
     sleep     ${yop_sleep}
     Switch Window       aithentic | Edit - Members
     Generic.Verify your current page location contains      member-bulk-edit
+    Bulk_Import_ExportPage.Enter random employee id of bulk import      EmployeeId
     Bulk_Import_ExportPage.Enter the new value of team member in the phone number column    MobileNo
     Bulk_Import_ExportPage.Enter the new value of team member in the email column      Email
     Bulk_Import_ExportPage.Enter the new value of team member in the department column      DepartmentName
+    Bulk_Import_ExportPage.Perform the keyboard action      DepartmentName
     Bulk_Import_ExportPage.Enter the new value of team member in the location column        LocationName
+    Bulk_Import_ExportPage.Perform the keyboard action      LocationName
     Bulk_Import_ExportPage.Enter the new value of team member in the role column     UserRoleName
+    Bulk_Import_ExportPage.Perform the keyboard action      UserRoleName
     Generic.Click on the button     Update
-    Bulk_Import_ExportPage.Click employee id box to scroll
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
-    Generic.Click on the button     Exit
-    MemberPage.Confirm the exit import process pop appers
-    Generic.Click on the button     Confirm
+    Generic.Click on the button     Finish
+    Bulk_Import_ExportPage.Click on the confirm button of finish pop up
     sleep       ${search_sleep}
     Switch Window       aithentic | Member - List
     Bulk_Import_ExportPage.Search team member by first and last name    ${generate_teamMember_FirstName} ${generate_teamMember_LastName}
@@ -441,18 +444,7 @@ Technology Bulk edit
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
     Generic.Click on the button     Finish
     sleep   ${search_sleep}
-    Bulk_Import_ExportPage.Click on confirm button under pop up of finish button of bulk edit
-    sleep       ${search_sleep}
-    Switch Window       aithentic | Technology - List
-    TechnologyPage.Search by AssetId       ${generated_assetidbulkedit}
-    TechnologyPage.Click on action button of technology
-    TechnologyPage.Click on Bulk_edit under action button
-    sleep     ${yop_sleep}
-    switch window     aithentic | Edit - Assets
-    Generic.Verify your current page location contains      technology-bulk-edit
-    Generic.Click on the button     Exit
-    sleep   ${search_sleep}
-    Bulk_Import_ExportPage.Click on confirm button under pop up of exit button of bulk edit
+    Bulk_Import_ExportPage.Click on the confirm button of finish pop up
     sleep       ${search_sleep}
     Switch Window       aithentic | Technology - List
     TechnologyPage.Search by AssetId       ${generated_assetidbulkedit}
