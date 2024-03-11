@@ -68,6 +68,7 @@ Activate and deactivate the location
     LocationPage.Select location state       Texas
     LocationPage.Select location city        Austin
     LocationPage.Select location zip     147001
+    LocationPage.Enter random cost center value
     LocationPage.Create random location name
     LocationPage.Save location form     save
     Generic.Fetch alert message text and compare it with    Location created successfully

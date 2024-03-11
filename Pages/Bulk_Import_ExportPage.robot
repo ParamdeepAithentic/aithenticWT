@@ -295,6 +295,17 @@ Enter the new value in the city column
     wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${city}
 
+Enter the new value of cost center in location bulk edit
+    [Arguments]    ${option}
+    MemberPage.Double click    ${option}
+    ${random_string} =    Generate Random String       6      [NUMBERS]
+    ${generated_costcenter}=    Catenate    ${random_string}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}']    60
+    Double click element    css:.ag-center-cols-container div[col-id='${option}']
+    input text   //textarea[@aria-label='Input Editor']   ${generated_costcenter}
+    Press Keys  //textarea[@aria-label='Input Editor']    ENTER
+    set global variable    ${generated_costcenter}
+
 Enter the new value in the location name column
     [Arguments]    ${option}
     MemberPage.Double click    ${option}
@@ -587,3 +598,33 @@ Enter the new value in the fields of technology bulk import
     LocationPage.Double click    ${option}
     wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${address}
+
+Enter the new value of country in location bulk import
+    [Arguments]    ${option}    ${option1}
+    MemberPage.Double click    ${option}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}']    60
+    wait until element is enabled       css:.ag-center-cols-container div[col-id='${option}']    60
+    Double click element    css:.ag-center-cols-container div[col-id='${option}']
+    input text   //textarea[@aria-label='Input Editor']     ${option1}
+    Press Keys  //textarea[@aria-label='Input Editor']    ENTER
+
+Create random IP subnet in location bulk import
+    [Arguments]    ${option}
+    MemberPage.Double click    ${option}
+    ${random_string1} =     Evaluate    random.randint(1, 255)
+    ${random_string2} =     Evaluate    random.randint(1, 255)
+    ${random_string3} =     Evaluate    random.randint(1, 255)
+    ${random_string4} =     Evaluate    random.randint(1, 255)
+    ${generated_SubnetIp}=    Catenate    ${random_string1}.${random_string2}.${random_string3}.${random_string4}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}']    60
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_SubnetIp}
+    set global variable    ${generated_SubnetIp}
+
+Click on the confirm button of finish pop up
+    wait until element is visible   css:.qa-confirm-finish-bulk-edit       60
+    wait until element is enabled   css:.qa-confirm-finish-bulk-edit       60
+    click element   css:.qa-confirm-finish-bulk-edit
+
+
+
+
