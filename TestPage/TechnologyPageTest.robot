@@ -1878,3 +1878,8 @@ Upload file: Image files while Clone the Technology
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
+
+#Check current directory path test
+#    ${parent_dir}=    Get Parent Directory Up To Root    ${CURDIR}
+#    Log To Console    ${parent_dir}
+#    Set Global Variable    ${parent_dir}

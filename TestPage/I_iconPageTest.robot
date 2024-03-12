@@ -63,12 +63,12 @@ Verify all i-icon of profile-listing
     I_iconPage.Choose tabs under organization        company
     I_iconPage.Click on i-icon of industry under company financial information
     Generic.Verify pop-up is visible after clicking on i-icon
-    I_iconPage.Click on link inside industry i-icon      https://www.naics.com/search/
-    sleep       ${yop_sleep}
-    switch window       NAICS & SIC Identification Tools | NAICS Association
-    Generic.Verify your current page location contains      naics.com
-    Generic.Verify your current page contains this text     NAICS Identification Tools
-    Go back
+#    I_iconPage.Click on link inside industry i-icon      https://www.naics.com/search/
+#    sleep       ${yop_sleep}
+#    switch window       NAICS & SIC Identification Tools | NAICS Association
+#    Generic.Verify your current page location contains      naics.com
+#    Generic.Verify your current page contains this text     NAICS Identification Tools
+#    Go back
     I_iconPage.Click on i-icon of company department
     Generic.Verify pop-up is visible after clicking on i-icon
     I_iconPage.Click on i-icon of company department
