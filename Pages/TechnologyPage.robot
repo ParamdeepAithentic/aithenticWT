@@ -1355,10 +1355,11 @@ Click on attachment tab
 #    click element   //label[normalize-space()='Upload File']
 
 Upload file
-    [Arguments]    @{fileNames}
+    [Arguments]         @{fileNames}
+    ${parent_dir} =    Evaluate    os.path.dirname(os.path.dirname(os.path.abspath('${CURDIR}')))    os
     FOR    ${fileName}    IN    @{fileNames}
         Execute JavaScript    document.querySelector('input[type="file"]').style.display = 'block';
-        Choose File    css=input[type="file"]    D:\\aithentic-rfw\\Files\\${fileName}
+        Choose File    css=input[type="file"]    ${parent_dir}\\Files\\${fileName}
         Execute JavaScript    document.querySelector('input[type="file"]').value = '';
     END
 
@@ -1427,3 +1428,13 @@ Click on clone button on techonology details page
     wait until element is not visible      ${loaderIcon}    60
     Generic.click on the button link     ${option}
     wait until element is not visible      ${loaderIcon}    60
+
+
+#Check current directory path
+#    Log To Console    ${CURDIR}
+
+
+Get Parent Directory Up To Root
+    [Arguments]    ${path}
+    ${parent_dir} =    Evaluate    os.path.dirname(os.path.dirname(os.path.abspath('${path}')))    os
+    [Return]    ${parent_dir}
