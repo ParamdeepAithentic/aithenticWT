@@ -1072,6 +1072,13 @@ Add new Technology- Add New Department and assign that department
 Add new Technology- Add New Assignee and assign that Assignee
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the employee ID checkbox   no
+    Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
 #    TechnologyPage.click on add technology button
@@ -1096,6 +1103,12 @@ Add new Technology- Add New Assignee and assign that Assignee
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the employee ID checkbox   yes
+    Generic.Fetch alert message text and compare it with       Settings Updated
 
 Add new Technology- Add New support-partner and assign that support partner
     Generic.click on the tab	Login
@@ -1250,6 +1263,13 @@ Edit Technology Page - Add New Department and assign that Department
 Edit Technology Page - Add New Assignee and assign that Assignee
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the employee ID checkbox   no
+    Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
 #    TechnologyPage.click on add technology button
@@ -1282,6 +1302,12 @@ Edit Technology Page - Add New Assignee and assign that Assignee
     TechnologyPage.Add assignment information assign to       ${generated_assignFname}      ${generated_assignLname}
     TechnologyPage.Click on update button of edit_technology page     Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the employee ID checkbox   yes
+    Generic.Fetch alert message text and compare it with       Settings Updated
 
 Edit Technology Page - Add New Supplier and assign that Supplier
     Generic.click on the tab	Login
