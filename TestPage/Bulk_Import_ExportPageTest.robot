@@ -345,6 +345,15 @@ Team Member Bulk Edit
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the employee ID checkbox   no
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
     MemberPage.Click on assigned user tab   Team Members
     MemberPage.Click on team member action button
     MemberPage.Choose the option from the action menu   Add Member
@@ -383,6 +392,13 @@ Team Member Bulk Edit
     sleep       ${search_sleep}
     Switch Window       aithentic | Member - List
     Bulk_Import_ExportPage.Search team member by first and last name    ${generate_teamMember_FirstName} ${generate_teamMember_LastName}
+    Generic.Wait until table get load
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the employee ID checkbox   yes
+    Generic.Fetch alert message text and compare it with       Settings Updated
 
 Technology Bulk edit
     [Tags]       sanity
@@ -452,6 +468,13 @@ Technology Bulk edit
 Team member Bulk Import
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the employee ID checkbox   no
+    Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     MemberPage.Click on team member action button
@@ -480,6 +503,12 @@ Team member Bulk Import
     Switch Window       aithentic | Member - List
     TeamMemberPage.Search Team Member by name       ${generated_Firstname}
     Generic.Wait until table get load
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the employee ID checkbox   yes
+    Generic.Fetch alert message text and compare it with       Settings Updated
 
 Assigned User Bulk Import
     Generic.click on the tab	Login

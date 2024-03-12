@@ -129,6 +129,7 @@ Verify team member Asset history
     [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
+
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Click on add team member action button
@@ -412,7 +413,6 @@ Verify user is able to export team member asset history list
     TechnologyPage.Choose add technology from action button of technology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       BrandName6162258049
-
     TechnologyPage.Select parameter from technology dropdown list     Product_00123
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Add assignment information assign to   ${generated_TMFname}       ${generated_TMLname}
@@ -675,6 +675,7 @@ Convert Assignee to team member in case of employee id is not system generated
     Generic.Select option from profile list     personal-details
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the employee ID checkbox   yes
     DashboardPage.Select the employee ID checkbox   no
     Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.select the option from the side menu    Team Members
