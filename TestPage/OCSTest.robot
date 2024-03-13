@@ -874,6 +874,7 @@ Network discovery search on discovered asset list with IP address
     Generic.Verify your current page contains this text      192.168.0.137
 
 Upload Image File while Add Discovery Asset
+    [Tags]      last
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.Click on the profile name

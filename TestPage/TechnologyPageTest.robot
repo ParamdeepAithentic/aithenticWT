@@ -1573,7 +1573,7 @@ Technology-Inactive asset and Restore asset
     Generic.Fetch alert message text and compare it with      Payment Successful
 
 Inactive asset - Restore asset from Technology Details page
-    [Tags]      smoke
+    [Tags]      smoke       last
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     chirag@dmts.fr.nf    Test@001
     Generic.Click on the profile name
@@ -1744,7 +1744,7 @@ Click on the attachment tab under technology
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
     TechnologyPage.Click on attachment tab
-    TechnologyPage.Upload file      Image_01.jpg       Image_02.png     Image_04.avif
+    TechnologyPage.Upload file       Image_01.jpg       Image_02.png     Image_04.avif
     Generic.Fetch alert message text and compare it with        Technology documents uploaded successfully
     TechnologyPage.View the file by clicking on view icon over file     .jpg
     TechnologyPage.Get and Verify the size of the image after zoom      zoom-in
