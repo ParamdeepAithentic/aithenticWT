@@ -824,7 +824,7 @@ Add component as an asset from Agent Discovery page
     OCS.Click on Discovery_info tab on Technology details Page
     OCS.Verify Discovery_info contains following tab    hardware-tab
     OCS.Verify Discovery_info contains following tab    software-tab
-    Generic.Scroll the page till   500
+    Generic.Scroll the page till   499
     OCS.Hover Over Add component button and verify text         Please click on the 'plus' icon to add component
     OCS.Click on plus icon of any component
     Sleep    ${yop_sleep}
