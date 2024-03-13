@@ -1071,7 +1071,6 @@ View Details and check the details of Contract
     Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name   ${generate_BusinessName}
     Generic.select the option from the side menu    Technology
-#   TechnologyPage.click on add technology button
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     PartnersPage.Click here to add link of contract details
@@ -1083,6 +1082,7 @@ View Details and check the details of Contract
     TechnologyPage.Select product technology group via technology   Applications
     TechnologyPage.Click on save product pop inside technology page
     Generic.Fetch alert message text and compare it with    Product created successfully
+    TechnologyPage.Select parameter from technology dropdown list    ${generated_product}
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date
     TechnologyPage.Renewal Date via technology
@@ -1101,6 +1101,7 @@ View Details and check the details of Contract
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology-list
+    Generic.Wait until table get load
     TechnologyPage.Search by BrandName      ${generate_BusinessName}
     Generic.select the option from the side menu    Contracts
     Generic.click on the button link    View Details
