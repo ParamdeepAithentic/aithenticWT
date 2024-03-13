@@ -423,9 +423,7 @@ Click on Discovery_info tab on Technology details Page
     Wait Until Element Is Visible    css:#discovery-info-tab        60
     Wait Until Element Is Enabled    css:#discovery-info-tab    60
     Click Element    css:#discovery-info-tab
-    Wait Until Element Is Visible    //h4[normalize-space()='Processor(s)']
-    Wait Until Element Is Enabled    //h4[normalize-space()='Processor(s)']
-    Generic.Scroll the page till    10000
+
 
 Verify Discovery_info contains following tab
     [Arguments]     ${tab}
