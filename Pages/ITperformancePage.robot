@@ -285,3 +285,48 @@ Get And Verify The Count Of Data Quality Under Investment by partner tab
         ...    AND    Click Element    css:span[class='back']  AND  Sleep    ${yop_sleep}
         ...    ELSE    Log    Custom action for element ${index} with value ${element}
     END
+
+Get and verify the count of table of investment by partner
+    [Arguments]     ${option}       ${tab_count}
+    ${element_count}=    Get Element Count    (//h4[normalize-space()='${tab_count}']//following::tr)[2]//td
+    Log      ${element_count}
+    FOR    ${index}    IN RANGE    4    ${element_count + 1}
+        Wait Until Element Is Visible   (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]       60
+        Wait Until Element Is Enabled   (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]       60
+        ${element}=    Get Text    (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]
+        Log    Element ${index}: ${element}
+        Run Keyword If    '${element}' == '${EMPTY}'    Run Keywords    Empty Action   AND     Continue For Loop
+        ${element}=    Remove Special Characters    ${element}
+        Log     Element after removing special characters: ${element}
+        ${element_as_number}=   Convert To Integer   ${element}
+        log  Converted Text: ${element_as_number}
+        Run Keyword If    ${element_as_number} == 0
+        ...    Skip Action
+        ...    ELSE IF    ${element_as_number} > 0
+        ...    Run Keywords      Click Element    (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]     AND       sleep   ${yop_sleep}
+        ...    AND    Click Element    css:span[class='back']  AND  Sleep    ${yop_sleep}
+        ...    ELSE    Log    Custom action for element ${index} with value ${element}
+    END
+
+
+Get and verify the count of table of brand spend by supplier and supplier spend my location of investment by partner
+    [Arguments]     ${option}       ${tab_count}
+    ${element_count}=    Get Element Count    (//h4[normalize-space()='${tab_count}']//following::tr)[2]//td
+    Log      ${element_count}
+    FOR    ${index}    IN RANGE    5    ${element_count + 1}
+        Wait Until Element Is Visible   (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]       60
+        Wait Until Element Is Enabled   (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]       60
+        ${element}=    Get Text    (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]
+        Log    Element ${index}: ${element}
+        Run Keyword If    '${element}' == '${EMPTY}'    Run Keywords    Empty Action   AND     Continue For Loop
+        ${element}=    Remove Special Characters    ${element}
+        Log     Element after removing special characters: ${element}
+        ${element_as_number}=   Convert To Integer   ${element}
+        log  Converted Text: ${element_as_number}
+        Run Keyword If    ${element_as_number} == 0
+        ...    Skip Action
+        ...    ELSE IF    ${element_as_number} > 0
+        ...    Run Keywords      Click Element    (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]     AND       sleep   ${yop_sleep}
+        ...    AND    Click Element    css:span[class='back']  AND  Sleep    ${yop_sleep}
+        ...    ELSE    Log    Custom action for element ${index} with value ${element}
+    END

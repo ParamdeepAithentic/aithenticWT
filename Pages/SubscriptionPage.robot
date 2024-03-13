@@ -252,4 +252,45 @@ Update the payment of changed plan
     wait until element is enabled      css:.qa-payment-update-${option1}          60
     click element      css:.qa-payment-update-${option1}
 
+Click on the values inside subscription connector table
+    wait until element is not visible    ${loaderIcon}    60
+    wait until element is visible   //div[@id='subscription-connector']//parent::div//div//table//tr[1]//td[8]      60
+    wait until element is enabled   //div[@id='subscription-connector']//parent::div//div//table//tr[1]//td[8]      60
+    click element   //div[@id='subscription-connector']//parent::div//div//table//tr[1]//td[8]
+
+Enter the value in the email field of google sigin
+    [Arguments]     ${email}
+    wait until element is visible   css:#identifierId       60
+    wait until element is enabled   css:#identifierId       60
+    click element   css:#identifierId
+    input text      css:#identifierId       ${email}
+
+Click on the next button
+    wait until element is visible   //span[normalize-space()='Next']        60
+    wait until element is enabled   //span[normalize-space()='Next']        60
+    click element   //span[normalize-space()='Next']
+    wait until element is not visible    ${loaderIcon}    60
+
+Enter the value in the password field of google sigin
+    [Arguments]     ${password}
+    wait until element is visible   css:input[name='Passwd']       60
+    wait until element is enabled   css:input[name='Passwd']       60
+    click element   css:input[name='Passwd']
+    input text      css:input[name='Passwd']      ${password}
+
+Click on the way how to sign in
+    Wait until element is visible   //div[contains(text(),'Get a verification code')]       60
+    wait until element is enabled   //div[contains(text(),'Get a verification code')]
+    click element   //div[contains(text(),'Get a verification code')]
+    wait until element is not visible    ${loaderIcon}    60
+
+Enter the verification code
+    [Arguments]     ${code}
+    Wait until element is visible   css:#idvPinId       60
+    wait until element is enabled   css:#idvPinId
+    click element   css:#idvPinId
+    input text      css:#idvPinId       ${code}
+    wait until element is not visible    ${loaderIcon}    60
+
+
 
