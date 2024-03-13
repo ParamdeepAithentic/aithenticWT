@@ -750,7 +750,7 @@ Add component as an asset after Adding OCS asset
     Switch Window       aithentic | Discovery Asset Detail
     Generic.Verify your current page location contains    discovery-asset-detail
     OCS.Verify Discovery_info contains following tab    software-tab
-    Generic.Scroll the page till   499
+    Generic.Scroll the page till   300
     OCS.Hover Over Add component button and verify text         Please click on the 'plus' icon to add component
     OCS.Click on plus icon of any component
     Sleep    ${yop_sleep}
