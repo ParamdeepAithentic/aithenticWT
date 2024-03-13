@@ -308,3 +308,18 @@ Fetch log_out alert message
 Click keyboard button
     [Arguments]     ${locator}      ${button}
     Press keys      ${locator}      ${button}
+
+Update settings for Asset_ID, employee_id and location
+    Generic.open the browser with the url
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form    ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the location ID checkbox   yes
+    DashboardPage.Select the asset ID checkbox      no
+    close browser
+
