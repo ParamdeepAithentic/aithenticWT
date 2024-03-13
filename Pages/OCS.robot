@@ -458,6 +458,7 @@ Hover Over Add component button and verify text
     [Arguments]     ${option}
     Wait Until Element Is Visible    //div[@id='software']//button[normalize-space()='Add as a Component']      60
     Wait Until Element Is Enabled    //div[@id='software']//button[normalize-space()='Add as a Component']      60
+    Scroll Element Into View    //div[@id='software']//button[normalize-space()='Add as a Component']
     Mouse Over    //div[@id='software']//button[normalize-space()='Add as a Component']
     ${text}=    Get Element attribute       //div[@id='software']//button[normalize-space()='Add as a Component']        title
     Should Be Equal    ${text}   ${option}
