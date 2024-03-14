@@ -424,6 +424,7 @@ Click on Discovery_info tab on Technology details Page
     Wait Until Element Is Enabled    css:#discovery-info-tab    60
     Click Element    css:#discovery-info-tab
 
+
 Verify Discovery_info contains following tab
     [Arguments]     ${tab}
     Wait Until Element Is Not Visible    ${loaderIcon}    60
@@ -458,7 +459,7 @@ Hover Over Add component button and verify text
     [Arguments]     ${option}
     Wait Until Element Is Visible    //div[@id='software']//button[normalize-space()='Add as a Component']      60
     Wait Until Element Is Enabled    //div[@id='software']//button[normalize-space()='Add as a Component']      60
-    Scroll Element Into View    //div[@id='software']//button[normalize-space()='Add as a Component']
+#    Scroll Element Into View    //div[@id='software']//button[normalize-space()='Add as a Component']
     Mouse Over    //div[@id='software']//button[normalize-space()='Add as a Component']
     ${text}=    Get Element attribute       //div[@id='software']//button[normalize-space()='Add as a Component']        title
     Should Be Equal    ${text}   ${option}
