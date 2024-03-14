@@ -1438,3 +1438,38 @@ Get Parent Directory Up To Root
     [Arguments]    ${path}
     ${parent_dir} =    Evaluate    os.path.dirname(os.path.dirname(os.path.abspath('${path}')))    os
     [Return]    ${parent_dir}
+
+Click on advanced search button link under add technology
+    wait until element is visible   css:div[class='row ng-star-inserted'] a[title='Click here to Advance search']       60
+    wait until element is enabled   css:div[class='row ng-star-inserted'] a[title='Click here to Advance search']       60
+    click element   css:div[class='row ng-star-inserted'] a[title='Click here to Advance search']
+    wait until element is not visible      ${loaderIcon}    60
+
+Click on the very first row of the table inside advanced search
+  wait until element is visible     //tr[@class='table-row text-left ng-star-inserted'][2]      60
+  wait until element is enabled     //tr[@class='table-row text-left ng-star-inserted'][2]      60
+  sleep     ${yop_sleep}
+  click element     //tr[@class='table-row text-left ng-star-inserted'][2]
+
+Fetch the Brand Name from the brand field
+    [Arguments]    ${option}
+    wait until element is visible       css:#brandselect           60
+    wait until element is enabled        css:#brandselect      60
+    ${get_fetch_BrandName} =    get text    css:#brandselect
+    set global variable    ${get_fetch_BrandName}
+    log to console     ${get_fetch_BrandName}
+
+Click technology advanced brand input field
+    wait until element is enabled       css:#advaceBrand        60
+    click element    css:#advaceBrand
+
+Select parameter from advanced brand dropdown list
+    [Arguments]    ${option}
+    Clear Element Text      css:#advaceBrand
+    ${StartTime1} =     Get Current Time in Milliseconds
+    input text    css:#advaceBrand   ${option}
+    Generic.Select parameter    ${option}
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  5  ${pageHeading}   Technology Page - Select parameter from brand dropdown list      5    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+

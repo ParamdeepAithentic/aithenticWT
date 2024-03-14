@@ -1883,3 +1883,29 @@ Upload file: Image files while Clone the Technology
 #    ${parent_dir}=    Get Parent Directory Up To Root    ${CURDIR}
 #    Log To Console    ${parent_dir}
 #    Set Global Variable    ${parent_dir}
+
+Search with brand_product_technologytype_technologygroup on advanced search
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click on advanced search button link under add technology
+    TechnologyPage.Click technology advanced brand input field
+    TechnologyPage.Select parameter from advanced brand dropdown list        Lenovo
+    Generic.click on the button     Search
+    sleep   2
+    Generic.Wait until table get load
+    Generic.Scroll the page till    49000
+    Generic.Wait until table get load
+    sleep   6
+    TechnologyPage.Click on the very first row of the table inside advanced search
+    Generic.click on the button     Select
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Fetch the Brand Name from the brand field
+
+
+
+
