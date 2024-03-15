@@ -1357,7 +1357,6 @@ Upload file
     Execute JavaScript    document.querySelector('input[type="file"]').style.display = 'block';
     Choose File    css=input[type="file"]    ${CURDIR}\\${fileName}
 
-#    Input Text    //input[@type='file']    ${CURDIR}\\UploadFile.txt
-##########################################################################################
+
 
 

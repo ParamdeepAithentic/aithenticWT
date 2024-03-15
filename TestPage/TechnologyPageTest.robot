@@ -1771,19 +1771,3 @@ Upload file while edit technology
 
 
 
-Scroll Within Web Table
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
-    Generic.select the option from the side menu    Technology
-    Generic.Verify your current page location contains      technology
-    sleep       10
-    Click element       css:.qa-technology-per-page
-    sleep       5
-    click element       //span[normalize-space()='10']
-    sleep       10
-    Execute JavaScript    document.querySelector('tbody tr:nth-child(500) td:nth-child(1)').scrollIntoView(true);
-    Sleep    5
-
-.table.table-hover tr.table-row
-.qa-technology-per-page .ng-value span.ng-value-label
-
