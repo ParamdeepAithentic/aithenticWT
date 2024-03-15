@@ -298,9 +298,9 @@ Scroll Window To End
     Execute JavaScript    window.scrollTo(0, document.body.scrollHeight);
 
 Wait until table get load
-    wait until element is visible       //tbody//tr//td[normalize-space()='1']     60
+#    wait until element is visible       //tbody//tr//td[normalize-space()='1']     60
 #    wait until element is enabled      //tbody//tr//td[normalize-space()='1']      60
-#    wait until element is visible       //div[@class='table-responsive table-scrollable table-column-common ng-star-inserted']      60
+    wait until element is visible       //div[@class='table-responsive table-scrollable table-column-common ng-star-inserted']      60
 
 Fetch log_out alert message
     sleep      2
