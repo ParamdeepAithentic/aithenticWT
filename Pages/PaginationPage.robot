@@ -43,7 +43,8 @@ ${GetDropDown_count}     css:.qa-technology-per-page .ng-value span.ng-value-lab
 ${Totalcount_field}        css:.qa-total-count-list
 
 *** Keywords ***
-Wait till table get loaded
+
+Check the table get load
     wait until element is visible       //td[normalize-space()='1']      60
     wait until element is enabled       //td[normalize-space()='1']      60
 
@@ -72,7 +73,8 @@ Get count of total rows
     wait until element is enabled       //td[normalize-space()='1']      60
     ${elements} =  Get WebElements     ${TotalRow_count}
     ${row_count} =    Get Length    ${elements}
-    set global variable    ${row_count}
+    ${total_table_row_count}=   Convert To Integer   ${row_count}
+    set global variable    ${total_table_row_count}
 
 
 Fetch the total count
@@ -80,10 +82,26 @@ Fetch the total count
     wait until element is visible   ${Totalcount_field}      60
     ${text}=     get text   ${Totalcount_field}
     ${parts}    Split String    ${text}    Total Count :
-    ${total_count}    Get Substring    ${parts[1]}    3
-    Log to console  Total count is :${total_count}
+    ${total_row_count}    Get Substring    ${parts[1]}    3
+    ${total_data_count}=   Convert To Integer   ${total_row_count}
+    Log to console  Total count is :${total_data_count}
+    set global variable    ${total_data_count}
+
+
+
+Verify Pagination and Row Count
+    Run Keyword If    '${dropDown_value_as_number}' == '${total_table_row_count}'
+    ...    Run Keywords
+    ...    Scroll within the element    ${dropDown_value_as_number}
+    ...    AND    Return From Keyword
+
+    Run Keyword If    '${row_count}' == '${total_data_count}'
+    ...    Run Keywords
+    ...    Scroll within the element    ${row_count}
+    ...    AND    Return From Keyword
+
 
 Scroll within the element
     [Arguments]    ${option}
     Execute JavaScript    document.querySelector('tbody tr:nth-child(${option}) td:nth-child(1)').scrollIntoView(true);
-
+    wait until element is visible       //td[normalize-space()='${option}']      60

@@ -49,16 +49,15 @@ Scroll Within Web Table
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    PaginationPage.Wait till table get loaded
+    PaginationPage.Check the table get load
     PaginationPage.Click on the pagination dropdown
-    PaginationPage.Select the value from the pagination drop down count    10
+    PaginationPage.Select the value from the pagination drop down count    500
     PaginationPage.Fetch the selected value of the dropdown
-    PaginationPage.Wait till table get loaded
-
-    PaginationPage.Scroll within the element    
-
-
+    PaginationPage.Check the table get load
     PaginationPage.Get count of total rows
+
+    PaginationPage.Verify Pagination and Row Count
+
     PaginationPage.Fetch the total count
 #    PaginationPage.Scroll within the element
 
