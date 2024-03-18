@@ -68,6 +68,7 @@ Scroll Within Web Table2
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     PaginationPage.Check the table get load
+    PaginationPage.Fetch the total count
     PaginationPage.Click on the pagination dropdown
     PaginationPage.Log WebElements
 
