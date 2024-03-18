@@ -424,6 +424,7 @@ Click on Discovery_info tab on Technology details Page
     Wait Until Element Is Enabled    css:#discovery-info-tab    60
     Click Element    css:#discovery-info-tab
 
+
 Verify Discovery_info contains following tab
     [Arguments]     ${tab}
     Wait Until Element Is Not Visible    ${loaderIcon}    60
@@ -458,14 +459,15 @@ Hover Over Add component button and verify text
     [Arguments]     ${option}
     Wait Until Element Is Visible    //div[@id='software']//button[normalize-space()='Add as a Component']      60
     Wait Until Element Is Enabled    //div[@id='software']//button[normalize-space()='Add as a Component']      60
+#    Scroll Element Into View    //div[@id='software']//button[normalize-space()='Add as a Component']
     Mouse Over    //div[@id='software']//button[normalize-space()='Add as a Component']
     ${text}=    Get Element attribute       //div[@id='software']//button[normalize-space()='Add as a Component']        title
     Should Be Equal    ${text}   ${option}
     
 Click on plus icon of any component
-    Wait Until Element Is Visible    (//i[contains(@class,'fa-plus-circle')])[1]       60
-    Wait Until Element Is Enabled    (//i[contains(@class,'fa-plus-circle')])[1]       60
-    Click Element    (//i[contains(@class,'fa-plus-circle')])[1]
+    Wait Until Element Is Visible    (//div[@id='software']//tbody//i)[1]       60
+    Wait Until Element Is Enabled    (//div[@id='software']//tbody//i)[1]       60
+    Click Element    (//div[@id='software']//tbody//i)[1]
 
 Verify Software tab Should contain Element
     Wait Until Element Is Visible       css:.fa-check-circle        60
@@ -509,3 +511,19 @@ Fetch text from Agent Discovery tab and compare it with
     Log To Console    ${fetch_agenttext}
     Set Global Variable    ${fetch_agenttext}
     Should be equal   ${fetch_agenttext}     ${option}
+
+click on the value of IP discovered devices of inside table
+    wait until element is not visible    ${loaderIcon}    60
+    wait until element is visible   //h5[normalize-space()='Tag Name - johnsoftwaresolutions-1428-3']//parent::div//div//table//td[7]   60
+    wait until element is enabled   //h5[normalize-space()='Tag Name - johnsoftwaresolutions-1428-3']//parent::div//div//table//td[7]   60
+    click element   //h5[normalize-space()='Tag Name - johnsoftwaresolutions-1428-3']//parent::div//div//table//td[7]
+
+Search with MAC address and IP Address on the search bar of Discovered Asset List
+    [Arguments]     ${MAC_Address}
+    wait until element is not visible    ${loaderIcon}    60
+    wait until element is visible       css:thead tr       60
+    wait until element is visible   css:input[placeholder='Search by Tag Name, MAC Address, IP Address...']     60
+    wait until element is enabled   css:input[placeholder='Search by Tag Name, MAC Address, IP Address...']     60
+    input text  css:input[placeholder='Search by Tag Name, MAC Address, IP Address...']     ${MAC_Address}
+    sleep       ${search_sleep}
+    wait until element is visible       css:thead tr       60

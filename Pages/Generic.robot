@@ -47,7 +47,7 @@ ${apiURL}              https://uat-api.aithentic.com/api/v1
 #${apiURL}               https://qa-api.aithentic.com/api/v1
 ${valid_password}        Test!@5897     #UAT user
 #${valid_password}         Test@123       #QA User
-
+#
 ${admin_url}        https://uat-admin.aithentic.com/
 #${admin_url}        https://qa-admin.aithentic.com/
 
@@ -70,6 +70,7 @@ ${click_Country}     css:#country
 ${click_countryTag}     css:.iti__selected-flag.dropdown-toggle
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
+
 ${yop_sleep}       10
 ${search_sleep}       1
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
@@ -283,7 +284,7 @@ Enter phone number
     input text  ${contact_Country_search}   ${country}
     Generic.Select parameter      ${code}
     input text     ${phone}     ${phoneNo}
-    Sleep    ${search_sleep}
+    Sleep    3
 
 Scroll the page till
     [Arguments]    ${option}
@@ -303,3 +304,22 @@ Wait until table get load
 Fetch log_out alert message
     sleep      2
     Wait Until Element Is Not Visible    ${alert_Msg}        60
+
+Click keyboard button
+    [Arguments]     ${locator}      ${button}
+    Press keys      ${locator}      ${button}
+
+Update settings for Asset_ID, employee_id and location
+    Generic.open the browser with the url
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form    ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the location ID checkbox   yes
+    DashboardPage.Select the asset ID checkbox      no
+    close browser
+

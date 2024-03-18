@@ -185,8 +185,8 @@ Select option from country column
     [Arguments]    ${option}
     wait until element is visible      css:.ag-center-cols-container div[col-id='${option}']    60
     Double click element      css:.ag-center-cols-container div[col-id='${option}']
-    wait until element is visible      css:div[aria-label='List'] div:nth-child(4) div    60
-    click element       css:div[aria-label='List'] div:nth-child(4) div
+    wait until element is visible      css:div[aria-label='List'] div:nth-child(3) div    60
+    click element       css:div[aria-label='List'] div:nth-child(3) div
 
 Double click
     [Arguments]    ${option}
@@ -210,3 +210,22 @@ Search by location name
      ${EndTime1} =     Get Current Time in Milliseconds
      ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
      Calculate Running time    3    ${pageHeading}   Location Page - Search location name in the table    3    ${pageTime}     ${ActualTime}    LocationPage_Time
+
+Enter random cost center value
+    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${generated_location}=    Catenate    CostCenter_${random_string}
+    wait until element is visible       css:.qa-cost-center    60
+    wait until element is enabled       css:.qa-cost-center    60
+    input text   css:.qa-cost-center   ${generated_location}
+    set global variable    ${generated_location}
+
+Create Random IP Subnet
+    ${random_string1} =     Evaluate    random.randint(1, 255)
+    ${random_string2} =     Evaluate    random.randint(1, 255)
+    ${random_string3} =     Evaluate    random.randint(1, 255)
+    ${random_string4} =     Evaluate    random.randint(1, 255)
+    ${generated_SubnetIP} =    Catenate    ${random_string1}.${random_string2}.${random_string3}.${random_string4}
+    Wait Until Element Is Visible    css:input[formcontrolname='IPSubnets']    60
+    Wait Until Element Is Enabled    css:input[formcontrolname='IPSubnets']    60
+    Input Text    css:input[formcontrolname='IPSubnets']    ${generated_SubnetIP}
+    set global variable    ${generated_SubnetIP}
