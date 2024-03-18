@@ -1,0 +1,14 @@
+Second signal will force exit.
+Execution forcefully stopped.
+[ ERROR ] Execution stopped by user.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Pramdeep Singh\AppData\Local\Programs\Python\Python311\Scripts\robot.exe\__main__.py", line 7, in <module>
+  File "C:\Users\Pramdeep Singh\AppData\Local\Programs\Python\Python311\Lib\site-packages\robot\run.py", line 510, in run_cli
+    return RobotFramework().execute_cli(arguments, exit=exit)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Pramdeep Singh\AppData\Local\Programs\Python\Python311\Lib\site-packages\robot\utils\application.py", line 41, in execute_cli
+    with self._logger:
+KeyboardInterrupt
+^C

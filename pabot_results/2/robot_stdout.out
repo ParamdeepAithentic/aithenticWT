@@ -1,0 +1,23 @@
+==============================================================================
+Aithentic-Rfw                                                                 
+==============================================================================
+Aithentic-Rfw.TestPage                                                        
+==============================================================================
+Aithentic-Rfw.TestPage.ContractsPageTest :: Contains all test cases of Cont...
+==============================================================================
+Technology Auto removed from dynamic contract When edit Brand and ... Current Time in Milliseconds: 35723
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\aithentic-rfw\TestPage\ContractsPageTest.robot:72
+    T:  Technology Auto removed from dynamic contract When edit Brand and product    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\aithentic-rfw\TestPage\ContractsPageTest.robot:81
+      Replace Domain    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\aithentic-rfw\Pages\ReplaceDomainAPI.robot:79
+      PUT    url=${base_url}    json=${json_payload}    headers=${headers}
+      |  url=${base_url} = url=https://uat-api.aithentic.com/api/v1/client-domains (str)
+      |  json=${json_payload} = json={'domains': [{'old': 'www.yopmail.net', 'new': 'www.automationqa20240307140128.com'}]} (str)
+      |  headers=${headers} = headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '96'} (str)
+______________________________________________________________________________

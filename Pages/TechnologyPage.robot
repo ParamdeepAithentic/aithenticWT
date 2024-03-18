@@ -8,6 +8,7 @@ Library           BuiltIn
 Library           random
 Library           DateTime
 Library           OperatingSystem
+Library           Browser
 Resource        ../Pages/Generic.robot
 Resource        ../Pages/DashboardPage.robot
 Resource        ../Pages/DepartmentPage.robot
@@ -165,9 +166,6 @@ ${technology_address_Linetwo}       css:#strretAddress2
 ${zip}     css:#zip
 ${technology_employeeid}        css:#AssignedEmployeeId
 ${businessEmail}        css:#AssignedEmail
-
-#${view_icon_file}       //p[contains(text(),'${format}')]//parent::div//i[contains(@class,"open-image-preview-QA")]
-#${download_icon_file}   //p[contains(text(),'.jpg')]//parent::div//i[contains(@class,"open-image-download-QA")]
 
 *** Keywords ***
 Fetch the Brand Name from the row
@@ -335,9 +333,9 @@ Select parameter from technology dropdown list
     Calculate Running time  6  ${pageHeading}   Technology Page - Select parameter from technology dropdown list      6    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Click on add product link
-    wait until element is visible   css:.qa-product-add-assets      60
-    wait until element is enabled   css:.qa-product-add-assets      60
-    click element   css:.qa-product-add-assets
+    [Arguments]      ${option}
+    Generic.click on the tab        ${option}
+
 
 ##############Technology Group Information for hardware#################
 Add mac address for technology group information for hardware
@@ -1350,89 +1348,14 @@ Click on attachment tab
     wait until element is enabled   css:#PrintQrButton   60
     wait until element is visible   css:#attachments-tab   60
     click element   css:#attachments-tab
-#    wait until element is visible   //label[normalize-space()='Upload File']        60
-#    wait until element is enabled   //label[normalize-space()='Upload File']        60
+    wait until element is visible   //label[normalize-space()='Upload File']        60
+    wait until element is enabled   //label[normalize-space()='Upload File']        60
 #    click element   //label[normalize-space()='Upload File']
 
 Upload file
-    [Arguments]         @{fileNames}
-    ${parent_dir} =    Evaluate    os.path.dirname(os.path.dirname(os.path.abspath('${CURDIR}')))    os
-    FOR    ${fileName}    IN    @{fileNames}
-        Execute JavaScript    document.querySelector('input[type="file"]').style.display = 'block';
-        Choose File    css=input[type="file"]    ${parent_dir}\\Files\\${fileName}
-        Execute JavaScript    document.querySelector('input[type="file"]').value = '';
-    END
-
-View the file by clicking on view icon over file
-    [Arguments]     ${format}
-    wait until element is visible     //p[contains(text(),'${format}')]//parent::div     60
-    Mouse Over    //p[contains(text(),'${format}')]//parent::div
-    wait until element is visible       //p[contains(text(),'${format}')]//parent::div//i[contains(@class,"open-image-preview-QA")]    60
-    wait until element is enabled       //p[contains(text(),'${format}')]//parent::div//i[contains(@class,"open-image-preview-QA")]    60
-    click element       //p[contains(text(),'${format}')]//parent::div//i[contains(@class,"open-image-preview-QA")]
-
-Zoom the Image
-    [Arguments]     ${option}
-    wait until element is visible       css:.${option}-QA     60
-    wait until element is enabled       css:.${option}-QA     60
-    Click Element        css:.${option}-QA
-
-Get and Verify the size of the image after zoom
-    [Arguments]     ${zoom_type}
-    Wait Until Element Is Visible       //img[@alt='Asset Image']       60
-    Wait Until Element Is enabled       //img[@alt='Asset Image']       60
-    ${text}=       Get Element Attribute     //img[@alt='Asset Image']       style
-    ${width}    Split String    ${text}    width:
-    ${original_width}    Split String From Right    ${width[1][:-3]}
-#    ${original_width}    Get Substring    ${parts[1]}    1       4
-    Log To Console      ${original_width}
-    Zoom the Image      ${zoom_type}
-
-    ${text}=    Get Element Attribute     //img[@alt='Asset Image']       style
-    ${width}    Split String    ${text}    width:
-    ${changed_width}    Split String From Right    ${width[1][:-3]}
-#    ${changed_width}    Get Substring    ${parts[1]}    1       4
-    Log To Console      ${changed_width}
-    Zoom the Image      ${zoom_type}
-
-   Run Keyword If    ${original_width} < ${changed_width}  Log to console    Image width increased after zoom_in
-   ...      ELSE IF    ${original_width} > ${changed_width}    Log to console   Image width decreased after zoom_out
-   ...      ELSE    Log to console    Image width remained the same after zoom
-
-Click on cross icon to close the document
-    Wait Until Element Is Visible    //a[normalize-space()='×']     60
-    Wait Until Element Is Enabled    //a[normalize-space()='×']     60
-    click element    //a[normalize-space()='×']
-
-Remove the document by clicking on cross-icon
-    [Arguments]     ${option}
-    Wait Until Element Is Visible    //p[contains(text(),'${option}')]//parent::div//span    60
-    Wait Until Element Is Visible    //p[contains(text(),'${option}')]//parent::div//span    60
-    Click Element    //p[contains(text(),'${option}')]//parent::div//span
-
-Download the file by clicking on download icon over file
-    [Arguments]     ${format}
-    wait until element is visible     //p[contains(text(),'${format}')]//parent::div//img    60
-    Mouse Over    //p[contains(text(),'${format}')]//parent::div//img
-    wait until element is visible       //p[contains(text(),'${format}')]//parent::div//i[contains(@class,"open-image-download-QA")]    60
-    wait until element is enabled       //p[contains(text(),'${format}')]//parent::div//i[contains(@class,"open-image-download-QA")]   60
-    click element       //p[contains(text(),'${format}')]//parent::div//i[contains(@class,"open-image-download-QA")]
-
-click on bulk import under action button of technology
-    wait until element is visible       css:.add-bulk-member-qa     60
-    wait until element is enabled       css:.add-bulk-member-qa     60
-    click element   css:.add-bulk-member-qa
-
-Click on clone button on techonology details page
-    [Arguments]    ${option}
-    wait until element is not visible      ${loaderIcon}    60
-    Generic.click on the button link     ${option}
-    wait until element is not visible      ${loaderIcon}    60
-
-
-#Check current directory path
-#    Log To Console    ${CURDIR}
-
+    [Arguments]    ${fileName}
+    Execute JavaScript    document.querySelector('input[type="file"]').style.display = 'block';
+    Choose File    css=input[type="file"]    ${CURDIR}\\${fileName}
 
 Get Parent Directory Up To Root
     [Arguments]    ${path}
@@ -1543,6 +1466,3 @@ Enter product in the product not containing input field
 
 Wait until advanced search table get load
     wait until element is visible       //div[@class='table-responsive table-scrollable table-column-common ng-star-inserted']      60
-
-
-
