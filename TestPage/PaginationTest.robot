@@ -51,7 +51,7 @@ Scroll Within Web Table
     Generic.Verify your current page location contains      technology
     PaginationPage.Check the table get load
     PaginationPage.Click on the pagination dropdown
-    PaginationPage.Select the value from the pagination drop down count    500
+    PaginationPage.Select the value from the pagination drop down count    30
     PaginationPage.Fetch the selected value of the dropdown
     PaginationPage.Check the table get load
     PaginationPage.Get count of total rows
