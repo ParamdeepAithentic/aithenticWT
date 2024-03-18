@@ -1896,59 +1896,65 @@ Search with brand_product_technologytype_technologygroup on advanced search
     TechnologyPage.Click technology advanced brand input field
     TechnologyPage.Select parameter from advanced brand dropdown list        Lenovo
     Generic.click on the button     Search
-    sleep       1
-    Generic.Wait until table get load
+    sleep      ${search_sleep}
+    TechnologyPage.Wait until advanced search table get load
     TechnologyPage.Click on the row of the table inside advanced search
     Generic.Scroll Window To End
     Generic.click on the button     Select
-    sleep   5
+    sleep   ${search_sleep}
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Fetch the Brand Name from the brand field
+    TechnologyPage.verify Text from Assignment Information      Lenovo       ${brand_name}
     TechnologyPage.Click on advanced search button link under add technology
     Generic.click on the button     Reset Filters
     TechnologyPage.Click technology advanced technology type and group input field  advaceType
     TechnologyPage.Select parameter from advanced technology type dropdown list     advaceType       Hardware
     Generic.click on the button     Search
-    sleep       1
-    Generic.Wait until table get load
+    sleep       ${search_sleep}
+    TechnologyPage.Wait until advanced search table get load
     TechnologyPage.Click on the row of the table inside advanced search
     Generic.Scroll Window To End
     Generic.click on the button     Select
-    sleep   5
+    sleep   ${search_sleep}
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Fetch the technology type from the technology type field
+    TechnologyPage.verify Text from Assignment Information      Hardware       ${Technology_type}
     TechnologyPage.Click on advanced search button link under add technology
     Generic.click on the button     Reset Filters
     TechnologyPage.Click technology advanced technology type and group input field    advaceGroup
     TechnologyPage.Select parameter from advanced technology type dropdown list     advaceGroup     Applications
     Generic.click on the button     Search
-    sleep   1
-    Generic.Wait until table get load
+    sleep   ${search_sleep}
+    TechnologyPage.Wait until advanced search table get load
     TechnologyPage.Click on the row of the table inside advanced search
     Generic.Scroll Window To End
     Generic.click on the button     Select
-    sleep   1
+    sleep   ${search_sleep}
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Get text of technology group inside add technology
+    TechnologyPage.verify Text from Assignment Information      Applications      ${Technology_group}
     TechnologyPage.Click on advanced search button link under add technology
     Generic.click on the button     Reset Filters
     TechnologyPage.Enter product in the product input field     Vishal luthra
     Generic.click on the button     Search
-    sleep   1
-    Generic.Wait until table get load
+    sleep   ${search_sleep}
+    TechnologyPage.Wait until advanced search table get load
     TechnologyPage.Get text of product inside add technology
+    TechnologyPage.verify Text from Assignment Information      Vishal luthra      ${product}
     Generic.click on the button     Reset Filters
     TechnologyPage.Enter description in the description input field     Aithentic Description
     Generic.click on the button     Search
-    sleep   1
-    Generic.Wait until table get load
+    sleep   ${search_sleep}
+    TechnologyPage.Wait until advanced search table get load
     TechnologyPage.Get text of description inside add technology
+    TechnologyPage.verify Text from Assignment Information      Aithentic Description     ${description}
     Generic.click on the button     Reset Filters
     TechnologyPage.Enter feature in the description input field     Aithentic Feature
     Generic.click on the button     Search
-    sleep   1
-    Generic.Wait until table get load
+    sleep   ${search_sleep}
+    TechnologyPage.Wait until advanced search table get load
     TechnologyPage.Get text of feature inside add technology
+    TechnologyPage.verify Text from Assignment Information      Aithentic Feature     ${feature}
 
 
 

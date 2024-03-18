@@ -1454,6 +1454,7 @@ Fetch the Brand Name from the brand field
     Wait Until Element Is Enabled        //input[@id='brandselect']//parent::div//preceding-sibling::div//span[2]    timeout=60s
     ${brand_name} =    Get text     //input[@id='brandselect']//parent::div//preceding-sibling::div//span[2]
     Log to console   Brand Name: ${brand_name}
+    set global variable     ${brand_name}
 
 Click technology advanced brand input field
     wait until element is enabled       css:#advaceBrand        60
@@ -1482,6 +1483,7 @@ Fetch the technology type from the technology type field
     Wait Until Element Is Enabled        //input[@id='selectTypeName']//parent::div//preceding-sibling::div//span[2]    timeout=60s
     ${Technology_type} =    Get text     //input[@id='selectTypeName']//parent::div//preceding-sibling::div//span[2]
     Log to console   Technology Type: ${Technology_type}
+    set global variable     ${Technology_type}
 
 Get text of technology group inside add technology
     wait until element is visible   css:.ant-select-selection-item   60
@@ -1531,5 +1533,16 @@ Get text of feature inside add technology
     ${feature} =    Get text    //tbody//tr[1]//td[3]
     Set Global Variable  ${feature}
     Log To Console    Feature: ${feature}
+
+Enter product in the product not containing input field
+    [Arguments]     ${Product}
+    wait until element is visible   css:input[formcontrolname='ProductNotContaining']     60
+    wait until element is enabled   css:input[formcontrolname='ProductNotContaining']     60
+    click element   css:input[formcontrolname='ProductNotContaining']
+    input text      css:input[formcontrolname='ProductNotContaining']     ${Product}
+
+Wait until advanced search table get load
+    wait until element is visible       //div[@class='table-responsive table-scrollable table-column-common ng-star-inserted']      60
+
 
 
