@@ -511,7 +511,6 @@ Edit brand and product via details
     TechnologyPage.Accept updated edited technology pop up     Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
 
-
 Sent Message should show in the Sent Tab
     [Tags]      Sanity
     Generic.click on the tab	Login
@@ -1073,6 +1072,13 @@ Add new Technology- Add New Department and assign that department
 Add new Technology- Add New Assignee and assign that Assignee
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the employee ID checkbox   no
+    Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
 #    TechnologyPage.click on add technology button
@@ -1097,6 +1103,12 @@ Add new Technology- Add New Assignee and assign that Assignee
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the employee ID checkbox   yes
+    Generic.Fetch alert message text and compare it with       Settings Updated
 
 Add new Technology- Add New support-partner and assign that support partner
     Generic.click on the tab	Login
@@ -1251,6 +1263,13 @@ Edit Technology Page - Add New Department and assign that Department
 Edit Technology Page - Add New Assignee and assign that Assignee
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the employee ID checkbox   no
+    Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
 #    TechnologyPage.click on add technology button
@@ -1283,6 +1302,12 @@ Edit Technology Page - Add New Assignee and assign that Assignee
     TechnologyPage.Add assignment information assign to       ${generated_assignFname}      ${generated_assignLname}
     TechnologyPage.Click on update button of edit_technology page     Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the employee ID checkbox   yes
+    Generic.Fetch alert message text and compare it with       Settings Updated
 
 Edit Technology Page - Add New Supplier and assign that Supplier
     Generic.click on the tab	Login
@@ -1698,8 +1723,7 @@ Verify the technology data while applying agent Filters
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     UnselectAssetAPI.Hit API Endpoint
 
-
-Search with brand_product_technologytype_technologygroup on advanced search
+Click on the attachment tab under technology
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
@@ -1707,67 +1731,258 @@ Search with brand_product_technologytype_technologygroup on advanced search
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
-    TechnologyPage.Click on advanced search button link under add technology
-    TechnologyPage.Click technology advanced brand input field
-    TechnologyPage.Select parameter from advanced brand dropdown list        Lenovo
-    Generic.click on the button     Search
-    sleep      ${search_sleep}
-    TechnologyPage.Wait until advanced search table get load
-    TechnologyPage.Click on the row of the table inside advanced search
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
+    TechnologyPage.Add assetID for technology lifecycle information random
     Generic.Scroll Window To End
-    Generic.click on the button     Select
-    sleep   ${search_sleep}
-    Generic.Verify your current page location contains      addtechnology
-    TechnologyPage.Fetch the Brand Name from the brand field
-    TechnologyPage.verify Text from Assignment Information      Lenovo       ${brand_name}
-    TechnologyPage.Click on advanced search button link under add technology
-    Generic.click on the button     Reset Filters
-    TechnologyPage.Click technology advanced technology type and group input field  advaceType
-    TechnologyPage.Select parameter from advanced technology type dropdown list     advaceType       Hardware
-    Generic.click on the button     Search
-    sleep       ${search_sleep}
-    TechnologyPage.Wait until advanced search table get load
-    TechnologyPage.Click on the row of the table inside advanced search
-    Generic.Scroll Window To End
-    Generic.click on the button     Select
-    sleep   ${search_sleep}
-    Generic.Verify your current page location contains      addtechnology
-    TechnologyPage.Fetch the technology type from the technology type field
-    TechnologyPage.verify Text from Assignment Information      Hardware       ${Technology_type}
-    TechnologyPage.Click on advanced search button link under add technology
-    Generic.click on the button     Reset Filters
-    TechnologyPage.Click technology advanced technology type and group input field    advaceGroup
-    TechnologyPage.Select parameter from advanced technology type dropdown list     advaceGroup     Applications
-    Generic.click on the button     Search
-    sleep   ${search_sleep}
-    TechnologyPage.Wait until advanced search table get load
-    TechnologyPage.Click on the row of the table inside advanced search
-    Generic.Scroll Window To End
-    Generic.click on the button     Select
-    sleep   ${search_sleep}
-    Generic.Verify your current page location contains      addtechnology
-    TechnologyPage.Get text of technology group inside add technology
-    TechnologyPage.verify Text from Assignment Information      Applications      ${Technology_group}
-    TechnologyPage.Click on advanced search button link under add technology
-    Generic.click on the button     Reset Filters
-    TechnologyPage.Enter product in the product input field     Vishal luthra
-    Generic.click on the button     Search
-    sleep   ${search_sleep}
-    TechnologyPage.Wait until advanced search table get load
-    TechnologyPage.Get text of product inside add technology
-    TechnologyPage.verify Text from Assignment Information      Vishal luthra      ${product}
-    Generic.click on the button     Reset Filters
-    TechnologyPage.Enter description in the description input field     Aithentic Description
-    Generic.click on the button     Search
-    sleep   ${search_sleep}
-    TechnologyPage.Wait until advanced search table get load
-    TechnologyPage.Get text of description inside add technology
-    TechnologyPage.verify Text from Assignment Information      Aithentic Description     ${description}
-    Generic.click on the button     Reset Filters
-    TechnologyPage.Enter feature in the description input field     Aithentic Feature
-    Generic.click on the button     Search
-    sleep   ${search_sleep}
-    TechnologyPage.Wait until advanced search table get load
-    TechnologyPage.Get text of feature inside add technology
-    TechnologyPage.verify Text from Assignment Information      Aithentic Feature     ${feature}
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+    TechnologyPage.Click on attachment tab
+    TechnologyPage.Upload file       Image_01.jpg       Image_02.png        Document_02.pdf
+    Generic.Fetch alert message text and compare it with        Technology documents uploaded successfully
+    TechnologyPage.View the file by clicking on view icon over file     .jpg
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-in
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-out
+    TechnologyPage.Click on cross icon to close the document
+    Sleep    ${search_sleep}
+    TechnologyPage.Download the file by clicking on download icon over file    .jpg
+    Sleep    ${yop_sleep}
+    Switch Window       NEW
+    Generic.Verify your current page location contains    amazonaws
+    Generic.Verify your current page location contains    .jpg
+    Switch Window       Main
+    TechnologyPage.View the file by clicking on view icon over file     .pdf
+    Sleep    ${yop_sleep}
+    Switch Window       NEW
+    Generic.Verify your current page location contains    amazonaws
+    Generic.Verify your current page location contains    .pdf
+    Switch Window       Main
+    TechnologyPage.Download the file by clicking on download icon over file    .jpg
+    Sleep    ${yop_sleep}
+    Switch Window       NEW
+    Generic.Verify your current page location contains    amazonaws
+    Generic.Verify your current page location contains    .jpg
+    Switch Window       Main
 
+
+Upload file: Image files while adding Technology
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
+    TechnologyPage.Add assetID for technology lifecycle information random
+    Generic.Scroll Window To End
+    TechnologyPage.Upload file      Image_01.jpg       Image_02.png
+    Generic.Fetch alert message text and compare it with        Technology documents uploaded successfully
+    Generic.Scroll Window To End
+    TechnologyPage.View the file by clicking on view icon over file     .jpg
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-in
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-out
+    TechnologyPage.Click on cross icon to close the document
+    TechnologyPage.View the file by clicking on view icon over file     .png
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-in
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-out
+    TechnologyPage.Click on cross icon to close the document
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+
+Upload file: Image files while Edit Technology
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
+    TechnologyPage.Add assetID for technology lifecycle information random
+    Generic.Scroll Window To End
+    TechnologyPage.Upload file      Image_01.jpg       Image_02.png
+    Generic.Fetch alert message text and compare it with        Technology documents uploaded successfully
+    TechnologyPage.View the file by clicking on view icon over file     .jpg
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-in
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-out
+    TechnologyPage.Click on cross icon to close the document
+    TechnologyPage.View the file by clicking on view icon over file     .png
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-in
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-out
+    TechnologyPage.Click on cross icon to close the document
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+    TechnologyPage.Click on edit button on product details page        Edit
+    Generic.Verify your current page location contains      edit-technology
+    Generic.Scroll Window To End
+    TechnologyPage.Remove the document by clicking on cross-icon    .png
+    TechnologyPage.Upload file      Image_05.gif
+    Generic.Fetch alert message text and compare it with        Technology documents uploaded successfully
+    TechnologyPage.View the file by clicking on view icon over file     .gif
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-in
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-out
+    TechnologyPage.Click on cross icon to close the document
+    TechnologyPage.Click on update button of edit_technology page      Update
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+
+Upload file: Image files while Clone the Technology
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+    TechnologyPage.Click on clone button on techonology details page       Clone
+    Generic.Verify your current page location contains      clone-addtechnology
+    TechnologyPage.Add assetID for technology lifecycle information random
+    Generic.Scroll Window To End
+    TechnologyPage.Upload file      Image_01.jpg       Image_02.png
+    Generic.Fetch alert message text and compare it with        Technology documents uploaded successfully
+    Generic.Scroll Window To End
+    TechnologyPage.View the file by clicking on view icon over file     .jpg
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-in
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-out
+    TechnologyPage.Click on cross icon to close the document
+    TechnologyPage.View the file by clicking on view icon over file     .png
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-in
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-out
+    TechnologyPage.Click on cross icon to close the document
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+
+Upload file: Document files while adding Technology
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
+    TechnologyPage.Add assetID for technology lifecycle information random
+    Generic.Scroll Window To End
+    TechnologyPage.Upload file      Document_02.pdf
+    Generic.Fetch alert message text and compare it with        Technology documents uploaded successfully
+    Generic.Scroll Window To End
+    TechnologyPage.View the file by clicking on view icon over file     .pdf
+    Sleep    ${yop_sleep}
+    Switch Window       NEW
+    Generic.Verify your current page location contains    amazonaws
+    Generic.Verify your current page location contains    .pdf
+    Switch Window       Main
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+
+Upload file: Document files while Edit Technology
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
+    TechnologyPage.Add assetID for technology lifecycle information random
+    Generic.Scroll Window To End
+    TechnologyPage.Upload file      Image_01.jpg       Image_02.png
+    Generic.Fetch alert message text and compare it with        Technology documents uploaded successfully
+    TechnologyPage.View the file by clicking on view icon over file     .jpg
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-in
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-out
+    TechnologyPage.Click on cross icon to close the document
+    TechnologyPage.View the file by clicking on view icon over file     .png
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-in
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-out
+    TechnologyPage.Click on cross icon to close the document
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+    TechnologyPage.Click on edit button on product details page        Edit
+    Generic.Verify your current page location contains      edit-technology
+    Generic.Scroll Window To End
+    TechnologyPage.Remove the document by clicking on cross-icon    .png
+    TechnologyPage.Upload file      Document_02.pdf
+    Generic.Fetch alert message text and compare it with        Technology documents uploaded successfully
+    TechnologyPage.View the file by clicking on view icon over file     .pdf
+    Sleep    ${yop_sleep}
+    Switch Window       NEW
+    Generic.Verify your current page location contains    amazonaws
+    Generic.Verify your current page location contains    .pdf
+    Switch Window       Main
+    TechnologyPage.Click on update button of edit_technology page      Update
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+
+Upload file: Document files while Clone the Technology
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+    TechnologyPage.Click on clone button on techonology details page       Clone
+    Generic.Verify your current page location contains      clone-addtechnology
+    TechnologyPage.Add assetID for technology lifecycle information random
+    Generic.Scroll Window To End
+    TechnologyPage.Upload file      Document_02.pdf
+    Generic.Fetch alert message text and compare it with        Technology documents uploaded successfully
+    Generic.Scroll Window To End
+    TechnologyPage.View the file by clicking on view icon over file     .pdf
+    Sleep    ${yop_sleep}
+    Switch Window       NEW
+    Generic.Verify your current page location contains    amazonaws
+    Generic.Verify your current page location contains    .pdf
+    Switch Window       Main
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
