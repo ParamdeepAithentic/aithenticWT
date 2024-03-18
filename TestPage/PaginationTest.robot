@@ -44,25 +44,8 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 
+
 Scroll Within Web Table
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
-    Generic.select the option from the side menu    Technology
-    Generic.Verify your current page location contains      technology
-    PaginationPage.Check the table get load
-    PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown
-    PaginationPage.Select the value from the pagination drop down count    500
-    PaginationPage.Fetch the selected value of the dropdown
-    PaginationPage.Check the table get load
-    PaginationPage.Get count of total rows
-    PaginationPage.Verify Pagination and Row Count
-
-
-
-
-
-Scroll Within Web Table2
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
