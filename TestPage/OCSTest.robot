@@ -1290,3 +1290,4 @@ Add Asset with IP address from Network Discovery Page
     TechnologyPage.Click on update button of edit_technology page       Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     UnselectAssetAPI.Hit API Endpoint
+
