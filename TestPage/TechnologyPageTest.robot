@@ -1727,22 +1727,21 @@ Upload file while adding Technology
     Generic.Scroll Window To End
     TechnologyPage.Upload file      UploadFile.txt       Jpegimage.jpg      pdf.pdf
     Generic.Fetch alert message text and compare it with        Technology documents uploaded successfully
-#    TechnologyPage.View the file by clicking on view icon over file     .txt
-#    TechnologyPage.Click on cross icon to close the document
-#    sleep   ${yop_sleep}
-##    TechnologyPage.Upload file      Jpegimage.jpg
-##    Generic.Fetch alert message text and compare it with        Technology documents uploaded successfully
-#    TechnologyPage.View the file by clicking on view icon over file     .jpg
-#    TechnologyPage.Get and Verify the size of the image after zoom      zoom-in
-#    TechnologyPage.Get and Verify the size of the image after zoom      zoom-out
-#    TechnologyPage.Click on cross icon to close the document
-#    sleep     ${yop_sleep}
-##    TechnologyPage.Upload file      pdf.pdf
-##    Generic.Fetch alert message text and compare it with        Technology documents uploaded successfully
-#    TechnologyPage.View the file by clicking on view icon over file     .pdf
-#    TechnologyPage.Click on cross icon to close the document
-##    TechnologyPage.Click on save technology form button
-##    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.View the file by clicking on view icon over file     .jpg
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-in
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-out
+    TechnologyPage.Click on cross icon to close the document
+    TechnologyPage.View the file by clicking on view icon over file     .png
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-in
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-out
+    TechnologyPage.Click on cross icon to close the document
+    TechnologyPage.View the file by clicking on view icon over file     .avif
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-in
+    TechnologyPage.Get and Verify the size of the image after zoom      zoom-out
+    TechnologyPage.Click on cross icon to close the document
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
 
 Upload file while edit technology
     Generic.click on the tab	Login
