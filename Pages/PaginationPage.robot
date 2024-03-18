@@ -49,9 +49,10 @@ Check the table get load
     wait until element is enabled       //td[normalize-space()='1']      60
 
 Click on the pagination dropdown
-    wait until element is visible   ${GetDropDown_count}      60
-    wait until element is enabled   ${GetDropDown_count}       60
-    click element       ${GetDropDown_count}
+    [Arguments]     ${option}
+    wait until element is visible   css:.qa-${option}-per-page .ng-value span.ng-value-label      60
+    wait until element is enabled   css:.qa-${option}-per-page .ng-value span.ng-value-label      60
+    click element       css:.qa-${option}-per-page .ng-value span.ng-value-label
 
 
 Select the value from the pagination drop down count
@@ -62,7 +63,8 @@ Select the value from the pagination drop down count
 
 
 Fetch the selected value of the dropdown
-    ${get_count_of_dropDown_value} =    get text    ${GetDropDown_count}
+    [Arguments]     ${option}
+    ${get_count_of_dropDown_value} =    get text    css:.qa-${option}-per-page .ng-value span.ng-value-label
     ${dropDown_value_as_number}=   Convert To Integer   ${get_count_of_dropDown_value}
     set global variable    ${dropDown_value_as_number}
     Log to console  Selected value :${dropDown_value_as_number}
@@ -109,12 +111,13 @@ Scroll within the element
 
 
 Log WebElements
+    [Arguments]     ${option}
     ${elements} =    Get WebElements    //div[contains(@class, 'scroll-host')]//span
     ${element_count} =    Get Length    ${elements}
     FOR    ${index}    IN RANGE    0    ${element_count}
         wait until element is visible     //div[contains (@id, '-${index}')]       60
         wait until element is enabled     //div[contains (@id, '-${index}')]       60
         click element   //div[contains (@id, '-${index}')]
-        Run Keywords    Fetch the selected value of the dropdown   AND      Check the table get load       AND      Get count of total rows     AND     Verify Pagination and Row Count     AND     Fetch the total count   AND     Click on the pagination dropdown
+        Run Keywords    Fetch the selected value of the dropdown  ${option}   AND      Check the table get load       AND      Get count of total rows     AND     Verify Pagination and Row Count     AND     Fetch the total count   AND     Click on the pagination dropdown  ${option}
     END
 

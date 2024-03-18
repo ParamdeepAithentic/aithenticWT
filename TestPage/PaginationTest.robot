@@ -52,7 +52,90 @@ Scroll Within Web Table
     Generic.Verify your current page location contains      technology
     PaginationPage.Check the table get load
     PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown
-    PaginationPage.Log WebElements
+    PaginationPage.Click on the pagination dropdown     technology
+    PaginationPage.Log WebElements      technology
 
+Scroll Within partner table
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    Generic.select the option from the side menu    Partners
+    Generic.Verify your current page location contains      partner-listing
+    PaginationPage.Check the table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     partner-list
+    PaginationPage.Log WebElements      partner-list
+
+Scroll Within contract table
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    Generic.select the option from the side menu    Contracts
+    Generic.Verify your current page location contains      contracts-list
+    PaginationPage.Check the table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     contracts
+    PaginationPage.Log WebElements      contracts
+
+Scroll Within Department table
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     department-dropdown
+    Generic.Verify your current page location contains      department
+    PaginationPage.Check the table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     department
+    PaginationPage.Log WebElements      department
+
+Scroll Within Brand table
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     brand-dropdown
+    Generic.Verify your current page location contains      brand-list
+    PaginationPage.Check the table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     brand
+    PaginationPage.Log WebElements      brand
+
+Scroll Within Product table
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     product-dropdown
+    Generic.Verify your current page location contains      product-list
+    PaginationPage.Check the table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     products
+    PaginationPage.Log WebElements      products
+
+Scroll Within location Table
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    Generic.select the option from the side menu    Technology
+#    Generic.Verify your current page location contains      technology
+    PaginationPage.Check the table get load
+    PaginationPage.Fetch the total count
+#    PaginationPage.Click on the pagination dropdown     technology
+#    PaginationPage.Log WebElements      technology
+
+Scroll Within Team Member Table
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
+#    Generic.select the option from the side menu    Technology
+#    Generic.Verify your current page location contains      technology
+    PaginationPage.Check the table get load
+    PaginationPage.Fetch the total count
+#    PaginationPage.Click on the pagination dropdown     technology
+#    PaginationPage.Log WebElements      technology
+
+
+Scroll Within Assigned User Table
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
+#    Generic.select the option from the side menu    Technology
+#    Generic.Verify your current page location contains      technology
+    PaginationPage.Check the table get load
+    PaginationPage.Fetch the total count
+#    PaginationPage.Click on the pagination dropdown     technology
+#    PaginationPage.Log WebElements      technology
 
