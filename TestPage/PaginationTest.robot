@@ -111,31 +111,30 @@ Scroll Within Product table
 Scroll Within location Table
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
-    Generic.select the option from the side menu    Technology
-#    Generic.Verify your current page location contains      technology
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
     PaginationPage.Check the table get load
     PaginationPage.Fetch the total count
-#    PaginationPage.Click on the pagination dropdown     technology
-#    PaginationPage.Log WebElements      technology
+    PaginationPage.Click on the pagination dropdown     location-list
+    PaginationPage.Log WebElements      location-list
 
 Scroll Within Team Member Table
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
-#    Generic.select the option from the side menu    Technology
-#    Generic.Verify your current page location contains      technology
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
     PaginationPage.Check the table get load
     PaginationPage.Fetch the total count
-#    PaginationPage.Click on the pagination dropdown     technology
-#    PaginationPage.Log WebElements      technology
-
+    PaginationPage.Click on the pagination dropdown     member-list
+    PaginationPage.Log WebElements      member-list
 
 Scroll Within Assigned User Table
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
-#    Generic.select the option from the side menu    Technology
-#    Generic.Verify your current page location contains      technology
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    MemberPage.Click on assigned user tab   Assigned Users
     PaginationPage.Check the table get load
     PaginationPage.Fetch the total count
-#    PaginationPage.Click on the pagination dropdown     technology
-#    PaginationPage.Log WebElements      technology
-
+    PaginationPage.Click on the pagination dropdown     assignee-list
+    PaginationPage.Log WebElements      assignee-list

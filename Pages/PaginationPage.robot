@@ -45,8 +45,8 @@ ${Totalcount_field}        css:.qa-total-count-list
 *** Keywords ***
 
 Check the table get load
-    wait until element is visible       //td[normalize-space()='1']      60
-    wait until element is enabled       //td[normalize-space()='1']      60
+    wait until element is visible       (//td[normalize-space()='1'])[1]      60
+    wait until element is enabled       (//td[normalize-space()='1'])[1]      60
 
 Click on the pagination dropdown
     [Arguments]     ${option}
@@ -64,6 +64,8 @@ Select the value from the pagination drop down count
 
 Fetch the selected value of the dropdown
     [Arguments]     ${option}
+    wait until element is visible       (//td[normalize-space()='1'])[1]      60
+    wait until element is enabled       (//td[normalize-space()='1'])[1]      60
     ${get_count_of_dropDown_value} =    get text    css:.qa-${option}-per-page .ng-value span.ng-value-label
     ${dropDown_value_as_number}=   Convert To Integer   ${get_count_of_dropDown_value}
     set global variable    ${dropDown_value_as_number}
@@ -71,8 +73,8 @@ Fetch the selected value of the dropdown
 
 
 Get count of total rows
-    wait until element is visible       //td[normalize-space()='1']      60
-    wait until element is enabled       //td[normalize-space()='1']      60
+    wait until element is visible       (//td[normalize-space()='1'])[1]      60
+    wait until element is enabled       (//td[normalize-space()='1'])[1]      60
     ${elements} =  Get WebElements     ${TotalRow_count}
     ${row_count} =    Get Length    ${elements}
     ${total_table_row_count}=   Convert To Integer   ${row_count}
@@ -120,4 +122,3 @@ Log WebElements
         click element   //div[contains (@id, '-${index}')]
         Run Keywords    Fetch the selected value of the dropdown  ${option}   AND      Check the table get load       AND      Get count of total rows     AND     Verify Pagination and Row Count     AND     Fetch the total count   AND     Click on the pagination dropdown  ${option}
     END
-
