@@ -1044,3 +1044,84 @@ Upload Image File while Add component as an asset from Agent Discovery page
     TechnologyPage.Click on update button of edit_technology page       Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     UnselectAssetAPI.Hit API Endpoint
+
+Upload Document File while Add Discovery Asset
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+    Generic.Click on the profile name
+    Generic.Select option from profile list     view-discovery
+    Generic.Verify your current page location contains    ocs
+    OCS.Hover over searched Agent/Discovered Asset
+    OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
+    OCS.Get Serial number by hovering over discovered assets     Serial Number:
+    OCS.Get Host name by hovering over discovered assets     Host name:
+    OCS.Choose Tab under Asset Discovery    agent-discovery
+    OCS.Click on Plus icon under table
+    Sleep    ${Yop_Sleep}
+    Switch Window       aithentic | Add Discovery Asset
+    Generic.Verify your current page location contains    add-discovered-asset
+    Generic.Verify your current page contains this text    Add Technology
+    TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
+    OCS.Enter The Asset_id in Add Technology Page
+    TechnologyPage.Upload file          Document_02.pdf
+    Generic.Scroll Window To End
+    Generic.Fetch alert message text and compare it with        Technology documents uploaded successfully
+    TechnologyPage.View the file by clicking on view icon over file     .pdf
+    Sleep    ${yop_sleep}
+    Switch Window       NEW
+    Generic.Verify your current page location contains    amazonaws
+    Generic.Verify your current page location contains    .pdf
+    Switch Window       aithentic | Add Discovery Asset
+    OCS.Click on save button of Add Technology Page
+    OCS.Wait for the invisiblity of alert msg        Technology created successfully
+    Sleep    ${yop_sleep}
+    Switch Window       aithentic | Asset - Discovery
+    Generic.Refresh the existing page
+    Generic.Verify your current page contains this text    ${generated_AssetID}
+    Generic.select the option from the side menu        Technology
+    Generic.Verify your current page location contains      technology-list
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains    technology-details
+    OCS.Get Value of MAC-Address from technology details and compare it with      ${hover_MAC_address}
+    OCS.Get Value of Host-Name and compare it with    ${hover_host name}
+    TechnologyPage.Click on attachment tab
+    TechnologyPage.Upload file          Image_05.gif    Document_02.pdf
+    Generic.Scroll Window To End
+    Generic.Fetch alert message text and compare it with        Technology documents uploaded successfully
+    TechnologyPage.View the file by clicking on view icon over file     .pdf
+    Sleep    ${yop_sleep}
+    Switch Window       NEW
+    Generic.Verify your current page location contains    amazonaws
+    Generic.Verify your current page location contains    .pdf
+    Switch Window       Main
+    Sleep    ${search_sleep}
+    TechnologyPage.Download the file by clicking on download icon over file    .pdf
+    Sleep    ${yop_sleep}
+    Switch Window       NEW
+    Generic.Verify your current page location contains    amazonaws
+    Generic.Verify your current page location contains    .pdf
+    Switch Window       Main
+    OCS.Verify Page should contain Element     discovery-info-tab
+    OCS.Click on Discovery_info tab on Technology details Page
+    OCS.Verify Discovery_info contains following tab    hardware-tab
+    OCS.Verify Discovery_info contains following tab    software-tab
+    OCS.Verify Discovery_info contains following tab    network-tab
+    OCS.Verify Discovery_info contains following tab    devices-tab
+    TechnologyPage.Click on edit button on product details page        Edit
+    Generic.Verify your current page location contains      edit-technology
+    OCS.Edit the MAC_Address of Asset
+    OCS.Edit The Host_Name of Asset
+    Generic.Scroll Window To End
+    TechnologyPage.Remove the document by clicking on cross-icon    .gif
+    TechnologyPage.Upload file      Document_02.pdf
+    Generic.Fetch alert message text and compare it with        Technology documents uploaded successfully
+    TechnologyPage.View the file by clicking on view icon over file     .pdf
+    Sleep    ${yop_sleep}
+    Switch Window       NEW
+    Generic.Verify your current page location contains    amazonaws
+    Generic.Verify your current page location contains    .pdf
+    Switch Window       Main
+    TechnologyPage.Click on update button of edit_technology page       Update
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+    UnselectAssetAPI.Hit API Endpoint
