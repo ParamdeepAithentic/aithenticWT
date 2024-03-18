@@ -95,9 +95,9 @@ Verify Pagination and Row Count
     ...    Scroll within the element    ${dropDown_value_as_number}
     ...    AND    Return From Keyword
 
-    Run Keyword If    '${row_count}' == '${total_data_count}'
-    ...    Run Keywords
-    ...    Scroll within the element    ${row_count}
+    Run Keyword If    '${total_table_row_count}' == '${total_data_count}'
+    ...    Run Keywords     Fetch the total count    AND
+    ...    Scroll within the element    ${total_table_row_count}
     ...    AND    Return From Keyword
 
 
@@ -105,3 +105,16 @@ Scroll within the element
     [Arguments]    ${option}
     Execute JavaScript    document.querySelector('tbody tr:nth-child(${option}) td:nth-child(1)').scrollIntoView(true);
     wait until element is visible       //td[normalize-space()='${option}']      60
+
+
+
+Log WebElements
+    ${elements} =    Get WebElements    //div[contains(@class, 'scroll-host')]//span
+    ${element_count} =    Get Length    ${elements}
+    FOR    ${index}    IN RANGE    0    ${element_count}
+        wait until element is visible     //div[contains (@id, '-${index}')]       60
+        wait until element is enabled     //div[contains (@id, '-${index}')]       60
+        click element   //div[contains (@id, '-${index}')]
+        Run Keywords    Fetch the selected value of the dropdown   AND      Check the table get load       AND      Get count of total rows     AND     Verify Pagination and Row Count     AND     Fetch the total count   AND     Click on the pagination dropdown
+    END
+
