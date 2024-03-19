@@ -1067,3 +1067,17 @@ Upload Image and Document File while Add component as an asset from Agent Discov
     TechnologyPage.Click on update button of edit_technology page       Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     UnselectAssetAPI.Hit API Endpoint
+
+Network discovery search on discovered asset list with Tag Name
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+    Generic.select the option from the side menu    Asset Discovery
+    Generic.Verify your current page location contains     discovery-assets
+    OCS.click on the value of IP discovered devices of inside table
+    Sleep    ${yop_sleep}
+    Switch Window       aithentic | Discovered Assets
+    Generic.Verify your current page location contains     discovery-assets-list
+    OCS.Search with MAC address and IP Address on the search bar of Discovered Asset List         johnsoftwaresolutions-1428-3
+    sleep   ${search_sleep}
+    Generic.Wait until table get load
+    Generic.Verify your current page contains this text      johnsoftwaresolutions-1428-3
