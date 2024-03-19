@@ -149,7 +149,7 @@ Remove Special Characters
     [Arguments]    ${input_string}
     ${pattern}=    Set Variable    [^a-zA-Z0-9\s]
     ${cleaned_string}=    Replace String Using Regexp    ${input_string}    ${pattern}    ${EMPTY}
-    [Return]    ${cleaned_string}
+    RETURN    ${cleaned_string}
 
 Click on tabs under it perfomance
     [Arguments]     ${option}
