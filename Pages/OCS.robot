@@ -527,3 +527,14 @@ Search with MAC address and IP Address on the search bar of Discovered Asset Lis
     input text  css:input[placeholder='Search by Tag Name, MAC Address, IP Address...']     ${MAC_Address}
     sleep       ${search_sleep}
     wait until element is visible       css:thead tr       60
+
+Enter input in the brand field of advanced search of discovered asset
+    wait until element is visible   //ng-select[@class='qa-brands ng-select-searchable ng-select-clearable ng-select ng-select-single ng-untouched ng-pristine ng-valid']//div[@class='ng-select-container']//input[@type='text']       60
+    wait until element is enabled   //ng-select[@class='qa-brands ng-select-searchable ng-select-clearable ng-select ng-select-single ng-untouched ng-pristine ng-valid']//div[@class='ng-select-container']//input[@type='text']       60
+    click element  //ng-select[@class='qa-brands ng-select-searchable ng-select-clearable ng-select ng-select-single ng-untouched ng-pristine ng-valid']//div[@class='ng-select-container']//input[@type='text']
+
+Select brand from advanced brand dropdown list
+    [Arguments]    ${option}
+#    Clear Element Text      //ng-select[@class='qa-brands ng-select-searchable ng-select-clearable ng-select ng-select-single ng-untouched ng-pristine ng-valid']//div[@class='ng-select-container']//input[@type='text']
+    input text    //ng-select[@class='qa-brands ng-select-searchable ng-select-clearable ng-select ng-select-single ng-untouched ng-pristine ng-valid']//div[@class='ng-select-container']//input[@type='text']   ${option}
+    Generic.Select parameter    ${option}
