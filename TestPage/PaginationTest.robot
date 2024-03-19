@@ -45,7 +45,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 
-Scroll Within Web Table
+Verify pagination of Web Table
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
@@ -55,7 +55,7 @@ Scroll Within Web Table
     PaginationPage.Click on the pagination dropdown     technology
     PaginationPage.Log WebElements      technology
 
-Scroll Within partner table
+Verify pagination of partner table
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.select the option from the side menu    Partners
@@ -65,7 +65,7 @@ Scroll Within partner table
     PaginationPage.Click on the pagination dropdown     partner-list
     PaginationPage.Log WebElements      partner-list
 
-Scroll Within contract table
+Verify pagination of contract table
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.select the option from the side menu    Contracts
@@ -75,7 +75,7 @@ Scroll Within contract table
     PaginationPage.Click on the pagination dropdown     contracts
     PaginationPage.Log WebElements      contracts
 
-Scroll Within Department table
+Verify pagination of Department table
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Click on the profile name
@@ -86,7 +86,7 @@ Scroll Within Department table
     PaginationPage.Click on the pagination dropdown     department
     PaginationPage.Log WebElements      department
 
-Scroll Within Brand table
+Verify pagination of Brand table
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Click on the profile name
@@ -97,7 +97,7 @@ Scroll Within Brand table
     PaginationPage.Click on the pagination dropdown     brand
     PaginationPage.Log WebElements      brand
 
-Scroll Within Product table
+Verify pagination of Product table
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Click on the profile name
@@ -108,7 +108,7 @@ Scroll Within Product table
     PaginationPage.Click on the pagination dropdown     products
     PaginationPage.Log WebElements      products
 
-Scroll Within location Table
+Verify pagination of location Table
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.select the option from the side menu    Location
@@ -118,7 +118,7 @@ Scroll Within location Table
     PaginationPage.Click on the pagination dropdown     location-list
     PaginationPage.Log WebElements      location-list
 
-Scroll Within Team Member Table
+Verify pagination of Team Member Table
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.select the option from the side menu    Team Members
@@ -128,7 +128,7 @@ Scroll Within Team Member Table
     PaginationPage.Click on the pagination dropdown     member-list
     PaginationPage.Log WebElements      member-list
 
-Scroll Within Assigned User Table
+Verify pagination of Assigned User Table
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.select the option from the side menu    Team Members
