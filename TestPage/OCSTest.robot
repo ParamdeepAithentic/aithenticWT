@@ -1045,7 +1045,6 @@ Upload Image File while Add component as an asset from Agent Discovery page
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     UnselectAssetAPI.Hit API Endpoint
 
-
 Network discovery search on discovered asset list with Tag Name
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123

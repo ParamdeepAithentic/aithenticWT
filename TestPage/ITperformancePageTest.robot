@@ -130,7 +130,6 @@ IT perfomance drill down data quality of Investments by partner tab
     ITperformancePage.Click on data quality button link under investments by partner tab    4
     ITperformancePage.Get And Verify The Count Of Data Quality Under Investment by partner tab   dataquality-partner-4        dataquality-partner-4
 
-
 It performnace drill down investment by partner
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}     ${valid_password}
