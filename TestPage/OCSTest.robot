@@ -570,8 +570,8 @@ Apply filters and clear filter on Existing Assets
     OCS.Choose tab under Discovery Assets   network-discovery
     OCS.click on filter icon of existing assets
     OCS.Choose filters for discovered asset     Select Brand
-    OCS.Get text of selected brand, mac address and agent of discovered assets  0
-    OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   0
+    OCS.Get text of selected brand, mac address and agent of discovered assets  1
+    OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   1
     Generic.click on the button     Apply
     OCS.Hover over searched existing Asset
     OCS.Get text by hovering over existing assets   Brand:
@@ -634,6 +634,7 @@ Add Discovery Asset
     Generic.Verify your current page contains this text    Add Technology
     TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
     OCS.Enter The Asset_id in Add Technology Page
+
     OCS.Click on save button of Add Technology Page
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
     Sleep    ${yop_sleep}
@@ -693,6 +694,7 @@ Create Asset from Add Assets Page
     Generic.Verify your current page contains this text    Add Technology
     TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
     OCS.Enter The Asset_id in Add Technology Page
+    TechnologyPage.Create unique serial number random
     OCS.Click on save button of Add Technology Page
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
     Sleep    ${yop_sleep}
