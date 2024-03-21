@@ -547,9 +547,9 @@ Click on the table inside advanced search of discovered asset for brand
     click element   (//div[contains(text(),'Lenovo')])[1]
 
 Fetch the Brand Name from the brand field of discovered asset
-    Wait Until Element Is Visible        //ng-select[@id='BrandName']//div[@class='ng-select-container ng-has-value']//div[@class='ng-value-container']    timeout=60s
-    Wait Until Element Is Enabled        //ng-select[@id='BrandName']//div[@class='ng-select-container ng-has-value']//div[@class='ng-value-container']    timeout=60s
-    ${brand_name} =    Get text     //ng-select[@id='BrandName']//div[@class='ng-select-container ng-has-value']//div[@class='ng-value-container']
+    Wait Until Element Is Visible        //div[@class='full-width-field']//ng-select[@id='BrandName']    timeout=60s
+    Wait Until Element Is Enabled        //div[@class='full-width-field']//ng-select[@id='BrandName']    timeout=60s
+    ${brand_name} =    Get text     //div[@class='full-width-field']//ng-select[@id='BrandName']
     Log to console   Brand Name: ${brand_name}
     set global variable     ${brand_name}
 

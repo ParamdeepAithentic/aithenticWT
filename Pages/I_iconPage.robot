@@ -190,9 +190,9 @@ Click on the cross icon of advanced search under technology
     click element   //div[@class='modal-dialog1']//span[normalize-space()='×']
 
 Click on advanced search link under create asset network discovery
-    wait until element is visible  //div[@class='full-width-field position-relative']//span[normalize-space()='Advance Search']    60
-    wait until element is enabled   //div[@class='full-width-field position-relative']//span[normalize-space()='Advance Search']    60
-    click element   //div[@class='full-width-field position-relative']//span[normalize-space()='Advance Search']
+    wait until element is visible  (//span[contains(text(),'Advance Search')])[2]    60
+    wait until element is enabled   (//span[contains(text(),'Advance Search')])[2]    60
+    click element   (//span[contains(text(),'Advance Search')])[2]
     wait until element is not visible      ${loaderIcon}    60
 
 Click on i_icon of advanced search under add discovered asset
