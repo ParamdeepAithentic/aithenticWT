@@ -1290,3 +1290,9 @@ Search with containing fields under advance search of IP Address of discovered a
     Generic.Verify your current page location contains      discovery-assets
     I_iconPage.Choose tab under Discovery Assets       network-discovery
 
+
+Disconnect
+    DisconnectConnectorAPI.Hit API to disconnect connector
+
+
+

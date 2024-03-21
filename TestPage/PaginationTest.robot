@@ -45,7 +45,8 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 
-Verify pagination of Web Table
+Verify pagination of technology Table
+    [Tags]    Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
@@ -129,6 +130,7 @@ Verify pagination of Team Member Table
     PaginationPage.Log WebElements      member-list
 
 Verify pagination of Assigned User Table
+    [Tags]    Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.select the option from the side menu    Team Members
