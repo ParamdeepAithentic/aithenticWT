@@ -79,6 +79,8 @@ Enter text to search discovery asset
     Wait Until Element Is Visible    //input[@placeholder='Search OCS Discovered Assets']       60
     Wait Until Element Is enabled    //input[@placeholder='Search OCS Discovered Assets']       60
     Input Text    //input[@placeholder='Search OCS Discovered Assets']    ${option}
+    Sleep    ${yop_sleep}
+    Wait Until Element Is Not Visible    ${loaderIcon}  60
 
 Enter text to search existing asset
     [Arguments]     ${option}
@@ -86,6 +88,8 @@ Enter text to search existing asset
     Wait Until Element Is Visible    //input[@placeholder='Search Existing Assets']       60
     Wait Until Element Is enabled    //input[@placeholder='Search Existing Assets']       60
     Input Text    //input[@placeholder='Search Existing Assets']    ${option}
+
+
 
 Verify Searched discovery asset
     [Arguments]     ${option}
@@ -582,3 +586,15 @@ Fetch the technology type from the technology type field of component of discove
     ${technology_type} =    Get text   css:.qa-tech-type
     Log to console   Technology Type: ${technology_type}
     set global variable     ${technology_type}
+
+Click on Refresh Icon of discovered asset lists
+    Wait Until Element Is Not Visible    ${loaderIcon}  60
+    Wait Until Element Is Visible    css:i[title='Clear search filters']        60
+    Wait Until Element Is Enabled    css:i[title='Clear search filters']    60
+    Click Element    css:i[title='Clear search filters']
+
+Click on Go to Agent Discovery Page
+    Wait Until Element Is Not Visible    ${loaderIcon}  60
+    Wait Until Element Is Visible    css:span[class='back']        60
+    Wait Until Element Is Enabled    css:span[class='back']    60
+    Click Element    css:span[class='back']
