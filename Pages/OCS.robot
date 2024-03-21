@@ -566,12 +566,6 @@ Click on the table inside advanced search of discovered asset for technology typ
     wait until element is enabled   (//div[contains(text(),'Extended service')])[1]     60
     click element    (//div[contains(text(),'Extended service')])[1]
 
-Fetch the technology type from the technology type field of discovered asset
-    Wait Until Element Is Visible       css:.qa-tech-type.technology-type-dropdown.ng-select-searchable.ng-select-clearable.ng-select.ng-select-single.ng-untouched.ng-pristine.ng-valid    timeout=60s
-    Wait Until Element Is Enabled        css:.qa-tech-type.technology-type-dropdown.ng-select-searchable.ng-select-clearable.ng-select.ng-select-single.ng-untouched.ng-pristine.ng-valid   timeout=60s
-    ${technology_type} =    Get text   css:.qa-tech-type.technology-type-dropdown.ng-select-searchable.ng-select-clearable.ng-select.ng-select-single.ng-untouched.ng-pristine.ng-valid
-    Log to console   Technology Type: ${technology_type}
-    set global variable     ${technology_type}
 
 Enter input in the technology group field of advanced search of discovered asset
     wait until element is visible  css:.modal-body .qa-group      60
@@ -581,3 +575,10 @@ Enter input in the technology group field of advanced search of discovered asset
     sleep   ${search_sleep}
     Wait Until Element Is Visible    css:.modal-body .qa-group input    timeout=60s
     Press Keys      css:.modal-body .qa-group input     ENTER
+
+Fetch the technology type from the technology type field of component of discovered asset
+    Wait Until Element Is Visible       css:.qa-tech-type    timeout=60s
+    Wait Until Element Is Enabled        css:.qa-tech-type    timeout=60s
+    ${technology_type} =    Get text   css:.qa-tech-type
+    Log to console   Technology Type: ${technology_type}
+    set global variable     ${technology_type}
