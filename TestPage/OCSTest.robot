@@ -1125,3 +1125,7 @@ Upload Document File while Add Discovery Asset
     TechnologyPage.Click on update button of edit_technology page       Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     UnselectAssetAPI.Hit API Endpoint
+
+
+Disconnect
+    DisconnectConnectorAPI.Hit API to disconnect connector

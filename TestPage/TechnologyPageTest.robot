@@ -388,6 +388,7 @@ Restore asset from removed asset details page
 
 ################# Still have to work on this testcase ###############
 Restore asset by selecting checkbox
+    [Tags]    Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
@@ -1772,6 +1773,7 @@ Click on the attachment tab under technology
 
 
 Upload file: Image files while adding Technology
+    [Tags]    Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
@@ -1881,6 +1883,7 @@ Upload file: Image files while Clone the Technology
     TechnologyPage.Click on save technology form pop button
 
 Upload file: Document files while adding Technology
+    [Tags]    Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
