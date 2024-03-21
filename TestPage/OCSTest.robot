@@ -1330,3 +1330,6 @@ Network discovery search on discovered asset list with Tag Name
     Generic.Wait until table get load
     Generic.Verify your current page contains this text      johnsoftwaresolutions-1428-3
 
+Disconnect
+    DisconnectConnectorAPI.Hit API to disconnect connector
+    
