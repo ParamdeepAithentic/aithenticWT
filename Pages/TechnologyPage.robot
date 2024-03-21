@@ -1438,3 +1438,109 @@ Get Parent Directory Up To Root
     [Arguments]    ${path}
     ${parent_dir} =    Evaluate    os.path.dirname(os.path.dirname(os.path.abspath('${path}')))    os
     [Return]    ${parent_dir}
+
+
+Click on advanced search button link under add technology
+    wait until element is visible   css:div[class='row ng-star-inserted'] a[title='Click here to Advance search']       60
+    wait until element is enabled   css:div[class='row ng-star-inserted'] a[title='Click here to Advance search']       60
+    click element   css:div[class='row ng-star-inserted'] a[title='Click here to Advance search']
+    wait until element is not visible      ${loaderIcon}    60
+
+Click on the row of the table inside advanced search
+    Execute JavaScript    document.querySelector('.bg-white.location-list-qa.ng-star-inserted > tr:nth-child(12)').scrollIntoView(true);
+    Click Element    css:.bg-white.location-list-qa.ng-star-inserted > tr:nth-child(5) > td:nth-child(1)
+
+Fetch the Brand Name from the brand field
+    Wait Until Element Is Visible        //input[@id='brandselect']//parent::div//preceding-sibling::div//span[2]    timeout=60s
+    Wait Until Element Is Enabled        //input[@id='brandselect']//parent::div//preceding-sibling::div//span[2]    timeout=60s
+    ${brand_name} =    Get text     //input[@id='brandselect']//parent::div//preceding-sibling::div//span[2]
+    Log to console   Brand Name: ${brand_name}
+    set global variable     ${brand_name}
+
+Click technology advanced brand input field
+    wait until element is enabled       css:#advaceBrand        60
+    click element    css:#advaceBrand
+
+Select parameter from advanced brand dropdown list
+    [Arguments]    ${option}
+    Clear Element Text      css:#advaceBrand
+    input text    css:#advaceBrand   ${option}
+    Generic.Select parameter    ${option}
+
+Click technology advanced technology type and group input field
+    [Arguments]     ${option1}
+    wait until element is enabled       css:#${option1}        60
+    click element    css:#${option1}
+
+
+Select parameter from advanced technology type dropdown list
+    [Arguments]    ${option1}    ${option}
+    Clear Element Text      css:#${option1}
+    input text    css:#${option1}   ${option}
+    Generic.Select parameter    ${option}
+
+Fetch the technology type from the technology type field
+    Wait Until Element Is Visible        //input[@id='selectTypeName']//parent::div//preceding-sibling::div//span[2]    timeout=60s
+    Wait Until Element Is Enabled        //input[@id='selectTypeName']//parent::div//preceding-sibling::div//span[2]    timeout=60s
+    ${Technology_type} =    Get text     //input[@id='selectTypeName']//parent::div//preceding-sibling::div//span[2]
+    Log to console   Technology Type: ${Technology_type}
+    set global variable     ${Technology_type}
+
+Get text of technology group inside add technology
+    wait until element is visible   css:.ant-select-selection-item   60
+    wait until element is enabled   css:.ant-select-selection-item   60
+    ${Technology_group} =    Get text    css:.ant-select-selection-item
+    Set Global Variable    ${Technology_group}
+    Log To Console    Technology Group: ${Technology_group}
+
+Enter product in the product input field
+    [Arguments]     ${product}
+    wait until element is visible   //input[@placeholder='-- Please enter at least 2 characters--']     60
+    wait until element is enabled   //input[@placeholder='-- Please enter at least 2 characters--']     60
+    click element   //input[@placeholder='-- Please enter at least 2 characters--']
+    input text      //input[@placeholder='-- Please enter at least 2 characters--']     ${product}
+
+Get text of product inside add technology
+    wait until element is visible   //tbody//tr[1]//td[1]   60
+    wait until element is enabled   //tbody//tr[1]//td[1]  60
+    ${product} =    Get text    //tbody//tr[1]//td[1]
+    Set Global Variable    ${product}
+    Log To Console    Product: ${product}
+
+Enter description in the description input field
+    [Arguments]     ${description}
+    wait until element is visible   //input[@formcontrolname='DescriptionContaining']     60
+    wait until element is enabled   //input[@formcontrolname='DescriptionContaining']     60
+    click element   //input[@formcontrolname='DescriptionContaining']
+    input text      //input[@formcontrolname='DescriptionContaining']     ${description}
+
+Get text of description inside add technology
+    wait until element is visible   //tbody//tr[1]//td[2]   60
+    wait until element is enabled   //tbody//tr[1]//td[2]  60
+    ${description} =    Get text    //tbody//tr[1]//td[2]
+    Set Global Variable   ${description}
+    Log To Console    Description: ${description}
+
+Enter feature in the description input field
+    [Arguments]     ${feature}
+    wait until element is visible   //input[@formcontrolname='FeatureContaining']     60
+    wait until element is enabled   //input[@formcontrolname='FeatureContaining']     60
+    click element   //input[@formcontrolname='FeatureContaining']
+    input text      //input[@formcontrolname='FeatureContaining']     ${feature}
+
+Get text of feature inside add technology
+    wait until element is visible   //tbody//tr[1]//td[3]   60
+    wait until element is enabled   //tbody//tr[1]//td[3]  60
+    ${feature} =    Get text    //tbody//tr[1]//td[3]
+    Set Global Variable  ${feature}
+    Log To Console    Feature: ${feature}
+
+Enter product in the product not containing input field
+    [Arguments]     ${Product}
+    wait until element is visible   css:input[formcontrolname='ProductNotContaining']     60
+    wait until element is enabled   css:input[formcontrolname='ProductNotContaining']     60
+    click element   css:input[formcontrolname='ProductNotContaining']
+    input text      css:input[formcontrolname='ProductNotContaining']     ${Product}
+
+Wait until advanced search table get load
+    wait until element is visible       //div[@class='table-responsive table-scrollable table-column-common ng-star-inserted']      60
