@@ -1330,6 +1330,297 @@ Network discovery search on discovered asset list with Tag Name
     Generic.Wait until table get load
     Generic.Verify your current page contains this text      johnsoftwaresolutions-1428-3
 
+Search with containing fields under advance search of discovered asset
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+    Generic.select the option from the side menu    Asset Discovery
+    Generic.Verify your current page location contains     discovery-assets
+    I_iconPage.Choose tab under Discovery Assets       network-discovery
+    Generic.Verify your current page location contains    ocs
+    OCS.Mark check-box of Agent/Discovered Asset
+    OCS.Click on Button inside Network Discovery Page       Add Assets
+    Generic.Verify your current page location contains    add-assets
+    OCS.Click on three-dots inside table of add assets
+    OCS.Select option inside three-dots    Create Asset
+    Sleep    ${yop_sleep}
+    Switch Window       aithentic | Add Discovery Asset
+    Generic.Verify your current page contains this text    Add Technology
+    I_iconPage.Click on advanced search link under create asset network discovery
+    sleep   ${search_sleep}
+    Generic.click on the button     Reset Filters
+    OCS.Enter input in the brand field of advanced search of discovered asset       Lenovo
+    Generic.click on the button     Search
+    sleep      ${search_sleep}
+    TechnologyPage.Wait until advanced search table get load
+    OCS.Click on the table inside advanced search of discovered asset for brand
+    Generic.Scroll Window To End
+    Generic.click on the button     Select
+    sleep   ${search_sleep}
+    Generic.Verify your current page contains this text    Add Technology
+    OCS.Fetch the Brand Name from the brand field of discovered asset
+    TechnologyPage.verify Text from Assignment Information      Lenovo       ${brand_name}
+    Generic.Refresh the existing page
+    I_iconPage.Click on advanced search link under create asset network discovery
+    Generic.click on the button     Reset Filters
+    OCS.Enter and select technology type in advance search of discovered search
+    Generic.click on the button     Search
+    sleep       ${search_sleep}
+    TechnologyPage.Wait until advanced search table get load
+    OCS.Click on the table inside advanced search of discovered asset for technology type
+    Generic.Scroll Window To End
+    Generic.click on the button     Select
+    sleep   ${search_sleep}
+    Generic.Verify your current page contains this text    Add Technology
+    OCS.Fetch the technology type from the technology type field of component of discovered asset
+    TechnologyPage.verify Text from Assignment Information      Maintenance       ${Technology_type}
+    Generic.Refresh the existing page
+    I_iconPage.Click on advanced search link under create asset network discovery
+    Generic.click on the button     Reset Filters
+    OCS.Enter input in the technology group field of advanced search of discovered asset
+    Generic.click on the button     Search
+    sleep   ${search_sleep}
+    TechnologyPage.Wait until advanced search table get load
+    OCS.Click on the table inside advanced search of discovered asset for technology group
+    Generic.Scroll Window To End
+    Generic.click on the button     Select
+    sleep   ${search_sleep}
+    Generic.Verify your current page contains this text    Add Technology
+    TechnologyPage.Get text of technology group inside add technology
+    TechnologyPage.verify Text from Assignment Information      Applications      ${Technology_group}
+     Generic.Refresh the existing page
+    I_iconPage.Click on advanced search link under create asset network discovery
+    Generic.click on the button     Reset Filters
+    TechnologyPage.Enter product in the product input field     Vishal luthra
+    Generic.click on the button     Search
+    sleep   ${search_sleep}
+    TechnologyPage.Wait until advanced search table get load
+    TechnologyPage.Get text of product inside add technology
+    TechnologyPage.verify Text from Assignment Information      Vishal luthra      ${product}
+
+    Generic.click on the button     Reset Filters
+    TechnologyPage.Enter description in the description input field     Aithentic Description
+    Generic.click on the button     Search
+    sleep   ${search_sleep}
+    TechnologyPage.Wait until advanced search table get load
+    TechnologyPage.Get text of description inside add technology
+    TechnologyPage.verify Text from Assignment Information      Aithentic Description     ${description}
+    Generic.click on the button     Reset Filters
+    TechnologyPage.Enter feature in the description input field     Aithentic Feature
+    Generic.click on the button     Search
+    sleep   ${search_sleep}
+    TechnologyPage.Wait until advanced search table get load
+    TechnologyPage.Get text of feature inside add technology
+    TechnologyPage.verify Text from Assignment Information      Aithentic Feature     ${feature}
+
+Search with containing fields under advance search of component of discovered asset
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+    Generic.select the option from the side menu        Asset Discovery
+    Generic.Verify your current page location contains      discovery-assets
+    I_iconPage.Choose tab under Discovery Assets       network-discovery
+
+    Generic.Verify your current page location contains    ocs
+    OCS.Mark check-box of Agent/Discovered Asset
+    OCS.Click on Button inside Network Discovery Page       Add Assets
+    Generic.Verify your current page location contains    add-assets
+    OCS.Click on three-dots inside table of add assets
+    OCS.Select option inside three-dots    Create Asset
+    Sleep    ${yop_sleep}
+    Switch Window       aithentic | Add Discovery Asset
+    Generic.Verify your current page contains this text    Add Technology
+    TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
+    OCS.Enter The Asset_id in Add Technology Page
+    OCS.Click on save button of Add Technology Page
+    OCS.Wait for the invisiblity of alert msg        Technology created successfully
+    Sleep    ${yop_sleep}
+    switch window    aithentic | Asset - Discovery
+    Generic.Verify your current page location contains    add-assets
+    Generic.Verify your current page contains this text    ${generated_AssetID}
+    OCS.Click on three-dots inside table of add assets
+    OCS.Select option inside three-dots    View Component
+    Sleep    ${yop_sleep}
+    Switch Window       aithentic | Discovery Asset Detail
+    Generic.Verify your current page location contains    discovery-asset-detail
+    OCS.Verify Discovery_info contains following tab    software-tab
+    Generic.Scroll the page till   300
+    OCS.Hover Over Add component button and verify text         Please click on the 'plus' icon to add component
+    OCS.Click on plus icon of any component
+    Sleep    ${yop_sleep}
+    Switch Window       aithentic | Add Discovery Asset
+    Generic.Verify your current page contains this text    Add Technology
+    I_iconPage.Click on advanced search link under create asset network discovery
+    sleep   ${search_sleep}
+    Generic.click on the button     Reset Filters
+    OCS.Enter input in the brand field of advanced search of discovered asset       Lenovo
+    Generic.click on the button     Search
+    sleep      ${search_sleep}
+    TechnologyPage.Wait until advanced search table get load
+    OCS.Click on the table inside advanced search of discovered asset for brand
+    Generic.Scroll Window To End
+    Generic.click on the button     Select
+    sleep   ${search_sleep}
+    Generic.Verify your current page contains this text    Add Technology
+    OCS.Fetch the Brand Name from the brand field of discovered asset
+    TechnologyPage.verify Text from Assignment Information      Lenovo       ${brand_name}
+    Generic.Refresh the existing page
+    I_iconPage.Click on advanced search link under create asset network discovery
+    Generic.click on the button     Reset Filters
+    OCS.Enter and select technology type in advance search of discovered search
+    Generic.click on the button     Search
+    sleep       ${search_sleep}
+    TechnologyPage.Wait until advanced search table get load
+    OCS.Click on the table inside advanced search of discovered asset for technology type
+    Generic.Scroll Window To End
+    Generic.click on the button     Select
+    sleep   ${search_sleep}
+    Generic.Verify your current page contains this text    Add Technology
+    OCS.Fetch the technology type from the technology type field of component of discovered asset
+    TechnologyPage.verify Text from Assignment Information      Maintenance       ${Technology_type}
+    Generic.Refresh the existing page
+    I_iconPage.Click on advanced search link under create asset network discovery
+    Generic.click on the button     Reset Filters
+    OCS.Enter input in the technology group field of advanced search of discovered asset
+    Generic.click on the button     Search
+    sleep   ${search_sleep}
+    TechnologyPage.Wait until advanced search table get load
+    OCS.Click on the table inside advanced search of discovered asset for technology group
+    Generic.Scroll Window To End
+    Generic.click on the button     Select
+    sleep   ${search_sleep}
+    Generic.Verify your current page contains this text    Add Technology
+    TechnologyPage.Get text of technology group inside add technology
+    TechnologyPage.verify Text from Assignment Information      Applications      ${Technology_group}
+     Generic.Refresh the existing page
+    I_iconPage.Click on advanced search link under create asset network discovery
+    Generic.click on the button     Reset Filters
+    TechnologyPage.Enter product in the product input field     Vishal luthra
+    Generic.click on the button     Search
+    sleep   ${search_sleep}
+    TechnologyPage.Wait until advanced search table get load
+    TechnologyPage.Get text of product inside add technology
+    TechnologyPage.verify Text from Assignment Information      Vishal luthra      ${product}
+
+    Generic.click on the button     Reset Filters
+    TechnologyPage.Enter description in the description input field     Aithentic Description
+    Generic.click on the button     Search
+    sleep   ${search_sleep}
+    TechnologyPage.Wait until advanced search table get load
+    TechnologyPage.Get text of description inside add technology
+    TechnologyPage.verify Text from Assignment Information      Aithentic Description     ${description}
+    Generic.click on the button     Reset Filters
+    TechnologyPage.Enter feature in the description input field     Aithentic Feature
+    Generic.click on the button     Search
+    sleep   ${search_sleep}
+    TechnologyPage.Wait until advanced search table get load
+    TechnologyPage.Get text of feature inside add technology
+    TechnologyPage.verify Text from Assignment Information      Aithentic Feature     ${feature}
+    I_iconPage.Click on the cross icon of advanced search under technology
+    sleep   ${search_sleep}
+
+    Generic.select the option from the side menu        Technology
+    Generic.Verify your current page location contains      technology-list
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains    technology-details
+    TechnologyPage.Click on edit button on product details page        Edit
+    Generic.Verify your current page location contains      edit-technology
+    OCS.Edit the MAC_Address of Asset
+    OCS.Edit the Serial_No. of Asset
+    OCS.Edit The Host_Name of Asset
+    TechnologyPage.Click on update button of edit_technology page       Update
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+    UnselectAssetAPI.Hit API Endpoint
+
+Search with containing fields under advance search of IP Address of discovered asset
+     Generic.click on the tab	Login
+    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+    Generic.Click on the profile name
+    Generic.Select option from profile list     view-discovery
+    Generic.Verify your current page location contains    ocs
+    OCS.Click on search icon of discovery assets
+    OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
+    OCS.Verify Searched discovery asset    00:17:61:10:C6:A1
+    OCS.Hover over searched Discovered Asset
+    OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
+    Generic.select the option from the side menu    Asset Discovery
+    Generic.Verify your current page location contains     discovery-assets
+    OCS.click on the value of IP discovered devices of inside table
+    Sleep    ${yop_sleep}
+    Switch Window       aithentic | Discovered Assets
+    Generic.Verify your current page location contains     discovery-assets-list
+    Generic.Wait until table get load
+    OCS.Click on Plus icon under table
+    Sleep    ${Yop_Sleep}
+    Switch Window       aithentic | Add Discovery Asset
+    Generic.Verify your current page location contains    add-discovered-asset
+    Generic.Verify your current page contains this text    Add Technology
+    I_iconPage.Click on advanced search link under create asset network discovery
+    sleep   ${search_sleep}
+    Generic.click on the button     Reset Filters
+    OCS.Enter input in the brand field of advanced search of discovered asset       Lenovo
+    Generic.click on the button     Search
+    sleep      ${search_sleep}
+    TechnologyPage.Wait until advanced search table get load
+    OCS.Click on the table inside advanced search of discovered asset for brand
+    Generic.Scroll Window To End
+    Generic.click on the button     Select
+    sleep   ${search_sleep}
+    Generic.Verify your current page contains this text    Add Technology
+    OCS.Fetch the Brand Name from the brand field of discovered asset
+    TechnologyPage.verify Text from Assignment Information      Lenovo       ${brand_name}
+    Generic.Refresh the existing page
+    I_iconPage.Click on advanced search link under create asset network discovery
+    Generic.click on the button     Reset Filters
+    OCS.Enter and select technology type in advance search of discovered search
+    Generic.click on the button     Search
+    sleep       ${search_sleep}
+    TechnologyPage.Wait until advanced search table get load
+    OCS.Click on the table inside advanced search of discovered asset for technology type
+    Generic.Scroll Window To End
+    Generic.click on the button     Select
+    sleep   ${search_sleep}
+    Generic.Verify your current page contains this text    Add Technology
+    OCS.Fetch the technology type from the technology type field of component of discovered asset
+    TechnologyPage.verify Text from Assignment Information      Maintenance       ${Technology_type}
+    Generic.Refresh the existing page
+    I_iconPage.Click on advanced search link under create asset network discovery
+    Generic.click on the button     Reset Filters
+    OCS.Enter input in the technology group field of advanced search of discovered asset
+    Generic.click on the button     Search
+    sleep   ${search_sleep}
+    TechnologyPage.Wait until advanced search table get load
+    OCS.Click on the table inside advanced search of discovered asset for technology group
+    Generic.Scroll Window To End
+    Generic.click on the button     Select
+    sleep   ${search_sleep}
+    Generic.Verify your current page contains this text    Add Technology
+    TechnologyPage.Get text of technology group inside add technology
+    TechnologyPage.verify Text from Assignment Information      Applications      ${Technology_group}
+     Generic.Refresh the existing page
+    I_iconPage.Click on advanced search link under create asset network discovery
+    Generic.click on the button     Reset Filters
+    TechnologyPage.Enter product in the product input field     Vishal luthra
+    Generic.click on the button     Search
+    sleep   ${search_sleep}
+    TechnologyPage.Wait until advanced search table get load
+    TechnologyPage.Get text of product inside add technology
+    TechnologyPage.verify Text from Assignment Information      Vishal luthra      ${product}
+
+    Generic.click on the button     Reset Filters
+    TechnologyPage.Enter description in the description input field     Aithentic Description
+    Generic.click on the button     Search
+    sleep   ${search_sleep}
+    TechnologyPage.Wait until advanced search table get load
+    TechnologyPage.Get text of description inside add technology
+    TechnologyPage.verify Text from Assignment Information      Aithentic Description     ${description}
+    Generic.click on the button     Reset Filters
+    TechnologyPage.Enter feature in the description input field     Aithentic Feature
+    Generic.click on the button     Search
+    sleep   ${search_sleep}
+    TechnologyPage.Wait until advanced search table get load
+    TechnologyPage.Get text of feature inside add technology
+    TechnologyPage.verify Text from Assignment Information      Aithentic Feature     ${feature}
+
 Disconnect
     DisconnectConnectorAPI.Hit API to disconnect connector
     

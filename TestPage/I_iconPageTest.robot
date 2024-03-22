@@ -264,6 +264,30 @@ Verify all i-icon of advanced search
     TechnologyPage.Click on update button of edit_technology page       Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     UnselectAssetAPI.Hit API Endpoint
+    Generic.Click on the profile name
+    Generic.Select option from profile list     view-discovery
+    Generic.Verify your current page location contains    ocs
+    OCS.Click on search icon of discovery assets
+    OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
+    OCS.Verify Searched discovery asset    00:17:61:10:C6:A1
+    OCS.Hover over searched Discovered Asset
+    OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
+    Generic.select the option from the side menu    Asset Discovery
+    Generic.Verify your current page location contains     discovery-assets
+    OCS.click on the value of IP discovered devices of inside table
+    Sleep    ${yop_sleep}
+    Switch Window       aithentic | Discovered Assets
+    Generic.Verify your current page location contains     discovery-assets-list
+    Generic.Wait until table get load
+    OCS.Click on Plus icon under table
+    Sleep    ${Yop_Sleep}
+    Switch Window       aithentic | Add Discovery Asset
+    Generic.Verify your current page location contains    add-discovered-asset
+    Generic.Verify your current page contains this text    Add Technology
+    I_iconPage.Click on advanced search link under create asset network discovery
+    sleep   ${search_sleep}
+    I_iconPage.Click on i_icon of advanced search under add discovered asset
+    I_iconPage.Verify pop is visible after clicking i-icon of advancede search under discovered asset
 
 
 
