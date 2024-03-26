@@ -79,6 +79,8 @@ Enter text to search discovery asset
     Wait Until Element Is Visible    //input[@placeholder='Search OCS Discovered Assets']       60
     Wait Until Element Is enabled    //input[@placeholder='Search OCS Discovered Assets']       60
     Input Text    //input[@placeholder='Search OCS Discovered Assets']    ${option}
+    Sleep    ${yop_sleep}
+    Wait Until Element Is Not Visible    ${loaderIcon}  60
 
 Enter text to search existing asset
     [Arguments]     ${option}
@@ -86,6 +88,8 @@ Enter text to search existing asset
     Wait Until Element Is Visible    //input[@placeholder='Search Existing Assets']       60
     Wait Until Element Is enabled    //input[@placeholder='Search Existing Assets']       60
     Input Text    //input[@placeholder='Search Existing Assets']    ${option}
+
+
 
 Verify Searched discovery asset
     [Arguments]     ${option}
@@ -527,3 +531,70 @@ Search with MAC address and IP Address on the search bar of Discovered Asset Lis
     input text  css:input[placeholder='Search by Tag Name, MAC Address, IP Address...']     ${MAC_Address}
     sleep       ${search_sleep}
     wait until element is visible       css:thead tr       60
+
+Enter input in the brand field of advanced search of discovered asset
+    [Arguments]     ${option}
+    wait until element is visible  css:.modal-body .qa-brands      60
+    wait until element is enabled       css:.modal-body .qa-brands     60
+    click element       css:.modal-body .qa-brands
+#    Clear Element Text      css:.modal-body .qa-brands
+    input text      css:.modal-body .qa-brands input       ${option}
+    Generic.Select parameter    ${option}
+
+Click on the table inside advanced search of discovered asset for brand
+    wait until element is visible    (//div[contains(text(),'Lenovo')])[1]     60
+    wait until element is enabled  (//div[contains(text(),'Lenovo')])[1]     60
+    click element   (//div[contains(text(),'Lenovo')])[1]
+
+Fetch the Brand Name from the brand field of discovered asset
+    Wait Until Element Is Visible        //div[@class='full-width-field']//ng-select[@id='BrandName']    timeout=60s
+    Wait Until Element Is Enabled        //div[@class='full-width-field']//ng-select[@id='BrandName']    timeout=60s
+    ${brand_name} =    Get text     //div[@class='full-width-field']//ng-select[@id='BrandName']
+    Log to console   Brand Name: ${brand_name}
+    set global variable     ${brand_name}
+
+Enter and select technology type in advance search of discovered search
+    wait until element is visible      css:#advaceType     60
+    wait until element is enabled       css:#advaceType     60
+    click element   css:#advaceType
+    input text      css:#advaceType     Maintenance
+    Press Keys      css:#advaceType     ENTER
+
+Click on the table inside advanced search of discovered asset for technology group
+    wait until element is visible    (//div[contains(text(),'Subscription')])[1]     60
+    wait until element is enabled   (//div[contains(text(),'Subscription')])[1]     60
+    click element    (//div[contains(text(),'Subscription')])[1]
+
+Click on the table inside advanced search of discovered asset for technology type
+    wait until element is visible    (//div[contains(text(),'Extended service')])[1]     60
+    wait until element is enabled   (//div[contains(text(),'Extended service')])[1]     60
+    click element    (//div[contains(text(),'Extended service')])[1]
+
+
+Enter input in the technology group field of advanced search of discovered asset
+    wait until element is visible  css:.modal-body .qa-group      60
+    wait until element is enabled       css:.modal-body .qa-group     60
+    click element       css:.modal-body .qa-group
+    input text      css:.modal-body .qa-group input       Applications
+    sleep   ${search_sleep}
+    Wait Until Element Is Visible    css:.modal-body .qa-group input    timeout=60s
+    Press Keys      css:.modal-body .qa-group input     ENTER
+
+Fetch the technology type from the technology type field of component of discovered asset
+    Wait Until Element Is Visible       css:.qa-tech-type    timeout=60s
+    Wait Until Element Is Enabled        css:.qa-tech-type    timeout=60s
+    ${technology_type} =    Get text   css:.qa-tech-type
+    Log to console   Technology Type: ${technology_type}
+    set global variable     ${technology_type}
+
+Click on Refresh Icon of discovered asset lists
+    Wait Until Element Is Not Visible    ${loaderIcon}  60
+    Wait Until Element Is Visible    css:i[title='Clear search filters']        60
+    Wait Until Element Is Enabled    css:i[title='Clear search filters']    60
+    Click Element    css:i[title='Clear search filters']
+
+Click on Go to Agent Discovery Page
+    Wait Until Element Is Not Visible    ${loaderIcon}  60
+    Wait Until Element Is Visible    css:span[class='back']        60
+    Wait Until Element Is Enabled    css:span[class='back']    60
+    Click Element    css:span[class='back']

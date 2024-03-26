@@ -47,9 +47,11 @@ ${apiURL}              https://uat-api.aithentic.com/api/v1
 #${apiURL}               https://qa-api.aithentic.com/api/v1
 ${valid_password}        Test!@5897     #UAT user
 #${valid_password}         Test@123       #QA User
-#
+
 ${admin_url}        https://uat-admin.aithentic.com/
 #${admin_url}        https://qa-admin.aithentic.com/
+
+
 
 ${admin_name}        aithentic@yopmail.com
 ${admin_password}       Admin@123
@@ -322,4 +324,3 @@ Update settings for Asset_ID, employee_id and location
     DashboardPage.Select the location ID checkbox   yes
     DashboardPage.Select the asset ID checkbox      no
     close browser
-
