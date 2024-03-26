@@ -1621,6 +1621,6 @@ Search with containing fields under advance search of IP Address of discovered a
     TechnologyPage.Get text of feature inside add technology
     TechnologyPage.verify Text from Assignment Information      Aithentic Feature     ${feature}
 
-Disconnect
-    DisconnectConnectorAPI.Hit API to disconnect connector
+#Disconnect
+#    DisconnectConnectorAPI.Hit API to disconnect connector
     
