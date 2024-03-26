@@ -179,5 +179,27 @@ Click on i_icon under network_discovery tab
     wait until element is visible       css:.qa-iIconSection-network-discovery      60
     click element       css:.qa-iIconSection-network-discovery
 
+Click on i_icon of advanced search under add technology
+    wait until element is visible   css:#advance-search-add-technology-Iicon    60
+    wait until element is enabled   css:#advance-search-add-technology-Iicon    60
+    click element   css:#advance-search-add-technology-Iicon
 
+Click on the cross icon of advanced search under technology
+    wait until element is visible   //div[@class='modal-dialog1']//span[normalize-space()='×']      60
+    wait until element is enabled   //div[@class='modal-dialog1']//span[normalize-space()='×']      60
+    click element   //div[@class='modal-dialog1']//span[normalize-space()='×']
 
+Click on advanced search link under create asset network discovery
+    wait until element is visible  (//span[contains(text(),'Advance Search')])[2]    60
+    wait until element is enabled   (//span[contains(text(),'Advance Search')])[2]    60
+    click element   (//span[contains(text(),'Advance Search')])[2]
+    wait until element is not visible      ${loaderIcon}    60
+
+Click on i_icon of advanced search under add discovered asset
+    wait until element is visible   css:.info-icon i    60
+    wait until element is enabled   css:.info-icon i    60
+    Mouse over      css:.info-icon i
+
+Verify pop is visible after clicking i-icon of advancede search under discovered asset
+    wait until element is visible       css:#tooltip-0        60
+    log to console      Yes, pop-up is visible for i-icon
