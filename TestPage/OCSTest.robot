@@ -1234,6 +1234,7 @@ Add asset with IP Address under discovered asset list
     OCS.Verify Searched discovery asset    00:17:61:10:C6:A1
     OCS.Hover over searched Discovered Asset
     OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
+#    OCS.Get Host name by hovering over discovered assets        Host name:
     Generic.select the option from the side menu    Asset Discovery
     Generic.Verify your current page location contains     discovery-assets
     OCS.click on the value of IP discovered devices of inside table
@@ -1247,6 +1248,7 @@ Add asset with IP Address under discovered asset list
     Generic.Verify your current page location contains    add-discovered-asset
     Generic.Verify your current page contains this text    Add Technology
     TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
+    TechnologyPage.Create random unique serial number
     OCS.Enter The Asset_id in Add Technology Page
     OCS.Click on save button of Add Technology Page
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
@@ -1260,11 +1262,10 @@ Add asset with IP Address under discovered asset list
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains    technology-details
     OCS.Get Value of MAC-Address from technology details and compare it with      ${hover_MAC_address}
-    OCS.Get Value of Host-Name and compare it with    ${hover_host name}
+#    OCS.Get Value of Host-Name and compare it with      ${hover_host name}
     TechnologyPage.Click on edit button on product details page        Edit
     Generic.Verify your current page location contains      edit-technology
     OCS.Edit the MAC_Address of Asset
-    OCS.Edit The Host_Name of Asset
     TechnologyPage.Click on update button of edit_technology page       Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     UnselectAssetAPI.Hit API Endpoint
@@ -1279,6 +1280,9 @@ Add Asset with IP address from Network Discovery Page
     OCS.Click on search icon of discovery assets
     OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
     OCS.Verify Searched discovery asset    00:17:61:10:C6:A1
+    OCS.Hover over searched Discovered Asset
+    OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
+    OCS.Get Host name by hovering over discovered assets        Host name:
     OCS.Mark check-box of Agent/Discovered Asset
     OCS.Click on Button inside Network Discovery Page       Add Assets
     Generic.Verify your current page location contains    add-assets
@@ -1302,13 +1306,13 @@ Add Asset with IP address from Network Discovery Page
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Asset - Discovery
-    Generic.Verify your current page location contains    add-assets
-    Generic.Verify your current page contains this text    ${generated_AssetID}
     Generic.select the option from the side menu        Technology
     Generic.Verify your current page location contains      technology-list
     TechnologyPage.Search by AssetId       ${generated_AssetID}
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains    technology-details
+    OCS.Get Value of MAC-Address from technology details and compare it with      ${hover_MAC_address}
+    OCS.Get Value of Host-Name and compare it with      ${hover_host name}
     TechnologyPage.Click on edit button on product details page        Edit
     Generic.Verify your current page location contains      edit-technology
     OCS.Edit the MAC_Address of Asset

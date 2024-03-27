@@ -1083,7 +1083,6 @@ View Details and check the details of Contract
     TechnologyPage.Select product technology group via technology   Applications
     TechnologyPage.Click on save product pop inside technology page
     Generic.Fetch alert message text and compare it with    Product created successfully
-    TechnologyPage.Select parameter from technology dropdown list    ${generated_product}
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date
     TechnologyPage.Renewal Date via technology
