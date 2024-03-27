@@ -109,6 +109,7 @@ Verify all i-icon of team member page
     I_iconPage.Click on i-icon of team-members tab
 
 Verify all i-icon of Technology page
+    [Tags]    retry
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology

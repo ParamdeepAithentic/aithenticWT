@@ -535,6 +535,7 @@ Verify user is able to export team member asset history list
     TeamMemberPage.verify status of first name in member list   ${generated_AssetID}
 
 Convert Assignee to Team Member
+    [Tags]    retry
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Team Members

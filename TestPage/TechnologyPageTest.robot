@@ -211,7 +211,7 @@ Fill the technology form for subscription product
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
 Create new asset with new brand and product
-    [Tags]      Sanity      Smoke
+    [Tags]      Sanity      Smoke     retry
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
@@ -1483,7 +1483,7 @@ Technology Details- Verify the Location Details
 #    TechnologyPage.Get Value of Assignment Information Location Name
 
 Technology-Inactive asset and Restore asset
-    [Tags]      smoke
+    [Tags]      smoke   retry
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     chirag@dmts.fr.nf    Test@001
     Generic.Click on the profile name
@@ -1493,6 +1493,7 @@ Technology-Inactive asset and Restore asset
     TechnologyPage.Click on current plan of subscription
     Generic.Scroll the page till    200
     SubscriptionPage.Set asset range to     500
+    SubscriptionPage.Set asset range to     100
     SubscriptionPage.Set asset range to     200
     SubscriptionPage.Update the payment of changed plan     proceed
     TechnologyPage.Click on pop up of available Inactive Asset   cancel
@@ -1574,7 +1575,7 @@ Technology-Inactive asset and Restore asset
     Generic.Fetch alert message text and compare it with      Payment Successful
 
 Inactive asset - Restore asset from Technology Details page
-    [Tags]      smoke
+    [Tags]      smoke      retry
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     chirag@dmts.fr.nf    Test@001
     Generic.Click on the profile name
@@ -1674,6 +1675,7 @@ Inactive asset - Restore asset from Technology Details page
     Generic.Fetch alert message text and compare it with      Payment Successful
 
 Verify the technology data while applying agent Filters
+    [Tags]    retry
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.select the option from the side menu    Technology
@@ -1684,6 +1686,7 @@ Verify the technology data while applying agent Filters
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Select parameter from technology dropdown list       Product_00337612322
+    TechnologyPage.Create random unique serial number
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully

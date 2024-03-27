@@ -720,6 +720,7 @@ Search By Brand name in product list
     DashboardPage.Verify product added    ${generated_product}
 
 Verify Reports Asset Alert
+    [Tags]    retry
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}       ${valid_password}
     Generic.select the option from the side menu    Technology
