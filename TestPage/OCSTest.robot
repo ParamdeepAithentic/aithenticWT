@@ -1223,6 +1223,7 @@ Refresh search text on discovered asset list page
     Generic.Wait until table get load
 
 Add asset with IP Address under discovered asset list
+    [Tags]    retry
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.Click on the profile name
@@ -1269,6 +1270,7 @@ Add asset with IP Address under discovered asset list
     UnselectAssetAPI.Hit API Endpoint
 
 Add Asset with IP address from Network Discovery Page
+    [Tags]    retry
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.Click on the profile name
