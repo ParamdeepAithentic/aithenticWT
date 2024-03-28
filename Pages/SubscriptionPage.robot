@@ -252,6 +252,46 @@ Update the payment of changed plan
     wait until element is enabled      css:.qa-payment-update-${option1}          60
     click element      css:.qa-payment-update-${option1}
 
+Click on the three dots of subscription connector
+    wait until element is visible  //tbody//tr[2]//td[8]    60
+    wait until element is enabled   //tbody//tr[2]//td[8]   60
+    click element  //tbody//tr[2]//td[8]
+    sleep   ${search_sleep}
+
+Click on option under three dots of subscription connector
+    [Arguments]     ${option}
+    wait until element is visible  (//div[contains(@class,'dropdown-menu')])[2]//a[normalize-space()='${option}']     60
+    wait until element is enabled   (//div[contains(@class,'dropdown-menu')])[2]//a[normalize-space()='${option}']    60
+    click element   (//div[contains(@class,'dropdown-menu')])[2]//a[normalize-space()='${option}']
+    sleep  ${search_sleep}
+
+Fetch text of delete under table of subscription connector
+    [Arguments]     ${option}
+    wait until element is visible    //tbody//tr[2]//td[7]        60
+    ${value} =    get text    //tbody//tr[2]//td[7]
+    log to console     ${value}
+    should be equal    ${value}    ${option}
+    Wait Until Element Is Not Visible     ${value}        60
+
+Fetch alert message text of subscription connector and compare it with
+    wait until element is visible    css:.toast-body       60
+    ${alert_Msg2} =    get text    css:.toast-body
+    log to console     ${alert_Msg2}
+    set global variable     ${alert_Msg2}
+    Run Keyword If    '${alert_Msg2}' == 'Your scheduler is now running. This process can take up to several minutes. Please check back.'     Log to console    ${alert_Msg2}
+    ...    ELSE    Log to console   ${alert_Msg2}
+    Wait Until Element Is Not Visible    ${alert_Msg2}        60
+
+Get the value of fields under view details of subscription connector
+    [Arguments]     ${option1}      ${option2}
+    wait until element is not visible   ${loaderIcon}    60
+    wait until element is visible   (//div[@id='viewDetails']//input)[${option1}]   60
+    ${value} =    get value    (//div[@id='viewDetails']//input)[${option1}]
+    log to console     ${value}
+    should be equal    ${value}         ${option2}
+
+
+
 
 
 
