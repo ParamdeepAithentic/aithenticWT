@@ -1195,6 +1195,7 @@ Click the add here link on support to edit new support
 
 
 Click on save product pop inside technology page
+    sleep       ${search_sleep}
     wait until element is visible   css:div[class='modal-footer my-1'] button[type='submit']    60
     wait until element is enabled   css:div[class='modal-footer my-1'] button[type='submit']    60
     click element   css:div[class='modal-footer my-1'] button[type='submit']

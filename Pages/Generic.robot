@@ -301,7 +301,7 @@ Scroll Window To End
 
 Wait until table get load
     wait until element is visible       //tbody//tr//td[normalize-space()='1']     60
-#    wait until element is enabled      //tbody//tr//td[normalize-space()='1']      60
+    wait until element is enabled      //tbody//tr//td[normalize-space()='1']      60
 
 Fetch log_out alert message
     sleep      2
