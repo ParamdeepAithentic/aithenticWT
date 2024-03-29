@@ -81,6 +81,7 @@ Create and edit the scheduler
     SubscriptionPage.Click on option under three dots of subscription connector     Edit
     SubscriptionPage.click on the cross icon of create scheduler    1
     SubscriptionPage.Enter input in the input field of frequency under create scheduler    Weekly
+#    SubscriptionPage.click on the cross icon of create scheduler    2
     SubscriptionPage.Enter input in the input field of day under create scheduler       Monday
     SubscriptionPage.Enter input in the input field of time under create scheduler      12:00
     sleep   ${search_sleep}
