@@ -253,9 +253,10 @@ Update the payment of changed plan
     click element      css:.qa-payment-update-${option1}
 
 Click on the three dots of subscription connector
-    wait until element is visible  //tbody//tr[2]//td[8]    60
-    wait until element is enabled   //tbody//tr[2]//td[8]   60
-    click element  //tbody//tr[2]//td[8]
+    [Arguments]     ${option}
+    wait until element is visible  //td[normalize-space()='${option}']//parent::tr//td//div//button    60
+    wait until element is enabled   //td[normalize-space()='${option}']//parent::tr//td//div//button  60
+    click element  //td[normalize-space()='${option}']//parent::tr//td//div//button
     sleep   ${search_sleep}
 
 Click on option under three dots of subscription connector
@@ -267,8 +268,8 @@ Click on option under three dots of subscription connector
 
 Fetch text of delete under table of subscription connector
     [Arguments]     ${option}
-    wait until element is visible    //tbody//tr[2]//td[7]        60
-    ${value} =    get text    //tbody//tr[2]//td[7]
+    wait until element is visible    //td[normalize-space()='Google']//parent::tr//td//span        60
+    ${value} =    get text    //td[normalize-space()='Google']//parent::tr//td//span
     log to console     ${value}
     should be equal    ${value}    ${option}
     Wait Until Element Is Not Visible     ${value}        60
@@ -325,12 +326,9 @@ Enter input in the input field of date under create scheduler
     click element   //div[@id='editScheduler']//input[@formcontrolname='Date']
     input text      //div[@id='editScheduler']//input[@formcontrolname='Date']      ${option}
 
-
-
-
-
-
-
-
+Click on the activate option under subscription connector table
+    wait until element is visible   //td[normalize-space()='Google']//parent::tr//td[normalize-space()='Activate']      60
+    wait until element is enabled   //td[normalize-space()='Google']//parent::tr//td[normalize-space()='Activate']      60
+    click element   //td[normalize-space()='Google']//parent::tr//td[normalize-space()='Activate']
 
 
