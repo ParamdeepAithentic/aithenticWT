@@ -290,10 +290,40 @@ Get the value of fields under view details of subscription connector
     log to console     ${value}
     should be equal    ${value}         ${option2}
 
+Enter input in the input field of frequency under create scheduler
+    [Arguments]     ${option}
+    wait until element is visible  //div[@id='editScheduler']//ng-select[@formcontrolname='schedulerFrequency']    60
+    wait until element is enabled   //div[@id='editScheduler']//ng-select[@formcontrolname='schedulerFrequency']    60
+    click element   //div[@id='editScheduler']//ng-select[@formcontrolname='schedulerFrequency']
+    Generic.Select parameter    ${option}
 
+Enter input in the input field of time under create scheduler
+    [Arguments]     ${option}
+    wait until element is visible  //div[@id='editScheduler']//input[@formcontrolname='schedulerTime']    60
+    wait until element is enabled   //div[@id='editScheduler']//input[@formcontrolname='schedulerTime']    60
+    clear element text  //div[@id='editScheduler']//input[@formcontrolname='schedulerTime']
+    sleep    ${search_sleep}
+    input text  //div[@id='editScheduler']//input[@formcontrolname='schedulerTime']     ${option}
 
+click on the cross icon of create scheduler
+    [Arguments]     ${option}
+    wait until element is visible   (//div[@id='editScheduler']//span[@title='Clear all'])[${option}]    60
+    wait until element is enabled   (//div[@id='editScheduler']//span[@title='Clear all'])[${option}]     60
+    click element   (//div[@id='editScheduler']//span[@title='Clear all'])[${option}]
 
+Enter input in the input field of day under create scheduler
+    [Arguments]     ${option}
+    wait until element is visible  //div[@id='editScheduler']//ng-select[@formcontrolname='schedulerDay']    60
+    wait until element is enabled   //div[@id='editScheduler']//ng-select[@formcontrolname='schedulerDay']    60
+    click element   //div[@id='editScheduler']//ng-select[@formcontrolname='schedulerDay']
+    Generic.Select parameter    ${option}
 
+Enter input in the input field of date under create scheduler
+    [Arguments]     ${option}
+    wait until element is visible  //div[@id='editScheduler']//input[@formcontrolname='Date']    60
+    wait until element is enabled   //div[@id='editScheduler']//input[@formcontrolname='Date']    60
+    click element   //div[@id='editScheduler']//input[@formcontrolname='Date']
+    input text      //div[@id='editScheduler']//input[@formcontrolname='Date']      ${option}
 
 
 
