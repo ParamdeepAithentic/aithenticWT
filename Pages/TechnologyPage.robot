@@ -442,9 +442,11 @@ Add self technology idKey
 Add assetID for technology lifecycle information random
     wait until element is not visible       ${loaderIcon}        60
     wait until element is visible       ${asset_id}        60
+    wait until element is enabled       ${asset_id}        60
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_AssetID}=    Catenate    AssetID_${random_string}
     input text   ${asset_id}   ${generated_AssetID}
+    sleep       ${search_sleep}
     log to console      ${generated_AssetID}
     set global variable    ${generated_AssetID}
 
