@@ -57,9 +57,6 @@ ${agentDiscovery_TagName}       Tag Name - johnsoftwaresolutions-1192-1         
 ${admin_name}        aithentic@yopmail.com
 ${admin_password}       Admin@123
 
-
-
-
 ${browser_name}          headlessfirefox
 
 ${email}                 testqa29j@mailinator.com       #UAT user
