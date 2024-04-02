@@ -518,9 +518,9 @@ Fetch text from Agent Discovery tab and compare it with
 
 click on the value of IP discovered devices of inside table
     wait until element is not visible    ${loaderIcon}    60
-    wait until element is visible   //h5[normalize-space()='Tag Name - johnsoftwaresolutions-1428-3']//parent::div//div//table//td[7]   60
-    wait until element is enabled   //h5[normalize-space()='Tag Name - johnsoftwaresolutions-1428-3']//parent::div//div//table//td[7]   60
-    click element   //h5[normalize-space()='Tag Name - johnsoftwaresolutions-1428-3']//parent::div//div//table//td[7]
+    wait until element is visible   //h5[normalize-space()='${agentDiscovery_TagName}']//parent::div//div//table//td[7]   60
+    wait until element is enabled   //h5[normalize-space()='${agentDiscovery_TagName}']//parent::div//div//table//td[7]   60
+    click element   //h5[normalize-space()='${agentDiscovery_TagName}']//parent::div//div//table//td[7]
 
 Search with MAC address and IP Address on the search bar of Discovered Asset List
     [Arguments]     ${MAC_Address}
