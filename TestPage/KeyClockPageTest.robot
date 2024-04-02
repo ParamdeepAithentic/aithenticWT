@@ -61,6 +61,7 @@ Register new user for key clock functionality
 
     Generic.Verify your current page location contains      update-email
     Generic.Open new window     yopmail
+    Generic.Refresh the existing page
     Generic.Search yopmail emails for       ${generate_register_Email}
     Generic.Switch to iframe by ID      ifinbox
 

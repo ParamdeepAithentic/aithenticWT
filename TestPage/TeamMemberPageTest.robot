@@ -151,6 +151,7 @@ Verify team member Asset history
     Generic.Select other option from profile list     Logout
     Generic.Fetch log_out alert message
     Generic.Open new window     yopmail
+    Generic.Refresh the existing page
     Generic.Search yopmail emails for   ${generated_TMbusinessEmail}
     sleep       ${search_sleep}
     Generic.Refresh the existing page
@@ -236,6 +237,7 @@ Search asset history with Asset ID
     Generic.Select other option from profile list     Logout
     Generic.Fetch log_out alert message
     Generic.Open new window     yopmail
+    Generic.Refresh the existing page
     Generic.Search yopmail emails for   ${generated_TMbusinessEmail}
     sleep       ${search_sleep}
     Generic.Refresh the existing page
@@ -342,6 +344,7 @@ Verify user is able to export team member asset history list
     Generic.Select other option from profile list     Logout
     Generic.Fetch log_out alert message
     Generic.Open new window     yopmail
+    Generic.Refresh the existing page
     Generic.Search yopmail emails for   ${generated_TMbusinessEmail}
     sleep       ${search_sleep}
     Generic.Refresh the existing page

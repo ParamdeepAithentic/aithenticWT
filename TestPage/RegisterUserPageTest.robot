@@ -64,6 +64,7 @@ Register new user
     RegisterUserPage.Save the register form
     Generic.Verify your current page location contains      update-email
     Generic.Open new window     yopmail
+    Generic.Refresh the existing page
     Generic.Search yopmail emails for       ${generate_register_Email}
     Generic.Switch to iframe by ID      ifinbox
     Yopmail.Click on email of yopmail   Email Register Verification Required.
@@ -147,6 +148,7 @@ Signup with ACH payment method
     RegisterUserPage.Save the register form
     Generic.Verify your current page location contains      update-email
     Generic.Open new window     yopmail
+    Generic.Refresh the existing page
     Generic.Search yopmail emails for       ${generate_register_Email}
     Generic.Switch to iframe by ID      ifinbox
     Yopmail.Click on email of yopmail   Email Register Verification Required.
@@ -231,6 +233,7 @@ Change plan and Change asset limit with ACH Payment method
     RegisterUserPage.Save the register form
     Generic.Verify your current page location contains      update-email
     Generic.Open new window     yopmail
+    Generic.Refresh the existing page
     Generic.Search yopmail emails for       ${generate_register_Email}
     Generic.Switch to iframe by ID      ifinbox
     Yopmail.Click on email of yopmail   Email Register Verification Required.
