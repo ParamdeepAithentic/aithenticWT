@@ -522,6 +522,31 @@ click on the value of IP discovered devices of inside table
     wait until element is enabled   //h5[normalize-space()='${agentDiscovery_TagName}']//parent::div//div//table//td[7]   60
     click element   //h5[normalize-space()='${agentDiscovery_TagName}']//parent::div//div//table//td[7]
 
+Fetch the Tagname from agent discovery page
+    wait until element is not visible    ${loaderIcon}    60
+    wait until element is visible   //h5[normalize-space()='${agentDiscovery_TagName}']     60
+    wait until element is enabled   //h5[normalize-space()='${agentDiscovery_TagName}']     60
+    ${IP_tagname}=      Get text        //h5[normalize-space()='${agentDiscovery_TagName}']//parent::div//div//table//td[2]
+    Log To Console    ${IP_tagname}
+    Set Global Variable   ${IP_tagname}
+
+
+Fetch the Mac_address from agent discovery page
+    wait until element is not visible    ${loaderIcon}    60
+    wait until element is visible   //h5[normalize-space()='${agentDiscovery_TagName}']     60
+    wait until element is enabled   //h5[normalize-space()='${agentDiscovery_TagName}']     60
+    ${IP_IPaddress}=      Get text        //h5[normalize-space()='${agentDiscovery_TagName}']//parent::div//div//table//td[4]
+    Log To Console    ${IP_IPaddress}
+    Set Global Variable   ${IP_IPaddress}
+
+Fetch the IP address tagname from agent discovery page
+    wait until element is not visible    ${loaderIcon}    60
+    wait until element is visible   //h5[normalize-space()='${agentDiscovery_TagName}']     60
+    wait until element is enabled   //h5[normalize-space()='${agentDiscovery_TagName}']     60
+    ${IP_macaddress}=      Get text        //h5[normalize-space()='${agentDiscovery_TagName}']//parent::div//div//table//td[5]
+    Log To Console    ${IP_macaddress}
+    Set Global Variable   ${IP_macaddress}
+
 Search with MAC address and IP Address on the search bar of Discovered Asset List
     [Arguments]     ${MAC_Address}
     wait until element is not visible    ${loaderIcon}    60
