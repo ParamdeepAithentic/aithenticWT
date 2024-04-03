@@ -186,6 +186,7 @@ Invite user into Aithentic
     Generic.Select other option from profile list     Logout
     Generic.Fetch log_out alert message
     Generic.Open new window      yopmail
+    Generic.Refresh the existing page
     Generic.Search yopmail emails for       ${generate_sharetoEmail}
     Generic.Refresh the existing page
     Generic.Switch to iframe by ID      ifmail
@@ -203,6 +204,7 @@ Invite user into Aithentic
     RegisterUserPage.Save the register form
 #    Generic.Verify your current page location contains      update-email
     Generic.Open new window     yopmail
+    Generic.Refresh the existing page
     Generic.Search yopmail emails for       ${generate_sharetoEmail}
     Generic.Switch to iframe by ID      ifinbox
     Yopmail.Click on email of yopmail   Email Register Verification Required.
