@@ -376,8 +376,3 @@ click on the confirm button of unsuspend pop up
     click element   //button[@type='submit'][normalize-space()='Confirm']
     wait until element is not visible       ${loaderIcon}    60
 
-
-
-
-
-

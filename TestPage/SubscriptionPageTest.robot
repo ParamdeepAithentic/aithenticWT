@@ -155,7 +155,3 @@ Suspend and unsuspend the account
     SubscriptionPage.Click on the activate option under subscription connector table
     Generic.Fetch alert message text and compare it with        Status Updated
 
-
-
-
-
