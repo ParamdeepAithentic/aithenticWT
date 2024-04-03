@@ -168,15 +168,18 @@ Select partner business_name
     Clear element text      ${click_businessName}
     input text   ${businessName}   ${option}
     sleep   ${search_sleep}
-    Press Keys     ${businessName}       ENTER
-    sleep   ${search_sleep}
+    wait until element is visible     //div[contains (@id, '-0')]       60
+    wait until element is enabled     //div[contains (@id, '-0')]       60
+    click element   //div[contains (@id, '-0')]
+#    Press Keys     ${businessName}       ENTER
+#    sleep   ${search_sleep}
 
 
 Select partner business URL
     wait until element is visible       ${select_businessURL}         60
     wait until element is enabled       ${select_businessURL}        60
-    click element   ${select_businessURL}
     sleep      2
+    click element   ${select_businessURL}
     wait until element is visible     //div[contains (@id, '-0')]       60
     wait until element is enabled     //div[contains (@id, '-0')]       60
     click element   //div[contains (@id, '-0')]

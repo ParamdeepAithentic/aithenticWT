@@ -215,6 +215,7 @@ Compose Message invite user test
 #--------------------------------------YOP mail -----------------------------------------------------------
 
     Generic.Open new window     yopmail
+    Generic.Refresh the existing page
     Generic.Search yopmail emails for       ${generate_PersonName}
     Generic.Switch to iframe by ID      ifinbox
     Yopmail.Click on email of yopmail   Partner Invitation
@@ -444,6 +445,7 @@ Compose Message invite user test
 
     Generic.Open new window     yopmail
 #    Generic.Search yopmail emails for       ${generate_PersonName}
+    Generic.Refresh the existing page
     Generic.Search yopmail emails for       ${generate_SecondaryContactBusinessEmail}
     Generic.Switch to iframe by ID      ifinbox
     Yopmail.Click on email of yopmail   Team Member Invitation
@@ -800,7 +802,7 @@ Edit Manufacturer via partner
 
 
 Deactivate Manufacturer via partner
-    [Tags]      Sanity
+    [Tags]      Sanity      tt
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
