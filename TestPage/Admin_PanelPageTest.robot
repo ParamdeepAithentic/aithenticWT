@@ -55,6 +55,7 @@ Change plan- Assign commercial plan and change it to slotted
     Admin_PanelPage.Open Admin panel
     LandingPage.Fill the login form of Admin panel     ${admin_name}       ${admin_password}
     Generic.Open new window     yopmail
+    Generic.Refresh the existing page
     Generic.Search yopmail emails for       ${admin_name}
     Generic.Switch to iframe by ID      ifinbox
     Yopmail.Click on email of yopmail       Admin OTP Access

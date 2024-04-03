@@ -59,6 +59,7 @@ Download agent for OCS from signup - Linux
 
     Generic.Verify your current page location contains      update-email
     Generic.Open new window     yopmail
+    Generic.Refresh the existing page
     Generic.Search yopmail emails for       ${generate_register_Email}
     Generic.Switch to iframe by ID      ifinbox
 
@@ -163,6 +164,7 @@ Download agent for OCS from signup - Windows
 
     Generic.Verify your current page location contains      update-email
     Generic.Open new window     yopmail
+    Generic.Refresh the existing page
     Generic.Search yopmail emails for       ${generate_register_Email}
     Generic.Switch to iframe by ID      ifinbox
 
@@ -266,6 +268,7 @@ Download agent for OCS from signup - macOS
     RegisterUserPage.Save the register form
     Generic.Verify your current page location contains      update-email
     Generic.Open new window     yopmail
+    Generic.Refresh the existing page
     Generic.Search yopmail emails for       ${generate_register_Email}
     Generic.Switch to iframe by ID      ifinbox
     Yopmail.Click on email of yopmail   Email Register Verification Required.
@@ -477,7 +480,7 @@ Search Existing Assets
     OCS.Verify searched existing asset    ${generated_AssetID}
 
 Match Discovery and Existing Asset
-    [Tags]      Sanity
+    [Tags]      Sanity    t
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.select the option from the side menu    Technology

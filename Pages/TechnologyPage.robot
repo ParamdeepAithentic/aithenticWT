@@ -113,8 +113,8 @@ ${iamDone_BTN}      //button[text()="I'm Done,Save "]
 ${Yes_BTN}      //span[contains(text(),'Yes')]
 
 ####################### search asset id #####################
-#${asset_SearchBar}      css:input[placeholder='Search by Brand, Product, Asset ID, Serial number, Software version or Assignee']
-${asset_SearchBar}      //input[@placeholder='Search by Brand, Product, Asset ID, Serial number or Assignee']
+${asset_SearchBar}      css:input[placeholder='Search by Brand, Product, Asset ID, Serial number, Software version or Assignee']
+#${asset_SearchBar}      //input[@placeholder='Search by Brand, Product, Asset ID, Serial number or Assignee']
 ${search_loader}     css:div[role='status']
 ${fetch_assetID}     //td[@class='technology-asset-width pr-4']//a
 ${fetch_productID}      css:tbody tr:nth-child(1) td:nth-child(4)
@@ -442,9 +442,11 @@ Add self technology idKey
 Add assetID for technology lifecycle information random
     wait until element is not visible       ${loaderIcon}        60
     wait until element is visible       ${asset_id}        60
+    wait until element is enabled       ${asset_id}        60
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_AssetID}=    Catenate    AssetID_${random_string}
     input text   ${asset_id}   ${generated_AssetID}
+    sleep       ${search_sleep}
     log to console      ${generated_AssetID}
     set global variable    ${generated_AssetID}
 

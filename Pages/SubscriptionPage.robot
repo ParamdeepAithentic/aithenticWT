@@ -252,15 +252,83 @@ Update the payment of changed plan
     wait until element is enabled      css:.qa-payment-update-${option1}          60
     click element      css:.qa-payment-update-${option1}
 
+Click on the three dots of subscription connector
+    [Arguments]     ${option}
+    wait until element is visible  //td[normalize-space()='${option}']//parent::tr//td//div//button    60
+    wait until element is enabled   //td[normalize-space()='${option}']//parent::tr//td//div//button  60
+    click element  //td[normalize-space()='${option}']//parent::tr//td//div//button
+    sleep   ${search_sleep}
 
+Click on option under three dots of subscription connector
+    [Arguments]     ${option}
+    wait until element is visible  (//div[contains(@class,'dropdown-menu')])[2]//a[normalize-space()='${option}']     60
+    wait until element is enabled   (//div[contains(@class,'dropdown-menu')])[2]//a[normalize-space()='${option}']    60
+    click element   (//div[contains(@class,'dropdown-menu')])[2]//a[normalize-space()='${option}']
+    sleep  ${search_sleep}
 
+Fetch text of delete under table of subscription connector
+    [Arguments]     ${option}
+    wait until element is visible    //td[normalize-space()='Google']//parent::tr//td//span        60
+    ${value} =    get text    //td[normalize-space()='Google']//parent::tr//td//span
+    log to console     ${value}
+    should be equal    ${value}    ${option}
+    Wait Until Element Is Not Visible     ${value}        60
 
+Fetch alert message text of subscription connector and compare it with
+    wait until element is visible    css:.toast-body       60
+    ${alert_Msg2} =    get text    css:.toast-body
+    log to console     ${alert_Msg2}
+    set global variable     ${alert_Msg2}
+    Run Keyword If    '${alert_Msg2}' == 'Your scheduler is now running. This process can take up to several minutes. Please check back.'     Log to console    ${alert_Msg2}
+    ...    ELSE    Log to console   ${alert_Msg2}
+    Wait Until Element Is Not Visible    ${alert_Msg2}        60
 
+Get the value of fields under view details of subscription connector
+    [Arguments]     ${option1}      ${option2}
+    wait until element is not visible   ${loaderIcon}    60
+    wait until element is visible   (//div[@id='viewDetails']//input)[${option1}]   60
+    ${value} =    get value    (//div[@id='viewDetails']//input)[${option1}]
+    log to console     ${value}
+    should be equal    ${value}         ${option2}
 
+Enter input in the input field of frequency under create scheduler
+    [Arguments]     ${option}
+    wait until element is visible  //div[@id='editScheduler']//ng-select[@formcontrolname='schedulerFrequency']    60
+    wait until element is enabled   //div[@id='editScheduler']//ng-select[@formcontrolname='schedulerFrequency']    60
+    click element   //div[@id='editScheduler']//ng-select[@formcontrolname='schedulerFrequency']
+    Generic.Select parameter    ${option}
 
+Enter input in the input field of time under create scheduler
+    [Arguments]     ${option}
+    wait until element is visible  //div[@id='editScheduler']//input[@formcontrolname='schedulerTime']    60
+    wait until element is enabled   //div[@id='editScheduler']//input[@formcontrolname='schedulerTime']    60
+    clear element text  //div[@id='editScheduler']//input[@formcontrolname='schedulerTime']
+    sleep    ${search_sleep}
+    input text  //div[@id='editScheduler']//input[@formcontrolname='schedulerTime']     ${option}
 
+click on the cross icon of create scheduler
+    [Arguments]     ${option}
+    wait until element is visible   (//div[@id='editScheduler']//span[@title='Clear all'])[${option}]    60
+    wait until element is enabled   (//div[@id='editScheduler']//span[@title='Clear all'])[${option}]     60
+    click element   (//div[@id='editScheduler']//span[@title='Clear all'])[${option}]
 
+Enter input in the input field of day under create scheduler
+    [Arguments]     ${option}
+    wait until element is visible  //div[@id='editScheduler']//ng-select[@formcontrolname='schedulerDay']    60
+    wait until element is enabled   //div[@id='editScheduler']//ng-select[@formcontrolname='schedulerDay']    60
+    click element   //div[@id='editScheduler']//ng-select[@formcontrolname='schedulerDay']
+    Generic.Select parameter    ${option}
 
+Enter input in the input field of date under create scheduler
+    [Arguments]     ${option}
+    wait until element is visible  //div[@id='editScheduler']//input[@formcontrolname='Date']    60
+    wait until element is enabled   //div[@id='editScheduler']//input[@formcontrolname='Date']    60
+    click element   //div[@id='editScheduler']//input[@formcontrolname='Date']
+    input text      //div[@id='editScheduler']//input[@formcontrolname='Date']      ${option}
 
+Click on the activate option under subscription connector table
+    wait until element is visible   //td[normalize-space()='Google']//parent::tr//td[normalize-space()='Activate']      60
+    wait until element is enabled   //td[normalize-space()='Google']//parent::tr//td[normalize-space()='Activate']      60
+    click element   //td[normalize-space()='Google']//parent::tr//td[normalize-space()='Activate']
 
 
