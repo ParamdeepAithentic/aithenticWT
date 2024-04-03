@@ -1632,4 +1632,22 @@ Search with containing fields under advance search of IP Address of discovered a
 
 #Disconnect
 #    DisconnectConnectorAPI.Hit API to disconnect connector
+
+Verify Click on Go to Agent Discovery button on Discovered Assets Page
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+    Generic.select the option from the side menu    Asset Discovery
+    Generic.Verify your current page location contains     discovery-assets
+    OCS.click on the value of IP discovered devices of inside table
+    Sleep    ${yop_sleep}
+    Switch Window       aithentic | Discovered Assets
+    Generic.Verify your current page location contains     discovery-assets-list
+    ContractsPage.Click on back to contract link
+    Sleep    ${yop_sleep}
+    Switch Window       aithentic | Asset - Discovery
+    Generic.Verify your current page location contains     discovery-assets
+
+
+
+
     
