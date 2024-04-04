@@ -44,6 +44,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Product Bulk import
+    [Tags]    Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
@@ -71,6 +72,7 @@ Product Bulk import
     Bulk_Import_ExportPage.Verify product added using bulk_import_export   ${generated_addProductName}
 
 Product Bulk Edit
+    [Tags]    Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
@@ -249,6 +251,7 @@ Add Department Bulk Edit
     Bulk_Import_ExportPage.Verify department added using bulk_import_export     ${generated_EditDepartmentName}
 
 Location Bulk Edit
+    [Tags]    Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Location
@@ -302,6 +305,7 @@ Location Bulk Edit
     Bulk_Import_ExportPage.Search by location name     ${generated_NewLocationName}
 
 Assigned Users Bulk Edit
+    [Tags]    Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      asset-overview
@@ -341,6 +345,7 @@ Assigned Users Bulk Edit
     Bulk_Import_ExportPage.Search by empID  ${generated_assigneeEmpID}
 
 Team Member Bulk Edit
+    [Tags]    Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Team Members
@@ -466,6 +471,7 @@ Technology Bulk edit
     TechnologyPage.Search by AssetId       ${generated_assetidbulkedit}
 
 Team member Bulk Import
+    [Tags]    Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
@@ -570,6 +576,7 @@ Location Bulk Import
     Generic.Wait until table get load
 
 Technology Bulk import
+    [Tags]    Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
