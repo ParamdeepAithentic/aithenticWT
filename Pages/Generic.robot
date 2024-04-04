@@ -41,12 +41,12 @@ Resource        ../Pages/Bulk_Import_ExportPage.robot
 ${user_name}             rahulshettyacademy
 ${invalid_password}      123445
 
-${url}                 https://uat-app.aithentic.com/
-#${url}                  https://qa-app.aithentic.com/
-${apiURL}              https://uat-api.aithentic.com/api/v1
-#${apiURL}               https://qa-api.aithentic.com/api/v1
-${valid_password}        Test!@5897     #UAT user
-#${valid_password}         Test@123       #QA User
+#${url}                 https://uat-app.aithentic.com/
+${url}                  https://qa-app.aithentic.com/
+#${apiURL}              https://uat-api.aithentic.com/api/v1
+${apiURL}               https://qa-api.aithentic.com/api/v1
+#${valid_password}        Test!@5897     #UAT user
+${valid_password}         Test@123       #QA User
 
 #${admin_url}        https://uat-admin.aithentic.com/
 ${admin_url}        https://qa-admin.aithentic.com/
