@@ -852,34 +852,6 @@ Add component as an asset from Agent Discovery page
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     UnselectAssetAPI.Hit API Endpoint
 
-Network discovery search on discovered asset list with MAC address
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-    Generic.select the option from the side menu    Asset Discovery
-    Generic.Verify your current page location contains     discovery-assets
-    OCS.click on the value of IP discovered devices of inside table
-    Sleep    ${yop_sleep}
-    Switch Window       aithentic | Discovered Assets
-    Generic.Verify your current page location contains     discovery-assets-list
-    OCS.Search with MAC address and IP Address on the search bar of Discovered Asset List        10:7B:44:62:66:87
-    sleep   ${search_sleep}
-    Generic.Wait until table get load
-    Generic.Verify your current page contains this text     10:7B:44:62:66:87
-
-Network discovery search on discovered asset list with IP address
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-    Generic.select the option from the side menu    Asset Discovery
-    Generic.Verify your current page location contains     discovery-assets
-    OCS.click on the value of IP discovered devices of inside table
-    Sleep    ${yop_sleep}
-    Switch Window       aithentic | Discovered Assets
-    Generic.Verify your current page location contains     discovery-assets-list
-    OCS.Search with MAC address and IP Address on the search bar of Discovered Asset List         192.168.0.137
-    sleep   ${search_sleep}
-    Generic.Wait until table get load
-    Generic.Verify your current page contains this text      192.168.0.137
-
 Upload Image and Document File while Add Discovery Asset
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -1325,19 +1297,29 @@ Add Asset with IP address from Network Discovery Page
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     UnselectAssetAPI.Hit API Endpoint
 
-Network discovery search on discovered asset list with Tag Name
+Network discovery: search on discovered asset list with Tag Name, IP_address and MAC_address
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.select the option from the side menu    Asset Discovery
     Generic.Verify your current page location contains     discovery-assets
+    OCS.Fetch the Tagname from agent discovery page
+    OCS.Fetch the IP address tagname from agent discovery page
+    OCS.Fetch the Mac_address from agent discovery page
     OCS.click on the value of IP discovered devices of inside table
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Discovered Assets
     Generic.Verify your current page location contains     discovery-assets-list
-    OCS.Search with MAC address and IP Address on the search bar of Discovered Asset List         johnsoftwaresolutions-1428-3
-    sleep   ${search_sleep}
+    OCS.Search with MAC address and IP Address on the search bar of Discovered Asset List         ${IP_tagname}
+    Generic.Verify your current page contains this text      ${IP_tagname}
+    OCS.Click on Refresh Icon of discovered asset lists
     Generic.Wait until table get load
-    Generic.Verify your current page contains this text      johnsoftwaresolutions-1428-3
+    OCS.Search with MAC address and IP Address on the search bar of Discovered Asset List       ${IP_IPaddress}
+    Generic.Verify your current page contains this text      ${IP_IPaddress}
+    OCS.Click on Refresh Icon of discovered asset lists
+    Generic.Wait until table get load
+    OCS.Search with MAC address and IP Address on the search bar of Discovered Asset List       ${IP_macaddress}
+    Generic.Verify your current page contains this text      ${IP_macaddress}
+
 
 Search with containing fields under advance search of discovered asset
     Generic.click on the tab	Login
@@ -1396,7 +1378,7 @@ Search with containing fields under advance search of discovered asset
     Generic.Verify your current page contains this text    Add Technology
     TechnologyPage.Get text of technology group inside add technology
     TechnologyPage.verify Text from Assignment Information      Applications      ${Technology_group}
-     Generic.Refresh the existing page
+    Generic.Refresh the existing page
     I_iconPage.Click on advanced search link under create asset network discovery
     Generic.click on the button     Reset Filters
     TechnologyPage.Enter product in the product input field     Vishal luthra
@@ -1499,7 +1481,7 @@ Search with containing fields under advance search of component of discovered as
     Generic.Verify your current page contains this text    Add Technology
     TechnologyPage.Get text of technology group inside add technology
     TechnologyPage.verify Text from Assignment Information      Applications      ${Technology_group}
-     Generic.Refresh the existing page
+    Generic.Refresh the existing page
     I_iconPage.Click on advanced search link under create asset network discovery
     Generic.click on the button     Reset Filters
     TechnologyPage.Enter product in the product input field     Vishal luthra
@@ -1605,7 +1587,7 @@ Search with containing fields under advance search of IP Address of discovered a
     Generic.Verify your current page contains this text    Add Technology
     TechnologyPage.Get text of technology group inside add technology
     TechnologyPage.verify Text from Assignment Information      Applications      ${Technology_group}
-     Generic.Refresh the existing page
+    Generic.Refresh the existing page
     I_iconPage.Click on advanced search link under create asset network discovery
     Generic.click on the button     Reset Filters
     TechnologyPage.Enter product in the product input field     Vishal luthra
