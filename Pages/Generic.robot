@@ -42,9 +42,9 @@ ${user_name}             rahulshettyacademy
 ${invalid_password}      123445
 
 ${url}                 https://uat-app.aithentic.com/
-#${url}                  https://qa-app.aithentic.com/
+#${url}                https://qa-app.aithentic.com/
 ${apiURL}              https://uat-api.aithentic.com/api/v1
-#${apiURL}               https://qa-api.aithentic.com/api/v1
+#${apiURL}             https://qa-api.aithentic.com/api/v1
 ${valid_password}        Test!@5897     #UAT user
 #${valid_password}         Test@123       #QA User
 
@@ -57,7 +57,7 @@ ${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-3        
 ${admin_name}        aithentic@yopmail.com
 ${admin_password}       Admin@123
 
-${browser_name}          headlessfirefox
+${browser_name}          firefox
 
 ${email}                 testqa29j@mailinator.com       #UAT user
 

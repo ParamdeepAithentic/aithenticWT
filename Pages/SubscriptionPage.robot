@@ -331,4 +331,48 @@ Click on the activate option under subscription connector table
     wait until element is enabled   //td[normalize-space()='Google']//parent::tr//td[normalize-space()='Activate']      60
     click element   //td[normalize-space()='Google']//parent::tr//td[normalize-space()='Activate']
 
+Click on the suspend my account button link under billing details
+    wait until element is visible   //div[@class='row'][1]//span[contains(text(),'Suspend My Account')]     60
+    wait until element is enabled   //div[@class='row'][1]//span[contains(text(),'Suspend My Account')]     60
+    click element   //div[@class='row'][1]//span[contains(text(),'Suspend My Account')]
+    wait until element is not visible       ${loaderIcon}    60
+
+Enter input in the start date field of billing details
+    Generic.Enter current date       css:#startDate
+
+Enter input in the end date field of billing details
+    wait until element is visible   css:#endDate      60
+    wait until element is enabled   css:#endDate      60
+    click element   css:#endDate
+    input text      css:#endDate      07/02/2024
+    Press Keys      css:#endDate       ENTER
+
+Enter input in the description field of billing details
+    wait until element is visible   css:#description      60
+    wait until element is enabled   css:#description      60
+    click element   css:#description
+    input text      css:#description     Testing
+
+Visible the disable activate button link after suspending account
+    wait until element is visible    //td[normalize-space()='Google']//parent::tr//td[normalize-space()='Activate']     60
+
+Click on the Unsuspend my account button link under billing details
+    wait until element is visible   //div[@class='row'][1]//span[contains(text(),'Unsuspend My Account')]     60
+    wait until element is enabled   //div[@class='row'][1]//span[contains(text(),'Unsuspend My Account')]     60
+    click element   //div[@class='row'][1]//span[contains(text(),'Unsuspend My Account')]
+    wait until element is not visible       ${loaderIcon}    60
+
+click on the checkboxes under unsuspend my account button link
+    wait until element is visible   //label[contains(text(),"I'm authorized to conduct such transaction for my ")]  60
+    wait until element is enabled   //label[contains(text(),"I'm authorized to conduct such transaction for my ")]  60
+    click element   //label[contains(text(),"I'm authorized to conduct such transaction for my ")]
+    wait until element is visible   //label[normalize-space()='I acknoledge I am restoring my aithentic account.']  60
+    click element   //label[normalize-space()='I acknoledge I am restoring my aithentic account.']
+    wait until element is not visible       ${loaderIcon}    60
+
+click on the confirm button of unsuspend pop up
+    wait until element is visible   //button[@type='submit'][normalize-space()='Confirm']       60
+    wait until element is enabled   //button[@type='submit'][normalize-space()='Confirm']       60
+    click element   //button[@type='submit'][normalize-space()='Confirm']
+    wait until element is not visible       ${loaderIcon}    60
 

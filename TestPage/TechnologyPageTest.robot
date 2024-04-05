@@ -144,8 +144,8 @@ Fill the technology form for maintenance product
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Select parameter from technology dropdown list       OPMR815324
-    TechnologyPage.Add technology group information contract start date
-    TechnologyPage.Add technology group information contract end date      12/12/2028
+#    TechnologyPage.Add technology group information contract start date
+#    TechnologyPage.Add technology group information contract end date      12/12/2028
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date
     TechnologyPage.Select warranty end date    12/12/2028
@@ -183,8 +183,8 @@ Fill the technology form for subscription product
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Select parameter from technology dropdown list       OPMR815277
-    TechnologyPage.Add technology group information contract start date
-    TechnologyPage.Add technology group information contract end date     12/12/2028
+#    TechnologyPage.Add technology group information contract start date
+#    TechnologyPage.Add technology group information contract end date     12/12/2028
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date
     TechnologyPage.Select warranty end date    12/12/2028
@@ -294,8 +294,8 @@ Restore asset type one
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Select parameter from technology dropdown list       OPMR815324
-    TechnologyPage.Add technology group information contract start date
-    TechnologyPage.Add technology group information contract end date    12/12/2028
+#    TechnologyPage.Add technology group information contract start date
+#    TechnologyPage.Add technology group information contract end date    12/12/2028
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date
     TechnologyPage.Select warranty end date    12/12/2028
@@ -346,8 +346,8 @@ Restore asset from removed asset details page
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Select parameter from technology dropdown list       Product_2727984358
-    TechnologyPage.Add technology group information contract start date
-    TechnologyPage.Add technology group information contract end date      12/12/2028
+#    TechnologyPage.Add technology group information contract start date
+#    TechnologyPage.Add technology group information contract end date      12/12/2028
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date
     TechnologyPage.Select warranty end date    12/12/2028
