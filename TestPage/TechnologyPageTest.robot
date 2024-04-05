@@ -48,6 +48,7 @@ ${self_searchId} =   AssetID_1803536655
 *** Test Cases ***
 
 Fill the technology form for license product
+    [Tags]      Time
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
@@ -211,7 +212,7 @@ Fill the technology form for subscription product
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
 Create new asset with new brand and product
-    [Tags]      Sanity      Smoke     retry
+    [Tags]      Sanity      Smoke     retry     Time
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
@@ -1975,3 +1976,27 @@ Search with brand_product_technologytype_technologygroup on advanced search
     TechnologyPage.Wait until advanced search table get load
     TechnologyPage.Get text of feature inside add technology
     TechnologyPage.verify Text from Assignment Information      Aithentic Feature     ${feature}
+
+Search Technnology with Product Version
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list      OPMR815309
+    TechnologyPage.Add random technology product version
+    TechnologyPage.Add random technology product edition
+    TechnologyPage.Add random technology hostOn
+    TechnologyPage.Add random technology idKey
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by Product Version       ${result}
+    TechnologyPage.Click on the first row of the technology table
+    TechnologyPage.Verify that product version on technology details page
