@@ -208,3 +208,10 @@ Click on i_icon of upload file while adding technology
     wait until element is visible   css:span[id='technology-products-Iicon'] i   60
     wait until element is enabled   css:span[id='technology-products-Iicon'] i    60
     Mouse over      css:span[id='technology-products-Iicon'] i
+
+Fetch the text of I-icon of upload file while adding technology
+    Wait Until Element Is Visible        css:span[id='technology-products-Iicon'] i   60    timeout=60s
+    Wait Until Element Is Enabled        css:span[id='technology-products-Iicon'] i   60    timeout=60s
+    ${I_icon} =    Get text     css:span[id='technology-products-Iicon'] i   60
+    Log to console   Text: ${I_icon}
+    set global variable     ${I_icon}
