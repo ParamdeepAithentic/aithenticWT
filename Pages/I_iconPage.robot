@@ -203,3 +203,8 @@ Click on i_icon of advanced search under add discovered asset
 Verify pop is visible after clicking i-icon of advancede search under discovered asset
     wait until element is visible       css:#tooltip-0        60
     log to console      Yes, pop-up is visible for i-icon
+
+Click on i_icon of upload file while adding technology
+    wait until element is visible   css:span[id='technology-products-Iicon'] i   60
+    wait until element is enabled   css:span[id='technology-products-Iicon'] i    60
+    Mouse over      css:span[id='technology-products-Iicon'] i
