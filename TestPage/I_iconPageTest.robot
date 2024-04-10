@@ -302,9 +302,7 @@ Upload File I-icon while adding technology
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Select parameter from technology dropdown list       OPMR815274
     Generic.Scroll Window To End
-    I_iconPage.Click on i_icon of upload file while adding technology
-    I_iconPage.Fetch the text of I-icon of upload file while adding technology
-
+    I_iconPage.Fetch the text of I-icon of upload file while adding technology     You can upload 1 file of 8MB or 8 files of 1MB each.
 
 
 

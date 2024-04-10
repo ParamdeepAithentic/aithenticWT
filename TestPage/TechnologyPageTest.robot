@@ -1944,10 +1944,11 @@ Search with brand_product_technologytype_technologygroup on advanced search
     Generic.click on the button     Reset Filters
     TechnologyPage.Click technology advanced technology type and group input field    advaceGroup
     TechnologyPage.Select parameter from advanced technology type dropdown list     advaceGroup     Applications
+    TechnologyPage.Enter product in the product input field     Xampp
     Generic.click on the button     Search
     sleep   ${search_sleep}
     TechnologyPage.Wait until advanced search table get load
-    TechnologyPage.Click on the row of the table inside advanced search
+    TechnologyPage.Click on the technology group row of the table inside advanced search
     Generic.Scroll Window To End
     Generic.click on the button     Select
     sleep   ${search_sleep}

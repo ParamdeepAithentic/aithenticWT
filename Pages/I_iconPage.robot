@@ -204,14 +204,13 @@ Verify pop is visible after clicking i-icon of advancede search under discovered
     wait until element is visible       css:#tooltip-0        60
     log to console      Yes, pop-up is visible for i-icon
 
-Click on i_icon of upload file while adding technology
-    wait until element is visible   css:span[id='technology-products-Iicon'] i   60
-    wait until element is enabled   css:span[id='technology-products-Iicon'] i    60
-    Mouse over      css:span[id='technology-products-Iicon'] i
-
 Fetch the text of I-icon of upload file while adding technology
-    Wait Until Element Is Visible        css:span[id='technology-products-Iicon'] i   60    timeout=60s
-    Wait Until Element Is Enabled        css:span[id='technology-products-Iicon'] i   60    timeout=60s
-    ${I_icon} =    Get text     css:span[id='technology-products-Iicon'] i   60
+    [Arguments]     ${option}
+    wait until element is visible   //span[@id='technology-products-Iicon']//i   60
+    wait until element is enabled   //span[@id='technology-products-Iicon']//i    60
+    Mouse over      //span[@id='technology-products-Iicon']
+    ${I_icon} =    Get element attribute     //span[@id='technology-products-Iicon']    title
     Log to console   Text: ${I_icon}
     set global variable     ${I_icon}
+    should be equal    ${I_icon}    ${option}
+
