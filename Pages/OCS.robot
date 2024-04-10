@@ -586,9 +586,9 @@ Enter and select technology type in advance search of discovered search
     Press Keys      css:#advaceType     ENTER
 
 Click on the table inside advanced search of discovered asset for technology group
-    wait until element is visible    (//div[contains(text(),'-')])[2]     60
-    wait until element is enabled   (//div[contains(text(),'-')])[2]     60
-    click element    (//div[contains(text(),'-')])[2]
+    wait until element is visible    //div[contains(@class,'Contract-Form-Edit')]//tbody[contains(@class,'location-list-qa')]//tr//td     60
+    wait until element is enabled   //div[contains(@class,'Contract-Form-Edit')]//tbody[contains(@class,'location-list-qa')]//tr//td     60
+    click element    //div[contains(@class,'Contract-Form-Edit')]//tbody[contains(@class,'location-list-qa')]//tr//td
 
 Click on the table inside advanced search of discovered asset for technology type
     wait until element is visible    (//div[contains(text(),'Extended service')])[1]     60
