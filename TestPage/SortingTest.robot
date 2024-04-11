@@ -289,7 +289,7 @@ Test the sorting of removed technology page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology-list
     TechnologyPage.Click on removed assets option of technology filters
-    Sleep    3
+    Sleep    ${yop_sleep}
     SortingPage.Verify the sorting of the table     3       Group
     SortingPage.Verify the sorting of the table     4       Brand
     SortingPage.Verify the sorting of the table     5       Product

@@ -480,7 +480,7 @@ Search Existing Assets
     OCS.Verify searched existing asset    ${generated_AssetID}
 
 Match Discovery and Existing Asset
-    [Tags]      Sanity    t
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.select the option from the side menu    Technology

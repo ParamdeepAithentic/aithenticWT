@@ -1441,7 +1441,7 @@ Click on clone button on techonology details page
 Get Parent Directory Up To Root
     [Arguments]    ${path}
     ${parent_dir} =    Evaluate    os.path.dirname(os.path.dirname(os.path.abspath('${path}')))    os
-    [Return]    ${parent_dir}
+    RETURN    ${parent_dir}
 
 
 Click on advanced search button link under add technology

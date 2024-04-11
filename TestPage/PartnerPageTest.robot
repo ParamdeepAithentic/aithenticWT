@@ -49,7 +49,7 @@ Compose Message invite user test
     [Tags]      Sanity      Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.Verify your current page location contains      asset-overview
+    Generic.Verify your current page location contains      management-console
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner

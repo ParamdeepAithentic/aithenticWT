@@ -40,7 +40,7 @@ Verify all i-icon of Dashboard page
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Dashboard
-    Generic.Verify your current page location contains      asset-overview
+    Generic.Verify your current page location contains      management-console
     I_iconPage.Click on i-icon of asset-overview tab
     Generic.Verify pop-up is visible after clicking on i-icon
     I_iconPage.Click on i-icon of asset-overview tab

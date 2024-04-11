@@ -1,0 +1,25 @@
+datasources:e9669d98483d861ddfe4e543474577f852196453
+commandlineoptions:65f95c924ba97541f47949701c4e3c51192a5b43
+suitesfrom:no-suites-from-option
+file:9b343c611027ec09e1755584f72012c9851219d9
+--test DashboardPageTest.Click the option from side drawer
+--test DashboardPageTest.Verify the drawer list
+--test DashboardPageTest.Verify the side options list
+--test DashboardPageTest.click the option from menu
+--test DashboardPageTest.Verify the profile option list
+--test DashboardPageTest.Create and verify new brand
+--test DashboardPageTest.Create a new product with adding new brand
+--test DashboardPageTest.Add Brand via personal detail under technology
+--test DashboardPageTest.Invite user into Aithentic
+--test DashboardPageTest.Verify Help Center
+--test DashboardPageTest.Edit Brand and address via brand under profile list
+--test DashboardPageTest.Deactivate Brand and address via brand under profile list
+--test DashboardPageTest.Activate Brand and address via brand under profile list
+--test DashboardPageTest.Remove Brand and address via brand under profile list
+--test DashboardPageTest.Verify adding a new brand from profile listing
+--test DashboardPageTest.Verify Department quick_links in profile settings dropdown
+--test DashboardPageTest.Search By Technology Group in product list
+--test DashboardPageTest.Verify Brand quick_links in profile settings Dropdown
+--test DashboardPageTest.Verify Product quick_links in profile settings dropdown
+--test DashboardPageTest.Search By Brand name in product list
+--test DashboardPageTest.Verify Reports Asset Alert
