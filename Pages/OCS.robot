@@ -522,6 +522,31 @@ click on the value of IP discovered devices of inside table
     wait until element is enabled   //h5[normalize-space()='${agentDiscovery_TagName}']//parent::div//div//table//td[7]   60
     click element   //h5[normalize-space()='${agentDiscovery_TagName}']//parent::div//div//table//td[7]
 
+Fetch the Tagname from agent discovery page
+    wait until element is not visible    ${loaderIcon}    60
+    wait until element is visible   //h5[normalize-space()='${agentDiscovery_TagName}']     60
+    wait until element is enabled   //h5[normalize-space()='${agentDiscovery_TagName}']     60
+    ${IP_tagname}=      Get text        //h5[normalize-space()='${agentDiscovery_TagName}']//parent::div//div//table//td[2]
+    Log To Console    ${IP_tagname}
+    Set Global Variable   ${IP_tagname}
+
+
+Fetch the Mac_address from agent discovery page
+    wait until element is not visible    ${loaderIcon}    60
+    wait until element is visible   //h5[normalize-space()='${agentDiscovery_TagName}']     60
+    wait until element is enabled   //h5[normalize-space()='${agentDiscovery_TagName}']     60
+    ${IP_IPaddress}=      Get text        //h5[normalize-space()='${agentDiscovery_TagName}']//parent::div//div//table//td[4]
+    Log To Console    ${IP_IPaddress}
+    Set Global Variable   ${IP_IPaddress}
+
+Fetch the IP address tagname from agent discovery page
+    wait until element is not visible    ${loaderIcon}    60
+    wait until element is visible   //h5[normalize-space()='${agentDiscovery_TagName}']     60
+    wait until element is enabled   //h5[normalize-space()='${agentDiscovery_TagName}']     60
+    ${IP_macaddress}=      Get text        //h5[normalize-space()='${agentDiscovery_TagName}']//parent::div//div//table//td[5]
+    Log To Console    ${IP_macaddress}
+    Set Global Variable   ${IP_macaddress}
+
 Search with MAC address and IP Address on the search bar of Discovered Asset List
     [Arguments]     ${MAC_Address}
     wait until element is not visible    ${loaderIcon}    60
@@ -561,9 +586,9 @@ Enter and select technology type in advance search of discovered search
     Press Keys      css:#advaceType     ENTER
 
 Click on the table inside advanced search of discovered asset for technology group
-    wait until element is visible    (//div[contains(text(),'Subscription')])[1]     60
-    wait until element is enabled   (//div[contains(text(),'Subscription')])[1]     60
-    click element    (//div[contains(text(),'Subscription')])[1]
+    wait until element is visible    //div[contains(@class,'Contract-Form-Edit')]//tbody[contains(@class,'location-list-qa')]//tr//td     60
+    wait until element is enabled   //div[contains(@class,'Contract-Form-Edit')]//tbody[contains(@class,'location-list-qa')]//tr//td     60
+    click element    //div[contains(@class,'Contract-Form-Edit')]//tbody[contains(@class,'location-list-qa')]//tr//td
 
 Click on the table inside advanced search of discovered asset for technology type
     wait until element is visible    (//div[contains(text(),'Extended service')])[1]     60
@@ -578,8 +603,7 @@ Enter input in the technology group field of advanced search of discovered asset
     input text      css:.modal-body .qa-group input       Applications
     sleep   ${search_sleep}
     Wait Until Element Is Visible    css:.modal-body .qa-group input    timeout=60s
-    Press Keys      css:.modal-body .qa-group input     ENTER
-
+    Press Keys  css:.modal-body .qa-group input     ENTER
 Fetch the technology type from the technology type field of component of discovered asset
     Wait Until Element Is Visible       css:.qa-tech-type    timeout=60s
     Wait Until Element Is Enabled        css:.qa-tech-type    timeout=60s

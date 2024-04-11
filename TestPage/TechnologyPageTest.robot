@@ -48,6 +48,7 @@ ${self_searchId} =   AssetID_1803536655
 *** Test Cases ***
 
 Fill the technology form for license product
+    [Tags]      Time
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Technology
@@ -143,8 +144,8 @@ Fill the technology form for maintenance product
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Select parameter from technology dropdown list       OPMR815324
-    TechnologyPage.Add technology group information contract start date
-    TechnologyPage.Add technology group information contract end date      12/12/2028
+#    TechnologyPage.Add technology group information contract start date
+#    TechnologyPage.Add technology group information contract end date      12/12/2028
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date
     TechnologyPage.Select warranty end date    12/12/2028
@@ -182,8 +183,8 @@ Fill the technology form for subscription product
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Select parameter from technology dropdown list       OPMR815277
-    TechnologyPage.Add technology group information contract start date
-    TechnologyPage.Add technology group information contract end date     12/12/2028
+#    TechnologyPage.Add technology group information contract start date
+#    TechnologyPage.Add technology group information contract end date     12/12/2028
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date
     TechnologyPage.Select warranty end date    12/12/2028
@@ -211,7 +212,7 @@ Fill the technology form for subscription product
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
 Create new asset with new brand and product
-    [Tags]      Sanity      Smoke     retry
+    [Tags]      Sanity      Smoke     retry     Time
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Click on the profile name
@@ -293,8 +294,8 @@ Restore asset type one
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Select parameter from technology dropdown list       OPMR815324
-    TechnologyPage.Add technology group information contract start date
-    TechnologyPage.Add technology group information contract end date    12/12/2028
+#    TechnologyPage.Add technology group information contract start date
+#    TechnologyPage.Add technology group information contract end date    12/12/2028
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date
     TechnologyPage.Select warranty end date    12/12/2028
@@ -345,8 +346,8 @@ Restore asset from removed asset details page
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Select parameter from technology dropdown list       Product_2727984358
-    TechnologyPage.Add technology group information contract start date
-    TechnologyPage.Add technology group information contract end date      12/12/2028
+#    TechnologyPage.Add technology group information contract start date
+#    TechnologyPage.Add technology group information contract end date      12/12/2028
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date
     TechnologyPage.Select warranty end date    12/12/2028
@@ -1942,10 +1943,11 @@ Search with brand_product_technologytype_technologygroup on advanced search
     Generic.click on the button     Reset Filters
     TechnologyPage.Click technology advanced technology type and group input field    advaceGroup
     TechnologyPage.Select parameter from advanced technology type dropdown list     advaceGroup     Applications
+    TechnologyPage.Enter product in the product input field     Xampp
     Generic.click on the button     Search
     sleep   ${search_sleep}
     TechnologyPage.Wait until advanced search table get load
-    TechnologyPage.Click on the row of the table inside advanced search
+    TechnologyPage.Click on the technology group row of the table inside advanced search
     Generic.Scroll Window To End
     Generic.click on the button     Select
     sleep   ${search_sleep}
@@ -1974,3 +1976,27 @@ Search with brand_product_technologytype_technologygroup on advanced search
     TechnologyPage.Wait until advanced search table get load
     TechnologyPage.Get text of feature inside add technology
     TechnologyPage.verify Text from Assignment Information      Aithentic Feature     ${feature}
+
+Search Technnology with Product Version
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list      OPMR815309
+    TechnologyPage.Add random technology product version
+    TechnologyPage.Add random technology product edition
+    TechnologyPage.Add random technology hostOn
+    TechnologyPage.Add random technology idKey
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by Product Version       ${result}
+    TechnologyPage.Click on the first row of the technology table
+    TechnologyPage.Verify that product version on technology details page

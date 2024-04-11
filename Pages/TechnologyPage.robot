@@ -389,8 +389,10 @@ Add random technology product version
     wait until element is visible       ${product_version}        60
     wait until element is enabled       ${product_version}        60
     ${random_string} =    Generate Random String       10      [NUMBERS]
-    ${result}=    Catenate    productVersion_${random_string}
+    ${result}=    Catenate    ProductVersion_${random_string}
     input text   ${product_version}   ${result}
+    Log To Console    ${result}
+    Set Global Variable    ${result}
 
 Add self technology product version
     [Arguments]    ${result}
@@ -1499,10 +1501,10 @@ Get text of technology group inside add technology
 
 Enter product in the product input field
     [Arguments]     ${product}
-    wait until element is visible   //input[@placeholder='-- Please enter at least 2 characters--']     60
-    wait until element is enabled   //input[@placeholder='-- Please enter at least 2 characters--']     60
-    click element   //input[@placeholder='-- Please enter at least 2 characters--']
-    input text      //input[@placeholder='-- Please enter at least 2 characters--']     ${product}
+    wait until element is visible   //input[@formcontrolname='ProductContaining']     60
+    wait until element is enabled   //input[@formcontrolname='ProductContaining']     60
+    click element   //input[@formcontrolname='ProductContaining']
+    input text      //input[@formcontrolname='ProductContaining']     ${product}
 
 Get text of product inside add technology
     wait until element is visible   //tbody//tr[1]//td[1]   60
@@ -1548,3 +1550,22 @@ Enter product in the product not containing input field
 
 Wait until advanced search table get load
     wait until element is visible       //div[@class='table-responsive table-scrollable table-column-common ng-star-inserted']      60
+
+Search by Product Version
+    [Arguments]    ${software_version}
+    wait until element is visible       css:thead tr       60
+    wait until element is visible       ${asset_SearchBar}       60
+    Clear Element Text      ${asset_SearchBar}
+    input text      ${asset_SearchBar}     ${software_version}
+    sleep       ${search_sleep}
+
+Verify that product version on technology details page
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    Wait Until Element Is Visible       //input[@id='Product Version']      60
+    ${value_product_version}        Get Value        //input[@id='Product Version']
+    Log To Console    ${value_product_version}
+    Should Be Equal    ${value_product_version}    ${result}
+
+Click on the technology group row of the table inside advanced search
+    Execute JavaScript    document.querySelector('.bg-white.location-list-qa.ng-star-inserted > tr:nth-child(1)').scrollIntoView(true);
+    Click Element    css:.bg-white.location-list-qa.ng-star-inserted > tr:nth-child(1) > td:nth-child(1)

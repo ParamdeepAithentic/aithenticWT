@@ -39,6 +39,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Activate and deactivate the location
+    [Tags]      Time
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      asset-overview
