@@ -42,6 +42,69 @@ Test Teardown   Close Browser session
 *** Variables ***
 
 *** Test Cases ***
+
+Create the scheduler
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
+    Generic.Click on the profile name
+    Generic.Select option from profile list     subscription-connector
+    Generic.Verify your current page location contains      technology-settings
+    SubscriptionPage.Click on the three dots of subscription connector      Google
+    SubscriptionPage.Click on option under three dots of subscription connector     Create Scheduler
+    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Monthly
+    SubscriptionPage.Enter input in the start date field of billing details
+    SubscriptionPage.Enter input in the input field of time under create scheduler      2:00
+    sleep   ${search_sleep}
+    Generic.click on the button     Create
+    Generic.click on the button     Create
+    Generic.Fetch alert message text and compare it with        Scheduler created sucessfully
+
+Edit the scheduler
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
+    Generic.Click on the profile name
+    Generic.Select option from profile list     subscription-connector
+    Generic.Verify your current page location contains      technology-settings
+    SubscriptionPage.Click on the three dots of subscription connector      Google
+    SubscriptionPage.Click on option under three dots of subscription connector     Edit
+    SubscriptionPage.click on the cross icon of create scheduler    1
+    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Weekly
+    SubscriptionPage.Enter input in the input field of day under create scheduler       Monday
+    SubscriptionPage.Enter input in the input field of time under create scheduler      12:00
+    sleep   ${search_sleep}
+    Generic.click on the button     Update
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+    SubscriptionPage.Click on the three dots of subscription connector      Google
+    SubscriptionPage.Click on option under three dots of subscription connector     Edit
+    SubscriptionPage.click on the cross icon of create scheduler    1
+    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Daily
+    SubscriptionPage.Enter input in the input field of time under create scheduler      1:00
+    sleep   ${search_sleep}
+    Generic.click on the button     Update
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+    SubscriptionPage.Click on the three dots of subscription connector      Google
+    SubscriptionPage.Click on option under three dots of subscription connector     Edit
+    SubscriptionPage.click on the cross icon of create scheduler    1
+    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Monthly
+   SubscriptionPage.Enter input in the start date field of billing details
+    SubscriptionPage.Enter input in the input field of time under create scheduler      2:00
+    sleep   ${search_sleep}
+    Generic.click on the button     Update
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+    SubscriptionPage.Click on the three dots of subscription connector      Google
+    SubscriptionPage.Click on option under three dots of subscription connector     Edit
+    SubscriptionPage.click on the cross icon of create scheduler    1
+    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Yearly
+    SubscriptionPage.Enter input in the start date field of billing details
+    SubscriptionPage.Enter input in the input field of time under create scheduler      3:00
+    sleep   ${search_sleep}
+    Generic.click on the button     Update
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+
 Run now from view details
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
@@ -69,55 +132,6 @@ Run now from view details
     SubscriptionPage.Click on option under three dots of subscription connector     Details
     SubscriptionPage.Get the value of fields under view details of subscription connector   1       GAPPS
     SubscriptionPage.Get the value of fields under view details of subscription connector   2       Samuel John
-    SubscriptionPage.Get the value of fields under view details of subscription connector   3       Mar 12, 2024, 5:38:26 AM
-
-Create and edit the scheduler
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
-    Generic.Click on the profile name
-    Generic.Select option from profile list     subscription-connector
-    Generic.Verify your current page location contains      technology-settings
-    SubscriptionPage.Click on the three dots of subscription connector      Google
-    SubscriptionPage.Click on option under three dots of subscription connector     Edit
-    SubscriptionPage.click on the cross icon of create scheduler    1
-    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Weekly
-#    SubscriptionPage.click on the cross icon of create scheduler    2
-    SubscriptionPage.Enter input in the input field of day under create scheduler       Monday
-    SubscriptionPage.Enter input in the input field of time under create scheduler      12:00
-    sleep   ${search_sleep}
-    Generic.click on the button     Update
-    Generic.click on the button     Update
-    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
-    SubscriptionPage.Click on the three dots of subscription connector      Google
-    SubscriptionPage.Click on option under three dots of subscription connector     Edit
-    SubscriptionPage.click on the cross icon of create scheduler    1
-    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Daily
-    SubscriptionPage.Enter input in the input field of time under create scheduler      1:00
-    sleep   ${search_sleep}
-    Generic.click on the button     Update
-    Generic.click on the button     Update
-    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
-    SubscriptionPage.Click on the three dots of subscription connector      Google
-    SubscriptionPage.Click on option under three dots of subscription connector     Edit
-    SubscriptionPage.click on the cross icon of create scheduler    1
-    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Monthly
-    SubscriptionPage.Enter input in the input field of date under create scheduler      03/23/2022
-    SubscriptionPage.Enter input in the input field of time under create scheduler      2:00
-    sleep   ${search_sleep}
-    Generic.click on the button     Update
-    Generic.click on the button     Update
-    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
-    SubscriptionPage.Click on the three dots of subscription connector      Google
-    SubscriptionPage.Click on option under three dots of subscription connector     Edit
-    SubscriptionPage.click on the cross icon of create scheduler    1
-    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Yearly
-    SubscriptionPage.Enter input in the input field of date under create scheduler      03/23/2022
-    SubscriptionPage.Enter input in the input field of time under create scheduler      3:00
-    sleep   ${search_sleep}
-    Generic.click on the button     Update
-    Generic.click on the button     Update
-    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
-
 
 Suspend and unsuspend the account
     Generic.click on the tab	Login

@@ -1501,10 +1501,10 @@ Get text of technology group inside add technology
 
 Enter product in the product input field
     [Arguments]     ${product}
-    wait until element is visible   //input[@placeholder='-- Please enter at least 2 characters--']     60
-    wait until element is enabled   //input[@placeholder='-- Please enter at least 2 characters--']     60
-    click element   //input[@placeholder='-- Please enter at least 2 characters--']
-    input text      //input[@placeholder='-- Please enter at least 2 characters--']     ${product}
+    wait until element is visible   //input[@formcontrolname='ProductContaining']     60
+    wait until element is enabled   //input[@formcontrolname='ProductContaining']     60
+    click element   //input[@formcontrolname='ProductContaining']
+    input text      //input[@formcontrolname='ProductContaining']     ${product}
 
 Get text of product inside add technology
     wait until element is visible   //tbody//tr[1]//td[1]   60
@@ -1565,3 +1565,7 @@ Verify that product version on technology details page
     ${value_product_version}        Get Value        //input[@id='Product Version']
     Log To Console    ${value_product_version}
     Should Be Equal    ${value_product_version}    ${result}
+
+Click on the technology group row of the table inside advanced search
+    Execute JavaScript    document.querySelector('.bg-white.location-list-qa.ng-star-inserted > tr:nth-child(1)').scrollIntoView(true);
+    Click Element    css:.bg-white.location-list-qa.ng-star-inserted > tr:nth-child(1) > td:nth-child(1)

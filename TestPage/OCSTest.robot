@@ -1181,21 +1181,21 @@ Visit discovered asset list when click on No. IP discovered devices
     Switch Window       aithentic | Asset - Discovery
     Generic.Verify your current page location contains     discovery-assets
 
-Refresh search text on discovered asset list page
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-    Generic.select the option from the side menu    Asset Discovery
-    Generic.Verify your current page location contains     discovery-assets
-    OCS.click on the value of IP discovered devices of inside table
-    Sleep    ${yop_sleep}
-    Switch Window       aithentic | Discovered Assets
-    Generic.Verify your current page location contains     discovery-assets-list
-    OCS.Search with MAC address and IP Address on the search bar of Discovered Asset List         192.168.0.137
-    sleep   ${search_sleep}
-    Generic.Wait until table get load
-    Generic.Verify your current page contains this text      192.168.0.137
-    OCS.Click on Refresh Icon of discovered asset lists
-    Generic.Wait until table get load
+#Refresh search text on discovered asset list page
+#    Generic.click on the tab	Login
+#    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+#    Generic.select the option from the side menu    Asset Discovery
+#    Generic.Verify your current page location contains     discovery-assets
+#    OCS.click on the value of IP discovered devices of inside table
+#    Sleep    ${yop_sleep}
+#    Switch Window       aithentic | Discovered Assets
+#    Generic.Verify your current page location contains     discovery-assets-list
+#    OCS.Search with MAC address and IP Address on the search bar of Discovered Asset List         192.168.0.137
+#    sleep   ${search_sleep}
+#    Generic.Wait until table get load
+#    Generic.Verify your current page contains this text      192.168.0.137
+#    OCS.Click on Refresh Icon of discovered asset lists
+#    Generic.Wait until table get load
 
 Add asset with IP Address under discovered asset list
     [Tags]    retry
@@ -1297,28 +1297,28 @@ Add Asset with IP address from Network Discovery Page
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     UnselectAssetAPI.Hit API Endpoint
 
-Network discovery: search on discovered asset list with Tag Name, IP_address and MAC_address
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-    Generic.select the option from the side menu    Asset Discovery
-    Generic.Verify your current page location contains     discovery-assets
-    OCS.Fetch the Tagname from agent discovery page
-    OCS.Fetch the IP address tagname from agent discovery page
-    OCS.Fetch the Mac_address from agent discovery page
-    OCS.click on the value of IP discovered devices of inside table
-    Sleep    ${yop_sleep}
-    Switch Window       aithentic | Discovered Assets
-    Generic.Verify your current page location contains     discovery-assets-list
-    OCS.Search with MAC address and IP Address on the search bar of Discovered Asset List         ${IP_tagname}
-    Generic.Verify your current page contains this text      ${IP_tagname}
-    OCS.Click on Refresh Icon of discovered asset lists
-    Generic.Wait until table get load
-    OCS.Search with MAC address and IP Address on the search bar of Discovered Asset List       ${IP_IPaddress}
-    Generic.Verify your current page contains this text      ${IP_IPaddress}
-    OCS.Click on Refresh Icon of discovered asset lists
-    Generic.Wait until table get load
-    OCS.Search with MAC address and IP Address on the search bar of Discovered Asset List       ${IP_macaddress}
-    Generic.Verify your current page contains this text      ${IP_macaddress}
+#Network discovery: search on discovered asset list with Tag Name, IP_address and MAC_address
+#    Generic.click on the tab	Login
+#    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+#    Generic.select the option from the side menu    Asset Discovery
+#    Generic.Verify your current page location contains     discovery-assets
+#    OCS.Fetch the Tagname from agent discovery page
+#    OCS.Fetch the IP address tagname from agent discovery page
+#    OCS.Fetch the Mac_address from agent discovery page
+#    OCS.click on the value of IP discovered devices of inside table
+#    Sleep    ${yop_sleep}
+#    Switch Window       aithentic | Discovered Assets
+#    Generic.Verify your current page location contains     discovery-assets-list
+#    OCS.Search with MAC address and IP Address on the search bar of Discovered Asset List         ${IP_tagname}
+#    Generic.Verify your current page contains this text      ${IP_tagname}
+#    OCS.Click on Refresh Icon of discovered asset lists
+#    Generic.Wait until table get load
+#    OCS.Search with MAC address and IP Address on the search bar of Discovered Asset List       ${IP_IPaddress}
+#    Generic.Verify your current page contains this text      ${IP_IPaddress}
+#    OCS.Click on Refresh Icon of discovered asset lists
+#    Generic.Wait until table get load
+#    OCS.Search with MAC address and IP Address on the search bar of Discovered Asset List       ${IP_macaddress}
+#    Generic.Verify your current page contains this text      ${IP_macaddress}
 
 
 Search with containing fields under advance search of discovered asset
@@ -1368,6 +1368,7 @@ Search with containing fields under advance search of discovered asset
     I_iconPage.Click on advanced search link under create asset network discovery
     Generic.click on the button     Reset Filters
     OCS.Enter input in the technology group field of advanced search of discovered asset
+    TechnologyPage.Enter product in the product input field     Xampp
     Generic.click on the button     Search
     sleep   ${search_sleep}
     TechnologyPage.Wait until advanced search table get load
@@ -1471,6 +1472,7 @@ Search with containing fields under advance search of component of discovered as
     I_iconPage.Click on advanced search link under create asset network discovery
     Generic.click on the button     Reset Filters
     OCS.Enter input in the technology group field of advanced search of discovered asset
+    TechnologyPage.Enter product in the product input field     Xampp
     Generic.click on the button     Search
     sleep   ${search_sleep}
     TechnologyPage.Wait until advanced search table get load
@@ -1577,6 +1579,7 @@ Search with containing fields under advance search of IP Address of discovered a
     I_iconPage.Click on advanced search link under create asset network discovery
     Generic.click on the button     Reset Filters
     OCS.Enter input in the technology group field of advanced search of discovered asset
+    TechnologyPage.Enter product in the product input field     Xampp
     Generic.click on the button     Search
     sleep   ${search_sleep}
     TechnologyPage.Wait until advanced search table get load

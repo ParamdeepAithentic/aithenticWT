@@ -363,10 +363,11 @@ Click on the Unsuspend my account button link under billing details
     wait until element is not visible       ${loaderIcon}    60
 
 click on the checkboxes under unsuspend my account button link
-    wait until element is visible   //label[contains(text(),"I'm authorized to conduct such transaction for my ")]  60
-    wait until element is enabled   //label[contains(text(),"I'm authorized to conduct such transaction for my ")]  60
+    wait until element is visible   //label[contains(text(),"I'm authorized to conduct such transaction for my ")]    60
+    wait until element is enabled   //label[contains(text(),"I'm authorized to conduct such transaction for my ")]    60
     click element   //label[contains(text(),"I'm authorized to conduct such transaction for my ")]
-    wait until element is visible   //label[normalize-space()='I acknoledge I am restoring my aithentic account.']  60
+    wait until element is visible   //label[normalize-space()='I acknoledge I am restoring my aithentic account.']    60
+    wait until element is enabled   //label[normalize-space()='I acknoledge I am restoring my aithentic account.']    60
     click element   //label[normalize-space()='I acknoledge I am restoring my aithentic account.']
     wait until element is not visible       ${loaderIcon}    60
 

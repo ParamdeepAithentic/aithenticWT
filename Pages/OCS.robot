@@ -586,9 +586,9 @@ Enter and select technology type in advance search of discovered search
     Press Keys      css:#advaceType     ENTER
 
 Click on the table inside advanced search of discovered asset for technology group
-    wait until element is visible    (//div[contains(text(),'Subscription')])[1]     60
-    wait until element is enabled   (//div[contains(text(),'Subscription')])[1]     60
-    click element    (//div[contains(text(),'Subscription')])[1]
+    wait until element is visible    //div[contains(@class,'Contract-Form-Edit')]//tbody[contains(@class,'location-list-qa')]//tr//td     60
+    wait until element is enabled   //div[contains(@class,'Contract-Form-Edit')]//tbody[contains(@class,'location-list-qa')]//tr//td     60
+    click element    //div[contains(@class,'Contract-Form-Edit')]//tbody[contains(@class,'location-list-qa')]//tr//td
 
 Click on the table inside advanced search of discovered asset for technology type
     wait until element is visible    (//div[contains(text(),'Extended service')])[1]     60
@@ -603,8 +603,7 @@ Enter input in the technology group field of advanced search of discovered asset
     input text      css:.modal-body .qa-group input       Applications
     sleep   ${search_sleep}
     Wait Until Element Is Visible    css:.modal-body .qa-group input    timeout=60s
-    Press Keys      css:.modal-body .qa-group input     ENTER
-
+    Press Keys  css:.modal-body .qa-group input     ENTER
 Fetch the technology type from the technology type field of component of discovered asset
     Wait Until Element Is Visible       css:.qa-tech-type    timeout=60s
     Wait Until Element Is Enabled        css:.qa-tech-type    timeout=60s
