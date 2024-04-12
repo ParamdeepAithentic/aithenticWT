@@ -452,6 +452,29 @@ Add assetID for technology lifecycle information random
     log to console      ${generated_AssetID}
     set global variable    ${generated_AssetID}
 
+Add New_Parent assetID for technology lifecycle information random
+    wait until element is not visible       ${loaderIcon}        60
+    wait until element is visible       ${asset_id}        60
+    wait until element is enabled       ${asset_id}        60
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_NewParent_AssetID}=    Catenate    AssetID_${random_string}
+    input text   ${asset_id}   ${generated_NewParent_AssetID}
+    sleep       ${search_sleep}
+    log to console      ${generated_NewParent_AssetID}
+    set global variable    ${generated_NewParentAssetID}
+
+Add New_Component assetID for technology lifecycle information random
+    wait until element is not visible       ${loaderIcon}        60
+    wait until element is visible       ${asset_id}        60
+    wait until element is enabled       ${asset_id}        60
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_NewComponent_AssetID}=    Catenate    AssetID_${random_string}
+    input text   ${asset_id}   ${generated_NewComponent_AssetID}
+    sleep       ${search_sleep}
+    log to console      ${generated_NewComponent_AssetID}
+    set global variable     ${generated_NewComponent_AssetID}
+
+
 Add assetID for technology lifecycle information self
     [Arguments]    ${option}
     wait until element is visible       ${asset_id}        60
