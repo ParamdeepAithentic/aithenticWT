@@ -43,6 +43,7 @@ Test Teardown   Close Browser session
 Create team member form
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Click on add team member action button
@@ -62,6 +63,7 @@ Create team member form
 Add Team member page - Add New Department and assign that department to Team member
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Click on add team member action button
@@ -89,6 +91,7 @@ Edit Team member page - Edit New Department and assign that department to Team m
     [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Click on add team member action button
@@ -129,7 +132,7 @@ Verify team member Asset history
     [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
-
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Click on add team member action button
@@ -216,6 +219,7 @@ Verify team member Asset history
 Search asset history with Asset ID
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Click on add team member action button
@@ -323,6 +327,7 @@ Verify user is able to export team member asset history list
     [Tags]      Sanity      Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form   debut@cool.fr.nf    Test@123
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Click on add team member action button
@@ -541,6 +546,7 @@ Convert Assignee to Team Member
     [Tags]    retry
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     MemberPage.Click on assigned user tab     Assigned Users
@@ -644,6 +650,7 @@ Convert Assignee to Team Member
 Check the validation of business email id
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     MemberPage.Click on assigned user tab     Assigned Users
@@ -675,6 +682,7 @@ Check the validation of business email id
 Convert Assignee to team member in case of employee id is not system generated
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     I_iconPage.Choose options inside personal_details        Organization

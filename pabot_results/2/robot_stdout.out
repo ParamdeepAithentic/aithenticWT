@@ -1,0 +1,18 @@
+==============================================================================
+TestPage                                                                      
+==============================================================================
+TestPage.Bulk Import ExportPageTest :: Contains all keyword of  Dashboard page
+==============================================================================
+Technology Bulk import                                                Current Time in Milliseconds: 16934
+uploadtext:Upload is prepared
+uploadtext:Upload Successful
+AssetID_65127707
+| PASS |
+------------------------------------------------------------------------------
+TestPage.Bulk Import ExportPageTest :: Contains all keyword of  Da... | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+TestPage                                                              | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Output:  D:\aithentic-rfw\pabot_results\2\original.xml

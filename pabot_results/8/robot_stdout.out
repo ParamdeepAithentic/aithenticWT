@@ -1,0 +1,21 @@
+==============================================================================
+TestPage                                                                      
+==============================================================================
+TestPage.OCSTest :: Contains all test cases of OCS page                       
+==============================================================================
+Download agent for OCS from signup - macOS                            Current Time in Milliseconds: 11308
+registerEmail:BusinessEmail29058@yopmail.net
+Account created successfully.
+The passcode is:275659
+Profile saved successfully
+Payment Successful
+Settings Updated
+| PASS |
+------------------------------------------------------------------------------
+TestPage.OCSTest :: Contains all test cases of OCS page               | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+TestPage                                                              | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Output:  D:\aithentic-rfw\pabot_results\8\original.xml

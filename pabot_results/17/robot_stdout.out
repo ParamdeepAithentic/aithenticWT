@@ -1,0 +1,30 @@
+==============================================================================
+TestPage                                                                      
+==============================================================================
+TestPage.ReportPageTest                                                       
+==============================================================================
+Verify Reports Technology Types records count                         Current Time in Milliseconds: 11899
+Technology: 194
+Total count is :194
+The Key data of Hardware is equal to total counts in Hardware
+Technology: 178
+Total count is :178
+The Key data of License is equal to total counts in License
+Technology: 4
+Total count is :4
+The Key data of Virtual Machines is equal to total counts in Virtual Machines
+Technology: 111
+Total count is :111
+The Key data of Maintenance is equal to total counts in Maintenance
+Technology: 7
+Total count is :7
+The Key data of Subscription is equal to total counts in Subscription
+| PASS |
+------------------------------------------------------------------------------
+TestPage.ReportPageTest                                               | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+TestPage                                                              | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Output:  D:\aithentic-rfw\pabot_results\17\original.xml

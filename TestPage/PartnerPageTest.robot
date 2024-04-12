@@ -50,6 +50,7 @@ Compose Message invite user test
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      management-console
+    LandingPage.Verify you are on dashboard page
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
@@ -500,6 +501,7 @@ Compose Message invite user test
 Export Specificartner into Excel Doc CSV and TSV for manufacturer
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
     PartnersPage.Click new partner button
@@ -561,6 +563,7 @@ Export Specificartner into Excel Doc CSV and TSV for Supplier
     [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
     PartnersPage.Click new partner button
@@ -623,6 +626,7 @@ Export Specificartner into Excel Doc CSV and TSV for Support Partner
     [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
     PartnersPage.Click new partner button
@@ -680,6 +684,7 @@ Export Specificartner into Excel Doc CSV and TSV for Support Partner
 Add Manufacturer via personal detail under technology and partner
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -726,6 +731,7 @@ Edit Manufacturer via partner
     [Tags]      Sanity
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -805,6 +811,7 @@ Deactivate Manufacturer via partner
     [Tags]      Sanity      tt
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -887,6 +894,7 @@ Deactivate Manufacturer via partner
 Activate Manufacturer via partner
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -972,6 +980,7 @@ Activate Manufacturer via partner
 Remove Manufacturer from partner
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -1062,6 +1071,7 @@ View Details and check the details of Contract
     [Tags]    retry
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
     ReplaceDomainAPI.Replace Domain
     Generic.select the option from the side menu    Partners
     PartnersPage.Click new partner button

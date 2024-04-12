@@ -1,0 +1,33 @@
+==============================================================================
+TestPage                                                                      
+==============================================================================
+TestPage.OCSTest :: Contains all test cases of OCS page                       
+==============================================================================
+Add component as an asset after Adding OCS asset                      Current Time in Milliseconds: 16030
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\aithentic-rfw\TestPage\OCSTest.robot:734
+    T:  Add component as an asset after Adding OCS asset    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\aithentic-rfw\TestPage\OCSTest.robot:746
+      Select option inside three-dots    More Details
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\aithentic-rfw\Pages\OCS.robot:460
+      click on the button link    ${options}
+      |  ${options} = {'include': [], 'exclude': [], 'skip': [], 'skip_on_failure': []} (DotDict)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\aithentic-rfw\Pages\Generic.robot:128
+      Wait Until Element Is Visible    //a[normalize-space()='${option}']    60
+      |  //a[normalize-space()='${option}'] = //a[normalize-space()='More Details'] (str)
+______________________________________________________________________________
+| FAIL |
+Element '//a[normalize-space()='More Details']' not visible after 1 minute.
+------------------------------------------------------------------------------
+TestPage.OCSTest :: Contains all test cases of OCS page               | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+TestPage                                                              | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Output:  D:\aithentic-rfw\pabot_results\12\original.xml

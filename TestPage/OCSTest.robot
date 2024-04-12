@@ -356,6 +356,7 @@ Download Agent from network discovery - Linux
     [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Asset Discovery
     Generic.Verify your current page location contains      discovery-assets
     DashboardPage.Click on download agent button to download        Download Agent
@@ -368,6 +369,7 @@ Download Agent from network discovery - Windows
     [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Asset Discovery
     Generic.Verify your current page location contains      discovery-assets
     DashboardPage.Click on download agent button to download        Download Agent
@@ -380,6 +382,7 @@ Download Agent from network discovery - macOS
     [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Asset Discovery
     Generic.Verify your current page location contains      discovery-assets
     DashboardPage.Click on download agent button to download        Download Agent
@@ -392,6 +395,7 @@ Download Agent from asset discovery - Linux
     [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     sleep   ${search_sleep}
@@ -406,6 +410,7 @@ Download Agent from asset discovery - Windows
     [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     sleep   ${search_sleep}
@@ -420,6 +425,7 @@ Download Agent from asset discovery - macOS
     [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     sleep   ${search_sleep}
@@ -433,6 +439,7 @@ Download Agent from asset discovery - macOS
 Search Discovered Assets
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
@@ -458,6 +465,7 @@ Search Discovered Assets
 Search Existing Assets
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -483,6 +491,7 @@ Match Discovery and Existing Asset
     [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -533,6 +542,7 @@ Match Discovery and Existing Asset
 Apply filters and clear filter on Discovered Asset
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     johns@mai.25u.com         Test@123
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     OCS.Choose tab under Discovery Assets   network-discovery
@@ -568,6 +578,7 @@ Apply filters and clear filter on Existing Assets
     [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     johns@mai.25u.com     Test@123
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     OCS.Choose tab under Discovery Assets   network-discovery
@@ -622,6 +633,7 @@ Apply filters and clear filter on Existing Assets
 Add Discovery Asset
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
@@ -668,6 +680,7 @@ Add Discovery Asset
 Create Asset from Add Assets Page
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
@@ -722,6 +735,7 @@ Add component as an asset after Adding OCS asset
     [Tags]      Sanity      smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
@@ -786,6 +800,7 @@ Add component as an asset after Adding OCS asset
 Network Discovery in case of no records
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       raghu@yopmail.com         Test@001
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
@@ -797,6 +812,7 @@ Network Discovery in case of no records
 Add component as an asset from Agent Discovery page
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
@@ -855,6 +871,7 @@ Add component as an asset from Agent Discovery page
 Upload Image and Document File while Add Discovery Asset
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
@@ -950,6 +967,7 @@ Upload Image and Document File while Add Discovery Asset
 Upload Image and Document File while Add component as an asset from Agent Discovery page
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
@@ -1048,6 +1066,7 @@ Upload Image and Document File while Add component as an asset from Agent Discov
 Match IP Discovered asset with Existing asset
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
@@ -1084,6 +1103,7 @@ Match IP Discovered asset with Existing asset
 Match Discovery Asset with Static Existing Asset
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
@@ -1118,6 +1138,7 @@ Match Discovery Asset with Static Existing Asset
 Match IP Discovered Asset with Dynamic Existing Asset
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -1170,6 +1191,7 @@ Match IP Discovered Asset with Dynamic Existing Asset
 Visit discovered asset list when click on No. IP discovered devices
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Asset Discovery
     Generic.Verify your current page location contains     discovery-assets
     OCS.click on the value of IP discovered devices of inside table
@@ -1201,6 +1223,7 @@ Add asset with IP Address under discovered asset list
     [Tags]    retry
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
@@ -1249,6 +1272,7 @@ Add Asset with IP address from Network Discovery Page
     [Tags]    retry
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
@@ -1324,6 +1348,7 @@ Add Asset with IP address from Network Discovery Page
 Search with containing fields under advance search of discovered asset
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Asset Discovery
     Generic.Verify your current page location contains     discovery-assets
     I_iconPage.Choose tab under Discovery Assets       network-discovery
@@ -1407,6 +1432,7 @@ Search with containing fields under advance search of discovered asset
 Search with containing fields under advance search of component of discovered asset
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu        Asset Discovery
     Generic.Verify your current page location contains      discovery-assets
     I_iconPage.Choose tab under Discovery Assets       network-discovery
@@ -1527,6 +1553,7 @@ Search with containing fields under advance search of component of discovered as
 Search with containing fields under advance search of IP Address of discovered asset
      Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
@@ -1621,6 +1648,7 @@ Search with containing fields under advance search of IP Address of discovered a
 Upload Image and Document file during Add Asset with IP address from Agent Discovery Page
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs

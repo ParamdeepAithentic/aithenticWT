@@ -44,8 +44,10 @@ Fill the login Form
     wait until element is visible    ${Kc_password}    60
     Input Password      ${Kc_password}     ${valid_password}
     Click Button        ${Kc_loginBtn}
-    wait until element is visible    css:button[title='Print Renewal Overview Section']    60
-    wait until element is enabled    css:button[title='Print Renewal Overview Section']    60
+
+Verify you are on dashboard page
+    wait until element is visible    //div[normalize-space()='End of life']    60
+    wait until element is enabled    //div[normalize-space()='End of life']    60
 
 
 Fill the login form of Admin panel

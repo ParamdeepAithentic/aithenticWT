@@ -1,0 +1,40 @@
+==============================================================================
+TestPage                                                                      
+==============================================================================
+TestPage.OCSTest :: Contains all test cases of OCS page                       
+==============================================================================
+Download agent for OCS from signup - Windows                            
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\aithentic-rfw\TestPage\OCSTest.robot:149
+    T:  Download agent for OCS from signup - Windows    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\aithentic-rfw\TestPage\OCSTest.robot:36
+      open the browser with the url    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\aithentic-rfw\Pages\Generic.robot:138
+      Wait Until Element Is Visible    //a[normalize-space()='Login']    60
+______________________________________________________________________________
+| FAIL |
+Setup failed:
+NoSuchWindowException: Message: Browsing context has been discarded
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:192:5
+NoSuchWindowError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:678:5
+assert.that/<@chrome://remote/content/shared/webdriver/Assert.sys.mjs:485:13
+assert.open@chrome://remote/content/shared/webdriver/Assert.sys.mjs:147:4
+GeckoDriver.prototype.findElements@chrome://remote/content/marionette/driver.sys.mjs:1584:15
+despatch@chrome://remote/content/marionette/server.sys.mjs:318:40
+execute@chrome://remote/content/marionette/server.sys.mjs:289:16
+onPacket/<@chrome://remote/content/marionette/server.sys.mjs:262:20
+onPacket@chrome://remote/content/marionette/server.sys.mjs:263:9
+_onJSONObjectReady/<@chrome://remote/content/marionette/transport.sys.mjs:494:20
+------------------------------------------------------------------------------
+TestPage.OCSTest :: Contains all test cases of OCS page               | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+TestPage                                                              | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Output:  D:\aithentic-rfw\pabot_results\7\original.xml

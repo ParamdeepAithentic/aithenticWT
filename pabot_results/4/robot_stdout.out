@@ -1,0 +1,41 @@
+==============================================================================
+TestPage                                                                      
+==============================================================================
+TestPage.ContractsPageTest :: Contains all test cases of Contracts page       
+==============================================================================
+Technology Auto removed from static contract When edit Brand and p... Current Time in Milliseconds: 12010
+Person_4021580147@BusinessName4711289372.net
+Partner created successfully
+BusinessName4711289372
+Product_8341848962
+Product created successfully
+Product_8341848962
+SerialNumber_0428439850
+AssetID_3998498073
+Current Date: 04/12/2024
+Technology created successfully
+AssetID_3998498073
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\aithentic-rfw\TestPage\ContractsPageTest.robot:230
+    T:  Technology Auto removed from static contract When edit Brand and product    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\aithentic-rfw\TestPage\ContractsPageTest.robot:334
+      Enter contract brand    ${generate_BusinessName}
+      |  ${generate_BusinessName} = BusinessName4711289372 (str)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\aithentic-rfw\Pages\ContractsPage.robot:117
+      Wait Until Element Is Visible    //ng-select[@labelforid='brand']//ng-dropdown-panel//span[normalize-space()='${option}']    60
+      |  //ng-select[@labelforid='brand']//ng-dropdown-panel//span[normalize-space()='${option}'] = //ng-select[@labelforid='brand']//ng-dropdown-panel//span[normalize-space()='BusinessName4711289372'] (str)
+______________________________________________________________________________
+| FAIL |
+Element '//ng-select[@labelforid='brand']//ng-dropdown-panel//span[normalize-space()='BusinessName4711289372']' not visible after 1 minute.
+------------------------------------------------------------------------------
+TestPage.ContractsPageTest :: Contains all test cases of Contracts... | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+TestPage                                                              | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Output:  D:\aithentic-rfw\pabot_results\4\original.xml

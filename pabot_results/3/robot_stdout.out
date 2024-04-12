@@ -1,0 +1,35 @@
+==============================================================================
+TestPage                                                                      
+==============================================================================
+TestPage.ContractsPageTest :: Contains all test cases of Contracts page       
+==============================================================================
+Technology Auto removed from dynamic contract When edit Brand and ... Current Time in Milliseconds: 16249
+Person_4561092545@BusinessName4653365913.net
+Partner created successfully
+BusinessName4653365913
+Product_0256357176
+Product created successfully
+Product_0256357176
+SerialNumber_7194273792
+AssetID_5362166025
+Current Date: 04/12/2024
+Technology created successfully
+AssetID_5362166025
+Current Date: 04/12/2024
+Contract created successfully
+Contract_BrandName=BusinessName4653365913
+Contract_ID= CT6470
+Contract_BrandName=BusinessName4653365913
+Contract_BrandName=BusinessName4653365913
+AssetID_5362166025
+Technology updated successfully
+Contract_BrandName=BusinessName4653365913
+| PASS |
+------------------------------------------------------------------------------
+TestPage.ContractsPageTest :: Contains all test cases of Contracts... | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+TestPage                                                              | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Output:  D:\aithentic-rfw\pabot_results\3\original.xml
