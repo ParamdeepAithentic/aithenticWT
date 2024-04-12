@@ -1,21 +1,36 @@
 ==============================================================================
 TestPage                                                                      
 ==============================================================================
-TestPage.OCSTest :: Contains all test cases of OCS page                       
+TestPage.TeamMemberPageTest :: Contains all test cases of Team member page    
 ==============================================================================
-Download agent for OCS from signup - Linux                            Current Time in Milliseconds: 18589
-registerEmail:BusinessEmail90097@yopmail.net
-Account created successfully.
-The passcode is:599083
-Profile saved successfully
-Payment Successful
-Settings Updated
-| PASS |
+Verify user is able to export team member asset history list          Current Time in Milliseconds: 17119
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\aithentic-rfw\TestPage\TeamMemberPageTest.robot:326
+    T:  Verify user is able to export team member asset history list    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\aithentic-rfw\TestPage\TeamMemberPageTest.robot:35
+      open the browser with the url    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\aithentic-rfw\Pages\Generic.robot:144
+      Calculate Running time    2    ${pageHeading}    Generic - open the browser with the url    2    ${pageTime}    ${ActualTime}    Load_Time_tracking
+      |  ${pageHeading} = 2 (str)
+      |  ${pageTime} = 3 (str)
+      |  ${ActualTime} = <Unable to define variable value>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\aithentic-rfw\Pages\Generic.robot:106
+      Open Excel Document    ${SheetLocationAndName}    doc_id=1
+      |  ${SheetLocationAndName} = LoadTimeSheet.xlsx (str)
+______________________________________________________________________________
+| FAIL |
+Setup failed:
+BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'
 ------------------------------------------------------------------------------
-TestPage.OCSTest :: Contains all test cases of OCS page               | PASS |
-1 test, 1 passed, 0 failed
+TestPage.TeamMemberPageTest :: Contains all test cases of Team mem... | FAIL |
+1 test, 0 passed, 1 failed
 ==============================================================================
-TestPage                                                              | PASS |
-1 test, 1 passed, 0 failed
+TestPage                                                              | FAIL |
+1 test, 0 passed, 1 failed
 ==============================================================================
-Output:  D:\aithentic-rfw\pabot_results\6\original.xml
+Output:  D:\aithentic-rfw\pabot_results\6\rerun.xml

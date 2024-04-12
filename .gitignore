@@ -5,3 +5,6 @@ report.html
 geckodriver-*
 selenium-screenshot*
 original.xml
+pabot_results
+pabot_results/*
+rerun.xml

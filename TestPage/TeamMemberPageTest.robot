@@ -183,7 +183,7 @@ Verify team member Asset history
     Switch Window   aithentic | OTP
     TwoFactorAuth.Enter the otp     ${passcode}
     TwoFactorAuth.Click verification button
-    Generic.Verify your current page location contains     asset-overview
+    Generic.Verify your current page location contains     management-console
     Generic.Click on the profile name
     Generic.Select other option from profile list     Logout
     Generic.Fetch log_out alert message
@@ -270,7 +270,7 @@ Search asset history with Asset ID
     Switch Window   aithentic | OTP
     TwoFactorAuth.Enter the otp     ${passcode}
     TwoFactorAuth.Click verification button
-    Generic.Verify your current page location contains     asset-overview
+    Generic.Verify your current page location contains     management-console
     Generic.Click on the profile name
     Generic.Select other option from profile list     Logout
     Generic.Fetch log_out alert message
@@ -380,7 +380,7 @@ Verify user is able to export team member asset history list
     Switch Window   aithentic | OTP
     TwoFactorAuth.Enter the otp     ${passcode}
     TwoFactorAuth.Click verification button
-    Generic.Verify your current page location contains     asset-overview
+    Generic.Verify your current page location contains     management-console
     Generic.Click on the profile name
     Generic.Select other option from profile list     Logout
     Generic.Fetch log_out alert message

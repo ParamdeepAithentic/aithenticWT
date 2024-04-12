@@ -1,118 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Rebot 7.0 (Python 3.11.8 on win32)" generated="2024-04-11T16:03:48.471762" rpa="false" schemaversion="5">
+<robot generator="Rebot 7.0 (Python 3.11.8 on win32)" generated="2024-04-12T10:53:21.757204" rpa="false" schemaversion="5">
 <suite id="s1" name="TestPage" source="D:\aithentic-rfw\TestPage">
-<suite id="s1-s1" name="Bulk Import ExportPageTest" source="D:\aithentic-rfw\TestPage\Bulk_Import_ExportPageTest.robot">
-<test id="s1-s1-t1" name="Product Bulk Edit" line="74">
+<suite id="s1-s1" name="ContractsPageTest" source="D:\aithentic-rfw\TestPage\ContractsPageTest.robot">
+<test id="s1-s1-t1" name="Technology Auto removed from static contract When edit Brand and product" line="230">
 <kw name="open the browser with the url" owner="Generic" type="SETUP">
 <kw name="Fix the column number" owner="Generic">
 <kw name="Catenate" owner="BuiltIn">
-<msg time="2024-04-11T16:03:11.950578" level="INFO">${pageHeading} = 2</msg>
+<msg time="2024-04-12T10:51:59.559581" level="INFO">${pageHeading} = 2</msg>
 <var>${pageHeading}</var>
 <arg>2</arg>
 <doc>Catenates the given items together and returns the resulted string.</doc>
-<status status="PASS" start="2024-04-11T16:03:11.949577" elapsed="0.001001"/>
+<status status="PASS" start="2024-04-12T10:51:59.559581" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-04-11T16:03:11.951577" level="INFO">${pageHeading} = 2</msg>
+<msg time="2024-04-12T10:51:59.561139" level="INFO">${pageHeading} = 2</msg>
 <arg>${pageHeading}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-04-11T16:03:11.950578" elapsed="0.000999"/>
+<status status="PASS" start="2024-04-12T10:51:59.560592" elapsed="0.000547"/>
 </kw>
-<status status="PASS" start="2024-04-11T16:03:11.947578" elapsed="0.003999"/>
+<status status="PASS" start="2024-04-12T10:51:59.557167" elapsed="0.003972"/>
 </kw>
 <kw name="Fix the row number" owner="Generic">
 <kw name="Catenate" owner="BuiltIn">
-<msg time="2024-04-11T16:03:11.953577" level="INFO">${pageTime} = 3</msg>
+<msg time="2024-04-12T10:51:59.563104" level="INFO">${pageTime} = 3</msg>
 <var>${pageTime}</var>
 <arg>3</arg>
 <doc>Catenates the given items together and returns the resulted string.</doc>
-<status status="PASS" start="2024-04-11T16:03:11.953577" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-12T10:51:59.562598" elapsed="0.001475"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-04-11T16:03:11.955577" level="INFO">${pageTime} = 3</msg>
+<msg time="2024-04-12T10:51:59.565861" level="INFO">${pageTime} = 3</msg>
 <arg>${pageTime}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-04-11T16:03:11.954578" elapsed="0.000999"/>
+<status status="PASS" start="2024-04-12T10:51:59.564994" elapsed="0.000867"/>
 </kw>
-<status status="PASS" start="2024-04-11T16:03:11.952576" elapsed="0.003001"/>
+<status status="PASS" start="2024-04-12T10:51:59.561139" elapsed="0.004722"/>
 </kw>
 <kw name="Get Current Time in Milliseconds" owner="Generic">
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2024-04-11T16:03:11.956938" level="INFO">${time_in_milliseconds} = 1712831591956</msg>
+<msg time="2024-04-12T10:51:59.568105" level="INFO">${time_in_milliseconds} = 1712899319568</msg>
 <var>${time_in_milliseconds}</var>
 <arg>int(time.time() * 1000)</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2024-04-11T16:03:11.956938" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-12T10:51:59.567486" elapsed="0.000619"/>
 </kw>
 <return>
 <value>${time_in_milliseconds}</value>
-<status status="PASS" start="2024-04-11T16:03:11.957990" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-12T10:51:59.568105" elapsed="0.000560"/>
 </return>
-<msg time="2024-04-11T16:03:11.957990" level="INFO">${StartTime1} = 1712831591956</msg>
+<msg time="2024-04-12T10:51:59.568665" level="INFO">${StartTime1} = 1712899319568</msg>
 <var>${StartTime1}</var>
-<status status="PASS" start="2024-04-11T16:03:11.955577" elapsed="0.002413"/>
+<status status="PASS" start="2024-04-12T10:51:59.566962" elapsed="0.001703"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-04-11T16:03:11.959308" level="INFO">Opening browser 'firefox' to base url 'https://uat-app.aithentic.com/'.</msg>
+<msg time="2024-04-12T10:51:59.570543" level="INFO">Opening browser 'firefox' to base url 'https://uat-app.aithentic.com/'.</msg>
 <arg>${url}</arg>
 <arg>${browser_name}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-04-11T16:03:11.957990" elapsed="18.616908"/>
+<status status="PASS" start="2024-04-12T10:51:59.569171" elapsed="16.882592"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>//a[normalize-space()='Login']</arg>
 <arg>60</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-11T16:03:30.574898" elapsed="0.038158"/>
+<status status="PASS" start="2024-04-12T10:52:16.453272" elapsed="0.036685"/>
 </kw>
 <kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
 <arg>//a[normalize-space()='Login']</arg>
 <arg>60</arg>
 <doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2024-04-11T16:03:30.614055" elapsed="0.019017"/>
+<status status="PASS" start="2024-04-12T10:52:16.491178" elapsed="0.020573"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-04-11T16:03:30.633072" elapsed="0.276686"/>
+<status status="PASS" start="2024-04-12T10:52:16.512838" elapsed="0.271192"/>
 </kw>
 <kw name="Get Current Time in Milliseconds" owner="Generic">
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2024-04-11T16:03:30.912011" level="INFO">${time_in_milliseconds} = 1712831610912</msg>
+<msg time="2024-04-12T10:52:16.788675" level="INFO">${time_in_milliseconds} = 1712899336788</msg>
 <var>${time_in_milliseconds}</var>
 <arg>int(time.time() * 1000)</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2024-04-11T16:03:30.912011" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-12T10:52:16.787608" elapsed="0.001067"/>
 </kw>
 <return>
 <value>${time_in_milliseconds}</value>
-<status status="PASS" start="2024-04-11T16:03:30.913007" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-12T10:52:16.788675" elapsed="0.000000"/>
 </return>
-<msg time="2024-04-11T16:03:30.913516" level="INFO">${EndTime1} = 1712831610912</msg>
+<msg time="2024-04-12T10:52:16.788675" level="INFO">${EndTime1} = 1712899336788</msg>
 <var>${EndTime1}</var>
-<status status="PASS" start="2024-04-11T16:03:30.910976" elapsed="0.002540"/>
+<status status="PASS" start="2024-04-12T10:52:16.785027" elapsed="0.003648"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2024-04-11T16:03:30.913516" level="INFO">${ActualTime} = 18956</msg>
+<msg time="2024-04-12T10:52:16.789736" level="INFO">${ActualTime} = 17220</msg>
 <var>${ActualTime}</var>
 <arg>${EndTime1}-${StartTime1}</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2024-04-11T16:03:30.913516" elapsed="0.001008"/>
+<status status="PASS" start="2024-04-12T10:52:16.788675" elapsed="0.001061"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Current Time in Milliseconds: ${ActualTime}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-04-11T16:03:30.914524" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-12T10:52:16.789736" elapsed="0.000000"/>
 </kw>
 <kw name="Calculate Running time" owner="Generic">
 <kw name="Close All Excel Documents" owner="ExcelLibrary">
 <doc>Closes all opened documents.</doc>
-<status status="PASS" start="2024-04-11T16:03:30.915986" elapsed="0.001326"/>
+<status status="PASS" start="2024-04-12T10:52:16.790792" elapsed="0.000000"/>
 </kw>
 <kw name="Open Excel Document" owner="ExcelLibrary">
+<msg time="2024-04-12T10:52:16.824690" level="FAIL">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</msg>
 <arg>${SheetLocationAndName}</arg>
 <arg>doc_id=1</arg>
 <doc>Opens xlsx document file.</doc>
-<status status="PASS" start="2024-04-11T16:03:30.917312" elapsed="0.055010"/>
+<status status="FAIL" start="2024-04-12T10:52:16.791851" elapsed="0.037024">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
 </kw>
 <kw name="Write Excel Cell" owner="ExcelLibrary">
 <arg>${RowNum_forText}</arg>
@@ -120,7 +121,7 @@
 <arg>${module_name}</arg>
 <arg>${SheetTabName}</arg>
 <doc>Writes value to the cell.</doc>
-<status status="PASS" start="2024-04-11T16:03:30.972322" elapsed="0.001027"/>
+<status status="NOT RUN" start="2024-04-12T10:52:16.839496" elapsed="0.001050"/>
 </kw>
 <kw name="Write Excel Cell" owner="ExcelLibrary">
 <arg>${RowNum}</arg>
@@ -128,16 +129,16 @@
 <arg>${TimeTakenToLoginPage}</arg>
 <arg>${SheetTabName}</arg>
 <doc>Writes value to the cell.</doc>
-<status status="PASS" start="2024-04-11T16:03:30.973349" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-04-12T10:52:16.840546" elapsed="0.000000"/>
 </kw>
 <kw name="Save Excel Document" owner="ExcelLibrary">
 <arg>${SheetLocationAndName}</arg>
 <doc>Saves the current document to disk.</doc>
-<status status="PASS" start="2024-04-11T16:03:30.974376" elapsed="0.069872"/>
+<status status="NOT RUN" start="2024-04-12T10:52:16.840546" elapsed="0.000000"/>
 </kw>
 <kw name="Close All Excel Documents" owner="ExcelLibrary">
 <doc>Closes all opened documents.</doc>
-<status status="PASS" start="2024-04-11T16:03:31.045318" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-04-12T10:52:16.841600" elapsed="0.000000"/>
 </kw>
 <arg>2</arg>
 <arg>${pageHeading}</arg>
@@ -146,1547 +147,163 @@
 <arg>${pageTime}</arg>
 <arg>${ActualTime}</arg>
 <arg>Load_Time_tracking</arg>
-<status status="PASS" start="2024-04-11T16:03:30.915986" elapsed="0.129332"/>
+<status status="FAIL" start="2024-04-12T10:52:16.790792" elapsed="0.050808">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
 </kw>
-<status status="PASS" start="2024-04-11T16:03:11.945576" elapsed="19.099742"/>
-</kw>
-<kw name="click on the tab" owner="Generic">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>//a[normalize-space()='${option}']</arg>
-<arg>60</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-11T16:03:31.046553" elapsed="0.019483"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
-<arg>//a[normalize-space()='${option}']</arg>
-<arg>60</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2024-04-11T16:03:31.066036" elapsed="0.030282"/>
-</kw>
-<kw name="Click Link" owner="SeleniumLibrary">
-<msg time="2024-04-11T16:03:31.097491" level="INFO">Clicking link '//a[normalize-space()='Login']'.</msg>
-<arg>//a[normalize-space()='${option}']</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-11T16:03:31.096318" elapsed="1.535954"/>
-</kw>
-<arg>Login</arg>
-<status status="PASS" start="2024-04-11T16:03:31.045318" elapsed="1.586954"/>
-</kw>
-<kw name="Fill the login Form" owner="LandingPage">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${Kc_username}</arg>
-<arg>60</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-11T16:03:32.634272" elapsed="0.070501"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-04-11T16:03:32.705774" level="INFO">Typing text 'testqa29j@mailinator.com' into text field 'css:#username'.</msg>
-<arg>${Kc_username}</arg>
-<arg>${email}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-11T16:03:32.704773" elapsed="0.027042"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${Kc_password}</arg>
-<arg>60</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-11T16:03:32.731815" elapsed="0.021077"/>
-</kw>
-<kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2024-04-11T16:03:32.754948" level="INFO">Typing password into text field 'css:#password'.</msg>
-<msg time="2024-04-11T16:03:32.763499" level="INFO">Temporally setting log level to: NONE</msg>
-<arg>${Kc_password}</arg>
-<arg>${valid_password}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-11T16:03:32.753948" elapsed="0.020539"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-04-11T16:03:32.775487" level="INFO">Clicking button 'css:#kc-login'.</msg>
-<arg>${Kc_loginBtn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-11T16:03:32.775487" elapsed="1.324221"/>
-</kw>
-<arg>${email}</arg>
-<arg>${valid_password}</arg>
-<status status="PASS" start="2024-04-11T16:03:32.633272" elapsed="1.466436"/>
-</kw>
-<kw name="Click on the profile name" owner="Generic">
-<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
-<arg>${loaderIcon}</arg>
-<arg>60</arg>
-<doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" start="2024-04-11T16:03:34.101713" elapsed="0.117508"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${profileName}</arg>
-<arg>60</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-11T16:03:34.219221" elapsed="8.658549"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
-<arg>${profileName}</arg>
-<arg>60</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2024-04-11T16:03:42.877770" elapsed="0.015562"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-11T16:03:42.893332" level="INFO">Clicking element 'css:#user-name-nav'.</msg>
-<msg time="2024-04-11T16:03:42.957001" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="0-selenium-screenshot-1.png"&gt;&lt;img src="0-selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2024-04-11T16:03:42.957001" level="FAIL">ElementClickInterceptedException: Message: Element &lt;div id="user-name-nav" class="user-name-sec pl-2 float-left text-capitalize qa-user-name-nav ng-tns-c94-0"&gt; is not clickable at point (1422,28) because another element &lt;div class="wrapper w-100 vh-100 position-fixed ng-star-inserted"&gt; obscures it
-Stacktrace:
-RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
-WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:192:5
-ElementClickInterceptedError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:336:5
-webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:176:11
-interaction.clickElement@chrome://remote/content/marionette/interaction.sys.mjs:135:11
-clickElement@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:204:29
-receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:84:31
-</msg>
-<arg>${profileName}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="FAIL" start="2024-04-11T16:03:42.893332" elapsed="0.077260">ElementClickInterceptedException: Message: Element &lt;div id="user-name-nav" class="user-name-sec pl-2 float-left text-capitalize qa-user-name-nav ng-tns-c94-0"&gt; is not clickable at point (1422,28) because another element &lt;div class="wrapper w-100 vh-100 position-fixed ng-star-inserted"&gt; obscures it
-Stacktrace:
-RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
-WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:192:5
-ElementClickInterceptedError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:336:5
-webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:176:11
-interaction.clickElement@chrome://remote/content/marionette/interaction.sys.mjs:135:11
-clickElement@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:204:29
-receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:84:31
-</status>
-</kw>
-<status status="FAIL" start="2024-04-11T16:03:34.099708" elapsed="8.870884">ElementClickInterceptedException: Message: Element &lt;div id="user-name-nav" class="user-name-sec pl-2 float-left text-capitalize qa-user-name-nav ng-tns-c94-0"&gt; is not clickable at point (1422,28) because another element &lt;div class="wrapper w-100 vh-100 position-fixed ng-star-inserted"&gt; obscures it
-Stacktrace:
-RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
-WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:192:5
-ElementClickInterceptedError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:336:5
-webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:176:11
-interaction.clickElement@chrome://remote/content/marionette/interaction.sys.mjs:135:11
-clickElement@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:204:29
-receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:84:31
-</status>
-</kw>
-<kw name="Select option from profile list" owner="Generic">
-<arg>product-dropdown</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="Verify your current page location contains" owner="Generic">
-<arg>product</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="Click on action button" owner="DashboardPage">
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="Select the option from action menu" owner="DashboardPage">
-<arg>import</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>${yop_sleep}</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="Switch Window" owner="SeleniumLibrary">
-<arg>aithentic | Add - Products</arg>
-<doc>Switches to browser window matching ``locator``.</doc>
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="Verify your current page location contains" owner="Generic">
-<arg>add-product-grid</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="Enter the value in the product name column in bulk_import" owner="Bulk_Import_ExportPage">
-<arg>ProductName</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="Enter the new value in the brand name column in bulk_import" owner="Bulk_Import_ExportPage">
-<arg>Brand</arg>
-<arg>QABrand555</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="Select option from status column in bulk_import" owner="Bulk_Import_ExportPage">
-<arg>ProductStatus</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="Select option from technology type column in bulk_import" owner="Bulk_Import_ExportPage">
-<arg>TechType</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="Select option from technology group column in bulk_import" owner="Bulk_Import_ExportPage">
-<arg>TechGroup</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="Enter the value in the product_description column in bulk_import" owner="Bulk_Import_ExportPage">
-<arg>ProductDescription</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="Enter the value in the product_feature column in bulk_import" owner="Bulk_Import_ExportPage">
-<arg>ProductFeatures</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="click on the button" owner="Generic">
-<arg>Check Data</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="click on the button" owner="Generic">
-<arg>Upload</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="Verify the upload message text" owner="Bulk_Import_ExportPage">
-<arg>Upload</arg>
-<arg>Upload Successful</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="click on the button" owner="Generic">
-<arg>Finish</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="Click on I_m_done button when popup appears" owner="Bulk_Import_ExportPage">
-<arg>no-im-done</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="Switch Window" owner="SeleniumLibrary">
-<arg>aithentic | Product - List</arg>
-<doc>Switches to browser window matching ``locator``.</doc>
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="Verify product added using bulk_import_export" owner="Bulk_Import_ExportPage">
-<arg>${generated_addProductName}</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="Click on action button" owner="DashboardPage">
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="Select the option from action menu" owner="DashboardPage">
-<arg>edit</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>${yop_sleep}</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="Switch Window" owner="SeleniumLibrary">
-<arg>aithentic | Edit - Products</arg>
-<doc>Switches to browser window matching ``locator``.</doc>
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="Verify your current page location contains" owner="Generic">
-<arg>product-bulk-edit</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="Enter the new value in the product name column in bulk_edit" owner="Bulk_Import_ExportPage">
-<arg>ProductId</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="Enter the new value in the brand name column in bulk_edit" owner="Bulk_Import_ExportPage">
-<arg>BrandName</arg>
-<arg>QABrand555</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="Select option from status column in bulk_edit" owner="Bulk_Import_ExportPage">
-<arg>ProductStatus</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="Select option from technology type column in bulk_edit" owner="Bulk_Import_ExportPage">
-<arg>TechType</arg>
-<arg>1</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="click on the button" owner="Generic">
-<arg>Check Data</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="click on the button" owner="Generic">
-<arg>Update</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="Confirm the exit import process pop appers" owner="MemberPage">
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="click on the button" owner="Generic">
-<arg>Confirm</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="Verify the upload message text" owner="Bulk_Import_ExportPage">
-<arg>Upload</arg>
-<arg>Upload Successful</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="click on the button" owner="Generic">
-<arg>Finish</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="Click on the confirm button of finish pop up" owner="Bulk_Import_ExportPage">
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>${yop_sleep}</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="Switch Window" owner="SeleniumLibrary">
-<arg>aithentic | Product - List</arg>
-<doc>Switches to browser window matching ``locator``.</doc>
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="Click on Refresh icon of product-list page" owner="Bulk_Import_ExportPage">
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
-</kw>
-<kw name="Verify product added using bulk_import_export" owner="Bulk_Import_ExportPage">
-<arg>${generated_EditProductName}</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:42.972200" elapsed="0.000000"/>
+<status status="FAIL" start="2024-04-12T10:51:59.556167" elapsed="17.285433">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
 </kw>
 <kw name="Close Browser session" owner="Generic" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-04-11T16:03:42.972200" elapsed="3.053763"/>
+<status status="PASS" start="2024-04-12T10:52:16.843713" elapsed="3.518094"/>
 </kw>
-<status status="PASS" start="2024-04-11T16:03:42.972200" elapsed="3.053763"/>
+<status status="PASS" start="2024-04-12T10:52:16.842661" elapsed="3.519146"/>
 </kw>
 <tag>Sanity</tag>
-<status status="FAIL" start="2024-04-11T16:03:11.941068" elapsed="34.084895">ElementClickInterceptedException: Message: Element &lt;div id="user-name-nav" class="user-name-sec pl-2 float-left text-capitalize qa-user-name-nav ng-tns-c94-0"&gt; is not clickable at point (1422,28) because another element &lt;div class="wrapper w-100 vh-100 position-fixed ng-star-inserted"&gt; obscures it
-Stacktrace:
-RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
-WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:192:5
-ElementClickInterceptedError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:336:5
-webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:176:11
-interaction.clickElement@chrome://remote/content/marionette/interaction.sys.mjs:135:11
-clickElement@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:204:29
-receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:84:31
-</status>
+<status status="FAIL" start="2024-04-12T10:51:59.549849" elapsed="20.811958">Setup failed:
+BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
 </test>
-<test id="s1-s1-t2" name="Assigned Users Bulk Edit" line="307">
-<kw name="open the browser with the url" owner="Generic" type="SETUP">
-<kw name="Fix the column number" owner="Generic">
-<kw name="Catenate" owner="BuiltIn">
-<msg time="2024-04-11T16:03:12.020860" level="INFO">${pageHeading} = 2</msg>
-<var>${pageHeading}</var>
-<arg>2</arg>
-<doc>Catenates the given items together and returns the resulted string.</doc>
-<status status="PASS" start="2024-04-11T16:03:12.020860" elapsed="0.000000"/>
-</kw>
-<kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-04-11T16:03:12.021861" level="INFO">${pageHeading} = 2</msg>
-<arg>${pageHeading}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-04-11T16:03:12.021861" elapsed="0.000000"/>
-</kw>
-<status status="PASS" start="2024-04-11T16:03:12.017326" elapsed="0.005534"/>
-</kw>
-<kw name="Fix the row number" owner="Generic">
-<kw name="Catenate" owner="BuiltIn">
-<msg time="2024-04-11T16:03:12.023861" level="INFO">${pageTime} = 3</msg>
-<var>${pageTime}</var>
-<arg>3</arg>
-<doc>Catenates the given items together and returns the resulted string.</doc>
-<status status="PASS" start="2024-04-11T16:03:12.023861" elapsed="0.000000"/>
-</kw>
-<kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-04-11T16:03:12.024861" level="INFO">${pageTime} = 3</msg>
-<arg>${pageTime}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-04-11T16:03:12.024861" elapsed="0.000999"/>
-</kw>
-<status status="PASS" start="2024-04-11T16:03:12.022860" elapsed="0.003000"/>
-</kw>
-<kw name="Get Current Time in Milliseconds" owner="Generic">
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2024-04-11T16:03:12.027860" level="INFO">${time_in_milliseconds} = 1712831592026</msg>
-<var>${time_in_milliseconds}</var>
-<arg>int(time.time() * 1000)</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2024-04-11T16:03:12.026860" elapsed="0.001000"/>
-</kw>
-<return>
-<value>${time_in_milliseconds}</value>
-<status status="PASS" start="2024-04-11T16:03:12.027860" elapsed="0.000000"/>
-</return>
-<msg time="2024-04-11T16:03:12.027860" level="INFO">${StartTime1} = 1712831592026</msg>
-<var>${StartTime1}</var>
-<status status="PASS" start="2024-04-11T16:03:12.025860" elapsed="0.002000"/>
-</kw>
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-04-11T16:03:12.030369" level="INFO">Opening browser 'firefox' to base url 'https://uat-app.aithentic.com/'.</msg>
-<arg>${url}</arg>
-<arg>${browser_name}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-04-11T16:03:12.028864" elapsed="16.238816"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>//a[normalize-space()='Login']</arg>
-<arg>60</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-11T16:03:28.267680" elapsed="0.051039"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
-<arg>//a[normalize-space()='Login']</arg>
-<arg>60</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2024-04-11T16:03:28.318719" elapsed="0.027918"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-04-11T16:03:28.347670" elapsed="0.260112"/>
-</kw>
-<kw name="Get Current Time in Milliseconds" owner="Generic">
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2024-04-11T16:03:28.611787" level="INFO">${time_in_milliseconds} = 1712831608610</msg>
-<var>${time_in_milliseconds}</var>
-<arg>int(time.time() * 1000)</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2024-04-11T16:03:28.609781" elapsed="0.002006"/>
-</kw>
-<return>
-<value>${time_in_milliseconds}</value>
-<status status="PASS" start="2024-04-11T16:03:28.612788" elapsed="0.000996"/>
-</return>
-<msg time="2024-04-11T16:03:28.613784" level="INFO">${EndTime1} = 1712831608610</msg>
-<var>${EndTime1}</var>
-<status status="PASS" start="2024-04-11T16:03:28.608780" elapsed="0.005004"/>
-</kw>
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2024-04-11T16:03:28.615780" level="INFO">${ActualTime} = 16584</msg>
-<var>${ActualTime}</var>
-<arg>${EndTime1}-${StartTime1}</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2024-04-11T16:03:28.614781" elapsed="0.000999"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Current Time in Milliseconds: ${ActualTime}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-04-11T16:03:28.615780" elapsed="0.001001"/>
-</kw>
-<kw name="Calculate Running time" owner="Generic">
-<kw name="Close All Excel Documents" owner="ExcelLibrary">
-<doc>Closes all opened documents.</doc>
-<status status="PASS" start="2024-04-11T16:03:28.617819" elapsed="0.000000"/>
-</kw>
-<kw name="Open Excel Document" owner="ExcelLibrary">
-<arg>${SheetLocationAndName}</arg>
-<arg>doc_id=1</arg>
-<doc>Opens xlsx document file.</doc>
-<status status="PASS" start="2024-04-11T16:03:28.617819" elapsed="0.053222"/>
-</kw>
-<kw name="Write Excel Cell" owner="ExcelLibrary">
-<arg>${RowNum_forText}</arg>
-<arg>${ColumnNum_forText}</arg>
-<arg>${module_name}</arg>
-<arg>${SheetTabName}</arg>
-<doc>Writes value to the cell.</doc>
-<status status="PASS" start="2024-04-11T16:03:28.672143" elapsed="0.000000"/>
-</kw>
-<kw name="Write Excel Cell" owner="ExcelLibrary">
-<arg>${RowNum}</arg>
-<arg>${ColumnNum}</arg>
-<arg>${TimeTakenToLoginPage}</arg>
-<arg>${SheetTabName}</arg>
-<doc>Writes value to the cell.</doc>
-<status status="PASS" start="2024-04-11T16:03:28.672143" elapsed="0.001204"/>
-</kw>
-<kw name="Save Excel Document" owner="ExcelLibrary">
-<arg>${SheetLocationAndName}</arg>
-<doc>Saves the current document to disk.</doc>
-<status status="PASS" start="2024-04-11T16:03:28.673347" elapsed="0.073394"/>
-</kw>
-<kw name="Close All Excel Documents" owner="ExcelLibrary">
-<doc>Closes all opened documents.</doc>
-<status status="PASS" start="2024-04-11T16:03:28.747781" elapsed="0.000000"/>
-</kw>
-<arg>2</arg>
-<arg>${pageHeading}</arg>
-<arg>Generic - open the browser with the url</arg>
-<arg>2</arg>
-<arg>${pageTime}</arg>
-<arg>${ActualTime}</arg>
-<arg>Load_Time_tracking</arg>
-<status status="PASS" start="2024-04-11T16:03:28.616781" elapsed="0.132468"/>
-</kw>
-<status status="PASS" start="2024-04-11T16:03:12.016820" elapsed="16.732429"/>
-</kw>
-<kw name="click on the tab" owner="Generic">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>//a[normalize-space()='${option}']</arg>
-<arg>60</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-11T16:03:28.750249" elapsed="0.016994"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
-<arg>//a[normalize-space()='${option}']</arg>
-<arg>60</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2024-04-11T16:03:28.767243" elapsed="0.015801"/>
-</kw>
-<kw name="Click Link" owner="SeleniumLibrary">
-<msg time="2024-04-11T16:03:28.784157" level="INFO">Clicking link '//a[normalize-space()='Login']'.</msg>
-<arg>//a[normalize-space()='${option}']</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-11T16:03:28.784157" elapsed="2.052411"/>
-</kw>
-<arg>Login</arg>
-<status status="PASS" start="2024-04-11T16:03:28.749249" elapsed="2.087319"/>
-</kw>
-<kw name="Fill the login Form" owner="LandingPage">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${Kc_username}</arg>
-<arg>60</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-11T16:03:30.837603" elapsed="0.017777"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-04-11T16:03:30.855380" level="INFO">Typing text 'testqa29j@mailinator.com' into text field 'css:#username'.</msg>
-<arg>${Kc_username}</arg>
-<arg>${email}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-11T16:03:30.855380" elapsed="0.029592"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${Kc_password}</arg>
-<arg>60</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-11T16:03:30.884972" elapsed="0.017370"/>
-</kw>
-<kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2024-04-11T16:03:30.903649" level="INFO">Typing password into text field 'css:#password'.</msg>
-<msg time="2024-04-11T16:03:30.910976" level="INFO">Temporally setting log level to: NONE</msg>
-<arg>${Kc_password}</arg>
-<arg>${valid_password}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-11T16:03:30.902342" elapsed="0.020059"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-04-11T16:03:30.923400" level="INFO">Clicking button 'css:#kc-login'.</msg>
-<arg>${Kc_loginBtn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-11T16:03:30.923400" elapsed="1.249513"/>
-</kw>
-<arg>${email}</arg>
-<arg>${valid_password}</arg>
-<status status="PASS" start="2024-04-11T16:03:30.836568" elapsed="1.336345"/>
-</kw>
-<kw name="Verify your current page location contains" owner="Generic">
-<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
-<arg>${verifyOption}</arg>
-<arg>60</arg>
-<doc>Waits until the current URL contains ``expected``.</doc>
-<status status="PASS" start="2024-04-11T16:03:32.174912" elapsed="6.490626"/>
-</kw>
-<arg>management-console</arg>
-<status status="PASS" start="2024-04-11T16:03:32.173915" elapsed="6.491623"/>
-</kw>
-<kw name="Get Current Time in Milliseconds" owner="Generic">
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2024-04-11T16:03:38.667539" level="INFO">${time_in_milliseconds} = 1712831618667</msg>
-<var>${time_in_milliseconds}</var>
-<arg>int(time.time() * 1000)</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2024-04-11T16:03:38.666539" elapsed="0.001000"/>
-</kw>
-<return>
-<value>${time_in_milliseconds}</value>
-<status status="PASS" start="2024-04-11T16:03:38.667539" elapsed="0.000000"/>
-</return>
-<msg time="2024-04-11T16:03:38.667539" level="INFO">${StartTime1} = 1712831618667</msg>
-<var>${StartTime1}</var>
-<status status="PASS" start="2024-04-11T16:03:38.665538" elapsed="0.002001"/>
-</kw>
-<kw name="select the option from the side menu" owner="Generic">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>//li[@title='${option}']</arg>
-<arg>60</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-11T16:03:38.668538" elapsed="0.408151"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
-<arg>//li[@title='${option}']</arg>
-<arg>60</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2024-04-11T16:03:39.076689" elapsed="0.021524"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-11T16:03:39.098213" level="INFO">Clicking element '//li[@title='Team Members']'.</msg>
-<msg time="2024-04-11T16:03:39.214911" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="1-selenium-screenshot-1.png"&gt;&lt;img src="1-selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2024-04-11T16:03:39.214911" level="FAIL">ElementClickInterceptedException: Message: Element &lt;li class="bgimages-dashboard pointer sprite-sidebar mb-3 scale ng-tns-c94-0 member-image ng-star-inserted"&gt; is not clickable at point (32,292) because another element &lt;div class="wrapper w-100 vh-100 position-fixed ng-star-inserted"&gt; obscures it
-Stacktrace:
-RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
-WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:192:5
-ElementClickInterceptedError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:336:5
-webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:176:11
-interaction.clickElement@chrome://remote/content/marionette/interaction.sys.mjs:135:11
-clickElement@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:204:29
-receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:84:31
-</msg>
-<arg>//li[@title='${option}']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="FAIL" start="2024-04-11T16:03:39.098213" elapsed="0.131705">ElementClickInterceptedException: Message: Element &lt;li class="bgimages-dashboard pointer sprite-sidebar mb-3 scale ng-tns-c94-0 member-image ng-star-inserted"&gt; is not clickable at point (32,292) because another element &lt;div class="wrapper w-100 vh-100 position-fixed ng-star-inserted"&gt; obscures it
-Stacktrace:
-RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
-WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:192:5
-ElementClickInterceptedError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:336:5
-webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:176:11
-interaction.clickElement@chrome://remote/content/marionette/interaction.sys.mjs:135:11
-clickElement@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:204:29
-receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:84:31
-</status>
-</kw>
-<arg>Team Members</arg>
-<status status="FAIL" start="2024-04-11T16:03:38.668538" elapsed="0.561380">ElementClickInterceptedException: Message: Element &lt;li class="bgimages-dashboard pointer sprite-sidebar mb-3 scale ng-tns-c94-0 member-image ng-star-inserted"&gt; is not clickable at point (32,292) because another element &lt;div class="wrapper w-100 vh-100 position-fixed ng-star-inserted"&gt; obscures it
-Stacktrace:
-RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
-WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:192:5
-ElementClickInterceptedError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:336:5
-webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:176:11
-interaction.clickElement@chrome://remote/content/marionette/interaction.sys.mjs:135:11
-clickElement@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:204:29
-receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:84:31
-</status>
-</kw>
-<kw name="Verify your current page location contains" owner="Generic">
-<arg>memberslist</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.229918" elapsed="0.000000"/>
-</kw>
-<kw name="Get Current Time in Milliseconds" owner="Generic">
-<var>${EndTime1}</var>
-<status status="NOT RUN" start="2024-04-11T16:03:39.229918" elapsed="0.000000"/>
-</kw>
-<kw name="Evaluate" owner="BuiltIn">
-<var>${ActualTime}</var>
-<arg>${EndTime1}-${StartTime1}</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" start="2024-04-11T16:03:39.229918" elapsed="0.000000"/>
-</kw>
-<kw name="Calculate Running time" owner="Generic">
-<arg>23</arg>
-<arg>${pageHeading}</arg>
-<arg>Page Load - Total Page Load Time of Team Members</arg>
-<arg>23</arg>
-<arg>${pageTime}</arg>
-<arg>${ActualTime}</arg>
-<arg>PageLoad_Time</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.229918" elapsed="0.000000"/>
-</kw>
-<kw name="Click on assigned user tab" owner="MemberPage">
-<arg>Assigned Users</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.229918" elapsed="0.000000"/>
-</kw>
-<kw name="Click on assigned user action button" owner="MemberPage">
-<status status="NOT RUN" start="2024-04-11T16:03:39.229918" elapsed="0.000000"/>
-</kw>
-<kw name="Choose the option from the action menu" owner="MemberPage">
-<arg>Add Assignee</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.229918" elapsed="0.000000"/>
-</kw>
-<kw name="Create random assignee first name" owner="MemberPage">
-<status status="NOT RUN" start="2024-04-11T16:03:39.229918" elapsed="0.000000"/>
-</kw>
-<kw name="Create random assignee last name" owner="MemberPage">
-<status status="NOT RUN" start="2024-04-11T16:03:39.229918" elapsed="0.000000"/>
-</kw>
-<kw name="Create random assignee email" owner="MemberPage">
-<status status="NOT RUN" start="2024-04-11T16:03:39.229918" elapsed="0.000000"/>
-</kw>
-<kw name="Create random assignee ID" owner="MemberPage">
-<status status="NOT RUN" start="2024-04-11T16:03:39.229918" elapsed="0.000000"/>
-</kw>
-<kw name="Save the add assignee" owner="MemberPage">
-<arg>save</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.229918" elapsed="0.000000"/>
-</kw>
-<kw name="Fetch alert message text and compare it with" owner="Generic">
-<arg>Assigned Users created successfully</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.229918" elapsed="0.000000"/>
-</kw>
-<kw name="Search assigned user by first and last name" owner="Bulk_Import_ExportPage">
-<arg>${generated_assigneeFname} ${generated_assigneeLname}</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.229918" elapsed="0.000000"/>
-</kw>
-<kw name="Click on assigned user action button" owner="MemberPage">
-<status status="NOT RUN" start="2024-04-11T16:03:39.244911" elapsed="0.000000"/>
-</kw>
-<kw name="Choose the option from the action menu" owner="MemberPage">
-<arg>Bulk Edit</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.244911" elapsed="0.000000"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>${yop_sleep}</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2024-04-11T16:03:39.244911" elapsed="0.000000"/>
-</kw>
-<kw name="Switch Window" owner="SeleniumLibrary">
-<arg>aithentic | Data-Wizard</arg>
-<doc>Switches to browser window matching ``locator``.</doc>
-<status status="NOT RUN" start="2024-04-11T16:03:39.244911" elapsed="0.000000"/>
-</kw>
-<kw name="Verify your current page location contains" owner="Generic">
-<arg>assignee-bulk-edit</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.249425" elapsed="0.000000"/>
-</kw>
-<kw name="Enter the new value of assigned in the first name column" owner="Bulk_Import_ExportPage">
-<arg>FirstName</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.249425" elapsed="0.000000"/>
-</kw>
-<kw name="Enter the new value of assigned in the last name column" owner="Bulk_Import_ExportPage">
-<arg>LastName</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.249425" elapsed="0.000000"/>
-</kw>
-<kw name="Enter the new value of assigned in the email column" owner="Bulk_Import_ExportPage">
-<arg>AssignedEmail</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.249425" elapsed="0.000000"/>
-</kw>
-<kw name="Enter the new value of assigned in the ID column" owner="Bulk_Import_ExportPage">
-<arg>AssignedEmployeeId</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.249425" elapsed="0.003027"/>
-</kw>
-<kw name="click on the button" owner="Generic">
-<arg>Update</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.252452" elapsed="0.000000"/>
-</kw>
-<kw name="Verify the upload message text" owner="Bulk_Import_ExportPage">
-<arg>Upload</arg>
-<arg>Upload Successful</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.252452" elapsed="0.000000"/>
-</kw>
-<kw name="click on the button" owner="Generic">
-<arg>Finish</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.252452" elapsed="0.000000"/>
-</kw>
-<kw name="Click on the confirm button of finish pop up" owner="Bulk_Import_ExportPage">
-<status status="NOT RUN" start="2024-04-11T16:03:39.252452" elapsed="0.000000"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>${search_sleep}</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2024-04-11T16:03:39.252452" elapsed="0.000000"/>
-</kw>
-<kw name="Switch Window" owner="SeleniumLibrary">
-<arg>aithentic | Member - List</arg>
-<doc>Switches to browser window matching ``locator``.</doc>
-<status status="NOT RUN" start="2024-04-11T16:03:39.252452" elapsed="0.000000"/>
-</kw>
-<kw name="Search assigned user by first and last name" owner="Bulk_Import_ExportPage">
-<arg>${generated_assigneeFname} ${generated_assigneeLname}</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.252452" elapsed="0.000000"/>
-</kw>
-<kw name="Search by empID" owner="Bulk_Import_ExportPage">
-<arg>${generated_assigneeEmpID}</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.252452" elapsed="0.000000"/>
-</kw>
-<kw name="Close Browser session" owner="Generic" type="TEARDOWN">
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-04-11T16:03:39.252452" elapsed="3.260645"/>
-</kw>
-<status status="PASS" start="2024-04-11T16:03:39.252452" elapsed="3.260645"/>
-</kw>
-<tag>Sanity</tag>
-<tag>Time</tag>
-<status status="FAIL" start="2024-04-11T16:03:12.011821" elapsed="30.501276">ElementClickInterceptedException: Message: Element &lt;li class="bgimages-dashboard pointer sprite-sidebar mb-3 scale ng-tns-c94-0 member-image ng-star-inserted"&gt; is not clickable at point (32,292) because another element &lt;div class="wrapper w-100 vh-100 position-fixed ng-star-inserted"&gt; obscures it
-Stacktrace:
-RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
-WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:192:5
-ElementClickInterceptedError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:336:5
-webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:176:11
-interaction.clickElement@chrome://remote/content/marionette/interaction.sys.mjs:135:11
-clickElement@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:204:29
-receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:84:31
-</status>
-</test>
-<test id="s1-s1-t3" name="Technology Bulk import" line="578">
-<kw name="open the browser with the url" owner="Generic" type="SETUP">
-<kw name="Fix the column number" owner="Generic">
-<kw name="Catenate" owner="BuiltIn">
-<msg time="2024-04-11T16:03:11.992309" level="INFO">${pageHeading} = 2</msg>
-<var>${pageHeading}</var>
-<arg>2</arg>
-<doc>Catenates the given items together and returns the resulted string.</doc>
-<status status="PASS" start="2024-04-11T16:03:11.991308" elapsed="0.001001"/>
-</kw>
-<kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-04-11T16:03:11.993308" level="INFO">${pageHeading} = 2</msg>
-<arg>${pageHeading}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-04-11T16:03:11.992309" elapsed="0.000999"/>
-</kw>
-<status status="PASS" start="2024-04-11T16:03:11.989308" elapsed="0.004000"/>
-</kw>
-<kw name="Fix the row number" owner="Generic">
-<kw name="Catenate" owner="BuiltIn">
-<msg time="2024-04-11T16:03:11.995311" level="INFO">${pageTime} = 3</msg>
-<var>${pageTime}</var>
-<arg>3</arg>
-<doc>Catenates the given items together and returns the resulted string.</doc>
-<status status="PASS" start="2024-04-11T16:03:11.994311" elapsed="0.001000"/>
-</kw>
-<kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-04-11T16:03:11.996311" level="INFO">${pageTime} = 3</msg>
-<arg>${pageTime}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-04-11T16:03:11.995311" elapsed="0.001000"/>
-</kw>
-<status status="PASS" start="2024-04-11T16:03:11.994311" elapsed="0.002000"/>
-</kw>
-<kw name="Get Current Time in Milliseconds" owner="Generic">
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2024-04-11T16:03:11.998311" level="INFO">${time_in_milliseconds} = 1712831591998</msg>
-<var>${time_in_milliseconds}</var>
-<arg>int(time.time() * 1000)</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2024-04-11T16:03:11.997311" elapsed="0.001000"/>
-</kw>
-<return>
-<value>${time_in_milliseconds}</value>
-<status status="PASS" start="2024-04-11T16:03:11.998311" elapsed="0.000000"/>
-</return>
-<msg time="2024-04-11T16:03:11.999312" level="INFO">${StartTime1} = 1712831591998</msg>
-<var>${StartTime1}</var>
-<status status="PASS" start="2024-04-11T16:03:11.996311" elapsed="0.003001"/>
-</kw>
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-04-11T16:03:12.000312" level="INFO">Opening browser 'firefox' to base url 'https://uat-app.aithentic.com/'.</msg>
-<arg>${url}</arg>
-<arg>${browser_name}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-04-11T16:03:11.999312" elapsed="16.619468"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>//a[normalize-space()='Login']</arg>
-<arg>60</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-11T16:03:28.619865" elapsed="0.048913"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
-<arg>//a[normalize-space()='Login']</arg>
-<arg>60</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2024-04-11T16:03:28.669918" elapsed="0.024382"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-04-11T16:03:28.695299" elapsed="0.279663"/>
-</kw>
-<kw name="Get Current Time in Milliseconds" owner="Generic">
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2024-04-11T16:03:28.976963" level="INFO">${time_in_milliseconds} = 1712831608976</msg>
-<var>${time_in_milliseconds}</var>
-<arg>int(time.time() * 1000)</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2024-04-11T16:03:28.975961" elapsed="0.001002"/>
-</kw>
-<return>
-<value>${time_in_milliseconds}</value>
-<status status="PASS" start="2024-04-11T16:03:28.976963" elapsed="0.000000"/>
-</return>
-<msg time="2024-04-11T16:03:28.976963" level="INFO">${EndTime1} = 1712831608976</msg>
-<var>${EndTime1}</var>
-<status status="PASS" start="2024-04-11T16:03:28.974962" elapsed="0.002001"/>
-</kw>
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2024-04-11T16:03:28.977959" level="INFO">${ActualTime} = 16978</msg>
-<var>${ActualTime}</var>
-<arg>${EndTime1}-${StartTime1}</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2024-04-11T16:03:28.977959" elapsed="0.000000"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Current Time in Milliseconds: ${ActualTime}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-04-11T16:03:28.977959" elapsed="0.000000"/>
-</kw>
-<kw name="Calculate Running time" owner="Generic">
-<kw name="Close All Excel Documents" owner="ExcelLibrary">
-<doc>Closes all opened documents.</doc>
-<status status="PASS" start="2024-04-11T16:03:28.979038" elapsed="0.000000"/>
-</kw>
-<kw name="Open Excel Document" owner="ExcelLibrary">
-<arg>${SheetLocationAndName}</arg>
-<arg>doc_id=1</arg>
-<doc>Opens xlsx document file.</doc>
-<status status="PASS" start="2024-04-11T16:03:28.980047" elapsed="0.036504"/>
-</kw>
-<kw name="Write Excel Cell" owner="ExcelLibrary">
-<arg>${RowNum_forText}</arg>
-<arg>${ColumnNum_forText}</arg>
-<arg>${module_name}</arg>
-<arg>${SheetTabName}</arg>
-<doc>Writes value to the cell.</doc>
-<status status="PASS" start="2024-04-11T16:03:29.016551" elapsed="0.001082"/>
-</kw>
-<kw name="Write Excel Cell" owner="ExcelLibrary">
-<arg>${RowNum}</arg>
-<arg>${ColumnNum}</arg>
-<arg>${TimeTakenToLoginPage}</arg>
-<arg>${SheetTabName}</arg>
-<doc>Writes value to the cell.</doc>
-<status status="PASS" start="2024-04-11T16:03:29.017633" elapsed="0.000000"/>
-</kw>
-<kw name="Save Excel Document" owner="ExcelLibrary">
-<arg>${SheetLocationAndName}</arg>
-<doc>Saves the current document to disk.</doc>
-<status status="PASS" start="2024-04-11T16:03:29.018639" elapsed="0.045310"/>
-</kw>
-<kw name="Close All Excel Documents" owner="ExcelLibrary">
-<doc>Closes all opened documents.</doc>
-<status status="PASS" start="2024-04-11T16:03:29.064991" elapsed="0.000000"/>
-</kw>
-<arg>2</arg>
-<arg>${pageHeading}</arg>
-<arg>Generic - open the browser with the url</arg>
-<arg>2</arg>
-<arg>${pageTime}</arg>
-<arg>${ActualTime}</arg>
-<arg>Load_Time_tracking</arg>
-<status status="PASS" start="2024-04-11T16:03:28.979038" elapsed="0.085953"/>
-</kw>
-<status status="PASS" start="2024-04-11T16:03:11.987309" elapsed="17.077682"/>
-</kw>
-<kw name="click on the tab" owner="Generic">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>//a[normalize-space()='${option}']</arg>
-<arg>60</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-11T16:03:29.065987" elapsed="0.015923"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
-<arg>//a[normalize-space()='${option}']</arg>
-<arg>60</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2024-04-11T16:03:29.082986" elapsed="0.017058"/>
-</kw>
-<kw name="Click Link" owner="SeleniumLibrary">
-<msg time="2024-04-11T16:03:29.101078" level="INFO">Clicking link '//a[normalize-space()='Login']'.</msg>
-<arg>//a[normalize-space()='${option}']</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-11T16:03:29.100044" elapsed="2.047457"/>
-</kw>
-<arg>Login</arg>
-<status status="PASS" start="2024-04-11T16:03:29.065987" elapsed="2.082515"/>
-</kw>
-<kw name="Fill the login Form" owner="LandingPage">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${Kc_username}</arg>
-<arg>60</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-11T16:03:31.150007" elapsed="0.019242"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-04-11T16:03:31.171304" level="INFO">Typing text 'testqa29j@mailinator.com' into text field 'css:#username'.</msg>
-<arg>${Kc_username}</arg>
-<arg>${email}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-11T16:03:31.170248" elapsed="0.040675"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${Kc_password}</arg>
-<arg>60</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-11T16:03:31.212252" elapsed="0.019683"/>
-</kw>
-<kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2024-04-11T16:03:31.232968" level="INFO">Typing password into text field 'css:#password'.</msg>
-<msg time="2024-04-11T16:03:31.238139" level="INFO">Temporally setting log level to: NONE</msg>
-<arg>${Kc_password}</arg>
-<arg>${valid_password}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-11T16:03:31.232968" elapsed="0.014742"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-04-11T16:03:31.248711" level="INFO">Clicking button 'css:#kc-login'.</msg>
-<arg>${Kc_loginBtn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-11T16:03:31.247710" elapsed="1.816455"/>
-</kw>
-<arg>${email}</arg>
-<arg>${valid_password}</arg>
-<status status="PASS" start="2024-04-11T16:03:31.149499" elapsed="1.915704"/>
-</kw>
-<kw name="select the option from the side menu" owner="Generic">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>//li[@title='${option}']</arg>
-<arg>60</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-11T16:03:33.066245" elapsed="6.420203"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
-<arg>//li[@title='${option}']</arg>
-<arg>60</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2024-04-11T16:03:39.486448" elapsed="0.030510"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-11T16:03:39.516958" level="INFO">Clicking element '//li[@title='Technology']'.</msg>
-<msg time="2024-04-11T16:03:39.655565" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="2-selenium-screenshot-1.png"&gt;&lt;img src="2-selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2024-04-11T16:03:39.666077" level="FAIL">ElementClickInterceptedException: Message: Element &lt;li id="technology-list-redirection" class="bgimages-dashboard pointer sprite-sidebar mb-3 scale ng-tns-c94-0 tech-image"&gt; is not clickable at point (32,490) because another element &lt;div class="wrapper w-100 vh-100 position-fixed ng-star-inserted"&gt; obscures it
-Stacktrace:
-RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
-WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:192:5
-ElementClickInterceptedError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:336:5
-webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:176:11
-interaction.clickElement@chrome://remote/content/marionette/interaction.sys.mjs:135:11
-clickElement@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:204:29
-receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:84:31
-</msg>
-<arg>//li[@title='${option}']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="FAIL" start="2024-04-11T16:03:39.516958" elapsed="0.151144">ElementClickInterceptedException: Message: Element &lt;li id="technology-list-redirection" class="bgimages-dashboard pointer sprite-sidebar mb-3 scale ng-tns-c94-0 tech-image"&gt; is not clickable at point (32,490) because another element &lt;div class="wrapper w-100 vh-100 position-fixed ng-star-inserted"&gt; obscures it
-Stacktrace:
-RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
-WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:192:5
-ElementClickInterceptedError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:336:5
-webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:176:11
-interaction.clickElement@chrome://remote/content/marionette/interaction.sys.mjs:135:11
-clickElement@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:204:29
-receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:84:31
-</status>
-</kw>
-<arg>Technology</arg>
-<status status="FAIL" start="2024-04-11T16:03:33.065203" elapsed="6.602899">ElementClickInterceptedException: Message: Element &lt;li id="technology-list-redirection" class="bgimages-dashboard pointer sprite-sidebar mb-3 scale ng-tns-c94-0 tech-image"&gt; is not clickable at point (32,490) because another element &lt;div class="wrapper w-100 vh-100 position-fixed ng-star-inserted"&gt; obscures it
-Stacktrace:
-RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
-WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:192:5
-ElementClickInterceptedError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:336:5
-webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:176:11
-interaction.clickElement@chrome://remote/content/marionette/interaction.sys.mjs:135:11
-clickElement@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:204:29
-receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:84:31
-</status>
-</kw>
-<kw name="Verify your current page location contains" owner="Generic">
-<arg>technology-list</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.668102" elapsed="0.000000"/>
-</kw>
-<kw name="Click on action button of technology" owner="TechnologyPage">
-<status status="NOT RUN" start="2024-04-11T16:03:39.668102" elapsed="0.000000"/>
-</kw>
-<kw name="click on bulk import under action button of technology" owner="TechnologyPage">
-<status status="NOT RUN" start="2024-04-11T16:03:39.668102" elapsed="0.000000"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>${yop_sleep}</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2024-04-11T16:03:39.668102" elapsed="0.000000"/>
-</kw>
-<kw name="Switch Window" owner="SeleniumLibrary">
-<arg>aithentic | Data-Wizard</arg>
-<doc>Switches to browser window matching ``locator``.</doc>
-<status status="NOT RUN" start="2024-04-11T16:03:39.668102" elapsed="0.000000"/>
-</kw>
-<kw name="click on checkbox under technology bulk import" owner="Bulk_Import_ExportPage">
-<status status="NOT RUN" start="2024-04-11T16:03:39.668102" elapsed="0.000000"/>
-</kw>
-<kw name="click on the button" owner="Generic">
-<arg>Next</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.668102" elapsed="0.000000"/>
-</kw>
-<kw name="Verify your current page location contains" owner="Generic">
-<arg>add-technology</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.668102" elapsed="0.000000"/>
-</kw>
-<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
-<arg>Brand</arg>
-<arg>QABrand555</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.668102" elapsed="0.000000"/>
-</kw>
-<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
-<arg>Product</arg>
-<arg>Product_00337612322</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.677612" elapsed="0.000000"/>
-</kw>
-<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
-<arg>ItemTechCount</arg>
-<arg>1</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.677612" elapsed="0.000000"/>
-</kw>
-<kw name="Select option from technology type column in bulk_edit" owner="Bulk_Import_ExportPage">
-<arg>Supplier</arg>
-<arg>1</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.677612" elapsed="0.000000"/>
-</kw>
-<kw name="Select option from technology type column in bulk_edit" owner="Bulk_Import_ExportPage">
-<arg>SupportPartner</arg>
-<arg>1</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.680144" elapsed="0.000000"/>
-</kw>
-<kw name="click on the button" owner="Generic">
-<arg>Check Data</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.680144" elapsed="0.000000"/>
-</kw>
-<kw name="click on the button" owner="Generic">
-<arg>Upload</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.680144" elapsed="0.000000"/>
-</kw>
-<kw name="Verify the upload message text" owner="Bulk_Import_ExportPage">
-<arg>Upload</arg>
-<arg>Upload is prepared</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.683157" elapsed="0.000000"/>
-</kw>
-<kw name="click on the button" owner="Generic">
-<arg>Next</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.683157" elapsed="0.000000"/>
-</kw>
-<kw name="Verify your current page location contains" owner="Generic">
-<arg>add-technology-templates</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.683157" elapsed="0.000000"/>
-</kw>
-<kw name="Select option from technology type column in bulk_edit" owner="Bulk_Import_ExportPage">
-<arg>LocationName</arg>
-<arg>1</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.683157" elapsed="0.000000"/>
-</kw>
-<kw name="Select option from technology type column in bulk_edit" owner="Bulk_Import_ExportPage">
-<arg>DepartmentName</arg>
-<arg>1</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.683157" elapsed="0.000000"/>
-</kw>
-<kw name="Select option from technology type column in bulk_edit" owner="Bulk_Import_ExportPage">
-<arg>AssignTo</arg>
-<arg>1</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.683157" elapsed="0.000000"/>
-</kw>
-<kw name="Enter the new value of asset id of technology bulk import" owner="Bulk_Import_ExportPage">
-<arg>AssetId</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.683157" elapsed="0.000000"/>
-</kw>
-<kw name="Select option from technology type column in bulk_edit" owner="Bulk_Import_ExportPage">
-<arg>Status</arg>
-<arg>1</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.683157" elapsed="0.000000"/>
-</kw>
-<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
-<arg>Status</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.683157" elapsed="0.000000"/>
-</kw>
-<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
-<arg>PurchaseOrderNo</arg>
-<arg>25</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.683157" elapsed="0.000000"/>
-</kw>
-<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
-<arg>PurchaseOrderNo</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.683157" elapsed="0.000000"/>
-</kw>
-<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
-<arg>PurchaseDt</arg>
-<arg>01/21/2021</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.683157" elapsed="0.000000"/>
-</kw>
-<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
-<arg>PurchaseDt</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.683157" elapsed="0.000000"/>
-</kw>
-<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
-<arg>WarrantyEndDt</arg>
-<arg>03/23/2025</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.683157" elapsed="0.000000"/>
-</kw>
-<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
-<arg>WarrantyEndDt</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.683157" elapsed="0.000000"/>
-</kw>
-<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
-<arg>Comment</arg>
-<arg>Testing</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.683157" elapsed="0.000000"/>
-</kw>
-<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
-<arg>Comment</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.683157" elapsed="0.000000"/>
-</kw>
-<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
-<arg>CostType</arg>
-<arg>Purchased</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.683157" elapsed="0.000000"/>
-</kw>
-<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
-<arg>CostType</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.683157" elapsed="0.000000"/>
-</kw>
-<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
-<arg>PaymentPartner</arg>
-<arg>testqa 20Feb</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.683157" elapsed="0.000000"/>
-</kw>
-<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
-<arg>PaymentPartner</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.683157" elapsed="0.000000"/>
-</kw>
-<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
-<arg>PaymentType</arg>
-<arg>FixedPayment</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.683157" elapsed="0.000000"/>
-</kw>
-<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
-<arg>PaymentType</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.683157" elapsed="0.000000"/>
-</kw>
-<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
-<arg>PaymentPeriod</arg>
-<arg>Monthly</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.683157" elapsed="0.000000"/>
-</kw>
-<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
-<arg>PaymentPeriod</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.683157" elapsed="0.000000"/>
-</kw>
-<kw name="Select option from technology type column in bulk_edit" owner="Bulk_Import_ExportPage">
-<arg>BudgetCurrency</arg>
-<arg>1</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.683157" elapsed="0.000000"/>
-</kw>
-<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
-<arg>BudgetCurrency</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.683157" elapsed="0.000000"/>
-</kw>
-<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
-<arg>BudgetPaymentValue</arg>
-<arg>2500</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.683157" elapsed="0.000000"/>
-</kw>
-<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
-<arg>BudgetPaymentValue</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.683157" elapsed="0.000000"/>
-</kw>
-<kw name="Select option from technology type column in bulk_edit" owner="Bulk_Import_ExportPage">
-<arg>ActualPaymentCurrency</arg>
-<arg>1</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.683157" elapsed="0.000000"/>
-</kw>
-<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
-<arg>ActualPaymentCurrency</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.683157" elapsed="0.000000"/>
-</kw>
-<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
-<arg>LastActualPaymentValue</arg>
-<arg>2000</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.683157" elapsed="0.000000"/>
-</kw>
-<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
-<arg>LastActualPaymentValue</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.683157" elapsed="0.000000"/>
-</kw>
-<kw name="Select option from technology type column in bulk_edit" owner="Bulk_Import_ExportPage">
-<arg>CostCenter</arg>
-<arg>1</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.698648" elapsed="0.000834"/>
-</kw>
-<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
-<arg>CostCenter</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.699482" elapsed="0.000000"/>
-</kw>
-<kw name="Select option from technology type column in bulk_edit" owner="Bulk_Import_ExportPage">
-<arg>Supplier</arg>
-<arg>1</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.700439" elapsed="0.000000"/>
-</kw>
-<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
-<arg>Supplier</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.700439" elapsed="0.000000"/>
-</kw>
-<kw name="Select option from technology type column in bulk_edit" owner="Bulk_Import_ExportPage">
-<arg>SupportPartner</arg>
-<arg>1</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.700439" elapsed="0.000000"/>
-</kw>
-<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
-<arg>SupportPartner</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.700439" elapsed="0.000000"/>
-</kw>
-<kw name="Enter the new value of serial number of technology bulk import" owner="Bulk_Import_ExportPage">
-<arg>DYNA_21</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.700439" elapsed="0.000000"/>
-</kw>
-<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
-<arg>DYNA_21</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.700439" elapsed="0.000000"/>
-</kw>
-<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
-<arg>TECHDYNA_2</arg>
-<arg>Capex</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.700439" elapsed="0.000000"/>
-</kw>
-<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
-<arg>TECHDYNA_2</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.700439" elapsed="0.000000"/>
-</kw>
-<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
-<arg>TECHDYNA_9</arg>
-<arg>Account123</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.700439" elapsed="0.000000"/>
-</kw>
-<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
-<arg>TECHDYNA_9</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.700439" elapsed="0.000000"/>
-</kw>
-<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
-<arg>TECHDYNA_3</arg>
-<arg>1654</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.700439" elapsed="0.005510"/>
-</kw>
-<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
-<arg>TECHDYNA_3</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.705949" elapsed="0.000000"/>
-</kw>
-<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
-<arg>TECHDYNA_4</arg>
-<arg>1100</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.705949" elapsed="0.000000"/>
-</kw>
-<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
-<arg>TECHDYNA_4</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.705949" elapsed="0.000000"/>
-</kw>
-<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
-<arg>TECHDYNA_7</arg>
-<arg>100</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.705949" elapsed="0.000000"/>
-</kw>
-<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
-<arg>TECHDYNA_7</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.705949" elapsed="0.000000"/>
-</kw>
-<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
-<arg>TECHDYNA_8</arg>
-<arg>12</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.705949" elapsed="0.000000"/>
-</kw>
-<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
-<arg>TECHDYNA_8</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.705949" elapsed="0.000000"/>
-</kw>
-<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
-<arg>TECHDYNA_8</arg>
-<arg>01/01/2023</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.705949" elapsed="0.000000"/>
-</kw>
-<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
-<arg>TECHDYNA_10</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.705949" elapsed="0.000000"/>
-</kw>
-<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
-<arg>TECHDYNA_8</arg>
-<arg>01/01/2024</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.705949" elapsed="0.000000"/>
-</kw>
-<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
-<arg>TECHDYNA_11</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.705949" elapsed="0.000000"/>
-</kw>
-<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
-<arg>TECHDYNA_8</arg>
-<arg>1</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.705949" elapsed="0.000000"/>
-</kw>
-<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
-<arg>TECHDYNA_12</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.705949" elapsed="0.000000"/>
-</kw>
-<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
-<arg>RenewalDate</arg>
-<arg>02/11/2024</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.705949" elapsed="0.000000"/>
-</kw>
-<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
-<arg>RenewalDate</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.705949" elapsed="0.000000"/>
-</kw>
-<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
-<arg>LastPaymentDate</arg>
-<arg>03/12/2024</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.705949" elapsed="0.000000"/>
-</kw>
-<kw name="click on the button" owner="Generic">
-<arg>Check Data</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.714461" elapsed="0.000000"/>
-</kw>
-<kw name="click on the button" owner="Generic">
-<arg>Upload</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.714461" elapsed="0.000000"/>
-</kw>
-<kw name="Verify the upload message text" owner="Bulk_Import_ExportPage">
-<arg>UploadMessage</arg>
-<arg>Upload Successful</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.714461" elapsed="0.000000"/>
-</kw>
-<kw name="click on the button" owner="Generic">
-<arg>Next</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.714461" elapsed="0.000000"/>
-</kw>
-<kw name="Click on I_m_done button when popup appears" owner="Bulk_Import_ExportPage">
-<arg>no-im-done</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.714461" elapsed="0.000000"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>${yop_sleep}</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2024-04-11T16:03:39.714461" elapsed="0.000000"/>
-</kw>
-<kw name="Switch Window" owner="SeleniumLibrary">
-<arg>aithentic | Technology - List</arg>
-<doc>Switches to browser window matching ``locator``.</doc>
-<status status="NOT RUN" start="2024-04-11T16:03:39.714461" elapsed="0.000000"/>
-</kw>
-<kw name="Verify your current page location contains" owner="Generic">
-<arg>technology-list</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.714461" elapsed="0.000000"/>
-</kw>
-<kw name="Search by AssetId" owner="TechnologyPage">
-<arg>${generated_assetid}</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:39.714461" elapsed="0.000000"/>
-</kw>
-<kw name="Wait until table get load" owner="Generic">
-<status status="NOT RUN" start="2024-04-11T16:03:39.714461" elapsed="0.000000"/>
-</kw>
-<kw name="Close Browser session" owner="Generic" type="TEARDOWN">
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-04-11T16:03:39.714461" elapsed="3.337822"/>
-</kw>
-<status status="PASS" start="2024-04-11T16:03:39.714461" elapsed="3.337822"/>
-</kw>
-<tag>Sanity</tag>
-<status status="FAIL" start="2024-04-11T16:03:11.982307" elapsed="31.069976">ElementClickInterceptedException: Message: Element &lt;li id="technology-list-redirection" class="bgimages-dashboard pointer sprite-sidebar mb-3 scale ng-tns-c94-0 tech-image"&gt; is not clickable at point (32,490) because another element &lt;div class="wrapper w-100 vh-100 position-fixed ng-star-inserted"&gt; obscures it
-Stacktrace:
-RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
-WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:192:5
-ElementClickInterceptedError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:336:5
-webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:176:11
-interaction.clickElement@chrome://remote/content/marionette/interaction.sys.mjs:135:11
-clickElement@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:204:29
-receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:84:31
-</status>
-</test>
-<doc>Contains all keyword of  Dashboard page</doc>
-<status status="FAIL" start="2024-04-11T16:03:09.846000" elapsed="36.167361"/>
+<doc>Contains all test cases of Contracts page</doc>
+<status status="FAIL" start="2024-04-12T10:51:57.666000" elapsed="22.697997"/>
 </suite>
-<suite id="s1-s2" name="ContractsPageTest" source="D:\aithentic-rfw\TestPage\ContractsPageTest.robot">
-<test id="s1-s2-t1" name="Technology Auto removed from dynamic contract When edit Brand and product" line="72">
+<suite id="s1-s2" name="OCSTest" source="D:\aithentic-rfw\TestPage\OCSTest.robot">
+<test id="s1-s2-t1" name="Download agent for OCS from signup - Windows" line="149">
 <kw name="open the browser with the url" owner="Generic" type="SETUP">
 <kw name="Fix the column number" owner="Generic">
 <kw name="Catenate" owner="BuiltIn">
-<msg time="2024-04-11T16:03:12.020860" level="INFO">${pageHeading} = 2</msg>
+<msg time="2024-04-12T10:52:01.250997" level="INFO">${pageHeading} = 2</msg>
 <var>${pageHeading}</var>
 <arg>2</arg>
 <doc>Catenates the given items together and returns the resulted string.</doc>
-<status status="PASS" start="2024-04-11T16:03:12.020860" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-12T10:52:01.250897" elapsed="0.000100"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-04-11T16:03:12.022860" level="INFO">${pageHeading} = 2</msg>
+<msg time="2024-04-12T10:52:01.250997" level="INFO">${pageHeading} = 2</msg>
 <arg>${pageHeading}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-04-11T16:03:12.021861" elapsed="0.000999"/>
+<status status="PASS" start="2024-04-12T10:52:01.250997" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-04-11T16:03:12.017326" elapsed="0.005534"/>
+<status status="PASS" start="2024-04-12T10:52:01.248851" elapsed="0.002146"/>
 </kw>
 <kw name="Fix the row number" owner="Generic">
 <kw name="Catenate" owner="BuiltIn">
-<msg time="2024-04-11T16:03:12.025860" level="INFO">${pageTime} = 3</msg>
+<msg time="2024-04-12T10:52:01.252122" level="INFO">${pageTime} = 3</msg>
 <var>${pageTime}</var>
 <arg>3</arg>
 <doc>Catenates the given items together and returns the resulted string.</doc>
-<status status="PASS" start="2024-04-11T16:03:12.023861" elapsed="0.001999"/>
+<status status="PASS" start="2024-04-12T10:52:01.252122" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-04-11T16:03:12.026860" level="INFO">${pageTime} = 3</msg>
+<msg time="2024-04-12T10:52:01.253136" level="INFO">${pageTime} = 3</msg>
 <arg>${pageTime}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-04-11T16:03:12.025860" elapsed="0.001000"/>
+<status status="PASS" start="2024-04-12T10:52:01.252122" elapsed="0.001014"/>
 </kw>
-<status status="PASS" start="2024-04-11T16:03:12.022860" elapsed="0.004000"/>
+<status status="PASS" start="2024-04-12T10:52:01.252122" elapsed="0.001119"/>
 </kw>
 <kw name="Get Current Time in Milliseconds" owner="Generic">
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2024-04-11T16:03:12.028864" level="INFO">${time_in_milliseconds} = 1712831592028</msg>
+<msg time="2024-04-12T10:52:01.253241" level="INFO">${time_in_milliseconds} = 1712899321253</msg>
 <var>${time_in_milliseconds}</var>
 <arg>int(time.time() * 1000)</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2024-04-11T16:03:12.028864" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-12T10:52:01.253241" elapsed="0.000000"/>
 </kw>
 <return>
 <value>${time_in_milliseconds}</value>
-<status status="PASS" start="2024-04-11T16:03:12.028864" elapsed="0.000998"/>
+<status status="PASS" start="2024-04-12T10:52:01.254255" elapsed="0.000117"/>
 </return>
-<msg time="2024-04-11T16:03:12.030369" level="INFO">${StartTime1} = 1712831592028</msg>
+<msg time="2024-04-12T10:52:01.254372" level="INFO">${StartTime1} = 1712899321253</msg>
 <var>${StartTime1}</var>
-<status status="PASS" start="2024-04-11T16:03:12.027860" elapsed="0.002509"/>
+<status status="PASS" start="2024-04-12T10:52:01.253241" elapsed="0.001131"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-04-11T16:03:12.031381" level="INFO">Opening browser 'firefox' to base url 'https://uat-app.aithentic.com/'.</msg>
+<msg time="2024-04-12T10:52:01.254372" level="INFO">Opening browser 'firefox' to base url 'https://uat-app.aithentic.com/'.</msg>
 <arg>${url}</arg>
 <arg>${browser_name}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-04-11T16:03:12.030369" elapsed="33.501824"/>
+<status status="PASS" start="2024-04-12T10:52:01.254372" elapsed="16.858337"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<msg time="2024-04-11T16:03:45.974167" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: WebDriver session does not exist, or is not active
-Stacktrace:
-RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
-WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:192:5
-InvalidSessionIDError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:447:5
-assert.that/&lt;@chrome://remote/content/shared/webdriver/Assert.sys.mjs:485:13
-assert.session@chrome://remote/content/shared/webdriver/Assert.sys.mjs:37:4
-despatch@chrome://remote/content/marionette/server.sys.mjs:315:19
-execute@chrome://remote/content/marionette/server.sys.mjs:289:16
-onPacket/&lt;@chrome://remote/content/marionette/server.sys.mjs:262:20
-onPacket@chrome://remote/content/marionette/server.sys.mjs:263:9
-_onJSONObjectReady/&lt;@chrome://remote/content/marionette/transport.sys.mjs:494:20
-</msg>
-<msg time="2024-04-11T16:03:45.974167" level="FAIL">NoSuchWindowException: Message: Browsing context has been discarded
-Stacktrace:
-RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
-WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:192:5
-NoSuchWindowError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:678:5
-assert.that/&lt;@chrome://remote/content/shared/webdriver/Assert.sys.mjs:485:13
-assert.open@chrome://remote/content/shared/webdriver/Assert.sys.mjs:147:4
-GeckoDriver.prototype.findElements@chrome://remote/content/marionette/driver.sys.mjs:1584:15
-despatch@chrome://remote/content/marionette/server.sys.mjs:318:40
-execute@chrome://remote/content/marionette/server.sys.mjs:289:16
-onPacket/&lt;@chrome://remote/content/marionette/server.sys.mjs:262:20
-onPacket@chrome://remote/content/marionette/server.sys.mjs:263:9
-_onJSONObjectReady/&lt;@chrome://remote/content/marionette/transport.sys.mjs:494:20
-</msg>
 <arg>//a[normalize-space()='Login']</arg>
 <arg>60</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="FAIL" start="2024-04-11T16:03:45.541704" elapsed="0.436482">NoSuchWindowException: Message: Browsing context has been discarded
-Stacktrace:
-RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
-WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:192:5
-NoSuchWindowError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:678:5
-assert.that/&lt;@chrome://remote/content/shared/webdriver/Assert.sys.mjs:485:13
-assert.open@chrome://remote/content/shared/webdriver/Assert.sys.mjs:147:4
-GeckoDriver.prototype.findElements@chrome://remote/content/marionette/driver.sys.mjs:1584:15
-despatch@chrome://remote/content/marionette/server.sys.mjs:318:40
-execute@chrome://remote/content/marionette/server.sys.mjs:289:16
-onPacket/&lt;@chrome://remote/content/marionette/server.sys.mjs:262:20
-onPacket@chrome://remote/content/marionette/server.sys.mjs:263:9
-_onJSONObjectReady/&lt;@chrome://remote/content/marionette/transport.sys.mjs:494:20
-</status>
+<status status="PASS" start="2024-04-12T10:52:18.113802" elapsed="0.049138"/>
 </kw>
 <kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
 <arg>//a[normalize-space()='Login']</arg>
 <arg>60</arg>
 <doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="NOT RUN" start="2024-04-11T16:03:45.978186" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-12T10:52:18.162940" elapsed="0.028087"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="NOT RUN" start="2024-04-11T16:03:45.978186" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-12T10:52:18.192027" elapsed="0.274602"/>
 </kw>
 <kw name="Get Current Time in Milliseconds" owner="Generic">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-12T10:52:18.469983" level="INFO">${time_in_milliseconds} = 1712899338469</msg>
+<var>${time_in_milliseconds}</var>
+<arg>int(time.time() * 1000)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-12T10:52:18.468907" elapsed="0.001076"/>
+</kw>
+<return>
+<value>${time_in_milliseconds}</value>
+<status status="PASS" start="2024-04-12T10:52:18.469983" elapsed="0.001051"/>
+</return>
+<msg time="2024-04-12T10:52:18.471132" level="INFO">${EndTime1} = 1712899338469</msg>
 <var>${EndTime1}</var>
-<status status="NOT RUN" start="2024-04-11T16:03:45.978186" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-12T10:52:18.466629" elapsed="0.004503"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-12T10:52:18.472135" level="INFO">${ActualTime} = 17216</msg>
 <var>${ActualTime}</var>
 <arg>${EndTime1}-${StartTime1}</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" start="2024-04-11T16:03:45.984698" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-12T10:52:18.471132" elapsed="0.001003"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Current Time in Milliseconds: ${ActualTime}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2024-04-11T16:03:45.984698" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-12T10:52:18.472135" elapsed="0.000000"/>
 </kw>
 <kw name="Calculate Running time" owner="Generic">
+<kw name="Close All Excel Documents" owner="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="PASS" start="2024-04-12T10:52:18.473195" elapsed="0.000000"/>
+</kw>
+<kw name="Open Excel Document" owner="ExcelLibrary">
+<msg time="2024-04-12T10:52:18.510760" level="FAIL">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</msg>
+<arg>${SheetLocationAndName}</arg>
+<arg>doc_id=1</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="FAIL" start="2024-04-12T10:52:18.474244" elapsed="0.038676">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${RowNum_forText}</arg>
+<arg>${ColumnNum_forText}</arg>
+<arg>${module_name}</arg>
+<arg>${SheetTabName}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2024-04-12T10:52:18.523700" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${RowNum}</arg>
+<arg>${ColumnNum}</arg>
+<arg>${TimeTakenToLoginPage}</arg>
+<arg>${SheetTabName}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2024-04-12T10:52:18.523700" elapsed="0.000000"/>
+</kw>
+<kw name="Save Excel Document" owner="ExcelLibrary">
+<arg>${SheetLocationAndName}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="NOT RUN" start="2024-04-12T10:52:18.523700" elapsed="0.001004"/>
+</kw>
+<kw name="Close All Excel Documents" owner="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="NOT RUN" start="2024-04-12T10:52:18.524704" elapsed="0.000000"/>
+</kw>
 <arg>2</arg>
 <arg>${pageHeading}</arg>
 <arg>Generic - open the browser with the url</arg>
@@ -1694,89 +311,1341 @@ _onJSONObjectReady/&lt;@chrome://remote/content/marionette/transport.sys.mjs:494
 <arg>${pageTime}</arg>
 <arg>${ActualTime}</arg>
 <arg>Load_Time_tracking</arg>
-<status status="NOT RUN" start="2024-04-11T16:03:45.984698" elapsed="0.000000"/>
+<status status="FAIL" start="2024-04-12T10:52:18.472135" elapsed="0.052569">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
 </kw>
-<status status="FAIL" start="2024-04-11T16:03:12.016820" elapsed="33.967878">NoSuchWindowException: Message: Browsing context has been discarded
-Stacktrace:
-RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
-WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:192:5
-NoSuchWindowError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:678:5
-assert.that/&lt;@chrome://remote/content/shared/webdriver/Assert.sys.mjs:485:13
-assert.open@chrome://remote/content/shared/webdriver/Assert.sys.mjs:147:4
-GeckoDriver.prototype.findElements@chrome://remote/content/marionette/driver.sys.mjs:1584:15
-despatch@chrome://remote/content/marionette/server.sys.mjs:318:40
-execute@chrome://remote/content/marionette/server.sys.mjs:289:16
-onPacket/&lt;@chrome://remote/content/marionette/server.sys.mjs:262:20
-onPacket@chrome://remote/content/marionette/server.sys.mjs:263:9
-_onJSONObjectReady/&lt;@chrome://remote/content/marionette/transport.sys.mjs:494:20
-</status>
+<status status="FAIL" start="2024-04-12T10:52:01.248851" elapsed="17.275853">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
 </kw>
 <kw name="Close Browser session" owner="Generic" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
-<msg time="2024-04-11T16:03:48.182536" level="ERROR">When closing browser, received exception: Execution terminated by signal</msg>
-<msg time="2024-04-11T16:03:48.182536" level="INFO">Cannot capture screenshot because no browser is open.</msg>
 <doc>Closes the current browser.</doc>
-<status status="FAIL" start="2024-04-11T16:03:45.984698" elapsed="2.197838">Execution terminated by signal</status>
+<status status="PASS" start="2024-04-12T10:52:18.525751" elapsed="3.274038"/>
 </kw>
-<status status="FAIL" start="2024-04-11T16:03:45.984698" elapsed="2.197838">Execution terminated by signal</status>
+<status status="PASS" start="2024-04-12T10:52:18.525751" elapsed="3.274038"/>
+</kw>
+<tag>Sanity</tag>
+<status status="FAIL" start="2024-04-12T10:52:01.246611" elapsed="20.553178">Setup failed:
+BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
+</test>
+<test id="s1-s2-t2" name="Add component as an asset after Adding OCS asset" line="734">
+<kw name="open the browser with the url" owner="Generic" type="SETUP">
+<kw name="Fix the column number" owner="Generic">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2024-04-12T10:51:59.538594" level="INFO">${pageHeading} = 2</msg>
+<var>${pageHeading}</var>
+<arg>2</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2024-04-12T10:51:59.537497" elapsed="0.001097"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-12T10:51:59.539926" level="INFO">${pageHeading} = 2</msg>
+<arg>${pageHeading}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-12T10:51:59.539419" elapsed="0.000507"/>
+</kw>
+<status status="PASS" start="2024-04-12T10:51:59.535415" elapsed="0.004511"/>
+</kw>
+<kw name="Fix the row number" owner="Generic">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2024-04-12T10:51:59.540994" level="INFO">${pageTime} = 3</msg>
+<var>${pageTime}</var>
+<arg>3</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2024-04-12T10:51:59.540994" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-12T10:51:59.542038" level="INFO">${pageTime} = 3</msg>
+<arg>${pageTime}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-12T10:51:59.540994" elapsed="0.001044"/>
+</kw>
+<status status="PASS" start="2024-04-12T10:51:59.539926" elapsed="0.002112"/>
+</kw>
+<kw name="Get Current Time in Milliseconds" owner="Generic">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-12T10:51:59.543091" level="INFO">${time_in_milliseconds} = 1712899319543</msg>
+<var>${time_in_milliseconds}</var>
+<arg>int(time.time() * 1000)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-12T10:51:59.542038" elapsed="0.001053"/>
+</kw>
+<return>
+<value>${time_in_milliseconds}</value>
+<status status="PASS" start="2024-04-12T10:51:59.543091" elapsed="0.000000"/>
+</return>
+<msg time="2024-04-12T10:51:59.543091" level="INFO">${StartTime1} = 1712899319543</msg>
+<var>${StartTime1}</var>
+<status status="PASS" start="2024-04-12T10:51:59.542038" elapsed="0.001053"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-04-12T10:51:59.544136" level="INFO">Opening browser 'firefox' to base url 'https://uat-app.aithentic.com/'.</msg>
+<arg>${url}</arg>
+<arg>${browser_name}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-04-12T10:51:59.544136" elapsed="17.981478"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Login']</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-12T10:52:17.526619" elapsed="0.055432"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Login']</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-04-12T10:52:17.583052" elapsed="0.035284"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-04-12T10:52:17.619335" elapsed="0.284453"/>
+</kw>
+<kw name="Get Current Time in Milliseconds" owner="Generic">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-12T10:52:17.906648" level="INFO">${time_in_milliseconds} = 1712899337906</msg>
+<var>${time_in_milliseconds}</var>
+<arg>int(time.time() * 1000)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-12T10:52:17.905250" elapsed="0.002396"/>
+</kw>
+<return>
+<value>${time_in_milliseconds}</value>
+<status status="PASS" start="2024-04-12T10:52:17.907646" elapsed="0.000999"/>
+</return>
+<msg time="2024-04-12T10:52:17.908952" level="INFO">${EndTime1} = 1712899337906</msg>
+<var>${EndTime1}</var>
+<status status="PASS" start="2024-04-12T10:52:17.904250" elapsed="0.004702"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-12T10:52:17.909950" level="INFO">${ActualTime} = 18363</msg>
+<var>${ActualTime}</var>
+<arg>${EndTime1}-${StartTime1}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-12T10:52:17.908952" elapsed="0.000998"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Current Time in Milliseconds: ${ActualTime}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-12T10:52:17.910950" elapsed="0.000059"/>
+</kw>
+<kw name="Calculate Running time" owner="Generic">
+<kw name="Close All Excel Documents" owner="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="PASS" start="2024-04-12T10:52:17.912009" elapsed="0.001047"/>
+</kw>
+<kw name="Open Excel Document" owner="ExcelLibrary">
+<msg time="2024-04-12T10:52:17.962950" level="FAIL">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</msg>
+<arg>${SheetLocationAndName}</arg>
+<arg>doc_id=1</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="FAIL" start="2024-04-12T10:52:17.913056" elapsed="0.054626">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${RowNum_forText}</arg>
+<arg>${ColumnNum_forText}</arg>
+<arg>${module_name}</arg>
+<arg>${SheetTabName}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2024-04-12T10:52:17.980676" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${RowNum}</arg>
+<arg>${ColumnNum}</arg>
+<arg>${TimeTakenToLoginPage}</arg>
+<arg>${SheetTabName}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2024-04-12T10:52:17.980676" elapsed="0.001001"/>
+</kw>
+<kw name="Save Excel Document" owner="ExcelLibrary">
+<arg>${SheetLocationAndName}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="NOT RUN" start="2024-04-12T10:52:17.982030" elapsed="0.000000"/>
+</kw>
+<kw name="Close All Excel Documents" owner="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="NOT RUN" start="2024-04-12T10:52:17.983106" elapsed="0.000000"/>
+</kw>
+<arg>2</arg>
+<arg>${pageHeading}</arg>
+<arg>Generic - open the browser with the url</arg>
+<arg>2</arg>
+<arg>${pageTime}</arg>
+<arg>${ActualTime}</arg>
+<arg>Load_Time_tracking</arg>
+<status status="FAIL" start="2024-04-12T10:52:17.911009" elapsed="0.072097">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
+</kw>
+<status status="FAIL" start="2024-04-12T10:51:59.534413" elapsed="18.449694">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
+</kw>
+<kw name="Close Browser session" owner="Generic" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-04-12T10:52:17.985188" elapsed="3.267538"/>
+</kw>
+<status status="PASS" start="2024-04-12T10:52:17.984161" elapsed="3.268565"/>
+</kw>
+<tag>Sanity</tag>
+<tag>smoke</tag>
+<status status="FAIL" start="2024-04-12T10:51:59.530505" elapsed="21.722221">Setup failed:
+BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
+</test>
+<test id="s1-s2-t3" name="Match Discovery and Existing Asset" line="490">
+<kw name="open the browser with the url" owner="Generic" type="SETUP">
+<kw name="Fix the column number" owner="Generic">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2024-04-12T10:52:56.168793" level="INFO">${pageHeading} = 2</msg>
+<var>${pageHeading}</var>
+<arg>2</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2024-04-12T10:52:56.168793" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-12T10:52:56.169889" level="INFO">${pageHeading} = 2</msg>
+<arg>${pageHeading}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-12T10:52:56.168793" elapsed="0.001096"/>
+</kw>
+<status status="PASS" start="2024-04-12T10:52:56.167691" elapsed="0.002198"/>
+</kw>
+<kw name="Fix the row number" owner="Generic">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2024-04-12T10:52:56.170987" level="INFO">${pageTime} = 3</msg>
+<var>${pageTime}</var>
+<arg>3</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2024-04-12T10:52:56.169889" elapsed="0.001098"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-12T10:52:56.170987" level="INFO">${pageTime} = 3</msg>
+<arg>${pageTime}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-12T10:52:56.170987" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-04-12T10:52:56.169889" elapsed="0.001098"/>
+</kw>
+<kw name="Get Current Time in Milliseconds" owner="Generic">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-12T10:52:56.172083" level="INFO">${time_in_milliseconds} = 1712899376172</msg>
+<var>${time_in_milliseconds}</var>
+<arg>int(time.time() * 1000)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-12T10:52:56.172083" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${time_in_milliseconds}</value>
+<status status="PASS" start="2024-04-12T10:52:56.172083" elapsed="0.000000"/>
+</return>
+<msg time="2024-04-12T10:52:56.172083" level="INFO">${StartTime1} = 1712899376172</msg>
+<var>${StartTime1}</var>
+<status status="PASS" start="2024-04-12T10:52:56.170987" elapsed="0.001096"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-04-12T10:52:56.173086" level="INFO">Opening browser 'firefox' to base url 'https://uat-app.aithentic.com/'.</msg>
+<arg>${url}</arg>
+<arg>${browser_name}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-04-12T10:52:56.173086" elapsed="16.238804"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Login']</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-12T10:53:12.412889" elapsed="0.030706"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Login']</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-04-12T10:53:12.443595" elapsed="0.020515"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-04-12T10:53:12.464110" elapsed="0.289581"/>
+</kw>
+<kw name="Get Current Time in Milliseconds" owner="Generic">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-12T10:53:12.755699" level="INFO">${time_in_milliseconds} = 1712899392755</msg>
+<var>${time_in_milliseconds}</var>
+<arg>int(time.time() * 1000)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-12T10:53:12.754697" elapsed="0.001002"/>
+</kw>
+<return>
+<value>${time_in_milliseconds}</value>
+<status status="PASS" start="2024-04-12T10:53:12.755699" elapsed="0.000998"/>
+</return>
+<msg time="2024-04-12T10:53:12.756697" level="INFO">${EndTime1} = 1712899392755</msg>
+<var>${EndTime1}</var>
+<status status="PASS" start="2024-04-12T10:53:12.754697" elapsed="0.002000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-12T10:53:12.758713" level="INFO">${ActualTime} = 16583</msg>
+<var>${ActualTime}</var>
+<arg>${EndTime1}-${StartTime1}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-12T10:53:12.756697" elapsed="0.002016"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Current Time in Milliseconds: ${ActualTime}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-12T10:53:12.759706" elapsed="0.000999"/>
+</kw>
+<kw name="Calculate Running time" owner="Generic">
+<kw name="Close All Excel Documents" owner="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="PASS" start="2024-04-12T10:53:12.762696" elapsed="0.001001"/>
+</kw>
+<kw name="Open Excel Document" owner="ExcelLibrary">
+<msg time="2024-04-12T10:53:12.799211" level="FAIL">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</msg>
+<arg>${SheetLocationAndName}</arg>
+<arg>doc_id=1</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="FAIL" start="2024-04-12T10:53:12.763697" elapsed="0.040050">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${RowNum_forText}</arg>
+<arg>${ColumnNum_forText}</arg>
+<arg>${module_name}</arg>
+<arg>${SheetTabName}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2024-04-12T10:53:12.810745" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${RowNum}</arg>
+<arg>${ColumnNum}</arg>
+<arg>${TimeTakenToLoginPage}</arg>
+<arg>${SheetTabName}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2024-04-12T10:53:12.811744" elapsed="0.000000"/>
+</kw>
+<kw name="Save Excel Document" owner="ExcelLibrary">
+<arg>${SheetLocationAndName}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="NOT RUN" start="2024-04-12T10:53:12.811744" elapsed="0.000000"/>
+</kw>
+<kw name="Close All Excel Documents" owner="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="NOT RUN" start="2024-04-12T10:53:12.811744" elapsed="0.000000"/>
+</kw>
+<arg>2</arg>
+<arg>${pageHeading}</arg>
+<arg>Generic - open the browser with the url</arg>
+<arg>2</arg>
+<arg>${pageTime}</arg>
+<arg>${ActualTime}</arg>
+<arg>Load_Time_tracking</arg>
+<status status="FAIL" start="2024-04-12T10:53:12.761703" elapsed="0.050041">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
+</kw>
+<status status="FAIL" start="2024-04-12T10:52:56.166588" elapsed="16.646156">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
+</kw>
+<kw name="Close Browser session" owner="Generic" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-04-12T10:53:12.812744" elapsed="3.091086"/>
+</kw>
+<status status="PASS" start="2024-04-12T10:53:12.812744" elapsed="3.091086"/>
+</kw>
+<tag>Sanity</tag>
+<status status="FAIL" start="2024-04-12T10:52:56.164420" elapsed="19.740412">Setup failed:
+BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
+</test>
+<doc>Contains all test cases of OCS page</doc>
+<status status="FAIL" start="2024-04-12T10:51:57.706000" elapsed="21.994692"/>
+</suite>
+<suite id="s1-s3" name="PartnerPageTest" source="D:\aithentic-rfw\TestPage\PartnerPageTest.robot">
+<test id="s1-s3-t1" name="Compose Message invite user test" line="48">
+<kw name="open the browser with the url" owner="Generic" type="SETUP">
+<kw name="Fix the column number" owner="Generic">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2024-04-12T10:51:59.557746" level="INFO">${pageHeading} = 2</msg>
+<var>${pageHeading}</var>
+<arg>2</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2024-04-12T10:51:59.557167" elapsed="0.000579"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-12T10:51:59.559075" level="INFO">${pageHeading} = 2</msg>
+<arg>${pageHeading}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-12T10:51:59.557746" elapsed="0.001329"/>
+</kw>
+<status status="PASS" start="2024-04-12T10:51:59.554107" elapsed="0.005474"/>
+</kw>
+<kw name="Fix the row number" owner="Generic">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2024-04-12T10:51:59.561139" level="INFO">${pageTime} = 3</msg>
+<var>${pageTime}</var>
+<arg>3</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2024-04-12T10:51:59.560592" elapsed="0.000547"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-12T10:51:59.562150" level="INFO">${pageTime} = 3</msg>
+<arg>${pageTime}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-12T10:51:59.561139" elapsed="0.001011"/>
+</kw>
+<status status="PASS" start="2024-04-12T10:51:59.559581" elapsed="0.003017"/>
+</kw>
+<kw name="Get Current Time in Milliseconds" owner="Generic">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-12T10:51:59.565861" level="INFO">${time_in_milliseconds} = 1712899319565</msg>
+<var>${time_in_milliseconds}</var>
+<arg>int(time.time() * 1000)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-12T10:51:59.564994" elapsed="0.000867"/>
+</kw>
+<return>
+<value>${time_in_milliseconds}</value>
+<status status="PASS" start="2024-04-12T10:51:59.565861" elapsed="0.000571"/>
+</return>
+<msg time="2024-04-12T10:51:59.566962" level="INFO">${StartTime1} = 1712899319565</msg>
+<var>${StartTime1}</var>
+<status status="PASS" start="2024-04-12T10:51:59.563104" elapsed="0.003858"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-04-12T10:51:59.568614" level="INFO">Opening browser 'firefox' to base url 'https://uat-app.aithentic.com/'.</msg>
+<arg>${url}</arg>
+<arg>${browser_name}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-04-12T10:51:59.567486" elapsed="19.101827"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Login']</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-12T10:52:18.669313" elapsed="0.096988"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Login']</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-04-12T10:52:18.766301" elapsed="0.026020"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-04-12T10:52:18.793322" elapsed="0.272888"/>
+</kw>
+<kw name="Get Current Time in Milliseconds" owner="Generic">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-12T10:52:19.068395" level="INFO">${time_in_milliseconds} = 1712899339068</msg>
+<var>${time_in_milliseconds}</var>
+<arg>int(time.time() * 1000)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-12T10:52:19.068395" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${time_in_milliseconds}</value>
+<status status="PASS" start="2024-04-12T10:52:19.068395" elapsed="0.001060"/>
+</return>
+<msg time="2024-04-12T10:52:19.069455" level="INFO">${EndTime1} = 1712899339068</msg>
+<var>${EndTime1}</var>
+<status status="PASS" start="2024-04-12T10:52:19.067318" elapsed="0.002137"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-12T10:52:19.070514" level="INFO">${ActualTime} = 19503</msg>
+<var>${ActualTime}</var>
+<arg>${EndTime1}-${StartTime1}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-12T10:52:19.069455" elapsed="0.001059"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Current Time in Milliseconds: ${ActualTime}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-12T10:52:19.070514" elapsed="0.001000"/>
+</kw>
+<kw name="Calculate Running time" owner="Generic">
+<kw name="Close All Excel Documents" owner="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="PASS" start="2024-04-12T10:52:19.072621" elapsed="0.000000"/>
+</kw>
+<kw name="Open Excel Document" owner="ExcelLibrary">
+<msg time="2024-04-12T10:52:19.119778" level="FAIL">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</msg>
+<arg>${SheetLocationAndName}</arg>
+<arg>doc_id=1</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="FAIL" start="2024-04-12T10:52:19.072621" elapsed="0.052397">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${RowNum_forText}</arg>
+<arg>${ColumnNum_forText}</arg>
+<arg>${module_name}</arg>
+<arg>${SheetTabName}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2024-04-12T10:52:19.136843" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${RowNum}</arg>
+<arg>${ColumnNum}</arg>
+<arg>${TimeTakenToLoginPage}</arg>
+<arg>${SheetTabName}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2024-04-12T10:52:19.136843" elapsed="0.001001"/>
+</kw>
+<kw name="Save Excel Document" owner="ExcelLibrary">
+<arg>${SheetLocationAndName}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="NOT RUN" start="2024-04-12T10:52:19.137844" elapsed="0.000000"/>
+</kw>
+<kw name="Close All Excel Documents" owner="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="NOT RUN" start="2024-04-12T10:52:19.137844" elapsed="0.001043"/>
+</kw>
+<arg>2</arg>
+<arg>${pageHeading}</arg>
+<arg>Generic - open the browser with the url</arg>
+<arg>2</arg>
+<arg>${pageTime}</arg>
+<arg>${ActualTime}</arg>
+<arg>Load_Time_tracking</arg>
+<status status="FAIL" start="2024-04-12T10:52:19.071568" elapsed="0.067319">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
+</kw>
+<status status="FAIL" start="2024-04-12T10:51:59.552961" elapsed="19.585926">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
+</kw>
+<kw name="Close Browser session" owner="Generic" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-04-12T10:52:19.139928" elapsed="3.096172"/>
+</kw>
+<status status="PASS" start="2024-04-12T10:52:19.139928" elapsed="3.096172"/>
 </kw>
 <tag>Sanity</tag>
 <tag>Smoke</tag>
 <tag>Time</tag>
-<status status="FAIL" start="2024-04-11T16:03:12.011821" elapsed="36.170715">Setup failed:
-NoSuchWindowException: Message: Browsing context has been discarded
-Stacktrace:
-RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
-WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:192:5
-NoSuchWindowError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:678:5
-assert.that/&lt;@chrome://remote/content/shared/webdriver/Assert.sys.mjs:485:13
-assert.open@chrome://remote/content/shared/webdriver/Assert.sys.mjs:147:4
-GeckoDriver.prototype.findElements@chrome://remote/content/marionette/driver.sys.mjs:1584:15
-despatch@chrome://remote/content/marionette/server.sys.mjs:318:40
-execute@chrome://remote/content/marionette/server.sys.mjs:289:16
-onPacket/&lt;@chrome://remote/content/marionette/server.sys.mjs:262:20
-onPacket@chrome://remote/content/marionette/server.sys.mjs:263:9
-_onJSONObjectReady/&lt;@chrome://remote/content/marionette/transport.sys.mjs:494:20
-
-
-Also teardown failed:
-Execution terminated by signal</status>
+<status status="FAIL" start="2024-04-12T10:51:59.547255" elapsed="22.688845">Setup failed:
+BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
 </test>
-<doc>Contains all test cases of Contracts page</doc>
-<status status="FAIL" start="2024-04-11T16:03:09.851602" elapsed="38.330934"/>
+<test id="s1-s3-t2" name="Export Specificartner into Excel Doc CSV and TSV for Support Partner" line="625">
+<kw name="open the browser with the url" owner="Generic" type="SETUP">
+<kw name="Fix the column number" owner="Generic">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2024-04-12T10:52:27.407355" level="INFO">${pageHeading} = 2</msg>
+<var>${pageHeading}</var>
+<arg>2</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2024-04-12T10:52:27.406307" elapsed="0.001048"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-12T10:52:27.408392" level="INFO">${pageHeading} = 2</msg>
+<arg>${pageHeading}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-12T10:52:27.408392" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-04-12T10:52:27.404278" elapsed="0.004114"/>
+</kw>
+<kw name="Fix the row number" owner="Generic">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2024-04-12T10:52:27.410443" level="INFO">${pageTime} = 3</msg>
+<var>${pageTime}</var>
+<arg>3</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2024-04-12T10:52:27.410443" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-12T10:52:27.411469" level="INFO">${pageTime} = 3</msg>
+<arg>${pageTime}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-12T10:52:27.410443" elapsed="0.001026"/>
+</kw>
+<status status="PASS" start="2024-04-12T10:52:27.409418" elapsed="0.002051"/>
+</kw>
+<kw name="Get Current Time in Milliseconds" owner="Generic">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-12T10:52:27.413525" level="INFO">${time_in_milliseconds} = 1712899347413</msg>
+<var>${time_in_milliseconds}</var>
+<arg>int(time.time() * 1000)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-12T10:52:27.412498" elapsed="0.001027"/>
+</kw>
+<return>
+<value>${time_in_milliseconds}</value>
+<status status="PASS" start="2024-04-12T10:52:27.413525" elapsed="0.000000"/>
+</return>
+<msg time="2024-04-12T10:52:27.414554" level="INFO">${StartTime1} = 1712899347413</msg>
+<var>${StartTime1}</var>
+<status status="PASS" start="2024-04-12T10:52:27.412498" elapsed="0.002056"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-04-12T10:52:27.415581" level="INFO">Opening browser 'firefox' to base url 'https://uat-app.aithentic.com/'.</msg>
+<arg>${url}</arg>
+<arg>${browser_name}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-04-12T10:52:27.414554" elapsed="19.883983"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Login']</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-12T10:52:47.299538" elapsed="0.085030"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Login']</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-04-12T10:52:47.384568" elapsed="0.036046"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-04-12T10:52:47.420614" elapsed="0.290742"/>
+</kw>
+<kw name="Get Current Time in Milliseconds" owner="Generic">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-12T10:52:47.714356" level="INFO">${time_in_milliseconds} = 1712899367713</msg>
+<var>${time_in_milliseconds}</var>
+<arg>int(time.time() * 1000)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-12T10:52:47.713355" elapsed="0.001001"/>
+</kw>
+<return>
+<value>${time_in_milliseconds}</value>
+<status status="PASS" start="2024-04-12T10:52:47.714356" elapsed="0.000000"/>
+</return>
+<msg time="2024-04-12T10:52:47.714356" level="INFO">${EndTime1} = 1712899367713</msg>
+<var>${EndTime1}</var>
+<status status="PASS" start="2024-04-12T10:52:47.712355" elapsed="0.003003"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-12T10:52:47.716355" level="INFO">${ActualTime} = 20300</msg>
+<var>${ActualTime}</var>
+<arg>${EndTime1}-${StartTime1}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-12T10:52:47.715358" elapsed="0.000997"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Current Time in Milliseconds: ${ActualTime}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-12T10:52:47.717356" elapsed="0.000000"/>
+</kw>
+<kw name="Calculate Running time" owner="Generic">
+<kw name="Close All Excel Documents" owner="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="PASS" start="2024-04-12T10:52:47.718357" elapsed="0.001511"/>
+</kw>
+<kw name="Open Excel Document" owner="ExcelLibrary">
+<msg time="2024-04-12T10:52:47.766841" level="FAIL">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</msg>
+<arg>${SheetLocationAndName}</arg>
+<arg>doc_id=1</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="FAIL" start="2024-04-12T10:52:47.719868" elapsed="0.052475">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${RowNum_forText}</arg>
+<arg>${ColumnNum_forText}</arg>
+<arg>${module_name}</arg>
+<arg>${SheetTabName}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2024-04-12T10:52:47.783916" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${RowNum}</arg>
+<arg>${ColumnNum}</arg>
+<arg>${TimeTakenToLoginPage}</arg>
+<arg>${SheetTabName}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2024-04-12T10:52:47.783916" elapsed="0.000000"/>
+</kw>
+<kw name="Save Excel Document" owner="ExcelLibrary">
+<arg>${SheetLocationAndName}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="NOT RUN" start="2024-04-12T10:52:47.783916" elapsed="0.000000"/>
+</kw>
+<kw name="Close All Excel Documents" owner="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="NOT RUN" start="2024-04-12T10:52:47.784917" elapsed="0.000000"/>
+</kw>
+<arg>2</arg>
+<arg>${pageHeading}</arg>
+<arg>Generic - open the browser with the url</arg>
+<arg>2</arg>
+<arg>${pageTime}</arg>
+<arg>${ActualTime}</arg>
+<arg>Load_Time_tracking</arg>
+<status status="FAIL" start="2024-04-12T10:52:47.718357" elapsed="0.066560">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
+</kw>
+<status status="FAIL" start="2024-04-12T10:52:27.403186" elapsed="20.381731">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
+</kw>
+<kw name="Close Browser session" owner="Generic" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-04-12T10:52:47.785916" elapsed="3.127402"/>
+</kw>
+<status status="PASS" start="2024-04-12T10:52:47.784917" elapsed="3.128401"/>
+</kw>
+<tag>Sanity</tag>
+<status status="FAIL" start="2024-04-12T10:52:27.397031" elapsed="23.517503">Setup failed:
+BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
+</test>
+<status status="FAIL" start="2024-04-12T10:51:57.757000" elapsed="24.479605"/>
 </suite>
-<doc>[https://pabot.org/?ref=log|Pabot] result from 4 executions.</doc>
-<status status="FAIL" start="2024-04-11T16:03:09.819000" elapsed="36.198877"/>
+<suite id="s1-s4" name="TeamMemberPageTest" source="D:\aithentic-rfw\TestPage\TeamMemberPageTest.robot">
+<test id="s1-s4-t1" name="Verify team member Asset history" line="131">
+<kw name="open the browser with the url" owner="Generic" type="SETUP">
+<kw name="Fix the column number" owner="Generic">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2024-04-12T10:52:28.329048" level="INFO">${pageHeading} = 2</msg>
+<var>${pageHeading}</var>
+<arg>2</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2024-04-12T10:52:28.329048" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-12T10:52:28.330159" level="INFO">${pageHeading} = 2</msg>
+<arg>${pageHeading}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-12T10:52:28.330159" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-04-12T10:52:28.325828" elapsed="0.004331"/>
+</kw>
+<kw name="Fix the row number" owner="Generic">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2024-04-12T10:52:28.332391" level="INFO">${pageTime} = 3</msg>
+<var>${pageTime}</var>
+<arg>3</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2024-04-12T10:52:28.331281" elapsed="0.001110"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-12T10:52:28.332391" level="INFO">${pageTime} = 3</msg>
+<arg>${pageTime}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-12T10:52:28.332391" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-04-12T10:52:28.331281" elapsed="0.001110"/>
+</kw>
+<kw name="Get Current Time in Milliseconds" owner="Generic">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-12T10:52:28.335168" level="INFO">${time_in_milliseconds} = 1712899348335</msg>
+<var>${time_in_milliseconds}</var>
+<arg>int(time.time() * 1000)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-12T10:52:28.334087" elapsed="0.001081"/>
+</kw>
+<return>
+<value>${time_in_milliseconds}</value>
+<status status="PASS" start="2024-04-12T10:52:28.335168" elapsed="0.000000"/>
+</return>
+<msg time="2024-04-12T10:52:28.336206" level="INFO">${StartTime1} = 1712899348335</msg>
+<var>${StartTime1}</var>
+<status status="PASS" start="2024-04-12T10:52:28.334087" elapsed="0.002119"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-04-12T10:52:28.337284" level="INFO">Opening browser 'firefox' to base url 'https://uat-app.aithentic.com/'.</msg>
+<arg>${url}</arg>
+<arg>${browser_name}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-04-12T10:52:28.336206" elapsed="17.895799"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Login']</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-12T10:52:46.233009" elapsed="0.044079"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Login']</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-04-12T10:52:46.278087" elapsed="0.028576"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-04-12T10:52:46.307672" elapsed="0.270239"/>
+</kw>
+<kw name="Get Current Time in Milliseconds" owner="Generic">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-12T10:52:46.580910" level="INFO">${time_in_milliseconds} = 1712899366580</msg>
+<var>${time_in_milliseconds}</var>
+<arg>int(time.time() * 1000)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-12T10:52:46.579910" elapsed="0.001000"/>
+</kw>
+<return>
+<value>${time_in_milliseconds}</value>
+<status status="PASS" start="2024-04-12T10:52:46.581910" elapsed="0.000000"/>
+</return>
+<msg time="2024-04-12T10:52:46.581910" level="INFO">${EndTime1} = 1712899366580</msg>
+<var>${EndTime1}</var>
+<status status="PASS" start="2024-04-12T10:52:46.578909" elapsed="0.003001"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-12T10:52:46.582913" level="INFO">${ActualTime} = 18245</msg>
+<var>${ActualTime}</var>
+<arg>${EndTime1}-${StartTime1}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-12T10:52:46.582913" elapsed="0.000996"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Current Time in Milliseconds: ${ActualTime}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-12T10:52:46.583909" elapsed="0.001001"/>
+</kw>
+<kw name="Calculate Running time" owner="Generic">
+<kw name="Close All Excel Documents" owner="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="PASS" start="2024-04-12T10:52:46.585909" elapsed="0.001000"/>
+</kw>
+<kw name="Open Excel Document" owner="ExcelLibrary">
+<msg time="2024-04-12T10:52:46.637202" level="FAIL">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</msg>
+<arg>${SheetLocationAndName}</arg>
+<arg>doc_id=1</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="FAIL" start="2024-04-12T10:52:46.586909" elapsed="0.055297">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${RowNum_forText}</arg>
+<arg>${ColumnNum_forText}</arg>
+<arg>${module_name}</arg>
+<arg>${SheetTabName}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2024-04-12T10:52:46.656920" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${RowNum}</arg>
+<arg>${ColumnNum}</arg>
+<arg>${TimeTakenToLoginPage}</arg>
+<arg>${SheetTabName}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2024-04-12T10:52:46.657930" elapsed="0.000000"/>
+</kw>
+<kw name="Save Excel Document" owner="ExcelLibrary">
+<arg>${SheetLocationAndName}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="NOT RUN" start="2024-04-12T10:52:46.657930" elapsed="0.000000"/>
+</kw>
+<kw name="Close All Excel Documents" owner="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="NOT RUN" start="2024-04-12T10:52:46.657930" elapsed="0.000000"/>
+</kw>
+<arg>2</arg>
+<arg>${pageHeading}</arg>
+<arg>Generic - open the browser with the url</arg>
+<arg>2</arg>
+<arg>${pageTime}</arg>
+<arg>${ActualTime}</arg>
+<arg>Load_Time_tracking</arg>
+<status status="FAIL" start="2024-04-12T10:52:46.584910" elapsed="0.075527">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
+</kw>
+<status status="FAIL" start="2024-04-12T10:52:28.325828" elapsed="18.334609">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
+</kw>
+<kw name="Close Browser session" owner="Generic" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-04-12T10:52:46.665438" elapsed="3.444937"/>
+</kw>
+<status status="PASS" start="2024-04-12T10:52:46.661437" elapsed="3.448938"/>
+</kw>
+<tag>Sanity</tag>
+<status status="FAIL" start="2024-04-12T10:52:28.322741" elapsed="21.787634">Setup failed:
+BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
+</test>
+<test id="s1-s4-t2" name="Verify user is able to export team member asset history list" line="326">
+<kw name="open the browser with the url" owner="Generic" type="SETUP">
+<kw name="Fix the column number" owner="Generic">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2024-04-12T10:52:28.957584" level="INFO">${pageHeading} = 2</msg>
+<var>${pageHeading}</var>
+<arg>2</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2024-04-12T10:52:28.957584" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-12T10:52:28.958617" level="INFO">${pageHeading} = 2</msg>
+<arg>${pageHeading}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-12T10:52:28.958617" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-04-12T10:52:28.956551" elapsed="0.002066"/>
+</kw>
+<kw name="Fix the row number" owner="Generic">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2024-04-12T10:52:28.959644" level="INFO">${pageTime} = 3</msg>
+<var>${pageTime}</var>
+<arg>3</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2024-04-12T10:52:28.959644" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-12T10:52:28.960679" level="INFO">${pageTime} = 3</msg>
+<arg>${pageTime}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-12T10:52:28.959644" elapsed="0.001035"/>
+</kw>
+<status status="PASS" start="2024-04-12T10:52:28.958617" elapsed="0.002062"/>
+</kw>
+<kw name="Get Current Time in Milliseconds" owner="Generic">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-12T10:52:28.961698" level="INFO">${time_in_milliseconds} = 1712899348961</msg>
+<var>${time_in_milliseconds}</var>
+<arg>int(time.time() * 1000)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-12T10:52:28.960679" elapsed="0.001019"/>
+</kw>
+<return>
+<value>${time_in_milliseconds}</value>
+<status status="PASS" start="2024-04-12T10:52:28.961698" elapsed="0.000000"/>
+</return>
+<msg time="2024-04-12T10:52:28.961698" level="INFO">${StartTime1} = 1712899348961</msg>
+<var>${StartTime1}</var>
+<status status="PASS" start="2024-04-12T10:52:28.960679" elapsed="0.001019"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-04-12T10:52:28.962718" level="INFO">Opening browser 'firefox' to base url 'https://uat-app.aithentic.com/'.</msg>
+<arg>${url}</arg>
+<arg>${browser_name}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-04-12T10:52:28.961698" elapsed="16.768961"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Login']</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-12T10:52:45.732170" elapsed="0.041798"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Login']</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-04-12T10:52:45.773968" elapsed="0.022858"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-04-12T10:52:45.797826" elapsed="0.279928"/>
+</kw>
+<kw name="Get Current Time in Milliseconds" owner="Generic">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-12T10:52:46.081758" level="INFO">${time_in_milliseconds} = 1712899366080</msg>
+<var>${time_in_milliseconds}</var>
+<arg>int(time.time() * 1000)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-12T10:52:46.079770" elapsed="0.001988"/>
+</kw>
+<return>
+<value>${time_in_milliseconds}</value>
+<status status="PASS" start="2024-04-12T10:52:46.081758" elapsed="0.000000"/>
+</return>
+<msg time="2024-04-12T10:52:46.081758" level="INFO">${EndTime1} = 1712899366080</msg>
+<var>${EndTime1}</var>
+<status status="PASS" start="2024-04-12T10:52:46.077754" elapsed="0.004004"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-12T10:52:46.082754" level="INFO">${ActualTime} = 17119</msg>
+<var>${ActualTime}</var>
+<arg>${EndTime1}-${StartTime1}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-12T10:52:46.082754" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Current Time in Milliseconds: ${ActualTime}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-12T10:52:46.083756" elapsed="0.000000"/>
+</kw>
+<kw name="Calculate Running time" owner="Generic">
+<kw name="Close All Excel Documents" owner="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="PASS" start="2024-04-12T10:52:46.085754" elapsed="0.000000"/>
+</kw>
+<kw name="Open Excel Document" owner="ExcelLibrary">
+<msg time="2024-04-12T10:52:46.127655" level="FAIL">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</msg>
+<arg>${SheetLocationAndName}</arg>
+<arg>doc_id=1</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="FAIL" start="2024-04-12T10:52:46.085754" elapsed="0.047413">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${RowNum_forText}</arg>
+<arg>${ColumnNum_forText}</arg>
+<arg>${module_name}</arg>
+<arg>${SheetTabName}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2024-04-12T10:52:46.145686" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${RowNum}</arg>
+<arg>${ColumnNum}</arg>
+<arg>${TimeTakenToLoginPage}</arg>
+<arg>${SheetTabName}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2024-04-12T10:52:46.146686" elapsed="0.000000"/>
+</kw>
+<kw name="Save Excel Document" owner="ExcelLibrary">
+<arg>${SheetLocationAndName}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="NOT RUN" start="2024-04-12T10:52:46.146686" elapsed="0.000000"/>
+</kw>
+<kw name="Close All Excel Documents" owner="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="NOT RUN" start="2024-04-12T10:52:46.147688" elapsed="0.000000"/>
+</kw>
+<arg>2</arg>
+<arg>${pageHeading}</arg>
+<arg>Generic - open the browser with the url</arg>
+<arg>2</arg>
+<arg>${pageTime}</arg>
+<arg>${ActualTime}</arg>
+<arg>Load_Time_tracking</arg>
+<status status="FAIL" start="2024-04-12T10:52:46.084754" elapsed="0.062934">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
+</kw>
+<status status="FAIL" start="2024-04-12T10:52:28.955519" elapsed="17.192169">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
+</kw>
+<kw name="Close Browser session" owner="Generic" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-04-12T10:52:46.149686" elapsed="3.474227"/>
+</kw>
+<status status="PASS" start="2024-04-12T10:52:46.148688" elapsed="3.476225"/>
+</kw>
+<tag>Sanity</tag>
+<tag>Smoke</tag>
+<status status="FAIL" start="2024-04-12T10:52:28.953451" elapsed="20.671462">Setup failed:
+BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
+</test>
+<doc>Contains all test cases of Team member page</doc>
+<status status="FAIL" start="2024-04-12T10:52:26.476000" elapsed="23.635210"/>
+</suite>
+<suite id="s1-s5" name="TechnologyPageTest" source="D:\aithentic-rfw\TestPage\TechnologyPageTest.robot">
+<test id="s1-s5-t1" name="Verify the history of added technology" line="836">
+<kw name="open the browser with the url" owner="Generic" type="SETUP">
+<kw name="Fix the column number" owner="Generic">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2024-04-12T10:52:29.387607" level="INFO">${pageHeading} = 2</msg>
+<var>${pageHeading}</var>
+<arg>2</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2024-04-12T10:52:29.386569" elapsed="0.001038"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-12T10:52:29.387607" level="INFO">${pageHeading} = 2</msg>
+<arg>${pageHeading}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-12T10:52:29.387607" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-04-12T10:52:29.385537" elapsed="0.002070"/>
+</kw>
+<kw name="Fix the row number" owner="Generic">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2024-04-12T10:52:29.388661" level="INFO">${pageTime} = 3</msg>
+<var>${pageTime}</var>
+<arg>3</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2024-04-12T10:52:29.388661" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-12T10:52:29.389706" level="INFO">${pageTime} = 3</msg>
+<arg>${pageTime}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-12T10:52:29.389706" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-04-12T10:52:29.388661" elapsed="0.001045"/>
+</kw>
+<kw name="Get Current Time in Milliseconds" owner="Generic">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-12T10:52:29.390741" level="INFO">${time_in_milliseconds} = 1712899349390</msg>
+<var>${time_in_milliseconds}</var>
+<arg>int(time.time() * 1000)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-12T10:52:29.390741" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${time_in_milliseconds}</value>
+<status status="PASS" start="2024-04-12T10:52:29.390741" elapsed="0.000000"/>
+</return>
+<msg time="2024-04-12T10:52:29.390741" level="INFO">${StartTime1} = 1712899349390</msg>
+<var>${StartTime1}</var>
+<status status="PASS" start="2024-04-12T10:52:29.389706" elapsed="0.001035"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-04-12T10:52:29.391784" level="INFO">Opening browser 'firefox' to base url 'https://uat-app.aithentic.com/'.</msg>
+<arg>${url}</arg>
+<arg>${browser_name}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-04-12T10:52:29.390741" elapsed="17.781806"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Login']</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-12T10:52:47.173546" elapsed="0.083966"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Login']</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-04-12T10:52:47.257512" elapsed="0.028512"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-04-12T10:52:47.286024" elapsed="0.294364"/>
+</kw>
+<kw name="Get Current Time in Milliseconds" owner="Generic">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-12T10:52:47.583387" level="INFO">${time_in_milliseconds} = 1712899367583</msg>
+<var>${time_in_milliseconds}</var>
+<arg>int(time.time() * 1000)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-12T10:52:47.582387" elapsed="0.001000"/>
+</kw>
+<return>
+<value>${time_in_milliseconds}</value>
+<status status="PASS" start="2024-04-12T10:52:47.583387" elapsed="0.001002"/>
+</return>
+<msg time="2024-04-12T10:52:47.584389" level="INFO">${EndTime1} = 1712899367583</msg>
+<var>${EndTime1}</var>
+<status status="PASS" start="2024-04-12T10:52:47.581393" elapsed="0.002996"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-12T10:52:47.585387" level="INFO">${ActualTime} = 18193</msg>
+<var>${ActualTime}</var>
+<arg>${EndTime1}-${StartTime1}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-12T10:52:47.584389" elapsed="0.000998"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Current Time in Milliseconds: ${ActualTime}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-12T10:52:47.586386" elapsed="0.000000"/>
+</kw>
+<kw name="Calculate Running time" owner="Generic">
+<kw name="Close All Excel Documents" owner="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="PASS" start="2024-04-12T10:52:47.588387" elapsed="0.000000"/>
+</kw>
+<kw name="Open Excel Document" owner="ExcelLibrary">
+<msg time="2024-04-12T10:52:47.638906" level="FAIL">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</msg>
+<arg>${SheetLocationAndName}</arg>
+<arg>doc_id=1</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="FAIL" start="2024-04-12T10:52:47.588387" elapsed="0.056036">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${RowNum_forText}</arg>
+<arg>${ColumnNum_forText}</arg>
+<arg>${module_name}</arg>
+<arg>${SheetTabName}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2024-04-12T10:52:47.654749" elapsed="0.001508"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${RowNum}</arg>
+<arg>${ColumnNum}</arg>
+<arg>${TimeTakenToLoginPage}</arg>
+<arg>${SheetTabName}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2024-04-12T10:52:47.656257" elapsed="0.000000"/>
+</kw>
+<kw name="Save Excel Document" owner="ExcelLibrary">
+<arg>${SheetLocationAndName}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="NOT RUN" start="2024-04-12T10:52:47.656257" elapsed="0.000000"/>
+</kw>
+<kw name="Close All Excel Documents" owner="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="NOT RUN" start="2024-04-12T10:52:47.657260" elapsed="0.000000"/>
+</kw>
+<arg>2</arg>
+<arg>${pageHeading}</arg>
+<arg>Generic - open the browser with the url</arg>
+<arg>2</arg>
+<arg>${pageTime}</arg>
+<arg>${ActualTime}</arg>
+<arg>Load_Time_tracking</arg>
+<status status="FAIL" start="2024-04-12T10:52:47.587386" elapsed="0.069874">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
+</kw>
+<status status="FAIL" start="2024-04-12T10:52:29.384524" elapsed="18.272736">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
+</kw>
+<kw name="Close Browser session" owner="Generic" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-04-12T10:52:47.658260" elapsed="3.144096"/>
+</kw>
+<status status="PASS" start="2024-04-12T10:52:47.657260" elapsed="3.145096"/>
+</kw>
+<tag>Sanity</tag>
+<status status="FAIL" start="2024-04-12T10:52:29.382367" elapsed="21.419989">Setup failed:
+BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
+</test>
+<test id="s1-s5-t2" name="Fill the technology form for hardware product" line="99">
+<kw name="open the browser with the url" owner="Generic" type="SETUP">
+<kw name="Fix the column number" owner="Generic">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2024-04-12T10:52:56.775378" level="INFO">${pageHeading} = 2</msg>
+<var>${pageHeading}</var>
+<arg>2</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2024-04-12T10:52:56.774377" elapsed="0.001001"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-12T10:52:56.775378" level="INFO">${pageHeading} = 2</msg>
+<arg>${pageHeading}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-12T10:52:56.775378" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-04-12T10:52:56.772332" elapsed="0.004393"/>
+</kw>
+<kw name="Fix the row number" owner="Generic">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2024-04-12T10:52:56.777722" level="INFO">${pageTime} = 3</msg>
+<var>${pageTime}</var>
+<arg>3</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2024-04-12T10:52:56.777722" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-12T10:52:56.778740" level="INFO">${pageTime} = 3</msg>
+<arg>${pageTime}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-12T10:52:56.777722" elapsed="0.001018"/>
+</kw>
+<status status="PASS" start="2024-04-12T10:52:56.776725" elapsed="0.002015"/>
+</kw>
+<kw name="Get Current Time in Milliseconds" owner="Generic">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-12T10:52:56.779730" level="INFO">${time_in_milliseconds} = 1712899376779</msg>
+<var>${time_in_milliseconds}</var>
+<arg>int(time.time() * 1000)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-12T10:52:56.779730" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${time_in_milliseconds}</value>
+<status status="PASS" start="2024-04-12T10:52:56.779730" elapsed="0.001003"/>
+</return>
+<msg time="2024-04-12T10:52:56.780733" level="INFO">${StartTime1} = 1712899376779</msg>
+<var>${StartTime1}</var>
+<status status="PASS" start="2024-04-12T10:52:56.778740" elapsed="0.001993"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-04-12T10:52:56.781744" level="INFO">Opening browser 'firefox' to base url 'https://uat-app.aithentic.com/'.</msg>
+<arg>${url}</arg>
+<arg>${browser_name}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-04-12T10:52:56.780733" elapsed="17.166954"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Login']</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-12T10:53:13.947687" elapsed="0.032744"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Login']</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-04-12T10:53:13.981442" elapsed="0.023358"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-04-12T10:53:14.005809" elapsed="0.265078"/>
+</kw>
+<kw name="Get Current Time in Milliseconds" owner="Generic">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-12T10:53:14.273966" level="INFO">${time_in_milliseconds} = 1712899394273</msg>
+<var>${time_in_milliseconds}</var>
+<arg>int(time.time() * 1000)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-12T10:53:14.272935" elapsed="0.001031"/>
+</kw>
+<return>
+<value>${time_in_milliseconds}</value>
+<status status="PASS" start="2024-04-12T10:53:14.273966" elapsed="0.001027"/>
+</return>
+<msg time="2024-04-12T10:53:14.275893" level="INFO">${EndTime1} = 1712899394273</msg>
+<var>${EndTime1}</var>
+<status status="PASS" start="2024-04-12T10:53:14.271890" elapsed="0.004003"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-12T10:53:14.276970" level="INFO">${ActualTime} = 17494</msg>
+<var>${ActualTime}</var>
+<arg>${EndTime1}-${StartTime1}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-12T10:53:14.276970" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Current Time in Milliseconds: ${ActualTime}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-12T10:53:14.277972" elapsed="0.000000"/>
+</kw>
+<kw name="Calculate Running time" owner="Generic">
+<kw name="Close All Excel Documents" owner="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="PASS" start="2024-04-12T10:53:14.278966" elapsed="0.000000"/>
+</kw>
+<kw name="Open Excel Document" owner="ExcelLibrary">
+<msg time="2024-04-12T10:53:14.306497" level="FAIL">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</msg>
+<arg>${SheetLocationAndName}</arg>
+<arg>doc_id=1</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="FAIL" start="2024-04-12T10:53:14.278966" elapsed="0.033054">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${RowNum_forText}</arg>
+<arg>${ColumnNum_forText}</arg>
+<arg>${module_name}</arg>
+<arg>${SheetTabName}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2024-04-12T10:53:14.319020" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${RowNum}</arg>
+<arg>${ColumnNum}</arg>
+<arg>${TimeTakenToLoginPage}</arg>
+<arg>${SheetTabName}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2024-04-12T10:53:14.320019" elapsed="0.000000"/>
+</kw>
+<kw name="Save Excel Document" owner="ExcelLibrary">
+<arg>${SheetLocationAndName}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="NOT RUN" start="2024-04-12T10:53:14.320019" elapsed="0.000000"/>
+</kw>
+<kw name="Close All Excel Documents" owner="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="NOT RUN" start="2024-04-12T10:53:14.321019" elapsed="0.000000"/>
+</kw>
+<arg>2</arg>
+<arg>${pageHeading}</arg>
+<arg>Generic - open the browser with the url</arg>
+<arg>2</arg>
+<arg>${pageTime}</arg>
+<arg>${ActualTime}</arg>
+<arg>Load_Time_tracking</arg>
+<status status="FAIL" start="2024-04-12T10:53:14.277972" elapsed="0.043047">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
+</kw>
+<status status="FAIL" start="2024-04-12T10:52:56.771310" elapsed="17.549709">BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
+</kw>
+<kw name="Close Browser session" owner="Generic" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-04-12T10:53:14.323100" elapsed="3.051933"/>
+</kw>
+<status status="PASS" start="2024-04-12T10:53:14.322020" elapsed="3.054043"/>
+</kw>
+<tag>Sanity</tag>
+<tag>Smoke</tag>
+<status status="FAIL" start="2024-04-12T10:52:56.766884" elapsed="20.609179">Setup failed:
+BadZipFile: Bad CRC-32 for file 'xl/worksheets/sheet3.xml'</status>
+</test>
+<doc>Contains all test cases of Technology page</doc>
+<status status="FAIL" start="2024-04-12T10:52:27.695000" elapsed="23.109720"/>
+</suite>
+<doc>[https://pabot.org/?ref=log|Pabot] result from 10 executions.</doc>
+<status status="FAIL" start="2024-04-12T10:51:57.635000" elapsed="22.730212"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="4" skip="0">All Tests</stat>
+<stat pass="0" fail="10" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="4" skip="0">Sanity</stat>
-<stat pass="0" fail="1" skip="0">Smoke</stat>
-<stat pass="0" fail="2" skip="0">Time</stat>
+<stat pass="0" fail="10" skip="0">Sanity</stat>
+<stat pass="0" fail="4" skip="0">smoke</stat>
+<stat pass="0" fail="1" skip="0">Time</stat>
 </tag>
 <suite>
-<stat pass="0" fail="4" skip="0" id="s1" name="TestPage">TestPage</stat>
-<stat pass="0" fail="3" skip="0" id="s1-s1" name="Bulk Import ExportPageTest">TestPage.Bulk Import ExportPageTest</stat>
-<stat pass="0" fail="1" skip="0" id="s1-s2" name="ContractsPageTest">TestPage.ContractsPageTest</stat>
+<stat pass="0" fail="10" skip="0" id="s1" name="TestPage">TestPage</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="ContractsPageTest">TestPage.ContractsPageTest</stat>
+<stat pass="0" fail="3" skip="0" id="s1-s2" name="OCSTest">TestPage.OCSTest</stat>
+<stat pass="0" fail="2" skip="0" id="s1-s3" name="PartnerPageTest">TestPage.PartnerPageTest</stat>
+<stat pass="0" fail="2" skip="0" id="s1-s4" name="TeamMemberPageTest">TestPage.TeamMemberPageTest</stat>
+<stat pass="0" fail="2" skip="0" id="s1-s5" name="TechnologyPageTest">TestPage.TechnologyPageTest</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2024-04-11T16:03:45.974167" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: WebDriver session does not exist, or is not active
-Stacktrace:
-RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
-WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:192:5
-InvalidSessionIDError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:447:5
-assert.that/&lt;@chrome://remote/content/shared/webdriver/Assert.sys.mjs:485:13
-assert.session@chrome://remote/content/shared/webdriver/Assert.sys.mjs:37:4
-despatch@chrome://remote/content/marionette/server.sys.mjs:315:19
-execute@chrome://remote/content/marionette/server.sys.mjs:289:16
-onPacket/&lt;@chrome://remote/content/marionette/server.sys.mjs:262:20
-onPacket@chrome://remote/content/marionette/server.sys.mjs:263:9
-_onJSONObjectReady/&lt;@chrome://remote/content/marionette/transport.sys.mjs:494:20
-</msg>
-<msg time="2024-04-11T16:03:48.182536" level="ERROR">When closing browser, received exception: Execution terminated by signal</msg>
 </errors>
 </robot>
