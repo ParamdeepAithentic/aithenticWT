@@ -328,7 +328,6 @@ Verify Help Center
     DashboardPage.Verify no result found with wrong FAQ
 
 Edit Brand and address via brand under profile list
-    [Tags]    rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -814,6 +813,8 @@ Verify Reports Asset Alert
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     Generic.Verify your current page location contains      technology
     Generic.select the option from the side menu    Dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview
     Generic.Verify your current page contains this text     Billing Details
@@ -828,6 +829,8 @@ Verify Reports Asset Alert
     Generic.Verify your current page location contains      technology
     Generic.Verify your current page contains this text     No Records 
     Generic.select the option from the side menu    Dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview
     Generic.Verify your current page contains this text     Billing Details
@@ -841,6 +844,8 @@ Verify Reports Asset Alert
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
     Generic.select the option from the side menu    Dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview
     Generic.Verify your current page contains this text    Billing Details
@@ -854,6 +859,8 @@ Verify Reports Asset Alert
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
     Generic.select the option from the side menu    Dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview
     Generic.Verify your current page contains this text     Billing Details
@@ -867,6 +874,8 @@ Verify Reports Asset Alert
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
     Generic.select the option from the side menu    Dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview
     Generic.Verify your current page contains this text     Billing Details

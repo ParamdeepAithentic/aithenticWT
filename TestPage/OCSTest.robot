@@ -642,7 +642,6 @@ Apply filters and clear filter on Existing Assets
     OCS.Get text by hovering over existing assets  ProductId:
 
 Add Discovery Asset
-    [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     LandingPage.Verify you are on dashboard page
