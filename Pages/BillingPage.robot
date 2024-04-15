@@ -118,4 +118,3 @@ Click on billing trash to remove card
     Wait Until Element Is Visible       ${billing_trash_icon}   ${wait_time}
     Wait Until Element Is Enabled       ${billing_trash_icon}    ${wait_time}
     click element      ${billing_trash_icon}
-
