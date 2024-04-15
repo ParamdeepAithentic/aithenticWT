@@ -790,6 +790,8 @@ Verify Reports Asset Alert
     Generic.Verify your current page location contains      technology
     Generic.Wait until table get load
     Generic.select the option from the side menu    Dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview
     Generic.Verify your current page contains this text     Billing Details
