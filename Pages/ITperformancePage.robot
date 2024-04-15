@@ -64,54 +64,54 @@ ${EMPTY}
 *** Keywords ***
 Verify sheet is downloaded
     [Arguments]    ${option}
-    wait until element is enabled       css:div[id='${option}'] a[title='Download the file']    60
+    wait until element is enabled       css:div[id='${option}'] a[title='Download the file']    ${wait_time}
 #sspslReport,brandReports,AssetReports
 
 Verify all tabs of supplier_partner_location and download sheet
-    Wait Until Element Is Not Visible    ${loaderIcon}      60
-    wait until element is visible  ${forcastReport}       60
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible  ${forcastReport}       ${wait_time}
     click element   ${forcastReport}
-    wait until element is visible  ${forcastList}       60
+    wait until element is visible  ${forcastList}       ${wait_time}
     ${elements} =    Get WebElements    ${forcastList}
     FOR    ${element}    IN    @{elements}
         Click Element    ${element}
-        Wait Until Element Is Not Visible    ${loaderIcon}      60
+        Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
 
     END
-    wait until element is visible  ${download_forcastReport}       60
+    wait until element is visible  ${download_forcastReport}       ${wait_time}
     click element   ${download_forcastReport}
 
 Verify all tabs of brand report and download sheet
-    Wait Until Element Is Not Visible    ${loaderIcon}      60
-    wait until element is visible  ${AgingReport}       60
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible  ${AgingReport}       ${wait_time}
     click element   ${AgingReport}
-    wait until element is visible  ${AgingList}       60
+    wait until element is visible  ${AgingList}       ${wait_time}
     ${elements} =    Get WebElements    ${AgingList}
     FOR    ${element}    IN    @{elements}
         Click Element    ${element}
-        Wait Until Element Is Not Visible    ${loaderIcon}      60
+        Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     END
-    wait until element is visible  ${download_AgingReport}       60
+    wait until element is visible  ${download_AgingReport}       ${wait_time}
     click element   ${download_AgingReport}
 
 
 Verify all tabs of asset report and download sheet
-    Wait Until Element Is Not Visible    ${loaderIcon}      60
-    wait until element is visible  ${partnerInvestmentReport}       60
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible  ${partnerInvestmentReport}       ${wait_time}
     click element   ${partnerInvestmentReport}
-    wait until element is visible  ${partnerInvestmentList}       60
+    wait until element is visible  ${partnerInvestmentList}       ${wait_time}
     ${elements} =    Get WebElements    ${partnerInvestmentList}
     FOR    ${element}    IN    @{elements}
         Click Element    ${element}
-        Wait Until Element Is Not Visible    ${loaderIcon}      60
+        Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     END
-    wait until element is visible  ${download_partnerInvestmentReport}       60
+    wait until element is visible  ${download_partnerInvestmentReport}       ${wait_time}
     click element   ${download_partnerInvestmentReport}
 
 Click on download all button
-    Wait Until Element Is Not Visible    ${loaderIcon}      60
-    wait until element is visible  ${download_allFiles}       90
-    wait until element is enabled  ${download_allFiles}       90
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible  ${download_allFiles}       ${wait_time}
+    wait until element is enabled  ${download_allFiles}       ${wait_time}
     click element   ${download_allFiles}
     sleep       ${search_sleep}
 
@@ -127,8 +127,8 @@ Get and verify the count of aging analytics table
     ${element_count}=    Get Element Count    (//h4[normalize-space()='${tab_count}']//following::tr)[2]//td
     Log      ${element_count}
     FOR    ${index}    IN RANGE    5    ${element_count + 1}
-        Wait Until Element Is Visible   (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]       60
-        Wait Until Element Is Enabled   (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]       60
+        Wait Until Element Is Visible   (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]       ${wait_time}
+        Wait Until Element Is Enabled   (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]       ${wait_time}
         ${element}=    Get Text    (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]
         Log    Element ${index}: ${element}
         Run Keyword If    '${element}' == '${EMPTY}'    Run Keywords    Empty Action   AND     Continue For Loop
@@ -153,78 +153,78 @@ Remove Special Characters
 
 Click on tabs under it perfomance
     [Arguments]     ${option}
-    wait until element is not visible   ${loaderIcon}       60
-    wait until element is visible   css:.qa-${option}-tab      60
-    wait until element is enabled   css:.qa-${option}-tab      60
+    wait until element is not visible   ${loaderIcon}       ${wait_time}
+    wait until element is visible   css:.qa-${option}-tab      ${wait_time}
+    wait until element is enabled   css:.qa-${option}-tab      ${wait_time}
     click element   css:.qa-${option}-tab
     sleep   ${search_sleep}
 
 
 Click on data quality button link under it perfomance
     [Arguments]     ${option}
-    wait until element is visible   css:.qa-data-quality-${option} h4   60
-    wait until element is enabled   css:.qa-data-quality-${option} h4     60
+    wait until element is visible   css:.qa-data-quality-${option} h4   ${wait_time}
+    wait until element is enabled   css:.qa-data-quality-${option} h4     ${wait_time}
     sleep   ${search_sleep}
     click element   css:.qa-data-quality-${option} h4
 
 
 Click on aging analytics tab
-    Wait Until Element Is Not Visible    ${loaderIcon}      60
-    wait until element is visible  ${AgingReport}       60
-    wait until element is enabled   ${AgingReport}       60
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible  ${AgingReport}       ${wait_time}
+    wait until element is enabled   ${AgingReport}       ${wait_time}
     click element   ${AgingReport}
 
 Click on tab under aging analytics
     [Arguments]     ${tab}
-    wait until element is visible   css:#${tab}-tab   60
-    wait until element is enabled   css:#${tab}-tab   60
+    wait until element is visible   css:#${tab}-tab   ${wait_time}
+    wait until element is enabled   css:#${tab}-tab   ${wait_time}
     sleep   ${search_sleep}
     click element   css:#${tab}-tab
-    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
 
 click on fiscal year forecast
-    wait until element is visible   css:#totalitassetsspendfy-tab   60
-    wait until element is enabled   css:#totalitassetsspendfy-tab   60
+    wait until element is visible   css:#totalitassetsspendfy-tab   ${wait_time}
+    wait until element is enabled   css:#totalitassetsspendfy-tab   ${wait_time}
     click element   css:#totalitassetsspendfy-tab
-    wait until element is not visible   ${loaderIcon}       60
+    wait until element is not visible   ${loaderIcon}       ${wait_time}
 
 Click on refresh icon of technolofy it performance page
-    wait until element is visible   css:.reset-search-qa    60
-    wait until element is enabled   css:.reset-search-qa    60
+    wait until element is visible   css:.reset-search-qa    ${wait_time}
+    wait until element is enabled   css:.reset-search-qa    ${wait_time}
     click element   css:.reset-search-qa
-    wait until element is not visible   ${loaderIcon}       60
+    wait until element is not visible   ${loaderIcon}       ${wait_time}
     Generic.Wait until table get load
 
 Click on current and previous year tab under spend forecast
-    wait until element is not visible   ${loaderIcon}       60
-    wait until element is visible   css:#totalitassetsspendfyq-tab      60
-    wait until element is enabled   css:#totalitassetsspendfyq-tab      60
+    wait until element is not visible   ${loaderIcon}       ${wait_time}
+    wait until element is visible   css:#totalitassetsspendfyq-tab      ${wait_time}
+    wait until element is enabled   css:#totalitassetsspendfyq-tab      ${wait_time}
     click element   css:#totalitassetsspendfyq-tab
 
 Click on five year forecast tab under spend forecast
-    wait until element is not visible   ${loaderIcon}       60
-    wait until element is visible   css:#technologyspendforecast-tab      60
-    wait until element is enabled   css:#technologyspendforecast-tab      60
+    wait until element is not visible   ${loaderIcon}       ${wait_time}
+    wait until element is visible   css:#technologyspendforecast-tab      ${wait_time}
+    wait until element is enabled   css:#technologyspendforecast-tab      ${wait_time}
     click element   css:#technologyspendforecast-tab
 
 Click on data quality button link under investments by partner tab
     [Arguments]     ${option}
-    wait until element is visible   css:.qa-data-quality-partner-${option} h4   60
-    wait until element is enabled   css:.qa-data-quality-partner-${option} h4     60
+    wait until element is visible   css:.qa-data-quality-partner-${option} h4   ${wait_time}
+    wait until element is enabled   css:.qa-data-quality-partner-${option} h4     ${wait_time}
     sleep   ${search_sleep}
     click element   css:.qa-data-quality-partner-${option} h4
 
 
 Click on tabs under investment by partner tab
     [Arguments]     ${tab}
-    wait until element is visible   css:#${tab}-tab    60
-    wait until element is enabled   css:#${tab}-tab    60
+    wait until element is visible   css:#${tab}-tab    ${wait_time}
+    wait until element is enabled   css:#${tab}-tab    ${wait_time}
     click element   css:#${tab}-tab
-    wait until element is not visible    ${loaderIcon}       60
+    wait until element is not visible    ${loaderIcon}       ${wait_time}
 
 Search by brand, asset id , product and assignee
     [Arguments]    ${AssetID}
-    wait until element is visible       css:input[placeholder='Search by Brand, Product, Asset ID and Assignee']       60
+    wait until element is visible       css:input[placeholder='Search by Brand, Product, Asset ID and Assignee']       ${wait_time}
     Clear Element Text      css:input[placeholder='Search by Brand, Product, Asset ID and Assignee']
     input text      css:input[placeholder='Search by Brand, Product, Asset ID and Assignee']     ${AssetID}
     sleep       ${search_sleep}
@@ -234,8 +234,8 @@ Get And Verify The Count Of Data Quality Under Tabs
     ${element_count}=    Get Element Count    //div[@id="${tab_count}"]//tbody//tr//td[2]
     Log      ${element_count}
     FOR    ${index}    IN RANGE    1    ${element_count + 1}
-        Wait Until Element Is Visible   //div[@id="${option}"]//tbody//tr[${index}]//td[2]       60
-        Wait Until Element Is Enabled   //div[@id="${option}"]//tbody//tr[${index}]//td[2]        60
+        Wait Until Element Is Visible   //div[@id="${option}"]//tbody//tr[${index}]//td[2]       ${wait_time}
+        Wait Until Element Is Enabled   //div[@id="${option}"]//tbody//tr[${index}]//td[2]        ${wait_time}
         ${element}=    Get Text    //div[@id="${option}"]//tbody//tr[${index}]//td[2]
         Log    Element ${index}: ${element}
         Run Keyword If    '${element}' == '${EMPTY}'    Run Keywords    Empty Action   AND     Continue For Loop
@@ -253,8 +253,8 @@ Get And Verify The Count Of Data Quality Under Tabs
 
 Fetch and compare the total count
     [Arguments]  ${value}
-    wait until element is enabled       ${Totalcount_field}      60
-    wait until element is visible   ${Totalcount_field}      60
+    wait until element is enabled       ${Totalcount_field}      ${wait_time}
+    wait until element is visible   ${Totalcount_field}      ${wait_time}
     ${text}=     get text   ${Totalcount_field}
     ${parts}    Split String    ${text}    Total Count :
     ${total_count}    Get Substring    ${parts[1]}    3
@@ -269,8 +269,8 @@ Get And Verify The Count Of Data Quality Under Investment by partner tab
     ${element_count}=    Get Element Count    //div[@id="${tab_count}"]//tbody//tr//td[2]
     Log      ${element_count}
     FOR    ${index}    IN RANGE    1    ${element_count}
-        Wait Until Element Is Visible   //div[@id="${option}"]//tbody//tr[${index}]//td[2]       60
-        Wait Until Element Is Enabled   //div[@id="${option}"]//tbody//tr[${index}]//td[2]        60
+        Wait Until Element Is Visible   //div[@id="${option}"]//tbody//tr[${index}]//td[2]       ${wait_time}
+        Wait Until Element Is Enabled   //div[@id="${option}"]//tbody//tr[${index}]//td[2]        ${wait_time}
         ${element}=    Get Text    //div[@id="${option}"]//tbody//tr[${index}]//td[2]
         Log    Element ${index}: ${element}
         Run Keyword If    '${element}' == '${EMPTY}'    Run Keywords    Empty Action   AND     Continue For Loop
@@ -291,8 +291,8 @@ Get and verify the count of table of investment by partner
     ${element_count}=    Get Element Count    (//h4[normalize-space()='${tab_count}']//following::tr)[2]//td
     Log      ${element_count}
     FOR    ${index}    IN RANGE    4    ${element_count + 1}
-        Wait Until Element Is Visible   (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]       60
-        Wait Until Element Is Enabled   (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]       60
+        Wait Until Element Is Visible   (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]       ${wait_time}
+        Wait Until Element Is Enabled   (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]       ${wait_time}
         ${element}=    Get Text    (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]
         Log    Element ${index}: ${element}
         Run Keyword If    '${element}' == '${EMPTY}'    Run Keywords    Empty Action   AND     Continue For Loop
@@ -314,8 +314,8 @@ Get and verify the count of table of brand spend by supplier and supplier spend 
     ${element_count}=    Get Element Count    (//h4[normalize-space()='${tab_count}']//following::tr)[2]//td
     Log      ${element_count}
     FOR    ${index}    IN RANGE    5    ${element_count + 1}
-        Wait Until Element Is Visible   (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]       60
-        Wait Until Element Is Enabled   (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]       60
+        Wait Until Element Is Visible   (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]       ${wait_time}
+        Wait Until Element Is Enabled   (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]       ${wait_time}
         ${element}=    Get Text    (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]
         Log    Element ${index}: ${element}
         Run Keyword If    '${element}' == '${EMPTY}'    Run Keywords    Empty Action   AND     Continue For Loop

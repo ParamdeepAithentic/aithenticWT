@@ -39,9 +39,11 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Activate and deactivate the location
+    [Tags]      Time
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.Verify your current page location contains      asset-overview
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.select the option from the side menu    Location
     Generic.Verify your current page location contains      locationlist

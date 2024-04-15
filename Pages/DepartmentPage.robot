@@ -35,14 +35,14 @@ ${department_ActionBTN}      css:#Team-Member-Actions
 
 *** Keywords ***
 Click on added department action button
-    Wait Until Element Is Visible       ${department_ActionBTN}    60
-    Wait Until Element Is Enabled      ${department_ActionBTN}     60
+    Wait Until Element Is Visible       ${department_ActionBTN}    ${wait_time}
+    Wait Until Element Is Enabled      ${department_ActionBTN}     ${wait_time}
     click element       ${department_ActionBTN}
 
 Choose the option from the action menu
     [Arguments]    ${option}
-    Wait Until Element Is Visible       //a[contains(text(),'${option}')]    60
-    Wait Until Element Is Enabled      //a[contains(text(),'${option}')]     60
+    Wait Until Element Is Visible       //a[contains(text(),'${option}')]    ${wait_time}
+    Wait Until Element Is Enabled      //a[contains(text(),'${option}')]     ${wait_time}
     click element       //a[contains(text(),'${option}')]
 #Add Department, Bulk Edit, Bulk Import
 
@@ -51,14 +51,14 @@ Enter the new value of department in the depatment name column
     DashboardPage.Double click    ${option}
     ${random_string} =    Generate Random String       7      [NUMBERS]
     ${generated_DeptName}=    Catenate    DepartmentName${random_string}
-    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    60
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    ${wait_time}
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_DeptName}
     set global variable    ${generated_DeptName}
 
 
 Double click
     [Arguments]    ${option}
-    wait until element is visible      css:.ag-center-cols-container div[col-id='${option}']    60
+    wait until element is visible      css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
     Double click element      css:.ag-center-cols-container div[col-id='${option}']
     Press Keys    css:.ag-center-cols-container div[col-id='${option}']     CONTROL+A
     Press Keys    css:.ag-center-cols-container div[col-id='${option}']     DELETE
@@ -66,8 +66,8 @@ Double click
 
 Select option from side menu in department list
     [Arguments]    ${option}
-    wait until element is visible      //span[normalize-space()='${option}']    60
-    wait until element is enabled      //span[normalize-space()='${option}']    60
+    wait until element is visible      //span[normalize-space()='${option}']    ${wait_time}
+    wait until element is enabled      //span[normalize-space()='${option}']    ${wait_time}
     click element      //span[normalize-space()='${option}']
 
 

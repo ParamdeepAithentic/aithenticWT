@@ -52,19 +52,19 @@ ${billing_trash_icon}     css:.fa-trash-alt
 
 *** Keywords ***
 Click on the arrow of billing details
-    Wait Until Element Is Visible       ${billing_details_arrow}    60
-    Wait Until Element Is Enabled       ${billing_details_arrow}     60
+    Wait Until Element Is Visible       ${billing_details_arrow}    ${wait_time}
+    Wait Until Element Is Enabled       ${billing_details_arrow}     ${wait_time}
     click element       ${billing_details_arrow}
 
 Click on add new card/bank
-    Wait Until Element Is Visible       ${billing_add_new_card}     60
-    Wait Until Element Is Enabled       ${billing_add_new_card}      60
+    Wait Until Element Is Visible       ${billing_add_new_card}     ${wait_time}
+    Wait Until Element Is Enabled       ${billing_add_new_card}      ${wait_time}
     click element      ${billing_add_new_card}
 
 Select the billing payment type
     [Arguments]    ${option}
-    Wait Until Element Is Visible       css:.fa-${option}    60
-    Wait Until Element Is Enabled       css:.fa-${option}     60
+    Wait Until Element Is Visible       css:.fa-${option}    ${wait_time}
+    Wait Until Element Is Enabled       css:.fa-${option}     ${wait_time}
     click element       css:.fa-${option}
 #options: credit-card, university
 
@@ -82,39 +82,39 @@ Enter billing account type
 
 Save the billing payment form
     [Arguments]    ${option}
-    Wait Until Element Is Visible       css:.qa-payment-form-${option}    60
-    Wait Until Element Is Enabled       css:.qa-payment-form-${option}     60
+    Wait Until Element Is Visible       css:.qa-payment-form-${option}    ${wait_time}
+    Wait Until Element Is Enabled       css:.qa-payment-form-${option}     ${wait_time}
     click element       css:.qa-payment-form-${option}
 #options: save, cancel
 
 Save the status of set as primary account
     [Arguments]    ${option}
     sleep       ${search_sleep}
-    Wait Until Element Is Visible       css:.qa-${option}-cancel-make-card-primary    60
-    Wait Until Element Is Enabled       css:.qa-${option}-cancel-make-card-primary    60
+    Wait Until Element Is Visible       css:.qa-${option}-cancel-make-card-primary    ${wait_time}
+    Wait Until Element Is Enabled       css:.qa-${option}-cancel-make-card-primary    ${wait_time}
     click element       css:.qa-${option}-cancel-make-card-primary
 #options: cancel,confirm
 
 Confirm if you want to delect account
     [Arguments]    ${option}
     sleep       ${search_sleep}
-    Wait Until Element Is Visible       css:.qa-${option}-cancel-make-card-primary    60
-    Wait Until Element Is Enabled       css:.qa-${option}-cancel-make-card-primary     60
+    Wait Until Element Is Visible       css:.qa-${option}-cancel-make-card-primary    ${wait_time}
+    Wait Until Element Is Enabled       css:.qa-${option}-cancel-make-card-primary     ${wait_time}
     click element       css:.qa-${option}-cancel-make-card-primary
 #options: cancel,confirm
 
 Close the billing payment options module
-    Wait Until Element Is Visible       css:div[id='updateCard'] button[aria-label='Close'] span    60
-    Wait Until Element Is Enabled       css:div[id='updateCard'] button[aria-label='Close'] span     60
+    Wait Until Element Is Visible       css:div[id='updateCard'] button[aria-label='Close'] span    ${wait_time}
+    Wait Until Element Is Enabled       css:div[id='updateCard'] button[aria-label='Close'] span     ${wait_time}
     click element       css:div[id='updateCard'] button[aria-label='Close'] span
 
 
 Click on future transaction link
-    Wait Until Element Is Visible       ${billing_future_trans_line}   60
-    Wait Until Element Is Enabled       ${billing_future_trans_line}     60
+    Wait Until Element Is Visible       ${billing_future_trans_line}   ${wait_time}
+    Wait Until Element Is Enabled       ${billing_future_trans_line}     ${wait_time}
     click element      ${billing_future_trans_line}
 
 Click on billing trash to remove card
-    Wait Until Element Is Visible       ${billing_trash_icon}   60
-    Wait Until Element Is Enabled       ${billing_trash_icon}    60
+    Wait Until Element Is Visible       ${billing_trash_icon}   ${wait_time}
+    Wait Until Element Is Enabled       ${billing_trash_icon}    ${wait_time}
     click element      ${billing_trash_icon}

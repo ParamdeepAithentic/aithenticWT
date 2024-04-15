@@ -1,0 +1,7 @@
+datasources:18f8dd9b7cc89cc1a14aaf13971001af09f4165c
+commandlineoptions:2a8517fe88046ad6a836fdad6e63eceaaaca09c0
+suitesfrom:no-suites-from-option
+file:752641c997c419f99e6fbac756f208272b760129
+--test TestPage.DashboardPageTest.Verify the drawer list
+--test TestPage.PartnerPageTest.Compose Message invite user test
+--test TestPage.RegisterUserPageTest.Register new user

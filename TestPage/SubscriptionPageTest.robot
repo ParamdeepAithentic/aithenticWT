@@ -43,4 +43,133 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 
+Create the scheduler
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     subscription-connector
+    Generic.Verify your current page location contains      technology-settings
+    SubscriptionPage.Click on the three dots of subscription connector      Google
+    SubscriptionPage.Click on option under three dots of subscription connector     Create Scheduler
+    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Monthly
+    SubscriptionPage.Enter input in the start date field of billing details
+    SubscriptionPage.Enter input in the input field of time under create scheduler      2:00
+    sleep   ${search_sleep}
+    Generic.click on the button     Create
+    Generic.click on the button     Create
+    Generic.Fetch alert message text and compare it with        Scheduler created sucessfully
+
+Edit the scheduler
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     subscription-connector
+    Generic.Verify your current page location contains      technology-settings
+    SubscriptionPage.Click on the three dots of subscription connector      Google
+    SubscriptionPage.Click on option under three dots of subscription connector     Edit
+    SubscriptionPage.click on the cross icon of create scheduler    1
+    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Weekly
+    SubscriptionPage.Enter input in the input field of day under create scheduler       Monday
+    SubscriptionPage.Enter input in the input field of time under create scheduler      12:00
+    sleep   ${search_sleep}
+    Generic.click on the button     Update
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+    SubscriptionPage.Click on the three dots of subscription connector      Google
+    SubscriptionPage.Click on option under three dots of subscription connector     Edit
+    SubscriptionPage.click on the cross icon of create scheduler    1
+    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Daily
+    SubscriptionPage.Enter input in the input field of time under create scheduler      1:00
+    sleep   ${search_sleep}
+    Generic.click on the button     Update
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+    SubscriptionPage.Click on the three dots of subscription connector      Google
+    SubscriptionPage.Click on option under three dots of subscription connector     Edit
+    SubscriptionPage.click on the cross icon of create scheduler    1
+    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Monthly
+   SubscriptionPage.Enter input in the start date field of billing details
+    SubscriptionPage.Enter input in the input field of time under create scheduler      2:00
+    sleep   ${search_sleep}
+    Generic.click on the button     Update
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+    SubscriptionPage.Click on the three dots of subscription connector      Google
+    SubscriptionPage.Click on option under three dots of subscription connector     Edit
+    SubscriptionPage.click on the cross icon of create scheduler    1
+    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Yearly
+    SubscriptionPage.Enter input in the start date field of billing details
+    SubscriptionPage.Enter input in the input field of time under create scheduler      3:00
+    sleep   ${search_sleep}
+    Generic.click on the button     Update
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+
+Run now from view details
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     subscription-connector
+    Generic.Verify your current page location contains      technology-settings
+    SubscriptionPage.Click on the three dots of subscription connector      Google
+    SubscriptionPage.Click on option under three dots of subscription connector     Details
+    Generic.click on the button     Run Now
+    SubscriptionPage.Fetch alert message text of subscription connector and compare it with
+    sleep  ${search_sleep}
+    SubscriptionPage.Click on the three dots of subscription connector      Google
+    SubscriptionPage.Click on option under three dots of subscription connector     Delete
+    Generic.click on the button     Yes
+    Generic.Fetch alert message text and compare it with        Status Updated
+    SubscriptionPage.Fetch text of delete under table of subscription connector      Deleted
+    sleep  ${search_sleep}
+    SubscriptionPage.Click on the activate option under subscription connector table
+    Generic.Fetch alert message text and compare it with        Status Updated
+    SubscriptionPage.Fetch text of delete under table of subscription connector      Active
+    SubscriptionPage.Click on the three dots of subscription connector      Google
+    SubscriptionPage.Click on option under three dots of subscription connector     Run Now
+    SubscriptionPage.Fetch alert message text of subscription connector and compare it with
+    SubscriptionPage.Click on the three dots of subscription connector      Google
+    SubscriptionPage.Click on option under three dots of subscription connector     Details
+    SubscriptionPage.Get the value of fields under view details of subscription connector   1       GAPPS
+    SubscriptionPage.Get the value of fields under view details of subscription connector   2       Samuel John
+
+Suspend and unsuspend the account
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     billing-dropdown
+    Generic.Verify your current page location contains      billing-details
+    SubscriptionPage.Click on the suspend my account button link under billing details
+    SubscriptionPage.Enter input in the description field of billing details
+    SubscriptionPage.Enter input in the start date field of billing details
+    SubscriptionPage.Enter input in the end date field of billing details
+    sleep   ${search_sleep}
+    Generic.click on the button     Suspend
+    Generic.Fetch alert message text and compare it with        Account suspended successfully.
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    Generic.Select parameter    Technology
+    Generic.Verify your current page location contains      technology-settings
+    Generic.click on the tab    Subscription Connectors
+    SubscriptionPage.Visible the disable activate button link after suspending account
+     Generic.Click on the profile name
+    Generic.Select option from profile list     billing-dropdown
+    Generic.Verify your current page location contains      billing-details
+    SubscriptionPage.Click on the Unsuspend my account button link under billing details
+    SubscriptionPage.click on the checkboxes under unsuspend my account button link
+    SubscriptionPage.click on the confirm button of unsuspend pop up
+    Generic.Fetch alert message text and compare it with        Payment Successful
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    Generic.Select parameter    Technology
+    Generic.Verify your current page location contains      technology-settings
+    Generic.click on the tab    Subscription Connectors
+    SubscriptionPage.Click on the activate option under subscription connector table
+    Generic.Fetch alert message text and compare it with        Status Updated
 

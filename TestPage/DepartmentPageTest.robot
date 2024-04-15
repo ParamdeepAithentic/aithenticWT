@@ -48,6 +48,7 @@ Test Teardown   Close Browser session
 Department bulk edit
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     department-dropdown
     Generic.Verify your current page location contains      department

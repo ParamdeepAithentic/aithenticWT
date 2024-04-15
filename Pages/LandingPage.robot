@@ -39,19 +39,22 @@ ${Admin_loginBtn}          //button[normalize-space()='Log In']
 
 Fill the login Form
     [Arguments]     ${email}     ${valid_password}
-    wait until element is visible    ${Kc_username}       60
+    wait until element is visible    ${Kc_username}       ${wait_time}
     Input Text          ${Kc_username}     ${email}
-    wait until element is visible    ${Kc_password}    60
+    wait until element is visible    ${Kc_password}    ${wait_time}
     Input Password      ${Kc_password}     ${valid_password}
     Click Button        ${Kc_loginBtn}
-#    wait until location contains    asset-overview     60
-#    wait until element is visible       ${profileName}       60
+
+Verify you are on dashboard page
+    wait until element is visible    //div[normalize-space()='End of life']    ${wait_time}
+    wait until element is enabled    //div[normalize-space()='End of life']    ${wait_time}
+
 
 Fill the login form of Admin panel
     [Arguments]     ${email}     ${valid_password}
-    wait until element is visible    ${Admin_username_field}       60
+    wait until element is visible    ${Admin_username_field}       ${wait_time}
     Input Text          ${Admin_username_field}     ${email}
-    wait until element is visible    ${Admin_password_field}    60
+    wait until element is visible    ${Admin_password_field}    ${wait_time}
     Input Password      ${Admin_password_field}     ${valid_password}
     Click Button        ${Admin_loginBtn}
 
