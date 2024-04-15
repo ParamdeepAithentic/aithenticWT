@@ -44,9 +44,11 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Create the scheduler
+    [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     Generic.Click on the profile name
     Generic.Select option from profile list     subscription-connector
     Generic.Verify your current page location contains      technology-settings
@@ -57,13 +59,14 @@ Create the scheduler
     SubscriptionPage.Enter input in the input field of time under create scheduler      2:00
     sleep   ${search_sleep}
     Generic.click on the button     Create
-    Generic.click on the button     Create
+#    Generic.click on the button     Create
     Generic.Fetch alert message text and compare it with        Scheduler created sucessfully
 
 Edit the scheduler
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     Generic.Click on the profile name
     Generic.Select option from profile list     subscription-connector
     Generic.Verify your current page location contains      technology-settings
@@ -111,6 +114,7 @@ Run now from view details
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     Generic.Click on the profile name
     Generic.Select option from profile list     subscription-connector
     Generic.Verify your current page location contains      technology-settings
@@ -140,6 +144,7 @@ Suspend and unsuspend the account
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     Generic.Click on the profile name
     Generic.Select option from profile list     billing-dropdown
     Generic.Verify your current page location contains      billing-details
