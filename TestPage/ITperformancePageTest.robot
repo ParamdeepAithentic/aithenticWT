@@ -107,6 +107,7 @@ It performnace drill down agging analytics
     ITperformancePage.Get and verify the count of aging analytics table     Upcoming End Of Life        Upcoming End Of Life
 
 IT perfomance drill down data quality
+    [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -124,6 +125,7 @@ IT perfomance drill down data quality
     ITperformancePage.Get And Verify The Count Of Data Quality Under Tabs   dataquality3        dataquality3
 
 IT perfomance drill down data quality of Investments by partner tab
+    [Tags]      rerun       sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
     LandingPage.Verify you are on dashboard page

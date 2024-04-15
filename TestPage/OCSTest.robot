@@ -443,6 +443,7 @@ Download Agent from asset discovery - macOS
     Generic.click on the button link    Download
 
 Search Discovered Assets
+    [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     LandingPage.Verify you are on dashboard page
@@ -641,6 +642,7 @@ Apply filters and clear filter on Existing Assets
     OCS.Get text by hovering over existing assets  ProductId:
 
 Add Discovery Asset
+    [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     LandingPage.Verify you are on dashboard page
@@ -823,6 +825,7 @@ Network Discovery in case of no records
     OCS.Fetch text from Agent Discovery tab and compare it with    No record found
 
 Add component as an asset from Agent Discovery page
+    [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     LandingPage.Verify you are on dashboard page
@@ -883,6 +886,7 @@ Add component as an asset from Agent Discovery page
     UnselectAssetAPI.Hit API Endpoint
 
 Upload Image and Document File while Add Discovery Asset
+    [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     LandingPage.Verify you are on dashboard page
@@ -980,6 +984,7 @@ Upload Image and Document File while Add Discovery Asset
     UnselectAssetAPI.Hit API Endpoint
 
 Upload Image and Document File while Add component as an asset from Agent Discovery page
+    [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     LandingPage.Verify you are on dashboard page
@@ -1671,6 +1676,7 @@ Search with containing fields under advance search of IP Address of discovered a
 #    DisconnectConnectorAPI.Hit API to disconnect connector
 
 Upload Image and Document file during Add Asset with IP address from Agent Discovery Page
+    [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     LandingPage.Verify you are on dashboard page

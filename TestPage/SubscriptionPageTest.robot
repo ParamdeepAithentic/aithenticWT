@@ -44,6 +44,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Create the scheduler
+    [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     LandingPage.Verify you are on dashboard page
@@ -58,7 +59,7 @@ Create the scheduler
     SubscriptionPage.Enter input in the input field of time under create scheduler      2:00
     sleep   ${search_sleep}
     Generic.click on the button     Create
-    Generic.click on the button     Create
+#    Generic.click on the button     Create
     Generic.Fetch alert message text and compare it with        Scheduler created sucessfully
 
 Edit the scheduler
