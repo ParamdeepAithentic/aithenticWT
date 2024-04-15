@@ -404,27 +404,32 @@ Verify Brand added
 select the option from the dashboard drawer
     [Arguments]     ${option}
     wait until element is visible    //span[normalize-space()='${option}']      ${wait_time}
+    wait until element is enabled    //span[normalize-space()='${option}']      ${wait_time}
     click element    //span[normalize-space()='${option}']
 
 ################################### WELCOME PAGE AND AHEAD ###############
 Click on complete setup button
     [Arguments]     ${option}
     wait until element is visible    //button[normalize-space()='${option}']        ${wait_time}
+    wait until element is enabled    //button[normalize-space()='${option}']        ${wait_time}
     click element    //button[normalize-space()='${option}']
 
 Select the asset ID checkbox
     [Arguments]     ${option}
     wait until element is visible    css:.checkmark.qa-inner-customcheckbox-asset-id-${option}      ${wait_time}
+    wait until element is enabled    css:.checkmark.qa-inner-customcheckbox-asset-id-${option}      ${wait_time}
     click element    css:.checkmark.qa-inner-customcheckbox-asset-id-${option}
 
 Select the employee ID checkbox
     [Arguments]     ${option}
     wait until element is visible    css:.checkmark.qa-inner-customcheckbox-employee-id-${option}       ${wait_time}
+    wait until element is enabled    css:.checkmark.qa-inner-customcheckbox-employee-id-${option}       ${wait_time}
     click element    css:.checkmark.qa-inner-customcheckbox-employee-id-${option}
 
 Select the location ID checkbox
     [Arguments]     ${option}
     wait until element is visible    css:.checkmark.qa-inner-customcheckbox-location-id-${option}       ${wait_time}
+    wait until element is enabled    css:.checkmark.qa-inner-customcheckbox-location-id-${option}       ${wait_time}
     click element    css:.checkmark.qa-inner-customcheckbox-location-id-${option}
 #options: ProductId, BrandName, ProductStatus,TechType, GroupName, ProductDescription
 
@@ -432,12 +437,14 @@ Select the location ID checkbox
 Double click
     [Arguments]    ${option}
     wait until element is visible      css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
+    wait until element is enabled      css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
     Double click element      css:.ag-center-cols-container div[col-id='${option}']
     Press Keys    css:.ag-center-cols-container div[col-id='${option}']     CONTROL+A
     Press Keys    css:.ag-center-cols-container div[col-id='${option}']     DELETE
 
 Create unique department name random
     wait until element is visible       ${add_dept_name}        ${wait_time}
+    wait until element is enabled       ${add_dept_name}        ${wait_time}
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_DepartmentNumber}=    Catenate    DeptNo_${random_string}
     input text   ${add_dept_name}   ${generated_DepartmentNumber}
@@ -449,6 +456,7 @@ Create unique department name random
 Select department status
     [Arguments]    ${option}
     wait until element is visible       ${add_dept_status}        ${wait_time}
+    wait until element is enabled       ${add_dept_status}        ${wait_time}
     click element     ${add_dept_status}
     Clear Element Text      ${add_dept_status}
     Generic.Select parameter    ${option}
@@ -456,6 +464,7 @@ Select department status
 Select department cost center
     [Arguments]    ${option}
     wait until element is visible       ${add_dept_costCenter}        ${wait_time}
+    wait until element is enabled       ${add_dept_costCenter}        ${wait_time}
     input text    ${add_dept_costCenter}   ${option}
 
 Verify department added
