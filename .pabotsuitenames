@@ -1,27 +1,7 @@
-datasources:8460edba4ecd7d40bd345e365174b8e9b7a3c060
-commandlineoptions:97d170e1550eee4afc0af065b78cda302a97674c
+datasources:18f8dd9b7cc89cc1a14aaf13971001af09f4165c
+commandlineoptions:2a8517fe88046ad6a836fdad6e63eceaaaca09c0
 suitesfrom:no-suites-from-option
-file:556264a8e24f730e70a5841843d8b7bac488cb8b
---suite TestPage.Admin PanelPageTest
---suite TestPage.Bulk Import ExportPageTest
---suite TestPage.ContractsPageTest
---suite TestPage.DashboardPageTest
---suite TestPage.DepartmentPageTest
---suite TestPage.I iconPageTest
---suite TestPage.ITperformancePageTest
---suite TestPage.KeyClockPageTest
---suite TestPage.LandingPageTest
---suite TestPage.LocationPageTest
---suite TestPage.LoginAPITest
---suite TestPage.MemberPageTest
---suite TestPage.OCSTest
---suite TestPage.PaginationTest
---suite TestPage.PartnerPageTest
---suite TestPage.RegisterUserPageTest
---suite TestPage.ReplaceDomainTest
---suite TestPage.ReportPageTest
---suite TestPage.SortingTest
---suite TestPage.SubscriptionPageTest
---suite TestPage.TeamMemberPageTest
---suite TestPage.TechnologyPageTest
---suite TestPage.UnselectAssetAPITest
+file:752641c997c419f99e6fbac756f208272b760129
+--test TestPage.DashboardPageTest.Verify the drawer list
+--test TestPage.PartnerPageTest.Compose Message invite user test
+--test TestPage.RegisterUserPageTest.Register new user

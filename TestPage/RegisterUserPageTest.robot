@@ -115,6 +115,8 @@ Register new user
     Generic.Verify your current page location contains     subscription-payment
 #-------------------------------------------BILLING-----------------------------------------------------
     SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
     SubscriptionPage.Switch to card iframe
     SubscriptionPage.Enter cardnumber    42424242424242420424242
     Unselect Frame

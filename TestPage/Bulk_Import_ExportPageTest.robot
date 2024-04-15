@@ -662,11 +662,11 @@ Technology Bulk import
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_7
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_8      12
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_8
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_8      01/01/2023
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_10      01/01/2023
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_10
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_8      01/01/2024
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_11     01/01/2024
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_11
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_8      1
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_12     1
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_12
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      RenewalDate      02/11/2024
     Bulk_Import_ExportPage.Perform the keyboard action      RenewalDate
