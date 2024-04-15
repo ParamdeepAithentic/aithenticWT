@@ -750,7 +750,7 @@ Search By Brand name in product list
     DashboardPage.Verify product added    ${generated_product}
 
 Verify Reports Asset Alert
-    [Tags]    tt
+    [Tags]    rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}       ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -769,6 +769,7 @@ Verify Reports Asset Alert
     Generic.Verify your current page location contains      technology
     Generic.Wait until table get load
     Generic.select the option from the side menu    Dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview
     Generic.Verify your current page contains this text     Billing Details
