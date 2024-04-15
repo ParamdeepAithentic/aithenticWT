@@ -54,34 +54,34 @@ ${loaderIcon}     //div[@role='status']
 *** Keywords ***
 Enter the user ID
     [Arguments]    ${email}
-    wait until element is not visible      ${loaderIcon}       60
-    wait until element is visible       ${user_accountEmail}       60
-    wait until element is enabled       ${user_accountEmail}       60
+    wait until element is not visible      ${loaderIcon}       ${wait_time}
+    wait until element is visible       ${user_accountEmail}       ${wait_time}
+    wait until element is enabled       ${user_accountEmail}       ${wait_time}
     Clear Element Text      ${user_accountEmail}
     input text      ${user_accountEmail}     ${email}
 
 Enter the password
     [Arguments]    ${password}
-    wait until element is visible       ${user_accountPassword}       60
-    wait until element is enabled       ${user_accountPassword}       60
+    wait until element is visible       ${user_accountPassword}       ${wait_time}
+    wait until element is enabled       ${user_accountPassword}       ${wait_time}
     Clear Element Text      ${user_accountPassword}
     input text      ${user_accountPassword}     ${password}
 
 Confirm the entered password
     [Arguments]    ${confirmPassword}
-    wait until element is visible       ${user_accountConfirmPassword}       60
-    wait until element is enabled       ${user_accountConfirmPassword}       60
+    wait until element is visible       ${user_accountConfirmPassword}       ${wait_time}
+    wait until element is enabled       ${user_accountConfirmPassword}       ${wait_time}
     Clear Element Text      ${user_accountConfirmPassword}
     input text      ${user_accountConfirmPassword}     ${confirmPassword}
 
 Click on term and condition checkbox
-    wait until element is not visible      ${loaderIcon}       60
-    wait until element is visible       ${user_accountChkBox}       60
-    wait until element is enabled       ${user_accountChkBox}       60
+    wait until element is not visible      ${loaderIcon}       ${wait_time}
+    wait until element is visible       ${user_accountChkBox}       ${wait_time}
+    wait until element is enabled       ${user_accountChkBox}       ${wait_time}
     click element       ${user_accountChkBox}
 
 Click create account button
-    wait until element is visible       ${user_accountSubmitBTN}       60
-    wait until element is enabled       ${user_accountSubmitBTN}       60
+    wait until element is visible       ${user_accountSubmitBTN}       ${wait_time}
+    wait until element is enabled       ${user_accountSubmitBTN}       ${wait_time}
     click element       ${user_accountSubmitBTN}
 

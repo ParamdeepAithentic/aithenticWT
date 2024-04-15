@@ -387,7 +387,8 @@ Compose Message invite user test
 
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-
+    Generic.Verify your current page location contains      management-console
+    LandingPage.Verify you are on dashboard page
 #-------------------------- ADD NEW CONTACT----------------------------------------------------
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner

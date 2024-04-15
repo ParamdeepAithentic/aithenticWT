@@ -47,17 +47,17 @@ ${team_memeber_location}     css:.qa-LocationTypeId input
 Enter asset ID
     [Arguments]     ${option}
     Generic.Enter value into field  ${message_assetID}      ${option}
-    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     sleep   2
     Press Keys     ${message_assetID}       ENTER
 
 Enter contract ID
     [Arguments]     ${option}
     Generic.Enter value into field  ${message_contractID}      ${option}
-    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     sleep   2
     Generic.Enter value into field  ${message_contractID}      ${option}
-    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     sleep       2
     Press Keys     ${message_contractID}       ENTER
     sleep       2
@@ -71,15 +71,15 @@ Enter Recipient list
 
 Select side option from message list
     [Arguments]     ${option}
-    wait until element is visible    //span[normalize-space()='${option}']   60
+    wait until element is visible    //span[normalize-space()='${option}']   ${wait_time}
     click element       //span[normalize-space()='${option}']
 #sent/Compose/Inbox
 
 Select compose message pop up option
     [Arguments]     ${option}
     sleep   ${search_sleep}
-    wait until element is visible    css:.qa-${option}-send-invite   60
-    wait until element is enabled    css:.qa-${option}-send-invite   60
+    wait until element is visible    css:.qa-${option}-send-invite   ${wait_time}
+    wait until element is enabled    css:.qa-${option}-send-invite   ${wait_time}
     click element       css:.qa-${option}-send-invite
 #yes/no
 
@@ -102,8 +102,8 @@ Enter message details
 Save compose message
     [Arguments]     ${option}
 #    sleep   ${search_sleep}
-    wait until element is visible    css:.${option}-message-qa   60
-    wait until element is enabled    css:.${option}-message-qa   60
+    wait until element is visible    css:.${option}-message-qa   ${wait_time}
+    wait until element is enabled    css:.${option}-message-qa   ${wait_time}
     click element       css:.${option}-message-qa
 #send/cancel
 
@@ -123,7 +123,7 @@ Enter team member location
 #Canada
 Save team member
     [Arguments]     ${option}
-    wait until element is visible    css:.${option}-member-qa   60
+    wait until element is visible    css:.${option}-member-qa   ${wait_time}
     click element       css:.${option}-member-qa
-    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
 #save/cancel

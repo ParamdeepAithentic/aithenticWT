@@ -83,7 +83,7 @@ ${payment_completeProcessBTN}     css:button[type='submit']
 *** Keywords ***
 Select country of manufacturer profile
     [Arguments]    ${option1}
-    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     Generic.Enter value into field      ${subscription_country}     ${option1}
     Generic.Select parameter    ${option1}
 
@@ -119,24 +119,24 @@ Input text into manufacturer position/title
     Generic.Enter value into field      ${position}     ${option1}
 
 Save the manufacturer profile
-    wait until element is visible       ${save_manufacturer_BTN}       60
-    wait until element is enabled       ${save_manufacturer_BTN}       60
+    wait until element is visible       ${save_manufacturer_BTN}       ${wait_time}
+    wait until element is enabled       ${save_manufacturer_BTN}       ${wait_time}
     click element        ${save_manufacturer_BTN}
 
 Select plan of subscription
-    wait until element is not visible      ${loaderIcon}        60
-    wait until element is visible       ${select_subscription_type}       60
-    wait until element is enabled       ${select_subscription_type}       60
+    wait until element is not visible      ${loaderIcon}        ${wait_time}
+    wait until element is visible       ${select_subscription_type}       ${wait_time}
+    wait until element is enabled       ${select_subscription_type}       ${wait_time}
     click element        ${select_subscription_type}
 
 Select and move next with subscription
-    wait until element is visible       ${plan_price}       60
-    wait until element is enabled       ${moveNext}       60
+    wait until element is visible       ${plan_price}       ${wait_time}
+    wait until element is enabled       ${moveNext}       ${wait_time}
     click element        ${moveNext}
 
 Click on same billing address checkbox
-    wait until element is visible       ${same_address_chkbox}       60
-    wait until element is enabled       ${same_address_chkbox}       60
+    wait until element is visible       ${same_address_chkbox}       ${wait_time}
+    wait until element is enabled       ${same_address_chkbox}       ${wait_time}
     click element        ${same_address_chkbox}
     click element        ${same_address_chkbox}
     click element        ${same_address_chkbox}
@@ -162,32 +162,32 @@ Switch to card iframe
     Select Frame   css:iframe[title='Secure card payment input frame']
 
 Click on complete process button
-    wait until element is visible       ${payment_completeProcessBTN}       60
-    wait until element is enabled       ${payment_completeProcessBTN}       60
+    wait until element is visible       ${payment_completeProcessBTN}       ${wait_time}
+    wait until element is enabled       ${payment_completeProcessBTN}       ${wait_time}
     click element        ${payment_completeProcessBTN}
-    Wait Until Element Is Not Visible    ${loaderIcon}      120
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
 
 Select the another plan
-    wait until element is visible       css:div[class='row justify-content-center'] div:nth-child(1) div:nth-child(1) div:nth-child(2)       60
-    wait until element is enabled       css:div[class='row justify-content-center'] div:nth-child(1) div:nth-child(1) div:nth-child(2)       60
+    wait until element is visible       css:div[class='row justify-content-center'] div:nth-child(1) div:nth-child(1) div:nth-child(2)       ${wait_time}
+    wait until element is enabled       css:div[class='row justify-content-center'] div:nth-child(1) div:nth-child(1) div:nth-child(2)       ${wait_time}
     click element        css:div[class='row justify-content-center'] div:nth-child(1) div:nth-child(1) div:nth-child(2)
 
 Select if you want to change plan or asset
     [Arguments]    ${option1}
-    wait until element is visible       //button[normalize-space()='${option1}']       60
-    wait until element is enabled       //button[normalize-space()='${option1}']       60
+    wait until element is visible       //button[normalize-space()='${option1}']       ${wait_time}
+    wait until element is enabled       //button[normalize-space()='${option1}']       ${wait_time}
     click element        //button[normalize-space()='${option1}']
 
 Select different plan
-    wait until element is visible       (//button[@type='button'][normalize-space()='Select'])[2]       60
-    wait until element is enabled       (//button[@type='button'][normalize-space()='Select'])[2]       60
+    wait until element is visible       (//button[@type='button'][normalize-space()='Select'])[2]       ${wait_time}
+    wait until element is enabled       (//button[@type='button'][normalize-space()='Select'])[2]       ${wait_time}
     click element       (//button[@type='button'][normalize-space()='Select'])[2]
 
 Set asset range to
     [Arguments]     ${option1}
     Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    wait until element is visible       //div[normalize-space()='${option1}']       60
-    wait until element is enabled       //div[normalize-space()='${option1}']       60
+    wait until element is visible       //div[normalize-space()='${option1}']       ${wait_time}
+    wait until element is enabled       //div[normalize-space()='${option1}']       ${wait_time}
     click element       //div[normalize-space()='${option1}']
 
 Update the asset range
@@ -195,8 +195,8 @@ Update the asset range
     Generic.click on the button     ${option1}
 
 Select card type university
-    wait until element is visible       css:span .fa-university       60
-    wait until element is enabled       css:span .fa-university       60
+    wait until element is visible       css:span .fa-university       ${wait_time}
+    wait until element is enabled       css:span .fa-university       ${wait_time}
     Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
     click element       css:span .fa-university
 
@@ -211,15 +211,15 @@ Enter card routing number
     Generic.Enter value into field      ${routingNumber}     ${option1}
 
 Click account type
-    wait until element is visible       ${accountType}       60
-    wait until element is enabled       ${accountType}        60
+    wait until element is visible       ${accountType}       ${wait_time}
+    wait until element is enabled       ${accountType}        ${wait_time}
     Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
     click element      ${accountType}
 
 Select account type
     [Arguments]    ${option1}
-    wait until element is visible      //option[normalize-space()='${option1}']        60
-    wait until element is enabled      //option[normalize-space()='${option1}']         60
+    wait until element is visible      //option[normalize-space()='${option1}']        ${wait_time}
+    wait until element is enabled      //option[normalize-space()='${option1}']         ${wait_time}
     Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
     click element      //option[normalize-space()=' ${option1}']
 #Company, Individual
@@ -230,150 +230,150 @@ Enter account holder name
 
 Select the payment method
     [Arguments]    ${option1}
-    wait until element is visible      css:.qa-payment-way-options-${option1}        60
-    wait until element is enabled      css:.qa-payment-way-options-${option1}          60
+    wait until element is visible      css:.qa-payment-way-options-${option1}        ${wait_time}
+    wait until element is enabled      css:.qa-payment-way-options-${option1}          ${wait_time}
     click element      css:.qa-payment-way-options-${option1}
 
 
 Select the account for payment
-    wait until element is visible      css:.check-mark.pointer        60
-    wait until element is enabled      css:.check-mark.pointer          60
+    wait until element is visible      css:.check-mark.pointer        ${wait_time}
+    wait until element is enabled      css:.check-mark.pointer          ${wait_time}
     click element      css:.check-mark.pointer
 
 Proceed the payment
     [Arguments]    ${option1}
-    wait until element is visible      css:.qa-payment-method-${option1}        60
-    wait until element is enabled      css:.qa-payment-method-${option1}          60
+    wait until element is visible      css:.qa-payment-method-${option1}        ${wait_time}
+    wait until element is enabled      css:.qa-payment-method-${option1}          ${wait_time}
     click element      css:.qa-payment-method-${option1}
 
 Update the payment of changed plan
     [Arguments]    ${option1}
-    wait until element is visible      css:.qa-payment-update-${option1}        60
-    wait until element is enabled      css:.qa-payment-update-${option1}          60
+    wait until element is visible      css:.qa-payment-update-${option1}        ${wait_time}
+    wait until element is enabled      css:.qa-payment-update-${option1}          ${wait_time}
     click element      css:.qa-payment-update-${option1}
 
 Click on the three dots of subscription connector
     [Arguments]     ${option}
-    wait until element is visible  //td[normalize-space()='${option}']//parent::tr//td//div//button    60
-    wait until element is enabled   //td[normalize-space()='${option}']//parent::tr//td//div//button  60
+    wait until element is visible  //td[normalize-space()='${option}']//parent::tr//td//div//button    ${wait_time}
+    wait until element is enabled   //td[normalize-space()='${option}']//parent::tr//td//div//button  ${wait_time}
     click element  //td[normalize-space()='${option}']//parent::tr//td//div//button
     sleep   ${search_sleep}
 
 Click on option under three dots of subscription connector
     [Arguments]     ${option}
-    wait until element is visible  (//div[contains(@class,'dropdown-menu')])[2]//a[normalize-space()='${option}']     60
-    wait until element is enabled   (//div[contains(@class,'dropdown-menu')])[2]//a[normalize-space()='${option}']    60
+    wait until element is visible  (//div[contains(@class,'dropdown-menu')])[2]//a[normalize-space()='${option}']     ${wait_time}
+    wait until element is enabled   (//div[contains(@class,'dropdown-menu')])[2]//a[normalize-space()='${option}']    ${wait_time}
     click element   (//div[contains(@class,'dropdown-menu')])[2]//a[normalize-space()='${option}']
     sleep  ${search_sleep}
 
 Fetch text of delete under table of subscription connector
     [Arguments]     ${option}
-    wait until element is visible    //td[normalize-space()='Google']//parent::tr//td//span        60
+    wait until element is visible    //td[normalize-space()='Google']//parent::tr//td//span        ${wait_time}
     ${value} =    get text    //td[normalize-space()='Google']//parent::tr//td//span
     log to console     ${value}
     should be equal    ${value}    ${option}
-    Wait Until Element Is Not Visible     ${value}        60
+    Wait Until Element Is Not Visible     ${value}        ${wait_time}
 
 Fetch alert message text of subscription connector and compare it with
-    wait until element is visible    css:.toast-body       60
+    wait until element is visible    css:.toast-body       ${wait_time}
     ${alert_Msg2} =    get text    css:.toast-body
     log to console     ${alert_Msg2}
     set global variable     ${alert_Msg2}
     Run Keyword If    '${alert_Msg2}' == 'Your scheduler is now running. This process can take up to several minutes. Please check back.'     Log to console    ${alert_Msg2}
     ...    ELSE    Log to console   ${alert_Msg2}
-    Wait Until Element Is Not Visible    ${alert_Msg2}        60
+    Wait Until Element Is Not Visible    ${alert_Msg2}        ${wait_time}
 
 Get the value of fields under view details of subscription connector
     [Arguments]     ${option1}      ${option2}
-    wait until element is not visible   ${loaderIcon}    60
-    wait until element is visible   (//div[@id='viewDetails']//input)[${option1}]   60
+    wait until element is not visible   ${loaderIcon}    ${wait_time}
+    wait until element is visible   (//div[@id='viewDetails']//input)[${option1}]   ${wait_time}
     ${value} =    get value    (//div[@id='viewDetails']//input)[${option1}]
     log to console     ${value}
     should be equal    ${value}         ${option2}
 
 Enter input in the input field of frequency under create scheduler
     [Arguments]     ${option}
-    wait until element is visible  //div[@id='editScheduler']//ng-select[@formcontrolname='schedulerFrequency']    60
-    wait until element is enabled   //div[@id='editScheduler']//ng-select[@formcontrolname='schedulerFrequency']    60
+    wait until element is visible  //div[@id='editScheduler']//ng-select[@formcontrolname='schedulerFrequency']    ${wait_time}
+    wait until element is enabled   //div[@id='editScheduler']//ng-select[@formcontrolname='schedulerFrequency']    ${wait_time}
     click element   //div[@id='editScheduler']//ng-select[@formcontrolname='schedulerFrequency']
     Generic.Select parameter    ${option}
 
 Enter input in the input field of time under create scheduler
     [Arguments]     ${option}
-    wait until element is visible  //div[@id='editScheduler']//input[@formcontrolname='schedulerTime']    60
-    wait until element is enabled   //div[@id='editScheduler']//input[@formcontrolname='schedulerTime']    60
+    wait until element is visible  //div[@id='editScheduler']//input[@formcontrolname='schedulerTime']    ${wait_time}
+    wait until element is enabled   //div[@id='editScheduler']//input[@formcontrolname='schedulerTime']    ${wait_time}
     clear element text  //div[@id='editScheduler']//input[@formcontrolname='schedulerTime']
     sleep    ${search_sleep}
     input text  //div[@id='editScheduler']//input[@formcontrolname='schedulerTime']     ${option}
 
 click on the cross icon of create scheduler
     [Arguments]     ${option}
-    wait until element is visible   (//div[@id='editScheduler']//span[@title='Clear all'])[${option}]    60
-    wait until element is enabled   (//div[@id='editScheduler']//span[@title='Clear all'])[${option}]     60
+    wait until element is visible   (//div[@id='editScheduler']//span[@title='Clear all'])[${option}]    ${wait_time}
+    wait until element is enabled   (//div[@id='editScheduler']//span[@title='Clear all'])[${option}]     ${wait_time}
     click element   (//div[@id='editScheduler']//span[@title='Clear all'])[${option}]
 
 Enter input in the input field of day under create scheduler
     [Arguments]     ${option}
-    wait until element is visible  //div[@id='editScheduler']//ng-select[@formcontrolname='schedulerDay']    60
-    wait until element is enabled   //div[@id='editScheduler']//ng-select[@formcontrolname='schedulerDay']    60
+    wait until element is visible  //div[@id='editScheduler']//ng-select[@formcontrolname='schedulerDay']    ${wait_time}
+    wait until element is enabled   //div[@id='editScheduler']//ng-select[@formcontrolname='schedulerDay']    ${wait_time}
     click element   //div[@id='editScheduler']//ng-select[@formcontrolname='schedulerDay']
     Generic.Select parameter    ${option}
 
 Enter input in the input field of date under create scheduler
     [Arguments]     ${option}
-    wait until element is visible  //div[@id='editScheduler']//input[@formcontrolname='Date']    60
-    wait until element is enabled   //div[@id='editScheduler']//input[@formcontrolname='Date']    60
+    wait until element is visible  //div[@id='editScheduler']//input[@formcontrolname='Date']    ${wait_time}
+    wait until element is enabled   //div[@id='editScheduler']//input[@formcontrolname='Date']    ${wait_time}
     click element   //div[@id='editScheduler']//input[@formcontrolname='Date']
     input text      //div[@id='editScheduler']//input[@formcontrolname='Date']      ${option}
 
 Click on the activate option under subscription connector table
-    wait until element is visible   //td[normalize-space()='Google']//parent::tr//td[normalize-space()='Activate']      60
-    wait until element is enabled   //td[normalize-space()='Google']//parent::tr//td[normalize-space()='Activate']      60
+    wait until element is visible   //td[normalize-space()='Google']//parent::tr//td[normalize-space()='Activate']      ${wait_time}
+    wait until element is enabled   //td[normalize-space()='Google']//parent::tr//td[normalize-space()='Activate']      ${wait_time}
     click element   //td[normalize-space()='Google']//parent::tr//td[normalize-space()='Activate']
 
 Click on the suspend my account button link under billing details
-    wait until element is visible   //div[@class='row'][1]//span[contains(text(),'Suspend My Account')]     60
-    wait until element is enabled   //div[@class='row'][1]//span[contains(text(),'Suspend My Account')]     60
+    wait until element is visible   //div[@class='row'][1]//span[contains(text(),'Suspend My Account')]     ${wait_time}
+    wait until element is enabled   //div[@class='row'][1]//span[contains(text(),'Suspend My Account')]     ${wait_time}
     click element   //div[@class='row'][1]//span[contains(text(),'Suspend My Account')]
-    wait until element is not visible       ${loaderIcon}    60
+    wait until element is not visible       ${loaderIcon}    ${wait_time}
 
 Enter input in the start date field of billing details
     Generic.Enter current date       css:#startDate
 
 Enter input in the end date field of billing details
-    wait until element is visible   css:#endDate      60
-    wait until element is enabled   css:#endDate      60
+    wait until element is visible   css:#endDate      ${wait_time}
+    wait until element is enabled   css:#endDate      ${wait_time}
     click element   css:#endDate
     input text      css:#endDate      07/02/2024
     Press Keys      css:#endDate       ENTER
 
 Enter input in the description field of billing details
-    wait until element is visible   css:#description      60
-    wait until element is enabled   css:#description      60
+    wait until element is visible   css:#description      ${wait_time}
+    wait until element is enabled   css:#description      ${wait_time}
     click element   css:#description
     input text      css:#description     Testing
 
 Visible the disable activate button link after suspending account
-    wait until element is visible    //td[normalize-space()='Google']//parent::tr//td[normalize-space()='Activate']     60
+    wait until element is visible    //td[normalize-space()='Google']//parent::tr//td[normalize-space()='Activate']     ${wait_time}
 
 Click on the Unsuspend my account button link under billing details
-    wait until element is visible   //div[@class='row'][1]//span[contains(text(),'Unsuspend My Account')]     60
-    wait until element is enabled   //div[@class='row'][1]//span[contains(text(),'Unsuspend My Account')]     60
+    wait until element is visible   //div[@class='row'][1]//span[contains(text(),'Unsuspend My Account')]     ${wait_time}
+    wait until element is enabled   //div[@class='row'][1]//span[contains(text(),'Unsuspend My Account')]     ${wait_time}
     click element   //div[@class='row'][1]//span[contains(text(),'Unsuspend My Account')]
-    wait until element is not visible       ${loaderIcon}    60
+    wait until element is not visible       ${loaderIcon}    ${wait_time}
 
 click on the checkboxes under unsuspend my account button link
-    wait until element is visible   //label[contains(text(),"I'm authorized to conduct such transaction for my ")]    60
-    wait until element is enabled   //label[contains(text(),"I'm authorized to conduct such transaction for my ")]    60
+    wait until element is visible   //label[contains(text(),"I'm authorized to conduct such transaction for my ")]    ${wait_time}
+    wait until element is enabled   //label[contains(text(),"I'm authorized to conduct such transaction for my ")]    ${wait_time}
     click element   //label[contains(text(),"I'm authorized to conduct such transaction for my ")]
-    wait until element is visible   //label[normalize-space()='I acknoledge I am restoring my aithentic account.']    60
-    wait until element is enabled   //label[normalize-space()='I acknoledge I am restoring my aithentic account.']    60
+    wait until element is visible   //label[normalize-space()='I acknoledge I am restoring my aithentic account.']    ${wait_time}
+    wait until element is enabled   //label[normalize-space()='I acknoledge I am restoring my aithentic account.']    ${wait_time}
     click element   //label[normalize-space()='I acknoledge I am restoring my aithentic account.']
-    wait until element is not visible       ${loaderIcon}    60
+    wait until element is not visible       ${loaderIcon}    ${wait_time}
 
 click on the confirm button of unsuspend pop up
-    wait until element is visible   //button[@type='submit'][normalize-space()='Confirm']       60
-    wait until element is enabled   //button[@type='submit'][normalize-space()='Confirm']       60
+    wait until element is visible   //button[@type='submit'][normalize-space()='Confirm']       ${wait_time}
+    wait until element is enabled   //button[@type='submit'][normalize-space()='Confirm']       ${wait_time}
     click element   //button[@type='submit'][normalize-space()='Confirm']
-    wait until element is not visible       ${loaderIcon}    60
+    wait until element is not visible       ${loaderIcon}    ${wait_time}
 

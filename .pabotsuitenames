@@ -1,14 +1,27 @@
-datasources:64098b96cb8f62c8f9716db23d4546038acbf636
-commandlineoptions:2a8517fe88046ad6a836fdad6e63eceaaaca09c0
+datasources:8460edba4ecd7d40bd345e365174b8e9b7a3c060
+commandlineoptions:97d170e1550eee4afc0af065b78cda302a97674c
 suitesfrom:no-suites-from-option
-file:d61574ca51fdac91e621cb5856f397db1332544e
---test TestPage.ContractsPageTest.Technology Auto removed from static contract When edit Brand and product
---test TestPage.OCSTest.Download agent for OCS from signup - Windows
---test TestPage.OCSTest.Add component as an asset after Adding OCS asset
---test TestPage.PartnerPageTest.Compose Message invite user test
---test TestPage.PartnerPageTest.Export Specificartner into Excel Doc CSV and TSV for Support Partner
---test TestPage.TeamMemberPageTest.Verify team member Asset history
---test TestPage.TeamMemberPageTest.Verify user is able to export team member asset history list
---test TestPage.TechnologyPageTest.Verify the history of added technology
---test TestPage.OCSTest.Match Discovery and Existing Asset
---test TestPage.TechnologyPageTest.Fill the technology form for hardware product
+file:556264a8e24f730e70a5841843d8b7bac488cb8b
+--suite TestPage.Admin PanelPageTest
+--suite TestPage.Bulk Import ExportPageTest
+--suite TestPage.ContractsPageTest
+--suite TestPage.DashboardPageTest
+--suite TestPage.DepartmentPageTest
+--suite TestPage.I iconPageTest
+--suite TestPage.ITperformancePageTest
+--suite TestPage.KeyClockPageTest
+--suite TestPage.LandingPageTest
+--suite TestPage.LocationPageTest
+--suite TestPage.LoginAPITest
+--suite TestPage.MemberPageTest
+--suite TestPage.OCSTest
+--suite TestPage.PaginationTest
+--suite TestPage.PartnerPageTest
+--suite TestPage.RegisterUserPageTest
+--suite TestPage.ReplaceDomainTest
+--suite TestPage.ReportPageTest
+--suite TestPage.SortingTest
+--suite TestPage.SubscriptionPageTest
+--suite TestPage.TeamMemberPageTest
+--suite TestPage.TechnologyPageTest
+--suite TestPage.UnselectAssetAPITest

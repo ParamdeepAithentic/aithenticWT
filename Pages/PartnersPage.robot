@@ -84,23 +84,23 @@ ${contact_name}     css:#contactName
 
 Search by business name
     [Arguments]    ${BusinessName}
-    wait until element is visible       css:thead tr       60
-    wait until element is visible       ${partner_searchBar}       60
+    wait until element is visible       css:thead tr       ${wait_time}
+    wait until element is visible       ${partner_searchBar}       ${wait_time}
     input text      ${partner_searchBar}     ${BusinessName}
     sleep       ${search_sleep}
-    wait until element is visible       //td[normalize-space()='${BusinessName}']     60
+    wait until element is visible       //td[normalize-space()='${BusinessName}']     ${wait_time}
     ${get_businessName} =    get text    //td[normalize-space()='${BusinessName}']
     log to console     ${get_businessName}
     should be equal    ${BusinessName}     ${get_businessName}
 
 Search by brand name
     [Arguments]    ${BrandName}
-    wait until element is visible       css:thead tr       60
-    wait until element is visible       //input[@placeholder='Search by Brand Name']       60
+    wait until element is visible       css:thead tr       ${wait_time}
+    wait until element is visible       //input[@placeholder='Search by Brand Name']       ${wait_time}
     ${StartTime1} =     Get Current Time in Milliseconds
     input text      //input[@placeholder='Search by Brand Name']     ${BrandName}
     sleep       ${search_sleep}
-    wait until element is visible       //td[normalize-space()='${BrandName}']     60
+    wait until element is visible       //td[normalize-space()='${BrandName}']     ${wait_time}
     log to console     ${get_brandName}
     should be equal    ${BrandName}     ${get_brandName}
     ${EndTime1} =     Get Current Time in Milliseconds
@@ -110,20 +110,20 @@ Search by brand name
 
 Select partner type
     [Arguments]    ${option}
-     wait until element is visible      //span[normalize-space()='${option}']//div       60
-     wait until element is enabled       //span[normalize-space()='${option}']//div       60
+     wait until element is visible      //span[normalize-space()='${option}']//div       ${wait_time}
+     wait until element is enabled       //span[normalize-space()='${option}']//div       ${wait_time}
      click element      //span[normalize-space()='${option}']//div
 
 
 Click new partner button
-    wait until element is visible       ${add_Partner}        60
-    wait until element is enabled       ${add_Partner}        60
+    wait until element is visible       ${add_Partner}        ${wait_time}
+    wait until element is enabled       ${add_Partner}        ${wait_time}
     click element     ${add_Partner}
 
 Select partner type of new partner
     [Arguments]    ${partner}
-    wait until element is visible      ${click_Partner}        60
-    wait until element is enabled       ${click_Partner}        60
+    wait until element is visible      ${click_Partner}        ${wait_time}
+    wait until element is enabled       ${click_Partner}        ${wait_time}
     ${StartTime1} =     Get Current Time in Milliseconds
     click element   ${click_Partner}
     Select partner type     ${partner}
@@ -133,8 +133,8 @@ Select partner type of new partner
 
 
 Create partner random business name
-    wait until element is visible       ${click_businessName}        60
-    wait until element is enabled       ${click_businessName}        60
+    wait until element is visible       ${click_businessName}        ${wait_time}
+    wait until element is enabled       ${click_businessName}        ${wait_time}
     click element   ${click_businessName}
     Clear element text      ${click_businessName}
     ${random_string} =    Generate Random String       10      [NUMBERS]
@@ -145,8 +145,8 @@ Create partner random business name
 
 Create partner self business name
     [Arguments]    ${option}
-    wait until element is visible       ${click_businessName}        60
-    wait until element is enabled       ${click_businessName}        60
+    wait until element is visible       ${click_businessName}        ${wait_time}
+    wait until element is enabled       ${click_businessName}        ${wait_time}
     click element   ${click_businessName}
     Clear element text      ${click_businessName}
     input text   ${businessName}   ${option}
@@ -154,40 +154,40 @@ Create partner self business name
 
 Enter partner business URL
     [Arguments]    ${option}
-    wait until element is visible       ${businessURL}        60
-    wait until element is enabled       ${businessURL}        60
+    wait until element is visible       ${businessURL}        ${wait_time}
+    wait until element is enabled       ${businessURL}        ${wait_time}
     click element   ${businessURL}
     Clear element text      ${businessURL}
     input text   ${businessURL}   ${option}.net
 
 Select partner business_name
     [Arguments]    ${option}
-    wait until element is visible       ${click_businessName}        60
-    wait until element is enabled       ${click_businessName}        60
+    wait until element is visible       ${click_businessName}        ${wait_time}
+    wait until element is enabled       ${click_businessName}        ${wait_time}
     click element   ${click_businessName}
     Clear element text      ${click_businessName}
     input text   ${businessName}   ${option}
     sleep   ${search_sleep}
-    wait until element is visible     //div[contains (@id, '-0')]       60
-    wait until element is enabled     //div[contains (@id, '-0')]       60
+    wait until element is visible     //div[contains (@id, '-0')]       ${wait_time}
+    wait until element is enabled     //div[contains (@id, '-0')]       ${wait_time}
     click element   //div[contains (@id, '-0')]
 #    Press Keys     ${businessName}       ENTER
 #    sleep   ${search_sleep}
 
 
 Select partner business URL
-    wait until element is visible       ${select_businessURL}         60
-    wait until element is enabled       ${select_businessURL}        60
+    wait until element is visible       ${select_businessURL}         ${wait_time}
+    wait until element is enabled       ${select_businessURL}        ${wait_time}
     sleep      2
     click element   ${select_businessURL}
-    wait until element is visible     //div[contains (@id, '-0')]       60
-    wait until element is enabled     //div[contains (@id, '-0')]       60
+    wait until element is visible     //div[contains (@id, '-0')]       ${wait_time}
+    wait until element is enabled     //div[contains (@id, '-0')]       ${wait_time}
     click element   //div[contains (@id, '-0')]
 
 Select partner country
     [Arguments]    ${country}
-    wait until element is visible       ${click_Country}        60
-    wait until element is enabled       ${click_Country}        60
+    wait until element is visible       ${click_Country}        ${wait_time}
+    wait until element is enabled       ${click_Country}        ${wait_time}
     click element   ${click_Country}
     Clear element text      ${click_Country}
     ${StartTime1} =     Get Current Time in Milliseconds
@@ -199,48 +199,48 @@ Select partner country
 
 
 Click on contact person button
-    wait until element is visible   ${addContact}       60
-    wait until element is enabled   ${addContact}       60
+    wait until element is visible   ${addContact}       ${wait_time}
+    wait until element is enabled   ${addContact}       ${wait_time}
     click element   ${addContact}
-    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
 
 Enter random contact person
-    wait until element is not visible   ${loaderIcon}       60
-    wait until element is visible      ${contactPerson}       60
-    wait until element is enabled      ${contactPerson}       60
+    wait until element is not visible   ${loaderIcon}       ${wait_time}
+    wait until element is visible      ${contactPerson}       ${wait_time}
+    wait until element is enabled      ${contactPerson}       ${wait_time}
     click element   ${contactPerson}
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generate_PersonName}=    Catenate    Person_${random_string}
     input text   ${contactPerson}   ${generate_PersonName}
-    wait until element is visible      css:div[role='option']       60
+    wait until element is visible      css:div[role='option']       ${wait_time}
     click element   css:div[role='option']
     set global variable    ${generate_PersonName}
 
 Enter random contact name
-    wait until element is not visible   ${loaderIcon}       60
-    wait until element is visible      ${contact_name}       60
-    wait until element is enabled     ${contact_name}       60
+    wait until element is not visible   ${loaderIcon}       ${wait_time}
+    wait until element is visible      ${contact_name}       ${wait_time}
+    wait until element is enabled     ${contact_name}       ${wait_time}
     click element   ${contact_name}
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generate_PersonName}=    Catenate    Person_${random_string}
     input text   ${contact_name}   ${generate_PersonName}
-    wait until element is visible      css:div[role='option']       60
+    wait until element is visible      css:div[role='option']       ${wait_time}
     click element   css:div[role='option']
     set global variable    ${generate_PersonName}
 
 Enter self contact person
     [Arguments]    ${option}
-    wait until element is visible      ${contactEmail}       60
-    wait until element is enabled      ${contactEmail}       60
+    wait until element is visible      ${contactEmail}       ${wait_time}
+    wait until element is enabled      ${contactEmail}       ${wait_time}
     click element   ${contactPerson}
     input text   ${contactPerson}   ${option}
-    wait until element is visible      css:div[role='option']       60
+    wait until element is visible      css:div[role='option']       ${wait_time}
     click element   css:div[role='option']
 
 Enter contact business email
     [Arguments]    ${Pname}    ${Bname}
-    wait until element is visible   ${contactEmail}        60
-    wait until element is enabled      ${contactEmail}       60
+    wait until element is visible   ${contactEmail}        ${wait_time}
+    wait until element is enabled      ${contactEmail}       ${wait_time}
     click element   ${contactEmail}
     clear element text    ${contactEmail}
     input text   ${contactEmail}   ${Pname}@${Bname}.net
@@ -250,8 +250,8 @@ Enter contact business email
 
 Enter secondary contact business email
     [Arguments]    ${Pname}    ${email}
-    wait until element is visible       ${secondary_contactEmail}       60
-    wait until element is enabled       ${secondary_contactEmail}       60
+    wait until element is visible       ${secondary_contactEmail}       ${wait_time}
+    wait until element is enabled       ${secondary_contactEmail}       ${wait_time}
     click element   ${secondary_contactEmail}
     clear element text    ${secondary_contactEmail}
     input text   ${secondary_contactEmail}   ${Pname}@${email}.net
@@ -263,8 +263,8 @@ Enter secondary contact business email
 
 Enter contact location
     [Arguments]    ${loc}
-    wait until element is visible       ${location}     60
-    wait until element is enabled       ${location}     60
+    wait until element is visible       ${location}     ${wait_time}
+    wait until element is enabled       ${location}     ${wait_time}
     click element   ${location}
     clear element text    ${location}
     ${StartTime1} =     Get Current Time in Milliseconds
@@ -276,45 +276,45 @@ Enter contact location
 
 
 Save the new contact
-    wait until element is visible   ${save_addNewContact}       60
-    wait until element is enabled   ${save_addNewContact}       60
+    wait until element is visible   ${save_addNewContact}       ${wait_time}
+    wait until element is enabled   ${save_addNewContact}       ${wait_time}
     click element   ${save_addNewContact}
-    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     sleep   ${search_sleep}
 
 Save the secondary contact
-    wait until element is visible   ${save_secondaryNewContact}     60
-    wait until element is enabled   ${save_secondaryNewContact}     60
+    wait until element is visible   ${save_secondaryNewContact}     ${wait_time}
+    wait until element is enabled   ${save_secondaryNewContact}     ${wait_time}
     click element   ${save_secondaryNewContact}
-    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
 
 Click contact main save button
-    Wait Until Element Is Not Visible    ${loaderIcon}      60
-    wait until element is visible      ${main_Save}       60
-    wait until element is enabled      ${main_Save}       60
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible      ${main_Save}       ${wait_time}
+    wait until element is enabled      ${main_Save}       ${wait_time}
     click element   ${main_Save}
-    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
 
 
 Click first row of table
-    wait until element is visible      css:td:nth-child(1)        60
-    wait until element is enabled      css:td:nth-child(1)        60
+    wait until element is visible      css:td:nth-child(1)        ${wait_time}
+    wait until element is enabled      css:td:nth-child(1)        ${wait_time}
     click element   css:td:nth-child(1)
 
 Click on edit button
-    Wait Until Element Is Not Visible    ${loaderIcon}      60
-    wait until element is visible      //button[normalize-space()='Edit']        60
-    wait until element is enabled      //button[normalize-space()='Edit']        60
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible      //button[normalize-space()='Edit']        ${wait_time}
+    wait until element is enabled      //button[normalize-space()='Edit']        ${wait_time}
     click element   //button[normalize-space()='Edit']
 
 Click on add custome business URL icon
-    wait until element is visible      ${add_custom_businessURL}        60
-    wait until element is enabled      ${add_custom_businessURL}        60
+    wait until element is visible      ${add_custom_businessURL}        ${wait_time}
+    wait until element is enabled      ${add_custom_businessURL}        ${wait_time}
     click element   ${add_custom_businessURL}
 
 Create partner random secondary business URL
-    wait until element is visible       ${add_secondaryURL}        60
-    wait until element is enabled       ${add_secondaryURL}        60
+    wait until element is visible       ${add_secondaryURL}        ${wait_time}
+    wait until element is enabled       ${add_secondaryURL}        ${wait_time}
     click element   ${add_secondaryURL}
     Clear element text      ${add_secondaryURL}
     ${random_string} =    Generate Random String       10      [NUMBERS]
@@ -323,62 +323,62 @@ Create partner random secondary business URL
     set global variable    ${generate_SecondaryBusinessName}
 
 Click on update button
-    Wait Until Element Is Not Visible    ${loaderIcon}      60
-    wait until element is visible      ${main_update_btn}        60
-    wait until element is enabled      ${main_update_btn}        60
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible      ${main_update_btn}        ${wait_time}
+    wait until element is enabled      ${main_update_btn}        ${wait_time}
     click element   ${main_update_btn}
 
 Save the new added contact
-    wait until element is visible   //form[@class='ng-untouched ng-dirty ng-valid']//button[@type='button'][normalize-space()='Add']        60
-    wait until element is enabled   //form[@class='ng-untouched ng-dirty ng-valid']//button[@type='button'][normalize-space()='Add']        60
+    wait until element is visible   //form[@class='ng-untouched ng-dirty ng-valid']//button[@type='button'][normalize-space()='Add']        ${wait_time}
+    wait until element is enabled   //form[@class='ng-untouched ng-dirty ng-valid']//button[@type='button'][normalize-space()='Add']        ${wait_time}
     click element   //form[@class='ng-untouched ng-dirty ng-valid']//button[@type='button'][normalize-space()='Add']
-    wait until element is visible      ${loaderIcon}       60
-    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    wait until element is visible      ${loaderIcon}       ${wait_time}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
 
 Click on the export Button
-    Wait Until Element Is Not Visible    ${loaderIcon}      60
-    wait until element is visible      ${partner_export_btn}        60
-    wait until element is enabled      ${partner_export_btn}        60
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible      ${partner_export_btn}        ${wait_time}
+    wait until element is enabled      ${partner_export_btn}        ${wait_time}
     click element   ${partner_export_btn}
 
 
 Confirm to export file
-    wait until element is visible      css:.btn.button-green.m-2       60
-    wait until element is enabled      css:.btn.button-green.m-2       60
+    wait until element is visible      css:.btn.button-green.m-2       ${wait_time}
+    wait until element is enabled      css:.btn.button-green.m-2       ${wait_time}
     sleep       ${search_sleep}
     click element   css:.btn.button-green.m-2
 
 
 Download the selected extension file
     [Arguments]    ${option}
-    Wait Until Element Is Not Visible    ${loaderIcon}      60
-    wait until element is visible      //a[contains(text(),'${option}')]       60
-    wait until element is enabled     //a[contains(text(),'${option}')]       60
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible      //a[contains(text(),'${option}')]       ${wait_time}
+    wait until element is enabled     //a[contains(text(),'${option}')]       ${wait_time}
     click element   //a[contains(text(),'${option}')]
 
 Verify that the selected extension file is downloaded
     [Arguments]    ${option}
-#    Wait Until Element Is Not Visible    ${loaderIcon}      60
-    wait until element is visible      //span[contains(text(),'${option}')]       60
-    wait until element is enabled      //span[contains(text(),'${option}')]       60
+#    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible      //span[contains(text(),'${option}')]       ${wait_time}
+    wait until element is enabled      //span[contains(text(),'${option}')]       ${wait_time}
     click element   css:.fa-file-download
     sleep       3
 
 Remove the file from downloaded list
-#    Wait Until Element Is Not Visible    ${loaderIcon}      60
-    wait until element is visible       css:.fas.fa-times.dropDownProgressBar       60
-    wait until element is enabled       css:.fas.fa-times.dropDownProgressBar       60
+#    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       css:.fas.fa-times.dropDownProgressBar       ${wait_time}
+    wait until element is enabled       css:.fas.fa-times.dropDownProgressBar       ${wait_time}
     click element       css:.fas.fa-times.dropDownProgressBar
 
 Select the partner row
     [Arguments]    ${option}
-    wait until element is visible       //td[normalize-space()='${option}']       60
+    wait until element is visible       //td[normalize-space()='${option}']       ${wait_time}
     click element       //td[normalize-space()='${option}']
 
 Add Unique address_one of partner
-    wait until element is not visible       ${loaderIcon}    60
-    wait until element is visible     ${partner_address_Line1}         60
-    wait until element is enabled     ${partner_address_Line1}         60
+    wait until element is not visible       ${loaderIcon}    ${wait_time}
+    wait until element is visible     ${partner_address_Line1}         ${wait_time}
+    wait until element is enabled     ${partner_address_Line1}         ${wait_time}
     click element      ${partner_address_Line1}
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generate_newaddress_one}=    Catenate    ${random_string}
@@ -388,8 +388,8 @@ Add Unique address_one of partner
     set global variable    ${generate_newaddress_one}
 
 Add Unique address_two of partner
-    wait until element is visible     ${partner_address_Line2}         60
-    wait until element is enabled     ${partner_address_Line2}         60
+    wait until element is visible     ${partner_address_Line2}         ${wait_time}
+    wait until element is enabled     ${partner_address_Line2}         ${wait_time}
     click element      ${partner_address_Line2}
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generate_newaddress_two}=    Catenate    ${random_string}
@@ -400,18 +400,18 @@ Add Unique address_two of partner
 
 Select State
     [Arguments]    ${address}
-    wait until element is not visible       ${loaderIcon}       60
-    wait until element is visible   ${partner_state}   60
-    wait until element is enabled   ${partner_state}   60
+    wait until element is not visible       ${loaderIcon}       ${wait_time}
+    wait until element is visible   ${partner_state}   ${wait_time}
+    wait until element is enabled   ${partner_state}   ${wait_time}
     click element   ${partner_state}
     clear element text      ${partner_state}
     Generic.Select parameter    ${address}
 
 Select City
     [Arguments]    ${address}
-    wait until element is not visible       ${loaderIcon}       60
-    wait until element is visible   ${partner_city}   60
-    wait until element is enabled   ${partner_city}   60
+    wait until element is not visible       ${loaderIcon}       ${wait_time}
+    wait until element is visible   ${partner_city}   ${wait_time}
+    wait until element is enabled   ${partner_city}   ${wait_time}
     click element   ${partner_city}
     clear element text      ${partner_city}
     Generic.Select parameter    ${address}
@@ -419,16 +419,16 @@ Select City
 
 Zip code Input
     [Arguments]     ${code}
-    wait until element is visible      ${zip_code}   60
-    wait until element is enabled     ${zip_code}   60
+    wait until element is visible      ${zip_code}   ${wait_time}
+    wait until element is enabled     ${zip_code}   ${wait_time}
     click element    ${zip_code}
     input text  ${zip_code}    ${code}
 
 Save new Address
-    wait until element is visible       ${save_address}     60
-    wait until element is enabled       ${save_address}     60
+    wait until element is visible       ${save_address}     ${wait_time}
+    wait until element is enabled       ${save_address}     ${wait_time}
     click element       ${save_address}
-    wait until element is not visible       ${loaderIcon}    60
+    wait until element is not visible       ${loaderIcon}    ${wait_time}
     sleep   ${search_sleep}
 
 Click on Add new Address of partner
@@ -440,7 +440,7 @@ Click on Add new Contact of partner
     Generic.select parameter    ${option}
 
 Click on three dots of partners listing
-    wait until element is visible   ${three_dots}   60
+    wait until element is visible   ${three_dots}   ${wait_time}
     click element   ${three_dots}
 
 Select option from three dots of partner
@@ -450,13 +450,13 @@ Select option from three dots of partner
 #option: Edit, Deactivate, Activate, Remove
 
 click on plus icon to add another business_url
-    wait until element is visible       css:.fas.fa-plus        60
+    wait until element is visible       css:.fas.fa-plus        ${wait_time}
     click element       css:.fas.fa-plus
 
 Add second business_url
     [Arguments]    ${name}
-    wait until element is visible       ${secondary_contactURL}     60
-    wait until element is enabled       ${secondary_contactURL}     60
+    wait until element is visible       ${secondary_contactURL}     ${wait_time}
+    wait until element is enabled       ${secondary_contactURL}     ${wait_time}
     click element   ${secondary_contactURL}
     clear element text    ${secondary_contactURL}
     ${generate_SecondaryContactBusinessURL}=   Catenate    ${name}.com
@@ -466,15 +466,15 @@ Add second business_url
 
 Select country
     [Arguments]    ${name}
-    wait until element is visible       ${contactP_country}       60
-    wait until element is enabled       ${contactP_country}       60
+    wait until element is visible       ${contactP_country}       ${wait_time}
+    wait until element is enabled       ${contactP_country}       ${wait_time}
     click element   ${contactP_country}
     input text      ${contactP_country}        ${name}
     Press Keys      ${contactP_country}       ENTER
 
 Add new address_two of partner
-    wait until element is visible     ${partner_newaddress_Line2}         60
-    wait until element is enabled     ${partner_newaddress_Line2}         60
+    wait until element is visible     ${partner_newaddress_Line2}         ${wait_time}
+    wait until element is enabled     ${partner_newaddress_Line2}         ${wait_time}
     click element      ${partner_newaddress_Line2}
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generate_newaddress_two}=    Catenate    ${random_string}
@@ -485,36 +485,36 @@ Add new address_two of partner
 
 Add new zip code of partner
     [Arguments]     ${code}
-    wait until element is visible      ${new_zipcode}    60
-    wait until element is enabled      ${new_zipcode}    60
+    wait until element is visible      ${new_zipcode}    ${wait_time}
+    wait until element is enabled      ${new_zipcode}    ${wait_time}
     clear element text      ${new_zipcode}
     click element    ${new_zipcode}
     input text   ${new_zipcode}    ${code}
 
 
 click on edit icon
-    wait until element is not visible       ${loaderIcon}       60
+    wait until element is not visible       ${loaderIcon}       ${wait_time}
     sleep       ${search_sleep}
-    wait until element is visible   ${partner_edit_icon}   60
-    wait until element is enabled   ${partner_edit_icon}   60
+    wait until element is visible   ${partner_edit_icon}   ${wait_time}
+    wait until element is enabled   ${partner_edit_icon}   ${wait_time}
     click element       ${partner_edit_icon}
 
 Click on cross-icon for clearing text
-    wait until element is visible    ${clear_text}   60
-    wait until element is enabled    ${clear_text}   60
+    wait until element is visible    ${clear_text}   ${wait_time}
+    wait until element is enabled    ${clear_text}   ${wait_time}
     click element       ${clear_text}
 
 Update the partner information
-    wait until element is not visible   ${loaderIcon}       60
-    wait until element is visible       ${update_button}        60
-    wait until element is enabled      ${update_button}        60
+    wait until element is not visible   ${loaderIcon}       ${wait_time}
+    wait until element is visible       ${update_button}        ${wait_time}
+    wait until element is enabled      ${update_button}        ${wait_time}
     click element       ${update_button}
     sleep   ${search_sleep}
 
 Enter new_business_email of contact
     [Arguments]    ${Pname}    ${Bname}
-    wait until element is visible       ${new_contactEmail}     60
-    wait until element is enabled       ${new_contactEmail}     60
+    wait until element is visible       ${new_contactEmail}     ${wait_time}
+    wait until element is enabled       ${new_contactEmail}     ${wait_time}
     click element   ${new_contactEmail}
     clear element text    ${new_contactEmail}
     input text   ${new_contactEmail}   ${Pname}@${Bname}.net
@@ -531,15 +531,15 @@ Click on the save button
     Generic.click on the button         ${option}
 
 Click here to add link of contract details
-    wait until element is visible   (//a[normalize-space()='Click here to add'])[2]        60
-    wait until element is enabled      (//a[normalize-space()='Click here to add'])[2]       60
+    wait until element is visible   (//a[normalize-space()='Click here to add'])[2]        ${wait_time}
+    wait until element is enabled      (//a[normalize-space()='Click here to add'])[2]       ${wait_time}
     click element   (//a[normalize-space()='Click here to add'])[2]
 
 Enter contact business email via link
     [Arguments]    ${Pname}
-    wait until element is not visible   ${loaderIcon}   60
-    wait until element is visible   css:#businessEmail        60
-    wait until element is enabled      css:#businessEmail       60
+    wait until element is not visible   ${loaderIcon}   ${wait_time}
+    wait until element is visible   css:#businessEmail        ${wait_time}
+    wait until element is enabled      css:#businessEmail       ${wait_time}
     click element   css:#businessEmail
     ${generate_ContactBusinessEmailvialink}=    Catenate    ${Pname}@yopmail.net
     input text   css:#businessEmail  ${generate_ContactBusinessEmailvialink}
@@ -547,9 +547,9 @@ Enter contact business email via link
     set global variable    ${generate_ContactBusinessEmailvialink}
 
 Enter random contact person via link
-    wait until element is not visible   ${loaderIcon}       60
-    wait until element is visible      css:#contactName     60
-    wait until element is enabled      css:#contactName       60
+    wait until element is not visible   ${loaderIcon}       ${wait_time}
+    wait until element is visible      css:#contactName     ${wait_time}
+    wait until element is enabled      css:#contactName       ${wait_time}
     click element   css:#contactName
     ${random_string} =    Generate Random String       6      [NUMBERS]
     ${generate_contactPersonName}=    Catenate    Person_${random_string}
@@ -560,50 +560,50 @@ Enter random contact person via link
 
 Enter contact location via link
     [Arguments]    ${loc}
-    wait until element is visible       css:#forLcoations     60
-    wait until element is enabled       css:#forLcoations     60
+    wait until element is visible       css:#forLcoations     ${wait_time}
+    wait until element is enabled       css:#forLcoations     ${wait_time}
     click element   css:#forLcoations
     input text  css:#forLcoations   ${loc}
     Press Keys     css:#forLcoations       ENTER
 
 Click on save button of contact via link
     [Arguments]     ${button}
-    wait until element is visible   //div[@id='contactModalContract']//button[normalize-space()='${button}']      60
+    wait until element is visible   //div[@id='contactModalContract']//button[normalize-space()='${button}']      ${wait_time}
     click element   //div[@id='contactModalContract']//button[normalize-space()='${button}']
 
 Enter and select contact name via link
-    wait until element is not visible   ${loaderIcon}   60
-    wait until element is visible   css:#contName   60
+    wait until element is not visible   ${loaderIcon}   ${wait_time}
+    wait until element is visible   css:#contName   ${wait_time}
     click element   css:#contName
     input text  css:#contName       ${generate_contactPersonName}
     Press Keys  css:#contName   ENTER
 
 Click on back to contracts link via contract
-    wait until element is visible   css:.back.theme-blue    60
+    wait until element is visible   css:.back.theme-blue    ${wait_time}
     click element   css:.back.theme-blue
 
 Verify status after withdraw the contract
     [Arguments]    ${option}
-    wait until element is visible   //td[normalize-space()='${option}']      60
+    wait until element is visible   //td[normalize-space()='${option}']      ${wait_time}
 # options: active, inactive, pending
 
 Click on the three buttons link of contract via view smart details
     [Arguments]     ${option}
-    wait until element is visible   //b[normalize-space()='${option}:']/../../..//a[@class='back pointer ng-star-inserted'][normalize-space()='1']      60
+    wait until element is visible   //b[normalize-space()='${option}:']/../../..//a[@class='back pointer ng-star-inserted'][normalize-space()='1']      ${wait_time}
     click element   //b[normalize-space()='${option}:']/../../..//a[@class='back pointer ng-star-inserted'][normalize-space()='1']
 
 
 Click on back to contract details button link
-    wait until element is not visible   ${loaderIcon}   60
-    wait until element is visible   css:.back.pointer.font-weight-bold    60
+    wait until element is not visible   ${loaderIcon}   ${wait_time}
+    wait until element is visible   css:.back.pointer.font-weight-bold    ${wait_time}
     click element   css:.back.pointer.font-weight-bold
 
 Download the contract pdf
-    wait until element is not visible   ${loaderIcon}   60
-    wait until element is visible   //i[@title='Download PDF Version']      60
+    wait until element is not visible   ${loaderIcon}   ${wait_time}
+    wait until element is visible   //i[@title='Download PDF Version']      ${wait_time}
     click element   //i[@title='Download PDF Version']
 
 Verify pages with the element
     [Arguments]    ${option}
-    wait until element is visible   //th[normalize-space()='${option}']     60
+    wait until element is visible   //th[normalize-space()='${option}']     ${wait_time}
 # option: Yes, No

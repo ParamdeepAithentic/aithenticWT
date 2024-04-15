@@ -38,22 +38,22 @@ ${admin_verify_btn}     //button[normalize-space()='Verify']
 *** Keywords ***
 Enter the otp
     [Arguments]    ${otp}
-     wait until element is visible      ${otp_Input}       60
-     wait until element is enabled      ${otp_Input}       60
+     wait until element is visible      ${otp_Input}       ${wait_time}
+     wait until element is enabled      ${otp_Input}       ${wait_time}
      input text     ${otp_Input}    ${otp}
 
 Enter the Admin Access OTP
      [Arguments]    ${otp}
-     wait until element is visible      ${admin_otp_Input}       60
-     wait until element is enabled      ${admin_otp_Input}       60
+     wait until element is visible      ${admin_otp_Input}       ${wait_time}
+     wait until element is enabled      ${admin_otp_Input}       ${wait_time}
      input text     ${admin_otp_Input}    ${otp}
 
 Click verification button
-    wait until element is visible      ${twoFA_verify_btn}       60
-    wait until element is enabled      ${twoFA_verify_btn}       60
+    wait until element is visible      ${twoFA_verify_btn}       ${wait_time}
+    wait until element is enabled      ${twoFA_verify_btn}       ${wait_time}
     click element   ${twoFA_verify_btn}
 
 Click on the verify button
-    wait until element is visible       ${admin_verify_btn}     60
-    Wait until element is enabled       ${admin_verify_btn}     60
+    wait until element is visible       ${admin_verify_btn}     ${wait_time}
+    Wait until element is enabled       ${admin_verify_btn}     ${wait_time}
     click element       ${admin_verify_btn}
