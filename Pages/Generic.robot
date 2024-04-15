@@ -57,7 +57,7 @@ ${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-3        
 ${admin_name}        aithentic@yopmail.com
 ${admin_password}       Admin@123
 
-${browser_name}          headlessfirefox
+${browser_name}          firefox
 
 ${email}                 testqa29j@mailinator.com       #UAT user
 
@@ -74,7 +74,7 @@ ${click_countryTag}     css:.iti__selected-flag.dropdown-toggle
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
-${wait_time}        120
+${wait_time}        60
 ${yop_sleep}       10
 ${search_sleep}       1
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
