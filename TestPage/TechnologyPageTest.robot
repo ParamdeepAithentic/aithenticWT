@@ -1916,6 +1916,7 @@ Upload file: Image and Document files while Edit Technology
     TechnologyPage.Remove the document by clicking on cross-icon    .png
     TechnologyPage.Upload file      Image_02.png    Document_02.pdf
     Generic.Fetch alert message text and compare it with        Technology documents uploaded successfully
+    Generic.Scroll Window To End
     TechnologyPage.View the file by clicking on view icon over file     .png
     TechnologyPage.Get and Verify the size of the image after zoom      zoom-in
     TechnologyPage.Get and Verify the size of the image after zoom      zoom-out
