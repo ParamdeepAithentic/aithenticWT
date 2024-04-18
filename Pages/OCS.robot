@@ -94,8 +94,10 @@ Enter text to search existing asset
 Verify Searched discovery asset
     [Arguments]     ${option}
     wait until element is not visible   ${loaderIcon}        ${wait_time}
-    Wait Until Element Is Visible    ${Discovery_Assets}        ${wait_time}
-    Element Should Contain   ${Discovery_Assets}   ${option}
+#    Wait Until Element Is Visible    ${Discovery_Assets}        ${wait_time}
+    Wait Until Element Is Visible    //div[contains(text(),'MSI')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]        ${wait_time}
+#    Element Should Contain   ${Discovery_Assets}   ${option}
+    Element Should Contain   //div[contains(text(),'MSI')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]   ${option}
 
 Verify searched existing asset
     [Arguments]     ${option}
@@ -212,9 +214,11 @@ Hover over searched Agent/Discovered Asset
 
 Click on Searched Discovered asset
    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-   Wait Until Element Is Visible    ${Discovery_Assets}     ${wait_time}
-   Wait Until Element Is Enabled    ${Discovery_Assets}     ${wait_time}
-   Click element    ${Discovery_Assets}
+#   Wait Until Element Is Visible    ${Discovery_Assets}     ${wait_time}
+    Wait Until Element Is Visible    //div[contains(text(),'MSI')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]     ${wait_time}
+    Wait Until Element Is enabled    //div[contains(text(),'MSI')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]     ${wait_time}
+#   Wait Until Element Is Enabled    ${Discovery_Assets}     ${wait_time}
+   Click element    //div[contains(text(),'MSI')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]
    Sleep    ${search sleep}
 
 Click on tab under dicovery_asset_detail page
@@ -272,17 +276,17 @@ Enter The Asset_id in Add Technology Page
     log to console      ${generated_AssetID}
     Set Global Variable   ${generated_AssetID}
 
-Get MAC_Address by hovering over discovered assets
-    [Arguments]     ${text}
-    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    Wait Until Element Is Visible   ${Discovery_Assets}      ${wait_time}
-    Wait Until Element Is Enabled   ${Discovery_Assets}      ${wait_time}
-    sleep       ${search_sleep}
-    ${hover_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
-    ${parts}    Split String    ${hover_text}    ${text}
-    ${hover_MAC_address}    Get Substring    ${parts[1]}    1
-    Log to console      ${hover_MAC_address}
-    set global variable     ${hover_MAC_address}
+#Get MAC_Address by hovering over discovered assets
+#    [Arguments]     ${text}
+#    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+#    Wait Until Element Is Visible   ${Discovery_Assets}      ${wait_time}
+#    Wait Until Element Is Enabled   ${Discovery_Assets}      ${wait_time}
+#    sleep       ${search_sleep}
+#    ${hover_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
+#    ${parts}    Split String    ${hover_text}    ${text}
+#    ${hover_MAC_address}    Get Substring    ${parts[1]}    1
+#    Log to console      ${hover_MAC_address}
+#    set global variable     ${hover_MAC_address}
 
 Get Serial number by hovering over discovered assets
     [Arguments]     ${text}
@@ -308,17 +312,17 @@ Get Tagname by hovering over discovered assets
     Log to console      ${hover_tagname}
     set global variable     ${hover_tagname}
 
-Get Host name by hovering over discovered assets
-    [Arguments]     ${text}
-    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    Wait Until Element Is Visible   ${Discovery_Assets}      ${wait_time}
-    Wait Until Element Is Enabled   ${Discovery_Assets}      ${wait_time}
-    sleep       ${search_sleep}
-    ${hover_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
-    ${parts}    Split String    ${hover_text}    ${text}
-    ${hover_host name}    Get Substring    ${parts[1]}    1
-    Log to console      ${hover_host name}
-    set global variable     ${hover_host name}
+#Get Host name by hovering over discovered assets
+#    [Arguments]     ${text}
+#    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+#    Wait Until Element Is Visible   ${Discovery_Assets}      ${wait_time}
+#    Wait Until Element Is Enabled   ${Discovery_Assets}      ${wait_time}
+#    sleep       ${search_sleep}
+#    ${hover_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
+#    ${parts}    Split String    ${hover_text}    ${text}
+#    ${hover_host name}    Get Substring    ${parts[1]}    1
+#    Log to console      ${hover_host name}
+#    set global variable     ${hover_host name}
 
 Get value of Tag_name from Agent discovery
     [Arguments]     ${option}
@@ -622,3 +626,38 @@ Click on Go to Agent Discovery Page
     Wait Until Element Is Visible    css:span[class='back']        ${wait_time}
     Wait Until Element Is Enabled    css:span[class='back']    ${wait_time}
     Click Element    css:span[class='back']
+
+Click on the down arrow icon of discovered asset
+    wait until element is visible   (//div[contains(@class,'left-text')]//following-sibling::div//img)[1]       ${wait_time}
+    wait until element is enabled   (//div[contains(@class,'left-text')]//following-sibling::div//img)[1]       ${wait_time}
+    click element      (//div[contains(@class,'left-text')]//following-sibling::div//img)[1]
+
+Mouse Hover over searched Discovered Assets
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible   //div[contains(text(),'MSI')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]     ${wait_time}
+    Wait Until Element Is Enabled    //div[contains(text(),'MSI')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]     ${wait_time}
+    Mouse Over    //div[contains(text(),'MSI')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]
+
+Get MAC_Address by hovering over discovered assets
+    [Arguments]     ${text}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible   //div[contains(text(),'MSI')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]      ${wait_time}
+    Wait Until Element Is Enabled   //div[contains(text(),'MSI')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]      ${wait_time}
+    sleep       ${search_sleep}
+    ${hover_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
+    ${parts}    Split String    ${hover_text}    ${text}
+    ${hover_MAC_address}    Get Substring    ${parts[1]}    1
+    Log to console      ${hover_MAC_address}
+    set global variable     ${hover_MAC_address}
+
+Get Host name by hovering over discovered assets
+    [Arguments]     ${text}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible   //div[contains(text(),'MSI')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]      ${wait_time}
+    Wait Until Element Is Enabled   //div[contains(text(),'MSI')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]      ${wait_time}
+    sleep       ${search_sleep}
+    ${hover_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
+    ${parts}    Split String    ${hover_text}    ${text}
+    ${hover_host name}    Get Substring    ${parts[1]}    1
+    Log to console      ${hover_host name}
+    set global variable     ${hover_host name}

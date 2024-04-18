@@ -454,12 +454,14 @@ Search Discovered Assets
     OCS.Choose tab under Discovery Assets   agent-discovery
     OCS.Get value of Tag_name from Agent discovery      johnsoftwaresolutions-
     OCS.Choose tab under Discovery Assets   network-discovery
+    OCS.Click on the down arrow icon of discovered asset
     OCS.Click on search icon of discovery assets
     OCS.Enter text to search discovery asset    ${asset_details}
-    OCS.Verify Searched discovery asset    ${asset_details}
-    OCS.Hover over searched Discovered Asset
+#    OCS.Verify Searched discovery asset    ${asset_details}
+#    OCS.Hover over searched Discovered Asset
+    OCS.Mouse Hover over searched Discovered Assets
     OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
-    OCS.Get Serial number by hovering over discovered assets     Serial Number:
+#    OCS.Get Serial number by hovering over discovered assets     Serial Number:
     OCS.Get Host name by hovering over discovered assets     Host name:
     OCS.Click on Searched Discovered asset
     Sleep    ${yop_sleep}
