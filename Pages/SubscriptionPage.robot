@@ -354,7 +354,7 @@ Enter input in the description field of billing details
     input text      css:#description     Testing
 
 Visible the disable activate button link after suspending account
-    wait until element is visible    //td[normalize-space()='Google']//parent::tr//td[normalize-space()='Activate']     ${wait_time}
+    wait until element is visible    //td[normalize-space()='Google']//parent::tr//td[normalize-space()='-']     ${wait_time}
 
 Click on the Unsuspend my account button link under billing details
     wait until element is visible   //div[@class='row'][1]//span[contains(text(),'Unsuspend My Account')]     ${wait_time}

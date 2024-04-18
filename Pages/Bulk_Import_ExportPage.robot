@@ -600,6 +600,20 @@ Enter the new value in the fields of technology bulk import
     wait until element is enabled       css:.ag-center-cols-container div[col-id='${option}'] input    ${wait_time}
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${address}
 
+Enter the new value in cost type field of technology bulk import
+    [Arguments]    ${option}    ${address}
+    Double click element      css:.ag-center-cols-container div[col-id='${option}']
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    ${wait_time}
+    wait until element is enabled       css:.ag-center-cols-container div[col-id='${option}'] input    ${wait_time}
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${address}
+
+Enter the new value in last Payment date field of technology bulk import
+    [Arguments]    ${option}    ${address}
+    Double click element      css:.ag-center-cols-container div[col-id='${option}']
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    ${wait_time}
+    wait until element is enabled       css:.ag-center-cols-container div[col-id='${option}'] input    ${wait_time}
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${address}
+
 Enter the new value of country in location bulk import
     [Arguments]    ${option}    ${option1}
     MemberPage.Double click    ${option}
