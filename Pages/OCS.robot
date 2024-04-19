@@ -628,6 +628,7 @@ Click on Go to Agent Discovery Page
     Click Element    css:span[class='back']
 
 Click on the down arrow icon of discovered asset
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible   (//div[contains(@class,'left-text')]//following-sibling::div//img)[1]       ${wait_time}
     wait until element is enabled   (//div[contains(@class,'left-text')]//following-sibling::div//img)[1]       ${wait_time}
     click element      (//div[contains(@class,'left-text')]//following-sibling::div//img)[1]
@@ -661,3 +662,9 @@ Get Host name by hovering over discovered assets
     ${hover_host name}    Get Substring    ${parts[1]}    1
     Log to console      ${hover_host name}
     set global variable     ${hover_host name}
+
+Click on newly discovered tab under network discovery
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is visible    css:.qa-newly-discovered-tab     ${wait_time}
+    Wait Until Element Is enabled    css:.qa-newly-discovered-tab     ${wait_time}
+    click element    css:.qa-newly-discovered-tab
