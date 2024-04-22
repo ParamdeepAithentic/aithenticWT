@@ -49,8 +49,8 @@ ${apiURL}             https://qa-api.aithentic.com/api/v1
 ${valid_password}         Test@123       #QA User
 
 
-${admin_url}        https://uat-admin.aithentic.com/
-#${admin_url}        https://qa-admin.aithentic.com/
+#${admin_url}        https://uat-admin.aithentic.com/
+${admin_url}        https://qa-admin.aithentic.com/
 
 #${agentDiscovery_TagName}       Tag Name - johnsoftwaresolutions-1192-1         #qa
 ${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-3        #uat
@@ -75,7 +75,7 @@ ${click_countryTag}     css:.iti__selected-flag.dropdown-toggle
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
-${wait_time}        60
+${wait_time}        120
 ${yop_sleep}       10
 ${search_sleep}       1
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March

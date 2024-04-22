@@ -454,6 +454,7 @@ Search Discovered Assets
     OCS.Choose tab under Discovery Assets   agent-discovery
     OCS.Get value of Tag_name from Agent discovery      johnsoftwaresolutions-
     OCS.Choose tab under Discovery Assets   network-discovery
+    OCS.Click on newly discovered tab under network discovery
     OCS.Click on the down arrow icon of discovered asset
     OCS.Click on search icon of discovery assets
     OCS.Enter text to search discovery asset    ${asset_details}
@@ -461,14 +462,14 @@ Search Discovered Assets
 #    OCS.Hover over searched Discovered Asset
     OCS.Mouse Hover over searched Discovered Assets
     OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
-#    OCS.Get Serial number by hovering over discovered assets     Serial Number:
+    OCS.Get Serial number by hovering over discovered assets     Serial Number:
     OCS.Get Host name by hovering over discovered assets     Host name:
     OCS.Click on Searched Discovered asset
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Discovery Asset Detail
     Generic.Verify your current page contains this text    Asset Infomation
-#    OCS.Click on tab under dicovery_asset_detail page    Hardware
-#    Generic.Verify your current page contains this text     ${hover_serial_number}
+    OCS.Click on tab under dicovery_asset_detail page    Hardware
+    Generic.Verify your current page contains this text     ${hover_serial_number}
     OCS.Click on tab under dicovery_asset_detail page    Network
     Generic.Verify your current page contains this text    ${hover_MAC_address}
 
@@ -557,7 +558,8 @@ Apply filters and clear filter on Discovered Asset
     Generic.Verify your current page location contains      management-console
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
-    OCS.Choose tab under Discovery Assets   network-discovery
+#    OCS.Choose tab under Discovery Assets   network-discovery
+    Generic.Verify your current page location contains      discovery-assets
     OCS.Click on newly discovered tab under network discovery
     OCS.click on filter icon of discovered assets
     OCS.Choose filters for discovered asset     Select Brand
@@ -569,23 +571,24 @@ Apply filters and clear filter on Discovered Asset
     OCS.Mouse Hover over searched Discovered Assets
     OCS.Get text by hovering over assets    Brand:
     OCS.verify Text by hovering over assets  ${substring}       ${selected_brand}
-    OCS.Mouse Hover over searched Discovered Assets
+    OCS.Click on the down arrow icon of discovered asset
     OCS.Click on clear filter button link of discovered assets    Clear Filters
     OCS.Choose filters for discovered asset     Select MAC Address
     OCS.Get text of selected brand, mac address and agent of discovered assets  0
     OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   0
     Generic.click on the button     Apply
-    sleep   2
+    sleep   1
     OCS.Click on the down arrow icon of discovered asset
     OCS.Mouse Hover over searched Discovered Assets
     OCS.Get text by hovering over assets     MacAddress:
     OCS.verify Text by hovering over assets  ${substring}       ${selected_brand}
+    OCS.Click on the down arrow icon of discovered asset
     OCS.Click on clear filter button link of discovered assets    Clear Filters
     OCS.Choose filters for discovered asset     Select Agent Tags
     OCS.Get text of selected brand, mac address and agent of discovered assets  0
     OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   0
     Generic.click on the button     Apply
-    sleep   2
+    sleep   1
     OCS.Click on the down arrow icon of discovered asset
     OCS.Mouse Hover over searched Discovered Assets
     OCS.Get text by hovering over assets    Tag:
