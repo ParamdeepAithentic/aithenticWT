@@ -580,7 +580,7 @@ Apply filters and clear filter on Discovered Asset
     sleep   1
     OCS.Click on the down arrow icon of discovered asset
     OCS.Mouse Hover over searched Discovered Assets
-    OCS.Get text by hovering over assets     MacAddress:
+    OCS.Get MAC_Address by hovering over discovered assets     MacAddress:
     OCS.verify Text by hovering over assets  ${substring}       ${selected_brand}
     OCS.Click on the down arrow icon of discovered asset
     OCS.Click on clear filter button link of discovered assets    Clear Filters
