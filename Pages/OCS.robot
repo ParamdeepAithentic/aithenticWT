@@ -668,3 +668,10 @@ Click on newly discovered tab under network discovery
     Wait Until Element Is visible    css:.qa-newly-discovered-tab     ${wait_time}
     Wait Until Element Is enabled    css:.qa-newly-discovered-tab     ${wait_time}
     click element    css:.qa-newly-discovered-tab
+
+
+Mouse Hover over searched existing assets
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible   (//div[contains(text(),'QABrand555')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]     ${wait_time}
+    Wait Until Element Is Enabled    (//div[contains(text(),'QABrand555')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]     ${wait_time}
+    Mouse Over    (//div[contains(text(),'QABrand555')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]

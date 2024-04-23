@@ -495,8 +495,11 @@ Search Existing Assets
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
+    OCS.Click on newly discovered tab under network discovery
     OCS.Click on search icon of Existing assets
     OCS.Enter text to search existing asset    ${generated_AssetID}
+    OCS.Click on the down arrow icon of discovered asset
+    OCS.Mouse Hover over searched existing assets
     OCS.Verify searched existing asset    ${generated_AssetID}
 
 #Match Discovery and Existing Asset
