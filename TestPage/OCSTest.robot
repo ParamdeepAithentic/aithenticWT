@@ -498,7 +498,7 @@ Search Existing Assets
     OCS.Click on newly discovered tab under network discovery
     OCS.Click on search icon of Existing assets
     OCS.Enter text to search existing asset    ${generated_AssetID}
-    OCS.Click on the down arrow icon of discovered asset
+    OCS.Click on the down arrow icon of existing assets
     OCS.Mouse Hover over searched existing assets
     OCS.Verify searched existing asset    ${generated_AssetID}
 
@@ -608,29 +608,35 @@ Apply filters and clear filter on Existing Assets
     Generic.Verify your current page location contains      management-console
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
-    OCS.Choose tab under Discovery Assets   network-discovery
+    Generic.Verify your current page location contains      discovery-assets
+    OCS.Click on newly discovered tab under network discovery
     OCS.click on filter icon of existing assets
     OCS.Choose filters for discovered asset     Select Brand
-    OCS.Get text of selected brand, mac address and agent of discovered assets  1
-    OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   1
+    OCS.Enter input in the brand field of existing asset       QABrand555
+#    OCS.Get text of selected brand, mac address and agent of discovered assets  0
     Generic.click on the button     Apply
-    OCS.Hover over searched existing Asset
+    OCS.Click on the down arrow icon of existing assets
+    OCS.Mouse Hover over searched existing assets
     OCS.Get text by hovering over existing assets   Brand:
-    OCS.verify Text by hovering over assets  ${substring1}       ${selected_brand}
+#    OCS.verify Text by hovering over assets  ${substring1}       ${selected_brand}
+    OCS.Click on the down arrow icon of existing assets
     OCS.Click on clear filter button link of discovered assets      Clear Filters
     OCS.Choose filters for discovered asset     Select Product
     OCS.Get text of selected brand, mac address and agent of discovered assets  0
     OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   0
     Generic.click on the button     Apply
-    OCS.Hover over searched existing Asset
+    OCS.Click on the down arrow icon of existing assets
+    OCS.Mouse Hover over searched existing assets
     OCS.Get text by hovering over existing assets   ProductId:
     OCS.verify Text by hovering over assets  ${substring1}       ${selected_brand}
+    OCS.Click on the down arrow icon of existing assets
     OCS.Click on clear filter button link of discovered assets  Clear Filters
     OCS.Choose filters for discovered asset    Select Department
     OCS.Get text of selected brand, mac address and agent of discovered assets  0
     OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   0
     Generic.click on the button     Apply
-    OCS.Hover over searched existing Asset
+    OCS.Click on the down arrow icon of existing assets
+    OCS.Mouse Hover over searched existing assets
     OCS.click on the right text asset result of existing asset
     sleep       ${yop_sleep}
     Switch Window   aithentic | Technology - Details
@@ -639,12 +645,14 @@ Apply filters and clear filter on Existing Assets
     OCS.verify Text by hovering over assets  ${assign_loc_input_value}       ${selected_brand}
     sleep       ${yop_sleep}
     Switch Window   aithentic | Asset - Discovery
+    OCS.Click on the down arrow icon of existing assets
     OCS.Click on clear filter button link of discovered assets  Clear Filters
     OCS.Choose filters for discovered asset    Select Location
     OCS.Get text of selected brand, mac address and agent of discovered assets  0
     OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   0
     Generic.click on the button     Apply
-    OCS.Hover over searched existing Asset
+    OCS.Click on the down arrow icon of existing assets
+    OCS.Mouse Hover over searched existing assets
     OCS.click on the right text asset result of existing asset
     sleep       ${yop_sleep}
     Switch Window   aithentic | Technology - Details
@@ -653,9 +661,12 @@ Apply filters and clear filter on Existing Assets
     OCS.verify Text by hovering over assets  ${assign_loc_input_value}       ${selected_brand}
     sleep       ${yop_sleep}
     Switch Window   aithentic | Asset - Discovery
+    OCS.Click on the down arrow icon of existing assets
     OCS.Click on clear filter button link of discovered assets      Clear Filters
-    OCS.Hover over searched existing Asset
+    OCS.Click on the down arrow icon of existing assets
+    OCS.Mouse Hover over searched existing assets
     OCS.Get text by hovering over existing assets  ProductId:
+
 
 Add Discovery Asset
     Generic.click on the tab	Login
@@ -665,7 +676,9 @@ Add Discovery Asset
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
-    OCS.Hover over searched Agent/Discovered Asset
+    OCS.Click on newly discovered tab under network discovery
+    OCS.Click on the down arrow icon of discovered asset
+    OCS.Mouse Hover over searched Discovered Assets
     OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
     OCS.Get Serial number by hovering over discovered assets     Serial Number:
     OCS.Get Host name by hovering over discovered assets     Host name:

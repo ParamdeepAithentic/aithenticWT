@@ -88,6 +88,7 @@ Enter text to search existing asset
     Wait Until Element Is Visible    //input[@placeholder='Search Existing Assets']       ${wait_time}
     Wait Until Element Is enabled    //input[@placeholder='Search Existing Assets']       ${wait_time}
     Input Text    //input[@placeholder='Search Existing Assets']    ${option}
+    wait until element is not visible   ${loaderIcon}        ${wait_time}
 
 
 
@@ -103,8 +104,9 @@ Verify searched existing asset
     [Arguments]     ${option}
     wait until element is not visible   ${loaderIcon}        ${wait_time}
     Sleep    ${yop_sleep}
-    Wait Until Element Is Visible    ${Existing_Assets}     ${wait_time}
-    Element Should Contain   ${Existing_Assets}    ${option}
+    Wait Until Element Is Visible   (//div[contains(text(),'QABrand555')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]      ${wait_time}
+    Element Should Contain   (//div[contains(text(),'QABrand555')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]     ${option}
+
 
 
 Click on search icon of Existing assets
@@ -401,7 +403,7 @@ Hover over searched existing Asset
 
 Get text by hovering over existing assets
     [Arguments]     ${option}
-    Wait Until Element Is Visible   css:.right-text      ${wait_time}
+    Wait Until Element Is Visible   (//div[contains(text(),'QABrand555')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]      ${wait_time}
     ${text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${option}')]//ancestor::li
     ${parts}    Split String    ${text}    ${option}
     ${substring1}    Get Substring    ${parts[1]}    1
@@ -410,9 +412,9 @@ Get text by hovering over existing assets
 
 click on the right text asset result of existing asset
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    wait until element is visible  css:.right-text     ${wait_time}
-    wait until element is enabled  css:.right-text     ${wait_time}
-    click element   css:.right-text
+    wait until element is visible  (//div[contains(text(),'QABrand555')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]     ${wait_time}
+    wait until element is enabled  (//div[contains(text(),'QABrand555')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]    ${wait_time}
+    click element   (//div[contains(text(),'QABrand555')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]
     
 Click on save button of Add Technology Page
     Sleep    ${search_sleep}
@@ -635,15 +637,15 @@ Click on the down arrow icon of discovered asset
 
 Mouse Hover over searched Discovered Assets
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    Wait Until Element Is Visible   //div[contains(text(),'MSI')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]     ${wait_time}
-    Wait Until Element Is Enabled    //div[contains(text(),'MSI')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]     ${wait_time}
-    Mouse Over    //div[contains(text(),'MSI')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]
+    Wait Until Element Is Visible   //div[contains(text(),'Apple Inc')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]     ${wait_time}
+    Wait Until Element Is Enabled    //div[contains(text(),'Apple Inc')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]     ${wait_time}
+    Mouse Over    //div[contains(text(),'Apple Inc')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]
 
 Get MAC_Address by hovering over discovered assets
     [Arguments]     ${text}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    Wait Until Element Is Visible   //div[contains(text(),'MSI')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]      ${wait_time}
-    Wait Until Element Is Enabled   //div[contains(text(),'MSI')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]      ${wait_time}
+    Wait Until Element Is Visible   //div[contains(text(),'Apple Inc')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]      ${wait_time}
+    Wait Until Element Is Enabled   //div[contains(text(),'Apple Inc')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]      ${wait_time}
     sleep       ${search_sleep}
     ${hover_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
     ${parts}    Split String    ${hover_text}    ${text}
@@ -654,8 +656,8 @@ Get MAC_Address by hovering over discovered assets
 Get Host name by hovering over discovered assets
     [Arguments]     ${text}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    Wait Until Element Is Visible   //div[contains(text(),'MSI')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]      ${wait_time}
-    Wait Until Element Is Enabled   //div[contains(text(),'MSI')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]      ${wait_time}
+    Wait Until Element Is Visible   //div[contains(text(),'Apple Inc')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]      ${wait_time}
+    Wait Until Element Is Enabled   //div[contains(text(),'Apple Inc')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]      ${wait_time}
     sleep       ${search_sleep}
     ${hover_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
     ${parts}    Split String    ${hover_text}    ${text}
@@ -675,3 +677,18 @@ Mouse Hover over searched existing assets
     Wait Until Element Is Visible   (//div[contains(text(),'QABrand555')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]     ${wait_time}
     Wait Until Element Is Enabled    (//div[contains(text(),'QABrand555')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]     ${wait_time}
     Mouse Over    (//div[contains(text(),'QABrand555')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]
+
+Click on the down arrow icon of existing assets
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible  (//div[contains(@class,'qa-assets-boxes-right')]//following-sibling::div//img)[1]       ${wait_time}
+    wait until element is enabled    (//div[contains(@class,'qa-assets-boxes-right')]//following-sibling::div//img)[1]       ${wait_time}
+    click element     (//div[contains(@class,'qa-assets-boxes-right')]//following-sibling::div//img)[1]
+
+Enter input in the brand field of existing asset
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[1]      ${wait_time}
+    Wait Until Element Is enabled    (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[1]      ${wait_time}
+    click element    (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[1]
+    input text    (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[1]       ${option}
+    Press Keys      (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[1]     ENTER
