@@ -51,6 +51,7 @@ ${apiURL}             https://pre-prod-api.aithentic.com/api/v1
 #${valid_password}         Test@123       #QA User
 ${valid_password}         Test@123         #pre prod
 
+
 ${admin_url}        https://uat-admin.aithentic.com/
 #${admin_url}        https://qa-admin.aithentic.com/
 
