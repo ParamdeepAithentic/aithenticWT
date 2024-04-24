@@ -41,12 +41,15 @@ Resource        ../Pages/Bulk_Import_ExportPage.robot
 ${user_name}             rahulshettyacademy
 ${invalid_password}      123445
 
-${url}                 https://uat-app.aithentic.com/
+#${url}                 https://uat-app.aithentic.com/
 #${url}                https://qa-app.aithentic.com/
-${apiURL}              https://uat-api.aithentic.com/api/v1
+${url}                https://pre-prod-app.aithentic.com
+#${apiURL}              https://uat-api.aithentic.com/api/v1
 #${apiURL}             https://qa-api.aithentic.com/api/v1
-${valid_password}        Test!@5897     #UAT user
+${apiURL}             https://pre-prod-api.aithentic.com/api/v1
+#${valid_password}        Test!@5897     #UAT user
 #${valid_password}         Test@123       #QA User
+${valid_password}         Test@123         #pre prod
 
 
 #${admin_url}        https://uat-admin.aithentic.com/
@@ -161,6 +164,15 @@ Get Current Date and Time
 
 Close Browser session
     close browser
+
+
+Close Browser session for OCS file
+    Run Keyword If    '${TEST_STATUS}' == 'FAIL'    My Failure Handling Keyword
+    close browser
+
+My Failure Handling Keyword
+    Log     above test case is failed
+
 
 select the option from the side menu
     [Arguments]     ${option}
