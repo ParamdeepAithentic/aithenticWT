@@ -637,15 +637,15 @@ Click on the down arrow icon of discovered asset
 
 Mouse Hover over searched Discovered Assets
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    Wait Until Element Is Visible   //div[contains(text(),'Apple Inc')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]     ${wait_time}
-    Wait Until Element Is Enabled    //div[contains(text(),'Apple Inc')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]     ${wait_time}
-    Mouse Over    //div[contains(text(),'Apple Inc')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]
+    Wait Until Element Is Visible   //div[contains(text(),'MSI')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]     ${wait_time}
+    Wait Until Element Is Enabled    //div[contains(text(),'MSI')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]     ${wait_time}
+    Mouse Over    //div[contains(text(),'MSI')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]
 
 Get MAC_Address by hovering over discovered assets
     [Arguments]     ${text}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    Wait Until Element Is Visible   //div[contains(text(),'Apple Inc')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]      ${wait_time}
-    Wait Until Element Is Enabled   //div[contains(text(),'Apple Inc')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]      ${wait_time}
+    Wait Until Element Is Visible   //div[contains(text(),'MSI')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]      ${wait_time}
+    Wait Until Element Is Enabled   //div[contains(text(),'MSI')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]      ${wait_time}
     sleep       ${search_sleep}
     ${hover_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
     ${parts}    Split String    ${hover_text}    ${text}
@@ -656,8 +656,8 @@ Get MAC_Address by hovering over discovered assets
 Get Host name by hovering over discovered assets
     [Arguments]     ${text}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    Wait Until Element Is Visible   //div[contains(text(),'Apple Inc')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]      ${wait_time}
-    Wait Until Element Is Enabled   //div[contains(text(),'Apple Inc')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]      ${wait_time}
+    Wait Until Element Is Visible   //div[contains(text(),'MSI')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]      ${wait_time}
+    Wait Until Element Is Enabled   //div[contains(text(),'MSI')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]      ${wait_time}
     sleep       ${search_sleep}
     ${hover_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
     ${parts}    Split String    ${hover_text}    ${text}
@@ -692,3 +692,21 @@ Enter input in the brand field of existing asset
     click element    (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[1]
     input text    (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[1]       ${option}
     Press Keys      (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[1]     ENTER
+
+Mouse Hover over searched IP Assets
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible   css:.box .left-text     ${wait_time}
+    Wait Until Element Is Enabled    css:.box .left-text     ${wait_time}
+    Mouse Over    css:.box .left-text
+
+Get MAC_Address by hovering over IP discovered assets
+    [Arguments]     ${text}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible   css:.box .left-text      ${wait_time}
+    Wait Until Element Is Enabled   css:.box .left-text      ${wait_time}
+    sleep       ${search_sleep}
+    ${hover_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
+    ${parts}    Split String    ${hover_text}    ${text}
+    ${hover_MAC_address}    Get Substring    ${parts[1]}    1
+    Log to console      ${hover_MAC_address}
+    set global variable     ${hover_MAC_address}

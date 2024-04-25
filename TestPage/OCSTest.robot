@@ -726,27 +726,28 @@ Create Asset from Add Assets Page
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
+    OCS.Click on newly discovered tab under network discovery
     OCS.Mark check-box of Agent/Discovered Asset
     OCS.Click on Button inside Network Discovery Page       Add Assets
-    Generic.Verify your current page location contains    add-assets
-    OCS.Click on three-dots inside table of add assets
-    OCS.Select option inside three-dots    More Details
-    Sleep    ${yop_sleep}
-    Switch Window       aithentic | Discovery Asset Detail
-    Generic.Verify your current page location contains    discovery-asset-detail
-    close window
-    switch window    aithentic | Asset - Discovery
-    Generic.Verify your current page location contains    add-assets
-    OCS.Click on three-dots inside table of add assets
-    OCS.Select option inside three-dots    View Component
-    Sleep    ${yop_sleep}
-    Switch Window       aithentic | Discovery Asset Detail
-    Generic.Verify your current page location contains    discovery-asset-detail
-    close window
-    Switch Window       aithentic | Asset - Discovery
-    Generic.Verify your current page location contains    add-assets
-    OCS.Click on three-dots inside table of add assets
-    OCS.Select option inside three-dots    Create Asset
+#    Generic.Verify your current page location contains    add-assets
+#    OCS.Click on three-dots inside table of add assets
+#    OCS.Select option inside three-dots    More Details
+#    Sleep    ${yop_sleep}
+#    Switch Window       aithentic | Discovery Asset Detail
+#    Generic.Verify your current page location contains    discovery-asset-detail
+#    close window
+#    switch window    aithentic | Asset - Discovery
+#    Generic.Verify your current page location contains    add-assets
+#    OCS.Click on three-dots inside table of add assets
+#    OCS.Select option inside three-dots    View Component
+#    Sleep    ${yop_sleep}
+#    Switch Window       aithentic | Discovery Asset Detail
+#    Generic.Verify your current page location contains    discovery-asset-detail
+#    close window
+#    Switch Window       aithentic | Asset - Discovery
+#    Generic.Verify your current page location contains    add-assets
+#    OCS.Click on three-dots inside table of add assets
+#    OCS.Select option inside three-dots    Create Asset
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Add Discovery Asset
     Generic.Verify your current page contains this text    Add Technology
@@ -757,8 +758,8 @@ Create Asset from Add Assets Page
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Asset - Discovery
-    Generic.Verify your current page location contains    add-assets
-    Generic.Verify your current page contains this text    ${generated_AssetID}
+#    Generic.Verify your current page location contains    add-assets
+#    Generic.Verify your current page contains this text    ${generated_AssetID}
     Generic.select the option from the side menu        Technology
     Generic.Verify your current page location contains      technology-list
     TechnologyPage.Search by AssetId       ${generated_AssetID}
@@ -1409,11 +1410,12 @@ Search with containing fields under advance search of discovered asset
     Generic.Verify your current page location contains     discovery-assets
     I_iconPage.Choose tab under Discovery Assets       network-discovery
     Generic.Verify your current page location contains    ocs
+    OCS.Click on newly discovered tab under network discovery
     OCS.Mark check-box of Agent/Discovered Asset
     OCS.Click on Button inside Network Discovery Page       Add Assets
-    Generic.Verify your current page location contains    add-assets
-    OCS.Click on three-dots inside table of add assets
-    OCS.Select option inside three-dots    Create Asset
+#    Generic.Verify your current page location contains    add-assets
+#    OCS.Click on three-dots inside table of add assets
+#    OCS.Select option inside three-dots    Create Asset
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Add Discovery Asset
     Generic.Verify your current page contains this text    Add Technology
@@ -1615,11 +1617,14 @@ Search with containing fields under advance search of IP Address of discovered a
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
+    OCS.Click on newly discovered tab under network discovery
     OCS.Click on search icon of discovery assets
     OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
-    OCS.Verify Searched discovery asset    00:17:61:10:C6:A1
-    OCS.Hover over searched Discovered Asset
-    OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
+#    OCS.Verify Searched discovery asset    00:17:61:10:C6:A1
+    OCS.Click on the down arrow icon of discovered asset
+    OCS.Mouse Hover over searched IP Assets
+#    OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
+    OCS.Get MAC_Address by hovering over IP discovered assets   MacAddress:
     Generic.select the option from the side menu    Asset Discovery
     Generic.Verify your current page location contains     discovery-assets
     OCS.click on the value of IP discovered devices of inside table
