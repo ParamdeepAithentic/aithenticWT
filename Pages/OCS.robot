@@ -37,7 +37,7 @@ ${AgentReady_text}     //p[contains(text(),'File is ready, please download')]
 
 ${Add_technology_product}       //div[contains(text(),'Select or Search Product')]//following-sibling::div//input
 ${Add_technology_brand}         css:#BrandName
-${plus_icon}    (//tbody//td//i)[1]
+${plus_icon}    (//i[@title='Add as an Asset'])[10]
 ${Discovery_Assets}     css:.left-text
 ${Existing_Assets}      css:.right-text
 
@@ -557,9 +557,9 @@ Search with MAC address and IP Address on the search bar of Discovered Asset Lis
     [Arguments]     ${MAC_Address}
     wait until element is not visible    ${loaderIcon}    ${wait_time}
     wait until element is visible       css:thead tr       ${wait_time}
-    wait until element is visible   css:input[placeholder='Search by Tag Name, MAC Address, IP Address...']     ${wait_time}
-    wait until element is enabled   css:input[placeholder='Search by Tag Name, MAC Address, IP Address...']     ${wait_time}
-    input text  css:input[placeholder='Search by Tag Name, MAC Address, IP Address...']     ${MAC_Address}
+    wait until element is visible   css:input[placeholder='Search by Brand or Name or Description or Asset ID']     ${wait_time}
+    wait until element is enabled   css:input[placeholder='Search by Brand or Name or Description or Asset ID']     ${wait_time}
+    input text  css:input[placeholder='Search by Brand or Name or Description or Asset ID']     ${MAC_Address}
     sleep       ${search_sleep}
     wait until element is visible       css:thead tr       ${wait_time}
 
@@ -710,3 +710,11 @@ Get MAC_Address by hovering over IP discovered assets
     ${hover_MAC_address}    Get Substring    ${parts[1]}    1
     Log to console      ${hover_MAC_address}
     set global variable     ${hover_MAC_address}
+
+Fetch the Brandname from agent discovery page
+    wait until element is not visible    ${loaderIcon}    ${wait_time}
+    wait until element is visible   (//table[contains(@class,'table-hover')])[2]    ${wait_time}
+    wait until element is enabled   (//table[contains(@class,'table-hover')])[2]     ${wait_time}
+    ${Brand_name}=      Get text        (//tr[@class='table-row ng-star-inserted']//td)[2]
+    Log To Console    ${Brand_name}
+    Set Global Variable   ${Brand_name}

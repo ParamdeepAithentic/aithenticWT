@@ -1377,24 +1377,50 @@ Add Asset with IP address from Network Discovery Page
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     UnselectAssetAPI.Hit API Endpoint
 
-#Network discovery: search on discovered asset list with Tag Name, IP_address and MAC_address
-#    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-#    Generic.select the option from the side menu    Asset Discovery
-#    Generic.Verify your current page location contains     discovery-assets
-#    OCS.Fetch the Tagname from agent discovery page
-#    OCS.Fetch the IP address tagname from agent discovery page
-#    OCS.Fetch the Mac_address from agent discovery page
-#    OCS.click on the value of IP discovered devices of inside table
-#    Sleep    ${yop_sleep}
-#    Switch Window       aithentic | Discovered Assets
-#    Generic.Verify your current page location contains     discovery-assets-list
-#    OCS.Search with MAC address and IP Address on the search bar of Discovered Asset List         ${IP_tagname}
-#    Generic.Verify your current page contains this text      ${IP_tagname}
-#    OCS.Click on Refresh Icon of discovered asset lists
-#    Generic.Wait until table get load
-#    OCS.Search with MAC address and IP Address on the search bar of Discovered Asset List       ${IP_IPaddress}
-#    Generic.Verify your current page contains this text      ${IP_IPaddress}
+Network discovery: search on discovered asset list with Tag Name, IP_address and MAC_address
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
+    Generic.select the option from the side menu    Asset Discovery
+    Generic.Verify your current page location contains     discovery-assets
+    OCS.Fetch the IP address tagname from agent discovery page
+    OCS.Fetch the Mac_address from agent discovery page
+    OCS.click on the value of IP discovered devices of inside table
+    Sleep    ${yop_sleep}
+    Switch Window       aithentic | Discovered Assets
+    Generic.Verify your current page location contains     discovery-assets-list
+    OCS.Fetch the Brandname from agent discovery page
+    OCS.Click on Plus icon under table
+    Sleep    ${yop_Sleep}
+    Switch Window       aithentic | Add Discovery Asset
+    Generic.Verify your current page location contains    add-discovered-asset
+    Generic.Verify your current page contains this text    Add Technology
+    TechnologyPage.Select parameter from technology dropdown list      Macmini9,1
+    TechnologyPage.Create unique serial number random
+    OCS.Enter The Asset_id in Add Technology Page
+    OCS.Click on save button of Add Technology Page
+    OCS.Wait for the invisiblity of alert msg        Technology created successfully
+    Sleep    ${yop_sleep}
+    Switch Window        aithentic | Discovered Assets
+    OCS.Search with MAC address and IP Address on the search bar of Discovered Asset List       ${Brand_name}
+    TechnologyPage.verify Text from Assignment Information     ${Brand_name}          Apple, Inc.
+    OCS.Click on Refresh Icon of discovered asset lists
+    OCS.Search with MAC address and IP Address on the search bar of Discovered Asset List       ${generated_AssetID}
+    TechnologyPage.verify Text from Assignment Information     ${generated_AssetID}          ${generated_AssetID}
+    Generic.select the option from the side menu        Technology
+    Generic.Verify your current page location contains      technology-list
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains    technology-details
+    TechnologyPage.Click on edit button on product details page        Edit
+    Generic.Verify your current page location contains      edit-technology
+    OCS.Edit the MAC_Address of Asset
+    OCS.Edit the Serial_No. of Asset
+    TechnologyPage.Click on update button of edit_technology page       Update
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+    UnselectAssetAPI.Hit API Endpoint
+
 #    OCS.Click on Refresh Icon of discovered asset lists
 #    Generic.Wait until table get load
 #    OCS.Search with MAC address and IP Address on the search bar of Discovered Asset List       ${IP_macaddress}
