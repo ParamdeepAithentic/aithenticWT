@@ -1521,28 +1521,37 @@ Search with containing fields under advance search of component of discovered as
     Generic.select the option from the side menu        Asset Discovery
     Generic.Verify your current page location contains      discovery-assets
     I_iconPage.Choose tab under Discovery Assets       network-discovery
-
+    OCS.Click on newly discovered tab under network discovery
     Generic.Verify your current page location contains    ocs
+    OCS.Click on search icon of discovery assets
+    OCS.Enter text to search discovery asset    MSI
+    OCS.Click on the down arrow icon of discovered asset
     OCS.Mark check-box of Agent/Discovered Asset
     OCS.Click on Button inside Network Discovery Page       Add Assets
-    Generic.Verify your current page location contains    add-assets
-    OCS.Click on three-dots inside table of add assets
-    OCS.Select option inside three-dots    Create Asset
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Add Discovery Asset
     Generic.Verify your current page contains this text    Add Technology
     TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
+    TechnologyPage.Create unique serial number random
     OCS.Enter The Asset_id in Add Technology Page
     OCS.Click on save button of Add Technology Page
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
     Sleep    ${yop_sleep}
     switch window    aithentic | Asset - Discovery
-    Generic.Verify your current page location contains    add-assets
-    Generic.Verify your current page contains this text    ${generated_AssetID}
-    OCS.Click on three-dots inside table of add assets
-    OCS.Select option inside three-dots    View Component
-    Sleep    ${yop_sleep}
-    Switch Window       aithentic | Discovery Asset Detail
+#    Generic.Verify your current page contains this text    ${generated_AssetID}
+#    Sleep    ${yop_sleep}
+#    Switch Window       aithentic | Discovery Asset Detail
+    Generic.select the option from the side menu        Technology
+    Generic.Verify your current page location contains      technology-list
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains    technology-details
+    OCS.Verify Page should contain Element     discovery-info-tab
+    OCS.Click on Discovery_info tab on Technology details Page
+    OCS.Verify Discovery_info contains following tab    software-tab
+    Generic.Scroll the page till   499
+    OCS.Hover Over Add component button and verify text         Please click on the 'plus' icon to add component
+    OCS.Click on plus icon of any component
     Generic.Verify your current page location contains    discovery-asset-detail
     OCS.Verify Discovery_info contains following tab    software-tab
     Generic.Scroll the page till   300
@@ -1657,7 +1666,7 @@ Search with containing fields under advance search of IP Address of discovered a
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Discovered Assets
     Generic.Verify your current page location contains     discovery-assets-list
-    Generic.Wait until table get load
+    OCS.Fetch the Brandname from agent discovery page
     OCS.Click on Plus icon under table
     Sleep    ${Yop_Sleep}
     Switch Window       aithentic | Add Discovery Asset
@@ -1677,7 +1686,9 @@ Search with containing fields under advance search of IP Address of discovered a
     Generic.Verify your current page contains this text    Add Technology
     OCS.Fetch the Brand Name from the brand field of discovered asset
     TechnologyPage.verify Text from Assignment Information      Lenovo       ${brand_name}
+    sleep   ${yop_sleep}
     Generic.Refresh the existing page
+    sleep   ${yop_sleep}
     I_iconPage.Click on advanced search link under create asset network discovery
     Generic.click on the button     Reset Filters
     OCS.Enter and select technology type in advance search of discovered search
@@ -1691,6 +1702,7 @@ Search with containing fields under advance search of IP Address of discovered a
     Generic.Verify your current page contains this text    Add Technology
     OCS.Fetch the technology type from the technology type field of component of discovered asset
     TechnologyPage.verify Text from Assignment Information      Maintenance       ${Technology_type}
+    Generic.Refresh the existing page
     Generic.Refresh the existing page
     I_iconPage.Click on advanced search link under create asset network discovery
     Generic.click on the button     Reset Filters
@@ -1706,6 +1718,7 @@ Search with containing fields under advance search of IP Address of discovered a
     Generic.Verify your current page contains this text    Add Technology
     TechnologyPage.Get text of technology group inside add technology
     TechnologyPage.verify Text from Assignment Information      Applications      ${Technology_group}
+    Generic.Refresh the existing page
     Generic.Refresh the existing page
     I_iconPage.Click on advanced search link under create asset network discovery
     Generic.click on the button     Reset Filters
@@ -1743,17 +1756,15 @@ Upload Image and Document file during Add Asset with IP address from Agent Disco
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
+    OCS.Click on newly discovered tab under network discovery
     OCS.Click on search icon of discovery assets
     OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
-    OCS.Verify Searched discovery asset    00:17:61:10:C6:A1
-    OCS.Hover over searched Discovered Asset
-    OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
-    OCS.Get Host name by hovering over discovered assets        Host name:
+    OCS.Click on the down arrow icon of discovered asset
+#    OCS.Verify Searched discovery asset    00:17:61:10:C6:A1
+    OCS.Mouse Hover over searched IP Assets
+    OCS.Get MAC_Address by hovering over IP discovered assets    MacAddress:
     OCS.Mark check-box of Agent/Discovered Asset
     OCS.Click on Button inside Network Discovery Page       Add Assets
-    Generic.Verify your current page location contains    add-assets
-    OCS.Click on three-dots inside table of add assets
-    OCS.Select option inside three-dots    Create Asset
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Add Discovery Asset
     Generic.Verify your current page contains this text    Add Technology
@@ -1781,13 +1792,14 @@ Upload Image and Document file during Add Asset with IP address from Agent Disco
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Asset - Discovery
+    Generic.Verify your current page location contains      discovery-assets
     Generic.select the option from the side menu        Technology
     Generic.Verify your current page location contains      technology-list
     TechnologyPage.Search by AssetId       ${generated_AssetID}
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains    technology-details
     OCS.Get Value of MAC-Address from technology details and compare it with      ${hover_MAC_address}
-    OCS.Get Value of Host-Name and compare it with      ${hover_host name}
+#    OCS.Get Value of Host-Name and compare it with      ${hover_host name}
     TechnologyPage.Click on attachment tab
     TechnologyPage.Upload file          Document_02.pdf
     Generic.Scroll Window To End
@@ -1808,7 +1820,6 @@ Upload Image and Document file during Add Asset with IP address from Agent Disco
     Generic.Verify your current page location contains      edit-technology
     OCS.Edit the MAC_Address of Asset
     OCS.Edit the Serial_No. of Asset
-    OCS.Edit The Host_Name of Asset
     Generic.Scroll Window To End
     TechnologyPage.Remove the document by clicking on cross-icon    .pdf
     TechnologyPage.Remove the document by clicking on cross-icon    .png

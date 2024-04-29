@@ -451,9 +451,9 @@ Wait for the invisiblity of alert msg
     
 Mark check-box of Agent/Discovered Asset
     Wait Until Element Is Not Visible    ${loaderIcon}  ${wait_time}
-    Wait Until Element Is Visible    (//div[contains(@class,'left-text')]//following-sibling::div//span)[1]        ${wait_time}
-    Wait Until Element Is Enabled    (//div[contains(@class,'left-text')]//following-sibling::div//span)[1]      ${wait_time}
-    Click Element    (//div[contains(@class,'left-text')]//following-sibling::div//span)[1]
+    Wait Until Element Is Visible    (//div[contains(@class,'left-text')]//following-sibling::div//span)[2]        ${wait_time}
+    Wait Until Element Is Enabled    (//div[contains(@class,'left-text')]//following-sibling::div//span)[2]      ${wait_time}
+    Click Element    (//div[contains(@class,'left-text')]//following-sibling::div//span)[2]
 
 Click on three-dots inside table of add assets
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
@@ -718,3 +718,22 @@ Fetch the Brandname from agent discovery page
     ${Brand_name}=      Get text        (//tr[@class='table-row ng-star-inserted']//td)[2]
     Log To Console    ${Brand_name}
     Set Global Variable   ${Brand_name}
+
+
+Fetch the brand name in software tab
+    Fetch the Brandname from agent discovery page
+    wait until element is not visible    ${loaderIcon}    ${wait_time}
+    wait until element is visible   (//div[@id='software']//tbody//td)[2]    ${wait_time}
+    wait until element is enabled   (//div[@id='software']//tbody//td)[2]     ${wait_time}
+    ${Brand}=      Get text        (//div[@id='software']//tbody//td)[2]
+    Log To Console    ${Brand}
+    Set Global Variable   ${Brand}
+
+Fetch the product in software tab
+    Fetch the Brandname from agent discovery page
+    wait until element is not visible    ${loaderIcon}    ${wait_time}
+    wait until element is visible   (//div[@id='software']//tbody//td)[3]    ${wait_time}
+    wait until element is enabled   (//div[@id='software']//tbody//td)[3]     ${wait_time}
+    ${Product}=      Get text        (//div[@id='software']//tbody//td)[3]
+    Log To Console    ${Product}
+    Set Global Variable   ${Product}
