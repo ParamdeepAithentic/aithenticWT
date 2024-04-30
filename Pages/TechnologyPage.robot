@@ -1288,7 +1288,7 @@ Click on Location tab of technology- list page
     wait until element is visible   css:#PrintQrButton   ${wait_time}
     wait until element is enabled   css:#PrintQrButton   ${wait_time}
     wait until element is visible   css:#location-tab   ${wait_time}
-    click element   css:#location-tab
+#    click element   css:#location-tab
 
 Get Value of Assignment Information Location_Department_AssginTo_IDFields
     [Arguments]     ${value}
@@ -1378,6 +1378,7 @@ Click on attachment tab
     wait until element is visible   css:#PrintQrButton   ${wait_time}
     wait until element is enabled   css:#PrintQrButton   ${wait_time}
     wait until element is visible   css:#attachments-tab   ${wait_time}
+    sleep   ${search_sleep}
     click element   css:#attachments-tab
 #    wait until element is visible   //label[normalize-space()='Upload File']        ${wait_time}
 #    wait until element is enabled   //label[normalize-space()='Upload File']        ${wait_time}

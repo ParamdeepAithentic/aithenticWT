@@ -37,7 +37,7 @@ ${AgentReady_text}     //p[contains(text(),'File is ready, please download')]
 
 ${Add_technology_product}       //div[contains(text(),'Select or Search Product')]//following-sibling::div//input
 ${Add_technology_brand}         css:#BrandName
-${plus_icon}    (//i[@title='Add as an Asset'])[10]
+${plus_icon}    (//i[@title='Add as an Asset'])[1]
 ${Discovery_Assets}     css:.left-text
 ${Existing_Assets}      css:.right-text
 
@@ -117,14 +117,14 @@ Click on search icon of Existing assets
 
 Select any Discovered asset
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    wait until element is visible        //div[contains(@class,"qa-assets-boxes-left")]/div[1]/div[1]        ${wait_time}
-    Click Element    //div[contains(@class,"qa-assets-boxes-left")]/div[1]/div[1]
+    wait until element is visible        (//div[contains(@class,'box')]//div[contains(@class,'circle')])[1]        ${wait_time}
+    Click Element    (//div[contains(@class,'box')]//div[contains(@class,'circle')])[1]
     Wait Until Element Is Not Visible    ${alert_Msg}       ${wait_time}
 
 Select any existing asset
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    wait until element is visible       //div[contains(@class,"qa-assets-boxes-right")]/div[1]/div[1]       ${wait_time}
-    Click Element    //div[contains(@class,"qa-assets-boxes-right")]/div[1]/div[1]
+    wait until element is visible       //div[contains(@class,"qa-assets-boxes-right")]/div[1]/div[2]//div[contains(@class,'circle')]       ${wait_time}
+    Click Element    //div[contains(@class,"qa-assets-boxes-right")]/div[1]/div[2]//div[contains(@class,'circle')]
     Wait Until Element Is Not Visible    ${alert_Msg}       ${wait_time}
 
 Verify that line appears between selected assets
@@ -473,11 +473,11 @@ Hover Over Add component button and verify text
     Mouse Over    //div[@id='software']//button[normalize-space()='Add as a Component']
     ${text}=    Get Element attribute       //div[@id='software']//button[normalize-space()='Add as a Component']        title
     Should Be Equal    ${text}   ${option}
-    
+
 Click on plus icon of any component
-    Wait Until Element Is Visible    (//div[@id='software']//tbody//i)[1]       ${wait_time}
-    Wait Until Element Is Enabled    (//div[@id='software']//tbody//i)[1]       ${wait_time}
-    Click Element    (//div[@id='software']//tbody//i)[1]
+    Wait Until Element Is Visible    (//div[@id='software']//tbody//i[contains(@class,'fa-plus-circle')])[1]       ${wait_time}
+    Wait Until Element Is Enabled    (//div[@id='software']//tbody//i[contains(@class,'fa-plus-circle')])[1]       ${wait_time}
+    Click Element    (//div[@id='software']//tbody//i[contains(@class,'fa-plus-circle')])[1]
 
 Verify Software tab Should contain Element
     Wait Until Element Is Visible       css:.fa-check-circle        ${wait_time}
@@ -707,9 +707,9 @@ Get MAC_Address by hovering over IP discovered assets
     sleep       ${search_sleep}
     ${hover_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
     ${parts}    Split String    ${hover_text}    ${text}
-    ${hover_MAC_address}    Get Substring    ${parts[1]}    1
-    Log to console      ${hover_MAC_address}
-    set global variable     ${hover_MAC_address}
+    ${hover_MAC_addressIP}    Get Substring    ${parts[1]}    1
+    Log to console      ${hover_MAC_addressIP}
+    set global variable     ${hover_MAC_addressIP}
 
 Fetch the Brandname from agent discovery page
     wait until element is not visible    ${loaderIcon}    ${wait_time}
@@ -737,3 +737,27 @@ Fetch the product in software tab
     ${Product}=      Get text        (//div[@id='software']//tbody//td)[3]
     Log To Console    ${Product}
     Set Global Variable   ${Product}
+
+et MAC_Address by hovering over discovery asset detail page
+    [Arguments]     ${text}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible   (//div[contains(@class,'welcome-main')])[2]      ${wait_time}
+    Wait Until Element Is Enabled   (//div[contains(@class,'welcome-main')])[2]     ${wait_time}
+    sleep       ${search_sleep}
+    ${hover_text}=        Get Text        (//div[contains(@class,'welcome-main')]//b[contains(text(),'Mac Address')])
+    ${parts}    Split String    ${hover_text}    ${text}
+    ${hover_MAC_addressDA}    Get Substring    ${parts[1]}    1
+    Log to console      ${hover_MAC_addressDA}
+    set global variable     ${hover_MAC_addressDA}
+
+Get Serial number by hovering over existing assets
+    [Arguments]     ${text}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible   (//div[contains(text(),'QABrand555')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]      ${wait_time}
+    Wait Until Element Is Enabled   (//div[contains(text(),'QABrand555')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]      ${wait_time}
+    sleep       ${search_sleep}
+    ${hover_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
+    ${parts}    Split String    ${hover_text}    ${text}
+    ${hover_serial_number}    Get Substring    ${parts[1]}    1
+    Log to console      ${hover_serial_number}
+    set global variable     ${hover_serial_number}
