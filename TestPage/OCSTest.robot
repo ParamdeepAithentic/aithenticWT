@@ -561,7 +561,6 @@ Apply filters and clear filter on Discovered Asset
     Generic.Verify your current page location contains      management-console
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
-#    OCS.Choose tab under Discovery Assets   network-discovery
     Generic.Verify your current page location contains      discovery-assets
     OCS.Click on newly discovered tab under network discovery
     OCS.click on filter icon of discovered assets
@@ -569,7 +568,7 @@ Apply filters and clear filter on Discovered Asset
     OCS.Get text of selected brand, mac address and agent of discovered assets  0
     OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   0
     Generic.click on the button     Apply
-    sleep   1
+    sleep   ${search_sleep}
     OCS.Click on the down arrow icon of discovered asset
     OCS.Mouse Hover over searched Discovered Assets
     OCS.Get text by hovering over assets    Brand:
@@ -580,24 +579,28 @@ Apply filters and clear filter on Discovered Asset
     OCS.Get text of selected brand, mac address and agent of discovered assets  0
     OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   0
     Generic.click on the button     Apply
-    sleep   1
+    sleep  ${search_sleep}
     OCS.Click on the down arrow icon of discovered asset
-    OCS.Mouse Hover over searched Discovered Assets
+    OCS.Mouse Hover over searched IP Assets
     OCS.Get MAC_Address by hovering over discovered assets     MacAddress:
-    OCS.verify Text by hovering over assets  ${substring}       ${selected_brand}
+    OCS.verify Text by hovering over assets  ${hover_MAC_address}       ${selected_brand}
     OCS.Click on the down arrow icon of discovered asset
     OCS.Click on clear filter button link of discovered assets    Clear Filters
     OCS.Choose filters for discovered asset     Select Agent Tags
     OCS.Get text of selected brand, mac address and agent of discovered assets  0
     OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   0
     Generic.click on the button     Apply
-    sleep   1
+    sleep  ${search_sleep}
     OCS.Click on the down arrow icon of discovered asset
     OCS.Mouse Hover over searched Discovered Assets
     OCS.Get text by hovering over assets    Tag:
     OCS.verify Text by hovering over assets  ${substring}       ${selected_brand}
     OCS.Click on clear filter button link of discovered assets    Clear Filters
-    OCS.Hover over searched Discovered Asset
+    sleep   ${search_sleep}
+    OCS.Click on the down arrow icon of discovered asset
+    sleep   ${search_sleep}
+    OCS.Click on the down arrow icon of discovered asset
+    OCS.Mouse Hover over searched IP Assets
     OCS.Get text by hovering over assets     Brand:
 
 Apply filters and clear filter on Existing Assets
@@ -613,22 +616,22 @@ Apply filters and clear filter on Existing Assets
     OCS.click on filter icon of existing assets
     OCS.Choose filters for discovered asset     Select Brand
     OCS.Enter input in the brand field of existing asset       QABrand555
-#    OCS.Get text of selected brand, mac address and agent of discovered assets  0
+    OCS.Get text of selected brand of filter of existing asset
     Generic.click on the button     Apply
     OCS.Click on the down arrow icon of existing assets
     OCS.Mouse Hover over searched existing assets
     OCS.Get text by hovering over existing assets   Brand:
-#    OCS.verify Text by hovering over assets  ${substring1}       ${selected_brand}
+    OCS.verify Text by hovering over assets  ${substring1}       ${brand}
     OCS.Click on the down arrow icon of existing assets
     OCS.Click on clear filter button link of discovered assets      Clear Filters
     OCS.Choose filters for discovered asset     Select Product
-    OCS.Get text of selected brand, mac address and agent of discovered assets  0
-    OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   0
+    OCS.Enter input in the product field of filters of existing agent       QAHardwareProduct
+    OCS.Get text of selected brand of filter of existing asset
     Generic.click on the button     Apply
     OCS.Click on the down arrow icon of existing assets
     OCS.Mouse Hover over searched existing assets
-    OCS.Get text by hovering over existing assets   ProductId:
-    OCS.verify Text by hovering over assets  ${substring1}       ${selected_brand}
+    OCS.Get text by hovering over existing assets   Model/Product Name:
+    OCS.verify Text by hovering over assets  ${substring1}      ${brand}
     OCS.Click on the down arrow icon of existing assets
     OCS.Click on clear filter button link of discovered assets  Clear Filters
     OCS.Choose filters for discovered asset    Select Department
@@ -663,9 +666,6 @@ Apply filters and clear filter on Existing Assets
     Switch Window   aithentic | Asset - Discovery
     OCS.Click on the down arrow icon of existing assets
     OCS.Click on clear filter button link of discovered assets      Clear Filters
-    OCS.Click on the down arrow icon of existing assets
-    OCS.Mouse Hover over searched existing assets
-    OCS.Get text by hovering over existing assets  ProductId:
 
 
 Add Discovery Asset
@@ -1129,27 +1129,30 @@ Match IP Discovered asset with Existing asset
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
+    OCS.Click on newly discovered tab under network discovery
     OCS.Click on search icon of discovery assets
     OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
-    OCS.Verify Searched discovery asset    00:17:61:10:C6:A1
-    OCS.Hover over searched Discovered Asset
-    OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
-    OCS.Get Host name by hovering over discovered assets     Host name:
+    OCS.Click on the down arrow icon of discovered asset
+#    OCS.Verify Searched discovery asset    00:17:61:10:C6:A1
+    OCS.Mouse Hover over searched IP Assets
+    OCS.Get MAC_Address by hovering over IP discovered assets    MacAddress:
+#    OCS.Get Host name by hovering over discovered assets     Host name:
     OCS.Select any Discovered asset
     OCS.Click on search icon of discovery assets
-    OCS.Hover Existing Agent
-    OCS.Get text by hovering over existing assets of technology    Tag:
+    OCS.Click on the down arrow icon of existing assets
+    OCS.Mouse Hover over searched existing assets
+    OCS.Get asset id by hovering over existing assets    Asset Id:
     OCS.Select any existing asset
     OCS.Verify that line appears between selected assets
     OCS.Click on Button inside Network Discovery Page     Confirm Matches
     Generic.Fetch alert message text and compare it with      Matched Assets updated successfully
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.Search by AssetId       ${hover_details}
+    TechnologyPage.Search by AssetId       ${hover_assetid}
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains    technology-details
-    OCS.Get Value of MAC-Address from technology details and compare it with      ${hover_MAC_address}
-    OCS.Get Value of Host-Name and compare it with    ${hover_host name}
+    OCS.Get Value of MAC-Address from technology details and compare it with      ${hover_MAC_addressIP}
+#    OCS.Get Value of Host-Name and compare it with    ${hover_host name}
     TechnologyPage.Click on edit button on product details page        Edit
     Generic.Verify your current page location contains      edit-technology
     OCS.Edit the MAC_Address of Asset
@@ -1178,14 +1181,14 @@ Match Discovery Asset with Static Existing Asset
     OCS.Select any Discovered asset
     OCS.Click on the down arrow icon of existing assets
     OCS.Mouse Hover over searched existing assets
-    OCS.Get Serial number by hovering over existing assets    Serial Number:
+    OCS.Get asset id by hovering over existing assets    Asset Id:
     OCS.Select any existing asset
 #    OCS.Verify that line appears between selected assets
     OCS.Click on Button inside Network Discovery Page     Confirm Matches
     Generic.Fetch alert message text and compare it with      Matched Assets updated successfully
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.Search by AssetId        ${hover_details}
+    TechnologyPage.Search by AssetId         ${hover_assetid}
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains    technology-details
     OCS.Get Value of MAC-Address from technology details and compare it with      ${hover_MAC_address}
@@ -1296,24 +1299,46 @@ Add asset with IP Address under discovered asset list
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
-    OCS.Click on newly discovered tab under network discovery
-    OCS.Click on search icon of discovery assets
-    OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
-    OCS.Click on the down arrow icon of discovered asset
-    OCS.Mouse Hover over searched IP Assets
-    OCS.Get MAC_Address by hovering over IP discovered assets    MacAddress:
+    OCS.Choose tab under Discovery Assets   agent-discovery
+    Generic.Verify your current page location contains    ocs
+#    OCS.Click on newly discovered tab under network discovery
+#    OCS.Click on search icon of discovery assets
+#    OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
+#    OCS.Click on the down arrow icon of discovered asset
+#    OCS.Mouse Hover over searched IP Assets
+#    OCS.Get MAC_Address by hovering over IP discovered assets    MacAddress:
 #    OCS.Get Host name by hovering over discovered assets        Host name:
-    Generic.select the option from the side menu    Asset Discovery
-    Generic.Verify your current page location contains     discovery-assets
+#    Generic.select the option from the side menu    Asset Discovery
+#    Generic.Verify your current page location contains     discovery-assets
     OCS.click on the value of IP discovered devices of inside table
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Discovered Assets
     Generic.Verify your current page location contains     discovery-assets-list
     OCS.Fetch the Brandname from agent discovery page
-    OCS.Click on Plus icon under table
+    OCS.Click on down arrow link on discovery asset list page
+    OCS.Click on view button link on discovery asset list page
     Sleep    ${Yop_Sleep}
+    Switch Window       aithentic | Asset - Discovery
+    Generic.Verify your current page location contains    discovery-asset-details
+    OCS.Get MAC_Address by hovering over discovery asset detail page    Mac Address :
+    close window
+#    Sleep    ${yop_sleep}
+#    Switch Window       aithentic | Discovered Assets
+    Generic.Verify your current page location contains     discovery-assets-list
+    TechnologyPage.Click on back to list of technology
+    Generic.Verify your current page location contains    ocs
+    I_iconPage.Choose tab under Discovery Assets       network-discovery
+    Generic.Verify your current page location contains    ocs
+    OCS.Click on newly discovered tab under network discovery
+    OCS.Click on search icon of discovery assets
+    OCS.Enter text to search discovery asset    ${hover_MAC_addressdiscoveryassetdetail}
+    OCS.Click on the down arrow icon of discovered asset
+    OCS.Mouse Hover over searched IP Assets
+    OCS.Get MAC_Address by hovering over IP discovered assets    MacAddress:
+    OCS.Mark check-box of Agent/Discovered Asset
+    OCS.Click on Button inside Network Discovery Page       Add Assets
+    Sleep    ${yop_sleep}
     Switch Window       aithentic | Add Discovery Asset
-    Generic.Verify your current page location contains    add-discovered-asset
     Generic.Verify your current page contains this text    Add Technology
     TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
     TechnologyPage.Create random unique serial number
@@ -1322,6 +1347,7 @@ Add asset with IP Address under discovered asset list
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Discovered Assets
+    Generic.Verify your current page location contains      discovery-assets-list
     Generic.Refresh the existing page
     Generic.Verify your current page contains this text    ${generated_AssetID}
     Generic.select the option from the side menu        Technology
@@ -1336,7 +1362,7 @@ Add asset with IP Address under discovered asset list
     TechnologyPage.Click on update button of edit_technology page       Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     UnselectAssetAPI.Hit API Endpoint
-
+#
 Add Asset with IP address from Network Discovery Page
     [Tags]    retry
     Generic.click on the tab	Login

@@ -239,9 +239,9 @@ Click on Plus icon under table
 #    wait until element is visible    (//tbody)[1]        ${wait_time}
 #    wait until element is enabled     (//tbody)[1]        ${wait_time}
 #    Execute JavaScript  window.scrollBy(10000, 0)
-    Wait Until Element Is Visible     ${plus_icon}         ${wait_time}
-    wait until element is enabled     ${plus_icon}      ${wait_time}
-    Click Element   ${plus_icon}
+    Wait Until Element Is Visible     (//i[@title='Add as an Asset'])[10]         ${wait_time}
+    wait until element is enabled     (//i[@title='Add as an Asset'])[10]      ${wait_time}
+    Click Element   (//i[@title='Add as an Asset'])[10]
 
 Choose option from brand on Add technology Page
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
@@ -738,19 +738,19 @@ Fetch the product in software tab
     Log To Console    ${Product}
     Set Global Variable   ${Product}
 
-et MAC_Address by hovering over discovery asset detail page
+Get MAC_Address by hovering over discovery asset detail page
     [Arguments]     ${text}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     Wait Until Element Is Visible   (//div[contains(@class,'welcome-main')])[2]      ${wait_time}
     Wait Until Element Is Enabled   (//div[contains(@class,'welcome-main')])[2]     ${wait_time}
     sleep       ${search_sleep}
-    ${hover_text}=        Get Text        (//div[contains(@class,'welcome-main')]//b[contains(text(),'Mac Address')])
+    ${hover_text}=        Get Text        //div[contains(@class,'welcome-main')]//b[contains(text(),'Mac Address')]//parent::div
     ${parts}    Split String    ${hover_text}    ${text}
-    ${hover_MAC_addressDA}    Get Substring    ${parts[1]}    1
-    Log to console      ${hover_MAC_addressDA}
-    set global variable     ${hover_MAC_addressDA}
+    ${hover_MAC_addressdiscoveryassetdetail}    Get Substring    ${parts[1]}    1
+    Log to console     ${hover_MAC_addressdiscoveryassetdetail}
+    set global variable     ${hover_MAC_addressdiscoveryassetdetail}
 
-Get Serial number by hovering over existing assets
+Get asset id by hovering over existing assets
     [Arguments]     ${text}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     Wait Until Element Is Visible   (//div[contains(text(),'QABrand555')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]      ${wait_time}
@@ -758,6 +758,32 @@ Get Serial number by hovering over existing assets
     sleep       ${search_sleep}
     ${hover_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
     ${parts}    Split String    ${hover_text}    ${text}
-    ${hover_serial_number}    Get Substring    ${parts[1]}    1
-    Log to console      ${hover_serial_number}
-    set global variable     ${hover_serial_number}
+    ${hover_assetid}    Get Substring    ${parts[1]}    1
+    Log to console      ${hover_assetid}
+    set global variable     ${hover_assetid}
+
+Get text of selected brand of filter of existing asset
+    Wait Until Element Is Visible  //span[@class='ng-value-label ng-star-inserted']       ${wait_time}
+    ${brand}=        Get Text    //span[@class='ng-value-label ng-star-inserted']
+    Log to console      ${brand}
+    set global variable     ${brand}
+
+Enter input in the product field of filters of existing agent
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[2]      ${wait_time}
+    Wait Until Element Is enabled    (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[2]      ${wait_time}
+    click element    (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[2]
+    input text    (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[2]       ${option}
+    Press Keys      (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[2]     ENTER
+
+
+Click on down arrow link on discovery asset list page
+    wait until element is visible      (//tbody//tr[1]//td[7])[2]      ${wait_time}
+    wait until element is enabled      (//tbody//tr[1]//td[7])[2]      ${wait_time}
+    click element  (//tbody//tr[1]//td[7])[2]
+
+Click on view button link on discovery asset list page
+    wait until element is visible      (//tbody//tr[2]//td[7])[2]      ${wait_time}
+    wait until element is enabled      (//tbody//tr[2]//td[7])[2]      ${wait_time}
+    click element  (//tbody//tr[2]//td[7])[2]
