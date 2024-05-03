@@ -41,22 +41,22 @@ Resource        ../Pages/Bulk_Import_ExportPage.robot
 ${user_name}             rahulshettyacademy
 ${invalid_password}      123445
 
-#${url}                 https://uat-app.aithentic.com/
-${url}                https://qa-app.aithentic.com/
+${url}                 https://uat-app.aithentic.com/
+#${url}                https://qa-app.aithentic.com/
 #${url}                https://pre-prod-app.aithentic.com
-#${apiURL}              https://uat-api.aithentic.com/api/v1
-${apiURL}             https://qa-api.aithentic.com/api/v1
+${apiURL}              https://uat-api.aithentic.com/api/v1
+#${apiURL}             https://qa-api.aithentic.com/api/v1
 #${apiURL}             https://pre-prod-api.aithentic.com/api/v1
-#${valid_password}        Test!@5897     #UAT user
-${valid_password}         Test@123       #QA User
+${valid_password}        Test!@5897     #UAT user
+#${valid_password}         Test@123       #QA User
 #${valid_password}         Test@123         #pre prod
 
 
 #${admin_url}        https://uat-admin.aithentic.com/
 ${admin_url}        https://qa-admin.aithentic.com/
 
-${agentDiscovery_TagName}       Tag Name - johnsoftwaresolutions-1192-4         #qa
-#${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-3        #uat
+#${agentDiscovery_TagName}       Tag Name - johnsoftwaresolutions-1192-4         #qa
+${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-3        #uat
 
 ${admin_name}        aithentic@yopmail.com
 ${admin_password}       Admin@123
@@ -78,7 +78,7 @@ ${click_countryTag}     css:.iti__selected-flag.dropdown-toggle
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
-${wait_time}        120
+${wait_time}        10
 ${yop_sleep}       10
 ${search_sleep}       1
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
@@ -168,10 +168,30 @@ Close Browser session
 
 Close Browser session for OCS file
     Run Keyword If    '${TEST_STATUS}' == 'FAIL'    My Failure Handling Keyword
+    Run Keyword If    '${TEST_STATUS}' == 'FAIL'    Close Browser session
     close browser
 
 My Failure Handling Keyword
-    Log     above test case is failed
+    :FOR    ${step}    IN
+        Generic.Click on the profile name
+        Generic.Select option from profile list     view-discovery
+        Generic.Verify your current page location contains    ocs
+        Generic.Refresh the existing page
+        UnselectAssetAPI.Hit API Endpoint
+        OCS.Click on Existing asset
+        Sleep    ${yop_sleep}
+        Switch Window       aithentic | Technology - Details
+        Generic.Verify your current page location contains    technology-details
+        TechnologyPage.Click on edit button on product details page        Edit
+        Generic.Verify your current page location contains      edit-technology
+        OCS.Edit the MAC_Address of Asset
+        OCS.Edit the Serial_No. of Asset
+        OCS.Edit The Host_Name of Asset
+        TechnologyPage.Click on update button of edit_technology page       Update
+        Generic.Fetch alert message text and compare it with        Technology updated successfully
+        UnselectAssetAPI.Hit API Endpoint
+#        Run Keyword And Ignore Error    ${step}
+        Run Keyword If    '${TEST_STATUS}' == 'FAIL'         Close Browser session
 
 
 select the option from the side menu
@@ -342,3 +362,4 @@ Update settings for Asset_ID, employee_id and location
     DashboardPage.Select the location ID checkbox   yes
     DashboardPage.Select the asset ID checkbox      no
     close browser
+

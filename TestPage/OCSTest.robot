@@ -34,7 +34,8 @@ Resource        ../Pages/UnselectAssetAPI.robot
 
 
 Test Setup      open the browser with the url
-Test Teardown   Close Browser session
+Test Teardown   Close Browser session for OCS file
+
 
 
 *** Variables ***
@@ -63,7 +64,7 @@ Download agent for OCS from signup - Linux
     Generic.Search yopmail emails for       ${generate_register_Email}
     Generic.Switch to iframe by ID      ifinbox
 
-    Yopmail.Click on email of yopmail   Email Register Verification Required.
+    Yopmail.Click on email of yopmail   Email Register Verification Requ
     Unselect Frame
 
     Generic.Switch to iframe by ID      ifmail
@@ -848,6 +849,8 @@ Network Discovery in case of no records
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
+    OCS.Click on newly discovered tab under network discovery
+    Generic.Verify your current page location contains    ocs
     OCS.Fetch text from Agent/Discovered assets column and compare it with      No records
     OCS.Fetch text from Existing assets column and compare it with     No records
     OCS.Choose Tab under Asset Discovery    agent-discovery
@@ -864,7 +867,7 @@ Add component as an asset from Agent Discovery page
     Generic.Verify your current page location contains    ocs
     OCS.Click on newly discovered tab under network discovery
     OCS.Click on search icon of discovery assets
-    OCS.Enter text to search discovery asset    MSI
+    OCS.Enter text to search discovery asset    Apple Inc
     OCS.Click on the down arrow icon of discovered asset
     OCS.Mouse Hover over searched Discovered Assets
     OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
@@ -929,7 +932,7 @@ Upload Image and Document File while Add Discovery Asset
     Generic.Verify your current page location contains    ocs
     OCS.Click on newly discovered tab under network discovery
     OCS.Click on search icon of discovery assets
-    OCS.Enter text to search discovery asset    MSI
+    OCS.Enter text to search discovery asset   Apple Inc
     OCS.Click on the down arrow icon of discovered asset
     OCS.Mouse Hover over searched Discovered Assets
     OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
@@ -1172,7 +1175,7 @@ Match Discovery Asset with Static Existing Asset
     Generic.Verify your current page location contains    ocs
     OCS.Click on newly discovered tab under network discovery
     OCS.Click on search icon of discovery assets
-    OCS.Enter text to search discovery asset    MSI
+    OCS.Enter text to search discovery asset    Apple Inc
     OCS.Click on the down arrow icon of discovered asset
     OCS.Mouse Hover over searched Discovered Assets
     OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
@@ -1301,15 +1304,6 @@ Add asset with IP Address under discovered asset list
     Generic.Verify your current page location contains    ocs
     OCS.Choose tab under Discovery Assets   agent-discovery
     Generic.Verify your current page location contains    ocs
-#    OCS.Click on newly discovered tab under network discovery
-#    OCS.Click on search icon of discovery assets
-#    OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
-#    OCS.Click on the down arrow icon of discovered asset
-#    OCS.Mouse Hover over searched IP Assets
-#    OCS.Get MAC_Address by hovering over IP discovered assets    MacAddress:
-#    OCS.Get Host name by hovering over discovered assets        Host name:
-#    Generic.select the option from the side menu    Asset Discovery
-#    Generic.Verify your current page location contains     discovery-assets
     OCS.click on the value of IP discovered devices of inside table
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Discovered Assets
@@ -1322,8 +1316,7 @@ Add asset with IP Address under discovered asset list
     Generic.Verify your current page location contains    discovery-asset-details
     OCS.Get MAC_Address by hovering over discovery asset detail page    Mac Address :
     close window
-#    Sleep    ${yop_sleep}
-#    Switch Window       aithentic | Discovered Assets
+    Switch Window       aithentic | Discovered Assets
     Generic.Verify your current page location contains     discovery-assets-list
     TechnologyPage.Click on back to list of technology
     Generic.Verify your current page location contains    ocs
@@ -1346,9 +1339,16 @@ Add asset with IP Address under discovered asset list
     OCS.Click on save button of Add Technology Page
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
     Sleep    ${yop_sleep}
+    Switch Window       aithentic | Asset - Discovery
+    Generic.Verify your current page location contains      ocs
+     OCS.Choose tab under Discovery Assets   agent-discovery
+    Generic.Verify your current page location contains    ocs
+    OCS.click on the value of IP discovered devices of inside table
+    Sleep    ${yop_sleep}
     Switch Window       aithentic | Discovered Assets
-    Generic.Verify your current page location contains      discovery-assets-list
+    Generic.Verify your current page location contains     discovery-assets-list
     Generic.Refresh the existing page
+    OCS.Click on down arrow link on discovery asset list page
     Generic.Verify your current page contains this text    ${generated_AssetID}
     Generic.select the option from the side menu        Technology
     Generic.Verify your current page location contains      technology-list
@@ -1362,7 +1362,7 @@ Add asset with IP Address under discovered asset list
     TechnologyPage.Click on update button of edit_technology page       Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     UnselectAssetAPI.Hit API Endpoint
-#
+
 Add Asset with IP address from Network Discovery Page
     [Tags]    retry
     Generic.click on the tab	Login
@@ -1548,7 +1548,7 @@ Search with containing fields under advance search of component of discovered as
     OCS.Click on newly discovered tab under network discovery
     Generic.Verify your current page location contains    ocs
     OCS.Click on search icon of discovery assets
-    OCS.Enter text to search discovery asset    MSI
+    OCS.Enter text to search discovery asset   Apple Inc
     OCS.Click on the down arrow icon of discovered asset
     OCS.Mark check-box of Agent/Discovered Asset
     OCS.Click on Button inside Network Discovery Page       Add Assets

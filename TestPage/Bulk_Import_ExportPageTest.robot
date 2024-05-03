@@ -438,6 +438,7 @@ Technology Bulk edit
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Select parameter from technology dropdown list      OPMR815277
     TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Renewal Date via technology
     TechnologyPage.Add cost type of technology cost information         Open Ended Contract
     TechnologyPage.Add payment type of technology cost information     FixedPayment
     TechnologyPage.Add payment peroid of technology cost information       Monthly
@@ -460,6 +461,7 @@ Technology Bulk edit
     Bulk_Import_ExportPage.Select the new value of technology group in bulk edit of technology    TechnologyType      Hardware
     Bulk_Import_ExportPage.click on the arrow of product    Product Information     1
     Bulk_Import_ExportPage.Enter the new value of asset id of bulk edit of technology   AssetId
+    Bulk_Import_Exportpage.Enter the new value in last Payment date field of technology bulk import      RenewalDate      03/11/2024
     Bulk_Import_ExportPage.click on the arrow of product    Technology Lifecycle Information     2
     Bulk_Import_ExportPage.Click on the fields and select value from dropdown of technology bulk edit        Status
     Bulk_Import_ExportPage.click on the arrow of product    Technology Lifecycle Information     1
