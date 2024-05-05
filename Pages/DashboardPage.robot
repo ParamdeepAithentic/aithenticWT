@@ -483,7 +483,7 @@ Verify department added
 
 Verify the side option list parameters
    wait until element is visible   ${side_options}      ${wait_time}
-   @{expectedList} =    Create List        Aithentic logo    Dashboard       Messages        Location        Team Members      Partners      Contracts      Technology      Asecure Cloud Login     Asset Discovery
+   @{expectedList} =    Create List        Aithentic logo    Dashboard       Messages        Location        Team Members      Partners      Contracts      Technology      CSPM     Asset Discovery
    ${elements} =  Get WebElements     ${side_options}
    @{actualList} =   Create List
    FOR  ${element}  IN      @{elements}
