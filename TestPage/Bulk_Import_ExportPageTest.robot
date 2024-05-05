@@ -639,7 +639,7 @@ Technology Bulk import
     Bulk_Import_ExportPage.Perform the keyboard action      WarrantyEndDt
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      Comment         Testing
     Bulk_Import_ExportPage.Perform the keyboard action      Comment
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      CostType        Purchased
+    Bulk_Import_Exportpage.Enter the new value in cost type field of technology bulk import      CostType        Rented
     Bulk_Import_ExportPage.Perform the keyboard action      CostType
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      PaymentPartner        testqa 20Feb
     Bulk_Import_ExportPage.Perform the keyboard action      PaymentPartner
@@ -649,7 +649,7 @@ Technology Bulk import
     Bulk_Import_ExportPage.Perform the keyboard action      PaymentPeriod
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      FirstPaymentDate        02/03/2023
     Bulk_Import_ExportPage.Perform the keyboard action      FirstPaymentDate
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      LastPaymentDate       02/03/2024
+    Bulk_Import_Exportpage.Enter the new value in last Payment date field of technology bulk import      LastPaymentDate       02/03/2024
     Bulk_Import_ExportPage.Perform the keyboard action      LastPaymentDate
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      RenewalDate      02/11/2024
     Bulk_Import_ExportPage.Perform the keyboard action      RenewalDate
