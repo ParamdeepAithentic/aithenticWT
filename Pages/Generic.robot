@@ -63,7 +63,7 @@ ${admin_password}       Admin@123
 
 ${browser_name}          firefox
 
-${email}                 testqa29j@mailinator.com       #UAT user
+${email}                 testqa29j@mailinator.com
 
 ${SheetLocationAndName}   LoadTimeSheet.xlsx
 ${SheetTabName}     Load_Time_tracking

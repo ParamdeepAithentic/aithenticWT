@@ -44,7 +44,6 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Create the scheduler
-    [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     LandingPage.Verify you are on dashboard page

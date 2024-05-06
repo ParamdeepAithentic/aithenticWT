@@ -1,118 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Rebot 7.0 (Python 3.11.8 on win32)" generated="2024-04-15T12:50:38.020804" rpa="false" schemaversion="5">
+<robot generator="Rebot 7.0 (Python 3.11.8 on win32)" generated="2024-04-24T14:26:46.203058" rpa="false" schemaversion="5">
 <suite id="s1" name="TestPage" source="D:\aithentic-rfw\TestPage">
-<suite id="s1-s1" name="DashboardPageTest" source="D:\aithentic-rfw\TestPage\DashboardPageTest.robot">
-<test id="s1-s1-t1" name="Verify the drawer list" line="57">
+<suite id="s1-s1" name="Bulk Import ExportPageTest" source="D:\aithentic-rfw\TestPage\Bulk_Import_ExportPageTest.robot">
+<test id="s1-s1-t1" name="Product Bulk import" line="46">
 <kw name="open the browser with the url" owner="Generic" type="SETUP">
 <kw name="Fix the column number" owner="Generic">
 <kw name="Catenate" owner="BuiltIn">
-<msg time="2024-04-15T12:49:15.471551" level="INFO">${pageHeading} = 2</msg>
+<msg time="2024-04-24T14:17:19.211161" level="INFO">${pageHeading} = 2</msg>
 <var>${pageHeading}</var>
 <arg>2</arg>
 <doc>Catenates the given items together and returns the resulted string.</doc>
-<status status="PASS" start="2024-04-15T12:49:15.471551" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-24T14:17:19.211161" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-04-15T12:49:15.471551" level="INFO">${pageHeading} = 2</msg>
+<msg time="2024-04-24T14:17:19.211161" level="INFO">${pageHeading} = 2</msg>
 <arg>${pageHeading}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-04-15T12:49:15.471551" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-24T14:17:19.211161" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-04-15T12:49:15.471551" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-24T14:17:19.211161" elapsed="0.000000"/>
 </kw>
 <kw name="Fix the row number" owner="Generic">
 <kw name="Catenate" owner="BuiltIn">
-<msg time="2024-04-15T12:49:15.471551" level="INFO">${pageTime} = 3</msg>
+<msg time="2024-04-24T14:17:19.211161" level="INFO">${pageTime} = 3</msg>
 <var>${pageTime}</var>
 <arg>3</arg>
 <doc>Catenates the given items together and returns the resulted string.</doc>
-<status status="PASS" start="2024-04-15T12:49:15.471551" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-24T14:17:19.211161" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-04-15T12:49:15.487498" level="INFO">${pageTime} = 3</msg>
+<msg time="2024-04-24T14:17:19.211161" level="INFO">${pageTime} = 3</msg>
 <arg>${pageTime}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-04-15T12:49:15.471551" elapsed="0.015947"/>
+<status status="PASS" start="2024-04-24T14:17:19.211161" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-04-15T12:49:15.471551" elapsed="0.015947"/>
+<status status="PASS" start="2024-04-24T14:17:19.211161" elapsed="0.000000"/>
 </kw>
 <kw name="Get Current Time in Milliseconds" owner="Generic">
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2024-04-15T12:49:15.487498" level="INFO">${time_in_milliseconds} = 1713165555487</msg>
+<msg time="2024-04-24T14:17:19.227058" level="INFO">${time_in_milliseconds} = 1713948439227</msg>
 <var>${time_in_milliseconds}</var>
 <arg>int(time.time() * 1000)</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2024-04-15T12:49:15.487498" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-24T14:17:19.211161" elapsed="0.015897"/>
 </kw>
 <return>
 <value>${time_in_milliseconds}</value>
-<status status="PASS" start="2024-04-15T12:49:15.487498" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-24T14:17:19.227058" elapsed="0.000000"/>
 </return>
-<msg time="2024-04-15T12:49:15.487498" level="INFO">${StartTime1} = 1713165555487</msg>
+<msg time="2024-04-24T14:17:19.227058" level="INFO">${StartTime1} = 1713948439227</msg>
 <var>${StartTime1}</var>
-<status status="PASS" start="2024-04-15T12:49:15.487498" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-24T14:17:19.211161" elapsed="0.015897"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-04-15T12:49:15.487498" level="INFO">Opening browser 'headlessfirefox' to base url 'https://uat-app.aithentic.com/'.</msg>
+<msg time="2024-04-24T14:17:19.227058" level="INFO">Opening browser 'headlessfirefox' to base url 'https://pre-prod-app.aithentic.com'.</msg>
 <arg>${url}</arg>
 <arg>${browser_name}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-04-15T12:49:15.487498" elapsed="19.421449"/>
+<status status="PASS" start="2024-04-24T14:17:19.227058" elapsed="14.480188"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>//a[normalize-space()='Login']</arg>
 <arg>${wait_time}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-15T12:49:34.908947" elapsed="0.039534"/>
+<status status="PASS" start="2024-04-24T14:17:33.707246" elapsed="0.024756"/>
 </kw>
 <kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
 <arg>//a[normalize-space()='Login']</arg>
 <arg>${wait_time}</arg>
 <doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2024-04-15T12:49:34.948481" elapsed="0.011013"/>
+<status status="PASS" start="2024-04-24T14:17:33.732002" elapsed="0.016670"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-04-15T12:49:34.959494" elapsed="0.010298"/>
+<status status="PASS" start="2024-04-24T14:17:33.748672" elapsed="0.000000"/>
 </kw>
 <kw name="Get Current Time in Milliseconds" owner="Generic">
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2024-04-15T12:49:34.969792" level="INFO">${time_in_milliseconds} = 1713165574969</msg>
+<msg time="2024-04-24T14:17:33.748672" level="INFO">${time_in_milliseconds} = 1713948453748</msg>
 <var>${time_in_milliseconds}</var>
 <arg>int(time.time() * 1000)</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2024-04-15T12:49:34.969792" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-24T14:17:33.748672" elapsed="0.000000"/>
 </kw>
 <return>
 <value>${time_in_milliseconds}</value>
-<status status="PASS" start="2024-04-15T12:49:34.969792" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-24T14:17:33.748672" elapsed="0.000000"/>
 </return>
-<msg time="2024-04-15T12:49:34.969792" level="INFO">${EndTime1} = 1713165574969</msg>
+<msg time="2024-04-24T14:17:33.752693" level="INFO">${EndTime1} = 1713948453748</msg>
 <var>${EndTime1}</var>
-<status status="PASS" start="2024-04-15T12:49:34.969792" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-24T14:17:33.748672" elapsed="0.004021"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2024-04-15T12:49:34.969792" level="INFO">${ActualTime} = 19482</msg>
+<msg time="2024-04-24T14:17:33.752693" level="INFO">${ActualTime} = 14521</msg>
 <var>${ActualTime}</var>
 <arg>${EndTime1}-${StartTime1}</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2024-04-15T12:49:34.969792" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-24T14:17:33.752693" elapsed="0.000000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Current Time in Milliseconds: ${ActualTime}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-04-15T12:49:34.969792" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-24T14:17:33.752693" elapsed="0.000000"/>
 </kw>
 <kw name="Calculate Running time" owner="Generic">
 <kw name="Close All Excel Documents" owner="ExcelLibrary">
 <doc>Closes all opened documents.</doc>
-<status status="PASS" start="2024-04-15T12:49:34.969792" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-24T14:17:33.752693" elapsed="0.000000"/>
 </kw>
 <kw name="Open Excel Document" owner="ExcelLibrary">
 <arg>${SheetLocationAndName}</arg>
 <arg>doc_id=1</arg>
 <doc>Opens xlsx document file.</doc>
-<status status="PASS" start="2024-04-15T12:49:34.969792" elapsed="0.040058"/>
+<status status="PASS" start="2024-04-24T14:17:33.752693" elapsed="0.019996"/>
 </kw>
 <kw name="Write Excel Cell" owner="ExcelLibrary">
 <arg>${RowNum_forText}</arg>
@@ -120,7 +120,7 @@
 <arg>${module_name}</arg>
 <arg>${SheetTabName}</arg>
 <doc>Writes value to the cell.</doc>
-<status status="PASS" start="2024-04-15T12:49:35.009850" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-24T14:17:33.772689" elapsed="0.000000"/>
 </kw>
 <kw name="Write Excel Cell" owner="ExcelLibrary">
 <arg>${RowNum}</arg>
@@ -128,16 +128,16 @@
 <arg>${TimeTakenToLoginPage}</arg>
 <arg>${SheetTabName}</arg>
 <doc>Writes value to the cell.</doc>
-<status status="PASS" start="2024-04-15T12:49:35.009850" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-24T14:17:33.772689" elapsed="0.000000"/>
 </kw>
 <kw name="Save Excel Document" owner="ExcelLibrary">
 <arg>${SheetLocationAndName}</arg>
 <doc>Saves the current document to disk.</doc>
-<status status="PASS" start="2024-04-15T12:49:35.009850" elapsed="0.050155"/>
+<status status="PASS" start="2024-04-24T14:17:33.772689" elapsed="0.044102"/>
 </kw>
 <kw name="Close All Excel Documents" owner="ExcelLibrary">
 <doc>Closes all opened documents.</doc>
-<status status="PASS" start="2024-04-15T12:49:35.060005" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-24T14:17:33.816791" elapsed="0.000000"/>
 </kw>
 <arg>2</arg>
 <arg>${pageHeading}</arg>
@@ -146,144 +146,308 @@
 <arg>${pageTime}</arg>
 <arg>${ActualTime}</arg>
 <arg>Load_Time_tracking</arg>
-<status status="PASS" start="2024-04-15T12:49:34.969792" elapsed="0.090213"/>
+<status status="PASS" start="2024-04-24T14:17:33.752693" elapsed="0.064098"/>
 </kw>
-<status status="PASS" start="2024-04-15T12:49:15.471551" elapsed="19.588454"/>
+<status status="PASS" start="2024-04-24T14:17:19.211161" elapsed="14.605630"/>
 </kw>
 <kw name="click on the tab" owner="Generic">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>//a[normalize-space()='${option}']</arg>
 <arg>${wait_time}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-15T12:49:35.070084" elapsed="0.010008"/>
+<status status="PASS" start="2024-04-24T14:17:33.816791" elapsed="0.018452"/>
 </kw>
 <kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
 <arg>//a[normalize-space()='${option}']</arg>
 <arg>${wait_time}</arg>
 <doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2024-04-15T12:49:35.080092" elapsed="0.025253"/>
+<status status="PASS" start="2024-04-24T14:17:33.835243" elapsed="0.009585"/>
 </kw>
 <kw name="Click Link" owner="SeleniumLibrary">
-<msg time="2024-04-15T12:49:35.105345" level="INFO">Clicking link '//a[normalize-space()='Login']'.</msg>
+<msg time="2024-04-24T14:17:33.844828" level="INFO">Clicking link '//a[normalize-space()='Login']'.</msg>
 <arg>//a[normalize-space()='${option}']</arg>
 <doc>Clicks a link identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-15T12:49:35.105345" elapsed="1.339637"/>
+<status status="PASS" start="2024-04-24T14:17:33.844828" elapsed="1.202668"/>
 </kw>
 <arg>Login</arg>
-<status status="PASS" start="2024-04-15T12:49:35.060005" elapsed="1.389986"/>
+<status status="PASS" start="2024-04-24T14:17:33.816791" elapsed="1.230705"/>
 </kw>
 <kw name="Fill the login Form" owner="LandingPage">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${Kc_username}</arg>
 <arg>${wait_time}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-15T12:49:36.449991" elapsed="0.015173"/>
+<status status="PASS" start="2024-04-24T14:17:35.047496" elapsed="0.044097"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-04-15T12:49:36.465164" level="INFO">Typing text 'testqa29j@mailinator.com' into text field 'css:#username'.</msg>
+<msg time="2024-04-24T14:17:35.091593" level="INFO">Typing text 'testqa29j@mailinator.com' into text field 'css:#username'.</msg>
 <arg>${Kc_username}</arg>
 <arg>${email}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-15T12:49:36.465164" elapsed="0.020329"/>
+<status status="PASS" start="2024-04-24T14:17:35.091593" elapsed="0.013055"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${Kc_password}</arg>
 <arg>${wait_time}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-15T12:49:36.485493" elapsed="0.020947"/>
+<status status="PASS" start="2024-04-24T14:17:35.104648" elapsed="0.012729"/>
 </kw>
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2024-04-15T12:49:36.506440" level="INFO">Typing password into text field 'css:#password'.</msg>
-<msg time="2024-04-15T12:49:36.512447" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2024-04-24T14:17:35.117377" level="INFO">Typing password into text field 'css:#password'.</msg>
+<msg time="2024-04-24T14:17:35.121428" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>${Kc_password}</arg>
 <arg>${valid_password}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-15T12:49:36.506440" elapsed="0.010025"/>
+<status status="PASS" start="2024-04-24T14:17:35.117377" elapsed="0.008048"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-04-15T12:49:36.516465" level="INFO">Clicking button 'css:#kc-login'.</msg>
+<msg time="2024-04-24T14:17:35.129424" level="INFO">Clicking button 'css:#kc-login'.</msg>
 <arg>${Kc_loginBtn}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-15T12:49:36.516465" elapsed="1.314280"/>
+<status status="PASS" start="2024-04-24T14:17:35.129424" elapsed="1.006151"/>
 </kw>
 <arg>${email}</arg>
 <arg>${valid_password}</arg>
-<status status="PASS" start="2024-04-15T12:49:36.449991" elapsed="1.380754"/>
+<status status="PASS" start="2024-04-24T14:17:35.047496" elapsed="1.088079"/>
 </kw>
 <kw name="Verify you are on dashboard page" owner="LandingPage">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:19:36.192830" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="0-selenium-screenshot-1.png"&gt;&lt;img src="0-selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-04-24T14:19:36.192830" level="FAIL">Element '//div[normalize-space()='End of life']' not visible after 2 minutes.</msg>
 <arg>//div[normalize-space()='End of life']</arg>
 <arg>${wait_time}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-15T12:49:37.830745" elapsed="12.546947"/>
+<status status="FAIL" start="2024-04-24T14:17:36.135575" elapsed="120.057255">Element '//div[normalize-space()='End of life']' not visible after 2 minutes.</status>
 </kw>
 <kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
 <arg>//div[normalize-space()='End of life']</arg>
 <arg>${wait_time}</arg>
 <doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2024-04-15T12:49:50.377692" elapsed="0.021933"/>
+<status status="NOT RUN" start="2024-04-24T14:19:36.192830" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-04-15T12:49:37.830745" elapsed="12.569877"/>
-</kw>
-<kw name="Get Current Time in Milliseconds" owner="Generic">
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2024-04-15T12:49:50.402615" level="INFO">${time_in_milliseconds} = 1713165590401</msg>
-<var>${time_in_milliseconds}</var>
-<arg>int(time.time() * 1000)</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2024-04-15T12:49:50.401618" elapsed="0.000997"/>
-</kw>
-<return>
-<value>${time_in_milliseconds}</value>
-<status status="PASS" start="2024-04-15T12:49:50.402615" elapsed="0.000000"/>
-</return>
-<msg time="2024-04-15T12:49:50.402615" level="INFO">${StartTime1} = 1713165590401</msg>
-<var>${StartTime1}</var>
-<status status="PASS" start="2024-04-15T12:49:50.400622" elapsed="0.001993"/>
+<status status="FAIL" start="2024-04-24T14:17:36.135575" elapsed="120.057255">Element '//div[normalize-space()='End of life']' not visible after 2 minutes.</status>
 </kw>
 <kw name="Verify your current page location contains" owner="Generic">
-<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
-<arg>${verifyOption}</arg>
-<arg>${wait_time}</arg>
-<doc>Waits until the current URL contains ``expected``.</doc>
-<status status="PASS" start="2024-04-15T12:49:50.404610" elapsed="0.002988"/>
+<arg>management-console</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:36.192830" elapsed="0.000000"/>
 </kw>
-<arg>home</arg>
-<status status="PASS" start="2024-04-15T12:49:50.403611" elapsed="0.004985"/>
+<kw name="Click on the profile name" owner="Generic">
+<status status="NOT RUN" start="2024-04-24T14:19:36.192830" elapsed="0.000000"/>
+</kw>
+<kw name="Select option from profile list" owner="Generic">
+<arg>product-dropdown</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:36.192830" elapsed="0.000000"/>
+</kw>
+<kw name="Verify your current page location contains" owner="Generic">
+<arg>product</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:36.192830" elapsed="0.000000"/>
+</kw>
+<kw name="Click on action button" owner="DashboardPage">
+<status status="NOT RUN" start="2024-04-24T14:19:36.192830" elapsed="0.000000"/>
+</kw>
+<kw name="Select the option from action menu" owner="DashboardPage">
+<arg>import</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:36.192830" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>${yop_sleep}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-04-24T14:19:36.192830" elapsed="0.000000"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>aithentic | Add - Products</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="NOT RUN" start="2024-04-24T14:19:36.192830" elapsed="0.000000"/>
+</kw>
+<kw name="Verify your current page location contains" owner="Generic">
+<arg>add-product-grid</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:36.192830" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the value in the product name column in bulk_import" owner="Bulk_Import_ExportPage">
+<arg>ProductName</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:36.192830" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the brand name column in bulk_import" owner="Bulk_Import_ExportPage">
+<arg>Brand</arg>
+<arg>QABrand555</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:36.192830" elapsed="0.000000"/>
+</kw>
+<kw name="Select option from status column in bulk_import" owner="Bulk_Import_ExportPage">
+<arg>ProductStatus</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:36.192830" elapsed="0.000000"/>
+</kw>
+<kw name="Select option from technology type column in bulk_import" owner="Bulk_Import_ExportPage">
+<arg>TechType</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:36.192830" elapsed="0.000000"/>
+</kw>
+<kw name="Select option from technology group column in bulk_import" owner="Bulk_Import_ExportPage">
+<arg>TechGroup</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:36.192830" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the value in the product_description column in bulk_import" owner="Bulk_Import_ExportPage">
+<arg>ProductDescription</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:36.192830" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the value in the product_feature column in bulk_import" owner="Bulk_Import_ExportPage">
+<arg>ProductFeatures</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:36.192830" elapsed="0.000000"/>
+</kw>
+<kw name="click on the button" owner="Generic">
+<arg>Check Data</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:36.192830" elapsed="0.000000"/>
+</kw>
+<kw name="click on the button" owner="Generic">
+<arg>Upload</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:36.192830" elapsed="0.000000"/>
+</kw>
+<kw name="Verify the upload message text" owner="Bulk_Import_ExportPage">
+<arg>Upload</arg>
+<arg>Upload Successful</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:36.192830" elapsed="0.000000"/>
+</kw>
+<kw name="click on the button" owner="Generic">
+<arg>Finish</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:36.192830" elapsed="0.000000"/>
+</kw>
+<kw name="Click on I_m_done button when popup appears" owner="Bulk_Import_ExportPage">
+<arg>no-im-done</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:36.192830" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>${yop_sleep}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-04-24T14:19:36.192830" elapsed="0.000000"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>aithentic | Product - List</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="NOT RUN" start="2024-04-24T14:19:36.192830" elapsed="0.000000"/>
+</kw>
+<kw name="Verify product added using bulk_import_export" owner="Bulk_Import_ExportPage">
+<arg>${generated_addProductName}</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:36.192830" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser session" owner="Generic" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-04-24T14:19:36.192830" elapsed="2.632955"/>
+</kw>
+<status status="PASS" start="2024-04-24T14:19:36.192830" elapsed="2.632955"/>
+</kw>
+<tag>Sanity</tag>
+<status status="FAIL" start="2024-04-24T14:17:19.211161" elapsed="139.614624">Element '//div[normalize-space()='End of life']' not visible after 2 minutes.</status>
+</test>
+<test id="s1-s1-t2" name="Product Bulk Edit" line="76">
+<kw name="open the browser with the url" owner="Generic" type="SETUP">
+<kw name="Fix the column number" owner="Generic">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2024-04-24T14:17:19.211161" level="INFO">${pageHeading} = 2</msg>
+<var>${pageHeading}</var>
+<arg>2</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2024-04-24T14:17:19.211161" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-24T14:17:19.211161" level="INFO">${pageHeading} = 2</msg>
+<arg>${pageHeading}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-24T14:17:19.211161" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-04-24T14:17:19.211161" elapsed="0.000000"/>
+</kw>
+<kw name="Fix the row number" owner="Generic">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2024-04-24T14:17:19.211161" level="INFO">${pageTime} = 3</msg>
+<var>${pageTime}</var>
+<arg>3</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2024-04-24T14:17:19.211161" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-24T14:17:19.211161" level="INFO">${pageTime} = 3</msg>
+<arg>${pageTime}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-24T14:17:19.211161" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-04-24T14:17:19.211161" elapsed="0.000000"/>
 </kw>
 <kw name="Get Current Time in Milliseconds" owner="Generic">
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2024-04-15T12:49:50.410588" level="INFO">${time_in_milliseconds} = 1713165590410</msg>
+<msg time="2024-04-24T14:17:19.227058" level="INFO">${time_in_milliseconds} = 1713948439227</msg>
 <var>${time_in_milliseconds}</var>
 <arg>int(time.time() * 1000)</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2024-04-15T12:49:50.409591" elapsed="0.000997"/>
+<status status="PASS" start="2024-04-24T14:17:19.227058" elapsed="0.000000"/>
 </kw>
 <return>
 <value>${time_in_milliseconds}</value>
-<status status="PASS" start="2024-04-15T12:49:50.410588" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-24T14:17:19.227058" elapsed="0.000000"/>
 </return>
-<msg time="2024-04-15T12:49:50.410588" level="INFO">${EndTime1} = 1713165590410</msg>
+<msg time="2024-04-24T14:17:19.227058" level="INFO">${StartTime1} = 1713948439227</msg>
+<var>${StartTime1}</var>
+<status status="PASS" start="2024-04-24T14:17:19.211161" elapsed="0.015897"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:17:19.227058" level="INFO">Opening browser 'headlessfirefox' to base url 'https://pre-prod-app.aithentic.com'.</msg>
+<arg>${url}</arg>
+<arg>${browser_name}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-04-24T14:17:19.227058" elapsed="10.532079"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Login']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T14:17:29.759137" elapsed="0.020110"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Login']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-04-24T14:17:29.789254" elapsed="0.009998"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-04-24T14:17:29.799252" elapsed="0.000000"/>
+</kw>
+<kw name="Get Current Time in Milliseconds" owner="Generic">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-24T14:17:29.809245" level="INFO">${time_in_milliseconds} = 1713948449809</msg>
+<var>${time_in_milliseconds}</var>
+<arg>int(time.time() * 1000)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-24T14:17:29.799252" elapsed="0.009993"/>
+</kw>
+<return>
+<value>${time_in_milliseconds}</value>
+<status status="PASS" start="2024-04-24T14:17:29.809245" elapsed="0.000000"/>
+</return>
+<msg time="2024-04-24T14:17:29.809245" level="INFO">${EndTime1} = 1713948449809</msg>
 <var>${EndTime1}</var>
-<status status="PASS" start="2024-04-15T12:49:50.408596" elapsed="0.001992"/>
+<status status="PASS" start="2024-04-24T14:17:29.799252" elapsed="0.009993"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2024-04-15T12:49:50.412091" level="INFO">${ActualTime} = 9</msg>
+<msg time="2024-04-24T14:17:29.809245" level="INFO">${ActualTime} = 10582</msg>
 <var>${ActualTime}</var>
 <arg>${EndTime1}-${StartTime1}</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2024-04-15T12:49:50.411585" elapsed="0.000506"/>
+<status status="PASS" start="2024-04-24T14:17:29.809245" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Current Time in Milliseconds: ${ActualTime}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-24T14:17:29.809245" elapsed="0.000000"/>
 </kw>
 <kw name="Calculate Running time" owner="Generic">
 <kw name="Close All Excel Documents" owner="ExcelLibrary">
 <doc>Closes all opened documents.</doc>
-<status status="PASS" start="2024-04-15T12:49:50.413248" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-24T14:17:29.809245" elapsed="0.000000"/>
 </kw>
 <kw name="Open Excel Document" owner="ExcelLibrary">
 <arg>${SheetLocationAndName}</arg>
 <arg>doc_id=1</arg>
 <doc>Opens xlsx document file.</doc>
-<status status="PASS" start="2024-04-15T12:49:50.413248" elapsed="0.050562"/>
+<status status="PASS" start="2024-04-24T14:17:29.809245" elapsed="0.019996"/>
 </kw>
 <kw name="Write Excel Cell" owner="ExcelLibrary">
 <arg>${RowNum_forText}</arg>
@@ -291,7 +455,7 @@
 <arg>${module_name}</arg>
 <arg>${SheetTabName}</arg>
 <doc>Writes value to the cell.</doc>
-<status status="PASS" start="2024-04-15T12:49:50.463810" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-24T14:17:29.829241" elapsed="0.000000"/>
 </kw>
 <kw name="Write Excel Cell" owner="ExcelLibrary">
 <arg>${RowNum}</arg>
@@ -299,204 +463,3133 @@
 <arg>${TimeTakenToLoginPage}</arg>
 <arg>${SheetTabName}</arg>
 <doc>Writes value to the cell.</doc>
-<status status="PASS" start="2024-04-15T12:49:50.467314" elapsed="0.000997"/>
+<status status="PASS" start="2024-04-24T14:17:29.829241" elapsed="0.000000"/>
 </kw>
 <kw name="Save Excel Document" owner="ExcelLibrary">
 <arg>${SheetLocationAndName}</arg>
 <doc>Saves the current document to disk.</doc>
-<status status="PASS" start="2024-04-15T12:49:50.469307" elapsed="0.107548"/>
+<status status="PASS" start="2024-04-24T14:17:29.829241" elapsed="0.029987"/>
 </kw>
 <kw name="Close All Excel Documents" owner="ExcelLibrary">
 <doc>Closes all opened documents.</doc>
-<status status="PASS" start="2024-04-15T12:49:50.577851" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-24T14:17:29.859228" elapsed="0.000000"/>
 </kw>
-<arg>24</arg>
+<arg>2</arg>
 <arg>${pageHeading}</arg>
-<arg>Page Load - Total Page Load Time of Home Page after login</arg>
-<arg>24</arg>
+<arg>Generic - open the browser with the url</arg>
+<arg>2</arg>
 <arg>${pageTime}</arg>
 <arg>${ActualTime}</arg>
-<arg>PageLoad_Time</arg>
-<status status="PASS" start="2024-04-15T12:49:50.412091" elapsed="0.165760"/>
+<arg>Load_Time_tracking</arg>
+<status status="PASS" start="2024-04-24T14:17:29.809245" elapsed="0.049983"/>
 </kw>
-<kw name="select the option from the side menu" owner="Generic">
+<status status="PASS" start="2024-04-24T14:17:19.211161" elapsed="10.648067"/>
+</kw>
+<kw name="click on the tab" owner="Generic">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>//li[@title='${option}']</arg>
+<arg>//a[normalize-space()='${option}']</arg>
 <arg>${wait_time}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-15T12:49:50.579845" elapsed="0.017941"/>
+<status status="PASS" start="2024-04-24T14:17:29.859228" elapsed="0.016503"/>
 </kw>
 <kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
-<arg>//li[@title='${option}']</arg>
+<arg>//a[normalize-space()='${option}']</arg>
 <arg>${wait_time}</arg>
 <doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2024-04-15T12:49:50.598787" elapsed="0.014949"/>
+<status status="PASS" start="2024-04-24T14:17:29.875731" elapsed="0.013521"/>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-15T12:49:50.614240" level="INFO">Clicking element '//li[@title='Dashboard']'.</msg>
-<arg>//li[@title='${option}']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-15T12:49:50.614240" elapsed="0.245379"/>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:17:29.889252" level="INFO">Clicking link '//a[normalize-space()='Login']'.</msg>
+<arg>//a[normalize-space()='${option}']</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T14:17:29.889252" elapsed="1.566145"/>
 </kw>
-<arg>Dashboard</arg>
-<status status="PASS" start="2024-04-15T12:49:50.578849" elapsed="0.280770"/>
+<arg>Login</arg>
+<status status="PASS" start="2024-04-24T14:17:29.859228" elapsed="1.596169"/>
 </kw>
-<kw name="Verify your current page location contains" owner="Generic">
-<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
-<arg>${verifyOption}</arg>
-<arg>${wait_time}</arg>
-<doc>Waits until the current URL contains ``expected``.</doc>
-<status status="PASS" start="2024-04-15T12:49:50.860616" elapsed="0.007215"/>
-</kw>
-<arg>dashboard</arg>
-<status status="PASS" start="2024-04-15T12:49:50.860616" elapsed="0.008212"/>
-</kw>
-<kw name="Verify the drawer list parameters" owner="DashboardPage">
+<kw name="Fill the login Form" owner="LandingPage">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${drawerList}</arg>
+<arg>${Kc_username}</arg>
 <arg>${wait_time}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-15T12:49:50.869825" elapsed="0.017928"/>
+<status status="PASS" start="2024-04-24T14:17:31.455397" elapsed="0.018040"/>
 </kw>
-<kw name="Create List" owner="BuiltIn">
-<msg time="2024-04-15T12:49:50.888750" level="INFO">@{expectedList} = [ Management Console | Account Overview | Asset Overview | IT Performances | Subscription ]</msg>
-<var>@{expectedList}</var>
-<arg>Management Console</arg>
-<arg>Account Overview</arg>
-<arg>Asset Overview</arg>
-<arg>IT Performances</arg>
-<arg>Subscription</arg>
-<doc>Returns a list containing given items.</doc>
-<status status="PASS" start="2024-04-15T12:49:50.887753" elapsed="0.000997"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:17:31.473437" level="INFO">Typing text 'testqa29j@mailinator.com' into text field 'css:#username'.</msg>
+<arg>${Kc_username}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T14:17:31.473437" elapsed="0.020031"/>
 </kw>
-<kw name="Get WebElements" owner="SeleniumLibrary">
-<msg time="2024-04-15T12:49:50.893733" level="INFO">${elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="cadcb57d-65f5-49d4-9be4-808689ab6649", element="501cb774-8762-4335-a92e-eb0392f1a734")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (s...</msg>
-<var>${elements}</var>
-<arg>${drawerList}</arg>
-<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
-<status status="PASS" start="2024-04-15T12:49:50.888750" elapsed="0.004983"/>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Kc_password}</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T14:17:31.493468" elapsed="0.014394"/>
 </kw>
-<kw name="Create List" owner="BuiltIn">
-<msg time="2024-04-15T12:49:50.894736" level="INFO">@{actualList} = [ ]</msg>
-<var>@{actualList}</var>
-<doc>Returns a list containing given items.</doc>
-<status status="PASS" start="2024-04-15T12:49:50.894736" elapsed="0.000000"/>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:17:31.507862" level="INFO">Typing password into text field 'css:#password'.</msg>
+<msg time="2024-04-24T14:17:31.544470" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${Kc_password}</arg>
+<arg>${valid_password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T14:17:31.507862" elapsed="0.044597"/>
 </kw>
-<for flavor="IN">
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${element.text}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-04-15T12:49:50.895726" elapsed="0.028421"/>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:17:31.552459" level="INFO">Clicking button 'css:#kc-login'.</msg>
+<arg>${Kc_loginBtn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T14:17:31.552459" elapsed="1.063898"/>
 </kw>
-<kw name="Append To List" owner="Collections">
-<arg>${actualList}</arg>
-<arg>${element.text}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-04-15T12:49:50.925142" elapsed="0.021928"/>
+<arg>${email}</arg>
+<arg>${valid_password}</arg>
+<status status="PASS" start="2024-04-24T14:17:31.455397" elapsed="1.160960"/>
 </kw>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cadcb57d-65f5-49d4-9be4-808689ab6649", element="501cb774-8762-4335-a92e-eb0392f1a734")&gt;</var>
-<status status="PASS" start="2024-04-15T12:49:50.895726" elapsed="0.051344"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${element.text}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-04-15T12:49:50.948067" elapsed="0.032415"/>
+<kw name="Verify you are on dashboard page" owner="LandingPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:19:32.710187" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="1-selenium-screenshot-1.png"&gt;&lt;img src="1-selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-04-24T14:19:32.710187" level="FAIL">Element '//div[normalize-space()='End of life']' not visible after 2 minutes.</msg>
+<arg>//div[normalize-space()='End of life']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-04-24T14:17:32.616357" elapsed="120.093830">Element '//div[normalize-space()='End of life']' not visible after 2 minutes.</status>
 </kw>
-<kw name="Append To List" owner="Collections">
-<arg>${actualList}</arg>
-<arg>${element.text}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-04-15T12:49:50.981478" elapsed="0.021926"/>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>//div[normalize-space()='End of life']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
 </kw>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cadcb57d-65f5-49d4-9be4-808689ab6649", element="6df8e9e9-dcb3-4c65-96f9-4ffb86a0f79f")&gt;</var>
-<status status="PASS" start="2024-04-15T12:49:50.947070" elapsed="0.056334"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${element.text}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-04-15T12:49:51.004401" elapsed="0.034403"/>
+<status status="FAIL" start="2024-04-24T14:17:32.616357" elapsed="120.093830">Element '//div[normalize-space()='End of life']' not visible after 2 minutes.</status>
 </kw>
-<kw name="Append To List" owner="Collections">
-<arg>${actualList}</arg>
-<arg>${element.text}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-04-15T12:49:51.038804" elapsed="0.022928"/>
+<kw name="Verify your current page location contains" owner="Generic">
+<arg>management-console</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
 </kw>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cadcb57d-65f5-49d4-9be4-808689ab6649", element="b398ae16-96e5-4559-925b-1fef5783512d")&gt;</var>
-<status status="PASS" start="2024-04-15T12:49:51.003404" elapsed="0.058328"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${element.text}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-04-15T12:49:51.062729" elapsed="0.024942"/>
+<kw name="Click on the profile name" owner="Generic">
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
 </kw>
-<kw name="Append To List" owner="Collections">
-<arg>${actualList}</arg>
-<arg>${element.text}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-04-15T12:49:51.088667" elapsed="0.024923"/>
+<kw name="Select option from profile list" owner="Generic">
+<arg>product-dropdown</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
 </kw>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cadcb57d-65f5-49d4-9be4-808689ab6649", element="a707f9be-896b-4aa1-97e9-bb78aa0b251e")&gt;</var>
-<status status="PASS" start="2024-04-15T12:49:51.061732" elapsed="0.051858"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${element.text}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-04-15T12:49:51.114586" elapsed="0.031416"/>
+<kw name="Verify your current page location contains" owner="Generic">
+<arg>product</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
 </kw>
-<kw name="Append To List" owner="Collections">
-<arg>${actualList}</arg>
-<arg>${element.text}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-04-15T12:49:51.146998" elapsed="0.023520"/>
+<kw name="Click on action button" owner="DashboardPage">
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
 </kw>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cadcb57d-65f5-49d4-9be4-808689ab6649", element="3ed053c2-9c2e-462a-8279-a5f5c0153869")&gt;</var>
-<status status="PASS" start="2024-04-15T12:49:51.114586" elapsed="0.055932"/>
-</iter>
-<var>${element}</var>
-<value>@{elements}</value>
-<status status="PASS" start="2024-04-15T12:49:50.894736" elapsed="0.275782"/>
-</for>
-<kw name="Lists Should Be Equal" owner="Collections">
-<msg time="2024-04-15T12:49:51.171514" level="INFO">False</msg>
-<arg>${expectedList}</arg>
-<arg>${actualList}</arg>
-<doc>Fails if given lists are unequal.</doc>
-<status status="PASS" start="2024-04-15T12:49:51.170518" elapsed="0.000996"/>
+<kw name="Select the option from action menu" owner="DashboardPage">
+<arg>import</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-04-15T12:49:50.868828" elapsed="0.302686"/>
+<kw name="Sleep" owner="BuiltIn">
+<arg>${yop_sleep}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>aithentic | Add - Products</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
+</kw>
+<kw name="Verify your current page location contains" owner="Generic">
+<arg>add-product-grid</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the value in the product name column in bulk_import" owner="Bulk_Import_ExportPage">
+<arg>ProductName</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the brand name column in bulk_import" owner="Bulk_Import_ExportPage">
+<arg>Brand</arg>
+<arg>QABrand555</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
+</kw>
+<kw name="Select option from status column in bulk_import" owner="Bulk_Import_ExportPage">
+<arg>ProductStatus</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
+</kw>
+<kw name="Select option from technology type column in bulk_import" owner="Bulk_Import_ExportPage">
+<arg>TechType</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
+</kw>
+<kw name="Select option from technology group column in bulk_import" owner="Bulk_Import_ExportPage">
+<arg>TechGroup</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the value in the product_description column in bulk_import" owner="Bulk_Import_ExportPage">
+<arg>ProductDescription</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the value in the product_feature column in bulk_import" owner="Bulk_Import_ExportPage">
+<arg>ProductFeatures</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
+</kw>
+<kw name="click on the button" owner="Generic">
+<arg>Check Data</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
+</kw>
+<kw name="click on the button" owner="Generic">
+<arg>Upload</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
+</kw>
+<kw name="Verify the upload message text" owner="Bulk_Import_ExportPage">
+<arg>Upload</arg>
+<arg>Upload Successful</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
+</kw>
+<kw name="click on the button" owner="Generic">
+<arg>Finish</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
+</kw>
+<kw name="Click on I_m_done button when popup appears" owner="Bulk_Import_ExportPage">
+<arg>no-im-done</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>aithentic | Product - List</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
+</kw>
+<kw name="Verify product added using bulk_import_export" owner="Bulk_Import_ExportPage">
+<arg>${generated_addProductName}</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
+</kw>
+<kw name="Click on action button" owner="DashboardPage">
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
+</kw>
+<kw name="Select the option from action menu" owner="DashboardPage">
+<arg>edit</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>${yop_sleep}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>aithentic | Edit - Products</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
+</kw>
+<kw name="Verify your current page location contains" owner="Generic">
+<arg>product-bulk-edit</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the product name column in bulk_edit" owner="Bulk_Import_ExportPage">
+<arg>ProductId</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the brand name column in bulk_edit" owner="Bulk_Import_ExportPage">
+<arg>BrandName</arg>
+<arg>QABrand555</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
+</kw>
+<kw name="Select option from status column in bulk_edit" owner="Bulk_Import_ExportPage">
+<arg>ProductStatus</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
+</kw>
+<kw name="Select option from technology type column in bulk_edit" owner="Bulk_Import_ExportPage">
+<arg>TechType</arg>
+<arg>1</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
+</kw>
+<kw name="click on the button" owner="Generic">
+<arg>Check Data</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
+</kw>
+<kw name="click on the button" owner="Generic">
+<arg>Update</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
+</kw>
+<kw name="Confirm the exit import process pop appers" owner="MemberPage">
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
+</kw>
+<kw name="click on the button" owner="Generic">
+<arg>Confirm</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
+</kw>
+<kw name="Verify the upload message text" owner="Bulk_Import_ExportPage">
+<arg>Upload</arg>
+<arg>Upload Successful</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
+</kw>
+<kw name="click on the button" owner="Generic">
+<arg>Finish</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
+</kw>
+<kw name="Click on the confirm button of finish pop up" owner="Bulk_Import_ExportPage">
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>${yop_sleep}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>aithentic | Product - List</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
+</kw>
+<kw name="Click on Refresh icon of product-list page" owner="Bulk_Import_ExportPage">
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
+</kw>
+<kw name="Verify product added using bulk_import_export" owner="Bulk_Import_ExportPage">
+<arg>${generated_EditProductName}</arg>
+<status status="NOT RUN" start="2024-04-24T14:19:32.710187" elapsed="0.000000"/>
 </kw>
 <kw name="Close Browser session" owner="Generic" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-04-15T12:49:51.172511" elapsed="3.298047"/>
+<status status="PASS" start="2024-04-24T14:19:32.721694" elapsed="2.425505"/>
 </kw>
-<status status="PASS" start="2024-04-15T12:49:51.172511" elapsed="3.298047"/>
+<status status="PASS" start="2024-04-24T14:19:32.721694" elapsed="2.425505"/>
 </kw>
-<tag>Time</tag>
-<status status="PASS" start="2024-04-15T12:49:15.471551" elapsed="38.999007"/>
+<tag>Sanity</tag>
+<status status="FAIL" start="2024-04-24T14:17:19.211161" elapsed="135.936038">Element '//div[normalize-space()='End of life']' not visible after 2 minutes.</status>
 </test>
-<doc>Contains all test cases of Dashboard page</doc>
-<status status="PASS" start="2024-04-15T12:49:13.945000" elapsed="40.524634"/>
+<test id="s1-s1-t3" name="Location Bulk Edit" line="265">
+<kw name="open the browser with the url" owner="Generic" type="SETUP">
+<kw name="Fix the column number" owner="Generic">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2024-04-24T14:19:40.687799" level="INFO">${pageHeading} = 2</msg>
+<var>${pageHeading}</var>
+<arg>2</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2024-04-24T14:19:40.687799" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-24T14:19:40.687799" level="INFO">${pageHeading} = 2</msg>
+<arg>${pageHeading}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-24T14:19:40.687799" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-04-24T14:19:40.687799" elapsed="0.000000"/>
+</kw>
+<kw name="Fix the row number" owner="Generic">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2024-04-24T14:19:40.687799" level="INFO">${pageTime} = 3</msg>
+<var>${pageTime}</var>
+<arg>3</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2024-04-24T14:19:40.687799" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-24T14:19:40.687799" level="INFO">${pageTime} = 3</msg>
+<arg>${pageTime}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-24T14:19:40.687799" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-04-24T14:19:40.687799" elapsed="0.000000"/>
+</kw>
+<kw name="Get Current Time in Milliseconds" owner="Generic">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-24T14:19:40.687799" level="INFO">${time_in_milliseconds} = 1713948580687</msg>
+<var>${time_in_milliseconds}</var>
+<arg>int(time.time() * 1000)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-24T14:19:40.687799" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${time_in_milliseconds}</value>
+<status status="PASS" start="2024-04-24T14:19:40.687799" elapsed="0.000000"/>
+</return>
+<msg time="2024-04-24T14:19:40.687799" level="INFO">${StartTime1} = 1713948580687</msg>
+<var>${StartTime1}</var>
+<status status="PASS" start="2024-04-24T14:19:40.687799" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:19:40.687799" level="INFO">Opening browser 'headlessfirefox' to base url 'https://pre-prod-app.aithentic.com'.</msg>
+<arg>${url}</arg>
+<arg>${browser_name}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-04-24T14:19:40.687799" elapsed="10.160303"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Login']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T14:19:50.848102" elapsed="0.020108"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Login']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-04-24T14:19:50.868210" elapsed="0.025162"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-04-24T14:19:50.893372" elapsed="0.005004"/>
+</kw>
+<kw name="Get Current Time in Milliseconds" owner="Generic">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-24T14:19:50.898376" level="INFO">${time_in_milliseconds} = 1713948590898</msg>
+<var>${time_in_milliseconds}</var>
+<arg>int(time.time() * 1000)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-24T14:19:50.898376" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${time_in_milliseconds}</value>
+<status status="PASS" start="2024-04-24T14:19:50.898376" elapsed="0.000000"/>
+</return>
+<msg time="2024-04-24T14:19:50.898376" level="INFO">${EndTime1} = 1713948590898</msg>
+<var>${EndTime1}</var>
+<status status="PASS" start="2024-04-24T14:19:50.898376" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-24T14:19:50.898376" level="INFO">${ActualTime} = 10211</msg>
+<var>${ActualTime}</var>
+<arg>${EndTime1}-${StartTime1}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-24T14:19:50.898376" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Current Time in Milliseconds: ${ActualTime}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-24T14:19:50.898376" elapsed="0.000000"/>
+</kw>
+<kw name="Calculate Running time" owner="Generic">
+<kw name="Close All Excel Documents" owner="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="PASS" start="2024-04-24T14:19:50.898376" elapsed="0.000000"/>
+</kw>
+<kw name="Open Excel Document" owner="ExcelLibrary">
+<arg>${SheetLocationAndName}</arg>
+<arg>doc_id=1</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="PASS" start="2024-04-24T14:19:50.898376" elapsed="0.020005"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${RowNum_forText}</arg>
+<arg>${ColumnNum_forText}</arg>
+<arg>${module_name}</arg>
+<arg>${SheetTabName}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="PASS" start="2024-04-24T14:19:50.918381" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${RowNum}</arg>
+<arg>${ColumnNum}</arg>
+<arg>${TimeTakenToLoginPage}</arg>
+<arg>${SheetTabName}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="PASS" start="2024-04-24T14:19:50.918381" elapsed="0.000000"/>
+</kw>
+<kw name="Save Excel Document" owner="ExcelLibrary">
+<arg>${SheetLocationAndName}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="PASS" start="2024-04-24T14:19:50.918381" elapsed="0.040067"/>
+</kw>
+<kw name="Close All Excel Documents" owner="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="PASS" start="2024-04-24T14:19:50.958448" elapsed="0.000000"/>
+</kw>
+<arg>2</arg>
+<arg>${pageHeading}</arg>
+<arg>Generic - open the browser with the url</arg>
+<arg>2</arg>
+<arg>${pageTime}</arg>
+<arg>${ActualTime}</arg>
+<arg>Load_Time_tracking</arg>
+<status status="PASS" start="2024-04-24T14:19:50.898376" elapsed="0.060072"/>
+</kw>
+<status status="PASS" start="2024-04-24T14:19:40.687799" elapsed="10.270649"/>
+</kw>
+<kw name="click on the tab" owner="Generic">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='${option}']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T14:19:50.958448" elapsed="0.010734"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='${option}']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-04-24T14:19:50.969182" elapsed="0.019504"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:19:50.988686" level="INFO">Clicking link '//a[normalize-space()='Login']'.</msg>
+<arg>//a[normalize-space()='${option}']</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T14:19:50.988686" elapsed="1.272698"/>
+</kw>
+<arg>Login</arg>
+<status status="PASS" start="2024-04-24T14:19:50.958448" elapsed="1.302936"/>
+</kw>
+<kw name="Fill the login Form" owner="LandingPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Kc_username}</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T14:19:52.261384" elapsed="0.008004"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:19:52.279391" level="INFO">Typing text 'testqa29j@mailinator.com' into text field 'css:#username'.</msg>
+<arg>${Kc_username}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T14:19:52.279391" elapsed="0.020003"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Kc_password}</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T14:19:52.299394" elapsed="0.015356"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:19:52.314750" level="INFO">Typing password into text field 'css:#password'.</msg>
+<msg time="2024-04-24T14:19:52.320915" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${Kc_password}</arg>
+<arg>${valid_password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T14:19:52.314750" elapsed="0.014176"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:19:52.328926" level="INFO">Clicking button 'css:#kc-login'.</msg>
+<arg>${Kc_loginBtn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T14:19:52.328926" elapsed="1.019110"/>
+</kw>
+<arg>${email}</arg>
+<arg>${valid_password}</arg>
+<status status="PASS" start="2024-04-24T14:19:52.261384" elapsed="1.086652"/>
+</kw>
+<kw name="Verify you are on dashboard page" owner="LandingPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:21:53.479280" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="2-selenium-screenshot-1.png"&gt;&lt;img src="2-selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-04-24T14:21:53.479280" level="FAIL">Element '//div[normalize-space()='End of life']' not visible after 2 minutes.</msg>
+<arg>//div[normalize-space()='End of life']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-04-24T14:19:53.348036" elapsed="120.131244">Element '//div[normalize-space()='End of life']' not visible after 2 minutes.</status>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>//div[normalize-space()='End of life']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="NOT RUN" start="2024-04-24T14:21:53.479280" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-04-24T14:19:53.348036" elapsed="120.131244">Element '//div[normalize-space()='End of life']' not visible after 2 minutes.</status>
+</kw>
+<kw name="Verify your current page location contains" owner="Generic">
+<arg>management-console</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.479280" elapsed="0.000000"/>
+</kw>
+<kw name="select the option from the side menu" owner="Generic">
+<arg>Location</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.479280" elapsed="0.000000"/>
+</kw>
+<kw name="Verify your current page location contains" owner="Generic">
+<arg>locationlist</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.479280" elapsed="0.000000"/>
+</kw>
+<kw name="Click on Location action button" owner="LocationPage">
+<status status="NOT RUN" start="2024-04-24T14:21:53.479280" elapsed="0.000000"/>
+</kw>
+<kw name="Click on add location button" owner="LocationPage">
+<arg>Add New Location</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.479280" elapsed="0.000000"/>
+</kw>
+<kw name="Verify your current page location contains" owner="Generic">
+<arg>add-location</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.479280" elapsed="0.000000"/>
+</kw>
+<kw name="Select location country" owner="LocationPage">
+<arg>United States</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.479280" elapsed="0.000000"/>
+</kw>
+<kw name="Select location building name" owner="LocationPage">
+<arg>Trump tower</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.479280" elapsed="0.000000"/>
+</kw>
+<kw name="Select location floor" owner="LocationPage">
+<arg>second</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.479280" elapsed="0.000000"/>
+</kw>
+<kw name="Select location room" owner="LocationPage">
+<arg>203</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.479280" elapsed="0.000000"/>
+</kw>
+<kw name="Select location address one" owner="LocationPage">
+<arg>this address one of the location</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.479280" elapsed="0.000000"/>
+</kw>
+<kw name="Select location address two" owner="LocationPage">
+<arg>this address two of the location</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.479280" elapsed="0.000000"/>
+</kw>
+<kw name="Select location state" owner="LocationPage">
+<arg>Texas</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.479280" elapsed="0.000000"/>
+</kw>
+<kw name="Select location city" owner="LocationPage">
+<arg>Austin</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.479280" elapsed="0.000000"/>
+</kw>
+<kw name="Select location zip" owner="LocationPage">
+<arg>147001</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.479280" elapsed="0.000000"/>
+</kw>
+<kw name="Enter random cost center value" owner="LocationPage">
+<status status="NOT RUN" start="2024-04-24T14:21:53.479280" elapsed="0.000000"/>
+</kw>
+<kw name="Create random location name" owner="LocationPage">
+<status status="NOT RUN" start="2024-04-24T14:21:53.479280" elapsed="0.009111"/>
+</kw>
+<kw name="Create Random IP Subnet" owner="LocationPage">
+<status status="NOT RUN" start="2024-04-24T14:21:53.488391" elapsed="0.000000"/>
+</kw>
+<kw name="Save location form" owner="LocationPage">
+<arg>save</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.488391" elapsed="0.000000"/>
+</kw>
+<kw name="Fetch alert message text and compare it with" owner="Generic">
+<arg>Location created successfully</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.488391" elapsed="0.000000"/>
+</kw>
+<kw name="Search by location name" owner="Bulk_Import_ExportPage">
+<arg>${generated_location}</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.488391" elapsed="0.000000"/>
+</kw>
+<kw name="Fetch the location Name from the row" owner="LocationPage">
+<arg>${generated_location}</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.489979" elapsed="0.000000"/>
+</kw>
+<kw name="Click on Location action button" owner="LocationPage">
+<status status="NOT RUN" start="2024-04-24T14:21:53.489979" elapsed="0.000000"/>
+</kw>
+<kw name="Select the option from action menu" owner="LocationPage">
+<arg>edit</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.489979" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>${yop_sleep}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-04-24T14:21:53.489979" elapsed="0.000000"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>aithentic | Edit - Locations</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="NOT RUN" start="2024-04-24T14:21:53.489979" elapsed="0.000000"/>
+</kw>
+<kw name="Verify your current page location contains" owner="Generic">
+<arg>location-bulk-edit</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.489979" elapsed="0.000000"/>
+</kw>
+<kw name="Select option from country column" owner="LocationPage">
+<arg>Country</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.489979" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the building name column" owner="Bulk_Import_ExportPage">
+<arg>BuildingName</arg>
+<arg>Phelps tower</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.489979" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the floor number column" owner="Bulk_Import_ExportPage">
+<arg>Floor</arg>
+<arg>first</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.489979" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the room number column" owner="Bulk_Import_ExportPage">
+<arg>Room</arg>
+<arg>303</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.489979" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the state column" owner="Bulk_Import_ExportPage">
+<arg>State</arg>
+<arg>Kassrine</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.489979" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the city column" owner="Bulk_Import_ExportPage">
+<arg>City</arg>
+<arg>Tabursuq</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.489979" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>City</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.489979" elapsed="0.000000"/>
+</kw>
+<kw name="Enter random zip code of bulk import of loaction" owner="Bulk_Import_ExportPage">
+<arg>Zip</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.489979" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>Zip</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.489979" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value of cost center in location bulk edit" owner="Bulk_Import_ExportPage">
+<arg>CostCenter</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.489979" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>CostCenter</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.489979" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the location name column" owner="Bulk_Import_ExportPage">
+<arg>LocationTypeName</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.489979" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>LocationTypeName</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.489979" elapsed="0.000000"/>
+</kw>
+<kw name="Create random IP subnet in location bulk import" owner="Bulk_Import_ExportPage">
+<arg>IPSubnets</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.489979" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>IPSubnets</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.489979" elapsed="0.000000"/>
+</kw>
+<kw name="click on the button" owner="Generic">
+<arg>Check Data</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.489979" elapsed="0.000000"/>
+</kw>
+<kw name="click on the button" owner="Generic">
+<arg>Update</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.489979" elapsed="0.000000"/>
+</kw>
+<kw name="Verify the upload message text" owner="Bulk_Import_ExportPage">
+<arg>Upload</arg>
+<arg>Upload Successful</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.489979" elapsed="0.000000"/>
+</kw>
+<kw name="click on the button" owner="Generic">
+<arg>Finish</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.489979" elapsed="0.000000"/>
+</kw>
+<kw name="Click on the confirm button of finish pop up" owner="Bulk_Import_ExportPage">
+<status status="NOT RUN" start="2024-04-24T14:21:53.489979" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>${search_sleep}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-04-24T14:21:53.489979" elapsed="0.000000"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>aithentic | Location - List</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="NOT RUN" start="2024-04-24T14:21:53.489979" elapsed="0.000000"/>
+</kw>
+<kw name="Search by location name" owner="Bulk_Import_ExportPage">
+<arg>${generated_NewLocationName}</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:53.489979" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser session" owner="Generic" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-04-24T14:21:53.489979" elapsed="2.637397"/>
+</kw>
+<status status="PASS" start="2024-04-24T14:21:53.489979" elapsed="2.637397"/>
+</kw>
+<tag>Sanity</tag>
+<status status="FAIL" start="2024-04-24T14:19:40.687799" elapsed="135.439577">Element '//div[normalize-space()='End of life']' not visible after 2 minutes.</status>
+</test>
+<test id="s1-s1-t4" name="Assigned Users Bulk Edit" line="321">
+<kw name="open the browser with the url" owner="Generic" type="SETUP">
+<kw name="Fix the column number" owner="Generic">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2024-04-24T14:19:44.348236" level="INFO">${pageHeading} = 2</msg>
+<var>${pageHeading}</var>
+<arg>2</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2024-04-24T14:19:44.348236" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-24T14:19:44.348236" level="INFO">${pageHeading} = 2</msg>
+<arg>${pageHeading}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-24T14:19:44.348236" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-04-24T14:19:44.348236" elapsed="0.000000"/>
+</kw>
+<kw name="Fix the row number" owner="Generic">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2024-04-24T14:19:44.348236" level="INFO">${pageTime} = 3</msg>
+<var>${pageTime}</var>
+<arg>3</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2024-04-24T14:19:44.348236" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-24T14:19:44.348236" level="INFO">${pageTime} = 3</msg>
+<arg>${pageTime}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-24T14:19:44.348236" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-04-24T14:19:44.348236" elapsed="0.000000"/>
+</kw>
+<kw name="Get Current Time in Milliseconds" owner="Generic">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-24T14:19:44.348236" level="INFO">${time_in_milliseconds} = 1713948584348</msg>
+<var>${time_in_milliseconds}</var>
+<arg>int(time.time() * 1000)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-24T14:19:44.348236" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${time_in_milliseconds}</value>
+<status status="PASS" start="2024-04-24T14:19:44.348236" elapsed="0.000000"/>
+</return>
+<msg time="2024-04-24T14:19:44.348236" level="INFO">${StartTime1} = 1713948584348</msg>
+<var>${StartTime1}</var>
+<status status="PASS" start="2024-04-24T14:19:44.348236" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:19:44.364379" level="INFO">Opening browser 'headlessfirefox' to base url 'https://pre-prod-app.aithentic.com'.</msg>
+<arg>${url}</arg>
+<arg>${browser_name}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-04-24T14:19:44.348236" elapsed="10.059181"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Login']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T14:19:54.407417" elapsed="0.026756"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Login']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-04-24T14:19:54.434173" elapsed="0.015018"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-04-24T14:19:54.449191" elapsed="0.002296"/>
+</kw>
+<kw name="Get Current Time in Milliseconds" owner="Generic">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-24T14:19:54.451487" level="INFO">${time_in_milliseconds} = 1713948594451</msg>
+<var>${time_in_milliseconds}</var>
+<arg>int(time.time() * 1000)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-24T14:19:54.451487" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${time_in_milliseconds}</value>
+<status status="PASS" start="2024-04-24T14:19:54.451487" elapsed="0.000000"/>
+</return>
+<msg time="2024-04-24T14:19:54.451487" level="INFO">${EndTime1} = 1713948594451</msg>
+<var>${EndTime1}</var>
+<status status="PASS" start="2024-04-24T14:19:54.451487" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-24T14:19:54.451487" level="INFO">${ActualTime} = 10103</msg>
+<var>${ActualTime}</var>
+<arg>${EndTime1}-${StartTime1}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-24T14:19:54.451487" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Current Time in Milliseconds: ${ActualTime}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-24T14:19:54.451487" elapsed="0.003004"/>
+</kw>
+<kw name="Calculate Running time" owner="Generic">
+<kw name="Close All Excel Documents" owner="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="PASS" start="2024-04-24T14:19:54.454491" elapsed="0.000000"/>
+</kw>
+<kw name="Open Excel Document" owner="ExcelLibrary">
+<arg>${SheetLocationAndName}</arg>
+<arg>doc_id=1</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="PASS" start="2024-04-24T14:19:54.454491" elapsed="0.020183"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${RowNum_forText}</arg>
+<arg>${ColumnNum_forText}</arg>
+<arg>${module_name}</arg>
+<arg>${SheetTabName}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="PASS" start="2024-04-24T14:19:54.474674" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${RowNum}</arg>
+<arg>${ColumnNum}</arg>
+<arg>${TimeTakenToLoginPage}</arg>
+<arg>${SheetTabName}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="PASS" start="2024-04-24T14:19:54.474674" elapsed="0.000000"/>
+</kw>
+<kw name="Save Excel Document" owner="ExcelLibrary">
+<arg>${SheetLocationAndName}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="PASS" start="2024-04-24T14:19:54.474674" elapsed="0.034952"/>
+</kw>
+<kw name="Close All Excel Documents" owner="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="PASS" start="2024-04-24T14:19:54.509626" elapsed="0.000000"/>
+</kw>
+<arg>2</arg>
+<arg>${pageHeading}</arg>
+<arg>Generic - open the browser with the url</arg>
+<arg>2</arg>
+<arg>${pageTime}</arg>
+<arg>${ActualTime}</arg>
+<arg>Load_Time_tracking</arg>
+<status status="PASS" start="2024-04-24T14:19:54.454491" elapsed="0.055135"/>
+</kw>
+<status status="PASS" start="2024-04-24T14:19:44.348236" elapsed="10.161390"/>
+</kw>
+<kw name="click on the tab" owner="Generic">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='${option}']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T14:19:54.509626" elapsed="0.005521"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='${option}']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-04-24T14:19:54.515147" elapsed="0.009747"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:19:54.534970" level="INFO">Clicking link '//a[normalize-space()='Login']'.</msg>
+<arg>//a[normalize-space()='${option}']</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T14:19:54.534970" elapsed="1.193386"/>
+</kw>
+<arg>Login</arg>
+<status status="PASS" start="2024-04-24T14:19:54.509626" elapsed="1.218730"/>
+</kw>
+<kw name="Fill the login Form" owner="LandingPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Kc_username}</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T14:19:55.728356" elapsed="0.028655"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:19:55.757011" level="INFO">Typing text 'testqa29j@mailinator.com' into text field 'css:#username'.</msg>
+<arg>${Kc_username}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T14:19:55.757011" elapsed="0.019542"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Kc_password}</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T14:19:55.776553" elapsed="0.010001"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:19:55.786554" level="INFO">Typing password into text field 'css:#password'.</msg>
+<msg time="2024-04-24T14:19:55.786554" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${Kc_password}</arg>
+<arg>${valid_password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T14:19:55.786554" elapsed="0.010008"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:19:55.796562" level="INFO">Clicking button 'css:#kc-login'.</msg>
+<arg>${Kc_loginBtn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T14:19:55.796562" elapsed="1.018838"/>
+</kw>
+<arg>${email}</arg>
+<arg>${valid_password}</arg>
+<status status="PASS" start="2024-04-24T14:19:55.728356" elapsed="1.087044"/>
+</kw>
+<kw name="Verify you are on dashboard page" owner="LandingPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:21:56.962967" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="3-selenium-screenshot-1.png"&gt;&lt;img src="3-selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-04-24T14:21:56.962967" level="FAIL">Element '//div[normalize-space()='End of life']' not visible after 2 minutes.</msg>
+<arg>//div[normalize-space()='End of life']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-04-24T14:19:56.819407" elapsed="120.143560">Element '//div[normalize-space()='End of life']' not visible after 2 minutes.</status>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>//div[normalize-space()='End of life']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="NOT RUN" start="2024-04-24T14:21:56.962967" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-04-24T14:19:56.819407" elapsed="120.143560">Element '//div[normalize-space()='End of life']' not visible after 2 minutes.</status>
+</kw>
+<kw name="Verify your current page location contains" owner="Generic">
+<arg>management-console</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:56.962967" elapsed="0.000000"/>
+</kw>
+<kw name="Get Current Time in Milliseconds" owner="Generic">
+<var>${StartTime1}</var>
+<status status="NOT RUN" start="2024-04-24T14:21:56.962967" elapsed="0.000000"/>
+</kw>
+<kw name="select the option from the side menu" owner="Generic">
+<arg>Team Members</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:56.962967" elapsed="0.000000"/>
+</kw>
+<kw name="Verify your current page location contains" owner="Generic">
+<arg>memberslist</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:56.962967" elapsed="0.000000"/>
+</kw>
+<kw name="Get Current Time in Milliseconds" owner="Generic">
+<var>${EndTime1}</var>
+<status status="NOT RUN" start="2024-04-24T14:21:56.962967" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${ActualTime}</var>
+<arg>${EndTime1}-${StartTime1}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2024-04-24T14:21:56.962967" elapsed="0.000000"/>
+</kw>
+<kw name="Calculate Running time" owner="Generic">
+<arg>23</arg>
+<arg>${pageHeading}</arg>
+<arg>Page Load - Total Page Load Time of Team Members</arg>
+<arg>23</arg>
+<arg>${pageTime}</arg>
+<arg>${ActualTime}</arg>
+<arg>PageLoad_Time</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:56.962967" elapsed="0.000000"/>
+</kw>
+<kw name="Click on assigned user tab" owner="MemberPage">
+<arg>Assigned Users</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:56.962967" elapsed="0.000000"/>
+</kw>
+<kw name="Click on assigned user action button" owner="MemberPage">
+<status status="NOT RUN" start="2024-04-24T14:21:56.962967" elapsed="0.000000"/>
+</kw>
+<kw name="Choose the option from the action menu" owner="MemberPage">
+<arg>Add Assignee</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:56.962967" elapsed="0.000000"/>
+</kw>
+<kw name="Create random assignee first name" owner="MemberPage">
+<status status="NOT RUN" start="2024-04-24T14:21:56.962967" elapsed="0.000000"/>
+</kw>
+<kw name="Create random assignee last name" owner="MemberPage">
+<status status="NOT RUN" start="2024-04-24T14:21:56.962967" elapsed="0.000000"/>
+</kw>
+<kw name="Create random assignee email" owner="MemberPage">
+<status status="NOT RUN" start="2024-04-24T14:21:56.962967" elapsed="0.000000"/>
+</kw>
+<kw name="Create random assignee ID" owner="MemberPage">
+<status status="NOT RUN" start="2024-04-24T14:21:56.962967" elapsed="0.000000"/>
+</kw>
+<kw name="Save the add assignee" owner="MemberPage">
+<arg>save</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:56.962967" elapsed="0.000000"/>
+</kw>
+<kw name="Fetch alert message text and compare it with" owner="Generic">
+<arg>Assigned Users created successfully</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:56.962967" elapsed="0.000000"/>
+</kw>
+<kw name="Search assigned user by first and last name" owner="Bulk_Import_ExportPage">
+<arg>${generated_assigneeFname} ${generated_assigneeLname}</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:56.962967" elapsed="0.000000"/>
+</kw>
+<kw name="Click on assigned user action button" owner="MemberPage">
+<status status="NOT RUN" start="2024-04-24T14:21:56.962967" elapsed="0.000000"/>
+</kw>
+<kw name="Choose the option from the action menu" owner="MemberPage">
+<arg>Bulk Edit</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:56.962967" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>${yop_sleep}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-04-24T14:21:56.962967" elapsed="0.000000"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>aithentic | Data-Wizard</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="NOT RUN" start="2024-04-24T14:21:56.962967" elapsed="0.000000"/>
+</kw>
+<kw name="Verify your current page location contains" owner="Generic">
+<arg>assignee-bulk-edit</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:56.962967" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value of assigned in the first name column" owner="Bulk_Import_ExportPage">
+<arg>FirstName</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:56.962967" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value of assigned in the last name column" owner="Bulk_Import_ExportPage">
+<arg>LastName</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:56.962967" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value of assigned in the email column" owner="Bulk_Import_ExportPage">
+<arg>AssignedEmail</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:56.962967" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value of assigned in the ID column" owner="Bulk_Import_ExportPage">
+<arg>AssignedEmployeeId</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:56.962967" elapsed="0.000000"/>
+</kw>
+<kw name="click on the button" owner="Generic">
+<arg>Update</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:56.962967" elapsed="0.000000"/>
+</kw>
+<kw name="Verify the upload message text" owner="Bulk_Import_ExportPage">
+<arg>Upload</arg>
+<arg>Upload Successful</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:56.962967" elapsed="0.000000"/>
+</kw>
+<kw name="click on the button" owner="Generic">
+<arg>Finish</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:56.962967" elapsed="0.000000"/>
+</kw>
+<kw name="Click on the confirm button of finish pop up" owner="Bulk_Import_ExportPage">
+<status status="NOT RUN" start="2024-04-24T14:21:56.962967" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>${search_sleep}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-04-24T14:21:56.962967" elapsed="0.000000"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>aithentic | Member - List</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="NOT RUN" start="2024-04-24T14:21:56.962967" elapsed="0.011005"/>
+</kw>
+<kw name="Search assigned user by first and last name" owner="Bulk_Import_ExportPage">
+<arg>${generated_assigneeFname} ${generated_assigneeLname}</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:56.973972" elapsed="0.000000"/>
+</kw>
+<kw name="Search by empID" owner="Bulk_Import_ExportPage">
+<arg>${generated_assigneeEmpID}</arg>
+<status status="NOT RUN" start="2024-04-24T14:21:56.973972" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser session" owner="Generic" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-04-24T14:21:56.973972" elapsed="2.642065"/>
+</kw>
+<status status="PASS" start="2024-04-24T14:21:56.973972" elapsed="2.642065"/>
+</kw>
+<tag>Sanity</tag>
+<tag>Time</tag>
+<status status="FAIL" start="2024-04-24T14:19:44.348236" elapsed="135.267801">Element '//div[normalize-space()='End of life']' not visible after 2 minutes.</status>
+</test>
+<test id="s1-s1-t5" name="Team Member Bulk Edit" line="362">
+<kw name="open the browser with the url" owner="Generic" type="SETUP">
+<kw name="Fix the column number" owner="Generic">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2024-04-24T14:22:01.854102" level="INFO">${pageHeading} = 2</msg>
+<var>${pageHeading}</var>
+<arg>2</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2024-04-24T14:22:01.854102" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-24T14:22:01.862647" level="INFO">${pageHeading} = 2</msg>
+<arg>${pageHeading}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-24T14:22:01.862647" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-04-24T14:22:01.854102" elapsed="0.008545"/>
+</kw>
+<kw name="Fix the row number" owner="Generic">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2024-04-24T14:22:01.862647" level="INFO">${pageTime} = 3</msg>
+<var>${pageTime}</var>
+<arg>3</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2024-04-24T14:22:01.862647" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-24T14:22:01.862647" level="INFO">${pageTime} = 3</msg>
+<arg>${pageTime}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-24T14:22:01.862647" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-04-24T14:22:01.862647" elapsed="0.000000"/>
+</kw>
+<kw name="Get Current Time in Milliseconds" owner="Generic">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-24T14:22:01.862647" level="INFO">${time_in_milliseconds} = 1713948721862</msg>
+<var>${time_in_milliseconds}</var>
+<arg>int(time.time() * 1000)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-24T14:22:01.862647" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${time_in_milliseconds}</value>
+<status status="PASS" start="2024-04-24T14:22:01.862647" elapsed="0.000000"/>
+</return>
+<msg time="2024-04-24T14:22:01.862647" level="INFO">${StartTime1} = 1713948721862</msg>
+<var>${StartTime1}</var>
+<status status="PASS" start="2024-04-24T14:22:01.862647" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:22:01.862647" level="INFO">Opening browser 'headlessfirefox' to base url 'https://pre-prod-app.aithentic.com'.</msg>
+<arg>${url}</arg>
+<arg>${browser_name}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-04-24T14:22:01.862647" elapsed="10.301068"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Login']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T14:22:12.163715" elapsed="0.020598"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Login']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-04-24T14:22:12.190905" elapsed="0.009007"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-04-24T14:22:12.199912" elapsed="0.009004"/>
+</kw>
+<kw name="Get Current Time in Milliseconds" owner="Generic">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-24T14:22:12.208916" level="INFO">${time_in_milliseconds} = 1713948732208</msg>
+<var>${time_in_milliseconds}</var>
+<arg>int(time.time() * 1000)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-24T14:22:12.208916" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${time_in_milliseconds}</value>
+<status status="PASS" start="2024-04-24T14:22:12.208916" elapsed="0.000000"/>
+</return>
+<msg time="2024-04-24T14:22:12.208916" level="INFO">${EndTime1} = 1713948732208</msg>
+<var>${EndTime1}</var>
+<status status="PASS" start="2024-04-24T14:22:12.208916" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-24T14:22:12.208916" level="INFO">${ActualTime} = 10346</msg>
+<var>${ActualTime}</var>
+<arg>${EndTime1}-${StartTime1}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-24T14:22:12.208916" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Current Time in Milliseconds: ${ActualTime}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-24T14:22:12.208916" elapsed="0.000000"/>
+</kw>
+<kw name="Calculate Running time" owner="Generic">
+<kw name="Close All Excel Documents" owner="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="PASS" start="2024-04-24T14:22:12.208916" elapsed="0.000000"/>
+</kw>
+<kw name="Open Excel Document" owner="ExcelLibrary">
+<arg>${SheetLocationAndName}</arg>
+<arg>doc_id=1</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="PASS" start="2024-04-24T14:22:12.208916" elapsed="0.026988"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${RowNum_forText}</arg>
+<arg>${ColumnNum_forText}</arg>
+<arg>${module_name}</arg>
+<arg>${SheetTabName}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="PASS" start="2024-04-24T14:22:12.235904" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${RowNum}</arg>
+<arg>${ColumnNum}</arg>
+<arg>${TimeTakenToLoginPage}</arg>
+<arg>${SheetTabName}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="PASS" start="2024-04-24T14:22:12.235904" elapsed="0.000000"/>
+</kw>
+<kw name="Save Excel Document" owner="ExcelLibrary">
+<arg>${SheetLocationAndName}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="PASS" start="2024-04-24T14:22:12.235904" elapsed="0.036300"/>
+</kw>
+<kw name="Close All Excel Documents" owner="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="PASS" start="2024-04-24T14:22:12.281204" elapsed="0.000000"/>
+</kw>
+<arg>2</arg>
+<arg>${pageHeading}</arg>
+<arg>Generic - open the browser with the url</arg>
+<arg>2</arg>
+<arg>${pageTime}</arg>
+<arg>${ActualTime}</arg>
+<arg>Load_Time_tracking</arg>
+<status status="PASS" start="2024-04-24T14:22:12.208916" elapsed="0.072288"/>
+</kw>
+<status status="PASS" start="2024-04-24T14:22:01.854102" elapsed="10.427102"/>
+</kw>
+<kw name="click on the tab" owner="Generic">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='${option}']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T14:22:12.281204" elapsed="0.009191"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='${option}']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-04-24T14:22:12.290395" elapsed="0.009507"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:22:12.299902" level="INFO">Clicking link '//a[normalize-space()='Login']'.</msg>
+<arg>//a[normalize-space()='${option}']</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T14:22:12.299902" elapsed="1.301529"/>
+</kw>
+<arg>Login</arg>
+<status status="PASS" start="2024-04-24T14:22:12.281204" elapsed="1.320227"/>
+</kw>
+<kw name="Fill the login Form" owner="LandingPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Kc_username}</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T14:22:13.601431" elapsed="0.015104"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:22:13.616535" level="INFO">Typing text 'testqa29j@mailinator.com' into text field 'css:#username'.</msg>
+<arg>${Kc_username}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T14:22:13.616535" elapsed="0.017985"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Kc_password}</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T14:22:13.634520" elapsed="0.008996"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:22:13.652594" level="INFO">Typing password into text field 'css:#password'.</msg>
+<msg time="2024-04-24T14:22:13.652594" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${Kc_password}</arg>
+<arg>${valid_password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T14:22:13.643516" elapsed="0.017588"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:22:13.661104" level="INFO">Clicking button 'css:#kc-login'.</msg>
+<arg>${Kc_loginBtn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T14:22:13.661104" elapsed="1.041724"/>
+</kw>
+<arg>${email}</arg>
+<arg>${valid_password}</arg>
+<status status="PASS" start="2024-04-24T14:22:13.601431" elapsed="1.101397"/>
+</kw>
+<kw name="Verify you are on dashboard page" owner="LandingPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:24:14.834286" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="4-selenium-screenshot-1.png"&gt;&lt;img src="4-selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-04-24T14:24:14.834286" level="FAIL">Element '//div[normalize-space()='End of life']' not visible after 2 minutes.</msg>
+<arg>//div[normalize-space()='End of life']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-04-24T14:22:14.709336" elapsed="120.124950">Element '//div[normalize-space()='End of life']' not visible after 2 minutes.</status>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>//div[normalize-space()='End of life']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="NOT RUN" start="2024-04-24T14:24:14.834286" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-04-24T14:22:14.702828" elapsed="120.131458">Element '//div[normalize-space()='End of life']' not visible after 2 minutes.</status>
+</kw>
+<kw name="Verify your current page location contains" owner="Generic">
+<arg>management-console</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.834286" elapsed="0.000000"/>
+</kw>
+<kw name="select the option from the side menu" owner="Generic">
+<arg>Team Members</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.834286" elapsed="0.000000"/>
+</kw>
+<kw name="Verify your current page location contains" owner="Generic">
+<arg>memberslist</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.834286" elapsed="0.000000"/>
+</kw>
+<kw name="Click on the profile name" owner="Generic">
+<status status="NOT RUN" start="2024-04-24T14:24:14.834286" elapsed="0.000000"/>
+</kw>
+<kw name="Select option from profile list" owner="Generic">
+<arg>personal-details</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.834286" elapsed="0.000000"/>
+</kw>
+<kw name="Choose options inside personal_details" owner="I_iconPage">
+<arg>Organization</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.834286" elapsed="0.000000"/>
+</kw>
+<kw name="Choose tabs under organization" owner="I_iconPage">
+<arg>system</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.834286" elapsed="0.000000"/>
+</kw>
+<kw name="Select the employee ID checkbox" owner="DashboardPage">
+<arg>yes</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.834286" elapsed="0.000000"/>
+</kw>
+<kw name="Select the employee ID checkbox" owner="DashboardPage">
+<arg>no</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.834286" elapsed="0.000000"/>
+</kw>
+<kw name="Fetch alert message text and compare it with" owner="Generic">
+<arg>Settings Updated</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.834286" elapsed="0.000000"/>
+</kw>
+<kw name="select the option from the side menu" owner="Generic">
+<arg>Team Members</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.834286" elapsed="0.000000"/>
+</kw>
+<kw name="Verify your current page location contains" owner="Generic">
+<arg>memberslist</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.834286" elapsed="0.000000"/>
+</kw>
+<kw name="Click on assigned user tab" owner="MemberPage">
+<arg>Team Members</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.834286" elapsed="0.000000"/>
+</kw>
+<kw name="Click on team member action button" owner="MemberPage">
+<status status="NOT RUN" start="2024-04-24T14:24:14.834286" elapsed="0.000000"/>
+</kw>
+<kw name="Choose the option from the action menu" owner="MemberPage">
+<arg>Add Member</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.834286" elapsed="0.000000"/>
+</kw>
+<kw name="Verify your current page location contains" owner="Generic">
+<arg>addmembers</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.834286" elapsed="0.000000"/>
+</kw>
+<kw name="Enter team member first name" owner="MemberPage">
+<status status="NOT RUN" start="2024-04-24T14:24:14.834286" elapsed="0.000000"/>
+</kw>
+<kw name="Enter team member last name" owner="MemberPage">
+<status status="NOT RUN" start="2024-04-24T14:24:14.834286" elapsed="0.000000"/>
+</kw>
+<kw name="Enter team member business email" owner="MemberPage">
+<status status="NOT RUN" start="2024-04-24T14:24:14.834286" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the Position in member form" owner="TeamMemberPage">
+<arg>QA</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.834286" elapsed="0.000000"/>
+</kw>
+<kw name="Enter team member department" owner="MemberPage">
+<arg>Do not Delete this Department</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.834286" elapsed="0.000000"/>
+</kw>
+<kw name="Enter team member location" owner="MemberPage">
+<arg>United States - Main Office - 21 - 2</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.834286" elapsed="0.000000"/>
+</kw>
+<kw name="Enter team member role" owner="MemberPage">
+<arg>Admin</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.834286" elapsed="0.000000"/>
+</kw>
+<kw name="Create random employee id" owner="TeamMemberPage">
+<status status="NOT RUN" start="2024-04-24T14:24:14.834286" elapsed="0.000000"/>
+</kw>
+<kw name="Enter phone number" owner="Generic">
+<arg>India</arg>
+<arg>+91</arg>
+<arg>9646289871</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.834286" elapsed="0.000000"/>
+</kw>
+<kw name="Save new team member form" owner="MemberPage">
+<arg>save</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.834286" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>${search_sleep}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-04-24T14:24:14.834286" elapsed="0.000000"/>
+</kw>
+<kw name="Fetch alert message text and compare it with" owner="Generic">
+<arg>Team Member created successfully</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.846291" elapsed="0.000000"/>
+</kw>
+<kw name="Search team member by first and last name" owner="Bulk_Import_ExportPage">
+<arg>${generate_teamMember_FirstName} ${generate_teamMember_LastName}</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.846291" elapsed="0.000000"/>
+</kw>
+<kw name="Click on team member user action button" owner="MemberPage">
+<status status="NOT RUN" start="2024-04-24T14:24:14.846291" elapsed="0.000000"/>
+</kw>
+<kw name="Choose the option from the action menu" owner="MemberPage">
+<arg>Bulk Edit</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.846291" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>${yop_sleep}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-04-24T14:24:14.846291" elapsed="0.000000"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>aithentic | Edit - Members</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="NOT RUN" start="2024-04-24T14:24:14.846291" elapsed="0.000000"/>
+</kw>
+<kw name="Verify your current page location contains" owner="Generic">
+<arg>member-bulk-edit</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.846291" elapsed="0.000000"/>
+</kw>
+<kw name="Enter random employee id of bulk import" owner="Bulk_Import_ExportPage">
+<arg>EmployeeId</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.846291" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value of team member in the phone number column" owner="Bulk_Import_ExportPage">
+<arg>MobileNo</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.846291" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value of team member in the email column" owner="Bulk_Import_ExportPage">
+<arg>Email</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.846291" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value of team member in the department column" owner="Bulk_Import_ExportPage">
+<arg>DepartmentName</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.846291" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>DepartmentName</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.846291" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value of team member in the location column" owner="Bulk_Import_ExportPage">
+<arg>LocationName</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.846291" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>LocationName</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.846291" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value of team member in the role column" owner="Bulk_Import_ExportPage">
+<arg>UserRoleName</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.846291" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>UserRoleName</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.846291" elapsed="0.000000"/>
+</kw>
+<kw name="click on the button" owner="Generic">
+<arg>Update</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.846291" elapsed="0.000000"/>
+</kw>
+<kw name="Verify the upload message text" owner="Bulk_Import_ExportPage">
+<arg>Upload</arg>
+<arg>Upload Successful</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.846291" elapsed="0.000000"/>
+</kw>
+<kw name="click on the button" owner="Generic">
+<arg>Finish</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.846291" elapsed="0.000000"/>
+</kw>
+<kw name="Click on the confirm button of finish pop up" owner="Bulk_Import_ExportPage">
+<status status="NOT RUN" start="2024-04-24T14:24:14.850302" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>${search_sleep}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-04-24T14:24:14.850302" elapsed="0.000000"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>aithentic | Member - List</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="NOT RUN" start="2024-04-24T14:24:14.850302" elapsed="0.000000"/>
+</kw>
+<kw name="Search team member by first and last name" owner="Bulk_Import_ExportPage">
+<arg>${generate_teamMember_FirstName} ${generate_teamMember_LastName}</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.850302" elapsed="0.000000"/>
+</kw>
+<kw name="Wait until table get load" owner="Generic">
+<status status="NOT RUN" start="2024-04-24T14:24:14.850302" elapsed="0.000000"/>
+</kw>
+<kw name="Click on the profile name" owner="Generic">
+<status status="NOT RUN" start="2024-04-24T14:24:14.850302" elapsed="0.000000"/>
+</kw>
+<kw name="Select option from profile list" owner="Generic">
+<arg>personal-details</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.850302" elapsed="0.000000"/>
+</kw>
+<kw name="Choose options inside personal_details" owner="I_iconPage">
+<arg>Organization</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.852806" elapsed="0.000000"/>
+</kw>
+<kw name="Choose tabs under organization" owner="I_iconPage">
+<arg>system</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.852806" elapsed="0.000000"/>
+</kw>
+<kw name="Select the employee ID checkbox" owner="DashboardPage">
+<arg>yes</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.852806" elapsed="0.000000"/>
+</kw>
+<kw name="Fetch alert message text and compare it with" owner="Generic">
+<arg>Settings Updated</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:14.852806" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser session" owner="Generic" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-04-24T14:24:14.852806" elapsed="2.619823"/>
+</kw>
+<status status="PASS" start="2024-04-24T14:24:14.852806" elapsed="2.619823"/>
+</kw>
+<tag>Sanity</tag>
+<status status="FAIL" start="2024-04-24T14:22:01.854102" elapsed="135.618527">Element '//div[normalize-space()='End of life']' not visible after 2 minutes.</status>
+</test>
+<test id="s1-s1-t6" name="Technology Bulk edit" line="425">
+<kw name="open the browser with the url" owner="Generic" type="SETUP">
+<kw name="Fix the column number" owner="Generic">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2024-04-24T14:22:05.152990" level="INFO">${pageHeading} = 2</msg>
+<var>${pageHeading}</var>
+<arg>2</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2024-04-24T14:22:05.152990" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-24T14:22:05.152990" level="INFO">${pageHeading} = 2</msg>
+<arg>${pageHeading}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-24T14:22:05.152990" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-04-24T14:22:05.152990" elapsed="0.000000"/>
+</kw>
+<kw name="Fix the row number" owner="Generic">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2024-04-24T14:22:05.152990" level="INFO">${pageTime} = 3</msg>
+<var>${pageTime}</var>
+<arg>3</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2024-04-24T14:22:05.152990" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-24T14:22:05.152990" level="INFO">${pageTime} = 3</msg>
+<arg>${pageTime}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-24T14:22:05.152990" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-04-24T14:22:05.152990" elapsed="0.000000"/>
+</kw>
+<kw name="Get Current Time in Milliseconds" owner="Generic">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-24T14:22:05.152990" level="INFO">${time_in_milliseconds} = 1713948725152</msg>
+<var>${time_in_milliseconds}</var>
+<arg>int(time.time() * 1000)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-24T14:22:05.152990" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${time_in_milliseconds}</value>
+<status status="PASS" start="2024-04-24T14:22:05.152990" elapsed="0.000000"/>
+</return>
+<msg time="2024-04-24T14:22:05.152990" level="INFO">${StartTime1} = 1713948725152</msg>
+<var>${StartTime1}</var>
+<status status="PASS" start="2024-04-24T14:22:05.152990" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:22:05.152990" level="INFO">Opening browser 'headlessfirefox' to base url 'https://pre-prod-app.aithentic.com'.</msg>
+<arg>${url}</arg>
+<arg>${browser_name}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-04-24T14:22:05.152990" elapsed="10.374400"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Login']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T14:22:15.527390" elapsed="0.026998"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Login']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-04-24T14:22:15.554388" elapsed="0.016552"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-04-24T14:22:15.570940" elapsed="0.001505"/>
+</kw>
+<kw name="Get Current Time in Milliseconds" owner="Generic">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-24T14:22:15.572445" level="INFO">${time_in_milliseconds} = 1713948735572</msg>
+<var>${time_in_milliseconds}</var>
+<arg>int(time.time() * 1000)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-24T14:22:15.572445" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${time_in_milliseconds}</value>
+<status status="PASS" start="2024-04-24T14:22:15.572445" elapsed="0.000000"/>
+</return>
+<msg time="2024-04-24T14:22:15.572445" level="INFO">${EndTime1} = 1713948735572</msg>
+<var>${EndTime1}</var>
+<status status="PASS" start="2024-04-24T14:22:15.572445" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-24T14:22:15.572445" level="INFO">${ActualTime} = 10420</msg>
+<var>${ActualTime}</var>
+<arg>${EndTime1}-${StartTime1}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-24T14:22:15.572445" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Current Time in Milliseconds: ${ActualTime}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-24T14:22:15.572445" elapsed="0.000000"/>
+</kw>
+<kw name="Calculate Running time" owner="Generic">
+<kw name="Close All Excel Documents" owner="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="PASS" start="2024-04-24T14:22:15.572445" elapsed="0.000000"/>
+</kw>
+<kw name="Open Excel Document" owner="ExcelLibrary">
+<arg>${SheetLocationAndName}</arg>
+<arg>doc_id=1</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="PASS" start="2024-04-24T14:22:15.572445" elapsed="0.018099"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${RowNum_forText}</arg>
+<arg>${ColumnNum_forText}</arg>
+<arg>${module_name}</arg>
+<arg>${SheetTabName}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="PASS" start="2024-04-24T14:22:15.590544" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${RowNum}</arg>
+<arg>${ColumnNum}</arg>
+<arg>${TimeTakenToLoginPage}</arg>
+<arg>${SheetTabName}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="PASS" start="2024-04-24T14:22:15.590544" elapsed="0.000000"/>
+</kw>
+<kw name="Save Excel Document" owner="ExcelLibrary">
+<arg>${SheetLocationAndName}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="PASS" start="2024-04-24T14:22:15.590544" elapsed="0.044535"/>
+</kw>
+<kw name="Close All Excel Documents" owner="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="PASS" start="2024-04-24T14:22:15.635079" elapsed="0.000000"/>
+</kw>
+<arg>2</arg>
+<arg>${pageHeading}</arg>
+<arg>Generic - open the browser with the url</arg>
+<arg>2</arg>
+<arg>${pageTime}</arg>
+<arg>${ActualTime}</arg>
+<arg>Load_Time_tracking</arg>
+<status status="PASS" start="2024-04-24T14:22:15.572445" elapsed="0.062634"/>
+</kw>
+<status status="PASS" start="2024-04-24T14:22:05.152990" elapsed="10.482089"/>
+</kw>
+<kw name="click on the tab" owner="Generic">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='${option}']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T14:22:15.635079" elapsed="0.008994"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='${option}']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-04-24T14:22:15.644073" elapsed="0.008998"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:22:15.653071" level="INFO">Clicking link '//a[normalize-space()='Login']'.</msg>
+<arg>//a[normalize-space()='${option}']</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T14:22:15.653071" elapsed="1.475481"/>
+</kw>
+<arg>Login</arg>
+<status status="PASS" start="2024-04-24T14:22:15.635079" elapsed="1.493473"/>
+</kw>
+<kw name="Fill the login Form" owner="LandingPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Kc_username}</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T14:22:17.128552" elapsed="0.042012"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:22:17.176071" level="INFO">Typing text 'testqa29j@mailinator.com' into text field 'css:#username'.</msg>
+<arg>${Kc_username}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T14:22:17.170564" elapsed="0.018172"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Kc_password}</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T14:22:17.188736" elapsed="0.009343"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:22:17.206594" level="INFO">Typing password into text field 'css:#password'.</msg>
+<msg time="2024-04-24T14:22:17.207657" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${Kc_password}</arg>
+<arg>${valid_password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T14:22:17.206082" elapsed="0.009578"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:22:17.215660" level="INFO">Clicking button 'css:#kc-login'.</msg>
+<arg>${Kc_loginBtn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T14:22:17.215660" elapsed="1.014986"/>
+</kw>
+<arg>${email}</arg>
+<arg>${valid_password}</arg>
+<status status="PASS" start="2024-04-24T14:22:17.128552" elapsed="1.102094"/>
+</kw>
+<kw name="Verify you are on dashboard page" owner="LandingPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:24:18.325262" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="5-selenium-screenshot-1.png"&gt;&lt;img src="5-selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-04-24T14:24:18.325262" level="FAIL">Element '//div[normalize-space()='End of life']' not visible after 2 minutes.</msg>
+<arg>//div[normalize-space()='End of life']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-04-24T14:22:18.230646" elapsed="120.094616">Element '//div[normalize-space()='End of life']' not visible after 2 minutes.</status>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>//div[normalize-space()='End of life']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-04-24T14:22:18.230646" elapsed="120.094616">Element '//div[normalize-space()='End of life']' not visible after 2 minutes.</status>
+</kw>
+<kw name="Verify your current page location contains" owner="Generic">
+<arg>management-console</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="select the option from the side menu" owner="Generic">
+<arg>Technology</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Verify your current page location contains" owner="Generic">
+<arg>technology</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Verify your current page location contains" owner="Generic">
+<arg>technology-list</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Click on action button of technology" owner="TechnologyPage">
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Choose add technology from action button of technology" owner="TechnologyPage">
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Verify your current page location contains" owner="Generic">
+<arg>addtechnology</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Click technology brand input field" owner="TechnologyPage">
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Select parameter from brand dropdown list" owner="TechnologyPage">
+<arg>QABrand555</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Select parameter from technology dropdown list" owner="TechnologyPage">
+<arg>OPMR815277</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Add assetID for technology lifecycle information random" owner="TechnologyPage">
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Add cost type of technology cost information" owner="TechnologyPage">
+<arg>Open Ended Contract</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Add payment type of technology cost information" owner="TechnologyPage">
+<arg>FixedPayment</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Add payment peroid of technology cost information" owner="TechnologyPage">
+<arg>Monthly</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>${search_sleep}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Add payment partner of technology cost information" owner="TechnologyPage">
+<arg>testqa 20Feb</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Click on save technology form button" owner="TechnologyPage">
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Fetch alert message text and compare it with" owner="Generic">
+<arg>Technology created successfully</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Click on save technology form pop button" owner="TechnologyPage">
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Verify your current page location contains" owner="Generic">
+<arg>technology</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Search by AssetId" owner="TechnologyPage">
+<arg>${generated_AssetID}</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Click on action button of technology" owner="TechnologyPage">
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Click on Bulk_edit under action button" owner="TechnologyPage">
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>${yop_sleep}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>aithentic | Edit - Assets</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Verify your current page location contains" owner="Generic">
+<arg>technology-bulk-edit</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="click on the arrow of product" owner="Bulk_Import_ExportPage">
+<arg>Product Information</arg>
+<arg>2</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the product, brand, group and type value in bulk_edit of technology" owner="Bulk_Import_ExportPage">
+<arg>ModelProductName_1</arg>
+<arg>Product_2589283776</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the product, brand, group and type value in bulk_edit of technology" owner="Bulk_Import_ExportPage">
+<arg>Brand</arg>
+<arg>BrandName2556763617</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the product, brand, group and type value in bulk_edit of technology" owner="Bulk_Import_ExportPage">
+<arg>TechnologyGroup</arg>
+<arg>Applications</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Select the new value of technology group in bulk edit of technology" owner="Bulk_Import_ExportPage">
+<arg>TechnologyType</arg>
+<arg>Hardware</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="click on the arrow of product" owner="Bulk_Import_ExportPage">
+<arg>Product Information</arg>
+<arg>1</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value of asset id of bulk edit of technology" owner="Bulk_Import_ExportPage">
+<arg>AssetId</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="click on the arrow of product" owner="Bulk_Import_ExportPage">
+<arg>Technology Lifecycle Information</arg>
+<arg>2</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Click on the fields and select value from dropdown of technology bulk edit" owner="Bulk_Import_ExportPage">
+<arg>Status</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="click on the arrow of product" owner="Bulk_Import_ExportPage">
+<arg>Technology Lifecycle Information</arg>
+<arg>1</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="click on the arrow of product" owner="Bulk_Import_ExportPage">
+<arg>Assignment Information</arg>
+<arg>2</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Click on the fields and select value from dropdown of technology bulk edit" owner="Bulk_Import_ExportPage">
+<arg>LocationTypeName_1</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Click on the fields and select value from dropdown of technology bulk edit" owner="Bulk_Import_ExportPage">
+<arg>DepartmentName</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Click on the fields and select value from dropdown of technology bulk edit" owner="Bulk_Import_ExportPage">
+<arg>AssignedName</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="click on the arrow of product" owner="Bulk_Import_ExportPage">
+<arg>Assignment Information</arg>
+<arg>1</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="click on the arrow of product" owner="Bulk_Import_ExportPage">
+<arg>Partners Information</arg>
+<arg>2</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Click on the fields and select value from dropdown of technology bulk edit" owner="Bulk_Import_ExportPage">
+<arg>SupportPartnerName_1</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Click on the fields and select value from dropdown of technology bulk edit" owner="Bulk_Import_ExportPage">
+<arg>SupplierName</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="click on the arrow of product" owner="Bulk_Import_ExportPage">
+<arg>Partners Information</arg>
+<arg>1</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="click on the arrow of product" owner="Bulk_Import_ExportPage">
+<arg>Technology Cost Information</arg>
+<arg>2</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the product, brand, group and type value in bulk_edit of technology" owner="Bulk_Import_ExportPage">
+<arg>PaymentPartnerName</arg>
+<arg>Dell</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the product, brand, group and type value in bulk_edit of technology" owner="Bulk_Import_ExportPage">
+<arg>CostTypeName</arg>
+<arg>Purchased</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the product, brand, group and type value in bulk_edit of technology" owner="Bulk_Import_ExportPage">
+<arg>PaymentPeriod</arg>
+<arg>Once</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.325262" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the product, brand, group and type value in bulk_edit of technology" owner="Bulk_Import_ExportPage">
+<arg>CostCenter</arg>
+<arg>123456</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.340899" elapsed="0.000000"/>
+</kw>
+<kw name="click on the arrow of product" owner="Bulk_Import_ExportPage">
+<arg>Technology Cost Information</arg>
+<arg>1</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.340899" elapsed="0.000000"/>
+</kw>
+<kw name="click on the button" owner="Generic">
+<arg>Check data</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.340899" elapsed="0.000000"/>
+</kw>
+<kw name="click on the button" owner="Generic">
+<arg>Update</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.340899" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>${search_sleep}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-04-24T14:24:18.340899" elapsed="0.000000"/>
+</kw>
+<kw name="Verify the upload message text" owner="Bulk_Import_ExportPage">
+<arg>Upload</arg>
+<arg>Upload Successful</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.340899" elapsed="0.000000"/>
+</kw>
+<kw name="click on the button" owner="Generic">
+<arg>Finish</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.340899" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>${search_sleep}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-04-24T14:24:18.340899" elapsed="0.000000"/>
+</kw>
+<kw name="Click on the confirm button of finish pop up" owner="Bulk_Import_ExportPage">
+<status status="NOT RUN" start="2024-04-24T14:24:18.340899" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>${search_sleep}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-04-24T14:24:18.340899" elapsed="0.000000"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>aithentic | Technology - List</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="NOT RUN" start="2024-04-24T14:24:18.340899" elapsed="0.000000"/>
+</kw>
+<kw name="Search by AssetId" owner="TechnologyPage">
+<arg>${generated_assetidbulkedit}</arg>
+<status status="NOT RUN" start="2024-04-24T14:24:18.340899" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser session" owner="Generic" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-04-24T14:24:18.340899" elapsed="2.616922"/>
+</kw>
+<status status="PASS" start="2024-04-24T14:24:18.340899" elapsed="2.616922"/>
+</kw>
+<tag>sanity</tag>
+<status status="FAIL" start="2024-04-24T14:22:05.152990" elapsed="135.804831">Element '//div[normalize-space()='End of life']' not visible after 2 minutes.</status>
+</test>
+<test id="s1-s1-t7" name="Team member Bulk Import" line="492">
+<kw name="open the browser with the url" owner="Generic" type="SETUP">
+<kw name="Fix the column number" owner="Generic">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2024-04-24T14:24:23.146899" level="INFO">${pageHeading} = 2</msg>
+<var>${pageHeading}</var>
+<arg>2</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2024-04-24T14:24:23.146899" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-24T14:24:23.146899" level="INFO">${pageHeading} = 2</msg>
+<arg>${pageHeading}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-24T14:24:23.146899" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-04-24T14:24:23.146899" elapsed="0.000000"/>
+</kw>
+<kw name="Fix the row number" owner="Generic">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2024-04-24T14:24:23.146899" level="INFO">${pageTime} = 3</msg>
+<var>${pageTime}</var>
+<arg>3</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2024-04-24T14:24:23.146899" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-24T14:24:23.146899" level="INFO">${pageTime} = 3</msg>
+<arg>${pageTime}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-24T14:24:23.146899" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-04-24T14:24:23.146899" elapsed="0.000000"/>
+</kw>
+<kw name="Get Current Time in Milliseconds" owner="Generic">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-24T14:24:23.146899" level="INFO">${time_in_milliseconds} = 1713948863146</msg>
+<var>${time_in_milliseconds}</var>
+<arg>int(time.time() * 1000)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-24T14:24:23.146899" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${time_in_milliseconds}</value>
+<status status="PASS" start="2024-04-24T14:24:23.146899" elapsed="0.000000"/>
+</return>
+<msg time="2024-04-24T14:24:23.146899" level="INFO">${StartTime1} = 1713948863146</msg>
+<var>${StartTime1}</var>
+<status status="PASS" start="2024-04-24T14:24:23.146899" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:24:23.146899" level="INFO">Opening browser 'headlessfirefox' to base url 'https://pre-prod-app.aithentic.com'.</msg>
+<arg>${url}</arg>
+<arg>${browser_name}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-04-24T14:24:23.146899" elapsed="10.192961"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Login']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T14:24:33.339860" elapsed="0.013695"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Login']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-04-24T14:24:33.353555" elapsed="0.018224"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-04-24T14:24:33.371779" elapsed="0.000000"/>
+</kw>
+<kw name="Get Current Time in Milliseconds" owner="Generic">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-24T14:24:33.371779" level="INFO">${time_in_milliseconds} = 1713948873371</msg>
+<var>${time_in_milliseconds}</var>
+<arg>int(time.time() * 1000)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-24T14:24:33.371779" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${time_in_milliseconds}</value>
+<status status="PASS" start="2024-04-24T14:24:33.371779" elapsed="0.000000"/>
+</return>
+<msg time="2024-04-24T14:24:33.371779" level="INFO">${EndTime1} = 1713948873371</msg>
+<var>${EndTime1}</var>
+<status status="PASS" start="2024-04-24T14:24:33.371779" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-24T14:24:33.378282" level="INFO">${ActualTime} = 10225</msg>
+<var>${ActualTime}</var>
+<arg>${EndTime1}-${StartTime1}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-24T14:24:33.378282" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Current Time in Milliseconds: ${ActualTime}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-24T14:24:33.378282" elapsed="0.000000"/>
+</kw>
+<kw name="Calculate Running time" owner="Generic">
+<kw name="Close All Excel Documents" owner="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="PASS" start="2024-04-24T14:24:33.378282" elapsed="0.000000"/>
+</kw>
+<kw name="Open Excel Document" owner="ExcelLibrary">
+<arg>${SheetLocationAndName}</arg>
+<arg>doc_id=1</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="PASS" start="2024-04-24T14:24:33.378282" elapsed="0.020520"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${RowNum_forText}</arg>
+<arg>${ColumnNum_forText}</arg>
+<arg>${module_name}</arg>
+<arg>${SheetTabName}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="PASS" start="2024-04-24T14:24:33.398802" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${RowNum}</arg>
+<arg>${ColumnNum}</arg>
+<arg>${TimeTakenToLoginPage}</arg>
+<arg>${SheetTabName}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="PASS" start="2024-04-24T14:24:33.398802" elapsed="0.000000"/>
+</kw>
+<kw name="Save Excel Document" owner="ExcelLibrary">
+<arg>${SheetLocationAndName}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="PASS" start="2024-04-24T14:24:33.398802" elapsed="0.036972"/>
+</kw>
+<kw name="Close All Excel Documents" owner="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="PASS" start="2024-04-24T14:24:33.435774" elapsed="0.004518"/>
+</kw>
+<arg>2</arg>
+<arg>${pageHeading}</arg>
+<arg>Generic - open the browser with the url</arg>
+<arg>2</arg>
+<arg>${pageTime}</arg>
+<arg>${ActualTime}</arg>
+<arg>Load_Time_tracking</arg>
+<status status="PASS" start="2024-04-24T14:24:33.378282" elapsed="0.062010"/>
+</kw>
+<status status="PASS" start="2024-04-24T14:24:23.146899" elapsed="10.293393"/>
+</kw>
+<kw name="click on the tab" owner="Generic">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='${option}']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T14:24:33.440292" elapsed="0.007522"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='${option}']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-04-24T14:24:33.447814" elapsed="0.015187"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:24:33.463001" level="INFO">Clicking link '//a[normalize-space()='Login']'.</msg>
+<arg>//a[normalize-space()='${option}']</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T14:24:33.463001" elapsed="1.198784"/>
+</kw>
+<arg>Login</arg>
+<status status="PASS" start="2024-04-24T14:24:33.440292" elapsed="1.221493"/>
+</kw>
+<kw name="Fill the login Form" owner="LandingPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Kc_username}</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T14:24:34.661785" elapsed="0.008920"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:24:34.670705" level="INFO">Typing text 'testqa29j@mailinator.com' into text field 'css:#username'.</msg>
+<arg>${Kc_username}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T14:24:34.670705" elapsed="0.018122"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Kc_password}</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T14:24:34.688827" elapsed="0.009003"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:24:34.697830" level="INFO">Typing password into text field 'css:#password'.</msg>
+<msg time="2024-04-24T14:24:34.706828" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${Kc_password}</arg>
+<arg>${valid_password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T14:24:34.697830" elapsed="0.017432"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:24:34.715262" level="INFO">Clicking button 'css:#kc-login'.</msg>
+<arg>${Kc_loginBtn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T14:24:34.715262" elapsed="1.066631"/>
+</kw>
+<arg>${email}</arg>
+<arg>${valid_password}</arg>
+<status status="PASS" start="2024-04-24T14:24:34.661785" elapsed="1.120108"/>
+</kw>
+<kw name="Verify you are on dashboard page" owner="LandingPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:26:35.973640" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="6-selenium-screenshot-1.png"&gt;&lt;img src="6-selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-04-24T14:26:35.973640" level="FAIL">Element '//div[normalize-space()='End of life']' not visible after 2 minutes.</msg>
+<arg>//div[normalize-space()='End of life']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-04-24T14:24:35.781893" elapsed="120.191747">Element '//div[normalize-space()='End of life']' not visible after 2 minutes.</status>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>//div[normalize-space()='End of life']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="NOT RUN" start="2024-04-24T14:26:35.973640" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-04-24T14:24:35.781893" elapsed="120.191747">Element '//div[normalize-space()='End of life']' not visible after 2 minutes.</status>
+</kw>
+<kw name="Verify your current page location contains" owner="Generic">
+<arg>management-console</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:35.973640" elapsed="0.000000"/>
+</kw>
+<kw name="Click on the profile name" owner="Generic">
+<status status="NOT RUN" start="2024-04-24T14:26:35.973640" elapsed="0.000000"/>
+</kw>
+<kw name="Select option from profile list" owner="Generic">
+<arg>personal-details</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:35.973640" elapsed="0.000000"/>
+</kw>
+<kw name="Choose options inside personal_details" owner="I_iconPage">
+<arg>Organization</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:35.973640" elapsed="0.000000"/>
+</kw>
+<kw name="Choose tabs under organization" owner="I_iconPage">
+<arg>system</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:35.973640" elapsed="0.000000"/>
+</kw>
+<kw name="Select the employee ID checkbox" owner="DashboardPage">
+<arg>yes</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:35.973640" elapsed="0.000000"/>
+</kw>
+<kw name="Select the employee ID checkbox" owner="DashboardPage">
+<arg>no</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:35.973640" elapsed="0.000000"/>
+</kw>
+<kw name="Fetch alert message text and compare it with" owner="Generic">
+<arg>Settings Updated</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:35.973640" elapsed="0.000000"/>
+</kw>
+<kw name="select the option from the side menu" owner="Generic">
+<arg>Team Members</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:35.973640" elapsed="0.000000"/>
+</kw>
+<kw name="Verify your current page location contains" owner="Generic">
+<arg>memberslist</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:35.973640" elapsed="0.000000"/>
+</kw>
+<kw name="Click on team member action button" owner="MemberPage">
+<status status="NOT RUN" start="2024-04-24T14:26:35.973640" elapsed="0.000000"/>
+</kw>
+<kw name="Choose the option from the action menu" owner="MemberPage">
+<arg>Bulk Import</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:35.973640" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>${yop_sleep}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-04-24T14:26:35.973640" elapsed="0.000000"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>aithentic | Member - Import</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="NOT RUN" start="2024-04-24T14:26:35.973640" elapsed="0.000000"/>
+</kw>
+<kw name="Verify your current page location contains" owner="Generic">
+<arg>add-member-grid</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:35.973640" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value of first name in bulk import of team member" owner="Bulk_Import_ExportPage">
+<arg>FirstName</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:35.973640" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value of last name in bulk import of team member" owner="Bulk_Import_ExportPage">
+<arg>LastName</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:35.973640" elapsed="0.000000"/>
+</kw>
+<kw name="Enter random employee id of bulk import" owner="Bulk_Import_ExportPage">
+<arg>EmployeeId</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:35.973640" elapsed="0.000000"/>
+</kw>
+<kw name="Select option from technology type column in bulk_edit" owner="Bulk_Import_ExportPage">
+<arg>CountryCode</arg>
+<arg>1</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:35.973640" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value of team member in the phone number column" owner="Bulk_Import_ExportPage">
+<arg>MobileNo</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:35.973640" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value of team member in the email column" owner="Bulk_Import_ExportPage">
+<arg>BusinessEmail</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:35.973640" elapsed="0.000000"/>
+</kw>
+<kw name="Select option from technology type column in bulk_edit" owner="Bulk_Import_ExportPage">
+<arg>DepartmentName</arg>
+<arg>3</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:35.973640" elapsed="0.000000"/>
+</kw>
+<kw name="Select option from technology type column in bulk_edit" owner="Bulk_Import_ExportPage">
+<arg>MemberLocation</arg>
+<arg>3</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:35.973640" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>MemberLocation</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:35.973640" elapsed="0.000000"/>
+</kw>
+<kw name="Select option from technology type column in bulk_edit" owner="Bulk_Import_ExportPage">
+<arg>MemberRole</arg>
+<arg>2</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:35.973640" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>MemberRole</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:35.973640" elapsed="0.000000"/>
+</kw>
+<kw name="Enter position and title of team member bulk import" owner="Bulk_Import_ExportPage">
+<arg>QA</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:35.973640" elapsed="0.000000"/>
+</kw>
+<kw name="click on the button" owner="Generic">
+<arg>Check Data</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:35.973640" elapsed="0.000000"/>
+</kw>
+<kw name="click on the button" owner="Generic">
+<arg>Upload</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:35.973640" elapsed="0.000000"/>
+</kw>
+<kw name="Verify the upload message text" owner="Bulk_Import_ExportPage">
+<arg>Upload</arg>
+<arg>Upload Successful</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:35.973640" elapsed="0.000000"/>
+</kw>
+<kw name="click on the button" owner="Generic">
+<arg>Finish</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:35.973640" elapsed="0.000000"/>
+</kw>
+<kw name="Click on I_m_done button when popup appears" owner="Bulk_Import_ExportPage">
+<arg>no-im-done</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:35.973640" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>${yop_sleep}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-04-24T14:26:35.973640" elapsed="0.000000"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>aithentic | Member - List</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="NOT RUN" start="2024-04-24T14:26:35.973640" elapsed="0.000000"/>
+</kw>
+<kw name="Search Team Member by name" owner="TeamMemberPage">
+<arg>${generated_Firstname}</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:35.973640" elapsed="0.000000"/>
+</kw>
+<kw name="Wait until table get load" owner="Generic">
+<status status="NOT RUN" start="2024-04-24T14:26:35.973640" elapsed="0.015611"/>
+</kw>
+<kw name="Click on the profile name" owner="Generic">
+<status status="NOT RUN" start="2024-04-24T14:26:35.989251" elapsed="0.000000"/>
+</kw>
+<kw name="Select option from profile list" owner="Generic">
+<arg>personal-details</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:35.989251" elapsed="0.000000"/>
+</kw>
+<kw name="Choose options inside personal_details" owner="I_iconPage">
+<arg>Organization</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:35.989251" elapsed="0.000000"/>
+</kw>
+<kw name="Choose tabs under organization" owner="I_iconPage">
+<arg>system</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:35.989251" elapsed="0.000000"/>
+</kw>
+<kw name="Select the employee ID checkbox" owner="DashboardPage">
+<arg>yes</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:35.989251" elapsed="0.000000"/>
+</kw>
+<kw name="Fetch alert message text and compare it with" owner="Generic">
+<arg>Settings Updated</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:35.989251" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser session" owner="Generic" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-04-24T14:26:35.989251" elapsed="2.601080"/>
+</kw>
+<status status="PASS" start="2024-04-24T14:26:35.989251" elapsed="2.601080"/>
+</kw>
+<tag>Sanity</tag>
+<status status="FAIL" start="2024-04-24T14:24:23.146899" elapsed="135.443432">Element '//div[normalize-space()='End of life']' not visible after 2 minutes.</status>
+</test>
+<test id="s1-s1-t8" name="Technology Bulk import" line="603">
+<kw name="open the browser with the url" owner="Generic" type="SETUP">
+<kw name="Fix the column number" owner="Generic">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2024-04-24T14:24:26.515303" level="INFO">${pageHeading} = 2</msg>
+<var>${pageHeading}</var>
+<arg>2</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2024-04-24T14:24:26.515303" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-24T14:24:26.515303" level="INFO">${pageHeading} = 2</msg>
+<arg>${pageHeading}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-24T14:24:26.515303" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-04-24T14:24:26.515303" elapsed="0.000000"/>
+</kw>
+<kw name="Fix the row number" owner="Generic">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2024-04-24T14:24:26.515303" level="INFO">${pageTime} = 3</msg>
+<var>${pageTime}</var>
+<arg>3</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2024-04-24T14:24:26.515303" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-24T14:24:26.515303" level="INFO">${pageTime} = 3</msg>
+<arg>${pageTime}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-24T14:24:26.515303" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-04-24T14:24:26.515303" elapsed="0.000000"/>
+</kw>
+<kw name="Get Current Time in Milliseconds" owner="Generic">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-24T14:24:26.515303" level="INFO">${time_in_milliseconds} = 1713948866515</msg>
+<var>${time_in_milliseconds}</var>
+<arg>int(time.time() * 1000)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-24T14:24:26.515303" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${time_in_milliseconds}</value>
+<status status="PASS" start="2024-04-24T14:24:26.515303" elapsed="0.000000"/>
+</return>
+<msg time="2024-04-24T14:24:26.515303" level="INFO">${StartTime1} = 1713948866515</msg>
+<var>${StartTime1}</var>
+<status status="PASS" start="2024-04-24T14:24:26.515303" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:24:26.520392" level="INFO">Opening browser 'headlessfirefox' to base url 'https://pre-prod-app.aithentic.com'.</msg>
+<arg>${url}</arg>
+<arg>${browser_name}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-04-24T14:24:26.515303" elapsed="10.031334"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Login']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T14:24:36.546637" elapsed="0.027223"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Login']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-04-24T14:24:36.573860" elapsed="0.009006"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-04-24T14:24:36.582866" elapsed="0.009096"/>
+</kw>
+<kw name="Get Current Time in Milliseconds" owner="Generic">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-24T14:24:36.591962" level="INFO">${time_in_milliseconds} = 1713948876591</msg>
+<var>${time_in_milliseconds}</var>
+<arg>int(time.time() * 1000)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-24T14:24:36.591962" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${time_in_milliseconds}</value>
+<status status="PASS" start="2024-04-24T14:24:36.591962" elapsed="0.000000"/>
+</return>
+<msg time="2024-04-24T14:24:36.591962" level="INFO">${EndTime1} = 1713948876591</msg>
+<var>${EndTime1}</var>
+<status status="PASS" start="2024-04-24T14:24:36.591962" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-24T14:24:36.591962" level="INFO">${ActualTime} = 10076</msg>
+<var>${ActualTime}</var>
+<arg>${EndTime1}-${StartTime1}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-24T14:24:36.591962" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Current Time in Milliseconds: ${ActualTime}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-24T14:24:36.591962" elapsed="0.000000"/>
+</kw>
+<kw name="Calculate Running time" owner="Generic">
+<kw name="Close All Excel Documents" owner="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="PASS" start="2024-04-24T14:24:36.591962" elapsed="0.000000"/>
+</kw>
+<kw name="Open Excel Document" owner="ExcelLibrary">
+<arg>${SheetLocationAndName}</arg>
+<arg>doc_id=1</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="PASS" start="2024-04-24T14:24:36.595971" elapsed="0.014009"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${RowNum_forText}</arg>
+<arg>${ColumnNum_forText}</arg>
+<arg>${module_name}</arg>
+<arg>${SheetTabName}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="PASS" start="2024-04-24T14:24:36.609980" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${RowNum}</arg>
+<arg>${ColumnNum}</arg>
+<arg>${TimeTakenToLoginPage}</arg>
+<arg>${SheetTabName}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="PASS" start="2024-04-24T14:24:36.609980" elapsed="0.000000"/>
+</kw>
+<kw name="Save Excel Document" owner="ExcelLibrary">
+<arg>${SheetLocationAndName}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="PASS" start="2024-04-24T14:24:36.609980" elapsed="0.035986"/>
+</kw>
+<kw name="Close All Excel Documents" owner="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="PASS" start="2024-04-24T14:24:36.645966" elapsed="0.000000"/>
+</kw>
+<arg>2</arg>
+<arg>${pageHeading}</arg>
+<arg>Generic - open the browser with the url</arg>
+<arg>2</arg>
+<arg>${pageTime}</arg>
+<arg>${ActualTime}</arg>
+<arg>Load_Time_tracking</arg>
+<status status="PASS" start="2024-04-24T14:24:36.591962" elapsed="0.054004"/>
+</kw>
+<status status="PASS" start="2024-04-24T14:24:26.515303" elapsed="10.130663"/>
+</kw>
+<kw name="click on the tab" owner="Generic">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='${option}']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T14:24:36.645966" elapsed="0.014529"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='${option}']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-04-24T14:24:36.660495" elapsed="0.012521"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:24:36.673016" level="INFO">Clicking link '//a[normalize-space()='Login']'.</msg>
+<arg>//a[normalize-space()='${option}']</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T14:24:36.673016" elapsed="1.230812"/>
+</kw>
+<arg>Login</arg>
+<status status="PASS" start="2024-04-24T14:24:36.645966" elapsed="1.257862"/>
+</kw>
+<kw name="Fill the login Form" owner="LandingPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Kc_username}</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T14:24:37.903828" elapsed="0.036037"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:24:37.948851" level="INFO">Typing text 'testqa29j@mailinator.com' into text field 'css:#username'.</msg>
+<arg>${Kc_username}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T14:24:37.948851" elapsed="0.017023"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Kc_password}</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-24T14:24:37.965874" elapsed="0.010020"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:24:37.975894" level="INFO">Typing password into text field 'css:#password'.</msg>
+<msg time="2024-04-24T14:24:37.975894" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${Kc_password}</arg>
+<arg>${valid_password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T14:24:37.975894" elapsed="0.010005"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:24:37.985899" level="INFO">Clicking button 'css:#kc-login'.</msg>
+<arg>${Kc_loginBtn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-24T14:24:37.985899" elapsed="1.040502"/>
+</kw>
+<arg>${email}</arg>
+<arg>${valid_password}</arg>
+<status status="PASS" start="2024-04-24T14:24:37.903828" elapsed="1.122573"/>
+</kw>
+<kw name="Verify you are on dashboard page" owner="LandingPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2024-04-24T14:26:39.109629" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="7-selenium-screenshot-1.png"&gt;&lt;img src="7-selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-04-24T14:26:39.109629" level="FAIL">Element '//div[normalize-space()='End of life']' not visible after 2 minutes.</msg>
+<arg>//div[normalize-space()='End of life']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-04-24T14:24:39.026401" elapsed="120.083228">Element '//div[normalize-space()='End of life']' not visible after 2 minutes.</status>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>//div[normalize-space()='End of life']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="NOT RUN" start="2024-04-24T14:26:39.109629" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-04-24T14:24:39.026401" elapsed="120.083228">Element '//div[normalize-space()='End of life']' not visible after 2 minutes.</status>
+</kw>
+<kw name="Verify your current page location contains" owner="Generic">
+<arg>management-console</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.109629" elapsed="0.000000"/>
+</kw>
+<kw name="select the option from the side menu" owner="Generic">
+<arg>Technology</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.109629" elapsed="0.000000"/>
+</kw>
+<kw name="Verify your current page location contains" owner="Generic">
+<arg>technology-list</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.109629" elapsed="0.000000"/>
+</kw>
+<kw name="Click on action button of technology" owner="TechnologyPage">
+<status status="NOT RUN" start="2024-04-24T14:26:39.109629" elapsed="0.000000"/>
+</kw>
+<kw name="click on bulk import under action button of technology" owner="TechnologyPage">
+<status status="NOT RUN" start="2024-04-24T14:26:39.109629" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>${yop_sleep}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-04-24T14:26:39.109629" elapsed="0.000000"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>aithentic | Data-Wizard</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="NOT RUN" start="2024-04-24T14:26:39.109629" elapsed="0.000000"/>
+</kw>
+<kw name="click on checkbox under technology bulk import" owner="Bulk_Import_ExportPage">
+<status status="NOT RUN" start="2024-04-24T14:26:39.109629" elapsed="0.000000"/>
+</kw>
+<kw name="click on the button" owner="Generic">
+<arg>Next</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.109629" elapsed="0.000000"/>
+</kw>
+<kw name="Verify your current page location contains" owner="Generic">
+<arg>add-technology</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.109629" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
+<arg>Brand</arg>
+<arg>QABrand555</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.109629" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
+<arg>Product</arg>
+<arg>Product_00337612322</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.109629" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
+<arg>ItemTechCount</arg>
+<arg>1</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.109629" elapsed="0.000000"/>
+</kw>
+<kw name="Select option from technology type column in bulk_edit" owner="Bulk_Import_ExportPage">
+<arg>Supplier</arg>
+<arg>1</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.109629" elapsed="0.012601"/>
+</kw>
+<kw name="Select option from technology type column in bulk_edit" owner="Bulk_Import_ExportPage">
+<arg>SupportPartner</arg>
+<arg>1</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.122230" elapsed="0.000000"/>
+</kw>
+<kw name="click on the button" owner="Generic">
+<arg>Check Data</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.122230" elapsed="0.000000"/>
+</kw>
+<kw name="click on the button" owner="Generic">
+<arg>Upload</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.122230" elapsed="0.000000"/>
+</kw>
+<kw name="Verify the upload message text" owner="Bulk_Import_ExportPage">
+<arg>Upload</arg>
+<arg>Upload is prepared</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.122230" elapsed="0.000000"/>
+</kw>
+<kw name="click on the button" owner="Generic">
+<arg>Next</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.122230" elapsed="0.000000"/>
+</kw>
+<kw name="Verify your current page location contains" owner="Generic">
+<arg>add-technology-templates</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.122230" elapsed="0.000000"/>
+</kw>
+<kw name="Select option from technology type column in bulk_edit" owner="Bulk_Import_ExportPage">
+<arg>LocationName</arg>
+<arg>1</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.122230" elapsed="0.000000"/>
+</kw>
+<kw name="Select option from technology type column in bulk_edit" owner="Bulk_Import_ExportPage">
+<arg>DepartmentName</arg>
+<arg>1</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.122230" elapsed="0.000000"/>
+</kw>
+<kw name="Select option from technology type column in bulk_edit" owner="Bulk_Import_ExportPage">
+<arg>AssignTo</arg>
+<arg>1</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.122230" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value of asset id of technology bulk import" owner="Bulk_Import_ExportPage">
+<arg>AssetId</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.122230" elapsed="0.000000"/>
+</kw>
+<kw name="Select option from technology type column in bulk_edit" owner="Bulk_Import_ExportPage">
+<arg>Status</arg>
+<arg>1</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.122230" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>Status</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.122230" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
+<arg>PurchaseOrderNo</arg>
+<arg>25</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.122230" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>PurchaseOrderNo</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.122230" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
+<arg>PurchaseDt</arg>
+<arg>01/21/2021</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.122230" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>PurchaseDt</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.122230" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
+<arg>WarrantyEndDt</arg>
+<arg>03/23/2025</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.122230" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>WarrantyEndDt</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.122230" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
+<arg>Comment</arg>
+<arg>Testing</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.125836" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>Comment</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.125836" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in cost type field of technology bulk import" owner="Bulk_Import_ExportPage">
+<arg>CostType</arg>
+<arg>Rented</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.125836" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>CostType</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.125836" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
+<arg>PaymentPartner</arg>
+<arg>testqa 20Feb</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.125836" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>PaymentPartner</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.125836" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
+<arg>PaymentType</arg>
+<arg>FixedPayment</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.125836" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>PaymentType</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.125836" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
+<arg>PaymentPeriod</arg>
+<arg>Monthly</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.125836" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>PaymentPeriod</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.125836" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
+<arg>FirstPaymentDate</arg>
+<arg>02/03/2023</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.125836" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>FirstPaymentDate</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.125836" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in last Payment date field of technology bulk import" owner="Bulk_Import_ExportPage">
+<arg>LastPaymentDate</arg>
+<arg>02/03/2024</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.125836" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>LastPaymentDate</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.125836" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
+<arg>RenewalDate</arg>
+<arg>02/11/2024</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.125836" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>RenewalDate</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.125836" elapsed="0.000000"/>
+</kw>
+<kw name="Select option from technology type column in bulk_edit" owner="Bulk_Import_ExportPage">
+<arg>BudgetCurrency</arg>
+<arg>1</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.125836" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>BudgetCurrency</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.125836" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
+<arg>BudgetPaymentValue</arg>
+<arg>2500</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.125836" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>BudgetPaymentValue</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.125836" elapsed="0.000000"/>
+</kw>
+<kw name="Select option from technology type column in bulk_edit" owner="Bulk_Import_ExportPage">
+<arg>ActualPaymentCurrency</arg>
+<arg>1</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.125836" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>ActualPaymentCurrency</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.125836" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
+<arg>LastActualPaymentValue</arg>
+<arg>2000</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.125836" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>LastActualPaymentValue</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.125836" elapsed="0.000000"/>
+</kw>
+<kw name="Select option from technology type column in bulk_edit" owner="Bulk_Import_ExportPage">
+<arg>CostCenter</arg>
+<arg>1</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.125836" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>CostCenter</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.125836" elapsed="0.000000"/>
+</kw>
+<kw name="Select option from technology type column in bulk_edit" owner="Bulk_Import_ExportPage">
+<arg>Supplier</arg>
+<arg>1</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.125836" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>Supplier</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.125836" elapsed="0.000000"/>
+</kw>
+<kw name="Select option from technology type column in bulk_edit" owner="Bulk_Import_ExportPage">
+<arg>SupportPartner</arg>
+<arg>1</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.125836" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>SupportPartner</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.125836" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value of serial number of technology bulk import" owner="Bulk_Import_ExportPage">
+<arg>DYNA_21</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.125836" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>DYNA_21</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.125836" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
+<arg>TECHDYNA_2</arg>
+<arg>Capex</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.125836" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>TECHDYNA_2</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.125836" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
+<arg>TECHDYNA_9</arg>
+<arg>Account123</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.125836" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>TECHDYNA_9</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.125836" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
+<arg>TECHDYNA_3</arg>
+<arg>1654</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.132440" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>TECHDYNA_3</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.132440" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
+<arg>TECHDYNA_4</arg>
+<arg>1100</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.132440" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>TECHDYNA_4</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.132440" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
+<arg>TECHDYNA_7</arg>
+<arg>100</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.132440" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>TECHDYNA_7</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.132440" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
+<arg>TECHDYNA_8</arg>
+<arg>12</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.132440" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>TECHDYNA_8</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.132440" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
+<arg>TECHDYNA_10</arg>
+<arg>01/01/2023</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.132440" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>TECHDYNA_10</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.132440" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
+<arg>TECHDYNA_11</arg>
+<arg>01/01/2024</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.132440" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>TECHDYNA_11</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.132440" elapsed="0.000000"/>
+</kw>
+<kw name="Enter the new value in the fields of technology bulk import" owner="Bulk_Import_ExportPage">
+<arg>TECHDYNA_12</arg>
+<arg>1</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.132440" elapsed="0.000000"/>
+</kw>
+<kw name="Perform the keyboard action" owner="Bulk_Import_ExportPage">
+<arg>TECHDYNA_12</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.132440" elapsed="0.000000"/>
+</kw>
+<kw name="click on the button" owner="Generic">
+<arg>Check Data</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.132440" elapsed="0.000000"/>
+</kw>
+<kw name="click on the button" owner="Generic">
+<arg>Upload</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.132440" elapsed="0.000000"/>
+</kw>
+<kw name="Verify the upload message text" owner="Bulk_Import_ExportPage">
+<arg>UploadMessage</arg>
+<arg>Upload Successful</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.132440" elapsed="0.000000"/>
+</kw>
+<kw name="click on the button" owner="Generic">
+<arg>Next</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.132440" elapsed="0.000000"/>
+</kw>
+<kw name="Click on I_m_done button when popup appears" owner="Bulk_Import_ExportPage">
+<arg>no-im-done</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.132440" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>${yop_sleep}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-04-24T14:26:39.132440" elapsed="0.000000"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>aithentic | Technology - List</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="NOT RUN" start="2024-04-24T14:26:39.132440" elapsed="0.000000"/>
+</kw>
+<kw name="Verify your current page location contains" owner="Generic">
+<arg>technology-list</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.132440" elapsed="0.000000"/>
+</kw>
+<kw name="Search by AssetId" owner="TechnologyPage">
+<arg>${generated_assetid}</arg>
+<status status="NOT RUN" start="2024-04-24T14:26:39.132440" elapsed="0.000000"/>
+</kw>
+<kw name="Wait until table get load" owner="Generic">
+<status status="NOT RUN" start="2024-04-24T14:26:39.132440" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser session" owner="Generic" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-04-24T14:26:39.132440" elapsed="2.624284"/>
+</kw>
+<status status="PASS" start="2024-04-24T14:26:39.132440" elapsed="2.624284"/>
+</kw>
+<tag>Sanity</tag>
+<status status="FAIL" start="2024-04-24T14:24:26.507190" elapsed="135.249534">Element '//div[normalize-space()='End of life']' not visible after 2 minutes.</status>
+</test>
+<doc>Contains all keyword of  Dashboard page</doc>
+<status status="FAIL" start="2024-04-24T14:17:18.305000" elapsed="140.530632"/>
 </suite>
-<doc>[https://pabot.org/?ref=log|Pabot] result from 3 executions.</doc>
-<status status="PASS" start="2024-04-15T12:49:13.921000" elapsed="40.548779"/>
+<doc>[https://pabot.org/?ref=log|Pabot] result from 8 executions.</doc>
+<status status="FAIL" start="2024-04-24T14:17:18.294000" elapsed="140.541638"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="8" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">Time</stat>
+<stat pass="0" fail="8" skip="0">Sanity</stat>
+<stat pass="0" fail="1" skip="0">Time</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="TestPage">TestPage</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="DashboardPageTest">TestPage.DashboardPageTest</stat>
+<stat pass="0" fail="8" skip="0" id="s1" name="TestPage">TestPage</stat>
+<stat pass="0" fail="8" skip="0" id="s1-s1" name="Bulk Import ExportPageTest">TestPage.Bulk Import ExportPageTest</stat>
 </suite>
 </statistics>
 <errors>
