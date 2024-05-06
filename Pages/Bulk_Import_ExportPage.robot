@@ -640,6 +640,9 @@ Click on the confirm button of finish pop up
     wait until element is enabled   css:.qa-confirm-finish-bulk-edit       ${wait_time}
     click element   css:.qa-confirm-finish-bulk-edit
 
-
+Click on confirm warning button after update
+    wait until element is visible   css:.qa-confirm-technology-bulk-edit-warning      ${wait_time}
+    wait until element is enabled   css:.qa-confirm-technology-bulk-edit-warning       ${wait_time}
+    click element   css:.qa-confirm-technology-bulk-edit-warning
 
 
