@@ -46,7 +46,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Compose Message invite user test
-    [Tags]      Sanity      Smoke       Time
+    [Tags]      Sanity      Smoke       Time    rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -334,7 +334,7 @@ Compose Message invite user test
 #-------------------------------------------BILLING-----------------------------------------------------
     SubscriptionPage.Click on same billing address checkbox
     SubscriptionPage.Switch to card iframe
-    SubscriptionPage.Enter cardnumber    42424242424242420424242
+    SubscriptionPage.Enter cardnumber    42424242424242420429242
     Unselect Frame
     SubscriptionPage.Enter card user name    Paramdeep Singh
 
