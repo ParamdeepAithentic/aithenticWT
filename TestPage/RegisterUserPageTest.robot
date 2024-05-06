@@ -118,7 +118,7 @@ Register new user
     SubscriptionPage.Click on same billing address checkbox
     SubscriptionPage.Click on same billing address checkbox
     SubscriptionPage.Switch to card iframe
-    SubscriptionPage.Enter cardnumber    42424242424242420424242
+    SubscriptionPage.Enter cardnumber    42424242424242420429242
     Unselect Frame
     SubscriptionPage.Enter card user name    Paramdeep Singh
     SubscriptionPage.Check the authorization checkbox

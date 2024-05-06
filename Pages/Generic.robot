@@ -56,7 +56,7 @@ ${valid_password}        Test!@5897     #UAT user
 ${admin_url}        https://qa-admin.aithentic.com/
 
 #${agentDiscovery_TagName}       Tag Name - johnsoftwaresolutions-1192-4         #qa
-${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-3        #uat
+${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-4        #uat
 
 ${admin_name}        aithentic@yopmail.com
 ${admin_password}       Admin@123
@@ -78,7 +78,7 @@ ${click_countryTag}     css:.iti__selected-flag.dropdown-toggle
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
-${wait_time}        10
+${wait_time}        120
 ${yop_sleep}       10
 ${search_sleep}       1
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
@@ -172,7 +172,7 @@ Close Browser session for OCS file
     close browser
 
 My Failure Handling Keyword
-    :FOR    ${step}    IN
+    FOR    ${step}    IN
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    ocs
@@ -190,8 +190,9 @@ My Failure Handling Keyword
         TechnologyPage.Click on update button of edit_technology page       Update
         Generic.Fetch alert message text and compare it with        Technology updated successfully
         UnselectAssetAPI.Hit API Endpoint
+    END
 #        Run Keyword And Ignore Error    ${step}
-        Run Keyword If    '${TEST_STATUS}' == 'FAIL'         Close Browser session
+        Run Keyword If    '${step}' == 'FAIL'         Close Browser session
 
 
 select the option from the side menu
@@ -344,9 +345,9 @@ Fetch log_out alert message
     Wait Until Element Is Not Visible    ${alert_Msg}          ${wait_time}
 
 Click keyboard button
-    [Arguments]     ${locator}      ${button}
-    Press keys      ${locator}      ${button}
-
+#    [Arguments]     ${locator}      ${button}
+#    Press keys      ${locator}      ${button}
+#
 Update settings for Asset_ID, employee_id and location
     Generic.open the browser with the url
     Generic.click on the tab	Login

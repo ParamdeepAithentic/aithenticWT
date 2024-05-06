@@ -239,9 +239,16 @@ Click on Plus icon under table
 #    wait until element is visible    (//tbody)[1]        ${wait_time}
 #    wait until element is enabled     (//tbody)[1]        ${wait_time}
 #    Execute JavaScript  window.scrollBy(10000, 0)
-    Wait Until Element Is Visible     (//i[@title='Add as an Asset'])[1]         ${wait_time}
-    wait until element is enabled     (//i[@title='Add as an Asset'])[1]      ${wait_time}
-    Click Element   (//i[@title='Add as an Asset'])[1]
+    Wait Until Element Is Visible     (//i[@title='Add as an Asset'])[11]         ${wait_time}
+    wait until element is enabled     (//i[@title='Add as an Asset'])[11]      ${wait_time}
+    Click Element   (//i[@title='Add as an Asset'])[11]
+
+
+Click on plus icon under table of agent discovery
+    Wait Until Element Is Visible     (//i[@title='Add as an Asset'])[2]         ${wait_time}
+    wait until element is enabled     (//i[@title='Add as an Asset'])[2]      ${wait_time}
+    Click Element   (//i[@title='Add as an Asset'])[2]
+
 
 Choose option from brand on Add technology Page
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
@@ -278,17 +285,6 @@ Enter The Asset_id in Add Technology Page
     log to console      ${generated_AssetID}
     Set Global Variable   ${generated_AssetID}
 
-#Get MAC_Address by hovering over discovered assets
-#    [Arguments]     ${text}
-#    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-#    Wait Until Element Is Visible   ${Discovery_Assets}      ${wait_time}
-#    Wait Until Element Is Enabled   ${Discovery_Assets}      ${wait_time}
-#    sleep       ${search_sleep}
-#    ${hover_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
-#    ${parts}    Split String    ${hover_text}    ${text}
-#    ${hover_MAC_address}    Get Substring    ${parts[1]}    1
-#    Log to console      ${hover_MAC_address}
-#    set global variable     ${hover_MAC_address}
 
 Get Serial number by hovering over discovered assets
     [Arguments]     ${text}
@@ -403,7 +399,8 @@ Hover over searched existing Asset
 
 Get text by hovering over existing assets
     [Arguments]     ${option}
-    Wait Until Element Is Visible   (//div[contains(text(),'QABrand555')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]      ${wait_time}
+#    Wait Until Element Is Visible   (//div[contains(text(),'QABrand555')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]      ${wait_time}
+    Wait Until Element Is Visible   (//div[contains(text(),'Apple Inc.')]//ancestor::div[contains(@class,'box')]//child::div[contains(@class,'assets-text')])[2]      ${wait_time}
     ${text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${option}')]//ancestor::li
     ${parts}    Split String    ${text}    ${option}
     ${substring1}    Get Substring    ${parts[1]}    1
@@ -556,12 +553,13 @@ Fetch the IP address tagname from agent discovery page
 Search with MAC address and IP Address on the search bar of Discovered Asset List
     [Arguments]     ${MAC_Address}
     wait until element is not visible    ${loaderIcon}    ${wait_time}
-    wait until element is visible       css:thead tr       ${wait_time}
+    wait until element is visible       (//thead//tr)[2]       ${wait_time}
     wait until element is visible   css:input[placeholder='Search by Brand or Name or Description or Asset ID']     ${wait_time}
     wait until element is enabled   css:input[placeholder='Search by Brand or Name or Description or Asset ID']     ${wait_time}
     input text  css:input[placeholder='Search by Brand or Name or Description or Asset ID']     ${MAC_Address}
     sleep       ${search_sleep}
-    wait until element is visible       css:thead tr       ${wait_time}
+#    wait until element is visible       css:thead tr       ${wait_time}
+     wait until element is visible       (//thead//tr)[2]       ${wait_time}
 
 Enter input in the brand field of advanced search of discovered asset
     [Arguments]     ${option}
@@ -649,9 +647,9 @@ Get MAC_Address by hovering over discovered assets
     sleep       ${search_sleep}
     ${hover_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
     ${parts}    Split String    ${hover_text}    ${text}
-    ${hover_MAC_address}    Get Substring    ${parts[1]}    1
-    Log to console      ${hover_MAC_address}
-    set global variable     ${hover_MAC_address}
+    ${hover_MAC_address1}    Get Substring    ${parts[1]}    1
+    Log to console      ${hover_MAC_address1}
+    set global variable     ${hover_MAC_address1}
 
 Get Host name by hovering over discovered assets
     [Arguments]     ${text}
@@ -787,3 +785,9 @@ Click on view button link on discovery asset list page
     wait until element is visible      (//tbody//tr[2]//td[7])[2]      ${wait_time}
     wait until element is enabled      (//tbody//tr[2]//td[7])[2]      ${wait_time}
     click element  (//tbody//tr[2]//td[7])[2]
+
+Mouse Hover over filters of existing asset
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible   (//div[contains(text(),'Apple Inc.')]//ancestor::div[contains(@class,'box')]//child::div[contains(@class,'assets-text')])[2]     ${wait_time}
+    Wait Until Element Is Enabled    (//div[contains(text(),'Apple Inc.')]//ancestor::div[contains(@class,'box')]//child::div[contains(@class,'assets-text')])[2]     ${wait_time}
+    Mouse Over   (//div[contains(text(),'Apple Inc.')]//ancestor::div[contains(@class,'box')]//child::div[contains(@class,'assets-text')])[2]
