@@ -45,7 +45,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Register new user
-    [Tags]      smoke       Time
+    [Tags]      smoke       Time    rerun
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
@@ -118,7 +118,7 @@ Register new user
     SubscriptionPage.Click on same billing address checkbox
     SubscriptionPage.Click on same billing address checkbox
     SubscriptionPage.Switch to card iframe
-    SubscriptionPage.Enter cardnumber    42424242424242420424242
+    SubscriptionPage.Enter cardnumber    42424242424242420429242
     Unselect Frame
     SubscriptionPage.Enter card user name    Paramdeep Singh
     SubscriptionPage.Check the authorization checkbox
