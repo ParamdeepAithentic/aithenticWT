@@ -42,12 +42,12 @@ ${Kc_loginBtn}     css:#kc-login
 
 *** Keywords ***
 #Click on add department
-#    wait until element is visible      ${add_dept_btn}      60
-#    wait until element is enabled      ${add_dept_btn}      60
+#    wait until element is visible      ${add_dept_btn}      ${wait_time}
+#    wait until element is enabled      ${add_dept_btn}      ${wait_time}
 #    click element      ${add_dept_btn}
 #
 #
 #Enter user name
-#    wait until element is visible      ${add_dept_btn}      60
-#    wait until element is enabled      ${add_dept_btn}      60
+#    wait until element is visible      ${add_dept_btn}      ${wait_time}
+#    wait until element is enabled      ${add_dept_btn}      ${wait_time}
 #    click element      ${add_dept_btn}

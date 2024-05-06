@@ -56,8 +56,8 @@ ${admin_alert_msg}      css:.toast-message
 *** Keywords ***
 
 Fetch text from current Plan
-    wait until element is visible           css:.rounded-right h4       60
-    wait until element is enabled           css:.rounded-right h4       60
+    wait until element is visible           css:.rounded-right h4       ${wait_time}
+    wait until element is enabled           css:.rounded-right h4       ${wait_time}
     Sleep    ${yop_sleep}
     ${text}=        get text        css:.rounded-right h4
     Log To Console    ${text}
@@ -71,38 +71,38 @@ Verify text from current plan after changing subscription
 
 Choose option from side menu of Admin_panel
     [Arguments]     ${option}
-    wait until element is not visible       ${admin_loader}              60
+    wait until element is not visible       ${admin_loader}              ${wait_time}
     Generic.Select parameter        ${option}
 
 Select option under side menu
     [Arguments]     ${option}
-    wait until element is not visible       ${admin_loader}              60
+    wait until element is not visible       ${admin_loader}              ${wait_time}
     Generic.click on the tab    ${option}
 
 Get Admin OTP acess from email
     [Arguments]    ${text}
-    wait until element is visible   ${otp_mail_content}      60
-    wait until element is enabled   ${otp_mail_content}      60
+    wait until element is visible   ${otp_mail_content}      ${wait_time}
+    wait until element is enabled   ${otp_mail_content}      ${wait_time}
     ${mailContent}=     get text   ${otp_mail_content}
     ${parts}    Split String    ${mailContent}    ${text}
     ${passcode}    Get Substring    ${parts[1]}    2    8
     Log to console  The OTP is:${passcode}
     set global variable    ${passcode}
-    wait until element is not visible       ${admin_loader}              60
+    wait until element is not visible       ${admin_loader}              ${wait_time}
 
 Search the end user under subscribed companies
     [Arguments]     ${option}
-    wait until element is not visible       ${admin_loader}              60
-    wait until element is visible       css:#search     60
-    wait until element is enabled       css:#search     60
+    wait until element is not visible       ${admin_loader}              ${wait_time}
+    wait until element is visible       css:#search     ${wait_time}
+    wait until element is enabled       css:#search     ${wait_time}
     clear element text      css:#search
     Input text      css:#search         ${option}
-    wait until element is not visible       ${admin_loader}              60
+    wait until element is not visible       ${admin_loader}              ${wait_time}
 
 Click on the three_dots of the table
-    wait until element is not visible       ${admin_loader}              60
-    wait until element is visible       css:.fa-ellipsis-h       60
-    wait until element is enabled       css:.fa-ellipsis-h       60
+    wait until element is not visible       ${admin_loader}              ${wait_time}
+    wait until element is visible       css:.fa-ellipsis-h       ${wait_time}
+    wait until element is enabled       css:.fa-ellipsis-h       ${wait_time}
     click element           css:.fa-ellipsis-h
 
 Choose option by clicking on three_dots
@@ -112,40 +112,40 @@ Choose option by clicking on three_dots
 
 Scroll table horizontaly
     Sleep    ${search_sleep}
-    wait until element is visible       ${table}        60
-    wait until element is enabled       ${table}        60
+    wait until element is visible       ${table}        ${wait_time}
+    wait until element is enabled       ${table}        ${wait_time}
     Execute JavaScript  window.scrollBy(10000, 0)
 
 scroll table vertically
     [Arguments]     ${option}
-    wait until element is not visible       ${admin_loader}              60
-    wait until element is visible       css:.fa-ellipsis-h              60
-    wait until element is enabled       css:.fa-ellipsis-h              60
+    wait until element is not visible       ${admin_loader}              ${wait_time}
+    wait until element is visible       css:.fa-ellipsis-h              ${wait_time}
+    wait until element is enabled       css:.fa-ellipsis-h              ${wait_time}
     scroll element into view        //a[normalize-space()='${option}']
 
 Change the plan from Plan Name field
     [Arguments]     ${option}
-    wait until element is not visible       ${admin_loader}              60
-    wait until element is visible       css:#planName       60
-    wait until element is enabled       css:#planName       60
+    wait until element is not visible       ${admin_loader}              ${wait_time}
+    wait until element is visible       css:#planName       ${wait_time}
+    wait until element is enabled       css:#planName       ${wait_time}
     click element       css:#planName
     Select From List by Label       css:#planName       ${option}
 
 Click on the button inside assign commercial plan modal
     [Arguments]         ${option}
-    wait until element is not visible       ${admin_loader}              60
+    wait until element is not visible       ${admin_loader}              ${wait_time}
     Generic.click on the button     ${option}
 #option: Close, Confirm
 
 Get alert message and compare it with
     [Arguments]     ${option}
-    wait until element is not visible       ${admin_loader}              60
-    wait until element is visible       ${admin_alert_msg}      60
-    wait until element is enabled       ${admin_alert_msg}      60
+    wait until element is not visible       ${admin_loader}              ${wait_time}
+    wait until element is visible       ${admin_alert_msg}      ${wait_time}
+    wait until element is enabled       ${admin_alert_msg}      ${wait_time}
     ${get_alertMsg} =    get text    ${admin_alert_Msg}
     log to console     ${get_alertMsg}
     should be equal    ${get_alertMsg}     ${option}
-    Wait Until Element Is Not Visible    ${admin_alert_msg}        60
+    Wait Until Element Is Not Visible    ${admin_alert_msg}        ${wait_time}
 
 Open Admin panel
     Execute JavaScript    window.open('about:blank','_blank')
@@ -153,13 +153,13 @@ Open Admin panel
     Go To       ${admin_url}
 
 Select option from profile list
-    wait until element is visible       css:.qa-subscription-dropdown       60
-    wait until element is enabled       css:.qa-subscription-dropdown       60
+    wait until element is visible       css:.qa-subscription-dropdown       ${wait_time}
+    wait until element is enabled       css:.qa-subscription-dropdown       ${wait_time}
     click element       css:.qa-subscription-dropdown
 
 click on confirm button to change plan
     [Arguments]     ${option}
-    wait until element is not visible      ${loaderIcon}        60
-    wait until element is visible       //button[@type='button'][normalize-space()='${option}']   60
-    wait until element is enabled       //button[@type='button'][normalize-space()='${option}']   60
+    wait until element is not visible      ${loaderIcon}        ${wait_time}
+    wait until element is visible       //button[@type='button'][normalize-space()='${option}']   ${wait_time}
+    wait until element is enabled       //button[@type='button'][normalize-space()='${option}']   ${wait_time}
     click element       //button[@type='button'][normalize-space()='${option}']

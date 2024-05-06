@@ -47,6 +47,8 @@ Test Teardown   Close Browser session
 Click the option from side drawer
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     Generic.select the option from the side menu    Dashboard
     Generic.Verify your current page location contains      dashboard
     DashboardPage.select the option from the dashboard drawer   IT Performances
@@ -54,9 +56,11 @@ Click the option from side drawer
 
 
 Verify the drawer list
+    [Tags]      Time
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.Verify your current page location contains      home
     ${EndTime1} =     Get Current Time in Milliseconds
@@ -71,22 +75,30 @@ Verify the drawer list
 Verify the side options list
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     DashboardPage.Verify the side option list parameters
 
 click the option from menu
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
 
 Verify the profile option list
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     DashboardPage.Verify the profile option list parameters
 
 Create and verify new brand
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     Generic.Click on the profile name
     Generic.Select option from profile list     brand-dropdown
     Generic.Verify your current page location contains      brand
@@ -102,6 +114,8 @@ Create and verify new brand
 Create a new product with adding new brand
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     Generic.Click on the profile name
     Generic.Select option from profile list     brand-dropdown
     Generic.Verify your current page location contains      brand
@@ -133,6 +147,8 @@ Create a new product with adding new brand
 Add Brand via personal detail under technology
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -174,6 +190,8 @@ Add Brand via personal detail under technology
 Invite user into Aithentic
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     Generic.select the option from the side menu    Dashboard
     Generic.Verify your current page location contains      dashboard
     ReplaceDomainAPI.Replace Domain
@@ -186,6 +204,7 @@ Invite user into Aithentic
     Generic.Select other option from profile list     Logout
     Generic.Fetch log_out alert message
     Generic.Open new window      yopmail
+    Generic.Refresh the existing page
     Generic.Search yopmail emails for       ${generate_sharetoEmail}
     Generic.Refresh the existing page
     Generic.Switch to iframe by ID      ifmail
@@ -203,6 +222,7 @@ Invite user into Aithentic
     RegisterUserPage.Save the register form
 #    Generic.Verify your current page location contains      update-email
     Generic.Open new window     yopmail
+    Generic.Refresh the existing page
     Generic.Search yopmail emails for       ${generate_sharetoEmail}
     Generic.Switch to iframe by ID      ifinbox
     Yopmail.Click on email of yopmail   Email Register Verification Required.
@@ -270,6 +290,8 @@ Verify Help Center
     [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     Generic.select the option from the side menu    Dashboard
     Generic.Verify your current page location contains      dashboard
     DashboardPage.click on Help center icon of dashboard page
@@ -278,37 +300,38 @@ Verify Help Center
     Switch Window       Get Started Guide - Jira Service Management
     Generic.Verify your current page location contains     servicedesk
     Generic.Verify your current page contains this text     Get Started Guide
-    Switch Window      aithentic | Asset - Overview
+    Switch Window      aithentic | Dashboard
     DashboardPage.Click on link of information center list      Knowledge Base
 
     sleep       ${yop_sleep}
     Switch Window       Help Center Home - Jira Service Management
     Generic.Verify your current page location contains     servicedesk
     Generic.Verify your current page contains this text     SEARCH OUR KNOWLEDGE BASE
-    Switch Window       aithentic | Asset - Overview
+    Switch Window       aithentic | Dashboard
     DashboardPage.Click on link of information center list      What’s New!
 
     sleep       ${yop_sleep}
     Switch Window       What's New! - Jira Service Management
     Generic.Verify your current page location contains     servicedesk
     Generic.Verify your current page contains this text     What's New!
-    Switch Window       aithentic | Asset - Overview
+    Switch Window       aithentic | Dashboard
     DashboardPage.Click on link of Support      Customer
 
     sleep       ${yop_sleep}
     Switch Window       Customer Service Desk - Jira Service Management
     Generic.Verify your current page location contains      servicedesk
     Generic.Verify your current page contains this text     Customer Service Desk
-    Switch Window       aithentic | Asset - Overview
+    Switch Window       aithentic | Dashboard
     DashboardPage.Search any keyword of FAQ section     How do I complete my account setup?
     DashboardPage.Verify the keyword        How do I complete my account setup?
     DashboardPage.Search any keyword of FAQ section     Testing
     DashboardPage.Verify no result found with wrong FAQ
 
 Edit Brand and address via brand under profile list
-    [Tags]    rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -377,8 +400,11 @@ Edit Brand and address via brand under profile list
 
 
 Deactivate Brand and address via brand under profile list
+    [Tags]    tt
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -451,8 +477,11 @@ Deactivate Brand and address via brand under profile list
     Generic.Fetch alert message text and compare it with      Brand deactivated successfully
 
 Activate Brand and address via brand under profile list
+    [Tags]    tt
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -529,8 +558,11 @@ Activate Brand and address via brand under profile list
     Generic.Fetch alert message text and compare it with      Brand activated successfully
 
 Remove Brand and address via brand under profile list
+    [Tags]    tt
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -606,6 +638,8 @@ Verify adding a new brand from profile listing
     [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     Generic.Click on the profile name
     Generic.Select option from profile list     brand-dropdown
     ReplaceDomainAPI.Replace Domain
@@ -631,6 +665,8 @@ Verify adding a new brand from profile listing
 Verify Department quick_links in profile settings dropdown
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     Generic.Click on the profile name
     Generic.Select option from profile list      department-dropdown
     Generic.Verify your current page location contains       department-list
@@ -638,8 +674,11 @@ Verify Department quick_links in profile settings dropdown
     DashboardPage.Get and verify the text and compare it with     Added Departments
 
 Search By Technology Group in product list
+    [Tags]      Time
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     Generic.Click on the profile name
     Generic.Select option from profile list     brand-dropdown
     Generic.Verify your current page location contains      brand
@@ -672,6 +711,8 @@ Search By Technology Group in product list
 Verify Brand quick_links in profile settings Dropdown
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     Generic.Click on the profile name
     Generic.Select option from profile list     brand-dropdown
     Generic.Verify your current page location contains      brand-list
@@ -679,8 +720,11 @@ Verify Brand quick_links in profile settings Dropdown
     DashboardPage.Get and verify the text and compare it with   Added Brands
 
 Verify Product quick_links in profile settings dropdown
+    [Tags]    tt
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     Generic.Click on the profile name
     Generic.Select option from profile list      product-dropdown
     Generic.Verify your current page location contains       product-list
@@ -688,8 +732,11 @@ Verify Product quick_links in profile settings dropdown
     DashboardPage.Get and verify the text and compare it with       Added Products
 
 Search By Brand name in product list
+    [Tags]    tt
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     Generic.Click on the profile name
     Generic.Select option from profile list     brand-dropdown
     Generic.Verify your current page location contains      brand
@@ -720,8 +767,11 @@ Search By Brand name in product list
     DashboardPage.Verify product added    ${generated_product}
 
 Verify Reports Asset Alert
+    [Tags]    rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}       ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -737,6 +787,8 @@ Verify Reports Asset Alert
     Generic.Verify your current page location contains      technology
     Generic.Wait until table get load
     Generic.select the option from the side menu    Dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview
     Generic.Verify your current page contains this text     Billing Details
@@ -759,6 +811,8 @@ Verify Reports Asset Alert
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     Generic.Verify your current page location contains      technology
     Generic.select the option from the side menu    Dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview
     Generic.Verify your current page contains this text     Billing Details
@@ -773,6 +827,8 @@ Verify Reports Asset Alert
     Generic.Verify your current page location contains      technology
     Generic.Verify your current page contains this text     No Records 
     Generic.select the option from the side menu    Dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview
     Generic.Verify your current page contains this text     Billing Details
@@ -786,6 +842,8 @@ Verify Reports Asset Alert
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
     Generic.select the option from the side menu    Dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview
     Generic.Verify your current page contains this text    Billing Details
@@ -799,6 +857,8 @@ Verify Reports Asset Alert
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
     Generic.select the option from the side menu    Dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview
     Generic.Verify your current page contains this text     Billing Details
@@ -812,6 +872,8 @@ Verify Reports Asset Alert
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
     Generic.select the option from the side menu    Dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview
     Generic.Verify your current page contains this text     Billing Details

@@ -1,0 +1,13 @@
+datasources:3d103144668221faab759daac7b5ab98b2dddfb3
+commandlineoptions:725419e7a169ab477058d3e535c22f59a119e64b
+suitesfrom:no-suites-from-option
+file:be3a0a07873e61fae6d29f28a78fb3a333749b0c
+--test TechnologyPageTest.Fill the technology form for hardware product
+--test TechnologyPageTest.Create new asset with new brand and product
+--test TechnologyPageTest.Restore asset type one
+--test TechnologyPageTest.Sent Message should show in the Sent Tab
+--test TechnologyPageTest.Add Technology Page - Add New location and assign that location
+--test TechnologyPageTest.Add New Support Partner and Assign that Partner
+--test TechnologyPageTest.Verify the history of added technology
+--test TechnologyPageTest.Edit Technology Page - Add New Support Partner and assign that Support Partner
+--test TechnologyPageTest.Technology Details- Verify the Location Details

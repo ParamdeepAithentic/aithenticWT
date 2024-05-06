@@ -67,36 +67,36 @@ ${otp_mail_content}     //div[@id='mailctn']/div/div/p[1]
 *** Keywords ***
 
 #Click on first email of yopmail
-#    wait until element is visible   ${firstEmail}      60
-#    wait until element is enabled   ${firstEmail}      60
+#    wait until element is visible   ${firstEmail}      ${wait_time}
+#    wait until element is enabled   ${firstEmail}      ${wait_time}
 #    click element       ${firstEmail}
 
 Click on email of yopmail
     [Arguments]    ${email}
-    wait until element is visible   //div[normalize-space()='${email}']      60
-    wait until element is enabled   //div[normalize-space()='${email}']      60
+    wait until element is visible   //div[normalize-space()='${email}']      ${wait_time}
+    wait until element is enabled   //div[normalize-space()='${email}']      ${wait_time}
     click element       //div[normalize-space()='${email}']
 
 Click on sign In button in yopmail email
-    wait until element is visible   ${email_btn}       60
-    wait until element is enabled    ${email_btn}       60
+    wait until element is visible   ${email_btn}       ${wait_time}
+    wait until element is enabled    ${email_btn}       ${wait_time}
     click element       ${email_btn}
-#    wait until element is not visible    ${loaderIcon}       60
+#    wait until element is not visible    ${loaderIcon}       ${wait_time}
 
 Click on verify button in yopmail email
-    wait until element is visible   ${email_btn}       60
-    wait until element is enabled    ${email_btn}       60
+    wait until element is visible   ${email_btn}       ${wait_time}
+    wait until element is enabled    ${email_btn}       ${wait_time}
     click element       ${email_btn}
 
 Refresh the email
-    wait until element is visible   ${refresh}      60
-    wait until element is enabled   ${refresh}      60
+    wait until element is visible   ${refresh}      ${wait_time}
+    wait until element is enabled   ${refresh}      ${wait_time}
     click element       ${refresh}
 
 
 Get verification OTP from email
     [Arguments]    ${text}
-    wait until element is visible   ${otp_mail_content}      60
+    wait until element is visible   ${otp_mail_content}      ${wait_time}
     ${mailContent}=     get text   ${otp_mail_content}
 
     ${parts}    Split String    ${mailContent}    ${text}

@@ -47,6 +47,8 @@ Test Teardown   Close Browser session
 Download sheet for Forecasts
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     DashboardPage.select the option from the dashboard drawer     IT Performances
     Generic.Verify your current page location contains      it-performance
     ITperformancePage.Verify all tabs of supplier_partner_location and download sheet
@@ -56,6 +58,8 @@ Download sheet for Forecasts
 Download sheet for aging
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     DashboardPage.select the option from the dashboard drawer     IT Performances
     Generic.Verify your current page location contains      it-performance
     ITperformancePage.Verify all tabs of brand report and download sheet
@@ -65,6 +69,8 @@ Download sheet for aging
 Download sheet for investments
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     DashboardPage.select the option from the dashboard drawer     IT Performances
     Generic.Verify your current page location contains      it-performance
     ITperformancePage.Verify all tabs of asset report and download sheet
@@ -74,6 +80,8 @@ Download sheet for investments
 Download all sheets with download all button
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     DashboardPage.select the option from the dashboard drawer     IT Performances
     Generic.Verify your current page location contains      it-performance
     ITperformancePage.Click on download all button
@@ -81,6 +89,8 @@ Download all sheets with download all button
 It performnace drill down agging analytics
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}     ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     DashboardPage.select the option from the dashboard drawer     IT Performances
     Generic.Verify your current page location contains      it-performance
     ITperformancePage.Click on aging analytics tab
@@ -99,6 +109,8 @@ It performnace drill down agging analytics
 IT perfomance drill down data quality
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     DashboardPage.select the option from the dashboard drawer     IT Performances
     Generic.Verify your current page location contains      it-performance
     ITperformancePage.Click on tabs under it perfomance      spend-forecast-reports
@@ -112,8 +124,11 @@ IT perfomance drill down data quality
     ITperformancePage.Get And Verify The Count Of Data Quality Under Tabs   dataquality3        dataquality3
 
 IT perfomance drill down data quality of Investments by partner tab
+    [Tags]           sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     DashboardPage.select the option from the dashboard drawer     IT Performances
     Generic.Verify your current page location contains      it-performance
     ITperformancePage.Click on tabs under it perfomance     investments-partners
@@ -129,3 +144,23 @@ IT perfomance drill down data quality of Investments by partner tab
     ITperformancePage.Click on tabs under investment by partner tab     supportlocationbudget
     ITperformancePage.Click on data quality button link under investments by partner tab    4
     ITperformancePage.Get And Verify The Count Of Data Quality Under Investment by partner tab   dataquality-partner-4        dataquality-partner-4
+
+It performnace drill down investment by partner
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}     ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
+    DashboardPage.select the option from the dashboard drawer     IT Performances
+    Generic.Verify your current page location contains      it-performance
+    ITperformancePage.Click on tabs under it perfomance     investments-partners
+    ITperformancePage.Click on tabs under investment by partner tab     brandBudget
+    ITperformancePage.Get and verify the count of table of investment by partner     QACompany96590301 Budget by Brand       QACompany96590301 Budget by Brand
+    ITperformancePage.Click on tabs under it perfomance     investments-partners
+    ITperformancePage.Click on tabs under investment by partner tab     supplierbudget
+    ITperformancePage.Get and verify the count of table of investment by partner     QACompany96590301 Budget by Supplier       QACompany96590301 Budget by Supplier
+    ITperformancePage.Click on tabs under it perfomance     investments-partners
+    ITperformancePage.Click on tabs under investment by partner tab     brandsupplierbudget
+    ITperformancePage.Get and verify the count of table of brand spend by supplier and supplier spend my location of investment by partner     QACompany96590301 Budget by Brand and Supplier     QACompany96590301 Budget by Brand and Supplier
+    ITperformancePage.Click on tabs under it perfomance     investments-partners
+    ITperformancePage.Click on tabs under investment by partner tab     supportlocationbudget
+    ITperformancePage.Get and verify the count of table of brand spend by supplier and supplier spend my location of investment by partner     QACompany96590301 Budget by Supplier and Location        QACompany96590301 Budget by Supplier and Location

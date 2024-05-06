@@ -45,7 +45,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Register new user
-    [Tags]      smoke
+    [Tags]      smoke       Time
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
@@ -64,6 +64,7 @@ Register new user
     RegisterUserPage.Save the register form
     Generic.Verify your current page location contains      update-email
     Generic.Open new window     yopmail
+    Generic.Refresh the existing page
     Generic.Search yopmail emails for       ${generate_register_Email}
     Generic.Switch to iframe by ID      ifinbox
     Yopmail.Click on email of yopmail   Email Register Verification Required.
@@ -114,6 +115,8 @@ Register new user
     Generic.Verify your current page location contains     subscription-payment
 #-------------------------------------------BILLING-----------------------------------------------------
     SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
     SubscriptionPage.Switch to card iframe
     SubscriptionPage.Enter cardnumber    42424242424242420424242
     Unselect Frame
@@ -147,6 +150,7 @@ Signup with ACH payment method
     RegisterUserPage.Save the register form
     Generic.Verify your current page location contains      update-email
     Generic.Open new window     yopmail
+    Generic.Refresh the existing page
     Generic.Search yopmail emails for       ${generate_register_Email}
     Generic.Switch to iframe by ID      ifinbox
     Yopmail.Click on email of yopmail   Email Register Verification Required.
@@ -231,6 +235,7 @@ Change plan and Change asset limit with ACH Payment method
     RegisterUserPage.Save the register form
     Generic.Verify your current page location contains      update-email
     Generic.Open new window     yopmail
+    Generic.Refresh the existing page
     Generic.Search yopmail emails for       ${generate_register_Email}
     Generic.Switch to iframe by ID      ifinbox
     Yopmail.Click on email of yopmail   Email Register Verification Required.

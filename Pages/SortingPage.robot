@@ -43,9 +43,9 @@ Resource        ../Pages/Bulk_Import_ExportPage.robot
 *** Keywords ***
 Verify the sorting of the table
     [Arguments]    ${columnNumber}      ${headingName}
-    wait until element is not visible      ${loaderIcon}       60
-    wait until element is visible       //tbody//tr//td[normalize-space()='1']     60
-    Wait Until Element Is Visible    //tbody//tr//td[${columnNumber}]    60
+    wait until element is not visible      ${loaderIcon}       ${wait_time}
+    wait until element is visible       //tbody//tr//td[normalize-space()='1']     ${wait_time}
+    Wait Until Element Is Visible    //tbody//tr//td[${columnNumber}]    ${wait_time}
     ${element_list}=    Get WebElements    //tbody//tr//td[${columnNumber}]
 
     @{text_list}=    Create List
@@ -61,14 +61,14 @@ Verify the sorting of the table
     Sort List    ${sorted_text_list}
     Log to console  Sorted Text List (Ascending): ${sorted_text_list}
 
-    Wait Until Element Is Visible    //div[normalize-space()='${headingName}']//following-sibling::div//button    60
+    Wait Until Element Is Visible    //div[normalize-space()='${headingName}']//following-sibling::div//button    ${wait_time}
     click element   //div[normalize-space()='${headingName}']//following-sibling::div//button
 
-#    wait until element is not visible      css:#dropdownMenuButton.disabled-button       60
-    wait until element is not visible      ${loaderIcon}       60
-    wait until element is visible       //tbody//tr//td[normalize-space()='1']     60
+#    wait until element is not visible      css:#dropdownMenuButton.disabled-button       ${wait_time}
+    wait until element is not visible      ${loaderIcon}       ${wait_time}
+    wait until element is visible       //tbody//tr//td[normalize-space()='1']     ${wait_time}
 
-    Wait Until Element Is Visible    //tbody//tr//td[${columnNumber}]    60
+    Wait Until Element Is Visible    //tbody//tr//td[${columnNumber}]    ${wait_time}
     ${element_list}=    Get WebElements    //tbody//tr//td[${columnNumber}]
 
 
@@ -90,13 +90,13 @@ Verify the sorting of the table
     Log to console  Sorted Text List (Decending): ${sorted_list}
 
 
-    Wait Until Element Is Visible    //div[normalize-space()='${headingName}']//following-sibling::div//button    60
+    Wait Until Element Is Visible    //div[normalize-space()='${headingName}']//following-sibling::div//button    ${wait_time}
     click element   //div[normalize-space()='${headingName}']//following-sibling::div//button
-    wait until element is not visible      ${loaderIcon}       60
-    wait until element is visible       //tbody//tr//td[normalize-space()='1']     60
+    wait until element is not visible      ${loaderIcon}       ${wait_time}
+    wait until element is visible       //tbody//tr//td[normalize-space()='1']     ${wait_time}
 
 
-    Wait Until Element Is Visible    //tbody//tr//td[${columnNumber}]    60
+    Wait Until Element Is Visible    //tbody//tr//td[${columnNumber}]    ${wait_time}
     ${element_list}=    Get WebElements    //tbody//tr//td[${columnNumber}]
 
 
@@ -117,9 +117,9 @@ Verify the sorting of the table
 
 Verify the sorting of the table method two
     [Arguments]    ${columnNumber}      ${headingName}
-    wait until element is not visible      ${loaderIcon}       60
-    wait until element is visible       //tbody//tr//td[normalize-space()='1']     60
-    Wait Until Element Is Visible    //tbody//tr//td[${columnNumber}]    60
+    wait until element is not visible      ${loaderIcon}       ${wait_time}
+    wait until element is visible       //tbody//tr//td[normalize-space()='1']     ${wait_time}
+    Wait Until Element Is Visible    //tbody//tr//td[${columnNumber}]    ${wait_time}
     ${element_list}=    Get WebElements    //tbody//tr//td[${columnNumber}]
 
     @{text_list}=    Create List
@@ -135,14 +135,14 @@ Verify the sorting of the table method two
     Sort List    ${sorted_text_list}
     Log to console  Sorted Text List (Ascending): ${sorted_text_list}
 
-    Wait Until Element Is Visible    //div[normalize-space()='${headingName}']//app-sort-button    60
+    Wait Until Element Is Visible    //div[normalize-space()='${headingName}']//app-sort-button    ${wait_time}
     click element   //div[normalize-space()='${headingName}']//app-sort-button
 
-#    wait until element is not visible      css:#dropdownMenuButton.disabled-button       60
-    wait until element is not visible      ${loaderIcon}       60
-    wait until element is visible       //tbody//tr//td[normalize-space()='1']     60
+#    wait until element is not visible      css:#dropdownMenuButton.disabled-button       ${wait_time}
+    wait until element is not visible      ${loaderIcon}       ${wait_time}
+    wait until element is visible       //tbody//tr//td[normalize-space()='1']     ${wait_time}
 
-    Wait Until Element Is Visible    //tbody//tr//td[${columnNumber}]    60
+    Wait Until Element Is Visible    //tbody//tr//td[${columnNumber}]    ${wait_time}
     ${element_list}=    Get WebElements    //tbody//tr//td[${columnNumber}]
 
 
@@ -162,13 +162,13 @@ Verify the sorting of the table method two
     Log to console  Sorted Text List (Decending): ${sorted_list}
 
 
-    Wait Until Element Is Visible    //div[normalize-space()='${headingName}']//app-sort-button     60
+    Wait Until Element Is Visible    //div[normalize-space()='${headingName}']//app-sort-button     ${wait_time}
     click element   //div[normalize-space()='${headingName}']//app-sort-button
-    wait until element is not visible      ${loaderIcon}       60
-    wait until element is visible       //tbody//tr//td[normalize-space()='1']     60
+    wait until element is not visible      ${loaderIcon}       ${wait_time}
+    wait until element is visible       //tbody//tr//td[normalize-space()='1']     ${wait_time}
 
 
-    Wait Until Element Is Visible    //tbody//tr//td[${columnNumber}]    60
+    Wait Until Element Is Visible    //tbody//tr//td[${columnNumber}]    ${wait_time}
     ${element_list}=    Get WebElements    //tbody//tr//td[${columnNumber}]
 
 
@@ -185,9 +185,9 @@ Verify the sorting of the table method two
 
 Verify the sorting of the table method three
     [Arguments]    ${columnNumber}      ${headingName}
-    wait until element is not visible      ${loaderIcon}       60
-    wait until element is visible       //tbody//tr//td[normalize-space()='1']     60
-    Wait Until Element Is Visible    //tbody//tr//td[${columnNumber}]    60
+    wait until element is not visible      ${loaderIcon}       ${wait_time}
+    wait until element is visible       //tbody//tr//td[normalize-space()='1']     ${wait_time}
+    Wait Until Element Is Visible    //tbody//tr//td[${columnNumber}]    ${wait_time}
     ${element_list}=    Get WebElements    //tbody//tr//td[${columnNumber}]
 
     @{text_list}=    Create List
@@ -203,14 +203,14 @@ Verify the sorting of the table method three
     Sort List    ${sorted_text_list}
     Log to console  Sorted Text List (Ascending): ${sorted_text_list}
 
-    Wait Until Element Is Visible    //div[normalize-space()='${headingName}']//div[contains(@class,'sortingIcon')]    60
+    Wait Until Element Is Visible    //div[normalize-space()='${headingName}']//div[contains(@class,'sortingIcon')]    ${wait_time}
     click element   //div[normalize-space()='${headingName}']//div[contains(@class,'sortingIcon')]
 
-#    wait until element is not visible      css:#dropdownMenuButton.disabled-button       60
-    wait until element is not visible      ${loaderIcon}       60
-    wait until element is visible       //tbody//tr//td[normalize-space()='1']     60
+#    wait until element is not visible      css:#dropdownMenuButton.disabled-button       ${wait_time}
+    wait until element is not visible      ${loaderIcon}       ${wait_time}
+    wait until element is visible       //tbody//tr//td[normalize-space()='1']     ${wait_time}
 
-    Wait Until Element Is Visible    //tbody//tr//td[${columnNumber}]    60
+    Wait Until Element Is Visible    //tbody//tr//td[${columnNumber}]    ${wait_time}
     ${element_list}=    Get WebElements    //tbody//tr//td[${columnNumber}]
 
 
@@ -230,13 +230,13 @@ Verify the sorting of the table method three
     Log to console  Sorted Text List (Decending): ${sorted_list}
 
 
-    Wait Until Element Is Visible    //div[normalize-space()='${headingName}']//div[contains(@class,'sortingIcon')]    60
+    Wait Until Element Is Visible    //div[normalize-space()='${headingName}']//div[contains(@class,'sortingIcon')]    ${wait_time}
     click element   //div[normalize-space()='${headingName}']//div[contains(@class,'sortingIcon')]
-    wait until element is not visible      ${loaderIcon}       60
-    wait until element is visible       //tbody//tr//td[normalize-space()='1']     60
+    wait until element is not visible      ${loaderIcon}       ${wait_time}
+    wait until element is visible       //tbody//tr//td[normalize-space()='1']     ${wait_time}
 
 
-    Wait Until Element Is Visible    //tbody//tr//td[${columnNumber}]    60
+    Wait Until Element Is Visible    //tbody//tr//td[${columnNumber}]    ${wait_time}
     ${element_list}=    Get WebElements    //tbody//tr//td[${columnNumber}]
 
 
@@ -254,9 +254,9 @@ Verify the sorting of the table method three
 
 Verify the sorting of the table method four
     [Arguments]    ${columnNumber}      ${headingName}
-    wait until element is not visible      ${loaderIcon}       60
-    wait until element is visible       //tbody/tr[1]    60
-    Wait Until Element Is Visible    //tbody//tr//td[${columnNumber}]    60
+    wait until element is not visible      ${loaderIcon}       ${wait_time}
+    wait until element is visible       //tbody/tr[1]    ${wait_time}
+    Wait Until Element Is Visible    //tbody//tr//td[${columnNumber}]    ${wait_time}
     ${element_list}=    Get WebElements    //tbody//tr//td[${columnNumber}]
 
     @{text_list}=    Create List
@@ -272,14 +272,14 @@ Verify the sorting of the table method four
     Sort List    ${sorted_text_list}
     Log to console  Sorted Text List (Ascending): ${sorted_text_list}
 
-    Wait Until Element Is Visible    //div[normalize-space()='${headingName}']//div[contains(@class,'sortingIcon')]    60
+    Wait Until Element Is Visible    //div[normalize-space()='${headingName}']//div[contains(@class,'sortingIcon')]    ${wait_time}
     click element   //div[normalize-space()='${headingName}']//div[contains(@class,'sortingIcon')]
 
-#    wait until element is not visible      css:#dropdownMenuButton.disabled-button       60
-    wait until element is not visible      ${loaderIcon}       60
-    wait until element is visible       //tbody/tr[1]     60
+#    wait until element is not visible      css:#dropdownMenuButton.disabled-button       ${wait_time}
+    wait until element is not visible      ${loaderIcon}       ${wait_time}
+    wait until element is visible       //tbody/tr[1]     ${wait_time}
 
-    Wait Until Element Is Visible    //tbody//tr//td[${columnNumber}]    60
+    Wait Until Element Is Visible    //tbody//tr//td[${columnNumber}]    ${wait_time}
     ${element_list}=    Get WebElements    //tbody//tr//td[${columnNumber}]
 
 
@@ -299,13 +299,13 @@ Verify the sorting of the table method four
     Log to console  Sorted Text List (Decending): ${sorted_list}
 
 
-    Wait Until Element Is Visible    //div[normalize-space()='${headingName}']//div[contains(@class,'sortingIcon')]    60
+    Wait Until Element Is Visible    //div[normalize-space()='${headingName}']//div[contains(@class,'sortingIcon')]    ${wait_time}
     click element   //div[normalize-space()='${headingName}']//div[contains(@class,'sortingIcon')]
-    wait until element is not visible      ${loaderIcon}       60
-    wait until element is visible       //tbody/tr[1]     60
+    wait until element is not visible      ${loaderIcon}       ${wait_time}
+    wait until element is visible       //tbody/tr[1]     ${wait_time}
 
 
-    Wait Until Element Is Visible    //tbody//tr//td[${columnNumber}]    60
+    Wait Until Element Is Visible    //tbody//tr//td[${columnNumber}]    ${wait_time}
     ${element_list}=    Get WebElements    //tbody//tr//td[${columnNumber}]
 
 

@@ -41,6 +41,8 @@ Verify asset history of assigned users
     [Tags]  regression    smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     MemberPage.Click on assigned user tab under team member      Assigned Users
@@ -92,6 +94,8 @@ Verify asset history of assigned users
 Search asset history with Asset ID of Assigned User
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     Generic.Click on the profile name
     Generic.Select option from profile list     brand-dropdown
     Generic.Verify your current page location contains      brand
@@ -175,6 +179,8 @@ Export Assigned User Asset History list
    [Tags]   smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     MemberPage.Click on assigned user tab     Assigned Users

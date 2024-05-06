@@ -55,13 +55,13 @@ ${three_dots}       css:.three-dots
 
 *** Keywords ***
 Click on add team member action button
-    wait until element is visible      ${teamMember_Action_btn}      60
-    wait until element is enabled      ${teamMember_Action_btn}      60
+    wait until element is visible      ${teamMember_Action_btn}      ${wait_time}
+    wait until element is enabled      ${teamMember_Action_btn}      ${wait_time}
     click element      ${teamMember_Action_btn}
 
 Select option from team member action menu
-    wait until element is visible      //a[normalize-space()='Add Member']      60
-    wait until element is enabled      //a[normalize-space()='Add Member']      60
+    wait until element is visible      //a[normalize-space()='Add Member']      ${wait_time}
+    wait until element is enabled      //a[normalize-space()='Add Member']      ${wait_time}
     click element      //a[normalize-space()='Add Member']
 
 Choose option after clicking on Action button
@@ -73,7 +73,7 @@ Choose option after clicking on Action button
 Enter team member first name
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_TMFname}=    Catenate    TMFname_${random_string}
-    wait until element is visible       ${TMFname}     60
+    wait until element is visible       ${TMFname}     ${wait_time}
     input text   ${TMFname}    ${generated_TMFname}
     log to console      ${generated_TMFname}
     set global variable       ${generated_TMFname}
@@ -81,7 +81,7 @@ Enter team member first name
 Enter team member last name
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_TMLname}=    Catenate    TMLast_${random_string}
-    wait until element is visible       ${TMLname}    60
+    wait until element is visible       ${TMLname}    ${wait_time}
     input text   ${TMLname}   ${generated_TMLname}
     log to console      ${generated_TMLname}
     set global variable  ${generated_TMLname}
@@ -90,41 +90,41 @@ Enter team member last name
 Enter team member business email
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_TMbusinessEmail}=    Catenate    TMBusinessEmail_${random_string}@yopmail.net
-    wait until element is visible       ${TMBusinessEmail}    60
+    wait until element is visible       ${TMBusinessEmail}    ${wait_time}
     input text   ${TMBusinessEmail}   ${generated_TMbusinessEmail}
     log to console      ${generated_TMbusinessEmail}
 
 Enter team member business email_mailinator
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_TMbusinessEmail}=    Catenate    TMBusinessEmail_${random_string}@mailinator.com
-    wait until element is visible       ${TMBusinessEmail}    60
+    wait until element is visible       ${TMBusinessEmail}    ${wait_time}
     input text   ${TMBusinessEmail}   ${generated_TMbusinessEmail}
     log to console      ${generated_TMbusinessEmail}
 
 Enter team member business email with cool fr nf email
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_TMbusinessEmail}=    Catenate    TMBusinessEmail_${random_string}@cool.fr.nf
-    wait until element is visible       ${TMBusinessEmail}    60
+    wait until element is visible       ${TMBusinessEmail}    ${wait_time}
     input text   ${TMBusinessEmail}   ${generated_TMbusinessEmail}
     log to console      ${generated_TMbusinessEmail}
     set global variable     ${generated_TMbusinessEmail}
 
 
 Click on team member department
-    wait until element is enabled     ${TMDepartmentName}     60
-    wait until element is visible     ${TMDepartmentName}      60
+    wait until element is enabled     ${TMDepartmentName}     ${wait_time}
+    wait until element is visible     ${TMDepartmentName}      ${wait_time}
     click element   ${TMDepartmentName}
 
 Click on add here in department field
     [Arguments]    ${option}
     Generic.click on the tab    ${option}
-#    wait until element is visible   //a[normalize-space()='Click here to add']      60
-#    wait until element is enabled        //a[normalize-space()='Click here to add']      60
+#    wait until element is visible   //a[normalize-space()='Click here to add']      ${wait_time}
+#    wait until element is enabled        //a[normalize-space()='Click here to add']      ${wait_time}
 #    click element       //a[normalize-space()='Click here to add']
 
 Select team member department
     [Arguments]    ${option}
-    wait until element is visible       ${TMDepartmentName}     60
+    wait until element is visible       ${TMDepartmentName}     ${wait_time}
     input text      ${TMDepartmentName}         ${option}
     Generic.Select parameter        ${option}
 
@@ -135,39 +135,39 @@ Select team member role
     Generic.Select parameter        ${option}
 
 Click on team member location
-    wait until element is visible     ${TMLocation}     60
-    wait until element is enabled     ${TMLocation}      60
+    wait until element is visible     ${TMLocation}     ${wait_time}
+    wait until element is enabled     ${TMLocation}      ${wait_time}
     click element   ${TMLocation}
 
 Select team member location
-    wait until element is visible     //div[contains (@id, '-2')]       60
-    wait until element is enabled     //div[contains (@id, '-2')]       60
+    wait until element is visible     //div[contains (@id, '-2')]       ${wait_time}
+    wait until element is enabled     //div[contains (@id, '-2')]       ${wait_time}
     click element   //div[contains (@id, '-2')]
 
 Save the team member form
     [Arguments]    ${option}
-    wait until element is visible     css:.${option}-member-qa       60
-    wait until element is enabled     css:.${option}-member-qa       60
+    wait until element is visible     css:.${option}-member-qa       ${wait_time}
+    wait until element is enabled     css:.${option}-member-qa       ${wait_time}
     click element   css:.${option}-member-qa
 
 Enter the Position in member form
     [Arguments]    ${option}
-    wait until element is visible       css:#Position       60
+    wait until element is visible       css:#Position       ${wait_time}
     input text      css:#Position       ${option}
 
 Search Team Member by name
     [Arguments]    ${name}
-    wait until element is visible       css:thead tr       60
-    wait until element is visible      ${name_SearchBar}     60
+    wait until element is visible       css:thead tr       ${wait_time}
+    wait until element is visible      ${name_SearchBar}     ${wait_time}
     click element      ${name_SearchBar}
     Clear Element Text      ${name_SearchBar}
     ${StartTime1} =     Get Current Time in Milliseconds
     input text   ${name_SearchBar}   ${name}
     sleep      ${search_sleep}
-    wait until element is visible       css:thead tr       60
+    wait until element is visible       css:thead tr       ${wait_time}
 
 Click on three dots of Team Member listing
-    wait until element is visible   ${three_dots}   60
+    wait until element is visible   ${three_dots}   ${wait_time}
     click element   ${three_dots}
 
 Select option from three dots of Team Member
@@ -176,7 +176,7 @@ Select option from three dots of Team Member
 
 Click on the tab
     [Arguments]         ${option}
-    wait until element is visible       css:#member-${option}-tab     60
+    wait until element is visible       css:#member-${option}-tab     ${wait_time}
     click element       css:#member-${option}-tab
 
 Click on the button
@@ -185,8 +185,8 @@ Click on the button
 
 Search the department name
     [Arguments]    ${name}
-    wait until element is visible       css:thead tr       60
-    wait until element is visible      ${Dept_SearchBar}     60
+    wait until element is visible       css:thead tr       ${wait_time}
+    wait until element is visible      ${Dept_SearchBar}     ${wait_time}
     click element      ${Dept_SearchBar}
     Clear Element Text      ${Dept_SearchBar}
     ${StartTime1} =     Get Current Time in Milliseconds
@@ -194,59 +194,59 @@ Search the department name
 
 
 Verify resulted row contains Dept_name
-    wait until element is not visible       ${loaderIcon}       60
-    wait until element is visible       css:.table.department       60
+    wait until element is not visible       ${loaderIcon}       ${wait_time}
+    wait until element is visible       css:.table.department       ${wait_time}
     sleep       ${search_sleep}
     Table column should contain      css:.table.department      2       ${generated_DepartmentNumber}
 
 Select team member location with new domain
-    wait until element is visible     //div[contains (@id, '-0')]       60
-    wait until element is enabled     //div[contains (@id, '-0')]       60
+    wait until element is visible     //div[contains (@id, '-0')]       ${wait_time}
+    wait until element is enabled     //div[contains (@id, '-0')]       ${wait_time}
     click element   //div[contains (@id, '-0')]
 
 
 Click on back to member list of member list
-    wait until element is visible   css:span[class='back']      60
+    wait until element is visible   css:span[class='back']      ${wait_time}
     click element   css:span[class='back']
 
 Click on search by brand, product and asset id of asset history via team member
     [Arguments]     ${option}
-    wait until element is visible   css:.search-location-qa     60
+    wait until element is visible   css:.search-location-qa     ${wait_time}
     click element   css:.search-location-qa
     input text  css:.search-location-qa     ${option}
 
 verify status of first name in member list
     [Arguments]     ${option}
-    wait until element is visible   //td[normalize-space()='${option}']     60
+    wait until element is visible   //td[normalize-space()='${option}']     ${wait_time}
 Enter assign to field
     [Arguments]     ${option}
-    wait until element is visible   //td[normalize-space()='${option}']     60
+    wait until element is visible   //td[normalize-space()='${option}']     ${wait_time}
 
 Verify the first row of asset history under team member
-    wait until element is not visible   ${loaderIcon}    60
-    wait until element is visible   css:.table-hover    60
+    wait until element is not visible   ${loaderIcon}    ${wait_time}
+    wait until element is visible   css:.table-hover    ${wait_time}
 
 Click on convert to team member confirm pop up
-    wait until element is visible   css:.qa-convert-assignee-tm-confirm     60
-    wait until element is enabled   css:.qa-convert-assignee-tm-confirm     60
+    wait until element is visible   css:.qa-convert-assignee-tm-confirm     ${wait_time}
+    wait until element is enabled   css:.qa-convert-assignee-tm-confirm     ${wait_time}
     sleep   ${search_sleep}
     click element   css:.qa-convert-assignee-tm-confirm
 
 Click on asset history tab under team member
-    wait until element is visible    css:.asset-history-qa   60
-    wait until element is enabled  css:.asset-history-qa   60
+    wait until element is visible    css:.asset-history-qa   ${wait_time}
+    wait until element is enabled  css:.asset-history-qa   ${wait_time}
     click element    css:.asset-history-qa
 
 Enter team member business email_mailinator while converting assignee to team member
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_TMbusinessemail}=    Catenate    TMBusinessEmail_${random_string}@mailinator.com
-    wait until element is visible       css:#businessEmail    60
+    wait until element is visible       css:#businessEmail    ${wait_time}
     input text   css:#businessEmail   ${generated_TMbusinessemail}
     log to console      ${generated_TMbusinessemail}
 
 Enter the Position in member form while converting assignee to team member
     [Arguments]    ${option}
-    wait until element is visible       css:#position       60
+    wait until element is visible       css:#position       ${wait_time}
     input text      css:#position       ${option}
 
 Select team member role while converting assignee to team member
@@ -255,13 +255,13 @@ Select team member role while converting assignee to team member
     Generic.Select parameter        ${option}
 
 Click on details tab under team member
-    wait until element is visible   css:.member-details-qa      60
-    wait until element is enabled   css:.member-details-qa      60
+    wait until element is visible   css:.member-details-qa      ${wait_time}
+    wait until element is enabled   css:.member-details-qa      ${wait_time}
     click element   css:.member-details-qa
 
 Select team member status while converting assignee to team member
     [Arguments]    ${option}
-    wait until element is visible       css:#status     60
+    wait until element is visible       css:#status     ${wait_time}
     click element   css:#status
     input text   css:#status   ${option}
     Generic.Select parameter     ${option}
@@ -269,7 +269,7 @@ Select team member status while converting assignee to team member
 Create random employee id
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_memberEmpID}=    Catenate    ${random_string}
-    wait until element is visible       css:#employeeId    60
-    wait until element is enabled       css:#employeeId    60
+    wait until element is visible       css:#employeeId    ${wait_time}
+    wait until element is enabled       css:#employeeId    ${wait_time}
     input text   css:#employeeId   ${generated_memberEmpID}
     set global variable    ${generated_memberEmpID}

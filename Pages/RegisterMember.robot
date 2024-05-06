@@ -41,26 +41,26 @@ ${loaderIcon}     //div[@role='status']
 *** Keywords ***
 Fill first name for partner register member
     [Arguments]    ${fisrtName}
-    wait until element is not visible       ${loaderIcon}       60
-    wait until element is visible       ${partner_fname}       60
+    wait until element is not visible       ${loaderIcon}       ${wait_time}
+    wait until element is visible       ${partner_fname}       ${wait_time}
     Clear Element Text      ${partner_fname}
     input text      ${partner_fname}     ${fisrtName}
 
 
 Fill last name for partner register member
     [Arguments]    ${lastName}
-    wait until element is visible       ${partner_flname}       60
+    wait until element is visible       ${partner_flname}       ${wait_time}
     Clear Element Text      ${partner_flname}
     input text      ${partner_flname}     ${lastName}
 
 Check the term and condition checkbox
-    wait until element is not visible       ${loaderIcon}       60
-    wait until element is visible       ${tc_chkbox}       60
-    wait until element is enabled       ${tc_chkbox}       60
+    wait until element is not visible       ${loaderIcon}       ${wait_time}
+    wait until element is visible       ${tc_chkbox}       ${wait_time}
+    wait until element is enabled       ${tc_chkbox}       ${wait_time}
     click element       ${tc_chkbox}
 
 Submit the registration form
-    wait until element is visible       ${click_registerBTN}       60
-    wait until element is enabled       ${click_registerBTN}       60
+    wait until element is visible       ${click_registerBTN}       ${wait_time}
+    wait until element is enabled       ${click_registerBTN}       ${wait_time}
     click element       ${click_registerBTN}
 

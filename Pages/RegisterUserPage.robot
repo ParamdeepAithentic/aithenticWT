@@ -46,19 +46,19 @@ ${activeAssetPOPup}     //h5[normalize-space()='Available Inactive Assests']
 *** Keywords ***
 Download Agent popup
     [Arguments]    ${option}
-    wait until element is visible      //button[normalize-space()='${option}']     60
-    wait until element is enabled      //button[normalize-space()='${option}']     60
+    wait until element is visible      //button[normalize-space()='${option}']     ${wait_time}
+    wait until element is enabled      //button[normalize-space()='${option}']     ${wait_time}
     click element       //button[normalize-space()='${option}']
 
 
 #Verify that agent is ready to get download
-#    wait until element is not visible     ${preparingAgent_text}      60
-#    wait until element is visible     ${AgentReady_text}      60
+#    wait until element is not visible     ${preparingAgent_text}      ${wait_time}
+#    wait until element is visible     ${AgentReady_text}      ${wait_time}
 
 
 
 Create random register first name
-    wait until element is enabled       ${register_Fname}        60
+    wait until element is enabled       ${register_Fname}        ${wait_time}
     click element   ${register_Fname}
     Clear element text      ${register_Fname}
     ${random_string} =    Generate Random String       5      [NUMBERS]
@@ -68,14 +68,14 @@ Create random register first name
 
 Create self register first name
     [Arguments]    ${option}
-    wait until element is enabled       ${register_Fname}        60
+    wait until element is enabled       ${register_Fname}        ${wait_time}
     click element   ${register_Fname}
     Clear element text      ${register_Fname}
     input text   ${register_Fname}   ${option}
 
 
 Create random register last name
-    wait until element is enabled       ${register_Lname}        60
+    wait until element is enabled       ${register_Lname}        ${wait_time}
     click element   ${register_Lname}
     Clear element text      ${register_Lname}
     ${random_string} =    Generate Random String       5      [NUMBERS]
@@ -85,13 +85,13 @@ Create random register last name
 
 Create self register last name
     [Arguments]    ${option}
-    wait until element is enabled       ${register_Lname}        60
+    wait until element is enabled       ${register_Lname}        ${wait_time}
     click element   ${register_Lname}
     Clear element text      ${register_Lname}
     input text   ${register_Lname}   ${option}
 
 Create random register company name
-    wait until element is enabled       ${register_CompanyName}        60
+    wait until element is enabled       ${register_CompanyName}        ${wait_time}
     click element   ${register_CompanyName}
     Clear element text      ${register_CompanyName}
     ${random_string} =    Generate Random String       5      [NUMBERS]
@@ -102,25 +102,25 @@ Create random register company name
 
 Create self register company name
     [Arguments]    ${option}
-    wait until element is enabled       ${register_CompanyName}        60
+    wait until element is enabled       ${register_CompanyName}        ${wait_time}
     click element   ${register_CompanyName}
     Clear element text      ${register_CompanyName}
     input text   ${register_CompanyName}   ${option}
 
 
 Click on member type
-    wait until element is enabled       ${register_memberType}        60
+    wait until element is enabled       ${register_memberType}        ${wait_time}
     click element   ${register_memberType}
 
 Select the member type
     [Arguments]    ${option}
-    wait until element is visible      //span[contains(text(),'${option}')]     60
-    wait until element is enabled      //span[contains(text(),'${option}')]     60
+    wait until element is visible      //span[contains(text(),'${option}')]     ${wait_time}
+    wait until element is enabled      //span[contains(text(),'${option}')]     ${wait_time}
     click element       //span[contains(text(),'${option}')]
 
 
 Create partner random business email
-    wait until element is enabled       ${register_Email}        60
+    wait until element is enabled       ${register_Email}        ${wait_time}
     click element   ${register_Email}
     Clear element text      ${register_Email}
     ${random_string} =    Generate Random String       5      [NUMBERS]
@@ -131,21 +131,21 @@ Create partner random business email
 
 Create self register business name
     [Arguments]    ${option}
-    wait until element is enabled       ${register_Email}        60
+    wait until element is enabled       ${register_Email}        ${wait_time}
     click element   ${register_Email}
     Clear element text      ${register_Email}
     input text   ${register_Email}   ${option}@yopmail.net
 
 Select the checkbox
-    wait until element is visible      ${register_FormCheckBox}     60
-    wait until element is enabled      ${register_FormCheckBox}     60
+    wait until element is visible      ${register_FormCheckBox}     ${wait_time}
+    wait until element is enabled      ${register_FormCheckBox}     ${wait_time}
     click element       ${register_FormCheckBox}
 
 Save the register form
-    wait until element is visible      ${register_FormSubmitBTN}    60
-    wait until element is enabled      ${register_FormSubmitBTN}    60
+    wait until element is visible      ${register_FormSubmitBTN}    ${wait_time}
+    wait until element is enabled      ${register_FormSubmitBTN}    ${wait_time}
     click element       ${register_FormSubmitBTN}
-    Wait Until Element Is Not Visible    ${loaderIcon}      60
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
 
 Choose register user country
     [Arguments]    ${country}   ${code}     ${phoneNo}
@@ -159,4 +159,5 @@ Choose register user country
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  3  ${pageHeading}   RegisterUserPage - Choose register user country      3    ${pageTime}     ${ActualTime}    RegisterPage_Time
+
 

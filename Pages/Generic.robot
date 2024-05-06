@@ -42,21 +42,28 @@ ${user_name}             rahulshettyacademy
 ${invalid_password}      123445
 
 ${url}                 https://uat-app.aithentic.com/
-#${url}                  https://qa-app.aithentic.com/
+#${url}                https://qa-app.aithentic.com/
+#${url}                https://pre-prod-app.aithentic.com
 ${apiURL}              https://uat-api.aithentic.com/api/v1
-#${apiURL}               https://qa-api.aithentic.com/api/v1
+#${apiURL}             https://qa-api.aithentic.com/api/v1
+#${apiURL}             https://pre-prod-api.aithentic.com/api/v1
 ${valid_password}        Test!@5897     #UAT user
 #${valid_password}         Test@123       #QA User
-#
+#${valid_password}         Test@123         #pre prod
+
+
 ${admin_url}        https://uat-admin.aithentic.com/
 #${admin_url}        https://qa-admin.aithentic.com/
+
+#${agentDiscovery_TagName}       Tag Name - johnsoftwaresolutions-1192-1         #qa
+${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-3        #uat
 
 ${admin_name}        aithentic@yopmail.com
 ${admin_password}       Admin@123
 
-${browser_name}          Firefox
+${browser_name}          firefox
 
-${email}                 testqa29j@mailinator.com       #UAT user
+${email}                 testqa29j@mailinator.com
 
 ${SheetLocationAndName}   LoadTimeSheet.xlsx
 ${SheetTabName}     Load_Time_tracking
@@ -71,6 +78,7 @@ ${click_countryTag}     css:.iti__selected-flag.dropdown-toggle
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
+${wait_time}        120
 ${yop_sleep}       10
 ${search_sleep}       1
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
@@ -108,22 +116,22 @@ Calculate Running time
 
 click on the tab
     [Arguments]    ${option}
-    wait until element is visible    //a[normalize-space()='${option}']     60
-    wait until element is enabled    //a[normalize-space()='${option}']     60
+    wait until element is visible    //a[normalize-space()='${option}']          ${wait_time}
+    wait until element is enabled    //a[normalize-space()='${option}']          ${wait_time}
     click link          //a[normalize-space()='${option}']
 
 click on the button
     [Arguments]    ${option}
-    wait until element is not visible   ${loaderIcon}       60
-    wait until element is visible      //button[normalize-space()='${option}']     60
-    wait until element is enabled      //button[normalize-space()='${option}']     60
+    wait until element is not visible   ${loaderIcon}          ${wait_time}
+    wait until element is visible      //button[normalize-space()='${option}']          ${wait_time}
+    wait until element is enabled      //button[normalize-space()='${option}']          ${wait_time}
     click element       //button[normalize-space()='${option}']
     sleep   ${search_sleep}
 
 click on the button link
     [Arguments]    ${option}
-    wait until element is visible        //a[normalize-space()='${option}']         60
-    wait until element is enabled      //a[normalize-space()='${option}']     60
+    wait until element is visible        //a[normalize-space()='${option}']        ${wait_time}
+    wait until element is enabled      //a[normalize-space()='${option}']          ${wait_time}
     click element       //a[normalize-space()='${option}']
 
 open the browser with the url
@@ -132,8 +140,8 @@ open the browser with the url
 
     ${StartTime1} =     Get Current Time in Milliseconds
     open browser    ${url}      ${browser_name}     #executable_path=E:/Aithentic/TestPage/resources
-    wait until element is visible    //a[normalize-space()='Login']     60
-    wait until element is enabled    //a[normalize-space()='Login']     60
+    wait until element is visible    //a[normalize-space()='Login']          ${wait_time}
+    wait until element is enabled    //a[normalize-space()='Login']          ${wait_time}
     Maximize Browser Window
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
@@ -157,20 +165,29 @@ Get Current Date and Time
 Close Browser session
     close browser
 
+
+Close Browser session for OCS file
+    Run Keyword If    '${TEST_STATUS}' == 'FAIL'    My Failure Handling Keyword
+    close browser
+
+My Failure Handling Keyword
+    Log     above test case is failed
+
+
 select the option from the side menu
     [Arguments]     ${option}
-    wait until element is visible    //li[@title='${option}']      60
-    wait until element is enabled    //li[@title='${option}']      60
+    wait until element is visible    //li[@title='${option}']          ${wait_time}
+    wait until element is enabled    //li[@title='${option}']          ${wait_time}
     click element       //li[@title='${option}']
 #    wait until location contains    ${verifyOption}     timeout=50s
 
 Verify your current page location contains
     [Arguments]    ${verifyOption}
-    wait until location contains    ${verifyOption}     60
+    wait until location contains    ${verifyOption}     ${wait_time}
 
 Verify your current page contains this text
     [Arguments]    ${verifyOption}
-    wait until page contains    ${verifyOption}     60
+    wait until page contains    ${verifyOption}     ${wait_time}
 
 Get Current Time in Milliseconds
     ${time_in_milliseconds}=    Evaluate    int(time.time() * 1000)
@@ -178,58 +195,58 @@ Get Current Time in Milliseconds
 
 Fetch alert message text and compare it with
     [Arguments]    ${option}
-    wait until element is visible    ${alert_Msg}        240
+    wait until element is visible    ${alert_Msg}          ${wait_time}
     ${get_alertMsg} =    get text    ${alert_Msg}
     log to console     ${get_alertMsg}
     should be equal    ${get_alertMsg}     ${option}
-    Wait Until Element Is Not Visible    ${alert_Msg}        60
+    Wait Until Element Is Not Visible    ${alert_Msg}          ${wait_time}
 
 Verify alertify is visible
-       wait until element is visible    ${alert_Msg}        60
+       wait until element is visible    ${alert_Msg}          ${wait_time}
 
 Verify alert message of add team member of compose message
     [Arguments]    ${option}
-    wait until element is visible    ${alert_Msg}        60
+    wait until element is visible    ${alert_Msg}          ${wait_time}
     ${get_alertMsg} =    get text    ${alert_Msg}
     log to console     ${get_alertMsg}
     should be equal    ${get_alertMsg}     ${option}
 
 Cross the text message alert
-    wait until element is enabled    ${cross_alertMsg}        60
+    wait until element is enabled    ${cross_alertMsg}          ${wait_time}
     click element       ${cross_alertMsg}
 
 Select parameter
     [Arguments]    ${address}
-    wait until element is visible     //span[normalize-space()='${address}']        60
-    wait until element is enabled       //span[normalize-space()='${address}']      60
+    wait until element is visible     //span[normalize-space()='${address}']        ${wait_time}
+    wait until element is enabled       //span[normalize-space()='${address}']          ${wait_time}
     click element      //span[normalize-space()='${address}']
 
 Click on the profile name
-    wait until element is not visible      ${loaderIcon}        60
-    wait until element is visible       ${profileName}       60
-    wait until element is enabled       ${profileName}       60
+    wait until element is not visible      ${loaderIcon}          ${wait_time}
+    wait until element is visible       ${profileName}          ${wait_time}
+    wait until element is enabled       ${profileName}          ${wait_time}
     click element       ${profileName}
 
 ###############################################################################################
 Select other option from profile list
      [Arguments]     ${option}
-    wait until element is not visible      ${loaderIcon}        60
-    wait until element is visible    //a[normalize-space()='${option}']      60
-    wait until element is enabled    //a[normalize-space()='${option}']      60
+    wait until element is not visible      ${loaderIcon}          ${wait_time}
+    wait until element is visible    //a[normalize-space()='${option}']          ${wait_time}
+    wait until element is enabled    //a[normalize-space()='${option}']          ${wait_time}
     click element    //a[normalize-space()='${option}']
 
 Select option from profile list
      [Arguments]     ${option}
-     wait until element is not visible      ${loaderIcon}       60
-     wait until element is visible    css:.qa-${option} li      60
-     wait until element is enabled    css:.qa-${option} li      60
+     wait until element is not visible      ${loaderIcon}          ${wait_time}
+     wait until element is visible    css:.qa-${option} li      ${wait_time}
+     wait until element is enabled    css:.qa-${option} li      ${wait_time}
      click element    css:.qa-${option} li
 
 ###############################################################################################
 
 Enter current date
     [Arguments]    ${option}
-    Wait Until Element Is Enabled     ${option}      60
+    Wait Until Element Is Enabled     ${option}      ${wait_time}
     click element       ${option}
     Clear Element Text      ${option}
     ${curentDate}=    Generic.Fetch Current Date
@@ -237,15 +254,15 @@ Enter current date
 
 Enter self date
     [Arguments]    ${option}    ${date}
-    Wait Until Element Is Enabled     ${option}        60
+    Wait Until Element Is Enabled     ${option}          ${wait_time}
     click element       ${option}
     Clear Element Text      ${option}
     input text  ${option}    ${date}
 
 Enter value into field
     [Arguments]    ${field}     ${data}
-    wait until element is visible       ${field}       60
-    Wait Until Element Is Enabled     ${field}     60
+    wait until element is visible       ${field}          ${wait_time}
+    Wait Until Element Is Enabled     ${field}     ${wait_time}
 #    click element       ${field}
     Clear Element Text      ${field}
     input text      ${field}     ${data}
@@ -259,8 +276,8 @@ Open new window
 Search yopmail emails for
     [Arguments]   ${data}
     sleep       3
-    wait until element is visible       ${yop_email_searchBar}       60
-    Wait Until Element Is Enabled     ${yop_email_searchBar}     60
+    wait until element is visible       ${yop_email_searchBar}          ${wait_time}
+    Wait Until Element Is Enabled     ${yop_email_searchBar}     ${wait_time}
     click element   ${yop_email_searchBar}
     Clear Element Text      ${yop_email_searchBar}
     input text      ${yop_email_searchBar}     ${data}
@@ -271,15 +288,15 @@ Switch to iframe by ID
     Select Frame    //iframe[@id='${frameName}']
 
 Refresh the existing page
-    Wait Until Page Contains Element    css:body    60
+    Wait Until Page Contains Element    css:body    ${wait_time}
     Reload Page
     sleep       ${yop_sleep}
 
 Enter phone number
     [Arguments]    ${country}   ${code}     ${phoneNo}
     click element   ${click_countryTag}
-    wait until element is visible   ${contact_Country_search}       60
-    wait until element is enabled   ${contact_Country_search}       60
+    wait until element is visible   ${contact_Country_search}          ${wait_time}
+    wait until element is enabled   ${contact_Country_search}          ${wait_time}
     click element   ${contact_Country_search}
     input text  ${contact_Country_search}   ${country}
     Generic.Select parameter      ${code}
@@ -291,19 +308,19 @@ Scroll the page till
     Execute javascript      window.scrollTo(0,${option})
 
 Verify pop-up is visible after clicking on i-icon
-    wait until element is visible       css:.popover-content        60
+    wait until element is visible       css:.popover-content       ${wait_time} 
     log to console      Yes, pop-up is visible for i-icon
 
 Scroll Window To End
     Execute JavaScript    window.scrollTo(0, document.body.scrollHeight);
 
 Wait until table get load
-    wait until element is visible       //tbody//tr//td[normalize-space()='1']     60
-#    wait until element is enabled      //tbody//tr//td[normalize-space()='1']      60
+    wait until element is visible       //tbody//tr//td[normalize-space()='1']          ${wait_time}
+    wait until element is enabled      //tbody//tr//td[normalize-space()='1']          ${wait_time}
 
 Fetch log_out alert message
     sleep      2
-    Wait Until Element Is Not Visible    ${alert_Msg}        60
+    Wait Until Element Is Not Visible    ${alert_Msg}          ${wait_time}
 
 Click keyboard button
     [Arguments]     ${locator}      ${button}
@@ -313,6 +330,8 @@ Update settings for Asset_ID, employee_id and location
     Generic.open the browser with the url
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     I_iconPage.Choose options inside personal_details        Organization
@@ -322,4 +341,3 @@ Update settings for Asset_ID, employee_id and location
     DashboardPage.Select the location ID checkbox   yes
     DashboardPage.Select the asset ID checkbox      no
     close browser
-

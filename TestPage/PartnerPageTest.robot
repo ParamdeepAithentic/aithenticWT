@@ -46,10 +46,12 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Compose Message invite user test
-    [Tags]      Sanity      Smoke
+    [Tags]      Sanity      Smoke       Time
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.Verify your current page location contains      asset-overview
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
+
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
@@ -215,6 +217,7 @@ Compose Message invite user test
 #--------------------------------------YOP mail -----------------------------------------------------------
 
     Generic.Open new window     yopmail
+    Generic.Refresh the existing page
     Generic.Search yopmail emails for       ${generate_PersonName}
     Generic.Switch to iframe by ID      ifinbox
     Yopmail.Click on email of yopmail   Partner Invitation
@@ -385,7 +388,8 @@ Compose Message invite user test
 
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-
+    Generic.Verify your current page location contains      management-console
+    LandingPage.Verify you are on dashboard page
 #-------------------------- ADD NEW CONTACT----------------------------------------------------
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
@@ -444,6 +448,7 @@ Compose Message invite user test
 
     Generic.Open new window     yopmail
 #    Generic.Search yopmail emails for       ${generate_PersonName}
+    Generic.Refresh the existing page
     Generic.Search yopmail emails for       ${generate_SecondaryContactBusinessEmail}
     Generic.Switch to iframe by ID      ifinbox
     Yopmail.Click on email of yopmail   Team Member Invitation
@@ -490,7 +495,7 @@ Compose Message invite user test
     TwoFactorAuth.Enter the otp     ${passcode}
     TwoFactorAuth.Click verification button
 
-    Generic.Verify your current page location contains     asset-overview
+    Generic.Verify your current page location contains     management-console
 #--------------------------------------------END-----------------------------------------------------------
 
 
@@ -498,6 +503,7 @@ Compose Message invite user test
 Export Specificartner into Excel Doc CSV and TSV for manufacturer
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
     PartnersPage.Click new partner button
@@ -559,6 +565,8 @@ Export Specificartner into Excel Doc CSV and TSV for Supplier
     [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
     PartnersPage.Click new partner button
@@ -621,6 +629,8 @@ Export Specificartner into Excel Doc CSV and TSV for Support Partner
     [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
     PartnersPage.Click new partner button
@@ -678,6 +688,8 @@ Export Specificartner into Excel Doc CSV and TSV for Support Partner
 Add Manufacturer via personal detail under technology and partner
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -724,6 +736,8 @@ Edit Manufacturer via partner
     [Tags]      Sanity
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -800,9 +814,11 @@ Edit Manufacturer via partner
 
 
 Deactivate Manufacturer via partner
-    [Tags]      Sanity
+    [Tags]      Sanity      tt
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -885,6 +901,8 @@ Deactivate Manufacturer via partner
 Activate Manufacturer via partner
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -970,6 +988,8 @@ Activate Manufacturer via partner
 Remove Manufacturer from partner
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -1057,8 +1077,11 @@ Remove Manufacturer from partner
     Generic.Fetch alert message text and compare it with      Partner deleted successfully
 
 View Details and check the details of Contract
+    [Tags]     rerun
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     ReplaceDomainAPI.Replace Domain
     Generic.select the option from the side menu    Partners
     PartnersPage.Click new partner button
@@ -1082,7 +1105,7 @@ View Details and check the details of Contract
     TechnologyPage.Select product technology group via technology   Applications
     TechnologyPage.Click on save product pop inside technology page
     Generic.Fetch alert message text and compare it with    Product created successfully
-    TechnologyPage.Select parameter from technology dropdown list    ${generated_product}
+#    TechnologyPage.Select parameter from technology dropdown list    ${generated_product}
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date
     TechnologyPage.Renewal Date via technology
