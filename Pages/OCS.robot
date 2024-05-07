@@ -90,23 +90,20 @@ Enter text to search existing asset
     Input Text    //input[@placeholder='Search Existing Assets']    ${option}
     wait until element is not visible   ${loaderIcon}        ${wait_time}
 
-
-
 Verify Searched discovery asset
     [Arguments]     ${option}
     wait until element is not visible   ${loaderIcon}        ${wait_time}
 #    Wait Until Element Is Visible    ${Discovery_Assets}        ${wait_time}
-    Wait Until Element Is Visible    //div[contains(text(),'Apple Inc')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]        ${wait_time}
+    Wait Until Element Is Visible    //div[contains(text(),'Private')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]        ${wait_time}
 #    Element Should Contain   ${Discovery_Assets}   ${option}
-    Element Should Contain   //div[contains(text(),'Apple Inc')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]   ${option}
-
+#    Element Should Contain   //div[contains(text(),'Apple Inc')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]   ${option}
+    Element should contain  //div[contains(text(),'Private')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]        ${wait_time}
 Verify searched existing asset
     [Arguments]     ${option}
     wait until element is not visible   ${loaderIcon}        ${wait_time}
     Sleep    ${yop_sleep}
     Wait Until Element Is Visible   (//div[contains(text(),'QABrand555')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]      ${wait_time}
     Element Should Contain   (//div[contains(text(),'QABrand555')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]     ${option}
-
 
 
 Click on search icon of Existing assets
@@ -234,28 +231,20 @@ Choose Tab under Asset Discovery
     Click Element    css:#nav-${option}-tab
 
 Click on Plus icon under table
-#    Sleep    ${search_sleep}
-#    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-#    wait until element is visible    (//tbody)[1]        ${wait_time}
-#    wait until element is enabled     (//tbody)[1]        ${wait_time}
-#    Execute JavaScript  window.scrollBy(10000, 0)
     Wait Until Element Is Visible     (//i[@title='Add as an Asset'])[11]         ${wait_time}
     wait until element is enabled     (//i[@title='Add as an Asset'])[11]      ${wait_time}
     Click Element   (//i[@title='Add as an Asset'])[11]
-
 
 Click on plus icon under table of agent discovery
     Wait Until Element Is Visible     (//i[@title='Add as an Asset'])[2]         ${wait_time}
     wait until element is enabled     (//i[@title='Add as an Asset'])[2]      ${wait_time}
     Click Element   (//i[@title='Add as an Asset'])[2]
 
-
 Choose option from brand on Add technology Page
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     Wait Until Element Is Visible    ${Add_technology_brand}      ${wait_time}
     Wait Until Element Is Enabled    ${Add_technology_brand}      ${wait_time}
     Click Element    ${Add_technology_brand}
-#    Clear Element Text    ${Add_technology_brand}
     wait until element is visible     //div[contains (@id, '-0')]       ${wait_time}
     wait until element is enabled     //div[contains (@id, '-0')]       ${wait_time}
     click element   //div[contains (@id, '-0')]
@@ -268,9 +257,6 @@ Clear the text of Product field
 
 Choose option from product on Add technology Page
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-#    Wait Until Element Is Visible    ${Add_technology_product}      ${wait_time}
-#    Wait Until Element Is Enabled    ${Add_technology_product}      ${wait_time}
-#    Click Element    ${Add_technology_product}
     wait until element is visible     (//tbody//tr)[1]       ${wait_time}
     wait until element is enabled     (//tbody//tr)[1]       ${wait_time}
     click element   (//tbody//tr)[1]
@@ -474,7 +460,9 @@ Hover Over Add component button and verify text
 Click on plus icon of any component
     Wait Until Element Is Visible    (//div[@id='software']//tbody//i[contains(@class,'fa-plus-circle')])[1]       ${wait_time}
     Wait Until Element Is Enabled    (//div[@id='software']//tbody//i[contains(@class,'fa-plus-circle')])[1]       ${wait_time}
+    sleep   ${search_sleep}
     Click Element    (//div[@id='software']//tbody//i[contains(@class,'fa-plus-circle')])[1]
+    sleep   20s
 
 Verify Software tab Should contain Element
     Wait Until Element Is Visible       css:.fa-check-circle        ${wait_time}
@@ -688,6 +676,7 @@ Enter input in the brand field of existing asset
     Wait Until Element Is Visible    (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[1]      ${wait_time}
     Wait Until Element Is enabled    (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[1]      ${wait_time}
     click element    (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[1]
+    sleep   ${search_sleep}
     input text    (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[1]       ${option}
     Press Keys      (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[1]     ENTER
 
@@ -791,3 +780,17 @@ Mouse Hover over filters of existing asset
     Wait Until Element Is Visible   (//div[contains(text(),'Apple Inc.')]//ancestor::div[contains(@class,'box')]//child::div[contains(@class,'assets-text')])[2]     ${wait_time}
     Wait Until Element Is Enabled    (//div[contains(text(),'Apple Inc.')]//ancestor::div[contains(@class,'box')]//child::div[contains(@class,'assets-text')])[2]     ${wait_time}
     Mouse Over   (//div[contains(text(),'Apple Inc.')]//ancestor::div[contains(@class,'box')]//child::div[contains(@class,'assets-text')])[2]
+
+Visible the print qr button to for data loading
+    wait until element is visible   css:#PrintQrButton   ${wait_time}
+    wait until element is enabled   css:#PrintQrButton   ${wait_time}
+    wait until element is visible   css:#location-tab   ${wait_time}
+
+Enter input in search bar of software tab under technology details page
+    [Arguments]     ${option}
+    wait until element is visible   //input[@placeholder='Search by Publisher, Software Name and Asset Id']     ${wait_time}
+    wait until element is enabled   //input[@placeholder='Search by Publisher, Software Name and Asset Id']     ${wait_time}
+    click element   //input[@placeholder='Search by Publisher, Software Name and Asset Id']
+    input text  //input[@placeholder='Search by Publisher, Software Name and Asset Id']     ${option}
+    Sleep    ${yop_sleep}
+    Wait Until Element Is Not Visible    ${loaderIcon}  ${wait_time}
