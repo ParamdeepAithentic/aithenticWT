@@ -165,36 +165,6 @@ Get Current Date and Time
 Close Browser session
     close browser
 
-
-Close Browser session for OCS file
-    Run Keyword If    '${TEST_STATUS}' == 'FAIL'    My Failure Handling Keyword
-    Run Keyword If    '${TEST_STATUS}' == 'FAIL'    Close Browser session
-    close browser
-
-My Failure Handling Keyword
-    FOR    ${step}    IN
-        Generic.Click on the profile name
-        Generic.Select option from profile list     view-discovery
-        Generic.Verify your current page location contains    ocs
-        Generic.Refresh the existing page
-        UnselectAssetAPI.Hit API Endpoint
-        OCS.Click on Existing asset
-        Sleep    ${yop_sleep}
-        Switch Window       aithentic | Technology - Details
-        Generic.Verify your current page location contains    technology-details
-        TechnologyPage.Click on edit button on product details page        Edit
-        Generic.Verify your current page location contains      edit-technology
-        OCS.Edit the MAC_Address of Asset
-        OCS.Edit the Serial_No. of Asset
-        OCS.Edit The Host_Name of Asset
-        TechnologyPage.Click on update button of edit_technology page       Update
-        Generic.Fetch alert message text and compare it with        Technology updated successfully
-        UnselectAssetAPI.Hit API Endpoint
-    END
-#        Run Keyword And Ignore Error    ${step}
-        Run Keyword If    '${step}' == 'FAIL'         Close Browser session
-
-
 select the option from the side menu
     [Arguments]     ${option}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
