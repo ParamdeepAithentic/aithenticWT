@@ -52,8 +52,8 @@ ${valid_password}        Test!@5897     #UAT user
 #${valid_password}         Test@123         #pre prod
 
 
-#${admin_url}        https://uat-admin.aithentic.com/
-${admin_url}        https://qa-admin.aithentic.com/
+${admin_url}        https://uat-admin.aithentic.com/
+#${admin_url}        https://qa-admin.aithentic.com/
 
 #${agentDiscovery_TagName}       Tag Name - johnsoftwaresolutions-1192-4         #qa
 ${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-4        #uat
@@ -78,7 +78,7 @@ ${click_countryTag}     css:.iti__selected-flag.dropdown-toggle
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
-${wait_time}        10
+${wait_time}        60
 ${yop_sleep}       10
 ${search_sleep}       1
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
@@ -315,10 +315,7 @@ Fetch log_out alert message
     sleep      2
     Wait Until Element Is Not Visible    ${alert_Msg}          ${wait_time}
 
-Click keyboard button
-#    [Arguments]     ${locator}      ${button}
-#    Press keys      ${locator}      ${button}
-#
+
 Update settings for Asset_ID, employee_id and location
     Generic.open the browser with the url
     Generic.click on the tab	Login
@@ -335,45 +332,4 @@ Update settings for Asset_ID, employee_id and location
     DashboardPage.Select the asset ID checkbox      no
     close browser
 
-
-Close Browser Session for OCS file
-    Run Keyword If    '${TEST_STATUS}' == 'FAIL'    My Failure Handling
-    close browser
-
-
-
-#Close Browser Session for OCS File
-#    Run Keywords
-#    ...    My Failure Handling Keyword
-#    ...    ELSE    Welcome to the code
-
-My Failure Handling
-    ${status}=    Run Keyword And Return Status         Execute Further Steps 1
-    Log    Current status is :${status}
-    Run Keyword If    '${status}' == 'True'    Run Keywords     Execute Further Steps 2    AND     Welcome to the code
-    Run Keyword If    '${status}' == 'False'    Welcome to the code
-
-Execute Further Steps 1
-    Generic.Click on the profile name
-
-Execute Further Steps 2
-    Generic.Select option from profile list     view-discovery
-    Generic.Verify your current page location contains    ocs
-    Generic.Refresh the existing page
-    UnselectAssetAPI.Hit API Endpoint
-    OCS.Click on Existing asset
-    Sleep    ${yop_sleep}
-    Switch Window       aithentic | Technology - Details
-    Generic.Verify your current page location contains    technology-details
-    TechnologyPage.Click on edit button on product details page        Edit
-    Generic.Verify your current page location contains      edit-technology
-    OCS.Edit the MAC_Address of Asset
-    OCS.Edit the Serial_No. of Asset
-    OCS.Edit The Host_Name of Asset
-    TechnologyPage.Click on update button of edit_technology page       Update
-    Generic.Fetch alert message text and compare it with        Technology updated successfully
-    UnselectAssetAPI.Hit API Endpoint
-
-Welcome to the code
-    Close browser
 
