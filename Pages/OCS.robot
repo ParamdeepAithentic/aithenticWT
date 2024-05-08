@@ -793,3 +793,9 @@ Enter input in search bar of software tab under technology details page
     input text  //input[@placeholder='Search by Publisher, Software Name and Asset Id']     ${option}
     Sleep    ${yop_sleep}
     Wait Until Element Is Not Visible    ${loaderIcon}  ${wait_time}
+
+click on the asset id inside the table of agent discovery
+    wait until element is not visible    ${loaderIcon}    ${wait_time}
+    wait until element is visible   //h5[normalize-space()='${agentDiscovery_TagName}']//parent::div//div//table//td[8]   ${wait_time}
+    wait until element is enabled   //h5[normalize-space()='${agentDiscovery_TagName}']//parent::div//div//table//td[8]   ${wait_time}
+    click element   //h5[normalize-space()='${agentDiscovery_TagName}']//parent::div//div//table//td[8]
