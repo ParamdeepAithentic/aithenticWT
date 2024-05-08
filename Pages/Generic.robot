@@ -52,11 +52,11 @@ ${valid_password}        Test!@5897     #UAT user
 #${valid_password}         Test@123         #pre prod
 
 
-${admin_url}        https://uat-admin.aithentic.com/
-#${admin_url}        https://qa-admin.aithentic.com/
+#${admin_url}        https://uat-admin.aithentic.com/
+${admin_url}        https://qa-admin.aithentic.com/
 
-#${agentDiscovery_TagName}       Tag Name - johnsoftwaresolutions-1192-1         #qa
-${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-3        #uat
+#${agentDiscovery_TagName}       Tag Name - johnsoftwaresolutions-1192-4         #qa
+${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-4        #uat
 
 ${admin_name}        aithentic@yopmail.com
 ${admin_password}       Admin@123
@@ -168,14 +168,36 @@ Close Browser session
 
 Close Browser session for OCS file
     Run Keyword If    '${TEST_STATUS}' == 'FAIL'    My Failure Handling Keyword
+    Run Keyword If    '${TEST_STATUS}' == 'FAIL'    Close Browser session
     close browser
 
 My Failure Handling Keyword
-    Log     above test case is failed
+    FOR    ${step}    IN
+        Generic.Click on the profile name
+        Generic.Select option from profile list     view-discovery
+        Generic.Verify your current page location contains    ocs
+        Generic.Refresh the existing page
+        UnselectAssetAPI.Hit API Endpoint
+        OCS.Click on Existing asset
+        Sleep    ${yop_sleep}
+        Switch Window       aithentic | Technology - Details
+        Generic.Verify your current page location contains    technology-details
+        TechnologyPage.Click on edit button on product details page        Edit
+        Generic.Verify your current page location contains      edit-technology
+        OCS.Edit the MAC_Address of Asset
+        OCS.Edit the Serial_No. of Asset
+        OCS.Edit The Host_Name of Asset
+        TechnologyPage.Click on update button of edit_technology page       Update
+        Generic.Fetch alert message text and compare it with        Technology updated successfully
+        UnselectAssetAPI.Hit API Endpoint
+    END
+#        Run Keyword And Ignore Error    ${step}
+        Run Keyword If    '${step}' == 'FAIL'         Close Browser session
 
 
 select the option from the side menu
     [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible    //li[@title='${option}']          ${wait_time}
     wait until element is enabled    //li[@title='${option}']          ${wait_time}
     click element       //li[@title='${option}']
@@ -323,9 +345,9 @@ Fetch log_out alert message
     Wait Until Element Is Not Visible    ${alert_Msg}          ${wait_time}
 
 Click keyboard button
-    [Arguments]     ${locator}      ${button}
-    Press keys      ${locator}      ${button}
-
+#    [Arguments]     ${locator}      ${button}
+#    Press keys      ${locator}      ${button}
+#
 Update settings for Asset_ID, employee_id and location
     Generic.open the browser with the url
     Generic.click on the tab	Login
@@ -341,3 +363,4 @@ Update settings for Asset_ID, employee_id and location
     DashboardPage.Select the location ID checkbox   yes
     DashboardPage.Select the asset ID checkbox      no
     close browser
+
