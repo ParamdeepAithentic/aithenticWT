@@ -462,7 +462,6 @@ Click on plus icon of any component
     Wait Until Element Is Enabled    (//div[@id='software']//tbody//i[contains(@class,'fa-plus-circle')])[1]       ${wait_time}
     sleep   ${search_sleep}
     Click Element    (//div[@id='software']//tbody//i[contains(@class,'fa-plus-circle')])[1]
-    sleep   20s
 
 Verify Software tab Should contain Element
     Wait Until Element Is Visible       css:.fa-check-circle        ${wait_time}
