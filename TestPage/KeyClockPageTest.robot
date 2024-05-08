@@ -131,7 +131,7 @@ Register new user for key clock functionality
 #-------------------------------------------BILLING-----------------------------------------------------
     SubscriptionPage.Click on same billing address checkbox
     SubscriptionPage.Switch to card iframe
-    SubscriptionPage.Enter cardnumber    42424242424242420424242
+    SubscriptionPage.Enter cardnumber    42424242424242420429242
     Unselect Frame
     SubscriptionPage.Enter card user name    Paramdeep Singh
 
