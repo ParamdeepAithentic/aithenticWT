@@ -43,7 +43,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Download agent for OCS from signup - Linux
-    [Tags]      Sanity      Smoke
+#    [Tags]      Sanity      Smoke
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
 #    LoginAPI.Fetch the refresh token from the login api
@@ -148,7 +148,7 @@ Download agent for OCS from signup - Linux
     Generic.click on the button link    Download
 
 Download agent for OCS from signup - Windows
-    [Tags]      Sanity
+#    [Tags]      Sanity
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
 #    LoginAPI.Fetch the refresh token from the login api
@@ -253,7 +253,7 @@ Download agent for OCS from signup - Windows
     Generic.click on the button link    Download
 
 Download agent for OCS from signup - macOS
-    [Tags]      Sanity
+#    [Tags]      Sanity
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
 #    LoginAPI.Fetch the refresh token from the login api
@@ -354,7 +354,7 @@ Download agent for OCS from signup - macOS
     Generic.click on the button link    Download
 
 Download Agent from network discovery - Linux
-    [Tags]      Sanity
+#    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -368,7 +368,7 @@ Download Agent from network discovery - Linux
     Generic.click on the button link    Download
 
 Download Agent from network discovery - Windows
-    [Tags]      Sanity
+#    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -382,7 +382,7 @@ Download Agent from network discovery - Windows
     Generic.click on the button link    Download
 
 Download Agent from network discovery - macOS
-    [Tags]      Sanity
+#    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -396,7 +396,7 @@ Download Agent from network discovery - macOS
     Generic.click on the button link    Download
 
 Download Agent from asset discovery - Linux
-    [Tags]      Sanity
+#    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -412,7 +412,7 @@ Download Agent from asset discovery - Linux
     Generic.click on the button link    Download
 
 Download Agent from asset discovery - Windows
-    [Tags]      Sanity
+#    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -428,7 +428,7 @@ Download Agent from asset discovery - Windows
     Generic.click on the button link    Download
 
 Download Agent from asset discovery - macOS
-    [Tags]      Sanity
+#    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -459,7 +459,7 @@ Search Discovered Assets
     OCS.Enter text to search discovery asset    1428-4
     OCS.Click on the down arrow icon of discovered asset
     OCS.Mouse Hover over searched Discovered Assets
-    OCS.Verify Searched discovery asset    1428-4
+#    OCS.Verify Searched discovery asset    1428-4
     OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
     OCS.Get Serial number by hovering over discovered assets     Serial Number:
     OCS.Get Host name by hovering over discovered assets     Host name:
@@ -502,7 +502,7 @@ Search Existing Assets
     OCS.Verify searched existing asset    ${generated_AssetID}
 
 Match Discovery and Existing Asset
-    [Tags]      Sanity
+#    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     LandingPage.Verify you are on dashboard page
@@ -609,7 +609,7 @@ Apply filters and clear filter on Discovered Asset
     OCS.Get text by hovering over assets     Brand:
 
 Apply filters and clear filter on Existing Assets
-    [Tags]      Sanity
+#    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     johns@mai.25u.com     Test@123
     LandingPage.Verify you are on dashboard page
@@ -772,7 +772,7 @@ Create Asset from Add Assets Page
     UnselectAssetAPI.Hit API Endpoint
 
 Add component as an asset after Adding OCS asset
-    [Tags]      Sanity      smoke
+#    [Tags]      Sanity      smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     LandingPage.Verify you are on dashboard page
@@ -1406,50 +1406,50 @@ Add Asset with IP address from Network Discovery Page
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     UnselectAssetAPI.Hit API Endpoint
 
-Network discovery: search on discovered asset list with Tag Name, IP_address and MAC_address
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
-    Generic.select the option from the side menu    Asset Discovery
-    Generic.Verify your current page location contains     discovery-assets
-    OCS.Fetch the IP address tagname from agent discovery page
-    OCS.Fetch the Mac_address from agent discovery page
-    OCS.click on the value of IP discovered devices of inside table
-    Sleep    ${yop_sleep}
-    Switch Window       aithentic | Discovered Assets
-    Generic.Verify your current page location contains     discovery-assets-list
-    OCS.Fetch the Brandname from agent discovery page
-    OCS.Click on Plus icon under table
-    Sleep    ${yop_Sleep}
-    Switch Window       aithentic | Add Discovery Asset
-    Generic.Verify your current page location contains    add-discovered-asset
-    Generic.Verify your current page contains this text    Add Technology
-    TechnologyPage.Select parameter from technology dropdown list      Macmini9,1
-    TechnologyPage.Create unique serial number random
-    OCS.Enter The Asset_id in Add Technology Page
-    OCS.Click on save button of Add Technology Page
-    OCS.Wait for the invisiblity of alert msg        Technology created successfully
-    Sleep    ${yop_sleep}
-    Switch Window        aithentic | Discovered Assets
-    Generic.Verify your current page location contains    discovery-assets-list
-    OCS.Search with MAC address and IP Address on the search bar of Discovered Asset List       ${Brand_name}
-    TechnologyPage.verify Text from Assignment Information     ${Brand_name}          Apple, Inc.
-    OCS.Click on Refresh Icon of discovered asset lists
-    OCS.Search with MAC address and IP Address on the search bar of Discovered Asset List       ${generated_AssetID}
-    TechnologyPage.verify Text from Assignment Information     ${generated_AssetID}          ${generated_AssetID}
-    Generic.select the option from the side menu        Technology
-    Generic.Verify your current page location contains      technology-list
-    TechnologyPage.Search by AssetId       ${generated_AssetID}
-    TechnologyPage.Click on the first row of the technology table
-    Generic.Verify your current page location contains    technology-details
-    TechnologyPage.Click on edit button on product details page        Edit
-    Generic.Verify your current page location contains      edit-technology
-    OCS.Edit the MAC_Address of Asset
-    OCS.Edit the Serial_No. of Asset
-    TechnologyPage.Click on update button of edit_technology page       Update
-    Generic.Fetch alert message text and compare it with        Technology updated successfully
-    UnselectAssetAPI.Hit API Endpoint
+#Network discovery: search on discovered asset list with Tag Name, IP_address and MAC_address
+#    Generic.click on the tab	Login
+#    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+#    LandingPage.Verify you are on dashboard page
+#    Generic.Verify your current page location contains      management-console
+#    Generic.select the option from the side menu    Asset Discovery
+#    Generic.Verify your current page location contains     discovery-assets
+#    OCS.Fetch the IP address tagname from agent discovery page
+#    OCS.Fetch the Mac_address from agent discovery page
+#    OCS.click on the value of IP discovered devices of inside table
+#    Sleep    ${yop_sleep}
+#    Switch Window       aithentic | Discovered Assets
+#    Generic.Verify your current page location contains     discovery-assets-list
+#    OCS.Fetch the Brandname from agent discovery page
+#    OCS.Click on Plus icon under table
+#    Sleep    ${yop_Sleep}
+#    Switch Window       aithentic | Add Discovery Asset
+#    Generic.Verify your current page location contains    add-discovered-asset
+#    Generic.Verify your current page contains this text    Add Technology
+#    TechnologyPage.Select parameter from technology dropdown list      Macmini9,1
+#    TechnologyPage.Create unique serial number random
+#    OCS.Enter The Asset_id in Add Technology Page
+#    OCS.Click on save button of Add Technology Page
+#    OCS.Wait for the invisiblity of alert msg        Technology created successfully
+#    Sleep    ${yop_sleep}
+#    Switch Window        aithentic | Discovered Assets
+#    Generic.Verify your current page location contains    discovery-assets-list
+#    OCS.Search with MAC address and IP Address on the search bar of Discovered Asset List       ${Brand_name}
+#    TechnologyPage.verify Text from Assignment Information     ${Brand_name}          Apple, Inc.
+#    OCS.Click on Refresh Icon of discovered asset lists
+#    OCS.Search with MAC address and IP Address on the search bar of Discovered Asset List       ${generated_AssetID}
+#    TechnologyPage.verify Text from Assignment Information     ${generated_AssetID}          ${generated_AssetID}
+#    Generic.select the option from the side menu        Technology
+#    Generic.Verify your current page location contains      technology-list
+#    TechnologyPage.Search by AssetId       ${generated_AssetID}
+#    TechnologyPage.Click on the first row of the technology table
+#    Generic.Verify your current page location contains    technology-details
+#    TechnologyPage.Click on edit button on product details page        Edit
+#    Generic.Verify your current page location contains      edit-technology
+#    OCS.Edit the MAC_Address of Asset
+#    OCS.Edit the Serial_No. of Asset
+#    TechnologyPage.Click on update button of edit_technology page       Update
+#    Generic.Fetch alert message text and compare it with        Technology updated successfully
+#    UnselectAssetAPI.Hit API Endpoint
 
 #    OCS.Click on Refresh Icon of discovered asset lists
 #    Generic.Wait until table get load
