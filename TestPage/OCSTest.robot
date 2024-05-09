@@ -1377,8 +1377,8 @@ Add Asset with IP address from Network Discovery Page
     OCS.Click on search icon of discovery assets
     OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
     OCS.Click on the down arrow icon of discovered asset
-    OCS.Mouse Hover over searched IP Assets     00:17:61:10:C6:A1
-    OCS.Verify Searched discovery asset
+    OCS.Mouse Hover over searched IP Assets
+    OCS.Verify Searched discovery asset     00:17:61:10:C6:A1
     OCS.Get MAC_Address by hovering over IP discovered assets   MacAddress:
     OCS.Mark check-box of Agent/Discovered Asset
     OCS.Click on Button inside Network Discovery Page       Add Assets
