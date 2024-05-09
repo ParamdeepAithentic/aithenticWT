@@ -97,7 +97,8 @@ Verify Searched discovery asset
     Wait Until Element Is Visible    //div[contains(text(),'Private')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]        ${wait_time}
 #    Element Should Contain   ${Discovery_Assets}   ${option}
 #    Element Should Contain   //div[contains(text(),'Apple Inc')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]   ${option}
-    Element should contain  //div[contains(text(),'Private')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]        ${wait_time}
+    Element should contain  //div[contains(text(),'Private')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]    ${option}
+
 Verify searched existing asset
     [Arguments]     ${option}
     wait until element is not visible   ${loaderIcon}        ${wait_time}

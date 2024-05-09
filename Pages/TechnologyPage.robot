@@ -353,6 +353,13 @@ Add host name for technology group information for hardware
     wait until element is enabled       ${host_name}        ${wait_time}
     input text   ${host_name}   125.66
 
+Add host name for technology group information for hardware random
+    wait until element is visible       ${host_name}        ${wait_time}
+    wait until element is enabled       ${host_name}        ${wait_time}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${result}=    Catenate    HostName_${random_string}
+    input text   ${host_name}   ${result}
+
 #================================ CREATE SERIAL NUMBER ==========================
 Create unique serial number random
     wait until element is visible       ${serial_number}        ${wait_time}
