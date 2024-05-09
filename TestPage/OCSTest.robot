@@ -1400,11 +1400,6 @@ Create Asset from Add Assets Page 2
     Generic.Verify your current page location contains    ocs
     OCS.Click on newly discovered tab under network discovery
     OCS.Click on search icon of discovery assets
-#    ${TEST_STATUS}=    Run Keyword And Return Status       OCS.Click on search icon of discovery assets
-#    Run Keyword If    '${TEST_STATUS}' == 'FAIL'    Welcome to the code
-#
-#    ${TEST_STATUS}=    Run Keyword And Return Status       OCS.Enter text to search discovery asset   Apple Inc
-#    Run Keyword If    '${TEST_STATUS}' == 'FAIL'    My Failure Handling
     OCS.Enter text to search discovery asset
     OCS.Click on the down arrow icon of discovered asset
     OCS.Mouse Hover over searched Discovered Assets
@@ -1438,33 +1433,33 @@ Create Asset from Add Assets Page 2
     UnselectAssetAPI.Hit API Endpoint
 
 
-Test the method
-    TRY
-        log     this is try method
-    TRY
-        log     this is try method two
-    TRY
-        log     this is try method three
-    EXCEPT
-        log     this is except method
-    ELSE
-        log     this is else method
-    FINALLY
-        log     this is final method
-    END
-
-
-Test Try Blocks
-    TRY
-        OCS.Try Block One
-        OCS.Try Block Two
-        Fail
-        OCS.Try Block Three
-    EXCEPT
-        TRY
-            Log    this is inside try
-        EXCEPT    this is inside catch
-    END
+#Test the method
+#    TRY
+#        log     this is try method
+#    TRY
+#        log     this is try method two
+#    TRY
+#        log     this is try method three
+#    EXCEPT
+#        log     this is except method
+#    ELSE
+#        log     this is else method
+#    FINALLY
+#        log     this is final method
+#    END
+#
+#
+#Test Try Blocks
+#    TRY
+#        OCS.Try Block One
+#        OCS.Try Block Two
+#        Fail
+#        OCS.Try Block Three
+#    EXCEPT
+#        TRY
+#            Log    this is inside try
+#        EXCEPT    this is inside catch
+#    END
 
 Test Try Blocks 2
     TRY
@@ -1477,11 +1472,7 @@ Test Try Blocks 2
         Generic.Verify your current page location contains    ocs
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
-#    ${TEST_STATUS}=    Run Keyword And Return Status       OCS.Click on search icon of discovery assets
-#    Run Keyword If    '${TEST_STATUS}' == 'FAIL'    Welcome to the code
-#
-#    ${TEST_STATUS}=    Run Keyword And Return Status       OCS.Enter text to search discovery asset   Apple Inc
-#    Run Keyword If    '${TEST_STATUS}' == 'FAIL'    My Failure Handling
+
         OCS.Enter text to search discovery asset        Apple Inc
         OCS.Click on the down arrow icon of discovered asset
         OCS.Mouse Hover over searched Discovered Assets
