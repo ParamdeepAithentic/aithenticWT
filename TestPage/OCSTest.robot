@@ -115,8 +115,8 @@ Search Existing Assets
     END
 
 Match Discovery and Existing Asset
+    [Tags]      Sanity
     TRY
-        [Tags]      Sanity
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
         LandingPage.Verify you are on dashboard page
@@ -137,7 +137,11 @@ Match Discovery and Existing Asset
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    ocs
-        OCS.Hover over searched Discovered Asset
+         OCS.Click on newly discovered tab under network discovery
+        OCS.Click on search icon of discovery assets
+        OCS.Enter text to search discovery asset    Apple Inc
+        OCS.Click on the down arrow icon of discovered asset
+        OCS.Mouse Hover over searched Discovered Assets
         OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
         OCS.Get Serial number by hovering over discovered assets     Serial Number:
         OCS.Get Host name by hovering over discovered assets     Host name:
@@ -230,8 +234,8 @@ Apply filters and clear filter on Discovered Asset
     END
 
 Apply filters and clear filter on Existing Assets
+    [Tags]      Sanity
     TRY
-        [Tags]      Sanity
         Generic.click on the tab	Login
         LandingPage.Fill the login Form     johns@mai.25u.com     Test@123
         LandingPage.Verify you are on dashboard page
@@ -487,7 +491,6 @@ Add component as an asset from Agent Discovery page
 
 Upload Image and Document File while Add Discovery Asset
     TRY
-        [Tags]      rerun
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
         LandingPage.Verify you are on dashboard page
@@ -598,7 +601,6 @@ Upload Image and Document File while Add Discovery Asset
 
 Upload Image and Document File while Add component as an asset from Agent Discovery page
     TRY
-        [Tags]      rerun
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
         LandingPage.Verify you are on dashboard page
@@ -946,7 +948,6 @@ Add asset with IP Address under discovered asset list
 
 Add Asset with IP address from Network Discovery Page
     TRY
-#        [Tags]    retry
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
         LandingPage.Verify you are on dashboard page
@@ -1440,7 +1441,6 @@ Search with containing fields under advance search of IP Address of discovered a
 
 Upload Image and Document file during Add Asset with IP address from Agent Discovery Page
     TRY
-#        [Tags]      rerun
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
         LandingPage.Verify you are on dashboard page
