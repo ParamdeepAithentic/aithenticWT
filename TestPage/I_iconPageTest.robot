@@ -188,6 +188,7 @@ Verify all i-icon of Discovery assets
     sleep       ${yop_sleep}
     switch window       aithentic | Asset - Discovery
     I_iconPage.Choose tab under Discovery Assets       network-discovery
+    OCS.Click on newly discovered tab under network discovery
     I_iconPage.Click on i_icon under network_discovery tab
 
 Verify all i-icon of advanced search
