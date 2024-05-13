@@ -887,3 +887,29 @@ Click and verify the count of the tabs under renewal overview by management cons
     LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      management-console
     DashboardPage.Get And Verify The Count Of tabs under renewal overview by management console
+
+Click and verify the count of the tabs under renewal overview by choosing the value from the dropdown by management console
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
+    DashboardPage.Click on the dropdown of quarter end under management console
+    DashboardPage.Select the first value of To dropdown of quarter     0
+    DashboardPage.Get And Verify The Count Of tabs under renewal overview by management console
+    DashboardPage.Click on the dropdown of quarter end under management console
+    DashboardPage.Select the first value of To dropdown of quarter     1
+    DashboardPage.Get And Verify The Count Of tabs under renewal overview by management console
+    DashboardPage.Click on the dropdown of quarter end under management console
+    DashboardPage.Select the first value of To dropdown of quarter     2
+    DashboardPage.Get And Verify The Count Of tabs under renewal overview by management console
+    DashboardPage.Click on the dropdown of quarter end under management console
+    DashboardPage.Select the first value of To dropdown of quarter     3
+    DashboardPage.Get And Verify The Count Of tabs under renewal overview by management console
+    DashboardPage.Click on the dropdown of quarter end under management console
+    DashboardPage.Select the first value of To dropdown of quarter     4
+    DashboardPage.Get And Verify The Count Of tabs under renewal overview by management console
+    DashboardPage.Click on the first dropdown under management console
+    DashboardPage.Select the first value of To dropdown of quarter     3
+    DashboardPage.Click on the dropdown of quarter end under management console
+    DashboardPage.Select the first value of To dropdown of quarter     2
+    DashboardPage.Get And Verify The Count Of tabs under renewal overview by management console

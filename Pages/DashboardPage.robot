@@ -927,7 +927,7 @@ Get And Verify The Count Of tabs under renewal overview by management console
     FOR    ${index}    IN RANGE    1    ${element_count}
         Wait Until Element Is Visible   //div[@id='renewal-overview-section']//following-sibling::div//div[contains(@class,'renew-card p')]       ${wait_time}
         ${element}=    Get Text    (//div[contains(@class,'-dot')])[${index}]
-        Log to console   Milan : ${element}
+        Log to console   Element : ${element}
         Run Keyword If    '${element}' == '${EMPTY}'    Run Keywords    Empty Action   AND     Continue For Loop
         ${element}=    Remove Special Characters    ${element}
         Log     Element after removing special characters: ${element}
@@ -940,3 +940,21 @@ Get And Verify The Count Of tabs under renewal overview by management console
         ...    AND    Click Element    css:span[class='back']  AND  Sleep    ${yop_sleep}
         ...    ELSE    Log    Custom action for element ${index} with value ${element}
     END
+
+
+Click on the dropdown of quarter end under management console
+    Wait Until Element Is Visible    (//div[contains(@class,'qa-upcoming-days')])[2]      ${wait_time}
+    Wait Until Element Is Enabled    (//div[contains(@class,'qa-upcoming-days')])[2]      ${wait_time}
+    Click Element       (//div[contains(@class,'qa-upcoming-days')])[2]
+
+Select the first value of To dropdown of quarter
+    [Arguments]     ${option}
+    wait until element is visible     //div[contains (@id, '-${option}')]       ${wait_time}
+    wait until element is enabled     //div[contains (@id, '-${option}')]       ${wait_time}
+    click element   //div[contains (@id, '-${option}')]
+    wait until element is not visible       ${loaderIcon}       ${wait_time}
+
+Click on the first dropdown under management console
+    Wait Until Element Is Visible    (//div[contains(@class,'qa-upcoming-days')])[1]      ${wait_time}
+    Wait Until Element Is Enabled    (//div[contains(@class,'qa-upcoming-days')])[1]      ${wait_time}
+    Click Element       (//div[contains(@class,'qa-upcoming-days')])[1]
