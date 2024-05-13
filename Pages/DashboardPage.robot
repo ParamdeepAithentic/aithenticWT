@@ -898,3 +898,25 @@ Click on View more dropdown under recent notifications
 
 Verify the invisiblity of view_more button
     Wait Until Element Is Not Visible       //span[normalize-space()='View More']       ${wait_time}
+
+
+Get And Verify The Count Of tabs under renewal overview by management console
+    ${element_count}=    Get Element Count    //div[@id='renewal-overview-section']//following-sibling::div//div[contains(@class,'renew-card p')]
+    Log to console      ${element_count}
+    ${element}=    Get Text    //div[contains(@class,'-dot')]
+#        Log to console   Element : ${element}
+    FOR    ${index}    IN RANGE    0    ${element_count}
+        Wait Until Element Is Visible   //div[@id='renewal-overview-section']//following-sibling::div//div[contains(@class,'renew-card p')]       ${wait_time}
+        Log to console   Milan : ${element}
+        Run Keyword If    '${element}' == '${EMPTY}'    Run Keywords    Empty Action   AND     Continue For Loop
+        ${element}=    Remove Special Characters    ${element}
+        Log     Element after removing special characters: ${element}
+        ${element_as_number}=   Convert To Integer   ${element}
+        log  Converted Text: ${element_as_number}
+        Run Keyword If    ${element_as_number} == 0
+        ...    Skip Action
+        ...    ELSE IF    ${element_as_number} > 0
+        ...    Run Keywords      Click Element    //div[contains(@class,'-dot')]      AND       sleep   ${yop_sleep}        AND       ITperformancePage.Fetch and compare the total count  ${element_as_number}
+        ...    AND    Click Element    css:span[class='back']  AND  Sleep    ${yop_sleep}
+        ...    ELSE    Log    Custom action for element ${index} with value ${element}
+    END

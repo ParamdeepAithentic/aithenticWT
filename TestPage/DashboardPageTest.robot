@@ -880,3 +880,10 @@ Verify Reports Asset Alert
     DashboardPage.Wait until alert is visible in the Recent Notifiation tab        A new agent has been downloaded for       Macos.
     DashboardPage.Click on View more dropdown under recent notifications    View More
     DashboardPage.Verify the invisiblity of view_more button
+
+Click and verify the count of the tabs under renewal overview by management console
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
+    DashboardPage.Get And Verify The Count Of tabs under renewal overview by management console
