@@ -678,8 +678,11 @@ Enter input in the brand field of existing asset
     click element    (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[1]
     sleep   ${search_sleep}
     input text    (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[1]       ${option}
-    Press Keys      (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[1]     ENTER
-
+#    Press Keys      (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[1]     ENTER
+    Wait Until Element Is Visible    //span[normalize-space()='Apple Inc.']     ${wait_time}
+    Wait Until Element Is Enabled    //span[normalize-space()='Apple Inc.']     ${wait_time}
+    Click Element    //span[normalize-space()='Apple Inc.']
+    
 Mouse Hover over searched IP Assets
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     Wait Until Element Is Visible   css:.box .left-text     ${wait_time}
