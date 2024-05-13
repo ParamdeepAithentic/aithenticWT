@@ -784,6 +784,9 @@ Add component as an asset after Adding OCS asset
     OCS.Enter text to search discovery asset    Apple Inc
     OCS.Click on the down arrow icon of discovered asset
     OCS.Mouse Hover over searched Discovered Assets
+    OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
+    OCS.Get Serial number by hovering over discovered assets     Serial Number:
+    OCS.Get Host name by hovering over discovered assets     Host name:
     OCS.Mark check-box of Agent/Discovered Asset
     OCS.Click on Button inside Network Discovery Page       Add Assets
     Sleep    ${yop_sleep}
@@ -804,6 +807,7 @@ Add component as an asset after Adding OCS asset
     TechnologyPage.Search by AssetId       ${generated_AssetID}
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains    technology-details
+    sleep   ${search_sleep}
     OCS.Get Value of MAC-Address from technology details and compare it with      ${hover_MAC_address1}
     OCS.Get Value of Host-Name and compare it with    ${hover_host name}
     OCS.Verify Page should contain Element     discovery-info-tab

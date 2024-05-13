@@ -52,8 +52,8 @@ ${valid_password}        Test!@5897     #UAT user
 #${valid_password}         Test@123         #pre prod
 
 
-#${admin_url}        https://uat-admin.aithentic.com/
-${admin_url}        https://qa-admin.aithentic.com/
+${admin_url}        https://uat-admin.aithentic.com/
+#${admin_url}        https://qa-admin.aithentic.com/
 
 #${agentDiscovery_TagName}       Tag Name - johnsoftwaresolutions-1192-4         #qa
 ${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-3        #uat
