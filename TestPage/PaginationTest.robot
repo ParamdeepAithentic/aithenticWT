@@ -174,4 +174,4 @@ Verify Pagination of Product Dropdown when Add and Edit Technology
 #    Sleep    20
     PaginationPage.Fetch the total count
     PaginationPage.Click on the pagination dropdown     location-list
-    PaginationPage.Log WebElements      location-list
+    PaginationPage.Log WebElements of Product Dropdown      location-list

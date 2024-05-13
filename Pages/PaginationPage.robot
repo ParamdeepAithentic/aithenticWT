@@ -121,7 +121,11 @@ Log WebElements
         Run Keywords    Fetch the selected value of the dropdown  ${option}   AND      Check the table get load       AND      Get count of total rows     AND     Verify Pagination and Row Count     AND     Fetch the total count   AND     Click on the pagination dropdown  ${option}
     END
 
-Fetch the selected value of the dropdown 2
+
+#############################################################################################################################################
+
+
+Fetch the selected value of the product dropdown
     [Arguments]     ${option}
     wait until element is visible       //tbody/tr[1]      ${wait_time}
     wait until element is enabled       //tbody/tr[1]      ${wait_time}
@@ -130,11 +134,11 @@ Fetch the selected value of the dropdown 2
     set global variable    ${dropDown_value_as_number}
     Log to console  Selected value :${dropDown_value_as_number}
 
-Check the table get load 2
-    wait until element is visible       .table-responsive      ${wait_time}
-    wait until element is enabled       .table-responsive      ${wait_time}
+Check the table get load of product dropdown
+    wait until element is visible       //tbody/tr[1]      ${wait_time}
+    wait until element is enabled       //tbody/tr[1]      ${wait_time}
 
-Log WebElements
+Log WebElements of Product Dropdown
     [Arguments]     ${option}
     ${elements} =    Get WebElements    //div[contains(@class, 'scroll-host')]//span
     ${element_count} =    Get Length    ${elements}
@@ -142,15 +146,34 @@ Log WebElements
         wait until element is visible     //div[contains (@id, '-${index}')]       ${wait_time}
         wait until element is enabled     //div[contains (@id, '-${index}')]       ${wait_time}
         click element   //div[contains (@id, '-${index}')]
-        Run Keywords    Fetch the selected value of the dropdown  ${option}   AND      Check the table get load       AND      Get count of total rows     AND     Verify Pagination and Row Count     AND     Fetch the total count   AND     Click on the pagination dropdown  ${option}
+        Run Keywords    Fetch the selected value of the product dropdown     ${option}   AND      Check the table get load of product dropdown      AND      Get count of total rows from Product Dropdown     AND     Verify Pagination and Row Count     AND     Fetch the total count   AND     Click on the pagination dropdown  ${option}
     END
 
-Get count of total rows 2
-    wait until element is visible       .table-responsive      ${wait_time}
-    wait until element is enabled       .table-responsive      ${wait_time}
+
+Get count of total rows from Product Dropdown
+    wait until element is visible       //tbody/tr[1]      ${wait_time}
+    wait until element is enabled       //tbody/tr[1]      ${wait_time}
     ${elements} =  Get WebElements     ${TotalRow_count}
     ${row_count} =    Get Length    ${elements}
     ${total_table_row_count}=   Convert To Integer   ${row_count}
     set global variable    ${total_table_row_count}
 
-Verify Pagination and Row Count 2
+Verify Pagination and Row Count for product dropdown
+    Run Keyword If    '${dropDown_value_as_number}' == '${total_table_row_count}'
+    ...    Run Keywords
+    ...    Scroll within the element of product dropdown    ${dropDown_value_as_number}
+    ...    AND    Return From Keyword
+
+    Run Keyword If    '${total_table_row_count}' == '${total_data_count}'
+    ...    Run Keywords     Fetch the total count    AND
+    ...    Scroll within the element of product dropdown    ${total_table_row_count}
+    ...    AND    Return From Keyword
+
+
+Scroll within the element of product dropdown
+    [Arguments]    ${option}
+    Execute JavaScript    document.querySelector('tbody tr:nth-child(${option}) td:nth-child(1)').scrollIntoView(true);
+    wait until element is visible       //tbody/tr[${option}]      ${wait_time}
+
+
+
