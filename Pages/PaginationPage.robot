@@ -82,6 +82,7 @@ Get count of total rows
 
 
 Fetch the total count
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is enabled       ${Totalcount_field}      ${wait_time}
     wait until element is visible   ${Totalcount_field}      ${wait_time}
     ${text}=     get text   ${Totalcount_field}
@@ -104,13 +105,10 @@ Verify Pagination and Row Count
     ...    Scroll within the element    ${total_table_row_count}
     ...    AND    Return From Keyword
 
-
 Scroll within the element
     [Arguments]    ${option}
     Execute JavaScript    document.querySelector('tbody tr:nth-child(${option}) td:nth-child(1)').scrollIntoView(true);
     wait until element is visible       //td[normalize-space()='${option}']      ${wait_time}
-
-
 
 Log WebElements
     [Arguments]     ${option}
@@ -122,3 +120,37 @@ Log WebElements
         click element   //div[contains (@id, '-${index}')]
         Run Keywords    Fetch the selected value of the dropdown  ${option}   AND      Check the table get load       AND      Get count of total rows     AND     Verify Pagination and Row Count     AND     Fetch the total count   AND     Click on the pagination dropdown  ${option}
     END
+
+Fetch the selected value of the dropdown 2
+    [Arguments]     ${option}
+    wait until element is visible       //tbody/tr[1]      ${wait_time}
+    wait until element is enabled       //tbody/tr[1]      ${wait_time}
+    ${get_count_of_dropDown_value} =    get text    css:.qa-${option}-per-page .ng-value span.ng-value-label
+    ${dropDown_value_as_number}=   Convert To Integer   ${get_count_of_dropDown_value}
+    set global variable    ${dropDown_value_as_number}
+    Log to console  Selected value :${dropDown_value_as_number}
+
+Check the table get load 2
+    wait until element is visible       .table-responsive      ${wait_time}
+    wait until element is enabled       .table-responsive      ${wait_time}
+
+Log WebElements
+    [Arguments]     ${option}
+    ${elements} =    Get WebElements    //div[contains(@class, 'scroll-host')]//span
+    ${element_count} =    Get Length    ${elements}
+    FOR    ${index}    IN RANGE    0    ${element_count}
+        wait until element is visible     //div[contains (@id, '-${index}')]       ${wait_time}
+        wait until element is enabled     //div[contains (@id, '-${index}')]       ${wait_time}
+        click element   //div[contains (@id, '-${index}')]
+        Run Keywords    Fetch the selected value of the dropdown  ${option}   AND      Check the table get load       AND      Get count of total rows     AND     Verify Pagination and Row Count     AND     Fetch the total count   AND     Click on the pagination dropdown  ${option}
+    END
+
+Get count of total rows 2
+    wait until element is visible       .table-responsive      ${wait_time}
+    wait until element is enabled       .table-responsive      ${wait_time}
+    ${elements} =  Get WebElements     ${TotalRow_count}
+    ${row_count} =    Get Length    ${elements}
+    ${total_table_row_count}=   Convert To Integer   ${row_count}
+    set global variable    ${total_table_row_count}
+
+Verify Pagination and Row Count 2

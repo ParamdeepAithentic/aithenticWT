@@ -158,3 +158,20 @@ Verify pagination of Assigned User Table
     PaginationPage.Fetch the total count
     PaginationPage.Click on the pagination dropdown     assignee-list
     PaginationPage.Log WebElements      assignee-list
+
+Verify Pagination of Product Dropdown when Add and Edit Technology
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology-list
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       Wacom
+#    Sleep    20
+    PaginationPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     location-list
+    PaginationPage.Log WebElements      location-list
