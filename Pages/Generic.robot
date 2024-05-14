@@ -56,7 +56,8 @@ ${admin_url}        https://uat-admin.aithentic.com/
 #${admin_url}        https://qa-admin.aithentic.com/
 
 #${agentDiscovery_TagName}       Tag Name - johnsoftwaresolutions-1192-4         #qa
-${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-4        #uat
+${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-3        #uat
+
 
 ${admin_name}        aithentic@yopmail.com
 ${admin_password}       Admin@123
@@ -164,6 +165,7 @@ Get Current Date and Time
 
 Close Browser session
     close browser
+
 
 select the option from the side menu
     [Arguments]     ${option}
@@ -314,10 +316,11 @@ Fetch log_out alert message
     sleep      2
     Wait Until Element Is Not Visible    ${alert_Msg}          ${wait_time}
 
-#Click keyboard button
-#    [Arguments]     ${locator}      ${button}
-#    Press keys      ${locator}      ${button}
-#
+
+Click keyboard button
+    [Arguments]     ${locator}      ${button}
+    Press keys      ${locator}      ${button}
+
 Update settings for Asset_ID, employee_id and location
     Generic.open the browser with the url
     Generic.click on the tab	Login
@@ -333,4 +336,5 @@ Update settings for Asset_ID, employee_id and location
     DashboardPage.Select the location ID checkbox   yes
     DashboardPage.Select the asset ID checkbox      no
     close browser
+
 
