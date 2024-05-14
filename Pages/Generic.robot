@@ -56,7 +56,7 @@ ${valid_password}        Test!@5897     #UAT user
 ${admin_url}        https://qa-admin.aithentic.com/
 
 #${agentDiscovery_TagName}       Tag Name - johnsoftwaresolutions-1192-4         #qa
-${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-4        #uat
+${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-3        #uat
 
 ${admin_name}        aithentic@yopmail.com
 ${admin_password}       Admin@123
