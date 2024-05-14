@@ -171,7 +171,27 @@ Verify Pagination of Product Dropdown when Add and Edit Technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       Wacom
-#    Sleep    20
     PaginationPage.Fetch the total count
     PaginationPage.Click on the pagination dropdown     location-list
     PaginationPage.Log WebElements of Product Dropdown      location-list
+    TechnologyPage.Select parameter from technology dropdown list       ACK42014
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+    TechnologyPage.Click on edit button on product details page        Edit
+    Generic.Verify your current page location contains      edit-technology
+    TechnologyPage.Click on the edit icon on the edit technology page
+    TechnologyPage.Click on cross icon of product while editing technology
+    TechnologyPage.Select parameter from brand dropdown list        HP Inc.
+    PaginationPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     location-list
+    PaginationPage.Log WebElements of Product Dropdown      location-list
+
+
+
+
