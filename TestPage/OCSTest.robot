@@ -750,7 +750,9 @@ Match IP Discovered asset with Existing asset
     OCS.Get Value of MAC-Address from technology details and compare it with      ${hover_MAC_addressIP}
     TechnologyPage.Click on edit button on product details page        Edit
     Generic.Verify your current page location contains      edit-technology
+    OCS.Edit the MAC_Address of Asset
     OCS.Edit The Host_Name of Asset
+
     TechnologyPage.Click on update button of edit_technology page       Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     UnselectAssetAPI.Hit API Endpoint
@@ -855,6 +857,7 @@ Match IP Discovered Asset with Dynamic Existing Asset
         TechnologyPage.Click on edit button on product details page        Edit
         Generic.Verify your current page location contains      edit-technology
         OCS.Edit the Serial_No. of Asset
+        OCS.Edit the MAC_Address of Asset
         TechnologyPage.Click on update button of edit_technology page       Update
         Generic.Fetch alert message text and compare it with        Technology updated successfully
         UnselectAssetAPI.Hit API Endpoint
