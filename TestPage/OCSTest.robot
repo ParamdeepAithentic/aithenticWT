@@ -1477,3 +1477,6 @@ Upload Image and Document file during Add Asset with IP address from Agent Disco
     FINALLY
         OCS.Welcome to the code
     END
+
+
+    
