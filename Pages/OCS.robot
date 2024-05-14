@@ -97,7 +97,8 @@ Verify Searched discovery asset
     Wait Until Element Is Visible    //div[contains(text(),'Private')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]        ${wait_time}
 #    Element Should Contain   ${Discovery_Assets}   ${option}
 #    Element Should Contain   //div[contains(text(),'Apple Inc')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]   ${option}
-    Element should contain  //div[contains(text(),'Private')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]        ${wait_time}
+    Element should contain  //div[contains(text(),'Private')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]    ${option}
+
 Verify searched existing asset
     [Arguments]     ${option}
     wait until element is not visible   ${loaderIcon}        ${wait_time}
@@ -677,8 +678,11 @@ Enter input in the brand field of existing asset
     click element    (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[1]
     sleep   ${search_sleep}
     input text    (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[1]       ${option}
-    Press Keys      (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[1]     ENTER
-
+#    Press Keys      (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[1]     ENTER
+    Wait Until Element Is Visible    //span[normalize-space()='Apple Inc.']     ${wait_time}
+    Wait Until Element Is Enabled    //span[normalize-space()='Apple Inc.']     ${wait_time}
+    Click Element    //span[normalize-space()='Apple Inc.']
+    
 Mouse Hover over searched IP Assets
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     Wait Until Element Is Visible   css:.box .left-text     ${wait_time}
@@ -793,6 +797,58 @@ Enter input in search bar of software tab under technology details page
     input text  //input[@placeholder='Search by Publisher, Software Name and Asset Id']     ${option}
     Sleep    ${yop_sleep}
     Wait Until Element Is Not Visible    ${loaderIcon}  ${wait_time}
+
+Click on Existing asset
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    (//div[contains(@class,"right-text")])[1]      ${wait_time}
+    Wait Until Element Is Enabled    (//div[contains(@class,"right-text")])[1]      ${wait_time}
+    Click Element    (//div[contains(@class,"right-text")])[1]
+
+
+###############################################################
+
+
+Close Browser Session for OCS file
+    Run Keyword If    '${TEST_STATUS}' == 'FAIL'     Run Keywords     My Failure Handling     AND     Welcome to the code
+    close browser
+
+
+
+#Close Browser Session for OCS File
+#    Run Keyword If    '${TEST_STATUS}' == 'FAIL'    Run Keywords     My Failure Handling     AND     Welcome to the code
+##    ...    My Failure Handling Keyword
+#        ...    ELSE    Welcome to the code
+
+#My Failure Handling
+#    ${status}=    Run Keyword And Return Status         Execute Further Steps 1
+#    Log    Current status is :${status}
+#    Run Keyword If    '${status}' == 'True'    Run Keywords     Execute Further Steps 2    AND     Welcome to the code
+#    Run Keyword If    '${status}' == 'False'    Welcome to the code
+
+My Failure Handling
+    Generic.Click on the profile name
+    Generic.Select option from profile list     view-discovery
+    Generic.Verify your current page location contains    ocs
+    OCS.Click on newly discovered tab under network discovery
+    UnselectAssetAPI.Hit API Endpoint
+    Generic.Refresh the existing page
+    OCS.Click on newly discovered tab under network discovery
+    OCS.Click on Existing asset
+    Sleep    ${yop_sleep}
+    Switch Window       aithentic | Technology - Details
+    Generic.Verify your current page location contains    technology-details
+    TechnologyPage.Click on edit button on product details page        Edit
+    Generic.Verify your current page location contains      edit-technology
+    OCS.Edit the MAC_Address of Asset
+    OCS.Edit the Serial_No. of Asset
+    OCS.Edit The Host_Name of Asset
+    TechnologyPage.Click on update button of edit_technology page       Update
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+    UnselectAssetAPI.Hit API Endpoint
+
+Welcome to the code
+    Log     testing this method
+    Close browser
 
 click on the asset id inside the table of agent discovery
     wait until element is not visible    ${loaderIcon}    ${wait_time}

@@ -55,8 +55,9 @@ ${valid_password}        Test!@5897     #UAT user
 ${admin_url}        https://uat-admin.aithentic.com/
 #${admin_url}        https://qa-admin.aithentic.com/
 
-${agentDiscovery_TagName}       Tag Name - johnsoftwaresolutions-1192-4         #qa
-#${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-3        #uat
+#${agentDiscovery_TagName}       Tag Name - johnsoftwaresolutions-1192-4         #qa
+${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-3        #uat
+
 
 ${admin_name}        aithentic@yopmail.com
 ${admin_password}       Admin@123
@@ -78,7 +79,7 @@ ${click_countryTag}     css:.iti__selected-flag.dropdown-toggle
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
-${wait_time}        120
+${wait_time}        60
 ${yop_sleep}       10
 ${search_sleep}       1
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
@@ -164,6 +165,7 @@ Get Current Date and Time
 
 Close Browser session
     close browser
+
 
 select the option from the side menu
     [Arguments]     ${option}
@@ -314,10 +316,11 @@ Fetch log_out alert message
     sleep      2
     Wait Until Element Is Not Visible    ${alert_Msg}          ${wait_time}
 
+
 Click keyboard button
     [Arguments]     ${locator}      ${button}
     Press keys      ${locator}      ${button}
-#
+
 Update settings for Asset_ID, employee_id and location
     Generic.open the browser with the url
     Generic.click on the tab	Login
@@ -333,4 +336,5 @@ Update settings for Asset_ID, employee_id and location
     DashboardPage.Select the location ID checkbox   yes
     DashboardPage.Select the asset ID checkbox      no
     close browser
+
 
