@@ -53,7 +53,7 @@ ${valid_password}        Test!@5897     #UAT user
 
 
 ${admin_url}        https://uat-admin.aithentic.com/
-${admin_url}        https://qa-admin.aithentic.com/
+#${admin_url}        https://qa-admin.aithentic.com/
 
 #${agentDiscovery_TagName}       Tag Name - johnsoftwaresolutions-1192-4         #qa
 ${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-3        #uat
@@ -316,6 +316,10 @@ Fetch log_out alert message
     sleep      2
     Wait Until Element Is Not Visible    ${alert_Msg}          ${wait_time}
 
+
+Click keyboard button
+    [Arguments]     ${locator}      ${button}
+    Press keys      ${locator}      ${button}
 
 Update settings for Asset_ID, employee_id and location
     Generic.open the browser with the url

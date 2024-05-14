@@ -798,7 +798,6 @@ Enter input in search bar of software tab under technology details page
     Sleep    ${yop_sleep}
     Wait Until Element Is Not Visible    ${loaderIcon}  ${wait_time}
 
-
 Click on Existing asset
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     Wait Until Element Is Visible    (//div[contains(@class,"right-text")])[1]      ${wait_time}
@@ -851,3 +850,8 @@ Welcome to the code
     Log     testing this method
     Close browser
 
+click on the asset id inside the table of agent discovery
+    wait until element is not visible    ${loaderIcon}    ${wait_time}
+    wait until element is visible   //h5[normalize-space()='${agentDiscovery_TagName}']//parent::div//div//table//td[8]   ${wait_time}
+    wait until element is enabled   //h5[normalize-space()='${agentDiscovery_TagName}']//parent::div//div//table//td[8]   ${wait_time}
+    click element   //h5[normalize-space()='${agentDiscovery_TagName}']//parent::div//div//table//td[8]
