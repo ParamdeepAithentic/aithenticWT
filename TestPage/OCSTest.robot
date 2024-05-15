@@ -52,6 +52,7 @@ Search Discovered Assets
        Generic.Click on the profile name
        Generic.Select option from profile list     view-discovery
        Generic.Verify your current page location contains    ocs
+       I_iconPage.Choose tab under Discovery Assets       network-discovery
        OCS.Click on newly discovered tab under network discovery
        OCS.Click on search icon of discovery assets
        OCS.Enter text to search discovery asset    1428-4
@@ -99,6 +100,7 @@ Search Existing Assets
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    ocs
+        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of Existing assets
         OCS.Enter text to search existing asset    ${generated_AssetID}
@@ -135,6 +137,7 @@ Match Discovery and Existing Asset
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    ocs
+        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    Apple Inc
@@ -187,6 +190,7 @@ Apply filters and clear filter on Discovered Asset
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains      discovery-assets
+        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.click on filter icon of discovered assets
         OCS.Choose filters for discovered asset     Select Brand
@@ -244,6 +248,7 @@ Apply filters and clear filter on Existing Assets
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains      discovery-assets
+        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.click on filter icon of existing assets
         OCS.Choose filters for discovered asset     Select Brand
@@ -315,6 +320,7 @@ Add Discovery Asset
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    ocs
+        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    Apple Inc
@@ -378,6 +384,7 @@ Create Asset from Add Assets Page
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    ocs
+        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    Apple Inc
@@ -427,6 +434,7 @@ Add component as an asset from Agent Discovery page
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    ocs
+        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    Apple Inc
@@ -501,6 +509,7 @@ Upload Image and Document File while Add Discovery Asset
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    ocs
+        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset   Apple Inc
@@ -611,6 +620,7 @@ Upload Image and Document File while Add component as an asset from Agent Discov
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    ocs
+        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         Generic.Verify your current page location contains    ocs
         OCS.Click on search icon of discovery assets
@@ -727,6 +737,7 @@ Match IP Discovered asset with Existing asset
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
+    I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.Click on search icon of discovery assets
     OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
@@ -766,6 +777,7 @@ Match Discovery Asset with Static Existing Asset
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    ocs
+        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    Apple Inc
@@ -830,6 +842,7 @@ Match IP Discovered Asset with Dynamic Existing Asset
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    ocs
+        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
@@ -956,6 +969,7 @@ Add Asset with IP address from Network Discovery Page
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    ocs
+        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
@@ -1286,6 +1300,7 @@ Search with containing fields under advance search of IP Address of discovered a
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    ocs
+        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
@@ -1393,6 +1408,7 @@ Upload Image and Document file during Add Asset with IP address from Agent Disco
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    ocs
+        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
