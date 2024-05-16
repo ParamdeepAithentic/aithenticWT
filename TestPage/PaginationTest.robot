@@ -169,6 +169,19 @@ Verify Pagination of Product Dropdown when Add and Edit Technology
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click on advanced search button link under add technology
+    TechnologyPage.Click technology advanced brand input field
+    TechnologyPage.Select parameter from advanced brand dropdown list        Wacom
+    Generic.click on the button     Search
+    sleep      ${search_sleep}
+    TechnologyPage.Wait until advanced search table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     location-list
+    PaginationPage.Log WebElements of Product Dropdown      location-list
+    PaginationPage.Close the advance Search pop-up
+    sleep   ${search_sleep}
+    Generic.Verify your current page location contains      addtechnology
+
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       Wacom
     PaginationPage.Fetch the total count
@@ -191,7 +204,3 @@ Verify Pagination of Product Dropdown when Add and Edit Technology
     PaginationPage.Fetch the total count
     PaginationPage.Click on the pagination dropdown     location-list
     PaginationPage.Log WebElements of Product Dropdown      location-list
-
-
-
-

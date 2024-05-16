@@ -175,5 +175,10 @@ Scroll within the element of product dropdown
     Execute JavaScript    document.querySelector('tbody tr:nth-child(${option}) td:nth-child(1)').scrollIntoView(true);
     wait until element is visible       //tbody/tr[${option}]      ${wait_time}
 
-
+Close the advance Search pop-up
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //div[@id='advanceSearchPopup']//button//span[normalize-space()='×']    ${wait_time}
+    Wait Until Element Is Enabled    //div[@id='advanceSearchPopup']//button//span[normalize-space()='×']     ${wait_time}
+    Click Element    //div[@id='advanceSearchPopup']//button//span[normalize-space()='×']
+    
 
