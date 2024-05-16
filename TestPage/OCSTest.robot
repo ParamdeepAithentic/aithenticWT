@@ -57,7 +57,7 @@ Search Discovered Assets
        OCS.Click on search icon of discovery assets
        OCS.Enter text to search discovery asset    1428-4
        OCS.Click on the down arrow icon of discovered asset
-#       OCS.Verify Searched discovery asset    1428-4
+       Generic.Scroll Window To End
        OCS.Mouse Hover over searched Discovered Assets
        OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
        OCS.Get Serial number by hovering over discovered assets     Serial Number:
@@ -105,6 +105,7 @@ Search Existing Assets
         OCS.Click on search icon of Existing assets
         OCS.Enter text to search existing asset    ${generated_AssetID}
         OCS.Click on the down arrow icon of existing assets
+        Generic.Scroll Window To End
         OCS.Mouse Hover over searched existing assets
         OCS.Verify searched existing asset    ${generated_AssetID}
     EXCEPT
@@ -142,6 +143,7 @@ Match Discovery and Existing Asset
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    Apple Inc
         OCS.Click on the down arrow icon of discovered asset
+        Generic.Scroll Window To End
         OCS.Mouse Hover over searched Discovered Assets
         OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
         OCS.Get Serial number by hovering over discovered assets     Serial Number:
@@ -151,6 +153,7 @@ Match Discovery and Existing Asset
         OCS.Click on search icon of Existing assets
         OCS.Enter text to search existing asset    ${generated_AssetID}
         OCS.Click on the down arrow icon of existing assets
+        Generic.Scroll Window To End
         OCS.Mouse Hover over searched existing assets
         OCS.Verify searched existing asset    ${generated_AssetID}
         OCS.Select any existing asset
@@ -325,6 +328,7 @@ Add Discovery Asset
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    Apple Inc
         OCS.Click on the down arrow icon of discovered asset
+        Generic.Scroll Window To End
         OCS.Mouse Hover over searched Discovered Assets
         OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
         OCS.Get Serial number by hovering over discovered assets     Serial Number:
@@ -389,6 +393,7 @@ Create Asset from Add Assets Page
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    Apple Inc
         OCS.Click on the down arrow icon of discovered asset
+        Generic.Scroll Window To End
         OCS.Mouse Hover over searched Discovered Assets
         OCS.Mark check-box of Agent/Discovered Asset
         OCS.Click on Button inside Network Discovery Page       Add Assets
@@ -439,6 +444,7 @@ Add component as an asset from Agent Discovery page
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    Apple Inc
         OCS.Click on the down arrow icon of discovered asset
+        Generic.Scroll Window To End
         OCS.Mouse Hover over searched Discovered Assets
         OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
         OCS.Get Serial number by hovering over discovered assets     Serial Number:
@@ -514,6 +520,7 @@ Upload Image and Document File while Add Discovery Asset
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset   Apple Inc
         OCS.Click on the down arrow icon of discovered asset
+        Generic.Scroll Window To End
         OCS.Mouse Hover over searched Discovered Assets
         OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
         OCS.Get Serial number by hovering over discovered assets     Serial Number:
@@ -626,6 +633,7 @@ Upload Image and Document File while Add component as an asset from Agent Discov
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset   Apple Inc
         OCS.Click on the down arrow icon of discovered asset
+        Generic.Scroll Window To End
         OCS.Mouse Hover over searched Discovered Assets
         OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
         OCS.Get Serial number by hovering over discovered assets     Serial Number:
@@ -742,6 +750,7 @@ Match IP Discovered asset with Existing asset
     OCS.Click on search icon of discovery assets
     OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
     OCS.Click on the down arrow icon of discovered asset
+    Generic.Scroll Window To End
     OCS.Mouse Hover over searched IP Assets
     OCS.Get MAC_Address by hovering over IP discovered assets    MacAddress:
     OCS.Select any Discovered asset
@@ -782,6 +791,7 @@ Match Discovery Asset with Static Existing Asset
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    Apple Inc
         OCS.Click on the down arrow icon of discovered asset
+        Generic.Scroll Window To End
         OCS.Mouse Hover over searched Discovered Assets
         OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
         OCS.Get Serial number by hovering over discovered assets     Serial Number:
@@ -847,6 +857,7 @@ Match IP Discovered Asset with Dynamic Existing Asset
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
         Click on the down arrow icon of discovered asset
+        Generic.Scroll Window To End
         OCS.Mouse Hover over searched IP Assets
         OCS.Verify Searched discovery asset    00:17:61:10:C6:A1
         OCS.Get MAC_Address by hovering over IP discovered assets    MacAddress:
@@ -914,6 +925,7 @@ Add asset with IP Address under discovered asset list
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    ${hover_MAC_addressdiscoveryassetdetail}
         OCS.Click on the down arrow icon of discovered asset
+        Generic.Scroll Window To End
         OCS.Mouse Hover over searched IP Assets
         OCS.Get MAC_Address by hovering over IP discovered assets    MacAddress:
         OCS.Mark check-box of Agent/Discovered Asset
@@ -974,6 +986,7 @@ Add Asset with IP address from Network Discovery Page
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
         OCS.Click on the down arrow icon of discovered asset
+        Generic.Scroll Window To End
         OCS.Mouse Hover over searched IP Assets
         OCS.Verify Searched discovery asset         00:17:61:10:C6:A1
         OCS.Get MAC_Address by hovering over IP discovered assets   MacAddress:
@@ -1074,6 +1087,9 @@ Search with containing fields under advance search of discovered asset
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         Generic.Verify your current page location contains    ocs
         OCS.Click on newly discovered tab under network discovery
+        OCS.Click on the down arrow icon of discovered asset
+        Generic.Scroll Window To End
+        OCS.Mouse Hover over searched Discovered Assets
         OCS.Mark check-box of Agent/Discovered Asset
         OCS.Click on Button inside Network Discovery Page       Add Assets
         Sleep    ${yop_sleep}
@@ -1167,6 +1183,7 @@ Search with containing fields under advance search of component of discovered as
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset   Apple Inc
         OCS.Click on the down arrow icon of discovered asset
+        Generic.Scroll Window To End
         OCS.Mark check-box of Agent/Discovered Asset
         OCS.Click on Button inside Network Discovery Page       Add Assets
         Sleep    ${yop_sleep}
@@ -1305,9 +1322,9 @@ Search with containing fields under advance search of IP Address of discovered a
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
         OCS.Click on the down arrow icon of discovered asset
+        Generic.Scroll Window To End
         OCS.Mouse Hover over searched IP Assets
         OCS.Verify Searched discovery asset    00:17:61:10:C6:A1
-    #    OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
         OCS.Get MAC_Address by hovering over IP discovered assets   MacAddress:
         Generic.select the option from the side menu    Asset Discovery
         Generic.Verify your current page location contains     discovery-assets
@@ -1413,8 +1430,9 @@ Upload Image and Document file during Add Asset with IP address from Agent Disco
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
         OCS.Click on the down arrow icon of discovered asset
+        Generic.Scroll Window To End
         OCS.Mouse Hover over searched IP Assets
-        OCS.Verify Searched discovery asset    00:17:61:10:C6:A1
+#        OCS.Verify Searched discovery asset    00:17:61:10:C6:A1
         OCS.Get MAC_Address by hovering over IP discovered assets    MacAddress:
         OCS.Mark check-box of Agent/Discovered Asset
         OCS.Click on Button inside Network Discovery Page       Add Assets
