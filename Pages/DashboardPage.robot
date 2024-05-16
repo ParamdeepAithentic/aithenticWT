@@ -898,3 +898,63 @@ Click on View more dropdown under recent notifications
 
 Verify the invisiblity of view_more button
     Wait Until Element Is Not Visible       //span[normalize-space()='View More']       ${wait_time}
+
+
+
+
+Fetch and compare the total count
+    [Arguments]  ${value}
+    wait until element is enabled       ${Totalcount_field}      ${wait_time}
+    wait until element is visible   ${Totalcount_field}      ${wait_time}
+    ${text}=     get text   ${Totalcount_field}
+    ${parts}    Split String    ${text}    Total Count :
+    ${total_count}    Get Substring    ${parts[1]}    3
+    ${number}=   Convert To Integer   ${total_count}
+    Log to console  Total count is :${total_count}
+    set global variable    ${total_count}
+    should be equal    ${number}     ${value}
+
+Skip Action
+    Log    Skipping action as the element value is 0
+
+Empty Action
+    Log    Skipping empty action as the element value is null
+
+Get And Verify The Count Of tabs under renewal overview by management console
+    ${element_count}=    Get Element Count    //div[@id='renewal-overview-section']//following-sibling::div//div[contains(@class,'renew-card p')]
+    Log to console      ${element_count}
+
+    FOR    ${index}    IN RANGE    1    ${element_count}
+        Wait Until Element Is Visible   //div[@id='renewal-overview-section']//following-sibling::div//div[contains(@class,'renew-card p')]       ${wait_time}
+        ${element}=    Get Text    (//div[contains(@class,'-dot')])[${index}]
+        Log to console   Element : ${element}
+        Run Keyword If    '${element}' == '${EMPTY}'    Run Keywords    Empty Action   AND     Continue For Loop
+        ${element}=    Remove Special Characters    ${element}
+        Log     Element after removing special characters: ${element}
+        ${element_as_number}=   Convert To Integer   ${element}
+        Log  Converted Text: ${element_as_number}
+        Run Keyword If    ${element_as_number} == 0
+        ...    Skip Action
+        ...    ELSE IF    ${element_as_number} > 0
+        ...    Run Keywords      Click Element    (//div[contains(@class,'-dot')])[${index}]      AND       sleep   ${yop_sleep}        AND       DashboardPage.Fetch and compare the total count  ${element_as_number}
+        ...    AND    Click Element    css:span[class='back']  AND  Sleep    ${yop_sleep}
+        ...    ELSE    Log    Custom action for element ${index} with value ${element}
+    END
+
+
+Click on the dropdown of quarter end under management console
+    Wait Until Element Is Visible    (//div[contains(@class,'qa-upcoming-days')])[2]      ${wait_time}
+    Wait Until Element Is Enabled    (//div[contains(@class,'qa-upcoming-days')])[2]      ${wait_time}
+    Click Element       (//div[contains(@class,'qa-upcoming-days')])[2]
+
+Select the first value of To dropdown of quarter
+    [Arguments]     ${option}
+    wait until element is visible     //div[contains (@id, '-${option}')]       ${wait_time}
+    wait until element is enabled     //div[contains (@id, '-${option}')]       ${wait_time}
+    click element   //div[contains (@id, '-${option}')]
+    wait until element is not visible       ${loaderIcon}       ${wait_time}
+
+Click on the first dropdown under management console
+    Wait Until Element Is Visible    (//div[contains(@class,'qa-upcoming-days')])[1]      ${wait_time}
+    Wait Until Element Is Enabled    (//div[contains(@class,'qa-upcoming-days')])[1]      ${wait_time}
+    Click Element       (//div[contains(@class,'qa-upcoming-days')])[1]
