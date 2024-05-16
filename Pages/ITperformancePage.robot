@@ -242,7 +242,7 @@ Get And Verify The Count Of Data Quality Under Tabs
         ${element}=    Remove Special Characters    ${element}
         Log     Element after removing special characters: ${element}
         ${element_as_number}=   Convert To Integer   ${element}
-        log  Converted Text: ${element_as_number}
+        Log  Converted Text: ${element_as_number}
         Run Keyword If    ${element_as_number} == 0
         ...    Skip Action
         ...    ELSE IF    ${element_as_number} > 0
