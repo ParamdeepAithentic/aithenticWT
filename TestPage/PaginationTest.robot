@@ -241,7 +241,6 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
         PaginationPage.Close the advance Search pop-up
         sleep   ${search_sleep}
         Generic.Verify your current page location contains      add-discovered-asset
-#        PaginationPage.Clear the brand from brand input field
         PaginationPage.Enter the input in the brand field of discovered asset
         PaginationPage.Select parameter from brand dropdown list of OCS       Wacom
         PaginationPage.Fetch the total count
@@ -254,7 +253,6 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
         sleep      ${search_sleep}
         TechnologyPage.Click on save technology form button
         Generic.Fetch alert message text and compare it with        Technology created successfully
-#        TechnologyPage.Click on save technology form pop button
             Sleep    ${yop_sleep}
         switch window    aithentic | Asset - Discovery
         OCS.Choose tab under Discovery Assets   agent-discovery
@@ -292,7 +290,6 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
         PaginationPage.Close the advance Search pop-up
         sleep   ${search_sleep}
         Generic.Verify your current page location contains      add-discovered-asset
-#        PaginationPage.Clear the brand from brand input field
         PaginationPage.Enter the input in the brand field of discovered asset
         PaginationPage.Select parameter from brand dropdown list of OCS       Wacom
         Generic.Refresh the existing page
@@ -309,10 +306,6 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
         Generic.Fetch alert message text and compare it with        Technology created successfully
         sleep  ${yop_sleep}
         switch window   aithentic | Technology - Details
-#        Generic.select the option from the side menu        Technology
-#        Generic.Verify your current page location contains      technology-list
-#        TechnologyPage.Search by AssetId       ${generated_AssetID}
-#        TechnologyPage.Click on the first row of the technology table
         Generic.Verify your current page location contains    technology-details
         TechnologyPage.Click on edit button on product details page        Edit
         Generic.Verify your current page location contains      edit-technology
