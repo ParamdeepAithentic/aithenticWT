@@ -56,7 +56,9 @@ ${admin_url}        https://uat-admin.aithentic.com/
 #${admin_url}        https://qa-admin.aithentic.com/
 
 #${agentDiscovery_TagName}       Tag Name - johnsoftwaresolutions-1192-4         #qa
-${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-4        #uat
+${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-3        #uat
+
+
 
 
 ${admin_name}        aithentic@yopmail.com
@@ -169,7 +171,7 @@ Close Browser session
 
 select the option from the side menu
     [Arguments]     ${option}
-    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+#    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible    //li[@title='${option}']          ${wait_time}
     wait until element is enabled    //li[@title='${option}']          ${wait_time}
     click element       //li[@title='${option}']
