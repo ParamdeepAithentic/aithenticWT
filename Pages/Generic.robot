@@ -193,7 +193,7 @@ Fetch alert message text and compare it with
     ${get_alertMsg} =    get text    ${alert_Msg}
     log to console     ${get_alertMsg}
     should be equal    ${get_alertMsg}     ${option}
-#    Wait Until Element Is Not Visible    ${alert_Msg}          ${wait_time}
+    Wait Until Element Is Not Visible    ${alert_Msg}          ${wait_time}
 
 Verify alertify is visible
        wait until element is visible    ${alert_Msg}          ${wait_time}

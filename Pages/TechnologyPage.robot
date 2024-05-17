@@ -105,7 +105,7 @@ ${assignTo}      css:#assignTO
 ${supportPartner}      css:#supportPartner
 ${supplierPartner}      css:#supplierPartner
 ${select_supplierPartner}      (//div[@role='option'])[2]
-${saveBTN}      css:button[class='btn button-green']
+${saveBTN}      css:button[class='btn button-green mt-0 mx-2']
 
 ######################### Do you need another asset################
 ${savePOPup}      //div[@class='modal-content ng-star-inserted']//div[@class='modal-body']
@@ -1146,6 +1146,14 @@ Click here to add support partner
 Click here to add supplier partner
     wait until element is not visible    cs:.qa-assign-supplier-partner .ng-spinner-loader      ${wait_time}
     click element       css:.qa-click-to-add-partner-supplier
+
+Click here to add support partner via technology form
+    wait until element is not visible    cs:.qa-add-here-support      ${wait_time}
+    click element       css:.qa-add-here-support
+
+Click here to add supplier partner via technology form
+    wait until element is not visible    cs:.qa-add-here-supplier      ${wait_time}
+    click element       css:.qa-add-here-supplier
 
 Click contact main save button
     wait until element is visible      ${main_Save}       ${wait_time}
