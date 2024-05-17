@@ -105,7 +105,7 @@ ${assignTo}      css:#assignTO
 ${supportPartner}      css:#supportPartner
 ${supplierPartner}      css:#supplierPartner
 ${select_supplierPartner}      (//div[@role='option'])[2]
-${saveBTN}      css:button[class='btn button-green mt-0 mx-2']
+${saveBTN}      css:button[class='btn button-green']
 
 ######################### Do you need another asset################
 ${savePOPup}      //div[@class='modal-content ng-star-inserted']//div[@class='modal-body']
@@ -742,7 +742,7 @@ Click on save technology form button
     wait until element is visible       ${saveBTN}       ${wait_time}
     wait until element is enabled       ${saveBTN}       ${wait_time}
     click element       ${saveBTN}
-    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+#    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
 
 Click on save technology form pop button
     wait until element is visible       ${savePOPup}       ${wait_time}

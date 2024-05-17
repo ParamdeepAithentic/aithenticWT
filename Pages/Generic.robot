@@ -169,7 +169,7 @@ Close Browser session
 
 select the option from the side menu
     [Arguments]     ${option}
-    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+#    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible    //li[@title='${option}']          ${wait_time}
     wait until element is enabled    //li[@title='${option}']          ${wait_time}
     click element       //li[@title='${option}']
@@ -193,7 +193,7 @@ Fetch alert message text and compare it with
     ${get_alertMsg} =    get text    ${alert_Msg}
     log to console     ${get_alertMsg}
     should be equal    ${get_alertMsg}     ${option}
-    Wait Until Element Is Not Visible    ${alert_Msg}          ${wait_time}
+#    Wait Until Element Is Not Visible    ${alert_Msg}          ${wait_time}
 
 Verify alertify is visible
        wait until element is visible    ${alert_Msg}          ${wait_time}
