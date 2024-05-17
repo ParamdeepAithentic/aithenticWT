@@ -297,11 +297,11 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
         PaginationPage.Click on the pagination dropdown     location-list
         PaginationPage.Log WebElements of Product Dropdown      location-list
         TechnologyPage.Select parameter from technology dropdown list       ACK42014
-       OCS.Enter The Asset_id in Add Technology Page
-       TechnologyPage.Create random unique serial number
-       OCS.Enter The Asset_id in Add Technology Page
-       Generic.Scroll Window To End
-       sleep      ${search_sleep}
+        OCS.Enter The Asset_id in Add Technology Page
+        TechnologyPage.Create random unique serial number
+        OCS.Enter The Asset_id in Add Technology Page
+        Generic.Scroll Window To End
+        sleep      ${search_sleep}
         TechnologyPage.Click on save technology form button
         Generic.Fetch alert message text and compare it with        Technology created successfully
         sleep  ${yop_sleep}
@@ -309,6 +309,14 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
         Generic.Verify your current page location contains    technology-details
         TechnologyPage.Click on edit button on product details page        Edit
         Generic.Verify your current page location contains      edit-technology
+        TechnologyPage.Click on the edit icon on the edit technology page
+        TechnologyPage.Click on cross icon of product while editing technology
+        PaginationPage.Enter the input in the brand field of discovered asset
+        TechnologyPage.Select parameter from brand dropdown list        HP Inc.
+        PaginationPage.Fetch the total count
+        PaginationPage.Click on the pagination dropdown     location-list
+        PaginationPage.Log WebElements of Product Dropdown      location-list
+        Generic.Refresh the existing page
         OCS.Edit the MAC_Address of Asset
         OCS.Edit the Serial_No. of Asset
         OCS.Edit The Host_Name of Asset
