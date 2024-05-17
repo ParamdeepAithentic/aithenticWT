@@ -337,13 +337,7 @@ Verify Pagination of Product Dropdown when Add IP discovered asset
         OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
         OCS.Click on the down arrow icon of discovered asset
         OCS.Mouse Hover over searched IP Assets
-        OCS.Verify Searched discovery asset    00:17:61:10:C6:A1
         OCS.Get MAC_Address by hovering over IP discovered assets   MacAddress:
-        OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
-        OCS.Click on the down arrow icon of discovered asset
-        Generic.Scroll Window To End
-        OCS.Mouse Hover over searched IP Assets
-        OCS.Get MAC_Address by hovering over IP discovered assets    MacAddress:
         OCS.Mark check-box of Agent/Discovered Asset
         OCS.Click on Button inside Network Discovery Page       Add Assets
         Sleep    ${yop_sleep}
@@ -375,8 +369,15 @@ Verify Pagination of Product Dropdown when Add IP discovered asset
         sleep      ${search_sleep}
         TechnologyPage.Click on save technology form button
         Generic.Fetch alert message text and compare it with        Technology created successfully
-        sleep   ${yop_sleep}
-        switch window   aithentic | Technology - Details
+        Sleep    ${yop_sleep}
+        switch window    aithentic | Asset - Discovery
+        Generic.Refresh the existing page
+        OCS.Choose tab under Discovery Assets   agent-discovery
+        Generic.Verify your current page contains this text    ${generated_AssetID}
+        Generic.select the option from the side menu        Technology
+        Generic.Verify your current page location contains      technology-list
+        TechnologyPage.Search by AssetId       ${generated_AssetID}
+        TechnologyPage.Click on the first row of the technology table
         Generic.Verify your current page location contains    technology-details
         TechnologyPage.Click on edit button on product details page        Edit
         Generic.Verify your current page location contains      edit-technology
@@ -390,7 +391,6 @@ Verify Pagination of Product Dropdown when Add IP discovered asset
         Generic.Refresh the existing page
         OCS.Edit the MAC_Address of Asset
         OCS.Edit the Serial_No. of Asset
-        OCS.Edit The Host_Name of Asset
         TechnologyPage.Click on update button of edit_technology page       Update
         Generic.Fetch alert message text and compare it with        Technology updated successfully
         UnselectAssetAPI.Hit API Endpoint
