@@ -324,3 +324,76 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
         Generic.Fetch alert message text and compare it with        Technology updated successfully
         UnselectAssetAPI.Hit API Endpoint
 
+Verify Pagination of Product Dropdown when Add IP discovered asset
+        Generic.click on the tab	Login
+        LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+        LandingPage.Verify you are on dashboard page
+        Generic.Verify your current page location contains      management-console
+        Generic.Click on the profile name
+        Generic.Select option from profile list     view-discovery
+        Generic.Verify your current page location contains    ocs
+        OCS.Click on newly discovered tab under network discovery
+        OCS.Click on search icon of discovery assets
+        OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
+        OCS.Click on the down arrow icon of discovered asset
+        OCS.Mouse Hover over searched IP Assets
+        OCS.Verify Searched discovery asset    00:17:61:10:C6:A1
+        OCS.Get MAC_Address by hovering over IP discovered assets   MacAddress:
+        OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
+        OCS.Click on the down arrow icon of discovered asset
+        Generic.Scroll Window To End
+        OCS.Mouse Hover over searched IP Assets
+        OCS.Get MAC_Address by hovering over IP discovered assets    MacAddress:
+        OCS.Mark check-box of Agent/Discovered Asset
+        OCS.Click on Button inside Network Discovery Page       Add Assets
+        Sleep    ${yop_sleep}
+        Switch Window       aithentic | Add Discovery Asset
+        Generic.Verify your current page location contains    add-discovered-asset
+        Generic.Verify your current page contains this text    Add Technology
+        I_iconPage.Click on advanced search link under create asset network discovery
+        sleep   ${search_sleep}
+        Generic.click on the button     Reset Filters
+        OCS.Enter input in the brand field of advanced search of discovered asset       Wacom
+        Generic.click on the button     Search
+        sleep      ${search_sleep}
+        TechnologyPage.Wait until advanced search table get load
+        PaginationPage.Fetch the total count of OCS
+        PaginationPage.Click on the pagination dropdown of OCS      location-list
+        PaginationPage.Log WebElements of Product Dropdown of OCS   location-list
+        PaginationPage.Close the advance Search pop-up
+        sleep   ${search_sleep}
+        Generic.Verify your current page location contains      add-discovered-asset
+        PaginationPage.Enter the input in the brand field of discovered asset
+        PaginationPage.Select parameter from brand dropdown list of OCS       Wacom
+        PaginationPage.Fetch the total count
+        PaginationPage.Click on the pagination dropdown     location-list
+        PaginationPage.Log WebElements of Product Dropdown      location-list
+        TechnologyPage.Select parameter from technology dropdown list       ACK42014
+        OCS.Enter The Asset_id in Add Technology Page
+        TechnologyPage.Create random unique serial number
+        Generic.Scroll Window To End
+        sleep      ${search_sleep}
+        TechnologyPage.Click on save technology form button
+        Generic.Fetch alert message text and compare it with        Technology created successfully
+        sleep   ${yop_sleep}
+        switch window   aithentic | Technology - Details
+        Generic.Verify your current page location contains    technology-details
+        TechnologyPage.Click on edit button on product details page        Edit
+        Generic.Verify your current page location contains      edit-technology
+        TechnologyPage.Click on the edit icon on the edit technology page
+        TechnologyPage.Click on cross icon of product while editing technology
+        PaginationPage.Enter the input in the brand field of discovered asset
+        TechnologyPage.Select parameter from brand dropdown list        HP Inc.
+        PaginationPage.Fetch the total count
+        PaginationPage.Click on the pagination dropdown     location-list
+        PaginationPage.Log WebElements of Product Dropdown      location-list
+        Generic.Refresh the existing page
+        OCS.Edit the MAC_Address of Asset
+        OCS.Edit the Serial_No. of Asset
+        OCS.Edit The Host_Name of Asset
+        TechnologyPage.Click on update button of edit_technology page       Update
+        Generic.Fetch alert message text and compare it with        Technology updated successfully
+        UnselectAssetAPI.Hit API Endpoint
+
+
+
