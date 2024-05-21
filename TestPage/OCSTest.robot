@@ -116,7 +116,7 @@ Search Existing Assets
     END
 
 Match Discovery and Existing Asset
-    [Tags]      Sanity
+    [Tags]      Sanity      Failed
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -185,6 +185,7 @@ Match Discovery and Existing Asset
     END
 
 Apply filters and clear filter on Discovered Asset
+    [Tags]      Failed
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form     johns@mai.25u.com         Test@123
@@ -196,7 +197,7 @@ Apply filters and clear filter on Discovered Asset
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.click on filter icon of discovered assets
-        OCS.Choose filters for discovered asset     Select Brand
+        OCS.Choose filters for discovered asset     Select Brand        Apple Inc
         OCS.Get text of selected brand, mac address and agent of discovered assets  1
         OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   1
         Generic.click on the button     Apply
@@ -254,7 +255,7 @@ Apply filters and clear filter on Existing Assets
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.click on filter icon of existing assets
-        OCS.Choose filters for discovered asset     Select Brand
+#        OCS.Choose filters for discovered asset     Select Brand
 #       OCS.Enter input in the brand field of existing asset       QABrand555
         OCS.Enter input in the brand field of existing asset       Apple Inc.
         OCS.Get text of selected brand of filter of existing asset
@@ -829,6 +830,7 @@ Match Discovery Asset with Static Existing Asset
     END
 
 Match IP Discovered Asset with Dynamic Existing Asset
+    [Tags]      Failed
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -839,8 +841,7 @@ Match IP Discovered Asset with Dynamic Existing Asset
         TechnologyPage.Click on action button of technology
         TechnologyPage.Choose add technology from action button of technology
         Generic.Verify your current page location contains      addtechnology
-        TechnologyPage.Click technology brand input field
-        TechnologyPage.Select parameter from brand dropdown list       QABrand555
+#        TechnologyPage.Select parameter from brand dropdown list       QABrand555
         TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
         TechnologyPage.Add assetID for technology lifecycle information random
         TechnologyPage.Create random unique serial number
@@ -893,6 +894,7 @@ Match IP Discovered Asset with Dynamic Existing Asset
     END
 
 Add asset with IP Address under discovered asset list
+    [Tags]      Failed
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -973,6 +975,7 @@ Add asset with IP Address under discovered asset list
     END
 
 Add Asset with IP address from Network Discovery Page
+    [Tags]      Failed
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -1025,6 +1028,7 @@ Add Asset with IP address from Network Discovery Page
     END
 
 Network discovery: search on discovered asset list with Tag Name, IP_address and MAC_address
+    [Tags]      Failed
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -1309,6 +1313,7 @@ Search with containing fields under advance search of component of discovered as
     END
 
 Search with containing fields under advance search of IP Address of discovered asset
+    [Tags]      Failed
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123

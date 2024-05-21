@@ -227,6 +227,7 @@ Test the sorting of team member asset history page table
     SortingPage.Verify the sorting of the table     7       Assigned Date
 
 Test the sorting of contract page table
+    [Tags]      Failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
     LandingPage.Verify you are on dashboard page

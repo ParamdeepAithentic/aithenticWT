@@ -45,7 +45,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Change plan- Assign commercial plan and change it to slotted
-    [Tags]      smoke
+    [Tags]      smoke       Failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     mehak@mynes.com     Test@123
     LandingPage.Verify you are on dashboard page

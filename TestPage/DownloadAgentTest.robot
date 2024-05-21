@@ -366,7 +366,7 @@ Download Agent from network discovery - Linux
     Generic.click on the button link    Download
 
 Download Agent from network discovery - Windows
-    [Tags]      Sanity
+    [Tags]      Sanity     Failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -443,6 +443,7 @@ Download Agent from asset discovery - macOS
 
 
 Network Discovery in case of no records
+    [Tags]      Failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       raghu@yopmail.com         Test@001
     LandingPage.Verify you are on dashboard page
@@ -450,6 +451,8 @@ Network Discovery in case of no records
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
+    I_iconPage.Choose tab under Discovery Assets       network-discovery
+    OCS.Click on newly discovered tab under network discovery
     OCS.Fetch text from Agent/Discovered assets column and compare it with      No records
     OCS.Fetch text from Existing assets column and compare it with     No records
     OCS.Choose Tab under Asset Discovery    agent-discovery
@@ -457,6 +460,7 @@ Network Discovery in case of no records
 
 
 Visit discovered asset list when click on No. IP discovered devices
+    [Tags]      Failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     LandingPage.Verify you are on dashboard page

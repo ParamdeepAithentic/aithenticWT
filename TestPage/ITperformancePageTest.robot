@@ -87,6 +87,7 @@ Download all sheets with download all button
     ITperformancePage.Click on download all button
 
 It performnace drill down agging analytics
+    [Tags]      Failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}     ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -124,7 +125,7 @@ IT perfomance drill down data quality
     ITperformancePage.Get And Verify The Count Of Data Quality Under Tabs   dataquality3        dataquality3
 
 IT perfomance drill down data quality of Investments by partner tab
-    [Tags]           sanity
+    [Tags]           sanity     Failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
     LandingPage.Verify you are on dashboard page

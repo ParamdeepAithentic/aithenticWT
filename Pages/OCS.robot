@@ -326,11 +326,12 @@ click on filter icon of discovered assets
     click element   css:i[title='Filter: Agent/Network - Discovered Assets']
 
 Choose filters for discovered asset
-    [Arguments]     ${option}
+    [Arguments]     ${option1}      ${option2}
     wait until element is not visible   ${loaderIcon}        ${wait_time}
-    wait until element is visible   //ng-select[@placeholder='${option}']//input[@type='text']
-    wait until element is enabled   //ng-select[@placeholder='${option}']//input[@type='text']
-    click element   //ng-select[@placeholder='${option}']//input[@type='text']
+    wait until element is visible   //ng-select[@placeholder='${option1}']//input[@type='text']
+    wait until element is enabled   //ng-select[@placeholder='${option1}']//input[@type='text']
+#    click element   //ng-select[@placeholder='${option}']//input[@type='text']
+    input text      //ng-select[@placeholder='${option1}']//input[@type='text']         ${option2}
 
 Select brand_macaddres_agent from dropdown of discovered asset filter
     [Arguments]     ${number}

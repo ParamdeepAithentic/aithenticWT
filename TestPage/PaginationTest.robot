@@ -71,6 +71,7 @@ Verify pagination of partner table
     PaginationPage.Log WebElements      partner-list
 
 Verify pagination of contract table
+    [Tags]      Failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
