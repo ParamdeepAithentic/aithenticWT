@@ -237,7 +237,7 @@ Verify all i-icon of advanced search
     OCS.Enter The Asset_id in Add Technology Page
     Generic.Scroll Window To End
     OCS.Click on save button of Add Technology Page
-    OCS.Wait for the invisiblity of alert msg        Technology created successfully
+    Generic.Fetch alert message text and compare it with        Technology created successfully
     Sleep    ${yop_sleep}
     switch window    aithentic | Asset - Discovery
     Generic.Refresh the existing page
@@ -319,7 +319,7 @@ Verify all i-icon of advanced search
     OCS.Enter The Asset_id in Add Technology Page
     Generic.Scroll Window To End
     OCS.Click on save button of Add Technology Page
-    OCS.Wait for the invisiblity of alert msg        Technology created successfully
+    Generic.Fetch alert message text and compare it with        Technology created successfully
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Discovered Assets
     Generic.Refresh the existing page
@@ -447,7 +447,7 @@ Upload I-icon while adding discovery and component asset
     Generic.Scroll Window To End
     I_iconPage.Fetch the text of I-icon of upload file while adding technology     You can upload 1 file of 8MB or 8 files of 1MB each.
     OCS.Click on save button of Add Technology Page
-    OCS.Wait for the invisiblity of alert msg        Technology created successfully
+    Generic.Fetch alert message text and compare it with        Technology created successfully
     Sleep    ${yop_sleep}
     switch window    aithentic | Asset - Discovery
     Generic.Refresh the existing page
@@ -522,7 +522,7 @@ Upload I-icon while adding IP Address
     Generic.Scroll Window To End
     I_iconPage.Fetch the text of I-icon of upload file while adding technology     You can upload 1 file of 8MB or 8 files of 1MB each.
     OCS.Click on save button of Add Technology Page
-    OCS.Wait for the invisiblity of alert msg        Technology created successfully
+    Generic.Fetch alert message text and compare it with        Technology created successfully
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Discovered Assets
     Generic.Refresh the existing page

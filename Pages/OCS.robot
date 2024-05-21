@@ -426,12 +426,7 @@ Verify Discovery_info contains following tab
     Wait Until Element Is Enabled   css:#${tab}        ${wait_time}
     Click Element    css:#${tab}
 
-Wait for the invisiblity of alert msg
-    [Arguments]    ${option}
-    wait until element is visible    ${alert_Msg}        ${wait_time}
-    ${get_alertMsg} =    get text    ${alert_Msg}
-    log to console     ${get_alertMsg}
-    should be equal    ${get_alertMsg}     ${option}
+
     
 Mark check-box of Agent/Discovered Asset
     Wait Until Element Is Not Visible    ${loaderIcon}  ${wait_time}
