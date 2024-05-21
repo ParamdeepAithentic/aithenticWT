@@ -774,11 +774,11 @@ Add New Support Partner and Assign that Partner
     [Tags]      Sanity      Failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      asset-overview
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-#    TechnologyPage.click on add technology button
+    TechnologyPage.click on add technology button
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
