@@ -216,7 +216,7 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
         Generic.Verify your current page location contains    ocs
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
-        OCS.Enter text to search discovery asset    Apple Inc
+        OCS.Enter text to search discovery asset    MSI
         OCS.Click on the down arrow icon of discovered asset
         OCS.Mouse Hover over searched Discovered Assets
         OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
