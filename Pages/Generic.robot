@@ -64,7 +64,7 @@ ${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-3        
 ${admin_name}        aithentic@yopmail.com
 ${admin_password}       Admin@123
 
-${browser_name}          firefox
+${browser_name}         firefox
 
 ${email}                 testqa29j@mailinator.com
 
