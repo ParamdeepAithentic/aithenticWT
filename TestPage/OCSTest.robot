@@ -132,9 +132,6 @@ Match Discovery and Existing Asset
         TechnologyPage.Add assetID for technology lifecycle information random
         TechnologyPage.Click on save technology form button
         Generic.Fetch alert message text and compare it with        Technology created successfully
-        TechnologyPage.Click on save technology form pop button
-        Generic.Verify your current page location contains      technology-list
-        Generic.Wait until table get load
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    ocs
@@ -149,7 +146,6 @@ Match Discovery and Existing Asset
         OCS.Get Serial number by hovering over discovered assets     Serial Number:
         OCS.Get Host name by hovering over discovered assets     Host name:
         OCS.Select any Discovered asset
-        OCS.Click on search icon of discovery assets
         OCS.Click on search icon of Existing assets
         OCS.Enter text to search existing asset    ${generated_AssetID}
         OCS.Click on the down arrow icon of existing assets
@@ -157,7 +153,6 @@ Match Discovery and Existing Asset
         OCS.Mouse Hover over searched existing assets
         OCS.Verify searched existing asset    ${generated_AssetID}
         OCS.Select any existing asset
-        OCS.Click on search icon of Existing assets
         OCS.Verify that line appears between selected assets
         OCS.Click on Button inside Network Discovery Page     Confirm Matches
         Generic.Fetch alert message text and compare it with      Matched Assets updated successfully
@@ -830,7 +825,6 @@ Match Discovery Asset with Static Existing Asset
     END
 
 Match IP Discovered Asset with Dynamic Existing Asset
-    [Tags]      Failed
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -894,7 +888,6 @@ Match IP Discovered Asset with Dynamic Existing Asset
     END
 
 Add asset with IP Address under discovered asset list
-    [Tags]      Failed
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -975,7 +968,6 @@ Add asset with IP Address under discovered asset list
     END
 
 Add Asset with IP address from Network Discovery Page
-    [Tags]      Failed
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123

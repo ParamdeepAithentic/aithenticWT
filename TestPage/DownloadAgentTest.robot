@@ -366,7 +366,7 @@ Download Agent from network discovery - Linux
     Generic.click on the button link    Download
 
 Download Agent from network discovery - Windows
-    [Tags]      Sanity     Failed
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -443,7 +443,6 @@ Download Agent from asset discovery - macOS
 
 
 Network Discovery in case of no records
-    [Tags]      Failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       raghu@yopmail.com         Test@001
     LandingPage.Verify you are on dashboard page
@@ -460,7 +459,6 @@ Network Discovery in case of no records
 
 
 Visit discovered asset list when click on No. IP discovered devices
-    [Tags]      Failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     LandingPage.Verify you are on dashboard page
