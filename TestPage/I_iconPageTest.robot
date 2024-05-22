@@ -312,6 +312,8 @@ Verify all i-icon of advanced search
     sleep   ${search_sleep}
     I_iconPage.Click on i_icon of advanced search under add discovered asset
     I_iconPage.Verify pop is visible after clicking i-icon of advancede search under discovered asset
+
+
     I_iconPage.Click on i_icon of advanced search under add discovered asset
     I_iconPage.Click on the cross icon of advanced search under technology
     TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
@@ -477,6 +479,8 @@ Upload I-icon while adding discovery and component asset
     OCS.Create Asset_id for software component
     Generic.Scroll Window To End
     I_iconPage.Fetch the text of I-icon of upload file while adding technology     You can upload 1 file of 8MB or 8 files of 1MB each.
+    OCS.Click on save button of Add Technology Page
+    Generic.Fetch alert message text and compare it with       Technology created successfully
     Sleep    ${yop_sleep}
     Switch Window      aithentic | Technology - Details
     Generic.Verify your current page location contains    technology-details
