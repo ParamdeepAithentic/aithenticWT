@@ -776,6 +776,7 @@ Click on down arrow link on discovery asset list page
 
 Click on view button link on discovery asset list page
     wait until element is visible      (//tbody//tr[2]//td[7])[2]      ${wait_time}
+
     wait until element is enabled      (//tbody//tr[2]//td[7])[2]      ${wait_time}
     click element  (//tbody//tr[2]//td[7])[2]
 
