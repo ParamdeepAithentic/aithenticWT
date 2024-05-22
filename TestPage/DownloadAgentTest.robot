@@ -450,6 +450,8 @@ Network Discovery in case of no records
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
+    I_iconPage.Choose tab under Discovery Assets       network-discovery
+    OCS.Click on newly discovered tab under network discovery
     OCS.Fetch text from Agent/Discovered assets column and compare it with      No records
     OCS.Fetch text from Existing assets column and compare it with     No records
     OCS.Choose Tab under Asset Discovery    agent-discovery

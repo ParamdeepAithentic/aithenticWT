@@ -935,7 +935,7 @@ Get And Verify The Count Of tabs under renewal overview by management console
         ${element_as_number}=   Convert To Integer   ${element}
         Log  Converted Text: ${element_as_number}
         Run Keyword If    ${element_as_number} == 0
-        ...    Skip Action
+        ...    DashboardPage.Skip Action
         ...    ELSE IF    ${element_as_number} > 0
         ...    Run Keywords      Click Element    (//div[contains(@class,'-dot')])[${index}]      AND       sleep   ${yop_sleep}        AND       DashboardPage.Fetch and compare the total count  ${element_as_number}
         ...    AND    Click Element    css:span[class='back']  AND  Sleep    ${yop_sleep}
