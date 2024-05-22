@@ -347,7 +347,6 @@ Restore asset type one
 
 
 Restore asset from removed asset details page
-    [Tags]
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -771,7 +770,7 @@ Add Technology Page - Add New location and assign that location
     Generic.Fetch alert message text and compare it with       Assigned Users created successfully
 
 Add New Support Partner and Assign that Partner
-    [Tags]      Sanity      Failed
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -2060,7 +2059,6 @@ Upload file: Image and document files while Clone the Technology
     TechnologyPage.Click on save technology form pop button
 
 Search with brand_product_technologytype_technologygroup on advanced search
-    [Tags]      Failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
