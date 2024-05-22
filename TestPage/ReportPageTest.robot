@@ -37,7 +37,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Verify Reports Key Data records count
-    [Tags]      Sanity      Smoke       Failed
+    [Tags]      Sanity      Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}       ${valid_password}
     LandingPage.Verify you are on dashboard page

@@ -778,9 +778,8 @@ Add New Support Partner and Assign that Partner
     Generic.Verify your current page location contains      management-console
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.click on add technology button
     TechnologyPage.Click on action button of technology
-    TechnologyPage.Choose add technology from action button of technology
+    TechnologyPage.click on add technology button
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
