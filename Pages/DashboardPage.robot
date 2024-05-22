@@ -706,6 +706,7 @@ Edit State while edit address
     wait until element is visible  ${editstate_edit}   ${wait_time}
     wait until element is enabled  ${editstate_edit}   ${wait_time}
     click element  css:ng-select[placeholder='Select State'] span[title='Clear all']
+    wait until element is not visible   ${loaderIcon}   ${wait_time}
     click element   ${editstate_edit}
     wait until element is visible   css:span[title='${State}']   ${wait_time}
     click element   css:span[title='${State}']
