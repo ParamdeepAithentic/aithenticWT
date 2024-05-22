@@ -217,7 +217,7 @@ Verify all i-icon of advanced search
     OCS.Click on newly discovered tab under network discovery
     Generic.Verify your current page location contains    ocs
     OCS.Click on search icon of discovery assets
-    OCS.Enter text to search discovery asset   Apple Inc
+    OCS.Enter text to search discovery asset   MSI
     OCS.Click on the down arrow icon of discovered asset
     OCS.Mouse Hover over searched Discovered Assets
     OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
@@ -238,7 +238,7 @@ Verify all i-icon of advanced search
     OCS.Enter The Asset_id in Add Technology Page
     Generic.Scroll Window To End
     OCS.Click on save button of Add Technology Page
-    OCS.Wait for the invisiblity of alert msg        Technology created successfully
+    Generic.Fetch alert message text and compare it with        Technology created successfully
     Sleep    ${yop_sleep}
     switch window    aithentic | Asset - Discovery
     Generic.Refresh the existing page
@@ -322,7 +322,7 @@ Verify all i-icon of advanced search
     OCS.Enter The Asset_id in Add Technology Page
     Generic.Scroll Window To End
     OCS.Click on save button of Add Technology Page
-    OCS.Wait for the invisiblity of alert msg        Technology created successfully
+    Generic.Fetch alert message text and compare it with        Technology created successfully
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Discovered Assets
     Generic.Refresh the existing page
@@ -438,7 +438,7 @@ Upload I-icon while adding discovery and component asset
     OCS.Click on newly discovered tab under network discovery
     Generic.Verify your current page location contains    ocs
     OCS.Click on search icon of discovery assets
-    OCS.Enter text to search discovery asset   Apple Inc
+    OCS.Enter text to search discovery asset   MSI
     OCS.Click on the down arrow icon of discovered asset
     OCS.Mouse Hover over searched Discovered Assets
     OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
@@ -454,7 +454,7 @@ Upload I-icon while adding discovery and component asset
     Generic.Scroll Window To End
     I_iconPage.Fetch the text of I-icon of upload file while adding technology     You can upload 1 file of 8MB or 8 files of 1MB each.
     OCS.Click on save button of Add Technology Page
-    OCS.Wait for the invisiblity of alert msg        Technology created successfully
+    Generic.Fetch alert message text and compare it with        Technology created successfully
     Sleep    ${yop_sleep}
     switch window    aithentic | Asset - Discovery
     Generic.Refresh the existing page
@@ -484,10 +484,8 @@ Upload I-icon while adding discovery and component asset
     OCS.Create Asset_id for software component
     Generic.Scroll Window To End
     I_iconPage.Fetch the text of I-icon of upload file while adding technology     You can upload 1 file of 8MB or 8 files of 1MB each.
-    Generic.select the option from the side menu        Technology
-    Generic.Verify your current page location contains      technology-list
-    TechnologyPage.Search by AssetId       ${generated_AssetID}
-    TechnologyPage.Click on the first row of the technology table
+    Sleep    ${yop_sleep}
+    Switch Window      aithentic | Technology - Details
     Generic.Verify your current page location contains    technology-details
     TechnologyPage.Click on edit button on product details page        Edit
     Generic.Verify your current page location contains      edit-technology
@@ -532,7 +530,7 @@ Upload I-icon while adding IP Address
     Generic.Scroll Window To End
     I_iconPage.Fetch the text of I-icon of upload file while adding technology     You can upload 1 file of 8MB or 8 files of 1MB each.
     OCS.Click on save button of Add Technology Page
-    OCS.Wait for the invisiblity of alert msg        Technology created successfully
+    Generic.Fetch alert message text and compare it with        Technology created successfully
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Discovered Assets
     Generic.Refresh the existing page

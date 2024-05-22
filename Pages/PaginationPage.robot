@@ -42,6 +42,7 @@ ${TotalRow_count}       css:.table.table-hover tr.table-row
 ${GetDropDown_count}     css:.qa-technology-per-page .ng-value span.ng-value-label
 ${Totalcount_field}        css:.qa-total-count-list
 ${Totalcount_field1}        (//p[contains(@class,'qa-total-count-list')])[2]
+${saveBTN1}         css:button[class='btn button-green']
 
 *** Keywords ***
 
@@ -240,6 +241,11 @@ Select parameter from brand dropdown list of OCS
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  5  ${pageHeading}   Technology Page - Select parameter from brand dropdown list      5    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+
+Click on save technology form button of OCS
+    wait until element is visible       ${saveBTN1}       ${wait_time}
+    wait until element is enabled       ${saveBTN1}       ${wait_time}
+    click element       ${saveBTN1}
 
 
 
