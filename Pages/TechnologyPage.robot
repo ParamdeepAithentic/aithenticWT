@@ -40,7 +40,7 @@ Resource        ../Pages/Bulk_Import_ExportPage.robot
 
 ########################## technology form #####################
 ${assetTableLoader}     //div[@class='spinner-border text-loader']
-${AddTechnologyButton}      //a[@class='btn button-cyan mt-0 mx-1 ng-star-inserted'][normalize-space()='Add Technology']
+${AddTechnologyButton}     css:.qa-add-new-technology
 
 #############Product Information##################
 ${brand}       css:#brandselect

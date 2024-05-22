@@ -73,7 +73,6 @@ Verify the drawer list
 
 
 Verify the side options list
-    [Tags]      Failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -883,7 +882,6 @@ Verify Reports Asset Alert
     DashboardPage.Verify the invisiblity of view_more button
 
 Click and verify the count of the tabs under renewal overview by management console
-    [Tags]      Failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -891,7 +889,6 @@ Click and verify the count of the tabs under renewal overview by management cons
     DashboardPage.Get And Verify The Count Of tabs under renewal overview by management console
 
 Click and verify the count of the tabs under renewal overview by choosing the value from the dropdown by management console
-    [Tags]      Failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page

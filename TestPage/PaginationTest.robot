@@ -71,7 +71,6 @@ Verify pagination of partner table
     PaginationPage.Log WebElements      partner-list
 
 Verify pagination of contract table
-    [Tags]      Failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -217,7 +216,7 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
         Generic.Verify your current page location contains    ocs
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
-        OCS.Enter text to search discovery asset    Apple Inc
+        OCS.Enter text to search discovery asset    MSI
         OCS.Click on the down arrow icon of discovered asset
         OCS.Mouse Hover over searched Discovered Assets
         OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
@@ -252,8 +251,8 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
         TechnologyPage.Create random unique serial number
         Generic.Scroll Window To End
         sleep      ${search_sleep}
-        TechnologyPage.Click on save technology form button
-        Generic.Fetch alert message text and compare it with        Technology created successfully
+        PaginationPage.Click on save technology form button of OCS
+        Generic.Fetch alert message text and compare it with         Technology created successfully
             Sleep    ${yop_sleep}
         switch window    aithentic | Asset - Discovery
         OCS.Choose tab under Discovery Assets   agent-discovery
@@ -303,8 +302,8 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
         OCS.Enter The Asset_id in Add Technology Page
         Generic.Scroll Window To End
         sleep      ${search_sleep}
-        TechnologyPage.Click on save technology form button
-        Generic.Fetch alert message text and compare it with        Technology created successfully
+        PaginationPage.Click on save technology form button of OCS
+        Generic.Fetch alert message text and compare it with         Technology created successfully
         sleep  ${yop_sleep}
         switch window   aithentic | Technology - Details
         Generic.Verify your current page location contains    technology-details
@@ -368,8 +367,8 @@ Verify Pagination of Product Dropdown when Add IP discovered asset
         TechnologyPage.Create random unique serial number
         Generic.Scroll Window To End
         sleep      ${search_sleep}
-        TechnologyPage.Click on save technology form button
-        Generic.Fetch alert message text and compare it with        Technology created successfully
+        PaginationPage.Click on save technology form button of OCS
+        Generic.Fetch alert message text and compare it with       Technology created successfully
         Sleep    ${yop_sleep}
         switch window    aithentic | Asset - Discovery
         Generic.Refresh the existing page

@@ -293,7 +293,7 @@ Create new asset with new brand and product
 #    TechnologyPage.Search by SerialNo   ${generated_serialNo}       #yet to cover
 
 Restore asset type one
-    [Tags]      Sanity      Failed
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -347,7 +347,6 @@ Restore asset type one
 
 
 Restore asset from removed asset details page
-    [Tags]      Failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -403,7 +402,7 @@ Restore asset from removed asset details page
 
 ################# Still have to work on this testcase ###############
 Restore asset by selecting checkbox
-    [Tags]    Smoke     Failed
+    [Tags]    Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -480,7 +479,7 @@ Restore asset by selecting checkbox
 
 
 Edit brand and product via details
-    [Tags]      Failed
+    [Tags]
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -534,7 +533,7 @@ Edit brand and product via details
     Generic.Fetch alert message text and compare it with        Technology updated successfully
 
 Sent Message should show in the Sent Tab
-    [Tags]      Sanity      Failed
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -729,7 +728,7 @@ Add Products with 10 combinations of Tech Type and Tech group
 
 
 Add Technology Page - Add New location and assign that location
-    [Tags]      Sanity      Failed
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -771,16 +770,15 @@ Add Technology Page - Add New location and assign that location
     Generic.Fetch alert message text and compare it with       Assigned Users created successfully
 
 Add New Support Partner and Assign that Partner
-    [Tags]      Sanity      Failed
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      asset-overview
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-#    TechnologyPage.click on add technology button
     TechnologyPage.Click on action button of technology
-    TechnologyPage.Choose add technology from action button of technology
+    TechnologyPage.click on add technology button
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
@@ -852,7 +850,7 @@ Add New Support Partner and Assign that Partner
 
 
 Add New Support Partner and Assign that Partner via technology form only
-    [Tags]      Sanity    Supplier      Failed
+    [Tags]      Sanity    Supplier
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -923,7 +921,7 @@ Add New Support Partner and Assign that Partner via technology form only
     TechnologyPage.Verify that supplier partner is added in partner association     Supplier
 
 Verify the history of added technology
-    [Tags]      Sanity      Failed
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -1068,7 +1066,6 @@ Verify the history of added technology
 
 
 Add Technology Page - Add New Supplier and support partner and assign them
-    [Tags]      Failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -1114,7 +1111,6 @@ Add Technology Page - Add New Supplier and support partner and assign them
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
 Add new Technology- Add New Location and assign that location
-    [Tags]      Failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -1157,7 +1153,6 @@ Add new Technology- Add New Location and assign that location
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
 Add new Technology- Add New Department and assign that department
-    [Tags]      Failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -1618,7 +1613,7 @@ Technology Details- Verify the Location Details
 #    TechnologyPage.Get Value of Assignment Information Location Name
 
 Technology-Inactive asset and Restore asset
-    [Tags]      smoke       Failed
+    [Tags]      smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     chirag@dmts.fr.nf    Test@001
     LandingPage.Verify you are on dashboard page
@@ -1712,7 +1707,7 @@ Technology-Inactive asset and Restore asset
     Generic.Fetch alert message text and compare it with      Payment Successful
 
 Inactive asset - Restore asset from Technology Details page
-    [Tags]      smoke       Failed
+    [Tags]      smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     chirag@dmts.fr.nf    Test@001
     LandingPage.Verify you are on dashboard page
@@ -2064,7 +2059,6 @@ Upload file: Image and document files while Clone the Technology
     TechnologyPage.Click on save technology form pop button
 
 Search with brand_product_technologytype_technologygroup on advanced search
-    [Tags]      Failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page

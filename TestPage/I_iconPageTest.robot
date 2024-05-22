@@ -117,7 +117,7 @@ Verify all i-icon of team member page
     I_iconPage.Click on i-icon of team-members tab
 
 Verify all i-icon of Technology page
-    [Tags]    retry     Failed
+    [Tags]    retry
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -192,7 +192,6 @@ Verify all i-icon of Discovery assets
     I_iconPage.Click on i_icon under network_discovery tab
 
 Verify all i-icon of advanced search
-    [Tags]      Failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     LandingPage.Verify you are on dashboard page
@@ -217,7 +216,7 @@ Verify all i-icon of advanced search
     OCS.Click on newly discovered tab under network discovery
     Generic.Verify your current page location contains    ocs
     OCS.Click on search icon of discovery assets
-    OCS.Enter text to search discovery asset   Apple Inc
+    OCS.Enter text to search discovery asset   MSI
     OCS.Click on the down arrow icon of discovered asset
     OCS.Mouse Hover over searched Discovered Assets
     OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
@@ -238,7 +237,7 @@ Verify all i-icon of advanced search
     OCS.Enter The Asset_id in Add Technology Page
     Generic.Scroll Window To End
     OCS.Click on save button of Add Technology Page
-    OCS.Wait for the invisiblity of alert msg        Technology created successfully
+    Generic.Fetch alert message text and compare it with        Technology created successfully
     Sleep    ${yop_sleep}
     switch window    aithentic | Asset - Discovery
     Generic.Refresh the existing page
@@ -322,7 +321,7 @@ Verify all i-icon of advanced search
     OCS.Enter The Asset_id in Add Technology Page
     Generic.Scroll Window To End
     OCS.Click on save button of Add Technology Page
-    OCS.Wait for the invisiblity of alert msg        Technology created successfully
+    Generic.Fetch alert message text and compare it with        Technology created successfully
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Discovered Assets
     Generic.Refresh the existing page
@@ -341,7 +340,6 @@ Verify all i-icon of advanced search
     UnselectAssetAPI.Hit API Endpoint
 
 Upload File I-icon while add and edit technology
-    [Tags]      Failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -373,7 +371,6 @@ Upload File I-icon while add and edit technology
     Generic.Fetch alert message text and compare it with        Technology updated successfully
 
 Upload I-icon under attachment tab
-    [Tags]      Failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -399,7 +396,6 @@ Upload I-icon under attachment tab
     I_iconPage.Fetch the text of I-icon of upload file while adding technology     You can upload 1 file of 8MB or 8 files of 1MB each.
 
 Upload I-icon under clone add technology
-    [Tags]      Failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -427,7 +423,6 @@ Upload I-icon under clone add technology
     I_iconPage.Fetch the text of I-icon of upload file while adding technology     You can upload 1 file of 8MB or 8 files of 1MB each.
 
 Upload I-icon while adding discovery and component asset
-    [Tags]      Failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     LandingPage.Verify you are on dashboard page
@@ -438,7 +433,7 @@ Upload I-icon while adding discovery and component asset
     OCS.Click on newly discovered tab under network discovery
     Generic.Verify your current page location contains    ocs
     OCS.Click on search icon of discovery assets
-    OCS.Enter text to search discovery asset   Apple Inc
+    OCS.Enter text to search discovery asset   MSI
     OCS.Click on the down arrow icon of discovered asset
     OCS.Mouse Hover over searched Discovered Assets
     OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
@@ -454,7 +449,7 @@ Upload I-icon while adding discovery and component asset
     Generic.Scroll Window To End
     I_iconPage.Fetch the text of I-icon of upload file while adding technology     You can upload 1 file of 8MB or 8 files of 1MB each.
     OCS.Click on save button of Add Technology Page
-    OCS.Wait for the invisiblity of alert msg        Technology created successfully
+    Generic.Fetch alert message text and compare it with        Technology created successfully
     Sleep    ${yop_sleep}
     switch window    aithentic | Asset - Discovery
     Generic.Refresh the existing page
@@ -484,10 +479,10 @@ Upload I-icon while adding discovery and component asset
     OCS.Create Asset_id for software component
     Generic.Scroll Window To End
     I_iconPage.Fetch the text of I-icon of upload file while adding technology     You can upload 1 file of 8MB or 8 files of 1MB each.
-    Generic.select the option from the side menu        Technology
-    Generic.Verify your current page location contains      technology-list
-    TechnologyPage.Search by AssetId       ${generated_AssetID}
-    TechnologyPage.Click on the first row of the technology table
+    OCS.Click on save button of Add Technology Page
+    Generic.Fetch alert message text and compare it with       Technology created successfully
+    Sleep    ${yop_sleep}
+    Switch Window      aithentic | Technology - Details
     Generic.Verify your current page location contains    technology-details
     TechnologyPage.Click on edit button on product details page        Edit
     Generic.Verify your current page location contains      edit-technology
@@ -501,7 +496,6 @@ Upload I-icon while adding discovery and component asset
     UnselectAssetAPI.Hit API Endpoint
 
 Upload I-icon while adding IP Address
-    [Tags]      Failed
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     LandingPage.Verify you are on dashboard page
@@ -532,7 +526,7 @@ Upload I-icon while adding IP Address
     Generic.Scroll Window To End
     I_iconPage.Fetch the text of I-icon of upload file while adding technology     You can upload 1 file of 8MB or 8 files of 1MB each.
     OCS.Click on save button of Add Technology Page
-    OCS.Wait for the invisiblity of alert msg        Technology created successfully
+    Generic.Fetch alert message text and compare it with        Technology created successfully
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Discovered Assets
     Generic.Refresh the existing page

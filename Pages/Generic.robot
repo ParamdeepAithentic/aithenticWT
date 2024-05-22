@@ -52,12 +52,12 @@ ${valid_password}         Test@123       #QA User
 #${valid_password}         Test@123         #pre prod
 
 
+
 #${admin_url}        https://uat-admin.aithentic.com/
 ${admin_url}        https://qa-admin.aithentic.com/
 
 ${agentDiscovery_TagName}       Tag Name - johnsoftwaresolutions-1192-4         #qa
 #${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-10        #uat
-
 
 
 
@@ -67,8 +67,8 @@ ${admin_password}       Admin@123
 
 ${browser_name}         headlessfirefox
 
-${email}                 testqa29j@mailinator.com
 
+${email}                 testqa29j@mailinator.com
 ${SheetLocationAndName}   LoadTimeSheet.xlsx
 ${SheetTabName}     Load_Time_tracking
 
@@ -81,6 +81,7 @@ ${click_Country}     css:#country
 ${click_countryTag}     css:.iti__selected-flag.dropdown-toggle
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
+
 
 ${wait_time}       120
 ${yop_sleep}       10
