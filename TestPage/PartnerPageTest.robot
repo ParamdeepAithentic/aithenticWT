@@ -46,7 +46,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Compose Message invite user test
-    [Tags]      Sanity      Smoke       Time    rerun
+    [Tags]      Sanity      Smoke       Time    onetry
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -495,7 +495,7 @@ Compose Message invite user test
     TwoFactorAuth.Enter the otp     ${passcode}
     TwoFactorAuth.Click verification button
 
-    Generic.Verify your current page location contains     management-console
+    Generic.Verify your current page location contains     management-consolerob
 #--------------------------------------------END-----------------------------------------------------------
 
 

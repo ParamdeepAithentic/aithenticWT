@@ -423,7 +423,7 @@ Team Member Bulk Edit
     Generic.Fetch alert message text and compare it with       Settings Updated
 
 Technology Bulk edit
-    [Tags]       sanity
+    [Tags]       sanity    rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -606,7 +606,7 @@ Location Bulk Import
     Generic.Wait until table get load
 
 Technology Bulk import
-    [Tags]    Sanity
+    [Tags]    Sanity    rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -682,6 +682,7 @@ Technology Bulk import
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_3
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_4      1100
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_4
+
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_7      100
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_7
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_8      12

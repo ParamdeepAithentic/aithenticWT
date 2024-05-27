@@ -39,7 +39,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Activate and deactivate the location
-    [Tags]      Time
+    [Tags]      Time        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page

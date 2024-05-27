@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.11.8 on win32)" generated="20240527 11:48:27.802" rpa="false" schemaversion="3">
+<suite id="s1" name="RegisterUserPageTest" source="D:\aithentic-rfw\TestPage\RegisterUserPageTest.robot">
+<test id="s1-t1" name="Register new user" line="47">
+<kw name="open the browser with the url" library="Generic" type="SETUP">
+<kw name="Fix the column number" library="Generic">
+<kw name="Catenate" library="BuiltIn">
+<var>${pageHeading}</var>
+<arg>2</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20240527 11:48:28.736" level="INFO">${pageHeading} = 2</msg>
+<status status="PASS" starttime="20240527 11:48:28.736" endtime="20240527 11:48:28.736"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${pageHeading}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20240527 11:48:28.736" level="INFO">${pageHeading} = 2</msg>
+<status status="PASS" starttime="20240527 11:48:28.736" endtime="20240527 11:48:28.736"/>
+</kw>
+<status status="PASS" starttime="20240527 11:48:28.736" endtime="20240527 11:48:28.736"/>
+</kw>
+<kw name="Fix the row number" library="Generic">
+<kw name="Catenate" library="BuiltIn">
+<var>${pageTime}</var>
+<arg>3</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20240527 11:48:28.736" level="INFO">${pageTime} = 3</msg>
+<status status="PASS" starttime="20240527 11:48:28.736" endtime="20240527 11:48:28.736"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${pageTime}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20240527 11:48:28.752" level="INFO">${pageTime} = 3</msg>
+<status status="PASS" starttime="20240527 11:48:28.736" endtime="20240527 11:48:28.752"/>
+</kw>
+<status status="PASS" starttime="20240527 11:48:28.736" endtime="20240527 11:48:28.752"/>
+</kw>
+<kw name="Get Current Time in Milliseconds" library="Generic">
+<var>${StartTime1}</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${time_in_milliseconds}</var>
+<arg>int(time.time() * 1000)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240527 11:48:28.752" level="INFO">${time_in_milliseconds} = 1716790708751</msg>
+<status status="PASS" starttime="20240527 11:48:28.752" endtime="20240527 11:48:28.752"/>
+</kw>
+<return>
+<value>${time_in_milliseconds}</value>
+<status status="PASS" starttime="20240527 11:48:28.752" endtime="20240527 11:48:28.752"/>
+</return>
+<msg timestamp="20240527 11:48:28.752" level="INFO">${StartTime1} = 1716790708751</msg>
+<status status="PASS" starttime="20240527 11:48:28.752" endtime="20240527 11:48:28.752"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser_name}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240527 11:48:28.752" level="INFO">Opening browser 'firefox' to base url 'https://pre-prod-app.aithentic.com'.</msg>
+<status status="PASS" starttime="20240527 11:48:28.752" endtime="20240527 11:48:35.954"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//a[normalize-space()='Login']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20240527 11:48:36.004" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: WebDriver session does not exist, or is not active
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:193:5
+InvalidSessionIDError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:448:5
+assert.that/&lt;@chrome://remote/content/shared/webdriver/Assert.sys.mjs:485:13
+assert.session@chrome://remote/content/shared/webdriver/Assert.sys.mjs:37:4
+despatch@chrome://remote/content/marionette/server.sys.mjs:315:19
+execute@chrome://remote/content/marionette/server.sys.mjs:289:16
+onPacket/&lt;@chrome://remote/content/marionette/server.sys.mjs:262:20
+onPacket@chrome://remote/content/marionette/server.sys.mjs:263:9
+_onJSONObjectReady/&lt;@chrome://remote/content/marionette/transport.sys.mjs:494:20
+</msg>
+<msg timestamp="20240527 11:48:36.004" level="FAIL">NoSuchWindowException: Message: Browsing context has been discarded
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:193:5
+NoSuchWindowError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:679:5
+assert.that/&lt;@chrome://remote/content/shared/webdriver/Assert.sys.mjs:485:13
+assert.open@chrome://remote/content/shared/webdriver/Assert.sys.mjs:147:4
+GeckoDriver.prototype.findElements@chrome://remote/content/marionette/driver.sys.mjs:1584:15
+despatch@chrome://remote/content/marionette/server.sys.mjs:318:40
+execute@chrome://remote/content/marionette/server.sys.mjs:289:16
+onPacket/&lt;@chrome://remote/content/marionette/server.sys.mjs:262:20
+onPacket@chrome://remote/content/marionette/server.sys.mjs:263:9
+_onJSONObjectReady/&lt;@chrome://remote/content/marionette/transport.sys.mjs:494:20
+</msg>
+<status status="FAIL" starttime="20240527 11:48:35.954" endtime="20240527 11:48:36.011"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>//a[normalize-space()='Login']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="NOT RUN" starttime="20240527 11:48:36.011" endtime="20240527 11:48:36.011"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20240527 11:48:36.011" endtime="20240527 11:48:36.011"/>
+</kw>
+<kw name="Get Current Time in Milliseconds" library="Generic">
+<var>${EndTime1}</var>
+<status status="NOT RUN" starttime="20240527 11:48:36.011" endtime="20240527 11:48:36.011"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${ActualTime}</var>
+<arg>${EndTime1}-${StartTime1}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20240527 11:48:36.011" endtime="20240527 11:48:36.011"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Current Time in Milliseconds: ${ActualTime}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240527 11:48:36.011" endtime="20240527 11:48:36.011"/>
+</kw>
+<kw name="Calculate Running time" library="Generic">
+<arg>2</arg>
+<arg>${pageHeading}</arg>
+<arg>Generic - open the browser with the url</arg>
+<arg>2</arg>
+<arg>${pageTime}</arg>
+<arg>${ActualTime}</arg>
+<arg>Load_Time_tracking</arg>
+<status status="NOT RUN" starttime="20240527 11:48:36.011" endtime="20240527 11:48:36.015"/>
+</kw>
+<status status="FAIL" starttime="20240527 11:48:28.736" endtime="20240527 11:48:36.015"/>
+</kw>
+<kw name="Close Browser session" library="Generic" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240527 11:48:36.017" endtime="20240527 11:48:38.045"/>
+</kw>
+<status status="PASS" starttime="20240527 11:48:36.015" endtime="20240527 11:48:38.045"/>
+</kw>
+<tag>rerun</tag>
+<tag>smoke</tag>
+<tag>Time</tag>
+<status status="FAIL" starttime="20240527 11:48:28.736" endtime="20240527 11:48:38.045">Setup failed:
+NoSuchWindowException: Message: Browsing context has been discarded
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:193:5
+NoSuchWindowError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:679:5
+assert.that/&lt;@chrome://remote/content/shared/webdriver/Assert.sys.mjs:485:13
+assert.open@chrome://remote/content/shared/webdriver/Assert.sys.mjs:147:4
+GeckoDriver.prototype.findElements@chrome://remote/content/marionette/driver.sys.mjs:1584:15
+despatch@chrome://remote/content/marionette/server.sys.mjs:318:40
+execute@chrome://remote/content/marionette/server.sys.mjs:289:16
+onPacket/&lt;@chrome://remote/content/marionette/server.sys.mjs:262:20
+onPacket@chrome://remote/content/marionette/server.sys.mjs:263:9
+_onJSONObjectReady/&lt;@chrome://remote/content/marionette/transport.sys.mjs:494:20
+</status>
+</test>
+<test id="s1-t2" name="Signup with ACH payment method" line="138">
+<kw name="open the browser with the url" library="Generic" type="SETUP">
+<kw name="Fix the column number" library="Generic">
+<kw name="Catenate" library="BuiltIn">
+<var>${pageHeading}</var>
+<arg>2</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20240527 11:48:38.045" level="INFO">${pageHeading} = 2</msg>
+<status status="PASS" starttime="20240527 11:48:38.045" endtime="20240527 11:48:38.045"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${pageHeading}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20240527 11:48:38.045" level="INFO">${pageHeading} = 2</msg>
+<status status="PASS" starttime="20240527 11:48:38.045" endtime="20240527 11:48:38.045"/>
+</kw>
+<status status="PASS" starttime="20240527 11:48:38.045" endtime="20240527 11:48:38.045"/>
+</kw>
+<kw name="Fix the row number" library="Generic">
+<kw name="Catenate" library="BuiltIn">
+<var>${pageTime}</var>
+<arg>3</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20240527 11:48:38.045" level="INFO">${pageTime} = 3</msg>
+<status status="PASS" starttime="20240527 11:48:38.045" endtime="20240527 11:48:38.045"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${pageTime}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20240527 11:48:38.045" level="INFO">${pageTime} = 3</msg>
+<status status="PASS" starttime="20240527 11:48:38.045" endtime="20240527 11:48:38.045"/>
+</kw>
+<status status="PASS" starttime="20240527 11:48:38.045" endtime="20240527 11:48:38.045"/>
+</kw>
+<kw name="Get Current Time in Milliseconds" library="Generic">
+<var>${StartTime1}</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${time_in_milliseconds}</var>
+<arg>int(time.time() * 1000)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240527 11:48:38.045" level="INFO">${time_in_milliseconds} = 1716790718044</msg>
+<status status="PASS" starttime="20240527 11:48:38.045" endtime="20240527 11:48:38.045"/>
+</kw>
+<return>
+<value>${time_in_milliseconds}</value>
+<status status="PASS" starttime="20240527 11:48:38.045" endtime="20240527 11:48:38.045"/>
+</return>
+<msg timestamp="20240527 11:48:38.045" level="INFO">${StartTime1} = 1716790718044</msg>
+<status status="PASS" starttime="20240527 11:48:38.045" endtime="20240527 11:48:38.045"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser_name}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240527 11:48:38.045" level="INFO">Opening browser 'firefox' to base url 'https://pre-prod-app.aithentic.com'.</msg>
+<status status="PASS" starttime="20240527 11:48:38.045" endtime="20240527 11:48:45.804"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//a[normalize-space()='Login']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20240527 11:48:45.860" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: WebDriver session does not exist, or is not active
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:193:5
+InvalidSessionIDError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:448:5
+assert.that/&lt;@chrome://remote/content/shared/webdriver/Assert.sys.mjs:485:13
+assert.session@chrome://remote/content/shared/webdriver/Assert.sys.mjs:37:4
+despatch@chrome://remote/content/marionette/server.sys.mjs:315:19
+execute@chrome://remote/content/marionette/server.sys.mjs:289:16
+onPacket/&lt;@chrome://remote/content/marionette/server.sys.mjs:262:20
+onPacket@chrome://remote/content/marionette/server.sys.mjs:263:9
+_onJSONObjectReady/&lt;@chrome://remote/content/marionette/transport.sys.mjs:494:20
+</msg>
+<msg timestamp="20240527 11:48:45.870" level="FAIL">NoSuchWindowException: Message: Browsing context has been discarded
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:193:5
+NoSuchWindowError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:679:5
+assert.that/&lt;@chrome://remote/content/shared/webdriver/Assert.sys.mjs:485:13
+assert.open@chrome://remote/content/shared/webdriver/Assert.sys.mjs:147:4
+GeckoDriver.prototype.findElements@chrome://remote/content/marionette/driver.sys.mjs:1584:15
+despatch@chrome://remote/content/marionette/server.sys.mjs:318:40
+execute@chrome://remote/content/marionette/server.sys.mjs:289:16
+onPacket/&lt;@chrome://remote/content/marionette/server.sys.mjs:262:20
+onPacket@chrome://remote/content/marionette/server.sys.mjs:263:9
+_onJSONObjectReady/&lt;@chrome://remote/content/marionette/transport.sys.mjs:494:20
+</msg>
+<status status="FAIL" starttime="20240527 11:48:45.804" endtime="20240527 11:48:45.870"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>//a[normalize-space()='Login']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="NOT RUN" starttime="20240527 11:48:45.870" endtime="20240527 11:48:45.870"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20240527 11:48:45.870" endtime="20240527 11:48:45.870"/>
+</kw>
+<kw name="Get Current Time in Milliseconds" library="Generic">
+<var>${EndTime1}</var>
+<status status="NOT RUN" starttime="20240527 11:48:45.870" endtime="20240527 11:48:45.870"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${ActualTime}</var>
+<arg>${EndTime1}-${StartTime1}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20240527 11:48:45.870" endtime="20240527 11:48:45.870"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Current Time in Milliseconds: ${ActualTime}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240527 11:48:45.870" endtime="20240527 11:48:45.870"/>
+</kw>
+<kw name="Calculate Running time" library="Generic">
+<arg>2</arg>
+<arg>${pageHeading}</arg>
+<arg>Generic - open the browser with the url</arg>
+<arg>2</arg>
+<arg>${pageTime}</arg>
+<arg>${ActualTime}</arg>
+<arg>Load_Time_tracking</arg>
+<status status="NOT RUN" starttime="20240527 11:48:45.870" endtime="20240527 11:48:45.870"/>
+</kw>
+<status status="FAIL" starttime="20240527 11:48:38.045" endtime="20240527 11:48:45.870"/>
+</kw>
+<kw name="Close Browser session" library="Generic" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240527 11:48:45.885" endtime="20240527 11:48:47.926"/>
+</kw>
+<status status="PASS" starttime="20240527 11:48:45.885" endtime="20240527 11:48:47.926"/>
+</kw>
+<status status="FAIL" starttime="20240527 11:48:38.045" endtime="20240527 11:48:47.926">Setup failed:
+NoSuchWindowException: Message: Browsing context has been discarded
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:193:5
+NoSuchWindowError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:679:5
+assert.that/&lt;@chrome://remote/content/shared/webdriver/Assert.sys.mjs:485:13
+assert.open@chrome://remote/content/shared/webdriver/Assert.sys.mjs:147:4
+GeckoDriver.prototype.findElements@chrome://remote/content/marionette/driver.sys.mjs:1584:15
+despatch@chrome://remote/content/marionette/server.sys.mjs:318:40
+execute@chrome://remote/content/marionette/server.sys.mjs:289:16
+onPacket/&lt;@chrome://remote/content/marionette/server.sys.mjs:262:20
+onPacket@chrome://remote/content/marionette/server.sys.mjs:263:9
+_onJSONObjectReady/&lt;@chrome://remote/content/marionette/transport.sys.mjs:494:20
+</status>
+</test>
+<test id="s1-t3" name="Change plan and Change asset limit with ACH Payment method" line="222">
+<kw name="open the browser with the url" library="Generic" type="SETUP">
+<kw name="Fix the column number" library="Generic">
+<kw name="Catenate" library="BuiltIn">
+<var>${pageHeading}</var>
+<arg>2</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20240527 11:48:47.926" level="INFO">${pageHeading} = 2</msg>
+<status status="PASS" starttime="20240527 11:48:47.926" endtime="20240527 11:48:47.926"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${pageHeading}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20240527 11:48:47.926" level="INFO">${pageHeading} = 2</msg>
+<status status="PASS" starttime="20240527 11:48:47.926" endtime="20240527 11:48:47.926"/>
+</kw>
+<status status="PASS" starttime="20240527 11:48:47.926" endtime="20240527 11:48:47.926"/>
+</kw>
+<kw name="Fix the row number" library="Generic">
+<kw name="Catenate" library="BuiltIn">
+<var>${pageTime}</var>
+<arg>3</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20240527 11:48:47.926" level="INFO">${pageTime} = 3</msg>
+<status status="PASS" starttime="20240527 11:48:47.926" endtime="20240527 11:48:47.926"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${pageTime}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20240527 11:48:47.926" level="INFO">${pageTime} = 3</msg>
+<status status="PASS" starttime="20240527 11:48:47.926" endtime="20240527 11:48:47.926"/>
+</kw>
+<status status="PASS" starttime="20240527 11:48:47.926" endtime="20240527 11:48:47.926"/>
+</kw>
+<kw name="Get Current Time in Milliseconds" library="Generic">
+<var>${StartTime1}</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${time_in_milliseconds}</var>
+<arg>int(time.time() * 1000)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240527 11:48:47.926" level="INFO">${time_in_milliseconds} = 1716790727926</msg>
+<status status="PASS" starttime="20240527 11:48:47.926" endtime="20240527 11:48:47.926"/>
+</kw>
+<return>
+<value>${time_in_milliseconds}</value>
+<status status="PASS" starttime="20240527 11:48:47.926" endtime="20240527 11:48:47.926"/>
+</return>
+<msg timestamp="20240527 11:48:47.926" level="INFO">${StartTime1} = 1716790727926</msg>
+<status status="PASS" starttime="20240527 11:48:47.926" endtime="20240527 11:48:47.926"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser_name}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240527 11:48:47.926" level="INFO">Opening browser 'firefox' to base url 'https://pre-prod-app.aithentic.com'.</msg>
+<status status="PASS" starttime="20240527 11:48:47.926" endtime="20240527 11:48:54.927"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//a[normalize-space()='Login']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20240527 11:48:54.964" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: WebDriver session does not exist, or is not active
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:193:5
+InvalidSessionIDError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:448:5
+assert.that/&lt;@chrome://remote/content/shared/webdriver/Assert.sys.mjs:485:13
+assert.session@chrome://remote/content/shared/webdriver/Assert.sys.mjs:37:4
+despatch@chrome://remote/content/marionette/server.sys.mjs:315:19
+execute@chrome://remote/content/marionette/server.sys.mjs:289:16
+onPacket/&lt;@chrome://remote/content/marionette/server.sys.mjs:262:20
+onPacket@chrome://remote/content/marionette/server.sys.mjs:263:9
+_onJSONObjectReady/&lt;@chrome://remote/content/marionette/transport.sys.mjs:494:20
+</msg>
+<msg timestamp="20240527 11:48:54.964" level="FAIL">NoSuchWindowException: Message: Browsing context has been discarded
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:193:5
+NoSuchWindowError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:679:5
+assert.that/&lt;@chrome://remote/content/shared/webdriver/Assert.sys.mjs:485:13
+assert.open@chrome://remote/content/shared/webdriver/Assert.sys.mjs:147:4
+GeckoDriver.prototype.findElements@chrome://remote/content/marionette/driver.sys.mjs:1584:15
+despatch@chrome://remote/content/marionette/server.sys.mjs:318:40
+execute@chrome://remote/content/marionette/server.sys.mjs:289:16
+onPacket/&lt;@chrome://remote/content/marionette/server.sys.mjs:262:20
+onPacket@chrome://remote/content/marionette/server.sys.mjs:263:9
+_onJSONObjectReady/&lt;@chrome://remote/content/marionette/transport.sys.mjs:494:20
+</msg>
+<status status="FAIL" starttime="20240527 11:48:54.927" endtime="20240527 11:48:54.964"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>//a[normalize-space()='Login']</arg>
+<arg>${wait_time}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="NOT RUN" starttime="20240527 11:48:54.964" endtime="20240527 11:48:54.964"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20240527 11:48:54.964" endtime="20240527 11:48:54.964"/>
+</kw>
+<kw name="Get Current Time in Milliseconds" library="Generic">
+<var>${EndTime1}</var>
+<status status="NOT RUN" starttime="20240527 11:48:54.964" endtime="20240527 11:48:54.964"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${ActualTime}</var>
+<arg>${EndTime1}-${StartTime1}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20240527 11:48:54.964" endtime="20240527 11:48:54.964"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Current Time in Milliseconds: ${ActualTime}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240527 11:48:54.964" endtime="20240527 11:48:54.964"/>
+</kw>
+<kw name="Calculate Running time" library="Generic">
+<arg>2</arg>
+<arg>${pageHeading}</arg>
+<arg>Generic - open the browser with the url</arg>
+<arg>2</arg>
+<arg>${pageTime}</arg>
+<arg>${ActualTime}</arg>
+<arg>Load_Time_tracking</arg>
+<status status="NOT RUN" starttime="20240527 11:48:54.964" endtime="20240527 11:48:54.964"/>
+</kw>
+<status status="FAIL" starttime="20240527 11:48:47.926" endtime="20240527 11:48:54.964"/>
+</kw>
+<kw name="Close Browser session" library="Generic" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240527 11:48:54.976" endtime="20240527 11:48:57.011"/>
+</kw>
+<status status="PASS" starttime="20240527 11:48:54.976" endtime="20240527 11:48:57.011"/>
+</kw>
+<tag>smoke</tag>
+<status status="FAIL" starttime="20240527 11:48:47.926" endtime="20240527 11:48:57.011">Setup failed:
+NoSuchWindowException: Message: Browsing context has been discarded
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:193:5
+NoSuchWindowError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:679:5
+assert.that/&lt;@chrome://remote/content/shared/webdriver/Assert.sys.mjs:485:13
+assert.open@chrome://remote/content/shared/webdriver/Assert.sys.mjs:147:4
+GeckoDriver.prototype.findElements@chrome://remote/content/marionette/driver.sys.mjs:1584:15
+despatch@chrome://remote/content/marionette/server.sys.mjs:318:40
+execute@chrome://remote/content/marionette/server.sys.mjs:289:16
+onPacket/&lt;@chrome://remote/content/marionette/server.sys.mjs:262:20
+onPacket@chrome://remote/content/marionette/server.sys.mjs:263:9
+_onJSONObjectReady/&lt;@chrome://remote/content/marionette/transport.sys.mjs:494:20
+</status>
+</test>
+<doc>Contains all test cases of Register user page</doc>
+<status status="FAIL" starttime="20240527 11:48:27.802" endtime="20240527 11:48:57.011"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="3" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">rerun</stat>
+<stat pass="0" fail="2" skip="0">smoke</stat>
+<stat pass="0" fail="1" skip="0">Time</stat>
+</tag>
+<suite>
+<stat pass="0" fail="3" skip="0" id="s1" name="RegisterUserPageTest">RegisterUserPageTest</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20240527 11:48:36.004" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: WebDriver session does not exist, or is not active
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:193:5
+InvalidSessionIDError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:448:5
+assert.that/&lt;@chrome://remote/content/shared/webdriver/Assert.sys.mjs:485:13
+assert.session@chrome://remote/content/shared/webdriver/Assert.sys.mjs:37:4
+despatch@chrome://remote/content/marionette/server.sys.mjs:315:19
+execute@chrome://remote/content/marionette/server.sys.mjs:289:16
+onPacket/&lt;@chrome://remote/content/marionette/server.sys.mjs:262:20
+onPacket@chrome://remote/content/marionette/server.sys.mjs:263:9
+_onJSONObjectReady/&lt;@chrome://remote/content/marionette/transport.sys.mjs:494:20
+</msg>
+<msg timestamp="20240527 11:48:45.860" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: WebDriver session does not exist, or is not active
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:193:5
+InvalidSessionIDError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:448:5
+assert.that/&lt;@chrome://remote/content/shared/webdriver/Assert.sys.mjs:485:13
+assert.session@chrome://remote/content/shared/webdriver/Assert.sys.mjs:37:4
+despatch@chrome://remote/content/marionette/server.sys.mjs:315:19
+execute@chrome://remote/content/marionette/server.sys.mjs:289:16
+onPacket/&lt;@chrome://remote/content/marionette/server.sys.mjs:262:20
+onPacket@chrome://remote/content/marionette/server.sys.mjs:263:9
+_onJSONObjectReady/&lt;@chrome://remote/content/marionette/transport.sys.mjs:494:20
+</msg>
+<msg timestamp="20240527 11:48:54.964" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: WebDriver session does not exist, or is not active
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:193:5
+InvalidSessionIDError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:448:5
+assert.that/&lt;@chrome://remote/content/shared/webdriver/Assert.sys.mjs:485:13
+assert.session@chrome://remote/content/shared/webdriver/Assert.sys.mjs:37:4
+despatch@chrome://remote/content/marionette/server.sys.mjs:315:19
+execute@chrome://remote/content/marionette/server.sys.mjs:289:16
+onPacket/&lt;@chrome://remote/content/marionette/server.sys.mjs:262:20
+onPacket@chrome://remote/content/marionette/server.sys.mjs:263:9
+_onJSONObjectReady/&lt;@chrome://remote/content/marionette/transport.sys.mjs:494:20
+</msg>
+</errors>
+</robot>

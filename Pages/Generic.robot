@@ -41,15 +41,15 @@ Resource        ../Pages/Bulk_Import_ExportPage.robot
 ${user_name}             rahulshettyacademy
 ${invalid_password}      123445
 
-${url}                 https://uat-app.aithentic.com/
+#${url}                 https://uat-app.aithentic.com/
 #${url}                https://qa-app.aithentic.com/
-#${url}                https://pre-prod-app.aithentic.com
-${apiURL}              https://uat-api.aithentic.com/api/v1
+${url}                https://pre-prod-app.aithentic.com
+#${apiURL}              https://uat-api.aithentic.com/api/v1
 #${apiURL}             https://qa-api.aithentic.com/api/v1
-#${apiURL}             https://pre-prod-api.aithentic.com/api/v1
-${valid_password}        Test!@5897     #UAT user
+${apiURL}             https://pre-prod-api.aithentic.com/api/v1
+#${valid_password}        Test!@5897     #UAT user
 #${valid_password}         Test@123       #QA User
-#${valid_password}         Test@123         #pre prod
+${valid_password}         Test@123         #pre prod
 
 
 
@@ -299,6 +299,7 @@ Enter phone number
 Scroll the page till
     [Arguments]    ${option}
     Execute javascript      window.scrollTo(0,${option})
+    wait until element is not visible       ${loaderIcon}       ${wait_time}
 
 Verify pop-up is visible after clicking on i-icon
     wait until element is visible       css:.popover-content       ${wait_time} 
