@@ -270,7 +270,7 @@ Invite user into Aithentic
     Generic.Verify your current page location contains     subscription-payment
     SubscriptionPage.Click on same billing address checkbox
     SubscriptionPage.Switch to card iframe
-    SubscriptionPage.Enter cardnumber    42424242424242420424242
+    SubscriptionPage.Enter cardnumber    42424242424242420429242
     Unselect Frame
     SubscriptionPage.Enter card user name    Paramdeep Singh
     SubscriptionPage.Check the authorization checkbox
@@ -880,3 +880,36 @@ Verify Reports Asset Alert
     DashboardPage.Wait until alert is visible in the Recent Notifiation tab        A new agent has been downloaded for       Macos.
     DashboardPage.Click on View more dropdown under recent notifications    View More
     DashboardPage.Verify the invisiblity of view_more button
+
+Click and verify the count of the tabs under renewal overview by management console
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
+    DashboardPage.Get And Verify The Count Of tabs under renewal overview by management console
+
+Click and verify the count of the tabs under renewal overview by choosing the value from the dropdown by management console
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
+    DashboardPage.Click on the dropdown of quarter end under management console
+    DashboardPage.Select the first value of To dropdown of quarter     0
+    DashboardPage.Get And Verify The Count Of tabs under renewal overview by management console
+    DashboardPage.Click on the dropdown of quarter end under management console
+    DashboardPage.Select the first value of To dropdown of quarter     1
+    DashboardPage.Get And Verify The Count Of tabs under renewal overview by management console
+    DashboardPage.Click on the dropdown of quarter end under management console
+    DashboardPage.Select the first value of To dropdown of quarter     2
+    DashboardPage.Get And Verify The Count Of tabs under renewal overview by management console
+    DashboardPage.Click on the dropdown of quarter end under management console
+    DashboardPage.Select the first value of To dropdown of quarter     3
+    DashboardPage.Get And Verify The Count Of tabs under renewal overview by management console
+    DashboardPage.Click on the dropdown of quarter end under management console
+    DashboardPage.Select the first value of To dropdown of quarter     4
+    DashboardPage.Get And Verify The Count Of tabs under renewal overview by management console
+    DashboardPage.Click on the first dropdown under management console
+    DashboardPage.Select the first value of To dropdown of quarter     3
+    DashboardPage.Click on the dropdown of quarter end under management console
+    DashboardPage.Select the first value of To dropdown of quarter     2
+    DashboardPage.Get And Verify The Count Of tabs under renewal overview by management console

@@ -132,7 +132,7 @@ Edit Team member page - Edit New Department and assign that department to Team m
     Generic.Verify your current page location contains          memberslist
 
 Verify team member Asset history
-    [Tags]      Sanity
+    [Tags]      Sanity      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
     LandingPage.Verify you are on dashboard page
@@ -187,7 +187,7 @@ Verify team member Asset history
     Switch Window   aithentic | OTP
     TwoFactorAuth.Enter the otp     ${passcode}
     TwoFactorAuth.Click verification button
-    Generic.Verify your current page location contains     management-console
+    Generic.Verify your current page location contains     asset-overview
     Generic.Click on the profile name
     Generic.Select other option from profile list     Logout
     Generic.Fetch log_out alert message
@@ -333,7 +333,7 @@ Search asset history with Asset ID
     TeamMemberPage.verify status of first name in member list   ${generated_AssetID}
 
 Verify user is able to export team member asset history list
-    [Tags]      Sanity      Smoke    rerun
+    [Tags]      Sanity      Smoke       rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form   debut@cool.fr.nf    Test@123
     LandingPage.Verify you are on dashboard page
@@ -390,7 +390,7 @@ Verify user is able to export team member asset history list
     Switch Window   aithentic | OTP
     TwoFactorAuth.Enter the otp     ${passcode}
     TwoFactorAuth.Click verification button
-    Generic.Verify your current page location contains     management-console
+    Generic.Verify your current page location contains     asset-overview
     Generic.Click on the profile name
     Generic.Select other option from profile list     Logout
     Generic.Fetch log_out alert message
@@ -713,6 +713,7 @@ Convert Assignee to team member in case of employee id is not system generated
     MemberPage.Enter first name of assigned users
     MemberPage.Enter last name of assigned users
     MemberPage.Enter business email of assigned users
+    TechnologyPage.Create unique assign to employee_ID random
     MemberPage.Click on save button of assigned user
     Generic.Fetch alert message text and compare it with        Assigned Users created successfully
     MemberPage.Search assigned user by first name   ${generated_AssigneduserFirstName}

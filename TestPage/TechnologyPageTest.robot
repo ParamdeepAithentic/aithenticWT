@@ -353,7 +353,6 @@ Restore asset from removed asset details page
     Generic.Verify your current page location contains      management-console
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
@@ -480,6 +479,7 @@ Restore asset by selecting checkbox
 
 
 Edit brand and product via details
+    [Tags]
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -764,6 +764,8 @@ Add Technology Page - Add New location and assign that location
     TechnologyPage.Click on add assign to
     TechnologyPage.Create unique assign to first name random
     TechnologyPage.Create unique assign to last name random
+    MemberPage.Enter business email of assigned users
+    TechnologyPage.Create unique assign to employee_ID random
     TechnologyPage.Save the assign to      save
     Generic.Fetch alert message text and compare it with       Assigned Users created successfully
 
@@ -775,9 +777,8 @@ Add New Support Partner and Assign that Partner
     Generic.Verify your current page location contains      management-console
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-#    TechnologyPage.click on add technology button
     TechnologyPage.Click on action button of technology
-    TechnologyPage.Choose add technology from action button of technology
+    TechnologyPage.click on add technology button
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
@@ -845,6 +846,79 @@ Add New Support Partner and Assign that Partner
     TechnologyPage.Verify that support partner is added in partner association      Support Partner
     TechnologyPage.Verify that supplier partner is added in partner association     Supplier
 
+
+
+
+Add New Support Partner and Assign that Partner via technology form only
+    [Tags]      Sanity    Supplier
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+#    TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    #           TechnologyPage.Click technology product input field
+    TechnologyPage.Select parameter from technology dropdown list       OPMR815274
+    TechnologyPage.Create unique serial number random
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select purchase date
+    TechnologyPage.Select warranty end date    12/12/2028
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Add technology lifecycle comment    Technology Lifecycle Information- comment
+    TechnologyPage.Add order number of technology cost information     56
+    TechnologyPage.Add payment partner of technology cost information      testqa 20Feb
+    TechnologyPage.Add cost type of technology cost information        Purchased
+    TechnologyPage.Add payment type of technology cost information     FixedPayment
+    TechnologyPage.Add payment peroid of technology cost information       Monthly
+    TechnologyPage.Add first payment date of technology cost information       12/12/2028
+    TechnologyPage.Add budget payment of technology cost information       1100
+    TechnologyPage.Add actual payment of technology cost information       1050
+    TechnologyPage.Add expense type of technology cost information     Capex
+    TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
+    TechnologyPage.Add assignment information department name      TestQA Department Up31840619
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
+
+    TechnologyPage.Click here to add support partner via technology form
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Add - Partner
+    Generic.Verify your current page location contains      addpartner
+    PartnersPage.Create partner random business name
+    PartnersPage.Enter partner business URL      ${generate_BusinessName}
+    PartnersPage.Select partner country       United States
+    TechnologyPage.Click contact main save button
+    Generic.Verify alertify is visible
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Add - Technology
+    TechnologyPage.Wait till support partner get auto polute        ${generate_BusinessName}
+    TechnologyPage.Click here to add supplier partner via technology form
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Add - Partner
+    Generic.Verify your current page location contains      addpartner
+    PartnersPage.Create partner random business name
+    PartnersPage.Enter partner business URL      ${generate_BusinessName}
+    PartnersPage.Select partner country       United States
+    TechnologyPage.Click contact main save button
+    Generic.Verify alertify is visible
+    Switch Window       aithentic | Add - Technology
+    TechnologyPage.Wait till supplier partner get auto polute       ${generate_BusinessName}
+
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+
+    TechnologyPage.Select tab under technology details      partners
+    TechnologyPage.Verify that support partner is added in partner association      Support Partner
+    TechnologyPage.Verify that supplier partner is added in partner association     Supplier
 
 Verify the history of added technology
     [Tags]      Sanity
@@ -1757,11 +1831,20 @@ Verify the technology data while applying agent Filters
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
-    OCS.Hover over searched Discovered Asset
+    OCS.Click on newly discovered tab under network discovery
+    OCS.Click on search icon of discovery assets
+    OCS.Enter text to search discovery asset    Apple Inc
+    OCS.Click on the down arrow icon of discovered asset
+    Generic.Scroll Window To End
+    OCS.Mouse Hover over searched Discovered Assets
     OCS.Get Tagname by hovering over discovered assets    Tag:
     OCS.Select any Discovered asset
+    OCS.Click on search icon of discovery assets
     OCS.Click on search icon of Existing assets
     OCS.Enter text to search existing asset    ${generated_AssetID}
+    OCS.Click on the down arrow icon of existing assets
+    Generic.Scroll Window To End
+    OCS.Mouse Hover over searched existing assets
     OCS.Verify searched existing asset    ${generated_AssetID}
     OCS.Select any existing asset
     OCS.Click on search icon of Existing assets
@@ -1779,6 +1862,7 @@ Verify the technology data while applying agent Filters
     TechnologyPage.Verify that Agent column should contain text     -
     TechnologyPage.Search by AssetId       ${generated_AssetID}
     TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains    technology-details
     TechnologyPage.Click on edit button on product details page        Edit
     Generic.Verify your current page location contains      edit-technology
     OCS.Edit the MAC_Address of Asset

@@ -137,7 +137,7 @@ Get and verify the count of aging analytics table
         ${element_as_number}=   Convert To Integer   ${element}
         log  Converted Text: ${element_as_number}
         Run Keyword If    ${element_as_number} == 0
-        ...    Skip Action
+        ...    ITperformancePage.Skip Action
         ...    ELSE IF    ${element_as_number} > 0
         ...    Run Keywords      Click Element    (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]     AND       sleep   ${yop_sleep}
         ...    AND    Click Element    css:span[class='back']  AND  Sleep    ${yop_sleep}
@@ -242,9 +242,9 @@ Get And Verify The Count Of Data Quality Under Tabs
         ${element}=    Remove Special Characters    ${element}
         Log     Element after removing special characters: ${element}
         ${element_as_number}=   Convert To Integer   ${element}
-        log  Converted Text: ${element_as_number}
+        Log  Converted Text: ${element_as_number}
         Run Keyword If    ${element_as_number} == 0
-        ...    Skip Action
+        ...    ITperformancePage.Skip Action
         ...    ELSE IF    ${element_as_number} > 0
         ...    Run Keywords      Click Element    //div[@id="${option}"]//tbody//tr[${index}]//td[2]      AND       sleep   ${yop_sleep}        AND       ITperformancePage.Fetch and compare the total count  ${element_as_number}
         ...    AND    Click Element    css:span[class='back']  AND  Sleep    ${yop_sleep}
@@ -279,7 +279,7 @@ Get And Verify The Count Of Data Quality Under Investment by partner tab
         ${element_as_number}=   Convert To Integer   ${element}
         log  Converted Text: ${element_as_number}
         Run Keyword If    ${element_as_number} == 0
-        ...    Skip Action
+        ...    ITperformancePage.Skip Action
         ...    ELSE IF    ${element_as_number} > 0
         ...    Run Keywords      Click Element    //div[@id="${option}"]//tbody//tr[${index}]//td[2]      AND       sleep   ${yop_sleep}        AND       ITperformancePage.Fetch and compare the total count  ${element_as_number}
         ...    AND    Click Element    css:span[class='back']  AND  Sleep    ${yop_sleep}
@@ -301,7 +301,7 @@ Get and verify the count of table of investment by partner
         ${element_as_number}=   Convert To Integer   ${element}
         log  Converted Text: ${element_as_number}
         Run Keyword If    ${element_as_number} == 0
-        ...    Skip Action
+        ...    ITperformancePage.Skip Action
         ...    ELSE IF    ${element_as_number} > 0
         ...    Run Keywords      Click Element    (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]     AND       sleep   ${yop_sleep}
         ...    AND    Click Element    css:span[class='back']  AND  Sleep    ${yop_sleep}
@@ -324,7 +324,7 @@ Get and verify the count of table of brand spend by supplier and supplier spend 
         ${element_as_number}=   Convert To Integer   ${element}
         log  Converted Text: ${element_as_number}
         Run Keyword If    ${element_as_number} == 0
-        ...    Skip Action
+        ...    ITperformancePage.Skip Action
         ...    ELSE IF    ${element_as_number} > 0
         ...    Run Keywords      Click Element    (//h4[normalize-space()='${option}']//following::tr)[2]//td[${index}]     AND       sleep   ${yop_sleep}
         ...    AND    Click Element    css:span[class='back']  AND  Sleep    ${yop_sleep}

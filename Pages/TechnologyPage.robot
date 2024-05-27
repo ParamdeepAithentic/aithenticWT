@@ -40,7 +40,7 @@ Resource        ../Pages/Bulk_Import_ExportPage.robot
 
 ########################## technology form #####################
 ${assetTableLoader}     //div[@class='spinner-border text-loader']
-${AddTechnologyButton}      //a[@class='btn button-cyan mt-0 mx-1 ng-star-inserted'][normalize-space()='Add Technology']
+${AddTechnologyButton}     css:.qa-add-new-technology
 
 #############Product Information##################
 ${brand}       css:#brandselect
@@ -352,6 +352,13 @@ Add host name for technology group information for hardware
     wait until element is visible       ${host_name}        ${wait_time}
     wait until element is enabled       ${host_name}        ${wait_time}
     input text   ${host_name}   125.66
+
+Add host name for technology group information for hardware random
+    wait until element is visible       ${host_name}        ${wait_time}
+    wait until element is enabled       ${host_name}        ${wait_time}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${result}=    Catenate    HostName_${random_string}
+    input text   ${host_name}   ${result}
 
 #================================ CREATE SERIAL NUMBER ==========================
 Create unique serial number random
@@ -735,7 +742,7 @@ Click on save technology form button
     wait until element is visible       ${saveBTN}       ${wait_time}
     wait until element is enabled       ${saveBTN}       ${wait_time}
     click element       ${saveBTN}
-    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+#    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
 
 Click on save technology form pop button
     wait until element is visible       ${savePOPup}       ${wait_time}
@@ -1140,6 +1147,14 @@ Click here to add supplier partner
     wait until element is not visible    cs:.qa-assign-supplier-partner .ng-spinner-loader      ${wait_time}
     click element       css:.qa-click-to-add-partner-supplier
 
+Click here to add support partner via technology form
+    wait until element is not visible    cs:.qa-add-here-support      ${wait_time}
+    click element       css:.qa-add-here-support
+
+Click here to add supplier partner via technology form
+    wait until element is not visible    cs:.qa-add-here-supplier      ${wait_time}
+    click element       css:.qa-add-here-supplier
+
 Click contact main save button
     wait until element is visible      ${main_Save}       ${wait_time}
     wait until element is enabled      ${main_Save}       ${wait_time}
@@ -1378,6 +1393,7 @@ Click on attachment tab
     wait until element is visible   css:#PrintQrButton   ${wait_time}
     wait until element is enabled   css:#PrintQrButton   ${wait_time}
     wait until element is visible   css:#attachments-tab   ${wait_time}
+    sleep   ${search_sleep}
     click element   css:#attachments-tab
 #    wait until element is visible   //label[normalize-space()='Upload File']        ${wait_time}
 #    wait until element is enabled   //label[normalize-space()='Upload File']        ${wait_time}

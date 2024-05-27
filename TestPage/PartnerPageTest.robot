@@ -46,7 +46,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Compose Message invite user test
-    [Tags]      Sanity      Smoke       Time    rerun
+    [Tags]      Sanity      Smoke       Time    onetry
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -495,7 +495,7 @@ Compose Message invite user test
     TwoFactorAuth.Enter the otp     ${passcode}
     TwoFactorAuth.Click verification button
 
-    Generic.Verify your current page location contains     management-console
+    Generic.Verify your current page location contains     management-consolerob
 #--------------------------------------------END-----------------------------------------------------------
 
 
@@ -1060,6 +1060,7 @@ Remove Manufacturer from partner
     Generic.Enter phone number      India   +91     9646289871
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     Generic.click on the button     Add
+    sleep   ${search_sleep}
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with    Partner updated successfully
     PartnersPage.Search by business name    ${generated_BrandName}
