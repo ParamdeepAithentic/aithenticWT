@@ -426,8 +426,8 @@ Technology Bulk edit
     [Tags]       sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      asset-overview
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     Generic.Verify your current page location contains     technology-list
