@@ -42,6 +42,7 @@ ${user_name}             rahulshettyacademy
 ${invalid_password}      123445
 
 #${url}                 https://uat-app.aithentic.com/
+<<<<<<< HEAD
 #${url}                https://qa-app.aithentic.com/
 ${url}                https://pre-prod-app.aithentic.com
 #${apiURL}              https://uat-api.aithentic.com/api/v1
@@ -56,14 +57,18 @@ ${valid_password}         Test@123         #pre prod
 ${admin_url}        https://uat-admin.aithentic.com/
 #${admin_url}        https://qa-admin.aithentic.com/
 
-#${agentDiscovery_TagName}       Tag Name - johnsoftwaresolutions-1192-4         #qa
-${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-10        #uat
+${agentDiscovery_TagName}       Tag Name - johnsoftwaresolutions-1192-4         #qa
+#${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-10        #uat
 
 
 
 ${admin_name}        aithentic@yopmail.com
 ${admin_password}       Admin@123
-${browser_name}          firefox
+
+
+${browser_name}         headlessfirefox
+
+
 ${email}                 testqa29j@mailinator.com
 ${SheetLocationAndName}   LoadTimeSheet.xlsx
 ${SheetTabName}     Load_Time_tracking
@@ -78,7 +83,8 @@ ${click_countryTag}     css:.iti__selected-flag.dropdown-toggle
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
-${wait_time}       240
+
+${wait_time}       120
 ${yop_sleep}       10
 ${search_sleep}       1
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
