@@ -400,7 +400,6 @@ Edit Brand and address via brand under profile list
 
 
 Deactivate Brand and address via brand under profile list
-    [Tags]    tt
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page

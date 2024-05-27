@@ -46,6 +46,7 @@ Fill the login Form
     Click Button        ${Kc_loginBtn}
 
 Verify you are on dashboard page
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible    //div[normalize-space()='End of life']    ${wait_time}
     wait until element is enabled    //div[normalize-space()='End of life']    ${wait_time}
 

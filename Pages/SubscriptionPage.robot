@@ -195,6 +195,7 @@ Update the asset range
     Generic.click on the button     ${option1}
 
 Select card type university
+
     wait until element is visible       css:span .fa-university       ${wait_time}
     wait until element is enabled       css:span .fa-university       ${wait_time}
     Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
