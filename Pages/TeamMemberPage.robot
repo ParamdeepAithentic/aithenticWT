@@ -55,6 +55,7 @@ ${three_dots}       css:.three-dots
 
 *** Keywords ***
 Click on add team member action button
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible      ${teamMember_Action_btn}      ${wait_time}
     wait until element is enabled      ${teamMember_Action_btn}      ${wait_time}
     click element      ${teamMember_Action_btn}

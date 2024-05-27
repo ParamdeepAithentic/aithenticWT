@@ -42,7 +42,7 @@ ${user_name}             rahulshettyacademy
 ${invalid_password}      123445
 
 #${url}                 https://uat-app.aithentic.com/
-<<<<<<< HEAD
+
 #${url}                https://qa-app.aithentic.com/
 ${url}                https://pre-prod-app.aithentic.com
 #${apiURL}              https://uat-api.aithentic.com/api/v1
@@ -68,7 +68,7 @@ ${admin_password}       Admin@123
 
 ${browser_name}         headlessfirefox
 
-
+${browser_name}          firefox
 ${email}                 testqa29j@mailinator.com
 ${SheetLocationAndName}   LoadTimeSheet.xlsx
 ${SheetTabName}     Load_Time_tracking
@@ -174,7 +174,7 @@ Close Browser session
 
 select the option from the side menu
     [Arguments]     ${option}
-#    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible    //li[@title='${option}']          ${wait_time}
     wait until element is enabled    //li[@title='${option}']          ${wait_time}
     click element       //li[@title='${option}']
@@ -216,6 +216,7 @@ Cross the text message alert
 
 Select parameter
     [Arguments]    ${address}
+    Wait Until Element Is Not Visible    ${loaderIcon}   ${wait_time}
     wait until element is visible     //span[normalize-space()='${address}']        ${wait_time}
     wait until element is enabled       //span[normalize-space()='${address}']          ${wait_time}
     click element      //span[normalize-space()='${address}']
@@ -305,6 +306,7 @@ Enter phone number
 Scroll the page till
     [Arguments]    ${option}
     Execute javascript      window.scrollTo(0,${option})
+    wait until element is not visible       ${loaderIcon}       ${wait_time}
 
 Verify pop-up is visible after clicking on i-icon
     wait until element is visible       css:.popover-content       ${wait_time} 
