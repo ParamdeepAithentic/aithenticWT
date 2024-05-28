@@ -317,6 +317,7 @@ Compose Message invite user test
     SubscriptionPage.Input text into manufacturer zip code      73301
     SubscriptionPage.Select department of manufacturer profile      Customer Support
     SubscriptionPage.Input text into manufacturer position/title    Agent
+    Generic.Scroll Window To End
     SubscriptionPage.Save the manufacturer profile
     Generic.Verify your current page location contains     subscription-menu
     Generic.Fetch alert message text and compare it with       Profile saved successfully

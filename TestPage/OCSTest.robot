@@ -1179,7 +1179,7 @@ Search with containing fields under advance search of component of discovered as
         OCS.Click on newly discovered tab under network discovery
         Generic.Verify your current page location contains    ocs
         OCS.Click on search icon of discovery assets
-        OCS.Enter text to search discovery asset   MSI
+        OCS.Enter text to search discovery asset   Apple Inc
         OCS.Click on the down arrow icon of discovered asset
         Generic.Scroll Window To End
         OCS.Mark check-box of Agent/Discovered Asset
@@ -1191,7 +1191,7 @@ Search with containing fields under advance search of component of discovered as
         TechnologyPage.Create unique serial number random
         OCS.Enter The Asset_id in Add Technology Page
         OCS.Click on save button of Add Technology Page
-        OCS.Wait for the invisiblity of alert msg        Technology created successfully
+        Generic.Fetch alert message text and compare it with        Technology created successfully
         Sleep    ${yop_sleep}
         switch window    aithentic | Asset - Discovery
         OCS.Choose tab under Discovery Assets   agent-discovery
