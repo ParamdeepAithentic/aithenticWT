@@ -42,7 +42,6 @@ ${user_name}             rahulshettyacademy
 ${invalid_password}      123445
 
 ${url}                 https://uat-app.aithentic.com/
-
 #${url}                https://qa-app.aithentic.com/
 #${url}                https://pre-prod-app.aithentic.com
 ${apiURL}              https://uat-api.aithentic.com/api/v1
@@ -342,6 +341,11 @@ Update settings for Asset_ID, employee_id and location
     DashboardPage.Select the employee ID checkbox   yes
     DashboardPage.Select the location ID checkbox   yes
     DashboardPage.Select the asset ID checkbox      no
+    sleep       ${yop_sleep}
     close browser
+    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+    Run Process    cmd.exe    /C    taskkill /IM chrome.exe /F
+    Run Process    cmd.exe    /C    taskkill /IM skype.exe /F
+    Run Process    cmd.exe    /C    taskkill /IM msedge.exe /F
 
 

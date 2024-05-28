@@ -55,6 +55,7 @@ Verify all i-icon of Dashboard page
     I_iconPage.Click on i-icon of account_overview tab
 
 Verify all i-icon of profile-listing
+    [Tags]     Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -117,7 +118,7 @@ Verify all i-icon of team member page
     I_iconPage.Click on i-icon of team-members tab
 
 Verify all i-icon of Technology page
-    [Tags]    retry
+    [Tags]    retry     Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -192,6 +193,7 @@ Verify all i-icon of Discovery assets
     I_iconPage.Click on i_icon under network_discovery tab
 
 Verify all i-icon of advanced search
+    [Tags]     Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     LandingPage.Verify you are on dashboard page

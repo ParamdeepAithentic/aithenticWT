@@ -8,6 +8,7 @@ Library           BuiltIn
 Library           random
 Library           DateTime
 Library           OperatingSystem
+Library           Process
 Resource        ../Pages/Generic.robot
 Resource        ../Pages/DashboardPage.robot
 Resource        ../Pages/DepartmentPage.robot
@@ -45,7 +46,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Change plan- Assign commercial plan and change it to slotted
-    [Tags]      smoke
+    [Tags]      Smoke     Sanity      Time
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     mehak@mynes.com     Test@123
     LandingPage.Verify you are on dashboard page
@@ -99,3 +100,5 @@ Change plan- Assign commercial plan and change it to slotted
     Generic.Verify your current page location contains      billing
     Admin_PanelPage.Fetch text from current Plan
     Admin_PanelPage.Verify text from current plan after changing subscription       Premium
+
+
