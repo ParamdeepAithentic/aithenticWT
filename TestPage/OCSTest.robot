@@ -252,7 +252,7 @@ Apply filters and clear filter on Existing Assets
         OCS.click on filter icon of existing assets
 #        OCS.Choose filters for discovered asset     Select Brand
 #       OCS.Enter input in the brand field of existing asset       QABrand555
-        OCS.Enter input in the brand field of existing asset       MSI.
+        OCS.Enter input in the brand field of existing asset       Apple Inc.
         OCS.Get text of selected brand of filter of existing asset
         Generic.click on the button     Apply
         OCS.Click on the down arrow icon of existing assets
@@ -322,7 +322,7 @@ Add Discovery Asset
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
-        OCS.Enter text to search discovery asset    MSI
+        OCS.Enter text to search discovery asset    Apple Inc
         OCS.Click on the down arrow icon of discovered asset
         Generic.Scroll Window To End
         OCS.Mouse Hover over searched Discovered Assets
@@ -387,7 +387,7 @@ Create Asset from Add Assets Page
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
-        OCS.Enter text to search discovery asset    MSI
+        OCS.Enter text to search discovery asset  Apple Inc
         OCS.Click on the down arrow icon of discovered asset
         Generic.Scroll Window To End
         OCS.Mouse Hover over searched Discovered Assets
@@ -438,7 +438,7 @@ Add component as an asset from Agent Discovery page
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
-        OCS.Enter text to search discovery asset    MSI
+        OCS.Enter text to search discovery asset    Apple Inc
         OCS.Click on the down arrow icon of discovered asset
         Generic.Scroll Window To End
         OCS.Mouse Hover over searched Discovered Assets
@@ -514,7 +514,7 @@ Upload Image and Document File while Add Discovery Asset
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
-        OCS.Enter text to search discovery asset   MSI
+        OCS.Enter text to search discovery asset   Apple Inc
         OCS.Click on the down arrow icon of discovered asset
         Generic.Scroll Window To End
         OCS.Mouse Hover over searched Discovered Assets
@@ -627,7 +627,7 @@ Upload Image and Document File while Add component as an asset from Agent Discov
         OCS.Click on newly discovered tab under network discovery
         Generic.Verify your current page location contains    ocs
         OCS.Click on search icon of discovery assets
-        OCS.Enter text to search discovery asset   MSI
+        OCS.Enter text to search discovery asset   Apple Inc
         OCS.Click on the down arrow icon of discovered asset
         Generic.Scroll Window To End
         OCS.Mouse Hover over searched Discovered Assets
@@ -888,6 +888,7 @@ Match IP Discovered Asset with Dynamic Existing Asset
     END
 
 Add asset with IP Address under discovered asset list
+    [Tags]      Sanity
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -1178,7 +1179,7 @@ Search with containing fields under advance search of component of discovered as
         OCS.Click on newly discovered tab under network discovery
         Generic.Verify your current page location contains    ocs
         OCS.Click on search icon of discovery assets
-        OCS.Enter text to search discovery asset   MSI
+        OCS.Enter text to search discovery asset   Apple Inc
         OCS.Click on the down arrow icon of discovered asset
         Generic.Scroll Window To End
         OCS.Mark check-box of Agent/Discovered Asset
@@ -1190,7 +1191,7 @@ Search with containing fields under advance search of component of discovered as
         TechnologyPage.Create unique serial number random
         OCS.Enter The Asset_id in Add Technology Page
         OCS.Click on save button of Add Technology Page
-        OCS.Wait for the invisiblity of alert msg        Technology created successfully
+        Generic.Fetch alert message text and compare it with        Technology created successfully
         Sleep    ${yop_sleep}
         switch window    aithentic | Asset - Discovery
         OCS.Choose tab under Discovery Assets   agent-discovery
@@ -1306,6 +1307,7 @@ Search with containing fields under advance search of component of discovered as
     END
 
 Search with containing fields under advance search of IP Address of discovered asset
+    [Tags]      Sanity
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123

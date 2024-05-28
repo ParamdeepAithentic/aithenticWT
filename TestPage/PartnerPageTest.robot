@@ -46,7 +46,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Compose Message invite user test
-    [Tags]      Sanity      Smoke       Time    onetry
+    [Tags]      Sanity      Smoke       Time       rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -317,6 +317,7 @@ Compose Message invite user test
     SubscriptionPage.Input text into manufacturer zip code      73301
     SubscriptionPage.Select department of manufacturer profile      Customer Support
     SubscriptionPage.Input text into manufacturer position/title    Agent
+    Generic.Scroll Window To End
     SubscriptionPage.Save the manufacturer profile
     Generic.Verify your current page location contains     subscription-menu
     Generic.Fetch alert message text and compare it with       Profile saved successfully
@@ -495,7 +496,7 @@ Compose Message invite user test
     TwoFactorAuth.Enter the otp     ${passcode}
     TwoFactorAuth.Click verification button
 
-    Generic.Verify your current page location contains     management-consolerob
+    Generic.Verify your current page location contains     asset-overview
 #--------------------------------------------END-----------------------------------------------------------
 
 

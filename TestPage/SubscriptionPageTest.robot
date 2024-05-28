@@ -62,6 +62,7 @@ Test Teardown   Close Browser session
 #    Generic.Fetch alert message text and compare it with        Scheduler created sucessfully
 #
 Edit the scheduler
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     LandingPage.Verify you are on dashboard page
@@ -92,7 +93,7 @@ Edit the scheduler
     SubscriptionPage.Click on option under three dots of subscription connector     Edit
     SubscriptionPage.click on the cross icon of create scheduler    1
     SubscriptionPage.Enter input in the input field of frequency under create scheduler    Monthly
-   SubscriptionPage.Enter input in the start date field of billing details
+    SubscriptionPage.Enter input in the start date field of billing details
     SubscriptionPage.Enter input in the input field of time under create scheduler      2:00
     sleep   ${search_sleep}
     Generic.click on the button     Update
@@ -140,6 +141,7 @@ Run now from view details
     SubscriptionPage.Get the value of fields under view details of subscription connector   2       Samuel John
 
 Suspend and unsuspend the account
+    [Tags]      Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     LandingPage.Verify you are on dashboard page
@@ -161,7 +163,7 @@ Suspend and unsuspend the account
     Generic.Verify your current page location contains      technology-settings
     Generic.click on the tab    Subscription Connectors
     SubscriptionPage.Visible the disable activate button link after suspending account
-     Generic.Click on the profile name
+    Generic.Click on the profile name
     Generic.Select option from profile list     billing-dropdown
     Generic.Verify your current page location contains      billing-details
     SubscriptionPage.Click on the Unsuspend my account button link under billing details

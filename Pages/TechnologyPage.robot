@@ -68,8 +68,8 @@ ${Contract_endDate}        css:#DYNA_17
 ######################Contract information################
 ${contract_id}     css:#TECHDYNA_3
 ${chargeable_basis}     //input[@id='Chargeable basis']      #User, CPU
-${cost_each}     css:#TECHDYNA_7
-${max_contracted}     css:#TECHDYNA_8
+${cost_each}     //input[@id='Cost Each']
+${max_contracted}     //input[@id='Max Contracted']
 
 ###############Technology Lifecycle Information################
 ${asset_id}     css:#AssetId
