@@ -15,7 +15,7 @@ Resource        ../Pages/LandingPage.robot
 Resource        ../Pages/TechnologyPage.robot
 Resource        ../Pages/RegisterMember.robot
 Resource        ../Pages/ContractsPage.robot
-Resource        ../Pages/LoginAPI.robot
+Resource        ../Pages/LoginPage.robot
 Resource        ../Pages/ReplaceDomainAPI.robot
 Resource        ../Pages/Yopmail.robot
 Resource        ../Pages/UserAccount.robot
