@@ -83,7 +83,6 @@ Fill the technology form for license product
     TechnologyPage.Add contract Id of contract information random
     TechnologyPage.Add cost each of contract information random
     TechnologyPage.Add chargeable basis of contract information self      User
-
     TechnologyPage.Add max contracted of contract information random
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
