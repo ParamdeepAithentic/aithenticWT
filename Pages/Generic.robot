@@ -41,20 +41,20 @@ Resource        ../Pages/Bulk_Import_ExportPage.robot
 ${user_name}             rahulshettyacademy
 ${invalid_password}      123445
 
-#${url}                 https://uat-app.aithentic.com/
+${url}                 https://uat-app.aithentic.com/
 #${url}                https://qa-app.aithentic.com/
-${url}                https://pre-prod-app.aithentic.com
-#${apiURL}              https://uat-api.aithentic.com/api/v1
+#${url}                https://pre-prod-app.aithentic.com
+${apiURL}              https://uat-api.aithentic.com/api/v1
 #${apiURL}             https://qa-api.aithentic.com/api/v1
-${apiURL}             https://pre-prod-api.aithentic.com/api/v1
-#${valid_password}        Test!@5897     #UAT user
+#${apiURL}             https://pre-prod-api.aithentic.com/api/v1
+${valid_password}        Test!@5897     #UAT user
 #${valid_password}         Test@123       #QA User
-${valid_password}         Test@123         #pre prod
+#${valid_password}         Test@123         #pre prod
 
 
 
-#${admin_url}        https://uat-admin.aithentic.com/
-${admin_url}        https://qa-admin.aithentic.com/
+${admin_url}        https://uat-admin.aithentic.com/
+#${admin_url}        https://qa-admin.aithentic.com/
 
 #${agentDiscovery_TagName}       Tag Name - johnsoftwaresolutions-1192-4         #qa
 ${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-10        #uat
@@ -337,6 +337,11 @@ Update settings for Asset_ID, employee_id and location
     DashboardPage.Select the employee ID checkbox   yes
     DashboardPage.Select the location ID checkbox   yes
     DashboardPage.Select the asset ID checkbox      no
+    sleep       ${yop_sleep}
     close browser
+    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+    Run Process    cmd.exe    /C    taskkill /IM chrome.exe /F
+    Run Process    cmd.exe    /C    taskkill /IM skype.exe /F
+    Run Process    cmd.exe    /C    taskkill /IM msedge.exe /F
 
 
