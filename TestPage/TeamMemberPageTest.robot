@@ -104,6 +104,7 @@ Edit Team member page - Edit New Department and assign that department to Team m
     Generic.Enter phone number      India   +91     9646289871
     TeamMemberPage.Enter team member business email_mailinator
     TeamMemberPage.Enter the Position in member form        QA
+    TeamMemberPage.Create random employee id
     sleep       ${yop_sleep}
     TeamMemberPage.Click on add here in department field        Click here to add
     TechnologyPage.Create unique department name random

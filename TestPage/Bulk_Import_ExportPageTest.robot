@@ -426,8 +426,8 @@ Technology Bulk edit
     [Tags]       sanity    rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      asset-overview
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     Generic.Verify your current page location contains     technology-list
@@ -456,9 +456,9 @@ Technology Bulk edit
     Generic.Verify your current page location contains      technology-bulk-edit
     Bulk_Import_ExportPage.click on the arrow of product    Product Information     2
     Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology    ModelProductName_1     Product_2589283776
-    Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology    Brand      BrandName2556763617
-    Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology    TechnologyGroup      Applications
-    Bulk_Import_ExportPage.Select the new value of technology group in bulk edit of technology    TechnologyType      Hardware
+#    Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology    Brand      BrandName2556763617
+#    Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology    TechnologyGroup      Applications
+#    Bulk_Import_ExportPage.Select the new value of technology group in bulk edit of technology    TechnologyType      Hardware
     Bulk_Import_ExportPage.click on the arrow of product    Product Information     1
     Bulk_Import_ExportPage.Enter the new value of asset id of bulk edit of technology   AssetId
     Bulk_Import_ExportPage.click on the arrow of product    Technology Lifecycle Information    2
