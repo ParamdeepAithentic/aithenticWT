@@ -41,16 +41,7 @@ Resource        ../Pages/Bulk_Import_ExportPage.robot
 ${user_name}             rahulshettyacademy
 ${invalid_password}      123445
 
-<<<<<<< HEAD
-#${url}                 https://uat-app.aithentic.com/
-${url}                https://qa-app.aithentic.com/
-#${url}                 https://pre-prod-app.aithentic.com
-#${apiURL}              https://uat-api.aithentic.com/api/v1
-${apiURL}             https://qa-api.aithentic.com/api/v1
-#${apiURL}             https://pre-prod-api.aithentic.com/api/v1
-#${valid_password}        Test!@5897     #UAT user
-${valid_password}         Test@123       #QA User
-=======
+
 ${url}                 https://uat-app.aithentic.com/
 #${url}                https://qa-app.aithentic.com/
 #${url}                https://pre-prod-app.aithentic.com
@@ -59,7 +50,6 @@ ${apiURL}              https://uat-api.aithentic.com/api/v1
 #${apiURL}             https://pre-prod-api.aithentic.com/api/v1
 ${valid_password}        Test!@5897     #UAT user
 #${valid_password}         Test@123       #QA User
->>>>>>> 192eebc1928e4b7e7966b9bb82812f6206729729
 #${valid_password}         Test@123         #pre prod
 
 
@@ -87,12 +77,8 @@ ${click_countryTag}     css:.iti__selected-flag.dropdown-toggle
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
-<<<<<<< HEAD
-${wait_time}       60
-=======
 
-${wait_time}       240
->>>>>>> 192eebc1928e4b7e7966b9bb82812f6206729729
+${wait_time}       60
 ${yop_sleep}       10
 ${search_sleep}       1
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
