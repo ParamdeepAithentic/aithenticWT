@@ -188,3 +188,48 @@ Export location list of location under technology details page
     PartnersPage.Verify that the selected extension file is downloaded       .tsv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
+
+Export partner list while adding new partner
+    Generic.click on the tab	    Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
+    ReplaceDomainAPI.Replace Domain
+    Generic.select the option from the side menu    Partners
+    Generic.Verify your current page location contains      partner-listing
+    Generic.Wait until table get load
+    PartnersPage.Click new partner button
+    PartnersPage.Select partner type of new partner     Manufacturer
+    PartnersPage.Create partner random business name
+    PartnersPage.Enter partner business URL     yopmail
+    PartnersPage.Select partner country       United States
+    PartnersPage.Click on the save button   Save
+    Generic.Fetch alert message text and compare it with    Partner created successfully
+    PartnersPage.Search by business name   ${generate_BusinessName}
+    PartnersPage.Click on three dots of partners listing
+    PartnersPage.Select option from three dots of partner     Details
+    Generic.Verify your current page location contains      partner-details
+    PartnersPage.Click on the export Button
+    PartnersPage.Download the selected extension file      .xlsx
+    PartnersPage.Confirm to export file
+    PartnersPage.Verify that the selected extension file is downloaded       .xlsx
+    PartnersPage.Remove the file from downloaded list
+    Generic.click on the button     Okay, Thanks!
+    PartnersPage.Click on the export Button
+    PartnersPage.Download the selected extension file      .ods
+    PartnersPage.Confirm to export file
+    PartnersPage.Verify that the selected extension file is downloaded       .ods
+    PartnersPage.Remove the file from downloaded list
+    Generic.click on the button     Okay, Thanks!
+    PartnersPage.Click on the export Button
+    PartnersPage.Download the selected extension file      .csv
+    PartnersPage.Confirm to export file
+    PartnersPage.Verify that the selected extension file is downloaded       .csv
+    PartnersPage.Remove the file from downloaded list
+    Generic.click on the button     Okay, Thanks!
+    PartnersPage.Click on the export Button
+    PartnersPage.Download the selected extension file      .tsv
+    PartnersPage.Confirm to export file
+    PartnersPage.Verify that the selected extension file is downloaded       .tsv
+    PartnersPage.Remove the file from downloaded list
+    Generic.click on the button     Okay, Thanks!
