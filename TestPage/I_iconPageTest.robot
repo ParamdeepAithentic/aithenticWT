@@ -551,4 +551,3 @@ Upload I-icon while adding IP Address
     TechnologyPage.Click on update button of edit_technology page       Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     UnselectAssetAPI.Hit API Endpoint
-
