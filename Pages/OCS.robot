@@ -328,10 +328,15 @@ click on filter icon of discovered assets
 Choose filters for discovered asset
     [Arguments]     ${option1}      ${option2}
     wait until element is not visible   ${loaderIcon}        ${wait_time}
-    wait until element is visible   //ng-select[@placeholder='${option1}']//input[@type='text']
-    wait until element is enabled   //ng-select[@placeholder='${option1}']//input[@type='text']
-#    click element   //ng-select[@placeholder='${option}']//input[@type='text']
+    wait until element is visible       //*[@placeholder='${option1}']        ${wait_time}
+    wait until element is enabled       //*[@placeholder='${option1}']        ${wait_time}
+    Click element   //*[@placeholder='${option1}']
+    Clear Element Text      //ng-select[@placeholder='${option1}']//input[@type='text']
     input text      //ng-select[@placeholder='${option1}']//input[@type='text']         ${option2}
+    wait until element is visible   //*[@placeholder='${option1}']//input[@type='text']//following::span[normalize-space()='${option2}']
+    wait until element is enabled   //*[@placeholder='${option1}']//input[@type='text']//following::span[normalize-space()='${option2}']
+    click element   //*[@placeholder='${option1}']//input[@type='text']//following::span[normalize-space()='${option2}']
+
 
 Select brand_macaddres_agent from dropdown of discovered asset filter
     [Arguments]     ${number}
@@ -829,6 +834,7 @@ My Failure Handling
     OCS.Click on newly discovered tab under network discovery
     UnselectAssetAPI.Hit API Endpoint
     Generic.Refresh the existing page
+    I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.Click on Existing asset
     Sleep    ${yop_sleep}

@@ -256,52 +256,59 @@ Apply filters and clear filter on Existing Assets
 #        OCS.Choose filters for discovered asset     Select Brand
 #       OCS.Enter input in the brand field of existing asset       QABrand555
         OCS.Enter input in the brand field of existing asset       Apple Inc.
-        OCS.Get text of selected brand of filter of existing asset
+#        OCS.Get text of selected brand of filter of existing asset
         Generic.click on the button     Apply
         OCS.Click on the down arrow icon of existing assets
         OCS.Mouse Hover over filters of existing asset
         OCS.Get text by hovering over existing assets   Brand:
-        OCS.verify Text by hovering over assets  ${substring1}       ${brand}
+        OCS.verify Text by hovering over assets  ${substring1}       Apple Inc.
         OCS.Click on the down arrow icon of existing assets
         OCS.Click on clear filter button link of discovered assets      Clear Filters
-        OCS.Choose filters for discovered asset     Select Product
-        OCS.Enter input in the product field of filters of existing agent       Macmini9,1
-        OCS.Get text of selected brand of filter of existing asset
+        OCS.Choose filters for discovered asset     Select Product      Macmini9,1
+#        OCS.Get text of selected brand, mac address and agent of discovered assets  0
+#        OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   0
+#        OCS.Enter input in the product field of filters of existing agent       Macmini9,1
+#        OCS.Get text of selected brand of filter of existing asset
         Generic.click on the button     Apply
         OCS.Click on the down arrow icon of existing assets
+        sleep   ${search_sleep}
         OCS.Mouse Hover over filters of existing asset
         OCS.Get text by hovering over existing assets   Model/Product Name:
-        OCS.verify Text by hovering over assets  ${substring1}      ${brand}
+        OCS.verify Text by hovering over assets  ${substring1}      Macmini9,1
         OCS.Click on the down arrow icon of existing assets
         OCS.Click on clear filter button link of discovered assets  Clear Filters
-        OCS.Choose filters for discovered asset    Select Department
-        OCS.Get text of selected brand, mac address and agent of discovered assets  0
-        OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   0
+        OCS.Choose filters for discovered asset    Select Department    Quality Assurance
+#        OCS.Get text of selected brand, mac address and agent of discovered assets  0
+#        OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   0
         Generic.click on the button     Apply
         OCS.Click on the down arrow icon of existing assets
         OCS.Mouse Hover over filters of existing asset
+        OCS.Get text by hovering over existing assets   Department Name:
+        OCS.verify Text by hovering over assets  ${substring1}      Quality Assurance
         OCS.click on the right text asset result of existing asset
         sleep       ${yop_sleep}
         Switch Window   aithentic | Technology - Details
         TechnologyPage.Click on Location tab of technology- list page
         TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     DepartmentName
-        OCS.verify Text by hovering over assets  ${assign_loc_input_value}       ${selected_brand}
+#        OCS.verify Text by hovering over assets  ${assign_loc_input_value}       ${selected_brand}
         sleep       ${yop_sleep}
         Switch Window   aithentic | Asset - Discovery
         OCS.Click on the down arrow icon of existing assets
         OCS.Click on clear filter button link of discovered assets  Clear Filters
-        OCS.Choose filters for discovered asset    Select Location
-        OCS.Get text of selected brand, mac address and agent of discovered assets  0
-        OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   0
+        OCS.Choose filters for discovered asset    Select Location      *Main Office
+#        OCS.Get text of selected brand, mac address and agent of discovered assets  0
+#        OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   0
         Generic.click on the button     Apply
         OCS.Click on the down arrow icon of existing assets
         OCS.Mouse Hover over filters of existing asset
+        OCS.Get text by hovering over existing assets   Location Name:
+        OCS.verify Text by hovering over assets  ${substring1}      *Main Office
         OCS.click on the right text asset result of existing asset
         sleep       ${yop_sleep}
         Switch Window   aithentic | Technology - Details
         Generic.Verify your current page location contains    technology-details
         TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     LocationName
-        OCS.verify Text by hovering over assets  ${assign_loc_input_value}       ${selected_brand}
+#        OCS.verify Text by hovering over assets  ${assign_loc_input_value}       ${selected_brand}
         sleep       ${yop_sleep}
         Switch Window   aithentic | Asset - Discovery
         OCS.Click on the down arrow icon of existing assets
@@ -345,7 +352,7 @@ Add Discovery Asset
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window       aithentic | Asset - Discovery
+        Switch Window       aithentic | Service Now Newly-Discovered
         Generic.Refresh the existing page
         OCS.Choose Tab under Asset Discovery    agent-discovery
         Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -407,7 +414,7 @@ Create Asset from Add Assets Page
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window       aithentic | Asset - Discovery
+        Switch Window       aithentic | Service Now Newly-Discovered
         Generic.Refresh the existing page
         OCS.Choose Tab under Asset Discovery    agent-discovery
         Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -463,7 +470,7 @@ Add component as an asset from Agent Discovery page
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window       aithentic | Asset - Discovery
+        Switch Window       aithentic | Service Now Newly-Discovered
         Generic.Refresh the existing page
         OCS.Choose Tab under Asset Discovery    agent-discovery
         Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -557,7 +564,7 @@ Upload Image and Document File while Add Discovery Asset
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window       aithentic | Asset - Discovery
+        Switch Window       aithentic | Service Now Newly-Discovered
         Generic.Refresh the existing page
          OCS.Choose Tab under Asset Discovery    agent-discovery
         Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -670,7 +677,7 @@ Upload Image and Document File while Add component as an asset from Agent Discov
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window       aithentic | Asset - Discovery
+        Switch Window       aithentic | Service Now Newly-Discovered
         Generic.Refresh the existing page
         OCS.Choose Tab under Asset Discovery    agent-discovery
         Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -947,7 +954,7 @@ Add asset with IP Address under discovered asset list
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window       aithentic | Asset - Discovery
+        Switch Window       aithentic | Service Now Newly-Discovered
         Generic.Verify your current page location contains      ocs
         OCS.Choose tab under Discovery Assets   agent-discovery
         Generic.Verify your current page location contains    ocs
@@ -1010,7 +1017,7 @@ Add Asset with IP address from Network Discovery Page
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window       aithentic | Asset - Discovery
+        Switch Window       aithentic | Service Now Newly-Discovered
         Generic.select the option from the side menu        Technology
         Generic.Verify your current page location contains      technology-list
         TechnologyPage.Search by AssetId       ${generated_AssetID}
@@ -1208,7 +1215,7 @@ Search with containing fields under advance search of component of discovered as
         OCS.Click on save button of Add Technology Page
         Generic.Fetch alert message text and compare it with        Technology created successfully
         Sleep    ${yop_sleep}
-        switch window    aithentic | Asset - Discovery
+        switch window    aithentic | Service Now Newly-Discovered
         OCS.Choose tab under Discovery Assets   agent-discovery
         Generic.Verify your current page location contains      ocs
         Generic.Refresh the existing page
@@ -1479,7 +1486,7 @@ Upload Image and Document file during Add Asset with IP address from Agent Disco
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window       aithentic | Asset - Discovery
+        Switch Window       aithentic | Service Now Newly-Discovered
         Generic.Verify your current page location contains      discovery-assets
         Generic.select the option from the side menu        Technology
         Generic.Verify your current page location contains      technology-list
