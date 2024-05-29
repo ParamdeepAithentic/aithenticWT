@@ -218,7 +218,7 @@ Verify all i-icon of advanced search
     OCS.Click on newly discovered tab under network discovery
     Generic.Verify your current page location contains    ocs
     OCS.Click on search icon of discovery assets
-    OCS.Enter text to search discovery asset   MSI
+    OCS.Enter text to search discovery asset   Apple Inc
     OCS.Click on the down arrow icon of discovered asset
     OCS.Mouse Hover over searched Discovered Assets
     OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
@@ -435,7 +435,7 @@ Upload I-icon while adding discovery and component asset
     OCS.Click on newly discovered tab under network discovery
     Generic.Verify your current page location contains    ocs
     OCS.Click on search icon of discovery assets
-    OCS.Enter text to search discovery asset   MSI
+    OCS.Enter text to search discovery asset   Apple Inc
     OCS.Click on the down arrow icon of discovered asset
     OCS.Mouse Hover over searched Discovered Assets
     OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
