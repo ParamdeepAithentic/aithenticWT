@@ -1608,3 +1608,27 @@ Verify that product version on technology details page
 Click on the technology group row of the table inside advanced search
     Execute JavaScript    document.querySelector('.bg-white.location-list-qa.ng-star-inserted > tr:nth-child(1)').scrollIntoView(true);
     Click Element    css:.bg-white.location-list-qa.ng-star-inserted > tr:nth-child(1) > td:nth-child(1)
+
+Get And Verify The Count Of existing asset of parent
+    ${element_count}=    Get Element Count    //tbody/tr/td/label/span
+    Log to console      ${element_count}
+
+#    FOR    ${index}    IN RANGE    1    ${element_count}
+#        Wait Until Element Is Visible   //div[@id='renewal-overview-section']//following-sibling::div//div[contains(@class,'renew-card p')]       ${wait_time}
+#        ${element}=    Get Text    (//div[contains(@class,'-dot')])[${index}]
+#        Log to console   Element : ${element}
+#        Run Keyword If    '${element}' == '${EMPTY}'    Run Keywords    Empty Action   AND     Continue For Loop
+#        ${element}=    Remove Special Characters    ${element}
+#        Log     Element after removing special characters: ${element}
+#        ${element_as_number}=   Convert To Integer   ${element}
+#        Log  Converted Text: ${element_as_number}
+#        Run Keyword If    ${element_as_number} == 0
+#        ...    DashboardPage.Skip Action
+#        ...    ELSE IF    ${element_as_number} > 0
+#        ...    Run Keywords      Click Element    (//div[contains(@class,'-dot')])[${index}]      AND       sleep   ${yop_sleep}        AND       DashboardPage.Fetch and compare the total count  ${element_as_number}
+#        ...    AND    Click Element    css:span[class='back']  AND  Sleep    ${yop_sleep}
+#        ...    ELSE    Log    Custom action for element ${index} with value ${element}
+#    END
+
+
+

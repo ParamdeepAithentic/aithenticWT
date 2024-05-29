@@ -233,3 +233,39 @@ Export partner list while adding new partner
     PartnersPage.Verify that the selected extension file is downloaded       .tsv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
+
+Export list of parent tab under technology details
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       AssetID_7003489679
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+    TechnologyPage.Select tab under technology details      parent-components
+    TechnologyPage.Click on add new entry parent button under technology details page      Add New Entry
+    TechnologyPage.Select add new entry        New Asset
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list       Product_00337612322
+    TechnologyPage.Add New_Parent assetID for technology lifecycle information random
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology-list
+    sleep   2
+    TechnologyPage.Search by AssetId      ${generated_NewParentAssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+    TechnologyPage.Select tab under technology details      parent-components
+    TechnologyPage.Click on add new entry parent button under technology details page      Add New Entry
+    TechnologyPage.Select add new entry        Existing Asset
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Get And Verify The Count Of existing asset of parent
+
+
+
+
