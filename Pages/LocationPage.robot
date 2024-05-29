@@ -229,3 +229,17 @@ Create Random IP Subnet
     Wait Until Element Is Enabled    css:input[formcontrolname='IPSubnets']    ${wait_time}
     Input Text    css:input[formcontrolname='IPSubnets']    ${generated_SubnetIP}
     set global variable    ${generated_SubnetIP}
+
+Click on the export button of location under technology details page
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible      //div[contains(@id,'location')]//button[@id='dropdownMenuButton']        ${wait_time}
+    wait until element is enabled      //div[contains(@id,'location')]//button[@id='dropdownMenuButton']        ${wait_time}
+    click element  //div[contains(@id,'location')]//button[@id='dropdownMenuButton']
+
+
+Download the selected extension file of location under technology details
+    [Arguments]    ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible      //div[contains(@id,'location')]//a[contains(text(),'${option}')]       ${wait_time}
+    wait until element is enabled     //div[contains(@id,'location')]//a[contains(text(),'${option}')]       ${wait_time}
+    click element   //div[contains(@id,'location')]//a[contains(text(),'${option}')]

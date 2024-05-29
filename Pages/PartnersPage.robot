@@ -607,3 +607,17 @@ Verify pages with the element
     [Arguments]    ${option}
     wait until element is visible   //th[normalize-space()='${option}']     ${wait_time}
 # option: Yes, No
+
+Click on the export button of partner under technology details page
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible      //div[contains(@id,'partners')]//button[@id='dropdownMenuButton']        ${wait_time}
+    wait until element is enabled      //div[contains(@id,'partners')]//button[@id='dropdownMenuButton']        ${wait_time}
+    click element  //div[contains(@id,'partners')]//button[@id='dropdownMenuButton']
+
+
+Download the selected extension file of partner under technology details
+    [Arguments]    ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible      //div[contains(@id,'partners')]//a[contains(text(),'${option}')]       ${wait_time}
+    wait until element is enabled     //div[contains(@id,'partners')]//a[contains(text(),'${option}')]       ${wait_time}
+    click element   //div[contains(@id,'partners')]//a[contains(text(),'${option}')]

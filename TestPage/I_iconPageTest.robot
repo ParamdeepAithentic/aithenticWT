@@ -173,6 +173,7 @@ Verify all i-icon of partners page
     I_iconPage.Click on i-icon of partners tab
 
 Verify all i-icon of Discovery assets
+    [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -187,13 +188,13 @@ Verify all i-icon of Discovery assets
     Generic.Verify your current page location contains      customer
     Generic.Verify your current page contains this text     Asset Discovery
     sleep       ${yop_sleep}
-    switch window       aithentic | Asset - Discovery
+    switch window       aithentic | Service Now Newly-Discovered
     I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     I_iconPage.Click on i_icon under network_discovery tab
 
 Verify all i-icon of advanced search
-    [Tags]     Smoke
+    [Tags]     Smoke        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     LandingPage.Verify you are on dashboard page
@@ -213,12 +214,11 @@ Verify all i-icon of advanced search
     Generic.select the option from the side menu        Asset Discovery
     Generic.Verify your current page location contains      discovery-assets
     I_iconPage.Choose tab under Discovery Assets       network-discovery
-
     Generic.Verify your current page location contains    ocs
     OCS.Click on newly discovered tab under network discovery
     Generic.Verify your current page location contains    ocs
     OCS.Click on search icon of discovery assets
-    OCS.Enter text to search discovery asset   MSI
+    OCS.Enter text to search discovery asset   Apple Inc
     OCS.Click on the down arrow icon of discovered asset
     OCS.Mouse Hover over searched Discovered Assets
     OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
@@ -425,6 +425,7 @@ Upload I-icon under clone add technology
     I_iconPage.Fetch the text of I-icon of upload file while adding technology     You can upload 1 file of 8MB or 8 files of 1MB each.
 
 Upload I-icon while adding discovery and component asset
+    [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     LandingPage.Verify you are on dashboard page
@@ -432,10 +433,12 @@ Upload I-icon while adding discovery and component asset
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
+    OCS.Choose Tab under Asset Discovery    network-discovery
     OCS.Click on newly discovered tab under network discovery
     Generic.Verify your current page location contains    ocs
     OCS.Click on search icon of discovery assets
-    OCS.Enter text to search discovery asset   MSI
+    OCS.Enter text to search discovery asset   Apple Inc
+    Generic.Scroll Window To End
     OCS.Click on the down arrow icon of discovered asset
     OCS.Mouse Hover over searched Discovered Assets
     OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
@@ -498,6 +501,7 @@ Upload I-icon while adding discovery and component asset
     UnselectAssetAPI.Hit API Endpoint
 
 Upload I-icon while adding IP Address
+    [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     LandingPage.Verify you are on dashboard page
@@ -505,6 +509,7 @@ Upload I-icon while adding IP Address
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
+    OCS.Choose Tab under Asset Discovery    network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.Click on search icon of discovery assets
     OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
