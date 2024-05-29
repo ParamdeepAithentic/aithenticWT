@@ -207,6 +207,7 @@ Verify Pagination of Product Dropdown when Add and Edit Technology
 
 
 Verify Pagination of Product Dropdown when Add discovered asset and component
+        [Tags]      rerun
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
         LandingPage.Verify you are on dashboard page
@@ -214,6 +215,7 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    ocs
+        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    MSI
@@ -325,6 +327,7 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
         UnselectAssetAPI.Hit API Endpoint
 
 Verify Pagination of Product Dropdown when Add IP discovered asset
+        [Tags]      rerun
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
         LandingPage.Verify you are on dashboard page
@@ -332,6 +335,7 @@ Verify Pagination of Product Dropdown when Add IP discovered asset
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    ocs
+        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    00:17:61:10:C6:A1

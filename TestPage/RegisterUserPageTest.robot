@@ -45,7 +45,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Register new user
-    [Tags]      Smoke       Time
+    [Tags]      Smoke       Time        rerun
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
@@ -136,6 +136,7 @@ Register new user
 
 
 Signup with ACH payment method
+    [Tags]      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -220,7 +221,7 @@ Signup with ACH payment method
 
 
 Change plan and Change asset limit with ACH Payment method
-    [Tags]      Smoke
+    [Tags]      Smoke       rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain

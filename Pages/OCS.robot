@@ -852,3 +852,10 @@ click on the asset id inside the table of agent discovery
     wait until element is visible   //h5[normalize-space()='${agentDiscovery_TagName}']//parent::div//div//table//td[8]   ${wait_time}
     wait until element is enabled   //h5[normalize-space()='${agentDiscovery_TagName}']//parent::div//div//table//td[8]   ${wait_time}
     click element   //h5[normalize-space()='${agentDiscovery_TagName}']//parent::div//div//table//td[8]
+
+Wait for the invisiblity of alert msg
+    [Arguments]    ${option}
+    wait until element is visible    ${alert_Msg}          ${wait_time}
+    ${get_alertMsg} =    get text    ${alert_Msg}
+    log to console     ${get_alertMsg}
+    should be equal    ${get_alertMsg}     ${option}

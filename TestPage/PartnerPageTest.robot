@@ -46,7 +46,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Compose Message invite user test
-    [Tags]      Sanity      Smoke       Time       rerun
+    [Tags]      Sanity      Smoke       Time    rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -1079,6 +1079,7 @@ Remove Manufacturer from partner
     Generic.Fetch alert message text and compare it with      Partner deleted successfully
 
 View Details and check the details of Contract
+    [Tags]      rerun
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
