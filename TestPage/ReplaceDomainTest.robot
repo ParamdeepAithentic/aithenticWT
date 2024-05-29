@@ -8,6 +8,7 @@ Library         BuiltIn
 Library         random
 Library         DateTime
 Library         OperatingSystem
+Library         Process
 Resource        ../Pages/Generic.robot
 Resource        ../Pages/DashboardPage.robot
 Resource        ../Pages/ITperformancePage.robot
@@ -43,3 +44,8 @@ Replace the existing domain
 #    LoginPage.Fetch the refresh token from the login api
 #    ReplaceDomainAPI.Replace Domain     ${refresh_Token}
     ReplaceDomainAPI.Replace Domain
+
+
+
+Clear the process
+    ReplaceDomainAPI.Run Command

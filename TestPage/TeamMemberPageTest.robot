@@ -104,6 +104,7 @@ Edit Team member page - Edit New Department and assign that department to Team m
     Generic.Enter phone number      India   +91     9646289871
     TeamMemberPage.Enter team member business email_mailinator
     TeamMemberPage.Enter the Position in member form        QA
+    TeamMemberPage.Create random employee id
     sleep       ${yop_sleep}
     TeamMemberPage.Click on add here in department field        Click here to add
     TechnologyPage.Create unique department name random
@@ -132,7 +133,7 @@ Edit Team member page - Edit New Department and assign that department to Team m
     Generic.Verify your current page location contains          memberslist
 
 Verify team member Asset history
-    [Tags]      Sanity      rerun
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
     LandingPage.Verify you are on dashboard page
@@ -187,7 +188,7 @@ Verify team member Asset history
     Switch Window   aithentic | OTP
     TwoFactorAuth.Enter the otp     ${passcode}
     TwoFactorAuth.Click verification button
-    Generic.Verify your current page location contains     asset-overview
+    Generic.Verify your current page location contains     management-console
     Generic.Click on the profile name
     Generic.Select other option from profile list     Logout
     Generic.Fetch log_out alert message
@@ -333,7 +334,7 @@ Search asset history with Asset ID
     TeamMemberPage.verify status of first name in member list   ${generated_AssetID}
 
 Verify user is able to export team member asset history list
-    [Tags]      Sanity      Smoke       rerun
+    [Tags]     Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form   debut@cool.fr.nf    Test@123
     LandingPage.Verify you are on dashboard page
@@ -390,7 +391,7 @@ Verify user is able to export team member asset history list
     Switch Window   aithentic | OTP
     TwoFactorAuth.Enter the otp     ${passcode}
     TwoFactorAuth.Click verification button
-    Generic.Verify your current page location contains     asset-overview
+    Generic.Verify your current page location contains     management-console
     Generic.Click on the profile name
     Generic.Select other option from profile list     Logout
     Generic.Fetch log_out alert message
@@ -555,7 +556,7 @@ Verify user is able to export team member asset history list
     TeamMemberPage.verify status of first name in member list   ${generated_AssetID}
 
 Convert Assignee to Team Member
-    [Tags]    retry
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page

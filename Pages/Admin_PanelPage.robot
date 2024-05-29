@@ -8,6 +8,7 @@ Library           BuiltIn
 Library           random
 Library           DateTime
 Library           OperatingSystem
+Library           Process
 Resource        ../Pages/Generic.robot
 Resource        ../Pages/DashboardPage.robot
 Resource        ../Pages/DepartmentPage.robot

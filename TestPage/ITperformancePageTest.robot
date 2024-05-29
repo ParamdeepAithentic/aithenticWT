@@ -67,6 +67,7 @@ Download sheet for aging
     ITperformancePage.Verify sheet is downloaded        AgingAnalyticsReports
 
 Download sheet for investments
+    [Tags]     Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -124,7 +125,7 @@ IT perfomance drill down data quality
     ITperformancePage.Get And Verify The Count Of Data Quality Under Tabs   dataquality3        dataquality3
 
 IT perfomance drill down data quality of Investments by partner tab
-    [Tags]           sanity
+    [Tags]     sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
     LandingPage.Verify you are on dashboard page
