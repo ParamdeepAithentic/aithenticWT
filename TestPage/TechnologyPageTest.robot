@@ -48,7 +48,7 @@ ${self_searchId} =   AssetID_1803536655
 *** Test Cases ***
 
 Fill the technology form for license product
-    [Tags]      Time      rerun
+    [Tags]      Time
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -1812,6 +1812,7 @@ Inactive asset - Restore asset from Technology Details page
     Generic.Fetch alert message text and compare it with      Payment Successful
 
 Verify the technology data while applying agent Filters
+    [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     LandingPage.Verify you are on dashboard page
@@ -1834,6 +1835,7 @@ Verify the technology data while applying agent Filters
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
+    I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.Click on search icon of discovery assets
     OCS.Enter text to search discovery asset    Apple Inc
@@ -2062,7 +2064,7 @@ Upload file: Image and document files while Clone the Technology
     TechnologyPage.Click on save technology form pop button
 
 Search with brand_product_technologytype_technologygroup on advanced search
-    [Tags]     Sanity
+    [Tags]     Sanity       rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page

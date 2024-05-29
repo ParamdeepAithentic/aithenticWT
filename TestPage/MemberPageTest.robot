@@ -176,7 +176,7 @@ Search asset history with Asset ID of Assigned User
     MemberPage.verify status of first name in member list of assigned user   ${generated_AssetID}
 
 Export Assigned User Asset History list
-    [Tags]   smoke     Sanity
+    [Tags]   smoke     Sanity   rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -185,6 +185,7 @@ Export Assigned User Asset History list
     Generic.Verify your current page location contains      memberslist
     MemberPage.Click on assigned user tab     Assigned Users
     MemberPage.Search assigned user by first name   Assign_Param Deep
+    sleep   ${search_sleep}
     MemberPage.Click on three dots of Team Member listing
     MemberPage.Select option from three dots of Team Member     Asset History
     Generic.Verify your current page location contains      asset-history
