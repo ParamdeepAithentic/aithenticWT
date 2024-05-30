@@ -277,9 +277,12 @@ Verify all i-icon of advanced search
     OCS.Create Asset_id for software component
     Generic.Scroll Window To End
     OCS.Click on save button of Add Technology Page
+
     OCS.Wait for the invisiblity of alert msg       Technology created successfully
     Sleep    ${yop_sleep}
     Switch Window      aithentic | Technology - Details
+
+
     Generic.Verify your current page location contains    technology-details
 #    sleep   ${search_sleep}
 #    Generic.select the option from the side menu        Technology
@@ -322,7 +325,6 @@ Verify all i-icon of advanced search
     sleep   ${search_sleep}
     I_iconPage.Click on i_icon of advanced search under add discovered asset
     I_iconPage.Verify pop is visible after clicking i-icon of advancede search under discovered asset
-
 
     I_iconPage.Click on i_icon of advanced search under add discovered asset
     I_iconPage.Click on the cross icon of advanced search under technology
