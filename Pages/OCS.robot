@@ -597,6 +597,8 @@ Enter input in the technology group field of advanced search of discovered asset
     sleep   ${search_sleep}
     Wait Until Element Is Visible    css:.modal-body .qa-group input    ${wait_time}
     Press Keys  css:.modal-body .qa-group input     ENTER
+
+
 Fetch the technology type from the technology type field of component of discovered asset
     Wait Until Element Is Visible       css:.qa-tech-type     ${wait_time}
     Wait Until Element Is Enabled        css:.qa-tech-type    ${wait_time}
