@@ -79,7 +79,6 @@ Search Discovered Assets
     END
 
 Search Existing Assets
-    [Tags]      rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -118,7 +117,7 @@ Search Existing Assets
     END
 
 Match Discovery and Existing Asset
-    [Tags]      Sanity     rerun
+    [Tags]      Sanity
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -196,36 +195,30 @@ Apply filters and clear filter on Discovered Asset
         OCS.Click on newly discovered tab under network discovery
         OCS.click on filter icon of discovered assets
         OCS.Choose filters for discovered asset     Select Brand        Apple Inc
-        OCS.Get text of selected brand, mac address and agent of discovered assets  1
-        OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   1
         Generic.click on the button     Apply
         sleep   ${search_sleep}
         OCS.Click on the down arrow icon of discovered asset
         OCS.Mouse Hover over searched Discovered Assets
         OCS.Get text by hovering over assets    Brand:
-        OCS.verify Text by hovering over assets  ${substring}       ${selected_brand}
+        OCS.verify Text by hovering over assets  ${substring}       Apple Inc
         OCS.Click on the down arrow icon of discovered asset
         OCS.Click on clear filter button link of discovered assets    Clear Filters
         OCS.Choose filters for discovered asset     Select MAC Address      98:5a:eb:cb:c8:ed
-        OCS.Get text of selected brand, mac address and agent of discovered assets  1
-        OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   1
         Generic.click on the button     Apply
         sleep  ${search_sleep}
         OCS.Click on the down arrow icon of discovered asset
         OCS.Mouse Hover over searched IP Assets
         OCS.Get MAC_Address by hovering over discovered assets     MacAddress:
-        OCS.verify Text by hovering over assets  ${hover_MAC_address1}       ${selected_brand}
+        OCS.verify Text by hovering over assets  ${hover_MAC_address1}       98:5a:eb:cb:c8:ed
         OCS.Click on the down arrow icon of discovered asset
         OCS.Click on clear filter button link of discovered assets    Clear Filters
         OCS.Choose filters for discovered asset     Select Agent Tags       johnsoftwaresolutions-1428-4
-        OCS.Get text of selected brand, mac address and agent of discovered assets  1
-        OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   1
         Generic.click on the button     Apply
         sleep  ${search_sleep}
         OCS.Click on the down arrow icon of discovered asset
         OCS.Mouse Hover over searched Discovered Assets
         OCS.Get text by hovering over assets    Tag:
-        OCS.verify Text by hovering over assets  ${substring}       ${selected_brand}
+        OCS.verify Text by hovering over assets  ${substring}       johnsoftwaresolutions-1428-4
         OCS.Click on clear filter button link of discovered assets    Clear Filters
         sleep   ${search_sleep}
         OCS.Click on the down arrow icon of discovered asset
@@ -253,10 +246,7 @@ Apply filters and clear filter on Existing Assets
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.click on filter icon of existing assets
-#        OCS.Choose filters for discovered asset     Select Brand
-#       OCS.Enter input in the brand field of existing asset       QABrand555
         OCS.Enter input in the brand field of existing asset       Apple Inc.
-#        OCS.Get text of selected brand of filter of existing asset
         Generic.click on the button     Apply
         OCS.Click on the down arrow icon of existing assets
         OCS.Mouse Hover over filters of existing asset
@@ -265,11 +255,8 @@ Apply filters and clear filter on Existing Assets
         OCS.Click on the down arrow icon of existing assets
         OCS.Click on clear filter button link of discovered assets      Clear Filters
         OCS.Choose filters for discovered asset     Select Product      Macmini9,1
-#        OCS.Get text of selected brand, mac address and agent of discovered assets  0
-#        OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   0
-#        OCS.Enter input in the product field of filters of existing agent       Macmini9,1
-#        OCS.Get text of selected brand of filter of existing asset
         Generic.click on the button     Apply
+        Generic.Scroll Window To End
         OCS.Click on the down arrow icon of existing assets
         sleep   ${search_sleep}
         OCS.Mouse Hover over filters of existing asset
@@ -278,8 +265,6 @@ Apply filters and clear filter on Existing Assets
         OCS.Click on the down arrow icon of existing assets
         OCS.Click on clear filter button link of discovered assets  Clear Filters
         OCS.Choose filters for discovered asset    Select Department    Quality Assurance
-#        OCS.Get text of selected brand, mac address and agent of discovered assets  0
-#        OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   0
         Generic.click on the button     Apply
         OCS.Click on the down arrow icon of existing assets
         OCS.Mouse Hover over filters of existing asset
@@ -290,15 +275,14 @@ Apply filters and clear filter on Existing Assets
         Switch Window   aithentic | Technology - Details
         TechnologyPage.Click on Location tab of technology- list page
         TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     DepartmentName
-#        OCS.verify Text by hovering over assets  ${assign_loc_input_value}       ${selected_brand}
+        OCS.verify Text by hovering over assets  ${assign_loc_input_value}       Quality Assurance
         sleep       ${yop_sleep}
-        Switch Window   aithentic | Asset - Discovery
+        Switch Window   aithentic | Service Now Newly-Discovered
         OCS.Click on the down arrow icon of existing assets
         OCS.Click on clear filter button link of discovered assets  Clear Filters
         OCS.Choose filters for discovered asset    Select Location      *Main Office
-#        OCS.Get text of selected brand, mac address and agent of discovered assets  0
-#        OCS.Select brand_macaddres_agent from dropdown of discovered asset filter   0
         Generic.click on the button     Apply
+        Generic.Scroll Window To End
         OCS.Click on the down arrow icon of existing assets
         OCS.Mouse Hover over filters of existing asset
         OCS.Get text by hovering over existing assets   Location Name:
@@ -308,14 +292,15 @@ Apply filters and clear filter on Existing Assets
         Switch Window   aithentic | Technology - Details
         Generic.Verify your current page location contains    technology-details
         TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     LocationName
-#        OCS.verify Text by hovering over assets  ${assign_loc_input_value}       ${selected_brand}
+        OCS.verify Text by hovering over assets  ${assign_loc_input_value}      *Main Office
         sleep       ${yop_sleep}
-        Switch Window   aithentic | Asset - Discovery
+        Switch Window   aithentic | Service Now Newly-Discovered
         OCS.Click on the down arrow icon of existing assets
         OCS.Click on clear filter button link of discovered assets      Clear Filters
     EXCEPT
         OCS.My Failure Handling
         Fail
+
     FINALLY
         OCS.Welcome to the code
     END
@@ -387,7 +372,6 @@ Add Discovery Asset
     END
 
 Create Asset from Add Assets Page
-    [Tags]      rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -439,7 +423,6 @@ Create Asset from Add Assets Page
     END
 
 Add component as an asset from Agent Discovery page
-    [Tags]      rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -516,7 +499,6 @@ Add component as an asset from Agent Discovery page
     END
 
 Upload Image and Document File while Add Discovery Asset
-    [Tags]      rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -629,7 +611,6 @@ Upload Image and Document File while Add Discovery Asset
     END
 
 Upload Image and Document File while Add component as an asset from Agent Discovery page
-    [Tags]      rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -790,7 +771,6 @@ Match IP Discovered asset with Existing asset
     UnselectAssetAPI.Hit API Endpoint
 
 Match Discovery Asset with Static Existing Asset
-    [Tags]      rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -987,7 +967,6 @@ Add asset with IP Address under discovered asset list
     END
 
 Add Asset with IP address from Network Discovery Page
-    [Tags]      rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -1040,7 +1019,6 @@ Add Asset with IP address from Network Discovery Page
     END
 
 Network discovery: search on discovered asset list with Tag Name, IP_address and MAC_address
-    [Tags]      rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -1095,7 +1073,6 @@ Network discovery: search on discovered asset list with Tag Name, IP_address and
     END
 
 Search with containing fields under advance search of discovered asset
-    [Tags]      rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -1213,7 +1190,7 @@ Search with containing fields under advance search of component of discovered as
         TechnologyPage.Create unique serial number random
         OCS.Enter The Asset_id in Add Technology Page
         OCS.Click on save button of Add Technology Page
-        Generic.Fetch alert message text and compare it with        Technology created successfully
+        OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
         switch window    aithentic | Service Now Newly-Discovered
         OCS.Choose tab under Discovery Assets   agent-discovery
@@ -1329,7 +1306,7 @@ Search with containing fields under advance search of component of discovered as
     END
 
 Search with containing fields under advance search of IP Address of discovered asset
-    [Tags]      Sanity     rerun
+    [Tags]      Sanity
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -1438,7 +1415,6 @@ Search with containing fields under advance search of IP Address of discovered a
     END
 
 Upload Image and Document file during Add Asset with IP address from Agent Discovery Page
-    [Tags]      rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123

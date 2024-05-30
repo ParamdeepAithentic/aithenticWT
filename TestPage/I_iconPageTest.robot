@@ -173,7 +173,6 @@ Verify all i-icon of partners page
     I_iconPage.Click on i-icon of partners tab
 
 Verify all i-icon of Discovery assets
-    [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -194,7 +193,7 @@ Verify all i-icon of Discovery assets
     I_iconPage.Click on i_icon under network_discovery tab
 
 Verify all i-icon of advanced search
-    [Tags]     Smoke        rerun
+    [Tags]     Smoke        rerun       tt
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     LandingPage.Verify you are on dashboard page
@@ -219,6 +218,7 @@ Verify all i-icon of advanced search
     Generic.Verify your current page location contains    ocs
     OCS.Click on search icon of discovery assets
     OCS.Enter text to search discovery asset   Apple Inc
+    Generic.Scroll Window To End
     OCS.Click on the down arrow icon of discovered asset
     OCS.Mouse Hover over searched Discovered Assets
     OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
@@ -237,11 +237,12 @@ Verify all i-icon of advanced search
     I_iconPage.Click on the cross icon of advanced search under technology
     TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
     OCS.Enter The Asset_id in Add Technology Page
+    TechnologyPage.Create unique serial number random
     Generic.Scroll Window To End
     OCS.Click on save button of Add Technology Page
     Generic.Fetch alert message text and compare it with        Technology created successfully
     Sleep    ${yop_sleep}
-    switch window    aithentic | Asset - Discovery
+    switch window    aithentic | Service Now Newly-Discovered
     Generic.Refresh the existing page
     OCS.Choose Tab under Asset Discovery    agent-discovery
     Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -293,9 +294,11 @@ Verify all i-icon of advanced search
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
+    I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.Click on search icon of discovery assets
     OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
+    Generic.Scroll Window To End
     OCS.Click on the down arrow icon of discovered asset
     OCS.Mouse Hover over searched IP Assets
     OCS.Get MAC_Address by hovering over IP discovered assets    MacAddress:
@@ -501,7 +504,7 @@ Upload I-icon while adding discovery and component asset
     UnselectAssetAPI.Hit API Endpoint
 
 Upload I-icon while adding IP Address
-    [Tags]      rerun
+    [Tags]      rerun       tt
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     LandingPage.Verify you are on dashboard page
@@ -513,6 +516,7 @@ Upload I-icon while adding IP Address
     OCS.Click on newly discovered tab under network discovery
     OCS.Click on search icon of discovery assets
     OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
+    Generic.Scroll Window To End
     OCS.Click on the down arrow icon of discovered asset
     OCS.Mouse Hover over searched IP Assets
     OCS.Get MAC_Address by hovering over IP discovered assets    MacAddress:
