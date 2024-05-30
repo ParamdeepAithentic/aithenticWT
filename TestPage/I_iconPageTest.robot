@@ -193,7 +193,7 @@ Verify all i-icon of Discovery assets
     I_iconPage.Click on i_icon under network_discovery tab
 
 Verify all i-icon of advanced search
-    [Tags]     Smoke        rerun       tt
+    [Tags]     Smoke        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     LandingPage.Verify you are on dashboard page
@@ -240,7 +240,7 @@ Verify all i-icon of advanced search
     TechnologyPage.Create unique serial number random
     Generic.Scroll Window To End
     OCS.Click on save button of Add Technology Page
-    Generic.Fetch alert message text and compare it with        Technology created successfully
+    OCS.Wait for the invisiblity of alert msg        Technology created successfully
     Sleep    ${yop_sleep}
     switch window    aithentic | Service Now Newly-Discovered
     Generic.Refresh the existing page
@@ -276,12 +276,17 @@ Verify all i-icon of advanced search
     TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
     OCS.Create Asset_id for software component
     Generic.Scroll Window To End
-
-    Generic.select the option from the side menu        Technology
-    Generic.Verify your current page location contains      technology-list
-    TechnologyPage.Search by AssetId       ${generated_AssetID}
-    TechnologyPage.Click on the first row of the technology table
+    OCS.Click on save button of Add Technology Page
+    OCS.Wait for the invisiblity of alert msg       Technology created successfully
+    Sleep    ${yop_sleep}
+    Switch Window      aithentic | Technology - Details
     Generic.Verify your current page location contains    technology-details
+#    sleep   ${search_sleep}
+#    Generic.select the option from the side menu        Technology
+#    Generic.Verify your current page location contains      technology-list
+#    TechnologyPage.Search by AssetId       ${generated_AssetID}
+#    TechnologyPage.Click on the first row of the technology table
+#    Generic.Verify your current page location contains    technology-details
     TechnologyPage.Click on edit button on product details page        Edit
     Generic.Verify your current page location contains      edit-technology
     OCS.Edit the MAC_Address of Asset
@@ -326,7 +331,7 @@ Verify all i-icon of advanced search
     OCS.Enter The Asset_id in Add Technology Page
     Generic.Scroll Window To End
     OCS.Click on save button of Add Technology Page
-    Generic.Fetch alert message text and compare it with        Technology created successfully
+    OCS.Wait for the invisiblity of alert msg       Technology created successfully
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Discovered Assets
     Generic.Refresh the existing page
@@ -457,9 +462,9 @@ Upload I-icon while adding discovery and component asset
     Generic.Scroll Window To End
     I_iconPage.Fetch the text of I-icon of upload file while adding technology     You can upload 1 file of 8MB or 8 files of 1MB each.
     OCS.Click on save button of Add Technology Page
-    Generic.Fetch alert message text and compare it with        Technology created successfully
+    OCS.Wait for the invisiblity of alert msg        Technology created successfully
     Sleep    ${yop_sleep}
-    switch window    aithentic | Asset - Discovery
+    switch window    aithentic | Service Now Newly-Discovered
     Generic.Refresh the existing page
     OCS.Choose Tab under Asset Discovery    agent-discovery
     Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -488,7 +493,7 @@ Upload I-icon while adding discovery and component asset
     Generic.Scroll Window To End
     I_iconPage.Fetch the text of I-icon of upload file while adding technology     You can upload 1 file of 8MB or 8 files of 1MB each.
     OCS.Click on save button of Add Technology Page
-    Generic.Fetch alert message text and compare it with       Technology created successfully
+    OCS.Wait for the invisiblity of alert msg       Technology created successfully
     Sleep    ${yop_sleep}
     Switch Window      aithentic | Technology - Details
     Generic.Verify your current page location contains    technology-details
@@ -504,9 +509,9 @@ Upload I-icon while adding discovery and component asset
     UnselectAssetAPI.Hit API Endpoint
 
 Upload I-icon while adding IP Address
-    [Tags]      rerun       tt
+    [Tags]      rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+    LandingPage.Fill the login Form       mailto:johns@mai.25u.com         Test@123
     LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      management-console
     Generic.Click on the profile name
@@ -537,7 +542,7 @@ Upload I-icon while adding IP Address
     Generic.Scroll Window To End
     I_iconPage.Fetch the text of I-icon of upload file while adding technology     You can upload 1 file of 8MB or 8 files of 1MB each.
     OCS.Click on save button of Add Technology Page
-    Generic.Fetch alert message text and compare it with        Technology created successfully
+    OCS.Wait for the invisiblity of alert msg        Technology created successfully
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Discovered Assets
     Generic.Refresh the existing page

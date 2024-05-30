@@ -136,7 +136,6 @@ Register new user
 
 
 Signup with ACH payment method
-    [Tags]      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain

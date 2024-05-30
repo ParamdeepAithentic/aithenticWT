@@ -44,7 +44,6 @@ Test Setup      open the browser with the url
 *** Test Cases ***
 
 Search Discovered Assets
-    [Tags]      rerun
     TRY
        Generic.click on the tab	Login
        LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -171,6 +170,7 @@ Match Discovery and Existing Asset
         OCS.Edit the MAC_Address of Asset
         OCS.Edit the Serial_No. of Asset
         OCS.Edit The Host_Name of Asset
+        sleep   ${search_sleep}
         TechnologyPage.Click on update button of edit_technology page       Update
         Generic.Fetch alert message text and compare it with        Technology updated successfully
         UnselectAssetAPI.Hit API Endpoint
@@ -182,7 +182,6 @@ Match Discovery and Existing Asset
     END
 
 Apply filters and clear filter on Discovered Asset
-    [Tags]      rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form     johns@mai.25u.com         Test@123
@@ -235,7 +234,7 @@ Apply filters and clear filter on Discovered Asset
 
 
 Apply filters and clear filter on Existing Assets
-    [Tags]      Sanity     rerun
+    [Tags]      Sanity
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form     johns@mai.25u.com     Test@123
@@ -307,7 +306,6 @@ Apply filters and clear filter on Existing Assets
     END
 
 Add Discovery Asset
-    [Tags]      rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -362,6 +360,7 @@ Add Discovery Asset
         OCS.Edit the MAC_Address of Asset
         OCS.Edit The Host_Name of Asset
         OCS.Edit the Serial_No. of Asset
+        sleep   ${search_sleep}
         TechnologyPage.Click on update button of edit_technology page       Update
         Generic.Fetch alert message text and compare it with        Technology updated successfully
         UnselectAssetAPI.Hit API Endpoint
@@ -413,6 +412,7 @@ Create Asset from Add Assets Page
         OCS.Edit the MAC_Address of Asset
         OCS.Edit the Serial_No. of Asset
         OCS.Edit The Host_Name of Asset
+        sleep   ${search_sleep}
         TechnologyPage.Click on update button of edit_technology page       Update
         Generic.Fetch alert message text and compare it with        Technology updated successfully
         UnselectAssetAPI.Hit API Endpoint
@@ -489,6 +489,7 @@ Add component as an asset from Agent Discovery page
         OCS.Edit the MAC_Address of Asset
         OCS.Edit The Host_Name of Asset
 #        OCS.Edit the Serial_No. of Asset
+        sleep   ${search_sleep}
         TechnologyPage.Click on update button of edit_technology page       Update
         Generic.Fetch alert message text and compare it with        Technology updated successfully
         UnselectAssetAPI.Hit API Endpoint
@@ -585,6 +586,7 @@ Upload Image and Document File while Add Discovery Asset
         OCS.Edit the MAC_Address of Asset
         OCS.Edit The Host_Name of Asset
         OCS.Edit the Serial_No. of Asset
+        sleep   ${search_sleep}
         Generic.Scroll Window To End
         TechnologyPage.Remove the document by clicking on cross-icon    .pdf
         TechnologyPage.Remove the document by clicking on cross-icon    .png
@@ -731,7 +733,6 @@ Upload Image and Document File while Add component as an asset from Agent Discov
     END
 
 Match IP Discovered asset with Existing asset
-     [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     LandingPage.Verify you are on dashboard page
@@ -766,7 +767,7 @@ Match IP Discovered asset with Existing asset
     Generic.Verify your current page location contains      edit-technology
     OCS.Edit the MAC_Address of Asset
     OCS.Edit The Host_Name of Asset
-
+    sleep   ${search_sleep}
     TechnologyPage.Click on update button of edit_technology page       Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     UnselectAssetAPI.Hit API Endpoint
@@ -812,6 +813,7 @@ Match Discovery Asset with Static Existing Asset
         OCS.Edit the MAC_Address of Asset
         OCS.Edit the Serial_No. of Asset
         OCS.Edit The Host_Name of Asset
+        sleep   ${search_sleep}
         TechnologyPage.Click on update button of edit_technology page       Update
         Generic.Fetch alert message text and compare it with        Technology updated successfully
         UnselectAssetAPI.Hit API Endpoint
@@ -876,6 +878,7 @@ Match IP Discovered Asset with Dynamic Existing Asset
         Generic.Verify your current page location contains      edit-technology
         OCS.Edit the Serial_No. of Asset
         OCS.Edit the MAC_Address of Asset
+        sleep   ${search_sleep}
         TechnologyPage.Click on update button of edit_technology page       Update
         Generic.Fetch alert message text and compare it with        Technology updated successfully
         UnselectAssetAPI.Hit API Endpoint
@@ -903,7 +906,7 @@ Add asset with IP Address under discovered asset list
         Switch Window       aithentic | Discovered Assets
         Generic.Verify your current page location contains     discovery-assets-list
         OCS.Fetch the Brandname from agent discovery page
-        OCS.Click on down arrow link on discovery asset list page
+#        OCS.Click on down arrow link on discovery asset list page
         OCS.Click on view button link on discovery asset list page
         Sleep    ${Yop_Sleep}
         Switch Window       aithentic | Asset - Discovery
@@ -957,6 +960,7 @@ Add asset with IP Address under discovered asset list
         OCS.Edit the MAC_Address of Asset
         OCS.Edit The Host_Name of Asset
         OCS.Edit the Serial_No. of Asset
+        sleep   ${search_sleep}
         TechnologyPage.Click on update button of edit_technology page       Update
         Generic.Fetch alert message text and compare it with        Technology updated successfully
         UnselectAssetAPI.Hit API Endpoint
@@ -1009,6 +1013,7 @@ Add Asset with IP address from Network Discovery Page
         OCS.Edit the MAC_Address of Asset
         OCS.Edit The Host_Name of Asset
         OCS.Edit the Serial_No. of Asset
+        sleep   ${search_sleep}
         TechnologyPage.Click on update button of edit_technology page       Update
         Generic.Fetch alert message text and compare it with        Technology updated successfully
         UnselectAssetAPI.Hit API Endpoint
@@ -1063,6 +1068,7 @@ Network discovery: search on discovered asset list with Tag Name, IP_address and
         Generic.Verify your current page location contains      edit-technology
         OCS.Edit the MAC_Address of Asset
         OCS.Edit the Serial_No. of Asset
+        sleep   ${search_sleep}
         TechnologyPage.Click on update button of edit_technology page       Update
         Generic.Fetch alert message text and compare it with        Technology updated successfully
         UnselectAssetAPI.Hit API Endpoint
@@ -1284,18 +1290,21 @@ Search with containing fields under advance search of component of discovered as
         TechnologyPage.Get text of feature inside add technology
         TechnologyPage.verify Text from Assignment Information      Aithentic Feature     ${feature}
         I_iconPage.Click on the cross icon of advanced search under technology
-        sleep   ${search_sleep}
-
-        Generic.select the option from the side menu        Technology
-        Generic.Verify your current page location contains      technology-list
-        TechnologyPage.Search by AssetId       ${generated_AssetID}
-        TechnologyPage.Click on the first row of the technology table
+        Generic.Verify your current page contains this text    Add Technology
+        TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
+        OCS.Create Asset_id for software component
+        Generic.Scroll Window To End
+        OCS.Click on save button of Add Technology Page
+        OCS.Wait for the invisiblity of alert msg       Technology created successfully
+         Sleep    ${yop_sleep}
+        Switch Window      aithentic | Technology - Details
         Generic.Verify your current page location contains    technology-details
         TechnologyPage.Click on edit button on product details page        Edit
         Generic.Verify your current page location contains      edit-technology
         OCS.Edit the MAC_Address of Asset
         OCS.Edit the Serial_No. of Asset
         OCS.Edit The Host_Name of Asset
+        sleep   ${search_sleep}
         TechnologyPage.Click on update button of edit_technology page       Update
         Generic.Fetch alert message text and compare it with        Technology updated successfully
         UnselectAssetAPI.Hit API Endpoint
@@ -1492,6 +1501,7 @@ Upload Image and Document file during Add Asset with IP address from Agent Disco
         OCS.Edit the MAC_Address of Asset
         OCS.Edit The Host_Name of Asset
         OCS.Edit the Serial_No. of Asset
+        sleep   ${search_sleep}
         Generic.Scroll Window To End
         TechnologyPage.Remove the document by clicking on cross-icon    .pdf
         TechnologyPage.Remove the document by clicking on cross-icon    .png
