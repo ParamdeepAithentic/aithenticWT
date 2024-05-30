@@ -240,7 +240,7 @@ Verify all i-icon of advanced search
     TechnologyPage.Create unique serial number random
     Generic.Scroll Window To End
     OCS.Click on save button of Add Technology Page
-    Generic.Fetch alert message text and compare it with        Technology created successfully
+    OCS.Wait for the invisiblity of alert msg        Technology created successfully
     Sleep    ${yop_sleep}
     switch window    aithentic | Service Now Newly-Discovered
     Generic.Refresh the existing page
@@ -276,7 +276,9 @@ Verify all i-icon of advanced search
     TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
     OCS.Create Asset_id for software component
     Generic.Scroll Window To End
-
+    OCS.Click on save button of Add Technology Page
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    sleep   ${search_sleep}
     Generic.select the option from the side menu        Technology
     Generic.Verify your current page location contains      technology-list
     TechnologyPage.Search by AssetId       ${generated_AssetID}
@@ -318,7 +320,6 @@ Verify all i-icon of advanced search
     I_iconPage.Click on i_icon of advanced search under add discovered asset
     I_iconPage.Verify pop is visible after clicking i-icon of advancede search under discovered asset
 
-
     I_iconPage.Click on i_icon of advanced search under add discovered asset
     I_iconPage.Click on the cross icon of advanced search under technology
     TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
@@ -326,7 +327,7 @@ Verify all i-icon of advanced search
     OCS.Enter The Asset_id in Add Technology Page
     Generic.Scroll Window To End
     OCS.Click on save button of Add Technology Page
-    Generic.Fetch alert message text and compare it with        Technology created successfully
+    OCS.Wait for the invisiblity of alert msg        Technology created successfully
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Discovered Assets
     Generic.Refresh the existing page
@@ -537,7 +538,7 @@ Upload I-icon while adding IP Address
     Generic.Scroll Window To End
     I_iconPage.Fetch the text of I-icon of upload file while adding technology     You can upload 1 file of 8MB or 8 files of 1MB each.
     OCS.Click on save button of Add Technology Page
-    Generic.Fetch alert message text and compare it with        Technology created successfully
+    OCS.Wait for the invisiblity of alert msg        Technology created successfully
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Discovered Assets
     Generic.Refresh the existing page

@@ -174,7 +174,7 @@ Edit the MAC_Address of Asset
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_macaddress}=    Catenate    MAC_${random_string}
     Wait Until Element Is Visible    css:#DYNA_14   ${wait_time}
-    Wait Until Element Is Visible    css:#DYNA_14   ${wait_time}
+    Wait Until Element Is Enabled    css:#DYNA_14   ${wait_time}
     Input Text   css:#DYNA_14     ${generated_macaddress}
 
 Edit the Serial_No. of Asset
@@ -182,6 +182,7 @@ Edit the Serial_No. of Asset
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_serailnumber}=    Catenate    S_No_${random_string}
     Wait Until Element Is Visible    css:#DYNA_21   ${wait_time}
+    Wait Until Element Is Enabled    css:#DYNA_21   ${wait_time}
     Input Text   css:#DYNA_21     ${generated_serailnumber}
 
 Edit The Host_Name of Asset
