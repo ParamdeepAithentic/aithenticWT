@@ -103,7 +103,7 @@ Verify Pagination and Row Count
     ...    AND    Return From Keyword
 
     Run Keyword If    '${total_table_row_count}' == '${total_data_count}'
-    ...    Run Keywords     Fetch the total count    AND
+    ...    Run Keywords     PaginationPage.Fetch the total count    AND
     ...    Scroll within the element    ${total_table_row_count}
     ...    AND    Return From Keyword
 
@@ -167,7 +167,7 @@ Verify Pagination and Row Count for product dropdown
     ...    AND    Return From Keyword
 
     Run Keyword If    '${total_table_row_count}' == '${total_data_count}'
-    ...    Run Keywords     Fetch the total count    AND
+    ...    Run Keywords     PaginationPage.Fetch the total count    AND
     ...    Scroll within the element of product dropdown    ${total_table_row_count}
     ...    AND    Return From Keyword
 

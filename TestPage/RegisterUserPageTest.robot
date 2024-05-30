@@ -328,7 +328,7 @@ Change plan and Change asset limit with ACH Payment method
     BillingPage.Select the billing payment type     university
     BillingPage.Enter billing account number    000111111113
     BillingPage.Enter billing routing number    110000000
-    BillingPage.Enter billing account type      Param
+    BillingPage.Enter billing account type      Param'
     BillingPage.Save the billing payment form   save
     Generic.Fetch alert message text and compare it with      Card added successfully
     BillingPage.Select the billing payment type     university

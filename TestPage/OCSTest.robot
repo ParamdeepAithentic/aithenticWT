@@ -233,6 +233,7 @@ Apply filters and clear filter on Discovered Asset
         OCS.Welcome to the code
     END
 
+
 Apply filters and clear filter on Existing Assets
     [Tags]      Sanity     rerun
     TRY

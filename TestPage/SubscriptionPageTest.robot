@@ -161,7 +161,7 @@ Suspend and unsuspend the account
     Generic.Verify your current page location contains      personal-profile
     Generic.Select parameter    Technology
     Generic.Verify your current page location contains      technology-settings
-    Generic.click on the tab    Subscription Connectors
+    Generic.click on the tab    Connectors
     SubscriptionPage.Visible the disable activate button link after suspending account
     Generic.Click on the profile name
     Generic.Select option from profile list     billing-dropdown
