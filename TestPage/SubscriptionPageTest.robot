@@ -62,7 +62,7 @@ Test Teardown   Close Browser session
 #    Generic.Fetch alert message text and compare it with        Scheduler created sucessfully
 
 Edit the scheduler
-    [Tags]      Sanity
+    [Tags]      Sanity      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     LandingPage.Verify you are on dashboard page
@@ -111,6 +111,7 @@ Edit the scheduler
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
 
 Run now from view details
+    [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     LandingPage.Verify you are on dashboard page
@@ -141,7 +142,7 @@ Run now from view details
     SubscriptionPage.Get the value of fields under view details of subscription connector   2       Samuel John
 
 Suspend and unsuspend the account
-    [Tags]      Smoke
+    [Tags]      Smoke      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     LandingPage.Verify you are on dashboard page

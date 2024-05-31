@@ -173,6 +173,7 @@ Verify all i-icon of partners page
     I_iconPage.Click on i-icon of partners tab
 
 Verify all i-icon of Discovery assets
+    [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -193,7 +194,7 @@ Verify all i-icon of Discovery assets
     I_iconPage.Click on i_icon under network_discovery tab
 
 Verify all i-icon of advanced search
-    [Tags]     Smoke
+    [Tags]     Smoke     rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     LandingPage.Verify you are on dashboard page
@@ -435,6 +436,7 @@ Upload I-icon under clone add technology
     I_iconPage.Fetch the text of I-icon of upload file while adding technology     You can upload 1 file of 8MB or 8 files of 1MB each.
 
 Upload I-icon while adding discovery and component asset
+    [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     LandingPage.Verify you are on dashboard page
