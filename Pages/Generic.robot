@@ -61,7 +61,7 @@ ${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-10       
 ${admin_name}        aithentic@yopmail.com
 ${admin_password}       Admin@123
 
-${browser_name}          headlessfirefox
+${browser_name}         firefox
 ${email}                 testqa29j@mailinator.com
 ${SheetLocationAndName}   LoadTimeSheet.xlsx
 ${SheetTabName}     Load_Time_tracking
@@ -77,7 +77,7 @@ ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
 
-${wait_time}       240
+${wait_time}       60
 ${yop_sleep}       10
 ${search_sleep}       1
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
@@ -176,6 +176,7 @@ select the option from the side menu
 Verify your current page location contains
     [Arguments]    ${verifyOption}
     wait until location contains    ${verifyOption}     ${wait_time}
+    wait until element is not visible   ${loaderIcon}          ${wait_time}
 
 Verify your current page contains this text
     [Arguments]    ${verifyOption}

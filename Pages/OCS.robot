@@ -174,7 +174,7 @@ Edit the MAC_Address of Asset
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_macaddress}=    Catenate    MAC_${random_string}
     Wait Until Element Is Visible    css:#DYNA_14   ${wait_time}
-    Wait Until Element Is Visible    css:#DYNA_14   ${wait_time}
+    Wait Until Element Is enabled    css:#DYNA_14   ${wait_time}
     Input Text   css:#DYNA_14     ${generated_macaddress}
 
 Edit the Serial_No. of Asset
@@ -182,6 +182,7 @@ Edit the Serial_No. of Asset
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_serailnumber}=    Catenate    S_No_${random_string}
     Wait Until Element Is Visible    css:#DYNA_21   ${wait_time}
+    Wait Until Element Is enabled    css:#DYNA_21  ${wait_time}
     Input Text   css:#DYNA_21     ${generated_serailnumber}
 
 Edit The Host_Name of Asset
@@ -189,6 +190,7 @@ Edit The Host_Name of Asset
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_hostname}=    Catenate    Host_${random_string}
     Wait Until Element Is Visible    css:#DYNA_24   ${wait_time}
+    Wait Until Element Is enabled    css:#DYNA_24   ${wait_time}
     Input Text   css:#DYNA_24     ${generated_hostname}
 
 Hover Existing Agent
@@ -200,6 +202,7 @@ Hover Existing Agent
 Get text by hovering over existing assets of technology
     [Arguments]     ${text}
     Wait Until Element Is Visible   css:.right-text     ${wait_time}
+    Wait Until Element Is enabled   css:.right-text     ${wait_time}
     ${hover_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
     ${parts}    Split String    ${hover_text}    ${text}
     ${hover_details}    Get Substring    ${parts[1]}    1
@@ -229,6 +232,7 @@ Choose Tab under Asset Discovery
     [Arguments]     ${option}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     Wait Until Element Is Visible    css:#nav-agent-discovery-tab       ${wait_time}
+    Wait Until Element Is enabled    css:#nav-agent-discovery-tab       ${wait_time}
     Click Element    css:#nav-${option}-tab
 
 Click on Plus icon under table
@@ -266,6 +270,7 @@ Choose option from product on Add technology Page
 Enter The Asset_id in Add Technology Page
     wait until element is not visible       ${loaderIcon}        ${wait_time}
     wait until element is visible       //input[@formcontrolname="AssetId"]        ${wait_time}
+    wait until element is enabled       //input[@formcontrolname="AssetId"]        ${wait_time}
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_AssetID}=    Catenate    AssetID_${random_string}
     input text   //input[@formcontrolname="AssetId"]       ${generated_AssetID}
@@ -328,10 +333,15 @@ click on filter icon of discovered assets
 Choose filters for discovered asset
     [Arguments]     ${option1}      ${option2}
     wait until element is not visible   ${loaderIcon}        ${wait_time}
-    wait until element is visible   //ng-select[@placeholder='${option1}']//input[@type='text']
-    wait until element is enabled   //ng-select[@placeholder='${option1}']//input[@type='text']
-#    click element   //ng-select[@placeholder='${option}']//input[@type='text']
+    wait until element is visible       //*[@placeholder='${option1}']        ${wait_time}
+    wait until element is enabled       //*[@placeholder='${option1}']        ${wait_time}
+    Click element   //*[@placeholder='${option1}']
+    Clear Element Text      //ng-select[@placeholder='${option1}']//input[@type='text']
     input text      //ng-select[@placeholder='${option1}']//input[@type='text']         ${option2}
+    wait until element is visible   //*[@placeholder='${option1}']//input[@type='text']//following::span[normalize-space()='${option2}']
+    wait until element is enabled   //*[@placeholder='${option1}']//input[@type='text']//following::span[normalize-space()='${option2}']
+    click element   //*[@placeholder='${option1}']//input[@type='text']//following::span[normalize-space()='${option2}']
+
 
 Select brand_macaddres_agent from dropdown of discovered asset filter
     [Arguments]     ${number}
@@ -343,6 +353,7 @@ Get text by hovering over assets
     [Arguments]     ${option}
     wait until element is not visible    ${loaderIcon}      ${wait_time}
     Wait Until Element Is Visible   css:.left-text      ${wait_time}
+    Wait Until Element Is enabled   css:.left-text      ${wait_time}
     ${text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${option}')]//ancestor::li
     ${parts}    Split String    ${text}    ${option}
     ${substring}    Get Substring    ${parts[1]}    1
@@ -360,6 +371,7 @@ Hover over searched Discovered Asset
 Get text of selected brand, mac address and agent of discovered assets
     [Arguments]     ${number}
     Wait Until Element Is Visible  //div[contains (@id, -'${number}')]       ${wait_time}
+    Wait Until Element Is enabled  //div[contains (@id, -'${number}')]       ${wait_time}
     ${selected_brand}=        Get Text    //div[contains (@id, -'${number}')]
     Log to console      ${selected_brand}
     set global variable     ${selected_brand}
@@ -389,6 +401,7 @@ Get text by hovering over existing assets
     [Arguments]     ${option}
 #    Wait Until Element Is Visible   (//div[contains(text(),'QABrand555')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]      ${wait_time}
     Wait Until Element Is Visible   (//div[contains(text(),'Apple Inc.')]//ancestor::div[contains(@class,'box')]//child::div[contains(@class,'assets-text')])[2]      ${wait_time}
+    Wait Until Element Is enabled   (//div[contains(text(),'Apple Inc.')]//ancestor::div[contains(@class,'box')]//child::div[contains(@class,'assets-text')])[2]      ${wait_time}
     ${text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${option}')]//ancestor::li
     ${parts}    Split String    ${text}    ${option}
     ${substring1}    Get Substring    ${parts[1]}    1
@@ -538,6 +551,7 @@ Search with MAC address and IP Address on the search bar of Discovered Asset Lis
     [Arguments]     ${MAC_Address}
     wait until element is not visible    ${loaderIcon}    ${wait_time}
     wait until element is visible       (//thead//tr)[2]       ${wait_time}
+    wait until element is enabled       (//thead//tr)[2]       ${wait_time}
     wait until element is visible   css:input[placeholder='Search by Brand or Name or Description or Asset ID']     ${wait_time}
     wait until element is enabled   css:input[placeholder='Search by Brand or Name or Description or Asset ID']     ${wait_time}
     input text  css:input[placeholder='Search by Brand or Name or Description or Asset ID']     ${MAC_Address}
@@ -591,7 +605,10 @@ Enter input in the technology group field of advanced search of discovered asset
     input text      css:.modal-body .qa-group input       Applications
     sleep   ${search_sleep}
     Wait Until Element Is Visible    css:.modal-body .qa-group input    ${wait_time}
+    Wait Until Element Is enabled    css:.modal-body .qa-group input    ${wait_time}
     Press Keys  css:.modal-body .qa-group input     ENTER
+
+
 Fetch the technology type from the technology type field of component of discovered asset
     Wait Until Element Is Visible       css:.qa-tech-type     ${wait_time}
     Wait Until Element Is Enabled        css:.qa-tech-type    ${wait_time}
@@ -750,6 +767,7 @@ Get asset id by hovering over existing assets
 
 Get text of selected brand of filter of existing asset
     Wait Until Element Is Visible  //span[@class='ng-value-label ng-star-inserted']       ${wait_time}
+    Wait Until Element Is enabled  //span[@class='ng-value-label ng-star-inserted']       ${wait_time}
     ${brand}=        Get Text    //span[@class='ng-value-label ng-star-inserted']
     Log to console      ${brand}
     set global variable     ${brand}
@@ -765,14 +783,14 @@ Enter input in the product field of filters of existing agent
 
 
 Click on down arrow link on discovery asset list page
-    wait until element is visible      (//tbody//tr[1]//td[7])[2]      ${wait_time}
-    wait until element is enabled      (//tbody//tr[1]//td[7])[2]      ${wait_time}
-    click element  (//tbody//tr[1]//td[7])[2]
+    wait until element is visible      //tr[1]//following-sibling::td[normalize-space()='View']//span      ${wait_time}
+    wait until element is enabled      //tr[1]//following-sibling::td[normalize-space()='View']//span      ${wait_time}
+    click element  //tr[1]//following-sibling::td[normalize-space()='View']//span
 
 Click on view button link on discovery asset list page
-    wait until element is visible      (//tbody//tr[2]//td[7])[2]      ${wait_time}
-    wait until element is enabled      (//tbody//tr[2]//td[7])[2]      ${wait_time}
-    click element  (//tbody//tr[2]//td[7])[2]
+    wait until element is visible      //tr[1]//following-sibling::td[normalize-space()='View']//span      ${wait_time}
+    wait until element is enabled      //tr[1]//following-sibling::td[normalize-space()='View']//span      ${wait_time}
+    click element  //tr[1]//following-sibling::td[normalize-space()='View']//span
 
 Mouse Hover over filters of existing asset
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
@@ -829,6 +847,7 @@ My Failure Handling
     OCS.Click on newly discovered tab under network discovery
     UnselectAssetAPI.Hit API Endpoint
     Generic.Refresh the existing page
+    I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.Click on Existing asset
     Sleep    ${yop_sleep}
@@ -856,6 +875,7 @@ click on the asset id inside the table of agent discovery
 Wait for the invisiblity of alert msg
     [Arguments]    ${option}
     wait until element is visible    ${alert_Msg}          ${wait_time}
+    wait until element is enabled    ${alert_Msg}          ${wait_time}
     ${get_alertMsg} =    get text    ${alert_Msg}
     log to console     ${get_alertMsg}
     should be equal    ${get_alertMsg}     ${option}
