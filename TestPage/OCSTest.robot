@@ -825,7 +825,6 @@ Match Discovery Asset with Static Existing Asset
     END
 
 Match IP Discovered Asset with Dynamic Existing Asset
-    [Tags]      rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -890,7 +889,7 @@ Match IP Discovered Asset with Dynamic Existing Asset
     END
 
 Add asset with IP Address under discovered asset list
-    [Tags]      Sanity      rerun
+    [Tags]      Sanity
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -1173,7 +1172,6 @@ Search with containing fields under advance search of discovered asset
     END
 
 Search with containing fields under advance search of component of discovered asset
-    [Tags]      rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
