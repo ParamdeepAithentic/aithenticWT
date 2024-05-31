@@ -274,3 +274,4 @@ Create random employee id
     wait until element is enabled       css:#employeeId    ${wait_time}
     input text   css:#employeeId   ${generated_memberEmpID}
     set global variable    ${generated_memberEmpID}
+

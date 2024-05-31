@@ -38,7 +38,7 @@ Resource        ../Pages/SortingPage.robot
 Resource        ../Pages/Bulk_Import_ExportPage.robot
 Resource        ../Pages/Admin_PanelPage.robot
 
-Suite Setup     Update settings for Asset_ID, employee_id and location
+#Suite Setup     Update settings for Asset_ID, employee_id and location
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
 
@@ -74,7 +74,7 @@ Change plan- Assign commercial plan and change it to slotted
     Admin_PanelPage.Select option under side menu       Subscribed Companies
     Generic.Verify your current page contains this text         Subscribed Companies
     Admin_PanelPage.Search the end user under subscribed companies      mehak@mynes.com
-    Admin_PanelPage.Scroll table horizontaly
+#    Admin_PanelPage.Scroll table horizontaly
     Admin_PanelPage.Click on the three_dots of the table
     Admin_PanelPage.Choose option by clicking on three_dots         Assign Commercial Plan
     Admin_PanelPage.Change the plan from Plan Name field        Commercial-Debut BETA Promo

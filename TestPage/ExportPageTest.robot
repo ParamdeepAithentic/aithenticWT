@@ -256,7 +256,6 @@ Export list of parent tab under technology details
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology-list
-    sleep   2
     TechnologyPage.Search by AssetId      ${generated_NewParentAssetID}
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
@@ -265,6 +264,47 @@ Export list of parent tab under technology details
     TechnologyPage.Select add new entry        Existing Asset
     Generic.Verify your current page location contains      technology
     TechnologyPage.Get And Verify The Count Of existing asset of parent
+    Generic.click on the tab        Link
+    Generic.Fetch alert message text and compare it with        Technology linked successfully.
+    TechnologyPage.Click on the export button of parent tab under technology details page
+    TechnologyPage.Download the selected extension file of parent under technology details      .xlsx
+    PartnersPage.Confirm to export file
+    PartnersPage.Verify that the selected extension file is downloaded       .xlsx
+    PartnersPage.Remove the file from downloaded list
+    Generic.click on the button     Okay, Thanks!
+    TechnologyPage.Click on the export button of parent tab under technology details page
+    TechnologyPage.Download the selected extension file of parent under technology details      .ods
+    PartnersPage.Confirm to export file
+    PartnersPage.Verify that the selected extension file is downloaded       .ods
+    PartnersPage.Remove the file from downloaded list
+    Generic.click on the button     Okay, Thanks!
+    TechnologyPage.Click on the export button of parent tab under technology details page
+    TechnologyPage.Download the selected extension file of parent under technology details      .csv
+    PartnersPage.Confirm to export file
+    PartnersPage.Verify that the selected extension file is downloaded       .csv
+    PartnersPage.Remove the file from downloaded list
+    Generic.click on the button     Okay, Thanks!
+    TechnologyPage.Click on the export button of parent tab under technology details page
+    TechnologyPage.Download the selected extension file of parent under technology details      .tsv
+    PartnersPage.Confirm to export file
+    PartnersPage.Verify that the selected extension file is downloaded       .tsv
+    PartnersPage.Remove the file from downloaded list
+    Generic.click on the button     Okay, Thanks!
+
+
+Export Team member list
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Click on add team member action button
+    TeamMemberPage.Click on export button of team member
+    TeamMemberPage.Choose option after clicking on Action button    Export Data
+
+
+
 
 
 
