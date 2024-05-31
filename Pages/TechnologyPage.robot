@@ -1492,7 +1492,7 @@ Click on advanced search button link under add technology
     wait until element is not visible      ${loaderIcon}    ${wait_time}
 
 Click on the row of the table inside advanced search
-    Execute JavaScript    document.querySelector('.bg-white.location-list-qa.ng-star-inserted > tr:nth-child(12)').scrollIntoView(true);
+    Execute JavaScript    document.querySelector('.bg-white.location-list-qa.ng-star-inserted > tr:nth-child(3)').scrollIntoView(true);
     Click Element    css:.bg-white.location-list-qa.ng-star-inserted > tr:nth-child(5) > td:nth-child(1)
 
 Fetch the Brand Name from the brand field
