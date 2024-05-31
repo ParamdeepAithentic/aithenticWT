@@ -61,7 +61,7 @@ Create random register first name
     wait until element is enabled       ${register_Fname}        ${wait_time}
     click element   ${register_Fname}
     Clear element text      ${register_Fname}
-    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generate_register_Fname}=    Catenate    FName${random_string}
     input text   ${register_Fname}   ${generate_register_Fname}
     set global variable    ${generate_register_Fname}
@@ -78,7 +78,7 @@ Create random register last name
     wait until element is enabled       ${register_Lname}        ${wait_time}
     click element   ${register_Lname}
     Clear element text      ${register_Lname}
-    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generate_register_Lname}=    Catenate    LName${random_string}
     input text   ${register_Lname}   ${generate_register_Lname}
     set global variable    ${generate_register_Lname}
@@ -94,7 +94,7 @@ Create random register company name
     wait until element is enabled       ${register_CompanyName}        ${wait_time}
     click element   ${register_CompanyName}
     Clear element text      ${register_CompanyName}
-    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generate_register_CompanyName}=    Catenate    CompanyName${random_string}
     input text   ${register_CompanyName}   ${generate_register_CompanyName}
     set global variable    ${generate_register_CompanyName}
@@ -123,7 +123,7 @@ Create partner random business email
     wait until element is enabled       ${register_Email}        ${wait_time}
     click element   ${register_Email}
     Clear element text      ${register_Email}
-    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generate_register_Email}=    Catenate    BusinessEmail${random_string}@yopmail.net
     input text   ${register_Email}   ${generate_register_Email}
     log to console      registerEmail:${generate_register_Email}
