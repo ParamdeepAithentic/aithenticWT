@@ -398,18 +398,6 @@ Expand all sorting field
     ${element_count}=    Get Element Count    //div[@role='columnheader']
     Log to console      ${element_count}
 
-#    FOR    ${index}    IN RANGE    1    ${element_count}
-#        Double Click element   (//div[@ref='eResize'])[${index}]
-#    END
-
     FOR    ${index}    IN RANGE    ${element_count}    0    -1
     Double Click element   (//div[@ref='eResize'])[${index}]
     END
-
-
-Scroll table horizontaly
-    Sleep    ${search_sleep}
-    wait until element is visible       //div[normalize-space()='1']        ${wait_time}
-    wait until element is enabled       //div[normalize-space()='1']        ${wait_time}
-    Execute JavaScript  window.scrollBy(10000, 0)
-    Sleep    ${search_sleep}
