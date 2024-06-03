@@ -18,7 +18,7 @@ Resource        ../Pages/TechnologyPage.robot
 Resource        ../Pages/PartnersPage.robot
 Resource        ../Pages/RegisterMember.robot
 Resource        ../Pages/ContractsPage.robot
-Resource        ../Pages/LoginAPI.robot
+Resource        ../Pages/LoginPage.robot
 Resource        ../Pages/ReplaceDomainAPI.robot
 Resource        ../Pages/Yopmail.robot
 Resource        ../Pages/UserAccount.robot
@@ -50,4 +50,19 @@ Fetch the refresh token from the login api
     set global variable  ${refresh_Token}
 #    log to console      Refesh token we fetch out:${refresh_Token}
 
+Get text of role field from profile personal details
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    css:#UserRoleId    ${wait_time}
+#    Wait Until Element Is Enabled    css:#UserRoleId    ${wait_time}
+    ${role_user}=    Get value       css:#UserRoleId
+    log to console      ${role_user}
+    set global variable     ${role_user}
+
+Verify the logged_in user should be
+    [Arguments]      ${option}
+    Should Be Equal    ${role_user}    ${option}
+    
+Wait until i_icon is visible
+    Wait Until Element Is Visible    css:#technology-list-Iicon         ${wait_time}
+    Wait Until Element Is Enabled    css:#technology-list-Iicon         ${wait_time}
 

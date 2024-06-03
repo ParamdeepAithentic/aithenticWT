@@ -27,7 +27,7 @@ Resource        ../Pages/SubscriptionPage.robot
 Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
-Resource        ../Pages/LoginAPI.robot
+Resource        ../Pages/LoginPage.robot
 Resource        ../Pages/MemberPage.robot
 Resource        ../Pages/OCS.robot
 Resource        ../Pages/BillingPage.robot

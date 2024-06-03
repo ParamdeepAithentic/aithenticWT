@@ -16,7 +16,7 @@ Resource        ../Pages/TechnologyPage.robot
 Resource        ../Pages/PartnersPage.robot
 Resource        ../Pages/RegisterMember.robot
 Resource        ../Pages/ContractsPage.robot
-Resource        ../Pages/LoginAPI.robot
+Resource        ../Pages/LoginPage.robot
 Resource        ../Pages/ReplaceDomainAPI.robot
 Resource        ../Pages/Yopmail.robot
 Resource        ../Pages/UserAccount.robot
@@ -45,7 +45,7 @@ Register new user for key clock functionality
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
 
-#    LoginAPI.Fetch the refresh token from the login api
+#    LoginPage.Fetch the refresh token from the login api
     ReplaceDomainAPI.Replace Domain
     RegisterUserPage.Create random register first name
     RegisterUserPage.Create random register last name
