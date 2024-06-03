@@ -44,7 +44,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 #Create the scheduler
-#
+#    [
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
 #    LandingPage.Verify you are on dashboard page
@@ -60,9 +60,9 @@ Test Teardown   Close Browser session
 #    sleep   ${search_sleep}
 #    Generic.click on the button     Create
 #    Generic.Fetch alert message text and compare it with        Scheduler created sucessfully
-#
+
 Edit the scheduler
-    [Tags]      Sanity
+    [Tags]      Sanity      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     LandingPage.Verify you are on dashboard page
@@ -111,6 +111,7 @@ Edit the scheduler
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
 
 Run now from view details
+    [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     LandingPage.Verify you are on dashboard page
@@ -141,7 +142,7 @@ Run now from view details
     SubscriptionPage.Get the value of fields under view details of subscription connector   2       Samuel John
 
 Suspend and unsuspend the account
-    [Tags]      Smoke
+    [Tags]      Smoke      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     LandingPage.Verify you are on dashboard page
@@ -161,7 +162,7 @@ Suspend and unsuspend the account
     Generic.Verify your current page location contains      personal-profile
     Generic.Select parameter    Technology
     Generic.Verify your current page location contains      technology-settings
-    Generic.click on the tab    Subscription Connectors
+    Generic.click on the tab    Connectors
     SubscriptionPage.Visible the disable activate button link after suspending account
     Generic.Click on the profile name
     Generic.Select option from profile list     billing-dropdown
@@ -175,7 +176,7 @@ Suspend and unsuspend the account
     Generic.Verify your current page location contains      personal-profile
     Generic.Select parameter    Technology
     Generic.Verify your current page location contains      technology-settings
-    Generic.click on the tab    Subscription Connectors
+    Generic.click on the tab    Connectors
     SubscriptionPage.Click on the activate option under subscription connector table
     Generic.Fetch alert message text and compare it with        Status Updated
 

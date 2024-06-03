@@ -207,6 +207,7 @@ Verify Pagination of Product Dropdown when Add and Edit Technology
 
 
 Verify Pagination of Product Dropdown when Add discovered asset and component
+        [Tags]      rerun
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
         LandingPage.Verify you are on dashboard page
@@ -214,9 +215,10 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    ocs
+        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
-        OCS.Enter text to search discovery asset    MSI
+        OCS.Enter text to search discovery asset    Apple Inc
         OCS.Click on the down arrow icon of discovered asset
         OCS.Mouse Hover over searched Discovered Assets
         OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
@@ -252,9 +254,9 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
         Generic.Scroll Window To End
         sleep      ${search_sleep}
         PaginationPage.Click on save technology form button of OCS
-        Generic.Fetch alert message text and compare it with         Technology created successfully
-            Sleep    ${yop_sleep}
-        switch window    aithentic | Asset - Discovery
+        OCS.Wait for the invisiblity of alert msg        Technology created successfully
+        Sleep    ${yop_sleep}
+        switch window    aithentic | Service Now Newly-Discovered
         OCS.Choose tab under Discovery Assets   agent-discovery
         Generic.Verify your current page location contains      ocs
         Generic.Refresh the existing page
@@ -303,7 +305,7 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
         Generic.Scroll Window To End
         sleep      ${search_sleep}
         PaginationPage.Click on save technology form button of OCS
-        Generic.Fetch alert message text and compare it with         Technology created successfully
+        OCS.Wait for the invisiblity of alert msg         Technology created successfully
         sleep  ${yop_sleep}
         switch window   aithentic | Technology - Details
         Generic.Verify your current page location contains    technology-details
@@ -325,6 +327,7 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
         UnselectAssetAPI.Hit API Endpoint
 
 Verify Pagination of Product Dropdown when Add IP discovered asset
+        [Tags]      rerun
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
         LandingPage.Verify you are on dashboard page
@@ -332,6 +335,7 @@ Verify Pagination of Product Dropdown when Add IP discovered asset
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    ocs
+        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
@@ -368,9 +372,9 @@ Verify Pagination of Product Dropdown when Add IP discovered asset
         Generic.Scroll Window To End
         sleep      ${search_sleep}
         PaginationPage.Click on save technology form button of OCS
-        Generic.Fetch alert message text and compare it with       Technology created successfully
+        OCS.Wait for the invisiblity of alert msg       Technology created successfully
         Sleep    ${yop_sleep}
-        switch window    aithentic | Asset - Discovery
+        switch window    aithentic | Service Now Newly-Discovered
         Generic.Refresh the existing page
         OCS.Choose tab under Discovery Assets   agent-discovery
         Generic.Verify your current page contains this text    ${generated_AssetID}

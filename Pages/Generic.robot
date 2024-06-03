@@ -63,6 +63,7 @@ ${admin_name}        aithentic@yopmail.com
 ${admin_password}       Admin@123
 
 ${browser_name}          firefox
+
 ${email}                 testqa29j@mailinator.com
 ${SheetLocationAndName}   LoadTimeSheet.xlsx
 ${SheetTabName}     Load_Time_tracking
@@ -177,6 +178,7 @@ select the option from the side menu
 Verify your current page location contains
     [Arguments]    ${verifyOption}
     wait until location contains    ${verifyOption}     ${wait_time}
+    wait until element is not visible   ${loaderIcon}          ${wait_time}
 
 Verify your current page contains this text
     [Arguments]    ${verifyOption}
@@ -333,7 +335,7 @@ Update settings for Asset_ID, employee_id and location
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     Generic.Verify your current page location contains     organization
-    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the employee ID checkbox   no
     DashboardPage.Select the location ID checkbox   yes
     DashboardPage.Select the asset ID checkbox      no
     sleep       ${yop_sleep}

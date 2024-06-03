@@ -103,7 +103,7 @@ Verify Pagination and Row Count
     ...    AND    Return From Keyword
 
     Run Keyword If    '${total_table_row_count}' == '${total_data_count}'
-    ...    Run Keywords     Fetch the total count    AND
+    ...    Run Keywords     PaginationPage.Fetch the total count    AND
     ...    Scroll within the element    ${total_table_row_count}
     ...    AND    Return From Keyword
 
@@ -120,7 +120,7 @@ Log WebElements
         wait until element is visible     //div[contains (@id, '-${index}')]       ${wait_time}
         wait until element is enabled     //div[contains (@id, '-${index}')]       ${wait_time}
         click element   //div[contains (@id, '-${index}')]
-        Run Keywords    Fetch the selected value of the dropdown  ${option}   AND      Check the table get load       AND      Get count of total rows     AND     Verify Pagination and Row Count     AND     Fetch the total count   AND     Click on the pagination dropdown  ${option}
+        Run Keywords    Fetch the selected value of the dropdown  ${option}   AND      Check the table get load       AND      Get count of total rows     AND     Verify Pagination and Row Count     AND     PaginationPage.Fetch the total count   AND     Click on the pagination dropdown  ${option}
     END
 
 
@@ -148,7 +148,7 @@ Log WebElements of Product Dropdown
         wait until element is visible     //div[contains (@id, '-${index}')]       ${wait_time}
         wait until element is enabled     //div[contains (@id, '-${index}')]       ${wait_time}
         click element   //div[contains (@id, '-${index}')]
-        Run Keywords    Fetch the selected value of the product dropdown     ${option}   AND      Check the table get load of product dropdown      AND      Get count of total rows from Product Dropdown     AND     Verify Pagination and Row Count for product dropdown     AND     Fetch the total count   AND     Click on the pagination dropdown  ${option}
+        Run Keywords    Fetch the selected value of the product dropdown     ${option}   AND      Check the table get load of product dropdown      AND      Get count of total rows from Product Dropdown     AND     Verify Pagination and Row Count for product dropdown     AND     PaginationPage.Fetch the total count   AND     Click on the pagination dropdown  ${option}
     END
 
 
@@ -167,7 +167,7 @@ Verify Pagination and Row Count for product dropdown
     ...    AND    Return From Keyword
 
     Run Keyword If    '${total_table_row_count}' == '${total_data_count}'
-    ...    Run Keywords     Fetch the total count    AND
+    ...    Run Keywords     PaginationPage.Fetch the total count    AND
     ...    Scroll within the element of product dropdown    ${total_table_row_count}
     ...    AND    Return From Keyword
 
