@@ -227,74 +227,74 @@ Login as End_user with different roles
     Generic.Fetch log_out alert message
 
 Login as Manufacturer with different roles
-#    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form      manufacturer@yopmail.net    Test@123
-#    Generic.Verify your current page location contains      dashboard
-#    Generic.Click on the profile name
-#    Generic.Select option from profile list     personal-details
-#    Generic.Verify your current page location contains    personal-profile
-#    LoginPage.Get text of role field from profile personal details
-#    LoginPage.Verify the logged_in user should be    Manufacturer Subscriber
-#    Generic.Click on the profile name
-#    Generic.Select other option from profile list    Logout
-#    Generic.Fetch log_out alert message
-#
-######################################### MANUFACTURER ACCOUNT MANAGER #############################################################
-#    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form    manufactureraccountmanager@yopmail.net    Test@123
-#    Generic.Open new window     yopmail
-#    Generic.Refresh the existing page
-#    Generic.Search yopmail emails for       manufactureraccountmanager@yopmail.net
-#    Generic.Refresh the existing page
-#    Generic.Refresh the existing page
-#    Generic.Refresh the existing page
-#    Generic.Switch to iframe by ID      ifinbox
-#    Yopmail.Click on email of yopmail   OTP Verification.
-#    Unselect Frame
-#    Generic.Switch to iframe by ID      ifmail
-#    Yopmail.Get verification OTP from email    Your passcode is
-#    close window
-#    sleep       ${yop_sleep}
-#    Switch Window   aithentic | OTP
-#    TwoFactorAuth.Enter the otp     ${passcode}
-#    TwoFactorAuth.Click verification button
-#    Generic.Verify your current page location contains      dashboard
-#    Generic.Click on the profile name
-#    Generic.Select option from profile list     personal-details
-#    Generic.Verify your current page location contains    personal-profile
-#    LoginPage.Get text of role field from profile personal details
-#    LoginPage.Verify the logged_in user should be    Account Manager
-#    Generic.Click on the profile name
-#    Generic.Select other option from profile list    Logout
-#    Generic.Fetch log_out alert message
-######################################### MANUFACTURER COMMUNICATION MANAGER #############################################################
-#    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form    manufacturercommunication@yopmail.net    Test@123
-#    Generic.Open new window     yopmail
-#    Generic.Refresh the existing page
-#    Generic.Search yopmail emails for       manufacturercommunication@yopmail.net
-#    Generic.Refresh the existing page
-#    Generic.Refresh the existing page
-#    Generic.Refresh the existing page
-#    Generic.Switch to iframe by ID      ifinbox
-#    Yopmail.Click on email of yopmail   OTP Verification.
-#    Unselect Frame
-#    Generic.Switch to iframe by ID      ifmail
-#    Yopmail.Get verification OTP from email    Your passcode is
-#    close window
-#    sleep       ${yop_sleep}
-#    Switch Window   aithentic | OTP
-#    TwoFactorAuth.Enter the otp     ${passcode}
-#    TwoFactorAuth.Click verification button
-#    Generic.Verify your current page location contains      dashboard
-#    Generic.Click on the profile name
-#    Generic.Select option from profile list     personal-details
-#    Generic.Verify your current page location contains    personal-profile
-#    LoginPage.Get text of role field from profile personal details
-#    LoginPage.Verify the logged_in user should be    Communication Manager
-#    Generic.Click on the profile name
-#    Generic.Select other option from profile list    Logout
-#    Generic.Fetch log_out alert message
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      manufacturer@yopmail.net    Test@123
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains    personal-profile
+    LoginPage.Get text of role field from profile personal details
+    LoginPage.Verify the logged_in user should be    Manufacturer Subscriber
+    Generic.Click on the profile name
+    Generic.Select other option from profile list    Logout
+    Generic.Fetch log_out alert message
+
+######################################## MANUFACTURER ACCOUNT MANAGER #############################################################
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form    manufactureraccountmanager@yopmail.net    Test@123
+    Generic.Open new window     yopmail
+    Generic.Refresh the existing page
+    Generic.Search yopmail emails for       manufactureraccountmanager@yopmail.net
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   OTP Verification.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Get verification OTP from email    Your passcode is
+    close window
+    sleep       ${yop_sleep}
+    Switch Window   aithentic | OTP
+    TwoFactorAuth.Enter the otp     ${passcode}
+    TwoFactorAuth.Click verification button
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains    personal-profile
+    LoginPage.Get text of role field from profile personal details
+    LoginPage.Verify the logged_in user should be    Account Manager
+    Generic.Click on the profile name
+    Generic.Select other option from profile list    Logout
+    Generic.Fetch log_out alert message
+######################################## MANUFACTURER COMMUNICATION MANAGER #############################################################
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form    manufacturercommunication@yopmail.net    Test@123
+    Generic.Open new window     yopmail
+    Generic.Refresh the existing page
+    Generic.Search yopmail emails for       manufacturercommunication@yopmail.net
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   OTP Verification.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Get verification OTP from email    Your passcode is
+    close window
+    sleep       ${yop_sleep}
+    Switch Window   aithentic | OTP
+    TwoFactorAuth.Enter the otp     ${passcode}
+    TwoFactorAuth.Click verification button
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains    personal-profile
+    LoginPage.Get text of role field from profile personal details
+    LoginPage.Verify the logged_in user should be    Communication Manager
+    Generic.Click on the profile name
+    Generic.Select other option from profile list    Logout
+    Generic.Fetch log_out alert message
 ######################################## MANUFACTURER ADMIN #############################################################
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    manufactureradmin@yopmail.net    Test@123
