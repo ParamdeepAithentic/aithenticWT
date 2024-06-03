@@ -100,11 +100,11 @@ Enter contract with
     Clear Element Text      ${companyId}
     ${StartTime1} =     Get Current Time in Milliseconds
     input text      ${companyId}      ${option}
-    sleep       1
+    sleep       ${search_sleep}
     Press Keys     ${companyId}       ENTER
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  4  ${pageHeading}   ContractPage - Enter contract with      4    ${pageTime}     ${ActualTime}    ContractPage_Time
+    Calculate Running time  4  ${pageHeading}   ContractPage - Enter contract with business name       4    ${pageTime}     ${ActualTime}    ContractPage_Time
 
 
 

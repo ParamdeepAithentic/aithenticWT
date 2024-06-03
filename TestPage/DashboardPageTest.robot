@@ -60,8 +60,8 @@ Verify the drawer list
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
     ${StartTime1} =     Get Current Time in Milliseconds
+    Generic.Verify your current page location contains      management-console
     Generic.Verify your current page location contains      home
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
