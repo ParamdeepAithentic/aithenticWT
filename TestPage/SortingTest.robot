@@ -385,7 +385,7 @@ Test the sorting of bulk edit grid under team members
     SortingPage.Verify the sorting of the table method five    5       Mobile number
     SortingPage.Verify the sorting of the table method five    6       Business Email
     SortingPage.Verify the sorting of the table method five    7       Department
-#    SortingPage.Verify the sorting of the table method five    8       Member Location       - Not working. i believe due to astrick sign
+    SortingPage.Verify the sorting of the table method five    8       Member Location
     SortingPage.Verify the sorting of the table method five    9       Role
 
 
