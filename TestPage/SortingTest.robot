@@ -376,6 +376,7 @@ Test the sorting of bulk edit grid under team members
     sleep     ${yop_sleep}
     switch window     aithentic | Edit - Members
     Generic.Verify your current page location contains      member-bulk-edit
+    sleep   ${search_sleep}
     SortingPage.Verify the sorting of the table method five    10      Position/Title
     SortingPage.Verify the sorting of the table method five    11      Employee ID
     SortingPage.Expand all sorting field
