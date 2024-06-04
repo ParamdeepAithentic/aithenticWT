@@ -16,7 +16,7 @@ Resource        ../Pages/TechnologyPage.robot
 Resource        ../Pages/PartnersPage.robot
 Resource        ../Pages/RegisterMember.robot
 Resource        ../Pages/ContractsPage.robot
-Resource        ../Pages/LoginAPI.robot
+Resource        ../Pages/LoginPage.robot
 Resource        ../Pages/ReplaceDomainAPI.robot
 Resource        ../Pages/Yopmail.robot
 Resource        ../Pages/UserAccount.robot
@@ -42,6 +42,6 @@ Resource        ../Pages/UnselectAssetAPI.robot
 
 *** Test Cases ***
 Replace the existing domain
-#    LoginAPI.Fetch the refresh token from the login api
+#    LoginPage.Fetch the refresh token from the login api
 #    ReplaceDomainAPI.Replace Domain     ${refresh_Token}
     UnselectAssetAPI.Hit API Endpoint

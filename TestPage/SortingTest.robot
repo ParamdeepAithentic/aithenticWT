@@ -27,7 +27,7 @@ Resource        ../Pages/SubscriptionPage.robot
 Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
-Resource        ../Pages/LoginAPI.robot
+Resource        ../Pages/LoginPage.robot
 Resource        ../Pages/MemberPage.robot
 Resource        ../Pages/OCS.robot
 Resource        ../Pages/BillingPage.robot
@@ -361,3 +361,55 @@ Test the sorting of sent table page under message page
     SortingPage.Verify the sorting of the table method four    3       Subject
     SortingPage.Verify the sorting of the table method four    4       Status
     SortingPage.Verify the sorting of the table method four    5       Date
+
+
+Test the sorting of bulk edit grid under team members
+    [Tags]    Smoke
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      jasdeep@15963.fr.nf     Paramdeep@112
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    MemberPage.Click on team member action button
+    MemberPage.Choose the option from the action menu   Bulk Edit
+    sleep     ${yop_sleep}
+    switch window     aithentic | Edit - Members
+    Generic.Verify your current page location contains      member-bulk-edit
+    SortingPage.Verify the sorting of the table method five    10      Position/Title
+    SortingPage.Verify the sorting of the table method five    11      Employee ID
+    SortingPage.Expand all sorting field
+    SortingPage.Verify the sorting of the table method five    3       Last Name
+    SortingPage.Verify the sorting of the table method five    2       First Name
+    SortingPage.Verify the sorting of the table method five    4       Country Code
+    SortingPage.Verify the sorting of the table method five    5       Mobile number
+    SortingPage.Verify the sorting of the table method five    6       Business Email
+    SortingPage.Verify the sorting of the table method five    7       Department
+#    SortingPage.Verify the sorting of the table method five    8       Member Location       - Not working. i believe due to astrick sign
+    SortingPage.Verify the sorting of the table method five    9       Role
+
+
+
+
+
+Test the sorting of bulk edit grid under assigned users
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      jasdeep@15963.fr.nf     Paramdeep@112
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
+    ${StartTime1} =     Get Current Time in Milliseconds
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    MemberPage.Click on assigned user tab   Assigned Users
+    MemberPage.Click on assigned user action button
+    MemberPage.Choose the option from the action menu   Bulk Edit
+    sleep     ${yop_sleep}
+    switch window     aithentic | Data-Wizard
+    Generic.Verify your current page location contains      assignee-bulk-edit
+    SortingPage.Expand all sorting field
+    SortingPage.Verify the sorting of the table method five    2      First Name
+    SortingPage.Verify the sorting of the table method five    3      Last Name
+    SortingPage.Verify the sorting of the table method five    4      Business Email
+    SortingPage.Verify the sorting of the table method five    5      Employee Id
+
+

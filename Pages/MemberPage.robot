@@ -16,7 +16,7 @@ Resource        ../Pages/TechnologyPage.robot
 Resource        ../Pages/PartnersPage.robot
 Resource        ../Pages/RegisterMember.robot
 Resource        ../Pages/ContractsPage.robot
-Resource        ../Pages/LoginAPI.robot
+Resource        ../Pages/LoginPage.robot
 Resource        ../Pages/ReplaceDomainAPI.robot
 Resource        ../Pages/Yopmail.robot
 Resource        ../Pages/UserAccount.robot
@@ -72,17 +72,20 @@ Click on assigned user tab
      click element       css:i[title='${option}']
 
 Click on assigned user action button
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     Wait Until Element Is Visible       ${assignedUser_ActionBtn}    ${wait_time}
     Wait Until Element Is Enabled      ${assignedUser_ActionBtn}     ${wait_time}
     click element       ${assignedUser_ActionBtn}
 
 Click on team member user action button
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     Wait Until Element Is Visible       ${teamMember_ActionBtn}    ${wait_time}
     Wait Until Element Is Enabled      ${teamMember_ActionBtn}     ${wait_time}
     click element       ${teamMember_ActionBtn}
 
 Choose the option from the action menu
     [Arguments]    ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     Wait Until Element Is Visible       //a[contains(text(),'${option}')]    ${wait_time}
     Wait Until Element Is Enabled      //a[contains(text(),'${option}')]     ${wait_time}
     click element       //a[contains(text(),'${option}')]

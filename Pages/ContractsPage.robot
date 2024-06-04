@@ -16,7 +16,7 @@ Resource        ../Pages/TechnologyPage.robot
 Resource        ../Pages/PartnersPage.robot
 Resource        ../Pages/RegisterMember.robot
 Resource        ../Pages/ContractsPage.robot
-Resource        ../Pages/LoginAPI.robot
+Resource        ../Pages/LoginPage.robot
 Resource        ../Pages/ReplaceDomainAPI.robot
 Resource        ../Pages/Yopmail.robot
 Resource        ../Pages/UserAccount.robot
@@ -100,11 +100,11 @@ Enter contract with
     Clear Element Text      ${companyId}
     ${StartTime1} =     Get Current Time in Milliseconds
     input text      ${companyId}      ${option}
-    sleep       1
+    sleep       ${search_sleep}
     Press Keys     ${companyId}       ENTER
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  4  ${pageHeading}   ContractPage - Enter contract with      4    ${pageTime}     ${ActualTime}    ContractPage_Time
+    Calculate Running time  4  ${pageHeading}   ContractPage - Enter contract with business name       4    ${pageTime}     ${ActualTime}    ContractPage_Time
 
 
 

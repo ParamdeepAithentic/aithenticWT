@@ -26,7 +26,7 @@ Resource        ../Pages/SubscriptionPage.robot
 Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
-Resource        ../Pages/LoginAPI.robot
+Resource        ../Pages/LoginPage.robot
 Resource        ../Pages/MemberPage.robot
 Resource        ../Pages/OCS.robot
 Resource        ../Pages/BillingPage.robot
@@ -60,7 +60,7 @@ Compose Message invite user test
     Calculate Running time  3  ${pageHeading}   Page Load - Total Load Time of Partner Page      3    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 #-------------------------- PARTNER--------------------------------------------------------------
-#    LoginAPI.Fetch the refresh token from the login api
+#    LoginPage.Fetch the refresh token from the login api
     ReplaceDomainAPI.Replace Domain
 
     ${StartTime1} =     Get Current Time in Milliseconds
