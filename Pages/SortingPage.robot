@@ -324,7 +324,9 @@ Verify the sorting of the table method five
     [Arguments]    ${columnNumber}      ${headingName}
     wait until element is not visible      ${loaderIcon}       ${wait_time}
     wait until element is visible       //div[normalize-space()='1']    ${wait_time}
+    wait until element is enabled       //div[normalize-space()='1']    ${wait_time}
     Wait Until Element Is Visible    //div[@aria-colindex='${columnNumber}']    ${wait_time}
+    Wait Until Element Is enabled    //div[@aria-colindex='${columnNumber}']    ${wait_time}
 
     ${element_list}=    Get WebElements    //div[@aria-colindex='${columnNumber}']
 
@@ -342,6 +344,7 @@ Verify the sorting of the table method five
     Log to console  Sorted Text List (Ascending): ${sorted_text_list}
 
     Wait Until Element Is Visible    //span[normalize-space()='${headingName}']//span
+    Wait Until Element Is enabled    //span[normalize-space()='${headingName}']//span
 #    //following-sibling::span[@class='ag-header-icon ag-sort-none-icon']    ${wait_time}
     click element   //span[normalize-space()='${headingName}']//span
 #    //following-sibling::span[@class='ag-header-icon ag-sort-none-icon']
@@ -350,7 +353,9 @@ Verify the sorting of the table method five
 #    wait until element is not visible      css:#dropdownMenuButton.disabled-button       ${wait_time}
     wait until element is not visible      ${loaderIcon}       ${wait_time}
     wait until element is visible       //div[normalize-space()='1']    ${wait_time}
+    wait until element is enabled       //div[normalize-space()='1']    ${wait_time}
     Wait Until Element Is Visible    //div[@aria-colindex='${columnNumber}']    ${wait_time}
+    Wait Until Element Is enabled    //div[@aria-colindex='${columnNumber}']    ${wait_time}
 
     ${element_list}=    Get WebElements    //div[@aria-colindex='${columnNumber}']
 
@@ -372,14 +377,17 @@ Verify the sorting of the table method five
 
 
     Wait Until Element Is Visible    //span[normalize-space()='${headingName}']//span
+    Wait Until Element Is enabled    //span[normalize-space()='${headingName}']//span
 #    //following-sibling::span[@class='ag-header-icon ag-sort-ascending-icon']    ${wait_time}
     click element   //span[normalize-space()='${headingName}']//span
 #    //following-sibling::span[@class='ag-header-icon ag-sort-ascending-icon']
     wait until element is not visible      ${loaderIcon}       ${wait_time}
     wait until element is visible       //div[normalize-space()='1']     ${wait_time}
+    wait until element is enabled       //div[normalize-space()='1']     ${wait_time}
 
 
     Wait Until Element Is Visible    //div[@aria-colindex='${columnNumber}']    ${wait_time}
+    Wait Until Element Is enabled    //div[@aria-colindex='${columnNumber}']    ${wait_time}
     ${element_list}=    Get WebElements    //div[@aria-colindex='${columnNumber}']
 
 
