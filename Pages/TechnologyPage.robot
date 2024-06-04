@@ -1629,3 +1629,16 @@ Download the selected extension file of parent under technology details
     wait until element is visible   //div[@class='dropdown-menu show']//a[contains(text(),'${option}')]     ${wait_time}
     wait until element is enabled   //div[@class='dropdown-menu show']//a[contains(text(),'${option}')]     ${wait_time}
     click element   //div[@class='dropdown-menu show']//a[contains(text(),'${option}')]
+
+Click on the export button of deatils tab under technology details page
+   wait until element is visible   //div[@id='details']//button[@id='dropdownMenuButton']     ${wait_time}
+    wait until element is enabled   //div[@id='details']//button[@id='dropdownMenuButton']     ${wait_time}
+    click element   //div[@id='details']//button[@id='dropdownMenuButton']
+
+Click on the export button of component tab under technology details page
+   wait until element is visible   //div[@id='components']//button[@id='dropdownMenuButton']     ${wait_time}
+    wait until element is enabled   //div[@id='components']//button[@id='dropdownMenuButton']     ${wait_time}
+    click element   //div[@id='components']//button[@id='dropdownMenuButton']
+
+Wait for the shadow invisibility
+    wait until element is not visible   //div[@class='modal-backdrop fade show']    ${wait_time}

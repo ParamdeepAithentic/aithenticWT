@@ -275,3 +275,9 @@ Create random employee id
     input text   css:#employeeId   ${generated_memberEmpID}
     set global variable    ${generated_memberEmpID}
 
+Download the selected extension file of team member
+    [Arguments]    ${option}
+    wait until element is visible  //a[normalize-space()='Export as ${option}']     ${wait_time}
+    wait until element is enabled   //a[normalize-space()='Export as ${option}']     ${wait_time}
+    click element   //a[normalize-space()='Export as ${option}']
+
