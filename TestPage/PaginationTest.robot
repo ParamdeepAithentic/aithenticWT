@@ -399,5 +399,15 @@ Verify Pagination of Product Dropdown when Add IP discovered asset
         Generic.Fetch alert message text and compare it with        Technology updated successfully
         UnselectAssetAPI.Hit API Endpoint
 
-
+Verify Pagination of Recent Activities Table
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
+    DashboardPage.select the option from the dashboard drawer       Account Overview
+    Generic.Verify your current page location contains          account-overview
+    PaginationPage.Check the table get load for Recent Activities
+    PaginationPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     autoCreatedAsset
+    PaginationPage.Log WebElements for Recent Activites table     autoCreatedAsset
 
