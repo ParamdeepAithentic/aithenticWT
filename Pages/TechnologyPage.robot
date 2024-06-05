@@ -1114,6 +1114,7 @@ Select tab under technology details
     wait until element is visible       css:a[href='#${option}']       ${wait_time}
     wait until element is enabled       css:a[href='#${option}']        ${wait_time}
     click element        css:a[href='#${option}']
+    sleep   ${search_sleep}
 
 #options: details,partners,location,parent-components,components,messages,history,attachments
 
@@ -1608,3 +1609,55 @@ Verify that product version on technology details page
 Click on the technology group row of the table inside advanced search
     Execute JavaScript    document.querySelector('.bg-white.location-list-qa.ng-star-inserted > tr:nth-child(1)').scrollIntoView(true);
     Click Element    css:.bg-white.location-list-qa.ng-star-inserted > tr:nth-child(1) > td:nth-child(1)
+
+Get And Verify The Count Of existing asset of parent
+    ${element_count}=    Get Element Count    //tbody/tr/td/label/span
+    Log to console      ${element_count}
+
+    FOR    ${index}    IN RANGE    1    ${element_count}
+        Wait Until Element Is Visible   //tbody/tr[${index}]/td/label/span      ${wait_time}
+        Wait Until Element Is enabled   //tbody/tr[${index}]/td/label/span      ${wait_time}
+        click element   //tbody/tr[${index}]/td/label/span
+    END
+
+Click on the export button of parent tab under technology details page
+   wait until element is visible   //div[@id='parent-components']//button[@id='dropdownMenuButton']     ${wait_time}
+    wait until element is enabled   //div[@id='parent-components']//button[@id='dropdownMenuButton']     ${wait_time}
+    click element   //div[@id='parent-components']//button[@id='dropdownMenuButton']
+
+Download the selected extension file of parent under technology details
+    [Arguments]    ${option}
+    wait until element is visible   //div[@class='dropdown-menu show']//a[contains(text(),'${option}')]     ${wait_time}
+    wait until element is enabled   //div[@class='dropdown-menu show']//a[contains(text(),'${option}')]     ${wait_time}
+    click element   //div[@class='dropdown-menu show']//a[contains(text(),'${option}')]
+
+Click on the export button of deatils tab under technology details page
+   wait until element is visible   //div[@id='details']//button[@id='dropdownMenuButton']     ${wait_time}
+    wait until element is enabled   //div[@id='details']//button[@id='dropdownMenuButton']     ${wait_time}
+    click element   //div[@id='details']//button[@id='dropdownMenuButton']
+
+Click on the export button of component tab under technology details page
+   wait until element is visible   //div[@id='components']//button[@id='dropdownMenuButton']     ${wait_time}
+    wait until element is enabled   //div[@id='components']//button[@id='dropdownMenuButton']     ${wait_time}
+    click element   //div[@id='components']//button[@id='dropdownMenuButton']
+
+#Enter input in the not containing productv field
+#    [Arguments]     ${Product}
+#    wait until element is visible   //input[@formcontrolname='ProductNotContaining']     ${wait_time}
+#    wait until element is enabled   //input[@formcontrolname='ProductNotContaining']     ${wait_time}
+#    click element   //input[@formcontrolname='ProductNotContaining']
+#    input text      //input[@formcontrolname='ProductNotContaining']     ${Product}
+#
+#Enter input in the not containing description field
+#    [Arguments]     ${Description_not_containing}
+#    wait until element is visible   //input[@formcontrolname='DescriptionNotContaining']     ${wait_time}
+#    wait until element is enabled   //input[@formcontrolname='DescriptionNotContaining']    ${wait_time}
+#    click element   //input[@formcontrolname='DescriptionNotContaining']
+#    input text      //input[@formcontrolname='DescriptionNotContaining']     ${Description_not_containing}
+#
+#Enter input in the not containing feature field
+#    [Arguments]     ${Feature_not_containing}
+#    wait until element is visible   //input[@formcontrolname='FeatureNotContaining']     ${wait_time}
+#    wait until element is enabled   //input[@formcontrolname='FeatureNotContaining']    ${wait_time}
+#    click element   //input[@formcontrolname='FeatureNotContaining']
+#    input text     //input[@formcontrolname='FeatureNotContaining']     ${Feature_not_containing}
