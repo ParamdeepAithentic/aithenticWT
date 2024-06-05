@@ -42,8 +42,8 @@ ${user_name}             rahulshettyacademy
 ${invalid_password}      123445
 
 
-${url}                 https://uat-app.aithentic.com/
-#${url}                https://qa-app.aithentic.com/
+#${url}                 https://uat-app.aithentic.com/
+${url}                https://qa-app.aithentic.com/
 #${url}                https://pre-prod-app.aithentic.com
 ${apiURL}              https://uat-api.aithentic.com/api/v1
 #${apiURL}             https://qa-api.aithentic.com/api/v1
@@ -77,7 +77,6 @@ ${click_Country}     css:#country
 ${click_countryTag}     css:.iti__selected-flag.dropdown-toggle
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
-
 
 ${wait_time}       120
 ${yop_sleep}       10
@@ -340,7 +339,7 @@ Update settings for Asset_ID, employee_id and location
     DashboardPage.Select the asset ID checkbox      no
     sleep       ${yop_sleep}
     close browser
-    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
-    Run Process    cmd.exe    /C    taskkill /IM chrome.exe /F
-    Run Process    cmd.exe    /C    taskkill /IM skype.exe /F
-    Run Process    cmd.exe    /C    taskkill /IM msedge.exe /F
+#    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+#    Run Process    cmd.exe    /C    taskkill /IM chrome.exe /F
+#    Run Process    cmd.exe    /C    taskkill /IM skype.exe /F
+#    Run Process    cmd.exe    /C    taskkill /IM msedge.exe /F
