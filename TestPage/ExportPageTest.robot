@@ -533,15 +533,3 @@ Export component tab list
     PartnersPage.Verify that the selected extension file is downloaded       .tsv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
-
-
-
-
-
-
-
-
-
-
-
-
