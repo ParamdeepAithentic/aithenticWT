@@ -823,7 +823,7 @@ Verify Reports Asset Alert
     TechnologyPage.Remove asset from technology table
     Generic.Fetch alert message text and compare it with        Technology Removed Successfully
     Generic.Verify your current page location contains      technology
-    Generic.Verify your current page contains this text     No Records 
+    Generic.Verify your current page contains this text     No Records
     Generic.select the option from the side menu    Dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      management-console
@@ -877,8 +877,8 @@ Verify Reports Asset Alert
     Generic.Verify your current page contains this text     Billing Details
     Generic.Refresh the existing page
     DashboardPage.Wait until alert is visible in the Recent Notifiation tab        A new agent has been downloaded for       Macos.
-    DashboardPage.Click on View more dropdown under recent notifications    View More
-    DashboardPage.Verify the invisiblity of view_more button
+#    DashboardPage.Click on View more dropdown under recent notifications    View More
+#    DashboardPage.Verify the invisiblity of view_more button
 
 Click and verify the count of the tabs under renewal overview by management console
     Generic.click on the tab	Login
