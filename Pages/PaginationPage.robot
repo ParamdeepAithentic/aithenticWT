@@ -247,7 +247,39 @@ Click on save technology form button of OCS
     wait until element is enabled       ${saveBTN1}       ${wait_time}
     click element       ${saveBTN1}
 
+#######################################################################################################################################################################################################################################################################################################
 
+Fetch the selected value of the dropdown for Recent Activities table
+    [Arguments]     ${option}
+    wait until element is visible       //tbody/tr[2]      ${wait_time}
+    wait until element is enabled       //tbody/tr[2]      ${wait_time}
+    ${get_count_of_dropDown_value} =    get text    css:.qa-${option}-per-page .ng-value span.ng-value-label
+    ${dropDown_value_as_number}=   Convert To Integer   ${get_count_of_dropDown_value}
+    set global variable    ${dropDown_value_as_number}
+    Log to console  Selected value :${dropDown_value_as_number}
+
+Check the table get load for Recent Activities
+    wait until element is visible       //tbody/tr[2]      ${wait_time}
+    wait until element is enabled       //tbody/tr[2]      ${wait_time}
+
+Get count of total rows for Recent Activities table
+    wait until element is visible       //tbody/tr[2]      ${wait_time}
+    wait until element is enabled       //tbody/tr[2]      ${wait_time}
+    ${elements} =  Get WebElements     ${TotalRow_count}
+    ${row_count} =    Get Length    ${elements}
+    ${total_table_row_count}=   Convert To Integer   ${row_count}
+    set global variable    ${total_table_row_count}
+
+Log WebElements for Recent Activites table
+    [Arguments]     ${option}
+    ${elements} =    Get WebElements    //div[contains(@class, 'scroll-host')]//span
+    ${element_count} =    Get Length    ${elements}
+    FOR    ${index}    IN RANGE    0    ${element_count}
+        wait until element is visible     //div[contains (@id, '-${index}')]       ${wait_time}
+        wait until element is enabled     //div[contains (@id, '-${index}')]       ${wait_time}
+        click element   //div[contains (@id, '-${index}')]
+        Run Keywords    Fetch the selected value of the dropdown for Recent Activities table     ${option}   AND      Check the table get load for Recent Activities       AND      Get count of total rows for Recent Activities table     AND     Verify Pagination and Row Count     AND     PaginationPage.Fetch the total count   AND     Click on the pagination dropdown  ${option}
+    END
 
     
 
