@@ -1181,6 +1181,3 @@ View Details and check the details of Contract
     PartnersPage.Verify pages with the element  Item
     PartnersPage.Click on back to contract details button link
     PartnersPage.Download the contract pdf
-
-
-Export team member list

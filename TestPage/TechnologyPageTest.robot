@@ -2164,5 +2164,3 @@ Search Technnology with Product Version
     TechnologyPage.Search by Product Version       ${result}
     TechnologyPage.Click on the first row of the technology table
     TechnologyPage.Verify that product version on technology details page
-
-Export deatils page list
