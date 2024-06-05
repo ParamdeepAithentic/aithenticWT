@@ -1114,6 +1114,7 @@ Select tab under technology details
     wait until element is visible       css:a[href='#${option}']       ${wait_time}
     wait until element is enabled       css:a[href='#${option}']        ${wait_time}
     click element        css:a[href='#${option}']
+    sleep   ${search_sleep}
 
 #options: details,partners,location,parent-components,components,messages,history,attachments
 
@@ -1639,6 +1640,3 @@ Click on the export button of component tab under technology details page
    wait until element is visible   //div[@id='components']//button[@id='dropdownMenuButton']     ${wait_time}
     wait until element is enabled   //div[@id='components']//button[@id='dropdownMenuButton']     ${wait_time}
     click element   //div[@id='components']//button[@id='dropdownMenuButton']
-
-Wait for the shadow invisibility
-    wait until element is not visible   //div[@class='modal-backdrop fade show']    ${wait_time}

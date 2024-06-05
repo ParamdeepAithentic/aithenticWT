@@ -236,14 +236,28 @@ Export partner list while adding new partner
 
 Export list of parent tab under technology details
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      management-console
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.Search by AssetId       AssetID_7003489679
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list       OPMR815274
+    TechnologyPage.Create unique serial number random
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
+    OCS.Visible the print qr button to for data loading
     TechnologyPage.Select tab under technology details      parent-components
     TechnologyPage.Click on add new entry parent button under technology details page      Add New Entry
     TechnologyPage.Select add new entry        New Asset
@@ -252,6 +266,8 @@ Export list of parent tab under technology details
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Select parameter from technology dropdown list       Product_00337612322
     TechnologyPage.Add New_Parent assetID for technology lifecycle information random
+    TechnologyPage.Select technology lifecycle status      Active
+    Generic.Scroll Window To End
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
@@ -259,10 +275,14 @@ Export list of parent tab under technology details
     TechnologyPage.Search by AssetId      ${generated_NewParentAssetID}
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
+    OCS.Visible the print qr button to for data loading
     TechnologyPage.Select tab under technology details      parent-components
     TechnologyPage.Click on add new entry parent button under technology details page      Add New Entry
+    sleep   ${search_sleep}
     TechnologyPage.Select add new entry        Existing Asset
+    sleep   ${search_sleep}
     Generic.Verify your current page location contains      technology
+    Generic.Wait until table get load
     TechnologyPage.Get And Verify The Count Of existing asset of parent
     Generic.click on the tab        Link
     Generic.Fetch alert message text and compare it with        Technology linked successfully.
@@ -481,12 +501,11 @@ Export component tab list
     OCS.Visible the print qr button to for data loading
     TechnologyPage.Select tab under technology details      components
     TechnologyPage.Click on add new entry component button under technology details page       Add New Entry
+    sleep   ${search_sleep}
     TechnologyPage.Select add new entry        Existing Asset
     sleep   ${search_sleep}
     Generic.Verify your current page location contains      technology
     Generic.Wait until table get load
-    TechnologyPage.Wait for the shadow invisibility
-    sleep   5
     TechnologyPage.Get And Verify The Count Of existing asset of parent
     Generic.click on the tab        Link
     Generic.Fetch alert message text and compare it with        Technology linked successfully.
