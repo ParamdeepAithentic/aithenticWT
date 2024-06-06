@@ -1182,7 +1182,6 @@ View Details and check the details of Contract
     PartnersPage.Click on back to contract details button link
     PartnersPage.Download the contract pdf
 
-
 Add_edit_deactivate_removeSupplier while adding brand
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
@@ -1283,4 +1282,5 @@ Add_edit_deactivate_removeSupplier while adding brand
     PartnersPage.Select option from the pop up  Yes
     Generic.Fetch alert message text and compare it with      Partner deleted successfully
 
-
+Zz kill browser
+    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

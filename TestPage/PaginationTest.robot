@@ -411,3 +411,5 @@ Verify Pagination of Recent Activities Table
     PaginationPage.Click on the pagination dropdown     autoCreatedAsset
     PaginationPage.Log WebElements for Recent Activites table     autoCreatedAsset
 
+Zz kill browser
+    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

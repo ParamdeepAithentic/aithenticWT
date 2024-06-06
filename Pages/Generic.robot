@@ -62,7 +62,7 @@ ${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-10       
 ${admin_name}        aithentic@yopmail.com
 ${admin_password}       Admin@123
 
-${browser_name}          firefox
+${browser_name}          headlessfirefox
 
 ${email}                 testqa29j@mailinator.com
 ${SheetLocationAndName}   LoadTimeSheet.xlsx
@@ -79,7 +79,7 @@ ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
 
-${wait_time}       60
+${wait_time}        240
 ${yop_sleep}       10
 ${search_sleep}       1
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
@@ -340,7 +340,7 @@ Update settings for Asset_ID, employee_id and location
     DashboardPage.Select the asset ID checkbox      no
     sleep       ${yop_sleep}
     close browser
-#    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
-#    Run Process    cmd.exe    /C    taskkill /IM chrome.exe /F
-#    Run Process    cmd.exe    /C    taskkill /IM skype.exe /F
-#    Run Process    cmd.exe    /C    taskkill /IM msedge.exe /F
+    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+    Run Process    cmd.exe    /C    taskkill /IM chrome.exe /F
+    Run Process    cmd.exe    /C    taskkill /IM skype.exe /F
+    Run Process    cmd.exe    /C    taskkill /IM msedge.exe /F

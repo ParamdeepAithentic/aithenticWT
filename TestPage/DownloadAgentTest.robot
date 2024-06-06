@@ -460,7 +460,6 @@ Network Discovery in case of no records
 
 
 Visit discovered asset list when click on No. IP discovered devices
-    [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     LandingPage.Verify you are on dashboard page
@@ -475,6 +474,9 @@ Visit discovered asset list when click on No. IP discovered devices
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Service Now Newly-Discovered
     Generic.Verify your current page location contains     discovery-assets
+
+Zz kill browser
+    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
 
 #Refresh search text on discovered asset list page
 #    Generic.click on the tab	Login
