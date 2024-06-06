@@ -674,7 +674,6 @@ Technology Bulk import
     Bulk_Import_ExportPage.Perform the keyboard action      SupportPartner
     Bulk_Import_Exportpage.Enter the new value of serial number of technology bulk import      DYNA_21
     Bulk_Import_ExportPage.Perform the keyboard action      DYNA_21
-    sleep   500
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_2      Capex
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_2
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_9      Account123

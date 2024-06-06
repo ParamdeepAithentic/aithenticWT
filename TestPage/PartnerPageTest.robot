@@ -788,7 +788,7 @@ Edit Manufacturer via partner
     PartnersPage.Click on Add new Address of partner        Add new Address
     PartnersPage.Select country     United States
     PartnersPage.Add Unique address_one of partner
-    PartnersPage.Add new address_two of partner
+    PartnersPage.Add Unique address_two of partner
     PartnersPage.Select State       Alaska
     PartnersPage.Select City        Akutan
     PartnersPage.Add new zip code of partner     56709
@@ -1183,7 +1183,7 @@ View Details and check the details of Contract
     PartnersPage.Download the contract pdf
 
 
-Add Supplier while adding brand
+Add_edit_deactivate_removeSupplier while adding brand
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -1234,15 +1234,32 @@ Add Supplier while adding brand
     Generic.click on the button     Edit
     PartnersPage.click on plus icon to add another business_url
     PartnersPage.Add second business_url        ${generated_BrandName}
+    Generic.Scroll the page till        700
+#    PartnersPage.Click on Add new Address of partner        Add new Address
+#    PartnersPage.Select partner country       Austria
+#    PartnersPage.Add Unique address_one of partner
+#    PartnersPage.Add new address_two of partner
+#    PartnersPage.Select State         Salzburg
+#    PartnersPage.Select City         Anger
+#    PartnersPage.Add new zip code of partner     15321531
+#    Generic.click on the button     Add
     PartnersPage.click on edit icon
     PartnersPage.Add Unique address_one of partner
     PartnersPage.Add new address_two of partner
     PartnersPage.Click on cross-icon for clearing text
-    PartnersPage.Select State       Alaska
-    PartnersPage.Select City        Akutan
+    PartnersPage.Select State       Iowa
+    PartnersPage.Select City        Ackley
     PartnersPage.Add new zip code of partner     56709
     PartnersPage.Update the partner information
     Generic.Scroll the page till        700
+    PartnersPage.Click on Add new Address of partner        Add new Address
+    PartnersPage.Select partner country       United States
+    PartnersPage.Add Unique address_one of partner
+    PartnersPage.Add new address_two of partner
+    PartnersPage.Select State          Arizona
+    PartnersPage.Select City         Ajo
+    PartnersPage.Add new zip code of partner     15321531
+    Generic.click on the button     Add
     PartnersPage.Click on pencil icon of address and contact under partner   2
     PartnersPage.Enter random contact name
     PartnersPage.Enter new_business_email of contact    ${generate_PersonName}     yopmail
