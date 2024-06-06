@@ -165,3 +165,7 @@ It performnace drill down investment by partner
     ITperformancePage.Click on tabs under it perfomance     investments-partners
     ITperformancePage.Click on tabs under investment by partner tab     supportlocationbudget
     ITperformancePage.Get and verify the count of table of brand spend by supplier and supplier spend my location of investment by partner     QACompany96590301 Budget by Supplier and Location        QACompany96590301 Budget by Supplier and Location
+
+
+Zz kill browser
+    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

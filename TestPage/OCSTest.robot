@@ -1534,3 +1534,6 @@ Upload Image and Document file during Add Asset with IP address from Agent Disco
     FINALLY
         OCS.Welcome to the code
     END
+
+Zz kill browser
+    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

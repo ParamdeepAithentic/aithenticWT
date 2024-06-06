@@ -302,6 +302,7 @@ Select product technology group
     click element   ${select_technology_group}
     Scroll Element Into View        //span[normalize-space()='${option}']
     wait until element is visible      //span[normalize-space()='${option}']       ${wait_time}
+    wait until element is enabled      //span[normalize-space()='${option}']       ${wait_time}
     click element       //span[normalize-space()='${option}']
 
 Select product technology group via link

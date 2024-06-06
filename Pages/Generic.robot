@@ -42,8 +42,8 @@ ${user_name}             rahulshettyacademy
 ${invalid_password}      123445
 
 
-#${url}                 https://uat-app.aithentic.com/
-${url}                https://qa-app.aithentic.com/
+${url}                 https://uat-app.aithentic.com/
+#${url}                https://qa-app.aithentic.com/
 #${url}                https://pre-prod-app.aithentic.com
 ${apiURL}              https://uat-api.aithentic.com/api/v1
 #${apiURL}             https://qa-api.aithentic.com/api/v1
@@ -79,7 +79,7 @@ ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
 
-${wait_time}       60
+${wait_time}        120
 ${yop_sleep}       10
 ${search_sleep}       1
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
@@ -335,12 +335,12 @@ Update settings for Asset_ID, employee_id and location
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     Generic.Verify your current page location contains     organization
-    DashboardPage.Select the employee ID checkbox   no
+    DashboardPage.Select the employee ID checkbox   yes
     DashboardPage.Select the location ID checkbox   yes
     DashboardPage.Select the asset ID checkbox      no
     sleep       ${yop_sleep}
     close browser
-#    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
-#    Run Process    cmd.exe    /C    taskkill /IM chrome.exe /F
-#    Run Process    cmd.exe    /C    taskkill /IM skype.exe /F
-#    Run Process    cmd.exe    /C    taskkill /IM msedge.exe /F
+    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+    Run Process    cmd.exe    /C    taskkill /IM chrome.exe /F
+    Run Process    cmd.exe    /C    taskkill /IM skype.exe /F
+    Run Process    cmd.exe    /C    taskkill /IM msedge.exe /F

@@ -240,6 +240,7 @@ Create new asset with new brand and product
     Generic.Click on the profile name
     Generic.Select option from profile list     product-dropdown
     Generic.Verify your current page location contains      product
+    Generic.Wait until table get load
     DashboardPage.Click on action button
     DashboardPage.Click add product button
     DashboardPage.Create product name random
@@ -247,6 +248,7 @@ Create new asset with new brand and product
     DashboardPage.Add product description
     DashboardPage.Add product feature
     DashboardPage.Select product technology type     Hardware
+    sleep       1500
     DashboardPage.Select product technology group     Applications
     DashboardPage.Select product status   Active
     DashboardPage.Save added product details
@@ -2196,3 +2198,6 @@ Search Technnology with Product Version
     TechnologyPage.Search by Product Version       ${result}
     TechnologyPage.Click on the first row of the technology table
     TechnologyPage.Verify that product version on technology details page
+
+Zz kill browser
+    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
