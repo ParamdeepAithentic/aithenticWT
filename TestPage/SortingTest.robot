@@ -35,6 +35,7 @@ Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
 Resource        ../Pages/SortingPage.robot
 Resource        ../Pages/Bulk_Import_ExportPage.robot
+Resource    ../Pages/PaginationPage.robot
 
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
@@ -376,6 +377,7 @@ Test the sorting of bulk edit grid under team members
     sleep     ${yop_sleep}
     switch window     aithentic | Edit - Members
     Generic.Verify your current page location contains      member-bulk-edit
+    sleep   ${search_sleep}
     SortingPage.Verify the sorting of the table method five    10      Position/Title
     SortingPage.Verify the sorting of the table method five    11      Employee ID
     SortingPage.Expand all sorting field
@@ -412,4 +414,16 @@ Test the sorting of bulk edit grid under assigned users
     SortingPage.Verify the sorting of the table method five    4      Business Email
     SortingPage.Verify the sorting of the table method five    5      Employee Id
 
-
+Test the sorting of Recent Activities Table under Dashboard page
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
+    DashboardPage.select the option from the dashboard drawer       Account Overview
+    Generic.Verify your current page location contains          account-overview
+    DashboardPage.Click on the filter Past under recent Activities table        Months
+    PaginationPage.Check the table get load for Recent Activities
+    PaginationPage.Click on the pagination dropdown     autoCreatedAsset
+    PaginationPage.Select the value from the pagination drop down count    500
+    SortingPage.Verify the sorting of the table method six    2        Actioned By
+    SortingPage.Verify the sorting of the table method six    3        Created At

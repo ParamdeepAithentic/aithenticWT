@@ -959,3 +959,11 @@ Click on the first dropdown under management console
     Wait Until Element Is Visible    (//div[contains(@class,'qa-upcoming-days')])[1]      ${wait_time}
     Wait Until Element Is Enabled    (//div[contains(@class,'qa-upcoming-days')])[1]      ${wait_time}
     Click Element       (//div[contains(@class,'qa-upcoming-days')])[1]
+
+Click on the filter Past under recent Activities table
+    [Arguments]         ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //span[normalize-space()='Hours']//parent::div//parent::div  ${wait_time}
+    Wait Until Element Is Enabled    //span[normalize-space()='Hours']//parent::div//parent::div  ${wait_time}
+    Click Element    //span[normalize-space()='Hours']//parent::div//parent::div
+    Generic.Select parameter    ${option}

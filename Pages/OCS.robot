@@ -665,7 +665,7 @@ Get Host name by hovering over discovered assets
     set global variable     ${hover_host name}
 
 Click on newly discovered tab under network discovery
-    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+#    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     Wait Until Element Is visible    css:.qa-newly-discovered-tab     ${wait_time}
     Wait Until Element Is enabled    css:.qa-newly-discovered-tab     ${wait_time}
     click element    css:.qa-newly-discovered-tab
