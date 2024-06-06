@@ -2138,38 +2138,38 @@ Search with brand_product_technologytype_technologygroup on advanced search
     TechnologyPage.Wait until advanced search table get load
     TechnologyPage.Get text of feature inside add technology
     TechnologyPage.verify Text from Assignment Information      Aithentic Feature     ${feature}
-#    Generic.click on the button     Reset Filters
-#    TechnologyPage.Enter input in the not containing productv field     Product_0033761232
-#    Generic.click on the button     Search
-#    sleep   ${search_sleep}
-#    TechnologyPage.Wait until advanced search table get load
-#    TechnologyPage.Click on the row of the table inside advanced search
-#    Generic.Scroll Window To End
-#    Generic.click on the button     Select
-#    sleep   ${search_sleep}
-#    Generic.Verify your current page location contains      addtechnology
-#    TechnologyPage.Click on advanced search button link under add technology
-#    Generic.click on the button     Reset Filters
-#    TechnologyPage.Enter input in the not containing description field      Test4
-#    Generic.click on the button     Search
-#    sleep   ${search_sleep}
-#    TechnologyPage.Wait until advanced search table get load
-#    TechnologyPage.Click on the row of the table inside advanced search
-#    Generic.Scroll Window To End
-#    Generic.click on the button     Select
-#    sleep   ${search_sleep}
-#    Generic.Verify your current page location contains      addtechnology
-#    TechnologyPage.Click on advanced search button link under add technology
-#    Generic.click on the button     Reset Filters
-#    TechnologyPage.Enter input in the not containing feature field      Product feature
-#    Generic.click on the button     Search
-#    sleep   ${search_sleep}
-#    TechnologyPage.Wait until advanced search table get load
-#    TechnologyPage.Click on the row of the table inside advanced search
-#    Generic.Scroll Window To End
-#    Generic.click on the button     Select
-#    sleep   ${search_sleep}
-#    Generic.Verify your current page location contains      addtechnology
+    Generic.click on the button     Reset Filters
+    TechnologyPage.Enter input in the not containing productv field     Product_0033761232
+    Generic.click on the button     Search
+    sleep   ${search_sleep}
+    TechnologyPage.Wait until advanced search table get load
+    TechnologyPage.Click on the row of the table inside advanced search
+    Generic.Scroll Window To End
+    Generic.click on the button     Select
+    sleep   ${search_sleep}
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click on advanced search button link under add technology
+    Generic.click on the button     Reset Filters
+    TechnologyPage.Enter input in the not containing description field      Test4
+    Generic.click on the button     Search
+    sleep   ${search_sleep}
+    TechnologyPage.Wait until advanced search table get load
+    TechnologyPage.Click on the row of the table inside advanced search
+    Generic.Scroll Window To End
+    Generic.click on the button     Select
+    sleep   ${search_sleep}
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click on advanced search button link under add technology
+    Generic.click on the button     Reset Filters
+    TechnologyPage.Enter input in the not containing feature field      Product feature
+    Generic.click on the button     Search
+    sleep   ${search_sleep}
+    TechnologyPage.Wait until advanced search table get load
+    TechnologyPage.Click on the row of the table inside advanced search
+    Generic.Scroll Window To End
+    Generic.click on the button     Select
+    sleep   ${search_sleep}
+    Generic.Verify your current page location contains      addtechnology
 
 Search Technnology with Product Version
     Generic.click on the tab	Login
