@@ -93,12 +93,9 @@ Edit Team member page - Edit New Department and assign that department to Team m
     [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-<<<<<<< HEAD
+
 #    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
-=======
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     I_iconPage.Choose options inside personal_details        Organization
@@ -108,7 +105,6 @@ Edit Team member page - Edit New Department and assign that department to Team m
     DashboardPage.Select the location ID checkbox   yes
     DashboardPage.Select the asset ID checkbox      no
     Generic.Fetch alert message text and compare it with       Settings Updated
->>>>>>> 962a5d190f38045c722644cf86a62e19fc9096f9
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Click on add team member action button
