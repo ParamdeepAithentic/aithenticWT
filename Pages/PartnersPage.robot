@@ -73,7 +73,7 @@ ${loaderIcon}     //div[@role='status']
 ${partner_newaddress_Line2}     css:#addressLine2
 ${new_zipcode}      css:#zip
 ${new_contactEmail}     css:#businessEmail
-${update_button}       //div[@id='addressModal']//div[contains(@class,'addressModalWidth')]//following-sibling::button[normalize-space()='Update']
+${update_button}       xpath://button[@type='button'][normalize-space()='Update']
 ${select_remove_popUp_Yes}      xpath://button[normalize-space()='Yes']
 ${clear_text}       css:ng-select[placeholder='Select State'] span[title='Clear all']
 ${partner_edit_icon}        css:.fa-pencil-alt.pencil
