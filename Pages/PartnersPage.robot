@@ -636,3 +636,12 @@ Update the partner information of edit contact
     wait until element is enabled     //div[@id='contactModal']//div[@class='modal-content']//following-sibling::button[normalize-space()='Update']        ${wait_time}
     click element       //div[@id='contactModal']//div[@class='modal-content']//following-sibling::button[normalize-space()='Update']
     sleep   ${search_sleep}
+
+Select the partner address country
+    [Arguments]     ${country}
+    wait until element is visible       ${click_Country}        ${wait_time}
+    wait until element is enabled       ${click_Country}        ${wait_time}
+    click element   ${click_Country}
+    Clear element text      ${click_Country}
+    input text   ${click_Country}   ${country}
+    Press Keys   ${click_Country}       ENTER
