@@ -425,6 +425,7 @@ Login as Supplier with different roles
     Generic.Fetch log_out alert message
 
 Login as Support_Partner with different roles
+    [Tags]    rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      supportpartner@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
