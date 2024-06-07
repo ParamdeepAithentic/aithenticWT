@@ -1647,23 +1647,23 @@ Click on the export button of component tab under technology details page
     wait until element is enabled   //div[@id='components']//button[@id='dropdownMenuButton']     ${wait_time}
     click element   //div[@id='components']//button[@id='dropdownMenuButton']
 
-Enter input in the not containing productv field
-    [Arguments]     ${Product}
-    wait until element is visible   //input[@formcontrolname='ProductNotContaining']     ${wait_time}
-    wait until element is enabled   //input[@formcontrolname='ProductNotContaining']     ${wait_time}
-    click element   //input[@formcontrolname='ProductNotContaining']
-    input text      //input[@formcontrolname='ProductNotContaining']     ${Product}
-
-Enter input in the not containing description field
-    [Arguments]     ${Description_not_containing}
-    wait until element is visible   //input[@formcontrolname='DescriptionNotContaining']     ${wait_time}
-    wait until element is enabled   //input[@formcontrolname='DescriptionNotContaining']    ${wait_time}
-    click element   //input[@formcontrolname='DescriptionNotContaining']
-    input text      //input[@formcontrolname='DescriptionNotContaining']     ${Description_not_containing}
-
-Enter input in the not containing feature field
-    [Arguments]     ${Feature_not_containing}
-    wait until element is visible   //input[@formcontrolname='FeatureNotContaining']     ${wait_time}
-    wait until element is enabled   //input[@formcontrolname='FeatureNotContaining']    ${wait_time}
-    click element   //input[@formcontrolname='FeatureNotContaining']
-    input text     //input[@formcontrolname='FeatureNotContaining']     ${Feature_not_containing}
+#Enter input in the not containing productv field
+#    [Arguments]     ${Product}
+#    wait until element is visible   //input[@formcontrolname='ProductNotContaining']     ${wait_time}
+#    wait until element is enabled   //input[@formcontrolname='ProductNotContaining']     ${wait_time}
+#    click element   //input[@formcontrolname='ProductNotContaining']
+#    input text      //input[@formcontrolname='ProductNotContaining']     ${Product}
+#
+#Enter input in the not containing description field
+#    [Arguments]     ${Description_not_containing}
+#    wait until element is visible   //input[@formcontrolname='DescriptionNotContaining']     ${wait_time}
+#    wait until element is enabled   //input[@formcontrolname='DescriptionNotContaining']    ${wait_time}
+#    click element   //input[@formcontrolname='DescriptionNotContaining']
+#    input text      //input[@formcontrolname='DescriptionNotContaining']     ${Description_not_containing}
+#
+#Enter input in the not containing feature field
+#    [Arguments]     ${Feature_not_containing}
+#    wait until element is visible   //input[@formcontrolname='FeatureNotContaining']     ${wait_time}
+#    wait until element is enabled   //input[@formcontrolname='FeatureNotContaining']    ${wait_time}
+#    click element   //input[@formcontrolname='FeatureNotContaining']
+#    input text     //input[@formcontrolname='FeatureNotContaining']     ${Feature_not_containing}
