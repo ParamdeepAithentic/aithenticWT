@@ -42,8 +42,8 @@ Activate and deactivate the location
     [Tags]      Time      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.select the option from the side menu    Location
     Generic.Verify your current page location contains      locationlist

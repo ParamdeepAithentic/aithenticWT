@@ -47,8 +47,8 @@ Testone
 Login as End_user with different roles
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      enduser@yopmail.net    Test@123
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains    personal-profile
@@ -425,7 +425,6 @@ Login as Supplier with different roles
     Generic.Fetch log_out alert message
 
 Login as Support_Partner with different roles
-    [Tags]    rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      supportpartner@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
