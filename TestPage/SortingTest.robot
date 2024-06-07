@@ -365,7 +365,7 @@ Test the sorting of sent table page under message page
 
 
 Test the sorting of bulk edit grid under team members
-    [Tags]    Smoke
+    [Tags]    Smoke     rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      jasdeep@15963.fr.nf     Paramdeep@112
 #    LandingPage.Verify you are on dashboard page
@@ -427,3 +427,7 @@ Test the sorting of Recent Activities Table under Dashboard page
     PaginationPage.Select the value from the pagination drop down count    500
     SortingPage.Verify the sorting of the table method six    2        Actioned By
     SortingPage.Verify the sorting of the table method six    3        Created At
+
+
+Zz kill browser
+    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

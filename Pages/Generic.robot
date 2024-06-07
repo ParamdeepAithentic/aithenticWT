@@ -79,7 +79,7 @@ ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
 
-${wait_time}       60
+${wait_time}        30
 ${yop_sleep}       10
 ${search_sleep}       1
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
@@ -336,12 +336,25 @@ Update settings for Asset_ID, employee_id and location
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     Generic.Verify your current page location contains     organization
-    DashboardPage.Select the employee ID checkbox   no
+    DashboardPage.Select the employee ID checkbox   yes
     DashboardPage.Select the location ID checkbox   yes
     DashboardPage.Select the asset ID checkbox      no
+#    Generic.Click on the profile name
+#    Generic.Select option from profile list     subscription-dropdown
+#    Generic.Verify your current page location contains      subscription
+#    SubscriptionPage.Select if you want to change plan or asset    Change Plan
+#    TechnologyPage.Select plan for subscription     Premium
+#    Generic.Scroll the page till    200
+#    SubscriptionPage.Set asset range to     1000
+#    SubscriptionPage.Update the payment of changed plan     proceed
+#    TechnologyPage.Click on pop up of available Inactive Asset   cancel
+#    SubscriptionPage.Select the payment method    ach
+#    SubscriptionPage.Select the account for payment
+#    SubscriptionPage.Proceed the payment     proceed
+#    Generic.Fetch alert message text and compare it with      Payment Successful
     sleep       ${yop_sleep}
     close browser
-#    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
-#    Run Process    cmd.exe    /C    taskkill /IM chrome.exe /F
-#    Run Process    cmd.exe    /C    taskkill /IM skype.exe /F
-#    Run Process    cmd.exe    /C    taskkill /IM msedge.exe /F
+    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+    Run Process    cmd.exe    /C    taskkill /IM chrome.exe /F
+    Run Process    cmd.exe    /C    taskkill /IM skype.exe /F
+    Run Process    cmd.exe    /C    taskkill /IM msedge.exe /F

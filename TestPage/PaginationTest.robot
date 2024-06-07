@@ -207,7 +207,6 @@ Verify Pagination of Product Dropdown when Add and Edit Technology
 
 
 Verify Pagination of Product Dropdown when Add discovered asset and component
-        [Tags]      rerun
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
 #        LandingPage.Verify you are on dashboard page
@@ -327,7 +326,6 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
         UnselectAssetAPI.Hit API Endpoint
 
 Verify Pagination of Product Dropdown when Add IP discovered asset
-        [Tags]      rerun
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
 #        LandingPage.Verify you are on dashboard page
@@ -411,3 +409,5 @@ Verify Pagination of Recent Activities Table
     PaginationPage.Click on the pagination dropdown     autoCreatedAsset
     PaginationPage.Log WebElements for Recent Activites table     autoCreatedAsset
 
+Zz kill browser
+    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

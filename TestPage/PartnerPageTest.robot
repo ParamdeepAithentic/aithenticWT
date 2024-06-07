@@ -815,7 +815,7 @@ Edit Manufacturer via partner
 
 
 Deactivate Manufacturer via partner
-    [Tags]      Sanity      tt
+    [Tags]      Sanity
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -1079,7 +1079,6 @@ Remove Manufacturer from partner
     Generic.Fetch alert message text and compare it with      Partner deleted successfully
 
 View Details and check the details of Contract
-    [Tags]     rerun
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -1181,3 +1180,7 @@ View Details and check the details of Contract
     PartnersPage.Verify pages with the element  Item
     PartnersPage.Click on back to contract details button link
     PartnersPage.Download the contract pdf
+
+
+Zz kill browser
+    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

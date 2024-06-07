@@ -680,19 +680,21 @@ Technology Bulk import
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_9
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_3      1654
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_3
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_4      1100
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_4      CPU
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_4
 
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_7      100
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_7
+
+
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_8      12
-    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_8
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_10      01/01/2023
-    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_10
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_11     01/01/2024
-    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_11
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_12     1
-    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_12
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_8
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_10      01/01/2023
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_10
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_11     01/01/2024
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_11
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_12     1
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_12
 #    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      LastPaymentDate     03/12/2024
     Generic.Click on the button     Check Data      #Update,Edit
     Generic.Click on the button     Upload
@@ -704,3 +706,7 @@ Technology Bulk import
     Generic.Verify your current page location contains     technology-list
     TechnologyPage.Search by AssetId       ${generated_assetid}
     Generic.Wait until table get load
+
+
+Zz kill browser
+    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

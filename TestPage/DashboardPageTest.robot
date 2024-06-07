@@ -74,7 +74,6 @@ Verify the drawer list
 
 
 Verify the side options list
-    [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -954,3 +953,6 @@ Click and verify the count of the tabs under renewal overview by choosing the va
 #    DashboardPage.Reset the filters for recent activities
 #    DashboardPage.Click on the filter Past under recent Activities table        Months
 #    PaginationPage.Check the table get load for Recent Activities
+
+Zz kill browser
+    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

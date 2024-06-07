@@ -44,6 +44,7 @@ Test Teardown   Close Browser session
 
 
 *** Test Cases ***
+
 Export Partner list
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
@@ -533,3 +534,7 @@ Export component tab list
     PartnersPage.Verify that the selected extension file is downloaded       .tsv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
+
+
+Zz kill browser
+    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

@@ -90,11 +90,25 @@ Add Team member page - Add New Department and assign that department to Team mem
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
 
 Edit Team member page - Edit New Department and assign that department to Team member
-    [Tags]      Sanity      rerun
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+<<<<<<< HEAD
 #    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+=======
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   no
+    DashboardPage.Select the location ID checkbox   yes
+    DashboardPage.Select the asset ID checkbox      no
+    Generic.Fetch alert message text and compare it with       Settings Updated
+>>>>>>> 962a5d190f38045c722644cf86a62e19fc9096f9
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Click on add team member action button
@@ -133,7 +147,7 @@ Edit Team member page - Edit New Department and assign that department to Team m
     Generic.Verify your current page location contains          memberslist
 
 Verify team member Asset history
-    [Tags]      Sanity      rerun
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
 #    LandingPage.Verify you are on dashboard page
@@ -224,7 +238,6 @@ Verify team member Asset history
     Generic.Verify your current page contains this text     Asset History
 
 Search asset history with Asset ID
-    [Tags]    rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
 #    LandingPage.Verify you are on dashboard page
@@ -335,7 +348,7 @@ Search asset history with Asset ID
     TeamMemberPage.verify status of first name in member list   ${generated_AssetID}
 
 Verify user is able to export team member asset history list
-    [Tags]     Smoke        rerun
+    [Tags]     Smoke      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form   debut@cool.fr.nf    Test@123
 #    LandingPage.Verify you are on dashboard page
@@ -744,3 +757,6 @@ Convert Assignee to team member in case of employee id is not system generated
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the employee ID checkbox   yes
     Generic.Fetch alert message text and compare it with       Settings Updated
+
+Zz kill browser
+    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
