@@ -80,7 +80,6 @@ Export Partner list
     Generic.click on the button     Okay, Thanks!
 
 Export partner list under technology details
-    [Tags]    rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -156,7 +155,6 @@ Export Location List
 
 
 Export location list of location under technology details page
-    [Tags]    rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
