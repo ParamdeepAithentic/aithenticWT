@@ -403,8 +403,10 @@ Verify Brand added
 
 select the option from the dashboard drawer
     [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible    //span[normalize-space()='${option}']      ${wait_time}
     wait until element is enabled    //span[normalize-space()='${option}']      ${wait_time}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     click element    //span[normalize-space()='${option}']
 
 ################################### WELCOME PAGE AND AHEAD ###############

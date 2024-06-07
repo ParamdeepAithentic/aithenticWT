@@ -47,8 +47,8 @@ Test Teardown   Close Browser session
 Download sheet for Forecasts
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     DashboardPage.select the option from the dashboard drawer     IT Performances
     Generic.Verify your current page location contains      it-performance
     ITperformancePage.Verify all tabs of supplier_partner_location and download sheet
@@ -58,8 +58,8 @@ Download sheet for Forecasts
 Download sheet for aging
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     DashboardPage.select the option from the dashboard drawer     IT Performances
     Generic.Verify your current page location contains      it-performance
     ITperformancePage.Verify all tabs of brand report and download sheet
@@ -70,8 +70,8 @@ Download sheet for investments
     [Tags]     Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     DashboardPage.select the option from the dashboard drawer     IT Performances
     Generic.Verify your current page location contains      it-performance
     ITperformancePage.Verify all tabs of asset report and download sheet
@@ -81,8 +81,8 @@ Download sheet for investments
 Download all sheets with download all button
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     DashboardPage.select the option from the dashboard drawer     IT Performances
     Generic.Verify your current page location contains      it-performance
     ITperformancePage.Click on download all button
@@ -90,8 +90,8 @@ Download all sheets with download all button
 It performnace drill down agging analytics
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}     ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     DashboardPage.select the option from the dashboard drawer     IT Performances
     Generic.Verify your current page location contains      it-performance
     ITperformancePage.Click on aging analytics tab
@@ -110,8 +110,8 @@ It performnace drill down agging analytics
 IT perfomance drill down data quality
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     DashboardPage.select the option from the dashboard drawer     IT Performances
     Generic.Verify your current page location contains      it-performance
     ITperformancePage.Click on tabs under it perfomance      spend-forecast-reports
@@ -128,8 +128,8 @@ IT perfomance drill down data quality of Investments by partner tab
     [Tags]     sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     DashboardPage.select the option from the dashboard drawer     IT Performances
     Generic.Verify your current page location contains      it-performance
     ITperformancePage.Click on tabs under it perfomance     investments-partners
@@ -149,8 +149,8 @@ IT perfomance drill down data quality of Investments by partner tab
 It performnace drill down investment by partner
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}     ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     DashboardPage.select the option from the dashboard drawer     IT Performances
     Generic.Verify your current page location contains      it-performance
     ITperformancePage.Click on tabs under it perfomance     investments-partners

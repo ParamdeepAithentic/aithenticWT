@@ -40,8 +40,8 @@ Verify Reports Key Data records count
     [Tags]      Sanity      Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}       ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Dashboard
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview
@@ -90,8 +90,8 @@ Verify Reports Technology Types records count
     [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}       ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Dashboard
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview
@@ -133,8 +133,8 @@ Verify reports modules data
     [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Dashboard
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview

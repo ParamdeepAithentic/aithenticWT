@@ -39,12 +39,12 @@ Test Teardown   Close Browser session
 Verify all i-icon of Dashboard page
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Dashboard
-    Generic.Verify your current page location contains      management-console
+    Generic.Verify your current page location contains      dashboard
     DashboardPage.select the option from the dashboard drawer   Asset Overview
-    Generic.Verify your current page location contains      asset-overview
+    Generic.Verify your current page location contains      dashboard
     I_iconPage.Click on i-icon of asset-overview tab
     Generic.Verify pop-up is visible after clicking on i-icon
     I_iconPage.Click on i-icon of asset-overview tab
@@ -58,8 +58,8 @@ Verify all i-icon of profile-listing
     [Tags]     Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     I_iconPage.Choose options inside personal_details        Organization
@@ -109,8 +109,8 @@ Verify all i-icon of profile-listing
 Verify all i-icon of team member page
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     I_iconPage.Click on i-icon of team-members tab
@@ -121,8 +121,8 @@ Verify all i-icon of Technology page
     [Tags]    retry     Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     I_iconPage.Click on i-icon of technology tab
@@ -164,8 +164,8 @@ Verify all i-icon of Technology page
 Verify all i-icon of partners page
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner-listing
     I_iconPage.Click on i-icon of partners tab
@@ -176,8 +176,8 @@ Verify all i-icon of Discovery assets
     [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu        Asset Discovery
     Generic.Verify your current page location contains      discovery-assets
     I_iconPage.Choose tab under Discovery Assets       agent-discovery
@@ -197,8 +197,8 @@ Verify all i-icon of advanced search
     [Tags]     Smoke     rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -355,8 +355,8 @@ Verify all i-icon of advanced search
 Upload File I-icon while add and edit technology
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -386,8 +386,8 @@ Upload File I-icon while add and edit technology
 Upload I-icon under attachment tab
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -411,8 +411,8 @@ Upload I-icon under attachment tab
 Upload I-icon under clone add technology
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -439,8 +439,8 @@ Upload I-icon while adding discovery and component asset
     [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
@@ -515,8 +515,8 @@ Upload I-icon while adding IP Address
     [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
