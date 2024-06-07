@@ -177,6 +177,7 @@ select the option from the side menu
 
 Verify your current page location contains
     [Arguments]    ${verifyOption}
+    Wait Until Element Is Not Visible    ${loaderIcon}    ${wait_time}
     wait until location contains    ${verifyOption}     ${wait_time}
     wait until element is not visible   ${loaderIcon}          ${wait_time}
 

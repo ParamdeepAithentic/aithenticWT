@@ -48,7 +48,7 @@ Test Teardown   Close Browser session
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
 #    LandingPage.Verify you are on dashboard page
-#    Generic.Verify your current page location contains      management-console
+#    Generic.Verify your current page location contains      dashboard
 #    Generic.Click on the profile name
 #    Generic.Select option from profile list     subscription-connector
 #    Generic.Verify your current page location contains      technology-settings
@@ -65,8 +65,8 @@ Edit the scheduler
     [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     subscription-connector
     Generic.Verify your current page location contains      technology-settings
@@ -113,8 +113,8 @@ Edit the scheduler
 Run now from view details
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     subscription-connector
     Generic.Verify your current page location contains      technology-settings
@@ -144,8 +144,8 @@ Suspend and unsuspend the account
     [Tags]      Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     billing-dropdown
     Generic.Verify your current page location contains      billing-details

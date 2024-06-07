@@ -404,8 +404,10 @@ Verify Brand added
 
 select the option from the dashboard drawer
     [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible    //span[normalize-space()='${option}']      ${wait_time}
     wait until element is enabled    //span[normalize-space()='${option}']      ${wait_time}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     click element    //span[normalize-space()='${option}']
 
 ################################### WELCOME PAGE AND AHEAD ###############
@@ -968,3 +970,29 @@ Click on the filter Past under recent Activities table
     Wait Until Element Is Enabled    //span[normalize-space()='Hours']//parent::div//parent::div  ${wait_time}
     Click Element    //span[normalize-space()='Hours']//parent::div//parent::div
     Generic.Select parameter    ${option}
+
+Click on the filter under recent Activities table
+    [Arguments]         ${option1}      ${option2}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //div[contains(text(),'Asset Id')]//following-sibling::div//input      ${wait_time}
+    Wait Until Element Is Enabled    //div[contains(text(),'Asset Id')]//following-sibling::div//input      ${wait_time}
+    Input Text    //div[contains(text(),'${option1}')]//following-sibling::div//input    ${option2}
+    Generic.Select parameter    ${option2}
+    
+Click on row of recent activities table
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //table//tbody[contains (@class, 'ng-star-inserted')]//tr//td[1]       ${wait_time}
+    Wait Until Element Is Enabled    //table//tbody[contains (@class, 'ng-star-inserted')]//tr//td[1]        ${wait_time}
+    Click Element       //table//tbody[contains (@class, 'ng-star-inserted')]//tr//td[1]
+
+Click on Back to account overview button
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //span[@class='back']        ${wait_time}
+    Wait Until Element Is Enabled    //span[@class='back']        ${wait_time}
+    Click Element       //span[@class='back']
+
+Reset the filters for recent activities
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    css:.recent-activities-filters .fa-sync-alt        ${wait_time}
+    Wait Until Element Is Enabled    css:.recent-activities-filters .fa-sync-alt      ${wait_time}
+    Click Element      css:.recent-activities-filters .fa-sync-alt
