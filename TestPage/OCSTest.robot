@@ -44,7 +44,6 @@ Test Setup      open the browser with the url
 *** Test Cases ***
 
 Search Discovered Assets
-    [Tags]    rerun
     TRY
        Generic.click on the tab	Login
        LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -79,7 +78,6 @@ Search Discovered Assets
     END
 
 Search Existing Assets
-    [Tags]    rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -118,7 +116,7 @@ Search Existing Assets
     END
 
 Match Discovery and Existing Asset
-    [Tags]      Sanity    rerun
+    [Tags]      Sanity
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -184,7 +182,6 @@ Match Discovery and Existing Asset
     END
 
 Apply filters and clear filter on Discovered Asset
-    [Tags]    rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form     johns@mai.25u.com         Test@123
@@ -237,7 +234,7 @@ Apply filters and clear filter on Discovered Asset
 
 
 Apply filters and clear filter on Existing Assets
-    [Tags]      Sanity     rerun
+    [Tags]      Sanity
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form     johns@mai.25u.com     Test@123
@@ -309,7 +306,6 @@ Apply filters and clear filter on Existing Assets
     END
 
 Add Discovery Asset
-    [Tags]    rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -376,7 +372,6 @@ Add Discovery Asset
     END
 
 Create Asset from Add Assets Page
-    [Tags]    rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -429,7 +424,6 @@ Create Asset from Add Assets Page
     END
 
 Add component as an asset from Agent Discovery page
-    [Tags]    rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -507,7 +501,6 @@ Add component as an asset from Agent Discovery page
     END
 
 Upload Image and Document File while Add Discovery Asset
-    [Tags]    rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -741,7 +734,6 @@ Upload Image and Document File while Add component as an asset from Agent Discov
     END
 
 Match IP Discovered asset with Existing asset
-    [Tags]    rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     LandingPage.Verify you are on dashboard page
@@ -782,7 +774,6 @@ Match IP Discovered asset with Existing asset
     UnselectAssetAPI.Hit API Endpoint
 
 Match Discovery Asset with Static Existing Asset
-    [Tags]    rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -835,7 +826,6 @@ Match Discovery Asset with Static Existing Asset
     END
 
 Match IP Discovered Asset with Dynamic Existing Asset
-    [Tags]    rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -900,7 +890,7 @@ Match IP Discovered Asset with Dynamic Existing Asset
     END
 
 Add asset with IP Address under discovered asset list
-    [Tags]      Sanity     rerun
+    [Tags]      Sanity      rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -1329,7 +1319,7 @@ Search with containing fields under advance search of component of discovered as
     END
 
 Search with containing fields under advance search of IP Address of discovered asset
-    [Tags]      Sanity     rerun
+    [Tags]      Sanity      rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123

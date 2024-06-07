@@ -634,7 +634,7 @@ Remove Brand and address via brand under profile list
     Generic.Fetch alert message text and compare it with      Brand deleted successfully
 
 Verify adding a new brand from profile listing
-    [Tags]      Sanity
+    [Tags]      Sanity      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page

@@ -606,7 +606,7 @@ Location Bulk Import
     Generic.Wait until table get load
 
 Technology Bulk import
-    [Tags]    Sanity
+    [Tags]    Sanity        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -680,13 +680,15 @@ Technology Bulk import
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_9
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_3      1654
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_3
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_4      1100
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_4      CPU
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_4
 
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_7      100
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_7
+
+
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_8      12
-    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_8
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_8
 #    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_10      01/01/2023
 #    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_10
 #    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_11     01/01/2024

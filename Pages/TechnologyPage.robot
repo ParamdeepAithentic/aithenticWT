@@ -1325,6 +1325,12 @@ Click on current plan of subscription
     wait until element is visible   //button[normalize-space()='Current Plan']  ${wait_time}
     click element   //button[normalize-space()='Current Plan']
 
+Select plan for subscription
+    [Arguments]    ${option}
+    wait until element is visible   //h4[normalize-space()='${option}']//parent::div//following-sibling::div[@class='price-value']//button  ${wait_time}
+    wait until element is enabled   //h4[normalize-space()='${option}']//parent::div//following-sibling::div[@class='price-value']//button  ${wait_time}
+    click element   //button[normalize-space()='Current Plan']
+
 Click on pop up of available Inactive Asset
     [Arguments]     ${option}
     wait until element is visible   css:.qa-available-inactive-assests-${option}   ${wait_time}

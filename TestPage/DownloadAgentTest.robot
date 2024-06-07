@@ -443,7 +443,6 @@ Download Agent from asset discovery - macOS
 
 
 Network Discovery in case of no records
-    [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       raghu@yopmail.com         Test@001
     LandingPage.Verify you are on dashboard page
