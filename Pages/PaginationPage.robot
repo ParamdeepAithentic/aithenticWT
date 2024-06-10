@@ -281,5 +281,5 @@ Log WebElements for Recent Activites table
         Run Keywords    Fetch the selected value of the dropdown for Recent Activities table     ${option}   AND      Check the table get load for Recent Activities       AND      Get count of total rows for Recent Activities table     AND     Verify Pagination and Row Count     AND     PaginationPage.Fetch the total count   AND     Click on the pagination dropdown  ${option}
     END
 
-    
+
 

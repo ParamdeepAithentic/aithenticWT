@@ -788,7 +788,7 @@ Edit Manufacturer via partner
     PartnersPage.Click on Add new Address of partner        Add new Address
     PartnersPage.Select country     United States
     PartnersPage.Add Unique address_one of partner
-    PartnersPage.Add new address_two of partner
+    PartnersPage.Add Unique address_two of partner
     PartnersPage.Select State       Alaska
     PartnersPage.Select City        Akutan
     PartnersPage.Add new zip code of partner     56709
@@ -1181,6 +1181,187 @@ View Details and check the details of Contract
     PartnersPage.Click on back to contract details button link
     PartnersPage.Download the contract pdf
 
+Add_edit_deactivate_removeSupplier while adding brand
+    Generic.click on the tab	    Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    DashboardPage.Select an option from company details side list    Technology
+    Generic.Verify your current page location contains       technology-settings
+    ReplaceDomainAPI.Replace Domain
+    DashboardPage.Click on View Your Added Brand List
+    Generic.Verify your current page location contains      brand-list
+    DashboardPage.Click add brand button
+    DashboardPage.Create random brandName
+    DashboardPage.Add static Business Manufacturer URL      yopmail.net
+    DashboardPage.Add brand manufacturer country      United States
+    DashboardPage.Save added brand details
+    Generic.Fetch alert message text and compare it with        Brand created successfully.
+    DashboardPage.Click on main Save Button
+    Generic.select the option from the side menu    Partners
+    Generic.Verify your current page location contains      partner
+    PartnersPage.Click new partner button
+    Generic.Verify your current page location contains      addpartner
+    PartnersPage.Select partner type of new partner     Supplier
+    PartnersPage.Select partner business_name     ${generated_BrandName}
+    PartnersPage.Select partner business URL
+    PartnersPage.Select partner country       United States
+    PartnersPage.Click on Add new Address of partner        Add new Address
+    PartnersPage.Add Unique address_one of partner
+    PartnersPage.Add Unique address_two of partner
+    PartnersPage.Select State       Alaska
+    PartnersPage.Select City        Akutan
+    PartnersPage.Zip code Input     24015
+    PartnersPage.Save new Address
+    Generic.Scroll the page till        700
+    PartnersPage.Click on Add new Contact of partner        Add new Contact
+    PartnersPage.Enter random contact person
+    PartnersPage.Enter contact business email    ${generate_PersonName}     yopmail
+    Generic.Enter phone number      India   +91     9646289871
+    PartnersPage.Enter contact location      United States - Main Office - 21 - 2
+    PartnersPage.Save the new contact
+    PartnersPage.Click contact main save button
+    Generic.Fetch alert message text and compare it with    Partner created successfully
+    PartnersPage.Search by business name    ${generated_BrandName}
+    PartnersPage.Click on three dots of partners listing
+    PartnersPage.Select option from three dots of partner     Details
+    Generic.Verify your current page location contains      partner-details
+    Generic.click on the button     Edit
+    PartnersPage.click on plus icon to add another business_url
+    PartnersPage.Add second business_url        ${generated_BrandName}
+    Generic.Scroll the page till        700
+    PartnersPage.click on edit icon
+    PartnersPage.Add Unique address_one of partner
+    PartnersPage.Add new address_two of partner
+    PartnersPage.Click on cross-icon for clearing text
+    PartnersPage.Select State       Iowa
+    PartnersPage.Select City        Ackley
+    PartnersPage.Add new zip code of partner     56709
+    PartnersPage.Update the partner information
+    PartnersPage.Click on Add new Address of partner        Add new Address
+    PartnersPage.Select the partner address country        United States
+    PartnersPage.Add Unique address_one of partner
+    PartnersPage.Add new address_two of partner
+    PartnersPage.Select State         Arizona
+    PartnersPage.Select City         Ajo
+    PartnersPage.Add new zip code of partner     15321531
+    Generic.click on the button     Add
+    PartnersPage.Click on pencil icon of address and contact under partner   3
+    PartnersPage.Enter random contact name
+    PartnersPage.Enter new_business_email of contact    ${generate_PersonName}     yopmail
+    Generic.Enter phone number      India   +91     9665654657
+    PartnersPage.Enter contact location      United States - Quark city - 12 - 202
+    sleep   ${search_sleep}
+    PartnersPage.Update the partner information of edit contact
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with    Partner updated successfully
+    PartnersPage.Search by business name    ${generated_BrandName}
+    PartnersPage.Click on three dots of partners listing
+    PartnersPage.Select option from three dots of partner      Deactivate
+    PartnersPage.Select option from the pop up  Yes
+    Generic.Fetch alert message text and compare it with      Status updated successfully
+    PartnersPage.Click on three dots of partners listing
+    PartnersPage.Select option from three dots of partner      Activate
+    PartnersPage.Select option from the pop up  Yes
+    Generic.Fetch alert message text and compare it with      Status updated successfully
+    PartnersPage.Click on three dots of partners listing
+    PartnersPage.Select option from three dots of partner     Remove
+    PartnersPage.Select option from the pop up  Yes
+    Generic.Fetch alert message text and compare it with      Partner deleted successfully
 
 Zz kill browser
     Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+
+Add_edit_deactivate_removeSupport_partner_while_adding_brand
+    Generic.click on the tab	    Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    DashboardPage.Select an option from company details side list    Technology
+    Generic.Verify your current page location contains       technology-settings
+    ReplaceDomainAPI.Replace Domain
+    DashboardPage.Click on View Your Added Brand List
+    Generic.Verify your current page location contains      brand-list
+    DashboardPage.Click add brand button
+    DashboardPage.Create random brandName
+    DashboardPage.Add static Business Manufacturer URL      yopmail.net
+    DashboardPage.Add brand manufacturer country      Australia
+    DashboardPage.Save added brand details
+    Generic.Fetch alert message text and compare it with        Brand created successfully.
+    DashboardPage.Click on main Save Button
+    Generic.select the option from the side menu    Partners
+    Generic.Verify your current page location contains      partner
+    PartnersPage.Click new partner button
+    Generic.Verify your current page location contains      addpartner
+    PartnersPage.Select partner type of new partner     Support Partner
+    PartnersPage.Select partner business_name     ${generated_BrandName}
+    PartnersPage.Select partner business URL
+    PartnersPage.Select partner country       Australia
+    PartnersPage.Click on Add new Address of partner        Add new Address
+    PartnersPage.Add Unique address_one of partner
+    PartnersPage.Add Unique address_two of partner
+    PartnersPage.Select State       Victoria
+    PartnersPage.Select City        Albanvale
+    PartnersPage.Zip code Input     2659998
+    PartnersPage.Save new Address
+    Generic.Scroll the page till        700
+    PartnersPage.Click on Add new Contact of partner        Add new Contact
+    PartnersPage.Enter random contact person
+    PartnersPage.Enter contact business email    ${generate_PersonName}     yopmail
+    Generic.Enter phone number      India   +91     9699897854
+    PartnersPage.Enter contact location       Aland Islands
+    PartnersPage.Save the new contact
+    PartnersPage.Click contact main save button
+    Generic.Fetch alert message text and compare it with    Partner created successfully
+    PartnersPage.Search by business name    ${generated_BrandName}
+    PartnersPage.Click on three dots of partners listing
+    PartnersPage.Select option from three dots of partner     Details
+    Generic.Verify your current page location contains      partner-details
+    Generic.click on the button     Edit
+    PartnersPage.click on plus icon to add another business_url
+    PartnersPage.Add second business_url        ${generated_BrandName}
+    Generic.Scroll the page till        700
+    PartnersPage.click on edit icon
+    PartnersPage.Add Unique address_one of partner
+    PartnersPage.Add new address_two of partner
+    PartnersPage.Click on cross-icon for clearing text
+    PartnersPage.Select State        Northern Territory
+    PartnersPage.Select City         Anula
+    PartnersPage.Add new zip code of partner     581515
+    PartnersPage.Update the partner information
+    PartnersPage.Click on Add new Address of partner        Add new Address
+    PartnersPage.Select the partner address country        Australia
+    PartnersPage.Add Unique address_one of partner
+    PartnersPage.Add new address_two of partner
+    PartnersPage.Select State          South Australia
+    PartnersPage.Select City          Albert Park
+    PartnersPage.Add new zip code of partner     10012354
+    Generic.click on the button     Add
+    PartnersPage.Click on pencil icon of address and contact under partner   3
+    PartnersPage.Enter random contact name
+    PartnersPage.Enter new_business_email of contact    ${generate_PersonName}     yopmail
+    Generic.Enter phone number      India   +91     9112355987
+    PartnersPage.Enter contact location      United States - Quark city - 12 - 202
+    sleep   ${search_sleep}
+    PartnersPage.Update the partner information of edit contact
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with    Partner updated successfully
+    PartnersPage.Search by business name    ${generated_BrandName}
+    PartnersPage.Click on three dots of partners listing
+    PartnersPage.Select option from three dots of partner      Deactivate
+    PartnersPage.Select option from the pop up  Yes
+    Generic.Fetch alert message text and compare it with      Status updated successfully
+    PartnersPage.Click on three dots of partners listing
+    PartnersPage.Select option from three dots of partner      Activate
+    PartnersPage.Select option from the pop up  Yes
+    Generic.Fetch alert message text and compare it with      Status updated successfully
+    PartnersPage.Click on three dots of partners listing
+    PartnersPage.Select option from three dots of partner     Remove
+    PartnersPage.Select option from the pop up  Yes
+    Generic.Fetch alert message text and compare it with      Partner deleted successfully
