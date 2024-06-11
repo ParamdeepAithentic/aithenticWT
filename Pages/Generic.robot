@@ -79,7 +79,7 @@ ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
 
-${wait_time}        240
+${wait_time}        60
 ${yop_sleep}       10
 ${search_sleep}       1
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
@@ -179,7 +179,7 @@ Verify your current page location contains
     [Arguments]    ${verifyOption}
     Wait Until Element Is Not Visible    ${loaderIcon}    ${wait_time}
     wait until location contains    ${verifyOption}     ${wait_time}
-    wait until element is not visible   ${loaderIcon}          ${wait_time}
+    wait until element is not visible   ${loaderIcon}          ${wait_time}                 # Remove later
 
 Verify your current page contains this text
     [Arguments]    ${verifyOption}
@@ -222,6 +222,7 @@ Click on the profile name
     wait until element is not visible      ${loaderIcon}          ${wait_time}
     wait until element is visible       ${profileName}          ${wait_time}
     wait until element is enabled       ${profileName}          ${wait_time}
+    wait until element is not visible      ${loaderIcon}          ${wait_time}          # Remove later
     click element       ${profileName}
 
 ###############################################################################################
@@ -230,6 +231,7 @@ Select other option from profile list
     wait until element is not visible      ${loaderIcon}          ${wait_time}
     wait until element is visible    //a[normalize-space()='${option}']          ${wait_time}
     wait until element is enabled    //a[normalize-space()='${option}']          ${wait_time}
+    wait until element is not visible      ${loaderIcon}          ${wait_time}                  # Remove later
     click element    //a[normalize-space()='${option}']
 
 Select option from profile list
@@ -237,6 +239,7 @@ Select option from profile list
      wait until element is not visible      ${loaderIcon}          ${wait_time}
      wait until element is visible    css:.qa-${option} li      ${wait_time}
      wait until element is enabled    css:.qa-${option} li      ${wait_time}
+     wait until element is not visible      ${loaderIcon}          ${wait_time}                 # Remove later
      click element    css:.qa-${option} li
 
 ###############################################################################################
@@ -329,8 +332,8 @@ Update settings for Asset_ID, employee_id and location
     Generic.open the browser with the url
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     I_iconPage.Choose options inside personal_details        Organization
