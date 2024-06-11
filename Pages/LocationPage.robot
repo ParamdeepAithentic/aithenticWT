@@ -39,7 +39,6 @@ ${location_State}     css:.qa-State input
 ${location_City}     css:.qa-City input
 ${location_Zip}     css:#zip
 ${location_Name}     css:#locationName
-${randon_location}      css:#
 
 ${search_LocationName}     css:.search-location-qa
 
