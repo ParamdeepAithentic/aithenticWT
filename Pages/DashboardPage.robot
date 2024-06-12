@@ -996,3 +996,8 @@ Reset the filters for recent activities
     Wait Until Element Is Visible    css:.recent-activities-filters .fa-sync-alt        ${wait_time}
     Wait Until Element Is Enabled    css:.recent-activities-filters .fa-sync-alt      ${wait_time}
     Click Element      css:.recent-activities-filters .fa-sync-alt
+
+Select option from the pop up of product
+    [Arguments]    ${option}
+    wait until element is visible   css:.removeProduct${option}Button-qa   ${wait_time}
+    click element   css:.removeProduct${option}Button-qa
