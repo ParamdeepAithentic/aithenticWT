@@ -1001,3 +1001,9 @@ Select option from the pop up of product
     [Arguments]    ${option}
     wait until element is visible   css:.removeProduct${option}Button-qa   ${wait_time}
     click element   css:.removeProduct${option}Button-qa
+
+Click on the export button under account overview tab
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible     //i[@title='Exports Alerts']        ${wait_time}
+    wait until element is enabled      //i[@title='Exports Alerts']        ${wait_time}
+    click element  //i[@title='Exports Alerts']
