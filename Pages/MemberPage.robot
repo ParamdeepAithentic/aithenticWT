@@ -348,3 +348,10 @@ Double click team member bulk import
     wait until element is visible      css:.ag-pinned-left-cols-container div[col-id='${option}']   ${wait_time}
     wait until element is enabled      css:.ag-pinned-left-cols-container div[col-id='${option}']    ${wait_time}
     Double click element      css:.ag-pinned-left-cols-container div[col-id='${option}']
+
+Click on confirm button under remove pop up of assigned user
+    wait until element is not visible   ${loaderIcon}       ${wait_time}
+    wait until element is visible      //div[contains(@id,'remove-assignee')]//div[contains(@class,'modal-body')]//following-sibling::button[normalize-space()='Confirm']        ${wait_time}
+    wait until element is enabled     //div[contains(@id,'remove-assignee')]//div[contains(@class,'modal-body')]//following-sibling::button[normalize-space()='Confirm']        ${wait_time}
+    click element       //div[contains(@id,'remove-assignee')]//div[contains(@class,'modal-body')]//following-sibling::button[normalize-space()='Confirm']
+    sleep   ${search_sleep}
