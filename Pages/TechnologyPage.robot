@@ -1323,7 +1323,14 @@ Verify parameter from past location table
 
 Click on current plan of subscription
     wait until element is visible   //button[normalize-space()='Current Plan']  ${wait_time}
+    wait until element is enabled   //button[normalize-space()='Current Plan']  ${wait_time}
     click element   //button[normalize-space()='Current Plan']
+
+Click on plan of subscription
+    [Arguments]    ${option}
+    wait until element is visible   //h4[normalize-space()='${option}']//parent::div//following-sibling::div//button  ${wait_time}
+    wait until element is enabled   //h4[normalize-space()='${option}']//parent::div//following-sibling::div//button  ${wait_time}
+    click element       //h4[normalize-space()='${option}']//parent::div//following-sibling::div//button
 
 Select plan for subscription
     [Arguments]    ${option}
@@ -1336,6 +1343,13 @@ Click on pop up of available Inactive Asset
     wait until element is visible   css:.qa-available-inactive-assests-${option}   ${wait_time}
     wait until element is enabled   css:.qa-available-inactive-assests-${option}   ${wait_time}
     click element   css:.qa-available-inactive-assests-${option}
+
+Select option from exceed asset limit pop
+    [Arguments]     ${option}
+    wait until element is visible   css:.qa-asset-limit-exceede-${option}  ${wait_time}
+    wait until element is enabled   css:.qa-asset-limit-exceede-${option}  ${wait_time}
+    click element   css:.qa-asset-limit-exceede-${option}
+
 
 Click on removed assets option of technology filters
     wait until element is visible   css:.qa-removed-aasets-section  ${wait_time}
@@ -1646,6 +1660,17 @@ Click on the export button of component tab under technology details page
    wait until element is visible   //div[@id='components']//button[@id='dropdownMenuButton']     ${wait_time}
     wait until element is enabled   //div[@id='components']//button[@id='dropdownMenuButton']     ${wait_time}
     click element   //div[@id='components']//button[@id='dropdownMenuButton']
+
+
+Click button to proceed the asset restore
+   wait until element is visible    css:.qa-proceed-retore-asset-technology-list     ${wait_time}
+    wait until element is enabled   css:.qa-proceed-retore-asset-technology-list   ${wait_time}
+    click element   css:.qa-proceed-retore-asset-technology-list
+
+Click button to cancle the asset restoration
+   wait until element is visible    css:.qa-cancel-asset-technology-list     ${wait_time}
+    wait until element is enabled   css:.qa-cancel-asset-technology-list  ${wait_time}
+    click element   css:.qa-cancel-asset-technology-list
 
 #Enter input in the not containing productv field
 #    [Arguments]     ${Product}

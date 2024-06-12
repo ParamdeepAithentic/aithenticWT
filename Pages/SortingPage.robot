@@ -476,3 +476,12 @@ Verify the sorting of the table method six
     END
 
     Lists Should Be Equal    ${text_list_after_sort_desc}    ${sorted_list}
+
+
+Click on specific column for method one
+    [Arguments]    ${option}
+    Generic.Wait until table get load
+    Wait Until Element Is Visible    //div[normalize-space()='${option}']//following-sibling::div//button    ${wait_time}
+    Wait Until Element Is enabled    //div[normalize-space()='${option}']//following-sibling::div//button    ${wait_time}
+    click element       //div[normalize-space()='${option}']//following-sibling::div//button
+    Generic.Wait until table get load

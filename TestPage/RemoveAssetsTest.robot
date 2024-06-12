@@ -29,6 +29,7 @@ Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/DepartmentPage.robot
 Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
+Resource        ../Pages/PaginationPage.robot
 
 
 
@@ -39,8 +40,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 
-Technology-Inactive asset and Restore asset
-    [Tags]      smoke
+Free the asset limit
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -49,9 +49,26 @@ Technology-Inactive asset and Restore asset
     Generic.Select option from profile list     subscription-dropdown
     Generic.Verify your current page location contains      subscription
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
-    TechnologyPage.Click on current plan of subscription
+    TechnologyPage.Click on plan of subscription        Premium
     Generic.Scroll the page till    200
     SubscriptionPage.Set asset range to     500
-
+    sleep       2
     SubscriptionPage.Update the payment of changed plan     proceed
-    TechnologyPage.Click on pop up of available Inactive Asset   cancel
+#    Generic.Verify alertify is visible
+    sleep       2
+    TechnologyPage.Select option from exceed asset limit pop    technology
+    Generic.Verify your current page location contains      manage-technology-list
+    Generic.Wait until table get load
+    SortingPage.Click on specific column for method one     Created Date
+    SortingPage.Click on specific column for method one     Created Date
+    PaginationPage.Click on the pagination dropdown     technology
+    PaginationPage.Select the value from the pagination drop down count    500
+    sleep       3
+    PaginationPage.Click on the checkbox of technology listing
+
+    TechnologyPage.Click button to proceed the asset restore
+
+    SubscriptionPage.Select the payment method    ach
+    SubscriptionPage.Select the account for payment
+    SubscriptionPage.Proceed the payment     proceed
+    Generic.Fetch alert message text and compare it with      Payment Successful

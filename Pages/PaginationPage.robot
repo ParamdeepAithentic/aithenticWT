@@ -283,3 +283,14 @@ Log WebElements for Recent Activites table
 
 
 
+Click on the checkbox of technology listing
+    Generic.Wait until table get load
+    sleep       5
+    ${elements} =    Get WebElements    //tbody//tr//span
+    ${element_count} =    Get Length    ${elements}
+    FOR    ${index}    IN RANGE    1    ${element_count + 1}
+        wait until element is visible     (//tbody//tr//span)[${index}]       ${wait_time}
+        wait until element is enabled     (//tbody//tr//span)[${index}]      ${wait_time}
+        click element   (//tbody//tr//span)[${index}]
+        PaginationPage.Scroll within the element      ${index}
+    END

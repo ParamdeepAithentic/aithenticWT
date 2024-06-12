@@ -1730,7 +1730,7 @@ Inactive asset - Restore asset from Technology Details page
     SubscriptionPage.Select the payment method    ach
     SubscriptionPage.Select the account for payment
     SubscriptionPage.Proceed the payment     proceed
-    Generic.Fetch alert message text and compare it with      Payment Successful
+    Generic.Fetch alert message text and compare it with      Payment Successful      ############
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
