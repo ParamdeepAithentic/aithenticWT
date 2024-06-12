@@ -1166,7 +1166,7 @@ Search with containing fields under advance search of discovered asset
         TechnologyPage.Get text of feature inside add technology
         TechnologyPage.verify Text from Assignment Information      Aithentic Feature     ${feature}
         Generic.click on the button     Reset Filters
-        TechnologyPage.Enter input in the not containing productv field     Product_0033761232
+        TechnologyPage.Enter input in the not containing product field     Product_0033761232
         Generic.click on the button     Search
         sleep   ${search_sleep}
         TechnologyPage.Wait until advanced search table get load
@@ -1324,7 +1324,7 @@ Search with containing fields under advance search of component of discovered as
         TechnologyPage.Get text of feature inside add technology
         TechnologyPage.verify Text from Assignment Information      Aithentic Feature     ${feature}
         Generic.click on the button     Reset Filters
-        TechnologyPage.Enter input in the not containing productv field     Product_0033761232
+        TechnologyPage.Enter input in the not containing product field     Product_0033761232
         Generic.click on the button     Search
         sleep   ${search_sleep}
         TechnologyPage.Wait until advanced search table get load
@@ -1486,7 +1486,7 @@ Search with containing fields under advance search of IP Address of discovered a
         TechnologyPage.Get text of feature inside add technology
         TechnologyPage.verify Text from Assignment Information      Aithentic Feature     ${feature}
         Generic.click on the button     Reset Filters
-        TechnologyPage.Enter input in the not containing productv field     Product_0033761232
+        TechnologyPage.Enter input in the not containing product field     Product_0033761232
         Generic.click on the button     Search
         sleep   ${search_sleep}
         TechnologyPage.Wait until advanced search table get load
