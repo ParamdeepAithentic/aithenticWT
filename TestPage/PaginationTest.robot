@@ -219,6 +219,7 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    Apple Inc
         OCS.Click on the down arrow icon of discovered asset
+        Generic.Scroll Window To End
         OCS.Mouse Hover over searched Discovered Assets
         OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
         OCS.Get Serial number by hovering over discovered assets     Serial Number:

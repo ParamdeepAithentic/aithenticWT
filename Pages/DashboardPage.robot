@@ -407,7 +407,7 @@ select the option from the dashboard drawer
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible    //span[normalize-space()='${option}']      ${wait_time}
     wait until element is enabled    //span[normalize-space()='${option}']      ${wait_time}
-    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}                # Remove later
     click element    //span[normalize-space()='${option}']
 
 ################################### WELCOME PAGE AND AHEAD ###############
@@ -964,12 +964,12 @@ Click on the first dropdown under management console
     Click Element       (//div[contains(@class,'qa-upcoming-days')])[1]
 
 Click on the filter Past under recent Activities table
-    [Arguments]         ${option}
+    [Arguments]         ${option1}      ${option2}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    Wait Until Element Is Visible    //span[normalize-space()='Hours']//parent::div//parent::div  ${wait_time}
-    Wait Until Element Is Enabled    //span[normalize-space()='Hours']//parent::div//parent::div  ${wait_time}
-    Click Element    //span[normalize-space()='Hours']//parent::div//parent::div
-    Generic.Select parameter    ${option}
+    Wait Until Element Is Visible    //span[normalize-space()='${option1}']//parent::div//parent::div  ${wait_time}
+    Wait Until Element Is Enabled    //span[normalize-space()='${option1}']//parent::div//parent::div  ${wait_time}
+    Click Element    //span[normalize-space()='${option1}']//parent::div//parent::div
+    Generic.Select parameter    ${option2}
 
 Click on the filter under recent Activities table
     [Arguments]         ${option1}      ${option2}
