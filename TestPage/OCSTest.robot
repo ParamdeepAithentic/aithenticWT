@@ -1165,6 +1165,41 @@ Search with containing fields under advance search of discovered asset
         TechnologyPage.Wait until advanced search table get load
         TechnologyPage.Get text of feature inside add technology
         TechnologyPage.verify Text from Assignment Information      Aithentic Feature     ${feature}
+        Generic.click on the button     Reset Filters
+        TechnologyPage.Enter input in the not containing productv field     Product_0033761232
+        Generic.click on the button     Search
+        sleep   ${search_sleep}
+        TechnologyPage.Wait until advanced search table get load
+        sleep   ${search_sleep}
+        TechnologyPage.Click on the technology group row of the table inside advanced search of not conrtaining fields
+        Generic.Scroll Window To End
+        Generic.click on the button     Select
+        sleep   ${search_sleep}
+        Generic.Verify your current page contains this text     Add Technology
+        Generic.Refresh the existing page
+        I_iconPage.Click on advanced search link under create asset network discovery
+        Generic.click on the button     Reset Filters
+        TechnologyPage.Enter input in the not containing description field      Product Description
+        Generic.click on the button     Search
+        sleep   ${search_sleep}
+        TechnologyPage.Wait until advanced search table get load
+        TechnologyPage.Click on the technology group row of the table inside advanced search of not conrtaining fields
+        Generic.Scroll Window To End
+        Generic.click on the button     Select
+        sleep   ${search_sleep}
+        Generic.Verify your current page contains this text      Add Technology
+        Generic.Refresh the existing page
+        I_iconPage.Click on advanced search link under create asset network discovery
+        Generic.click on the button     Reset Filters
+        TechnologyPage.Enter input in the not containing feature field      Product feature
+        Generic.click on the button     Search
+        sleep   ${search_sleep}
+        TechnologyPage.Wait until advanced search table get load
+        TechnologyPage.Click on the technology group row of the table inside advanced search of not conrtaining fields
+        Generic.Scroll Window To End
+        Generic.click on the button     Select
+        sleep   ${search_sleep}
+        Generic.Verify your current page contains this text      Add Technology
     EXCEPT
         OCS.My Failure Handling
         Fail
@@ -1288,8 +1323,42 @@ Search with containing fields under advance search of component of discovered as
         TechnologyPage.Wait until advanced search table get load
         TechnologyPage.Get text of feature inside add technology
         TechnologyPage.verify Text from Assignment Information      Aithentic Feature     ${feature}
-        I_iconPage.Click on the cross icon of advanced search under technology
-        Generic.Verify your current page contains this text    Add Technology
+        Generic.click on the button     Reset Filters
+        TechnologyPage.Enter input in the not containing productv field     Product_0033761232
+        Generic.click on the button     Search
+        sleep   ${search_sleep}
+        TechnologyPage.Wait until advanced search table get load
+        sleep   ${search_sleep}
+        TechnologyPage.Click on the technology group row of the table inside advanced search of not conrtaining fields
+        Generic.Scroll Window To End
+        Generic.click on the button     Select
+        sleep   ${search_sleep}
+        Generic.Verify your current page contains this text     Add Technology
+        Generic.Refresh the existing page
+        I_iconPage.Click on advanced search link under create asset network discovery
+        Generic.click on the button     Reset Filters
+        TechnologyPage.Enter input in the not containing description field      Product Description
+        Generic.click on the button     Search
+        sleep   ${search_sleep}
+        TechnologyPage.Wait until advanced search table get load
+        TechnologyPage.Click on the technology group row of the table inside advanced search of not conrtaining fields
+        Generic.Scroll Window To End
+        Generic.click on the button     Select
+        sleep   ${search_sleep}
+        Generic.Verify your current page contains this text      Add Technology
+        Generic.Refresh the existing page
+        I_iconPage.Click on advanced search link under create asset network discovery
+        Generic.click on the button     Reset Filters
+        TechnologyPage.Enter input in the not containing feature field      Product feature
+        Generic.click on the button     Search
+        sleep   ${search_sleep}
+        TechnologyPage.Wait until advanced search table get load
+        TechnologyPage.Click on the technology group row of the table inside advanced search of not conrtaining fields
+        Generic.Scroll Window To End
+        Generic.click on the button     Select
+        sleep   ${search_sleep}
+        Generic.Verify your current page contains this text      Add Technology
+        Generic.Refresh the existing page
         TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
         OCS.Create Asset_id for software component
         Generic.Scroll Window To End
@@ -1416,6 +1485,41 @@ Search with containing fields under advance search of IP Address of discovered a
         TechnologyPage.Wait until advanced search table get load
         TechnologyPage.Get text of feature inside add technology
         TechnologyPage.verify Text from Assignment Information      Aithentic Feature     ${feature}
+        Generic.click on the button     Reset Filters
+        TechnologyPage.Enter input in the not containing productv field     Product_0033761232
+        Generic.click on the button     Search
+        sleep   ${search_sleep}
+        TechnologyPage.Wait until advanced search table get load
+        sleep   ${search_sleep}
+        TechnologyPage.Click on the technology group row of the table inside advanced search of not conrtaining fields
+        Generic.Scroll Window To End
+        Generic.click on the button     Select
+        sleep   ${search_sleep}
+        Generic.Verify your current page contains this text     Add Technology
+        Generic.Refresh the existing page
+        I_iconPage.Click on advanced search link under create asset network discovery
+        Generic.click on the button     Reset Filters
+        TechnologyPage.Enter input in the not containing description field      Product Description
+        Generic.click on the button     Search
+        sleep   ${search_sleep}
+        TechnologyPage.Wait until advanced search table get load
+        TechnologyPage.Click on the technology group row of the table inside advanced search of not conrtaining fields
+        Generic.Scroll Window To End
+        Generic.click on the button     Select
+        sleep   ${search_sleep}
+        Generic.Verify your current page contains this text      Add Technology
+        Generic.Refresh the existing page
+        I_iconPage.Click on advanced search link under create asset network discovery
+        Generic.click on the button     Reset Filters
+        TechnologyPage.Enter input in the not containing feature field      Product feature
+        Generic.click on the button     Search
+        sleep   ${search_sleep}
+        TechnologyPage.Wait until advanced search table get load
+        TechnologyPage.Click on the technology group row of the table inside advanced search of not conrtaining fields
+        Generic.Scroll Window To End
+        Generic.click on the button     Select
+        sleep   ${search_sleep}
+        Generic.Verify your current page contains this text      Add Technology
     EXCEPT
         OCS.My Failure Handling
         Fail

@@ -378,3 +378,23 @@ click on the confirm button of unsuspend pop up
     click element   //button[@type='submit'][normalize-space()='Confirm']
     wait until element is not visible       ${loaderIcon}    ${wait_time}
 
+Choose tab under subscription page after clicking on view_result
+    Wait Until Element Is Not Visible    ${loaderIcon}     ${wait_time}
+    wait until element is visible   //a[@id='default-tab']       ${wait_time}
+    wait until element is enabled   //a[@id='default-tab']       ${wait_time}
+    click element   //a[@id='default-tab']
+
+Fetch and compare the Brand from the table
+    [Arguments]    ${option}
+    wait until element is visible       //td[normalize-space()='${option}']     ${wait_time}
+    ${fetch_azurebrandName} =    get text    //td[normalize-space()='${option}']
+    set global variable    ${fetch_azurebrandName}
+    log to console     Azure_Brand_Name=${fetch_azurebrandName}
+    should be equal     ${option}       ${fetch_azurebrandName}
+
+Click on option under three dots of Microsoft coorporation
+    [Arguments]     ${option}
+    wait until element is visible  (//div[contains(@class,'dropdown-menu')])[3]//a[normalize-space()='${option}']     ${wait_time}
+    wait until element is enabled   (//div[contains(@class,'dropdown-menu')])[3]//a[normalize-space()='${option}']    ${wait_time}
+    click element   (//div[contains(@class,'dropdown-menu')])[3]//a[normalize-space()='${option}']
+    sleep  ${search_sleep}

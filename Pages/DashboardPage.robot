@@ -407,7 +407,7 @@ select the option from the dashboard drawer
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible    //span[normalize-space()='${option}']      ${wait_time}
     wait until element is enabled    //span[normalize-space()='${option}']      ${wait_time}
-    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}                # Remove later
     click element    //span[normalize-space()='${option}']
 
 ################################### WELCOME PAGE AND AHEAD ###############
@@ -964,12 +964,12 @@ Click on the first dropdown under management console
     Click Element       (//div[contains(@class,'qa-upcoming-days')])[1]
 
 Click on the filter Past under recent Activities table
-    [Arguments]         ${option}
+    [Arguments]         ${option1}      ${option2}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    Wait Until Element Is Visible    //span[normalize-space()='Hours']//parent::div//parent::div  ${wait_time}
-    Wait Until Element Is Enabled    //span[normalize-space()='Hours']//parent::div//parent::div  ${wait_time}
-    Click Element    //span[normalize-space()='Hours']//parent::div//parent::div
-    Generic.Select parameter    ${option}
+    Wait Until Element Is Visible    //span[normalize-space()='${option1}']//parent::div//parent::div  ${wait_time}
+    Wait Until Element Is Enabled    //span[normalize-space()='${option1}']//parent::div//parent::div  ${wait_time}
+    Click Element    //span[normalize-space()='${option1}']//parent::div//parent::div
+    Generic.Select parameter    ${option2}
 
 Click on the filter under recent Activities table
     [Arguments]         ${option1}      ${option2}
@@ -996,3 +996,14 @@ Reset the filters for recent activities
     Wait Until Element Is Visible    css:.recent-activities-filters .fa-sync-alt        ${wait_time}
     Wait Until Element Is Enabled    css:.recent-activities-filters .fa-sync-alt      ${wait_time}
     Click Element      css:.recent-activities-filters .fa-sync-alt
+
+Select option from the pop up of product
+    [Arguments]    ${option}
+    wait until element is visible   css:.removeProduct${option}Button-qa   ${wait_time}
+    click element   css:.removeProduct${option}Button-qa
+
+Click on the export button under account overview tab
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible     //i[@title='Exports Alerts']        ${wait_time}
+    wait until element is enabled      //i[@title='Exports Alerts']        ${wait_time}
+    click element  //i[@title='Exports Alerts']

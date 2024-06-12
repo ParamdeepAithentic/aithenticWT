@@ -535,6 +535,40 @@ Export component tab list
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
 
+Export account overview tab data
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
+    DashboardPage.select the option from the dashboard drawer       Account Overview
+    Generic.Verify your current page location contains          account-overview
+    DashboardPage.Click on the export button under account overview tab
+    TeamMemberPage.Download the selected extension file of team member      Excel(.xlsx)
+    PartnersPage.Confirm to export file
+    PartnersPage.Verify that the selected extension file is downloaded       .xlsx
+    PartnersPage.Remove the file from downloaded list
+    Generic.click on the button     Okay, Thanks!
+    DashboardPage.Click on the export button under account overview tab
+    TeamMemberPage.Download the selected extension file of team member      OpenDocument(.ods)
+    PartnersPage.Confirm to export file
+    PartnersPage.Verify that the selected extension file is downloaded       .ods
+    PartnersPage.Remove the file from downloaded list
+    Generic.click on the button     Okay, Thanks!
+    DashboardPage.Click on the export button under account overview tab
+    TeamMemberPage.Download the selected extension file of team member     Comma Separated Values(.csv)
+    PartnersPage.Confirm to export file
+    PartnersPage.Verify that the selected extension file is downloaded       .csv
+    PartnersPage.Remove the file from downloaded list
+    Generic.click on the button     Okay, Thanks!
+    DashboardPage.Click on the export button under account overview tab
+    TeamMemberPage.Download the selected extension file of team member      Tab Separated Values(.tsv)
+    PartnersPage.Confirm to export file
+    PartnersPage.Verify that the selected extension file is downloaded       .tsv
+    PartnersPage.Remove the file from downloaded list
+    Generic.click on the button     Okay, Thanks!
+
+
+
 
 Zz kill browser
     Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
