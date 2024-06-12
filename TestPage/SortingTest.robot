@@ -306,9 +306,6 @@ Test the sorting of department page list via bulk import of technology table
     SortingPage.Verify the sorting of the table method two     6       Status
 
 
-#//div[normalize-space()='${headingName}']//following-sibling::div//button
-#//div[normalize-space()='${headingName}']//app-sort-button
-#//div[normalize-space()='${headingName}']//div[contains(@class,'sortingIcon')]
 
 Test the sorting of removed technology page
     Generic.click on the tab	Login

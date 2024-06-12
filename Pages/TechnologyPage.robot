@@ -640,11 +640,11 @@ Add chargeable basis of contract information self
     wait until element is visible       ${chargeable_basis}        ${wait_time}
     click element   ${chargeable_basis}
     wait until element is visible       ${chargeable_basis}        ${wait_time}
-    ${StartTime1} =     Get Current Time in Milliseconds
     input text   ${chargeable_basis}   ${option}
     wait until element is visible    ${chargeable_basis}      ${wait_time}
     click element       ${chargeable_basis}
     Clear Element Text      ${chargeable_basis}
+    ${StartTime1} =     Get Current Time in Milliseconds
     input text      ${chargeable_basis}     ${option}
     Generic.Select parameter    ${option}
     ${EndTime1} =     Get Current Time in Milliseconds
@@ -682,9 +682,9 @@ Add max contracted of contract information self
 Add assignment information location
     [Arguments]    ${option1}
     wait until element is visible    ${locationName}      ${wait_time}
-    ${StartTime1} =     Get Current Time in Milliseconds
     click element       ${locationName}
 #    Clear Element Text      ${locationName}
+    ${StartTime1} =     Get Current Time in Milliseconds
     Generic.Enter value into field      ${locationName}     ${option1}
     Press Keys     ${locationName}       ENTER
     ${EndTime1} =     Get Current Time in Milliseconds
