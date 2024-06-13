@@ -1278,8 +1278,8 @@ Zz kill browser
 Add_edit_deactivate_removeSupport_partner_while_adding_brand
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -1343,12 +1343,14 @@ Add_edit_deactivate_removeSupport_partner_while_adding_brand
     PartnersPage.Select City          Albert Park
     PartnersPage.Add new zip code of partner     10012354
     Generic.click on the button     Add
+    PartnersPage.Wait for add address pop up hide
+    sleep   ${search_sleep}
     PartnersPage.Click on pencil icon of address and contact under partner   3
     PartnersPage.Enter random contact name
     PartnersPage.Enter new_business_email of contact    ${generate_PersonName}     yopmail
     Generic.Enter phone number      India   +91     9112355987
     PartnersPage.Enter contact location      United States - Quark city - 12 - 202
-    sleep   ${search_sleep}
+#    sleep   3s
     PartnersPage.Update the partner information of edit contact
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with    Partner updated successfully
