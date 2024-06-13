@@ -281,7 +281,7 @@ Save the new contact
     click element   ${save_addNewContact}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     sleep   ${search_sleep}
-
+    wait until element is visible   //div[@id='contactModal']//div[contains(@class,'modal-content')]       ${wait_time}
 Save the secondary contact
     wait until element is visible   ${save_secondaryNewContact}     ${wait_time}
     wait until element is enabled   ${save_secondaryNewContact}     ${wait_time}
@@ -430,6 +430,7 @@ Save new Address
     click element       ${save_address}
     wait until element is not visible       ${loaderIcon}    ${wait_time}
     sleep   ${search_sleep}
+    wait until element is not visible       //div[@id='addAddressModal']//div[contains(@class,'modal-content')]    ${wait_time}
 
 Click on Add new Address of partner
     [Arguments]     ${option}
@@ -510,7 +511,7 @@ Update the partner information
     wait until element is enabled      ${update_button}        ${wait_time}
     click element       ${update_button}
     sleep   ${search_sleep}
-
+    wait until element is not visible   //div[@id='addressModal']//div[contains(@class,'modal-content')]       ${wait_time}
 Enter new_business_email of contact
     [Arguments]    ${Pname}    ${Bname}
     wait until element is visible       ${new_contactEmail}     ${wait_time}
@@ -570,6 +571,7 @@ Click on save button of contact via link
     [Arguments]     ${button}
     wait until element is visible   //div[@id='contactModalContract']//button[normalize-space()='${button}']      ${wait_time}
     click element   //div[@id='contactModalContract']//button[normalize-space()='${button}']
+    wait until element is not visible   //div[@id='contactModal']//div[contains(@class,'modal-content')]     ${wait_time}
 
 Enter and select contact name via link
     wait until element is not visible   ${loaderIcon}   ${wait_time}

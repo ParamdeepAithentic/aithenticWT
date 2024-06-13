@@ -158,7 +158,9 @@ Search asset history with Asset ID of Assigned User
     Generic.Verify your current page contains this text             Technology
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
+    Generic.Wait until table get load
     MemberPage.Click on assigned user tab   Assigned Users
+    Generic.Wait until table get load
     MemberPage.Search assigned user by first name   ${generated_AssigneduserFirstName}
     MemberPage.Click on three dots of Team Member listing
     MemberPage.Select option from three dots of Team Member     Asset History

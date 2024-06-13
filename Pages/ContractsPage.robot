@@ -94,8 +94,8 @@ Enter contract type
 
 Enter contract with
     [Arguments]    ${option}
-    Wait Until Element Is Visible       ${pdf_modal}    ${wait_time}
-    Wait Until Element Is Enabled      ${pdf_modal}     ${wait_time}
+    Wait Until Element Is Visible       ${pdf_modal}    240
+    Wait Until Element Is Enabled      ${pdf_modal}     240
     click element       ${companyId}
     Clear Element Text      ${companyId}
     ${StartTime1} =     Get Current Time in Milliseconds
@@ -171,7 +171,7 @@ Click on generate contract button on select asset page
     Generic.click on the button link        ${option}
 
 Wait until PDF is loaded properly
-    wait until element is visible    ${pdf_modal}      ${wait_time}
+    wait until element is visible    ${pdf_modal}      240
 
 Click preview selection button on contact
      wait until element is visible    ${previewSelectionButton}      ${wait_time}
@@ -216,16 +216,16 @@ Save contract modal
 
 
 Fetch the contract ID from the row
-    wait until element is visible       css:.pr-4     ${wait_time}
+    wait until element is visible       css:.pr-4     240
     ${fetch_contract_ID} =    get text    css:.pr-4
     set global variable    ${fetch_contract_ID}
     log to console    Contract_ID= ${fetch_contract_ID}
 
 Fetch the contract Brand Name from the row
     [Arguments]    ${option}
-    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    wait until element is visible       //td[normalize-space()='${option}']     ${wait_time}
-    wait until element is enabled       //td[normalize-space()='${option}']     ${wait_time}
+    Wait Until Element Is Not Visible    ${loaderIcon}      240
+    wait until element is visible       //td[normalize-space()='${option}']     240
+    wait until element is enabled       //td[normalize-space()='${option}']     240
     ${fetch_contract_brandName} =    get text    //td[normalize-space()='${option}']
     set global variable    ${fetch_contract_brandName}
     log to console     Contract_BrandName=${fetch_contract_brandName}
@@ -249,23 +249,23 @@ Search by contract BrandName
 Click on the first tab row of contract list page table
     [Arguments]
     sleep   ${yop_sleep}
-    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    wait until element is visible    //tbody//tr//td[normalize-space()='View']        ${wait_time}
-    wait until element is enabled    //tbody//tr//td[normalize-space()='View']        ${wait_time}
+    Wait Until Element Is Not Visible    ${loaderIcon}      240
+    wait until element is visible    //tbody//tr//td[normalize-space()='View']        240
+    wait until element is enabled    //tbody//tr//td[normalize-space()='View']        240
     click element    //tbody//tr//td[normalize-space()='View']
 
 Click on the first tab row
     [Arguments]     ${option}
     sleep   ${yop_sleep}
-    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    wait until element is visible    //td[normalize-space()='${option}']       ${wait_time}
-    wait until element is enabled    //td[normalize-space()='${option}']        ${wait_time}
+    Wait Until Element Is Not Visible    ${loaderIcon}      240
+    wait until element is visible    //td[normalize-space()='${option}']      240
+    wait until element is enabled    //td[normalize-space()='${option}']        240
     click element    //td[normalize-space()='${option}']
 
 
 Verify technology is null
-    Wait Until Element Is Visible       ${pdf_modal}    ${wait_time}
-    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible       ${pdf_modal}    240
+    Wait Until Element Is Not Visible    ${loaderIcon}      240
     wait until element is visible       //span[normalize-space()='-']       ${wait_time}
 
 Save the contract details
