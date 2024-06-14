@@ -388,17 +388,15 @@ Test the sorting of bulk edit grid under team members
     sleep   ${search_sleep}
     SortingPage.Verify the sorting of the table method five    10      Position/Title
     SortingPage.Verify the sorting of the table method five    11      Employee ID
-    SortingPage.Expand all sorting field
+#    SortingPage.Expand all sorting field
+    SortingPage.Verify the sorting of the table method five    9       Role
+    SortingPage.Verify the sorting of the table method five    8       Member Location
+    SortingPage.Verify the sorting of the table method five    7       Department
+    SortingPage.Verify the sorting of the table method five    6       Business Email
+    SortingPage.Verify the sorting of the table method five    5       Mobile number
+    SortingPage.Verify the sorting of the table method five    4       Country Code
     SortingPage.Verify the sorting of the table method five    3       Last Name
     SortingPage.Verify the sorting of the table method five    2       First Name
-    SortingPage.Verify the sorting of the table method five    4       Country Code
-    SortingPage.Verify the sorting of the table method five    5       Mobile number
-    SortingPage.Verify the sorting of the table method five    6       Business Email
-    SortingPage.Verify the sorting of the table method five    7       Department
-    SortingPage.Verify the sorting of the table method five    8       Member Location
-    SortingPage.Verify the sorting of the table method five    9       Role
-
-
 Test the sorting of bulk edit grid under assigned users
     [Tags]      Stable
     Generic.click on the tab	Login
@@ -414,11 +412,11 @@ Test the sorting of bulk edit grid under assigned users
     sleep     ${yop_sleep}
     switch window     aithentic | Data-Wizard
     Generic.Verify your current page location contains      assignee-bulk-edit
-    SortingPage.Expand all sorting field
-    SortingPage.Verify the sorting of the table method five    2      First Name
-    SortingPage.Verify the sorting of the table method five    3      Last Name
-    SortingPage.Verify the sorting of the table method five    4      Business Email
+#    SortingPage.Expand all sorting field
     SortingPage.Verify the sorting of the table method five    5      Employee Id
+    SortingPage.Verify the sorting of the table method five    4      Business Email
+    SortingPage.Verify the sorting of the table method five    3      Last Name
+    SortingPage.Verify the sorting of the table method five    2      First Name
 
 Test the sorting of Recent Activities Table under Dashboard page
     [Tags]      Stable

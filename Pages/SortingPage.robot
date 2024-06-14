@@ -327,6 +327,7 @@ Verify the sorting of the table method five
     wait until element is enabled       //div[normalize-space()='1']    ${wait_time}
     Wait Until Element Is Visible    //div[@aria-colindex='${columnNumber}']    ${wait_time}
     Wait Until Element Is enabled    //div[@aria-colindex='${columnNumber}']    ${wait_time}
+    Double Click element   (//div[@ref='eResize'])[${columnNumber}]
 
     ${element_list}=    Get WebElements    //div[@aria-colindex='${columnNumber}']
 

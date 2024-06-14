@@ -61,8 +61,8 @@ Free the asset limit
     SortingPage.Click on specific column for method one     Created Date
     SortingPage.Click on specific column for method one     Created Date
     PaginationPage.Click on the pagination dropdown     technology
-    PaginationPage.Select the value from the pagination drop down count    500
-    sleep       3
+    PaginationPage.Select the value from the pagination drop down count    250
+#    sleep       3
     Generic.Wait until table get load
     PaginationPage.Click on the checkbox of technology listing
 
