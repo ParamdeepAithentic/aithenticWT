@@ -53,8 +53,8 @@ ${valid_password}        Test!@5897     #UAT user
 #${valid_password}         Test@123         #pre prod
 
 
-#${admin_url}        https://uat-admin.aithentic.com/
-${admin_url}        https://qa-admin.aithentic.com/
+${admin_url}        https://uat-admin.aithentic.com/
+#${admin_url}        https://qa-admin.aithentic.com/
 
 ${agentDiscovery_TagName}       Tag Name - johnsoftwaresolutions-1192-4         #qa
 #${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-10        #uat
@@ -126,6 +126,7 @@ click on the button
     wait until element is not visible   ${loaderIcon}          ${wait_time}
     wait until element is visible      //button[normalize-space()='${option}']          ${wait_time}
     wait until element is enabled      //button[normalize-space()='${option}']          ${wait_time}
+    sleep   ${search_sleep}
     click element       //button[normalize-space()='${option}']
     sleep   ${search_sleep}
 

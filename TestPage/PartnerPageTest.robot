@@ -645,6 +645,7 @@ Export Specificartner into Excel Doc CSV and TSV for Support Partner
     PartnersPage.Click contact main save button
     Generic.Verify your current page location contains      partner-listing
     Generic.Fetch alert message text and compare it with        Partner created successfully
+    Generic.Wait until table get load
     PartnersPage.Search by business name    ${generate_BusinessName}
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .xlsx
@@ -788,7 +789,7 @@ Edit Manufacturer via partner
     PartnersPage.Click on Add new Address of partner        Add new Address
     PartnersPage.Select country     United States
     PartnersPage.Add Unique address_one of partner
-    PartnersPage.Add Unique address_two of partner
+    PartnersPage.Add new address_two of partner
     PartnersPage.Select State       Alaska
     PartnersPage.Select City        Akutan
     PartnersPage.Add new zip code of partner     56709
@@ -890,6 +891,7 @@ Deactivate Manufacturer via partner
     Generic.Enter phone number      India   +91     9646289871
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     Generic.click on the button     Add
+    PartnersPage.Wait for add contact pop up hide
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with    Partner updated successfully
     PartnersPage.Search by business name    ${generated_BrandName}
@@ -974,6 +976,7 @@ Activate Manufacturer via partner
     Generic.Enter phone number      India   +91     9646289871
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     Generic.click on the button     Add
+    PartnersPage.Wait for add contact pop up hide
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with    Partner updated successfully
     PartnersPage.Search by business name    ${generated_BrandName}
@@ -1054,7 +1057,7 @@ Remove Manufacturer from partner
     PartnersPage.Select City        Akutan
     PartnersPage.Add new zip code of partner     56709
     PartnersPage.Update the partner information
-    Generic.Scroll the page till        700
+    PartnersPage.Wait for add address pop up hide
     PartnersPage.Click on Add new Contact of partner        Add new Contact
     PartnersPage.Enter random contact name
     PartnersPage.Enter new_business_email of contact    ${generate_PersonName}     yopmail
@@ -1249,6 +1252,8 @@ Add_edit_deactivate_removeSupplier while adding brand
     PartnersPage.Select City         Ajo
     PartnersPage.Add new zip code of partner     15321531
     Generic.click on the button     Add
+    PartnersPage.Wait for add address pop up hide
+    sleep   ${search_sleep}
     PartnersPage.Click on pencil icon of address and contact under partner   3
     PartnersPage.Enter random contact name
     PartnersPage.Enter new_business_email of contact    ${generate_PersonName}     yopmail
@@ -1335,6 +1340,7 @@ Add_edit_deactivate_removeSupport_partner_while_adding_brand
     PartnersPage.Select City         Anula
     PartnersPage.Add new zip code of partner     581515
     PartnersPage.Update the partner information
+    sleep   ${search_sleep}
     PartnersPage.Click on Add new Address of partner        Add new Address
     PartnersPage.Select the partner address country        Australia
     PartnersPage.Add Unique address_one of partner

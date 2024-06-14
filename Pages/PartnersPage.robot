@@ -510,6 +510,7 @@ Update the partner information
     wait until element is not visible   ${loaderIcon}       ${wait_time}
     wait until element is visible       ${update_button}        ${wait_time}
     wait until element is enabled      ${update_button}        ${wait_time}
+    sleep   ${search_sleep}
     click element       ${update_button}
     sleep   ${search_sleep}
     wait until element is not visible       //div[@id='addressModal']//div[contains(@class,'modal-content')]        ${wait_time}
@@ -652,3 +653,6 @@ Select the partner address country
 
 Wait for add address pop up hide
     wait until element is not visible       //div[@id='addAddressModal']//div[contains(@class,'modal-content')]     ${wait_time}
+
+Wait for add contact pop up hide
+    wait until element is not visible      //div[@id='contactModal']//div[contains(@class,'modal-content')]     ${wait_time}
