@@ -1062,6 +1062,7 @@ Remove Manufacturer from partner
     PartnersPage.Add new zip code of partner     56709
     PartnersPage.Update the partner information
     PartnersPage.Wait for add address pop up hide
+    Generic.Scroll the page till    700
     PartnersPage.Click on Add new Contact of partner        Add new Contact
     PartnersPage.Enter random contact name
     PartnersPage.Enter new_business_email of contact    ${generate_PersonName}     yopmail
