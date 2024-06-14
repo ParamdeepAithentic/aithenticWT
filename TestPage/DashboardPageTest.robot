@@ -45,6 +45,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Click the option from side drawer
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -56,7 +57,7 @@ Click the option from side drawer
 
 
 Verify the drawer list
-    [Tags]      Time
+    [Tags]      Time        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -73,6 +74,7 @@ Verify the drawer list
 
 
 Verify the side options list
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -80,6 +82,7 @@ Verify the side options list
     DashboardPage.Verify the side option list parameters
 
 click the option from menu
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page

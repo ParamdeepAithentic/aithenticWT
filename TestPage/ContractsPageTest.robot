@@ -70,7 +70,7 @@ Test Teardown   Close Browser session
 
 
 Technology Auto removed from dynamic contract When edit Brand and product
-    [Tags]      Sanity      Smoke       Time
+    [Tags]      Sanity      Smoke       Time        Unstable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -229,7 +229,7 @@ Technology Auto removed from dynamic contract When edit Brand and product
 
 
 Technology Auto removed from static contract When edit Brand and product
-    [Tags]      Sanity
+    [Tags]      Sanity      Unstable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
