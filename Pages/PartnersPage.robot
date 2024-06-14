@@ -16,7 +16,7 @@ Resource        ../Pages/TechnologyPage.robot
 Resource        ../Pages/PartnersPage.robot
 Resource        ../Pages/RegisterMember.robot
 Resource        ../Pages/ContractsPage.robot
-Resource        ../Pages/LoginAPI.robot
+Resource        ../Pages/LoginPage.robot
 Resource        ../Pages/ReplaceDomainAPI.robot
 Resource        ../Pages/Yopmail.robot
 Resource        ../Pages/UserAccount.robot
@@ -73,7 +73,7 @@ ${loaderIcon}     //div[@role='status']
 ${partner_newaddress_Line2}     css:#addressLine2
 ${new_zipcode}      css:#zip
 ${new_contactEmail}     css:#businessEmail
-${update_button}        xpath://button[@type='button'][normalize-space()='Update']
+${update_button}       xpath://button[@type='button'][normalize-space()='Update']
 ${select_remove_popUp_Yes}      xpath://button[normalize-space()='Yes']
 ${clear_text}       css:ng-select[placeholder='Select State'] span[title='Clear all']
 ${partner_edit_icon}        css:.fa-pencil-alt.pencil
@@ -224,9 +224,9 @@ Enter random contact name
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generate_PersonName}=    Catenate    Person_${random_string}
     input text   ${contact_name}   ${generate_PersonName}
-    wait until element is visible      css:div[role='option']       ${wait_time}
-    click element   css:div[role='option']
-    set global variable    ${generate_PersonName}
+#    wait until element is visible      css:div[role='option']       ${wait_time}
+#    click element   css:div[role='option']
+#    set global variable    ${generate_PersonName}
 
 Enter self contact person
     [Arguments]    ${option}
@@ -607,3 +607,41 @@ Verify pages with the element
     [Arguments]    ${option}
     wait until element is visible   //th[normalize-space()='${option}']     ${wait_time}
 # option: Yes, No
+
+Click on the export button of partner under technology details page
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible      //div[contains(@id,'partners')]//button[@id='dropdownMenuButton']        ${wait_time}
+    wait until element is enabled      //div[contains(@id,'partners')]//button[@id='dropdownMenuButton']        ${wait_time}
+    click element  //div[contains(@id,'partners')]//button[@id='dropdownMenuButton']
+
+
+Download the selected extension file of partner under technology details
+    [Arguments]    ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible      //div[contains(@id,'partners')]//a[contains(text(),'${option}')]       ${wait_time}
+    wait until element is enabled     //div[contains(@id,'partners')]//a[contains(text(),'${option}')]       ${wait_time}
+    click element   //div[contains(@id,'partners')]//a[contains(text(),'${option}')]
+
+
+Click on pencil icon of address and contact under partner
+    [Arguments]    ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible    (//i[contains(@class,'fa-pencil-alt')])[${option}]       ${wait_time}
+    wait until element is enabled   (//i[contains(@class,'fa-pencil-alt')])[${option}]      ${wait_time}
+    click element   (//i[contains(@class,'fa-pencil-alt')])[${option}]
+
+Update the partner information of edit contact
+    wait until element is not visible   ${loaderIcon}       ${wait_time}
+    wait until element is visible      //div[@id='contactModal']//div[@class='modal-content']//following-sibling::button[normalize-space()='Update']        ${wait_time}
+    wait until element is enabled     //div[@id='contactModal']//div[@class='modal-content']//following-sibling::button[normalize-space()='Update']        ${wait_time}
+    click element       //div[@id='contactModal']//div[@class='modal-content']//following-sibling::button[normalize-space()='Update']
+    sleep   ${search_sleep}
+
+Select the partner address country
+    [Arguments]     ${country}
+    wait until element is visible       ${click_Country}        ${wait_time}
+    wait until element is enabled       ${click_Country}        ${wait_time}
+    click element   ${click_Country}
+    Clear element text      ${click_Country}
+    input text   ${click_Country}   ${country}
+    Press Keys   ${click_Country}       ENTER

@@ -8,6 +8,7 @@ Library           BuiltIn
 Library           random
 Library           DateTime
 Library           OperatingSystem
+Library           Process
 Resource        ../Pages/Generic.robot
 Resource        ../Pages/DashboardPage.robot
 Resource        ../Pages/DepartmentPage.robot
@@ -27,7 +28,7 @@ Resource        ../Pages/SubscriptionPage.robot
 Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
-Resource        ../Pages/LoginAPI.robot
+Resource        ../Pages/LoginPage.robot
 Resource        ../Pages/MemberPage.robot
 Resource        ../Pages/OCS.robot
 Resource        ../Pages/BillingPage.robot
@@ -103,10 +104,12 @@ Click on the three_dots of the table
     wait until element is not visible       ${admin_loader}              ${wait_time}
     wait until element is visible       css:.fa-ellipsis-h       ${wait_time}
     wait until element is enabled       css:.fa-ellipsis-h       ${wait_time}
+    Sleep    ${search_sleep}
     click element           css:.fa-ellipsis-h
 
 Choose option by clicking on three_dots
     [Arguments]     ${option}
+    Sleep    ${search_sleep}
     Generic.click on the tab        ${option}
 #option: View Company, Change Commercial Plan
 
@@ -115,6 +118,7 @@ Scroll table horizontaly
     wait until element is visible       ${table}        ${wait_time}
     wait until element is enabled       ${table}        ${wait_time}
     Execute JavaScript  window.scrollBy(10000, 0)
+    Sleep    ${search_sleep}
 
 scroll table vertically
     [Arguments]     ${option}

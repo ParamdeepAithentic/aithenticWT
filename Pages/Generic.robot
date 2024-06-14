@@ -27,7 +27,7 @@ Resource        ../Pages/SubscriptionPage.robot
 Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
-Resource        ../Pages/LoginAPI.robot
+Resource        ../Pages/LoginPage.robot
 Resource        ../Pages/MemberPage.robot
 Resource        ../Pages/OCS.robot
 Resource        ../Pages/BillingPage.robot
@@ -41,34 +41,30 @@ Resource        ../Pages/Bulk_Import_ExportPage.robot
 ${user_name}             rahulshettyacademy
 ${invalid_password}      123445
 
-${url}                 https://uat-app.aithentic.com/
-#${url}                https://qa-app.aithentic.com/
+
+#${url}                 https://uat-app.aithentic.com/
+${url}                https://qa-app.aithentic.com/
 #${url}                https://pre-prod-app.aithentic.com
-${apiURL}              https://uat-api.aithentic.com/api/v1
-#${apiURL}             https://qa-api.aithentic.com/api/v1
+#${apiURL}              https://uat-api.aithentic.com/api/v1
+${apiURL}             https://qa-api.aithentic.com/api/v1
 #${apiURL}             https://pre-prod-api.aithentic.com/api/v1
-${valid_password}        Test!@5897     #UAT user
-#${valid_password}         Test@123       #QA User
+#${valid_password}        Test!@5897     #UAT user
+${valid_password}         Test@123       #QA User
 #${valid_password}         Test@123         #pre prod
 
 
-${admin_url}        https://uat-admin.aithentic.com/
-#${admin_url}        https://qa-admin.aithentic.com/
+#${admin_url}        https://uat-admin.aithentic.com/
+${admin_url}        https://qa-admin.aithentic.com/
 
-#${agentDiscovery_TagName}       Tag Name - johnsoftwaresolutions-1192-4         #qa
-${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-3        #uat
-
-
-
+${agentDiscovery_TagName}       Tag Name - johnsoftwaresolutions-1192-4         #qa
+#${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-10        #uat
 
 ${admin_name}        aithentic@yopmail.com
 ${admin_password}       Admin@123
 
-
-${browser_name}         firefox
+${browser_name}          firefox
 
 ${email}                 testqa29j@mailinator.com
-
 ${SheetLocationAndName}   LoadTimeSheet.xlsx
 ${SheetTabName}     Load_Time_tracking
 
@@ -82,7 +78,8 @@ ${click_countryTag}     css:.iti__selected-flag.dropdown-toggle
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
-${wait_time}       120
+
+${wait_time}        60
 ${yop_sleep}       10
 ${search_sleep}       1
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
@@ -150,7 +147,7 @@ open the browser with the url
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Log to console   Current Time in Milliseconds: ${ActualTime}
-    Calculate Running time  2  ${pageHeading}   Generic - open the browser with the url     2    ${pageTime}     ${ActualTime}    Load_Time_tracking
+    Calculate Running time  2  ${pageHeading}   Generic - open the browser with the url and maximize the page     2    ${pageTime}     ${ActualTime}    Load_Time_tracking
 
 Get Current Date and Time
     Generic.Fix the column number
@@ -172,7 +169,7 @@ Close Browser session
 
 select the option from the side menu
     [Arguments]     ${option}
-#    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible    //li[@title='${option}']          ${wait_time}
     wait until element is enabled    //li[@title='${option}']          ${wait_time}
     click element       //li[@title='${option}']
@@ -180,7 +177,9 @@ select the option from the side menu
 
 Verify your current page location contains
     [Arguments]    ${verifyOption}
+    Wait Until Element Is Not Visible    ${loaderIcon}    ${wait_time}
     wait until location contains    ${verifyOption}     ${wait_time}
+    wait until element is not visible   ${loaderIcon}          ${wait_time}                 # Remove later
 
 Verify your current page contains this text
     [Arguments]    ${verifyOption}
@@ -214,6 +213,7 @@ Cross the text message alert
 
 Select parameter
     [Arguments]    ${address}
+    Wait Until Element Is Not Visible    ${loaderIcon}   ${wait_time}
     wait until element is visible     //span[normalize-space()='${address}']        ${wait_time}
     wait until element is enabled       //span[normalize-space()='${address}']          ${wait_time}
     click element      //span[normalize-space()='${address}']
@@ -222,6 +222,7 @@ Click on the profile name
     wait until element is not visible      ${loaderIcon}          ${wait_time}
     wait until element is visible       ${profileName}          ${wait_time}
     wait until element is enabled       ${profileName}          ${wait_time}
+    wait until element is not visible      ${loaderIcon}          ${wait_time}          # Remove later
     click element       ${profileName}
 
 ###############################################################################################
@@ -230,6 +231,7 @@ Select other option from profile list
     wait until element is not visible      ${loaderIcon}          ${wait_time}
     wait until element is visible    //a[normalize-space()='${option}']          ${wait_time}
     wait until element is enabled    //a[normalize-space()='${option}']          ${wait_time}
+    wait until element is not visible      ${loaderIcon}          ${wait_time}                  # Remove later
     click element    //a[normalize-space()='${option}']
 
 Select option from profile list
@@ -237,6 +239,7 @@ Select option from profile list
      wait until element is not visible      ${loaderIcon}          ${wait_time}
      wait until element is visible    css:.qa-${option} li      ${wait_time}
      wait until element is enabled    css:.qa-${option} li      ${wait_time}
+     wait until element is not visible      ${loaderIcon}          ${wait_time}                 # Remove later
      click element    css:.qa-${option} li
 
 ###############################################################################################
@@ -303,6 +306,7 @@ Enter phone number
 Scroll the page till
     [Arguments]    ${option}
     Execute javascript      window.scrollTo(0,${option})
+    wait until element is not visible       ${loaderIcon}       ${wait_time}
 
 Verify pop-up is visible after clicking on i-icon
     wait until element is visible       css:.popover-content       ${wait_time} 
@@ -328,8 +332,8 @@ Update settings for Asset_ID, employee_id and location
     Generic.open the browser with the url
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     I_iconPage.Choose options inside personal_details        Organization
@@ -338,6 +342,24 @@ Update settings for Asset_ID, employee_id and location
     DashboardPage.Select the employee ID checkbox   yes
     DashboardPage.Select the location ID checkbox   yes
     DashboardPage.Select the asset ID checkbox      no
+#    Generic.Click on the profile name
+#    Generic.Select option from profile list     subscription-dropdown
+#    Generic.Verify your current page location contains      subscription
+#    SubscriptionPage.Select if you want to change plan or asset    Change Plan
+#    TechnologyPage.Select plan for subscription     Premium
+#    Generic.Scroll the page till    200
+#    SubscriptionPage.Set asset range to     1000
+#    SubscriptionPage.Update the payment of changed plan     proceed
+#    TechnologyPage.Click on pop up of available Inactive Asset   cancel
+#    SubscriptionPage.Select the payment method    ach
+#    SubscriptionPage.Select the account for payment
+#    SubscriptionPage.Proceed the payment     proceed
+#    Generic.Fetch alert message text and compare it with      Payment Successful
+    sleep       ${yop_sleep}
     close browser
+    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+    Run Process    cmd.exe    /C    taskkill /IM chrome.exe /F
+    Run Process    cmd.exe    /C    taskkill /IM skype.exe /F
+    Run Process    cmd.exe    /C    taskkill /IM msedge.exe /F
 
 

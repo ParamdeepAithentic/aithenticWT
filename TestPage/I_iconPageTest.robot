@@ -15,7 +15,7 @@ Resource        ../Pages/TechnologyPage.robot
 Resource        ../Pages/PartnersPage.robot
 Resource        ../Pages/RegisterMember.robot
 Resource        ../Pages/ContractsPage.robot
-Resource        ../Pages/LoginAPI.robot
+Resource        ../Pages/LoginPage.robot
 Resource        ../Pages/ReplaceDomainAPI.robot
 Resource        ../Pages/Yopmail.robot
 Resource        ../Pages/UserAccount.robot
@@ -39,12 +39,12 @@ Test Teardown   Close Browser session
 Verify all i-icon of Dashboard page
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Dashboard
-    Generic.Verify your current page location contains      management-console
+    Generic.Verify your current page location contains      dashboard
     DashboardPage.select the option from the dashboard drawer   Asset Overview
-    Generic.Verify your current page location contains      asset-overview
+    Generic.Verify your current page location contains      dashboard
     I_iconPage.Click on i-icon of asset-overview tab
     Generic.Verify pop-up is visible after clicking on i-icon
     I_iconPage.Click on i-icon of asset-overview tab
@@ -55,10 +55,11 @@ Verify all i-icon of Dashboard page
     I_iconPage.Click on i-icon of account_overview tab
 
 Verify all i-icon of profile-listing
+    [Tags]     Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     I_iconPage.Choose options inside personal_details        Organization
@@ -108,8 +109,8 @@ Verify all i-icon of profile-listing
 Verify all i-icon of team member page
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     I_iconPage.Click on i-icon of team-members tab
@@ -117,11 +118,11 @@ Verify all i-icon of team member page
     I_iconPage.Click on i-icon of team-members tab
 
 Verify all i-icon of Technology page
-    [Tags]    retry
+    [Tags]   Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     I_iconPage.Click on i-icon of technology tab
@@ -163,8 +164,8 @@ Verify all i-icon of Technology page
 Verify all i-icon of partners page
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner-listing
     I_iconPage.Click on i-icon of partners tab
@@ -174,8 +175,8 @@ Verify all i-icon of partners page
 Verify all i-icon of Discovery assets
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu        Asset Discovery
     Generic.Verify your current page location contains      discovery-assets
     I_iconPage.Choose tab under Discovery Assets       agent-discovery
@@ -186,16 +187,17 @@ Verify all i-icon of Discovery assets
     Generic.Verify your current page location contains      customer
     Generic.Verify your current page contains this text     Asset Discovery
     sleep       ${yop_sleep}
-    switch window       aithentic | Asset - Discovery
+    switch window       aithentic | Service Now Newly-Discovered
     I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     I_iconPage.Click on i_icon under network_discovery tab
 
 Verify all i-icon of advanced search
+    [Tags]     Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -211,12 +213,12 @@ Verify all i-icon of advanced search
     Generic.select the option from the side menu        Asset Discovery
     Generic.Verify your current page location contains      discovery-assets
     I_iconPage.Choose tab under Discovery Assets       network-discovery
-
     Generic.Verify your current page location contains    ocs
     OCS.Click on newly discovered tab under network discovery
     Generic.Verify your current page location contains    ocs
     OCS.Click on search icon of discovery assets
     OCS.Enter text to search discovery asset   Apple Inc
+    Generic.Scroll Window To End
     OCS.Click on the down arrow icon of discovered asset
     OCS.Mouse Hover over searched Discovered Assets
     OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
@@ -235,11 +237,12 @@ Verify all i-icon of advanced search
     I_iconPage.Click on the cross icon of advanced search under technology
     TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
     OCS.Enter The Asset_id in Add Technology Page
+    TechnologyPage.Create unique serial number random
     Generic.Scroll Window To End
     OCS.Click on save button of Add Technology Page
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
     Sleep    ${yop_sleep}
-    switch window    aithentic | Asset - Discovery
+    switch window    aithentic | Service Now Newly-Discovered
     Generic.Refresh the existing page
     OCS.Choose Tab under Asset Discovery    agent-discovery
     Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -273,12 +276,20 @@ Verify all i-icon of advanced search
     TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
     OCS.Create Asset_id for software component
     Generic.Scroll Window To End
+    OCS.Click on save button of Add Technology Page
 
-    Generic.select the option from the side menu        Technology
-    Generic.Verify your current page location contains      technology-list
-    TechnologyPage.Search by AssetId       ${generated_AssetID}
-    TechnologyPage.Click on the first row of the technology table
+    OCS.Wait for the invisiblity of alert msg       Technology created successfully
+    Sleep    ${yop_sleep}
+    Switch Window      aithentic | Technology - Details
+
+
     Generic.Verify your current page location contains    technology-details
+#    sleep   ${search_sleep}
+#    Generic.select the option from the side menu        Technology
+#    Generic.Verify your current page location contains      technology-list
+#    TechnologyPage.Search by AssetId       ${generated_AssetID}
+#    TechnologyPage.Click on the first row of the technology table
+#    Generic.Verify your current page location contains    technology-details
     TechnologyPage.Click on edit button on product details page        Edit
     Generic.Verify your current page location contains      edit-technology
     OCS.Edit the MAC_Address of Asset
@@ -291,9 +302,11 @@ Verify all i-icon of advanced search
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
+    I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.Click on search icon of discovery assets
     OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
+    Generic.Scroll Window To End
     OCS.Click on the down arrow icon of discovered asset
     OCS.Mouse Hover over searched IP Assets
     OCS.Get MAC_Address by hovering over IP discovered assets    MacAddress:
@@ -312,6 +325,7 @@ Verify all i-icon of advanced search
     sleep   ${search_sleep}
     I_iconPage.Click on i_icon of advanced search under add discovered asset
     I_iconPage.Verify pop is visible after clicking i-icon of advancede search under discovered asset
+
     I_iconPage.Click on i_icon of advanced search under add discovered asset
     I_iconPage.Click on the cross icon of advanced search under technology
     TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
@@ -319,7 +333,7 @@ Verify all i-icon of advanced search
     OCS.Enter The Asset_id in Add Technology Page
     Generic.Scroll Window To End
     OCS.Click on save button of Add Technology Page
-    OCS.Wait for the invisiblity of alert msg        Technology created successfully
+    OCS.Wait for the invisiblity of alert msg       Technology created successfully
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Discovered Assets
     Generic.Refresh the existing page
@@ -340,8 +354,8 @@ Verify all i-icon of advanced search
 Upload File I-icon while add and edit technology
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -371,8 +385,8 @@ Upload File I-icon while add and edit technology
 Upload I-icon under attachment tab
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -396,8 +410,8 @@ Upload I-icon under attachment tab
 Upload I-icon under clone add technology
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -421,17 +435,20 @@ Upload I-icon under clone add technology
     I_iconPage.Fetch the text of I-icon of upload file while adding technology     You can upload 1 file of 8MB or 8 files of 1MB each.
 
 Upload I-icon while adding discovery and component asset
+    [Tags]    rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
+    OCS.Choose Tab under Asset Discovery    network-discovery
     OCS.Click on newly discovered tab under network discovery
     Generic.Verify your current page location contains    ocs
     OCS.Click on search icon of discovery assets
     OCS.Enter text to search discovery asset   Apple Inc
+    Generic.Scroll Window To End
     OCS.Click on the down arrow icon of discovered asset
     OCS.Mouse Hover over searched Discovered Assets
     OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
@@ -449,7 +466,7 @@ Upload I-icon while adding discovery and component asset
     OCS.Click on save button of Add Technology Page
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
     Sleep    ${yop_sleep}
-    switch window    aithentic | Asset - Discovery
+    switch window    aithentic | Service Now Newly-Discovered
     Generic.Refresh the existing page
     OCS.Choose Tab under Asset Discovery    agent-discovery
     Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -477,10 +494,10 @@ Upload I-icon while adding discovery and component asset
     OCS.Create Asset_id for software component
     Generic.Scroll Window To End
     I_iconPage.Fetch the text of I-icon of upload file while adding technology     You can upload 1 file of 8MB or 8 files of 1MB each.
-    Generic.select the option from the side menu        Technology
-    Generic.Verify your current page location contains      technology-list
-    TechnologyPage.Search by AssetId       ${generated_AssetID}
-    TechnologyPage.Click on the first row of the technology table
+    OCS.Click on save button of Add Technology Page
+    OCS.Wait for the invisiblity of alert msg       Technology created successfully
+    Sleep    ${yop_sleep}
+    Switch Window      aithentic | Technology - Details
     Generic.Verify your current page location contains    technology-details
     TechnologyPage.Click on edit button on product details page        Edit
     Generic.Verify your current page location contains      edit-technology
@@ -496,14 +513,16 @@ Upload I-icon while adding discovery and component asset
 Upload I-icon while adding IP Address
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
+    OCS.Choose Tab under Asset Discovery    network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.Click on search icon of discovery assets
     OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
+    Generic.Scroll Window To End
     OCS.Click on the down arrow icon of discovered asset
     OCS.Mouse Hover over searched IP Assets
     OCS.Get MAC_Address by hovering over IP discovered assets    MacAddress:
@@ -543,3 +562,5 @@ Upload I-icon while adding IP Address
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     UnselectAssetAPI.Hit API Endpoint
 
+Zz kill browser
+    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

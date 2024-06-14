@@ -27,7 +27,7 @@ Resource        ../Pages/SubscriptionPage.robot
 Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
-Resource        ../Pages/LoginAPI.robot
+Resource        ../Pages/LoginPage.robot
 Resource        ../Pages/MemberPage.robot
 Resource        ../Pages/OCS.robot
 Resource        ../Pages/BillingPage.robot
@@ -302,6 +302,7 @@ Select product technology group
     click element   ${select_technology_group}
     Scroll Element Into View        //span[normalize-space()='${option}']
     wait until element is visible      //span[normalize-space()='${option}']       ${wait_time}
+    wait until element is enabled      //span[normalize-space()='${option}']       ${wait_time}
     click element       //span[normalize-space()='${option}']
 
 Select product technology group via link
@@ -403,8 +404,10 @@ Verify Brand added
 
 select the option from the dashboard drawer
     [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible    //span[normalize-space()='${option}']      ${wait_time}
     wait until element is enabled    //span[normalize-space()='${option}']      ${wait_time}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}                # Remove later
     click element    //span[normalize-space()='${option}']
 
 ################################### WELCOME PAGE AND AHEAD ###############
@@ -706,6 +709,7 @@ Edit State while edit address
     wait until element is visible  ${editstate_edit}   ${wait_time}
     wait until element is enabled  ${editstate_edit}   ${wait_time}
     click element  css:ng-select[placeholder='Select State'] span[title='Clear all']
+    wait until element is not visible   ${loaderIcon}   ${wait_time}
     click element   ${editstate_edit}
     wait until element is visible   css:span[title='${State}']   ${wait_time}
     click element   css:span[title='${State}']
@@ -934,7 +938,7 @@ Get And Verify The Count Of tabs under renewal overview by management console
         ${element_as_number}=   Convert To Integer   ${element}
         Log  Converted Text: ${element_as_number}
         Run Keyword If    ${element_as_number} == 0
-        ...    Skip Action
+        ...    DashboardPage.Skip Action
         ...    ELSE IF    ${element_as_number} > 0
         ...    Run Keywords      Click Element    (//div[contains(@class,'-dot')])[${index}]      AND       sleep   ${yop_sleep}        AND       DashboardPage.Fetch and compare the total count  ${element_as_number}
         ...    AND    Click Element    css:span[class='back']  AND  Sleep    ${yop_sleep}
@@ -958,3 +962,48 @@ Click on the first dropdown under management console
     Wait Until Element Is Visible    (//div[contains(@class,'qa-upcoming-days')])[1]      ${wait_time}
     Wait Until Element Is Enabled    (//div[contains(@class,'qa-upcoming-days')])[1]      ${wait_time}
     Click Element       (//div[contains(@class,'qa-upcoming-days')])[1]
+
+Click on the filter Past under recent Activities table
+    [Arguments]         ${option1}      ${option2}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //span[normalize-space()='${option1}']//parent::div//parent::div  ${wait_time}
+    Wait Until Element Is Enabled    //span[normalize-space()='${option1}']//parent::div//parent::div  ${wait_time}
+    Click Element    //span[normalize-space()='${option1}']//parent::div//parent::div
+    Generic.Select parameter    ${option2}
+
+Click on the filter under recent Activities table
+    [Arguments]         ${option1}      ${option2}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //div[contains(text(),'Asset Id')]//following-sibling::div//input      ${wait_time}
+    Wait Until Element Is Enabled    //div[contains(text(),'Asset Id')]//following-sibling::div//input      ${wait_time}
+    Input Text    //div[contains(text(),'${option1}')]//following-sibling::div//input    ${option2}
+    Generic.Select parameter    ${option2}
+    
+Click on row of recent activities table
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //table//tbody[contains (@class, 'ng-star-inserted')]//tr//td[1]       ${wait_time}
+    Wait Until Element Is Enabled    //table//tbody[contains (@class, 'ng-star-inserted')]//tr//td[1]        ${wait_time}
+    Click Element       //table//tbody[contains (@class, 'ng-star-inserted')]//tr//td[1]
+
+Click on Back to account overview button
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //span[@class='back']        ${wait_time}
+    Wait Until Element Is Enabled    //span[@class='back']        ${wait_time}
+    Click Element       //span[@class='back']
+
+Reset the filters for recent activities
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    css:.recent-activities-filters .fa-sync-alt        ${wait_time}
+    Wait Until Element Is Enabled    css:.recent-activities-filters .fa-sync-alt      ${wait_time}
+    Click Element      css:.recent-activities-filters .fa-sync-alt
+
+Select option from the pop up of product
+    [Arguments]    ${option}
+    wait until element is visible   css:.removeProduct${option}Button-qa   ${wait_time}
+    click element   css:.removeProduct${option}Button-qa
+
+Click on the export button under account overview tab
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible     //i[@title='Exports Alerts']        ${wait_time}
+    wait until element is enabled      //i[@title='Exports Alerts']        ${wait_time}
+    click element  //i[@title='Exports Alerts']

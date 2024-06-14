@@ -27,7 +27,7 @@ Resource        ../Pages/SubscriptionPage.robot
 Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
-Resource        ../Pages/LoginAPI.robot
+Resource        ../Pages/LoginPage.robot
 Resource        ../Pages/MemberPage.robot
 Resource        ../Pages/OCS.robot
 Resource        ../Pages/BillingPage.robot
@@ -55,6 +55,7 @@ ${three_dots}       css:.three-dots
 
 *** Keywords ***
 Click on add team member action button
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible      ${teamMember_Action_btn}      ${wait_time}
     wait until element is enabled      ${teamMember_Action_btn}      ${wait_time}
     click element      ${teamMember_Action_btn}
@@ -273,3 +274,10 @@ Create random employee id
     wait until element is enabled       css:#employeeId    ${wait_time}
     input text   css:#employeeId   ${generated_memberEmpID}
     set global variable    ${generated_memberEmpID}
+
+Download the selected extension file of team member
+    [Arguments]    ${option}
+    wait until element is visible  //a[normalize-space()='Export as ${option}']     ${wait_time}
+    wait until element is enabled   //a[normalize-space()='Export as ${option}']     ${wait_time}
+    click element   //a[normalize-space()='Export as ${option}']
+

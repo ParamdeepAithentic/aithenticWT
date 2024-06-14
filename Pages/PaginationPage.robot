@@ -27,7 +27,7 @@ Resource        ../Pages/SubscriptionPage.robot
 Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
-Resource        ../Pages/LoginAPI.robot
+Resource        ../Pages/LoginPage.robot
 Resource        ../Pages/MemberPage.robot
 Resource        ../Pages/OCS.robot
 Resource        ../Pages/BillingPage.robot
@@ -42,6 +42,7 @@ ${TotalRow_count}       css:.table.table-hover tr.table-row
 ${GetDropDown_count}     css:.qa-technology-per-page .ng-value span.ng-value-label
 ${Totalcount_field}        css:.qa-total-count-list
 ${Totalcount_field1}        (//p[contains(@class,'qa-total-count-list')])[2]
+${saveBTN1}         css:button[class='btn button-green']
 
 *** Keywords ***
 
@@ -102,7 +103,7 @@ Verify Pagination and Row Count
     ...    AND    Return From Keyword
 
     Run Keyword If    '${total_table_row_count}' == '${total_data_count}'
-    ...    Run Keywords     Fetch the total count    AND
+    ...    Run Keywords     PaginationPage.Fetch the total count    AND
     ...    Scroll within the element    ${total_table_row_count}
     ...    AND    Return From Keyword
 
@@ -119,7 +120,7 @@ Log WebElements
         wait until element is visible     //div[contains (@id, '-${index}')]       ${wait_time}
         wait until element is enabled     //div[contains (@id, '-${index}')]       ${wait_time}
         click element   //div[contains (@id, '-${index}')]
-        Run Keywords    Fetch the selected value of the dropdown  ${option}   AND      Check the table get load       AND      Get count of total rows     AND     Verify Pagination and Row Count     AND     Fetch the total count   AND     Click on the pagination dropdown  ${option}
+        Run Keywords    Fetch the selected value of the dropdown  ${option}   AND      Check the table get load       AND      Get count of total rows     AND     Verify Pagination and Row Count     AND     PaginationPage.Fetch the total count   AND     Click on the pagination dropdown  ${option}
     END
 
 
@@ -147,7 +148,7 @@ Log WebElements of Product Dropdown
         wait until element is visible     //div[contains (@id, '-${index}')]       ${wait_time}
         wait until element is enabled     //div[contains (@id, '-${index}')]       ${wait_time}
         click element   //div[contains (@id, '-${index}')]
-        Run Keywords    Fetch the selected value of the product dropdown     ${option}   AND      Check the table get load of product dropdown      AND      Get count of total rows from Product Dropdown     AND     Verify Pagination and Row Count for product dropdown     AND     Fetch the total count   AND     Click on the pagination dropdown  ${option}
+        Run Keywords    Fetch the selected value of the product dropdown     ${option}   AND      Check the table get load of product dropdown      AND      Get count of total rows from Product Dropdown     AND     Verify Pagination and Row Count for product dropdown     AND     PaginationPage.Fetch the total count   AND     Click on the pagination dropdown  ${option}
     END
 
 
@@ -166,7 +167,7 @@ Verify Pagination and Row Count for product dropdown
     ...    AND    Return From Keyword
 
     Run Keyword If    '${total_table_row_count}' == '${total_data_count}'
-    ...    Run Keywords     Fetch the total count    AND
+    ...    Run Keywords     PaginationPage.Fetch the total count    AND
     ...    Scroll within the element of product dropdown    ${total_table_row_count}
     ...    AND    Return From Keyword
 
@@ -241,7 +242,55 @@ Select parameter from brand dropdown list of OCS
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  5  ${pageHeading}   Technology Page - Select parameter from brand dropdown list      5    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
+Click on save technology form button of OCS
+    wait until element is visible       ${saveBTN1}       ${wait_time}
+    wait until element is enabled       ${saveBTN1}       ${wait_time}
+    click element       ${saveBTN1}
+
+#######################################################################################################################################################################################################################################################################################################
+
+Fetch the selected value of the dropdown for Recent Activities table
+    [Arguments]     ${option}
+    wait until element is visible       //tbody/tr[2]      ${wait_time}
+    wait until element is enabled       //tbody/tr[2]      ${wait_time}
+    ${get_count_of_dropDown_value} =    get text    css:.qa-${option}-per-page .ng-value span.ng-value-label
+    ${dropDown_value_as_number}=   Convert To Integer   ${get_count_of_dropDown_value}
+    set global variable    ${dropDown_value_as_number}
+    Log to console  Selected value :${dropDown_value_as_number}
+
+Check the table get load for Recent Activities
+    wait until element is visible       //tbody/tr[2]      ${wait_time}
+    wait until element is enabled       //tbody/tr[2]      ${wait_time}
+
+Get count of total rows for Recent Activities table
+    wait until element is visible       //tbody/tr[2]      ${wait_time}
+    wait until element is enabled       //tbody/tr[2]      ${wait_time}
+    ${elements} =  Get WebElements     ${TotalRow_count}
+    ${row_count} =    Get Length    ${elements}
+    ${total_table_row_count}=   Convert To Integer   ${row_count}
+    set global variable    ${total_table_row_count}
+
+Log WebElements for Recent Activites table
+    [Arguments]     ${option}
+    ${elements} =    Get WebElements    //div[contains(@class, 'scroll-host')]//span
+    ${element_count} =    Get Length    ${elements}
+    FOR    ${index}    IN RANGE    0    ${element_count}
+        wait until element is visible     //div[contains (@id, '-${index}')]       ${wait_time}
+        wait until element is enabled     //div[contains (@id, '-${index}')]       ${wait_time}
+        click element   //div[contains (@id, '-${index}')]
+        Run Keywords    Fetch the selected value of the dropdown for Recent Activities table     ${option}   AND      Check the table get load for Recent Activities       AND      Get count of total rows for Recent Activities table     AND     Verify Pagination and Row Count     AND     PaginationPage.Fetch the total count   AND     Click on the pagination dropdown  ${option}
+    END
 
 
-    
 
+Click on the checkbox of technology listing
+    Generic.Wait until table get load
+    sleep       5
+    ${elements} =    Get WebElements    //tbody//tr//span
+    ${element_count} =    Get Length    ${elements}
+    FOR    ${index}    IN RANGE    1    ${element_count + 1}
+        wait until element is visible     (//tbody//tr//span)[${index}]       ${wait_time}
+        wait until element is enabled     (//tbody//tr//span)[${index}]      ${wait_time}
+        click element   (//tbody//tr//span)[${index}]
+        PaginationPage.Scroll within the element      ${index}
+    END

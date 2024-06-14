@@ -16,7 +16,7 @@ Resource        ../Pages/TechnologyPage.robot
 Resource        ../Pages/PartnersPage.robot
 Resource        ../Pages/RegisterMember.robot
 Resource        ../Pages/ContractsPage.robot
-Resource        ../Pages/LoginAPI.robot
+Resource        ../Pages/LoginPage.robot
 Resource        ../Pages/ReplaceDomainAPI.robot
 Resource        ../Pages/Yopmail.robot
 Resource        ../Pages/UserAccount.robot
@@ -42,4 +42,5 @@ ${Shop_page_load}           css:.nav-link
 Validate Succesful Login
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains    dashboard

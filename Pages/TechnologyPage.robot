@@ -27,7 +27,7 @@ Resource        ../Pages/SubscriptionPage.robot
 Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
-Resource        ../Pages/LoginAPI.robot
+Resource        ../Pages/LoginPage.robot
 Resource        ../Pages/MemberPage.robot
 Resource        ../Pages/OCS.robot
 Resource        ../Pages/BillingPage.robot
@@ -40,7 +40,7 @@ Resource        ../Pages/Bulk_Import_ExportPage.robot
 
 ########################## technology form #####################
 ${assetTableLoader}     //div[@class='spinner-border text-loader']
-${AddTechnologyButton}      //a[@class='btn button-cyan mt-0 mx-1 ng-star-inserted'][normalize-space()='Add Technology']
+${AddTechnologyButton}     css:.qa-add-new-technology
 
 #############Product Information##################
 ${brand}       css:#brandselect
@@ -68,8 +68,8 @@ ${Contract_endDate}        css:#DYNA_17
 ######################Contract information################
 ${contract_id}     css:#TECHDYNA_3
 ${chargeable_basis}     //input[@id='Chargeable basis']      #User, CPU
-${cost_each}     css:#TECHDYNA_7
-${max_contracted}     css:#TECHDYNA_8
+${cost_each}     //input[@id='Cost Each']
+${max_contracted}     //input[@id='Max Contracted']
 
 ###############Technology Lifecycle Information################
 ${asset_id}     css:#AssetId
@@ -640,11 +640,11 @@ Add chargeable basis of contract information self
     wait until element is visible       ${chargeable_basis}        ${wait_time}
     click element   ${chargeable_basis}
     wait until element is visible       ${chargeable_basis}        ${wait_time}
-    ${StartTime1} =     Get Current Time in Milliseconds
     input text   ${chargeable_basis}   ${option}
     wait until element is visible    ${chargeable_basis}      ${wait_time}
     click element       ${chargeable_basis}
     Clear Element Text      ${chargeable_basis}
+    ${StartTime1} =     Get Current Time in Milliseconds
     input text      ${chargeable_basis}     ${option}
     Generic.Select parameter    ${option}
     ${EndTime1} =     Get Current Time in Milliseconds
@@ -682,9 +682,9 @@ Add max contracted of contract information self
 Add assignment information location
     [Arguments]    ${option1}
     wait until element is visible    ${locationName}      ${wait_time}
-    ${StartTime1} =     Get Current Time in Milliseconds
     click element       ${locationName}
 #    Clear Element Text      ${locationName}
+    ${StartTime1} =     Get Current Time in Milliseconds
     Generic.Enter value into field      ${locationName}     ${option1}
     Press Keys     ${locationName}       ENTER
     ${EndTime1} =     Get Current Time in Milliseconds
@@ -1114,6 +1114,7 @@ Select tab under technology details
     wait until element is visible       css:a[href='#${option}']       ${wait_time}
     wait until element is enabled       css:a[href='#${option}']        ${wait_time}
     click element        css:a[href='#${option}']
+    sleep   ${search_sleep}
 
 #options: details,partners,location,parent-components,components,messages,history,attachments
 
@@ -1322,6 +1323,19 @@ Verify parameter from past location table
 
 Click on current plan of subscription
     wait until element is visible   //button[normalize-space()='Current Plan']  ${wait_time}
+    wait until element is enabled   //button[normalize-space()='Current Plan']  ${wait_time}
+    click element   //button[normalize-space()='Current Plan']
+
+Click on plan of subscription
+    [Arguments]    ${option}
+    wait until element is visible   //h4[normalize-space()='${option}']//parent::div//following-sibling::div//button  ${wait_time}
+    wait until element is enabled   //h4[normalize-space()='${option}']//parent::div//following-sibling::div//button  ${wait_time}
+    click element       //h4[normalize-space()='${option}']//parent::div//following-sibling::div//button
+
+Select plan for subscription
+    [Arguments]    ${option}
+    wait until element is visible   //h4[normalize-space()='${option}']//parent::div//following-sibling::div[@class='price-value']//button  ${wait_time}
+    wait until element is enabled   //h4[normalize-space()='${option}']//parent::div//following-sibling::div[@class='price-value']//button  ${wait_time}
     click element   //button[normalize-space()='Current Plan']
 
 Click on pop up of available Inactive Asset
@@ -1329,6 +1343,13 @@ Click on pop up of available Inactive Asset
     wait until element is visible   css:.qa-available-inactive-assests-${option}   ${wait_time}
     wait until element is enabled   css:.qa-available-inactive-assests-${option}   ${wait_time}
     click element   css:.qa-available-inactive-assests-${option}
+
+Select option from exceed asset limit pop
+    [Arguments]     ${option}
+    wait until element is visible   css:.qa-asset-limit-exceede-${option}  ${wait_time}
+    wait until element is enabled   css:.qa-asset-limit-exceede-${option}  ${wait_time}
+    click element   css:.qa-asset-limit-exceede-${option}
+
 
 Click on removed assets option of technology filters
     wait until element is visible   css:.qa-removed-aasets-section  ${wait_time}
@@ -1492,7 +1513,7 @@ Click on advanced search button link under add technology
     wait until element is not visible      ${loaderIcon}    ${wait_time}
 
 Click on the row of the table inside advanced search
-    Execute JavaScript    document.querySelector('.bg-white.location-list-qa.ng-star-inserted > tr:nth-child(12)').scrollIntoView(true);
+    Execute JavaScript    document.querySelector('.bg-white.location-list-qa.ng-star-inserted > tr:nth-child(3)').scrollIntoView(true);
     Click Element    css:.bg-white.location-list-qa.ng-star-inserted > tr:nth-child(5) > td:nth-child(1)
 
 Fetch the Brand Name from the brand field
@@ -1608,3 +1629,92 @@ Verify that product version on technology details page
 Click on the technology group row of the table inside advanced search
     Execute JavaScript    document.querySelector('.bg-white.location-list-qa.ng-star-inserted > tr:nth-child(1)').scrollIntoView(true);
     Click Element    css:.bg-white.location-list-qa.ng-star-inserted > tr:nth-child(1) > td:nth-child(1)
+
+Get And Verify The Count Of existing asset of parent
+    ${element_count}=    Get Element Count    //tbody/tr/td/label/span
+    Log to console      ${element_count}
+
+    FOR    ${index}    IN RANGE    1    ${element_count}
+        Wait Until Element Is Visible   //tbody/tr[${index}]/td/label/span      ${wait_time}
+        Wait Until Element Is enabled   //tbody/tr[${index}]/td/label/span      ${wait_time}
+        click element   //tbody/tr[${index}]/td/label/span
+    END
+
+Click on the export button of parent tab under technology details page
+   wait until element is visible   //div[@id='parent-components']//button[@id='dropdownMenuButton']     ${wait_time}
+    wait until element is enabled   //div[@id='parent-components']//button[@id='dropdownMenuButton']     ${wait_time}
+    click element   //div[@id='parent-components']//button[@id='dropdownMenuButton']
+
+Download the selected extension file of parent under technology details
+    [Arguments]    ${option}
+    wait until element is visible   //div[@class='dropdown-menu show']//a[contains(text(),'${option}')]     ${wait_time}
+    wait until element is enabled   //div[@class='dropdown-menu show']//a[contains(text(),'${option}')]     ${wait_time}
+    click element   //div[@class='dropdown-menu show']//a[contains(text(),'${option}')]
+
+Click on the export button of deatils tab under technology details page
+   wait until element is visible   //div[@id='details']//button[@id='dropdownMenuButton']     ${wait_time}
+    wait until element is enabled   //div[@id='details']//button[@id='dropdownMenuButton']     ${wait_time}
+    click element   //div[@id='details']//button[@id='dropdownMenuButton']
+
+Click on the export button of component tab under technology details page
+   wait until element is visible   //div[@id='components']//button[@id='dropdownMenuButton']     ${wait_time}
+    wait until element is enabled   //div[@id='components']//button[@id='dropdownMenuButton']     ${wait_time}
+    click element   //div[@id='components']//button[@id='dropdownMenuButton']
+
+
+Click button to proceed the asset restore
+   wait until element is visible    css:.qa-proceed-retore-asset-technology-list     ${wait_time}
+    wait until element is enabled   css:.qa-proceed-retore-asset-technology-list   ${wait_time}
+    click element   css:.qa-proceed-retore-asset-technology-list
+
+Click button to cancle the asset restoration
+   wait until element is visible    css:.qa-cancel-asset-technology-list     ${wait_time}
+    wait until element is enabled   css:.qa-cancel-asset-technology-list  ${wait_time}
+    click element   css:.qa-cancel-asset-technology-list
+
+#Enter input in the not containing productv field
+#    [Arguments]     ${Product}
+#    wait until element is visible   //input[@formcontrolname='ProductNotContaining']     ${wait_time}
+#    wait until element is enabled   //input[@formcontrolname='ProductNotContaining']     ${wait_time}
+#    click element   //input[@formcontrolname='ProductNotContaining']
+#    input text      //input[@formcontrolname='ProductNotContaining']     ${Product}
+#
+#Enter input in the not containing description field
+#    [Arguments]     ${Description_not_containing}
+#    wait until element is visible   //input[@formcontrolname='DescriptionNotContaining']     ${wait_time}
+#    wait until element is enabled   //input[@formcontrolname='DescriptionNotContaining']    ${wait_time}
+#    click element   //input[@formcontrolname='DescriptionNotContaining']
+#    input text      //input[@formcontrolname='DescriptionNotContaining']     ${Description_not_containing}
+#
+#Enter input in the not containing feature field
+#    [Arguments]     ${Feature_not_containing}
+#    wait until element is visible   //input[@formcontrolname='FeatureNotContaining']     ${wait_time}
+#    wait until element is enabled   //input[@formcontrolname='FeatureNotContaining']    ${wait_time}
+#    click element   //input[@formcontrolname='FeatureNotContaining']
+#    input text     //input[@formcontrolname='FeatureNotContaining']     ${Feature_not_containing}
+
+Enter input in the not containing productv field
+    [Arguments]     ${Product}
+    wait until element is visible   //input[@formcontrolname='ProductNotContaining']     ${wait_time}
+    wait until element is enabled   //input[@formcontrolname='ProductNotContaining']     ${wait_time}
+    click element   //input[@formcontrolname='ProductNotContaining']
+    input text      //input[@formcontrolname='ProductNotContaining']     ${Product}
+
+Enter input in the not containing description field
+    [Arguments]     ${Description_not_containing}
+    wait until element is visible   //input[@formcontrolname='DescriptionNotContaining']     ${wait_time}
+    wait until element is enabled   //input[@formcontrolname='DescriptionNotContaining']    ${wait_time}
+    click element   //input[@formcontrolname='DescriptionNotContaining']
+    input text      //input[@formcontrolname='DescriptionNotContaining']     ${Description_not_containing}
+
+Enter input in the not containing feature field
+    [Arguments]     ${Feature_not_containing}
+    wait until element is visible   //input[@formcontrolname='FeatureNotContaining']     ${wait_time}
+    wait until element is enabled   //input[@formcontrolname='FeatureNotContaining']    ${wait_time}
+    click element   //input[@formcontrolname='FeatureNotContaining']
+    input text     //input[@formcontrolname='FeatureNotContaining']     ${Feature_not_containing}
+
+Click on the technology group row of the table inside advanced search of not conrtaining fields
+    Execute JavaScript    document.querySelector('.bg-white.location-list-qa >tr:nth-child(3) >td:nth-child(2) >div').scrollIntoView(true);
+    Click Element    css:.bg-white.location-list-qa >tr:nth-child(2) >td:nth-child(2) >div
+

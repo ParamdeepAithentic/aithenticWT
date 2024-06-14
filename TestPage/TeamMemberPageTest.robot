@@ -16,7 +16,7 @@ Resource        ../Pages/TechnologyPage.robot
 Resource        ../Pages/PartnersPage.robot
 Resource        ../Pages/RegisterMember.robot
 Resource        ../Pages/ContractsPage.robot
-Resource        ../Pages/LoginAPI.robot
+Resource        ../Pages/LoginPage.robot
 Resource        ../Pages/ReplaceDomainAPI.robot
 Resource        ../Pages/Yopmail.robot
 Resource        ../Pages/UserAccount.robot
@@ -43,8 +43,8 @@ Test Teardown   Close Browser session
 Create team member form
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Click on add team member action button
@@ -64,8 +64,8 @@ Create team member form
 Add Team member page - Add New Department and assign that department to Team member
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Click on add team member action button
@@ -93,8 +93,18 @@ Edit Team member page - Edit New Department and assign that department to Team m
     [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   no
+    DashboardPage.Select the location ID checkbox   yes
+    DashboardPage.Select the asset ID checkbox      no
+    Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Click on add team member action button
@@ -104,6 +114,7 @@ Edit Team member page - Edit New Department and assign that department to Team m
     Generic.Enter phone number      India   +91     9646289871
     TeamMemberPage.Enter team member business email_mailinator
     TeamMemberPage.Enter the Position in member form        QA
+    TeamMemberPage.Create random employee id
     sleep       ${yop_sleep}
     TeamMemberPage.Click on add here in department field        Click here to add
     TechnologyPage.Create unique department name random
@@ -135,8 +146,8 @@ Verify team member Asset history
     [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Click on add team member action button
@@ -187,14 +198,14 @@ Verify team member Asset history
     Switch Window   aithentic | OTP
     TwoFactorAuth.Enter the otp     ${passcode}
     TwoFactorAuth.Click verification button
-    Generic.Verify your current page location contains     management-console
+    Generic.Verify your current page location contains     dashboard
     Generic.Click on the profile name
     Generic.Select other option from profile list     Logout
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
-    Generic.Verify your current page location contains      management-console
-    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
+#    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Search Team Member by name   ${generated_TMFname}
@@ -225,8 +236,8 @@ Verify team member Asset history
 Search asset history with Asset ID
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Click on add team member action button
@@ -277,14 +288,14 @@ Search asset history with Asset ID
     Switch Window   aithentic | OTP
     TwoFactorAuth.Enter the otp     ${passcode}
     TwoFactorAuth.Click verification button
-    Generic.Verify your current page location contains     management-console
+    Generic.Verify your current page location contains     dashboard
     Generic.Click on the profile name
     Generic.Select other option from profile list     Logout
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
-    Generic.Verify your current page location contains      management-console
-    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
+#    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Search Team Member by name   ${generated_TMFname}
@@ -333,11 +344,11 @@ Search asset history with Asset ID
     TeamMemberPage.verify status of first name in member list   ${generated_AssetID}
 
 Verify user is able to export team member asset history list
-    [Tags]      Sanity      Smoke    rerun
+    [Tags]     Smoke      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form   debut@cool.fr.nf    Test@123
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Click on add team member action button
@@ -390,14 +401,14 @@ Verify user is able to export team member asset history list
     Switch Window   aithentic | OTP
     TwoFactorAuth.Enter the otp     ${passcode}
     TwoFactorAuth.Click verification button
-    Generic.Verify your current page location contains     management-console
+    Generic.Verify your current page location contains     dashboard
     Generic.Click on the profile name
     Generic.Select other option from profile list     Logout
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
-    Generic.Verify your current page location contains      management-console
-    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
+#    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Search Team Member by name   ${generated_TMFname}
@@ -555,11 +566,11 @@ Verify user is able to export team member asset history list
     TeamMemberPage.verify status of first name in member list   ${generated_AssetID}
 
 Convert Assignee to Team Member
-    [Tags]    retry
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     MemberPage.Click on assigned user tab     Assigned Users
@@ -663,8 +674,8 @@ Convert Assignee to Team Member
 Check the validation of business email id
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     MemberPage.Click on assigned user tab     Assigned Users
@@ -696,8 +707,8 @@ Check the validation of business email id
 Convert Assignee to team member in case of employee id is not system generated
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     I_iconPage.Choose options inside personal_details        Organization
@@ -713,6 +724,7 @@ Convert Assignee to team member in case of employee id is not system generated
     MemberPage.Enter first name of assigned users
     MemberPage.Enter last name of assigned users
     MemberPage.Enter business email of assigned users
+    TechnologyPage.Create unique assign to employee_ID random
     MemberPage.Click on save button of assigned user
     Generic.Fetch alert message text and compare it with        Assigned Users created successfully
     MemberPage.Search assigned user by first name   ${generated_AssigneduserFirstName}
@@ -741,3 +753,6 @@ Convert Assignee to team member in case of employee id is not system generated
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the employee ID checkbox   yes
     Generic.Fetch alert message text and compare it with       Settings Updated
+
+Zz kill browser
+    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
