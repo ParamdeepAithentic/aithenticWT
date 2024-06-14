@@ -281,11 +281,11 @@ Download the selected extension file of team member
     wait until element is enabled   //a[normalize-space()='Export as ${option}']     ${wait_time}
     click element   //a[normalize-space()='Export as ${option}']
 
-Verify the status of team member
-    [Arguments]    ${option}
-    wait until element is visible       css:thead tr       ${wait_time}
-    wait until element is enabled      //tbody//tr[1]//td[6]     ${wait_time}
-    ${status_text}=     Get text        //tbody//tr[1]//td[6]
-    Log To Console      ${status_text}
-    Set Global Variable         ${status_text}
-    Should Be Equal    ${status_text}       ${option}
+#Verify the status of team member
+#    [Arguments]    ${option}
+#    wait until element is visible       css:thead tr       ${wait_time}
+#    wait until element is enabled      //tbody//tr[1]//td[6]     ${wait_time}
+#    ${status_text}=     Get text        //tbody//tr[1]//td[6]
+#    Log To Console      ${status_text}
+#    Set Global Variable         ${status_text}
+#    Should Be Equal    ${status_text}       ${option}

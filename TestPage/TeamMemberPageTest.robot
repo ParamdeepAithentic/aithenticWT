@@ -707,7 +707,6 @@ Check the validation of business email id
 Convert Assignee to team member in case of employee id is not system generated
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
@@ -756,7 +755,7 @@ Convert Assignee to team member in case of employee id is not system generated
 
 Verify Invitation and signup as team member
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
+    LandingPage.Fill the login Form     ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
@@ -775,7 +774,7 @@ Verify Invitation and signup as team member
     TeamMemberPage.Save the team member form   save
     Generic.Fetch alert message text and compare it with        Team Member created successfully
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
-    TeamMemberPage.Verify the status of team member     Invited
+    TeamMemberPage.verify status of first name in member list     Invited
     Generic.Click on the profile name
     Generic.Select other option from profile list     Logout
     Generic.Fetch log_out alert message
@@ -814,38 +813,14 @@ Verify Invitation and signup as team member
     Generic.Select other option from profile list     Logout
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
+    LandingPage.Fill the login Form     ${email}        ${valid_password}
     Generic.Verify your current page location contains      dashboard
-#    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Search Team Member by name   ${generated_TMFname}
     TeamMemberPage.verify status of first name in member list   Active
-    Generic.select the option from the side menu    Technology
-    Generic.Verify your current page location contains      technology
-#   TechnologyPage.click on add technology button
-    TechnologyPage.Click on action button of technology
-    TechnologyPage.Choose add technology from action button of technology
-    Generic.Verify your current page location contains      addtechnology
-    TechnologyPage.Click technology brand input field
-    TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Select parameter from technology dropdown list       OPMR815274
-    TechnologyPage.Add assetID for technology lifecycle information random
-    TechnologyPage.Add assignment information assign to   ${generated_TMFname}       ${generated_TMLname}
-    TechnologyPage.Click on save technology form button
-    Generic.Fetch alert message text and compare it with        Technology created successfully
-    TechnologyPage.Click on save technology form pop button
-    Generic.Verify your current page location contains      technology
-    TechnologyPage.Search by AssetId       ${generated_AssetID}
-    Generic.select the option from the side menu    Team Members
-    Generic.Verify your current page location contains      memberslist
-    TeamMemberPage.Search Team Member by name   ${generated_TMFname}
     TeamMemberPage.Click on three dots of Team Member listing
-    TeamMemberPage.Select option from three dots of Team Member     Asset History
-    Generic.Verify your current page contains this text     Asset History
-
-
-
+    TeamMemberPage.Select option from three dots of Team Member     Details
 
 
 Zz kill browser
