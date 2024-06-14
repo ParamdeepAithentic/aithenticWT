@@ -45,6 +45,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Download sheet for Forecasts
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -56,6 +57,7 @@ Download sheet for Forecasts
     ITperformancePage.Verify sheet is downloaded        SpendForecastsReports
 
 Download sheet for aging
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -67,7 +69,7 @@ Download sheet for aging
     ITperformancePage.Verify sheet is downloaded        AgingAnalyticsReports
 
 Download sheet for investments
-    [Tags]     Sanity
+    [Tags]     Sanity       Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -79,6 +81,7 @@ Download sheet for investments
     ITperformancePage.Verify sheet is downloaded        sspslReport
 
 Download all sheets with download all button
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -88,6 +91,7 @@ Download all sheets with download all button
     ITperformancePage.Click on download all button
 
 It performnace drill down agging analytics
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}     ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -108,6 +112,7 @@ It performnace drill down agging analytics
     ITperformancePage.Get and verify the count of aging analytics table     Upcoming End Of Life        Upcoming End Of Life
 
 IT perfomance drill down data quality
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -125,7 +130,7 @@ IT perfomance drill down data quality
     ITperformancePage.Get And Verify The Count Of Data Quality Under Tabs   dataquality3        dataquality3
 
 IT perfomance drill down data quality of Investments by partner tab
-    [Tags]     sanity
+    [Tags]     sanity       Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -147,6 +152,7 @@ IT perfomance drill down data quality of Investments by partner tab
     ITperformancePage.Get And Verify The Count Of Data Quality Under Investment by partner tab   dataquality-partner-4        dataquality-partner-4
 
 It performnace drill down investment by partner
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}     ${valid_password}
 #    LandingPage.Verify you are on dashboard page

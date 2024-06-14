@@ -40,6 +40,7 @@ ${Shop_page_load}           css:.nav-link
 
 *** Test Cases ***
 Validate Succesful Login
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page

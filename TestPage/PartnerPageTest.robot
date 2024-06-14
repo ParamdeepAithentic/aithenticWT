@@ -46,7 +46,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Compose Message invite user test
-    [Tags]      Sanity      Smoke       Time     rerun
+    [Tags]      Sanity      Smoke       Time     rerun      Unstable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -502,6 +502,7 @@ Compose Message invite user test
 
 
 Export Specificartner into Excel Doc CSV and TSV for manufacturer
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -563,7 +564,7 @@ Export Specificartner into Excel Doc CSV and TSV for manufacturer
 
 
 Export Specificartner into Excel Doc CSV and TSV for Supplier
-    [Tags]      Sanity
+    [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -627,7 +628,7 @@ Export Specificartner into Excel Doc CSV and TSV for Supplier
 
 
 Export Specificartner into Excel Doc CSV and TSV for Support Partner
-    [Tags]      Sanity
+    [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -687,6 +688,7 @@ Export Specificartner into Excel Doc CSV and TSV for Support Partner
     Generic.Fetch alert message text and compare it with        Partner updated successfully
 
 Add Manufacturer via personal detail under technology and partner
+    [Tags]       Stable
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -734,7 +736,7 @@ Add Manufacturer via personal detail under technology and partner
 
 
 Edit Manufacturer via partner
-    [Tags]      Sanity
+    [Tags]      Sanity      Stable
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -815,7 +817,7 @@ Edit Manufacturer via partner
 
 
 Deactivate Manufacturer via partner
-    [Tags]      Sanity
+    [Tags]      Sanity      Stable
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -900,6 +902,7 @@ Deactivate Manufacturer via partner
 
 
 Activate Manufacturer via partner
+    [Tags]      Stable
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -987,6 +990,7 @@ Activate Manufacturer via partner
     Generic.Fetch alert message text and compare it with      Status updated successfully
 
 Remove Manufacturer from partner
+    [Tags]      Stable
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -1079,6 +1083,7 @@ Remove Manufacturer from partner
     Generic.Fetch alert message text and compare it with      Partner deleted successfully
 
 View Details and check the details of Contract
+    [Tags]      Stable
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -1182,6 +1187,7 @@ View Details and check the details of Contract
     PartnersPage.Download the contract pdf
 
 Add_edit_deactivate_removeSupplier while adding brand
+    [Tags]      Stable
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
@@ -1276,6 +1282,7 @@ Zz kill browser
     Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
 
 Add_edit_deactivate_removeSupport_partner_while_adding_brand
+    [Tags]      Stable
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page

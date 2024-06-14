@@ -46,7 +46,7 @@ Test Teardown   Close Browser session
 
 
 Verify pagination of technology Table
-    [Tags]    Smoke
+    [Tags]    Smoke     Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -59,6 +59,7 @@ Verify pagination of technology Table
     PaginationPage.Log WebElements      technology
 
 Verify pagination of partner table
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -71,6 +72,7 @@ Verify pagination of partner table
     PaginationPage.Log WebElements      partner-list
 
 Verify pagination of contract table
+    [Tags]      Unstable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -83,6 +85,7 @@ Verify pagination of contract table
     PaginationPage.Log WebElements      contracts
 
 Verify pagination of Department table
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -96,6 +99,7 @@ Verify pagination of Department table
     PaginationPage.Log WebElements      department
 
 Verify pagination of Brand table
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -109,6 +113,7 @@ Verify pagination of Brand table
     PaginationPage.Log WebElements      brand
 
 Verify pagination of Product table
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -122,6 +127,7 @@ Verify pagination of Product table
     PaginationPage.Log WebElements      products
 
 Verify pagination of location Table
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -134,6 +140,7 @@ Verify pagination of location Table
     PaginationPage.Log WebElements      location-list
 
 Verify pagination of Team Member Table
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -146,7 +153,7 @@ Verify pagination of Team Member Table
     PaginationPage.Log WebElements      member-list
 
 Verify pagination of Assigned User Table
-    [Tags]    Smoke
+    [Tags]    Smoke     Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -160,6 +167,7 @@ Verify pagination of Assigned User Table
     PaginationPage.Log WebElements      assignee-list
 
 Verify Pagination of Product Dropdown when Add and Edit Technology
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -207,6 +215,7 @@ Verify Pagination of Product Dropdown when Add and Edit Technology
 
 
 Verify Pagination of Product Dropdown when Add discovered asset and component
+        [Tags]      Unstable
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
 #        LandingPage.Verify you are on dashboard page
@@ -327,6 +336,7 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
         UnselectAssetAPI.Hit API Endpoint
 
 Verify Pagination of Product Dropdown when Add IP discovered asset
+        [Tags]      Unstable
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
 #        LandingPage.Verify you are on dashboard page
@@ -399,6 +409,7 @@ Verify Pagination of Product Dropdown when Add IP discovered asset
         UnselectAssetAPI.Hit API Endpoint
 
 Verify Pagination of Recent Activities Table
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
