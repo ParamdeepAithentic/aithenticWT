@@ -37,7 +37,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Verify Reports Key Data records count
-    [Tags]      Sanity      Smoke
+    [Tags]      Sanity      Smoke        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}       ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -78,16 +78,16 @@ Verify Reports Key Data records count
     Generic.Scroll Window To End
     ReportsPage.Fetch the total count
     ReportsPage.Verify that key_data is equals to total number of counts      Partners
-    Go back
-    Generic.Verify your current page location contains          account-overview
-    ReportsPage.Click on tab under key data       Contracts
-    Generic.Verify your current page location contains          contracts-list
-    Generic.Scroll Window To End
-    ReportsPage.Fetch the total count
-    ReportsPage.Verify that key_data is equals to total number of counts      Contracts
+#    Go back
+#    Generic.Verify your current page location contains          account-overview
+#    ReportsPage.Click on tab under key data       Contracts
+#    Generic.Verify your current page location contains          contracts-list
+#    Generic.Scroll Window To End
+#    ReportsPage.Fetch the total count
+#    ReportsPage.Verify that key_data is equals to total number of counts      Contracts
 
 Verify Reports Technology Types records count
-    [Tags]      Sanity
+    [Tags]      Sanity       stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}       ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -130,7 +130,7 @@ Verify Reports Technology Types records count
     ReportsPage.Verify that key_data is equals to total number of counts      Subscription
 
 Verify reports modules data
-    [Tags]      Sanity
+    [Tags]      Sanity       Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page

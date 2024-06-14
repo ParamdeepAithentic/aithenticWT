@@ -39,7 +39,6 @@ Test Teardown   Close Browser session
 
 
 *** Test Cases ***
-
 Free the asset limit
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     ${email}    ${valid_password}

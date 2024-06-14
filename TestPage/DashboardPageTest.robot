@@ -46,6 +46,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Click the option from side drawer
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -57,7 +58,7 @@ Click the option from side drawer
 
 
 Verify the drawer list
-    [Tags]      Time
+    [Tags]      Time        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -74,6 +75,7 @@ Verify the drawer list
 
 
 Verify the side options list
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -81,6 +83,7 @@ Verify the side options list
     DashboardPage.Verify the side option list parameters
 
 click the option from menu
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -89,6 +92,7 @@ click the option from menu
     Generic.Verify your current page location contains      partner
 
 Verify the profile option list
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -96,6 +100,7 @@ Verify the profile option list
     DashboardPage.Verify the profile option list parameters
 
 Create and verify new brand
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -113,6 +118,7 @@ Create and verify new brand
     DashboardPage.Verify Brand added      ${generated_BrandName}
 
 Create a new product with adding new brand
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -146,6 +152,7 @@ Create a new product with adding new brand
 
 
 Add Brand via personal detail under technology
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -189,6 +196,7 @@ Add Brand via personal detail under technology
 
 
 Invite user into Aithentic
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -288,7 +296,7 @@ Invite user into Aithentic
 
 
 Verify Help Center
-    [Tags]      Sanity
+    [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -329,6 +337,7 @@ Verify Help Center
     DashboardPage.Verify no result found with wrong FAQ
 
 Edit Brand and address via brand under profile list
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -401,6 +410,7 @@ Edit Brand and address via brand under profile list
 
 
 Deactivate Brand and address via brand under profile list
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -477,7 +487,7 @@ Deactivate Brand and address via brand under profile list
     Generic.Fetch alert message text and compare it with      Brand deactivated successfully
 
 Activate Brand and address via brand under profile list
-    [Tags]   Smoke
+    [Tags]   Smoke      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -558,7 +568,7 @@ Activate Brand and address via brand under profile list
     Generic.Fetch alert message text and compare it with      Brand activated successfully
 
 Remove Brand and address via brand under profile list
-    [Tags]    Smoke
+    [Tags]    Smoke     Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -635,7 +645,7 @@ Remove Brand and address via brand under profile list
     Generic.Fetch alert message text and compare it with      Brand deleted successfully
 
 Verify adding a new brand from profile listing
-    [Tags]      Sanity     rerun
+    [Tags]      Sanity     rerun        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -663,6 +673,7 @@ Verify adding a new brand from profile listing
     Generic.Fetch alert message text and compare it with      Brand deleted successfully
 
 Verify Department quick_links in profile settings dropdown
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -674,7 +685,7 @@ Verify Department quick_links in profile settings dropdown
     DashboardPage.Get and verify the text and compare it with     Added Departments
 
 Search By Technology Group in product list
-    [Tags]      Time
+    [Tags]      Time        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -709,6 +720,7 @@ Search By Technology Group in product list
     DashboardPage.Verify product added    ${generated_product}
 
 Verify Brand quick_links in profile settings Dropdown
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -720,7 +732,7 @@ Verify Brand quick_links in profile settings Dropdown
     DashboardPage.Get and verify the text and compare it with   Added Brands
 
 Verify Product quick_links in profile settings dropdown
-    [Tags]     Sanity
+    [Tags]     Sanity       Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -732,6 +744,7 @@ Verify Product quick_links in profile settings dropdown
     DashboardPage.Get and verify the text and compare it with       Added Products
 
 Search By Brand name in product list
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -766,6 +779,7 @@ Search By Brand name in product list
     DashboardPage.Verify product added    ${generated_product}
 
 Verify Reports Asset Alert
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}       ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -881,6 +895,7 @@ Verify Reports Asset Alert
 #    DashboardPage.Verify the invisiblity of view_more button
 
 Click and verify the count of the tabs under renewal overview by management console
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -888,7 +903,7 @@ Click and verify the count of the tabs under renewal overview by management cons
     DashboardPage.Get And Verify The Count Of tabs under renewal overview by management console
 
 Click and verify the count of the tabs under renewal overview by choosing the value from the dropdown by management console
-    [Tags]     Sanity
+    [Tags]     Sanity       Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -915,6 +930,7 @@ Click and verify the count of the tabs under renewal overview by choosing the va
     DashboardPage.Get And Verify The Count Of tabs under renewal overview by management console
 
 Verify Account_overview Recent Activities Filters
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}       ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -960,6 +976,7 @@ Zz kill browser
     Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
 
 Add and delete product from profile listing
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard

@@ -46,6 +46,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Export Partner list
+    [Tags]      Stable
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -80,6 +81,7 @@ Export Partner list
     Generic.click on the button     Okay, Thanks!
 
 Export partner list under technology details
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -117,6 +119,7 @@ Export partner list under technology details
 
 
 Export Location List
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -155,6 +158,7 @@ Export Location List
 
 
 Export location list of location under technology details page
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -191,6 +195,7 @@ Export location list of location under technology details page
     Generic.click on the button     Okay, Thanks!
 
 Export partner list while adding new partner
+    [Tags]      Stable
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -236,6 +241,7 @@ Export partner list while adding new partner
     Generic.click on the button     Okay, Thanks!
 
 Export list of parent tab under technology details
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -314,6 +320,7 @@ Export list of parent tab under technology details
 
 
 Export Team member list
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -351,6 +358,7 @@ Export Team member list
 
 
 Export Assigned User list
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -389,6 +397,7 @@ Export Assigned User list
 
 
 Export technology details page list
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -457,6 +466,7 @@ Export technology details page list
     Generic.click on the button     Okay, Thanks!
 
 Export component tab list
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -536,6 +546,7 @@ Export component tab list
     Generic.click on the button     Okay, Thanks!
 
 Export account overview tab data
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
