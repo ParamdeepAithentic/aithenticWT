@@ -296,7 +296,38 @@ Click on the checkbox of technology listing
 
 
 Run the remove asset journey
-    Run Keyword If    ${total_data_count} > 750
-        ...    RemoveAssetsTest.Remove the old assets to free the space
+    Run Keyword If    ${total_data_count} > 100
+        ...    PaginationPage.Remove the old assets to free the space
         ...    ELSE    Log    No need to delete any asset
-    END
+        ...    AND    Return From Keyword
+
+
+Remove the old assets to free the space
+    Generic.Click on the profile name
+    Generic.Select option from profile list     subscription-dropdown
+    Generic.Verify your current page location contains      subscription
+    SubscriptionPage.Select if you want to change plan or asset    Change Plan
+    TechnologyPage.Click on plan of subscription        Premium
+    Generic.Scroll the page till    200
+    SubscriptionPage.Set asset range to     200
+    sleep       5
+    SubscriptionPage.Update the payment of changed plan     proceed
+#    Generic.Verify alertify is visible
+    sleep       5
+    TechnologyPage.Select option from exceed asset limit pop    technology
+    Generic.Verify your current page location contains      manage-technology-list
+    Generic.Wait until table get load
+    SortingPage.Click on specific column for method one     Created Date
+    SortingPage.Click on specific column for method one     Created Date
+    PaginationPage.Click on the pagination dropdown     technology
+    PaginationPage.Select the value from the pagination drop down count    50
+#    sleep       3
+    Generic.Wait until table get load
+    PaginationPage.Click on the checkbox of technology listing
+
+    TechnologyPage.Click button to proceed the asset restore
+
+    SubscriptionPage.Select the payment method    ach
+    SubscriptionPage.Select the account for payment
+    SubscriptionPage.Proceed the payment     proceed
+    Generic.Fetch alert message text and compare it with      Payment Successful
