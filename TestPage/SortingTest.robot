@@ -399,9 +399,6 @@ Test the sorting of bulk edit grid under team members
     SortingPage.Verify the sorting of the table method five    9       Role
 
 
-
-
-
 Test the sorting of bulk edit grid under assigned users
     [Tags]      Stable
     Generic.click on the tab	Login
