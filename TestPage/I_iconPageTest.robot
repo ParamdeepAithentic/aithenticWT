@@ -37,6 +37,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Verify all i-icon of Dashboard page
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -55,7 +56,7 @@ Verify all i-icon of Dashboard page
     I_iconPage.Click on i-icon of account_overview tab
 
 Verify all i-icon of profile-listing
-    [Tags]     Sanity
+    [Tags]     Sanity       Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -107,6 +108,7 @@ Verify all i-icon of profile-listing
     I_iconPage.Click on i-icon inside technology
 
 Verify all i-icon of team member page
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -118,7 +120,7 @@ Verify all i-icon of team member page
     I_iconPage.Click on i-icon of team-members tab
 
 Verify all i-icon of Technology page
-    [Tags]   Sanity
+    [Tags]   Sanity     Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -162,6 +164,7 @@ Verify all i-icon of Technology page
     I_iconPage.Click on Back tab          Back to Manage Technology
 
 Verify all i-icon of partners page
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -173,6 +176,7 @@ Verify all i-icon of partners page
     I_iconPage.Click on i-icon of partners tab
 
 Verify all i-icon of Discovery assets
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -193,7 +197,7 @@ Verify all i-icon of Discovery assets
     I_iconPage.Click on i_icon under network_discovery tab
 
 Verify all i-icon of advanced search
-    [Tags]     Smoke
+    [Tags]     Smoke    Unstable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
 #    LandingPage.Verify you are on dashboard page
@@ -352,6 +356,7 @@ Verify all i-icon of advanced search
     UnselectAssetAPI.Hit API Endpoint
 
 Upload File I-icon while add and edit technology
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -383,6 +388,7 @@ Upload File I-icon while add and edit technology
     Generic.Fetch alert message text and compare it with        Technology updated successfully
 
 Upload I-icon under attachment tab
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -408,6 +414,7 @@ Upload I-icon under attachment tab
     I_iconPage.Fetch the text of I-icon of upload file while adding technology     You can upload 1 file of 8MB or 8 files of 1MB each.
 
 Upload I-icon under clone add technology
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -435,7 +442,7 @@ Upload I-icon under clone add technology
     I_iconPage.Fetch the text of I-icon of upload file while adding technology     You can upload 1 file of 8MB or 8 files of 1MB each.
 
 Upload I-icon while adding discovery and component asset
-    [Tags]    rerun
+    [Tags]    rerun     Unstable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
 #    LandingPage.Verify you are on dashboard page
@@ -511,6 +518,7 @@ Upload I-icon while adding discovery and component asset
     UnselectAssetAPI.Hit API Endpoint
 
 Upload I-icon while adding IP Address
+    [Tags]      Unstable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
 #    LandingPage.Verify you are on dashboard page

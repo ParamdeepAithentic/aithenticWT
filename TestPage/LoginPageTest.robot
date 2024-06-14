@@ -45,6 +45,7 @@ Testone
     Generic.Fix the row number
 
 Login as End_user with different roles
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      enduser@yopmail.net    Test@123
 #    LandingPage.Verify you are on dashboard page
@@ -227,6 +228,7 @@ Login as End_user with different roles
     Generic.Fetch log_out alert message
 
 Login as Manufacturer with different roles
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      manufacturer@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -355,6 +357,7 @@ Login as Manufacturer with different roles
 
 
 Login as Supplier with different roles
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      supplier@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -425,6 +428,7 @@ Login as Supplier with different roles
     Generic.Fetch log_out alert message
 
 Login as Support_Partner with different roles
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      supportpartner@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard

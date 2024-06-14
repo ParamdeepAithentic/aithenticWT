@@ -46,6 +46,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Department bulk edit
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page

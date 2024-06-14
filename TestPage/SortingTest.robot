@@ -47,6 +47,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Test the sorting of assigned user asset history page table
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
 #    LandingPage.Verify you are on dashboard page
@@ -67,6 +68,7 @@ Test the sorting of assigned user asset history page table
 
 
 Test the sorting of technology page table
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
 #    LandingPage.Verify you are on dashboard page
@@ -85,6 +87,7 @@ Test the sorting of technology page table
     SortingPage.Verify the sorting of the table     11      Assignee
 
 Test the sorting of brand page table
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
 #    LandingPage.Verify you are on dashboard page
@@ -97,6 +100,7 @@ Test the sorting of brand page table
 
 
 Test the sorting of product page table
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
 #    LandingPage.Verify you are on dashboard page
@@ -112,6 +116,7 @@ Test the sorting of product page table
 
 
 Test the sorting of location page table
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
 #    LandingPage.Verify you are on dashboard page
@@ -128,6 +133,7 @@ Test the sorting of location page table
 
 
 Test the sorting of team member page table
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
 #    LandingPage.Verify you are on dashboard page
@@ -143,6 +149,7 @@ Test the sorting of team member page table
 
 
 Test the sorting of partners page table
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
 #    LandingPage.Verify you are on dashboard page
@@ -158,6 +165,7 @@ Test the sorting of partners page table
 
 
 Test the sorting of department page table
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
 #    LandingPage.Verify you are on dashboard page
@@ -172,6 +180,7 @@ Test the sorting of department page table
 
 
 Test the sorting of Assigned user page table inside department page
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
 #    LandingPage.Verify you are on dashboard page
@@ -190,6 +199,7 @@ Test the sorting of Assigned user page table inside department page
 
 
 Test the sorting of team members page table inside department page
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
 #    LandingPage.Verify you are on dashboard page
@@ -209,6 +219,7 @@ Test the sorting of team members page table inside department page
 
 
 Test the sorting of team member asset history page table
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      jasdeep@15963.fr.nf    Paramdeep@112
 #    LandingPage.Verify you are on dashboard page
@@ -227,29 +238,27 @@ Test the sorting of team member asset history page table
     SortingPage.Verify the sorting of the table     6       Product Description
     SortingPage.Verify the sorting of the table     7       Assigned Date
 
-#Test the sorting of contract page table
-#    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
-##    LandingPage.Verify you are on dashboard page
-#    Generic.Verify your current page location contains      dashboard
-#    Generic.select the option from the side menu    Contracts
-#    Generic.Verify your current page location contains      contracts-list
-#    Generic.Wait until table get load
-#    SortingPage.Verify the sorting of the table method two     2       Business Name
-#    SortingPage.Verify the sorting of the table method two     3       Partner Type
-#    SortingPage.Verify the sorting of the table method two     4       Function
-##    SortingPage.Verify the sorting of the table method two     5       Contract ID
-##    SortingPage.Verify the sorting of the table method two     6       Created Date
-##    SortingPage.Verify the sorting of the table method two     7       End Date
-#    SortingPage.Verify the sorting of the table method two     8       Status
-#    SortingPage.Verify the sorting of the table method two     9       Permissions
-#    SortingPage.Verify the sorting of the table method two     10      Technology
-
-
-
+Test the sorting of contract page table
+    [Tags]      Unstable
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
+    Generic.select the option from the side menu    Contracts
+    Generic.Verify your current page location contains      contracts-list
+    Generic.Wait until table get load
+    SortingPage.Verify the sorting of the table method two     2       Business Name
+    SortingPage.Verify the sorting of the table method two     3       Partner Type
+    SortingPage.Verify the sorting of the table method two     4       Function
+#    SortingPage.Verify the sorting of the table method two     5       Contract ID
+#    SortingPage.Verify the sorting of the table method two     6       Created Date
+#    SortingPage.Verify the sorting of the table method two     7       End Date
+    SortingPage.Verify the sorting of the table method two     8       Status
+    SortingPage.Verify the sorting of the table method two     9       Permissions
+    SortingPage.Verify the sorting of the table method two     10      Technology
 
 Test the sorting of department page list via bulk import of technology table
-    [Tags]    Smoke
+    [Tags]    Smoke     Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      jasdeep@15963.fr.nf     Paramdeep@112
 #    LandingPage.Verify you are on dashboard page
@@ -308,6 +317,7 @@ Test the sorting of department page list via bulk import of technology table
 
 
 Test the sorting of removed technology page
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      jasdeep@15963.fr.nf     Paramdeep@112
 #    LandingPage.Verify you are on dashboard page
@@ -328,6 +338,7 @@ Test the sorting of removed technology page
     SortingPage.Verify the sorting of the table     12      Assignee
 
 Test the sorting of inbox table page under message page
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      jasdeep@15963.fr.nf     Paramdeep@112
 #    LandingPage.Verify you are on dashboard page
@@ -346,7 +357,7 @@ Test the sorting of inbox table page under message page
 
 
 Test the sorting of sent table page under message page
-    [Tags]    Smoke
+    [Tags]    Smoke     Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      jasdeep@15963.fr.nf     Paramdeep@112
 #    LandingPage.Verify you are on dashboard page
@@ -362,7 +373,7 @@ Test the sorting of sent table page under message page
 
 
 Test the sorting of bulk edit grid under team members
-    [Tags]    Smoke     rerun
+    [Tags]    Smoke     rerun       Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      jasdeep@15963.fr.nf     Paramdeep@112
 #    LandingPage.Verify you are on dashboard page
@@ -392,6 +403,7 @@ Test the sorting of bulk edit grid under team members
 
 
 Test the sorting of bulk edit grid under assigned users
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      jasdeep@15963.fr.nf     Paramdeep@112
 #    LandingPage.Verify you are on dashboard page
@@ -412,6 +424,7 @@ Test the sorting of bulk edit grid under assigned users
     SortingPage.Verify the sorting of the table method five    5      Employee Id
 
 Test the sorting of Recent Activities Table under Dashboard page
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
 #    LandingPage.Verify you are on dashboard page
