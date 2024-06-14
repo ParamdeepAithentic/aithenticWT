@@ -1693,7 +1693,7 @@ Click button to cancle the asset restoration
 #    click element   //input[@formcontrolname='FeatureNotContaining']
 #    input text     //input[@formcontrolname='FeatureNotContaining']     ${Feature_not_containing}
 
-Enter input in the not containing productv field
+Enter input in the not containing product field
     [Arguments]     ${Product}
     wait until element is visible   //input[@formcontrolname='ProductNotContaining']     ${wait_time}
     wait until element is enabled   //input[@formcontrolname='ProductNotContaining']     ${wait_time}

@@ -257,9 +257,6 @@ Test the sorting of contract page table
     SortingPage.Verify the sorting of the table method two     9       Permissions
     SortingPage.Verify the sorting of the table method two     10      Technology
 
-
-
-
 Test the sorting of department page list via bulk import of technology table
     [Tags]    Smoke     Stable
     Generic.click on the tab	Login
@@ -400,9 +397,6 @@ Test the sorting of bulk edit grid under team members
     SortingPage.Verify the sorting of the table method five    4       Country Code
     SortingPage.Verify the sorting of the table method five    3       Last Name
     SortingPage.Verify the sorting of the table method five    2       First Name
-
-
-
 Test the sorting of bulk edit grid under assigned users
     [Tags]      Stable
     Generic.click on the tab	Login
@@ -423,9 +417,6 @@ Test the sorting of bulk edit grid under assigned users
     SortingPage.Verify the sorting of the table method five    4      Business Email
     SortingPage.Verify the sorting of the table method five    3      Last Name
     SortingPage.Verify the sorting of the table method five    2      First Name
-
-
-
 
 Test the sorting of Recent Activities Table under Dashboard page
     [Tags]      Stable

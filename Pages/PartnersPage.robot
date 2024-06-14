@@ -281,6 +281,7 @@ Save the new contact
     click element   ${save_addNewContact}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     sleep   ${search_sleep}
+    wait until element is not visible       //div[@id='contactModal']//div[contains(@class,'modal-content')]         ${wait_time}
 
 Save the secondary contact
     wait until element is visible   ${save_secondaryNewContact}     ${wait_time}
@@ -430,6 +431,7 @@ Save new Address
     click element       ${save_address}
     wait until element is not visible       ${loaderIcon}    ${wait_time}
     sleep   ${search_sleep}
+    wait until element is not visible       //div[@id='addAddressModal']//div[contains(@class,'modal-content')]    ${wait_time}
 
 Click on Add new Address of partner
     [Arguments]     ${option}
@@ -508,8 +510,10 @@ Update the partner information
     wait until element is not visible   ${loaderIcon}       ${wait_time}
     wait until element is visible       ${update_button}        ${wait_time}
     wait until element is enabled      ${update_button}        ${wait_time}
+    sleep   ${search_sleep}
     click element       ${update_button}
     sleep   ${search_sleep}
+    wait until element is not visible       //div[@id='addressModal']//div[contains(@class,'modal-content')]        ${wait_time}
 
 Enter new_business_email of contact
     [Arguments]    ${Pname}    ${Bname}
@@ -570,6 +574,7 @@ Click on save button of contact via link
     [Arguments]     ${button}
     wait until element is visible   //div[@id='contactModalContract']//button[normalize-space()='${button}']      ${wait_time}
     click element   //div[@id='contactModalContract']//button[normalize-space()='${button}']
+    wait until element is not visible   //div[@id='contactModal']//div[contains(@class,'modal-content')]     ${wait_time}
 
 Enter and select contact name via link
     wait until element is not visible   ${loaderIcon}   ${wait_time}
@@ -635,8 +640,8 @@ Update the partner information of edit contact
     wait until element is visible      //div[@id='contactModal']//div[@class='modal-content']//following-sibling::button[normalize-space()='Update']        ${wait_time}
     wait until element is enabled     //div[@id='contactModal']//div[@class='modal-content']//following-sibling::button[normalize-space()='Update']        ${wait_time}
     click element       //div[@id='contactModal']//div[@class='modal-content']//following-sibling::button[normalize-space()='Update']
+    wait until element is not visible   ${loaderIcon}       ${wait_time}
     sleep   ${search_sleep}
-
 Select the partner address country
     [Arguments]     ${country}
     wait until element is visible       ${click_Country}        ${wait_time}
@@ -645,3 +650,9 @@ Select the partner address country
     Clear element text      ${click_Country}
     input text   ${click_Country}   ${country}
     Press Keys   ${click_Country}       ENTER
+
+Wait for add address pop up hide
+    wait until element is not visible       //div[@id='addAddressModal']//div[contains(@class,'modal-content')]     ${wait_time}
+
+Wait for add contact pop up hide
+    wait until element is not visible      //div[@id='contactModal']//div[contains(@class,'modal-content')]     ${wait_time}
