@@ -44,6 +44,35 @@ Free the asset limit
     LandingPage.Fill the login Form     ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+
+
+
+     Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    PaginationPage.Check the table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Run the remove asset journey
+
+    Generic.Click on the profile name
+    Generic.Select option from profile list     subscription-dropdown
+    Generic.Verify your current page location contains      subscription
+    SubscriptionPage.Select if you want to change plan or asset    Change Plan
+    TechnologyPage.Click on plan of subscription        Premium
+    Generic.Scroll the page till    200
+    SubscriptionPage.Set asset range to     900
+    sleep       2
+    SubscriptionPage.Update the payment of changed plan     proceed
+
+    Sleep   ${yop_sleep}
+    TechnologyPage.Click on pop up of available Inactive Asset      cancel
+    SubscriptionPage.Select the payment method    ach
+    SubscriptionPage.Select the account for payment
+    SubscriptionPage.Proceed the payment     proceed
+    Generic.Fetch alert message text and compare it with      Payment Successful
+
+
+
+Remove the old assets to free the space
     Generic.Click on the profile name
     Generic.Select option from profile list     subscription-dropdown
     Generic.Verify your current page location contains      subscription

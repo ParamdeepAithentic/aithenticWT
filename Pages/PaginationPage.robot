@@ -292,3 +292,11 @@ Click on the checkbox of technology listing
         click element   (//tbody//tr//span)[${index}]
         PaginationPage.Scroll within the element      ${index}
     END
+
+
+
+Run the remove asset journey
+    Run Keyword If    ${total_data_count} > 750
+        ...    RemoveAssetsTest.Remove the old assets to free the space
+        ...    ELSE    Log    No need to delete any asset
+    END
