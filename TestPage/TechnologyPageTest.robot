@@ -49,7 +49,7 @@ ${self_searchId} =   AssetID_1803536655
 
 Free the asset limit
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form     chirag@dmts.fr.nf     Test@001
+    LandingPage.Fill the login Form     chirag@dmts.fr.nf     Test@123
     Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
@@ -1642,7 +1642,7 @@ Technology Details- Verify the Location Details
 Technology-Inactive asset and Restore asset
     [Tags]      smoke           Stable
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form     chirag@dmts.fr.nf    Test@001
+    LandingPage.Fill the login Form     chirag@dmts.fr.nf    Test@123
 #    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
@@ -1736,7 +1736,7 @@ Technology-Inactive asset and Restore asset
 Inactive asset - Restore asset from Technology Details page
     [Tags]      smoke       Stable
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form     chirag@dmts.fr.nf    Test@001
+    LandingPage.Fill the login Form     chirag@dmts.fr.nf    Test@123
 #    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name

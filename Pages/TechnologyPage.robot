@@ -295,6 +295,7 @@ click on add technology button
     click element    ${AddTechnologyButton}
 
 Click technology brand input field
+    wait until element is visible       ${brand}        ${wait_time}
     wait until element is enabled       ${brand}        ${wait_time}
     click element    ${brand}
 

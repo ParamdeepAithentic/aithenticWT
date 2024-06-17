@@ -31,6 +31,7 @@ Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
+Resource        ../Pages/PaginationPage.robot
 
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
@@ -686,7 +687,7 @@ Convert Assignee to Team Member
     Generic.Wait until table get load
 
 Check the validation of business email id
-    [Tags]      Stable
+    [Tags]      Unstable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
