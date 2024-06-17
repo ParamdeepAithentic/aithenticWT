@@ -2238,4 +2238,3 @@ Verify cross icon and reset icon while adding product
 
 
 
-

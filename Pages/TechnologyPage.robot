@@ -330,6 +330,7 @@ Select parameter from technology dropdown list
     Wait Until Element Is Visible    //td[normalize-space()='${option}']        ${wait_time}
     Wait Until Element Is enabled    //td[normalize-space()='${option}']        ${wait_time}
     Click Element       //td[normalize-space()='${option}']
+    sleep   ${search_sleep}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
