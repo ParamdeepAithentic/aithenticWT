@@ -46,6 +46,7 @@ Test Teardown   Close Browser session
 
 
 *** Test Cases ***
+
 Test the sorting of assigned user asset history page table
     [Tags]      Stable
     Generic.click on the tab	Login

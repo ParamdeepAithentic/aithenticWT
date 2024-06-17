@@ -39,21 +39,7 @@ Test Teardown   Close Browser session
 
 
 *** Test Cases ***
-Free the asset limit
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form     ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      dashboard
 
-
-
-     Generic.select the option from the side menu    Technology
-    Generic.Verify your current page location contains      technology
-    PaginationPage.Check the table get load
-    PaginationPage.Fetch the total count
-
-
-    PaginationPage.Run the remove asset journey         #######################################
 
 
 
