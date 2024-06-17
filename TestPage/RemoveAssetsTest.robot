@@ -55,22 +55,6 @@ Free the asset limit
 
     PaginationPage.Run the remove asset journey         #######################################
 
-    Generic.Click on the profile name
-    Generic.Select option from profile list     subscription-dropdown
-    Generic.Verify your current page location contains      subscription
-    SubscriptionPage.Select if you want to change plan or asset    Change Plan
-    TechnologyPage.Click on plan of subscription        Premium
-    Generic.Scroll the page till    200
-    SubscriptionPage.Set asset range to     300
-    sleep       5
-    SubscriptionPage.Update the payment of changed plan     proceed
-
-    Sleep   ${yop_sleep}
-    TechnologyPage.Click on pop up of available Inactive Asset      cancel
-    SubscriptionPage.Select the payment method    ach
-    SubscriptionPage.Select the account for payment
-    SubscriptionPage.Proceed the payment     proceed
-    Generic.Fetch alert message text and compare it with      Payment Successful
 
 
 
