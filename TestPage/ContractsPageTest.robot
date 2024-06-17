@@ -252,6 +252,7 @@ Technology Auto removed from static contract When edit Brand and product
     PartnersPage.Select partner country       United States
 
     PartnersPage.Click on contact person button
+    sleep   ${search_sleep}
     PartnersPage.Enter random contact person
 
 #    PartnersPage.Enter contact business email    ${generate_PersonName}      ${generate_BusinessName}

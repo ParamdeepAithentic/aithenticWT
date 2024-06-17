@@ -167,10 +167,10 @@ Select partner business_name
     click element   ${click_businessName}
     Clear element text      ${click_businessName}
     input text   ${businessName}   ${option}
-    sleep   ${search_sleep}
-    wait until element is visible     //div[contains (@id, '-0')]       ${wait_time}
-    wait until element is enabled     //div[contains (@id, '-0')]       ${wait_time}
-    click element   //div[contains (@id, '-0')]
+#    sleep   ${search_sleep}
+    wait until element is visible     //div[contains (@id, '-0')]//span[normalize-space()='${option}']        ${wait_time}
+    wait until element is enabled     //div[contains (@id, '-0')]//span[normalize-space()='${option}']       ${wait_time}
+    click element   //div[contains (@id, '-0')]//span[normalize-space()='${option}']
 #    Press Keys     ${businessName}       ENTER
 #    sleep   ${search_sleep}
 
@@ -341,7 +341,7 @@ Click on the export Button
     wait until element is visible      ${partner_export_btn}        ${wait_time}
     wait until element is enabled      ${partner_export_btn}        ${wait_time}
     click element   ${partner_export_btn}
-
+    sleep   ${search_sleep}
 
 Confirm to export file
     wait until element is visible      css:.btn.button-green.m-2       ${wait_time}

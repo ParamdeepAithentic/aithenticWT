@@ -508,6 +508,7 @@ Verify the drawer list parameters
 
 #####NOT WORKING#########
 Verify the profile option list parameters
+    wait until element is not visible       ${loaderIcon}    ${wait_time}
     wait until element is visible    ${profile_option}      ${wait_time}
     click element    ${profile_option}
     sleep       2
@@ -947,6 +948,7 @@ Get And Verify The Count Of tabs under renewal overview by management console
 
 
 Click on the dropdown of quarter end under management console
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     Wait Until Element Is Visible    (//div[contains(@class,'qa-upcoming-days')])[2]      ${wait_time}
     Wait Until Element Is Enabled    (//div[contains(@class,'qa-upcoming-days')])[2]      ${wait_time}
     Click Element       (//div[contains(@class,'qa-upcoming-days')])[2]

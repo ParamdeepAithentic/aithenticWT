@@ -290,6 +290,8 @@ Search assigned user by first name
     click element      css:input[placeholder='Search by Assignee Name or Employee Id']
     input text   css:input[placeholder='Search by Assignee Name or Employee Id']   ${name}
     sleep      ${search_sleep}
+    wait until element is visible      //td[contains(text(),'${name}')]      ${wait_time}
+    wait until element is enabled      //td[contains(text(),'${name}')]      ${wait_time}
     wait until element is visible      //td[normalize-space()='1']      ${wait_time}
     wait until element is enabled      //td[normalize-space()='1']      ${wait_time}
     wait until element is visible       css:thead tr       ${wait_time}

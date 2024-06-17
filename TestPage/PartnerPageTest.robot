@@ -76,6 +76,7 @@ Compose Message invite user test
 #    PartnersPage.Enter partner business URL      ${generate_BusinessName}
     PartnersPage.Enter partner business URL     yopmail
     PartnersPage.Select partner country       United States
+    sleep   ${search_sleep}
 
 
 #-------------------------- CONTACT --------------------------------------------------------------
@@ -506,6 +507,7 @@ Export Specificartner into Excel Doc CSV and TSV for manufacturer
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
     PartnersPage.Click new partner button

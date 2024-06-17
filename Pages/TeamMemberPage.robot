@@ -70,6 +70,7 @@ Choose option after clicking on Action button
     wait until element is enabled       //a[@title='${option}']
     wait until element is visible       //a[@title='${option}']
     click element       //a[@title='${option}']
+    sleep   ${search_sleep}
 
 Enter team member first name
     ${random_string} =    Generate Random String       10      [NUMBERS]
@@ -280,4 +281,5 @@ Download the selected extension file of team member
     wait until element is visible  //a[normalize-space()='Export as ${option}']     ${wait_time}
     wait until element is enabled   //a[normalize-space()='Export as ${option}']     ${wait_time}
     click element   //a[normalize-space()='Export as ${option}']
+    sleep   ${search_sleep}
 
