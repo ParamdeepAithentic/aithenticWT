@@ -10,25 +10,35 @@ Library         DateTime
 Library         OperatingSystem
 Resource        ../Pages/Generic.robot
 Resource        ../Pages/DashboardPage.robot
+Resource        ../Pages/DepartmentPage.robot
 Resource        ../Pages/ITperformancePage.robot
+Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/LandingPage.robot
 Resource        ../Pages/TechnologyPage.robot
 Resource        ../Pages/PartnersPage.robot
-Resource        ../Pages/RegisterMember.robot
 Resource        ../Pages/ContractsPage.robot
-Resource        ../Pages/LoginPage.robot
+Resource        ../Pages/RegisterMember.robot
+Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/ReplaceDomainAPI.robot
 Resource        ../Pages/Yopmail.robot
 Resource        ../Pages/UserAccount.robot
 Resource        ../Pages/TwoFactorAuth.robot
 Resource        ../Pages/SubscriptionPage.robot
+Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
+Resource        ../Pages/LoginPage.robot
+Resource        ../Pages/MemberPage.robot
 Resource        ../Pages/OCS.robot
-Resource        ../Pages/RegisterUserPage.robot
+Resource        ../Pages/BillingPage.robot
 Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
-
+Resource        ../Pages/SortingPage.robot
+Resource        ../Pages/Bulk_Import_ExportPage.robot
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
+Resource        ../Pages/UnselectAssetAPI.robot
 *** Variables ***
 ${add_Partner}     css:a[title='Add New Partner']
 ${partner_export_btn}     //a[@id='dropdownMenuButton']
@@ -167,10 +177,10 @@ Select partner business_name
     click element   ${click_businessName}
     Clear element text      ${click_businessName}
     input text   ${businessName}   ${option}
-    sleep   ${search_sleep}
-    wait until element is visible     //div[contains (@id, '-0')]       ${wait_time}
-    wait until element is enabled     //div[contains (@id, '-0')]       ${wait_time}
-    click element   //div[contains (@id, '-0')]
+#    sleep   ${search_sleep}
+    wait until element is visible     //div[contains (@id, '-0')]//span[normalize-space()='${option}']        ${wait_time}
+    wait until element is enabled     //div[contains (@id, '-0')]//span[normalize-space()='${option}']       ${wait_time}
+    click element   //div[contains (@id, '-0')]//span[normalize-space()='${option}']
 #    Press Keys     ${businessName}       ENTER
 #    sleep   ${search_sleep}
 
@@ -203,6 +213,7 @@ Click on contact person button
     wait until element is enabled   ${addContact}       ${wait_time}
     click element   ${addContact}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+
 
 Enter random contact person
     wait until element is not visible   ${loaderIcon}       ${wait_time}
@@ -295,7 +306,7 @@ Click contact main save button
     wait until element is enabled      ${main_Save}       ${wait_time}
     click element   ${main_Save}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Click first row of table
     wait until element is visible      css:td:nth-child(1)        ${wait_time}
@@ -307,6 +318,7 @@ Click on edit button
     wait until element is visible      //button[normalize-space()='Edit']        ${wait_time}
     wait until element is enabled      //button[normalize-space()='Edit']        ${wait_time}
     click element   //button[normalize-space()='Edit']
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Click on add custome business URL icon
     wait until element is visible      ${add_custom_businessURL}        ${wait_time}
@@ -328,6 +340,7 @@ Click on update button
     wait until element is visible      ${main_update_btn}        ${wait_time}
     wait until element is enabled      ${main_update_btn}        ${wait_time}
     click element   ${main_update_btn}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Save the new added contact
     wait until element is visible   //form[@class='ng-untouched ng-dirty ng-valid']//button[@type='button'][normalize-space()='Add']        ${wait_time}
@@ -340,14 +353,16 @@ Click on the export Button
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible      ${partner_export_btn}        ${wait_time}
     wait until element is enabled      ${partner_export_btn}        ${wait_time}
+    sleep   ${search_sleep}
     click element   ${partner_export_btn}
-
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Confirm to export file
     wait until element is visible      css:.btn.button-green.m-2       ${wait_time}
     wait until element is enabled      css:.btn.button-green.m-2       ${wait_time}
     sleep       ${search_sleep}
     click element   css:.btn.button-green.m-2
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 
 Download the selected extension file
@@ -363,7 +378,7 @@ Verify that the selected extension file is downloaded
     wait until element is visible      //span[contains(text(),'${option}')]       ${wait_time}
     wait until element is enabled      //span[contains(text(),'${option}')]       ${wait_time}
     click element   css:.fa-file-download
-    sleep       3
+    sleep   ${search_sleep}
 
 Remove the file from downloaded list
 #    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
@@ -514,6 +529,7 @@ Update the partner information
     click element       ${update_button}
     sleep   ${search_sleep}
     wait until element is not visible       //div[@id='addressModal']//div[contains(@class,'modal-content')]        ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Enter new_business_email of contact
     [Arguments]    ${Pname}    ${Bname}
@@ -575,6 +591,7 @@ Click on save button of contact via link
     wait until element is visible   //div[@id='contactModalContract']//button[normalize-space()='${button}']      ${wait_time}
     click element   //div[@id='contactModalContract']//button[normalize-space()='${button}']
     wait until element is not visible   //div[@id='contactModal']//div[contains(@class,'modal-content')]     ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Enter and select contact name via link
     wait until element is not visible   ${loaderIcon}   ${wait_time}
@@ -617,6 +634,7 @@ Click on the export button of partner under technology details page
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible      //div[contains(@id,'partners')]//button[@id='dropdownMenuButton']        ${wait_time}
     wait until element is enabled      //div[contains(@id,'partners')]//button[@id='dropdownMenuButton']        ${wait_time}
+    sleep       ${search_sleep}
     click element  //div[contains(@id,'partners')]//button[@id='dropdownMenuButton']
 
 
@@ -641,7 +659,9 @@ Update the partner information of edit contact
     wait until element is enabled     //div[@id='contactModal']//div[@class='modal-content']//following-sibling::button[normalize-space()='Update']        ${wait_time}
     click element       //div[@id='contactModal']//div[@class='modal-content']//following-sibling::button[normalize-space()='Update']
     wait until element is not visible   ${loaderIcon}       ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
     sleep   ${search_sleep}
+
 Select the partner address country
     [Arguments]     ${country}
     wait until element is visible       ${click_Country}        ${wait_time}
@@ -653,6 +673,8 @@ Select the partner address country
 
 Wait for add address pop up hide
     wait until element is not visible       //div[@id='addAddressModal']//div[contains(@class,'modal-content')]     ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Wait for add contact pop up hide
     wait until element is not visible      //div[@id='contactModal']//div[contains(@class,'modal-content')]     ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}

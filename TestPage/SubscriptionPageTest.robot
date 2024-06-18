@@ -35,6 +35,10 @@ Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
 Resource        ../Pages/SortingPage.robot
 Resource        ../Pages/Bulk_Import_ExportPage.robot
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
+Resource        ../Pages/UnselectAssetAPI.robot
 
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
@@ -173,7 +177,7 @@ Suspend and unsuspend the account
     Generic.Fetch alert message text and compare it with        Payment Successful
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
-    Generic.Verify your current page location contains      personal-profile
+    Generic.Verify your curren t page location contains      personal-profile
     Generic.Select parameter    Technology
     Generic.Verify your current page location contains      technology-settings
     Generic.click on the tab    Connectors

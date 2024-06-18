@@ -35,7 +35,10 @@ Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
 Resource        ../Pages/SortingPage.robot
 Resource        ../Pages/Bulk_Import_ExportPage.robot
-
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
+Resource        ../Pages/UnselectAssetAPI.robot
 *** Variables ***
 ${Error_Message_Login}      css:.alert.alert-danger.col-md-12
 ${login_heading}        css:.heading-login.d-inline-block
@@ -508,6 +511,7 @@ Verify the drawer list parameters
 
 #####NOT WORKING#########
 Verify the profile option list parameters
+    wait until element is not visible       ${loaderIcon}    ${wait_time}
     wait until element is visible    ${profile_option}      ${wait_time}
     click element    ${profile_option}
     sleep       2
@@ -947,6 +951,7 @@ Get And Verify The Count Of tabs under renewal overview by management console
 
 
 Click on the dropdown of quarter end under management console
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     Wait Until Element Is Visible    (//div[contains(@class,'qa-upcoming-days')])[2]      ${wait_time}
     Wait Until Element Is Enabled    (//div[contains(@class,'qa-upcoming-days')])[2]      ${wait_time}
     Click Element       (//div[contains(@class,'qa-upcoming-days')])[2]
@@ -957,6 +962,7 @@ Select the first value of To dropdown of quarter
     wait until element is enabled     //div[contains (@id, '-${option}')]       ${wait_time}
     click element   //div[contains (@id, '-${option}')]
     wait until element is not visible       ${loaderIcon}       ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Click on the first dropdown under management console
     Wait Until Element Is Visible    (//div[contains(@class,'qa-upcoming-days')])[1]      ${wait_time}
@@ -990,6 +996,7 @@ Click on Back to account overview button
     Wait Until Element Is Visible    //span[@class='back']        ${wait_time}
     Wait Until Element Is Enabled    //span[@class='back']        ${wait_time}
     Click Element       //span[@class='back']
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Reset the filters for recent activities
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
@@ -1001,9 +1008,12 @@ Select option from the pop up of product
     [Arguments]    ${option}
     wait until element is visible   css:.removeProduct${option}Button-qa   ${wait_time}
     click element   css:.removeProduct${option}Button-qa
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Click on the export button under account overview tab
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible     //i[@title='Exports Alerts']        ${wait_time}
     wait until element is enabled      //i[@title='Exports Alerts']        ${wait_time}
+    sleep   ${search_sleep}
     click element  //i[@title='Exports Alerts']
+    wait until element is not visible       ${shadow}          ${wait_time}

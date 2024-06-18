@@ -10,27 +10,35 @@ Library         DateTime
 Library         OperatingSystem
 Resource        ../Pages/Generic.robot
 Resource        ../Pages/DashboardPage.robot
+Resource        ../Pages/DepartmentPage.robot
 Resource        ../Pages/ITperformancePage.robot
+Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/LandingPage.robot
 Resource        ../Pages/TechnologyPage.robot
 Resource        ../Pages/PartnersPage.robot
-Resource        ../Pages/RegisterMember.robot
 Resource        ../Pages/ContractsPage.robot
-Resource        ../Pages/LoginPage.robot
+Resource        ../Pages/RegisterMember.robot
+Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/ReplaceDomainAPI.robot
 Resource        ../Pages/Yopmail.robot
 Resource        ../Pages/UserAccount.robot
 Resource        ../Pages/TwoFactorAuth.robot
 Resource        ../Pages/SubscriptionPage.robot
+Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
-Resource        ../Pages/OCS.robot
-Resource        ../Pages/RegisterUserPage.robot
+Resource        ../Pages/LoginPage.robot
 Resource        ../Pages/MemberPage.robot
+Resource        ../Pages/OCS.robot
+Resource        ../Pages/BillingPage.robot
 Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
+Resource        ../Pages/SortingPage.robot
 Resource        ../Pages/Bulk_Import_ExportPage.robot
-
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
+Resource        ../Pages/UnselectAssetAPI.robot
 
 *** Variables ***
 ${assignedUser_ActionBtn}      css:#Assignee-Actions
@@ -129,6 +137,7 @@ Save the add assignee
     Wait Until Element Is Enabled    css:div[class='w-100 modal-footer'] button[type='submit']    ${wait_time}
     click element      css:div[class='w-100 modal-footer'] button[type='submit']
     wait until element is not visible      ${loaderIcon}     ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 #Click on the button
 #    [Arguments]    ${option}
@@ -231,6 +240,7 @@ Save new team member form
     Wait Until Element Is Visible       css:.${option}-member-qa    ${wait_time}
     Wait Until Element Is Enabled      css:.${option}-member-qa     ${wait_time}
     click element      css:.${option}-member-qa
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 
 #MobileNo,Email,DepartmentName,LocationName,UserRoleName
@@ -240,12 +250,14 @@ Click on assigned user tab under team member
     wait until element is not visible      ${loaderIcon}    ${wait_time}
     wait until element is visible   //span[normalize-space()='${option}']   ${wait_time}
     wait until element is enabled   //span[normalize-space()='${option}']   ${wait_time}
+    sleep   ${search_sleep}
     click element   //span[normalize-space()='${option}']
 
 Click on action button of assigned users
     wait until element is not visible      ${loaderIcon}    ${wait_time}
     wait until element is visible   css:#Assignee-Actions      ${wait_time}
     wait until element is enabled   css:#Assignee-Actions      ${wait_time}
+    sleep   ${search_sleep}
     click element   css:#Assignee-Actions
 
 Select option from action button of assigned user
@@ -290,6 +302,8 @@ Search assigned user by first name
     click element      css:input[placeholder='Search by Assignee Name or Employee Id']
     input text   css:input[placeholder='Search by Assignee Name or Employee Id']   ${name}
     sleep      ${search_sleep}
+    wait until element is visible      //td[contains(text(),'${name}')]      ${wait_time}
+    wait until element is enabled      //td[contains(text(),'${name}')]      ${wait_time}
     wait until element is visible      //td[normalize-space()='1']      ${wait_time}
     wait until element is enabled      //td[normalize-space()='1']      ${wait_time}
     wait until element is visible       css:thead tr       ${wait_time}
@@ -354,4 +368,5 @@ Click on confirm button under remove pop up of assigned user
     wait until element is visible      //div[contains(@id,'remove-assignee')]//div[contains(@class,'modal-body')]//following-sibling::button[normalize-space()='Confirm']        ${wait_time}
     wait until element is enabled     //div[contains(@id,'remove-assignee')]//div[contains(@class,'modal-body')]//following-sibling::button[normalize-space()='Confirm']        ${wait_time}
     click element       //div[contains(@id,'remove-assignee')]//div[contains(@class,'modal-body')]//following-sibling::button[normalize-space()='Confirm']
-    sleep   ${search_sleep}
+#    sleep   ${search_sleep}
+    wait until element is not visible       ${shadow}          ${wait_time}

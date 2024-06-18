@@ -35,7 +35,10 @@ Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
 Resource        ../Pages/SortingPage.robot
 Resource        ../Pages/Bulk_Import_ExportPage.robot
-
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
+Resource        ../Pages/UnselectAssetAPI.robot
 
 
 *** Variables ***
@@ -84,4 +87,5 @@ Click create account button
     wait until element is visible       ${user_accountSubmitBTN}       ${wait_time}
     wait until element is enabled       ${user_accountSubmitBTN}       ${wait_time}
     click element       ${user_accountSubmitBTN}
+    wait until element is not visible       ${shadow}          ${wait_time}
 

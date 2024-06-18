@@ -35,34 +35,37 @@ Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
 Resource        ../Pages/SortingPage.robot
 Resource        ../Pages/Bulk_Import_ExportPage.robot
-
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
+Resource        ../Pages/UnselectAssetAPI.robot
 *** Variables ***
 
 ${user_name}             rahulshettyacademy
 ${invalid_password}      123445
 
 
-#${url}                 https://uat-app.aithentic.com/
-${url}                https://qa-app.aithentic.com/
+${url}                 https://uat-app.aithentic.com/
+#${url}                https://qa-app.aithentic.com/
 #${url}                https://pre-prod-app.aithentic.com
-#${apiURL}              https://uat-api.aithentic.com/api/v1
-${apiURL}             https://qa-api.aithentic.com/api/v1
+${apiURL}              https://uat-api.aithentic.com/api/v1
+#${apiURL}             https://qa-api.aithentic.com/api/v1
 #${apiURL}             https://pre-prod-api.aithentic.com/api/v1
-#${valid_password}        Test!@5897     #UAT user
-${valid_password}         Test@123       #QA User
+${valid_password}        Test!@5897     #UAT user
+#${valid_password}         Test@123       #QA User
 #${valid_password}         Test@123         #pre prod
 
 
-#${admin_url}        https://uat-admin.aithentic.com/
-${admin_url}        https://qa-admin.aithentic.com/
+${admin_url}        https://uat-admin.aithentic.com/
+#${admin_url}        https://qa-admin.aithentic.com/
 
-${agentDiscovery_TagName}       Tag Name - johnsoftwaresolutions-1192-4         #qa
-#${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-10        #uat
+#${agentDiscovery_TagName}       Tag Name - johnsoftwaresolutions-1192-4         #qa
+${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-10        #uat
 
 ${admin_name}        aithentic@yopmail.com
 ${admin_password}       Admin@123
 
-${browser_name}          firefox
+${browser_name}         firefox
 
 ${email}                 testqa29j@mailinator.com
 ${SheetLocationAndName}   LoadTimeSheet.xlsx
@@ -71,6 +74,7 @@ ${SheetTabName}     Load_Time_tracking
 ${alert_Msg}     css:.msg.d-inline-flex
 ${cross_alertMsg}   css:.close.position-absolute.text-white
 ${loaderIcon}     //div[@role='status']
+${shadow}       //div[@aria-modal='true']
 ${yop_email_searchBar}     css:#login
 ${yop_email_searchBtn}      css:button[title='Check Inbox @yopmail.com']
 ${click_Country}     css:#country
@@ -126,15 +130,17 @@ click on the button
     wait until element is not visible   ${loaderIcon}          ${wait_time}
     wait until element is visible      //button[normalize-space()='${option}']          ${wait_time}
     wait until element is enabled      //button[normalize-space()='${option}']          ${wait_time}
-    sleep   ${search_sleep}
+#    sleep   ${search_sleep}
     click element       //button[normalize-space()='${option}']
-    sleep   ${search_sleep}
+#    sleep   ${search_sleep}
+
 
 click on the button link
     [Arguments]    ${option}
     wait until element is visible        //a[normalize-space()='${option}']        ${wait_time}
     wait until element is enabled      //a[normalize-space()='${option}']          ${wait_time}
     click element       //a[normalize-space()='${option}']
+
 
 open the browser with the url
     Generic.Fix the column number
@@ -219,6 +225,7 @@ Select parameter
     wait until element is enabled       //span[normalize-space()='${address}']          ${wait_time}
     click element      //span[normalize-space()='${address}']
 
+
 Click on the profile name
     wait until element is not visible      ${loaderIcon}          ${wait_time}
     wait until element is visible       ${profileName}          ${wait_time}
@@ -302,7 +309,8 @@ Enter phone number
     input text  ${contact_Country_search}   ${country}
     Generic.Select parameter      ${code}
     input text     ${phone}     ${phoneNo}
-    Sleep    3
+    Sleep    10                            #remove it later
+
 
 Scroll the page till
     [Arguments]    ${option}
@@ -328,6 +336,7 @@ Fetch log_out alert message
 Click keyboard button
     [Arguments]     ${locator}      ${button}
     Press keys      ${locator}      ${button}
+
 
 Update settings for Asset_ID, employee_id and location
     Generic.open the browser with the url
