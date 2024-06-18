@@ -779,6 +779,7 @@ Add Back Deleted Team member
     TeamMemberPage.Select team member role     CSPM
     TeamMemberPage.Click on team member location
     TeamMemberPage.Select team member location
+    Sleep    2
     TeamMemberPage.Save the team member form   save
     Generic.Fetch alert message text and compare it with        Team Member created successfully
     Generic.Verify your current page location contains      memberslist
@@ -798,6 +799,7 @@ Add Back Deleted Team member
     TeamMemberPage.Select team member role     CSPM
     TeamMemberPage.Click on team member location
     TeamMemberPage.Select team member location
+#    Sleep    2
     TeamMemberPage.Save the team member form   save
     Generic.Fetch alert message text and compare it with        Team Member created successfully
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
