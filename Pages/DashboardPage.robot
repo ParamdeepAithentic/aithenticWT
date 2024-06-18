@@ -1014,4 +1014,6 @@ Click on the export button under account overview tab
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible     //i[@title='Exports Alerts']        ${wait_time}
     wait until element is enabled      //i[@title='Exports Alerts']        ${wait_time}
+    sleep   ${search_sleep}
     click element  //i[@title='Exports Alerts']
+    wait until element is not visible       ${shadow}          ${wait_time}
