@@ -78,7 +78,7 @@ Replace Domain
 #    ...    new=www.${NewDomain}.com
 
      ${json_object} =    Create Dictionary
-        ...    old=zouz.fr.nf
+        ...    old=automationqa20240618161014.com
         ...    new=mailinator.com
 
 

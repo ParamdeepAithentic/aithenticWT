@@ -792,13 +792,13 @@ Add Back Deleted Team member
     TeamMemberPage.Enter team member first name
     TeamMemberPage.Enter team member last name
     Generic.Enter phone number      India   +91     9646289871
-    TeamMemberPage.Enter team member business email
+#    TeamMemberPage.Enter team member business email
+    TeamMemberPage.Enter team member business email_mailinator
     TeamMemberPage.Click on team member department
     TeamMemberPage.Select team member department        DepartmentName09041
     TeamMemberPage.Select team member role     CSPM
     TeamMemberPage.Click on team member location
     TeamMemberPage.Select team member location
-    Sleep    2
     TeamMemberPage.Save the team member form   save
     Generic.Fetch alert message text and compare it with        Team Member created successfully
     Generic.Verify your current page location contains      memberslist
@@ -818,7 +818,6 @@ Add Back Deleted Team member
     TeamMemberPage.Select team member role     CSPM
     TeamMemberPage.Click on team member location
     TeamMemberPage.Select team member location
-#    Sleep    2
     TeamMemberPage.Save the team member form   save
     Generic.Fetch alert message text and compare it with        Team Member created successfully
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
