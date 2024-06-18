@@ -546,7 +546,7 @@ Export component tab list
     Generic.click on the button     Okay, Thanks!
 
 Export account overview tab data
-    [Tags]      Stable
+    [Tags]      Unstable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
