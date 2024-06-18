@@ -48,7 +48,6 @@ Login as End_user with different roles
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      enduser@yopmail.net    Test@123
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details

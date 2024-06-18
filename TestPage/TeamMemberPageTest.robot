@@ -61,6 +61,8 @@ Create team member form
     TeamMemberPage.Click on team member location
     TeamMemberPage.Select team member location
     TeamMemberPage.Save the team member form   save
+    Generic.Fetch alert message text and compare it with        Team Member created successfully
+
 
 Add Team member page - Add New Department and assign that department to Team member
     [Tags]      Stable
@@ -758,6 +760,50 @@ Convert Assignee to team member in case of employee id is not system generated
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the employee ID checkbox   yes
     Generic.Fetch alert message text and compare it with       Settings Updated
+
+Add Back Deleted Team member
+    [Tags]      Stable
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Click on add team member action button
+    TeamMemberPage.Select option from team member action menu
+    TeamMemberPage.Enter team member first name
+    TeamMemberPage.Enter team member last name
+    Generic.Enter phone number      India   +91     9646289871
+    TeamMemberPage.Enter team member business email
+    TeamMemberPage.Click on team member department
+    TeamMemberPage.Select team member department        DepartmentName09041
+    TeamMemberPage.Select team member role     CSPM
+    TeamMemberPage.Click on team member location
+    TeamMemberPage.Select team member location
+    TeamMemberPage.Save the team member form   save
+    Generic.Fetch alert message text and compare it with        Team Member created successfully
+    Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Search Team Member by name       ${generated_TMFname}
+    TeamMemberPage.Click on three dots of Team Member listing
+    TeamMemberPage.Select option from three dots of Team Member     Remove
+    TeamMemberPage.Select option from remove TM warning pop-up      remove
+    Generic.Fetch alert message text and compare it with        Team member deleted successfully
+    TeamMemberPage.Click on add team member action button
+    TeamMemberPage.Select option from team member action menu
+    TeamMemberPage.Enter team member first name self    ${generated_TMFname}
+    TeamMemberPage.Enter team member last name self     ${generated_TMLname}
+    Generic.Enter phone number      India   +91     9646289871
+    TeamMemberPage.Enter team member business email self    ${generated_TMbusinessEmail}
+    TeamMemberPage.Click on team member department
+    TeamMemberPage.Select team member department        DepartmentName09041
+    TeamMemberPage.Select team member role     CSPM
+    TeamMemberPage.Click on team member location
+    TeamMemberPage.Select team member location
+    TeamMemberPage.Save the team member form   save
+    Generic.Fetch alert message text and compare it with        Team Member created successfully
+    TeamMemberPage.Search Team Member by name       ${generated_TMFname}
+    TeamMemberPage.Verify Team member added after delete        ${generated_TMFname} ${generated_TMLname}
+
+
 
 Zz kill browser
     Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

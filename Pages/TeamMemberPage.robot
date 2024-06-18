@@ -79,6 +79,18 @@ Enter team member first name
     log to console      ${generated_TMFname}
     set global variable       ${generated_TMFname}
 
+Enter team member first name self
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       ${TMFname}     ${wait_time}
+    input text   ${TMFname}    ${option}
+
+Enter team member last name self
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       ${TMLname}     ${wait_time}
+    input text   ${TMLname}    ${option}
+
 Enter team member last name
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_TMLname}=    Catenate    TMLast_${random_string}
@@ -87,13 +99,19 @@ Enter team member last name
     log to console      ${generated_TMLname}
     set global variable  ${generated_TMLname}
 
-
 Enter team member business email
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_TMbusinessEmail}=    Catenate    TMBusinessEmail_${random_string}@yopmail.net
     wait until element is visible       ${TMBusinessEmail}    ${wait_time}
     input text   ${TMBusinessEmail}   ${generated_TMbusinessEmail}
     log to console      ${generated_TMbusinessEmail}
+    Set Global Variable    ${generated_TMbusinessEmail}
+
+Enter team member business email self
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}  ${wait_time}
+    wait until element is visible       ${TMBusinessEmail}    ${wait_time}
+    input text   ${TMBusinessEmail}   ${option}
 
 Enter team member business email_mailinator
     ${random_string} =    Generate Random String       10      [NUMBERS]
@@ -101,6 +119,7 @@ Enter team member business email_mailinator
     wait until element is visible       ${TMBusinessEmail}    ${wait_time}
     input text   ${TMBusinessEmail}   ${generated_TMbusinessEmail}
     log to console      ${generated_TMbusinessEmail}
+    Set Global Variable    ${generated_TMbusinessEmail}
 
 Enter team member business email with cool fr nf email
     ${random_string} =    Generate Random String       10      [NUMBERS]
@@ -219,6 +238,7 @@ Click on search by brand, product and asset id of asset history via team member
 verify status of first name in member list
     [Arguments]     ${option}
     wait until element is visible   //td[normalize-space()='${option}']     ${wait_time}
+
 Enter assign to field
     [Arguments]     ${option}
     wait until element is visible   //td[normalize-space()='${option}']     ${wait_time}
@@ -281,3 +301,21 @@ Download the selected extension file of team member
     wait until element is enabled   //a[normalize-space()='Export as ${option}']     ${wait_time}
     click element   //a[normalize-space()='Export as ${option}']
 
+Select option from remove TM warning pop-up
+    [Arguments]    ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       css:.confirm-${option}-members-qa       ${wait_time}
+    wait until element is enabled       css:.confirm-${option}-members-qa       ${wait_time}
+    click element       css:.confirm-${option}-members-qa
+    TeamMemberPage.Close the remove warning pop-up
+
+Close the remove warning pop-up
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible      //h5[normalize-space()='Remove Team-Member']//parent::div//button[contains(@class,'close')]      ${wait_time}
+    wait until element is enabled      //h5[normalize-space()='Remove Team-Member']//parent::div//button[contains(@class,'close')]        ${wait_time}
+    click element       //h5[normalize-space()='Remove Team-Member']//parent::div//button[contains(@class,'close')]
+
+Verify Team member added after delete
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible   //td[normalize-space()='${option}']     ${wait_time}

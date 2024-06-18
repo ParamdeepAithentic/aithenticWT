@@ -61,11 +61,16 @@ Replace Domain
     ${NewDomain}=    Catenate    automationqa${date}${time}
 #    set global variable    ${NewDomain}
 
-    # Define the JSON object
-    ${json_object} =    Create Dictionary
-    ...    old=www.yopmail.net
-#     ...    old=www.cool.fr.nf
-    ...    new=www.${NewDomain}.com
+#     Define the JSON object
+#    ${json_object} =    Create Dictionary
+#    ...    old=www.yopmail.net
+##     ...    old=www.cool.fr.nf
+#    ...    new=www.${NewDomain}.com
+
+     ${json_object} =    Create Dictionary
+        ...    old=mailinator.com
+        ...    new=yopmail.net
+
 
      # Define the JSON array
     ${json_array} =    Create List
