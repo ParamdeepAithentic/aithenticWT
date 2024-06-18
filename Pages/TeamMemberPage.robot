@@ -61,6 +61,7 @@ Click on add team member action button
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible      ${teamMember_Action_btn}      ${wait_time}
     wait until element is enabled      ${teamMember_Action_btn}      ${wait_time}
+    sleep   ${search_sleep}
     click element      ${teamMember_Action_btn}
 
 Select option from team member action menu

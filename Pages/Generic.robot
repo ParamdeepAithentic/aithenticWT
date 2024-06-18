@@ -83,7 +83,7 @@ ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
 
-${wait_time}        30
+${wait_time}        60
 ${yop_sleep}       10
 ${search_sleep}       1
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
@@ -310,6 +310,7 @@ Enter phone number
     Generic.Select parameter      ${code}
     input text     ${phone}     ${phoneNo}
     Sleep    10                            #remove it later
+
 
 Scroll the page till
     [Arguments]    ${option}

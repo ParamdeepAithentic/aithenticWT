@@ -109,6 +109,7 @@ Export partner list under technology details
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
     TechnologyPage.Select tab under technology details      partners
+    Generic.Wait until table get load
     PartnersPage.Click on the export button of partner under technology details page
     PartnersPage.Download the selected extension file of partner under technology details      .xlsx
     PartnersPage.Confirm to export file

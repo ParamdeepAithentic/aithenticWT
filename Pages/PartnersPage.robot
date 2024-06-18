@@ -353,8 +353,8 @@ Click on the export Button
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible      ${partner_export_btn}        ${wait_time}
     wait until element is enabled      ${partner_export_btn}        ${wait_time}
-    click element   ${partner_export_btn}
     sleep   ${search_sleep}
+    click element   ${partner_export_btn}
     wait until element is not visible       ${shadow}          ${wait_time}
 
 Confirm to export file
@@ -378,7 +378,7 @@ Verify that the selected extension file is downloaded
     wait until element is visible      //span[contains(text(),'${option}')]       ${wait_time}
     wait until element is enabled      //span[contains(text(),'${option}')]       ${wait_time}
     click element   css:.fa-file-download
-    sleep       3
+    sleep   ${search_sleep}
 
 Remove the file from downloaded list
 #    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
@@ -634,6 +634,7 @@ Click on the export button of partner under technology details page
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible      //div[contains(@id,'partners')]//button[@id='dropdownMenuButton']        ${wait_time}
     wait until element is enabled      //div[contains(@id,'partners')]//button[@id='dropdownMenuButton']        ${wait_time}
+    sleep       ${search_sleep}
     click element  //div[contains(@id,'partners')]//button[@id='dropdownMenuButton']
 
 
@@ -660,6 +661,7 @@ Update the partner information of edit contact
     wait until element is not visible   ${loaderIcon}       ${wait_time}
     wait until element is not visible       ${shadow}          ${wait_time}
     sleep   ${search_sleep}
+
 Select the partner address country
     [Arguments]     ${country}
     wait until element is visible       ${click_Country}        ${wait_time}

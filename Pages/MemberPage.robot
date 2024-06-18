@@ -250,12 +250,14 @@ Click on assigned user tab under team member
     wait until element is not visible      ${loaderIcon}    ${wait_time}
     wait until element is visible   //span[normalize-space()='${option}']   ${wait_time}
     wait until element is enabled   //span[normalize-space()='${option}']   ${wait_time}
+    sleep   ${search_sleep}
     click element   //span[normalize-space()='${option}']
 
 Click on action button of assigned users
     wait until element is not visible      ${loaderIcon}    ${wait_time}
     wait until element is visible   css:#Assignee-Actions      ${wait_time}
     wait until element is enabled   css:#Assignee-Actions      ${wait_time}
+    sleep   ${search_sleep}
     click element   css:#Assignee-Actions
 
 Select option from action button of assigned user
