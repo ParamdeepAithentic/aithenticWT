@@ -71,6 +71,7 @@ Verify pagination of partner table
     PaginationPage.Click on the pagination dropdown     partner-list
     PaginationPage.Log WebElements      partner-list
 
+
 Verify pagination of contract table
     [Tags]      Unstable
     Generic.click on the tab	Login
