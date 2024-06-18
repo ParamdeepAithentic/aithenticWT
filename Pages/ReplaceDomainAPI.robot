@@ -97,7 +97,7 @@ Replace Domain
 
 
 
-#Run Command
-#    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
-#    Run Process    cmd.exe    /C    taskkill /IM chrome.exe /F
-#    Run Process    cmd.exe    /C    taskkill /IM skype.exe /F
+Run Command
+    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+    Run Process    cmd.exe    /C    taskkill /IM chrome.exe /F
+    Run Process    cmd.exe    /C    taskkill /IM skype.exe /F
