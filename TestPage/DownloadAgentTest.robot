@@ -469,7 +469,7 @@ Network Discovery in case of no records
 
 
 Visit discovered asset list when click on No. IP discovered devices
-    [Tags]      Stable
+    [Tags]      Unstable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
 #    LandingPage.Verify you are on dashboard page
