@@ -309,7 +309,7 @@ Enter phone number
     input text  ${contact_Country_search}   ${country}
     Generic.Select parameter      ${code}
     input text     ${phone}     ${phoneNo}
-    Sleep    3
+    Sleep    10
 
 Scroll the page till
     [Arguments]    ${option}

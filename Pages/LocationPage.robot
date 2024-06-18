@@ -253,6 +253,7 @@ Click on the export button of location under technology details page
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible      //div[contains(@id,'location')]//button[@id='dropdownMenuButton']        ${wait_time}
     wait until element is enabled      //div[contains(@id,'location')]//button[@id='dropdownMenuButton']        ${wait_time}
+    sleep   ${search_sleep}
     click element  //div[contains(@id,'location')]//button[@id='dropdownMenuButton']
 
 

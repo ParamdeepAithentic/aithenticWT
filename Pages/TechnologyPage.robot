@@ -1665,6 +1665,7 @@ Get And Verify The Count Of existing asset of parent
 Click on the export button of parent tab under technology details page
    wait until element is visible   //div[@id='parent-components']//button[@id='dropdownMenuButton']     ${wait_time}
     wait until element is enabled   //div[@id='parent-components']//button[@id='dropdownMenuButton']     ${wait_time}
+    sleep       ${search_sleep}
     click element   //div[@id='parent-components']//button[@id='dropdownMenuButton']
 
 Download the selected extension file of parent under technology details
@@ -1674,13 +1675,15 @@ Download the selected extension file of parent under technology details
     click element   //div[@class='dropdown-menu show']//a[contains(text(),'${option}')]
 
 Click on the export button of deatils tab under technology details page
-   wait until element is visible   //div[@id='details']//button[@id='dropdownMenuButton']     ${wait_time}
+    wait until element is visible   //div[@id='details']//button[@id='dropdownMenuButton']     ${wait_time}
     wait until element is enabled   //div[@id='details']//button[@id='dropdownMenuButton']     ${wait_time}
+    sleep       ${search_sleep}
     click element   //div[@id='details']//button[@id='dropdownMenuButton']
 
 Click on the export button of component tab under technology details page
-   wait until element is visible   //div[@id='components']//button[@id='dropdownMenuButton']     ${wait_time}
+    wait until element is visible   //div[@id='components']//button[@id='dropdownMenuButton']     ${wait_time}
     wait until element is enabled   //div[@id='components']//button[@id='dropdownMenuButton']     ${wait_time}
+    sleep       ${search_sleep}
     click element   //div[@id='components']//button[@id='dropdownMenuButton']
 
 

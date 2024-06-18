@@ -661,6 +661,7 @@ Update the partner information of edit contact
     wait until element is not visible   ${loaderIcon}       ${wait_time}
     wait until element is not visible       ${shadow}          ${wait_time}
     sleep   ${search_sleep}
+
 Select the partner address country
     [Arguments]     ${country}
     wait until element is visible       ${click_Country}        ${wait_time}
