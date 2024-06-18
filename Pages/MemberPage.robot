@@ -137,6 +137,7 @@ Save the add assignee
     Wait Until Element Is Enabled    css:div[class='w-100 modal-footer'] button[type='submit']    ${wait_time}
     click element      css:div[class='w-100 modal-footer'] button[type='submit']
     wait until element is not visible      ${loaderIcon}     ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 #Click on the button
 #    [Arguments]    ${option}
@@ -239,6 +240,7 @@ Save new team member form
     Wait Until Element Is Visible       css:.${option}-member-qa    ${wait_time}
     Wait Until Element Is Enabled      css:.${option}-member-qa     ${wait_time}
     click element      css:.${option}-member-qa
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 
 #MobileNo,Email,DepartmentName,LocationName,UserRoleName
@@ -364,4 +366,5 @@ Click on confirm button under remove pop up of assigned user
     wait until element is visible      //div[contains(@id,'remove-assignee')]//div[contains(@class,'modal-body')]//following-sibling::button[normalize-space()='Confirm']        ${wait_time}
     wait until element is enabled     //div[contains(@id,'remove-assignee')]//div[contains(@class,'modal-body')]//following-sibling::button[normalize-space()='Confirm']        ${wait_time}
     click element       //div[contains(@id,'remove-assignee')]//div[contains(@class,'modal-body')]//following-sibling::button[normalize-space()='Confirm']
-    sleep   ${search_sleep}
+#    sleep   ${search_sleep}
+    wait until element is not visible       ${shadow}          ${wait_time}

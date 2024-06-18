@@ -61,6 +61,7 @@ Fill the login Form
     wait until element is visible    ${Kc_password}    ${wait_time}
     Input Password      ${Kc_password}     ${valid_password}
     Click Button        ${Kc_loginBtn}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Verify you are on dashboard page
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
@@ -75,6 +76,7 @@ Fill the login form of Admin panel
     wait until element is visible    ${Admin_password_field}    ${wait_time}
     Input Password      ${Admin_password_field}     ${valid_password}
     Click Button        ${Admin_loginBtn}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 
 

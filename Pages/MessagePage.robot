@@ -94,6 +94,7 @@ Select compose message pop up option
     wait until element is visible    css:.qa-${option}-send-invite   ${wait_time}
     wait until element is enabled    css:.qa-${option}-send-invite   ${wait_time}
     click element       css:.qa-${option}-send-invite
+    wait until element is not visible       ${shadow}          ${wait_time}
 #yes/no
 
 Select message status
@@ -118,6 +119,7 @@ Save compose message
     wait until element is visible    css:.${option}-message-qa   ${wait_time}
     wait until element is enabled    css:.${option}-message-qa   ${wait_time}
     click element       css:.${option}-message-qa
+    wait until element is not visible       ${shadow}          ${wait_time}
 #send/cancel
 
 Enter team member last name
@@ -139,4 +141,5 @@ Save team member
     wait until element is visible    css:.${option}-member-qa   ${wait_time}
     click element       css:.${option}-member-qa
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
 #save/cancel

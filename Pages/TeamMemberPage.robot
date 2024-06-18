@@ -236,6 +236,7 @@ Click on convert to team member confirm pop up
     wait until element is enabled   css:.qa-convert-assignee-tm-confirm     ${wait_time}
     sleep   ${search_sleep}
     click element   css:.qa-convert-assignee-tm-confirm
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Click on asset history tab under team member
     wait until element is visible    css:.asset-history-qa   ${wait_time}

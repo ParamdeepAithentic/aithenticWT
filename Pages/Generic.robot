@@ -74,6 +74,7 @@ ${SheetTabName}     Load_Time_tracking
 ${alert_Msg}     css:.msg.d-inline-flex
 ${cross_alertMsg}   css:.close.position-absolute.text-white
 ${loaderIcon}     //div[@role='status']
+${shadow}       //div[@aria-modal='true']
 ${yop_email_searchBar}     css:#login
 ${yop_email_searchBtn}      css:button[title='Check Inbox @yopmail.com']
 ${click_Country}     css:#country
@@ -129,15 +130,17 @@ click on the button
     wait until element is not visible   ${loaderIcon}          ${wait_time}
     wait until element is visible      //button[normalize-space()='${option}']          ${wait_time}
     wait until element is enabled      //button[normalize-space()='${option}']          ${wait_time}
-    sleep   ${search_sleep}
+#    sleep   ${search_sleep}
     click element       //button[normalize-space()='${option}']
-    sleep   ${search_sleep}
+#    sleep   ${search_sleep}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 click on the button link
     [Arguments]    ${option}
     wait until element is visible        //a[normalize-space()='${option}']        ${wait_time}
     wait until element is enabled      //a[normalize-space()='${option}']          ${wait_time}
     click element       //a[normalize-space()='${option}']
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 open the browser with the url
     Generic.Fix the column number
@@ -221,6 +224,7 @@ Select parameter
     wait until element is visible     //span[normalize-space()='${address}']        ${wait_time}
     wait until element is enabled       //span[normalize-space()='${address}']          ${wait_time}
     click element      //span[normalize-space()='${address}']
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Click on the profile name
     wait until element is not visible      ${loaderIcon}          ${wait_time}
@@ -331,6 +335,7 @@ Fetch log_out alert message
 Click keyboard button
     [Arguments]     ${locator}      ${button}
     Press keys      ${locator}      ${button}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Update settings for Asset_ID, employee_id and location
     Generic.open the browser with the url
