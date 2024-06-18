@@ -51,7 +51,7 @@ Resource        ../Pages/UnselectAssetAPI.robot
 
 *** Test Cases ***
 Replace the existing domain
-    [Tags]      Unstable
+    [Tags]      Stable
 #    LoginPage.Fetch the refresh token from the login api
 #    ReplaceDomainAPI.Replace Domain     ${refresh_Token}
     UnselectAssetAPI.Hit API Endpoint

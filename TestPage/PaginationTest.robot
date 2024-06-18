@@ -416,7 +416,7 @@ Verify Pagination of Product Dropdown when Add IP discovered asset
         UnselectAssetAPI.Hit API Endpoint
 
 Verify Pagination of Recent Activities Table
-    [Tags]      Stable
+    [Tags]      Unstable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
