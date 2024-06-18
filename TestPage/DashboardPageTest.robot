@@ -34,8 +34,11 @@ Resource        ../Pages/BillingPage.robot
 Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
 Resource        ../Pages/SortingPage.robot
-Resource        ../Pages/PaginationPage.robot
 Resource        ../Pages/Bulk_Import_ExportPage.robot
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
+Resource        ../Pages/UnselectAssetAPI.robot
 
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
@@ -972,9 +975,6 @@ Verify Account_overview Recent Activities Filters
     DashboardPage.Click on the filter Past under recent Activities table        Months      Hours
     PaginationPage.Check the table get load for Recent Activities
 
-Zz kill browser
-    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
-
 Add and delete product from profile listing
     [Tags]      Stable
     Generic.click on the tab	Login
@@ -1012,3 +1012,6 @@ Add and delete product from profile listing
     TeamMemberPage.Select option from three dots of Team Member     Remove
     DashboardPage.Select option from the pop up of product     Yes
     Generic.Fetch alert message text and compare it with      Product deleted successfully
+
+Zz kill browser
+    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

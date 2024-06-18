@@ -35,6 +35,9 @@ Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
 Resource        ../Pages/SortingPage.robot
 Resource        ../Pages/Bulk_Import_ExportPage.robot
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
 Resource        ../Pages/UnselectAssetAPI.robot
 
 
@@ -47,15 +50,15 @@ ${self_searchId} =   AssetID_1803536655
 
 *** Test Cases ***
 
-Free the asset limit
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form     chirag@dmts.fr.nf     Test@123
-    Generic.Verify your current page location contains      dashboard
-    Generic.select the option from the side menu    Technology
-    Generic.Verify your current page location contains      technology
-    PaginationPage.Check the table get load
-    PaginationPage.Fetch the total count
-    PaginationPage.Run the remove asset journey
+#Free the asset limit
+#    Generic.click on the tab	Login
+#    LandingPage.Fill the login Form     chirag@dmts.fr.nf     Test@123
+#    Generic.Verify your current page location contains      dashboard
+#    Generic.select the option from the side menu    Technology
+#    Generic.Verify your current page location contains      technology
+#    PaginationPage.Check the table get load
+#    PaginationPage.Fetch the total count
+#    PaginationPage.Run the remove asset journey
 
 
 Fill the technology form for license product

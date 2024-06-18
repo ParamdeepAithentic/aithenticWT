@@ -37,6 +37,9 @@ Resource        ../Pages/I_iconPage.robot
 Resource        ../Pages/SortingPage.robot
 Resource        ../Pages/Bulk_Import_ExportPage.robot
 Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
+Resource        ../Pages/UnselectAssetAPI.robot
 
 Suite Setup     Update settings for Asset_ID, employee_id and location
 Test Setup      open the browser with the url
@@ -102,12 +105,12 @@ Change plan- Assign commercial plan and change it to slotted
 #    Admin_PanelPage.Verify text from current plan after changing subscription       Premium
 
 
-Free the asset limit
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form     ${email}    ${valid_password}
-    Generic.Verify your current page location contains      dashboard
-    Generic.select the option from the side menu    Technology
-    Generic.Verify your current page location contains      technology
-    PaginationPage.Check the table get load
-    PaginationPage.Fetch the total count
-    PaginationPage.Run the remove asset journey
+#Free the asset limit
+#    Generic.click on the tab	Login
+#    LandingPage.Fill the login Form     ${email}    ${valid_password}
+#    Generic.Verify your current page location contains      dashboard
+#    Generic.select the option from the side menu    Technology
+#    Generic.Verify your current page location contains      technology
+#    PaginationPage.Check the table get load
+#    PaginationPage.Fetch the total count
+#    PaginationPage.Run the remove asset journey
