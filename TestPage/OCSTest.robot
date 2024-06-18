@@ -31,6 +31,8 @@ Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
 Resource        ../Pages/UnselectAssetAPI.robot
+Resource        ../Pages/PaginationPage.robot
+
 
 
 Test Setup      open the browser with the url

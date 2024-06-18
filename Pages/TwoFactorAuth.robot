@@ -52,8 +52,10 @@ Click verification button
     wait until element is visible      ${twoFA_verify_btn}       ${wait_time}
     wait until element is enabled      ${twoFA_verify_btn}       ${wait_time}
     click element   ${twoFA_verify_btn}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Click on the verify button
     wait until element is visible       ${admin_verify_btn}     ${wait_time}
     Wait until element is enabled       ${admin_verify_btn}     ${wait_time}
     click element       ${admin_verify_btn}
+    wait until element is not visible       ${shadow}          ${wait_time}

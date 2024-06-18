@@ -166,6 +166,7 @@ Click on complete process button
     wait until element is enabled       ${payment_completeProcessBTN}       ${wait_time}
     click element        ${payment_completeProcessBTN}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Select the another plan
     wait until element is visible       css:div[class='row justify-content-center'] div:nth-child(1) div:nth-child(1) div:nth-child(2)       ${wait_time}
@@ -177,11 +178,13 @@ Select if you want to change plan or asset
     wait until element is visible       //button[normalize-space()='${option1}']       ${wait_time}
     wait until element is enabled       //button[normalize-space()='${option1}']       ${wait_time}
     click element        //button[normalize-space()='${option1}']
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Select different plan
     wait until element is visible       (//button[@type='button'][normalize-space()='Select'])[2]       ${wait_time}
     wait until element is enabled       (//button[@type='button'][normalize-space()='Select'])[2]       ${wait_time}
     click element       (//button[@type='button'][normalize-space()='Select'])[2]
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Set asset range to
     [Arguments]     ${option1}
@@ -195,7 +198,6 @@ Update the asset range
     Generic.click on the button     ${option1}
 
 Select card type university
-
     wait until element is visible       css:span .fa-university       ${wait_time}
     wait until element is enabled       css:span .fa-university       ${wait_time}
     Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
@@ -259,6 +261,7 @@ Click on the three dots of subscription connector
     wait until element is enabled   //td[normalize-space()='${option}']//parent::tr//td//div//button  ${wait_time}
     click element  //td[normalize-space()='${option}']//parent::tr//td//div//button
     sleep   ${search_sleep}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Click on option under three dots of subscription connector
     [Arguments]     ${option}
@@ -337,6 +340,7 @@ Click on the suspend my account button link under billing details
     wait until element is enabled   //div[@class='row'][1]//span[contains(text(),'Suspend My Account')]     ${wait_time}
     click element   //div[@class='row'][1]//span[contains(text(),'Suspend My Account')]
     wait until element is not visible       ${loaderIcon}    ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Enter input in the start date field of billing details
     Generic.Enter current date       css:#startDate
@@ -362,6 +366,7 @@ Click on the Unsuspend my account button link under billing details
     wait until element is enabled   //div[@class='row'][1]//span[contains(text(),'Unsuspend My Account')]     ${wait_time}
     click element   //div[@class='row'][1]//span[contains(text(),'Unsuspend My Account')]
     wait until element is not visible       ${loaderIcon}    ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 click on the checkboxes under unsuspend my account button link
     wait until element is visible   //label[contains(text(),"I'm authorized to conduct such transaction for my ")]    ${wait_time}
@@ -371,12 +376,15 @@ click on the checkboxes under unsuspend my account button link
     wait until element is enabled   //label[normalize-space()='I acknoledge I am restoring my aithentic account.']    ${wait_time}
     click element   //label[normalize-space()='I acknoledge I am restoring my aithentic account.']
     wait until element is not visible       ${loaderIcon}    ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 click on the confirm button of unsuspend pop up
     wait until element is visible   //button[@type='submit'][normalize-space()='Confirm']       ${wait_time}
     wait until element is enabled   //button[@type='submit'][normalize-space()='Confirm']       ${wait_time}
     click element   //button[@type='submit'][normalize-space()='Confirm']
     wait until element is not visible       ${loaderIcon}    ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Choose tab under subscription page after clicking on view_result
     Wait Until Element Is Not Visible    ${loaderIcon}     ${wait_time}

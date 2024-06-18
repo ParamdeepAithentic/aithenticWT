@@ -167,3 +167,4 @@ click on confirm button to change plan
     wait until element is visible       //button[@type='button'][normalize-space()='${option}']   ${wait_time}
     wait until element is enabled       //button[@type='button'][normalize-space()='${option}']   ${wait_time}
     click element       //button[@type='button'][normalize-space()='${option}']
+    wait until element is not visible       ${shadow}          ${wait_time}

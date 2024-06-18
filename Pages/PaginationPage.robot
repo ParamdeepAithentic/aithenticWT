@@ -182,6 +182,7 @@ Close the advance Search pop-up
     Wait Until Element Is Visible    //div[@id='advanceSearchPopup']//button//span[normalize-space()='×']    ${wait_time}
     Wait Until Element Is Enabled    //div[@id='advanceSearchPopup']//button//span[normalize-space()='×']     ${wait_time}
     Click Element    //div[@id='advanceSearchPopup']//button//span[normalize-space()='×']
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Clear the brand from brand input field
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
@@ -246,6 +247,7 @@ Click on save technology form button of OCS
     wait until element is visible       ${saveBTN1}       ${wait_time}
     wait until element is enabled       ${saveBTN1}       ${wait_time}
     click element       ${saveBTN1}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 #######################################################################################################################################################################################################################################################################################################
 

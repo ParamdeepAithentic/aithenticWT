@@ -84,4 +84,5 @@ Click create account button
     wait until element is visible       ${user_accountSubmitBTN}       ${wait_time}
     wait until element is enabled       ${user_accountSubmitBTN}       ${wait_time}
     click element       ${user_accountSubmitBTN}
+    wait until element is not visible       ${shadow}          ${wait_time}
 

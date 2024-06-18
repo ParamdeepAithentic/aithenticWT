@@ -51,12 +51,14 @@ Click on Location action button
     Wait Until Element Is Visible       ${location_Action}    ${wait_time}
     Wait Until Element Is Enabled      ${location_Action}     ${wait_time}
     click element       ${location_Action}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Click on add location button
     [Arguments]    ${option}
     Wait Until Element Is Visible       //a[@title='${option}']    ${wait_time}
     Wait Until Element Is Enabled      //a[@title='${option}']     ${wait_time}
     click element       //a[@title='${option}']
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 #----------------------- only bulk edit location is not having title-----------------------
 Select the option from action menu
@@ -64,14 +66,16 @@ Select the option from action menu
     wait until element is visible       css:.qa-location-bulk-${option}     ${wait_time}
     wait until element is enabled       css:.qa-location-bulk-${option}     ${wait_time}
     click element   css:.qa-location-bulk-${option}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Select location country
     [Arguments]    ${option}
-    Wait Until Element Is Visible       ${location_country}    ${wait_time}
-    Wait Until Element Is Enabled      ${location_country}     ${wait_time}
-    click element       ${location_country}
-    Clear Element Text      ${location_country}
-    Generic.Select parameter    ${option}
+    Wait Until Element Is Visible       //ng-select[@formcontrolname='Country']//following-sibling::ng-dropdown-panel//div//span[normalize-space()='${option}']    ${wait_time}
+    Wait Until Element Is Enabled      //ng-select[@formcontrolname='Country']//following-sibling::ng-dropdown-panel//div//span[normalize-space()='${option}']     ${wait_time}
+    click element       //ng-select[@formcontrolname='Country']//following-sibling::ng-dropdown-panel//div//span[normalize-space()='United States']
+
+#    Clear Element Text      ${location_country}
+#    Generic.Select parameter    ${option}
 
 Select location building name
     [Arguments]    ${option}
@@ -143,6 +147,7 @@ Save location form
     Wait Until Element Is Enabled       css:.qa-${option}-location    ${wait_time}
     click element       css:.qa-${option}-location
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Fetch the location Name from the row
     [Arguments]    ${option}
@@ -177,6 +182,7 @@ Select option from change location status pop up
     Wait Until Element Is enabled      css:.qa-update-location-status-${option}-action    ${wait_time}
     Mouse over      css:.qa-update-location-status-${option}-action
     click element      css:.qa-update-location-status-${option}-action
+    wait until element is not visible       ${shadow}          ${wait_time}
 #    sleep       1
 
 #------------------------------------------------------------------------------------------------

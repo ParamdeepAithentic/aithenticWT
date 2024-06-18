@@ -49,6 +49,7 @@ Download Agent popup
     wait until element is visible      //button[normalize-space()='${option}']     ${wait_time}
     wait until element is enabled      //button[normalize-space()='${option}']     ${wait_time}
     click element       //button[normalize-space()='${option}']
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 
 #Verify that agent is ready to get download
@@ -146,6 +147,7 @@ Save the register form
     wait until element is enabled      ${register_FormSubmitBTN}    ${wait_time}
     click element       ${register_FormSubmitBTN}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Choose register user country
     [Arguments]    ${country}   ${code}     ${phoneNo}

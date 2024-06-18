@@ -959,6 +959,7 @@ Select the first value of To dropdown of quarter
     wait until element is enabled     //div[contains (@id, '-${option}')]       ${wait_time}
     click element   //div[contains (@id, '-${option}')]
     wait until element is not visible       ${loaderIcon}       ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Click on the first dropdown under management console
     Wait Until Element Is Visible    (//div[contains(@class,'qa-upcoming-days')])[1]      ${wait_time}
@@ -992,6 +993,7 @@ Click on Back to account overview button
     Wait Until Element Is Visible    //span[@class='back']        ${wait_time}
     Wait Until Element Is Enabled    //span[@class='back']        ${wait_time}
     Click Element       //span[@class='back']
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Reset the filters for recent activities
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
@@ -1003,6 +1005,7 @@ Select option from the pop up of product
     [Arguments]    ${option}
     wait until element is visible   css:.removeProduct${option}Button-qa   ${wait_time}
     click element   css:.removeProduct${option}Button-qa
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Click on the export button under account overview tab
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
