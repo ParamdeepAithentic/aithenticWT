@@ -378,7 +378,7 @@ Verify that the selected extension file is downloaded
     wait until element is visible      //span[contains(text(),'${option}')]       ${wait_time}
     wait until element is enabled      //span[contains(text(),'${option}')]       ${wait_time}
     click element   css:.fa-file-download
-    sleep       3
+    sleep   ${search_sleep}
 
 Remove the file from downloaded list
 #    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
