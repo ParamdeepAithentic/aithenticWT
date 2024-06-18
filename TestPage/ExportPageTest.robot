@@ -106,7 +106,6 @@ Export partner list under technology details
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
-#    TechnologyPage.Search by AssetId       AssetID_7003489679
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
     TechnologyPage.Select tab under technology details      partners
@@ -197,7 +196,6 @@ Export location list of location under technology details page
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
-#    TechnologyPage.Search by AssetId       AssetID_7003489679
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
     TechnologyPage.Click on edit button on product details page        Edit

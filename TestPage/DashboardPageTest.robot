@@ -975,9 +975,6 @@ Verify Account_overview Recent Activities Filters
     DashboardPage.Click on the filter Past under recent Activities table        Months      Hours
     PaginationPage.Check the table get load for Recent Activities
 
-Zz kill browser
-    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
-
 Add and delete product from profile listing
     [Tags]      Stable
     Generic.click on the tab	Login
@@ -1015,3 +1012,6 @@ Add and delete product from profile listing
     TeamMemberPage.Select option from three dots of Team Member     Remove
     DashboardPage.Select option from the pop up of product     Yes
     Generic.Fetch alert message text and compare it with      Product deleted successfully
+
+Zz kill browser
+    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
