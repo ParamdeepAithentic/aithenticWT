@@ -39,6 +39,7 @@ Resource        ../Pages/Admin_PanelPage.robot
 Resource        ../Pages/PaginationPage.robot
 Resource        ../Pages/DisconnectConnectorAPI.robot
 Resource        ../Pages/UnselectAssetAPI.robot
+
 Suite Setup    Get Current Date and Time
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session

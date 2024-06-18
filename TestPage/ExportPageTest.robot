@@ -38,6 +38,7 @@ Resource        ../Pages/Admin_PanelPage.robot
 Resource        ../Pages/PaginationPage.robot
 Resource        ../Pages/DisconnectConnectorAPI.robot
 Resource        ../Pages/UnselectAssetAPI.robot
+
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
 
