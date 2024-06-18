@@ -45,22 +45,22 @@ ${user_name}             rahulshettyacademy
 ${invalid_password}      123445
 
 
-${url}                 https://uat-app.aithentic.com/
-#${url}                https://qa-app.aithentic.com/
+#${url}                 https://uat-app.aithentic.com/
+${url}                https://qa-app.aithentic.com/
 #${url}                https://pre-prod-app.aithentic.com
-${apiURL}              https://uat-api.aithentic.com/api/v1
-#${apiURL}             https://qa-api.aithentic.com/api/v1
+#${apiURL}              https://uat-api.aithentic.com/api/v1
+${apiURL}             https://qa-api.aithentic.com/api/v1
 #${apiURL}             https://pre-prod-api.aithentic.com/api/v1
-${valid_password}        Test!@5897     #UAT user
-#${valid_password}         Test@123       #QA User
+#${valid_password}        Test!@5897     #UAT user
+${valid_password}         Test@123       #QA User
 #${valid_password}         Test@123         #pre prod
 
 
-${admin_url}        https://uat-admin.aithentic.com/
-#${admin_url}        https://qa-admin.aithentic.com/
+#${admin_url}        https://uat-admin.aithentic.com/
+${admin_url}        https://qa-admin.aithentic.com/
 
-#${agentDiscovery_TagName}       Tag Name - johnsoftwaresolutions-1192-4         #qa
-${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-10        #uat
+${agentDiscovery_TagName}       Tag Name - johnsoftwaresolutions-1192-4         #qa
+#${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-10        #uat
 
 ${admin_name}        aithentic@yopmail.com
 ${admin_password}       Admin@123
@@ -83,7 +83,7 @@ ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
 
-${wait_time}        60
+${wait_time}        30
 ${yop_sleep}       10
 ${search_sleep}       1
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
@@ -133,14 +133,14 @@ click on the button
 #    sleep   ${search_sleep}
     click element       //button[normalize-space()='${option}']
 #    sleep   ${search_sleep}
-    wait until element is not visible       ${shadow}          ${wait_time}
+
 
 click on the button link
     [Arguments]    ${option}
     wait until element is visible        //a[normalize-space()='${option}']        ${wait_time}
     wait until element is enabled      //a[normalize-space()='${option}']          ${wait_time}
     click element       //a[normalize-space()='${option}']
-    wait until element is not visible       ${shadow}          ${wait_time}
+
 
 open the browser with the url
     Generic.Fix the column number
@@ -224,7 +224,7 @@ Select parameter
     wait until element is visible     //span[normalize-space()='${address}']        ${wait_time}
     wait until element is enabled       //span[normalize-space()='${address}']          ${wait_time}
     click element      //span[normalize-space()='${address}']
-    wait until element is not visible       ${shadow}          ${wait_time}
+
 
 Click on the profile name
     wait until element is not visible      ${loaderIcon}          ${wait_time}
@@ -335,7 +335,7 @@ Fetch log_out alert message
 Click keyboard button
     [Arguments]     ${locator}      ${button}
     Press keys      ${locator}      ${button}
-    wait until element is not visible       ${shadow}          ${wait_time}
+
 
 Update settings for Asset_ID, employee_id and location
     Generic.open the browser with the url

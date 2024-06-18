@@ -213,7 +213,7 @@ Click on contact person button
     wait until element is enabled   ${addContact}       ${wait_time}
     click element   ${addContact}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    wait until element is not visible       ${shadow}          ${wait_time}
+
 
 Enter random contact person
     wait until element is not visible   ${loaderIcon}       ${wait_time}
