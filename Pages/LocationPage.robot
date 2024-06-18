@@ -10,22 +10,35 @@ Library         DateTime
 Library         OperatingSystem
 Resource        ../Pages/Generic.robot
 Resource        ../Pages/DashboardPage.robot
+Resource        ../Pages/DepartmentPage.robot
 Resource        ../Pages/ITperformancePage.robot
+Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/LandingPage.robot
 Resource        ../Pages/TechnologyPage.robot
-Resource        ../Pages/RegisterMember.robot
+Resource        ../Pages/PartnersPage.robot
 Resource        ../Pages/ContractsPage.robot
-Resource        ../Pages/LoginPage.robot
+Resource        ../Pages/RegisterMember.robot
+Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/ReplaceDomainAPI.robot
 Resource        ../Pages/Yopmail.robot
 Resource        ../Pages/UserAccount.robot
 Resource        ../Pages/TwoFactorAuth.robot
 Resource        ../Pages/SubscriptionPage.robot
+Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
+Resource        ../Pages/LoginPage.robot
+Resource        ../Pages/MemberPage.robot
+Resource        ../Pages/OCS.robot
+Resource        ../Pages/BillingPage.robot
 Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
-
+Resource        ../Pages/SortingPage.robot
+Resource        ../Pages/Bulk_Import_ExportPage.robot
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
+Resource        ../Pages/UnselectAssetAPI.robot
 *** Variables ***
 
 ${location_Action}     css:.qa-location-actions
@@ -51,12 +64,14 @@ Click on Location action button
     Wait Until Element Is Visible       ${location_Action}    ${wait_time}
     Wait Until Element Is Enabled      ${location_Action}     ${wait_time}
     click element       ${location_Action}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Click on add location button
     [Arguments]    ${option}
     Wait Until Element Is Visible       //a[@title='${option}']    ${wait_time}
     Wait Until Element Is Enabled      //a[@title='${option}']     ${wait_time}
     click element       //a[@title='${option}']
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 #----------------------- only bulk edit location is not having title-----------------------
 Select the option from action menu
@@ -64,14 +79,16 @@ Select the option from action menu
     wait until element is visible       css:.qa-location-bulk-${option}     ${wait_time}
     wait until element is enabled       css:.qa-location-bulk-${option}     ${wait_time}
     click element   css:.qa-location-bulk-${option}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Select location country
     [Arguments]    ${option}
-    Wait Until Element Is Visible       ${location_country}    ${wait_time}
-    Wait Until Element Is Enabled      ${location_country}     ${wait_time}
-    click element       ${location_country}
-    Clear Element Text      ${location_country}
-    Generic.Select parameter    ${option}
+    Wait Until Element Is Visible       //ng-select[@formcontrolname='Country']//following-sibling::ng-dropdown-panel//div//span[normalize-space()='${option}']    ${wait_time}
+    Wait Until Element Is Enabled      //ng-select[@formcontrolname='Country']//following-sibling::ng-dropdown-panel//div//span[normalize-space()='${option}']     ${wait_time}
+    click element       //ng-select[@formcontrolname='Country']//following-sibling::ng-dropdown-panel//div//span[normalize-space()='United States']
+
+#    Clear Element Text      ${location_country}
+#    Generic.Select parameter    ${option}
 
 Select location building name
     [Arguments]    ${option}
@@ -143,6 +160,7 @@ Save location form
     Wait Until Element Is Enabled       css:.qa-${option}-location    ${wait_time}
     click element       css:.qa-${option}-location
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Fetch the location Name from the row
     [Arguments]    ${option}
@@ -177,6 +195,7 @@ Select option from change location status pop up
     Wait Until Element Is enabled      css:.qa-update-location-status-${option}-action    ${wait_time}
     Mouse over      css:.qa-update-location-status-${option}-action
     click element      css:.qa-update-location-status-${option}-action
+    wait until element is not visible       ${shadow}          ${wait_time}
 #    sleep       1
 
 #------------------------------------------------------------------------------------------------

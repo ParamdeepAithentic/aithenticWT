@@ -35,7 +35,10 @@ Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
 Resource        ../Pages/SortingPage.robot
 Resource        ../Pages/Bulk_Import_ExportPage.robot
-
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
+Resource        ../Pages/UnselectAssetAPI.robot
 *** Variables ***
 
 ########################## technology form #####################
@@ -188,6 +191,7 @@ Click on first table row checkbox and restore
     click element   ${restore_BTN}
 #    wait until element is visible       ${loaderIcon}       ${wait_time}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 
 Create random unique serial number
@@ -226,6 +230,7 @@ Select any asset to view assert details page
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible    //button[normalize-space()='${option}']    ${wait_time}       #Restore, Edit, Remove, Clone, Disposal
     click element   //button[normalize-space()='${option}']
+    wait until element is not visible       ${shadow}          ${wait_time}
     sleep       2
     click element       ${back_To_List_Link}
 
@@ -242,6 +247,7 @@ Select an option from recovery table actions
      #Restore, Details
 #    wait until element is visible       ${loaderIcon}       ${wait_time}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 
 Select an option from technology table actions
@@ -295,6 +301,7 @@ click on add technology button
     click element    ${AddTechnologyButton}
 
 Click technology brand input field
+    wait until element is visible       ${brand}        ${wait_time}
     wait until element is enabled       ${brand}        ${wait_time}
     click element    ${brand}
 
@@ -523,6 +530,7 @@ Accept updated edited technology pop up
      wait until element is visible     //div[@id='confirmUpdates']//button[normalize-space()='${option}']      ${wait_time}
      wait until element is enabled     //div[@id='confirmUpdates']//button[normalize-space()='${option}']      ${wait_time}
      click element      //div[@id='confirmUpdates']//button[normalize-space()='${option}']
+     wait until element is not visible       ${shadow}          ${wait_time}
 
 ###############Technology Cost Information#################
 Add order number of technology cost information
@@ -748,6 +756,7 @@ Click on save technology form pop button
     wait until element is visible       ${savePOPup}       ${wait_time}
     wait until element is enabled        ${savePOPup}       ${wait_time}
     click element       ${iamDone_BTN}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 
 Verify that after saving technology form user redirect to technology page
@@ -851,12 +860,14 @@ Click on the first row of the technology table
     wait until element is enabled      ${fetch_assetID}     ${wait_time}
     click element      ${fetch_assetID}
     wait until element is not visible      ${loaderIcon}    ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Click on edit button on product details page
     [Arguments]    ${option}
     wait until element is not visible      ${loaderIcon}    ${wait_time}
     Generic.click on the button link     ${option}
     wait until element is not visible      ${loaderIcon}    ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Click on the edit icon on the edit technology page
     wait until element is visible      ${editIcon}     ${wait_time}
@@ -1106,6 +1117,7 @@ Save the assign to
     wait until element is enabled       css:.qa-${option}-assignee-modal        ${wait_time}
     click element        css:.qa-${option}-assignee-modal
     wait until element is not visible        ${loaderIcon}         ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
 # options: save, cancel
 
 Select tab under technology details
@@ -1115,6 +1127,7 @@ Select tab under technology details
     wait until element is enabled       css:a[href='#${option}']        ${wait_time}
     click element        css:a[href='#${option}']
     sleep   ${search_sleep}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 #options: details,partners,location,parent-components,components,messages,history,attachments
 
@@ -1199,7 +1212,9 @@ Close the view history pop up
     wait until element is enabled       ${histortTab_ViewPopUp}      ${wait_time}
     click element   ${histortTab_ViewPopUp}
     wait until element is not visible       ${histortTab_ViewPopUp}      ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
     sleep   ${search_sleep}
+
 
 Submit the assign partner form
     [Arguments]     ${option}
@@ -1242,6 +1257,7 @@ Click on save product pop inside technology page
     wait until element is visible   css:div[class='modal-footer my-1'] button[type='submit']    ${wait_time}
     wait until element is enabled   css:div[class='modal-footer my-1'] button[type='submit']    ${wait_time}
     click element   css:div[class='modal-footer my-1'] button[type='submit']
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Select product technology group via technology
     [Arguments]    ${option}
@@ -1343,12 +1359,14 @@ Click on pop up of available Inactive Asset
     wait until element is visible   css:.qa-available-inactive-assests-${option}   ${wait_time}
     wait until element is enabled   css:.qa-available-inactive-assests-${option}   ${wait_time}
     click element   css:.qa-available-inactive-assests-${option}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Select option from exceed asset limit pop
     [Arguments]     ${option}
     wait until element is visible   css:.qa-asset-limit-exceede-${option}  ${wait_time}
     wait until element is enabled   css:.qa-asset-limit-exceede-${option}  ${wait_time}
     click element   css:.qa-asset-limit-exceede-${option}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 
 Click on removed assets option of technology filters
@@ -1360,6 +1378,7 @@ Click on asset limit exceeded pop up
     wait until element is visible   css:.qa-asset-limit-exceede-technology      ${wait_time}
     wait until element is enabled   css:.qa-asset-limit-exceede-technology      ${wait_time}
     click element   css:.qa-asset-limit-exceede-technology
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Click on proceed button of technology list page
     wait until element is visible   css:.qa-proceed-retore-asset-technology-list      ${wait_time}
@@ -1371,6 +1390,7 @@ Click on restore button of technology Details Page
     wait until element is enabled   css:.qa-restore-assets      ${wait_time}
     click element   css:.qa-restore-assets
     wait until element is not visible   ${loaderIcon}     ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Click on back to list of technology
     wait until element is visible   ${back_To_List_Link}    ${wait_time}
@@ -1494,6 +1514,7 @@ Click on clone button on techonology details page
     wait until element is not visible      ${loaderIcon}    ${wait_time}
     Generic.click on the button link     ${option}
     wait until element is not visible      ${loaderIcon}    ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 
 #Check current directory path
@@ -1511,6 +1532,7 @@ Click on advanced search button link under add technology
     wait until element is enabled   css:div[class='row ng-star-inserted'] a[title='Click here to Advance search']       ${wait_time}
     click element   css:div[class='row ng-star-inserted'] a[title='Click here to Advance search']
     wait until element is not visible      ${loaderIcon}    ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Click on the row of the table inside advanced search
     Execute JavaScript    document.querySelector('.bg-white.location-list-qa.ng-star-inserted > tr:nth-child(3)').scrollIntoView(true);

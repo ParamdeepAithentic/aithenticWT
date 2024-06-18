@@ -10,31 +10,35 @@ Library         DateTime
 Library         OperatingSystem
 Resource        ../Pages/Generic.robot
 Resource        ../Pages/DashboardPage.robot
+Resource        ../Pages/DepartmentPage.robot
 Resource        ../Pages/ITperformancePage.robot
+Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/LandingPage.robot
 Resource        ../Pages/TechnologyPage.robot
 Resource        ../Pages/PartnersPage.robot
-Resource        ../Pages/RegisterMember.robot
 Resource        ../Pages/ContractsPage.robot
-Resource        ../Pages/LoginPage.robot
+Resource        ../Pages/RegisterMember.robot
+Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/ReplaceDomainAPI.robot
 Resource        ../Pages/Yopmail.robot
 Resource        ../Pages/UserAccount.robot
 Resource        ../Pages/TwoFactorAuth.robot
 Resource        ../Pages/SubscriptionPage.robot
+Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
+Resource        ../Pages/LoginPage.robot
+Resource        ../Pages/MemberPage.robot
 Resource        ../Pages/OCS.robot
-Resource        ../Pages/RegisterUserPage.robot
-Resource        ../Pages/KeyClockPage.robot
-Resource        ../Pages/TeamMemberPage.robot
+Resource        ../Pages/BillingPage.robot
 Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
+Resource        ../Pages/SortingPage.robot
 Resource        ../Pages/Bulk_Import_ExportPage.robot
 Resource        ../Pages/Admin_PanelPage.robot
-Resource        ../Pages/Admin_PanelPage.robot
-Resource        ../Pages/Admin_PanelPage.robot
-
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
+Resource        ../Pages/UnselectAssetAPI.robot
 
 
 *** Variables ***
@@ -150,6 +154,7 @@ Click on I_m_done button when popup appears
      wait until element is visible       css:.${option}-qa     ${wait_time}
      wait until element is enabled       css:.${option}-qa     ${wait_time}
      click element      css:.${option}-qa
+     wait until element is not visible       ${shadow}          ${wait_time}
 
 Verify product added using bulk_import_export
    [Arguments]    ${productName}
@@ -486,15 +491,18 @@ Enter the new value of asset id of bulk edit of technology
 Click on confirm pop up of update button
     wait until element is visible  css:.qa-confirm-technology-bulk-edit-warning  ${wait_time}
     click element   css:.qa-confirm-technology-bulk-edit-warning
-    sleep   ${search_sleep}
+#    sleep   ${search_sleep}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Click on confirm button under pop up of finish button of bulk edit
     wait until element is visible  css:.qa-confirm-technology-bulk-edit-finish      ${wait_time}
     click element   css:.qa-confirm-technology-bulk-edit-finish
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Click on confirm button under pop up of exit button of bulk edit
     wait until element is visible  css:.qa-confirm-technology-bulk-edit-exit    ${wait_time}
     click element   css:.qa-confirm-technology-bulk-edit-exit
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 
 Enter the new value of first name in bulk import of team member
@@ -639,10 +647,12 @@ Click on the confirm button of finish pop up
     wait until element is visible   css:.qa-confirm-finish-bulk-edit       ${wait_time}
     wait until element is enabled   css:.qa-confirm-finish-bulk-edit       ${wait_time}
     click element   css:.qa-confirm-finish-bulk-edit
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Click on confirm warning button after update
     wait until element is visible   css:.qa-confirm-technology-bulk-edit-warning      ${wait_time}
     wait until element is enabled   css:.qa-confirm-technology-bulk-edit-warning       ${wait_time}
     click element   css:.qa-confirm-technology-bulk-edit-warning
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 

@@ -37,6 +37,11 @@ Resource        ../Pages/I_iconPage.robot
 Resource        ../Pages/SortingPage.robot
 Resource        ../Pages/Bulk_Import_ExportPage.robot
 Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
+Resource        ../Pages/UnselectAssetAPI.robot
+
+
 
 *** Variables ***
 ${billing_details_arrow}     css:.d-block span i
@@ -167,3 +172,4 @@ click on confirm button to change plan
     wait until element is visible       //button[@type='button'][normalize-space()='${option}']   ${wait_time}
     wait until element is enabled       //button[@type='button'][normalize-space()='${option}']   ${wait_time}
     click element       //button[@type='button'][normalize-space()='${option}']
+    wait until element is not visible       ${shadow}          ${wait_time}

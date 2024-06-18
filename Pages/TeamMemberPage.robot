@@ -35,7 +35,10 @@ Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
 Resource        ../Pages/SortingPage.robot
 Resource        ../Pages/Bulk_Import_ExportPage.robot
-
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
+Resource        ../Pages/UnselectAssetAPI.robot
 *** Variables ***
 ${TMFname}     css:#FirstName
 ${TMLname}     css:#LastName
@@ -70,6 +73,7 @@ Choose option after clicking on Action button
     wait until element is enabled       //a[@title='${option}']
     wait until element is visible       //a[@title='${option}']
     click element       //a[@title='${option}']
+    sleep   ${search_sleep}
 
 Enter team member first name
     ${random_string} =    Generate Random String       10      [NUMBERS]
@@ -252,6 +256,7 @@ Click on convert to team member confirm pop up
     wait until element is enabled   css:.qa-convert-assignee-tm-confirm     ${wait_time}
     sleep   ${search_sleep}
     click element   css:.qa-convert-assignee-tm-confirm
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Click on asset history tab under team member
     wait until element is visible    css:.asset-history-qa   ${wait_time}
@@ -300,6 +305,7 @@ Download the selected extension file of team member
     wait until element is visible  //a[normalize-space()='Export as ${option}']     ${wait_time}
     wait until element is enabled   //a[normalize-space()='Export as ${option}']     ${wait_time}
     click element   //a[normalize-space()='Export as ${option}']
+    sleep   ${search_sleep}
 
 Select option from remove TM warning pop-up
     [Arguments]    ${option}
