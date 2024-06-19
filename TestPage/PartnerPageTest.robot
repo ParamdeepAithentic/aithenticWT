@@ -34,6 +34,10 @@ Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
 Resource        ../Pages/SortingPage.robot
 Resource        ../Pages/Bulk_Import_ExportPage.robot
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
+Resource        ../Pages/UnselectAssetAPI.robot
 
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
@@ -76,6 +80,7 @@ Compose Message invite user test
 #    PartnersPage.Enter partner business URL      ${generate_BusinessName}
     PartnersPage.Enter partner business URL     yopmail
     PartnersPage.Select partner country       United States
+    sleep   ${search_sleep}
 
 
 #-------------------------- CONTACT --------------------------------------------------------------
@@ -506,6 +511,7 @@ Export Specificartner into Excel Doc CSV and TSV for manufacturer
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
     PartnersPage.Click new partner button
@@ -1284,8 +1290,6 @@ Add_edit_deactivate_removeSupplier while adding brand
     PartnersPage.Select option from the pop up  Yes
     Generic.Fetch alert message text and compare it with      Partner deleted successfully
 
-
-
 Add_edit_deactivate_removeSupport_partner_while_adding_brand
     [Tags]      Stable
     Generic.click on the tab	    Login
@@ -1380,7 +1384,6 @@ Add_edit_deactivate_removeSupport_partner_while_adding_brand
     PartnersPage.Select option from three dots of partner     Remove
     PartnersPage.Select option from the pop up  Yes
     Generic.Fetch alert message text and compare it with      Partner deleted successfully
-
 
 Zz kill browser
     Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

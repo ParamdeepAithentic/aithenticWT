@@ -35,6 +35,10 @@ Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
 Resource        ../Pages/SortingPage.robot
 Resource        ../Pages/Bulk_Import_ExportPage.robot
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
+Resource        ../Pages/UnselectAssetAPI.robot
 
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
@@ -62,7 +66,7 @@ Test Teardown   Close Browser session
 #    Generic.Fetch alert message text and compare it with        Scheduler created sucessfully
 
 Edit the scheduler
-    [Tags]      Sanity      Unstable
+    [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
 #    LandingPage.Verify you are on dashboard page
@@ -111,7 +115,7 @@ Edit the scheduler
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
 
 Run now from view details
-    [Tags]      Unstable
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
 #    LandingPage.Verify you are on dashboard page
@@ -142,7 +146,7 @@ Run now from view details
     SubscriptionPage.Get the value of fields under view details of subscription connector   2       Samuel John
 
 Suspend and unsuspend the account
-    [Tags]      Smoke       Unstable
+    [Tags]      Smoke       Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
 #    LandingPage.Verify you are on dashboard page
@@ -173,7 +177,7 @@ Suspend and unsuspend the account
     Generic.Fetch alert message text and compare it with        Payment Successful
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
-    Generic.Verify your current page location contains      personal-profile
+    Generic.Verify your curren t page location contains      personal-profile
     Generic.Select parameter    Technology
     Generic.Verify your current page location contains      technology-settings
     Generic.click on the tab    Connectors
