@@ -303,6 +303,7 @@ click on add technology button
 Click technology brand input field
     wait until element is visible       ${brand}        ${wait_time}
     wait until element is enabled       ${brand}        ${wait_time}
+    sleep       ${search_sleep}
     click element    ${brand}
 
 Select parameter from brand dropdown list
@@ -1532,7 +1533,7 @@ Click on advanced search button link under add technology
     wait until element is enabled   css:div[class='row ng-star-inserted'] a[title='Click here to Advance search']       ${wait_time}
     click element   css:div[class='row ng-star-inserted'] a[title='Click here to Advance search']
     wait until element is not visible      ${loaderIcon}    ${wait_time}
-    wait until element is not visible       ${shadow}          ${wait_time}
+
 
 Click on the row of the table inside advanced search
     Execute JavaScript    document.querySelector('.bg-white.location-list-qa.ng-star-inserted > tr:nth-child(3)').scrollIntoView(true);

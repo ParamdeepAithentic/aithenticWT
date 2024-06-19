@@ -306,7 +306,8 @@ Download the selected extension file of team member
     wait until element is visible  //a[normalize-space()='Export as ${option}']     ${wait_time}
     wait until element is enabled   //a[normalize-space()='Export as ${option}']     ${wait_time}
     click element   //a[normalize-space()='Export as ${option}']
-    sleep   ${search_sleep}
+#    sleep   ${search_sleep}
+    Wait Until Element Is Not Visible    //a[normalize-space()='Export as ${option}']      ${wait_time}
 
 Select option from remove TM warning pop-up
     [Arguments]    ${option}
