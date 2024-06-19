@@ -1264,6 +1264,8 @@ Search with containing fields under advance search of component of discovered as
         TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
         TechnologyPage.Create unique serial number random
         OCS.Enter The Asset_id in Add Technology Page
+        Generic.Scroll Window To End
+        TechnologyPage.Verify the visibility of assign to field
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
@@ -1658,6 +1660,130 @@ Upload Image and Document file during Add Asset with IP address from Agent Disco
     FINALLY
         OCS.Welcome to the code
     END
+
+Verify cross icon an reset icon while adding IP discovered asset
+        Generic.click on the tab	Login
+        LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+#        LandingPage.Verify you are on dashboard page
+        Generic.Verify your current page location contains      dashboard
+        Generic.Click on the profile name
+        Generic.Select option from profile list     view-discovery
+        Generic.Verify your current page location contains    ocs
+        I_iconPage.Choose tab under Discovery Assets       network-discovery
+        OCS.Click on newly discovered tab under network discovery
+        OCS.Click on search icon of discovery assets
+        OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
+        OCS.Click on the down arrow icon of discovered asset
+        Generic.Scroll Window To End
+        OCS.Mouse Hover over searched IP Assets
+        OCS.Verify Searched discovery asset    00:17:61:10:C6:A1
+        OCS.Get MAC_Address by hovering over IP discovered assets   MacAddress:
+        Generic.select the option from the side menu    Asset Discovery
+        Generic.Verify your current page location contains     discovery-assets
+        OCS.click on the value of IP discovered devices of inside table
+        Sleep    ${yop_sleep}
+        Switch Window       aithentic | Discovered Assets
+        Generic.Verify your current page location contains     discovery-assets-list
+        OCS.Fetch the Brandname from agent discovery page
+        OCS.Click on Plus icon under table
+        Sleep    ${Yop_Sleep}
+        Switch Window       aithentic | Add Discovery Asset
+        Generic.Verify your current page location contains    add-discovered-asset
+        Generic.Verify your current page contains this text    Add Technology
+        TechnologyPage.Select parameter from technology dropdown list      ZZ123
+        TechnologyPage.Click on reset icon while adding technology
+        TechnologyPage.Verify the invisibility of product after clicking on cross icon
+        TechnologyPage.Verify the invisibility of technology type after clicking on reset icon
+        sleep   ${search_sleep}
+        TechnologyPage.Click on reset icon while adding technology
+        TechnologyPage.Verify the invisibility of brand after clicking on reset icon
+
+Verify reset icon while adding discovery asset
+        Generic.click on the tab	Login
+        LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+#        LandingPage.Verify you are on dashboard page
+        Generic.Verify your current page location contains      dashboard
+        Generic.Click on the profile name
+        Generic.Select option from profile list     view-discovery
+        Generic.Verify your current page location contains    ocs
+        I_iconPage.Choose tab under Discovery Assets       network-discovery
+        OCS.Click on newly discovered tab under network discovery
+        OCS.Click on search icon of discovery assets
+        OCS.Enter text to search discovery asset    Apple Inc
+        OCS.Click on the down arrow icon of discovered asset
+        Generic.Scroll Window To End
+        OCS.Mouse Hover over searched Discovered Assets
+        OCS.Mark check-box of Agent/Discovered Asset
+        OCS.Click on Button inside Network Discovery Page       Add Assets
+        Sleep    ${Yop_Sleep}
+        Switch Window       aithentic | Add Discovery Asset
+        Generic.Verify your current page location contains    add-discovered-asset
+        Generic.Verify your current page contains this text    Add Technology
+        TechnologyPage.Select parameter from technology dropdown list      ZZ123
+        TechnologyPage.Click on reset icon while adding technology
+        TechnologyPage.Verify the invisibility of product after clicking on cross icon
+        TechnologyPage.Verify the invisibility of technology type after clicking on reset icon
+        sleep   ${search_sleep}
+        TechnologyPage.Click on reset icon while adding technology
+        TechnologyPage.Verify the invisibility of brand after clicking on reset icon
+
+Verify reset icon while adding component
+        Generic.click on the tab	Login
+        LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+#        LandingPage.Verify you are on dashboard page
+        Generic.Verify your current page location contains      dashboard
+        Generic.select the option from the side menu        Asset Discovery
+        Generic.Verify your current page location contains      discovery-assets
+        I_iconPage.Choose tab under Discovery Assets       network-discovery
+        OCS.Click on newly discovered tab under network discovery
+        Generic.Verify your current page location contains    ocs
+        OCS.Click on search icon of discovery assets
+        OCS.Enter text to search discovery asset   Apple Inc
+        OCS.Click on the down arrow icon of discovered asset
+        Generic.Scroll Window To End
+        OCS.Mark check-box of Agent/Discovered Asset
+        OCS.Click on Button inside Network Discovery Page       Add Assets
+        Sleep    ${yop_sleep}
+        Switch Window       aithentic | Add Discovery Asset
+        Generic.Verify your current page contains this text    Add Technology
+        TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
+        TechnologyPage.Create unique serial number random
+        OCS.Enter The Asset_id in Add Technology Page
+        Generic.Scroll Window To End
+        TechnologyPage.Verify the visibility of assign to field
+        OCS.Click on save button of Add Technology Page
+        OCS.Wait for the invisiblity of alert msg        Technology created successfully
+        Sleep    ${yop_sleep}
+        switch window    aithentic | Service Now Newly-Discovered
+        OCS.Choose tab under Discovery Assets   agent-discovery
+        Generic.Verify your current page location contains      ocs
+        Generic.Refresh the existing page
+
+        Generic.Verify your current page contains this text    ${generated_AssetID}
+        Generic.select the option from the side menu        Technology
+        Generic.Verify your current page location contains      technology-list
+        TechnologyPage.Search by AssetId       ${generated_AssetID}
+        TechnologyPage.Click on the first row of the technology table
+        Generic.Verify your current page location contains    technology-details
+        OCS.Visible the print qr button to for data loading
+        OCS.Verify Page should contain Element     discovery-info-tab
+        OCS.Click on Discovery_info tab on Technology details Page
+        OCS.Verify Discovery_info contains following tab    software-tab
+        sleep   ${search_sleep}
+        OCS.Enter input in search bar of software tab under technology details page     python
+        Generic.Scroll the page till   499
+        OCS.Hover Over Add component button and verify text         Please click on the 'plus' icon to add component
+        OCS.Click on plus icon of any component
+        Sleep    ${yop_sleep}
+        Switch Window       aithentic | Add Discovery Asset
+        Generic.Verify your current page contains this text    Add Technology
+        TechnologyPage.Select parameter from technology dropdown list      ZZ123
+        TechnologyPage.Click on reset icon while adding technology
+        TechnologyPage.Verify the invisibility of product after clicking on cross icon
+        TechnologyPage.Verify the invisibility of technology type after clicking on reset icon
+        sleep   ${search_sleep}
+        TechnologyPage.Click on reset icon while adding technology
+        TechnologyPage.Verify the invisibility of brand after clicking on reset icon
 
 Zz kill browser
     Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

@@ -338,6 +338,7 @@ Select parameter from technology dropdown list
     Wait Until Element Is Visible    //td[normalize-space()='${option}']        ${wait_time}
     Wait Until Element Is enabled    //td[normalize-space()='${option}']        ${wait_time}
     Click Element       //td[normalize-space()='${option}']
+    sleep   ${search_sleep}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
@@ -1744,3 +1745,21 @@ Click on the technology group row of the table inside advanced search of not con
     Execute JavaScript    document.querySelector('.bg-white.location-list-qa >tr:nth-child(3) >td:nth-child(2) >div').scrollIntoView(true);
     Click Element    css:.bg-white.location-list-qa >tr:nth-child(2) >td:nth-child(2) >div
 
+Click on reset icon while adding technology
+    wait until element is visible   css:.position-absolute.position-reset      ${wait_time}
+    wait until element is enabled   css:.position-absolute.position-reset     ${wait_time}
+    click element   css:.position-absolute.position-reset
+    sleep   ${search_sleep}
+
+Verify the invisibility of product after clicking on cross icon
+    wait until element is not visible   //div[contains(@class,'full-width-field')]//label[normalize-space()='Product']//following-sibling::input[@title='ZZ123 - Zz - Zz']      ${wait_time}
+
+Verify the invisibility of brand after clicking on reset icon
+    wait until element is not visible      //div[contains(@class,'full-width-field')]//ng-select[contains(@class,'qa-brands')]//following-sibling::div//span[normalize-space()='QABrand555']      ${wait_time}
+
+Verify the invisibility of technology type after clicking on reset icon
+    wait until element is not visible      //div[contains(@class,'full-width-field')]//ng-select[contains(@class,'qa-TechType')]//following-sibling::div//span[normalize-space()='Hardware']      ${wait_time}
+
+Verify the visibility of assign to field
+    wait until element is visible   //div[@class='full-width-field']//following-sibling::div//span[normalize-space()='John Abram']       ${wait_time}
+    wait until element is enabled   //div[@class='full-width-field']//following-sibling::div//span[normalize-space()='John Abram']        ${wait_time}
