@@ -1290,7 +1290,6 @@ Add_edit_deactivate_removeSupplier while adding brand
     PartnersPage.Select option from the pop up  Yes
     Generic.Fetch alert message text and compare it with      Partner deleted successfully
 
-
 Add_edit_deactivate_removeSupport_partner_while_adding_brand
     [Tags]      Stable
     Generic.click on the tab	    Login
@@ -1388,4 +1387,3 @@ Add_edit_deactivate_removeSupport_partner_while_adding_brand
 
 Zz kill browser
     Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
-

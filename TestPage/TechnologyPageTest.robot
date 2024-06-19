@@ -2228,5 +2228,28 @@ Search Technnology with Product Version
     TechnologyPage.Click on the first row of the technology table
     TechnologyPage.Verify that product version on technology details page
 
+
+Verify cross icon and reset icon while adding product
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list      ZZ123
+    TechnologyPage.Click on cross icon of product while editing technology
+    TechnologyPage.Verify the invisibility of product after clicking on cross icon
+    TechnologyPage.Click on reset icon while adding technology
+    TechnologyPage.Verify the invisibility of brand after clicking on reset icon
+    TechnologyPage.Verify the invisibility of technology type after clicking on reset icon
+
 Zz kill browser
     Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+
+
+
