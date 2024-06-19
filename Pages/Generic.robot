@@ -65,7 +65,7 @@ ${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-10       
 ${admin_name}        aithentic@yopmail.com
 ${admin_password}       Admin@123
 
-${browser_name}         headlessfirefox
+${browser_name}         firefox
 
 ${email}                 testqa29j@mailinator.com
 ${SheetLocationAndName}   LoadTimeSheet.xlsx
@@ -78,7 +78,8 @@ ${shadow}       //div[@aria-modal='true']
 ${yop_email_searchBar}     css:#login
 ${yop_email_searchBtn}      css:button[title='Check Inbox @yopmail.com']
 ${click_Country}     css:#country
-${click_countryTag}     css:.iti__selected-flag.dropdown-toggle
+#${click_countryTag}     css:.iti__selected-flag.dropdown-toggle
+${click_countryTag}     css:.iti__arrow
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
@@ -309,7 +310,9 @@ Enter phone number
     input text  ${contact_Country_search}   ${country}
     Generic.Select parameter      ${code}
     input text     ${phone}     ${phoneNo}
-    wait until element is not visible       //span[normalize-space()='Please enter a valid Mobile Number']       ${wait_time}
+#    click element   ${click_countryTag}
+#    Click element   css:#phone
+#    wait until element is not visible       //span[normalize-space()='Please enter a valid Mobile Number']      120  #${wait_time}
 
 
 

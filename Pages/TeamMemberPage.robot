@@ -171,6 +171,7 @@ Select team member location
 
 Save the team member form
     [Arguments]    ${option}
+    wait until element is not visible       //span[normalize-space()='Please enter a valid Mobile Number']    ${wait_time}
     wait until element is visible     css:.${option}-member-qa       ${wait_time}
     wait until element is enabled     css:.${option}-member-qa       ${wait_time}
     click element   css:.${option}-member-qa
