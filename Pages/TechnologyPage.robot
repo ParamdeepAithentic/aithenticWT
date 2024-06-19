@@ -1769,4 +1769,9 @@ Enter input in the cancellation notice period field
     wait until element is visible   css:#TECHDYNA_12     ${wait_time}
     wait until element is enabled   css:#TECHDYNA_12    ${wait_time}
     click element   css:#TECHDYNA_12
+    clear element text      css:#TECHDYNA_12
     input text      css:#TECHDYNA_12     ${cancellation}
+
+Verify the validation when entering negative value in cancellation notice period field
+    wait until element is visible   //span[@class='invalidInput ng-star-inserted']    ${wait_time}
+    wait until element is enabled   //span[@class='invalidInput ng-star-inserted']    ${wait_time}

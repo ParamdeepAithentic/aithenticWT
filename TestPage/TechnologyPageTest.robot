@@ -2286,7 +2286,10 @@ Creating technology while creating cancellation notice period and contract end d
     TechnologyPage.Add max contracted of contract information random
     TechnologyPage.Add technology group information contract start date
     TechnologyPage.Add technology group information contract end date      12/12/2028
-    TechnologyPage.Enter input in the cancellation notice period field      565554
+    TechnologyPage.Enter input in the cancellation notice period field      -9974
+    sleep   ${search_sleep}
+    TechnologyPage.Verify the validation when entering negative value in cancellation notice period field
+    TechnologyPage.Enter input in the cancellation notice period field      656565
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
     TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
@@ -2297,7 +2300,19 @@ Creating technology while creating cancellation notice period and contract end d
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
-
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+    TechnologyPage.Click on edit button on product details page        Edit
+    Generic.Verify your current page location contains      edit-technology
+    TechnologyPage.Click on the edit icon on the edit technology page
+    TechnologyPage.Add technology group information contract end date      12/12/2028
+    TechnologyPage.Enter input in the cancellation notice period field      -99
+    sleep   ${search_sleep}
+    TechnologyPage.Verify the validation when entering negative value in cancellation notice period field
+    TechnologyPage.Enter input in the cancellation notice period field      100215
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
+    TechnologyPage.Click on update button of edit_technology page       Update
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
 
 Zz kill browser
     Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
