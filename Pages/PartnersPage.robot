@@ -217,7 +217,6 @@ Click on contact person button
 
 Enter random contact person
     wait until element is not visible   ${loaderIcon}       ${wait_time}
-    wait until element is not visible   ${shadow}       ${wait_time}
     wait until element is visible      ${contactPerson}       ${wait_time}
     wait until element is enabled      ${contactPerson}       ${wait_time}
     click element   ${contactPerson}
@@ -305,6 +304,7 @@ Click contact main save button
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible      ${main_Save}       ${wait_time}
     wait until element is enabled      ${main_Save}       ${wait_time}
+    wait until element is not visible       //span[normalize-space()='Please enter a valid Mobile Number']     ${wait_time}
     click element   ${main_Save}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is not visible       ${shadow}          ${wait_time}
@@ -570,7 +570,6 @@ Enter contact business email via link
 
 Enter random contact person via link
     wait until element is not visible   ${loaderIcon}       ${wait_time}
-    wait until element is not visible   ${shadow}       ${wait_time}
     wait until element is visible      css:#contactName     ${wait_time}
     wait until element is enabled      css:#contactName       ${wait_time}
     click element   css:#contactName
