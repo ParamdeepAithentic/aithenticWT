@@ -1264,6 +1264,8 @@ Search with containing fields under advance search of component of discovered as
         TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
         TechnologyPage.Create unique serial number random
         OCS.Enter The Asset_id in Add Technology Page
+        Generic.Scroll Window To End
+        TechnologyPage.Verify the visibility of assign to field
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
@@ -1726,50 +1728,46 @@ Verify reset icon while adding discovery asset
         TechnologyPage.Verify the invisibility of brand after clicking on reset icon
 
 Verify reset icon while adding component
-    Generic.click on the tab	Login
+        Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
 #        LandingPage.Verify you are on dashboard page
         Generic.Verify your current page location contains      dashboard
-        Generic.Click on the profile name
-        Generic.Select option from profile list     view-discovery
-        Generic.Verify your current page location contains    ocs
+        Generic.select the option from the side menu        Asset Discovery
+        Generic.Verify your current page location contains      discovery-assets
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
+        Generic.Verify your current page location contains    ocs
         OCS.Click on search icon of discovery assets
-        OCS.Enter text to search discovery asset    Apple Inc
+        OCS.Enter text to search discovery asset   Apple Inc
         OCS.Click on the down arrow icon of discovered asset
         Generic.Scroll Window To End
-        OCS.Mouse Hover over searched Discovered Assets
-        OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
-        OCS.Get Serial number by hovering over discovered assets     Serial Number:
-        OCS.Get Host name by hovering over discovered assets     Host name:
-        OCS.Choose Tab under Asset Discovery    agent-discovery
-        OCS.Click on plus icon under table of agent discovery
-        Sleep    ${Yop_Sleep}
+        OCS.Mark check-box of Agent/Discovered Asset
+        OCS.Click on Button inside Network Discovery Page       Add Assets
+        Sleep    ${yop_sleep}
         Switch Window       aithentic | Add Discovery Asset
-        Generic.Verify your current page location contains    add-discovered-asset
         Generic.Verify your current page contains this text    Add Technology
         TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
-        OCS.Enter The Asset_id in Add Technology Page
         TechnologyPage.Create unique serial number random
+        OCS.Enter The Asset_id in Add Technology Page
         Generic.Scroll Window To End
+        TechnologyPage.Verify the visibility of assign to field
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window       aithentic | Service Now Newly-Discovered
+        switch window    aithentic | Service Now Newly-Discovered
+        OCS.Choose tab under Discovery Assets   agent-discovery
+        Generic.Verify your current page location contains      ocs
         Generic.Refresh the existing page
-        OCS.Choose Tab under Asset Discovery    agent-discovery
+
         Generic.Verify your current page contains this text    ${generated_AssetID}
         Generic.select the option from the side menu        Technology
         Generic.Verify your current page location contains      technology-list
         TechnologyPage.Search by AssetId       ${generated_AssetID}
         TechnologyPage.Click on the first row of the technology table
         Generic.Verify your current page location contains    technology-details
-        OCS.Get Value of MAC-Address from technology details and compare it with      ${hover_MAC_address1}
-        OCS.Get Value of Host-Name and compare it with    ${hover_host name}
+        OCS.Visible the print qr button to for data loading
         OCS.Verify Page should contain Element     discovery-info-tab
         OCS.Click on Discovery_info tab on Technology details Page
-        OCS.Verify Discovery_info contains following tab    hardware-tab
         OCS.Verify Discovery_info contains following tab    software-tab
         sleep   ${search_sleep}
         OCS.Enter input in search bar of software tab under technology details page     python

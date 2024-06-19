@@ -1758,3 +1758,7 @@ Verify the invisibility of brand after clicking on reset icon
 
 Verify the invisibility of technology type after clicking on reset icon
     wait until element is not visible      //div[contains(@class,'full-width-field')]//ng-select[contains(@class,'qa-TechType')]//following-sibling::div//span[normalize-space()='Hardware']      ${wait_time}
+
+Verify the visibility of assign to field
+    wait until element is visible   //div[@class='full-width-field']//following-sibling::div//span[normalize-space()='John Abram']       ${wait_time}
+    wait until element is enabled   //div[@class='full-width-field']//following-sibling::div//span[normalize-space()='John Abram']        ${wait_time}
