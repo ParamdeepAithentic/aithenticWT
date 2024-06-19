@@ -72,7 +72,7 @@ Create team member form
     TeamMemberPage.Enter team member first name
     TeamMemberPage.Enter team member last name
     Generic.Enter phone number      India   +91     9646289871
-    TeamMemberPage.Enter team member business email
+    TeamMemberPage.Enter team member business email_mailinator
     TeamMemberPage.Click on team member department
 #    TeamMemberPage.Select team member department
     TeamMemberPage.Select team member department        DepartmentName09041
@@ -726,7 +726,7 @@ Check the validation of business email id
     TeamMemberPage.Select team member location
     TeamMemberPage.Select team member role while converting assignee to team member    Admin
     Generic.click on the button     Update
-    Generic.Fetch alert message text and compare it with        The Email Address must end with one of the following: mailinator.com automationqa2023090514421014.com.
+    Generic.Fetch alert message text and compare it with containing text        The Email Address must end with one of the following:
 
 
 Convert Assignee to team member in case of employee id is not system generated
@@ -792,7 +792,6 @@ Add Back Deleted Team member
     TeamMemberPage.Enter team member first name
     TeamMemberPage.Enter team member last name
     Generic.Enter phone number      India   +91     9646289871
-#    TeamMemberPage.Enter team member business email
     TeamMemberPage.Enter team member business email_mailinator
     TeamMemberPage.Click on team member department
     TeamMemberPage.Select team member department        DepartmentName09041

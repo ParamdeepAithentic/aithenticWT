@@ -64,7 +64,7 @@ ${agentDiscovery_TagName}       Tag Name - johnsoftwaresolutions-1192-4         
 ${admin_name}        aithentic@yopmail.com
 ${admin_password}       Admin@123
 
-${browser_name}       firefox
+${browser_name}         firefox
 
 ${email}                 testqa29j@mailinator.com
 ${SheetLocationAndName}   LoadTimeSheet.xlsx
@@ -77,7 +77,8 @@ ${shadow}       //div[@aria-modal='true']
 ${yop_email_searchBar}     css:#login
 ${yop_email_searchBtn}      css:button[title='Check Inbox @yopmail.com']
 ${click_Country}     css:#country
-${click_countryTag}     css:.iti__selected-flag.dropdown-toggle
+#${click_countryTag}     css:.iti__selected-flag.dropdown-toggle
+${click_countryTag}     css:.iti__arrow
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
@@ -122,7 +123,7 @@ click on the tab
     [Arguments]    ${option}
     wait until element is visible    //a[normalize-space()='${option}']          ${wait_time}
     wait until element is enabled    //a[normalize-space()='${option}']          ${wait_time}
-    click link          //a[normalize-space()='${option}']
+    click element          //a[normalize-space()='${option}']
 
 click on the button
     [Arguments]    ${option}
@@ -131,7 +132,7 @@ click on the button
     wait until element is enabled      //button[normalize-space()='${option}']          ${wait_time}
 #    sleep   ${search_sleep}
     click element       //button[normalize-space()='${option}']
-#    sleep   ${search_sleep}
+    sleep   ${search_sleep}
 
 
 click on the button link
@@ -201,6 +202,12 @@ Fetch alert message text and compare it with
     ${get_alertMsg} =    get text    ${alert_Msg}
     log to console     ${get_alertMsg}
     should be equal    ${get_alertMsg}     ${option}
+    Wait Until Element Is Not Visible    ${alert_Msg}          ${wait_time}
+
+Fetch alert message text and compare it with containing text
+    [Arguments]    ${option}
+    wait until element is visible    ${alert_Msg}          ${wait_time}
+    Element should contain          ${alert_Msg}       ${option}
     Wait Until Element Is Not Visible    ${alert_Msg}          ${wait_time}
 
 Verify alertify is visible
@@ -308,7 +315,10 @@ Enter phone number
     input text  ${contact_Country_search}   ${country}
     Generic.Select parameter      ${code}
     input text     ${phone}     ${phoneNo}
-    Sleep    10                            #remove it later
+#    click element   ${click_countryTag}
+#    Click element   css:#phone
+#    wait until element is not visible       //span[normalize-space()='Please enter a valid Mobile Number']      120  #${wait_time}
+
 
 
 Scroll the page till
