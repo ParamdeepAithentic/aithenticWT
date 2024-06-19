@@ -751,7 +751,7 @@ Click on save technology form button
     wait until element is visible       ${saveBTN}       ${wait_time}
     wait until element is enabled       ${saveBTN}       ${wait_time}
     click element       ${saveBTN}
-#    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
 
 Click on save technology form pop button
     wait until element is visible       ${savePOPup}       ${wait_time}

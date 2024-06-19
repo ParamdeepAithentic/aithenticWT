@@ -124,7 +124,7 @@ click on the tab
     [Arguments]    ${option}
     wait until element is visible    //a[normalize-space()='${option}']          ${wait_time}
     wait until element is enabled    //a[normalize-space()='${option}']          ${wait_time}
-    click link          //a[normalize-space()='${option}']
+    click element          //a[normalize-space()='${option}']
 
 click on the button
     [Arguments]    ${option}
