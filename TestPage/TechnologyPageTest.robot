@@ -2225,8 +2225,6 @@ Search Technnology with Product Version
     TechnologyPage.Click on the first row of the technology table
     TechnologyPage.Verify that product version on technology details page
 
-Zz kill browser
-    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
 
 Verify cross icon and reset icon while adding product
     Generic.click on the tab	Login
@@ -2246,6 +2244,9 @@ Verify cross icon and reset icon while adding product
     TechnologyPage.Click on reset icon while adding technology
     TechnologyPage.Verify the invisibility of brand after clicking on reset icon
     TechnologyPage.Verify the invisibility of technology type after clicking on reset icon
+
+Zz kill browser
+    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
 
 
 

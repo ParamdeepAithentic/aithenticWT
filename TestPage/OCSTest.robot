@@ -1683,6 +1683,7 @@ Verify cross icon an reset icon while adding IP discovered asset
         TechnologyPage.Click on reset icon while adding technology
         TechnologyPage.Verify the invisibility of product after clicking on cross icon
         TechnologyPage.Verify the invisibility of technology type after clicking on reset icon
+        sleep   ${search_sleep}
         TechnologyPage.Click on reset icon while adding technology
         TechnologyPage.Verify the invisibility of brand after clicking on reset icon
 
@@ -1708,10 +1709,10 @@ Verify reset icon while adding discovery asset
         Generic.Verify your current page location contains    add-discovered-asset
         Generic.Verify your current page contains this text    Add Technology
         TechnologyPage.Select parameter from technology dropdown list      ZZ123
-        sleep   ${search_sleep}
         TechnologyPage.Click on reset icon while adding technology
         TechnologyPage.Verify the invisibility of product after clicking on cross icon
         TechnologyPage.Verify the invisibility of technology type after clicking on reset icon
+        sleep   ${search_sleep}
         TechnologyPage.Click on reset icon while adding technology
         TechnologyPage.Verify the invisibility of brand after clicking on reset icon
 
@@ -1742,6 +1743,7 @@ Verify reset icon while adding component
         TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
         OCS.Enter The Asset_id in Add Technology Page
         TechnologyPage.Create unique serial number random
+        Generic.Scroll Window To End
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
@@ -1772,6 +1774,7 @@ Verify reset icon while adding component
         TechnologyPage.Click on reset icon while adding technology
         TechnologyPage.Verify the invisibility of product after clicking on cross icon
         TechnologyPage.Verify the invisibility of technology type after clicking on reset icon
+        sleep   ${search_sleep}
         TechnologyPage.Click on reset icon while adding technology
         TechnologyPage.Verify the invisibility of brand after clicking on reset icon
 
