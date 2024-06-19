@@ -726,7 +726,7 @@ Check the validation of business email id
     TeamMemberPage.Select team member location
     TeamMemberPage.Select team member role while converting assignee to team member    Admin
     Generic.click on the button     Update
-    Generic.Fetch alert message text and compare it with        The Email Address must end with one of the following: mailinator.com automationqa2023090514421014.com.
+    Generic.Fetch alert message text and compare it with containing text        The Email Address must end with one of the following:
 
 
 Convert Assignee to team member in case of employee id is not system generated

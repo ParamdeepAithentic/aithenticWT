@@ -72,14 +72,14 @@ Replace Domain
 #    set global variable    ${NewDomain}
 
 #     Define the JSON object
-#    ${json_object} =    Create Dictionary
-#    ...    old=www.yopmail.net
-##     ...    old=www.cool.fr.nf
-#    ...    new=www.${NewDomain}.com
+    ${json_object} =    Create Dictionary
+    ...    old=www.yopmail.net
+#     ...    old=www.cool.fr.nf
+    ...    new=www.${NewDomain}.com
 
-     ${json_object} =    Create Dictionary
-        ...    old=automationqa20240618161014.com
-        ...    new=mailinator.com
+#     ${json_object} =    Create Dictionary
+#        ...    old=automationqa20240618152334.com
+#        ...    new=mailinator.com
 
 
      # Define the JSON array
