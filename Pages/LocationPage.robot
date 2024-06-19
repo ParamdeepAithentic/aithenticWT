@@ -81,8 +81,15 @@ Select the option from action menu
     click element   css:.qa-location-bulk-${option}
     wait until element is not visible       ${shadow}          ${wait_time}
 
+
+
 Select location country
     [Arguments]    ${option}
+    Wait Until Element Is Visible   css:#country       ${wait_time}
+    Wait Until Element Is Enabled   css:#country        ${wait_time}
+    click element       css:#country
+    Clear Element Text      css:#country
+    input text  css:#country     ${option}
     Wait Until Element Is Visible       //ng-select[@formcontrolname='Country']//following-sibling::ng-dropdown-panel//div//span[normalize-space()='${option}']    ${wait_time}
     Wait Until Element Is Enabled      //ng-select[@formcontrolname='Country']//following-sibling::ng-dropdown-panel//div//span[normalize-space()='${option}']     ${wait_time}
     click element       //ng-select[@formcontrolname='Country']//following-sibling::ng-dropdown-panel//div//span[normalize-space()='United States']
