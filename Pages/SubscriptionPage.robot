@@ -352,7 +352,7 @@ Click on the suspend my account button link under billing details
     wait until element is enabled   //div[@class='row'][1]//span[contains(text(),'Suspend My Account')]     ${wait_time}
     click element   //div[@class='row'][1]//span[contains(text(),'Suspend My Account')]
     wait until element is not visible       ${loaderIcon}    ${wait_time}
-    wait until element is not visible       ${shadow}          ${wait_time}
+
 
 Enter input in the start date field of billing details
     Generic.Enter current date       css:#startDate
