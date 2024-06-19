@@ -64,8 +64,8 @@ ${enter_hosted}      css:#DYNA_33
 ${enter_id_key}      css:#DYNA_34
 
 ##############Technology Group Information for Maintenance#################
-${Contract_startDate}        css:#DYNA_7
-${Contract_endDate}        css:#DYNA_17
+${Contract_startDate}        //input[@id='Contract Start Date']
+${Contract_endDate}        //input[@id='Contract End Date']
 
 
 ######################Contract information################
@@ -1763,3 +1763,10 @@ Verify the invisibility of technology type after clicking on reset icon
 Verify the visibility of assign to field
     wait until element is visible   //div[@class='full-width-field']//following-sibling::div//span[normalize-space()='John Abram']       ${wait_time}
     wait until element is enabled   //div[@class='full-width-field']//following-sibling::div//span[normalize-space()='John Abram']        ${wait_time}
+
+Enter input in the cancellation notice period field
+    [Arguments]     ${cancellation}
+    wait until element is visible   css:#TECHDYNA_12     ${wait_time}
+    wait until element is enabled   css:#TECHDYNA_12    ${wait_time}
+    click element   css:#TECHDYNA_12
+    input text      css:#TECHDYNA_12     ${cancellation}
