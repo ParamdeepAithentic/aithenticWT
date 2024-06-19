@@ -154,7 +154,7 @@ Click on I_m_done button when popup appears
      wait until element is visible       css:.${option}-qa     ${wait_time}
      wait until element is enabled       css:.${option}-qa     ${wait_time}
      click element      css:.${option}-qa
-     wait until element is not visible       ${shadow}          ${wait_time}
+
 
 Verify product added using bulk_import_export
    [Arguments]    ${productName}
@@ -647,7 +647,7 @@ Click on the confirm button of finish pop up
     wait until element is visible   css:.qa-confirm-finish-bulk-edit       ${wait_time}
     wait until element is enabled   css:.qa-confirm-finish-bulk-edit       ${wait_time}
     click element   css:.qa-confirm-finish-bulk-edit
-    wait until element is not visible       ${shadow}          ${wait_time}
+
 
 Click on confirm warning button after update
     wait until element is visible   css:.qa-confirm-technology-bulk-edit-warning      ${wait_time}

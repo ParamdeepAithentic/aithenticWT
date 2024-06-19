@@ -362,7 +362,8 @@ Confirm to export file
     wait until element is enabled      css:.btn.button-green.m-2       ${wait_time}
     sleep       ${search_sleep}
     click element   css:.btn.button-green.m-2
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       css:.btn.button-green.m-2          ${wait_time}
+
 
 
 Download the selected extension file

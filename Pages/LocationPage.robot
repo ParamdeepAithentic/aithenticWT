@@ -63,7 +63,9 @@ ${rowMenu}     css:.three-dots
 Click on Location action button
     Wait Until Element Is Visible       ${location_Action}    ${wait_time}
     Wait Until Element Is Enabled      ${location_Action}     ${wait_time}
+    sleep       ${search_sleep}
     click element       ${location_Action}
+    wait until element is not visible       ${location_Action}          ${wait_time}
     wait until element is not visible       ${shadow}          ${wait_time}
 
 Click on add location button
@@ -81,8 +83,15 @@ Select the option from action menu
     click element   css:.qa-location-bulk-${option}
     wait until element is not visible       ${shadow}          ${wait_time}
 
+
+
 Select location country
     [Arguments]    ${option}
+    Wait Until Element Is Visible   css:#country       ${wait_time}
+    Wait Until Element Is Enabled   css:#country        ${wait_time}
+    click element       css:#country
+    Clear Element Text      css:#country
+    input text  css:#country     ${option}
     Wait Until Element Is Visible       //ng-select[@formcontrolname='Country']//following-sibling::ng-dropdown-panel//div//span[normalize-space()='${option}']    ${wait_time}
     Wait Until Element Is Enabled      //ng-select[@formcontrolname='Country']//following-sibling::ng-dropdown-panel//div//span[normalize-space()='${option}']     ${wait_time}
     click element       //ng-select[@formcontrolname='Country']//following-sibling::ng-dropdown-panel//div//span[normalize-space()='United States']

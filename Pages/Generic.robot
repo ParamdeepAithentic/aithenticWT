@@ -65,7 +65,7 @@ ${agentDiscovery_TagName}       Tag Name - johnsoftwaresolutions-1192-4         
 ${admin_name}        aithentic@yopmail.com
 ${admin_password}       Admin@123
 
-${browser_name}         firefox
+${browser_name}         headlessfirefox
 
 ${email}                 testqa29j@mailinator.com
 ${SheetLocationAndName}   LoadTimeSheet.xlsx
@@ -132,7 +132,7 @@ click on the button
     wait until element is enabled      //button[normalize-space()='${option}']          ${wait_time}
 #    sleep   ${search_sleep}
     click element       //button[normalize-space()='${option}']
-#    sleep   ${search_sleep}
+    sleep   ${search_sleep}
 
 
 click on the button link
@@ -315,7 +315,8 @@ Enter phone number
     input text  ${contact_Country_search}   ${country}
     Generic.Select parameter      ${code}
     input text     ${phone}     ${phoneNo}
-    Sleep    10                            #remove it later
+    wait until element is not visible       //span[normalize-space()='Please enter a valid Mobile Number']       ${wait_time}
+
 
 
 Scroll the page till
