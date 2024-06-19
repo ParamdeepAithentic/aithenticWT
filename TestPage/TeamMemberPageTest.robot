@@ -72,7 +72,7 @@ Create team member form
     TeamMemberPage.Enter team member first name
     TeamMemberPage.Enter team member last name
     Generic.Enter phone number      India   +91     9646289871
-    TeamMemberPage.Enter team member business email
+    TeamMemberPage.Enter team member business email_mailinator
     TeamMemberPage.Click on team member department
 #    TeamMemberPage.Select team member department
     TeamMemberPage.Select team member department        DepartmentName09041
