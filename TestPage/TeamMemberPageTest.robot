@@ -557,25 +557,25 @@ Verify user is able to export team member asset history list
     TeamMemberPage.Select option from three dots of Team Member     Asset History
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .xlsx
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .xlsx
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .ods
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .ods
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .csv
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .csv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .tsv
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .tsv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
@@ -658,25 +658,25 @@ Convert Assignee to Team Member
     TeamMemberpage.Click on asset history tab under team member
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .xlsx
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .xlsx
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .ods
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .ods
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .csv
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .csv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .tsv
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .tsv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
@@ -696,7 +696,7 @@ Convert Assignee to Team Member
     Generic.Wait until table get load
 
 Check the validation of business email id
-    [Tags]      Unstable
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page

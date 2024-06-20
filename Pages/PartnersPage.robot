@@ -209,6 +209,7 @@ Select partner country
 
 
 Click on contact person button
+    sleep   ${search_sleep}
     wait until element is visible   ${addContact}       ${wait_time}
     wait until element is enabled   ${addContact}       ${wait_time}
     click element   ${addContact}
@@ -359,11 +360,12 @@ Click on the export Button
     wait until element is not visible       ${shadow}          ${wait_time}
 
 Confirm to export file
-    wait until element is visible      css:.btn.button-green.m-2       ${wait_time}
-    wait until element is enabled      css:.btn.button-green.m-2       ${wait_time}
+    [Tags]    ${option}
+    wait until element is visible      css:.qa-${option}-export      ${wait_time}
+    wait until element is enabled      css:.qa-${option}-export       ${wait_time}
     sleep       ${search_sleep}
-    click element   css:.btn.button-green.m-2
-    wait until element is not visible       css:.btn.button-green.m-2          ${wait_time}
+    click element   css:.qa-${option}-export
+    wait until element is not visible       css:.qa-${option}-export          ${wait_time}
 
 
 

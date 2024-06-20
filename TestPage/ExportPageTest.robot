@@ -61,25 +61,25 @@ Export Partner list
     Generic.Wait until table get load
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .xlsx
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .xlsx
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .ods
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .ods
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .csv
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .csv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .tsv
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .tsv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
@@ -112,25 +112,25 @@ Export partner list under technology details
     Generic.Wait until table get load
     PartnersPage.Click on the export button of partner under technology details page
     PartnersPage.Download the selected extension file of partner under technology details      .xlsx
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .xlsx
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     PartnersPage.Click on the export button of partner under technology details page
     PartnersPage.Download the selected extension file of partner under technology details      .ods
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .ods
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     PartnersPage.Click on the export button of partner under technology details page
     PartnersPage.Download the selected extension file of partner under technology details      .csv
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .csv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     PartnersPage.Click on the export button of partner under technology details page
     PartnersPage.Download the selected extension file of partner under technology details      .tsv
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .tsv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
@@ -148,28 +148,28 @@ Export Location List
     LocationPage.Click on Location action button
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .xlsx
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .xlsx
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     LocationPage.Click on Location action button
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .ods
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .ods
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     LocationPage.Click on Location action button
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .csv
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .csv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     LocationPage.Click on Location action button
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .tsv
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .tsv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
@@ -208,25 +208,25 @@ Export location list of location under technology details page
     TechnologyPage.Click on Location tab of technology- list page
     LocationPage.Click on the export button of location under technology details page
     LocationPage.Download the selected extension file of location under technology details      .xlsx
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .xlsx
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     LocationPage.Click on the export button of location under technology details page
     LocationPage.Download the selected extension file of location under technology details      .ods
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .ods
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     LocationPage.Click on the export button of location under technology details page
     LocationPage.Download the selected extension file of location under technology details      .csv
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .csv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     LocationPage.Click on the export button of location under technology details page
     LocationPage.Download the selected extension file of location under technology details      .tsv
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .tsv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
@@ -254,25 +254,25 @@ Export partner list while adding new partner
     Generic.Verify your current page location contains      partner-details
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .xlsx
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .xlsx
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .ods
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .ods
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .csv
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .csv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .tsv
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .tsv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
@@ -332,25 +332,25 @@ Export list of parent tab under technology details
     Generic.Fetch alert message text and compare it with        Technology linked successfully.
     TechnologyPage.Click on the export button of parent tab under technology details page
     TechnologyPage.Download the selected extension file of parent under technology details      .xlsx
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .xlsx
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     TechnologyPage.Click on the export button of parent tab under technology details page
     TechnologyPage.Download the selected extension file of parent under technology details      .ods
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .ods
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     TechnologyPage.Click on the export button of parent tab under technology details page
     TechnologyPage.Download the selected extension file of parent under technology details      .csv
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .csv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     TechnologyPage.Click on the export button of parent tab under technology details page
     TechnologyPage.Download the selected extension file of parent under technology details      .tsv
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .tsv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
@@ -367,28 +367,28 @@ Export Team member list
     TeamMemberPage.Click on add team member action button
     TeamMemberPage.Choose option after clicking on Action button    Export Data
     TeamMemberPage.Download the selected extension file of team member      Excel(.xlsx)
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .xlsx
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     TeamMemberPage.Click on add team member action button
     TeamMemberPage.Choose option after clicking on Action button    Export Data
     TeamMemberPage.Download the selected extension file of team member      OpenDocument(.ods)
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .ods
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     TeamMemberPage.Click on add team member action button
     TeamMemberPage.Choose option after clicking on Action button    Export Data
     TeamMemberPage.Download the selected extension file of team member      Comma Separated Values(.csv)
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .csv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     TeamMemberPage.Click on add team member action button
     TeamMemberPage.Choose option after clicking on Action button    Export Data
     TeamMemberPage.Download the selected extension file of team member      Tab Separated Values(.tsv)
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .tsv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
@@ -406,28 +406,28 @@ Export Assigned User list
     MemberPage.Click on action button of assigned users
     TeamMemberPage.Choose option after clicking on Action button    Export Data
     TeamMemberPage.Download the selected extension file of team member      Excel(.xlsx)
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .xlsx
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     MemberPage.Click on action button of assigned users
     TeamMemberPage.Choose option after clicking on Action button    Export Data
     TeamMemberPage.Download the selected extension file of team member      OpenDocument(.ods)
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .ods
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     MemberPage.Click on action button of assigned users
     TeamMemberPage.Choose option after clicking on Action button    Export Data
     TeamMemberPage.Download the selected extension file of team member      Comma Separated Values(.csv)
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .csv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     MemberPage.Click on action button of assigned users
     TeamMemberPage.Choose option after clicking on Action button    Export Data
     TeamMemberPage.Download the selected extension file of team member      Tab Separated Values(.tsv)
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .tsv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
@@ -479,25 +479,25 @@ Export technology details page list
     OCS.Visible the print qr button to for data loading
     TechnologyPage.Click on the export button of deatils tab under technology details page
     TechnologyPage.Download the selected extension file of parent under technology details      .xlsx
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .xlsx
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     TechnologyPage.Click on the export button of deatils tab under technology details page
     TechnologyPage.Download the selected extension file of parent under technology details      .ods
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .ods
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     TechnologyPage.Click on the export button of deatils tab under technology details page
     TechnologyPage.Download the selected extension file of parent under technology details      .csv
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .csv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     TechnologyPage.Click on the export button of deatils tab under technology details page
     TechnologyPage.Download the selected extension file of parent under technology details      .tsv
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .tsv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
@@ -559,25 +559,25 @@ Export component tab list
     Generic.Fetch alert message text and compare it with        Technology linked successfully.
     TechnologyPage.Click on the export button of component tab under technology details page
     TechnologyPage.Download the selected extension file of parent under technology details      .xlsx
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .xlsx
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     TechnologyPage.Click on the export button of component tab under technology details page
     TechnologyPage.Download the selected extension file of parent under technology details      .ods
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .ods
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     TechnologyPage.Click on the export button of component tab under technology details page
     TechnologyPage.Download the selected extension file of parent under technology details      .csv
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .csv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     TechnologyPage.Click on the export button of component tab under technology details page
     TechnologyPage.Download the selected extension file of parent under technology details      .tsv
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .tsv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
@@ -592,25 +592,25 @@ Export account overview tab data
     Generic.Verify your current page location contains          account-overview
     DashboardPage.Click on the export button under account overview tab
     TeamMemberPage.Download the selected extension file of team member      Excel(.xlsx)
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .xlsx
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     DashboardPage.Click on the export button under account overview tab
     TeamMemberPage.Download the selected extension file of team member      OpenDocument(.ods)
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .ods
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     DashboardPage.Click on the export button under account overview tab
     TeamMemberPage.Download the selected extension file of team member     Comma Separated Values(.csv)
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .csv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     DashboardPage.Click on the export button under account overview tab
     TeamMemberPage.Download the selected extension file of team member      Tab Separated Values(.tsv)
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .tsv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!

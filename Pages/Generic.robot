@@ -64,7 +64,7 @@ ${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-10       
 ${admin_name}        aithentic@yopmail.com
 ${admin_password}       Admin@123
 
-${browser_name}         firefox
+${browser_name}         headlessfirefox
 
 ${email}                 testqa29j@mailinator.com
 ${SheetLocationAndName}   LoadTimeSheet.xlsx
