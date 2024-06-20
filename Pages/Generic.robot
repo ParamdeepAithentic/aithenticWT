@@ -55,8 +55,9 @@ ${apiURL}             https://qa-api.aithentic.com/api/v1
 ${valid_password}         Test@123       #QA User
 #${valid_password}         Test@123         #pre prod
 
-${admin_url}        https://uat-admin.aithentic.com/
-#${admin_url}        https://qa-admin.aithentic.com/
+#${admin_url}        https://uat-admin.aithentic.com/
+${admin_url}        https://qa-admin.aithentic.com/
+
 
 ${agentDiscovery_TagName}       Tag Name - johnsoftwaresolutions-1192-4         #qa
 #${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-10        #uat
