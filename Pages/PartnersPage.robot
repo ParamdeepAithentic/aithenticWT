@@ -360,7 +360,7 @@ Click on the export Button
     wait until element is not visible       ${shadow}          ${wait_time}
 
 Confirm to export file
-    [Tags]    ${option}
+    [Arguments]    ${option}
     wait until element is visible      css:.qa-${option}-export      ${wait_time}
     wait until element is enabled      css:.qa-${option}-export       ${wait_time}
     sleep       ${search_sleep}
