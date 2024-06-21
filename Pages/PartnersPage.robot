@@ -212,6 +212,7 @@ Click on contact person button
     sleep   ${search_sleep}
     wait until element is visible   ${addContact}       ${wait_time}
     wait until element is enabled   ${addContact}       ${wait_time}
+    sleep       ${search_sleep}
     click element   ${addContact}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
 

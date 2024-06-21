@@ -388,7 +388,7 @@ click on the checkboxes under unsuspend my account button link
     wait until element is enabled   //label[normalize-space()='I acknoledge I am restoring my aithentic account.']    ${wait_time}
     click element   //label[normalize-space()='I acknoledge I am restoring my aithentic account.']
     wait until element is not visible       ${loaderIcon}    ${wait_time}
-    wait until element is not visible       ${shadow}          ${wait_time}
+
 
 click on the confirm button of unsuspend pop up
     wait until element is visible   //button[@type='submit'][normalize-space()='Confirm']       ${wait_time}
