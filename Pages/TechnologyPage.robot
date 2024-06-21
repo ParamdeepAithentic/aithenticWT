@@ -1773,5 +1773,5 @@ Enter input in the cancellation notice period field
     input text      css:#TECHDYNA_12     ${cancellation}
 
 Verify the validation when entering negative value in cancellation notice period field
-    wait until element is visible   //span[@class='invalidInput ng-star-inserted']    ${wait_time}
-    wait until element is enabled   //span[@class='invalidInput ng-star-inserted']    ${wait_time}
+    wait until element is visible   //span[contains(text(),' Please enter natural numbers only.')]    ${wait_time}
+    wait until element is enabled   //span[contains(text(),' Please enter natural numbers only.')]    ${wait_time}
