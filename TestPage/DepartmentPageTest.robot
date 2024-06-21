@@ -60,3 +60,55 @@ Department bulk edit
     Generic.Verify your current page location contains      department
     DepartmentPage.Click on added department action button
     DepartmentPage.Choose the option from the action menu   Add Department
+
+Add_edit_delete_department_via_profile_list
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     department-dropdown
+    Generic.Verify your current page location contains      department
+    DepartmentPage.Click on added department action button
+    DepartmentPage.Choose the option from the action menu   Add Department
+    TechnologyPage.Create unique department name random
+    DepartmentPage.Select department random cost center
+    TechnologyPage.Save the department       add
+    Generic.Fetch alert message text and compare it with        Department added successfully
+    Generic.Verify your current page location contains      department-list
+    DepartmentPage.Search by department name      ${generated_departmentnumber}
+    TeamMemberPage.Click on three dots of Team Member listing
+    TeamMemberPage.Select option from three dots of Team Member     Edit
+    TechnologyPage.Create unique department name random
+    DepartmentPage.Select department random cost center
+    TechnologyPage.Save the department       add
+    Generic.Fetch alert message text and compare it with        Department updated successfully
+    Generic.Verify your current page location contains      department-list
+    DepartmentPage.Search by department name      ${generated_departmentnumber}
+    TeamMemberPage.Click on three dots of Team Member listing
+    TeamMemberPage.Select option from three dots of Team Member     Remove
+    Generic.Select parameter        Yes
+    Generic.Fetch alert message text and compare it with        Department deleted successfully
+
+Add department and verify via organisation
+    Generic.open the browser with the url
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form    ${email}    ${valid_password}
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        company
+    Generic.Verify your current page location contains      dashboard
+    sleep   ${search_sleep}
+    DepartmentPage.Verify I-icon of company information under organistaion
+    Generic.Scroll Window To End
+    DepartmentPage.Create random department name
+    DepartmentPage.Select department random cost center
+    Generic.click on the button     Add
+    Generic.Fetch alert message text and compare it with        Department added successfully
+    Generic.Verify your current page location contains      department-list
+    DepartmentPage.Search by department name      ${generated_Department}
+
+
