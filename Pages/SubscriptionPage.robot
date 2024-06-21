@@ -396,7 +396,7 @@ click on the confirm button of unsuspend pop up
     click element   //button[@type='submit'][normalize-space()='Confirm']
     wait until element is not visible       ${loaderIcon}    ${wait_time}
     wait until element is not visible       ${shadow}          ${wait_time}
-    wait until element is not visible       ${shadow}          ${wait_time}
+
 
 Choose tab under subscription page after clicking on view_result
     Wait Until Element Is Not Visible    ${loaderIcon}     ${wait_time}
@@ -418,3 +418,21 @@ Click on option under three dots of Microsoft coorporation
     wait until element is enabled   (//div[contains(@class,'dropdown-menu')])[3]//a[normalize-space()='${option}']    ${wait_time}
     click element   (//div[contains(@class,'dropdown-menu')])[3]//a[normalize-space()='${option}']
     sleep  ${search_sleep}
+
+
+My Failure Handling
+    Generic.Click on the profile name
+    Generic.Select option from profile list     billing-dropdown
+    Generic.Verify your current page location contains      billing-details
+    SubscriptionPage.Click on the Unsuspend my account button link under billing details
+    SubscriptionPage.click on the checkboxes under unsuspend my account button link
+    SubscriptionPage.click on the confirm button of unsuspend pop up
+    Generic.Fetch alert message text and compare it with        Payment Successful
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your curren t page location contains      personal-profile
+    Generic.Select parameter    Technology
+    Generic.Verify your current page location contains      technology-settings
+    Generic.click on the tab    Connectors
+    SubscriptionPage.Click on the activate option under subscription connector table
+    Generic.Fetch alert message text and compare it with        Status Updated
