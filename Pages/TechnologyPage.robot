@@ -247,7 +247,7 @@ Select an option from recovery table actions
      #Restore, Details
 #    wait until element is visible       ${loaderIcon}       ${wait_time}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    wait until element is not visible       ${shadow}          ${wait_time}
+#    wait until element is not visible       ${shadow}          ${wait_time}
 
 
 Select an option from technology table actions
@@ -1775,3 +1775,37 @@ Enter input in the cancellation notice period field
 Verify the validation when entering negative value in cancellation notice period field
     wait until element is visible   //span[contains(text(),' Please enter natural numbers only.')]    ${wait_time}
     wait until element is enabled   //span[contains(text(),' Please enter natural numbers only.')]    ${wait_time}
+
+Verify status is visible of added technology
+    wait until element is visible   //td[normalize-space()='Active']    ${wait_time}
+
+Get Inner Text of Brand under product information tab
+   ${input_text}=    Execute JavaScript    return document.querySelector("input[id*='BrandName']").value
+    Log To Console    Inner Text of Input Field: ${input_text}
+    set global variable     ${input_text}
+    should be equal    ${input_text}     ${generated_BrandName}
+
+
+Wait until brand loder is invisible
+     wait until element is not visible   //input[@id='brandselect']//ancestor::ng-select[@id='BrandName']//following-sibling::div[contains(@class,'spinner-loader')]    ${wait_time}
+
+Get inner text of description under product information
+    ${textarea_value}=    Get Value    css=div[class*='welcome-main'] textarea#ProductDescription
+    Log To Console    Value of Textarea: ${textarea_value}
+    set global variable     ${textarea_value}
+    should be equal    ${textarea_value}     This is the description of new product added.
+
+Get Inner Text of Product under product information tab
+   ${input_text}=    Execute JavaScript    return document.querySelector("input[id*='ProductId']").value
+    Log To Console    Inner Text of Input Field: ${input_text}
+    set global variable     ${input_text}
+    should be equal    ${input_text}     ${generated_product}
+
+Get inner text of feature under product information
+    ${textarea_value}=    Get Value    css=div[class*='welcome-main'] textarea#ProductFeatures
+    Log To Console    Value of Textarea: ${textarea_value}
+    set global variable     ${textarea_value}
+    should be equal    ${textarea_value}     This is the features of new product added.
+
+
+
