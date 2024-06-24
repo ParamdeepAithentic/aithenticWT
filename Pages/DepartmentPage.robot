@@ -80,4 +80,49 @@ Select option from side menu in department list
     wait until element is enabled      //span[normalize-space()='${option}']    ${wait_time}
     click element      //span[normalize-space()='${option}']
 
+Search by department name
+    [Arguments]    ${department}
+     wait until element is visible       css:thead tr       ${wait_time}
+     wait until element is visible      css:input[placeholder='Search by Department Name']     ${wait_time}
+     click element      css:input[placeholder='Search by Department Name']
+     Clear Element Text      css:input[placeholder='Search by Department Name']
+     ${StartTime1} =     Get Current Time in Milliseconds
+     input text   css:input[placeholder='Search by Department Name']   ${department}
+     sleep      ${search_sleep}
+     wait until element is visible      //td[normalize-space()='1']     ${wait_time}
+     wait until element is visible       css:thead tr       ${wait_time}
+     Fetch the department Name from the row   ${department}
+     should be equal    ${get_fetch_depName}     ${department}
+
+Fetch the department Name from the row
+    [Arguments]    ${option}
+    wait until element is visible       //td[normalize-space()='${option}']     ${wait_time}
+    wait until element is enabled        //td[normalize-space()='${option}']     ${wait_time}
+    ${get_fetch_depName} =    get text    //td[normalize-space()='${option}']
+    set global variable    ${get_fetch_depName}
+    log to console     ${get_fetch_depName}
+
+Create random department name
+    wait until element is visible       css:#predefinedDepartmentNames        ${wait_time}
+    wait until element is enabled       css:#predefinedDepartmentNames        ${wait_time}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_Department}=    Catenate    DeptNo_${random_string}
+    input text   css:#predefinedDepartmentNames   ${generated_Department}
+    sleep       ${search_sleep}
+    click element     css:div[role='option']
+    log to console      ${generated_Department}
+    set global variable    ${generated_Department}
+
+Verify I-icon of company information under organistaion
+    wait until element is visible   //label[normalize-space()='Industry (NAICS)']//i        ${wait_time}
+    wait until element is enabled   //label[normalize-space()='Industry (NAICS)']//i        ${wait_time}
+
+Select department random cost center
+    wait until element is visible       css:#costCenter        ${wait_time}
+    wait until element is enabled       css:#costCenter        ${wait_time}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_cost_center}=    Catenate    Cost_${random_string}
+    input text   css:#costCenter   ${generated_cost_center}
+    log to console      ${generated_cost_center}
+    set global variable    ${generated_cost_center}
 

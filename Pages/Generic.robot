@@ -58,6 +58,7 @@ ${valid_password}         Test@123       #QA User
 #${admin_url}        https://uat-admin.aithentic.com/
 ${admin_url}        https://qa-admin.aithentic.com/
 
+
 ${agentDiscovery_TagName}       Tag Name - johnsoftwaresolutions-1192-4         #qa
 #${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-10        #uat
 
