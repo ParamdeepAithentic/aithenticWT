@@ -2356,6 +2356,7 @@ Dispose the technology while adding new brand and product
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       ${generated_BrandName}
     TechnologyPage.Select parameter from technology dropdown list      ${generated_product}
+    TechnologyPage.Wait until brand loder is invisible
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select technology lifecycle status      Active
     TechnologyPage.Click on save technology form button
@@ -2378,6 +2379,10 @@ Dispose the technology while adding new brand and product
     TechnologyPage.Search by AssetId       ${generated_AssetID}
     Generic.Wait until table get load
     TechnologyPage.Verify status is visible of added technology
+    TechnologyPage.Click on three dots of action button
+    TechnologyPage.Select an option from recovery table actions    Remove
+    PartnersPage.Select option from the pop up  Yes
+    Generic.Fetch alert message text and compare it with      Technology Removed Successfully
 
 Add the technology from profile listing
     [Tags]      Stable
@@ -2397,6 +2402,7 @@ Add the technology from profile listing
     TechnologyPage.Select product technology group via technology   Applications
     TechnologyPage.Click on save product pop inside technology page
     Generic.Fetch alert message text and compare it with    Product created successfully
+    TechnologyPage.Wait until brand loder is invisible
 #    TechnologyPage.Select parameter from technology dropdown list    ${generated_product}
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select technology lifecycle status      Active
@@ -2406,6 +2412,10 @@ Add the technology from profile listing
     Generic.Verify your current page location contains      technology-list
     Generic.Wait until table get load
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on three dots of action button
+    TechnologyPage.Select an option from recovery table actions    Remove
+    PartnersPage.Select option from the pop up  Yes
+    Generic.Fetch alert message text and compare it with      Technology Removed Successfully
 
 Verify_Asset_ID_Changing_settings_from_Profile_list
     [Tags]      Stable
@@ -2419,6 +2429,7 @@ Verify_Asset_ID_Changing_settings_from_Profile_list
     I_iconPage.Choose tabs under organization        system
     Generic.Verify your current page location contains     organization
     DashboardPage.Select the asset ID checkbox      yes
+    Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.Click on the profile name
     Generic.Select option from profile list     brand-dropdown
     Generic.Verify your current page location contains      brand
@@ -2431,6 +2442,9 @@ Verify_Asset_ID_Changing_settings_from_Profile_list
     Generic.Fetch alert message text and compare it with        Brand created successfully.
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
     PartnersPage.Click here to add link of contract details
     DashboardPage.Create random productName
     DashboardPage.Add product brand name      ${generated_BrandName}
@@ -2451,11 +2465,25 @@ Verify_Asset_ID_Changing_settings_from_Profile_list
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
     TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
+    TechnologyPage.Add support partner of partners information     QABusiness04191432
+    TechnologyPage.Add supplier of partners information        qabrand10050505
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
-    Generic.Verify your current page location contains      technology-list
+    Generic.Verify your current page location contains      technology
+    Generic.Wait until table get load
     TechnologyPage.Search by BrandName   ${generated_BrandName}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the asset ID checkbox      no
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by BrandName   ${generated_BrandName}
+    TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
     TechnologyPage.Click on edit button on product details page        Edit
     Generic.Verify your current page location contains      edit-technology
@@ -2465,14 +2493,13 @@ Verify_Asset_ID_Changing_settings_from_Profile_list
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.Search by AssetId       ${generated_AssetID}
     Generic.Wait until table get load
-    Generic.Click on the profile name
-    Generic.Select option from profile list     personal-details
-    I_iconPage.Choose options inside personal_details        Organization
-    I_iconPage.Choose tabs under organization        system
-    Generic.Verify your current page location contains     organization
-    DashboardPage.Select the asset ID checkbox      no
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on three dots of action button
+    TechnologyPage.Select an option from recovery table actions    Remove
+    PartnersPage.Select option from the pop up  Yes
+    Generic.Fetch alert message text and compare it with      Technology Removed Successfully
+
 
 
 

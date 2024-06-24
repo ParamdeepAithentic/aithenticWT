@@ -1787,6 +1787,7 @@ Get Inner Text of Brand under product information tab
 
 
 Wait until brand loder is invisible
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
      wait until element is not visible   //input[@id='brandselect']//ancestor::ng-select[@id='BrandName']//following-sibling::div[contains(@class,'spinner-loader')]    ${wait_time}
 
 Get inner text of description under product information
