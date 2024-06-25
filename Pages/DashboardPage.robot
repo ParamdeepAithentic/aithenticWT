@@ -1024,14 +1024,26 @@ Click on pre defined brand list
     wait until element is enabled   css:.qa-predefinedBrands input   ${wait_time}
     click element   css:.qa-predefinedBrands input
     clear element text      css:.qa-predefinedBrands input
+    ${StartTime1} =     Get Current Time in Milliseconds
     input text      css:.qa-predefinedBrands input      ${option}
     Generic.Select parameter    ${option}
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  4  ${pageHeading}   DashboardPage - Click on pre defined brand list      4    ${pageTime}     ${ActualTime}    DashboardPage_Time
 
 Click on pre defined product list
     [Arguments]     ${option}
     wait until element is visible   css:.qa-selectedProductRecord input   ${wait_time}
     wait until element is enabled   css:.qa-selectedProductRecord input   ${wait_time}
     click element   css:.qa-selectedProductRecord input
+#    wait until element is visible   //div[contains(@class,'panel-items')]   ${wait_time}
+#    wait until element is enabled   //div[contains(@class,'panel-items')]  ${wait_time}
     clear element text      css:.qa-selectedProductRecord input
+    ${StartTime1} =     Get Current Time in Milliseconds
     input text      css:.qa-selectedProductRecord input      ${option}
     Generic.Select parameter    ${option}
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  4  ${pageHeading}   DashboardPage - Click on pre defined product list      4    ${pageTime}     ${ActualTime}    DashboardPage_Time
+
+
