@@ -1200,11 +1200,11 @@ Verifying the Renewals Overview section of Management console
     TechnologyPage.Select purchase date self    05/13/2024
     TechnologyPage.Input current Date
     TechnologyPage.Enter current or future date as renewal date    ${current_date1}
-     TechnologyPage.Select technology lifecycle status      Active
-     TechnologyPage.Add technology lifecycle comment    Technology Lifecycle Information- comment
-     TechnologyPage.Add cost type of technology cost information        Fixed Length Contract
-     TechnologyPage.Add payment type of technology cost information     FixedPayment
-     TechnologyPage.Add payment peroid of technology cost information       Monthly
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Add technology lifecycle comment    Technology Lifecycle Information- comment
+    TechnologyPage.Add cost type of technology cost information        Fixed Length Contract
+    TechnologyPage.Add payment type of technology cost information     FixedPayment
+    TechnologyPage.Add payment peroid of technology cost information       Monthly
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
