@@ -1257,139 +1257,139 @@ Verifying the Renewals Overview section of Management console
     DashboardPage.Click on Back to management console tab
     Generic.Verify your current page location contains    management-console
 
-####################################### Expired warranties ###################################################################
-#    DashboardPage.Fetch the count renewals overview subtabs      Expired warranties
-#    DashboardPage.Set Globally the count from renewal overview subtabs
-#    Generic.select the option from the side menu    Technology
-#    Generic.Verify your current page location contains      technology
-#    TechnologyPage.Click on action button of technology
-#    TechnologyPage.Choose add technology from action button of technology
-#    Generic.Verify your current page location contains      addtechnology
-#    TechnologyPage.Select parameter from technology dropdown list       K2P85B
-#    TechnologyPage.Add assetID for technology lifecycle information random
-#    TechnologyPage.Select purchase date self    05/13/2024
-#    TechnologyPage.Renewal Date via technology
-#    TechnologyPage.Input current Date
-#    TechnologyPage.Select warranty end date    ${current_date1}
-#    TechnologyPage.Select technology lifecycle status      Active
-#    TechnologyPage.Add technology lifecycle comment    Technology Lifecycle Information- comment
-#    TechnologyPage.Add budget payment of technology cost information       11000
-#    TechnologyPage.Add actual payment of technology cost information       1050
-#    TechnologyPage.Click on save technology form button
-#    Generic.Fetch alert message text and compare it with        Technology created successfully
-#    TechnologyPage.Click on save technology form pop button
-#    Generic.Verify your current page location contains      technology
-#    Generic.Wait until table get load
-#    Generic.select the option from the side menu    Dashboard
-#    Generic.Verify your current page location contains      dashboard
-#    DashboardPage.Fetch the count renewals overview subtabs        Expired warranties
-#    DashboardPage.Compare the counts of renewal overview after adding the asset
-#    DashboardPage.Click on the subtabs          Expired warranties
-#    DashboardPage.Search and verify renewals overview through asset_id      ${generated_AssetID}
-#    DashboardPage.Click on Back to management console tab
-#    Generic.Verify your current page location contains    management-console
-#
+###################################### Expired warranties ###################################################################
+    DashboardPage.Fetch the count renewals overview subtabs      Expired warranties
+    DashboardPage.Set Globally the count from renewal overview subtabs
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Select parameter from technology dropdown list       K2P85B
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select purchase date self    05/13/2024
+    TechnologyPage.Renewal Date via technology
+    TechnologyPage.Input current Date
+    TechnologyPage.Select warranty end date    ${current_date1}
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Add technology lifecycle comment    Technology Lifecycle Information- comment
+    TechnologyPage.Add budget payment of technology cost information       11000
+    TechnologyPage.Add actual payment of technology cost information       1050
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    Generic.Wait until table get load
+    Generic.select the option from the side menu    Dashboard
+    Generic.Verify your current page location contains      dashboard
+    DashboardPage.Fetch the count renewals overview subtabs        Expired warranties
+    DashboardPage.Compare the counts of renewal overview after adding the asset
+    DashboardPage.Click on the subtabs          Expired warranties
+    DashboardPage.Search and verify renewals overview through asset_id      ${generated_AssetID}
+    DashboardPage.Click on Back to management console tab
+    Generic.Verify your current page location contains    management-console
+
 ################################ Warranty expirations #############################################################
-#    DashboardPage.wait until renewal overview section is load
-#    DashboardPage.Click on the dropdown of quarter end under management console
-#    DashboardPage.Select the first value of To dropdown of quarter     4
-#    DashboardPage.Fetch the count renewals overview subtabs     Warranty expirations
-#    DashboardPage.Set Globally the count from renewal overview subtabs
-#    Generic.select the option from the side menu    Technology
-#    Generic.Verify your current page location contains      technology
-#    TechnologyPage.Click on action button of technology
-#    TechnologyPage.Choose add technology from action button of technology
-#    Generic.Verify your current page location contains      addtechnology
-#    TechnologyPage.Select parameter from technology dropdown list       K2P85B
-#    TechnologyPage.Add assetID for technology lifecycle information random
-#    TechnologyPage.Select purchase date self    05/13/2024
-#    TechnologyPage.Input future Date
-#    TechnologyPage.Select warranty end date    ${formatted_future_date}
-#    TechnologyPage.Select technology lifecycle status      Active
-#    TechnologyPage.Add technology lifecycle comment    Technology Lifecycle Information- comment
-#    TechnologyPage.Click on save technology form button
-#    Generic.Fetch alert message text and compare it with        Technology created successfully
-#    TechnologyPage.Click on save technology form pop button
-#    Generic.Verify your current page location contains      technology
-#    Generic.Wait until table get load
-#    Generic.select the option from the side menu    Dashboard
-#    Generic.Verify your current page location contains      dashboard
-#    DashboardPage.wait until renewal overview section is load
-#    DashboardPage.Click on the dropdown of quarter end under management console
-#    DashboardPage.Select the first value of To dropdown of quarter     4
-#    DashboardPage.Fetch the count renewals overview subtabs         Warranty expirations
-#    DashboardPage.Compare the counts of renewal overview after adding the asset
-#    DashboardPage.Click on the subtabs          Warranty expirations
-#    DashboardPage.Search and verify renewals overview through asset_id      ${generated_AssetID}
-#    DashboardPage.Click on Back to management console tab
-#    Generic.Verify your current page location contains    management-console
-#
+    DashboardPage.wait until renewal overview section is load
+    DashboardPage.Click on the dropdown of quarter end under management console
+    DashboardPage.Select the first value of To dropdown of quarter     4
+    DashboardPage.Fetch the count renewals overview subtabs     Warranty expirations
+    DashboardPage.Set Globally the count from renewal overview subtabs
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Select parameter from technology dropdown list       K2P85B
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select purchase date self    05/13/2024
+    TechnologyPage.Input future Date
+    TechnologyPage.Select warranty end date    ${formatted_future_date}
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Add technology lifecycle comment    Technology Lifecycle Information- comment
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    Generic.Wait until table get load
+    Generic.select the option from the side menu    Dashboard
+    Generic.Verify your current page location contains      dashboard
+    DashboardPage.wait until renewal overview section is load
+    DashboardPage.Click on the dropdown of quarter end under management console
+    DashboardPage.Select the first value of To dropdown of quarter     4
+    DashboardPage.Fetch the count renewals overview subtabs         Warranty expirations
+    DashboardPage.Compare the counts of renewal overview after adding the asset
+    DashboardPage.Click on the subtabs          Warranty expirations
+    DashboardPage.Search and verify renewals overview through asset_id      ${generated_AssetID}
+    DashboardPage.Click on Back to management console tab
+    Generic.Verify your current page location contains    management-console
+
 ######################################## Overdue certificates ###################################################################
-#    DashboardPage.Fetch the count renewals overview subtabs      Overdue certificates
-#    DashboardPage.Set Globally the count from renewal overview subtabs
-#    Generic.select the option from the side menu    Technology
-#    Generic.Verify your current page location contains      technology
-#    TechnologyPage.Click on action button of technology
-#    TechnologyPage.Choose add technology from action button of technology
-#    Generic.Verify your current page location contains      addtechnology
-#    TechnologyPage.Select parameter from technology dropdown list      Certificate1 product
-#    TechnologyPage.Add assetID for technology lifecycle information random
-#    TechnologyPage.Select purchase date self    05/13/2024
-#    TechnologyPage.Input current Date
-#    TechnologyPage.Enter current or future date as renewal date    ${current_date1}
-#    TechnologyPage.Select technology lifecycle status      Active
-#    TechnologyPage.Add technology lifecycle comment    Technology Lifecycle Information- comment
-#    TechnologyPage.Add budget payment of technology cost information       11000
-#    TechnologyPage.Add actual payment of technology cost information       1050
-#    TechnologyPage.Click on save technology form button
-#    Generic.Fetch alert message text and compare it with        Technology created successfully
-#    TechnologyPage.Click on save technology form pop button
-#    Generic.Verify your current page location contains      technology
-#    Generic.Wait until table get load
-#    Generic.select the option from the side menu    Dashboard
-#    Generic.Verify your current page location contains      dashboard
-#    DashboardPage.Fetch the count renewals overview subtabs        Overdue certificates
-#    DashboardPage.Compare the counts of renewal overview after adding the asset
-#    DashboardPage.Click on the subtabs          Overdue certificates
-#    DashboardPage.Search and verify renewals overview through asset_id      ${generated_AssetID}
-#    DashboardPage.Click on Back to management console tab
-#    Generic.Verify your current page location contains    management-console
-#
-######################################## Upcoming cerificates ###################################################################
-#
-#    DashboardPage.wait until renewal overview section is load
-#    DashboardPage.Click on the dropdown of quarter end under management console
-#    DashboardPage.Select the first value of To dropdown of quarter     4
-#    DashboardPage.Fetch the count renewals overview subtabs     Upcoming cerificates
-#    DashboardPage.Set Globally the count from renewal overview subtabs
-#    Generic.select the option from the side menu    Technology
-#    Generic.Verify your current page location contains      technology
-#    TechnologyPage.Click on action button of technology
-#    TechnologyPage.Choose add technology from action button of technology
-#    Generic.Verify your current page location contains      addtechnology
-#    TechnologyPage.Select parameter from technology dropdown list       Certificate1 product
-#    TechnologyPage.Add assetID for technology lifecycle information random
-#    TechnologyPage.Select purchase date self    05/13/2024
-#    TechnologyPage.Input future Date
-#    TechnologyPage.Enter current or future date as renewal date    ${formatted_future_date}
-#    TechnologyPage.Select technology lifecycle status      Active
-#    TechnologyPage.Add technology lifecycle comment    Technology Lifecycle Information- comment
-#    TechnologyPage.Click on save technology form button
-#    Generic.Fetch alert message text and compare it with        Technology created successfully
-#    TechnologyPage.Click on save technology form pop button
-#    Generic.Verify your current page location contains      technology
-#    Generic.Wait until table get load
-#    Generic.select the option from the side menu    Dashboard
-#    Generic.Verify your current page location contains      dashboard
-#    DashboardPage.wait until renewal overview section is load
-#    DashboardPage.Click on the dropdown of quarter end under management console
-#    DashboardPage.Select the first value of To dropdown of quarter     4
-#    DashboardPage.Fetch the count renewals overview subtabs         Upcoming cerificates
-#    DashboardPage.Compare the counts of renewal overview after adding the asset
-#    DashboardPage.Click on the subtabs          Upcoming cerificates
-#    DashboardPage.Search and verify renewals overview through asset_id      ${generated_AssetID}
-#    DashboardPage.Click on Back to management console tab
-#    Generic.Verify your current page location contains    management-console
+    DashboardPage.Fetch the count renewals overview subtabs      Overdue certificates
+    DashboardPage.Set Globally the count from renewal overview subtabs
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Select parameter from technology dropdown list      Certificate1 product
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select purchase date self    05/13/2024
+    TechnologyPage.Input current Date
+    TechnologyPage.Enter current or future date as renewal date    ${current_date1}
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Add technology lifecycle comment    Technology Lifecycle Information- comment
+    TechnologyPage.Add budget payment of technology cost information       11000
+    TechnologyPage.Add actual payment of technology cost information       1050
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    Generic.Wait until table get load
+    Generic.select the option from the side menu    Dashboard
+    Generic.Verify your current page location contains      dashboard
+    DashboardPage.Fetch the count renewals overview subtabs        Overdue certificates
+    DashboardPage.Compare the counts of renewal overview after adding the asset
+    DashboardPage.Click on the subtabs          Overdue certificates
+    DashboardPage.Search and verify renewals overview through asset_id      ${generated_AssetID}
+    DashboardPage.Click on Back to management console tab
+    Generic.Verify your current page location contains    management-console
+
+####################################### Upcoming cerificates ###################################################################
+
+    DashboardPage.wait until renewal overview section is load
+    DashboardPage.Click on the dropdown of quarter end under management console
+    DashboardPage.Select the first value of To dropdown of quarter     4
+    DashboardPage.Fetch the count renewals overview subtabs     Upcoming cerificates
+    DashboardPage.Set Globally the count from renewal overview subtabs
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Select parameter from technology dropdown list       Certificate1 product
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select purchase date self    05/13/2024
+    TechnologyPage.Input future Date
+    TechnologyPage.Enter current or future date as renewal date    ${formatted_future_date}
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Add technology lifecycle comment    Technology Lifecycle Information- comment
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    Generic.Wait until table get load
+    Generic.select the option from the side menu    Dashboard
+    Generic.Verify your current page location contains      dashboard
+    DashboardPage.wait until renewal overview section is load
+    DashboardPage.Click on the dropdown of quarter end under management console
+    DashboardPage.Select the first value of To dropdown of quarter     4
+    DashboardPage.Fetch the count renewals overview subtabs         Upcoming cerificates
+    DashboardPage.Compare the counts of renewal overview after adding the asset
+    DashboardPage.Click on the subtabs          Upcoming cerificates
+    DashboardPage.Search and verify renewals overview through asset_id      ${generated_AssetID}
+    DashboardPage.Click on Back to management console tab
+    Generic.Verify your current page location contains    management-console
 
 
 
