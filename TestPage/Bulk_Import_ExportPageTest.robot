@@ -35,7 +35,10 @@ Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
 Resource        ../Pages/SortingPage.robot
 Resource        ../Pages/Bulk_Import_ExportPage.robot
-
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
+Resource        ../Pages/UnselectAssetAPI.robot
 
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
@@ -44,7 +47,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Product Bulk import
-    [Tags]    Sanity
+    [Tags]    Sanity        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -74,7 +77,7 @@ Product Bulk import
     Bulk_Import_ExportPage.Verify product added using bulk_import_export   ${generated_addProductName}
 
 Product Bulk Edit
-    [Tags]    Sanity
+    [Tags]    Sanity        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -123,6 +126,7 @@ Product Bulk Edit
     Bulk_Import_ExportPage.Verify product added using bulk_import_export   ${generated_EditProductName}
 
 Department Bulk Import
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -148,6 +152,7 @@ Department Bulk Import
     Bulk_Import_ExportPage.Verify department added using bulk_import_export   ${generated_addDepartmentName}
 
 Department Bulk Edit
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -189,6 +194,7 @@ Department Bulk Edit
     Bulk_Import_ExportPage.Verify department added using bulk_import_export     ${generated_EditDepartmentName}
 
 Add Product Bulk Edit
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -231,6 +237,7 @@ Add Product Bulk Edit
     Bulk_Import_ExportPage.Verify product added using bulk_import_export    ${generated_EditProductName}
 
 Add Department Bulk Edit
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -263,7 +270,7 @@ Add Department Bulk Edit
     Bulk_Import_ExportPage.Verify department added using bulk_import_export     ${generated_EditDepartmentName}
 
 Location Bulk Edit
-    [Tags]    Sanity
+    [Tags]    Sanity        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -319,7 +326,7 @@ Location Bulk Edit
     Bulk_Import_ExportPage.Search by location name     ${generated_NewLocationName}
 
 Assigned Users Bulk Edit
-    [Tags]    Sanity     Time
+    [Tags]    Sanity     Time       Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -360,7 +367,7 @@ Assigned Users Bulk Edit
     Bulk_Import_ExportPage.Search by empID  ${generated_assigneeEmpID}
 
 Team Member Bulk Edit
-    [Tags]    Sanity
+    [Tags]    Sanity        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -382,7 +389,7 @@ Team Member Bulk Edit
     Generic.Verify your current page location contains      addmembers
     MemberPage.Enter team member first name
     MemberPage.Enter team member last name
-    MemberPage.Enter team member business email
+    TeamMemberPage.Enter team member business email_mailinator
     TeamMemberPage.Enter the Position in member form        QA
     MemberPage.Enter team member department     Do not Delete this Department
     MemberPage.Enter team member location    United States - Main Office - 21 - 2
@@ -423,7 +430,7 @@ Team Member Bulk Edit
     Generic.Fetch alert message text and compare it with       Settings Updated
 
 Technology Bulk edit
-    [Tags]       sanity
+    [Tags]       sanity       Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -495,7 +502,7 @@ Technology Bulk edit
     TechnologyPage.Search by AssetId       ${generated_assetidbulkedit}
 
 Team member Bulk Import
-    [Tags]    Sanity
+    [Tags]    Sanity        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -543,6 +550,7 @@ Team member Bulk Import
     Generic.Fetch alert message text and compare it with       Settings Updated
 
 Assigned User Bulk Import
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -570,6 +578,7 @@ Assigned User Bulk Import
     Generic.Wait until table get load
 
 Location Bulk Import
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -606,7 +615,7 @@ Location Bulk Import
     Generic.Wait until table get load
 
 Technology Bulk import
-    [Tags]    Sanity
+    [Tags]    Sanity        Unstable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page

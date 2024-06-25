@@ -10,29 +10,35 @@ Library         DateTime
 Library         OperatingSystem
 Resource        ../Pages/Generic.robot
 Resource        ../Pages/DashboardPage.robot
+Resource        ../Pages/DepartmentPage.robot
 Resource        ../Pages/ITperformancePage.robot
+Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/LandingPage.robot
 Resource        ../Pages/TechnologyPage.robot
 Resource        ../Pages/PartnersPage.robot
-Resource        ../Pages/RegisterMember.robot
 Resource        ../Pages/ContractsPage.robot
-Resource        ../Pages/LoginPage.robot
+Resource        ../Pages/RegisterMember.robot
+Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/ReplaceDomainAPI.robot
 Resource        ../Pages/Yopmail.robot
 Resource        ../Pages/UserAccount.robot
 Resource        ../Pages/TwoFactorAuth.robot
 Resource        ../Pages/SubscriptionPage.robot
+Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
+Resource        ../Pages/LoginPage.robot
+Resource        ../Pages/MemberPage.robot
 Resource        ../Pages/OCS.robot
-Resource        ../Pages/RegisterUserPage.robot
-Resource        ../Pages/KeyClockPage.robot
-Resource        ../Pages/TeamMemberPage.robot
+Resource        ../Pages/BillingPage.robot
 Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
-Resource        ../Pages/UnselectAssetAPI.robot
+Resource        ../Pages/SortingPage.robot
+Resource        ../Pages/Bulk_Import_ExportPage.robot
+Resource        ../Pages/Admin_PanelPage.robot
 Resource        ../Pages/PaginationPage.robot
-
+Resource        ../Pages/DisconnectConnectorAPI.robot
+Resource        ../Pages/UnselectAssetAPI.robot
 
 
 Test Setup      open the browser with the url
@@ -46,7 +52,7 @@ Test Teardown   Close Browser session
 
 
 Verify pagination of technology Table
-    [Tags]    Smoke
+    [Tags]    Smoke     Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -59,6 +65,7 @@ Verify pagination of technology Table
     PaginationPage.Log WebElements      technology
 
 Verify pagination of partner table
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -70,7 +77,9 @@ Verify pagination of partner table
     PaginationPage.Click on the pagination dropdown     partner-list
     PaginationPage.Log WebElements      partner-list
 
+
 Verify pagination of contract table
+    [Tags]      Unstable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -83,6 +92,7 @@ Verify pagination of contract table
     PaginationPage.Log WebElements      contracts
 
 Verify pagination of Department table
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -96,6 +106,7 @@ Verify pagination of Department table
     PaginationPage.Log WebElements      department
 
 Verify pagination of Brand table
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -109,6 +120,7 @@ Verify pagination of Brand table
     PaginationPage.Log WebElements      brand
 
 Verify pagination of Product table
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -122,6 +134,7 @@ Verify pagination of Product table
     PaginationPage.Log WebElements      products
 
 Verify pagination of location Table
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -134,6 +147,7 @@ Verify pagination of location Table
     PaginationPage.Log WebElements      location-list
 
 Verify pagination of Team Member Table
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -146,7 +160,7 @@ Verify pagination of Team Member Table
     PaginationPage.Log WebElements      member-list
 
 Verify pagination of Assigned User Table
-    [Tags]    Smoke
+    [Tags]    Smoke     Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -160,6 +174,7 @@ Verify pagination of Assigned User Table
     PaginationPage.Log WebElements      assignee-list
 
 Verify Pagination of Product Dropdown when Add and Edit Technology
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -207,6 +222,7 @@ Verify Pagination of Product Dropdown when Add and Edit Technology
 
 
 Verify Pagination of Product Dropdown when Add discovered asset and component
+        [Tags]      Unstable
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
 #        LandingPage.Verify you are on dashboard page
@@ -327,6 +343,7 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
         UnselectAssetAPI.Hit API Endpoint
 
 Verify Pagination of Product Dropdown when Add IP discovered asset
+        [Tags]      Unstable
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
 #        LandingPage.Verify you are on dashboard page
@@ -399,6 +416,7 @@ Verify Pagination of Product Dropdown when Add IP discovered asset
         UnselectAssetAPI.Hit API Endpoint
 
 Verify Pagination of Recent Activities Table
+    [Tags]      Unstable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page

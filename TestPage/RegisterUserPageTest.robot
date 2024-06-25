@@ -35,6 +35,10 @@ Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
 Resource        ../Pages/SortingPage.robot
 Resource        ../Pages/Bulk_Import_ExportPage.robot
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
+Resource        ../Pages/UnselectAssetAPI.robot
 
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
@@ -45,7 +49,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Register new user
-    [Tags]      Smoke       Time
+    [Tags]      Smoke       Time        Stable
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
@@ -136,6 +140,7 @@ Register new user
 
 
 Signup with ACH payment method
+    [Tags]       Stable
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -220,7 +225,7 @@ Signup with ACH payment method
 
 
 Change plan and Change asset limit with ACH Payment method
-    [Tags]      Smoke
+    [Tags]      Smoke        Stable
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain

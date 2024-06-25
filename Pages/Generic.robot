@@ -35,7 +35,10 @@ Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
 Resource        ../Pages/SortingPage.robot
 Resource        ../Pages/Bulk_Import_ExportPage.robot
-
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
+Resource        ../Pages/UnselectAssetAPI.robot
 *** Variables ***
 
 ${user_name}             rahulshettyacademy
@@ -52,7 +55,6 @@ ${valid_password}        Test!@5897     #UAT user
 #${valid_password}         Test@123       #QA User
 #${valid_password}         Test@123         #pre prod
 
-
 ${admin_url}        https://uat-admin.aithentic.com/
 #${admin_url}        https://qa-admin.aithentic.com/
 
@@ -62,7 +64,7 @@ ${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-10       
 ${admin_name}        aithentic@yopmail.com
 ${admin_password}       Admin@123
 
-${browser_name}          firefox
+${browser_name}         firefox
 
 ${email}                 testqa29j@mailinator.com
 ${SheetLocationAndName}   LoadTimeSheet.xlsx
@@ -71,15 +73,16 @@ ${SheetTabName}     Load_Time_tracking
 ${alert_Msg}     css:.msg.d-inline-flex
 ${cross_alertMsg}   css:.close.position-absolute.text-white
 ${loaderIcon}     //div[@role='status']
+${shadow}       //div[@aria-modal='true']
 ${yop_email_searchBar}     css:#login
 ${yop_email_searchBtn}      css:button[title='Check Inbox @yopmail.com']
 ${click_Country}     css:#country
-${click_countryTag}     css:.iti__selected-flag.dropdown-toggle
+#${click_countryTag}     css:.iti__selected-flag.dropdown-toggle
+${click_countryTag}     css:.iti__arrow
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
-
-${wait_time}        60
+${wait_time}        120
 ${yop_sleep}       10
 ${search_sleep}       1
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
@@ -119,21 +122,24 @@ click on the tab
     [Arguments]    ${option}
     wait until element is visible    //a[normalize-space()='${option}']          ${wait_time}
     wait until element is enabled    //a[normalize-space()='${option}']          ${wait_time}
-    click link          //a[normalize-space()='${option}']
+    click element          //a[normalize-space()='${option}']
 
 click on the button
     [Arguments]    ${option}
     wait until element is not visible   ${loaderIcon}          ${wait_time}
     wait until element is visible      //button[normalize-space()='${option}']          ${wait_time}
     wait until element is enabled      //button[normalize-space()='${option}']          ${wait_time}
+#    sleep   ${search_sleep}
     click element       //button[normalize-space()='${option}']
     sleep   ${search_sleep}
+
 
 click on the button link
     [Arguments]    ${option}
     wait until element is visible        //a[normalize-space()='${option}']        ${wait_time}
     wait until element is enabled      //a[normalize-space()='${option}']          ${wait_time}
     click element       //a[normalize-space()='${option}']
+
 
 open the browser with the url
     Generic.Fix the column number
@@ -197,6 +203,12 @@ Fetch alert message text and compare it with
     should be equal    ${get_alertMsg}     ${option}
     Wait Until Element Is Not Visible    ${alert_Msg}          ${wait_time}
 
+Fetch alert message text and compare it with containing text
+    [Arguments]    ${option}
+    wait until element is visible    ${alert_Msg}          ${wait_time}
+    Element should contain          ${alert_Msg}       ${option}
+    Wait Until Element Is Not Visible    ${alert_Msg}          ${wait_time}
+
 Verify alertify is visible
        wait until element is visible    ${alert_Msg}          ${wait_time}
 
@@ -217,6 +229,7 @@ Select parameter
     wait until element is visible     //span[normalize-space()='${address}']        ${wait_time}
     wait until element is enabled       //span[normalize-space()='${address}']          ${wait_time}
     click element      //span[normalize-space()='${address}']
+
 
 Click on the profile name
     wait until element is not visible      ${loaderIcon}          ${wait_time}
@@ -301,7 +314,11 @@ Enter phone number
     input text  ${contact_Country_search}   ${country}
     Generic.Select parameter      ${code}
     input text     ${phone}     ${phoneNo}
-    Sleep    3
+#    click element   ${click_countryTag}
+#    Click element   css:#phone
+#    wait until element is not visible       //span[normalize-space()='Please enter a valid Mobile Number']      120  #${wait_time}
+
+
 
 Scroll the page till
     [Arguments]    ${option}
@@ -327,6 +344,7 @@ Fetch log_out alert message
 Click keyboard button
     [Arguments]     ${locator}      ${button}
     Press keys      ${locator}      ${button}
+
 
 Update settings for Asset_ID, employee_id and location
     Generic.open the browser with the url

@@ -35,7 +35,10 @@ Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
 Resource        ../Pages/SortingPage.robot
 Resource        ../Pages/Bulk_Import_ExportPage.robot
-
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
+Resource        ../Pages/UnselectAssetAPI.robot
 *** Variables ***
 ${Error_Message_Login}      css:.alert.alert-danger.col-md-12
 ${login_heading}        css:.heading-login.d-inline-block
@@ -127,7 +130,6 @@ ${search_technology_group}     css:.qa-selectedTechnologyGroups input
 
 ${search_technology_group}      (//div[@class='ng-input']//input)[2]
 ${search_by_brand_name}            (//div[@class='ng-input']//input)[3]
-
 
 *** Keywords ***
 Click on add department
@@ -508,6 +510,7 @@ Verify the drawer list parameters
 
 #####NOT WORKING#########
 Verify the profile option list parameters
+    wait until element is not visible       ${loaderIcon}    ${wait_time}
     wait until element is visible    ${profile_option}      ${wait_time}
     click element    ${profile_option}
     sleep       2
@@ -947,6 +950,7 @@ Get And Verify The Count Of tabs under renewal overview by management console
 
 
 Click on the dropdown of quarter end under management console
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     Wait Until Element Is Visible    (//div[contains(@class,'qa-upcoming-days')])[2]      ${wait_time}
     Wait Until Element Is Enabled    (//div[contains(@class,'qa-upcoming-days')])[2]      ${wait_time}
     Click Element       (//div[contains(@class,'qa-upcoming-days')])[2]
@@ -957,6 +961,7 @@ Select the first value of To dropdown of quarter
     wait until element is enabled     //div[contains (@id, '-${option}')]       ${wait_time}
     click element   //div[contains (@id, '-${option}')]
     wait until element is not visible       ${loaderIcon}       ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Click on the first dropdown under management console
     Wait Until Element Is Visible    (//div[contains(@class,'qa-upcoming-days')])[1]      ${wait_time}
@@ -990,6 +995,7 @@ Click on Back to account overview button
     Wait Until Element Is Visible    //span[@class='back']        ${wait_time}
     Wait Until Element Is Enabled    //span[@class='back']        ${wait_time}
     Click Element       //span[@class='back']
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Reset the filters for recent activities
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
@@ -1001,9 +1007,57 @@ Select option from the pop up of product
     [Arguments]    ${option}
     wait until element is visible   css:.removeProduct${option}Button-qa   ${wait_time}
     click element   css:.removeProduct${option}Button-qa
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Click on the export button under account overview tab
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible     //i[@title='Exports Alerts']        ${wait_time}
     wait until element is enabled      //i[@title='Exports Alerts']        ${wait_time}
+    sleep   ${search_sleep}
     click element  //i[@title='Exports Alerts']
+    wait until element is not visible       ${shadow}          ${wait_time}
+
+Fetch the count renewals overview subtabs
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //div[@id='renewal-overview-section']//following-sibling::div//div[contains(@class,'renew-card p')]//div[normalize-space()='${option}']//parent::div//following-sibling::div//div         ${wait_time}
+    Wait Until Element Is Enabled    //div[@id='renewal-overview-section']//following-sibling::div//div[contains(@class,'renew-card p')]//div[normalize-space()='${option}']//parent::div//following-sibling::div//div         ${wait_time}
+    ${renewal_overview_count}=      Get text    //div[@id='renewal-overview-section']//following-sibling::div//div[contains(@class,'renew-card p')]//div[normalize-space()='${option}']//parent::div//following-sibling::div//div
+    Set Global Variable    ${renewal_overview_count}
+
+Set Globally the count from renewal overview subtabs
+    ${renewal_overview_add_count}=  Evaluate    ${renewal_overview_count} + 1
+    ${renewal_overview_add_count_str}=      Convert To String    ${renewal_overview_add_count}
+    Log To Console    ${renewal_overview_add_count_str}
+    Set Global Variable    ${renewal_overview_add_count_str}
+
+Compare the counts of renewal overview after adding the asset
+    Should Be Equal    ${renewal_overview_add_count_str}    ${renewal_overview_count}
+
+Click on the subtabs
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //div[@id='renewal-overview-section']//following-sibling::div//div[contains(@class,'renew-card p')]//div[normalize-space()='${option}']//parent::div//following-sibling::div//div      ${wait_time}
+    Click Element    //div[@id='renewal-overview-section']//following-sibling::div//div[contains(@class,'renew-card p')]//div[normalize-space()='${option}']//parent::div//following-sibling::div//div
+
+Search and verify renewals overview through asset_id
+    [Arguments]     ${input}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    css:.search-location-qa    ${wait_time}
+    Wait Until Element Is Enabled    css:.search-location-qa    ${wait_time}
+    Input Text    css:.search-location-qa    ${input}
+    wait until element is visible       //table//tbody       ${wait_time}
+    Wait Until Element Contains    //table//tr//td[2]     ${input}    ${wait_time}
+    ${get_assetID} =    get text    //table//tr//td[2]
+    log to console     ${get_assetID}
+    should be equal    ${get_assetID}     ${input}
+
+Click on Back to management console tab
+    Wait Until Element Is Visible    css:span[class='back']     ${wait_time}
+    Wait Until Element Is Enabled    css:span[class='back']     ${wait_time}
+    Click Element     css:span[class='back']
+
+wait until renewal overview section is load
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //div[@id='renewal-overview-section']//button[contains(@class,'qa-renewal-overview-download')]         ${wait_time}
+    Wait Until Element Is Enabled    //div[@id='renewal-overview-section']//button[contains(@class,'qa-renewal-overview-download')]         ${wait_time}

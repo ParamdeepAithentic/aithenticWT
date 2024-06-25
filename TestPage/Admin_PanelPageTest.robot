@@ -37,6 +37,9 @@ Resource        ../Pages/I_iconPage.robot
 Resource        ../Pages/SortingPage.robot
 Resource        ../Pages/Bulk_Import_ExportPage.robot
 Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
+Resource        ../Pages/UnselectAssetAPI.robot
 
 Suite Setup     Update settings for Asset_ID, employee_id and location
 Test Setup      open the browser with the url
@@ -46,7 +49,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Change plan- Assign commercial plan and change it to slotted
-    [Tags]      Smoke     Sanity      Time      rerun
+    [Tags]      Smoke     Sanity      Time      rerun       Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     mehak@mynes.com     Test@123
 #    LandingPage.Verify you are on dashboard page
@@ -100,3 +103,14 @@ Change plan- Assign commercial plan and change it to slotted
 #    Generic.Verify your current page location contains      billing
 #    Admin_PanelPage.Fetch text from current Plan
 #    Admin_PanelPage.Verify text from current plan after changing subscription       Premium
+
+
+#Free the asset limit
+#    Generic.click on the tab	Login
+#    LandingPage.Fill the login Form     ${email}    ${valid_password}
+#    Generic.Verify your current page location contains      dashboard
+#    Generic.select the option from the side menu    Technology
+#    Generic.Verify your current page location contains      technology
+#    PaginationPage.Check the table get load
+#    PaginationPage.Fetch the total count
+#    PaginationPage.Run the remove asset journey

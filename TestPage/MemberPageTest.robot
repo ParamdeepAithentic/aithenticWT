@@ -10,23 +10,35 @@ Library         DateTime
 Library         OperatingSystem
 Resource        ../Pages/Generic.robot
 Resource        ../Pages/DashboardPage.robot
+Resource        ../Pages/DepartmentPage.robot
 Resource        ../Pages/ITperformancePage.robot
+Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/LandingPage.robot
 Resource        ../Pages/TechnologyPage.robot
 Resource        ../Pages/PartnersPage.robot
-Resource        ../Pages/RegisterMember.robot
 Resource        ../Pages/ContractsPage.robot
-Resource        ../Pages/LoginPage.robot
+Resource        ../Pages/RegisterMember.robot
+Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/ReplaceDomainAPI.robot
 Resource        ../Pages/Yopmail.robot
 Resource        ../Pages/UserAccount.robot
 Resource        ../Pages/TwoFactorAuth.robot
 Resource        ../Pages/SubscriptionPage.robot
+Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
+Resource        ../Pages/LoginPage.robot
 Resource        ../Pages/MemberPage.robot
+Resource        ../Pages/OCS.robot
+Resource        ../Pages/BillingPage.robot
 Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
+Resource        ../Pages/SortingPage.robot
+Resource        ../Pages/Bulk_Import_ExportPage.robot
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
+Resource        ../Pages/UnselectAssetAPI.robot
 
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
@@ -38,7 +50,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Verify asset history of assigned users
-    [Tags]  regression    smoke
+    [Tags]    smoke     Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -92,6 +104,7 @@ Verify asset history of assigned users
     Generic.Verify your current page contains this text     Technology
 
 Search asset history with Asset ID of Assigned User
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -158,7 +171,9 @@ Search asset history with Asset ID of Assigned User
     Generic.Verify your current page contains this text             Technology
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
+    Generic.Wait until table get load
     MemberPage.Click on assigned user tab   Assigned Users
+    Generic.Wait until table get load
     MemberPage.Search assigned user by first name   ${generated_AssigneduserFirstName}
     MemberPage.Click on three dots of Team Member listing
     MemberPage.Select option from three dots of Team Member     Asset History
@@ -176,7 +191,7 @@ Search asset history with Asset ID of Assigned User
     MemberPage.verify status of first name in member list of assigned user   ${generated_AssetID}
 
 Export Assigned User Asset History list
-    [Tags]   smoke     Sanity
+    [Tags]   smoke     Sanity       Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -259,6 +274,7 @@ Export Assigned User Asset History list
 #    Generic.Fetch alert message text and compare it with        Technology created successfully
 
 Update and delete assignee from side option
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page

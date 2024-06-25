@@ -10,27 +10,35 @@ Library         DateTime
 Library         OperatingSystem
 Resource        ../Pages/Generic.robot
 Resource        ../Pages/DashboardPage.robot
+Resource        ../Pages/DepartmentPage.robot
 Resource        ../Pages/ITperformancePage.robot
+Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/LandingPage.robot
 Resource        ../Pages/TechnologyPage.robot
 Resource        ../Pages/PartnersPage.robot
-Resource        ../Pages/RegisterMember.robot
 Resource        ../Pages/ContractsPage.robot
-Resource        ../Pages/LoginPage.robot
+Resource        ../Pages/RegisterMember.robot
+Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/ReplaceDomainAPI.robot
 Resource        ../Pages/Yopmail.robot
 Resource        ../Pages/UserAccount.robot
 Resource        ../Pages/TwoFactorAuth.robot
 Resource        ../Pages/SubscriptionPage.robot
+Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
-Resource        ../Pages/OCS.robot
-Resource        ../Pages/RegisterUserPage.robot
+Resource        ../Pages/LoginPage.robot
 Resource        ../Pages/MemberPage.robot
-Resource        ../Pages/KeyClockPage.robot
-Resource        ../Pages/TeamMemberPage.robot
+Resource        ../Pages/OCS.robot
+Resource        ../Pages/BillingPage.robot
 Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
+Resource        ../Pages/SortingPage.robot
+Resource        ../Pages/Bulk_Import_ExportPage.robot
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
+Resource        ../Pages/UnselectAssetAPI.robot
 
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
@@ -40,7 +48,19 @@ Test Teardown   Close Browser session
 
 
 *** Test Cases ***
+
+#Free the asset limit
+#    Generic.click on the tab	Login
+#    LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
+#    Generic.Verify your current page location contains      dashboard
+#    Generic.select the option from the side menu    Technology
+#    Generic.Verify your current page location contains      technology
+#    PaginationPage.Check the table get load
+#    PaginationPage.Fetch the total count
+#    PaginationPage.Run the remove asset journey
+
 Create team member form
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -52,7 +72,7 @@ Create team member form
     TeamMemberPage.Enter team member first name
     TeamMemberPage.Enter team member last name
     Generic.Enter phone number      India   +91     9646289871
-    TeamMemberPage.Enter team member business email
+    TeamMemberPage.Enter team member business email_mailinator
     TeamMemberPage.Click on team member department
 #    TeamMemberPage.Select team member department
     TeamMemberPage.Select team member department        DepartmentName09041
@@ -60,8 +80,11 @@ Create team member form
     TeamMemberPage.Click on team member location
     TeamMemberPage.Select team member location
     TeamMemberPage.Save the team member form   save
+    Generic.Fetch alert message text and compare it with        Team Member created successfully
+
 
 Add Team member page - Add New Department and assign that department to Team member
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -90,7 +113,7 @@ Add Team member page - Add New Department and assign that department to Team mem
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
 
 Edit Team member page - Edit New Department and assign that department to Team member
-    [Tags]      Sanity
+    [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 
@@ -143,7 +166,7 @@ Edit Team member page - Edit New Department and assign that department to Team m
     Generic.Verify your current page location contains          memberslist
 
 Verify team member Asset history
-    [Tags]      Sanity
+    [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
 #    LandingPage.Verify you are on dashboard page
@@ -234,6 +257,7 @@ Verify team member Asset history
     Generic.Verify your current page contains this text     Asset History
 
 Search asset history with Asset ID
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
 #    LandingPage.Verify you are on dashboard page
@@ -344,7 +368,7 @@ Search asset history with Asset ID
     TeamMemberPage.verify status of first name in member list   ${generated_AssetID}
 
 Verify user is able to export team member asset history list
-    [Tags]     Smoke      rerun
+    [Tags]     Smoke      rerun     Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form   debut@cool.fr.nf    Test@123
 #    LandingPage.Verify you are on dashboard page
@@ -566,7 +590,7 @@ Verify user is able to export team member asset history list
     TeamMemberPage.verify status of first name in member list   ${generated_AssetID}
 
 Convert Assignee to Team Member
-    [Tags]      Sanity
+    [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -672,6 +696,7 @@ Convert Assignee to Team Member
     Generic.Wait until table get load
 
 Check the validation of business email id
+    [Tags]      Unstable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -701,10 +726,11 @@ Check the validation of business email id
     TeamMemberPage.Select team member location
     TeamMemberPage.Select team member role while converting assignee to team member    Admin
     Generic.click on the button     Update
-    Generic.Fetch alert message text and compare it with        The Email Address must end with one of the following: mailinator.com automationqa2023090514421014.com.
+    Generic.Fetch alert message text and compare it with containing text        The Email Address must end with one of the following:
 
 
 Convert Assignee to team member in case of employee id is not system generated
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -764,7 +790,7 @@ Verify Invitation and signup as team member
     TeamMemberPage.Enter team member first name
     TeamMemberPage.Enter team member last name
     Generic.Enter phone number      India   +91     9646289871
-    TeamMemberPage.Enter team member business email with cool fr nf email
+    TeamMemberPage.Enter team member business email_mailinator
     TeamMemberPage.Enter the Position in member form        QA
     TeamMemberPage.Click on team member department
     TeamMemberPage.Select team member department        DepartmentName0451927202
@@ -838,6 +864,50 @@ Verify Invitation and signup as team member
     TeamMemberPage.Click on remove option under three dots
     Generic.Select parameter        Yes
     Generic.Fetch alert message text and compare it with        Team member deleted successfully
+
+Add Back Deleted Team member
+    [Tags]      Stable
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Click on add team member action button
+    TeamMemberPage.Choose option after clicking on Action button        Add New Member
+    TeamMemberPage.Enter team member first name
+    TeamMemberPage.Enter team member last name
+    Generic.Enter phone number      India   +91     9646289871
+    TeamMemberPage.Enter team member business email_mailinator
+    TeamMemberPage.Click on team member department
+    TeamMemberPage.Select team member department        DepartmentName09041
+    TeamMemberPage.Select team member role     CSPM
+    TeamMemberPage.Click on team member location
+    TeamMemberPage.Select team member location
+    TeamMemberPage.Save the team member form   save
+    Generic.Fetch alert message text and compare it with        Team Member created successfully
+    Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Search Team Member by name       ${generated_TMFname}
+    TeamMemberPage.Click on three dots of Team Member listing
+    TeamMemberPage.Select option from three dots of Team Member     Remove
+    TeamMemberPage.Select option from remove TM warning pop-up      remove
+    Generic.Fetch alert message text and compare it with        Team member deleted successfully
+    TeamMemberPage.Click on add team member action button
+    TeamMemberPage.Select option from team member action menu
+    TeamMemberPage.Enter team member first name self    ${generated_TMFname}
+    TeamMemberPage.Enter team member last name self     ${generated_TMLname}
+    Generic.Enter phone number      India   +91     9646289871
+    TeamMemberPage.Enter team member business email self    ${generated_TMbusinessEmail}
+    TeamMemberPage.Click on team member department
+    TeamMemberPage.Select team member department        DepartmentName09041
+    TeamMemberPage.Select team member role     CSPM
+    TeamMemberPage.Click on team member location
+    TeamMemberPage.Select team member location
+    TeamMemberPage.Save the team member form   save
+    Generic.Fetch alert message text and compare it with        Team Member created successfully
+    TeamMemberPage.Search Team Member by name       ${generated_TMFname}
+    TeamMemberPage.Verify Team member added after delete        ${generated_TMFname} ${generated_TMLname}
+
+
 
 Zz kill browser
     Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

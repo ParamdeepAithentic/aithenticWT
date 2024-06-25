@@ -10,25 +10,35 @@ Library         DateTime
 Library         OperatingSystem
 Resource        ../Pages/Generic.robot
 Resource        ../Pages/DashboardPage.robot
+Resource        ../Pages/DepartmentPage.robot
 Resource        ../Pages/ITperformancePage.robot
+Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/LandingPage.robot
 Resource        ../Pages/TechnologyPage.robot
 Resource        ../Pages/PartnersPage.robot
-Resource        ../Pages/RegisterMember.robot
 Resource        ../Pages/ContractsPage.robot
-Resource        ../Pages/LoginPage.robot
+Resource        ../Pages/RegisterMember.robot
+Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/ReplaceDomainAPI.robot
 Resource        ../Pages/Yopmail.robot
 Resource        ../Pages/UserAccount.robot
 Resource        ../Pages/TwoFactorAuth.robot
 Resource        ../Pages/SubscriptionPage.robot
+Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
-Resource        ../Pages/OCS.robot
-Resource        ../Pages/RegisterUserPage.robot
+Resource        ../Pages/LoginPage.robot
 Resource        ../Pages/MemberPage.robot
+Resource        ../Pages/OCS.robot
+Resource        ../Pages/BillingPage.robot
 Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
+Resource        ../Pages/SortingPage.robot
+Resource        ../Pages/Bulk_Import_ExportPage.robot
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
+Resource        ../Pages/UnselectAssetAPI.robot
 
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
@@ -39,7 +49,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Activate and deactivate the location
-    [Tags]      Time      Sanity
+    [Tags]      Time      Sanity        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -90,6 +100,7 @@ Activate and deactivate the location
     LocationPage.Fetch and verify the location status from the row   Active
 
 Edit the Location
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -131,6 +142,7 @@ Edit the Location
     Generic.Fetch alert message text and compare it with    Location updated successfully
 
 Remove Location from listing
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -160,6 +172,7 @@ Remove Location from listing
     Generic.Fetch alert message text and compare it with    Location deleted successfully
 
 Add Location from profile Listing
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -181,6 +194,7 @@ Add Location from profile Listing
     Generic.Fetch alert message text and compare it with    Location created successfully
 
 Verify Location_name Hide and show after changes it from settings
+    [Tags]      Stable
     Generic.open the browser with the url
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}    ${valid_password}

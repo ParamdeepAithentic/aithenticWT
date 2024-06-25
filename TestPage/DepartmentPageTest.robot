@@ -35,6 +35,10 @@ Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
 Resource        ../Pages/SortingPage.robot
 Resource        ../Pages/Bulk_Import_ExportPage.robot
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
+Resource        ../Pages/UnselectAssetAPI.robot
 
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
@@ -46,6 +50,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Department bulk edit
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -55,3 +60,57 @@ Department bulk edit
     Generic.Verify your current page location contains      department
     DepartmentPage.Click on added department action button
     DepartmentPage.Choose the option from the action menu   Add Department
+
+Add_edit_delete_department_via_profile_list
+    [Tags]      Stable
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     department-dropdown
+    Generic.Verify your current page location contains      department
+    DepartmentPage.Click on added department action button
+    DepartmentPage.Choose the option from the action menu   Add Department
+    TechnologyPage.Create unique department name random
+    DepartmentPage.Select department random cost center
+    TechnologyPage.Save the department       add
+    Generic.Fetch alert message text and compare it with        Department added successfully
+    Generic.Verify your current page location contains      department-list
+    DepartmentPage.Search by department name      ${generated_departmentnumber}
+    TeamMemberPage.Click on three dots of Team Member listing
+    TeamMemberPage.Select option from three dots of Team Member     Edit
+    TechnologyPage.Create unique department name random
+    DepartmentPage.Select department random cost center
+    TechnologyPage.Save the department       add
+    Generic.Fetch alert message text and compare it with        Department updated successfully
+    Generic.Verify your current page location contains      department-list
+    DepartmentPage.Search by department name      ${generated_departmentnumber}
+    TeamMemberPage.Click on three dots of Team Member listing
+    TeamMemberPage.Select option from three dots of Team Member     Remove
+    Generic.Select parameter        Yes
+    Generic.Fetch alert message text and compare it with        Department deleted successfully
+
+Add department and verify via organisation
+    [Tags]      Stable
+    Generic.open the browser with the url
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form    ${email}    ${valid_password}
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        company
+    Generic.Verify your current page location contains      dashboard
+    sleep   ${search_sleep}
+    DepartmentPage.Verify I-icon of company information under organistaion
+    Generic.Scroll Window To End
+    DepartmentPage.Create random department name
+    DepartmentPage.Select department random cost center
+    Generic.click on the button     Add
+    Generic.Fetch alert message text and compare it with        Department added successfully
+    Generic.Verify your current page location contains      department-list
+    DepartmentPage.Search by department name      ${generated_Department}
+
+

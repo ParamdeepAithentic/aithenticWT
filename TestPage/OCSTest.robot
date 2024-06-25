@@ -10,27 +10,36 @@ Library         DateTime
 Library         OperatingSystem
 Resource        ../Pages/Generic.robot
 Resource        ../Pages/DashboardPage.robot
+Resource        ../Pages/DepartmentPage.robot
 Resource        ../Pages/ITperformancePage.robot
+Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/LandingPage.robot
 Resource        ../Pages/TechnologyPage.robot
 Resource        ../Pages/PartnersPage.robot
-Resource        ../Pages/RegisterMember.robot
 Resource        ../Pages/ContractsPage.robot
-Resource        ../Pages/LoginPage.robot
+Resource        ../Pages/RegisterMember.robot
+Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/ReplaceDomainAPI.robot
 Resource        ../Pages/Yopmail.robot
 Resource        ../Pages/UserAccount.robot
 Resource        ../Pages/TwoFactorAuth.robot
 Resource        ../Pages/SubscriptionPage.robot
+Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
+Resource        ../Pages/LoginPage.robot
+Resource        ../Pages/MemberPage.robot
 Resource        ../Pages/OCS.robot
-Resource        ../Pages/RegisterUserPage.robot
-Resource        ../Pages/KeyClockPage.robot
-Resource        ../Pages/TeamMemberPage.robot
+Resource        ../Pages/BillingPage.robot
 Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
+Resource        ../Pages/SortingPage.robot
+Resource        ../Pages/Bulk_Import_ExportPage.robot
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
 Resource        ../Pages/UnselectAssetAPI.robot
+Resource        ../Pages/PaginationPage.robot
 
 
 Test Setup      open the browser with the url
@@ -43,7 +52,19 @@ Test Setup      open the browser with the url
 
 *** Test Cases ***
 
+#Free the asset limit
+#    Generic.click on the tab	Login
+#    LandingPage.Fill the login Form     johns@mai.25u.com        Test@123
+#    Generic.Verify your current page location contains      dashboard
+#    Generic.select the option from the side menu    Technology
+#    Generic.Verify your current page location contains      technology
+#    PaginationPage.Check the table get load
+#    PaginationPage.Fetch the total count
+#    PaginationPage.Run the remove asset journey
+
+
 Search Discovered Assets
+    [Tags]      Stable
     TRY
        Generic.click on the tab	Login
        LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -78,6 +99,7 @@ Search Discovered Assets
     END
 
 Search Existing Assets
+    [Tags]      Stable
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -116,7 +138,7 @@ Search Existing Assets
     END
 
 Match Discovery and Existing Asset
-    [Tags]      Sanity
+    [Tags]      Sanity      Unstable
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -182,6 +204,7 @@ Match Discovery and Existing Asset
     END
 
 Apply filters and clear filter on Discovered Asset
+    [Tags]      Stable
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form     johns@mai.25u.com         Test@123
@@ -234,7 +257,7 @@ Apply filters and clear filter on Discovered Asset
 
 
 Apply filters and clear filter on Existing Assets
-    [Tags]      Sanity
+    [Tags]      Sanity      Stable
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form     johns@mai.25u.com     Test@123
@@ -306,6 +329,7 @@ Apply filters and clear filter on Existing Assets
     END
 
 Add Discovery Asset
+    [Tags]        Unstable
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -372,6 +396,7 @@ Add Discovery Asset
     END
 
 Create Asset from Add Assets Page
+    [Tags]        Unstable
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -424,6 +449,7 @@ Create Asset from Add Assets Page
     END
 
 Add component as an asset from Agent Discovery page
+    [Tags]        Unstable
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -501,6 +527,7 @@ Add component as an asset from Agent Discovery page
     END
 
 Upload Image and Document File while Add Discovery Asset
+    [Tags]        Unstable
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -614,7 +641,7 @@ Upload Image and Document File while Add Discovery Asset
     END
 
 Upload Image and Document File while Add component as an asset from Agent Discovery page
-    [Tags]    rerun
+    [Tags]    rerun     Unstable
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -734,6 +761,7 @@ Upload Image and Document File while Add component as an asset from Agent Discov
     END
 
 Match IP Discovered asset with Existing asset
+    [Tags]        Unstable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
 #    LandingPage.Verify you are on dashboard page
@@ -774,6 +802,7 @@ Match IP Discovered asset with Existing asset
     UnselectAssetAPI.Hit API Endpoint
 
 Match Discovery Asset with Static Existing Asset
+    [Tags]        Unstable
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -826,6 +855,7 @@ Match Discovery Asset with Static Existing Asset
     END
 
 Match IP Discovered Asset with Dynamic Existing Asset
+    [Tags]        Unstable
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -890,7 +920,7 @@ Match IP Discovered Asset with Dynamic Existing Asset
     END
 
 Add asset with IP Address under discovered asset list
-    [Tags]      Sanity
+    [Tags]      Sanity      Unstable
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -972,6 +1002,7 @@ Add asset with IP Address under discovered asset list
     END
 
 Add Asset with IP address from Network Discovery Page
+    [Tags]      Unstable
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -1025,6 +1056,7 @@ Add Asset with IP address from Network Discovery Page
     END
 
 Network discovery: search on discovered asset list with Tag Name, IP_address and MAC_address
+    [Tags]        Unstable
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -1080,6 +1112,7 @@ Network discovery: search on discovered asset list with Tag Name, IP_address and
     END
 
 Search with containing fields under advance search of discovered asset
+    [Tags]        Unstable
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -1208,6 +1241,7 @@ Search with containing fields under advance search of discovered asset
     END
 
 Search with containing fields under advance search of component of discovered asset
+    [Tags]        Unstable
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -1230,6 +1264,8 @@ Search with containing fields under advance search of component of discovered as
         TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
         TechnologyPage.Create unique serial number random
         OCS.Enter The Asset_id in Add Technology Page
+        Generic.Scroll Window To End
+        TechnologyPage.Verify the visibility of assign to field
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
@@ -1384,7 +1420,7 @@ Search with containing fields under advance search of component of discovered as
     END
 
 Search with containing fields under advance search of IP Address of discovered asset
-    [Tags]      Sanity
+    [Tags]      Sanity          Unstable
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -1528,6 +1564,7 @@ Search with containing fields under advance search of IP Address of discovered a
     END
 
 Upload Image and Document file during Add Asset with IP address from Agent Discovery Page
+    [Tags]        Unstable
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -1623,6 +1660,130 @@ Upload Image and Document file during Add Asset with IP address from Agent Disco
     FINALLY
         OCS.Welcome to the code
     END
+
+Verify cross icon an reset icon while adding IP discovered asset
+        Generic.click on the tab	Login
+        LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+#        LandingPage.Verify you are on dashboard page
+        Generic.Verify your current page location contains      dashboard
+        Generic.Click on the profile name
+        Generic.Select option from profile list     view-discovery
+        Generic.Verify your current page location contains    ocs
+        I_iconPage.Choose tab under Discovery Assets       network-discovery
+        OCS.Click on newly discovered tab under network discovery
+        OCS.Click on search icon of discovery assets
+        OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
+        OCS.Click on the down arrow icon of discovered asset
+        Generic.Scroll Window To End
+        OCS.Mouse Hover over searched IP Assets
+        OCS.Verify Searched discovery asset    00:17:61:10:C6:A1
+        OCS.Get MAC_Address by hovering over IP discovered assets   MacAddress:
+        Generic.select the option from the side menu    Asset Discovery
+        Generic.Verify your current page location contains     discovery-assets
+        OCS.click on the value of IP discovered devices of inside table
+        Sleep    ${yop_sleep}
+        Switch Window       aithentic | Discovered Assets
+        Generic.Verify your current page location contains     discovery-assets-list
+        OCS.Fetch the Brandname from agent discovery page
+        OCS.Click on Plus icon under table
+        Sleep    ${Yop_Sleep}
+        Switch Window       aithentic | Add Discovery Asset
+        Generic.Verify your current page location contains    add-discovered-asset
+        Generic.Verify your current page contains this text    Add Technology
+        TechnologyPage.Select parameter from technology dropdown list      ZZ123
+        TechnologyPage.Click on reset icon while adding technology
+        TechnologyPage.Verify the invisibility of product after clicking on cross icon
+        TechnologyPage.Verify the invisibility of technology type after clicking on reset icon
+        sleep   ${search_sleep}
+        TechnologyPage.Click on reset icon while adding technology
+        TechnologyPage.Verify the invisibility of brand after clicking on reset icon
+
+Verify reset icon while adding discovery asset
+        Generic.click on the tab	Login
+        LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+#        LandingPage.Verify you are on dashboard page
+        Generic.Verify your current page location contains      dashboard
+        Generic.Click on the profile name
+        Generic.Select option from profile list     view-discovery
+        Generic.Verify your current page location contains    ocs
+        I_iconPage.Choose tab under Discovery Assets       network-discovery
+        OCS.Click on newly discovered tab under network discovery
+        OCS.Click on search icon of discovery assets
+        OCS.Enter text to search discovery asset    Apple Inc
+        OCS.Click on the down arrow icon of discovered asset
+        Generic.Scroll Window To End
+        OCS.Mouse Hover over searched Discovered Assets
+        OCS.Mark check-box of Agent/Discovered Asset
+        OCS.Click on Button inside Network Discovery Page       Add Assets
+        Sleep    ${Yop_Sleep}
+        Switch Window       aithentic | Add Discovery Asset
+        Generic.Verify your current page location contains    add-discovered-asset
+        Generic.Verify your current page contains this text    Add Technology
+        TechnologyPage.Select parameter from technology dropdown list      ZZ123
+        TechnologyPage.Click on reset icon while adding technology
+        TechnologyPage.Verify the invisibility of product after clicking on cross icon
+        TechnologyPage.Verify the invisibility of technology type after clicking on reset icon
+        sleep   ${search_sleep}
+        TechnologyPage.Click on reset icon while adding technology
+        TechnologyPage.Verify the invisibility of brand after clicking on reset icon
+
+Verify reset icon while adding component
+        Generic.click on the tab	Login
+        LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+#        LandingPage.Verify you are on dashboard page
+        Generic.Verify your current page location contains      dashboard
+        Generic.select the option from the side menu        Asset Discovery
+        Generic.Verify your current page location contains      discovery-assets
+        I_iconPage.Choose tab under Discovery Assets       network-discovery
+        OCS.Click on newly discovered tab under network discovery
+        Generic.Verify your current page location contains    ocs
+        OCS.Click on search icon of discovery assets
+        OCS.Enter text to search discovery asset   Apple Inc
+        OCS.Click on the down arrow icon of discovered asset
+        Generic.Scroll Window To End
+        OCS.Mark check-box of Agent/Discovered Asset
+        OCS.Click on Button inside Network Discovery Page       Add Assets
+        Sleep    ${yop_sleep}
+        Switch Window       aithentic | Add Discovery Asset
+        Generic.Verify your current page contains this text    Add Technology
+        TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
+        TechnologyPage.Create unique serial number random
+        OCS.Enter The Asset_id in Add Technology Page
+        Generic.Scroll Window To End
+        TechnologyPage.Verify the visibility of assign to field
+        OCS.Click on save button of Add Technology Page
+        OCS.Wait for the invisiblity of alert msg        Technology created successfully
+        Sleep    ${yop_sleep}
+        switch window    aithentic | Service Now Newly-Discovered
+        OCS.Choose tab under Discovery Assets   agent-discovery
+        Generic.Verify your current page location contains      ocs
+        Generic.Refresh the existing page
+
+        Generic.Verify your current page contains this text    ${generated_AssetID}
+        Generic.select the option from the side menu        Technology
+        Generic.Verify your current page location contains      technology-list
+        TechnologyPage.Search by AssetId       ${generated_AssetID}
+        TechnologyPage.Click on the first row of the technology table
+        Generic.Verify your current page location contains    technology-details
+        OCS.Visible the print qr button to for data loading
+        OCS.Verify Page should contain Element     discovery-info-tab
+        OCS.Click on Discovery_info tab on Technology details Page
+        OCS.Verify Discovery_info contains following tab    software-tab
+        sleep   ${search_sleep}
+        OCS.Enter input in search bar of software tab under technology details page     python
+        Generic.Scroll the page till   499
+        OCS.Hover Over Add component button and verify text         Please click on the 'plus' icon to add component
+        OCS.Click on plus icon of any component
+        Sleep    ${yop_sleep}
+        Switch Window       aithentic | Add Discovery Asset
+        Generic.Verify your current page contains this text    Add Technology
+        TechnologyPage.Select parameter from technology dropdown list      ZZ123
+        TechnologyPage.Click on reset icon while adding technology
+        TechnologyPage.Verify the invisibility of product after clicking on cross icon
+        TechnologyPage.Verify the invisibility of technology type after clicking on reset icon
+        sleep   ${search_sleep}
+        TechnologyPage.Click on reset icon while adding technology
+        TechnologyPage.Verify the invisibility of brand after clicking on reset icon
 
 Zz kill browser
     Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

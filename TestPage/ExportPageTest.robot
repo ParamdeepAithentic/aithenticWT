@@ -34,6 +34,10 @@ Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
 Resource        ../Pages/SortingPage.robot
 Resource        ../Pages/Bulk_Import_ExportPage.robot
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
+Resource        ../Pages/UnselectAssetAPI.robot
 
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
@@ -46,6 +50,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Export Partner list
+    [Tags]      Stable
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -80,16 +85,31 @@ Export Partner list
     Generic.click on the button     Okay, Thanks!
 
 Export partner list under technology details
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.Search by AssetId       AssetID_7003489679
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list       OPMR815274
+    TechnologyPage.Create unique serial number random
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
     TechnologyPage.Select tab under technology details      partners
+    Generic.Wait until table get load
     PartnersPage.Click on the export button of partner under technology details page
     PartnersPage.Download the selected extension file of partner under technology details      .xlsx
     PartnersPage.Confirm to export file
@@ -117,6 +137,7 @@ Export partner list under technology details
 
 
 Export Location List
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -155,16 +176,36 @@ Export Location List
 
 
 Export location list of location under technology details page
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.Search by AssetId       AssetID_7003489679
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list       OPMR815274
+    TechnologyPage.Create unique serial number random
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
-    TechnologyPage.Select tab under technology details      location
+    TechnologyPage.Click on edit button on product details page        Edit
+    Generic.Verify your current page location contains      edit-technology
+    TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
+    TechnologyPage.Click on update button of edit_technology page      Update
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+    Generic.Verify your current page location contains     technology-details
+    TechnologyPage.Click on Location tab of technology- list page
     LocationPage.Click on the export button of location under technology details page
     LocationPage.Download the selected extension file of location under technology details      .xlsx
     PartnersPage.Confirm to export file
@@ -191,6 +232,7 @@ Export location list of location under technology details page
     Generic.click on the button     Okay, Thanks!
 
 Export partner list while adding new partner
+    [Tags]      Stable
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -236,6 +278,7 @@ Export partner list while adding new partner
     Generic.click on the button     Okay, Thanks!
 
 Export list of parent tab under technology details
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -314,6 +357,7 @@ Export list of parent tab under technology details
 
 
 Export Team member list
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -351,6 +395,7 @@ Export Team member list
 
 
 Export Assigned User list
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -389,6 +434,7 @@ Export Assigned User list
 
 
 Export technology details page list
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -457,6 +503,7 @@ Export technology details page list
     Generic.click on the button     Okay, Thanks!
 
 Export component tab list
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -536,6 +583,7 @@ Export component tab list
     Generic.click on the button     Okay, Thanks!
 
 Export account overview tab data
+    [Tags]      Unstable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page

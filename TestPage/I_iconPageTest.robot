@@ -9,26 +9,35 @@ Library         DateTime
 Library         OperatingSystem
 Resource        ../Pages/Generic.robot
 Resource        ../Pages/DashboardPage.robot
+Resource        ../Pages/DepartmentPage.robot
 Resource        ../Pages/ITperformancePage.robot
+Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/LandingPage.robot
 Resource        ../Pages/TechnologyPage.robot
 Resource        ../Pages/PartnersPage.robot
-Resource        ../Pages/RegisterMember.robot
 Resource        ../Pages/ContractsPage.robot
-Resource        ../Pages/LoginPage.robot
+Resource        ../Pages/RegisterMember.robot
+Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/ReplaceDomainAPI.robot
 Resource        ../Pages/Yopmail.robot
 Resource        ../Pages/UserAccount.robot
 Resource        ../Pages/TwoFactorAuth.robot
 Resource        ../Pages/SubscriptionPage.robot
+Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
+Resource        ../Pages/LoginPage.robot
+Resource        ../Pages/MemberPage.robot
 Resource        ../Pages/OCS.robot
-Resource        ../Pages/RegisterUserPage.robot
-Resource        ../Pages/KeyClockPage.robot
-Resource        ../Pages/TeamMemberPage.robot
+Resource        ../Pages/BillingPage.robot
 Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
+Resource        ../Pages/SortingPage.robot
+Resource        ../Pages/Bulk_Import_ExportPage.robot
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
+Resource        ../Pages/UnselectAssetAPI.robot
 
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
@@ -37,6 +46,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Verify all i-icon of Dashboard page
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -55,7 +65,7 @@ Verify all i-icon of Dashboard page
     I_iconPage.Click on i-icon of account_overview tab
 
 Verify all i-icon of profile-listing
-    [Tags]     Sanity
+    [Tags]     Sanity       Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -107,6 +117,7 @@ Verify all i-icon of profile-listing
     I_iconPage.Click on i-icon inside technology
 
 Verify all i-icon of team member page
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -118,7 +129,7 @@ Verify all i-icon of team member page
     I_iconPage.Click on i-icon of team-members tab
 
 Verify all i-icon of Technology page
-    [Tags]   Sanity
+    [Tags]   Sanity     Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -162,6 +173,7 @@ Verify all i-icon of Technology page
     I_iconPage.Click on Back tab          Back to Manage Technology
 
 Verify all i-icon of partners page
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -173,6 +185,7 @@ Verify all i-icon of partners page
     I_iconPage.Click on i-icon of partners tab
 
 Verify all i-icon of Discovery assets
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -193,7 +206,7 @@ Verify all i-icon of Discovery assets
     I_iconPage.Click on i_icon under network_discovery tab
 
 Verify all i-icon of advanced search
-    [Tags]     Smoke
+    [Tags]     Smoke    Unstable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
 #    LandingPage.Verify you are on dashboard page
@@ -352,6 +365,7 @@ Verify all i-icon of advanced search
     UnselectAssetAPI.Hit API Endpoint
 
 Upload File I-icon while add and edit technology
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -383,6 +397,7 @@ Upload File I-icon while add and edit technology
     Generic.Fetch alert message text and compare it with        Technology updated successfully
 
 Upload I-icon under attachment tab
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -408,6 +423,7 @@ Upload I-icon under attachment tab
     I_iconPage.Fetch the text of I-icon of upload file while adding technology     You can upload 1 file of 8MB or 8 files of 1MB each.
 
 Upload I-icon under clone add technology
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -435,7 +451,7 @@ Upload I-icon under clone add technology
     I_iconPage.Fetch the text of I-icon of upload file while adding technology     You can upload 1 file of 8MB or 8 files of 1MB each.
 
 Upload I-icon while adding discovery and component asset
-    [Tags]    rerun
+    [Tags]    rerun     Unstable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
 #    LandingPage.Verify you are on dashboard page
@@ -511,6 +527,7 @@ Upload I-icon while adding discovery and component asset
     UnselectAssetAPI.Hit API Endpoint
 
 Upload I-icon while adding IP Address
+    [Tags]      Unstable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
 #    LandingPage.Verify you are on dashboard page
