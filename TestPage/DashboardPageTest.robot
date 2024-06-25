@@ -1013,5 +1013,27 @@ Add and delete product from profile listing
     DashboardPage.Select option from the pop up of product     Yes
     Generic.Fetch alert message text and compare it with      Product deleted successfully
 
+View Predefined brand
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    DashboardPage.Select an option from company details side list   Technology
+    Generic.Verify your current page location contains  technology-settings
+    DashboardPage.Click on pre defined brand list       @pamil.fr.nf
+
+View Predefined product
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    DashboardPage.Select an option from company details side list   Technology
+    Generic.Verify your current page location contains  technology-settings
+    DashboardPage.Click on pre defined product list       [W306MI0U247
+
 Zz kill browser
     Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

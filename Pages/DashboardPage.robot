@@ -1017,3 +1017,21 @@ Click on the export button under account overview tab
     sleep   ${search_sleep}
     click element  //i[@title='Exports Alerts']
     wait until element is not visible       ${shadow}          ${wait_time}
+
+Click on pre defined brand list
+    [Arguments]     ${option}
+    wait until element is visible   css:.qa-predefinedBrands input   ${wait_time}
+    wait until element is enabled   css:.qa-predefinedBrands input   ${wait_time}
+    click element   css:.qa-predefinedBrands input
+    clear element text      css:.qa-predefinedBrands input
+    input text      css:.qa-predefinedBrands input      ${option}
+    Generic.Select parameter    ${option}
+
+Click on pre defined product list
+    [Arguments]     ${option}
+    wait until element is visible   css:.qa-selectedProductRecord input   ${wait_time}
+    wait until element is enabled   css:.qa-selectedProductRecord input   ${wait_time}
+    click element   css:.qa-selectedProductRecord input
+    clear element text      css:.qa-selectedProductRecord input
+    input text      css:.qa-selectedProductRecord input      ${option}
+    Generic.Select parameter    ${option}
