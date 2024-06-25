@@ -821,7 +821,23 @@ Verify Invitation and signup as team member
     TeamMemberPage.verify status of first name in member list   Active
     TeamMemberPage.Click on three dots of Team Member listing
     TeamMemberPage.Select option from three dots of Team Member     Details
-
+    Generic.click on the button     Edit
+    Generic.Verify your current page location contains      updatemembers
+    TeamMemberPage.Enter team member first name while editing
+    TeamMemberPage.Enter team member last name while editing
+    TeamMemberPage.Click on add here in department field        Click here to add
+    TechnologyPage.Create unique department name random
+    TechnologyPage.Select department cost center     1300
+    TechnologyPage.Save the department       add
+    Generic.Fetch alert message text and compare it with        Department added successfully
+    TeamMemberPage.Click on the button      Update
+    Generic.Fetch alert message text and compare it with        Team Member updated successfully
+    Generic.Verify your current page location contains          memberslist
+    TeamMemberPage.Search Team Member by name   ${generated_Tmfname}
+    TeamMemberPage.Click on three dots of Team Member listing
+    TeamMemberPage.Click on remove option under three dots
+    Generic.Select parameter        Yes
+    Generic.Fetch alert message text and compare it with        Team member deleted successfully
 
 Zz kill browser
     Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
