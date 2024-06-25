@@ -2500,20 +2500,6 @@ Verify_Asset_ID_Changing_settings_from_Profile_list
     PartnersPage.Select option from the pop up  Yes
     Generic.Fetch alert message text and compare it with      Technology Removed Successfully
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Zz kill browser
     Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
 
