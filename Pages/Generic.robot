@@ -58,9 +58,9 @@ ${valid_password}        Test!@5897     #UAT user
 ${admin_url}        https://uat-admin.aithentic.com/
 #${admin_url}        https://qa-admin.aithentic.com/
 
-
 #${agentDiscovery_TagName}       Tag Name - johnsoftwaresolutions-1192-4         #qa
 ${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-10        #uat
+
 
 ${admin_name}        aithentic@yopmail.com
 ${admin_password}       Admin@123
@@ -83,8 +83,7 @@ ${click_countryTag}     css:.iti__arrow
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
-
-${wait_time}        60
+${wait_time}        120
 ${yop_sleep}       10
 ${search_sleep}       1
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March

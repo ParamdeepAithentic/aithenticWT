@@ -500,6 +500,10 @@ Add assetID for technology lifecycle information self
 Select purchase date
     Generic.Enter current date      ${purchase_date}
 
+Select purchase date self
+    [Arguments]    ${date}
+    Generic.Enter self date     ${purchase_date}       ${date}
+
 Select warranty end date
     [Arguments]    ${date}
     Generic.Enter self date     ${warranty_enddt}       ${date}
@@ -1296,6 +1300,38 @@ Renewal Date via technology
     wait until element is enabled   css:#RenewalDate     ${wait_time}
     click element   css:#RenewalDate
     input text  css:#RenewalDate     03/26/2021
+
+Input current Date
+    ${current_date1}    Get Current Date    result_format=%m/%d/%Y
+    Log To Console     ${current_date1}
+    set global variable         ${current_date1}
+
+Input future Date
+#    ${future_date} =    Add Time To Date   ${current_date1}    7    days    result_format=%m/%d/%Y
+#    Log To Console    ${future_date}
+#    Set Global Variable    ${future_date}
+
+    ${current_date}=    Get Current Date    result_format=%m/%d/%Y
+    Log To Console      Current Date is: ${current_date}
+
+    ${current_date_parts}=    Split String    ${current_date}    -
+    ${current_date_without_time}=    Set Variable    ${current_date_parts[0]}
+
+    ${future_date}=    Evaluate    datetime.datetime.strptime($current_date_without_time, "%m/%d/%Y") + datetime.timedelta(days=7)
+    ${formatted_future_date}=    Convert Date    ${future_date}    result_format=%m/%d/%Y
+
+    Log To Console      Future Date is: ${formatted_future_date}
+    Set Global Variable    ${formatted_future_date}
+
+    
+Enter current or future date as renewal date
+    [Arguments]     ${date}
+    wait until element is visible   css:#RenewalDate     ${wait_time}
+    wait until element is enabled   css:#RenewalDate     ${wait_time}
+    Clear Element Text    css:#RenewalDate
+    input text   css:#RenewalDate     ${date}
+    Clear Element Text    css:#RenewalDate
+    input text   css:#RenewalDate     ${date}
 
 Click on action button of technology
     wait until element is not visible      ${loaderIcon}    ${wait_time}
