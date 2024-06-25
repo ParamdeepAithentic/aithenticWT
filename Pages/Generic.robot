@@ -46,7 +46,7 @@ ${invalid_password}      123445
 
 
 ${url}                 https://uat-app.aithentic.com/
-${url}                https://qa-app.aithentic.com/
+#${url}                https://qa-app.aithentic.com/
 #${url}                https://pre-prod-app.aithentic.com
 ${apiURL}              https://uat-api.aithentic.com/api/v1
 #${apiURL}             https://qa-api.aithentic.com/api/v1
