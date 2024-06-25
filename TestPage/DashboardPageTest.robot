@@ -1391,7 +1391,5 @@ Verifying the Renewals Overview section of Management console
     DashboardPage.Click on Back to management console tab
     Generic.Verify your current page location contains    management-console
 
-
-
 Zz kill browser
     Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

@@ -131,8 +131,6 @@ ${search_technology_group}     css:.qa-selectedTechnologyGroups input
 ${search_technology_group}      (//div[@class='ng-input']//input)[2]
 ${search_by_brand_name}            (//div[@class='ng-input']//input)[3]
 
-     
-
 *** Keywords ***
 Click on add department
     wait until element is visible      ${add_dept_btn}      ${wait_time}

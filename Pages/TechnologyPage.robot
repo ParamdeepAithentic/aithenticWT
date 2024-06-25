@@ -173,9 +173,6 @@ ${businessEmail}        css:#AssignedEmail
 #${view_icon_file}       //p[contains(text(),'${format}')]//parent::div//i[contains(@class,"open-image-preview-QA")]
 #${download_icon_file}   //p[contains(text(),'.jpg')]//parent::div//i[contains(@class,"open-image-download-QA")]
 
-${DATE_FORMAT_IN}  %m/%d/%Y
-${DATE_FORMAT_OUT}  %m/%d/%y
-
 *** Keywords ***
 Fetch the Brand Name from the row
     [Arguments]    ${option}
