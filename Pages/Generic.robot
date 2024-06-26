@@ -44,7 +44,6 @@ Resource        ../Pages/UnselectAssetAPI.robot
 ${user_name}             rahulshettyacademy
 ${invalid_password}      123445
 
-
 ${url}                 https://uat-app.aithentic.com/
 #${url}                https://qa-app.aithentic.com/
 #${url}                https://pre-prod-app.aithentic.com
