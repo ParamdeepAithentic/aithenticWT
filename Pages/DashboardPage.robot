@@ -1040,7 +1040,7 @@ Click on the subtabs
     Wait Until Element Is Visible    //div[@id='renewal-overview-section']//following-sibling::div//div[contains(@class,'renew-card p')]//div[normalize-space()='${option}']//parent::div//following-sibling::div//div      ${wait_time}
     Click Element    //div[@id='renewal-overview-section']//following-sibling::div//div[contains(@class,'renew-card p')]//div[normalize-space()='${option}']//parent::div//following-sibling::div//div
 
-Search and verify renewals overview through asset_id
+Search and verify through asset_id
     [Arguments]     ${input}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     Wait Until Element Is Visible    css:.search-location-qa    ${wait_time}
@@ -1091,6 +1091,20 @@ Set Globally the count from subscription overview subtabs
 
 Compare the counts of subscription overview
     Should Be Equal    ${subscription_overview_add_count_str}    ${total_count}
+
+See all subscription connector
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //span[normalize-space()='See all 2']    ${wait_time}
+    Wait Until Element Is Enabled    //span[normalize-space()='See all 2']     ${wait_time}
+    Click Element    //span[normalize-space()='See all 2']
+
+Click on Download-icon of subscription overview
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    css:.qa-renewals-overview-details-download        ${wait_time}
+    Wait Until Element Is Enabled    css:.qa-renewals-overview-details-download        ${wait_time}
+    Click Element      css:.qa-renewals-overview-details-download
+
+Click on
 
 
 
