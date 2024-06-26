@@ -1014,7 +1014,8 @@ Add and delete product from profile listing
     Generic.Fetch alert message text and compare it with      Product deleted successfully
 
 
-Verifying the Renewals Overview section of Management console
+Verifying the Renewals Overview section of Management console - End of Life
+    [Tags]      Unstable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1025,7 +1026,7 @@ Verifying the Renewals Overview section of Management console
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
-    TechnologyPage.Select parameter from technology dropdown list       0A001-0033010-AA
+    TechnologyPage.Select parameter from technology dropdown list       Product_End_of_Life
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date self    05/13/2024
     TechnologyPage.Select warranty end date    12/12/2028
@@ -1070,7 +1071,7 @@ Verifying the Renewals Overview section of Management console
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
-    TechnologyPage.Select parameter from technology dropdown list       K2P85B
+    TechnologyPage.Select parameter from technology dropdown list         Product_future_end_of_life
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date self    05/13/2024
     TechnologyPage.Select warranty end date    12/12/2028
@@ -1107,7 +1108,10 @@ Verifying the Renewals Overview section of Management console
     DashboardPage.Click on Back to management console tab
     Generic.Verify your current page location contains    management-console
 
-######################################## Overdue renewals  #################################################################
+Verifying the Renewals Overview section of Management console - Overdue Renewals
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
     DashboardPage.Fetch the count renewals overview subtabs      Overdue renewals
     DashboardPage.Set Globally the count from renewal overview subtabs
     Generic.select the option from the side menu    Technology
@@ -1187,7 +1191,10 @@ Verifying the Renewals Overview section of Management console
     DashboardPage.Click on Back to management console tab
     Generic.Verify your current page location contains    management-console
 
-####################################### Overdue contracts ###################################################################
+Verifying the Renewals Overview section of Management console - Overdue contracts
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
     DashboardPage.Fetch the count renewals overview subtabs      Overdue contracts
     DashboardPage.Set Globally the count from renewal overview subtabs
     Generic.select the option from the side menu    Technology
@@ -1257,7 +1264,10 @@ Verifying the Renewals Overview section of Management console
     DashboardPage.Click on Back to management console tab
     Generic.Verify your current page location contains    management-console
 
-###################################### Expired warranties ###################################################################
+Verifying the Renewals Overview section of Management console - Expired warranties
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
     DashboardPage.Fetch the count renewals overview subtabs      Expired warranties
     DashboardPage.Set Globally the count from renewal overview subtabs
     Generic.select the option from the side menu    Technology
@@ -1324,7 +1334,10 @@ Verifying the Renewals Overview section of Management console
     DashboardPage.Click on Back to management console tab
     Generic.Verify your current page location contains    management-console
 
-######################################## Overdue certificates ###################################################################
+Verifying the Renewals Overview section of Management console - Overdue certificates
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
     DashboardPage.Fetch the count renewals overview subtabs      Overdue certificates
     DashboardPage.Set Globally the count from renewal overview subtabs
     Generic.select the option from the side menu    Technology
