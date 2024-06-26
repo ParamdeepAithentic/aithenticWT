@@ -780,6 +780,7 @@ Convert Assignee to team member in case of employee id is not system generated
     Generic.Fetch alert message text and compare it with       Settings Updated
 
 Verify Invitation and signup as team member
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
@@ -908,6 +909,7 @@ Add Back Deleted Team member
     TeamMemberPage.Verify Team member added after delete        ${generated_TMFname} ${generated_TMLname}
 
 Verify Invitation and signup as team member via company details
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
