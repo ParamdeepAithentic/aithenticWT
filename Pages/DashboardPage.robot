@@ -1061,3 +1061,37 @@ wait until renewal overview section is load
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     Wait Until Element Is Visible    //div[@id='renewal-overview-section']//button[contains(@class,'qa-renewal-overview-download')]         ${wait_time}
     Wait Until Element Is Enabled    //div[@id='renewal-overview-section']//button[contains(@class,'qa-renewal-overview-download')]         ${wait_time}
+
+Verify subscription overview should contain
+    [Arguments]         ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //p[normalize-space()='${option}']//parent::div     ${wait_time}
+    Wait Until Element Is Enabled    //p[normalize-space()='${option}']//parent::div     ${wait_time}
+
+Fetch the count under subscription overview section of management console
+    [Arguments]         ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //p[normalize-space()='${option}']//parent::div     ${wait_time}
+    Wait Until Element Is Enabled    //p[normalize-space()='${option}']//parent::div     ${wait_time}
+    Click Element     //p[normalize-space()='${option}']//parent::div
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible   ${Totalcount_field}      ${wait_time}
+    ${text}=     get text   ${Totalcount_field}
+    ${parts}    Split String    ${text}    Total Count :
+    ${total_count}    Get Substring    ${parts[1]}    3
+    ${number}=   Convert To Integer   ${total_count}
+    Log to console  Total count is :${total_count}
+    set global variable    ${total_count}
+
+Set Globally the count from subscription overview subtabs
+    ${subscription_overview_add_count}=  Evaluate    ${total_count} + 1
+    ${subscription_overview_add_count_str}=      Convert To String    ${subscription_overview_add_count}
+    Log To Console    ${subscription_overview_add_count_str}
+    Set Global Variable    ${subscription_overview_add_count_str}
+
+Compare the counts of subscription overview
+    Should Be Equal    ${subscription_overview_add_count_str}    ${total_count}
+
+
+
+
