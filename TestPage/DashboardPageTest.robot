@@ -1430,78 +1430,78 @@ Verifying the Subscription Overview section of Management console
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
     DashboardPage.wait until renewal overview section is load
-#    Generic.Scroll the page till    4000
-#    Generic.Verify your current page contains this text    Subscription Overview
-#    DashboardPage.Verify subscription overview should contain        Google
-#    DashboardPage.Fetch the count under subscription overview section of management console     Google
-#    DashboardPage.Set Globally the count from subscription overview subtabs
-#    Generic.select the option from the side menu    Technology
-#    Generic.Verify your current page location contains      technology
-#    TechnologyPage.Click on action button of technology
-#    TechnologyPage.Choose add technology from action button of technology
-#    Generic.Verify your current page location contains      addtechnology
-#    TechnologyPage.Click technology brand input field
-#    TechnologyPage.Select parameter from brand dropdown list    Google
-#    TechnologyPage.Select parameter from technology dropdown list    GAPPS
-#    TechnologyPage.Add assetID for technology lifecycle information random
-#    TechnologyPage.Add cost type of technology cost information        Open Ended Contract
-#    TechnologyPage.Add payment type of technology cost information     VariablePayment
-#    TechnologyPage.Add payment peroid of technology cost information       Monthly
-#    TechnologyPage.Add first payment date of technology cost information       05/06/2024
-#    TechnologyPage.Add budget payment of technology cost information       1100
-#    TechnologyPage.Add actual payment of technology cost information       1050
-#    TechnologyPage.Click on save technology form button
-#    Generic.Fetch alert message text and compare it with        Technology created successfully
-#    TechnologyPage.Click on save technology form pop button
-#    Generic.Verify your current page location contains      technology
-#    Generic.Wait until table get load
-#    Generic.select the option from the side menu    Dashboard
-#    Generic.Verify your current page location contains      dashboard
-#    DashboardPage.wait until renewal overview section is load
-#    Generic.Scroll the page till    4000
-#    Generic.Verify your current page contains this text    Subscription Overview
-#    DashboardPage.Verify subscription overview should contain        Google
-#    DashboardPage.Fetch the count under subscription overview section of management console     Google
-#    DashboardPage.Compare the counts of subscription overview
-#    DashboardPage.Search and verify through asset_id      ${generated_AssetID}
-#    DashboardPage.Click on Back to management console tab
-#    Generic.Verify your current page location contains    management-console
-#    DashboardPage.wait until renewal overview section is load
-#    Generic.Scroll the page till    5000
-#    Generic.Verify your current page contains this text   Subscription Overview
-#    DashboardPage.Verify subscription overview should contain        Microsoft Corporation
-#    DashboardPage.Fetch the count under subscription overview section of management console     Microsoft Corporation
-#    DashboardPage.Set Globally the count from subscription overview subtabs
-#    Generic.select the option from the side menu    Technology
-#    Generic.Verify your current page location contains      technology
-#    TechnologyPage.Click on action button of technology
-#    TechnologyPage.Choose add technology from action button of technology
-#    Generic.Verify your current page location contains      addtechnology
-#    TechnologyPage.Click technology brand input field
-#    TechnologyPage.Select parameter from brand dropdown list    Microsoft Corporation
-#    TechnologyPage.Select parameter from technology dropdown list    M365
-#    TechnologyPage.Add assetID for technology lifecycle information random
-#    TechnologyPage.Add cost type of technology cost information        Open Ended Contract
-#    TechnologyPage.Add payment type of technology cost information     VariablePayment
-#    TechnologyPage.Add payment peroid of technology cost information       Monthly
-#    TechnologyPage.Add first payment date of technology cost information       05/06/2024
-#    TechnologyPage.Add budget payment of technology cost information       1100
-#    TechnologyPage.Add actual payment of technology cost information       1050
-#    TechnologyPage.Click on save technology form button
-#    Generic.Fetch alert message text and compare it with        Technology created successfully
-#    TechnologyPage.Click on save technology form pop button
-#    Generic.Verify your current page location contains      technology
-#    Generic.Wait until table get load
-#    Generic.select the option from the side menu    Dashboard
-#    Generic.Verify your current page location contains      dashboard
-#    DashboardPage.wait until renewal overview section is load
-#    Generic.Scroll the page till    4000
-#    Generic.Verify your current page contains this text    Subscription Overview
-#    DashboardPage.Verify subscription overview should contain        Microsoft Corporation
-#    DashboardPage.Fetch the count under subscription overview section of management console     Microsoft Corporation
-#    DashboardPage.Compare the counts of subscription overview
-#    DashboardPage.Search and verify through asset_id      ${generated_AssetID}
-#    DashboardPage.Click on Back to management console tab
+    Generic.Scroll the page till    4000
+    Generic.Verify your current page contains this text    Subscription Overview
+    DashboardPage.Verify subscription overview should contain        Google
+    DashboardPage.Fetch the count under subscription overview section of management console     Google
+    DashboardPage.Set Globally the count from subscription overview subtabs
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list    Google
+    TechnologyPage.Select parameter from technology dropdown list    GAPPS
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Add cost type of technology cost information        Open Ended Contract
+    TechnologyPage.Add payment type of technology cost information     VariablePayment
+    TechnologyPage.Add payment peroid of technology cost information       Monthly
+    TechnologyPage.Add first payment date of technology cost information       05/06/2024
+    TechnologyPage.Add budget payment of technology cost information       1100
+    TechnologyPage.Add actual payment of technology cost information       1050
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    Generic.Wait until table get load
+    Generic.select the option from the side menu    Dashboard
+    Generic.Verify your current page location contains      dashboard
+    DashboardPage.wait until renewal overview section is load
+    Generic.Scroll the page till    4000
+    Generic.Verify your current page contains this text    Subscription Overview
+    DashboardPage.Verify subscription overview should contain        Google
+    DashboardPage.Fetch the count under subscription overview section of management console     Google
+    DashboardPage.Compare the counts of subscription overview
+    DashboardPage.Search and verify through asset_id      ${generated_AssetID}
+    DashboardPage.Click on Back to management console tab
+    Generic.Verify your current page location contains    management-console
+    DashboardPage.wait until renewal overview section is load
+    Generic.Scroll the page till    5000
+    Generic.Verify your current page contains this text   Subscription Overview
+    DashboardPage.Verify subscription overview should contain        Microsoft Corporation
+    DashboardPage.Fetch the count under subscription overview section of management console     Microsoft Corporation
+    DashboardPage.Set Globally the count from subscription overview subtabs
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list    Microsoft Corporation
+    TechnologyPage.Select parameter from technology dropdown list    M365
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Add cost type of technology cost information        Open Ended Contract
+    TechnologyPage.Add payment type of technology cost information     VariablePayment
+    TechnologyPage.Add payment peroid of technology cost information       Monthly
+    TechnologyPage.Add first payment date of technology cost information       05/06/2024
+    TechnologyPage.Add budget payment of technology cost information       1100
+    TechnologyPage.Add actual payment of technology cost information       1050
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    Generic.Wait until table get load
+    Generic.select the option from the side menu    Dashboard
+    Generic.Verify your current page location contains      dashboard
+    DashboardPage.wait until renewal overview section is load
+    Generic.Scroll the page till    4000
+    Generic.Verify your current page contains this text    Subscription Overview
+    DashboardPage.Verify subscription overview should contain        Microsoft Corporation
+    DashboardPage.Fetch the count under subscription overview section of management console     Microsoft Corporation
+    DashboardPage.Compare the counts of subscription overview
+    DashboardPage.Search and verify through asset_id      ${generated_AssetID}
+    DashboardPage.Click on Back to management console tab
     Generic.Verify your current page location contains    management-console
     Generic.Scroll Window To End
     DashboardPage.See all subscription connector
@@ -1509,9 +1509,36 @@ Verifying the Subscription Overview section of Management console
     DashboardPage.Click on Download-icon of subscription overview
     Sleep    ${yop_sleep}
     Switch Window       NEW
-    Generic.Verify your current page location contains    amazonaws
-    Generic.Verify your current page location contains    .jpg
+    Generic.Verify your current page location contains    renewals-overview-details
+    Generic.Verify your current page location contains    .pdf
     Switch Window       Main
+    Generic.Verify your current page location contains    management-console
+    DashboardPage.Click dropdown of subscription overview tables        Google
+    DashboardPage.Click on arrow icon inside subscription overview tables    Google
+    Generic.Verify your current page location contains    technology
+    Generic.Verify your current page contains this text     Technology
+    DashboardPage.Click on Back to management console tab
+    Generic.Verify your current page location contains     management-console
+    DashboardPage.wait until renewal overview section is load
+    Generic.Scroll Window To End
+    DashboardPage.See all subscription connector
+    Generic.Verify your current page contains this text     Renewals overview details
+    DashboardPage.Click dropdown of subscription overview tables        Google
+    DashboardPage.Click on arrow icon inside subscription overview tables    Microsoft Corporation
+    Generic.Verify your current page location contains    technology
+    Generic.Verify your current page contains this text     Technology
+    DashboardPage.Click on Back to management console tab
+    Generic.Verify your current page location contains    management-console
+    DashboardPage.wait until renewal overview section is load
+    Generic.Scroll Window To End
+    DashboardPage.See all subscription connector
+    Generic.Verify your current page contains this text     Renewals overview details
+    DashboardPage.Click on done button of subscription overview    Done
+
+
+
+
+
 
 
 

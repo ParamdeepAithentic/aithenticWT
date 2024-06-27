@@ -1126,7 +1126,24 @@ Click on Download-icon of subscription overview
     Wait Until Element Is Enabled    css:.qa-renewals-overview-details-download        ${wait_time}
     Click Element      css:.qa-renewals-overview-details-download
 
-Click on
+Click dropdown of subscription overview tables
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //div[normalize-space()='${option}']//ancestor::tr//span     ${wait_time}
+    Wait Until Element Is Enabled    //div[normalize-space()='${option}']//ancestor::tr//span        ${wait_time}
+    Click Element      //div[normalize-space()='${option}']//ancestor::tr//span
+
+Click on arrow icon inside subscription overview tables
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //div[normalize-space()='${option}']//ancestor::tr//button     ${wait_time}
+    Wait Until Element Is Enabled    //div[normalize-space()='${option}']//ancestor::tr//button     ${wait_time}
+    Click Element      //div[normalize-space()='${option}']//ancestor::tr//button
+
+Click on done button of subscription overview
+    [Arguments]     ${option}
+    Generic.click on the button         ${option}
+
 
 
 
