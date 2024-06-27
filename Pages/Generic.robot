@@ -44,22 +44,20 @@ Resource        ../Pages/UnselectAssetAPI.robot
 ${user_name}             rahulshettyacademy
 ${invalid_password}      123445
 
-
-#${url}                 https://uat-app.aithentic.com/
-${url}                https://qa-app.aithentic.com/
-#${url}                https://pre-prod-app.aithentic.com
+#${url}                https://qa-app.aithentic.com/
+${url}                https://pre-prod-app.aithentic.com
 #${apiURL}              https://uat-api.aithentic.com/api/v1
-${apiURL}             https://qa-api.aithentic.com/api/v1
-#${apiURL}             https://pre-prod-api.aithentic.com/api/v1
+#${apiURL}             https://qa-api.aithentic.com/api/v1
+${apiURL}             https://pre-prod-api.aithentic.com/api/v1
 #${valid_password}        Test!@5897     #UAT user
-${valid_password}         Test@123       #QA User
-#${valid_password}         Test@123         #pre prod
+#${valid_password}         Test@123       #QA User
+${valid_password}         Test@123         #pre prod
 
-#${admin_url}        https://uat-admin.aithentic.com/
-${admin_url}        https://qa-admin.aithentic.com/
+${admin_url}        https://uat-admin.aithentic.com/
+#${admin_url}        https://qa-admin.aithentic.com/
 
-${agentDiscovery_TagName}       Tag Name - johnsoftwaresolutions-1192-4         #qa
-#${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-10        #uat
+#${agentDiscovery_TagName}       Tag Name - johnsoftwaresolutions-1192-4         #qa
+${agentDiscovery_TagName}        Tag Name - johnsoftwaresolutions-1428-10        #uat
 
 ${admin_name}        aithentic@yopmail.com
 ${admin_password}       Admin@123
@@ -317,7 +315,7 @@ Enter phone number
     input text     ${phone}     ${phoneNo}
 #    click element   ${click_countryTag}
 #    Click element   css:#phone
-#    wait until element is not visible       //span[normalize-space()='Please enter a valid Mobile Number']      120  #${wait_time}
+#    wait until element is not visible       //span[normalize-space()='Please enter a valid Mobile Number']     ${wait_time}
 
 
 
