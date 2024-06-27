@@ -311,7 +311,7 @@ Download the selected extension file of team member
 #    sleep   ${search_sleep}
     Wait Until Element Is Not Visible    //a[normalize-space()='Export as ${option}']      ${wait_time}
 
-<<<<<<< HEAD
+
 #Verify the status of team member
 #    [Arguments]    ${option}
 #    wait until element is visible       css:thead tr       ${wait_time}
@@ -341,7 +341,7 @@ Click on remove option under three dots
     wait until element is visible       css:.member-remove-qa    ${wait_time}
     wait until element is visible       css:.member-remove-qa   ${wait_time}
     click element       css:.member-remove-qa
-=======
+
 Select option from remove TM warning pop-up
     [Arguments]    ${option}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
@@ -360,4 +360,3 @@ Verify Team member added after delete
     [Arguments]     ${option}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible   //td[normalize-space()='${option}']     ${wait_time}
->>>>>>> 02cc56b16300d179fd06d79560f4920be011f573
