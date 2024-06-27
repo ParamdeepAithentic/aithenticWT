@@ -310,6 +310,37 @@ Download the selected extension file of team member
 #    sleep   ${search_sleep}
     Wait Until Element Is Not Visible    //a[normalize-space()='Export as ${option}']      ${wait_time}
 
+<<<<<<< HEAD
+#Verify the status of team member
+#    [Arguments]    ${option}
+#    wait until element is visible       css:thead tr       ${wait_time}
+#    wait until element is enabled      //tbody//tr[1]//td[6]     ${wait_time}
+#    ${status_text}=     Get text        //tbody//tr[1]//td[6]
+#    Log To Console      ${status_text}
+#    Set Global Variable         ${status_text}
+#    Should Be Equal    ${status_text}       ${option}
+
+Enter team member first name while editing
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_Tmfname}=    Catenate    tmfname_${random_string}
+    wait until element is visible       css:#firstName     ${wait_time}
+    input text   css:#firstName    ${generated_Tmfname}
+    log to console      ${generated_Tmfname}
+    set global variable       ${generated_Tmfname}
+
+Enter team member last name while editing
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_Tmlname}=    Catenate    TMLast_${random_string}
+    wait until element is visible       css:#lastName    ${wait_time}
+    input text   css:#lastName   ${generated_Tmlname}
+    log to console      ${generated_Tmlname}
+    set global variable  ${generated_Tmlname}
+
+Click on remove option under three dots
+    wait until element is visible       css:.member-remove-qa    ${wait_time}
+    wait until element is visible       css:.member-remove-qa   ${wait_time}
+    click element       css:.member-remove-qa
+=======
 Select option from remove TM warning pop-up
     [Arguments]    ${option}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
@@ -328,3 +359,4 @@ Verify Team member added after delete
     [Arguments]     ${option}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible   //td[normalize-space()='${option}']     ${wait_time}
+>>>>>>> 02cc56b16300d179fd06d79560f4920be011f573
