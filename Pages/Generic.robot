@@ -56,12 +56,60 @@ ${click_countryTag}     css:.iti__arrow
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
-${wait_time}        120
+${wait_time}        60
 ${yop_sleep}       10
 ${search_sleep}       1
+${CASE}        uat      #qa , uat , pre-prod
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
 
 *** Keywords ***
+Simulate Switch Case
+#    ${CASE} =    Set Variable    option2
+    Run Keyword If    '${CASE}' == 'qa'    Set QA Variables
+    ...    ELSE IF    '${CASE}' == 'uat'   Set UAT Variables
+    ...    ELSE IF    '${CASE}' == 'pre-prod'    Set Pre-Prod Variables
+    ...    ELSE    Set Default Variables
+
+Set QA Variables
+    Set Suite Variable    ${url}    https://qa-app.aithentic.com/
+    Set Suite Variable    ${valid_password}    Test@123       #QA User
+    Set Suite Variable    ${apiURL}    https://qa-api.aithentic.com/api/v1
+    Set Suite Variable    ${agentDiscovery_TagName}    Tag Name - johnsoftwaresolutions-1192-4         #qa
+    Set Suite Variable    ${admin_url}        https://qa-admin.aithentic.com/
+    Set Suite Variable    ${admin_name}        aithentic@yopmail.com
+    Set Suite Variable    ${admin_password}       Admin@123
+    Set Suite Variable    ${browser_name}         firefox
+    Set Suite Variable    ${email}                 testqa29j@mailinator.com
+
+Set UAT Variables
+    Set Suite Variable    ${url}    https://uat-app.aithentic.com/
+    Set Suite Variable    ${valid_password}    Test!@5897     #UAT user
+    Set Suite Variable    ${apiURL}    https://uat-api.aithentic.com/api/v1
+    Set Suite Variable    ${agentDiscovery_TagName}    Tag Name - johnsoftwaresolutions-1428-10        #uat
+    Set Suite Variable    ${admin_url}        https://uat-admin.aithentic.com/
+    Set Suite Variable    ${admin_name}        aithentic@yopmail.com
+    Set Suite Variable    ${admin_password}       Admin@123
+    Set Suite Variable    ${browser_name}         firefox
+    Set Suite Variable    ${email}                 testqa29j@mailinator.com
+
+Set Pre-Prod Variables
+    Set Suite Variable    ${url}    https://pre-prod-app.aithentic.com/
+    Set Suite Variable    ${valid_password}    Test@123     #pre prod
+    Set Suite Variable    ${apiURL}    https://pre-prod-api.aithentic.com/api/v1
+    Set Suite Variable    ${browser_name}         firefox
+    Set Suite Variable    ${email}                 testqa29j@mailinator.com
+
+Set Default Variables
+    Set Suite Variable    ${url}    https://uat-app.aithentic.com/
+    Set Suite Variable    ${valid_password}    Test!@5897     #UAT user
+    Set Suite Variable    ${apiURL}    https://uat-api.aithentic.com/api/v1
+    Set Suite Variable    ${agentDiscovery_TagName}    Tag Name - johnsoftwaresolutions-1428-10        #uat
+    Set Suite Variable    ${admin_url}        https://uat-admin.aithentic.com/
+    Set Suite Variable    ${admin_name}        aithentic@yopmail.com
+    Set Suite Variable    ${admin_password}       Admin@123
+    Set Suite Variable    ${browser_name}         firefox
+    Set Suite Variable    ${email}                 testqa29j@mailinator.com
+
 Fix the column number
     ${pageHeading}=   Catenate    2
     set global variable    ${pageHeading}
@@ -118,7 +166,7 @@ click on the button link
 open the browser with the url
     Generic.Fix the column number
     Generic.Fix the row number
-
+    Simulate Switch Case
     ${StartTime1} =     Get Current Time in Milliseconds
     open browser    ${url}      ${browser_name}     #executable_path=E:/Aithentic/TestPage/resources
     wait until element is visible    //a[normalize-space()='Login']          ${wait_time}
