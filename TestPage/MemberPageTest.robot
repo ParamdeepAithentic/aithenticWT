@@ -206,25 +206,25 @@ Export Assigned User Asset History list
     Generic.Verify your current page location contains      asset-history
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .xlsx
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .xlsx
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .ods
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .ods
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .csv
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .csv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .tsv
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .tsv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!

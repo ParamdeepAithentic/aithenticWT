@@ -147,42 +147,47 @@ Run now from view details
 
 Suspend and unsuspend the account
     [Tags]      Smoke       Stable
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
-#    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      dashboard
-    Generic.Click on the profile name
-    Generic.Select option from profile list     billing-dropdown
-    Generic.Verify your current page location contains      billing-details
-    SubscriptionPage.Click on the suspend my account button link under billing details
-    SubscriptionPage.Enter input in the description field of billing details
-    SubscriptionPage.Enter input in the start date field of billing details
-    SubscriptionPage.Enter input in the end date field of billing details
-    sleep   ${search_sleep}
-    Generic.click on the button     Suspend
-    Generic.Fetch alert message text and compare it with        Account suspended successfully.
-    Generic.Click on the profile name
-    Generic.Select option from profile list     personal-details
-    Generic.Verify your current page location contains      personal-profile
-    Generic.Select parameter    Technology
-    Generic.Verify your current page location contains      technology-settings
-    Generic.click on the tab    Connectors
-    SubscriptionPage.Visible the disable activate button link after suspending account
-    Generic.Click on the profile name
-    Generic.Select option from profile list     billing-dropdown
-    Generic.Verify your current page location contains      billing-details
-    SubscriptionPage.Click on the Unsuspend my account button link under billing details
-    SubscriptionPage.click on the checkboxes under unsuspend my account button link
-    SubscriptionPage.click on the confirm button of unsuspend pop up
-    Generic.Fetch alert message text and compare it with        Payment Successful
-    Generic.Click on the profile name
-    Generic.Select option from profile list     personal-details
-    Generic.Verify your curren t page location contains      personal-profile
-    Generic.Select parameter    Technology
-    Generic.Verify your current page location contains      technology-settings
-    Generic.click on the tab    Connectors
-    SubscriptionPage.Click on the activate option under subscription connector table
-    Generic.Fetch alert message text and compare it with        Status Updated
+    TRY
+        Generic.click on the tab	Login
+        LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
+#       LandingPage.Verify you are on dashboard page
+        Generic.Verify your current page location contains      dashboard
+        Generic.Click on the profile name
+        Generic.Select option from profile list     billing-dropdown
+        Generic.Verify your current page location contains      billing-details
+        SubscriptionPage.Click on the suspend my account button link under billing details
+        SubscriptionPage.Enter input in the description field of billing details
+        SubscriptionPage.Enter input in the start date field of billing details
+        SubscriptionPage.Enter input in the end date field of billing details
+        sleep   ${search_sleep}
+        Generic.click on the button     Suspend
+        Generic.Fetch alert message text and compare it with        Account suspended successfully.
+        Generic.Click on the profile name
+        Generic.Select option from profile list     personal-details
+        Generic.Verify your current page location contains      personal-profile
+        Generic.Select parameter    Technology
+        Generic.Verify your current page location contains      technology-settings
+        Generic.click on the tab    Connectors
+        SubscriptionPage.Visible the disable activate button link after suspending account
+        Generic.Click on the profile name
+        Generic.Select option from profile list     billing-dropdown
+        Generic.Verify your current page location contains      billing-details
+        SubscriptionPage.Click on the Unsuspend my account button link under billing details
+        SubscriptionPage.click on the checkboxes under unsuspend my account button link
+        SubscriptionPage.click on the confirm button of unsuspend pop up
+        Generic.Fetch alert message text and compare it with        Payment Successful
+        Generic.Click on the profile name
+        Generic.Select option from profile list     personal-details
+        Generic.Verify your curren t page location contains      personal-profile
+        Generic.Select parameter    Technology
+        Generic.Verify your current page location contains      technology-settings
+        Generic.click on the tab    Connectors
+        SubscriptionPage.Click on the activate option under subscription connector table
+        Generic.Fetch alert message text and compare it with        Status Updated
+    EXCEPT
+        SubscriptionPage.My Failure Handling
+        Fail
+    END
 
 View Scheduler from view Result
     [Tags]      Unstable

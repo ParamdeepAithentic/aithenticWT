@@ -341,7 +341,7 @@ Enter phone number
     input text     ${phone}     ${phoneNo}
 #    click element   ${click_countryTag}
 #    Click element   css:#phone
-#    wait until element is not visible       //span[normalize-space()='Please enter a valid Mobile Number']      120  #${wait_time}
+#    wait until element is not visible       //span[normalize-space()='Please enter a valid Mobile Number']     ${wait_time}
 
 
 

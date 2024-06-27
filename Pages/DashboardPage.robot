@@ -643,11 +643,15 @@ click on Help center icon of dashboard page
 
 Click on link of information center list
     [Arguments]     ${link_name}
+    Wait Until Element Is Not Visible    ${loaderIcon}    ${wait_time}
     wait until element is visible       //span[contains(text(),'${link_name}')]     ${wait_time}
+    wait until element is enabled       //span[contains(text(),'${link_name}')]     ${wait_time}
     click element       //span[contains(text(),'${link_name}')]
 
 Click on link of Support
     [Arguments]     ${link_name}
+    Wait Until Element Is Not Visible    ${loaderIcon}    ${wait_time}
+    wait until element is visible       //span[contains(text(),'${link_name}')]     ${wait_time}
     wait until element is visible       //span[contains(text(),'${link_name}')]     ${wait_time}
     click element       //span[contains(text(),'${link_name}')]
 
