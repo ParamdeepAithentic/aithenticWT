@@ -247,7 +247,7 @@ Select an option from recovery table actions
      #Restore, Details
 #    wait until element is visible       ${loaderIcon}       ${wait_time}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    wait until element is not visible       ${shadow}          ${wait_time}
+#    wait until element is not visible       ${shadow}          ${wait_time}
 
 
 Select an option from technology table actions
@@ -502,6 +502,10 @@ Add assetID for technology lifecycle information self
 
 Select purchase date
     Generic.Enter current date      ${purchase_date}
+
+Select purchase date self
+    [Arguments]    ${date}
+    Generic.Enter self date     ${purchase_date}       ${date}
 
 Select warranty end date
     [Arguments]    ${date}
@@ -1301,6 +1305,38 @@ Renewal Date via technology
     click element   css:#RenewalDate
     input text  css:#RenewalDate     03/26/2021
 
+Input current Date
+    ${current_date1}    Get Current Date    result_format=%m/%d/%Y
+    Log To Console     ${current_date1}
+    set global variable         ${current_date1}
+
+Input future Date
+#    ${future_date} =    Add Time To Date   ${current_date1}    7    days    result_format=%m/%d/%Y
+#    Log To Console    ${future_date}
+#    Set Global Variable    ${future_date}
+
+    ${current_date}=    Get Current Date    result_format=%m/%d/%Y
+    Log To Console      Current Date is: ${current_date}
+
+    ${current_date_parts}=    Split String    ${current_date}    -
+    ${current_date_without_time}=    Set Variable    ${current_date_parts[0]}
+
+    ${future_date}=    Evaluate    datetime.datetime.strptime($current_date_without_time, "%m/%d/%Y") + datetime.timedelta(days=7)
+    ${formatted_future_date}=    Convert Date    ${future_date}    result_format=%m/%d/%Y
+
+    Log To Console      Future Date is: ${formatted_future_date}
+    Set Global Variable    ${formatted_future_date}
+
+    
+Enter current or future date as renewal date
+    [Arguments]     ${date}
+    wait until element is visible   css:#RenewalDate     ${wait_time}
+    wait until element is enabled   css:#RenewalDate     ${wait_time}
+    Clear Element Text    css:#RenewalDate
+    input text   css:#RenewalDate     ${date}
+    Clear Element Text    css:#RenewalDate
+    input text   css:#RenewalDate     ${date}
+
 Click on action button of technology
     wait until element is not visible      ${loaderIcon}    ${wait_time}
     wait until element is visible   css:.qa-technology-list-actions      ${wait_time}
@@ -1779,3 +1815,34 @@ Enter input in the cancellation notice period field
 Verify the validation when entering negative value in cancellation notice period field
     wait until element is visible   //span[contains(text(),' Please enter natural numbers only.')]    ${wait_time}
     wait until element is enabled   //span[contains(text(),' Please enter natural numbers only.')]    ${wait_time}
+
+Verify status is visible of added technology
+    wait until element is visible   //td[normalize-space()='Active']    ${wait_time}
+
+Get Inner Text of Brand under product information tab
+   ${input_text}=    Execute JavaScript    return document.querySelector("input[id*='BrandName']").value
+    Log To Console    Inner Text of Input Field: ${input_text}
+    set global variable     ${input_text}
+    should be equal    ${input_text}     ${generated_BrandName}
+
+Wait until brand loder is invisible
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+     wait until element is not visible   //input[@id='brandselect']//ancestor::ng-select[@id='BrandName']//following-sibling::div[contains(@class,'spinner-loader')]    ${wait_time}
+
+Get inner text of description under product information
+    ${textarea_value}=    Get Value    css=div[class*='welcome-main'] textarea#ProductDescription
+    Log To Console    Value of Textarea: ${textarea_value}
+    set global variable     ${textarea_value}
+    should be equal    ${textarea_value}     This is the description of new product added.
+
+Get Inner Text of Product under product information tab
+   ${input_text}=    Execute JavaScript    return document.querySelector("input[id*='ProductId']").value
+    Log To Console    Inner Text of Input Field: ${input_text}
+    set global variable     ${input_text}
+    should be equal    ${input_text}     ${generated_product}
+
+Get inner text of feature under product information
+    ${textarea_value}=    Get Value    css=div[class*='welcome-main'] textarea#ProductFeatures
+    Log To Console    Value of Textarea: ${textarea_value}
+    set global variable     ${textarea_value}
+    should be equal    ${textarea_value}     This is the features of new product added.

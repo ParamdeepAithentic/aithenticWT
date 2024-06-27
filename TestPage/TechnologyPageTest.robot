@@ -2316,6 +2316,191 @@ Creating technology while creating cancellation notice period and contract end d
     TechnologyPage.Click on update button of edit_technology page       Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
 
+Dispose the technology while adding new brand and product
+    [Tags]      Stable
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     brand-dropdown
+    Generic.Verify your current page location contains      brand
+    DashboardPage.Click add brand button
+    DashboardPage.Create random brandName
+    DashboardPage.Add business manufacturer URL       ${generated_BrandName}
+    DashboardPage.Add brand manufacturer country      Australia
+    DashboardPage.Save added brand details
+    DashboardPage.Click added brand main save button
+    Generic.Fetch alert message text and compare it with        Brand created successfully.
+    DashboardPage.Verify Brand added      ${generated_BrandName}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     product-dropdown
+    Generic.Verify your current page location contains      product
+    DashboardPage.Click on action button
+    DashboardPage.Click add product button
+    DashboardPage.Create random productName
+    DashboardPage.Add product brand name      ${generated_BrandName}
+    DashboardPage.Add product description
+    DashboardPage.Add product feature
+    DashboardPage.Select product technology type     Hardware
+    DashboardPage.Select product technology group     Applications
+    DashboardPage.Select product status   Active
+    DashboardPage.Save added product details
+    Generic.Fetch alert message text and compare it with        Product created successfully
+    DashboardPage.Verify product added    ${generated_product}
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+#    TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       ${generated_BrandName}
+    TechnologyPage.Select parameter from technology dropdown list      ${generated_product}
+    TechnologyPage.Wait until brand loder is invisible
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on three dots of action button
+    TechnologyPage.Select an option from recovery table actions    Disposal
+    Generic.Select parameter    Yes
+    Generic.Fetch alert message text and compare it with        Status updated successfully
+    TechnologyPage.Click on three dots of action button
+    TechnologyPage.Select an option from recovery table actions    Edit
+    Generic.Verify your current page location contains      edit-technology
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Click on update button of edit_technology page       Update
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    Generic.Wait until table get load
+    TechnologyPage.Verify status is visible of added technology
+    TechnologyPage.Click on three dots of action button
+    TechnologyPage.Select an option from recovery table actions    Remove
+    PartnersPage.Select option from the pop up  Yes
+    Generic.Fetch alert message text and compare it with      Technology Removed Successfully
+
+Add the technology from profile listing
+    [Tags]      Stable
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     add-technology-dropdown
+    Generic.Verify your current page location contains      addtechnology
+    PartnersPage.Click here to add link of contract details
+    DashboardPage.Create random productName
+    DashboardPage.Add product brand name      QABrand555
+    TechnologyPage.Add product description via technology
+    TechnologyPage.Add product feature via technology
+    TechnologyPage.Select product technology type via technology     Hardware
+    TechnologyPage.Select product technology group via technology   Applications
+    TechnologyPage.Click on save product pop inside technology page
+    Generic.Fetch alert message text and compare it with    Product created successfully
+    TechnologyPage.Wait until brand loder is invisible
+#    TechnologyPage.Select parameter from technology dropdown list    ${generated_product}
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology-list
+    Generic.Wait until table get load
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on three dots of action button
+    TechnologyPage.Select an option from recovery table actions    Remove
+    PartnersPage.Select option from the pop up  Yes
+    Generic.Fetch alert message text and compare it with      Technology Removed Successfully
+
+Verify_Asset_ID_Changing_settings_from_Profile_list
+    [Tags]      Stable
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the asset ID checkbox      yes
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    Generic.Click on the profile name
+    Generic.Select option from profile list     brand-dropdown
+    Generic.Verify your current page location contains      brand
+    DashboardPage.Click add brand button
+    DashboardPage.Create random brandName
+    DashboardPage.Add business manufacturer URL       ${generated_BrandName}
+    DashboardPage.Add brand manufacturer country      Australia
+    DashboardPage.Save added brand details
+    DashboardPage.Click added brand main save button
+    Generic.Fetch alert message text and compare it with        Brand created successfully.
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    PartnersPage.Click here to add link of contract details
+    DashboardPage.Create random productName
+    DashboardPage.Add product brand name      ${generated_BrandName}
+    TechnologyPage.Add product description via technology
+    TechnologyPage.Add product feature via technology
+    TechnologyPage.Select product technology type via technology     Hardware
+    TechnologyPage.Select product technology group via technology   Applications
+    TechnologyPage.Click on save product pop inside technology page
+    Generic.Fetch alert message text and compare it with    Product created successfully
+    TechnologyPage.Wait until brand loder is invisible
+    TechnologyPage.Get Inner Text of Brand under product information tab
+    TechnologyPage.Get Inner Text of Product under product information tab
+    TechnologyPage.Get inner text of description under product information
+    TechnologyPage.Get inner text of feature under product information
+    TechnologyPage.Select warranty end date    12/12/2028
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Add technology lifecycle comment    Technology Lifecycle Information- comment
+    TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
+    TechnologyPage.Add assignment information department name      TestQA Department Up31840619
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
+    TechnologyPage.Add support partner of partners information     QABusiness04191432
+    TechnologyPage.Add supplier of partners information        qabrand10050505
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    Generic.Wait until table get load
+    TechnologyPage.Search by BrandName   ${generated_BrandName}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the asset ID checkbox      no
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by BrandName   ${generated_BrandName}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+    TechnologyPage.Click on edit button on product details page        Edit
+    Generic.Verify your current page location contains      edit-technology
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Click on update button of edit_technology page       Update
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    Generic.Wait until table get load
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on three dots of action button
+    TechnologyPage.Select an option from recovery table actions    Remove
+    PartnersPage.Select option from the pop up  Yes
+    Generic.Fetch alert message text and compare it with      Technology Removed Successfully
+
 Zz kill browser
     Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
 
