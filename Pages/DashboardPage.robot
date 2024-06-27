@@ -1143,8 +1143,3 @@ Click on arrow icon inside subscription overview tables
 Click on done button of subscription overview
     [Arguments]     ${option}
     Generic.click on the button         ${option}
-
-
-
-
-
