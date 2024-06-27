@@ -299,8 +299,11 @@ click on add technology button
     wait until element is visible    ${AddTechnologyButton}     ${wait_time}
     wait until element is enabled       ${AddTechnologyButton}     ${wait_time}
     click element    ${AddTechnologyButton}
+    wait until element is visible    //p[normalize-space()='Add New Technology']     ${wait_time}
+
 
 Click technology brand input field
+    Wait Until Element Is Not Visible    //input[@id='brandselect']//ancestor::ng-select[@id='BrandName']//following-sibling::div[contains(@class,'spinner-loader')]        ${wait_time}
     wait until element is visible       ${brand}        ${wait_time}
     wait until element is enabled       ${brand}        ${wait_time}
     sleep       ${search_sleep}
@@ -1092,6 +1095,7 @@ Save the department
     wait until element is visible       css:.qa-${option}-department-modal        ${wait_time}
     wait until element is enabled       css:.qa-${option}-department-modal        ${wait_time}
     click element        css:.qa-${option}-department-modal
+    wait until element is not visible       ${shadow}          ${wait_time}
 # option: add, close
 
 Click on add assign to
