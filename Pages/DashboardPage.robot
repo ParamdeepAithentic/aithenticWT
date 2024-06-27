@@ -1062,7 +1062,7 @@ Click on the subtabs
     Wait Until Element Is Visible    //div[@id='renewal-overview-section']//following-sibling::div//div[contains(@class,'renew-card p')]//div[normalize-space()='${option}']//parent::div//following-sibling::div//div      ${wait_time}
     Click Element    //div[@id='renewal-overview-section']//following-sibling::div//div[contains(@class,'renew-card p')]//div[normalize-space()='${option}']//parent::div//following-sibling::div//div
 
-Search and verify renewals overview through asset_id
+Search and verify through asset_id
     [Arguments]     ${input}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     Wait Until Element Is Visible    css:.search-location-qa    ${wait_time}
@@ -1083,3 +1083,63 @@ wait until renewal overview section is load
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     Wait Until Element Is Visible    //div[@id='renewal-overview-section']//button[contains(@class,'qa-renewal-overview-download')]         ${wait_time}
     Wait Until Element Is Enabled    //div[@id='renewal-overview-section']//button[contains(@class,'qa-renewal-overview-download')]         ${wait_time}
+
+Verify subscription overview should contain
+    [Arguments]         ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //p[normalize-space()='${option}']//parent::div     ${wait_time}
+    Wait Until Element Is Enabled    //p[normalize-space()='${option}']//parent::div     ${wait_time}
+
+Fetch the count under subscription overview section of management console
+    [Arguments]         ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //p[normalize-space()='${option}']//parent::div     ${wait_time}
+    Wait Until Element Is Enabled    //p[normalize-space()='${option}']//parent::div     ${wait_time}
+    Click Element     //p[normalize-space()='${option}']//parent::div
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible   ${Totalcount_field}      ${wait_time}
+    ${text}=     get text   ${Totalcount_field}
+    ${parts}    Split String    ${text}    Total Count :
+    ${total_count}    Get Substring    ${parts[1]}    3
+    ${number}=   Convert To Integer   ${total_count}
+    Log to console  Total count is :${total_count}
+    set global variable    ${total_count}
+
+Set Globally the count from subscription overview subtabs
+    ${subscription_overview_add_count}=  Evaluate    ${total_count} + 1
+    ${subscription_overview_add_count_str}=      Convert To String    ${subscription_overview_add_count}
+    Log To Console    ${subscription_overview_add_count_str}
+    Set Global Variable    ${subscription_overview_add_count_str}
+
+Compare the counts of subscription overview
+    Should Be Equal    ${subscription_overview_add_count_str}    ${total_count}
+
+See all subscription connector
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //span[normalize-space()='See all 2']    ${wait_time}
+    Wait Until Element Is Enabled    //span[normalize-space()='See all 2']     ${wait_time}
+    Click Element    //span[normalize-space()='See all 2']
+
+Click on Download-icon of subscription overview
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    css:.qa-renewals-overview-details-download        ${wait_time}
+    Wait Until Element Is Enabled    css:.qa-renewals-overview-details-download        ${wait_time}
+    Click Element      css:.qa-renewals-overview-details-download
+
+Click dropdown of subscription overview tables
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //div[normalize-space()='${option}']//ancestor::tr//span     ${wait_time}
+    Wait Until Element Is Enabled    //div[normalize-space()='${option}']//ancestor::tr//span        ${wait_time}
+    Click Element      //div[normalize-space()='${option}']//ancestor::tr//span
+
+Click on arrow icon inside subscription overview tables
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //div[normalize-space()='${option}']//ancestor::tr//button     ${wait_time}
+    Wait Until Element Is Enabled    //div[normalize-space()='${option}']//ancestor::tr//button     ${wait_time}
+    Click Element      //div[normalize-space()='${option}']//ancestor::tr//button
+
+Click on done button of subscription overview
+    [Arguments]     ${option}
+    Generic.click on the button         ${option}
