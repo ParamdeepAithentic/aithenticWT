@@ -65,8 +65,7 @@ Click on Location action button
     Wait Until Element Is Enabled      ${location_Action}     ${wait_time}
     sleep       ${search_sleep}
     click element       ${location_Action}
-    wait until element is not visible       ${location_Action}          ${wait_time}
-    wait until element is not visible       ${shadow}          ${wait_time}
+
 
 Click on add location button
     [Arguments]    ${option}
