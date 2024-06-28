@@ -1022,7 +1022,7 @@ View Predefined brand
     Generic.Verify your current page location contains      personal-profile
     DashboardPage.Select an option from company details side list   Technology
     Generic.Verify your current page location contains  technology-settings
-    DashboardPage.Click on pre defined brand list       @pamil.fr.nf
+    DashboardPage.Click on pre defined brand list       /n software
 
 View Predefined product
     Generic.click on the tab	Login
