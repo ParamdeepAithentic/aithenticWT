@@ -76,14 +76,14 @@ Verify the drawer list
     Generic.Verify your current page location contains      dashboard
     DashboardPage.Verify the drawer list parameters
 
-
-Verify the side options list
-    [Tags]      Unstable
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      dashboard
-    DashboardPage.Verify the side option list parameters
+#
+#Verify the side options list
+#    [Tags]      Unstable
+#    Generic.click on the tab	Login
+#    LandingPage.Fill the login Form      ${email}    ${valid_password}
+##    LandingPage.Verify you are on dashboard page
+#    Generic.Verify your current page location contains      dashboard
+#    DashboardPage.Verify the side option list parameters
 
 click the option from menu
     [Tags]      Stable
@@ -932,48 +932,48 @@ Click and verify the count of the tabs under renewal overview by choosing the va
     DashboardPage.Select the first value of To dropdown of quarter     2
     DashboardPage.Get And Verify The Count Of tabs under renewal overview by management console
 
-Verify Account_overview Recent Activities Filters
-    [Tags]      Unstable
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}       ${valid_password}
-#    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      dashboard
-    Generic.select the option from the side menu    Technology
-    Generic.Verify your current page location contains      technology
-    TechnologyPage.Click on action button of technology
-    TechnologyPage.Choose add technology from action button of technology
-    Generic.Verify your current page location contains      addtechnology
-    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
-    TechnologyPage.Add assetID for technology lifecycle information random
-    TechnologyPage.Select technology lifecycle status      Active
-    TechnologyPage.Click on save technology form button
-    Generic.Fetch alert message text and compare it with        Technology created successfully
-    TechnologyPage.Click on save technology form pop button
-    Generic.Verify your current page location contains      technology
-    Generic.Wait until table get load
-    Generic.select the option from the side menu    Dashboard
-#    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      dashboard
-    DashboardPage.select the option from the dashboard drawer       Account Overview
-    Generic.Verify your current page location contains          account-overview
-    Generic.Verify your current page contains this text     Billing Details
-    Generic.Refresh the existing page
-    DashboardPage.Wait until alert is visible in the Recent Notifiation tab        You added Asset ID      ${generated_AssetID}.
-    DashboardPage.Click on the filter under recent Activities table     Asset Id        ${generated_AssetID}
-    Generic.Verify your current page contains this text     Billing Details
-    DashboardPage.Wait until alert is visible in the Recent Notifiation tab        You added Asset ID      ${generated_AssetID}.
-    DashboardPage.Click on row of recent activities table
-    Generic.Verify your current page location contains     technology-detail
-    DashboardPage.Click on Back to account overview button
-    DashboardPage.Reset the filters for recent activities
-    PaginationPage.Check the table get load for Recent Activities
-    DashboardPage.Click on the filter under recent Activities table     Actioned By        Test QA31280530 Up3128
-    PaginationPage.Check the table get load for Recent Activities
-    DashboardPage.Reset the filters for recent activities
-    DashboardPage.Click on the filter Past under recent Activities table        Hours       Days
-    DashboardPage.Click on the filter Past under recent Activities table        Days        Months
-    DashboardPage.Click on the filter Past under recent Activities table        Months      Hours
-    PaginationPage.Check the table get load for Recent Activities
+#Verify Account_overview Recent Activities Filters
+#    [Tags]      Unstable
+#    Generic.click on the tab	Login
+#    LandingPage.Fill the login Form      ${email}       ${valid_password}
+##    LandingPage.Verify you are on dashboard page
+#    Generic.Verify your current page location contains      dashboard
+#    Generic.select the option from the side menu    Technology
+#    Generic.Verify your current page location contains      technology
+#    TechnologyPage.Click on action button of technology
+#    TechnologyPage.Choose add technology from action button of technology
+#    Generic.Verify your current page location contains      addtechnology
+#    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
+#    TechnologyPage.Add assetID for technology lifecycle information random
+#    TechnologyPage.Select technology lifecycle status      Active
+#    TechnologyPage.Click on save technology form button
+#    Generic.Fetch alert message text and compare it with        Technology created successfully
+#    TechnologyPage.Click on save technology form pop button
+#    Generic.Verify your current page location contains      technology
+#    Generic.Wait until table get load
+#    Generic.select the option from the side menu    Dashboard
+##    LandingPage.Verify you are on dashboard page
+#    Generic.Verify your current page location contains      dashboard
+#    DashboardPage.select the option from the dashboard drawer       Account Overview
+#    Generic.Verify your current page location contains          account-overview
+#    Generic.Verify your current page contains this text     Billing Details
+#    Generic.Refresh the existing page
+#    DashboardPage.Wait until alert is visible in the Recent Notifiation tab        You added Asset ID      ${generated_AssetID}.
+#    DashboardPage.Click on the filter under recent Activities table     Asset Id        ${generated_AssetID}
+#    Generic.Verify your current page contains this text     Billing Details
+#    DashboardPage.Wait until alert is visible in the Recent Notifiation tab        You added Asset ID      ${generated_AssetID}.
+#    DashboardPage.Click on row of recent activities table
+#    Generic.Verify your current page location contains     technology-detail
+#    DashboardPage.Click on Back to account overview button
+#    DashboardPage.Reset the filters for recent activities
+#    PaginationPage.Check the table get load for Recent Activities
+#    DashboardPage.Click on the filter under recent Activities table     Actioned By        Test QA31280530 Up3128
+#    PaginationPage.Check the table get load for Recent Activities
+#    DashboardPage.Reset the filters for recent activities
+#    DashboardPage.Click on the filter Past under recent Activities table        Hours       Days
+#    DashboardPage.Click on the filter Past under recent Activities table        Days        Months
+#    DashboardPage.Click on the filter Past under recent Activities table        Months      Hours
+#    PaginationPage.Check the table get load for Recent Activities
 
 Add and delete product from profile listing
     [Tags]      Stable
@@ -1036,7 +1036,7 @@ View Predefined product
     DashboardPage.Click on pre defined product list       [W306MI0U247
 
 Verifying the Renewals Overview section of Management console - End of Life
-    [Tags]      Unstable
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard

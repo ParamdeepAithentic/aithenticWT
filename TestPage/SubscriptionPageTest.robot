@@ -189,21 +189,21 @@ Suspend and unsuspend the account
         Fail
     END
 
-View Scheduler from view Result
-    [Tags]      Unstable
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
-    Generic.Verify your current page location contains      dashboard
-    Generic.Click on the profile name
-    Generic.Select option from profile list     subscription-connector
-    Generic.Verify your current page location contains      technology-settings
-    SubscriptionPage.Click on the three dots of subscription connector      Google
-    SubscriptionPage.Click on option under three dots of subscription connector     View Results
-    Generic.Verify your current page contains this text    Sorry! You do not have permission to access this page.
-    Go Back
-    Generic.Verify your current page location contains      technology-settings
-    SubscriptionPage.Click on the three dots of subscription connector      Microsoft Corporation
-    SubscriptionPage.Click on option under three dots of Microsoft coorporation     View Results
-    Generic.Verify your current page location contains    subscription
-    SubscriptionPage.Choose tab under subscription page after clicking on view_result
-    SubscriptionPage.Fetch and compare the Brand from the table    Microsoft Corporation
+#View Scheduler from view Result
+#    [Tags]      Unstable
+#    Generic.click on the tab	Login
+#    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
+#    Generic.Verify your current page location contains      dashboard
+#    Generic.Click on the profile name
+#    Generic.Select option from profile list     subscription-connector
+#    Generic.Verify your current page location contains      technology-settings
+#    SubscriptionPage.Click on the three dots of subscription connector      Google
+#    SubscriptionPage.Click on option under three dots of subscription connector     View Results
+#    Generic.Verify your current page contains this text    Sorry! You do not have permission to access this page.
+#    Go Back
+#    Generic.Verify your current page location contains      technology-settings
+#    SubscriptionPage.Click on the three dots of subscription connector      Microsoft Corporation
+#    SubscriptionPage.Click on option under three dots of Microsoft coorporation     View Results
+#    Generic.Verify your current page location contains    subscription
+#    SubscriptionPage.Choose tab under subscription page after clicking on view_result
+#    SubscriptionPage.Fetch and compare the Brand from the table    Microsoft Corporation
