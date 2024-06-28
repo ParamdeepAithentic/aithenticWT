@@ -42,16 +42,16 @@ Resource        ../Pages/UnselectAssetAPI.robot
 
 
 #Suite Setup    Get Current Date and Time
-#Test Setup      open the browser with the url
-#Test Teardown   Close Browser session
+Test Setup      open the browser with the url
+Test Teardown   Close Browser session
 
 
 *** Variables ***
 
 
 *** Test Cases ***
-Replace the existing domain
-    [Tags]      Stable
-#    LoginPage.Fetch the refresh token from the login api
-#    ReplaceDomainAPI.Replace Domain     ${refresh_Token}
-    UnselectAssetAPI.Hit API Endpoint
+#API for unselect assets
+#    [Tags]      Stable
+##    LoginPage.Fetch the refresh token from the login api
+##    ReplaceDomainAPI.Replace Domain     ${refresh_Token}
+#    UnselectAssetAPI.Hit API Endpoint

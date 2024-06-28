@@ -980,6 +980,15 @@ Click on the filter Past under recent Activities table
     Click Element    //span[normalize-space()='${option1}']//parent::div//parent::div
     Generic.Select parameter    ${option2}
 
+Choose number of days inside under past filters
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //div[contains(@class,'filter-dropdown-date-time')]//input[contains(@class,'alertFilterInput')]  ${wait_time}
+    Wait Until Element Is Enabled    //div[contains(@class,'filter-dropdown-date-time')]//input[contains(@class,'alertFilterInput')]  ${wait_time}
+    input text    //div[contains(@class,'filter-dropdown-date-time')]//input[contains(@class,'alertFilterInput')]       ${option}
+
+
+
 Click on the filter under recent Activities table
     [Arguments]         ${option1}      ${option2}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
