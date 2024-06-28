@@ -364,8 +364,8 @@ Download Agent from network discovery - Linux
     [Tags]      Sanity          Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Asset Discovery
     Generic.Verify your current page location contains      discovery-assets
     DashboardPage.Click on download agent button to download        Download Agent
@@ -378,8 +378,8 @@ Download Agent from network discovery - Windows
     [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Asset Discovery
     Generic.Verify your current page location contains      discovery-assets
     DashboardPage.Click on download agent button to download        Download Agent
@@ -392,8 +392,8 @@ Download Agent from network discovery - macOS
     [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Asset Discovery
     Generic.Verify your current page location contains      discovery-assets
     DashboardPage.Click on download agent button to download        Download Agent
@@ -406,8 +406,8 @@ Download Agent from asset discovery - Linux
     [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     sleep   ${search_sleep}
@@ -422,8 +422,8 @@ Download Agent from asset discovery - Windows
     [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     sleep   ${search_sleep}
@@ -438,8 +438,8 @@ Download Agent from asset discovery - macOS
     [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     sleep   ${search_sleep}
@@ -455,8 +455,8 @@ Network Discovery in case of no records
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       raghu@yopmail.com         Test@001
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
@@ -472,8 +472,8 @@ Visit discovered asset list when click on No. IP discovered devices
     [Tags]      Unstable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Asset Discovery
     Generic.Verify your current page location contains     discovery-assets
     OCS.click on the value of IP discovered devices of inside table

@@ -52,8 +52,8 @@ Change plan- Assign commercial plan and change it to slotted
     [Tags]      Smoke     Sanity      Time      rerun       Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     mehak@mynes.com     Test@123
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
 #    Generic.Click on the profile name
 #    Generic.Select option from profile list     billing-dropdown
 #    Generic.Verify your current page location contains      billing
