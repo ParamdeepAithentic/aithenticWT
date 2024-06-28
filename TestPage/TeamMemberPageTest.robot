@@ -638,6 +638,7 @@ Convert Assignee to Team Member
     Generic.Verify your current page location contains      asset-history
     MemberPage.Search assigned user by asset id     ${generated_AssetID}
     TeamMemberPage.Click on back to member list of member list
+    MemberPage.Click on assigned user tab   Assigned Users
     MemberPage.Search assigned user by first name   ${generated_AssigneduserFirstName}
     MemberPage.Click on three dots of Team Member listing
     MemberPage.Select option from three dots of Team Member     Convert to TM

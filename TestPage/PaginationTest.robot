@@ -424,6 +424,8 @@ Verify Pagination of Recent Activities Table
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview
     PaginationPage.Check the table get load for Recent Activities
+    DashboardPage.Click on the filter Past under recent Activities table        Hours       Days
+    DashboardPage.Choose number of days inside under past filters       20
     PaginationPage.Fetch the total count
     PaginationPage.Click on the pagination dropdown     autoCreatedAsset
     PaginationPage.Log WebElements for Recent Activites table     autoCreatedAsset

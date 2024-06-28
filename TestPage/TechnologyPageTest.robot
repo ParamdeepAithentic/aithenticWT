@@ -2406,7 +2406,7 @@ Add the technology from profile listing
     TechnologyPage.Wait until brand loder is invisible
 #    TechnologyPage.Select parameter from technology dropdown list    ${generated_product}
     TechnologyPage.Add assetID for technology lifecycle information random
-    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Select edited technology lifecycle status      Active
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
