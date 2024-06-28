@@ -516,8 +516,9 @@ Select technology lifecycle status
     wait until element is visible    ${LifeCycleStatusId}      ${wait_time}
     wait until element is enabled    ${LifeCycleStatusId}      ${wait_time}
     click element       ${LifeCycleStatusId}
-    wait until element is visible   //ng-select[@id='LifeCycleStatusId']//span[@title='Clear all']     ${wait_time}
+    wait until element is visible   //ng-select[@id='LifeCycleStatusId']//span[@title='Clear all']    ${wait_time}
     click element       //ng-select[@id='LifeCycleStatusId']//span[@title='Clear all']
+    wait until element is visible   //span[normalize-space()='Active']      ${wait_time}
     Generic.Select parameter    ${option1}
 
 
@@ -1795,7 +1796,7 @@ Verify the invisibility of product after clicking on cross icon
     wait until element is not visible   //div[contains(@class,'full-width-field')]//label[normalize-space()='Product']//following-sibling::input[@title='ZZ123 - Zz - Zz']      ${wait_time}
 
 Verify the invisibility of brand after clicking on reset icon
-    wait until element is not visible      //div[contains(@class,'full-width-field')]//ng-select[contains(@class,'qa-brands')]//following-sibling::div//span[normalize-space()='QABrand555']      ${wait_time}
+    wait until element is visible      //ng-select[contains(@class,'qa-brands')]//div//div//div[normalize-space()='Select or Search Brand']      ${wait_time}
 
 Verify the invisibility of technology type after clicking on reset icon
     wait until element is not visible      //div[contains(@class,'full-width-field')]//ng-select[contains(@class,'qa-TechType')]//following-sibling::div//span[normalize-space()='Hardware']      ${wait_time}

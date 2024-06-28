@@ -196,6 +196,7 @@ Test the sorting of Assigned user page table inside department page
     DepartmentPage.Select option from side menu in department list       Assigned Users
     Generic.Verify your current page location contains      assignee-list
     Generic.Wait until table get load
+    sleep   5
     SortingPage.Verify the sorting of the table method two     3       Email Id
     SortingPage.Verify the sorting of the table method two     2       Assignee Name
     SortingPage.Verify the sorting of the table method two     4       Employee Id
