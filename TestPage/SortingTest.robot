@@ -184,7 +184,7 @@ Test the sorting of department page table
 
 
 Test the sorting of Assigned user page table inside department page
-    [Tags]      Stable
+    [Tags]      Unstable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
 #    LandingPage.Verify you are on dashboard page
@@ -196,6 +196,7 @@ Test the sorting of Assigned user page table inside department page
     DepartmentPage.Select option from side menu in department list       Assigned Users
     Generic.Verify your current page location contains      assignee-list
     Generic.Wait until table get load
+    sleep   5
     SortingPage.Verify the sorting of the table method two     3       Email Id
     SortingPage.Verify the sorting of the table method two     2       Assignee Name
     SortingPage.Verify the sorting of the table method two     4       Employee Id
@@ -242,24 +243,24 @@ Test the sorting of team member asset history page table
     SortingPage.Verify the sorting of the table     6       Product Description
     SortingPage.Verify the sorting of the table     7       Assigned Date
 
-#Test the sorting of contract page table
-#    [Tags]      Unstable
-#    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
-##    LandingPage.Verify you are on dashboard page
-#    Generic.Verify your current page location contains      dashboard
-#    Generic.select the option from the side menu    Contracts
-#    Generic.Verify your current page location contains      contracts-list
-#    Generic.Wait until table get load
-#    SortingPage.Verify the sorting of the table method two     2       Business Name
-#    SortingPage.Verify the sorting of the table method two     3       Partner Type
-#    SortingPage.Verify the sorting of the table method two     4       Function
-##    SortingPage.Verify the sorting of the table method two     5       Contract ID
-##    SortingPage.Verify the sorting of the table method two     6       Created Date
-##    SortingPage.Verify the sorting of the table method two     7       End Date
-#    SortingPage.Verify the sorting of the table method two     8       Status
-#    SortingPage.Verify the sorting of the table method two     9       Permissions
-#    SortingPage.Verify the sorting of the table method two     10      Technology
+Test the sorting of contract page table
+    [Tags]      Unstable
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
+    Generic.select the option from the side menu    Contracts
+    Generic.Verify your current page location contains      contracts-list
+    Generic.Wait until table get load
+    SortingPage.Verify the sorting of the table method two     2       Business Name
+    SortingPage.Verify the sorting of the table method two     3       Partner Type
+    SortingPage.Verify the sorting of the table method two     4       Function
+#    SortingPage.Verify the sorting of the table method two     5       Contract ID
+#    SortingPage.Verify the sorting of the table method two     6       Created Date
+#    SortingPage.Verify the sorting of the table method two     7       End Date
+    SortingPage.Verify the sorting of the table method two     8       Status
+    SortingPage.Verify the sorting of the table method two     9       Permissions
+    SortingPage.Verify the sorting of the table method two     10      Technology
 
 Test the sorting of department page list via bulk import of technology table
     [Tags]    Smoke     Stable
@@ -377,7 +378,7 @@ Test the sorting of sent table page under message page
 
 
 Test the sorting of bulk edit grid under team members
-    [Tags]    Smoke     rerun       Stable
+    [Tags]    Smoke     rerun       Unstable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      jasdeep@15963.fr.nf     Paramdeep@112
 #    LandingPage.Verify you are on dashboard page
@@ -401,6 +402,7 @@ Test the sorting of bulk edit grid under team members
     SortingPage.Verify the sorting of the table method five    4       Country Code
     SortingPage.Verify the sorting of the table method five    3       Last Name
     SortingPage.Verify the sorting of the table method five    2       First Name
+
 Test the sorting of bulk edit grid under assigned users
     [Tags]      Stable
     Generic.click on the tab	Login
@@ -422,20 +424,22 @@ Test the sorting of bulk edit grid under assigned users
     SortingPage.Verify the sorting of the table method five    3      Last Name
     SortingPage.Verify the sorting of the table method five    2      First Name
 
-#Test the sorting of Recent Activities Table under Dashboard page
-#    [Tags]      Unstable
-#    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
-##    LandingPage.Verify you are on dashboard page
-#    Generic.Verify your current page location contains      dashboard
-#    DashboardPage.select the option from the dashboard drawer       Account Overview
-#    Generic.Verify your current page location contains          account-overview
-#    DashboardPage.Click on the filter Past under recent Activities table        Hours       Days
-#    PaginationPage.Check the table get load for Recent Activities
-#    PaginationPage.Click on the pagination dropdown     autoCreatedAsset
-#    PaginationPage.Select the value from the pagination drop down count    500
-#    SortingPage.Verify the sorting of the table method six    2        Actioned By
-#    SortingPage.Verify the sorting of the table method six    3        Created At
+Test the sorting of Recent Activities Table under Dashboard page
+    [Tags]      Unstable
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
+    DashboardPage.select the option from the dashboard drawer       Account Overview
+    Generic.Verify your current page location contains          account-overview
+    DashboardPage.Click on the filter Past under recent Activities table        Hours       Days
+#    DashboardPage.Click on the filter Past under recent Activities table        Days        Months
+    DashboardPage.Choose number of days inside under past filters    24
+    PaginationPage.Check the table get load for Recent Activities
+    PaginationPage.Click on the pagination dropdown     autoCreatedAsset
+#    PaginationPage.Select the value from the pagination drop down count    10
+    SortingPage.Verify the sorting of the table method six    2        Actioned By
+    SortingPage.Verify the sorting of the table method six    3        Created At
 
 Zz kill browser
     Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
