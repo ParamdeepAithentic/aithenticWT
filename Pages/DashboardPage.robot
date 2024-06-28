@@ -611,7 +611,9 @@ click on share icon of dashboard page
     click element       css:.fa-share-alt
 
 Enter to Email into popup
+    Wait Until Element Is Not Visible    ${loaderIcon}    ${wait_time}
     wait until element is visible      ${share_toEmail}         ${wait_time}
+    wait until element is enabled      ${share_toEmail}         ${wait_time}
     click element       ${share_toEmail}
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generate_sharetoEmail}=    Catenate    ToEmail_${random_string}@yopmail.net
