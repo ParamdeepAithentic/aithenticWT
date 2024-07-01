@@ -48,7 +48,6 @@ Test Teardown   Close Browser session
 
 
 *** Test Cases ***
-
 Export Partner list
     [Tags]      Stable
     Generic.click on the tab	    Login
