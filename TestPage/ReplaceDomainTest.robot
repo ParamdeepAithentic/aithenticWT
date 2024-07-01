@@ -53,7 +53,7 @@ Resource        ../Pages/UnselectAssetAPI.robot
 Replace the existing domain
 #    LoginPage.Fetch the refresh token from the login api
 #    ReplaceDomainAPI.Replace Domain     ${refresh_Token}
-    ReplaceDomainAPI.Replace Domain
+#    ReplaceDomainAPI.Replace Domain
 
 
 

@@ -527,8 +527,8 @@ Select edited technology lifecycle status
     wait until element is not visible    ${loaderIcon}      ${wait_time}
     wait until element is visible    ${LifeCycleStatusId}      ${wait_time}
     click element       ${LifeCycleStatusId}
-    wait until element is visible   xpath://span[normalize-space()='${option1}']     ${wait_time}
-    click element   xpath://span[normalize-space()='${option1}']
+    wait until element is visible   //span[normalize-space()='${option1}']     ${wait_time}
+    click element   //span[normalize-space()='${option1}']
 
 Add technology lifecycle comment
     [Arguments]    ${option}

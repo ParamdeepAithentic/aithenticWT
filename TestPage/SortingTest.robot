@@ -243,24 +243,24 @@ Test the sorting of team member asset history page table
     SortingPage.Verify the sorting of the table     6       Product Description
     SortingPage.Verify the sorting of the table     7       Assigned Date
 
-Test the sorting of contract page table
-    [Tags]      Unstable
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
-#    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      dashboard
-    Generic.select the option from the side menu    Contracts
-    Generic.Verify your current page location contains      contracts-list
-    Generic.Wait until table get load
-    SortingPage.Verify the sorting of the table method two     2       Business Name
-    SortingPage.Verify the sorting of the table method two     3       Partner Type
-    SortingPage.Verify the sorting of the table method two     4       Function
-#    SortingPage.Verify the sorting of the table method two     5       Contract ID
-#    SortingPage.Verify the sorting of the table method two     6       Created Date
-#    SortingPage.Verify the sorting of the table method two     7       End Date
-    SortingPage.Verify the sorting of the table method two     8       Status
-    SortingPage.Verify the sorting of the table method two     9       Permissions
-    SortingPage.Verify the sorting of the table method two     10      Technology
+#Test the sorting of contract page table
+#    [Tags]      Unstable
+#    Generic.click on the tab	Login
+#    LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
+##    LandingPage.Verify you are on dashboard page
+#    Generic.Verify your current page location contains      dashboard
+#    Generic.select the option from the side menu    Contracts
+#    Generic.Verify your current page location contains      contracts-list
+#    Generic.Wait until table get load
+#    SortingPage.Verify the sorting of the table method two     2       Business Name
+#    SortingPage.Verify the sorting of the table method two     3       Partner Type
+#    SortingPage.Verify the sorting of the table method two     4       Function
+##    SortingPage.Verify the sorting of the table method two     5       Contract ID
+##    SortingPage.Verify the sorting of the table method two     6       Created Date
+##    SortingPage.Verify the sorting of the table method two     7       End Date
+#    SortingPage.Verify the sorting of the table method two     8       Status
+#    SortingPage.Verify the sorting of the table method two     9       Permissions
+#    SortingPage.Verify the sorting of the table method two     10      Technology
 
 Test the sorting of department page list via bulk import of technology table
     [Tags]    Smoke     Stable

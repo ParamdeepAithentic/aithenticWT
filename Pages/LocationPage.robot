@@ -330,6 +330,7 @@ Edit location country
     [Arguments]    ${option}
     Wait Until Element Is Visible       ${location_country}    ${wait_time}
     Wait Until Element Is Enabled      ${location_country}     ${wait_time}
+    Clear Element Text      ${location_country}
     Input Text    ${location_country}    ${option}
     Generic.Select parameter    ${option}
 

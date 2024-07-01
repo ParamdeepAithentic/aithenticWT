@@ -657,7 +657,7 @@ Verify adding a new brand from profile listing
     Generic.Select option from profile list     brand-dropdown
     ReplaceDomainAPI.Replace Domain
     Generic.Verify your current page location contains  brand-list
-    ReplaceDomainAPI.Replace Domain
+#    ReplaceDomainAPI.Replace Domain
     DashboardPage.Click add brand button
     DashboardPage.Create random brandName
     DashboardPage.Add brand manufacturer country      United States
