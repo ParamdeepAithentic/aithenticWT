@@ -343,9 +343,11 @@ Enter input in the input field of date under create scheduler
     input text      //div[@id='editScheduler']//input[@formcontrolname='Date']      ${option}
 
 Click on the activate option under subscription connector table
-    wait until element is visible   //td[normalize-space()='Google']//parent::tr//td[normalize-space()='Activate']      ${wait_time}
-    wait until element is enabled   //td[normalize-space()='Google']//parent::tr//td[normalize-space()='Activate']      ${wait_time}
-    click element   //td[normalize-space()='Google']//parent::tr//td[normalize-space()='Activate']
+    [Arguments]         ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible   //td[normalize-space()='${option}']//parent::tr//td[normalize-space()='Activate']      ${wait_time}
+    wait until element is enabled   //td[normalize-space()='${option}']//parent::tr//td[normalize-space()='Activate']      ${wait_time}
+    click element   //td[normalize-space()='${option}']//parent::tr//td[normalize-space()='Activate']
 
 Click on the suspend my account button link under billing details
     wait until element is visible   //div[@class='row'][1]//span[contains(text(),'Suspend My Account')]     ${wait_time}

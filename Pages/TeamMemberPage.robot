@@ -143,6 +143,7 @@ Click on team member department
 Click on add here in department field
     [Arguments]    ${option}
     wait until element is not visible       //span[normalize-space()='Please enter a valid Mobile Number']     ${wait_time}
+    Sleep       ${search_sleep}
     Generic.click on the tab    ${option}
 #    wait until element is visible   //a[normalize-space()='Click here to add']      ${wait_time}
 #    wait until element is enabled        //a[normalize-space()='Click here to add']      ${wait_time}
