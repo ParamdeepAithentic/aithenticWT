@@ -349,8 +349,7 @@ Select option from remove TM warning pop-up
     wait until element is visible       css:.confirm-${option}-members-qa       ${wait_time}
     wait until element is enabled       css:.confirm-${option}-members-qa       ${wait_time}
     click element       css:.confirm-${option}-members-qa
-    sleep       10
-    TeamMemberPage.Close the remove warning pop-up
+    TeamMemberPage.Close the remove warning pop-up      ## have to remove this line once fixed from dev side
 
 Close the remove warning pop-up
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
