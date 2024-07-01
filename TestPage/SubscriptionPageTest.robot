@@ -134,7 +134,7 @@ Run now from view details
     Generic.Fetch alert message text and compare it with        Status Updated
     SubscriptionPage.Fetch text of delete under table of subscription connector      Deleted
     sleep  ${search_sleep}
-    SubscriptionPage.Click on the activate option under subscription connector table
+    SubscriptionPage.Click on the activate option under subscription connector table        Google
     Generic.Fetch alert message text and compare it with        Status Updated
     SubscriptionPage.Fetch text of delete under table of subscription connector      Active
     SubscriptionPage.Click on the three dots of subscription connector      Google
@@ -182,7 +182,8 @@ Suspend and unsuspend the account
         Generic.Select parameter    Technology
         Generic.Verify your current page location contains      technology-settings
         Generic.click on the tab    Connectors
-        SubscriptionPage.Click on the activate option under subscription connector table
+        SubscriptionPage.Click on the activate option under subscription connector table        Google
+        SubscriptionPage.Click on the activate option under subscription connector table        Microsoft Corporation
         Generic.Fetch alert message text and compare it with        Status Updated
     EXCEPT
         SubscriptionPage.My Failure Handling
