@@ -56,10 +56,10 @@ ${click_countryTag}     css:.iti__arrow
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
-${wait_time}        60
+${wait_time}        100
 ${yop_sleep}       10
 ${search_sleep}       1
-${CASE}        pre-prod      #qa , uat , pre-prod
+${CASE}        qa      #qa , uat , pre-prod
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
 
 *** Keywords ***
@@ -96,7 +96,7 @@ Set Pre-Prod Variables
     Set Suite Variable    ${url}    https://pre-prod-app.aithentic.com/
     Set Suite Variable    ${valid_password}    Test@123     #pre prod
     Set Suite Variable    ${apiURL}    https://pre-prod-api.aithentic.com/api/v1
-    Set Suite Variable    ${browser_name}         firefox
+    Set Suite Variable    ${browser_name}         headlessfirefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
 
 Set Default Variables
