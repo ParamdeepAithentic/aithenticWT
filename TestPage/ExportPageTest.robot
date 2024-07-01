@@ -44,7 +44,7 @@ Test Teardown   Close Browser session
 
 
 *** Test Cases ***
-    Export Partner list
+Export Partner list
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     LandingPage.Verify you are on dashboard page
