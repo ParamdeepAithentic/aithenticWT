@@ -10,27 +10,35 @@ Library         DateTime
 Library         OperatingSystem
 Resource        ../Pages/Generic.robot
 Resource        ../Pages/DashboardPage.robot
+Resource        ../Pages/DepartmentPage.robot
 Resource        ../Pages/ITperformancePage.robot
+Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/LandingPage.robot
 Resource        ../Pages/TechnologyPage.robot
 Resource        ../Pages/PartnersPage.robot
-Resource        ../Pages/RegisterMember.robot
 Resource        ../Pages/ContractsPage.robot
-Resource        ../Pages/LoginAPI.robot
+Resource        ../Pages/RegisterMember.robot
+Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/ReplaceDomainAPI.robot
 Resource        ../Pages/Yopmail.robot
 Resource        ../Pages/UserAccount.robot
 Resource        ../Pages/TwoFactorAuth.robot
 Resource        ../Pages/SubscriptionPage.robot
+Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
+Resource        ../Pages/LoginPage.robot
+Resource        ../Pages/MemberPage.robot
 Resource        ../Pages/OCS.robot
-Resource        ../Pages/RegisterUserPage.robot
-Resource        ../Pages/KeyClockPage.robot
-Resource        ../Pages/TeamMemberPage.robot
+Resource        ../Pages/BillingPage.robot
 Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
-
+Resource        ../Pages/SortingPage.robot
+Resource        ../Pages/Bulk_Import_ExportPage.robot
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
+Resource        ../Pages/UnselectAssetAPI.robot
 *** Variables ***
 
 ${Create_new_contact_button}     css:a[data-toggle='modal']
@@ -71,6 +79,7 @@ Click on create new contract button
     click element       ${Create_new_contact_button}
     sleep       2
 
+
 Select type of contract
     [Arguments]    ${option}
     wait until element is visible       (//button[contains(text(),'${option}')])[1]     ${wait_time}
@@ -100,11 +109,11 @@ Enter contract with
     Clear Element Text      ${companyId}
     ${StartTime1} =     Get Current Time in Milliseconds
     input text      ${companyId}      ${option}
-    sleep       1
+    sleep       ${search_sleep}
     Press Keys     ${companyId}       ENTER
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  4  ${pageHeading}   ContractPage - Enter contract with      4    ${pageTime}     ${ActualTime}    ContractPage_Time
+    Calculate Running time  4  ${pageHeading}   ContractPage - Enter contract with business name       4    ${pageTime}     ${ActualTime}    ContractPage_Time
 
 
 
@@ -146,11 +155,13 @@ Select contract start date
     Generic.Enter current date      ${startDate}
     Press Keys      ${location}      ENTER
 
+
 Select contract end date
     [Arguments]    ${date}
     Wait Until Element Is Visible       ${endDate}      ${wait_time}
     Generic.Enter self date     ${endDate}       ${date}
     Press Keys      ${location}      ENTER
+
 
 Select contract function
     [Arguments]    ${option}
@@ -178,6 +189,7 @@ Click preview selection button on contact
      wait until element is enabled    ${previewSelectionButton}      ${wait_time}
      click element      ${previewSelectionButton}
      Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+     wait until element is not visible       ${shadow}          ${wait_time}
 
 Enter contract description comment
      [Arguments]    ${option}
@@ -197,6 +209,7 @@ Enter contract name
      Press Keys      ${contractName}      ENTER
 
 
+
 Select the checkboxes
     Wait Until Element Is Enabled       ${chkBoxOne}    ${wait_time}
     click element   ${chkBoxOne}
@@ -208,11 +221,13 @@ Save create contract button
     click element       ${click_createContract_btn}
 
 
+
 Save contract modal
     [Arguments]     ${option}
     Wait Until Element Is Visible       ${save_contract_modal}      ${wait_time}
     Wait Until Element Is Enabled       //div[@id='createOrGenerateContract']//div//div//div//div//button[contains(text(),'${option}')]     ${wait_time}
     click element       //div[@id='createOrGenerateContract']//div//div//div//div//button[contains(text(),'${option}')]
+
 
 
 Fetch the contract ID from the row
@@ -254,13 +269,15 @@ Click on the first tab row of contract list page table
     wait until element is enabled    //tbody//tr//td[normalize-space()='View']        ${wait_time}
     click element    //tbody//tr//td[normalize-space()='View']
 
+
 Click on the first tab row
     [Arguments]     ${option}
     sleep   ${yop_sleep}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    wait until element is visible    //td[normalize-space()='${option}']       ${wait_time}
+    wait until element is visible    //td[normalize-space()='${option}']      ${wait_time}
     wait until element is enabled    //td[normalize-space()='${option}']        ${wait_time}
     click element    //td[normalize-space()='${option}']
+
 
 
 Verify technology is null
@@ -276,6 +293,7 @@ Save the contract details
     wait until element is enabled    //button[@data-target="#${option}Contract"]        ${wait_time}
     click element    //button[@data-target="#${option}Contract"]
 
+
 Select the contract form pop up checkboxes
     wait until element is visible    css:form[class='ng-untouched ng-pristine ng-invalid ng-star-inserted']     ${wait_time}
     wait until element is visible    css:label[for='authorize']     ${wait_time}
@@ -284,15 +302,18 @@ Select the contract form pop up checkboxes
     click element    css:label[for='authorize']
     click element    css:label[for='acknowledged']
 
+
 Save the contract pop up details
     wait until element is visible    css:#accept-contract-detail      ${wait_time}
     wait until element is enabled    css:#accept-contract-detail      ${wait_time}
     click element    css:#accept-contract-detail
 
+
 Click on add new contact for this partner link under contract
     wait until element is visible   //span[normalize-space()='Add new Contact for this Partner']    ${wait_time}
     wait until element is enabled   //span[normalize-space()='Add new Contact for this Partner']    ${wait_time}
     click element   //span[normalize-space()='Add new Contact for this Partner']
+
 
 Click on back to contract link
     wait until element is not visible    ${loaderIcon}  ${wait_time}
@@ -300,3 +321,4 @@ Click on back to contract link
     wait until element is enabled   //span[@class='back']   ${wait_time}
     click element   //span[@class='back']
     wait until element is not visible    ${loaderIcon}  ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}

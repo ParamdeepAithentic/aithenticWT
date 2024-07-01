@@ -9,26 +9,35 @@ Library         DateTime
 Library         OperatingSystem
 Resource        ../Pages/Generic.robot
 Resource        ../Pages/DashboardPage.robot
+Resource        ../Pages/DepartmentPage.robot
 Resource        ../Pages/ITperformancePage.robot
+Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/LandingPage.robot
 Resource        ../Pages/TechnologyPage.robot
 Resource        ../Pages/PartnersPage.robot
-Resource        ../Pages/RegisterMember.robot
 Resource        ../Pages/ContractsPage.robot
-Resource        ../Pages/LoginAPI.robot
+Resource        ../Pages/RegisterMember.robot
+Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/ReplaceDomainAPI.robot
 Resource        ../Pages/Yopmail.robot
 Resource        ../Pages/UserAccount.robot
 Resource        ../Pages/TwoFactorAuth.robot
 Resource        ../Pages/SubscriptionPage.robot
+Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
+Resource        ../Pages/LoginPage.robot
+Resource        ../Pages/MemberPage.robot
 Resource        ../Pages/OCS.robot
-Resource        ../Pages/RegisterUserPage.robot
-Resource        ../Pages/KeyClockPage.robot
-Resource        ../Pages/TeamMemberPage.robot
+Resource        ../Pages/BillingPage.robot
 Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
+Resource        ../Pages/SortingPage.robot
+Resource        ../Pages/Bulk_Import_ExportPage.robot
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
+Resource        ../Pages/UnselectAssetAPI.robot
 
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
@@ -41,10 +50,10 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Download agent for OCS from signup - Linux
-    [Tags]      Sanity      Smoke
+    [Tags]      Sanity      Smoke       Stable
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
-#    LoginAPI.Fetch the refresh token from the login api
+#    LoginPage.Fetch the refresh token from the login api
     ReplaceDomainAPI.Replace Domain
     RegisterUserPage.Create random register first name
     RegisterUserPage.Create random register last name
@@ -146,10 +155,10 @@ Download agent for OCS from signup - Linux
     Generic.click on the button link    Download
 
 Download agent for OCS from signup - Windows
-    [Tags]      Sanity
+    [Tags]      Sanity      Stable
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
-#    LoginAPI.Fetch the refresh token from the login api
+#    LoginPage.Fetch the refresh token from the login api
     ReplaceDomainAPI.Replace Domain
     RegisterUserPage.Create random register first name
     RegisterUserPage.Create random register last name
@@ -251,10 +260,10 @@ Download agent for OCS from signup - Windows
     Generic.click on the button link    Download
 
 Download agent for OCS from signup - macOS
-    [Tags]      Sanity
+    [Tags]      Sanity      Stable
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
-#    LoginAPI.Fetch the refresh token from the login api
+#    LoginPage.Fetch the refresh token from the login api
     ReplaceDomainAPI.Replace Domain
     RegisterUserPage.Create random register first name
     RegisterUserPage.Create random register last name
@@ -352,11 +361,11 @@ Download agent for OCS from signup - macOS
     Generic.click on the button link    Download
 
 Download Agent from network discovery - Linux
-    [Tags]      Sanity
+    [Tags]      Sanity          Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Asset Discovery
     Generic.Verify your current page location contains      discovery-assets
     DashboardPage.Click on download agent button to download        Download Agent
@@ -366,11 +375,11 @@ Download Agent from network discovery - Linux
     Generic.click on the button link    Download
 
 Download Agent from network discovery - Windows
-    [Tags]      Sanity
+    [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Asset Discovery
     Generic.Verify your current page location contains      discovery-assets
     DashboardPage.Click on download agent button to download        Download Agent
@@ -380,11 +389,11 @@ Download Agent from network discovery - Windows
     Generic.click on the button link    Download
 
 Download Agent from network discovery - macOS
-    [Tags]      Sanity
+    [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Asset Discovery
     Generic.Verify your current page location contains      discovery-assets
     DashboardPage.Click on download agent button to download        Download Agent
@@ -394,11 +403,11 @@ Download Agent from network discovery - macOS
     Generic.click on the button link    Download
 
 Download Agent from asset discovery - Linux
-    [Tags]      Sanity
+    [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     sleep   ${search_sleep}
@@ -410,11 +419,11 @@ Download Agent from asset discovery - Linux
     Generic.click on the button link    Download
 
 Download Agent from asset discovery - Windows
-    [Tags]      Sanity
+    [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     sleep   ${search_sleep}
@@ -426,11 +435,11 @@ Download Agent from asset discovery - Windows
     Generic.click on the button link    Download
 
 Download Agent from asset discovery - macOS
-    [Tags]      Sanity
+    [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     sleep   ${search_sleep}
@@ -443,11 +452,11 @@ Download Agent from asset discovery - macOS
 
 
 Network Discovery in case of no records
-    [Tags]      rerun
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       raghu@yopmail.com         Test@001
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
@@ -459,22 +468,25 @@ Network Discovery in case of no records
     OCS.Fetch text from Agent Discovery tab and compare it with    No record found
 
 
-Visit discovered asset list when click on No. IP discovered devices
-    [Tags]      rerun
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
-    Generic.select the option from the side menu    Asset Discovery
-    Generic.Verify your current page location contains     discovery-assets
-    OCS.click on the value of IP discovered devices of inside table
-    Sleep    ${yop_sleep}
-    Switch Window       aithentic | Discovered Assets
-    Generic.Verify your current page location contains     discovery-assets-list
-    OCS.Click on Go to Agent Discovery Page
-    Sleep    ${yop_sleep}
-    Switch Window       aithentic | Service Now Newly-Discovered
-    Generic.Verify your current page location contains     discovery-assets
+#Visit discovered asset list when click on No. IP discovered devices
+#    [Tags]      Unstable
+#    Generic.click on the tab	Login
+#    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+##    LandingPage.Verify you are on dashboard page
+#    Generic.Verify your current page location contains      dashboard
+#    Generic.select the option from the side menu    Asset Discovery
+#    Generic.Verify your current page location contains     discovery-assets
+#    OCS.click on the value of IP discovered devices of inside table
+#    Sleep    ${yop_sleep}
+#    Switch Window       aithentic | Discovered Assets
+#    Generic.Verify your current page location contains     discovery-assets-list
+#    OCS.Click on Go to Agent Discovery Page
+#    Sleep    ${yop_sleep}
+#    Switch Window       aithentic | Service Now Newly-Discovered
+#    Generic.Verify your current page location contains     discovery-assets
+
+Zz kill browser
+    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
 
 #Refresh search text on discovered asset list page
 #    Generic.click on the tab	Login

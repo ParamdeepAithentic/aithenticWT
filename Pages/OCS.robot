@@ -10,26 +10,35 @@ Library         DateTime
 Library         OperatingSystem
 Resource        ../Pages/Generic.robot
 Resource        ../Pages/DashboardPage.robot
+Resource        ../Pages/DepartmentPage.robot
 Resource        ../Pages/ITperformancePage.robot
+Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/LandingPage.robot
 Resource        ../Pages/TechnologyPage.robot
 Resource        ../Pages/PartnersPage.robot
-Resource        ../Pages/RegisterMember.robot
 Resource        ../Pages/ContractsPage.robot
-Resource        ../Pages/LoginAPI.robot
+Resource        ../Pages/RegisterMember.robot
+Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/ReplaceDomainAPI.robot
 Resource        ../Pages/Yopmail.robot
 Resource        ../Pages/UserAccount.robot
 Resource        ../Pages/TwoFactorAuth.robot
 Resource        ../Pages/SubscriptionPage.robot
+Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
+Resource        ../Pages/LoginPage.robot
+Resource        ../Pages/MemberPage.robot
 Resource        ../Pages/OCS.robot
-Resource        ../Pages/RegisterUserPage.robot
+Resource        ../Pages/BillingPage.robot
 Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
+Resource        ../Pages/SortingPage.robot
+Resource        ../Pages/Bulk_Import_ExportPage.robot
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
 Resource        ../Pages/UnselectAssetAPI.robot
-
 
 *** Variables ***
 ${preparingAgent_text}     //div[@id='downloadAgentOCSFile']//p[contains(text(),'File is preparing, please wait....')]
@@ -52,6 +61,7 @@ Choose options to install from download agent button
     wait until element is enabled      css:.qa-${option}-install     ${wait_time}
     click element       css:.qa-${option}-install
     wait until element is not visible   ${loaderIcon}   ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Select the agent type
     [Arguments]    ${option}
@@ -81,6 +91,7 @@ Enter text to search discovery asset
     Input Text    //input[@placeholder='Search OCS Discovered Assets']    ${option}
     Sleep    ${yop_sleep}
     Wait Until Element Is Not Visible    ${loaderIcon}  ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Enter text to search existing asset
     [Arguments]     ${option}
@@ -89,6 +100,7 @@ Enter text to search existing asset
     Wait Until Element Is enabled    //input[@placeholder='Search Existing Assets']       ${wait_time}
     Input Text    //input[@placeholder='Search Existing Assets']    ${option}
     wait until element is not visible   ${loaderIcon}        ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Verify Searched discovery asset
     [Arguments]     ${option}
@@ -223,6 +235,7 @@ Click on Searched Discovered asset
 #   Wait Until Element Is Enabled    ${Discovery_Assets}     ${wait_time}
    Click element    //div[contains(text(),'Apple Inc')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]
    Sleep    ${search sleep}
+   wait until element is not visible       ${shadow}          ${wait_time}
 
 Click on tab under dicovery_asset_detail page
     [Arguments]     ${option}
@@ -266,6 +279,7 @@ Choose option from product on Add technology Page
     wait until element is enabled     (//tbody//tr)[1]       ${wait_time}
     click element   (//tbody//tr)[1]
     Sleep    ${yop_sleep}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Enter The Asset_id in Add Technology Page
     wait until element is not visible       ${loaderIcon}        ${wait_time}
@@ -419,6 +433,7 @@ Click on save button of Add Technology Page
     wait until element is visible  //button[@class='btn button-green']    ${wait_time}
     wait until element is enabled  //button[@class='btn button-green']     ${wait_time}
     click element   //button[@class='btn button-green']
+    wait until element is not visible       ${shadow}          ${wait_time}
 #    Wait Until Element Is not Visible    ${loaderIcon}      ${wait_time}
 
 Verify Page should contain Element
@@ -472,6 +487,7 @@ Click on plus icon of any component
     Wait Until Element Is Enabled    (//div[@id='software']//tbody//i[contains(@class,'fa-plus-circle')])[1]       ${wait_time}
     sleep   ${search_sleep}
     Click Element    (//div[@id='software']//tbody//i[contains(@class,'fa-plus-circle')])[1]
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Verify Software tab Should contain Element
     Wait Until Element Is Visible       css:.fa-check-circle        ${wait_time}
@@ -586,6 +602,7 @@ Enter and select technology type in advance search of discovered search
     click element   css:#advaceType
     input text      css:#advaceType     Maintenance
     Press Keys      css:#advaceType     ENTER
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Click on the table inside advanced search of discovered asset for technology group
     wait until element is visible    //div[contains(@class,'Contract-Form-Edit')]//tbody[contains(@class,'location-list-qa')]//tr//td     ${wait_time}
@@ -607,6 +624,7 @@ Enter input in the technology group field of advanced search of discovered asset
     Wait Until Element Is Visible    css:.modal-body .qa-group input    ${wait_time}
     Wait Until Element Is enabled    css:.modal-body .qa-group input    ${wait_time}
     Press Keys  css:.modal-body .qa-group input     ENTER
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 
 Fetch the technology type from the technology type field of component of discovered asset
@@ -665,7 +683,7 @@ Get Host name by hovering over discovered assets
     set global variable     ${hover_host name}
 
 Click on newly discovered tab under network discovery
-    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+#    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     Wait Until Element Is visible    css:.qa-newly-discovered-tab     ${wait_time}
     Wait Until Element Is enabled    css:.qa-newly-discovered-tab     ${wait_time}
     click element    css:.qa-newly-discovered-tab

@@ -10,22 +10,35 @@ Library         DateTime
 Library         OperatingSystem
 Resource        ../Pages/Generic.robot
 Resource        ../Pages/DashboardPage.robot
+Resource        ../Pages/DepartmentPage.robot
 Resource        ../Pages/ITperformancePage.robot
+Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/LandingPage.robot
 Resource        ../Pages/TechnologyPage.robot
 Resource        ../Pages/PartnersPage.robot
-Resource        ../Pages/RegisterMember.robot
 Resource        ../Pages/ContractsPage.robot
-Resource        ../Pages/LoginAPI.robot
+Resource        ../Pages/RegisterMember.robot
+Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/ReplaceDomainAPI.robot
 Resource        ../Pages/Yopmail.robot
 Resource        ../Pages/UserAccount.robot
 Resource        ../Pages/TwoFactorAuth.robot
 Resource        ../Pages/SubscriptionPage.robot
+Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/MessagePage.robot
+Resource        ../Pages/LocationPage.robot
+Resource        ../Pages/LoginPage.robot
+Resource        ../Pages/MemberPage.robot
+Resource        ../Pages/OCS.robot
+Resource        ../Pages/BillingPage.robot
 Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
-
+Resource        ../Pages/SortingPage.robot
+Resource        ../Pages/Bulk_Import_ExportPage.robot
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
+Resource        ../Pages/UnselectAssetAPI.robot
 
 *** Variables ***
 ${canclePreviewPopUp}     //span[@data-dismiss='modal']//i
@@ -114,6 +127,7 @@ Click on download all button
     wait until element is enabled  ${download_allFiles}       ${wait_time}
     click element   ${download_allFiles}
     sleep       ${search_sleep}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Skip Action
     Log    Skipping action as the element value is 0
@@ -166,6 +180,7 @@ Click on data quality button link under it perfomance
     wait until element is enabled   css:.qa-data-quality-${option} h4     ${wait_time}
     sleep   ${search_sleep}
     click element   css:.qa-data-quality-${option} h4
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 
 Click on aging analytics tab
@@ -213,6 +228,7 @@ Click on data quality button link under investments by partner tab
     wait until element is enabled   css:.qa-data-quality-partner-${option} h4     ${wait_time}
     sleep   ${search_sleep}
     click element   css:.qa-data-quality-partner-${option} h4
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 
 Click on tabs under investment by partner tab

@@ -10,22 +10,35 @@ Library         DateTime
 Library         OperatingSystem
 Resource        ../Pages/Generic.robot
 Resource        ../Pages/DashboardPage.robot
+Resource        ../Pages/DepartmentPage.robot
 Resource        ../Pages/ITperformancePage.robot
+Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/LandingPage.robot
 Resource        ../Pages/TechnologyPage.robot
-Resource        ../Pages/RegisterMember.robot
+Resource        ../Pages/PartnersPage.robot
 Resource        ../Pages/ContractsPage.robot
-Resource        ../Pages/LoginAPI.robot
+Resource        ../Pages/RegisterMember.robot
+Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/ReplaceDomainAPI.robot
 Resource        ../Pages/Yopmail.robot
 Resource        ../Pages/UserAccount.robot
 Resource        ../Pages/TwoFactorAuth.robot
 Resource        ../Pages/SubscriptionPage.robot
+Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
+Resource        ../Pages/LoginPage.robot
+Resource        ../Pages/MemberPage.robot
+Resource        ../Pages/OCS.robot
+Resource        ../Pages/BillingPage.robot
 Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
-
+Resource        ../Pages/SortingPage.robot
+Resource        ../Pages/Bulk_Import_ExportPage.robot
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
+Resource        ../Pages/UnselectAssetAPI.robot
 *** Variables ***
 
 ${location_Action}     css:.qa-location-actions
@@ -50,13 +63,16 @@ ${rowMenu}     css:.three-dots
 Click on Location action button
     Wait Until Element Is Visible       ${location_Action}    ${wait_time}
     Wait Until Element Is Enabled      ${location_Action}     ${wait_time}
+    sleep       ${search_sleep}
     click element       ${location_Action}
+
 
 Click on add location button
     [Arguments]    ${option}
     Wait Until Element Is Visible       //a[@title='${option}']    ${wait_time}
     Wait Until Element Is Enabled      //a[@title='${option}']     ${wait_time}
     click element       //a[@title='${option}']
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 #----------------------- only bulk edit location is not having title-----------------------
 Select the option from action menu
@@ -64,14 +80,23 @@ Select the option from action menu
     wait until element is visible       css:.qa-location-bulk-${option}     ${wait_time}
     wait until element is enabled       css:.qa-location-bulk-${option}     ${wait_time}
     click element   css:.qa-location-bulk-${option}
+    wait until element is not visible       ${shadow}          ${wait_time}
+
+
 
 Select location country
     [Arguments]    ${option}
-    Wait Until Element Is Visible       ${location_country}    ${wait_time}
-    Wait Until Element Is Enabled      ${location_country}     ${wait_time}
-    click element       ${location_country}
-    Clear Element Text      ${location_country}
-    Generic.Select parameter    ${option}
+    Wait Until Element Is Visible   css:#country       ${wait_time}
+    Wait Until Element Is Enabled   css:#country        ${wait_time}
+    click element       css:#country
+    Clear Element Text      css:#country
+    input text  css:#country     ${option}
+    Wait Until Element Is Visible       //ng-select[@formcontrolname='Country']//following-sibling::ng-dropdown-panel//div//span[normalize-space()='${option}']    ${wait_time}
+    Wait Until Element Is Enabled      //ng-select[@formcontrolname='Country']//following-sibling::ng-dropdown-panel//div//span[normalize-space()='${option}']     ${wait_time}
+    click element       //ng-select[@formcontrolname='Country']//following-sibling::ng-dropdown-panel//div//span[normalize-space()='United States']
+
+#    Clear Element Text      ${location_country}
+#    Generic.Select parameter    ${option}
 
 Select location building name
     [Arguments]    ${option}
@@ -143,6 +168,7 @@ Save location form
     Wait Until Element Is Enabled       css:.qa-${option}-location    ${wait_time}
     click element       css:.qa-${option}-location
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Fetch the location Name from the row
     [Arguments]    ${option}
@@ -177,6 +203,7 @@ Select option from change location status pop up
     Wait Until Element Is enabled      css:.qa-update-location-status-${option}-action    ${wait_time}
     Mouse over      css:.qa-update-location-status-${option}-action
     click element      css:.qa-update-location-status-${option}-action
+    wait until element is not visible       ${shadow}          ${wait_time}
 #    sleep       1
 
 #------------------------------------------------------------------------------------------------
@@ -234,6 +261,7 @@ Click on the export button of location under technology details page
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible      //div[contains(@id,'location')]//button[@id='dropdownMenuButton']        ${wait_time}
     wait until element is enabled      //div[contains(@id,'location')]//button[@id='dropdownMenuButton']        ${wait_time}
+    sleep   ${search_sleep}
     click element  //div[contains(@id,'location')]//button[@id='dropdownMenuButton']
 
 
@@ -243,3 +271,78 @@ Download the selected extension file of location under technology details
     wait until element is visible      //div[contains(@id,'location')]//a[contains(text(),'${option}')]       ${wait_time}
     wait until element is enabled     //div[contains(@id,'location')]//a[contains(text(),'${option}')]       ${wait_time}
     click element   //div[contains(@id,'location')]//a[contains(text(),'${option}')]
+
+Select option from pop-up to remove location
+    [Arguments]     ${option}
+    Generic.click on the button    ${option}
+
+Get Location name when add location
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    css:.qa-LocationTypeName       ${wait_time}
+    ${location_name_systemgenerated}=   get text     css:.qa-LocationTypeName
+    Log To Console    ${location_name_systemgenerated}
+    Set Global Variable    ${location_name_systemgenerated}
+
+Create random location_name when generated by user
+    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${generated_location_user}=    Catenate    LocationName${random_string}
+    wait until element is visible      css:#LocationTypeName    ${wait_time}
+    input text   css:#LocationTypeName   ${generated_location_user}
+    set global variable    ${generated_location_user}
+
+Enter building_name location_name when generated by user
+    [Arguments]    ${option}
+    Wait Until Element Is Enabled       css:#BuildingName    ${wait_time}
+    click element       css:#BuildingName
+    input text  css:#BuildingName     ${option}
+
+Enter floor location_name when generated by user
+    [Arguments]    ${option}
+    Wait Until Element Is Enabled       css:#Floor    ${wait_time}
+    click element       css:#Floor
+    input text  css:#Floor     ${option}
+
+Enter room location_name when generated by user
+    [Arguments]    ${option}
+    Wait Until Element Is Enabled       css:#Room    ${wait_time}
+    click element       css:#Room
+    input text  css:#Room     ${option}
+
+Enter address_1 location_name when generated by user
+    [Arguments]    ${option}
+    Wait Until Element Is Enabled       css:#StreetAddress1    ${wait_time}
+    click element       css:#StreetAddress1
+    input text  css:#StreetAddress1     ${option}
+
+Enter address_2 location_name when generated by user
+    [Arguments]    ${option}
+    Wait Until Element Is Enabled       css:#StreetAddress2    ${wait_time}
+    click element       css:#StreetAddress2
+    input text  css:#StreetAddress2      ${option}
+
+Enter zip_code location_name when generated by user
+    [Arguments]    ${option}
+    Wait Until Element Is Enabled       css:#Zip    ${wait_time}
+    click element       css:#Zip
+    input text  css:#Zip     ${option}
+
+Edit location country
+    [Arguments]    ${option}
+    Wait Until Element Is Visible       ${location_country}    ${wait_time}
+    Wait Until Element Is Enabled      ${location_country}     ${wait_time}
+    Input Text    ${location_country}    ${option}
+    Generic.Select parameter    ${option}
+
+Edit location state
+    [Arguments]    ${option}
+    Wait Until Element Is Visible       ${location_State}    ${wait_time}
+    Wait Until Element Is Enabled      ${location_State}     ${wait_time}
+    Input Text    ${location_State}    ${option}
+    Generic.Select parameter    ${option}
+
+Edit location city
+    [Arguments]    ${option}
+    Wait Until Element Is Visible      ${location_City}   ${wait_time}
+    Wait Until Element Is Enabled      ${location_City}     ${wait_time}
+    Input Text      ${location_City}        ${option}
+    Generic.Select parameter    ${option}
