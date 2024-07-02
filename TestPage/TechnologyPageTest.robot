@@ -52,7 +52,7 @@ ${self_searchId} =   AssetID_1803536655
 
 #Free the asset limit
 #    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form     chirag@dmts.fr.nf     Test@123
+#    LandingPage.Fill the login Form     ${email}    ${valid_password}
 #    Generic.Verify your current page location contains      dashboard
 #    Generic.select the option from the side menu    Technology
 #    Generic.Verify your current page location contains      technology
