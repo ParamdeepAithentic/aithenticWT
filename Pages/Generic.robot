@@ -90,7 +90,7 @@ Set UAT Variables
     Set Suite Variable    ${admin_url}        https://uat-admin.aithentic.com/
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
-    Set Suite Variable    ${browser_name}         headlessfirefox
+    Set Suite Variable    ${browser_name}         firefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
 
 Set Pre-Prod Variables
@@ -368,6 +368,8 @@ Click keyboard button
     [Arguments]     ${locator}      ${button}
     Press keys      ${locator}      ${button}
 
+wait for the shadow to get hide from the current screen
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Update settings for Asset_ID, employee_id and location
     Generic.open the browser with the url

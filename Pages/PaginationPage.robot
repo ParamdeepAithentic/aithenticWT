@@ -300,7 +300,7 @@ Click on the checkbox of technology listing
 
 
 Run the remove asset journey
-    Run Keyword If    ${total_data_count} > 800
+    Run Keyword If    ${total_data_count} >= 800
         ...    PaginationPage.Remove the old assets to free the space
         ...    ELSE  Run Keywords     Generic.Close Browser session
         ...    AND    Return From Keyword
