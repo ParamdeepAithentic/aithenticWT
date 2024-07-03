@@ -300,7 +300,7 @@ Click on the checkbox of technology listing
 
 
 Run the remove asset journey
-    Run Keyword If    ${total_data_count} > 400
+    Run Keyword If    ${total_data_count} > 800
         ...    PaginationPage.Remove the old assets to free the space
         ...    ELSE  Run Keywords     Generic.Close Browser session
         ...    AND    Return From Keyword
@@ -313,11 +313,11 @@ Remove the old assets to free the space
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     TechnologyPage.Click on plan of subscription        Premium
     Generic.Scroll the page till    200
-    SubscriptionPage.Set asset range to     400
-#    sleep       5
+    SubscriptionPage.Set asset range to     500
+    sleep       5
     SubscriptionPage.Update the payment of changed plan     proceed
 
-#    sleep       5
+    sleep       5
     TechnologyPage.Select option from exceed asset limit pop    technology
     Generic.Verify your current page location contains      manage-technology-list
     Generic.Wait until table get load
@@ -328,7 +328,7 @@ Remove the old assets to free the space
 
     Generic.Wait until table get load
     PaginationPage.Click on the checkbox of technology listing
-#    sleep       3
+    sleep       3
     TechnologyPage.Click button to proceed the asset restore
 
     SubscriptionPage.Select the payment method    ach
@@ -343,15 +343,15 @@ Remove the old assets to free the space
     TechnologyPage.Click on plan of subscription        Premium
     Generic.Scroll the page till    200
     SubscriptionPage.Set asset range to     900
-#    sleep    5
+    sleep    5
     SubscriptionPage.Update the payment of changed plan     proceed
 
     Sleep   ${yop_sleep}
     TechnologyPage.Click on pop up of available Inactive Asset      cancel
     SubscriptionPage.Select the payment method    ach
-#    sleep       1
+    sleep       1
     SubscriptionPage.Select the account for payment
-#    sleep       1
+    sleep       1
     SubscriptionPage.Proceed the payment     proceed
     sleep       1
     Generic.Fetch alert message text and compare it with      Payment Successful
