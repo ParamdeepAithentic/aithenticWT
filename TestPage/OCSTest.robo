@@ -52,15 +52,15 @@ Test Setup      open the browser with the url
 
 *** Test Cases ***
 
-#Free the asset limit
-#    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form     johns@mai.25u.com        Test@123
-#    Generic.Verify your current page location contains      dashboard
-#    Generic.select the option from the side menu    Technology
-#    Generic.Verify your current page location contains      technology
-#    PaginationPage.Check the table get load
-#    PaginationPage.Fetch the total count
-#    PaginationPage.Run the remove asset journey
+Free the asset limit
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form     johns@mai.25u.com        Test@123
+    Generic.Verify your current page location contains      dashboard
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    PaginationPage.Check the table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Run the remove asset journey
 
 
 Search Discovered Assets
@@ -1112,7 +1112,7 @@ Network discovery: search on discovered asset list with Tag Name, IP_address and
     END
 
 Search with containing fields under advance search of discovered asset
-    [Tags]        Unstable
+    [Tags]        Unstable       Faileddd
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -1564,7 +1564,7 @@ Search with containing fields under advance search of IP Address of discovered a
     END
 
 Upload Image and Document file during Add Asset with IP address from Agent Discovery Page
-    [Tags]        Unstable
+    [Tags]        Unstable         Faileddd
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -1662,6 +1662,7 @@ Upload Image and Document file during Add Asset with IP address from Agent Disco
     END
 
 Verify cross icon an reset icon while adding IP discovered asset
+        [Tags]      Faileddd
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
 #        LandingPage.Verify you are on dashboard page
