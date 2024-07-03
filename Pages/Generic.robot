@@ -56,7 +56,7 @@ ${click_countryTag}     css:.iti__arrow
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
-${wait_time}        100
+${wait_time}        60
 ${yop_sleep}       10
 ${search_sleep}       1
 ${CASE}        uat     #qa , uat , pre-prod
@@ -64,7 +64,6 @@ ${CASE}        uat     #qa , uat , pre-prod
 
 *** Keywords ***
 Simulate Switch Case
-#    ${CASE} =    Set Variable    option2
     Run Keyword If    '${CASE}' == 'qa'    Set QA Variables
     ...    ELSE IF    '${CASE}' == 'uat'   Set UAT Variables
     ...    ELSE IF    '${CASE}' == 'pre-prod'    Set Pre-Prod Variables
@@ -78,7 +77,7 @@ Set QA Variables
     Set Suite Variable    ${admin_url}        https://qa-admin.aithentic.com/
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
-    Set Suite Variable    ${browser_name}         firefox
+    Set Suite Variable    ${browser_name}         headlessfirefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
 
 Set UAT Variables
@@ -89,7 +88,7 @@ Set UAT Variables
     Set Suite Variable    ${admin_url}        https://uat-admin.aithentic.com/
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
-    Set Suite Variable    ${browser_name}         firefox
+    Set Suite Variable    ${browser_name}         headlessfirefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
 
 Set Pre-Prod Variables
