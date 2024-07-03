@@ -269,17 +269,17 @@ Update the payment of changed plan
 
 Click on the three dots of subscription connector
     [Arguments]     ${option}
-    wait until element is visible  //td[normalize-space()='${option}']//parent::tr//td//div//button    ${wait_time}
-    wait until element is enabled   //td[normalize-space()='${option}']//parent::tr//td//div//button  ${wait_time}
-    click element  //td[normalize-space()='${option}']//parent::tr//td//div//button
+    wait until element is visible  //td[normalize-space()='${option}']//parent::tr//td//button//i    ${wait_time}
+    wait until element is enabled  //td[normalize-space()='${option}']//parent::tr//td//button//i  ${wait_time}
+    click element  //td[normalize-space()='${option}']//parent::tr//td//button//i
     sleep   ${search_sleep}
     wait until element is not visible       ${shadow}          ${wait_time}
 
 Click on option under three dots of subscription connector
-    [Arguments]     ${option}
-    wait until element is visible  (//div[contains(@class,'dropdown-menu')])[2]//a[normalize-space()='${option}']     ${wait_time}
-    wait until element is enabled   (//div[contains(@class,'dropdown-menu')])[2]//a[normalize-space()='${option}']    ${wait_time}
-    click element   (//div[contains(@class,'dropdown-menu')])[2]//a[normalize-space()='${option}']
+    [Arguments]     ${option1}       ${option2}
+    wait until element is visible  //td[normalize-space()='${option1}']//parent::tr//td//button//i//parent::button//following-sibling::div//a[normalize-space()='${option2}']     ${wait_time}
+    wait until element is enabled   //td[normalize-space()='${option1}']//parent::tr//td//button//i//parent::button//following-sibling::div//a[normalize-space()='${option2}']    ${wait_time}
+    click element   //td[normalize-space()='${option1}']//parent::tr//td//button//i//parent::button//following-sibling::div//a[normalize-space()='${option2}']
     sleep  ${search_sleep}
 
 Fetch text of delete under table of subscription connector
