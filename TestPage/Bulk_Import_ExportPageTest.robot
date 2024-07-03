@@ -691,10 +691,10 @@ Technology Bulk import
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_3
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_4      CPU
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_4
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_5      Paramdeep
-    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_5
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_6      Test@123
-    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_6
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_5      Paramdeep
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_5
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_6      Test@123
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_6
 
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_7      100
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_7

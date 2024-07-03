@@ -363,7 +363,7 @@ Enter input in the end date field of billing details
     wait until element is visible   css:#endDate      ${wait_time}
     wait until element is enabled   css:#endDate      ${wait_time}
     click element   css:#endDate
-    input text      css:#endDate      07/02/2024
+    input text      css:#endDate      08/026/2024
     Press Keys      css:#endDate       ENTER
 
 Enter input in the description field of billing details
