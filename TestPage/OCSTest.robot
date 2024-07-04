@@ -62,7 +62,6 @@ Test Setup      open the browser with the url
 #    PaginationPage.Fetch the total count
 #    PaginationPage.Run the remove asset journey
 
-
 Search Discovered Assets
     [Tags]      Stable
     TRY
