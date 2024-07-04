@@ -158,7 +158,9 @@ Suspend and unsuspend the account
         SubscriptionPage.Click on the suspend my account button link under billing details
         SubscriptionPage.Enter input in the description field of billing details
         SubscriptionPage.Enter input in the start date field of billing details
-        SubscriptionPage.Enter input in the end date field of billing details
+#        SubscriptionPage.Enter input in the end date field of billing details
+        SubscriptionPage.Input future Date
+        SubscriptionPage.Enter input in the end date field of billing details       ${formatted_future_date}
         sleep   ${search_sleep}
         Generic.click on the button     Suspend
         Generic.Fetch alert message text and compare it with        Account suspended successfully.

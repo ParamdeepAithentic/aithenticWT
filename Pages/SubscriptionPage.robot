@@ -360,10 +360,11 @@ Enter input in the start date field of billing details
     Generic.Enter current date       css:#startDate
 
 Enter input in the end date field of billing details
+    [Arguments]     ${option}
     wait until element is visible   css:#endDate      ${wait_time}
     wait until element is enabled   css:#endDate      ${wait_time}
     click element   css:#endDate
-    input text      css:#endDate      08/026/2024
+    input text      css:#endDate      ${option}
     Press Keys      css:#endDate       ENTER
 
 Enter input in the description field of billing details
@@ -420,6 +421,19 @@ Click on option under three dots of Microsoft coorporation
     wait until element is enabled   (//div[contains(@class,'dropdown-menu')])[3]//a[normalize-space()='${option}']    ${wait_time}
     click element   (//div[contains(@class,'dropdown-menu')])[3]//a[normalize-space()='${option}']
     sleep  ${search_sleep}
+
+Input future Date
+    ${current_date}=    Get Current Date    result_format=%m/%d/%Y
+    Log To Console      Current Date is: ${current_date}
+
+    ${current_date_parts}=    Split String    ${current_date}    -
+    ${current_date_without_time}=    Set Variable    ${current_date_parts[0]}
+
+    ${future_date}=    Evaluate    datetime.datetime.strptime($current_date_without_time, "%m/%d/%Y") + datetime.timedelta(days=30)
+    ${formatted_future_date}=    Convert Date    ${future_date}    result_format=%m/%d/%Y
+
+    Log To Console      Future Date is: ${formatted_future_date}
+    Set Global Variable    ${formatted_future_date}
 
 
 My Failure Handling
