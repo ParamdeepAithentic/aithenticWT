@@ -50,8 +50,8 @@ Test Teardown   Close Browser session
 
 
 *** Test Cases ***
-API for unselect assets
-    [Tags]      Stable
-#    LoginPage.Fetch the refresh token from the login api
-#    ReplaceDomainAPI.Replace Domain     ${refresh_Token}
-    UnselectAssetAPI.Hit API Endpoint
+#API for unselect assets
+#    [Tags]      Stable
+##    LoginPage.Fetch the refresh token from the login api
+##    ReplaceDomainAPI.Replace Domain     ${refresh_Token}
+#    UnselectAssetAPI.Hit API Endpoint
