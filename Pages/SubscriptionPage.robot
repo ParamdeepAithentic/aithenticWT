@@ -283,9 +283,9 @@ Click on option under three dots of subscription connector
     sleep  ${search_sleep}
 
 Fetch text of delete under table of subscription connector
-    [Arguments]     ${option}
-    wait until element is visible    //td[normalize-space()='Google']//parent::tr//td//span        ${wait_time}
-    ${value} =    get text    //td[normalize-space()='Google']//parent::tr//td//span
+    [Arguments]     ${option1}      ${option}
+    wait until element is visible    //td[normalize-space()='${option1}']//parent::tr//td//span        ${wait_time}
+    ${value} =    get text    //td[normalize-space()='${option1}']//parent::tr//td//span
     log to console     ${value}
     should be equal    ${value}    ${option}
     Wait Until Element Is Not Visible     ${value}        ${wait_time}
