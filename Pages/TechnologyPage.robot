@@ -1328,7 +1328,6 @@ Input future Date
     Log To Console      Future Date is: ${formatted_future_date}
     Set Global Variable    ${formatted_future_date}
 
-    
 Enter current or future date as renewal date
     [Arguments]     ${date}
     wait until element is visible   css:#RenewalDate     ${wait_time}
