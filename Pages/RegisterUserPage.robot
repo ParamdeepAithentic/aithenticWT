@@ -50,8 +50,10 @@ ${register_FormCheckBox}   css:label[for='policy'] span     #checkbox
 ${register_FormSubmitBTN}   css:button[type='submit']
 ${loaderIcon}     //div[@role='status']
 ${activeAssetPOPup}     //h5[normalize-space()='Available Inactive Assests']
-
-
+${profile_position}     css:#Position
+${profile_email}        css:.qa-Email
+${profile_phone}        //div[contains(@class,'iti')]//input[@id='phone']
+${profile_company}         css:#CompanyName
 
 *** Keywords ***
 Download Agent popup
@@ -171,5 +173,128 @@ Choose register user country
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  3  ${pageHeading}   RegisterUserPage - Choose register user country      3    ${pageTime}     ${ActualTime}    RegisterPage_Time
+
+Select the option from the personal details sidebar
+    [Arguments]         ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible     css:.sidebar-${option}-qa         ${wait_time}
+    Wait Until Element Is Enabled    css:.sidebar-${option}-qa          ${wait_time}
+    Click Element    css:.sidebar-${option}-qa
+
+Fetch the profile personal_details and compare with registration details
+    [Arguments]     ${option1}      ${option2}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    ${option1}      ${wait_time}
+    ${profile_details}=      get value          ${option1}
+    Log To Console    ${profile_details}
+    Set Global Variable    ${profile_details}
+    Should Be Equal    ${profile_details}       ${option2}
+
+
+Fetch the location name from personal_details and compare with registration details
+    [Arguments]         ${option}
+    Wait Until Element Is not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       //ng-select[contains(@class,'qa-profile-location-update')]//div//div//span[2]    ${wait_time}
+    ${profile_locationtext}=      get text       //ng-select[contains(@class,'qa-profile-location-update')]//div//div//span[2]
+    ${parts}    Split String    ${profile_locationtext}    -
+    ${profile_locationdetails1}=  Get From List  ${parts}  0
+    ${profile_locationdetails}      Strip String    ${profile_locationdetails1}
+    Set Global Variable    ${profile_locationdetails}
+    Should Be Equal    ${profile_locationdetails}      ${option}
+
+Fetch the department name from personal_details and compare with registration details
+    [Arguments]         ${option}
+    wait until element is visible       //ng-select[contains(@class,'qa-DepartmentId')]//div//div//span[2]      ${wait_time}
+    ${profile_departmentdetails}=       Get text           //ng-select[contains(@class,'qa-DepartmentId')]//div//div//span[2]
+    Log To Console    ${profile_departmentdetails}
+    Set Global Variable    ${profile_departmentdetails}
+    Should Be Equal    ${profile_departmentdetails}    ${option}
+
+Edit the department from personal profile
+    [Arguments]    ${option1}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       css:.qa-DepartmentId          ${wait_time}
+    Wait Until Element Is Enabled     css:.qa-DepartmentId     ${wait_time}
+    Clear Element Text      css:.qa-DepartmentId
+    input text      css:.qa-DepartmentId     ${option1}
+    Generic.Select parameter    ${option1}
+
+Edit the Position from personal profile
+    wait until element is enabled       css:#Position        ${wait_time}
+    click element   css:#Position
+    Clear element text      css:#Position
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generate_position}=    Catenate    Pos_${random_string}
+    input text   css:#Position   ${generate_position}
+    set global variable    ${generate_position}
+
+
+Click on edit button to edit the profile details
+    [Arguments]     ${option}
+    Generic.click on the button    ${option}
+
+Edit phone number from profile details
+    [Arguments]    ${country}   ${code}     ${phoneNo}
+    click element   ${click_countryTag}
+    wait until element is visible   ${contact_Country_search}
+    click element   ${contact_Country_search}
+    input text  ${contact_Country_search}   ${country}
+    Generic.Select parameter      ${code}
+    input text     ${profile_phone}     ${phoneNo}
+
+Edit Location from profile details
+    [Arguments]    ${option1}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       css:.qa-profile-location-update          ${wait_time}
+    Wait Until Element Is Enabled     css:.qa-profile-location-update    ${wait_time}
+    Click Element    css:.qa-profile-location-update
+    input text      css:.qa-profile-location-update input      ${option1}
+    Generic.Select parameter    ${option1}
+
+Save the Profile details
+    [Arguments]     ${option1}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //div[contains(@class,'buttons')]//button[normalize-space()='${option1}']          ${wait_time}
+    Wait Until Element Is Enabled    //div[contains(@class,'buttons')]//button[normalize-space()='${option1}']          ${wait_time}
+    Click Element    //div[contains(@class,'buttons')]//button[normalize-space()='${option1}']
+
+Fetch the Company name from personal_details and compare with registration details
+    [Arguments]         ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible     ${profile_company}         ${wait_time}
+    ${profile_companydetails}=       Get value       ${profile_company}
+    Log To Console    ${profile_companydetails}
+    Set Global Variable    ${profile_companydetails}
+    Should Be Equal    ${profile_companydetails}    ${option}
+
+Fetch the Company name Address from personal_details and compare
+    [Arguments]         ${option1}      ${option2}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible     //ng-select[contains(@class,'qa-${option1}')]//span[2]        ${wait_time}
+    ${profile_companydetails}=       Get text       //ng-select[contains(@class,'qa-${option1}')]//span[2]
+    Log To Console    ${profile_companydetails}
+    Set Global Variable    ${profile_companydetails}
+    Should Be Equal    ${profile_companydetails}    ${option2}
+
+Fetch the Address and zip code from personal_details and compare
+    [Arguments]         ${option1}      ${option2}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible     css:.${option1}-qa         ${wait_time}
+    ${profile_companydetails}=       Get value       css:.${option1}-qa
+    Log To Console    ${profile_companydetails}
+    Set Global Variable    ${profile_companydetails}
+    Should Be Equal    ${profile_companydetails}    ${option2}
+
+Edit profile company name
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible     css:#CompanyName     ${wait_time}
+    wait until element is enabled      css:#CompanyName        ${wait_time}
+    click element   css:#CompanyName
+    Clear element text      css:#CompanyName
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generate_profile_CompanyName}=    Catenate    CompanyName${random_string}
+    input text   css:#CompanyName   ${generate_profile_CompanyName}
+    set global variable    ${generate_profile_CompanyName}
+
 
 
