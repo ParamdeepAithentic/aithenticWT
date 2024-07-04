@@ -81,6 +81,7 @@ Set QA Variables
     Set Suite Variable    ${admin_password}       Admin@123
     Set Suite Variable    ${browser_name}         headlessfirefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
+    Set Suite Variable    ${discovered_asset_brand}                 MSI
 
 Set UAT Variables
     Set Suite Variable    ${url}    https://uat-app.aithentic.com/
@@ -92,6 +93,7 @@ Set UAT Variables
     Set Suite Variable    ${admin_password}       Admin@123
     Set Suite Variable    ${browser_name}         firefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
+    Set Suite Variable    ${discovered_asset_brand}                 Apple Inc
 
 Set Pre-Prod Variables
     Set Suite Variable    ${url}    https://pre-prod-app.aithentic.com/

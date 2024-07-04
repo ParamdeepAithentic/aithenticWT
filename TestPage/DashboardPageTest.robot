@@ -312,28 +312,28 @@ Verify Help Center
     Switch Window       Get Started Guide - Jira Service Management
     Generic.Verify your current page location contains     servicedesk
     Generic.Verify your current page contains this text     Get Started Guide
-    Switch Window      aithentic | Dashboard
+    Switch Window      aithentic | Management - Console
     DashboardPage.Click on link of information center list      Knowledge Base
 
     sleep       ${yop_sleep}
     Switch Window       Help Center Home - Jira Service Management
     Generic.Verify your current page location contains     servicedesk
     Generic.Verify your current page contains this text     SEARCH OUR KNOWLEDGE BASE
-    Switch Window       aithentic | Dashboard
+    Switch Window       aithentic | Management - Console
     DashboardPage.Click on link of information center list      What’s New!
 
     sleep       ${yop_sleep}
     Switch Window       What's New! - Jira Service Management
     Generic.Verify your current page location contains     servicedesk
     Generic.Verify your current page contains this text     What's New!
-    Switch Window       aithentic | Dashboard
+    Switch Window       aithentic | Management - Console
     DashboardPage.Click on link of Support      Customer
 
     sleep       ${yop_sleep}
     Switch Window       Customer Service Desk - Jira Service Management
     Generic.Verify your current page location contains      servicedesk
     Generic.Verify your current page contains this text     Customer Service Desk
-    Switch Window       aithentic | Dashboard
+    Switch Window       aithentic | Management - Console
     DashboardPage.Search any keyword of FAQ section     How do I complete my account setup?
     DashboardPage.Verify the keyword        How do I complete my account setup?
     DashboardPage.Search any keyword of FAQ section     Testing
