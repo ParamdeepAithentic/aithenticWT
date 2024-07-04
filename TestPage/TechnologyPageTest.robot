@@ -265,7 +265,7 @@ Create new asset with new brand and product
     DashboardPage.Add product description
     DashboardPage.Add product feature
     DashboardPage.Select product technology type     Hardware
-    sleep       1500
+#    sleep       1500
     DashboardPage.Select product technology group     Applications
     DashboardPage.Select product status   Active
     DashboardPage.Save added product details
