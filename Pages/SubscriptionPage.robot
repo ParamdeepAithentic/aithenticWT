@@ -360,10 +360,11 @@ Enter input in the start date field of billing details
     Generic.Enter current date       css:#startDate
 
 Enter input in the end date field of billing details
+    [Arguments]     ${option}
     wait until element is visible   css:#endDate      ${wait_time}
     wait until element is enabled   css:#endDate      ${wait_time}
     click element   css:#endDate
-    input text      css:#endDate      08/026/2024
+    input text      css:#endDate      ${option}
     Press Keys      css:#endDate       ENTER
 
 Enter input in the description field of billing details
