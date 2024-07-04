@@ -211,54 +211,54 @@ View Scheduler from view Result
     SubscriptionPage.Fetch and compare the Brand from the table    Microsoft Corporation
 
 
-Edit the scheduler of service now
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
-#    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      dashboard
-    Generic.Click on the profile name
-    Generic.Select option from profile list     subscription-connector
-    Generic.Verify your current page location contains      technology-settings
-    SubscriptionPage.Click on the three dots of subscription connector      ServiceNow
-    SubscriptionPage.Click on option under three dots of subscription connector     ServiceNow       Scheduler
-    SubscriptionPage.click on the cross icon of create scheduler    1
-    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Weekly
-    SubscriptionPage.Enter input in the input field of day under create scheduler       Monday
-    SubscriptionPage.Enter input in the input field of time under create scheduler      12:00
-    sleep   ${search_sleep}
-    Generic.click on the button     Update
-    Generic.click on the button     Update
-    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
-    SubscriptionPage.Click on the three dots of subscription connector      ServiceNow
-    SubscriptionPage.Click on option under three dots of subscription connector     ServiceNow      Scheduler
-    SubscriptionPage.click on the cross icon of create scheduler    1
-    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Monthly
-    SubscriptionPage.Enter input in the start date field of billing details
-    SubscriptionPage.Enter input in the input field of time under create scheduler      2:00
-    sleep   ${search_sleep}
-    Generic.click on the button     Update
-    Generic.click on the button     Update
-    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
-    SubscriptionPage.Click on the three dots of subscription connector      ServiceNow
-    SubscriptionPage.Click on option under three dots of subscription connector     ServiceNow      Scheduler
-    SubscriptionPage.click on the cross icon of create scheduler    1
-    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Daily
-    SubscriptionPage.Enter input in the input field of time under create scheduler      1:00
-    sleep   ${search_sleep}
-    Generic.click on the button     Update
-    Generic.click on the button     Update
-    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
-    SubscriptionPage.Click on the three dots of subscription connector      ServiceNow
-    SubscriptionPage.Click on option under three dots of subscription connector     ServiceNow      Scheduler
-    SubscriptionPage.click on the cross icon of create scheduler    1
-    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Yearly
-    SubscriptionPage.Enter input in the start date field of billing details
-    SubscriptionPage.Enter input in the input field of time under create scheduler      3:00
-    sleep   ${search_sleep}
-    Generic.click on the button     Update
-    Generic.click on the button     Update
-    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
-
+#Edit the scheduler of service now
+#    Generic.click on the tab	Login
+#    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
+##    LandingPage.Verify you are on dashboard page
+#    Generic.Verify your current page location contains      dashboard
+#    Generic.Click on the profile name
+#    Generic.Select option from profile list     subscription-connector
+#    Generic.Verify your current page location contains      technology-settings
+#    SubscriptionPage.Click on the three dots of subscription connector      ServiceNow
+#    SubscriptionPage.Click on option under three dots of subscription connector     ServiceNow       Scheduler
+#    SubscriptionPage.click on the cross icon of create scheduler    1
+#    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Weekly
+#    SubscriptionPage.Enter input in the input field of day under create scheduler       Monday
+#    SubscriptionPage.Enter input in the input field of time under create scheduler      12:00
+#    sleep   ${search_sleep}
+#    Generic.click on the button     Update
+#    Generic.click on the button     Update
+#    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+#    SubscriptionPage.Click on the three dots of subscription connector      ServiceNow
+#    SubscriptionPage.Click on option under three dots of subscription connector     ServiceNow      Scheduler
+#    SubscriptionPage.click on the cross icon of create scheduler    1
+#    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Monthly
+#    SubscriptionPage.Enter input in the start date field of billing details
+#    SubscriptionPage.Enter input in the input field of time under create scheduler      2:00
+#    sleep   ${search_sleep}
+#    Generic.click on the button     Update
+#    Generic.click on the button     Update
+#    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+#    SubscriptionPage.Click on the three dots of subscription connector      ServiceNow
+#    SubscriptionPage.Click on option under three dots of subscription connector     ServiceNow      Scheduler
+#    SubscriptionPage.click on the cross icon of create scheduler    1
+#    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Daily
+#    SubscriptionPage.Enter input in the input field of time under create scheduler      1:00
+#    sleep   ${search_sleep}
+#    Generic.click on the button     Update
+#    Generic.click on the button     Update
+#    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+#    SubscriptionPage.Click on the three dots of subscription connector      ServiceNow
+#    SubscriptionPage.Click on option under three dots of subscription connector     ServiceNow      Scheduler
+#    SubscriptionPage.click on the cross icon of create scheduler    1
+#    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Yearly
+#    SubscriptionPage.Enter input in the start date field of billing details
+#    SubscriptionPage.Enter input in the input field of time under create scheduler      3:00
+#    sleep   ${search_sleep}
+#    Generic.click on the button     Update
+#    Generic.click on the button     Update
+#    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+#
 
 Edit the scheduler of Sentinelone
     [Tags]      Sanity      Stable
@@ -350,26 +350,94 @@ View Scheduler from view Result of sentinelone
     Generic.Verify your current page location contains      technology-settings
     SubscriptionPage.Click on the three dots of subscription connector      SentinelOne
     SubscriptionPage.Click on option under three dots of subscription connector     SentinelOne      View Results
-    Generic.Verify your current page contains this text    Sorry! You do not have permission to access this page.
+    Generic.Verify your current page location contains      discovery-assets
+    Generic.Verify your current page contains this text    Asset Discovery
+    SubscriptionPage.Verify the visibility of no records under view details under sentinel one
     Go Back
     Generic.Verify your current page location contains      technology-settings
     SubscriptionPage.Click on the three dots of subscription connector      Microsoft Corporation
 
-View Scheduler from view Result of service now
-    [Tags]      Stable
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
-    Generic.Verify your current page location contains      dashboard
-    Generic.Click on the profile name
-    Generic.Select option from profile list     subscription-connector
-    Generic.Verify your current page location contains      technology-settings
-    SubscriptionPage.Click on the three dots of subscription connector      ServiceNow
-    SubscriptionPage.Click on option under three dots of subscription connector     ServiceNow     View Results
-    Generic.Verify your current page location contains      discovery-assets
-    Generic.Verify your current page contains this text    Asset Discovery
-    Generic.Wait until table get load
-    Go Back
-    Generic.Verify your current page location contains      technology-settings
-    SubscriptionPage.Click on the three dots of subscription connector      Microsoft Corporation
+#View Scheduler from view Result of service now
+#    [Tags]      Stable
+#    Generic.click on the tab	Login
+#    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
+#    Generic.Verify your current page location contains      dashboard
+#    Generic.Click on the profile name
+#    Generic.Select option from profile list     subscription-connector
+#    Generic.Verify your current page location contains      technology-settings
+#    SubscriptionPage.Click on the three dots of subscription connector      ServiceNow
+#    SubscriptionPage.Click on option under three dots of subscription connector     ServiceNow     View Results
+#    Generic.Verify your current page location contains      discovery-assets
+#    Generic.Verify your current page contains this text    Asset Discovery
+#    Generic.Wait until table get load
+#    Go Back
+#    Generic.Verify your current page location contains      technology-settings
+#    SubscriptionPage.Click on the three dots of subscription connector      Microsoft Corporation
+#
+#Run_now_delete_view-details_of_service_now
+#    [Tags]      Stable
+#    Generic.click on the tab	Login
+#    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
+##    LandingPage.Verify you are on dashboard page
+#    Generic.Verify your current page location contains      dashboard
+#    Generic.Click on the profile name
+#    Generic.Select option from profile list     subscription-connector
+#    Generic.Verify your current page location contains      technology-settings
+#    SubscriptionPage.Click on the three dots of subscription connector      ServiceNow
+#    SubscriptionPage.Click on option under three dots of subscription connector    ServiceNow       Details
+#    Generic.click on the button     Run Now
+#    SubscriptionPage.Fetch alert message text of subscription connector and compare it with
+#    sleep  ${search_sleep}
+#    SubscriptionPage.Click on the three dots of subscription connector      ServiceNow
+#    SubscriptionPage.Click on option under three dots of subscription connector     ServiceNow    Delete
+#    Generic.click on the button     Yes
+#    Generic.Fetch alert message text and compare it with        Status Updated
+#    SubscriptionPage.Fetch text of delete under table of subscription connector     ServiceNow     Deleted
+#    sleep  ${search_sleep}
+#    SubscriptionPage.Click on the activate option under subscription connector table        ServiceNow
+#    Generic.Fetch alert message text and compare it with        Status Updated
+#    SubscriptionPage.Fetch text of delete under table of subscription connector     ServiceNow      Active
+#    SubscriptionPage.Click on the three dots of subscription connector      ServiceNow
+#    SubscriptionPage.Click on option under three dots of subscription connector     ServiceNow    Run Now
+#    SubscriptionPage.Fetch alert message text of subscription connector and compare it with
+#    SubscriptionPage.Click on the three dots of subscription connector      ServiceNow
+#    SubscriptionPage.Click on option under three dots of subscription connector     ServiceNow    Details
+#    SubscriptionPage.Get the value of fields under view details of subscription connector   1       ServiceNow
+#    SubscriptionPage.Get the value of fields under view details of subscription connector   2       Samuel John
+#
+#Service now via asset discovery
+#    [Tags]      Stable
+#    Generic.click on the tab	Login
+#    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
+##    LandingPage.Verify you are on dashboard page
+#    Generic.Verify your current page location contains      dashboard
+#    Generic.Verify your current page location contains      dashboard
+#    Generic.select the option from the side menu    Asset Discovery
+#    SubscriptionPage.Click on the service now tab under discovery assets
+#    OCS.Click on newly discovered tab under service now
+#    SubscriptionPage.Click on the settings icon under service now via discovery assets
+#    Generic.click on the tab        Details
+#    Generic.click on the button     Run Now
+#    SubscriptionPage.Fetch alert message text of subscription connector and compare it with
+#    sleep  ${search_sleep}
+#    SubscriptionPage.Click on the settings icon under service now via discovery assets
+#    Generic.click on the tab       Delete
+#    Generic.click on the button     Yes
+#    Generic.Fetch alert message text and compare it with        Status Updated
+#    SubscriptionPage.Click on the settings icon under service now via discovery assets
+#    Generic.click on the tab       Activate
+#    Generic.Fetch alert message text and compare it with        Status Updated
+#    SubscriptionPage.Click on the settings icon under service now via discovery assets
+#    Generic.click on the tab       Run Now
+#    SubscriptionPage.Fetch alert message text of subscription connector and compare it with
+#    SubscriptionPage.Click on the settings icon under service now via discovery assets
+#    Generic.click on the tab       Details
+#    SubscriptionPage.Get the value of fields under view details of subscription connector   1       ServiceNow
+#    SubscriptionPage.Get the value of fields under view details of subscription connector   2       Samuel John
+
+
+
+
+
 
 

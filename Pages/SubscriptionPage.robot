@@ -422,6 +422,18 @@ Click on option under three dots of Microsoft coorporation
     click element   (//div[contains(@class,'dropdown-menu')])[3]//a[normalize-space()='${option}']
     sleep  ${search_sleep}
 
+Click on the service now tab under discovery assets
+    wait until element is visible  css:#service-now-first-parent-tab     ${wait_time}
+    wait until element is enabled   css:#service-now-first-parent-tab    ${wait_time}
+    click element   css:#service-now-first-parent-tab
+    sleep  ${search_sleep}
+
+Click on the settings icon under service now via discovery assets
+    wait until element is visible  //div[contains(@class,'flex-space')]//div//i    ${wait_time}
+    wait until element is enabled  //div[contains(@class,'flex-space')]//div//i  ${wait_time}
+    click element  //div[contains(@class,'flex-space')]//div//i
+    sleep   ${search_sleep}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 My Failure Handling
     Generic.Click on the profile name
@@ -439,3 +451,7 @@ My Failure Handling
     Generic.click on the tab    Connectors
     SubscriptionPage.Click on the activate option under subscription connector table
     Generic.Fetch alert message text and compare it with        Status Updated
+
+Verify the visibility of no records under view details under sentinel one
+     wait until element is visible   //span[normalize-space()='No Records']    ${wait_time}
+     wait until element is enabled   //span[normalize-space()='No Records']  ${wait_time}

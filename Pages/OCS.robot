@@ -688,6 +688,12 @@ Click on newly discovered tab under network discovery
     Wait Until Element Is enabled    css:.qa-newly-discovered-tab     ${wait_time}
     click element    css:.qa-newly-discovered-tab
 
+Click on newly discovered tab under service now
+#    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is visible    css:#new-dicovered-sn    ${wait_time}
+    Wait Until Element Is enabled    css:#new-dicovered-sn     ${wait_time}
+    click element    css:#new-dicovered-sn
+
 
 Mouse Hover over searched existing assets
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
