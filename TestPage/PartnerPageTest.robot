@@ -92,7 +92,7 @@ Compose Message invite user test
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Verify your current page contains this text     Contact Person
-    Calculate Running time  5  ${pageHeading}   Page Load - Total load time from clicking location option from side listing to location listing page      5    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  5  ${pageHeading}   Page Load - Total load time from clicking add new contact and enter contact person name under add partner      5    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 #    PartnersPage.Enter contact business email    ${generate_PersonName}      ${generate_BusinessName}
     PartnersPage.Enter contact business email    ${generate_PersonName}     yopmail
@@ -111,7 +111,7 @@ Compose Message invite user test
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Verify your current page contains this text     Added Products
-    Calculate Running time  6  ${pageHeading}   Page Load - Total load time of product listing page      6    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  6  ${pageHeading}   Page Load - Total load time from clicking product option from profile listing to product listing page      6    ${pageTime}     ${ActualTime}    PageLoad_Time
 
     DashboardPage.Click on action button
     DashboardPage.Click add product button
@@ -127,7 +127,7 @@ Compose Message invite user test
     DashboardPage.Save added product details
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  7  ${pageHeading}   Page Load - Total load time of filling the add product details form     7    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  7  ${pageHeading}   Page Load - Total load time of filling the add product details form under add product     7    ${pageTime}     ${ActualTime}    PageLoad_Time
 
     Generic.Fetch alert message text and compare it with        Product created successfully
     DashboardPage.Verify product added    ${generated_product}
@@ -138,7 +138,7 @@ Compose Message invite user test
     Generic.Verify your current page location contains      technology
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  8  ${pageHeading}   Page Load - Total load time of Technology Page      8    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  8  ${pageHeading}   Page Load - Total load time from clicking technology option from side listing to technoloy page listing      8    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 
     ${StartTime1} =     Get Current Time in Milliseconds
@@ -148,7 +148,7 @@ Compose Message invite user test
     Generic.Verify your current page location contains      addtechnology
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  9  ${pageHeading}   Page Load - Total load time of Add Technology Page      9    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  9  ${pageHeading}   Page Load - Total load time from clicking add new technology option from from action dropdown to add technoloy      9    ${pageTime}     ${ActualTime}    PageLoad_Time
 
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       ${generate_BusinessName}
@@ -185,7 +185,7 @@ Compose Message invite user test
     Generic.Verify your current page location contains      contracts
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  10  ${pageHeading}   Page Load - Total load time of Contracts Page      10    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  10  ${pageHeading}   Page Load - Total load time from clicking contract option from side listing to contract page listing      10    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 
     ContractsPage.Click on create new contract button
@@ -195,7 +195,7 @@ Compose Message invite user test
     Generic.Verify your current page location contains      generate-contract
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  11  ${pageHeading}   Page Load - Total Page Load Time of Add Dynamic Contracts Page      11    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  11  ${pageHeading}   Page Load - Total load time from clicking Dynamic Contract option from pop up to generate new contract page      11    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 
     ContractsPage.Enter contract type      SmartShare_Manufacturer
@@ -425,7 +425,7 @@ Compose Message invite user test
     Generic.Verify your current page location contains      message
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time    20  ${pageHeading}   Page Load - Total Page Load Time of Message Page      20    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time    20  ${pageHeading}   Page Load - Total Page Load Time after clicking message option from side menu to Message Page      20    ${pageTime}     ${ActualTime}    PageLoad_Time
 #-------------------------- ADD TEAM MEMBER------------------------------------------------------
 
     MessagePage.Select side option from message list    Compose
