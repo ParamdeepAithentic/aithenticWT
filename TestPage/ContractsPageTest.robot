@@ -397,4 +397,3 @@ Technology Auto removed from static contract When edit Brand and product
     ContractsPage.Search by contract BrandName      ${generate_BusinessName}
     ContractsPage.Click on the first tab row    ${generate_BusinessName}
     ContractsPage.Verify technology is null
-

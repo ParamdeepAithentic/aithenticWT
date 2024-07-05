@@ -455,3 +455,45 @@ My Failure Handling
 Verify the visibility of no records under view details under sentinel one
      wait until element is visible   //span[normalize-space()='No Records']    ${wait_time}
      wait until element is enabled   //span[normalize-space()='No Records']  ${wait_time}
+
+Click on the create button link of service now under subscription connector
+    [Arguments]     ${option}       ${option1}
+    wait until element is visible  //td[normalize-space()='${option}']//parent::tr//td[normalize-space()='${option1}']    ${wait_time}
+    wait until element is enabled  //td[normalize-space()='${option}']//parent::tr//td[normalize-space()='${option1}']  ${wait_time}
+    click element  //td[normalize-space()='${option}']//parent::tr//td[normalize-space()='${option1}']
+    sleep   ${search_sleep}
+
+Enter input in the url end point field of service now
+    [Arguments]     ${option}
+    wait until element is visible  css:#urlEndPoint    ${wait_time}
+    wait until element is enabled  css:#urlEndPoint      ${wait_time}
+    click element  css:#urlEndPoint
+    input text      css:#urlEndPoint        ${option}
+
+Enter input in the username field of service now
+    [Arguments]     ${option}
+    wait until element is visible  css:#username    ${wait_time}
+    wait until element is enabled  css:#username      ${wait_time}
+    click element  css:#username
+    input text      css:#username       ${option}
+
+Enter input in the password field of service now
+    [Arguments]     ${option}
+    wait until element is visible  css:#password_sn    ${wait_time}
+    wait until element is enabled  css:#password_sn      ${wait_time}
+    click element  css:#password_sn
+    input text      css:#password_sn       ${option}
+
+ Enter input in the client id field of service now
+    [Arguments]     ${option}
+    wait until element is visible  css:#clientId    ${wait_time}
+    wait until element is enabled  css:#clientId      ${wait_time}
+    click element  css:#clientId
+    input text      css:#clientId        ${option}
+
+Enter input in the secret key field of service now
+    [Arguments]     ${option}
+    wait until element is visible  css:#clientSecret    ${wait_time}
+    wait until element is enabled  css:#clientSecret     ${wait_time}
+    click element  css:#clientSecret
+    input text      css:#clientSecret        ${option}
