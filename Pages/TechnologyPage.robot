@@ -213,7 +213,7 @@ Select and restore asset
     wait until element is visible   ${removedTechnology_chkBox}     ${wait_time}
     wait until element is enabled   ${removedTechnology_chkBox}     ${wait_time}
     sleep   3
-   Wait Until Element Is not Visible  xpath=//div[@class='fade-shadow']  ${wait_time}s
+    Wait Until Element Is not Visible  xpath=//div[@class='fade-shadow']  ${wait_time}s
     click element   ${removedTechnology_chkBox}
 #    Wait Until Element Is Enabled      ${restore_BTN}       ${wait_time}
 #    click element   ${restore_BTN}
