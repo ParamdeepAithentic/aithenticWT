@@ -503,3 +503,81 @@ Zz kill browser
 #    Generic.Verify your current page contains this text      192.168.0.137
 #    OCS.Click on Refresh Icon of discovered asset lists
 #    Generic.Wait until table get load
+
+Verify Filters of Existing asets by adding assets of different tech type
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     brand-dropdown
+    Generic.Verify your current page location contains      brand
+    DashboardPage.Click add brand button
+    DashboardPage.Create random brandName
+    DashboardPage.Add business manufacturer URL     qwerty
+    DashboardPage.Add brand manufacturer country      Australia
+    DashboardPage.Save added brand details
+    Generic.Fetch alert message text and compare it with        Brand created successfully.
+    DashboardPage.Click added brand main save button
+    DashboardPage.Verify Brand added      ${generated_BrandName}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     product-dropdown
+    Generic.Verify your current page location contains      product
+    Generic.Wait until table get load
+    DashboardPage.Click on action button
+    DashboardPage.Click add product button
+    DashboardPage.Create product name random
+    DashboardPage.Add product brand name      ${generated_BrandName}
+    DashboardPage.Add product description
+    DashboardPage.Add product feature
+    DashboardPage.Select product technology type     Hardware
+    DashboardPage.Select product technology group     Applications
+    DashboardPage.Select product status   Active
+    DashboardPage.Save added product details
+    Generic.Fetch alert message text and compare it with        Product created successfully
+    DashboardPage.Verify product added        ${generated_product}
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       ${generated_BrandName}
+    TechnologyPage.Select parameter from technology dropdown list       ${generated_product}
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Click on add location
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Add - Location
+    Generic.Verify your current page location contains      add-location
+    TechnologyPage.Select country of the location   United States
+    TechnologyPage.Enter building_name of the location
+    TechnologyPage.Enter floor of the location      6
+    TechnologyPage.Enter room of the location       30
+    TechnologyPage.Enter unique address_one of the location
+    TechnologyPage.Enter unique address_two of the location
+    TechnologyPage.Select state of location     Alaska
+    TechnologyPage.Select city of location      Akutan
+    TechnologyPage.Enter Zip_code       67540
+    TechnologyPage.Save the new added location         save
+    Generic.Verify alertify is visible
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Add - Technology
+    TechnologyPage.Click on refresh location icon
+    TechnologyPage.Add assignment information location     ${generated_buildingname}
+    TechnologyPage.Click on add department
+    TechnologyPage.Create unique department name random
+    TechnologyPage.Select department cost center     1300
+    TechnologyPage.Save the department       add
+    Generic.Fetch alert message text and compare it with        Department added successfully
+    TechnologyPage.Add assignment information department name      ${generated_DepartmentNumber}
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+
+
+
+
+
+
