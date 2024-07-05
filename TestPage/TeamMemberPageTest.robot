@@ -49,15 +49,16 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 
-#Free the asset limit
-#    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
-#    Generic.Verify your current page location contains      dashboard
-#    Generic.select the option from the side menu    Technology
-#    Generic.Verify your current page location contains      technology
-#    PaginationPage.Check the table get load
-#    PaginationPage.Fetch the total count
-#    PaginationPage.Run the remove asset journey
+Free the asset limit
+    [Tags]      Smoke     Sanity      Time      rerun       Stable
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
+    Generic.Verify your current page location contains      dashboard
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    PaginationPage.Check the table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Run the remove asset journey
 
 Create team member form
     [Tags]      Stable
@@ -1001,7 +1002,66 @@ Verify Invitation and signup as team member via company details
     Generic.Select parameter        Yes
     Generic.Fetch alert message text and compare it with        Team member deleted successfully
 
-
+Verify_Employee_ID_Changing_settings_from_Profile_list_while_add_edit_team_member
+    [Tags]      Stable
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      debut@cool.fr.nf   Test@123
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   yes
+    Generic.Fetch alert message text and compare it with       Settings Updated
+     Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Click on add team member action button
+    TeamMemberPage.Choose option after clicking on Action button        Add New Member
+    TeamMemberPage.Enter team member first name
+    TeamMemberPage.Enter team member last name
+    Generic.Enter phone number      India   +91     9646289871
+    TeamMemberPage.Enter team member business email with cool fr nf email
+    TeamMemberPage.Enter the Position in member form        QA
+    TeamMemberPage.Click on team member department
+    TeamMemberPage.Select team member department        DepartmentName0451927202
+    TeamMemberPage.Select team member role     Admin
+    TeamMemberPage.Click on team member location
+    TeamMemberPage.Select team member location with new domain
+    TeamMemberPage.Save the team member form   save
+    Generic.Fetch alert message text and compare it with        Team Member created successfully
+    TeamMemberPage.Search Team Member by name       ${generated_TMFname}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   no
+    Generic.Fetch alert message text and compare it with       Settings Updated
+     Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Search Team Member by name       ${generated_TMFname}
+    TeamMemberPage.Click on three dots of Team Member listing
+    TeamMemberPage.Select option from three dots of Team Member     Details
+    Generic.click on the button     Edit
+    Generic.Verify your current page location contains      updatemember
+    TeamMemberPage.Enter team member first name while editing
+    TeamMemberPage.Enter team member last name while editing
+    TeamMemberPage.Create random employee id
+    TeamMemberPage.Click on add here in department field        Click here to add
+    TechnologyPage.Create unique department name random
+    TechnologyPage.Select department cost center     1300
+    TechnologyPage.Save the department       add
+    Generic.Fetch alert message text and compare it with        Department added successfully
+    TeamMemberPage.Click on the button      Update
+    Generic.Fetch alert message text and compare it with        Team Member updated successfully
+    Generic.Verify your current page location contains          member
+    TeamMemberPage.Search Team Member by name   ${generated_Tmfname}
+    TeamMemberPage.Click on three dots of Team Member listing
+    TeamMemberPage.Click on remove option under three dots
+    Generic.Select parameter        Yes
+    Generic.Fetch alert message text and compare it with        Team member deleted successfully
 
 Zz kill browser
     Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

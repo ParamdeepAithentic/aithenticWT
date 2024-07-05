@@ -59,12 +59,13 @@ ${phone}     css:#phone
 ${wait_time}        60
 ${yop_sleep}       10
 ${search_sleep}       1
-${CASE}        qa      #qa , uat , pre-prod
+
+${CASE}        uat      #qa , uat , pre-prod
+
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
 
 *** Keywords ***
 Simulate Switch Case
-#    ${CASE} =    Set Variable    option2
     Run Keyword If    '${CASE}' == 'qa'    Set QA Variables
     ...    ELSE IF    '${CASE}' == 'uat'   Set UAT Variables
     ...    ELSE IF    '${CASE}' == 'pre-prod'    Set Pre-Prod Variables
@@ -80,6 +81,7 @@ Set QA Variables
     Set Suite Variable    ${admin_password}       Admin@123
     Set Suite Variable    ${browser_name}         firefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
+    Set Suite Variable    ${discovered_asset_brand}                 MSI
 
 Set UAT Variables
     Set Suite Variable    ${url}    https://uat-app.aithentic.com/
@@ -91,6 +93,7 @@ Set UAT Variables
     Set Suite Variable    ${admin_password}       Admin@123
     Set Suite Variable    ${browser_name}         firefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
+    Set Suite Variable    ${discovered_asset_brand}                 Apple Inc
 
 Set Pre-Prod Variables
     Set Suite Variable    ${url}    https://pre-prod-app.aithentic.com/
@@ -367,6 +370,8 @@ Click keyboard button
     [Arguments]     ${locator}      ${button}
     Press keys      ${locator}      ${button}
 
+wait for the shadow to get hide from the current screen
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Update settings for Asset_ID, employee_id and location
     Generic.open the browser with the url

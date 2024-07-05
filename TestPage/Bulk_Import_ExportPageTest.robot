@@ -117,6 +117,7 @@ Product Bulk Edit
     Generic.Click on the button     Update      #Check Data,Edit
     MemberPage.Confirm the exit import process pop appers
     Generic.Click on the button     Confirm
+    Generic.wait for the shadow to get hide from the current screen
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
     Generic.Click on the button     Finish
     Bulk_Import_ExportPage.Click on the confirm button of finish pop up
@@ -691,10 +692,10 @@ Technology Bulk import
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_3
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_4      CPU
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_4
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_5      Paramdeep
-    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_5
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_6      Test@123
-    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_6
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_5      Paramdeep
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_5
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_6      Test@123
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_6
 
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_7      100
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_7

@@ -50,15 +50,16 @@ ${self_searchId} =   AssetID_1803536655
 
 *** Test Cases ***
 
-#Free the asset limit
-#    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form     chirag@dmts.fr.nf     Test@123
-#    Generic.Verify your current page location contains      dashboard
-#    Generic.select the option from the side menu    Technology
-#    Generic.Verify your current page location contains      technology
-#    PaginationPage.Check the table get load
-#    PaginationPage.Fetch the total count
-#    PaginationPage.Run the remove asset journey
+Free the asset limit
+    [Tags]      Smoke     Sanity      Time      rerun       Stable
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form     ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    PaginationPage.Check the table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Run the remove asset journey
 
 
 Fill the technology form for license product
@@ -264,7 +265,7 @@ Create new asset with new brand and product
     DashboardPage.Add product description
     DashboardPage.Add product feature
     DashboardPage.Select product technology type     Hardware
-    sleep       1500
+#    sleep       1500
     DashboardPage.Select product technology group     Applications
     DashboardPage.Select product status   Active
     DashboardPage.Save added product details

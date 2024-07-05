@@ -115,7 +115,7 @@ Search by brand name
     should be equal    ${BrandName}     ${get_brandName}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  3  ${pageHeading}   PartnersPage - Search by brand name      3    ${pageTime}     ${ActualTime}    PatnersPage_Time
+    Calculate Running time  3  ${pageHeading}   PartnersPage - Search partner by brand name on partner listing page      3    ${pageTime}     ${ActualTime}    PatnersPage_Time
 
 
 Select partner type
@@ -139,7 +139,7 @@ Select partner type of new partner
     Select partner type     ${partner}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  4  ${pageHeading}   PartnersPage - Select partner type of new partner      4    ${pageTime}     ${ActualTime}    PatnersPage_Time
+    Calculate Running time  4  ${pageHeading}   PartnersPage - Select option from partner type dropdown on add new partner page      4    ${pageTime}     ${ActualTime}    PatnersPage_Time
 
 
 Create partner random business name
@@ -205,7 +205,7 @@ Select partner country
     Generic.Select parameter    ${country}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  5  ${pageHeading}   PartnersPage - Select partner country      5    ${pageTime}     ${ActualTime}    PatnersPage_Time
+    Calculate Running time  5  ${pageHeading}   PartnersPage - Select option from partner country dropdown on add new partner page      5    ${pageTime}     ${ActualTime}    PatnersPage_Time
 
 
 Click on contact person button
@@ -285,7 +285,7 @@ Enter contact location
     Press Keys     ${location}       ENTER
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  6  ${pageHeading}   PartnersPage - Enter contact location      6    ${pageTime}     ${ActualTime}    PatnersPage_Time
+    Calculate Running time  6  ${pageHeading}   PartnersPage - Select the option from location dropdown on add new contact popup module via add new partner screen      6    ${pageTime}     ${ActualTime}    PatnersPage_Time
 
 
 Save the new contact

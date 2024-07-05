@@ -51,7 +51,7 @@ Test Setup      open the browser with the url
 
 
 *** Test Cases ***
-
+#
 #Free the asset limit
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form     johns@mai.25u.com        Test@123
@@ -61,7 +61,6 @@ Test Setup      open the browser with the url
 #    PaginationPage.Check the table get load
 #    PaginationPage.Fetch the total count
 #    PaginationPage.Run the remove asset journey
-
 
 Search Discovered Assets
     [Tags]      Stable
