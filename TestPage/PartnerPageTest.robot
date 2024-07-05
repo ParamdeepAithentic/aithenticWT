@@ -61,7 +61,8 @@ Compose Message invite user test
     Generic.Verify your current page location contains      partner
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  3  ${pageHeading}   Page Load - Total Load Time of Partner Page      3    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Verify your current page contains this text     Partners
+    Calculate Running time  3  ${pageHeading}   Page Load - Total load time from clicking partner option from side listing to partner listing page      3    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 #-------------------------- PARTNER--------------------------------------------------------------
 #    LoginPage.Fetch the refresh token from the login api
@@ -72,7 +73,8 @@ Compose Message invite user test
     Generic.Verify your current page location contains      addpartner
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  4  ${pageHeading}   Page Load - Total Load Time of Add Partner Page      4    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Verify your current page contains this text     Add New Partner
+    Calculate Running time  4  ${pageHeading}   Page Load - Total load time from clicking add partner button from partner listing to add partner page      4    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 
     PartnersPage.Select partner type of new partner     Manufacturer
@@ -89,7 +91,8 @@ Compose Message invite user test
     PartnersPage.Enter random contact person
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  5  ${pageHeading}   Page Load - Total Page Load Time of Add Contact      5    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Verify your current page contains this text     Contact Person
+    Calculate Running time  5  ${pageHeading}   Page Load - Total load time from clicking location option from side listing to location listing page      5    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 #    PartnersPage.Enter contact business email    ${generate_PersonName}      ${generate_BusinessName}
     PartnersPage.Enter contact business email    ${generate_PersonName}     yopmail
@@ -107,7 +110,8 @@ Compose Message invite user test
     Generic.Verify your current page location contains      product
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  6  ${pageHeading}   Page Load - Total Load Time of Product Listing Page      6    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Verify your current page contains this text     Added Products
+    Calculate Running time  6  ${pageHeading}   Page Load - Total load time of product listing page      6    ${pageTime}     ${ActualTime}    PageLoad_Time
 
     DashboardPage.Click on action button
     DashboardPage.Click add product button
@@ -123,7 +127,7 @@ Compose Message invite user test
     DashboardPage.Save added product details
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  7  ${pageHeading}   Page Load - Total Load Time of Product Details pop up      7    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  7  ${pageHeading}   Page Load - Total load time of filling the add product details form     7    ${pageTime}     ${ActualTime}    PageLoad_Time
 
     Generic.Fetch alert message text and compare it with        Product created successfully
     DashboardPage.Verify product added    ${generated_product}
@@ -134,7 +138,7 @@ Compose Message invite user test
     Generic.Verify your current page location contains      technology
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  8  ${pageHeading}   Page Load - Total Load Time of Technology Page      8    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  8  ${pageHeading}   Page Load - Total load time of Technology Page      8    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 
     ${StartTime1} =     Get Current Time in Milliseconds
@@ -144,7 +148,7 @@ Compose Message invite user test
     Generic.Verify your current page location contains      addtechnology
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  9  ${pageHeading}   Page Load - Total Load Time of Add Technology Page      9    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  9  ${pageHeading}   Page Load - Total load time of Add Technology Page      9    ${pageTime}     ${ActualTime}    PageLoad_Time
 
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       ${generate_BusinessName}
@@ -181,7 +185,7 @@ Compose Message invite user test
     Generic.Verify your current page location contains      contracts
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  10  ${pageHeading}   Page Load - Total Load Time of Contracts Page      10    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  10  ${pageHeading}   Page Load - Total load time of Contracts Page      10    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 
     ContractsPage.Click on create new contract button
@@ -239,7 +243,7 @@ Compose Message invite user test
     Generic.Verify your current page location contains      register
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  12  ${pageHeading}   Page Load - Total Load Time of Become a Registered Member Page from Yopmail Page      12    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  12  ${pageHeading}   Page Load - Total load time of become a registered member page from yopmail page      12    ${pageTime}     ${ActualTime}    PageLoad_Time
 #----------------------------------REGISTER MEMBER--------------------------------------------------------------
 
     RegisterMember.Fill first name for partner register member      balwinder
@@ -266,7 +270,7 @@ Compose Message invite user test
     Generic.Verify your current page location contains     create-account
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  13  ${pageHeading}   Page Load - Total Load Time of Create your user account Page from Yopmail Page      13    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  13  ${pageHeading}   Page Load - Total load time of Create your user account Page from Yopmail Page      13    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 #----------------------------------------USER ACCOUNT---------------------------------------------------
     UserAccount.Enter the password      Paramdeep@112
@@ -297,7 +301,7 @@ Compose Message invite user test
     Switch Window   aithentic | OTP
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  14  ${pageHeading}   Page Load - Total Load Time of Two-Factor Authentication Page from Yopmail Page      14    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  14  ${pageHeading}   Page Load - Total load time of Two-Factor Authentication Page from Yopmail Page      14    ${pageTime}     ${ActualTime}    PageLoad_Time
 #
 #    Switch Window   aithentic | Login
 #    sleep       2
