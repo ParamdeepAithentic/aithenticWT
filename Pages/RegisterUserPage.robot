@@ -71,6 +71,7 @@ Download Agent popup
 
 
 Create random register first name
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is enabled       ${register_Fname}        ${wait_time}
     click element   ${register_Fname}
     Clear element text      ${register_Fname}
@@ -296,5 +297,65 @@ Edit profile company name
     input text   css:#CompanyName   ${generate_profile_CompanyName}
     set global variable    ${generate_profile_CompanyName}
 
+Edit the personal business_email of user
+     wait until element is enabled       ${profile_email}        ${wait_time}
+    click element    ${profile_email}
+    Clear element text      ${profile_email}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generate_profile_Email}=    Catenate    BusinessEmail${random_string}@yopmail.net
+    input text   ${profile_email}   ${generate_profile_Email}
+    log to console      profileEmail:${generate_profile_Email}
+    set global variable    ${generate_profile_Email}
 
+Edit location country inside company details
+    [Arguments]    ${option}
+    Wait Until Element Is Visible       css:.qa-Country    ${wait_time}
+    Wait Until Element Is Enabled      css:.qa-Country     ${wait_time}
+    Clear Element Text      css:.qa-Country
+    Input Text    css:.qa-Country    ${option}
+    Generic.Select parameter    ${option}
 
+Input text into manufacturer address one inside comapny details
+    [Arguments]    ${option}        ${option1}
+    Generic.Enter value into field      css:#StreetAddress${option1}     ${option}
+
+Verify the email change warning pop-up and choose option
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //div[@id='emailChangeWarning']        ${wait_time}
+    Wait Until Element Is Enabled    //div[@id='emailChangeWarning']        ${wait_time}
+    click button       //div[@id='emailChangeWarning']//button[contains(@class,'button-${option}')]
+    Wait Until Element Is Not Visible    //div[@id='emailChangeWarning']        ${wait_time}
+
+select number of days inside alerts section
+    [Arguments]         ${option1}        ${option2}      ${option3}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //label[@for='YesEmailPingAlert']//span[@class='checkmark']        ${wait_time}
+    Sleep    ${search_sleep}
+    Wait Until Element Is Visible    css:.qa-${option1}      ${wait_time}
+    Wait Until Element Is Enabled    css:.qa-${option1}      ${wait_time}
+    Click Element    css:.qa-endOfLifeContract input        
+    RegisterUserPage.Select number of days     ${option2}  ${option3}
+
+Select asset limit exhausation inside alerts section
+    [Arguments]     ${option}       ${option1}      ${option2}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    (//ng-select[contains(@class,'qa-audit-interval')])[${option}]      ${wait_time}
+    Wait Until Element Is Enabled    (//ng-select[contains(@class,'qa-audit-interval')])[${option}]      ${wait_time}
+    Click Element    (//ng-select[contains(@class,'qa-audit-interval')])[${option}]//input
+    RegisterUserPage.Select number of days     ${option1}  ${option2}
+
+Select asset center notifications inside alerts section
+    [Arguments]     ${option}   ${option1}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    css:.alertCenter-notification-qa      ${wait_time}
+    Wait Until Element Is Enabled    css:.alertCenter-notification-qa      ${wait_time}
+    Click Element    css:.alertCenter-notification-qa input
+    RegisterUserPage.Select number of days     ${option}  ${option1}
+
+Select number of days                          #This method is replaced with "select parameter later"
+    [Arguments]    ${address1}          ${address2}
+    Wait Until Element Is Not Visible    ${loaderIcon}   ${wait_time}
+    wait until element is visible     //span[normalize-space()='${address1}  ${address2}']        ${wait_time}
+    wait until element is enabled       //span[normalize-space()='${address1}  ${address2}']          ${wait_time}
+    click element      //span[normalize-space()='${address1}  ${address2}']
