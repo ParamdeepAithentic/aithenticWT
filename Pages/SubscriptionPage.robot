@@ -549,5 +549,3 @@ click on the cross icon of delete pop up under asset discovery
     click element   //div[@id='deleteServicenowlConnector']//span[normalize-space()='×']
     sleep   ${search_sleep}
     wait until element is not visible       ${shadow}          ${wait_time}
-
-
