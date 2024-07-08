@@ -617,7 +617,7 @@ Create service now with valid data
     SubscriptionPage.Click on the settings icon under service now via discovery assets
     Generic.click on the tab       Details
     Generic.click on the button     Run Now
-    SubscriptionPage.Click on cross icon of details under service now
+    SubscriptionPage.Click on cross icon of details under service now          #  delete this line after bug got fixed #
     SubscriptionPage.Fetch alert message text of subscription connector and compare it with
     sleep   ${search_sleep}
     SubscriptionPage.Click on the settings icon under service now via discovery assets
