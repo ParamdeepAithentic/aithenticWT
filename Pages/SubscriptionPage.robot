@@ -433,7 +433,7 @@ Click on the settings icon under service now via discovery assets
     wait until element is enabled  //div[contains(@class,'flex-space')]//div//i  ${wait_time}
     click element  //div[contains(@class,'flex-space')]//div//i
     sleep   ${search_sleep}
-    wait until element is not visible       ${shadow}          ${wait_time}
+#    wait until element is not visible       ${shadow}          ${wait_time}
 
 My Failure Handling
     Generic.Click on the profile name
@@ -497,3 +497,57 @@ Enter input in the secret key field of service now
     wait until element is enabled  css:#clientSecret     ${wait_time}
     click element  css:#clientSecret
     input text      css:#clientSecret        ${option}
+
+Click on cross icon of details under service now
+    wait until element is visible  //div[@id='viewDetails']//span[normalize-space()='×']    ${wait_time}
+    wait until element is enabled  //div[@id='viewDetails']//span[normalize-space()='×']     ${wait_time}
+    click element    //div[@id='viewDetails']//span[normalize-space()='×']
+    sleep   ${search_sleep}
+
+Fetch and compare the product from the table
+    [Arguments]    ${option}
+    wait until element is visible       //td[normalize-space()='${option}']     ${wait_time}
+    ${fetch_azureproductName} =    get text    //td[normalize-space()='${option}']
+    set global variable    ${fetch_azureproductName}
+    log to console     Azure_Product_Name=${fetch_azureproductName}
+    should be equal     ${option}      ${fetch_azureproductName}
+
+Enter input in the input field of frequency under asset discovery
+    [Arguments]     ${option}
+    wait until element is visible  //div[@id='openEditScheduler']//ng-select[@formcontrolname='schedulerFrequency']    ${wait_time}
+    wait until element is enabled   //div[@id='openEditScheduler']//ng-select[@formcontrolname='schedulerFrequency']    ${wait_time}
+    click element   //div[@id='openEditScheduler']//ng-select[@formcontrolname='schedulerFrequency']
+    Generic.Select parameter    ${option}
+
+Enter input in the input field of day asset discovery
+    [Arguments]     ${option}
+    wait until element is visible  //div[@id='openEditScheduler']//ng-select[@formcontrolname='schedulerDay']    ${wait_time}
+    wait until element is enabled  //div[@id='openEditScheduler']//ng-select[@formcontrolname='schedulerDay']    ${wait_time}
+    click element   //div[@id='openEditScheduler']//ng-select[@formcontrolname='schedulerDay']
+    Generic.Select parameter    ${option}
+
+Enter input in the input field of time under asset discovery
+    [Arguments]     ${option}
+    wait until element is visible  //div[@id='openEditScheduler']//input[@formcontrolname='schedulerTime']    ${wait_time}
+    wait until element is enabled   //div[@id='openEditScheduler']//input[@formcontrolname='schedulerTime']    ${wait_time}
+    clear element text  //div[@id='openEditScheduler']//input[@formcontrolname='schedulerTime']
+    sleep    ${search_sleep}
+    input text  //div[@id='openEditScheduler']//input[@formcontrolname='schedulerTime']     ${option}
+
+Enter input in the start date field of service now under asset discovery
+    Generic.Enter current date       //div[@id='openEditScheduler']//input[@formcontrolname='schedulerDate']
+
+click on the cross icon of service now under asset discovery
+    [Arguments]     ${option}
+    wait until element is visible   (//div[@id='openEditScheduler']//span[@title='Clear all'])[${option}]    ${wait_time}
+    wait until element is enabled   (//div[@id='openEditScheduler']//span[@title='Clear all'])[${option}]     ${wait_time}
+    click element   (//div[@id='openEditScheduler']//span[@title='Clear all'])[${option}]
+
+click on the cross icon of delete pop up under asset discovery
+    wait until element is visible   //div[@id='deleteServicenowlConnector']//span[normalize-space()='×']    ${wait_time}
+    wait until element is enabled   //div[@id='deleteServicenowlConnector']//span[normalize-space()='×']     ${wait_time}
+    click element   //div[@id='deleteServicenowlConnector']//span[normalize-space()='×']
+    sleep   ${search_sleep}
+    wait until element is not visible       ${shadow}          ${wait_time}
+
+
