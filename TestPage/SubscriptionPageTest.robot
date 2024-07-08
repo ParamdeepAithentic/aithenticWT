@@ -395,11 +395,11 @@ Create service now with invalid data
     sleep       ${yop_sleep}
     Switch Window       aithentic | Create Connection
     Generic.Verify your current page location contains      create-connection
-    SubscriptionPage.Enter input in the url end point field of service now      https://dev201405.service-now.com
-    SubscriptionPage.Enter input in the username field of service now       PuneetD
-    SubscriptionPage.Enter input in the password field of service now        _.(PJL>4j
-    SubscriptionPage.Enter input in the client id field of service now     7ec640b860364210f67aa1dbd4fd56fa
-    SubscriptionPage.Enter input in the secret key field of service now     xFlv]:Fbyp
+    SubscriptionPage.Enter input in the url end point field of service now      https://qa-admin.aithentic.com/
+    SubscriptionPage.Enter input in the username field of service now       Milan
+    SubscriptionPage.Enter input in the password field of service now       Test@123
+    SubscriptionPage.Enter input in the client id field of service now     Client@001
+    SubscriptionPage.Enter input in the secret key field of service now     gdevg:mlks
     Generic.click on the button     Create Connection
     Generic.Verify your current page contains this text     Service Now Connection Failed.
 
