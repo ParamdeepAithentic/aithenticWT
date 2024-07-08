@@ -205,7 +205,7 @@ View Scheduler from view Result
     Go Back
     Generic.Verify your current page location contains      technology-settings
     SubscriptionPage.Click on the three dots of subscription connector      Microsoft Corporation
-    SubscriptionPage.Click on option under three dots of subscription connector     Google          View Results
+    SubscriptionPage.Click on option under three dots of subscription connector     Google        View Results
     Generic.Verify your current page location contains    subscription
     SubscriptionPage.Choose tab under subscription page after clicking on view_result
     SubscriptionPage.Fetch and compare the Brand from the table    Microsoft Corporation

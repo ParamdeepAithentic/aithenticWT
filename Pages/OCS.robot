@@ -897,3 +897,15 @@ Wait for the invisiblity of alert msg
     ${get_alertMsg} =    get text    ${alert_Msg}
     log to console     ${get_alertMsg}
     should be equal    ${get_alertMsg}     ${option}
+
+Search filters and verify results
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[1]      ${wait_time}
+    Wait Until Element Is enabled    (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[1]      ${wait_time}
+    click element    (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[1]
+    sleep   ${search_sleep}
+    input text    (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[1]       ${option}
+    Wait Until Element Is Visible    //ng-dropdown-panel[contains (@id, '0')]//div//div//div        ${wait_time}
+    ${filter_text}=         get text        //ng-dropdown-panel[contains (@id, '0')]//div//div//div
+    Set Global Variable    ${filter_text}
