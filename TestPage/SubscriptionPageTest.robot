@@ -307,38 +307,6 @@ View Scheduler from view Result of sentinelone
     Generic.Verify your current page location contains      technology-settings
     SubscriptionPage.Click on the three dots of subscription connector      Microsoft Corporation
 
-
-#Service now via asset discovery
-#    [Tags]      Stable
-#    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
-##    LandingPage.Verify you are on dashboard page
-#    Generic.Verify your current page location contains      dashboard
-#    Generic.Verify your current page location contains      dashboard
-#    Generic.select the option from the side menu    Asset Discovery
-#    SubscriptionPage.Click on the service now tab under discovery assets
-#    OCS.Click on newly discovered tab under service now
-#    SubscriptionPage.Click on the settings icon under service now via discovery assets
-#    Generic.click on the tab        Details
-#    Generic.click on the button     Run Now
-#    SubscriptionPage.Fetch alert message text of subscription connector and compare it with
-#    sleep  ${search_sleep}
-#    SubscriptionPage.Click on the settings icon under service now via discovery assets
-#    Generic.click on the tab       Delete
-#    Generic.click on the button     Yes
-#    Generic.Fetch alert message text and compare it with        Status Updated
-#    SubscriptionPage.Click on the settings icon under service now via discovery assets
-#    Generic.click on the tab       Activate
-#    Generic.Fetch alert message text and compare it with        Status Updated
-#    SubscriptionPage.Click on the settings icon under service now via discovery assets
-#    Generic.click on the tab       Run Now
-#    SubscriptionPage.Fetch alert message text of subscription connector and compare it with
-#    SubscriptionPage.Click on the settings icon under service now via discovery assets
-#    Generic.click on the tab       Details
-#    SubscriptionPage.Get the value of fields under view details of subscription connector   1       ServiceNow
-#    SubscriptionPage.Get the value of fields under view details of subscription connector   2       Samuel John
-
-
 Create service now with invalid data
    Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
