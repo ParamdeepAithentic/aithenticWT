@@ -2392,9 +2392,7 @@ Add the technology from profile listing
     TechnologyPage.Click on save product pop inside technology page
     Generic.Fetch alert message text and compare it with    Product created successfully
     TechnologyPage.Wait until brand loder is invisible
-#    TechnologyPage.Select parameter from technology dropdown list    ${generated_product}
     TechnologyPage.Add assetID for technology lifecycle information random
-    TechnologyPage.Select edited technology lifecycle status      Active
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
@@ -2488,6 +2486,7 @@ Verify_Asset_ID_Changing_settings_from_Profile_list
     TechnologyPage.Select an option from recovery table actions    Remove
     PartnersPage.Select option from the pop up  Yes
     Generic.Fetch alert message text and compare it with      Technology Removed Successfully
+
 
 Zz kill browser
     Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
