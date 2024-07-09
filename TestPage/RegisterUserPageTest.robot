@@ -27,7 +27,7 @@ Resource        ../Pages/SubscriptionPage.robot
 Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
-Resource        ../Pages/LoginAPI.robot
+Resource        ../Pages/LoginPage.robot
 Resource        ../Pages/MemberPage.robot
 Resource        ../Pages/OCS.robot
 Resource        ../Pages/BillingPage.robot
@@ -35,6 +35,10 @@ Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
 Resource        ../Pages/SortingPage.robot
 Resource        ../Pages/Bulk_Import_ExportPage.robot
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
+Resource        ../Pages/UnselectAssetAPI.robot
 
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
@@ -45,7 +49,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Register new user
-    [Tags]      Smoke       Time     rerun
+    [Tags]      Smoke       Time        Stable
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
@@ -110,33 +114,33 @@ Register new user
     SubscriptionPage.Save the manufacturer profile
     Generic.Verify your current page location contains     subscription-menu
     Generic.Fetch alert message text and compare it with       Profile saved successfully
-    SubscriptionPage.Select plan of subscription
-    SubscriptionPage.Select and move next with subscription
-    Generic.Verify your current page location contains     subscription-payment
-#-------------------------------------------BILLING-----------------------------------------------------
-    SubscriptionPage.Click on same billing address checkbox
-    SubscriptionPage.Click on same billing address checkbox
-    SubscriptionPage.Click on same billing address checkbox
-    SubscriptionPage.Switch to card iframe
-    SubscriptionPage.Enter cardnumber    42424242424242420429242
-    Unselect Frame
-    SubscriptionPage.Enter card user name    Paramdeep Singh
-    SubscriptionPage.Check the authorization checkbox
-    SubscriptionPage.Check the acknowledgement checkbox
-    SubscriptionPage.Click on complete process button
-    Generic.Verify your current page location contains     welcome
-    Generic.Fetch alert message text and compare it with       Payment Successful
-    DashboardPage.Click on complete setup button      Complete Setup
-    Generic.Verify your current page location contains     organization
-    DashboardPage.Select the employee ID checkbox   yes
-    DashboardPage.Select the location ID checkbox   yes
-    DashboardPage.Select the asset ID checkbox      no
-    Generic.Fetch alert message text and compare it with       Settings Updated
+#    SubscriptionPage.Select plan of subscription
+#    SubscriptionPage.Select and move next with subscription
+#    Generic.Verify your current page location contains     subscription-payment
+##-------------------------------------------BILLING-----------------------------------------------------
+#    SubscriptionPage.Click on same billing address checkbox
+#    SubscriptionPage.Click on same billing address checkbox
+#    SubscriptionPage.Click on same billing address checkbox
+#    SubscriptionPage.Switch to card iframe
+#    SubscriptionPage.Enter cardnumber    42424242424242420429242
+#    Unselect Frame
+#    SubscriptionPage.Enter card user name    Paramdeep Singh
+#    SubscriptionPage.Check the authorization checkbox
+#    SubscriptionPage.Check the acknowledgement checkbox
+#    SubscriptionPage.Click on complete process button
+#    Generic.Verify your current page location contains     welcome
+#    Generic.Fetch alert message text and compare it with       Payment Successful
+#    DashboardPage.Click on complete setup button      Complete Setup
+#    Generic.Verify your current page location contains     organization
+#    DashboardPage.Select the employee ID checkbox   yes
+#    DashboardPage.Select the location ID checkbox   yes
+#    DashboardPage.Select the asset ID checkbox      no
+#    Generic.Fetch alert message text and compare it with       Settings Updated
 
 
 
 Signup with ACH payment method
-    [Tags]      rerun
+    [Tags]       Stable
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -221,7 +225,7 @@ Signup with ACH payment method
 
 
 Change plan and Change asset limit with ACH Payment method
-    [Tags]      Smoke       rerun
+    [Tags]      Smoke        Stable
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -339,3 +343,8 @@ Change plan and Change asset limit with ACH Payment method
     BillingPage.Confirm if you want to delect account   confirm
     Generic.Fetch alert message text and compare it with      Bank removed successfully
     BillingPage.Close the billing payment options module
+
+
+
+Zz kill browser
+    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

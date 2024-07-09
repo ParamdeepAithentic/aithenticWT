@@ -10,27 +10,35 @@ Library         DateTime
 Library         OperatingSystem
 Resource        ../Pages/Generic.robot
 Resource        ../Pages/DashboardPage.robot
+Resource        ../Pages/DepartmentPage.robot
 Resource        ../Pages/ITperformancePage.robot
+Resource        ../Pages/KeyClockPage.robot
 Resource        ../Pages/LandingPage.robot
 Resource        ../Pages/TechnologyPage.robot
 Resource        ../Pages/PartnersPage.robot
-Resource        ../Pages/RegisterMember.robot
 Resource        ../Pages/ContractsPage.robot
-Resource        ../Pages/LoginAPI.robot
+Resource        ../Pages/RegisterMember.robot
+Resource        ../Pages/RegisterUserPage.robot
 Resource        ../Pages/ReplaceDomainAPI.robot
 Resource        ../Pages/Yopmail.robot
 Resource        ../Pages/UserAccount.robot
 Resource        ../Pages/TwoFactorAuth.robot
 Resource        ../Pages/SubscriptionPage.robot
+Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
-Resource        ../Pages/OCS.robot
-Resource        ../Pages/RegisterUserPage.robot
+Resource        ../Pages/LoginPage.robot
 Resource        ../Pages/MemberPage.robot
-Resource        ../Pages/KeyClockPage.robot
-Resource        ../Pages/TeamMemberPage.robot
+Resource        ../Pages/OCS.robot
+Resource        ../Pages/BillingPage.robot
 Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
+Resource        ../Pages/SortingPage.robot
+Resource        ../Pages/Bulk_Import_ExportPage.robot
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
+Resource        ../Pages/UnselectAssetAPI.robot
 
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
@@ -42,44 +50,44 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 ######## UN comment when to use ##############
-#Fill contract form
-#    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    Generic.select the option from the side menu    Contracts
-#    Generic.Verify your current page location contains      contracts
-#    ContractsPage.Click on create new contract button
-#    ContractsPage.Select type of contract     Dynamic Contract
-#    Generic.Verify your current page location contains      generate-contract
-#    ContractsPage.Enter contract type      SmartShare_Manufacturer
-#    ContractsPage.Enter contract with     BusinessName60338
-#    ContractsPage.Enter contract brand    BusinessName60338
-#    ContractsPage.Enter contract location      United States - Main Office - 21 - 2
-#    ContractsPage.Enter contract permission       Read/Write
-#    ContractsPage.Select contract start date
-#    ContractsPage.Select contract end date      12/12/2028
-#    ContractsPage.Select contract function       Dynamic
-#    ContractsPage.Click preview selection button on contact
-#    ContractsPage.Enter contract description comment      Enter comment for contract description.
-#    ContractsPage.Enter contract name     Person_61918
-#    ContractsPage.Select the checkboxes
-#    ContractsPage.Save create contract button
-#    ContractsPage.Save contract modal     Create Contract
-#    Generic.Fetch alert message text and compare it with        Contract created successfully
-#    ContractsPage.Search by contract BrandName      BusinessName60338
+Fill contract form
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.select the option from the side menu    Contracts
+    Generic.Verify your current page location contains      contracts
+    ContractsPage.Click on create new contract button
+    ContractsPage.Select type of contract     Dynamic Contract
+    Generic.Verify your current page location contains      generate-contract
+    ContractsPage.Enter contract type      SmartShare_Manufacturer
+    ContractsPage.Enter contract with     BusinessName60338
+    ContractsPage.Enter contract brand    BusinessName60338
+    ContractsPage.Enter contract location      United States - Main Office - 21 - 2
+    ContractsPage.Enter contract permission       Read/Write
+    ContractsPage.Select contract start date
+    ContractsPage.Select contract end date      12/12/2028
+    ContractsPage.Select contract function       Dynamic
+    ContractsPage.Click preview selection button on contact
+    ContractsPage.Enter contract description comment      Enter comment for contract description.
+    ContractsPage.Enter contract name     Person_61918
+    ContractsPage.Select the checkboxes
+    ContractsPage.Save create contract button
+    ContractsPage.Save contract modal     Create Contract
+    Generic.Fetch alert message text and compare it with        Contract created successfully
+    ContractsPage.Search by contract BrandName      BusinessName60338
 
 
 
 Technology Auto removed from dynamic contract When edit Brand and product
-    [Tags]      Sanity      Smoke       Time
+    [Tags]      Sanity      Smoke       Time        Unstable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
 
 #-------------------------- PARTNER--------------------------------------------------------------
-#    LoginAPI.Fetch the refresh token from the login api
+#    LoginPage.Fetch the refresh token from the login api
     ReplaceDomainAPI.Replace Domain
 
     PartnersPage.Click new partner button
@@ -229,16 +237,16 @@ Technology Auto removed from dynamic contract When edit Brand and product
 
 
 Technology Auto removed from static contract When edit Brand and product
-    [Tags]      Sanity
+    [Tags]      Sanity      Unstable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
 
 #-------------------------- PARTNER--------------------------------------------------------------
-#    LoginAPI.Fetch the refresh token from the login api
+#    LoginPage.Fetch the refresh token from the login api
     ReplaceDomainAPI.Replace Domain
 
     PartnersPage.Click new partner button
@@ -252,6 +260,7 @@ Technology Auto removed from static contract When edit Brand and product
     PartnersPage.Select partner country       United States
 
     PartnersPage.Click on contact person button
+    sleep   ${search_sleep}
     PartnersPage.Enter random contact person
 
 #    PartnersPage.Enter contact business email    ${generate_PersonName}      ${generate_BusinessName}
@@ -388,4 +397,3 @@ Technology Auto removed from static contract When edit Brand and product
     ContractsPage.Search by contract BrandName      ${generate_BusinessName}
     ContractsPage.Click on the first tab row    ${generate_BusinessName}
     ContractsPage.Verify technology is null
-

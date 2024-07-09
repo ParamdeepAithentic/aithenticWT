@@ -27,7 +27,7 @@ Resource        ../Pages/SubscriptionPage.robot
 Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
-Resource        ../Pages/LoginAPI.robot
+Resource        ../Pages/LoginPage.robot
 Resource        ../Pages/MemberPage.robot
 Resource        ../Pages/OCS.robot
 Resource        ../Pages/BillingPage.robot
@@ -35,7 +35,10 @@ Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
 Resource        ../Pages/SortingPage.robot
 Resource        ../Pages/Bulk_Import_ExportPage.robot
-
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
+Resource        ../Pages/UnselectAssetAPI.robot
 *** Variables ***
 
 ########################## technology form #####################
@@ -61,8 +64,8 @@ ${enter_hosted}      css:#DYNA_33
 ${enter_id_key}      css:#DYNA_34
 
 ##############Technology Group Information for Maintenance#################
-${Contract_startDate}        css:#DYNA_7
-${Contract_endDate}        css:#DYNA_17
+${Contract_startDate}        //input[@id='Contract Start Date']
+${Contract_endDate}        //input[@id='Contract End Date']
 
 
 ######################Contract information################
@@ -188,6 +191,7 @@ Click on first table row checkbox and restore
     click element   ${restore_BTN}
 #    wait until element is visible       ${loaderIcon}       ${wait_time}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 
 Create random unique serial number
@@ -209,7 +213,7 @@ Select and restore asset
     wait until element is visible   ${removedTechnology_chkBox}     ${wait_time}
     wait until element is enabled   ${removedTechnology_chkBox}     ${wait_time}
     sleep   3
-   Wait Until Element Is not Visible  xpath=//div[@class='fade-shadow']  ${wait_time}s
+    Wait Until Element Is not Visible  xpath=//div[@class='fade-shadow']  ${wait_time}s
     click element   ${removedTechnology_chkBox}
 #    Wait Until Element Is Enabled      ${restore_BTN}       ${wait_time}
 #    click element   ${restore_BTN}
@@ -226,6 +230,7 @@ Select any asset to view assert details page
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible    //button[normalize-space()='${option}']    ${wait_time}       #Restore, Edit, Remove, Clone, Disposal
     click element   //button[normalize-space()='${option}']
+    wait until element is not visible       ${shadow}          ${wait_time}
     sleep       2
     click element       ${back_To_List_Link}
 
@@ -242,6 +247,7 @@ Select an option from recovery table actions
      #Restore, Details
 #    wait until element is visible       ${loaderIcon}       ${wait_time}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+#    wait until element is not visible       ${shadow}          ${wait_time}
 
 
 Select an option from technology table actions
@@ -293,9 +299,14 @@ click on add technology button
     wait until element is visible    ${AddTechnologyButton}     ${wait_time}
     wait until element is enabled       ${AddTechnologyButton}     ${wait_time}
     click element    ${AddTechnologyButton}
+    wait until element is visible    //p[normalize-space()='Add New Technology']     ${wait_time}
+
 
 Click technology brand input field
+    Wait Until Element Is Not Visible    //input[@id='brandselect']//ancestor::ng-select[@id='BrandName']//following-sibling::div[contains(@class,'spinner-loader')]        ${wait_time}
+    wait until element is visible       ${brand}        ${wait_time}
     wait until element is enabled       ${brand}        ${wait_time}
+    sleep       ${search_sleep}
     click element    ${brand}
 
 Select parameter from brand dropdown list
@@ -306,7 +317,7 @@ Select parameter from brand dropdown list
     Generic.Select parameter    ${option}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  5  ${pageHeading}   Technology Page - Select parameter from brand dropdown list      5    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+    Calculate Running time  5  ${pageHeading}   Technology Page - Select the option from brand dropdown list under add technology      5    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Click technology product input field
      wait until element is visible       ${product}        ${wait_time}
@@ -330,10 +341,11 @@ Select parameter from technology dropdown list
     Wait Until Element Is Visible    //td[normalize-space()='${option}']        ${wait_time}
     Wait Until Element Is enabled    //td[normalize-space()='${option}']        ${wait_time}
     Click Element       //td[normalize-space()='${option}']
+    sleep   ${search_sleep}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  6  ${pageHeading}   Technology Page - Select parameter from technology dropdown list      6    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+    Calculate Running time  6  ${pageHeading}   Technology Page - Select the option from product dropdown list under add technology      6    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Click on add product link
     wait until element is visible   css:.qa-product-add-assets      ${wait_time}
@@ -491,6 +503,10 @@ Add assetID for technology lifecycle information self
 Select purchase date
     Generic.Enter current date      ${purchase_date}
 
+Select purchase date self
+    [Arguments]    ${date}
+    Generic.Enter self date     ${purchase_date}       ${date}
+
 Select warranty end date
     [Arguments]    ${date}
     Generic.Enter self date     ${warranty_enddt}       ${date}
@@ -500,8 +516,9 @@ Select technology lifecycle status
     wait until element is visible    ${LifeCycleStatusId}      ${wait_time}
     wait until element is enabled    ${LifeCycleStatusId}      ${wait_time}
     click element       ${LifeCycleStatusId}
-    wait until element is visible   //ng-select[@id='LifeCycleStatusId']//span[@title='Clear all']     ${wait_time}
+    wait until element is visible   //ng-select[@id='LifeCycleStatusId']//span[@title='Clear all']    ${wait_time}
     click element       //ng-select[@id='LifeCycleStatusId']//span[@title='Clear all']
+    wait until element is visible   //span[normalize-space()='Active']      ${wait_time}
     Generic.Select parameter    ${option1}
 
 
@@ -510,8 +527,8 @@ Select edited technology lifecycle status
     wait until element is not visible    ${loaderIcon}      ${wait_time}
     wait until element is visible    ${LifeCycleStatusId}      ${wait_time}
     click element       ${LifeCycleStatusId}
-    wait until element is visible   xpath://span[normalize-space()='${option1}']     ${wait_time}
-    click element   xpath://span[normalize-space()='${option1}']
+    wait until element is visible   //span[normalize-space()='${option1}']     ${wait_time}
+    click element   //span[normalize-space()='${option1}']
 
 Add technology lifecycle comment
     [Arguments]    ${option}
@@ -523,6 +540,7 @@ Accept updated edited technology pop up
      wait until element is visible     //div[@id='confirmUpdates']//button[normalize-space()='${option}']      ${wait_time}
      wait until element is enabled     //div[@id='confirmUpdates']//button[normalize-space()='${option}']      ${wait_time}
      click element      //div[@id='confirmUpdates']//button[normalize-space()='${option}']
+     wait until element is not visible       ${shadow}          ${wait_time}
 
 ###############Technology Cost Information#################
 Add order number of technology cost information
@@ -541,7 +559,7 @@ Add payment partner of technology cost information
     Generic.Select parameter    ${option1}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  7  ${pageHeading}   Technology Page - Add payment partner of technology cost information     7    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+    Calculate Running time  7  ${pageHeading}   Technology Page - Add option from payment partner dropdown of cost information section under add technology     7    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Add cost type of technology cost information
     [Arguments]    ${option2}
@@ -553,7 +571,7 @@ Add cost type of technology cost information
     Generic.Select parameter    ${option2}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  8  ${pageHeading}   Technology Page - Add cost type of technology cost information      8    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+    Calculate Running time  8  ${pageHeading}   Technology Page - Add option from cost type of cost information section under add technology      8    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 
 Add payment type of technology cost information
@@ -568,7 +586,7 @@ Add payment type of technology cost information
     click element      //*[contains(text(), '${option3}')]
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  9  ${pageHeading}   Technology Page - Add payment type of technology cost information      9    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+    Calculate Running time  9  ${pageHeading}   Technology Page - Add option from payment type of cost information section under add technology      9    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Add payment peroid of technology cost information
     [Arguments]    ${option4}
@@ -580,7 +598,7 @@ Add payment peroid of technology cost information
     Generic.Select parameter    ${option4}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  10  ${pageHeading}   Technology Page - Add payment peroid of technology cost information      10    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+    Calculate Running time  10  ${pageHeading}   Technology Page - Add option from payment peroid of cost information section under add technology      10    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 
 
@@ -616,7 +634,7 @@ Add expense type of technology cost information
     Generic.Select parameter    ${option5}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  11  ${pageHeading}   Technology Page - Add expense type of technology cost information      11    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+    Calculate Running time  11  ${pageHeading}   Technology Page - Add option from expense type of cost information section under add technology      11    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 
 ################################### contract information ######################
@@ -640,16 +658,16 @@ Add chargeable basis of contract information self
     wait until element is visible       ${chargeable_basis}        ${wait_time}
     click element   ${chargeable_basis}
     wait until element is visible       ${chargeable_basis}        ${wait_time}
-    ${StartTime1} =     Get Current Time in Milliseconds
     input text   ${chargeable_basis}   ${option}
     wait until element is visible    ${chargeable_basis}      ${wait_time}
     click element       ${chargeable_basis}
     Clear Element Text      ${chargeable_basis}
+    ${StartTime1} =     Get Current Time in Milliseconds
     input text      ${chargeable_basis}     ${option}
     Generic.Select parameter    ${option}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  12  ${pageHeading}   Technology Page - Add chargeable basis of contract information self      12    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+    Calculate Running time  12  ${pageHeading}   Technology Page - Add chargeable basis of contract information self under contract information of add technology      12    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Add cost each of contract information random
     wait until element is visible       ${cost_each}        ${wait_time}
@@ -682,14 +700,14 @@ Add max contracted of contract information self
 Add assignment information location
     [Arguments]    ${option1}
     wait until element is visible    ${locationName}      ${wait_time}
-    ${StartTime1} =     Get Current Time in Milliseconds
     click element       ${locationName}
 #    Clear Element Text      ${locationName}
+    ${StartTime1} =     Get Current Time in Milliseconds
     Generic.Enter value into field      ${locationName}     ${option1}
     Press Keys     ${locationName}       ENTER
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  13  ${pageHeading}   Technology Page - Add assignment information location      13   ${pageTime}     ${ActualTime}    TechnologyPage_Time
+    Calculate Running time  13  ${pageHeading}   Technology Page - Select the location name from the dropdown under assignment information section under add technology      13   ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Add assignment information department name
     [Arguments]    ${option1}
@@ -701,7 +719,7 @@ Add assignment information department name
     Press Keys     ${departmentName}       ENTER
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  14  ${pageHeading}   Technology Page - Add assignment information department name      14    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+    Calculate Running time  14  ${pageHeading}   Technology Page - Select the department name from the dropdown under assignment information section under add technology      14    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Add assignment information assign to
     [Arguments]    ${option1}   ${option2}
@@ -723,7 +741,7 @@ Add support partner of partners information
     Generic.Select parameter    ${option1}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  15  ${pageHeading}   Technology Page - Add support partner of partners information      15    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+    Calculate Running time  15  ${pageHeading}   Technology Page - Add the option from support partner dropdown of partners information section under add technology      15    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Add supplier of partners information
     [Arguments]    ${option1}
@@ -735,19 +753,20 @@ Add supplier of partners information
     Generic.Select parameter    ${option1}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  16  ${pageHeading}   Technology Page - Add supplier of partners information      16   ${pageTime}     ${ActualTime}    TechnologyPage_Time
+    Calculate Running time  16  ${pageHeading}   Technology Page - Add the option from supplier dropdown of partners information section under add technology      16   ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 
 Click on save technology form button
     wait until element is visible       ${saveBTN}       ${wait_time}
     wait until element is enabled       ${saveBTN}       ${wait_time}
     click element       ${saveBTN}
-#    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
 
 Click on save technology form pop button
     wait until element is visible       ${savePOPup}       ${wait_time}
     wait until element is enabled        ${savePOPup}       ${wait_time}
     click element       ${iamDone_BTN}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 
 Verify that after saving technology form user redirect to technology page
@@ -772,7 +791,7 @@ Search by AssetId
     should be equal    ${get_assetID}     ${AssetID}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  17  ${pageHeading}   Technology Page - Search by AssetId     17    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+    Calculate Running time  17  ${pageHeading}   Technology Page - Search the technology by AssetId on technology list page     17    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Search by BrandName
     [Arguments]    ${BrandName}
@@ -789,7 +808,7 @@ Search by BrandName
      should be equal    ${get_fetch_brandName}     ${BrandName}
      ${EndTime1} =     Get Current Time in Milliseconds
      ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-     Calculate Running time  18  ${pageHeading}   Technology Page - Search by BrandName      18    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+     Calculate Running time  18  ${pageHeading}   Technology Page - Search the technology by BrandName on technology list page      18    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Search by ProductName
     [Arguments]    ${product}
@@ -808,7 +827,7 @@ Search by ProductName
      should be equal    ${product}     ${get_productID}
      ${EndTime1} =     Get Current Time in Milliseconds
      ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-     Calculate Running time  19  ${pageHeading}   Technology Page - Search by ProductName      19    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+     Calculate Running time  19  ${pageHeading}   Technology Page - Search the technology by ProductName on technology list page     19    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Search by SerialNo
     [Arguments]    ${assertId}  ${serialNo}
@@ -824,7 +843,7 @@ Search by SerialNo
      Wait Until Element Contains    ${fetch_assetID}     ${AssetID}    ${wait_time}
      ${EndTime1} =     Get Current Time in Milliseconds
      ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-     Calculate Running time  20  ${pageHeading}   Technology Page - Search by SerialNo      20    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+     Calculate Running time  20  ${pageHeading}   Technology Page - Search the technology by SerialNumber on technology list page      20    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Search by assignee
      [Arguments]    ${assignee}
@@ -843,7 +862,7 @@ Search by assignee
      should be equal    ${assignee}     ${get_assignee}
      ${EndTime1} =     Get Current Time in Milliseconds
      ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-     Calculate Running time  21  ${pageHeading}   Technology Page - Search by assignee      21    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+     Calculate Running time  21  ${pageHeading}   Technology Page - Search the technology by assignee on technology list page      21    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 
 Click on the first row of the technology table
@@ -851,12 +870,14 @@ Click on the first row of the technology table
     wait until element is enabled      ${fetch_assetID}     ${wait_time}
     click element      ${fetch_assetID}
     wait until element is not visible      ${loaderIcon}    ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Click on edit button on product details page
     [Arguments]    ${option}
     wait until element is not visible      ${loaderIcon}    ${wait_time}
     Generic.click on the button link     ${option}
     wait until element is not visible      ${loaderIcon}    ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Click on the edit icon on the edit technology page
     wait until element is visible      ${editIcon}     ${wait_time}
@@ -1075,6 +1096,7 @@ Save the department
     wait until element is visible       css:.qa-${option}-department-modal        ${wait_time}
     wait until element is enabled       css:.qa-${option}-department-modal        ${wait_time}
     click element        css:.qa-${option}-department-modal
+    wait until element is not visible       ${shadow}          ${wait_time}
 # option: add, close
 
 Click on add assign to
@@ -1106,6 +1128,7 @@ Save the assign to
     wait until element is enabled       css:.qa-${option}-assignee-modal        ${wait_time}
     click element        css:.qa-${option}-assignee-modal
     wait until element is not visible        ${loaderIcon}         ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
 # options: save, cancel
 
 Select tab under technology details
@@ -1114,6 +1137,8 @@ Select tab under technology details
     wait until element is visible       css:a[href='#${option}']       ${wait_time}
     wait until element is enabled       css:a[href='#${option}']        ${wait_time}
     click element        css:a[href='#${option}']
+    sleep   ${search_sleep}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 #options: details,partners,location,parent-components,components,messages,history,attachments
 
@@ -1198,7 +1223,9 @@ Close the view history pop up
     wait until element is enabled       ${histortTab_ViewPopUp}      ${wait_time}
     click element   ${histortTab_ViewPopUp}
     wait until element is not visible       ${histortTab_ViewPopUp}      ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
     sleep   ${search_sleep}
+
 
 Submit the assign partner form
     [Arguments]     ${option}
@@ -1241,6 +1268,7 @@ Click on save product pop inside technology page
     wait until element is visible   css:div[class='modal-footer my-1'] button[type='submit']    ${wait_time}
     wait until element is enabled   css:div[class='modal-footer my-1'] button[type='submit']    ${wait_time}
     click element   css:div[class='modal-footer my-1'] button[type='submit']
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Select product technology group via technology
     [Arguments]    ${option}
@@ -1277,6 +1305,37 @@ Renewal Date via technology
     wait until element is enabled   css:#RenewalDate     ${wait_time}
     click element   css:#RenewalDate
     input text  css:#RenewalDate     03/26/2021
+
+Input current Date
+    ${current_date1}    Get Current Date    result_format=%m/%d/%Y
+    Log To Console     ${current_date1}
+    set global variable         ${current_date1}
+
+Input future Date
+#    ${future_date} =    Add Time To Date   ${current_date1}    7    days    result_format=%m/%d/%Y
+#    Log To Console    ${future_date}
+#    Set Global Variable    ${future_date}
+
+    ${current_date}=    Get Current Date    result_format=%m/%d/%Y
+    Log To Console      Current Date is: ${current_date}
+
+    ${current_date_parts}=    Split String    ${current_date}    -
+    ${current_date_without_time}=    Set Variable    ${current_date_parts[0]}
+
+    ${future_date}=    Evaluate    datetime.datetime.strptime($current_date_without_time, "%m/%d/%Y") + datetime.timedelta(days=7)
+    ${formatted_future_date}=    Convert Date    ${future_date}    result_format=%m/%d/%Y
+
+    Log To Console      Future Date is: ${formatted_future_date}
+    Set Global Variable    ${formatted_future_date}
+
+Enter current or future date as renewal date
+    [Arguments]     ${date}
+    wait until element is visible   css:#RenewalDate     ${wait_time}
+    wait until element is enabled   css:#RenewalDate     ${wait_time}
+    Clear Element Text    css:#RenewalDate
+    input text   css:#RenewalDate     ${date}
+    Clear Element Text    css:#RenewalDate
+    input text   css:#RenewalDate     ${date}
 
 Click on action button of technology
     wait until element is not visible      ${loaderIcon}    ${wait_time}
@@ -1322,6 +1381,19 @@ Verify parameter from past location table
 
 Click on current plan of subscription
     wait until element is visible   //button[normalize-space()='Current Plan']  ${wait_time}
+    wait until element is enabled   //button[normalize-space()='Current Plan']  ${wait_time}
+    click element   //button[normalize-space()='Current Plan']
+
+Click on plan of subscription
+    [Arguments]    ${option}
+    wait until element is visible   //h4[normalize-space()='${option}']//parent::div//following-sibling::div//button  ${wait_time}
+    wait until element is enabled   //h4[normalize-space()='${option}']//parent::div//following-sibling::div//button  ${wait_time}
+    click element       //h4[normalize-space()='${option}']//parent::div//following-sibling::div//button
+
+Select plan for subscription
+    [Arguments]    ${option}
+    wait until element is visible   //h4[normalize-space()='${option}']//parent::div//following-sibling::div[@class='price-value']//button  ${wait_time}
+    wait until element is enabled   //h4[normalize-space()='${option}']//parent::div//following-sibling::div[@class='price-value']//button  ${wait_time}
     click element   //button[normalize-space()='Current Plan']
 
 Click on pop up of available Inactive Asset
@@ -1329,6 +1401,15 @@ Click on pop up of available Inactive Asset
     wait until element is visible   css:.qa-available-inactive-assests-${option}   ${wait_time}
     wait until element is enabled   css:.qa-available-inactive-assests-${option}   ${wait_time}
     click element   css:.qa-available-inactive-assests-${option}
+    wait until element is not visible       ${shadow}          ${wait_time}
+
+Select option from exceed asset limit pop
+    [Arguments]     ${option}
+    wait until element is visible   css:.qa-asset-limit-exceede-${option}  ${wait_time}
+    wait until element is enabled   css:.qa-asset-limit-exceede-${option}  ${wait_time}
+    click element   css:.qa-asset-limit-exceede-${option}
+    wait until element is not visible       ${shadow}          ${wait_time}
+
 
 Click on removed assets option of technology filters
     wait until element is visible   css:.qa-removed-aasets-section  ${wait_time}
@@ -1339,6 +1420,7 @@ Click on asset limit exceeded pop up
     wait until element is visible   css:.qa-asset-limit-exceede-technology      ${wait_time}
     wait until element is enabled   css:.qa-asset-limit-exceede-technology      ${wait_time}
     click element   css:.qa-asset-limit-exceede-technology
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Click on proceed button of technology list page
     wait until element is visible   css:.qa-proceed-retore-asset-technology-list      ${wait_time}
@@ -1350,6 +1432,7 @@ Click on restore button of technology Details Page
     wait until element is enabled   css:.qa-restore-assets      ${wait_time}
     click element   css:.qa-restore-assets
     wait until element is not visible   ${loaderIcon}     ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Click on back to list of technology
     wait until element is visible   ${back_To_List_Link}    ${wait_time}
@@ -1473,6 +1556,7 @@ Click on clone button on techonology details page
     wait until element is not visible      ${loaderIcon}    ${wait_time}
     Generic.click on the button link     ${option}
     wait until element is not visible      ${loaderIcon}    ${wait_time}
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 
 #Check current directory path
@@ -1490,6 +1574,7 @@ Click on advanced search button link under add technology
     wait until element is enabled   css:div[class='row ng-star-inserted'] a[title='Click here to Advance search']       ${wait_time}
     click element   css:div[class='row ng-star-inserted'] a[title='Click here to Advance search']
     wait until element is not visible      ${loaderIcon}    ${wait_time}
+
 
 Click on the row of the table inside advanced search
     Execute JavaScript    document.querySelector('.bg-white.location-list-qa.ng-star-inserted > tr:nth-child(3)').scrollIntoView(true);
@@ -1608,3 +1693,156 @@ Verify that product version on technology details page
 Click on the technology group row of the table inside advanced search
     Execute JavaScript    document.querySelector('.bg-white.location-list-qa.ng-star-inserted > tr:nth-child(1)').scrollIntoView(true);
     Click Element    css:.bg-white.location-list-qa.ng-star-inserted > tr:nth-child(1) > td:nth-child(1)
+
+Get And Verify The Count Of existing asset of parent
+    ${element_count}=    Get Element Count    //tbody/tr/td/label/span
+    Log to console      ${element_count}
+
+    FOR    ${index}    IN RANGE    1    ${element_count}
+        Wait Until Element Is Visible   //tbody/tr[${index}]/td/label/span      ${wait_time}
+        Wait Until Element Is enabled   //tbody/tr[${index}]/td/label/span      ${wait_time}
+        click element   //tbody/tr[${index}]/td/label/span
+    END
+
+Click on the export button of parent tab under technology details page
+   wait until element is visible   //div[@id='parent-components']//button[@id='dropdownMenuButton']     ${wait_time}
+    wait until element is enabled   //div[@id='parent-components']//button[@id='dropdownMenuButton']     ${wait_time}
+    sleep       ${search_sleep}
+    click element   //div[@id='parent-components']//button[@id='dropdownMenuButton']
+
+Download the selected extension file of parent under technology details
+    [Arguments]    ${option}
+    wait until element is visible   //div[@class='dropdown-menu show']//a[contains(text(),'${option}')]     ${wait_time}
+    wait until element is enabled   //div[@class='dropdown-menu show']//a[contains(text(),'${option}')]     ${wait_time}
+    click element   //div[@class='dropdown-menu show']//a[contains(text(),'${option}')]
+
+Click on the export button of deatils tab under technology details page
+    wait until element is visible   //div[@id='details']//button[@id='dropdownMenuButton']     ${wait_time}
+    wait until element is enabled   //div[@id='details']//button[@id='dropdownMenuButton']     ${wait_time}
+    sleep       ${search_sleep}
+    click element   //div[@id='details']//button[@id='dropdownMenuButton']
+
+Click on the export button of component tab under technology details page
+    wait until element is visible   //div[@id='components']//button[@id='dropdownMenuButton']     ${wait_time}
+    wait until element is enabled   //div[@id='components']//button[@id='dropdownMenuButton']     ${wait_time}
+    sleep       ${search_sleep}
+    click element   //div[@id='components']//button[@id='dropdownMenuButton']
+
+
+Click button to proceed the asset restore
+   wait until element is visible    css:.qa-proceed-retore-asset-technology-list     ${wait_time}
+    wait until element is enabled   css:.qa-proceed-retore-asset-technology-list   ${wait_time}
+    click element   css:.qa-proceed-retore-asset-technology-list
+
+Click button to cancle the asset restoration
+   wait until element is visible    css:.qa-cancel-asset-technology-list     ${wait_time}
+    wait until element is enabled   css:.qa-cancel-asset-technology-list  ${wait_time}
+    click element   css:.qa-cancel-asset-technology-list
+
+#Enter input in the not containing productv field
+#    [Arguments]     ${Product}
+#    wait until element is visible   //input[@formcontrolname='ProductNotContaining']     ${wait_time}
+#    wait until element is enabled   //input[@formcontrolname='ProductNotContaining']     ${wait_time}
+#    click element   //input[@formcontrolname='ProductNotContaining']
+#    input text      //input[@formcontrolname='ProductNotContaining']     ${Product}
+#
+#Enter input in the not containing description field
+#    [Arguments]     ${Description_not_containing}
+#    wait until element is visible   //input[@formcontrolname='DescriptionNotContaining']     ${wait_time}
+#    wait until element is enabled   //input[@formcontrolname='DescriptionNotContaining']    ${wait_time}
+#    click element   //input[@formcontrolname='DescriptionNotContaining']
+#    input text      //input[@formcontrolname='DescriptionNotContaining']     ${Description_not_containing}
+#
+#Enter input in the not containing feature field
+#    [Arguments]     ${Feature_not_containing}
+#    wait until element is visible   //input[@formcontrolname='FeatureNotContaining']     ${wait_time}
+#    wait until element is enabled   //input[@formcontrolname='FeatureNotContaining']    ${wait_time}
+#    click element   //input[@formcontrolname='FeatureNotContaining']
+#    input text     //input[@formcontrolname='FeatureNotContaining']     ${Feature_not_containing}
+
+Enter input in the not containing product field
+    [Arguments]     ${Product}
+    wait until element is visible   //input[@formcontrolname='ProductNotContaining']     ${wait_time}
+    wait until element is enabled   //input[@formcontrolname='ProductNotContaining']     ${wait_time}
+    click element   //input[@formcontrolname='ProductNotContaining']
+    input text      //input[@formcontrolname='ProductNotContaining']     ${Product}
+
+Enter input in the not containing description field
+    [Arguments]     ${Description_not_containing}
+    wait until element is visible   //input[@formcontrolname='DescriptionNotContaining']     ${wait_time}
+    wait until element is enabled   //input[@formcontrolname='DescriptionNotContaining']    ${wait_time}
+    click element   //input[@formcontrolname='DescriptionNotContaining']
+    input text      //input[@formcontrolname='DescriptionNotContaining']     ${Description_not_containing}
+
+Enter input in the not containing feature field
+    [Arguments]     ${Feature_not_containing}
+    wait until element is visible   //input[@formcontrolname='FeatureNotContaining']     ${wait_time}
+    wait until element is enabled   //input[@formcontrolname='FeatureNotContaining']    ${wait_time}
+    click element   //input[@formcontrolname='FeatureNotContaining']
+    input text     //input[@formcontrolname='FeatureNotContaining']     ${Feature_not_containing}
+
+Click on the technology group row of the table inside advanced search of not conrtaining fields
+    Execute JavaScript    document.querySelector('.bg-white.location-list-qa >tr:nth-child(3) >td:nth-child(2) >div').scrollIntoView(true);
+    Click Element    css:.bg-white.location-list-qa >tr:nth-child(2) >td:nth-child(2) >div
+
+Click on reset icon while adding technology
+    wait until element is visible   css:.position-absolute.position-reset      ${wait_time}
+    wait until element is enabled   css:.position-absolute.position-reset     ${wait_time}
+    click element   css:.position-absolute.position-reset
+    sleep   ${search_sleep}
+
+Verify the invisibility of product after clicking on cross icon
+    wait until element is not visible   //div[contains(@class,'full-width-field')]//label[normalize-space()='Product']//following-sibling::input[@title='ZZ123 - Zz - Zz']      ${wait_time}
+
+Verify the invisibility of brand after clicking on reset icon
+    wait until element is visible      //ng-select[contains(@class,'qa-brands')]//div//div//div[normalize-space()='Select or Search Brand']      ${wait_time}
+
+Verify the invisibility of technology type after clicking on reset icon
+    wait until element is not visible      //div[contains(@class,'full-width-field')]//ng-select[contains(@class,'qa-TechType')]//following-sibling::div//span[normalize-space()='Hardware']      ${wait_time}
+
+Verify the visibility of assign to field
+    wait until element is visible   //div[@class='full-width-field']//following-sibling::div//span[normalize-space()='John Abram']       ${wait_time}
+    wait until element is enabled   //div[@class='full-width-field']//following-sibling::div//span[normalize-space()='John Abram']        ${wait_time}
+
+Enter input in the cancellation notice period field
+    [Arguments]     ${cancellation}
+    wait until element is visible   css:#TECHDYNA_12     ${wait_time}
+    wait until element is enabled   css:#TECHDYNA_12    ${wait_time}
+    click element   css:#TECHDYNA_12
+    clear element text      css:#TECHDYNA_12
+    input text      css:#TECHDYNA_12     ${cancellation}
+
+Verify the validation when entering negative value in cancellation notice period field
+    wait until element is visible   //span[contains(text(),' Please enter natural numbers only.')]    ${wait_time}
+    wait until element is enabled   //span[contains(text(),' Please enter natural numbers only.')]    ${wait_time}
+
+Verify status is visible of added technology
+    wait until element is visible   //td[normalize-space()='Active']    ${wait_time}
+
+Get Inner Text of Brand under product information tab
+   ${input_text}=    Execute JavaScript    return document.querySelector("input[id*='BrandName']").value
+    Log To Console    Inner Text of Input Field: ${input_text}
+    set global variable     ${input_text}
+    should be equal    ${input_text}     ${generated_BrandName}
+
+Wait until brand loder is invisible
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+     wait until element is not visible   //input[@id='brandselect']//ancestor::ng-select[@id='BrandName']//following-sibling::div[contains(@class,'spinner-loader')]    ${wait_time}
+
+Get inner text of description under product information
+    ${textarea_value}=    Get Value    css=div[class*='welcome-main'] textarea#ProductDescription
+    Log To Console    Value of Textarea: ${textarea_value}
+    set global variable     ${textarea_value}
+    should be equal    ${textarea_value}     This is the description of new product added.
+
+Get Inner Text of Product under product information tab
+   ${input_text}=    Execute JavaScript    return document.querySelector("input[id*='ProductId']").value
+    Log To Console    Inner Text of Input Field: ${input_text}
+    set global variable     ${input_text}
+    should be equal    ${input_text}     ${generated_product}
+
+Get inner text of feature under product information
+    ${textarea_value}=    Get Value    css=div[class*='welcome-main'] textarea#ProductFeatures
+    Log To Console    Value of Textarea: ${textarea_value}
+    set global variable     ${textarea_value}
+    should be equal    ${textarea_value}     This is the features of new product added.
