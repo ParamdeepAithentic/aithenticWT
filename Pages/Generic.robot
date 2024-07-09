@@ -61,7 +61,7 @@ ${wait_time}       60
 ${yop_sleep}       10
 ${search_sleep}       1
 
-${CASE}        qa      #qa , uat , pre-prod
+${CASE}        uat      #qa , uat , pre-prod
 
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
 
@@ -98,7 +98,7 @@ Set UAT Variables
     Set Suite Variable    ${admin_url}        https://uat-admin.aithentic.com/
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
-    Set Suite Variable    ${browser_name}         firefox
+    Set Suite Variable    ${browser_name}         headlessfirefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
     Set Suite Variable    ${discovered_asset_brand}                 Dell Inc.
     Set Suite Variable    ${discovered_existing_brand}              Apple Inc.
