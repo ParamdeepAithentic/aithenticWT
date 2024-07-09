@@ -140,7 +140,7 @@ Compose Message invite user test
     Generic.Verify your current page contains this text     Technology
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  8  ${pageHeading}   Page Load - Total load time from clicking technology option from side listing to technoloy page listing      8    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  8  ${pageHeading}   Page Load - Total load time from clicking technology option from side listing to technology page listing      8    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 
     ${StartTime1} =     Get Current Time in Milliseconds
@@ -151,7 +151,7 @@ Compose Message invite user test
     Generic.Verify your current page contains this text     Add New Technology
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  9  ${pageHeading}   Page Load - Total load time from clicking add new technology option from from action dropdown to add technoloy      9    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  9  ${pageHeading}   Page Load - Total load time from clicking add new technology option from from action dropdown to add technology      9    ${pageTime}     ${ActualTime}    PageLoad_Time
 
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       ${generate_BusinessName}
@@ -363,7 +363,7 @@ Compose Message invite user test
     ${StartTime1} =     Get Current Time in Milliseconds
     SubscriptionPage.Click on complete process button
     Generic.Verify your current page location contains     welcome
-    Generic.Verify your current page contains this text     You're almost there...
+    Generic.Verify your current page contains this text     You’re almost there…
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  17  ${pageHeading}   Page Load - Total Page Load Time of Billing Payment to Welcome Page      17    ${pageTime}     ${ActualTime}    PageLoad_Time
