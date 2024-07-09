@@ -61,7 +61,7 @@ ${wait_time}       60
 ${yop_sleep}       10
 ${search_sleep}       1
 
-${CASE}        uat      #qa , uat , pre-prod
+${CASE}        qa      #qa , uat , pre-prod
 
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
 
@@ -83,6 +83,12 @@ Set QA Variables
     Set Suite Variable    ${browser_name}         headlessfirefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
     Set Suite Variable    ${discovered_asset_brand}                 MSI
+    Set Suite Variable    ${existing_mac}                       D8:CB:8A:CA:6A:39
+    Set Suite Variable    ${discovered_existing_brand}          QABrand555
+    Set Suite Variable    ${discovered_existing_product}        QAHardwareProduct
+    Set Suite Variable    ${discovered_existing_department}    Customer Support
+    Set Suite Variable    ${discovered_IP}   192.168.18.23
+    Set Suite Variable    ${discovery_asset_list_brand}       Apple, Inc.
 
 Set UAT Variables
     Set Suite Variable    ${url}    https://uat-app.aithentic.com/
@@ -94,7 +100,12 @@ Set UAT Variables
     Set Suite Variable    ${admin_password}       Admin@123
     Set Suite Variable    ${browser_name}         firefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
-    Set Suite Variable    ${discovered_asset_brand}                 Apple Inc
+    Set Suite Variable    ${discovered_asset_brand}                 Dell Inc.
+    Set Suite Variable    ${discovered_existing_brand}              Apple Inc.
+    Set Suite Variable    ${discovered_existing_product}            Macmini9,1
+    Set Suite Variable    ${discovered_existing_department}        Quality Assurance
+    Set Suite Variable    ${discovered_IP}    00:17:61:10:C6:A1
+    Set Suite Variable    ${discovery_asset_list_brand}     AKKA Germany GmbH
 
 Set Pre-Prod Variables
     Set Suite Variable    ${url}    https://pre-prod-app.aithentic.com/
