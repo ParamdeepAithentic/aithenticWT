@@ -1934,6 +1934,7 @@ Click on the attachment tab under technology
     Switch Window       NEW
     Generic.Verify your current page location contains    amazonaws
     Generic.Verify your current page location contains    .pdf
+    Generic.Verify your current page contains this text    Dummy PDF file
     Switch Window       Main
     TechnologyPage.Download the file by clicking on download icon over file    .jpg
     Sleep    ${yop_sleep}
@@ -1976,6 +1977,7 @@ Upload file: Image and Document files while adding Technology
     Switch Window       NEW
     Generic.Verify your current page location contains    amazonaws
     Generic.Verify your current page location contains    .pdf
+    Generic.Verify your current page contains this text    Dummy PDF file
     Switch Window       Main
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
@@ -2030,6 +2032,7 @@ Upload file: Image and Document files while Edit Technology
     Switch Window       NEW
     Generic.Verify your current page location contains    amazonaws
     Generic.Verify your current page location contains    .pdf
+    Generic.Verify your current page contains this text    Dummy PDF file
     Switch Window       Main
     TechnologyPage.Click on update button of edit_technology page      Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
@@ -2076,6 +2079,7 @@ Upload file: Image and document files while Clone the Technology
     Switch Window       NEW
     Generic.Verify your current page location contains    amazonaws
     Generic.Verify your current page location contains    .pdf
+    Generic.Verify your current page contains this text    Dummy PDF file
     Switch Window       Main
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully

@@ -570,11 +570,13 @@ Upload Image and Document File while Add Discovery Asset
         Switch Window       NEW
         Generic.Verify your current page location contains    amazonaws
         Generic.Verify your current page location contains    .pdf
+        Generic.Verify your current page contains this text    Dummy PDF file
+        Sleep    ${yop_sleep}
         Switch Window       aithentic | Add Discovery Asset
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window       aithentic | Service Now Newly-Discovered
+        Switch Window       aithentic | Sentinel One Newly-Discovered
         Generic.Refresh the existing page
          OCS.Choose Tab under Asset Discovery    agent-discovery
         Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -684,11 +686,13 @@ Upload Image and Document File while Add component as an asset from Agent Discov
         Switch Window       NEW
         Generic.Verify your current page location contains    amazonaws
         Generic.Verify your current page location contains    .pdf
+        Generic.Verify your current page contains this text    Dummy PDF file
+        Sleep    ${yop_sleep}
         Switch Window       aithentic | Add Discovery Asset
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window       aithentic | Service Now Newly-Discovered
+        Switch Window       aithentic | Sentinel One Newly-Discovered
         Generic.Refresh the existing page
         OCS.Choose Tab under Asset Discovery    agent-discovery
         Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -1607,11 +1611,13 @@ Upload Image and Document file during Add Asset with IP address from Agent Disco
         Switch Window       NEW
         Generic.Verify your current page location contains    amazonaws
         Generic.Verify your current page location contains    .pdf
+        Generic.Verify your current page contains this text    Dummy PDF file
+        Sleep    ${yop_sleep}
         Switch Window       aithentic | Add Discovery Asset
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window       aithentic | Service Now Newly-Discovered
+        Switch Window       aithentic | Sentinel One Newly-Discovered
         Generic.Verify your current page location contains      discovery-assets
         Generic.select the option from the side menu        Technology
         Generic.Verify your current page location contains      technology-list
