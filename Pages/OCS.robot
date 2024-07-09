@@ -255,9 +255,9 @@ Click on Plus icon under table
     Click Element   (//i[@title='Add as an Asset'])[11]
 
 Click on plus icon under table of agent discovery
-    Wait Until Element Is Visible     (//i[@title='Add as an Asset'])[${plus_icon}]         ${wait_time}
-    wait until element is enabled     (//i[@title='Add as an Asset'])[${plus_icon}]      ${wait_time}
-    Click Element   (//i[@title='Add as an Asset'])[${plus_icon}]
+    Wait Until Element Is Visible     //h5[normalize-space()='${agentDiscovery_TagName}']//parent::div//td[normalize-space()='View']//following-sibling::td//i         ${wait_time}
+    wait until element is enabled     //h5[normalize-space()='${agentDiscovery_TagName}']//parent::div//td[normalize-space()='View']//following-sibling::td//i      ${wait_time}
+    Click Element   //h5[normalize-space()='${agentDiscovery_TagName}']//parent::div//td[normalize-space()='View']//following-sibling::td//i
 
 Choose option from brand on Add technology Page
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}

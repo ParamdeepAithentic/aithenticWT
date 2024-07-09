@@ -56,7 +56,8 @@ ${click_countryTag}     css:.iti__arrow
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
-${wait_time}        60
+
+${wait_time}       60
 ${yop_sleep}       10
 ${search_sleep}       1
 
@@ -79,7 +80,7 @@ Set QA Variables
     Set Suite Variable    ${admin_url}        https://qa-admin.aithentic.com/
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
-    Set Suite Variable    ${browser_name}         firefox
+    Set Suite Variable    ${browser_name}         headlessfirefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
     Set Suite Variable    ${discovered_asset_brand}                 MSI
     Set Suite Variable    ${existing_mac}                       D8:CB:8A:CA:6A:39
@@ -88,7 +89,6 @@ Set QA Variables
     Set Suite Variable    ${discovered_existing_department}    Customer Support
     Set Suite Variable    ${discovered_IP}   192.168.18.23
     Set Suite Variable    ${discovery_asset_list_brand}       Apple, Inc.
-    Set Suite Variable    ${plus_icon}     1
 
 Set UAT Variables
     Set Suite Variable    ${url}    https://uat-app.aithentic.com/
@@ -106,7 +106,6 @@ Set UAT Variables
     Set Suite Variable    ${discovered_existing_department}        Quality Assurance
     Set Suite Variable    ${discovered_IP}    00:17:61:10:C6:A1
     Set Suite Variable    ${discovery_asset_list_brand}     AKKA Germany GmbH
-    Set Suite Variable    ${plus_icon}     2
 
 Set Pre-Prod Variables
     Set Suite Variable    ${url}    https://pre-prod-app.aithentic.com/
@@ -174,6 +173,7 @@ click on the button
 
 click on the button link
     [Arguments]    ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible        //a[normalize-space()='${option}']        ${wait_time}
     wait until element is enabled      //a[normalize-space()='${option}']          ${wait_time}
     click element       //a[normalize-space()='${option}']
