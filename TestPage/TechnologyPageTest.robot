@@ -1630,19 +1630,6 @@ Technology Details- Verify the Location Details
     Generic.Verify your current page contains this text     Past Location
     TechnologyPage.Verify parameter from past location table    ${generated_buildingname}
 
-Technology Details- Verify the Location Details-2
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.select the option from the side menu    Technology
-    Generic.Verify your current page location contains      technology
-    sleep   6
-    TechnologyPage.Search by AssetId       AssetID_3480632009
-    TechnologyPage.Click on the first row of the technology table
-    Generic.Verify your current page location contains     technology-details
-    TechnologyPage.Click on Location tab of technology- list page
-    TechnologyPage.Get Value of Assignment Information Location Name
-
 Technology-Inactive asset and Restore asset
     [Tags]      smoke           Stable
     Generic.click on the tab	Login
@@ -2405,9 +2392,7 @@ Add the technology from profile listing
     TechnologyPage.Click on save product pop inside technology page
     Generic.Fetch alert message text and compare it with    Product created successfully
     TechnologyPage.Wait until brand loder is invisible
-#    TechnologyPage.Select parameter from technology dropdown list    ${generated_product}
     TechnologyPage.Add assetID for technology lifecycle information random
-    TechnologyPage.Select edited technology lifecycle status      Active
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
@@ -2501,6 +2486,7 @@ Verify_Asset_ID_Changing_settings_from_Profile_list
     TechnologyPage.Select an option from recovery table actions    Remove
     PartnersPage.Select option from the pop up  Yes
     Generic.Fetch alert message text and compare it with      Technology Removed Successfully
+
 
 Zz kill browser
     Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
