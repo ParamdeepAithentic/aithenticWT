@@ -722,5 +722,26 @@ Technology Bulk import
     Generic.Wait until table get load
 
 
+Verify Bulk Import on the Technology Page by adding all parameters
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains     technology-list
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.click on bulk import under action button of technology
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Data-Wizard
+    Bulk_Import_ExportPage.click on checkbox under technology bulk import
+    Bulk_Import_ExportPage.click on all checkbox under technology bulk import        Any new department names
+    Bulk_Import_ExportPage.click on all checkbox under technology bulk import       - Location Names
+    Bulk_Import_ExportPage.click on all checkbox under technology bulk import       Admin, Asset managers and Asset users.
+    Bulk_Import_ExportPage.click on all checkbox under technology bulk import       - Create Brands
+    Bulk_Import_ExportPage.click on all checkbox under technology bulk import       - Create Products
+    Bulk_Import_ExportPage.click on all checkbox under technology bulk import       -All partners (manufacturer, supplier & support partners)
+    Generic.click on the button     Next
+
+
+
 Zz kill browser
     Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

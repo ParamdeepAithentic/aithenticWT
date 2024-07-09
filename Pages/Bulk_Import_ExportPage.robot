@@ -666,4 +666,13 @@ Click on confirm warning button after update
     click element   css:.qa-confirm-technology-bulk-edit-warning
     wait until element is not visible       ${shadow}          ${wait_time}
 
+click on all checkbox under technology bulk import
+    [Arguments]     ${option}
+    wait until element is visible   //label[contains(text(),'${option}')]      ${wait_time}
+    wait until element is enabled   //label[contains(text(),'${option}')]      ${wait_time}
+    click element   //label[contains(text(),'${option}')]
+    wait until element is not visible       ${loaderIcon}       ${wait_time}
+
+click
+
 
