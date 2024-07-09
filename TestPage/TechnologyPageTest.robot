@@ -1602,19 +1602,6 @@ Technology Details- Verify the Location Details
     Generic.Verify your current page contains this text     Past Location
     TechnologyPage.Verify parameter from past location table    ${generated_buildingname}
 
-#Technology Details- Verify the Location Details-2
-#    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
-#    Generic.select the option from the side menu    Technology
-#    Generic.Verify your current page location contains      technology
-#    sleep   6
-#    TechnologyPage.Search by AssetId       AssetID_3480632009
-#    TechnologyPage.Click on the first row of the technology table
-#    Generic.Verify your current page location contains     technology-details
-#    TechnologyPage.Click on Location tab of technology- list page
-#    TechnologyPage.Get Value of Assignment Information Location Name
-
 Technology-Inactive asset and Restore asset
     [Tags]      smoke
     Generic.click on the tab	Login
