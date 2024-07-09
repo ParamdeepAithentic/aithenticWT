@@ -27,7 +27,7 @@ Resource        ../Pages/SubscriptionPage.robot
 Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
-Resource        ../Pages/LoginAPI.robot
+Resource        ../Pages/LoginPage.robot
 Resource        ../Pages/MemberPage.robot
 Resource        ../Pages/OCS.robot
 Resource        ../Pages/BillingPage.robot
@@ -35,7 +35,10 @@ Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
 Resource        ../Pages/SortingPage.robot
 Resource        ../Pages/Bulk_Import_ExportPage.robot
-
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
+Resource        ../Pages/UnselectAssetAPI.robot
 *** Variables ***
 ${TMFname}     css:#FirstName
 ${TMLname}     css:#LastName
@@ -58,6 +61,7 @@ Click on add team member action button
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible      ${teamMember_Action_btn}      ${wait_time}
     wait until element is enabled      ${teamMember_Action_btn}      ${wait_time}
+    sleep   ${search_sleep}
     click element      ${teamMember_Action_btn}
 
 Select option from team member action menu
@@ -70,6 +74,7 @@ Choose option after clicking on Action button
     wait until element is enabled       //a[@title='${option}']
     wait until element is visible       //a[@title='${option}']
     click element       //a[@title='${option}']
+    sleep   ${search_sleep}
 
 Enter team member first name
     ${random_string} =    Generate Random String       10      [NUMBERS]
@@ -79,6 +84,18 @@ Enter team member first name
     log to console      ${generated_TMFname}
     set global variable       ${generated_TMFname}
 
+Enter team member first name self
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       ${TMFname}     ${wait_time}
+    input text   ${TMFname}    ${option}
+
+Enter team member last name self
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       ${TMLname}     ${wait_time}
+    input text   ${TMLname}    ${option}
+
 Enter team member last name
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_TMLname}=    Catenate    TMLast_${random_string}
@@ -87,13 +104,19 @@ Enter team member last name
     log to console      ${generated_TMLname}
     set global variable  ${generated_TMLname}
 
-
 Enter team member business email
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_TMbusinessEmail}=    Catenate    TMBusinessEmail_${random_string}@yopmail.net
     wait until element is visible       ${TMBusinessEmail}    ${wait_time}
     input text   ${TMBusinessEmail}   ${generated_TMbusinessEmail}
     log to console      ${generated_TMbusinessEmail}
+    Set Global Variable    ${generated_TMbusinessEmail}
+
+Enter team member business email self
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}  ${wait_time}
+    wait until element is visible       ${TMBusinessEmail}    ${wait_time}
+    input text   ${TMBusinessEmail}   ${option}
 
 Enter team member business email_mailinator
     ${random_string} =    Generate Random String       10      [NUMBERS]
@@ -101,6 +124,7 @@ Enter team member business email_mailinator
     wait until element is visible       ${TMBusinessEmail}    ${wait_time}
     input text   ${TMBusinessEmail}   ${generated_TMbusinessEmail}
     log to console      ${generated_TMbusinessEmail}
+    Set Global Variable    ${generated_TMbusinessEmail}
 
 Enter team member business email with cool fr nf email
     ${random_string} =    Generate Random String       10      [NUMBERS]
@@ -118,6 +142,8 @@ Click on team member department
 
 Click on add here in department field
     [Arguments]    ${option}
+    wait until element is not visible       //span[normalize-space()='Please enter a valid Mobile Number']     ${wait_time}
+    Sleep       ${search_sleep}
     Generic.click on the tab    ${option}
 #    wait until element is visible   //a[normalize-space()='Click here to add']      ${wait_time}
 #    wait until element is enabled        //a[normalize-space()='Click here to add']      ${wait_time}
@@ -147,6 +173,7 @@ Select team member location
 
 Save the team member form
     [Arguments]    ${option}
+    wait until element is not visible       //span[normalize-space()='Please enter a valid Mobile Number']    ${wait_time}
     wait until element is visible     css:.${option}-member-qa       ${wait_time}
     wait until element is enabled     css:.${option}-member-qa       ${wait_time}
     click element   css:.${option}-member-qa
@@ -219,6 +246,7 @@ Click on search by brand, product and asset id of asset history via team member
 verify status of first name in member list
     [Arguments]     ${option}
     wait until element is visible   //td[normalize-space()='${option}']     ${wait_time}
+
 Enter assign to field
     [Arguments]     ${option}
     wait until element is visible   //td[normalize-space()='${option}']     ${wait_time}
@@ -232,6 +260,7 @@ Click on convert to team member confirm pop up
     wait until element is enabled   css:.qa-convert-assignee-tm-confirm     ${wait_time}
     sleep   ${search_sleep}
     click element   css:.qa-convert-assignee-tm-confirm
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Click on asset history tab under team member
     wait until element is visible    css:.asset-history-qa   ${wait_time}
@@ -274,3 +303,61 @@ Create random employee id
     wait until element is enabled       css:#employeeId    ${wait_time}
     input text   css:#employeeId   ${generated_memberEmpID}
     set global variable    ${generated_memberEmpID}
+
+Download the selected extension file of team member
+    [Arguments]    ${option}
+    wait until element is visible  //a[normalize-space()='Export as ${option}']     ${wait_time}
+    wait until element is enabled   //a[normalize-space()='Export as ${option}']     ${wait_time}
+    click element   //a[normalize-space()='Export as ${option}']
+#    sleep   ${search_sleep}
+    Wait Until Element Is Not Visible    //a[normalize-space()='Export as ${option}']      ${wait_time}
+
+
+#Verify the status of team member
+#    [Arguments]    ${option}
+#    wait until element is visible       css:thead tr       ${wait_time}
+#    wait until element is enabled      //tbody//tr[1]//td[6]     ${wait_time}
+#    ${status_text}=     Get text        //tbody//tr[1]//td[6]
+#    Log To Console      ${status_text}
+#    Set Global Variable         ${status_text}
+#    Should Be Equal    ${status_text}       ${option}
+
+Enter team member first name while editing
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_Tmfname}=    Catenate    tmfname_${random_string}
+    wait until element is visible       css:#firstName     ${wait_time}
+    input text   css:#firstName    ${generated_Tmfname}
+    log to console      ${generated_Tmfname}
+    set global variable       ${generated_Tmfname}
+
+Enter team member last name while editing
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_Tmlname}=    Catenate    TMLast_${random_string}
+    wait until element is visible       css:#lastName    ${wait_time}
+    input text   css:#lastName   ${generated_Tmlname}
+    log to console      ${generated_Tmlname}
+    set global variable  ${generated_Tmlname}
+
+Click on remove option under three dots
+    wait until element is visible       css:.member-remove-qa    ${wait_time}
+    wait until element is visible       css:.member-remove-qa   ${wait_time}
+    click element       css:.member-remove-qa
+
+Select option from remove TM warning pop-up
+    [Arguments]    ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       css:.confirm-${option}-members-qa       ${wait_time}
+    wait until element is enabled       css:.confirm-${option}-members-qa       ${wait_time}
+    click element       css:.confirm-${option}-members-qa
+    TeamMemberPage.Close the remove warning pop-up      ## have to remove this line once fixed from dev side
+
+Close the remove warning pop-up
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible      //h5[normalize-space()='Remove Team-Member']//parent::div//button[contains(@class,'close')]      ${wait_time}
+    wait until element is enabled      //h5[normalize-space()='Remove Team-Member']//parent::div//button[contains(@class,'close')]        ${wait_time}
+    click element       //h5[normalize-space()='Remove Team-Member']//parent::div//button[contains(@class,'close')]
+
+Verify Team member added after delete
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible   //td[normalize-space()='${option}']     ${wait_time}

@@ -27,7 +27,7 @@ Resource        ../Pages/SubscriptionPage.robot
 Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
-Resource        ../Pages/LoginAPI.robot
+Resource        ../Pages/LoginPage.robot
 Resource        ../Pages/MemberPage.robot
 Resource        ../Pages/OCS.robot
 Resource        ../Pages/BillingPage.robot
@@ -36,6 +36,9 @@ Resource        ../Pages/I_iconPage.robot
 Resource        ../Pages/SortingPage.robot
 Resource        ../Pages/Bulk_Import_ExportPage.robot
 Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
+Resource        ../Pages/UnselectAssetAPI.robot
 
 
 *** Variables ***
@@ -107,6 +110,7 @@ Close the billing payment options module
     Wait Until Element Is Visible       css:div[id='updateCard'] button[aria-label='Close'] span    ${wait_time}
     Wait Until Element Is Enabled       css:div[id='updateCard'] button[aria-label='Close'] span     ${wait_time}
     click element       css:div[id='updateCard'] button[aria-label='Close'] span
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 
 Click on future transaction link

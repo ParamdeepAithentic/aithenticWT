@@ -26,7 +26,7 @@ Resource        ../Pages/SubscriptionPage.robot
 Resource        ../Pages/TeamMemberPage.robot
 Resource        ../Pages/MessagePage.robot
 Resource        ../Pages/LocationPage.robot
-Resource        ../Pages/LoginAPI.robot
+Resource        ../Pages/LoginPage.robot
 Resource        ../Pages/MemberPage.robot
 Resource        ../Pages/OCS.robot
 Resource        ../Pages/BillingPage.robot
@@ -34,6 +34,10 @@ Resource        ../Pages/ReportsPage.robot
 Resource        ../Pages/I_iconPage.robot
 Resource        ../Pages/SortingPage.robot
 Resource        ../Pages/Bulk_Import_ExportPage.robot
+Resource        ../Pages/Admin_PanelPage.robot
+Resource        ../Pages/PaginationPage.robot
+Resource        ../Pages/DisconnectConnectorAPI.robot
+Resource        ../Pages/UnselectAssetAPI.robot
 
 Test Setup      open the browser with the url
 Test Teardown   Close Browser session
@@ -46,21 +50,22 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Compose Message invite user test
-    [Tags]      Sanity      Smoke       Time     rerun
+    [Tags]      Sanity      Smoke       Time     rerun      Unstable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
 
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  3  ${pageHeading}   Page Load - Total Load Time of Partner Page      3    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Generic.Verify your current page contains this text     Partners
+    Calculate Running time  3  ${pageHeading}   Page Load - Total load time from clicking partner option from side listing to partner listing page      3    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 #-------------------------- PARTNER--------------------------------------------------------------
-#    LoginAPI.Fetch the refresh token from the login api
+#    LoginPage.Fetch the refresh token from the login api
     ReplaceDomainAPI.Replace Domain
 
     ${StartTime1} =     Get Current Time in Milliseconds
@@ -68,7 +73,8 @@ Compose Message invite user test
     Generic.Verify your current page location contains      addpartner
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  4  ${pageHeading}   Page Load - Total Load Time of Add Partner Page      4    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Generic.Verify your current page contains this text     Add New Partner
+    Calculate Running time  4  ${pageHeading}   Page Load - Total load time from clicking add partner button from partner listing to add partner page      4    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 
     PartnersPage.Select partner type of new partner     Manufacturer
@@ -76,6 +82,7 @@ Compose Message invite user test
 #    PartnersPage.Enter partner business URL      ${generate_BusinessName}
     PartnersPage.Enter partner business URL     yopmail
     PartnersPage.Select partner country       United States
+    sleep   ${search_sleep}
 
 
 #-------------------------- CONTACT --------------------------------------------------------------
@@ -84,7 +91,8 @@ Compose Message invite user test
     PartnersPage.Enter random contact person
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  5  ${pageHeading}   Page Load - Total Page Load Time of Add Contact      5    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Generic.Verify your current page contains this text     Contact Person
+    Calculate Running time  5  ${pageHeading}   Page Load - Total load time from clicking add new contact and enter contact person name under add partner      5    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 #    PartnersPage.Enter contact business email    ${generate_PersonName}      ${generate_BusinessName}
     PartnersPage.Enter contact business email    ${generate_PersonName}     yopmail
@@ -102,7 +110,8 @@ Compose Message invite user test
     Generic.Verify your current page location contains      product
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  6  ${pageHeading}   Page Load - Total Load Time of Product Listing Page      6    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Generic.Verify your current page contains this text     Added Products
+    Calculate Running time  6  ${pageHeading}   Page Load - Total load time from clicking product option from profile listing to product listing page      6    ${pageTime}     ${ActualTime}    PageLoad_Time
 
     DashboardPage.Click on action button
     DashboardPage.Click add product button
@@ -116,9 +125,10 @@ Compose Message invite user test
     DashboardPage.Select product technology type     Hardware
     DashboardPage.Select product technology group     Applications
     DashboardPage.Save added product details
+    Generic.Verify your current page contains this text     Added Products
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  7  ${pageHeading}   Page Load - Total Load Time of Product Details pop up      7    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  7  ${pageHeading}   Page Load - Total load time of filling the add product details form under add product     7    ${pageTime}     ${ActualTime}    PageLoad_Time
 
     Generic.Fetch alert message text and compare it with        Product created successfully
     DashboardPage.Verify product added    ${generated_product}
@@ -127,9 +137,10 @@ Compose Message invite user test
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
+    Generic.Verify your current page contains this text     Technology
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  8  ${pageHeading}   Page Load - Total Load Time of Technology Page      8    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  8  ${pageHeading}   Page Load - Total load time from clicking technology option from side listing to technoloy page listing      8    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 
     ${StartTime1} =     Get Current Time in Milliseconds
@@ -137,9 +148,10 @@ Compose Message invite user test
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
+    Generic.Verify your current page contains this text     Add New Technology
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  9  ${pageHeading}   Page Load - Total Load Time of Add Technology Page      9    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  9  ${pageHeading}   Page Load - Total load time from clicking add new technology option from from action dropdown to add technoloy      9    ${pageTime}     ${ActualTime}    PageLoad_Time
 
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       ${generate_BusinessName}
@@ -174,9 +186,10 @@ Compose Message invite user test
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.select the option from the side menu    Contracts
     Generic.Verify your current page location contains      contracts
+    Generic.Verify your current page contains this text     Contracts
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  10  ${pageHeading}   Page Load - Total Load Time of Contracts Page      10    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  10  ${pageHeading}   Page Load - Total load time from clicking contract option from side listing to contract page listing      10    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 
     ContractsPage.Click on create new contract button
@@ -184,9 +197,10 @@ Compose Message invite user test
     ${StartTime1} =     Get Current Time in Milliseconds
     ContractsPage.Select type of contract     Dynamic Contract
     Generic.Verify your current page location contains      generate-contract
+    Generic.Verify your current page contains this text     Generate New Contract
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  11  ${pageHeading}   Page Load - Total Page Load Time of Add Dynamic Contracts Page      11    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  11  ${pageHeading}   Page Load - Total load time from clicking Dynamic Contract option from pop up to generate new contract page      11    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 
     ContractsPage.Enter contract type      SmartShare_Manufacturer
@@ -232,9 +246,10 @@ Compose Message invite user test
     Switch Window       aithentic | Register
 
     Generic.Verify your current page location contains      register
+    Generic.Verify your current page contains this text     Become a Registered Member
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  12  ${pageHeading}   Page Load - Total Load Time of Become a Registered Member Page from Yopmail Page      12    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  12  ${pageHeading}   Page Load - Total load time of become a registered member page from yopmail page      12    ${pageTime}     ${ActualTime}    PageLoad_Time
 #----------------------------------REGISTER MEMBER--------------------------------------------------------------
 
     RegisterMember.Fill first name for partner register member      balwinder
@@ -259,9 +274,10 @@ Compose Message invite user test
     sleep       ${yop_sleep}
     Switch Window       aithentic | Create - Account
     Generic.Verify your current page location contains     create-account
+    Generic.Verify your current page contains this text     Create your user account
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  13  ${pageHeading}   Page Load - Total Load Time of Create your user account Page from Yopmail Page      13    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  13  ${pageHeading}   Page Load - Total load time of Create your user account Page from Yopmail Page      13    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 #----------------------------------------USER ACCOUNT---------------------------------------------------
     UserAccount.Enter the password      Paramdeep@112
@@ -290,9 +306,10 @@ Compose Message invite user test
     Yopmail.Get verification OTP from email    Your passcode is
     sleep       ${yop_sleep}
     Switch Window   aithentic | OTP
+    Generic.Verify your current page contains this text     6-digit code
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  14  ${pageHeading}   Page Load - Total Load Time of Two-Factor Authentication Page from Yopmail Page      14    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  14  ${pageHeading}   Page Load - Total load time of Two-Factor Authentication Page from Yopmail Page      14    ${pageTime}     ${ActualTime}    PageLoad_Time
 #
 #    Switch Window   aithentic | Login
 #    sleep       2
@@ -305,6 +322,7 @@ Compose Message invite user test
     TwoFactorAuth.Click verification button
 #--------------------------------------SUBSCRIPTION------------------------------------------------------------
     Generic.Verify your current page location contains     subscription
+    Generic.Verify your current page contains this text     Company Name
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  15  ${pageHeading}   Page Load - Total Page Load Time of Subscription page from OTP page     15    ${pageTime}     ${ActualTime}    PageLoad_Time
@@ -345,6 +363,7 @@ Compose Message invite user test
     ${StartTime1} =     Get Current Time in Milliseconds
     SubscriptionPage.Click on complete process button
     Generic.Verify your current page location contains     welcome
+    Generic.Verify your current page contains this text     You're almost there...
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  17  ${pageHeading}   Page Load - Total Page Load Time of Billing Payment to Welcome Page      17    ${pageTime}     ${ActualTime}    PageLoad_Time
@@ -370,6 +389,7 @@ Compose Message invite user test
 #    ContractsPage.Fetch the contract ID from the row
 #    ContractsPage.Click on the first tab row    ${generate_BusinessName}
 #    sleep   50000
+    Generic.Verify your current page contains this text     Create New Contract
     ContractsPage.Click on the first tab row of contract list page table
     Generic.Verify your current page location contains      view-smartshare
     ContractsPage.Save the contract details     Accept
@@ -389,8 +409,8 @@ Compose Message invite user test
 
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.Verify your current page location contains      management-console
-    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
+#    LandingPage.Verify you are on dashboard page
 #-------------------------- ADD NEW CONTACT----------------------------------------------------
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
@@ -414,9 +434,10 @@ Compose Message invite user test
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.select the option from the side menu    Messages
     Generic.Verify your current page location contains      message
+    Generic.Verify your current page contains this text      Message Box
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time    20  ${pageHeading}   Page Load - Total Page Load Time of Message Page      20    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time    20  ${pageHeading}   Page Load - Total Page Load Time after clicking message option from side menu to Message Page      20    ${pageTime}     ${ActualTime}    PageLoad_Time
 #-------------------------- ADD TEAM MEMBER------------------------------------------------------
 
     MessagePage.Select side option from message list    Compose
@@ -496,15 +517,17 @@ Compose Message invite user test
     TwoFactorAuth.Enter the otp     ${passcode}
     TwoFactorAuth.Click verification button
 
-    Generic.Verify your current page location contains     asset-overview
+    Generic.Verify your current page location contains     dashboard
 #--------------------------------------------END-----------------------------------------------------------
 
 
 
 Export Specificartner into Excel Doc CSV and TSV for manufacturer
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
     PartnersPage.Click new partner button
@@ -522,7 +545,7 @@ Export Specificartner into Excel Doc CSV and TSV for manufacturer
     PartnersPage.Search by business name    ${generate_BusinessName}
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .xlsx
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .xlsx
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
@@ -530,7 +553,7 @@ Export Specificartner into Excel Doc CSV and TSV for manufacturer
     PartnersPage.Search by business name    ${generate_BusinessName}
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .ods
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .ods
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
@@ -538,7 +561,7 @@ Export Specificartner into Excel Doc CSV and TSV for manufacturer
     PartnersPage.Search by business name    ${generate_BusinessName}
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .csv
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .csv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
@@ -546,7 +569,7 @@ Export Specificartner into Excel Doc CSV and TSV for manufacturer
     PartnersPage.Search by business name    ${generate_BusinessName}
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .tsv
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .tsv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
@@ -563,11 +586,11 @@ Export Specificartner into Excel Doc CSV and TSV for manufacturer
 
 
 Export Specificartner into Excel Doc CSV and TSV for Supplier
-    [Tags]      Sanity
+    [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
     PartnersPage.Click new partner button
@@ -584,7 +607,7 @@ Export Specificartner into Excel Doc CSV and TSV for Supplier
     PartnersPage.Search by business name    ${generate_BusinessName}
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .xlsx
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .xlsx
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
@@ -592,7 +615,7 @@ Export Specificartner into Excel Doc CSV and TSV for Supplier
     PartnersPage.Search by business name    ${generate_BusinessName}
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .ods
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .ods
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
@@ -600,7 +623,7 @@ Export Specificartner into Excel Doc CSV and TSV for Supplier
     PartnersPage.Search by business name    ${generate_BusinessName}
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .csv
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .csv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
@@ -608,7 +631,7 @@ Export Specificartner into Excel Doc CSV and TSV for Supplier
     PartnersPage.Search by business name    ${generate_BusinessName}
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .tsv
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .tsv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
@@ -627,11 +650,11 @@ Export Specificartner into Excel Doc CSV and TSV for Supplier
 
 
 Export Specificartner into Excel Doc CSV and TSV for Support Partner
-    [Tags]      Sanity
+    [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
     PartnersPage.Click new partner button
@@ -645,10 +668,11 @@ Export Specificartner into Excel Doc CSV and TSV for Support Partner
     PartnersPage.Click contact main save button
     Generic.Verify your current page location contains      partner-listing
     Generic.Fetch alert message text and compare it with        Partner created successfully
+    Generic.Wait until table get load
     PartnersPage.Search by business name    ${generate_BusinessName}
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .xlsx
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .xlsx
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
@@ -656,7 +680,7 @@ Export Specificartner into Excel Doc CSV and TSV for Support Partner
     PartnersPage.Search by business name    ${generate_BusinessName}
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .ods
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .ods
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
@@ -664,7 +688,7 @@ Export Specificartner into Excel Doc CSV and TSV for Support Partner
     PartnersPage.Search by business name    ${generate_BusinessName}
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .csv
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .csv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
@@ -672,7 +696,7 @@ Export Specificartner into Excel Doc CSV and TSV for Support Partner
     PartnersPage.Search by business name    ${generate_BusinessName}
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .tsv
-    PartnersPage.Confirm to export file
+    PartnersPage.Confirm to export file        confirm
     PartnersPage.Verify that the selected extension file is downloaded       .tsv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
@@ -687,10 +711,11 @@ Export Specificartner into Excel Doc CSV and TSV for Support Partner
     Generic.Fetch alert message text and compare it with        Partner updated successfully
 
 Add Manufacturer via personal detail under technology and partner
+    [Tags]       Stable
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -734,11 +759,11 @@ Add Manufacturer via personal detail under technology and partner
 
 
 Edit Manufacturer via partner
-    [Tags]      Sanity
+    [Tags]      Sanity      Stable
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -815,11 +840,11 @@ Edit Manufacturer via partner
 
 
 Deactivate Manufacturer via partner
-    [Tags]      Sanity      tt
+    [Tags]      Sanity      Stable
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -890,6 +915,7 @@ Deactivate Manufacturer via partner
     Generic.Enter phone number      India   +91     9646289871
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     Generic.click on the button     Add
+    PartnersPage.Wait for add contact pop up hide
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with    Partner updated successfully
     PartnersPage.Search by business name    ${generated_BrandName}
@@ -900,10 +926,11 @@ Deactivate Manufacturer via partner
 
 
 Activate Manufacturer via partner
+    [Tags]      Stable
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -974,6 +1001,7 @@ Activate Manufacturer via partner
     Generic.Enter phone number      India   +91     9646289871
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     Generic.click on the button     Add
+    PartnersPage.Wait for add contact pop up hide
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with    Partner updated successfully
     PartnersPage.Search by business name    ${generated_BrandName}
@@ -987,10 +1015,11 @@ Activate Manufacturer via partner
     Generic.Fetch alert message text and compare it with      Status updated successfully
 
 Remove Manufacturer from partner
+    [Tags]      Stable
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -1054,7 +1083,8 @@ Remove Manufacturer from partner
     PartnersPage.Select City        Akutan
     PartnersPage.Add new zip code of partner     56709
     PartnersPage.Update the partner information
-    Generic.Scroll the page till        700
+    PartnersPage.Wait for add address pop up hide
+    Generic.Scroll the page till    700
     PartnersPage.Click on Add new Contact of partner        Add new Contact
     PartnersPage.Enter random contact name
     PartnersPage.Enter new_business_email of contact    ${generate_PersonName}     yopmail
@@ -1079,11 +1109,11 @@ Remove Manufacturer from partner
     Generic.Fetch alert message text and compare it with      Partner deleted successfully
 
 View Details and check the details of Contract
-    [Tags]     rerun
+    [Tags]      Stable
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
     ReplaceDomainAPI.Replace Domain
     Generic.select the option from the side menu    Partners
     PartnersPage.Click new partner button
@@ -1181,3 +1211,195 @@ View Details and check the details of Contract
     PartnersPage.Verify pages with the element  Item
     PartnersPage.Click on back to contract details button link
     PartnersPage.Download the contract pdf
+
+Add_edit_deactivate_removeSupplier while adding brand
+    [Tags]      Stable
+    Generic.click on the tab	    Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      management-console
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    DashboardPage.Select an option from company details side list    Technology
+    Generic.Verify your current page location contains       technology-settings
+    ReplaceDomainAPI.Replace Domain
+    DashboardPage.Click on View Your Added Brand List
+    Generic.Verify your current page location contains      brand-list
+    DashboardPage.Click add brand button
+    DashboardPage.Create random brandName
+    DashboardPage.Add static Business Manufacturer URL      yopmail.net
+    DashboardPage.Add brand manufacturer country      United States
+    DashboardPage.Save added brand details
+    Generic.Fetch alert message text and compare it with        Brand created successfully.
+    DashboardPage.Click on main Save Button
+    Generic.select the option from the side menu    Partners
+    Generic.Verify your current page location contains      partner
+    PartnersPage.Click new partner button
+    Generic.Verify your current page location contains      addpartner
+    PartnersPage.Select partner type of new partner     Supplier
+    PartnersPage.Select partner business_name     ${generated_BrandName}
+    PartnersPage.Select partner business URL
+    PartnersPage.Select partner country       United States
+    PartnersPage.Click on Add new Address of partner        Add new Address
+    PartnersPage.Add Unique address_one of partner
+    PartnersPage.Add Unique address_two of partner
+    PartnersPage.Select State       Alaska
+    PartnersPage.Select City        Akutan
+    PartnersPage.Zip code Input     24015
+    PartnersPage.Save new Address
+    Generic.Scroll the page till        700
+    PartnersPage.Click on Add new Contact of partner        Add new Contact
+    PartnersPage.Enter random contact person
+    PartnersPage.Enter contact business email    ${generate_PersonName}     yopmail
+    Generic.Enter phone number      India   +91     9646289871
+    PartnersPage.Enter contact location      United States - Main Office - 21 - 2
+    PartnersPage.Save the new contact
+    PartnersPage.Click contact main save button
+    Generic.Fetch alert message text and compare it with    Partner created successfully
+    PartnersPage.Search by business name    ${generated_BrandName}
+    PartnersPage.Click on three dots of partners listing
+    PartnersPage.Select option from three dots of partner     Details
+    Generic.Verify your current page location contains      partner-details
+    Generic.click on the button     Edit
+    PartnersPage.click on plus icon to add another business_url
+    PartnersPage.Add second business_url        ${generated_BrandName}
+    Generic.Scroll the page till        700
+    PartnersPage.click on edit icon
+    PartnersPage.Add Unique address_one of partner
+    PartnersPage.Add new address_two of partner
+    PartnersPage.Click on cross-icon for clearing text
+    PartnersPage.Select State       Iowa
+    PartnersPage.Select City        Ackley
+    PartnersPage.Add new zip code of partner     56709
+    PartnersPage.Update the partner information
+    PartnersPage.Click on Add new Address of partner        Add new Address
+    PartnersPage.Select the partner address country        United States
+    PartnersPage.Add Unique address_one of partner
+    PartnersPage.Add new address_two of partner
+    PartnersPage.Select State         Arizona
+    PartnersPage.Select City         Ajo
+    PartnersPage.Add new zip code of partner     15321531
+    Generic.click on the button     Add
+    PartnersPage.Wait for add address pop up hide
+    sleep   ${search_sleep}
+    PartnersPage.Click on pencil icon of address and contact under partner   3
+    PartnersPage.Enter random contact name
+    PartnersPage.Enter new_business_email of contact    ${generate_PersonName}     yopmail
+    Generic.Enter phone number      India   +91     9665654657
+    PartnersPage.Enter contact location      United States - Quark city - 12 - 202
+    sleep   ${search_sleep}
+    PartnersPage.Update the partner information of edit contact
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with    Partner updated successfully
+    PartnersPage.Search by business name    ${generated_BrandName}
+    PartnersPage.Click on three dots of partners listing
+    PartnersPage.Select option from three dots of partner      Deactivate
+    PartnersPage.Select option from the pop up  Yes
+    Generic.Fetch alert message text and compare it with      Status updated successfully
+    PartnersPage.Click on three dots of partners listing
+    PartnersPage.Select option from three dots of partner      Activate
+    PartnersPage.Select option from the pop up  Yes
+    Generic.Fetch alert message text and compare it with      Status updated successfully
+    PartnersPage.Click on three dots of partners listing
+    PartnersPage.Select option from three dots of partner     Remove
+    PartnersPage.Select option from the pop up  Yes
+    Generic.Fetch alert message text and compare it with      Partner deleted successfully
+
+Add_edit_deactivate_removeSupport_partner_while_adding_brand
+    [Tags]      Stable
+    Generic.click on the tab	    Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    DashboardPage.Select an option from company details side list    Technology
+    Generic.Verify your current page location contains       technology-settings
+    ReplaceDomainAPI.Replace Domain
+    DashboardPage.Click on View Your Added Brand List
+    Generic.Verify your current page location contains      brand-list
+    DashboardPage.Click add brand button
+    DashboardPage.Create random brandName
+    DashboardPage.Add static Business Manufacturer URL      yopmail.net
+    DashboardPage.Add brand manufacturer country      Australia
+    DashboardPage.Save added brand details
+    Generic.Fetch alert message text and compare it with        Brand created successfully.
+    DashboardPage.Click on main Save Button
+    Generic.select the option from the side menu    Partners
+    Generic.Verify your current page location contains      partner
+    PartnersPage.Click new partner button
+    Generic.Verify your current page location contains      addpartner
+    PartnersPage.Select partner type of new partner     Support Partner
+    PartnersPage.Select partner business_name     ${generated_BrandName}
+    PartnersPage.Select partner business URL
+    PartnersPage.Select partner country       Australia
+    PartnersPage.Click on Add new Address of partner        Add new Address
+    PartnersPage.Add Unique address_one of partner
+    PartnersPage.Add Unique address_two of partner
+    PartnersPage.Select State       Victoria
+    PartnersPage.Select City        Albanvale
+    PartnersPage.Zip code Input     2659998
+    PartnersPage.Save new Address
+    Generic.Scroll the page till        700
+    PartnersPage.Click on Add new Contact of partner        Add new Contact
+    PartnersPage.Enter random contact person
+    PartnersPage.Enter contact business email    ${generate_PersonName}     yopmail
+    Generic.Enter phone number      India   +91     9699897854
+    PartnersPage.Enter contact location       Aland Islands
+    PartnersPage.Save the new contact
+    PartnersPage.Click contact main save button
+    Generic.Fetch alert message text and compare it with    Partner created successfully
+    PartnersPage.Search by business name    ${generated_BrandName}
+    PartnersPage.Click on three dots of partners listing
+    PartnersPage.Select option from three dots of partner     Details
+    Generic.Verify your current page location contains      partner-details
+    Generic.click on the button     Edit
+    PartnersPage.click on plus icon to add another business_url
+    PartnersPage.Add second business_url        ${generated_BrandName}
+    Generic.Scroll the page till        700
+    PartnersPage.click on edit icon
+    PartnersPage.Add Unique address_one of partner
+    PartnersPage.Add new address_two of partner
+    PartnersPage.Click on cross-icon for clearing text
+    PartnersPage.Select State        Northern Territory
+    PartnersPage.Select City         Anula
+    PartnersPage.Add new zip code of partner     581515
+    PartnersPage.Update the partner information
+    sleep   ${search_sleep}
+    PartnersPage.Click on Add new Address of partner        Add new Address
+    PartnersPage.Select the partner address country        Australia
+    PartnersPage.Add Unique address_one of partner
+    PartnersPage.Add new address_two of partner
+    PartnersPage.Select State          South Australia
+    PartnersPage.Select City          Albert Park
+    PartnersPage.Add new zip code of partner     10012354
+    Generic.click on the button     Add
+    PartnersPage.Wait for add address pop up hide
+    sleep   ${search_sleep}
+    PartnersPage.Click on pencil icon of address and contact under partner   3
+    PartnersPage.Enter random contact name
+    PartnersPage.Enter new_business_email of contact    ${generate_PersonName}     yopmail
+    Generic.Enter phone number      India   +91     9112355987
+    PartnersPage.Enter contact location      United States - Quark city - 12 - 202
+#    sleep   3s
+    PartnersPage.Update the partner information of edit contact
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with    Partner updated successfully
+    PartnersPage.Search by business name    ${generated_BrandName}
+    PartnersPage.Click on three dots of partners listing
+    PartnersPage.Select option from three dots of partner      Deactivate
+    PartnersPage.Select option from the pop up  Yes
+    Generic.Fetch alert message text and compare it with      Status updated successfully
+    PartnersPage.Click on three dots of partners listing
+    PartnersPage.Select option from three dots of partner      Activate
+    PartnersPage.Select option from the pop up  Yes
+    Generic.Fetch alert message text and compare it with      Status updated successfully
+    PartnersPage.Click on three dots of partners listing
+    PartnersPage.Select option from three dots of partner     Remove
+    PartnersPage.Select option from the pop up  Yes
+    Generic.Fetch alert message text and compare it with      Partner deleted successfully
+
+Zz kill browser
+    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
