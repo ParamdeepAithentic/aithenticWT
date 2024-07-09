@@ -86,9 +86,9 @@ Click on search icon of discovery assets
 Enter text to search discovery asset
     [Arguments]     ${option}
     wait until element is not visible   ${loaderIcon}        ${wait_time}
-    Wait Until Element Is Visible    //input[@placeholder='Search Agent/Network Discovered Assets']       ${wait_time}
-    Wait Until Element Is enabled    //input[@placeholder='Search Agent/Network Discovered Assets']       ${wait_time}
-    Input Text    //input[@placeholder='Search Agent/Network Discovered Assets']    ${option}
+    Wait Until Element Is Visible    //input[@placeholder='Search OCS Discovered Assets']       ${wait_time}
+    Wait Until Element Is enabled    //input[@placeholder='Search OCS Discovered Assets']       ${wait_time}
+    Input Text    //input[@placeholder='Search OCS Discovered Assets']    ${option}
     Sleep    ${yop_sleep}
     Wait Until Element Is Not Visible    ${loaderIcon}  ${wait_time}
     wait until element is not visible       ${shadow}          ${wait_time}
