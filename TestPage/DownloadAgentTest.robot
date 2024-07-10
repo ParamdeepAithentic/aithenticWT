@@ -488,7 +488,6 @@ Visit discovered asset list when click on No. IP discovered devices
 Zz kill browser
     [Tags]      Smoke     Sanity      Time      rerun       Stable
     Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
-    Run Process    cmd.exe    /C    taskkill /IM python.exe /F
 
 #Refresh search text on discovered asset list page
 #    Generic.click on the tab	Login

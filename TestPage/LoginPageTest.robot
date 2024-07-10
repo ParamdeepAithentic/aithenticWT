@@ -570,4 +570,3 @@ Login as Support_Partner with different roles
 Zz kill browser
     [Tags]      Smoke     Sanity      Time      rerun       Stable
     Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
-    Run Process    cmd.exe    /C    taskkill /IM python.exe /F
