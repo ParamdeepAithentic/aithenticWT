@@ -233,7 +233,7 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
-        OCS.Enter text to search discovery asset    Apple Inc
+        OCS.Enter text to search discovery asset    ${discovered_asset_brand}
         OCS.Click on the down arrow icon of discovered asset
         Generic.Scroll Window To End
         OCS.Mouse Hover over searched Discovered Assets
@@ -357,7 +357,7 @@ Verify Pagination of Product Dropdown when Add IP discovered asset
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
-        OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
+        OCS.Enter text to search discovery asset    ${discovered_IP}
         OCS.Click on the down arrow icon of discovered asset
         OCS.Mouse Hover over searched IP Assets
         OCS.Get MAC_Address by hovering over IP discovered assets   MacAddress:

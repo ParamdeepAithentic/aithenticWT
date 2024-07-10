@@ -485,9 +485,9 @@ Visit discovered asset list when click on No. IP discovered devices
     Switch Window       aithentic | Sentinel One Newly-Discovered
     Generic.Verify your current page location contains     discovery-assets
 
-Zz kill browser
-    [Tags]      Smoke     Sanity      Time      rerun       Stable    yy
-    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+#Zz kill browser
+#    [Tags]      Smoke     Sanity      Time      rerun       Stable    yy
+#    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
 
 #Refresh search text on discovered asset list page
 #    Generic.click on the tab	Login
