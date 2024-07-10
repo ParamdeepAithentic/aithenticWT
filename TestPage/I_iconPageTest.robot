@@ -226,11 +226,11 @@ Verify all i-icon of advanced search
     Generic.select the option from the side menu        Asset Discovery
     Generic.Verify your current page location contains      discovery-assets
     I_iconPage.Choose tab under Discovery Assets       network-discovery
-    Generic.Verify your current page location contains    ocs
+    Generic.Verify your current page location contains    aad
     OCS.Click on newly discovered tab under network discovery
-    Generic.Verify your current page location contains    ocs
+    Generic.Verify your current page location contains    aad
     OCS.Click on search icon of discovery assets
-    OCS.Enter text to search discovery asset   Apple Inc
+    OCS.Enter text to search discovery asset  ${discovered_asset_brand}
     Generic.Scroll Window To End
     OCS.Click on the down arrow icon of discovered asset
     OCS.Mouse Hover over searched Discovered Assets
@@ -255,7 +255,7 @@ Verify all i-icon of advanced search
     OCS.Click on save button of Add Technology Page
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
     Sleep    ${yop_sleep}
-    switch window    aithentic | Service Now Newly-Discovered
+    switch window    aithentic | Sentinel One Newly-Discovered
     Generic.Refresh the existing page
     OCS.Choose Tab under Asset Discovery    agent-discovery
     Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -314,11 +314,11 @@ Verify all i-icon of advanced search
     UnselectAssetAPI.Hit API Endpoint
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
-    Generic.Verify your current page location contains    ocs
+    Generic.Verify your current page location contains    aad
     I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.Click on search icon of discovery assets
-    OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
+    OCS.Enter text to search discovery asset    ${discovered_IP}
     Generic.Scroll Window To End
     OCS.Click on the down arrow icon of discovered asset
     OCS.Mouse Hover over searched IP Assets
@@ -458,12 +458,12 @@ Upload I-icon while adding discovery and component asset
     Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
-    Generic.Verify your current page location contains    ocs
+    Generic.Verify your current page location contains    aad
     OCS.Choose Tab under Asset Discovery    network-discovery
     OCS.Click on newly discovered tab under network discovery
-    Generic.Verify your current page location contains    ocs
+    Generic.Verify your current page location contains   aad
     OCS.Click on search icon of discovery assets
-    OCS.Enter text to search discovery asset   Apple Inc
+    OCS.Enter text to search discovery asset   ${discovered_asset_brand}
     Generic.Scroll Window To End
     OCS.Click on the down arrow icon of discovered asset
     OCS.Mouse Hover over searched Discovered Assets
@@ -482,7 +482,7 @@ Upload I-icon while adding discovery and component asset
     OCS.Click on save button of Add Technology Page
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
     Sleep    ${yop_sleep}
-    switch window    aithentic | Service Now Newly-Discovered
+    switch window    aithentic | Sentinel One Newly-Discovered
     Generic.Refresh the existing page
     OCS.Choose Tab under Asset Discovery    agent-discovery
     Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -534,11 +534,11 @@ Upload I-icon while adding IP Address
     Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
-    Generic.Verify your current page location contains    ocs
+    Generic.Verify your current page location contains    aad
     OCS.Choose Tab under Asset Discovery    network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.Click on search icon of discovery assets
-    OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
+    OCS.Enter text to search discovery asset    ${discovered_IP}
     Generic.Scroll Window To End
     OCS.Click on the down arrow icon of discovered asset
     OCS.Mouse Hover over searched IP Assets

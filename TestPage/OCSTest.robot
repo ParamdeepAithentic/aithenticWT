@@ -71,7 +71,7 @@ Search Discovered Assets
        Generic.Verify your current page location contains      dashboard
        Generic.Click on the profile name
        Generic.Select option from profile list     view-discovery
-       Generic.Verify your current page location contains    ocs
+       Generic.Verify your current page location contains    aad
        OCS.Get value of Tag_name from Agent discovery
        I_iconPage.Choose tab under Discovery Assets       network-discovery
        OCS.Click on newly discovered tab under network discovery
@@ -121,7 +121,7 @@ Search Existing Assets
         Generic.Wait until table get load
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
-        Generic.Verify your current page location contains    ocs
+        Generic.Verify your current page location contains   aad
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of Existing assets
@@ -158,7 +158,7 @@ Match Discovery and Existing Asset
         Generic.Wait until table get load
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
-        Generic.Verify your current page location contains    ocs
+        Generic.Verify your current page location contains    aad
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
@@ -338,7 +338,7 @@ Add Discovery Asset
         Generic.Verify your current page location contains      dashboard
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
-        Generic.Verify your current page location contains    ocs
+        Generic.Verify your current page location contains    aad
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
@@ -407,7 +407,7 @@ Create Asset from Add Assets Page
         Generic.Verify your current page location contains      dashboard
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
-        Generic.Verify your current page location contains    ocs
+        Generic.Verify your current page location contains    aad
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
@@ -462,7 +462,7 @@ Add component as an asset from Agent Discovery page
         Generic.Verify your current page location contains      dashboard
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
-        Generic.Verify your current page location contains    ocs
+        Generic.Verify your current page location contains    aad
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
@@ -543,7 +543,7 @@ Upload Image and Document File while Add Discovery Asset
         Generic.Verify your current page location contains      dashboard
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
-        Generic.Verify your current page location contains    ocs
+        Generic.Verify your current page location contains   aad
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
@@ -662,10 +662,10 @@ Upload Image and Document File while Add component as an asset from Agent Discov
         Generic.Verify your current page location contains      dashboard
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
-        Generic.Verify your current page location contains    ocs
+        Generic.Verify your current page location contains    aad
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
-        Generic.Verify your current page location contains    ocs
+        Generic.Verify your current page location contains   aad
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset   ${discovered_asset_brand}
         OCS.Click on the down arrow icon of discovered asset
@@ -785,7 +785,7 @@ Match IP Discovered asset with Existing asset
     Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
-    Generic.Verify your current page location contains    ocs
+    Generic.Verify your current page location contains    aad
     I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.Click on search icon of discovery assets
@@ -828,7 +828,7 @@ Match Discovery Asset with Static Existing Asset
         Generic.Verify your current page location contains      dashboard
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
-        Generic.Verify your current page location contains    ocs
+        Generic.Verify your current page location contains   aad
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
@@ -949,9 +949,9 @@ Add asset with IP Address under discovered asset list
         Generic.Verify your current page location contains      dashboard
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
-        Generic.Verify your current page location contains    ocs
+        Generic.Verify your current page location contains    aad
         OCS.Choose tab under Discovery Assets   agent-discovery
-        Generic.Verify your current page location contains    ocs
+        Generic.Verify your current page location contains   aad
         OCS.click on the value of IP discovered devices of inside table
         Sleep    ${yop_sleep}
         Switch Window       aithentic | Discovered Assets
@@ -967,9 +967,9 @@ Add asset with IP Address under discovered asset list
         Switch Window       aithentic | Discovered Assets
         Generic.Verify your current page location contains     discovery-assets-list
         TechnologyPage.Click on back to list of technology
-        Generic.Verify your current page location contains    ocs
+        Generic.Verify your current page location contains   aad
         I_iconPage.Choose tab under Discovery Assets       network-discovery
-        Generic.Verify your current page location contains    ocs
+        Generic.Verify your current page location contains    aad
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    ${hover_MAC_addressdiscoveryassetdetail}
@@ -991,9 +991,9 @@ Add asset with IP Address under discovered asset list
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
         Switch Window       aithentic | Sentinel One Newly-Discovered
-        Generic.Verify your current page location contains      ocs
+        Generic.Verify your current page location contains      aad
         OCS.Choose tab under Discovery Assets   agent-discovery
-        Generic.Verify your current page location contains   ocs
+        Generic.Verify your current page location contains   aad
         OCS.click on the value of IP discovered devices of inside table
         Sleep    ${yop_sleep}
         Switch Window       aithentic | Discovered Assets
@@ -1033,7 +1033,7 @@ Add Asset with IP address from Network Discovery Page
         Generic.Verify your current page location contains      dashboard
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
-        Generic.Verify your current page location contains    ocs
+        Generic.Verify your current page location contains  aad
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
@@ -1146,7 +1146,7 @@ Search with containing fields under advance search of discovered asset
         Generic.select the option from the side menu    Asset Discovery
         Generic.Verify your current page location contains     discovery-assets
         I_iconPage.Choose tab under Discovery Assets       network-discovery
-        Generic.Verify your current page location contains    ocs
+        Generic.Verify your current page location contains   aad
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on the down arrow icon of discovered asset
         Generic.Scroll Window To End
@@ -1276,7 +1276,7 @@ Search with containing fields under advance search of component of discovered as
         Generic.Verify your current page location contains      discovery-assets
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
-        Generic.Verify your current page location contains    ocs
+        Generic.Verify your current page location contains    aad
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset   ${discovered_asset_brand}
         OCS.Click on the down arrow icon of discovered asset
@@ -1296,7 +1296,7 @@ Search with containing fields under advance search of component of discovered as
         Sleep    ${yop_sleep}
         switch window    aithentic | Sentinel One Newly-Discovered
         OCS.Choose tab under Discovery Assets   agent-discovery
-        Generic.Verify your current page location contains      ocs
+        Generic.Verify your current page location contains      aad
         Generic.Refresh the existing page
 
         Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -1453,7 +1453,7 @@ Search with containing fields under advance search of IP Address of discovered a
         Generic.Verify your current page location contains      dashboard
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
-        Generic.Verify your current page location contains   ocs
+        Generic.Verify your current page location contains   aad
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
@@ -1597,7 +1597,7 @@ Upload Image and Document file during Add Asset with IP address from Agent Disco
         Generic.Verify your current page location contains      dashboard
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
-        Generic.Verify your current page location contains    ocs
+        Generic.Verify your current page location contains    aad
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
@@ -1695,7 +1695,7 @@ Verify cross icon an reset icon while adding IP discovered asset
         Generic.Verify your current page location contains      dashboard
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
-        Generic.Verify your current page location contains    ocs
+        Generic.Verify your current page location contains    aad
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
@@ -1732,7 +1732,7 @@ Verify reset icon while adding discovery asset
         Generic.Verify your current page location contains      dashboard
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
-        Generic.Verify your current page location contains    ocs
+        Generic.Verify your current page location contains   aad
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
@@ -1763,7 +1763,7 @@ Verify reset icon while adding component
         Generic.Verify your current page location contains      discovery-assets
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
-        Generic.Verify your current page location contains    ocs
+        Generic.Verify your current page location contains    aad
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset   ${discovered_asset_brand}
         OCS.Click on the down arrow icon of discovered asset
@@ -1783,7 +1783,7 @@ Verify reset icon while adding component
         Sleep    ${yop_sleep}
         switch window    aithentic | Sentinel One Newly-Discovered
         OCS.Choose tab under Discovery Assets   agent-discovery
-        Generic.Verify your current page location contains      ocs
+        Generic.Verify your current page location contains      aad
         Generic.Refresh the existing page
 
         Generic.Verify your current page contains this text    ${generated_AssetID}

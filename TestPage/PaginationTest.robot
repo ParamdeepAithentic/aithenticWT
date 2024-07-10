@@ -229,11 +229,11 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
         Generic.Verify your current page location contains      dashboard
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
-        Generic.Verify your current page location contains    ocs
+        Generic.Verify your current page location contains    aad
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
-        OCS.Enter text to search discovery asset    Apple Inc
+        OCS.Enter text to search discovery asset     ${discovered_asset_brand}
         OCS.Click on the down arrow icon of discovered asset
         Generic.Scroll Window To End
         OCS.Mouse Hover over searched Discovered Assets
@@ -272,7 +272,7 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
         PaginationPage.Click on save technology form button of OCS
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        switch window    aithentic | Service Now Newly-Discovered
+        switch window    aithentic | Sentinel One Newly-Discovered
         OCS.Choose tab under Discovery Assets   agent-discovery
         Generic.Verify your current page location contains      ocs
         Generic.Refresh the existing page
@@ -350,11 +350,11 @@ Verify Pagination of Product Dropdown when Add IP discovered asset
         Generic.Verify your current page location contains      dashboard
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
-        Generic.Verify your current page location contains    ocs
+        Generic.Verify your current page location contains    aad
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
-        OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
+        OCS.Enter text to search discovery asset    ${discovered_IP}
         OCS.Click on the down arrow icon of discovered asset
         OCS.Mouse Hover over searched IP Assets
         OCS.Get MAC_Address by hovering over IP discovered assets   MacAddress:
@@ -390,7 +390,7 @@ Verify Pagination of Product Dropdown when Add IP discovered asset
         PaginationPage.Click on save technology form button of OCS
         OCS.Wait for the invisiblity of alert msg       Technology created successfully
         Sleep    ${yop_sleep}
-        switch window    aithentic | Service Now Newly-Discovered
+        switch window    aithentic | Sentinel One Newly-Discovered
         Generic.Refresh the existing page
         OCS.Choose tab under Discovery Assets   agent-discovery
         Generic.Verify your current page contains this text    ${generated_AssetID}
