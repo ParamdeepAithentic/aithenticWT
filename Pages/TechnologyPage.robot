@@ -112,7 +112,7 @@ ${saveBTN}      css:button[class='btn button-green mt-0 mx-2']
 
 ######################### Do you need another asset################
 ${savePOPup}      //div[@class='modal-content ng-star-inserted']//div[@class='modal-body']
-${iamDone_BTN}      //button[text()="I'm Done,Save "]
+${iamDone_BTN}      //button[text()="Done "]
 ${Yes_BTN}      //span[contains(text(),'Yes')]
 
 ####################### search asset id #####################
