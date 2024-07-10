@@ -469,7 +469,7 @@ Network Discovery in case of no records
 
 
 Visit discovered asset list when click on No. IP discovered devices
-    [Tags]      Unstable
+    [Tags]      Unstable    yy
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
 #    LandingPage.Verify you are on dashboard page
@@ -486,9 +486,10 @@ Visit discovered asset list when click on No. IP discovered devices
     Generic.Verify your current page location contains     discovery-assets
 
 Zz kill browser
-    [Tags]      Smoke     Sanity      Time      rerun       Stable
+    [Tags]      Smoke     Sanity      Time      rerun       Stable    yy
     Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
 #    Run Process    cmd.exe    /C    taskkill /IM python.exe /F
+
 
 #Refresh search text on discovered asset list page
 #    Generic.click on the tab	Login

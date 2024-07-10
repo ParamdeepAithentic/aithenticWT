@@ -2409,7 +2409,7 @@ Add the technology from profile listing
     Generic.Fetch alert message text and compare it with      Technology Removed Successfully
 
 Verify_Asset_ID_Changing_settings_from_Profile_list
-    [Tags]      Stable
+    [Tags]      Stable    yy
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -2493,9 +2493,9 @@ Verify_Asset_ID_Changing_settings_from_Profile_list
 
 
 Zz kill browser
-    [Tags]      Smoke     Sanity      Time      rerun       Stable
+    [Tags]      Smoke     Sanity      Time      rerun       Stable    yy
     Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
-    Run Process    cmd.exe    /C    taskkill /IM python.exe /F
+#    Run Process    cmd.exe    /C    taskkill /IM python.exe /F
 
 
 
