@@ -1309,7 +1309,7 @@ Add_edit_deactivate_removeSupplier while adding brand
     Generic.Fetch alert message text and compare it with      Partner deleted successfully
 
 Add_edit_deactivate_removeSupport_partner_while_adding_brand
-    [Tags]      Stable
+    [Tags]      Stable    yy
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -1404,6 +1404,6 @@ Add_edit_deactivate_removeSupport_partner_while_adding_brand
     Generic.Fetch alert message text and compare it with      Partner deleted successfully
 
 Zz kill browser
-    [Tags]      Smoke     Sanity      Time      rerun       Stable
+    [Tags]      Smoke     Sanity      Time      rerun       Stable    yy
     Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
 #    Run Process    cmd.exe    /C    taskkill /IM python.exe /F

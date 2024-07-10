@@ -56,7 +56,7 @@ Testone
     Generic.Fix the row number
 
 Login as End_user with different roles
-    [Tags]      Stable
+    [Tags]      Stable    yy
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      enduser@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -568,5 +568,5 @@ Login as Support_Partner with different roles
     Generic.Fetch log_out alert message
 
 Zz kill browser
-    [Tags]      Smoke     Sanity      Time      rerun       Stable
+    [Tags]      Smoke     Sanity      Time      rerun       Stable    yy
     Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
