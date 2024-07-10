@@ -152,6 +152,7 @@ Match Discovery and Existing Asset
         TechnologyPage.Select parameter from brand dropdown list       QABrand555
         TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
         TechnologyPage.Add assetID for technology lifecycle information random
+        TechnologyPage.Select technology lifecycle status      Active
         TechnologyPage.Click on save technology form button
         Generic.Fetch alert message text and compare it with        Technology created successfully
         TechnologyPage.Click on save technology form pop button
@@ -192,6 +193,7 @@ Match Discovery and Existing Asset
         OCS.Edit the MAC_Address of Asset
         OCS.Edit the Serial_No. of Asset
         OCS.Edit The Host_Name of Asset
+        TechnologyPage.Select technology lifecycle status      Active
         sleep   ${search_sleep}
         TechnologyPage.Click on update button of edit_technology page       Update
         Generic.Fetch alert message text and compare it with        Technology updated successfully
