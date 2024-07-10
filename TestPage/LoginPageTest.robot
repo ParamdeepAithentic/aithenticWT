@@ -566,3 +566,8 @@ Login as Support_Partner with different roles
     Generic.Click on the profile name
     Generic.Select other option from profile list    Logout
     Generic.Fetch log_out alert message
+
+Zz kill browser
+    [Tags]      Smoke     Sanity      Time      rerun       Stable
+    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+    Run Process    cmd.exe    /C    taskkill /IM python.exe /F

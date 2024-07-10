@@ -255,7 +255,7 @@ Verify all i-icon of advanced search
     OCS.Click on save button of Add Technology Page
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
     Sleep    ${yop_sleep}
-    switch window    aithentic | Service Now Newly-Discovered
+    aithentic | Sentinel One Newly-Discovered
     Generic.Refresh the existing page
     OCS.Choose Tab under Asset Discovery    agent-discovery
     Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -482,7 +482,7 @@ Upload I-icon while adding discovery and component asset
     OCS.Click on save button of Add Technology Page
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
     Sleep    ${yop_sleep}
-    switch window    aithentic | Service Now Newly-Discovered
+    aithentic | Sentinel One Newly-Discovered
     Generic.Refresh the existing page
     OCS.Choose Tab under Asset Discovery    agent-discovery
     Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -579,5 +579,3 @@ Upload I-icon while adding IP Address
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     UnselectAssetAPI.Hit API Endpoint
 
-Zz kill browser
-    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

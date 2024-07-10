@@ -1062,6 +1062,3 @@ Verify_Employee_ID_Changing_settings_from_Profile_list_while_add_edit_team_membe
     TeamMemberPage.Click on remove option under three dots
     Generic.Select parameter        Yes
     Generic.Fetch alert message text and compare it with        Team member deleted successfully
-
-Zz kill browser
-    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

@@ -272,7 +272,7 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
         PaginationPage.Click on save technology form button of OCS
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        switch window    aithentic | Service Now Newly-Discovered
+        switch window    aithentic | Sentinel One Newly-Discovered
         OCS.Choose tab under Discovery Assets   agent-discovery
         Generic.Verify your current page location contains      ocs
         Generic.Refresh the existing page
@@ -342,6 +342,9 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
         Generic.Fetch alert message text and compare it with        Technology updated successfully
         UnselectAssetAPI.Hit API Endpoint
 
+
+
+
 Verify Pagination of Product Dropdown when Add IP discovered asset
         [Tags]      Unstable
         Generic.click on the tab	Login
@@ -390,7 +393,7 @@ Verify Pagination of Product Dropdown when Add IP discovered asset
         PaginationPage.Click on save technology form button of OCS
         OCS.Wait for the invisiblity of alert msg       Technology created successfully
         Sleep    ${yop_sleep}
-        switch window    aithentic | Service Now Newly-Discovered
+        switch window    aithentic | Sentinel One Newly-Discovered
         Generic.Refresh the existing page
         OCS.Choose tab under Discovery Assets   agent-discovery
         Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -430,5 +433,4 @@ Verify Pagination of Recent Activities Table
     PaginationPage.Click on the pagination dropdown     autoCreatedAsset
     PaginationPage.Log WebElements for Recent Activites table     autoCreatedAsset
 
-Zz kill browser
-    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+
