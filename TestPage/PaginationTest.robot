@@ -433,3 +433,4 @@ Verify Pagination of Recent Activities Table
     PaginationPage.Click on the pagination dropdown     autoCreatedAsset
     PaginationPage.Log WebElements for Recent Activites table     autoCreatedAsset
 
+
