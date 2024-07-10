@@ -2494,6 +2494,7 @@ Verify_Asset_ID_Changing_settings_from_Profile_list
 
 Zz kill browser
     Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+    Run Process    cmd.exe    /C    taskkill /IM python.exe /F
 
 
 

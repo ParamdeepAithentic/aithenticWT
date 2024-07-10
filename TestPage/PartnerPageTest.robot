@@ -363,7 +363,8 @@ Compose Message invite user test
     ${StartTime1} =     Get Current Time in Milliseconds
     SubscriptionPage.Click on complete process button
     Generic.Verify your current page location contains     welcome
-    Generic.Verify your current page contains this text     You're almost there...
+    sleep       160
+    Generic.Verify your current page contains this text     Watch Now
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  17  ${pageHeading}   Page Load - Total Page Load Time of Billing Payment to Welcome Page      17    ${pageTime}     ${ActualTime}    PageLoad_Time
@@ -1403,3 +1404,4 @@ Add_edit_deactivate_removeSupport_partner_while_adding_brand
 
 Zz kill browser
     Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+    Run Process    cmd.exe    /C    taskkill /IM python.exe /F

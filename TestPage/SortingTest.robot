@@ -437,6 +437,3 @@ Test the sorting of Recent Activities Table under Dashboard page
 #    PaginationPage.Select the value from the pagination drop down count    10
     SortingPage.Verify the sorting of the table method six    2        Actioned By
     SortingPage.Verify the sorting of the table method six    3        Created At
-
-Zz kill browser
-    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
