@@ -100,7 +100,7 @@ Set UAT Variables
     Set Suite Variable    ${admin_password}       Admin@123
     Set Suite Variable    ${browser_name}         headlessfirefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
-    Set Suite Variable    ${discovered_asset_brand}                 Dell Inc.
+    Set Suite Variable    ${discovered_asset_brand}                 Apple Inc
     Set Suite Variable    ${discovered_existing_brand}              Apple Inc.
     Set Suite Variable    ${discovered_existing_product}            Macmini9,1
     Set Suite Variable    ${discovered_existing_department}        Quality Assurance
