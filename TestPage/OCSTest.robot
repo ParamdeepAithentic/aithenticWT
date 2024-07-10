@@ -580,6 +580,8 @@ Upload Image and Document File while Add Discovery Asset
         Switch Window       NEW
         Generic.Verify your current page location contains    amazonaws
         Generic.Verify your current page location contains    .pdf
+        Generic.Verify your current page contains this text    Dummy PDF file
+        Sleep    ${yop_sleep}
         Switch Window       aithentic | Add Discovery Asset
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
@@ -697,6 +699,8 @@ Upload Image and Document File while Add component as an asset from Agent Discov
         Switch Window       NEW
         Generic.Verify your current page location contains    amazonaws
         Generic.Verify your current page location contains    .pdf
+        Generic.Verify your current page contains this text    Dummy PDF file
+        Sleep    ${yop_sleep}
         Switch Window       aithentic | Add Discovery Asset
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
@@ -1629,6 +1633,8 @@ Upload Image and Document file during Add Asset with IP address from Agent Disco
         Switch Window       NEW
         Generic.Verify your current page location contains    amazonaws
         Generic.Verify your current page location contains    .pdf
+        Generic.Verify your current page contains this text    Dummy PDF file
+        Sleep    ${yop_sleep}
         Switch Window       aithentic | Add Discovery Asset
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
