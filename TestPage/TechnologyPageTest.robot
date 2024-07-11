@@ -1934,6 +1934,7 @@ Click on the attachment tab under technology
     Switch Window       NEW
     Generic.Verify your current page location contains    amazonaws
     Generic.Verify your current page location contains    .pdf
+    Generic.Verify your current page contains this text    Dummy PDF file
     Switch Window       Main
     TechnologyPage.Download the file by clicking on download icon over file    .jpg
     Sleep    ${yop_sleep}
@@ -1976,6 +1977,7 @@ Upload file: Image and Document files while adding Technology
     Switch Window       NEW
     Generic.Verify your current page location contains    amazonaws
     Generic.Verify your current page location contains    .pdf
+    Generic.Verify your current page contains this text    Dummy PDF file
     Switch Window       Main
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
@@ -2030,6 +2032,7 @@ Upload file: Image and Document files while Edit Technology
     Switch Window       NEW
     Generic.Verify your current page location contains    amazonaws
     Generic.Verify your current page location contains    .pdf
+    Generic.Verify your current page contains this text    Dummy PDF file
     Switch Window       Main
     TechnologyPage.Click on update button of edit_technology page      Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
@@ -2076,6 +2079,7 @@ Upload file: Image and document files while Clone the Technology
     Switch Window       NEW
     Generic.Verify your current page location contains    amazonaws
     Generic.Verify your current page location contains    .pdf
+    Generic.Verify your current page contains this text    Dummy PDF file
     Switch Window       Main
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
@@ -2405,7 +2409,7 @@ Add the technology from profile listing
     Generic.Fetch alert message text and compare it with      Technology Removed Successfully
 
 Verify_Asset_ID_Changing_settings_from_Profile_list
-    [Tags]      Stable
+    [Tags]      Stable    yy
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -2488,8 +2492,10 @@ Verify_Asset_ID_Changing_settings_from_Profile_list
     Generic.Fetch alert message text and compare it with      Technology Removed Successfully
 
 
-Zz kill browser
-    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+#Zz kill browser
+#    [Tags]      Smoke     Sanity      Time      rerun       Stable    yy
+#    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+#    Run Process    cmd.exe    /C    taskkill /IM python.exe /F
 
 
 

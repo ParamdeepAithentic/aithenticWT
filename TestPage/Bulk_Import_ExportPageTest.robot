@@ -721,6 +721,3 @@ Technology Bulk import
     TechnologyPage.Search by AssetId       ${generated_assetid}
     Generic.Wait until table get load
 
-
-Zz kill browser
-    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

@@ -200,7 +200,7 @@ Verify all i-icon of Discovery assets
     Generic.Verify your current page location contains      customer
     Generic.Verify your current page contains this text     Asset Discovery
     sleep       ${yop_sleep}
-    switch window       aithentic | Service Now Newly-Discovered
+    switch window       aithentic | Sentinel One Newly-Discovered
     I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     I_iconPage.Click on i_icon under network_discovery tab
@@ -230,7 +230,7 @@ Verify all i-icon of advanced search
     OCS.Click on newly discovered tab under network discovery
     Generic.Verify your current page location contains    ocs
     OCS.Click on search icon of discovery assets
-    OCS.Enter text to search discovery asset   Apple Inc
+    OCS.Enter text to search discovery asset   ${discovered_asset_brand}
     Generic.Scroll Window To End
     OCS.Click on the down arrow icon of discovered asset
     OCS.Mouse Hover over searched Discovered Assets
@@ -255,7 +255,7 @@ Verify all i-icon of advanced search
     OCS.Click on save button of Add Technology Page
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
     Sleep    ${yop_sleep}
-    switch window    aithentic | Service Now Newly-Discovered
+    Switch Window      aithentic | Sentinel One Newly-Discovered
     Generic.Refresh the existing page
     OCS.Choose Tab under Asset Discovery    agent-discovery
     Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -318,7 +318,7 @@ Verify all i-icon of advanced search
     I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.Click on search icon of discovery assets
-    OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
+    OCS.Enter text to search discovery asset    ${discovered_IP}
     Generic.Scroll Window To End
     OCS.Click on the down arrow icon of discovered asset
     OCS.Mouse Hover over searched IP Assets
@@ -463,7 +463,7 @@ Upload I-icon while adding discovery and component asset
     OCS.Click on newly discovered tab under network discovery
     Generic.Verify your current page location contains    ocs
     OCS.Click on search icon of discovery assets
-    OCS.Enter text to search discovery asset   Apple Inc
+    OCS.Enter text to search discovery asset   ${discovered_asset_brand}
     Generic.Scroll Window To End
     OCS.Click on the down arrow icon of discovered asset
     OCS.Mouse Hover over searched Discovered Assets
@@ -482,7 +482,7 @@ Upload I-icon while adding discovery and component asset
     OCS.Click on save button of Add Technology Page
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
     Sleep    ${yop_sleep}
-    switch window    aithentic | Service Now Newly-Discovered
+    Switch Window       aithentic | Sentinel One Newly-Discovered
     Generic.Refresh the existing page
     OCS.Choose Tab under Asset Discovery    agent-discovery
     Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -538,7 +538,7 @@ Upload I-icon while adding IP Address
     OCS.Choose Tab under Asset Discovery    network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.Click on search icon of discovery assets
-    OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
+    OCS.Enter text to search discovery asset    ${discovered_IP}
     Generic.Scroll Window To End
     OCS.Click on the down arrow icon of discovered asset
     OCS.Mouse Hover over searched IP Assets
@@ -579,5 +579,3 @@ Upload I-icon while adding IP Address
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     UnselectAssetAPI.Hit API Endpoint
 
-Zz kill browser
-    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

@@ -1063,7 +1063,6 @@ Verify_Employee_ID_Changing_settings_from_Profile_list_while_add_edit_team_membe
     Generic.Select parameter        Yes
     Generic.Fetch alert message text and compare it with        Team member deleted successfully
 
-
 Add Back Deleted Team member - Active
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      debut@cool.fr.nf   Test@123
