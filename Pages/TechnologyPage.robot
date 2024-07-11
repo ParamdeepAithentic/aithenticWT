@@ -526,7 +526,8 @@ Select edited technology lifecycle status
     [Arguments]    ${option1}
     wait until element is not visible    ${loaderIcon}      ${wait_time}
     wait until element is visible    ${LifeCycleStatusId}      ${wait_time}
-    click element       ${LifeCycleStatusId}
+    Clear Element Text    ${LifeCycleStatusId}
+    click element     ${LifeCycleStatusId}
     wait until element is visible   //span[normalize-space()='${option1}']     ${wait_time}
     click element   //span[normalize-space()='${option1}']
 
@@ -1401,7 +1402,7 @@ Click on pop up of available Inactive Asset
     wait until element is visible   css:.qa-available-inactive-assests-${option}   ${wait_time}
     wait until element is enabled   css:.qa-available-inactive-assests-${option}   ${wait_time}
     click element   css:.qa-available-inactive-assests-${option}
-    wait until element is not visible       ${shadow}          ${wait_time}
+#    wait until element is not visible       ${shadow}          ${wait_time}
 
 Select option from exceed asset limit pop
     [Arguments]     ${option}

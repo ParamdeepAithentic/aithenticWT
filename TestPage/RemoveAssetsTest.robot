@@ -47,7 +47,9 @@ Test Teardown   Close Browser session
 
 
 *** Test Cases ***
-
+#Zz kill browser
+#    [Tags]      Smoke     Sanity      Time      rerun       Stable    yy
+#    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
 
 
 
