@@ -344,11 +344,10 @@ Click on remove option under three dots
     click element       css:.member-remove-qa
 
 Select option from remove TM warning pop-up
-    [Arguments]    ${option}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-#    //wait until element is visible       //button[contains(@class,'cfirm-remove-members-qa')]//span     ${wait_time}
-    wait until element is enabled       //button[contains(@class,'confirm-remove-members-qa')]//span      ${wait_time}
-    click element       //button[contains(@class,'confirm-remove-members-qa')]//span
+    wait until element is visible       css:.confirm-remove-members-qa span    ${wait_time}
+    wait until element is enabled      css:.confirm-remove-members-qa span    ${wait_time}
+    click element       css:.confirm-remove-members-qa span
     TeamMemberPage.Close the remove warning pop-up      ## have to remove this line once fixed from dev side
 
 Close the remove warning pop-up

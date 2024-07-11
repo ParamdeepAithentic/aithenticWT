@@ -892,7 +892,7 @@ Add Back Deleted Team member - Invited
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
     TeamMemberPage.Click on three dots of Team Member listing
     TeamMemberPage.Select option from three dots of Team Member     Remove
-    TeamMemberPage.Select option from remove TM warning pop-up      remove
+    TeamMemberPage.Select option from remove TM warning pop-up
     Generic.Fetch alert message text and compare it with        Team member deleted successfully
     TeamMemberPage.Click on add team member action button
     TeamMemberPage.Select option from team member action menu
@@ -1126,16 +1126,13 @@ Add Back Deleted Team member - Active
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
-    Generic.Click on the profile name
-    Generic.Select option from profile list     personal-details
-    Generic.Verify your current page location contains      personal-profile
-    DashboardPage.Select an option from company details side list    Team Members
-    Generic.Verify your current page location contains    member
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Search Team Member by name   ${generated_TMFname}
     TeamMemberPage.verify status of first name in member list   Active
     TeamMemberPage.Click on three dots of Team Member listing
     TeamMemberPage.Select option from three dots of Team Member     Remove
-    TeamMemberPage.Select option from remove TM warning pop-up      remove
+    TeamMemberPage.Select option from remove TM warning pop-up
     Generic.Fetch alert message text and compare it with        Team member deleted successfully
     TeamMemberPage.Click on add team member action button
     TeamMemberPage.Select option from team member action menu
@@ -1199,7 +1196,6 @@ Add Back Deleted Team member - Active
     Generic.Verify your current page location contains    member
     TeamMemberPage.Search Team Member by name   ${generated_Tmfname}
     TeamMemberPage.Verify Team member added after delete        ${generated_TMFname} ${generated_TMLname}
-
 
 Zz kill browser
     Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
