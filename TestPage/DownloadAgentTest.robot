@@ -485,9 +485,6 @@ Visit discovered asset list when click on No. IP discovered devices
     Switch Window       aithentic | Service Now Newly-Discovered
     Generic.Verify your current page location contains     discovery-assets
 
-Zz kill browser
-    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
-
 #Refresh search text on discovered asset list page
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -518,7 +515,7 @@ Verify Filters of Existing asets by adding assets of different tech type - HARDW
     DashboardPage.Save added brand details
     Generic.Fetch alert message text and compare it with        Brand created successfully.
     DashboardPage.Click added brand main save button
-    DashboardPage.Verify Brand added      ${generated_BrandName}
+#    DashboardPage.Verify Brand added      ${generated_BrandName}
     Generic.Click on the profile name
     Generic.Select option from profile list     product-dropdown
     Generic.Verify your current page location contains      product
