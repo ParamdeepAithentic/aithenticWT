@@ -520,6 +520,8 @@ Compose Message invite user test
     TwoFactorAuth.Click verification button
 
     Generic.Verify your current page location contains     dashboard
+#--------------------------------------------END-----------------------------------------------------------
+
 
 Export Specificartner into Excel Doc CSV and TSV for manufacturer
     [Tags]      Stable
