@@ -328,30 +328,35 @@ Verify the email change warning pop-up and choose option
     Wait Until Element Is Not Visible    //div[@id='emailChangeWarning']        ${wait_time}
 
 select number of days inside alerts section
-    [Arguments]         ${option1}        ${option2}      ${option3}
+    [Arguments]         ${option1}        ${option2}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    Wait Until Element Is Visible    //label[@for='YesEmailPingAlert']//span[@class='checkmark']        ${wait_time}
+#    Wait Until Element Is Visible    //label[@for='YesEmailPingAlert']//span[@class='checkmark']        ${wait_time}
     Sleep    ${search_sleep}
+    Wait Until Element Is Visible    //span[@title='Clear all']     ${wait_time}
+    Wait Until Element Is Enabled    //span[@title='Clear all']     ${wait_time}
+    Click Element       //span[@title='Clear all']
     Wait Until Element Is Visible    css:.qa-${option1}      ${wait_time}
     Wait Until Element Is Enabled    css:.qa-${option1}      ${wait_time}
-    Click Element    css:.qa-endOfLifeContract input        
-    RegisterUserPage.Select number of days     ${option2}  ${option3}
+
+#    Clear Element Text   css:.qa-${option1} input
+    Click Element    css:.qa-${option1} input
+    Generic.Select parameter    ${option2}
 
 Select asset limit exhausation inside alerts section
-    [Arguments]     ${option}       ${option1}      ${option2}
+    [Arguments]     ${option}       ${option1}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     Wait Until Element Is Visible    (//ng-select[contains(@class,'qa-audit-interval')])[${option}]      ${wait_time}
     Wait Until Element Is Enabled    (//ng-select[contains(@class,'qa-audit-interval')])[${option}]      ${wait_time}
     Click Element    (//ng-select[contains(@class,'qa-audit-interval')])[${option}]//input
-    RegisterUserPage.Select number of days     ${option1}  ${option2}
+    Generic.Select parameter    ${option1}
 
 Select asset center notifications inside alerts section
-    [Arguments]     ${option}   ${option1}
+    [Arguments]     ${option}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     Wait Until Element Is Visible    css:.alertCenter-notification-qa      ${wait_time}
     Wait Until Element Is Enabled    css:.alertCenter-notification-qa      ${wait_time}
     Click Element    css:.alertCenter-notification-qa input
-    RegisterUserPage.Select number of days     ${option}  ${option1}
+    Generic.Select parameter    ${option}
 
 Select number of days                          #This method is replaced with "select parameter later"
     [Arguments]    ${address1}          ${address2}
