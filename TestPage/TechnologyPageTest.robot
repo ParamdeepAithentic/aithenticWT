@@ -1032,6 +1032,7 @@ Verify the history of added technology
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Select parameter from technology dropdown list       Product_00337612322
     TechnologyPage.Add New_Parent assetID for technology lifecycle information random
+    TechnologyPage.Select technology lifecycle status      Active
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
@@ -1050,6 +1051,7 @@ Verify the history of added technology
 #    TechnologyPage.Click technology product input field
     TechnologyPage.Select parameter from technology dropdown list       Product_00337612322
     TechnologyPage.Add New_Component assetID for technology lifecycle information random
+    TechnologyPage.Select technology lifecycle status      Active
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
