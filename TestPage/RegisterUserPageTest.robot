@@ -654,12 +654,12 @@ test
     Generic.Scroll Window To End
     RegisterUserPage.Select the option from the personal details sidebar        alerts
     Generic.Verify your current page location contains    alerts
-    RegisterUserPage.select number of days inside alerts section     endOfLifeContract        90 Days
+    RegisterUserPage.select number of days inside alerts section     endOfLifeContract        90 Days
     Generic.Fetch alert message text and compare it with      Alerts settings updated successfully
-    RegisterUserPage.Select asset limit exhausation inside alerts section    1      365 Days (12 months)
-    RegisterUserPage.Select asset limit exhausation inside alerts section    2      95% limit consumed
-    RegisterUserPage.select number of days inside alerts section    audit-warning     14 Days
-    RegisterUserPage.Select asset center notifications inside alerts section         60 Days
+    RegisterUserPage.Select asset limit exhausation inside alerts section    1       365 Days (12 months)
+    RegisterUserPage.Select asset limit exhausation inside alerts section    2       95% limit consumed
+    RegisterUserPage.select number of days inside alerts section    audit-warning      10 Days
+    RegisterUserPage.Select asset center notifications inside alerts section          60 Days
 
 Zz kill browser
     Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
