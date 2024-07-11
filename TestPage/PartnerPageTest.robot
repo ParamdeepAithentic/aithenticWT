@@ -523,7 +523,6 @@ Compose Message invite user test
 #--------------------------------------------END-----------------------------------------------------------
 
 
-
 Export Specificartner into Excel Doc CSV and TSV for manufacturer
     [Tags]      Stable
     Generic.click on the tab	Login
@@ -1403,7 +1402,6 @@ Add_edit_deactivate_removeSupport_partner_while_adding_brand
     PartnersPage.Select option from the pop up  Yes
     Generic.Fetch alert message text and compare it with      Partner deleted successfully
 
-#Zz kill browser
-#    [Tags]      Smoke     Sanity      Time      rerun       Stable    yy
-#    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
-#    Run Process    cmd.exe    /C    taskkill /IM python.exe /F
+Zz kill browser
+    sleep       ${wait_time}
+    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
