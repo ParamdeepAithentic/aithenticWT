@@ -173,3 +173,20 @@ click on confirm button to change plan
     wait until element is enabled       //button[@type='button'][normalize-space()='${option}']   ${wait_time}
     click element       //button[@type='button'][normalize-space()='${option}']
     wait until element is not visible       ${shadow}          ${wait_time}
+
+Welcome to the code
+    Log     Plan not required to be changed
+
+
+Select the higest plan
+     ${element_count}=    Get Element Count    //div[@id='cost-range']//div[contains(@class,'ngx-slider-inner-tooltip')]//ancestor::span//ngx-slider-tooltip-wrapper[contains(@class,'ngx-slider-span')]
+    Log      ${element_count}
+
+#    ${new_count}=    Evaluate    ${element_count} + 1
+#    Log      ${new_count}
+
+    #FOR    ${index}    IN RANGE    1    ${element_count + 1}
+    Wait Until Element Is Visible   (//div[@id='cost-range']//div[contains(@class,'ngx-slider-inner-tooltip')]//ancestor::span//ngx-slider-tooltip-wrapper[contains(@class,'ngx-slider-span')])[${element_count}]       ${wait_time}
+    Wait Until Element Is enabled   (//div[@id='cost-range']//div[contains(@class,'ngx-slider-inner-tooltip')]//ancestor::span//ngx-slider-tooltip-wrapper[contains(@class,'ngx-slider-span')])[${element_count}]       ${wait_time}
+    Click element    (//div[@id='cost-range']//div[contains(@class,'ngx-slider-inner-tooltip')]//ancestor::span//ngx-slider-tooltip-wrapper[contains(@class,'ngx-slider-span')])[${element_count}]
+    #END

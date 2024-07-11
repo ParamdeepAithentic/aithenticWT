@@ -67,7 +67,7 @@ ${CASE}        uat      #qa , uat , pre-prod
 
 *** Keywords ***
 Simulate Switch Case
-    Run Keyword If    '${CASE}' == 'qa'    Set QA Variables     AND     Set Plan range in pre requites
+    Run Keyword If    '${CASE}' == 'qa'    Set QA Variables
     ...    ELSE IF    '${CASE}' == 'uat'   Set UAT Variables
     ...    ELSE IF    '${CASE}' == 'pre-prod'    Set Pre-Prod Variables
     ...    ELSE    Set Default Variables
@@ -80,7 +80,7 @@ Set QA Variables
     Set Suite Variable    ${admin_url}        https://qa-admin.aithentic.com/
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
-    Set Suite Variable    ${browser_name}         headlessfirefox
+    Set Suite Variable    ${browser_name}         firefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
     Set Suite Variable    ${discovered_asset_brand}                 MSI
     Set Suite Variable    ${existing_mac}                       D8:CB:8A:CA:6A:39
@@ -89,6 +89,7 @@ Set QA Variables
     Set Suite Variable    ${discovered_existing_department}    Customer Support
     Set Suite Variable    ${discovered_IP}   192.168.18.23
     Set Suite Variable    ${discovery_asset_list_brand}       Apple, Inc.
+#    Run Keyword    Set Plan range in pre requites    ${admin_name}    ${admin_password}
 
 Set UAT Variables
     Set Suite Variable    ${url}    https://uat-app.aithentic.com/
@@ -98,7 +99,7 @@ Set UAT Variables
     Set Suite Variable    ${admin_url}        https://uat-admin.aithentic.com/
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
-    Set Suite Variable    ${browser_name}         headlessfirefox
+    Set Suite Variable    ${browser_name}         firefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
     Set Suite Variable    ${discovered_asset_brand}                 Apple Inc
     Set Suite Variable    ${discovered_existing_brand}              Apple Inc.
@@ -420,22 +421,5 @@ Update settings for Asset_ID, employee_id and location
     Run Process    cmd.exe    /C    taskkill /IM skype.exe /F
     Run Process    cmd.exe    /C    taskkill /IM msedge.exe /F
 
-Set Plan range in pre requites
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form     mehak@mynes.com     Test@123
-    Generic.Click on the profile name
-    Generic.Select option from profile list     subscription-dropdown
-    Generic.Verify your current page location contains      subscription
-    SubscriptionPage.Select if you want to change plan or asset    Change Plan
-    TechnologyPage.Select plan for subscription     Premium
-    Generic.Scroll the page till    200
-    SubscriptionPage.Set asset range to     1000
-    sleep   ${search_sleep}
-    SubscriptionPage.Set asset range to     900
-    SubscriptionPage.Update the payment of changed plan     proceed
-    TechnologyPage.Click on pop up of available Inactive Asset   cancel
-    SubscriptionPage.Select the payment method    ach
-    SubscriptionPage.Select the account for payment
-    SubscriptionPage.Proceed the payment     proceed
-    Generic.Fetch alert message text and compare it with      Payment Successful
+
 
