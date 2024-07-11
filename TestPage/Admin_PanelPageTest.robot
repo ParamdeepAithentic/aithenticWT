@@ -115,3 +115,5 @@ Free the asset limit
     PaginationPage.Check the table get load
     PaginationPage.Fetch the total count
     PaginationPage.Run the remove asset journey
+
+
