@@ -233,7 +233,7 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
-        OCS.Enter text to search discovery asset    Apple Inc
+        OCS.Enter text to search discovery asset    ${discovered_asset_brand}
         OCS.Click on the down arrow icon of discovered asset
         Generic.Scroll Window To End
         OCS.Mouse Hover over searched Discovered Assets

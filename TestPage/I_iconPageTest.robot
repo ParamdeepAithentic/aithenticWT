@@ -202,7 +202,7 @@ Verify all i-icon of Discovery assets
     Generic.Verify your current page location contains      customer
     Generic.Verify your current page contains this text     Asset Discovery
     sleep       ${yop_sleep}
-    switch window       aithentic | Service Now Newly-Discovered
+    switch window       aithentic | Sentinel One Newly-Discovered
     I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     I_iconPage.Click on i_icon under network_discovery tab
@@ -257,9 +257,7 @@ Verify all i-icon of advanced search
     OCS.Click on save button of Add Technology Page
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
     Sleep    ${yop_sleep}
-
     switch window    aithentic | Sentinel One Newly-Discovered
-
     Generic.Refresh the existing page
     OCS.Choose Tab under Asset Discovery    agent-discovery
     Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -488,7 +486,6 @@ Upload I-icon while adding discovery and component asset
     Sleep    ${yop_sleep}
 
     switch window    aithentic | Sentinel One Newly-Discovered
-
 
     Generic.Refresh the existing page
     OCS.Choose Tab under Asset Discovry    agent-discovery

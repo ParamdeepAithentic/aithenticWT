@@ -230,10 +230,10 @@ Hover over searched Agent/Discovered Asset
 Click on Searched Discovered asset
    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
 #   Wait Until Element Is Visible    ${Discovery_Assets}     ${wait_time}
-    Wait Until Element Is Visible    //div[contains(text(),'${discovered_asset_brand}')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]     ${wait_time}
-    Wait Until Element Is enabled    //div[contains(text(),'${discovered_asset_brand}')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]     ${wait_time}
+    Wait Until Element Is Visible    //div[contains(text(),'${discovered_asset_brand}')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')][1]     ${wait_time}
+    Wait Until Element Is enabled    //div[contains(text(),'${discovered_asset_brand}')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')][1]     ${wait_time}
 #   Wait Until Element Is Enabled    ${Discovery_Assets}     ${wait_time}
-   Click element    //div[contains(text(),'${discovered_asset_brand}')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]
+   Click element    //div[contains(text(),'${discovered_asset_brand}')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')][1]
    Sleep    ${search sleep}
    wait until element is not visible       ${shadow}          ${wait_time}
 
@@ -308,8 +308,8 @@ Get Serial number by hovering over discovered assets
 Get Tagname by hovering over discovered assets
     [Arguments]     ${text}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    Wait Until Element Is Visible   //div[contains(text(),'${discovered_asset_brand}')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]      ${wait_time}
-    Wait Until Element Is Enabled   //div[contains(text(),'${discovered_asset_brand}')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]      ${wait_time}
+    Wait Until Element Is Visible   //div[contains(text(),'${discovered_asset_brand}')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')][1]      ${wait_time}
+    Wait Until Element Is Enabled   //div[contains(text(),'${discovered_asset_brand}')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')][1]      ${wait_time}
     sleep       ${search_sleep}
     ${hover_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
     ${parts}    Split String    ${hover_text}    ${text}
@@ -656,15 +656,16 @@ Click on the down arrow icon of discovered asset
 
 Mouse Hover over searched Discovered Assets
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    Wait Until Element Is Visible   //div[contains(text(),'${discovered_asset_brand}')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]     ${wait_time}
-    Wait Until Element Is Enabled    //div[contains(text(),'${discovered_asset_brand}')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]     ${wait_time}
-    Mouse Over    //div[contains(text(),'${discovered_asset_brand}')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]
+    Wait Until Element Is Visible    //div[contains(text(),'${discovered_asset_brand}')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')][1]     ${wait_time}
+    Wait Until Element Is Enabled    //div[contains(text(),'${discovered_asset_brand}')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')][1]     ${wait_time}
+    Mouse Over    //div[contains(text(),'${discovered_asset_brand}')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')][1]
+
 
 Get MAC_Address by hovering over discovered assets
     [Arguments]     ${text}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    Wait Until Element Is Visible   //div[contains(text(),'${discovered_asset_brand}')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]      ${wait_time}
-    Wait Until Element Is Enabled   //div[contains(text(),'${discovered_asset_brand}')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]      ${wait_time}
+    Wait Until Element Is Visible   //div[contains(text(),'${discovered_asset_brand}')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')][1]      ${wait_time}
+    Wait Until Element Is Enabled   //div[contains(text(),'${discovered_asset_brand}')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')][1]      ${wait_time}
     sleep       ${search_sleep}
     ${hover_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
     ${parts}    Split String    ${hover_text}    ${text}
@@ -675,8 +676,8 @@ Get MAC_Address by hovering over discovered assets
 Get Host name by hovering over discovered assets
     [Arguments]     ${text}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    Wait Until Element Is Visible   //div[contains(text(),'${discovered_asset_brand}')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]      ${wait_time}
-    Wait Until Element Is Enabled   //div[contains(text(),'${discovered_asset_brand}')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')]      ${wait_time}
+    Wait Until Element Is Visible   //div[contains(text(),'${discovered_asset_brand}')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')][1]      ${wait_time}
+    Wait Until Element Is Enabled   //div[contains(text(),'${discovered_asset_brand}')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')][1]      ${wait_time}
     sleep       ${search_sleep}
     ${hover_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
     ${parts}    Split String    ${hover_text}    ${text}
