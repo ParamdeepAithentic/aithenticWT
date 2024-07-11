@@ -80,7 +80,7 @@ Set QA Variables
     Set Suite Variable    ${admin_url}        https://qa-admin.aithentic.com/
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
-    Set Suite Variable    ${browser_name}         firefox
+    Set Suite Variable    ${browser_name}         headlessfirefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
     Set Suite Variable    ${discovered_asset_brand}                 MSI
     Set Suite Variable    ${existing_mac}                       D8:CB:8A:CA:6A:39
@@ -89,7 +89,7 @@ Set QA Variables
     Set Suite Variable    ${discovered_existing_department}    Customer Support
     Set Suite Variable    ${discovered_IP}   192.168.18.23
     Set Suite Variable    ${discovery_asset_list_brand}       Apple, Inc.
-#    Run Keyword    Set Plan range in pre requites    ${admin_name}    ${admin_password}
+
 
 Set UAT Variables
     Set Suite Variable    ${url}    https://uat-app.aithentic.com/
@@ -99,7 +99,7 @@ Set UAT Variables
     Set Suite Variable    ${admin_url}        https://uat-admin.aithentic.com/
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
-    Set Suite Variable    ${browser_name}         firefox
+    Set Suite Variable    ${browser_name}         headlessfirefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
     Set Suite Variable    ${discovered_asset_brand}                 Apple Inc
     Set Suite Variable    ${discovered_existing_brand}              Apple Inc.
@@ -416,10 +416,10 @@ Update settings for Asset_ID, employee_id and location
 #    Generic.Fetch alert message text and compare it with      Payment Successful
     sleep       ${yop_sleep}
     close browser
-    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
-    Run Process    cmd.exe    /C    taskkill /IM chrome.exe /F
-    Run Process    cmd.exe    /C    taskkill /IM skype.exe /F
-    Run Process    cmd.exe    /C    taskkill /IM msedge.exe /F
+#    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+#    Run Process    cmd.exe    /C    taskkill /IM chrome.exe /F
+#    Run Process    cmd.exe    /C    taskkill /IM skype.exe /F
+#    Run Process    cmd.exe    /C    taskkill /IM msedge.exe /F
 
 
 
