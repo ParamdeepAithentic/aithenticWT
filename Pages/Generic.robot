@@ -57,8 +57,8 @@ ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
 
-${wait_time}       60
-${yop_sleep}       10
+${wait_time}       120
+${yop_sleep}       20
 ${search_sleep}       1
 
 ${CASE}        qa      #qa , uat , pre-prod

@@ -278,10 +278,12 @@ Inactive or Removed technology
     click element      ${removedTechnology_threeDot}
 
 Remove asset from technology table
-     wait until element is visible      ${removePopUp}        ${wait_time}
-     wait until element is enabled       ${removePopUp}        ${wait_time}
+#     wait until element is visible      ${removePopUp}        ${wait_time}
+#     wait until element is enabled       ${removePopUp}        ${wait_time}
+     sleep      ${search_sleep}
      Wait Until Element Is Enabled      ${select_remove_popUp_Yes}      ${wait_time}
      click element      ${select_remove_popUp_Yes}
+     sleep      ${search_sleep}
 
 
 Search and remove asset
