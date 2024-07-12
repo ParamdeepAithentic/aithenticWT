@@ -105,12 +105,37 @@ Change plan- Assign commercial plan and change it to slotted
 #    Admin_PanelPage.Verify text from current plan after changing subscription       Premium
 
 
-#Free the asset limit
-#    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form     ${email}    ${valid_password}
-#    Generic.Verify your current page location contains      dashboard
-#    Generic.select the option from the side menu    Technology
-#    Generic.Verify your current page location contains      technology
-#    PaginationPage.Check the table get load
-#    PaginationPage.Fetch the total count
-#    PaginationPage.Run the remove asset journey
+Free the asset limit
+    [Tags]      Smoke     Sanity      Time      rerun       Stable
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form     ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    PaginationPage.Check the table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Run the remove asset journey
+
+
+Set Plan range in pre requites
+    TRY
+        Generic.click on the tab	Login
+        LandingPage.Fill the login Form     ${email}    ${valid_password}
+        Generic.Click on the profile name
+        Generic.Select option from profile list     subscription-dropdown
+        Generic.Verify your current page location contains      subscription
+        SubscriptionPage.Select if you want to change plan or asset    Change Plan
+        TechnologyPage.Select plan for subscription     Premium
+        Generic.Scroll the page till    500
+        Admin_PanelPage.Select the higest plan
+        sleep   ${search_sleep}
+#        SubscriptionPage.Set asset range to     900
+        SubscriptionPage.Update the payment of changed plan     proceed
+        TechnologyPage.Click on pop up of available Inactive Asset   cancel
+        SubscriptionPage.Select the payment method    ach
+        SubscriptionPage.Select the account for payment
+        SubscriptionPage.Proceed the payment     proceed
+        Generic.Fetch alert message text and compare it with      Payment Successful
+    EXCEPT
+        Admin_PanelPage.Welcome to the code
+    END

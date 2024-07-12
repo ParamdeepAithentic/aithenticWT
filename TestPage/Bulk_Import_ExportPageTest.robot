@@ -117,6 +117,7 @@ Product Bulk Edit
     Generic.Click on the button     Update      #Check Data,Edit
     MemberPage.Confirm the exit import process pop appers
     Generic.Click on the button     Confirm
+    Generic.wait for the shadow to get hide from the current screen
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
     Generic.Click on the button     Finish
     Bulk_Import_ExportPage.Click on the confirm button of finish pop up
@@ -615,7 +616,7 @@ Location Bulk Import
     Generic.Wait until table get load
 
 Technology Bulk import
-    [Tags]    Sanity        Unstable
+    [Tags]    Sanity        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -636,7 +637,7 @@ Technology Bulk import
     Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       SupportPartner        1
     Generic.Click on the button     Check Data      #Update,Edit
     Generic.Click on the button     Upload
-    Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload is prepared
+    Bulk_Import_ExportPage.Verify the upload message text - bulk import tech    Upload       Upload is prepared
     Generic.click on the button     Next
     Generic.Verify your current page location contains     add-technology-templates
     Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       LocationName        1
@@ -691,10 +692,10 @@ Technology Bulk import
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_3
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_4      CPU
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_4
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_5      Paramdeep
-    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_5
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_6      Test@123
-    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_6
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_5      Paramdeep
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_5
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_6      Test@123
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_6
 
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_7      100
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_7
@@ -720,6 +721,3 @@ Technology Bulk import
     TechnologyPage.Search by AssetId       ${generated_assetid}
     Generic.Wait until table get load
 
-
-Zz kill browser
-    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

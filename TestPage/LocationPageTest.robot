@@ -128,6 +128,8 @@ Edit the Location
     LocationPage.Click on three dots on row
     LocationPage.Select the option from row menu     Edit
     Generic.Verify your current page location contains    edit
+
+    #################################################################
     LocationPage.Edit location country   United States
     LocationPage.Select location building name   Trump tower
     LocationPage.Select location floor   second

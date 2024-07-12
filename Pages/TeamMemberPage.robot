@@ -143,6 +143,7 @@ Click on team member department
 Click on add here in department field
     [Arguments]    ${option}
     wait until element is not visible       //span[normalize-space()='Please enter a valid Mobile Number']     ${wait_time}
+    Sleep       ${search_sleep}
     Generic.click on the tab    ${option}
 #    wait until element is visible   //a[normalize-space()='Click here to add']      ${wait_time}
 #    wait until element is enabled        //a[normalize-space()='Click here to add']      ${wait_time}
@@ -311,7 +312,7 @@ Download the selected extension file of team member
 #    sleep   ${search_sleep}
     Wait Until Element Is Not Visible    //a[normalize-space()='Export as ${option}']      ${wait_time}
 
-<<<<<<< HEAD
+
 #Verify the status of team member
 #    [Arguments]    ${option}
 #    wait until element is visible       css:thead tr       ${wait_time}
@@ -341,14 +342,13 @@ Click on remove option under three dots
     wait until element is visible       css:.member-remove-qa    ${wait_time}
     wait until element is visible       css:.member-remove-qa   ${wait_time}
     click element       css:.member-remove-qa
-=======
+
 Select option from remove TM warning pop-up
-    [Arguments]    ${option}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    wait until element is visible       css:.confirm-${option}-members-qa       ${wait_time}
-    wait until element is enabled       css:.confirm-${option}-members-qa       ${wait_time}
-    click element       css:.confirm-${option}-members-qa
-    TeamMemberPage.Close the remove warning pop-up
+    wait until element is visible       css:.confirm-remove-members-qa span    ${wait_time}
+    wait until element is enabled      css:.confirm-remove-members-qa span    ${wait_time}
+    click element       css:.confirm-remove-members-qa span
+    TeamMemberPage.Close the remove warning pop-up      ## have to remove this line once fixed from dev side
 
 Close the remove warning pop-up
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
@@ -360,4 +360,3 @@ Verify Team member added after delete
     [Arguments]     ${option}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible   //td[normalize-space()='${option}']     ${wait_time}
->>>>>>> 02cc56b16300d179fd06d79560f4920be011f573

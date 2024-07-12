@@ -76,7 +76,6 @@ Verify the drawer list
     Generic.Verify your current page location contains      dashboard
     DashboardPage.Verify the drawer list parameters
 
-
 Verify the side options list
     [Tags]      Unstable
     Generic.click on the tab	Login
@@ -208,7 +207,7 @@ Invite user into Aithentic
     Generic.Verify your current page location contains      dashboard
     ReplaceDomainAPI.Replace Domain
     DashboardPage.click on share icon of dashboard page
-    DashboardPage.Enter toEmail into popup
+    DashboardPage.Enter to Email into popup
     DashboardPage.Click on Send Invite button
     Generic.Verify alertify is visible
     Generic.Fetch alert message text and compare it with        Invite sent successfully
@@ -312,28 +311,28 @@ Verify Help Center
     Switch Window       Get Started Guide - Jira Service Management
     Generic.Verify your current page location contains     servicedesk
     Generic.Verify your current page contains this text     Get Started Guide
-    Switch Window      aithentic | Dashboard
+    Switch Window      aithentic | Management - Console
     DashboardPage.Click on link of information center list      Knowledge Base
 
     sleep       ${yop_sleep}
     Switch Window       Help Center Home - Jira Service Management
     Generic.Verify your current page location contains     servicedesk
     Generic.Verify your current page contains this text     SEARCH OUR KNOWLEDGE BASE
-    Switch Window       aithentic | Dashboard
+    Switch Window       aithentic | Management - Console
     DashboardPage.Click on link of information center list      What’s New!
 
     sleep       ${yop_sleep}
     Switch Window       What's New! - Jira Service Management
     Generic.Verify your current page location contains     servicedesk
     Generic.Verify your current page contains this text     What's New!
-    Switch Window       aithentic | Dashboard
+    Switch Window       aithentic | Management - Console
     DashboardPage.Click on link of Support      Customer
 
     sleep       ${yop_sleep}
     Switch Window       Customer Service Desk - Jira Service Management
     Generic.Verify your current page location contains      servicedesk
     Generic.Verify your current page contains this text     Customer Service Desk
-    Switch Window       aithentic | Dashboard
+    Switch Window       aithentic | Management - Console
     DashboardPage.Search any keyword of FAQ section     How do I complete my account setup?
     DashboardPage.Verify the keyword        How do I complete my account setup?
     DashboardPage.Search any keyword of FAQ section     Testing
@@ -657,7 +656,7 @@ Verify adding a new brand from profile listing
     Generic.Select option from profile list     brand-dropdown
     ReplaceDomainAPI.Replace Domain
     Generic.Verify your current page location contains  brand-list
-    ReplaceDomainAPI.Replace Domain
+#    ReplaceDomainAPI.Replace Domain
     DashboardPage.Click add brand button
     DashboardPage.Create random brandName
     DashboardPage.Add brand manufacturer country      United States
@@ -933,7 +932,7 @@ Click and verify the count of the tabs under renewal overview by choosing the va
     DashboardPage.Get And Verify The Count Of tabs under renewal overview by management console
 
 Verify Account_overview Recent Activities Filters
-    [Tags]      Unstable
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}       ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1024,7 +1023,7 @@ View Predefined brand
     Generic.Verify your current page location contains      personal-profile
     DashboardPage.Select an option from company details side list   Technology
     Generic.Verify your current page location contains  technology-settings
-    DashboardPage.Click on pre defined brand list       @pamil.fr.nf
+    DashboardPage.Click on pre defined brand list       /n software
 
 View Predefined product
     Generic.click on the tab	Login
@@ -1039,7 +1038,7 @@ View Predefined product
     DashboardPage.Click on pre defined product list       [W306MI0U247
 
 Verifying the Renewals Overview section of Management console - End of Life
-    [Tags]      Unstable
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains
@@ -1548,5 +1547,3 @@ Verifying the Subscription Overview section of Management console
     Generic.Verify your current page contains this text     Renewals overview details
     DashboardPage.Click on done button of subscription overview    Done
 
-Zz kill browser
-    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

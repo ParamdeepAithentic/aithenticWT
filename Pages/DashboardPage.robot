@@ -237,7 +237,7 @@ Add product brand name
     Generic.Select parameter     ${option}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  5  ${pageHeading}   DashboardPage - Add product brand name      5    ${pageTime}     ${ActualTime}    DashboardPage_Time
+    Calculate Running time  5  ${pageHeading}   DashboardPage - Select option from brand name dropdown via add product pop up of product page     5    ${pageTime}     ${ActualTime}    DashboardPage_Time
     sleep   ${search_sleep}
 
 Add product description
@@ -269,7 +269,7 @@ Select product status
     Generic.Select parameter     ${option}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  6  ${pageHeading}   DashboardPage - Select product status      6    ${pageTime}     ${ActualTime}    DashboardPage_Time
+    Calculate Running time  6  ${pageHeading}   DashboardPage - Select option from product status dropdown via add product pop up of product page      6    ${pageTime}     ${ActualTime}    DashboardPage_Time
 
 Select product status via link
     [Arguments]    ${option}
@@ -288,7 +288,7 @@ Select product technology type
     Generic.Select parameter     ${option}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  7  ${pageHeading}   DashboardPage - Select product technology type      7    ${pageTime}     ${ActualTime}    DashboardPage_Time
+    Calculate Running time  7  ${pageHeading}   DashboardPage - Select option from product technology type dropdown via add product pop up of product page       7    ${pageTime}     ${ActualTime}    DashboardPage_Time
 
 Select product technology type via technology
     [Arguments]    ${option}
@@ -337,7 +337,7 @@ Verify product added
      should be equal    ${productName}     ${get_productName}
      ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  8  ${pageHeading}   DashboardPage - Verify product added      8    ${pageTime}     ${ActualTime}    DashboardPage_Time
+    Calculate Running time  8  ${pageHeading}   DashboardPage - Search the product on the add product listing page      8    ${pageTime}     ${ActualTime}    DashboardPage_Time
 
 
 Click add brand button
@@ -375,7 +375,7 @@ Add brand manufacturer country
     Generic.Select parameter     ${country}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  9  ${pageHeading}   DashboardPage - Add brand manufacturer country      9    ${pageTime}     ${ActualTime}    DashboardPage_Time
+    Calculate Running time  9  ${pageHeading}   DashboardPage - Select the option from brand manufacturer country dropdown via add new brand      9    ${pageTime}     ${ActualTime}    DashboardPage_Time
 
 
 Save added brand details
@@ -402,7 +402,7 @@ Verify Brand added
      should be equal    ${BrandName}     ${get_brandName}
      ${EndTime1} =     Get Current Time in Milliseconds
      ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-     Calculate Running time  10  ${pageHeading}   DashboardPage - Verify Brand added      10    ${pageTime}     ${ActualTime}    DashboardPage_Time
+     Calculate Running time  10  ${pageHeading}   DashboardPage - Search the brand on the add brand listing page      10    ${pageTime}     ${ActualTime}    DashboardPage_Time
 
 select the option from the dashboard drawer
     [Arguments]     ${option}
@@ -611,7 +611,9 @@ click on share icon of dashboard page
     click element       css:.fa-share-alt
 
 Enter to Email into popup
+    Wait Until Element Is Not Visible    ${loaderIcon}    ${wait_time}
     wait until element is visible      ${share_toEmail}         ${wait_time}
+    wait until element is enabled      ${share_toEmail}         ${wait_time}
     click element       ${share_toEmail}
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generate_sharetoEmail}=    Catenate    ToEmail_${random_string}@yopmail.net
@@ -979,6 +981,15 @@ Click on the filter Past under recent Activities table
     Wait Until Element Is Enabled    //span[normalize-space()='${option1}']//parent::div//parent::div  ${wait_time}
     Click Element    //span[normalize-space()='${option1}']//parent::div//parent::div
     Generic.Select parameter    ${option2}
+
+Choose number of days inside under past filters
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //div[contains(@class,'filter-dropdown-date-time')]//input[contains(@class,'alertFilterInput')]  ${wait_time}
+    Wait Until Element Is Enabled    //div[contains(@class,'filter-dropdown-date-time')]//input[contains(@class,'alertFilterInput')]  ${wait_time}
+    input text    //div[contains(@class,'filter-dropdown-date-time')]//input[contains(@class,'alertFilterInput')]       ${option}
+
+
 
 Click on the filter under recent Activities table
     [Arguments]         ${option1}      ${option2}

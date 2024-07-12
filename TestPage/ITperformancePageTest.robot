@@ -176,7 +176,7 @@ It performnace drill down investment by partner
     ITperformancePage.Click on tabs under investment by partner tab     supportlocationbudget
     ITperformancePage.Get and verify the count of table of brand spend by supplier and supplier spend my location of investment by partner     QACompany96590301 Budget by Supplier and Location        QACompany96590301 Budget by Supplier and Location
 
-Verify the text of download icon under IT performnace
+Verify the text of download icon under IT performance
     [Tags]        Unstable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}     ${valid_password}
@@ -186,5 +186,3 @@ Verify the text of download icon under IT performnace
     Generic.Verify your current page location contains      it-performance
     ITperformancePage.Hover the text of download icon under it performance      Download the file.
 
-Zz kill browser
-    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

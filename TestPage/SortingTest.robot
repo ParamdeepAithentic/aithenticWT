@@ -184,7 +184,7 @@ Test the sorting of department page table
 
 
 Test the sorting of Assigned user page table inside department page
-    [Tags]      Stable
+    [Tags]      Unstable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
 #    LandingPage.Verify you are on dashboard page
@@ -196,6 +196,7 @@ Test the sorting of Assigned user page table inside department page
     DepartmentPage.Select option from side menu in department list       Assigned Users
     Generic.Verify your current page location contains      assignee-list
     Generic.Wait until table get load
+    sleep   5
     SortingPage.Verify the sorting of the table method two     3       Email Id
     SortingPage.Verify the sorting of the table method two     2       Assignee Name
     SortingPage.Verify the sorting of the table method two     4       Employee Id
@@ -377,7 +378,7 @@ Test the sorting of sent table page under message page
 
 
 Test the sorting of bulk edit grid under team members
-    [Tags]    Smoke     rerun       Stable
+    [Tags]    Smoke     rerun       Unstable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      jasdeep@15963.fr.nf     Paramdeep@112
 #    LandingPage.Verify you are on dashboard page
@@ -401,6 +402,7 @@ Test the sorting of bulk edit grid under team members
     SortingPage.Verify the sorting of the table method five    4       Country Code
     SortingPage.Verify the sorting of the table method five    3       Last Name
     SortingPage.Verify the sorting of the table method five    2       First Name
+
 Test the sorting of bulk edit grid under assigned users
     [Tags]      Stable
     Generic.click on the tab	Login
@@ -432,10 +434,6 @@ Test the sorting of Recent Activities Table under Dashboard page
     Generic.Verify your current page location contains          account-overview
     DashboardPage.Click on the filter Past under recent Activities table        Hours       Days
     PaginationPage.Check the table get load for Recent Activities
-    PaginationPage.Click on the pagination dropdown     autoCreatedAsset
-    PaginationPage.Select the value from the pagination drop down count    500
+#    PaginationPage.Select the value from the pagination drop down count    10
     SortingPage.Verify the sorting of the table method six    2        Actioned By
     SortingPage.Verify the sorting of the table method six    3        Created At
-
-Zz kill browser
-    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

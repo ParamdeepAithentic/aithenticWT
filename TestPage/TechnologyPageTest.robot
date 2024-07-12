@@ -50,15 +50,16 @@ ${self_searchId} =   AssetID_1803536655
 
 *** Test Cases ***
 
-#Free the asset limit
-#    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form     chirag@dmts.fr.nf     Test@123
-#    Generic.Verify your current page location contains      dashboard
-#    Generic.select the option from the side menu    Technology
-#    Generic.Verify your current page location contains      technology
-#    PaginationPage.Check the table get load
-#    PaginationPage.Fetch the total count
-#    PaginationPage.Run the remove asset journey
+Free the asset limit
+    [Tags]      Smoke     Sanity      Time      rerun       Stable
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form     ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    PaginationPage.Check the table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Run the remove asset journey
 
 
 Fill the technology form for license product
@@ -264,7 +265,7 @@ Create new asset with new brand and product
     DashboardPage.Add product description
     DashboardPage.Add product feature
     DashboardPage.Select product technology type     Hardware
-    sleep       1500
+#    sleep       1500
     DashboardPage.Select product technology group     Applications
     DashboardPage.Select product status   Active
     DashboardPage.Save added product details
@@ -1629,214 +1630,201 @@ Technology Details- Verify the Location Details
     Generic.Verify your current page contains this text     Past Location
     TechnologyPage.Verify parameter from past location table    ${generated_buildingname}
 
-#Technology Details- Verify the Location Details-2
-#    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form      ${email}    ${valid_password}
+Technology-Inactive asset and Restore asset
+    [Tags]      smoke           Stable
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form     chirag@dmts.fr.nf    Test@123
 #    LandingPage.Verify you are on dashboard page
-#    Generic.select the option from the side menu    Technology
-#    Generic.Verify your current page location contains      technology
-#    sleep   6
-#    TechnologyPage.Search by AssetId       AssetID_3480632009
-#    TechnologyPage.Click on the first row of the technology table
-#    Generic.Verify your current page location contains     technology-details
-#    TechnologyPage.Click on Location tab of technology- list page
-#    TechnologyPage.Get Value of Assignment Information Location Name
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     subscription-dropdown
+    Generic.Verify your current page location contains      subscription
+    SubscriptionPage.Select if you want to change plan or asset    Change Plan
+    TechnologyPage.Click on current plan of subscription
+    Generic.Scroll the page till    200
+    SubscriptionPage.Set asset range to     500
+    SubscriptionPage.Set asset range to     100
+    SubscriptionPage.Set asset range to     200
+    SubscriptionPage.Update the payment of changed plan     proceed
+    TechnologyPage.Click on pop up of available Inactive Asset   cancel
+    SubscriptionPage.Select the payment method    ach
+    SubscriptionPage.Select the account for payment
+    SubscriptionPage.Proceed the payment     proceed
+    Generic.Fetch alert message text and compare it with      Payment Successful
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list       Product_00337612322
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select purchase date
+    TechnologyPage.Select warranty end date    12/12/2028
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Add technology lifecycle comment    Technology Lifecycle Information- comment
+    TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
+    TechnologyPage.Add assignment information department name      TestQA Department Up31840619
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology-list
+    Generic.Wait until table get load
+    Generic.Click on the profile name
+    Generic.Select option from profile list     subscription-dropdown
+    Generic.Verify your current page location contains      subscription
+    SubscriptionPage.Select if you want to change plan or asset    Change Plan
+    TechnologyPage.Click on current plan of subscription
+    Generic.Scroll the page till    200
+    SubscriptionPage.Set asset range to     100
+    SubscriptionPage.Update the payment of changed plan     proceed
+    Sleep   ${yop_sleep}
+    TechnologyPage.Click on asset limit exceeded pop up
+    Generic.Verify your current page location contains      technology-list
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Select and restore asset
+    TechnologyPage.Click on proceed button of technology list page
+    SubscriptionPage.Select the payment method    ach
+    SubscriptionPage.Select the account for payment
+    SubscriptionPage.Proceed the payment     proceed
+    Generic.Fetch alert message text and compare it with      Payment Successful
+    Generic.Click on the profile name
+    Generic.Select option from profile list     subscription-dropdown
+    Generic.Verify your current page location contains      subscription
+    SubscriptionPage.Select if you want to change plan or asset    Change Plan
+    TechnologyPage.Click on current plan of subscription
+    Generic.Scroll the page till    200
+    SubscriptionPage.Set asset range to     200
+    SubscriptionPage.Update the payment of changed plan     proceed
+    Sleep   ${yop_sleep}
+    TechnologyPage.Click on pop up of available Inactive Asset       technology
+    Generic.Verify your current page location contains      manage-technology-list
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Select and restore asset
+    Generic.click on the button     Restore
+    SubscriptionPage.Select the payment method    ach
+    SubscriptionPage.Select the account for payment
+    SubscriptionPage.Proceed the payment     proceed
+    Generic.Fetch alert message text and compare it with      Payment Successful
+    SubscriptionPage.Select if you want to change plan or asset    Change Plan
+    TechnologyPage.Click on current plan of subscription
+    Generic.Scroll the page till    200
+    SubscriptionPage.Set asset range to     100
+    SubscriptionPage.Update the payment of changed plan     proceed
+    Sleep   ${yop_sleep}
+    TechnologyPage.Click on asset limit exceeded pop up
+    Generic.Verify your current page location contains      technology-list
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Select and restore asset
+    TechnologyPage.Click on proceed button of technology list page
+    SubscriptionPage.Select the payment method    ach
+    SubscriptionPage.Select the account for payment
+    SubscriptionPage.Proceed the payment     proceed
+    Generic.Fetch alert message text and compare it with      Payment Successful
 
-#Technology-Inactive asset and Restore asset
-#    [Tags]      smoke           Stable
-#    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form     chirag@dmts.fr.nf    Test@123
-##    LandingPage.Verify you are on dashboard page
-#    Generic.Verify your current page location contains      dashboard
-#    Generic.Click on the profile name
-#    Generic.Select option from profile list     subscription-dropdown
-#    Generic.Verify your current page location contains      subscription
-#    SubscriptionPage.Select if you want to change plan or asset    Change Plan
-#    TechnologyPage.Click on current plan of subscription
-#    Generic.Scroll the page till    200
-#    SubscriptionPage.Set asset range to     500
-#    SubscriptionPage.Set asset range to     100
-#    SubscriptionPage.Set asset range to     200
-#    SubscriptionPage.Update the payment of changed plan     proceed
-#    TechnologyPage.Click on pop up of available Inactive Asset   cancel
-#    SubscriptionPage.Select the payment method    ach
-#    SubscriptionPage.Select the account for payment
-#    SubscriptionPage.Proceed the payment     proceed
-#    Generic.Fetch alert message text and compare it with      Payment Successful
-#    Generic.select the option from the side menu    Technology
-#    Generic.Verify your current page location contains      technology
-#    TechnologyPage.Click on action button of technology
-#    TechnologyPage.Choose add technology from action button of technology
-#    Generic.Verify your current page location contains      addtechnology
-#    TechnologyPage.Click technology brand input field
-#    TechnologyPage.Select parameter from brand dropdown list       QABrand555
-#    TechnologyPage.Select parameter from technology dropdown list       Product_00337612322
-#    TechnologyPage.Add assetID for technology lifecycle information random
-#    TechnologyPage.Select purchase date
-#    TechnologyPage.Select warranty end date    12/12/2028
-#    TechnologyPage.Select technology lifecycle status      Active
-#    TechnologyPage.Add technology lifecycle comment    Technology Lifecycle Information- comment
-#    TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
-#    TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-#    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
-#    TechnologyPage.Click on save technology form button
-#    Generic.Fetch alert message text and compare it with        Technology created successfully
-#    TechnologyPage.Click on save technology form pop button
-#    Generic.Verify your current page location contains      technology-list
-#    Generic.Wait until table get load
-#    Generic.Click on the profile name
-#    Generic.Select option from profile list     subscription-dropdown
-#    Generic.Verify your current page location contains      subscription
-#    SubscriptionPage.Select if you want to change plan or asset    Change Plan
-#    TechnologyPage.Click on current plan of subscription
-#    Generic.Scroll the page till    200
-#    SubscriptionPage.Set asset range to     100
-#    SubscriptionPage.Update the payment of changed plan     proceed
-#    Sleep   ${yop_sleep}
-#    TechnologyPage.Click on asset limit exceeded pop up
-#    Generic.Verify your current page location contains      technology-list
-#    TechnologyPage.Search by AssetId       ${generated_AssetID}
-#    TechnologyPage.Select and restore asset
-#    TechnologyPage.Click on proceed button of technology list page
-#    SubscriptionPage.Select the payment method    ach
-#    SubscriptionPage.Select the account for payment
-#    SubscriptionPage.Proceed the payment     proceed
-#    Generic.Fetch alert message text and compare it with      Payment Successful
-#    Generic.Click on the profile name
-#    Generic.Select option from profile list     subscription-dropdown
-#    Generic.Verify your current page location contains      subscription
-#    SubscriptionPage.Select if you want to change plan or asset    Change Plan
-#    TechnologyPage.Click on current plan of subscription
-#    Generic.Scroll the page till    200
-#    SubscriptionPage.Set asset range to     200
-#    SubscriptionPage.Update the payment of changed plan     proceed
-#    Sleep   ${yop_sleep}
-#    TechnologyPage.Click on pop up of available Inactive Asset       technology
-#    Generic.Verify your current page location contains      manage-technology-list
-#    TechnologyPage.Search by AssetId       ${generated_AssetID}
-#    TechnologyPage.Select and restore asset
-#    Generic.click on the button     Restore
-#    SubscriptionPage.Select the payment method    ach
-#    SubscriptionPage.Select the account for payment
-#    SubscriptionPage.Proceed the payment     proceed
-#    Generic.Fetch alert message text and compare it with      Payment Successful
-#    SubscriptionPage.Select if you want to change plan or asset    Change Plan
-#    TechnologyPage.Click on current plan of subscription
-#    Generic.Scroll the page till    200
-#    SubscriptionPage.Set asset range to     100
-#    SubscriptionPage.Update the payment of changed plan     proceed
-#    Sleep   ${yop_sleep}
-#    TechnologyPage.Click on asset limit exceeded pop up
-#    Generic.Verify your current page location contains      technology-list
-#    TechnologyPage.Search by AssetId       ${generated_AssetID}
-#    TechnologyPage.Select and restore asset
-#    TechnologyPage.Click on proceed button of technology list page
-#    SubscriptionPage.Select the payment method    ach
-#    SubscriptionPage.Select the account for payment
-#    SubscriptionPage.Proceed the payment     proceed
-#    Generic.Fetch alert message text and compare it with      Payment Successful
-
-#Inactive asset - Restore asset from Technology Details page
-#    [Tags]      smoke       Stable
-#    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form     chirag@dmts.fr.nf    Test@123
-##    LandingPage.Verify you are on dashboard page
-#    Generic.Verify your current page location contains      dashboard
-#    Generic.Click on the profile name
-#    Generic.Select option from profile list     subscription-dropdown
-#    Generic.Verify your current page location contains      subscription
-#    SubscriptionPage.Select if you want to change plan or asset    Change Plan
-#    TechnologyPage.Click on current plan of subscription
-#    Generic.Scroll the page till    200
-#    SubscriptionPage.Set asset range to     500
-#    SubscriptionPage.Set asset range to     200
-#    SubscriptionPage.Update the payment of changed plan     proceed
-#    TechnologyPage.Click on pop up of available Inactive Asset   cancel
-#    SubscriptionPage.Select the payment method    ach
-#    SubscriptionPage.Select the account for payment
-#    SubscriptionPage.Proceed the payment     proceed
-#    Generic.Fetch alert message text and compare it with      Payment Successful      ############
-#    Generic.select the option from the side menu    Technology
-#    Generic.Verify your current page location contains      technology
-#    TechnologyPage.Click on action button of technology
-#    TechnologyPage.Choose add technology from action button of technology
-#    Generic.Verify your current page location contains      addtechnology
-#    TechnologyPage.Click technology brand input field
-#    TechnologyPage.Select parameter from brand dropdown list       QABrand555
-#    TechnologyPage.Select parameter from technology dropdown list       Product_00337612322
-#    TechnologyPage.Add assetID for technology lifecycle information random
-#    TechnologyPage.Select purchase date
-#    TechnologyPage.Select warranty end date    12/12/2028
-#    TechnologyPage.Select technology lifecycle status      Active
-#    TechnologyPage.Add technology lifecycle comment    Technology Lifecycle Information- comment
-#    TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
-#    TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-#    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
-#    TechnologyPage.Click on save technology form button
-#    Generic.Fetch alert message text and compare it with        Technology created successfully
-#    TechnologyPage.Click on save technology form pop button
-#    Generic.Verify your current page location contains      technology-list
-#    Generic.Wait until table get load
-#    Generic.Click on the profile name
-#    Generic.Select option from profile list     subscription-dropdown
-#    Generic.Verify your current page location contains      subscription
-#    SubscriptionPage.Select if you want to change plan or asset    Change Plan
-#    TechnologyPage.Click on current plan of subscription
-#    Generic.Scroll the page till    200
-#    SubscriptionPage.Set asset range to     100
-#    SubscriptionPage.Update the payment of changed plan     proceed
-#    Sleep   ${yop_sleep}
-#    TechnologyPage.Click on asset limit exceeded pop up
-#    Generic.Verify your current page location contains      technology-list
-#    TechnologyPage.Search by AssetId       ${generated_AssetID}
-#    TechnologyPage.Select and restore asset
-#    TechnologyPage.Click on proceed button of technology list page
-#    SubscriptionPage.Select the payment method    ach
-#    SubscriptionPage.Select the account for payment
-#    SubscriptionPage.Proceed the payment     proceed
-#    Generic.Fetch alert message text and compare it with      Payment Successful
-#    Generic.Click on the profile name
-#    Generic.Select option from profile list     subscription-dropdown
-#    Generic.Verify your current page location contains      subscription
-#    SubscriptionPage.Select if you want to change plan or asset    Change Plan
-#    TechnologyPage.Click on current plan of subscription
-#    Generic.Scroll the page till    200
-#    SubscriptionPage.Set asset range to     200
-#    SubscriptionPage.Update the payment of changed plan     proceed
-#    Sleep   ${yop_sleep}
-#    TechnologyPage.Click on pop up of available Inactive Asset      cancel
-#    SubscriptionPage.Select the payment method    ach
-#    SubscriptionPage.Select the account for payment
-#    SubscriptionPage.Proceed the payment     proceed
-#    Generic.Fetch alert message text and compare it with      Payment Successful
-#    Generic.select the option from the side menu    Technology
-#    TechnologyPage.Click on manage technology sub option      Removed Assets
-#    TechnologyPage.Search by AssetId       ${generated_AssetID}
-#    TechnologyPage.Click on the first row of the technology table
-#    Generic.Verify your current page location contains     technology-details
-#    TechnologyPage.Click on restore button of technology Details Page
-#    TechnologyPage.Click on back to list of technology
-#    Generic.Verify your current page location contains      technology-list
-#    TechnologyPage.Click on manage technology sub option       Technology List
-#    TechnologyPage.Search by AssetId   ${generated_AssetID}
-#    Generic.Click on the profile name
-#    Generic.Select option from profile list     subscription-dropdown
-#    Generic.Verify your current page location contains      subscription
-#    SubscriptionPage.Select if you want to change plan or asset    Change Plan
-#    TechnologyPage.Click on current plan of subscription
-#    Generic.Scroll the page till    200
-#    SubscriptionPage.Set asset range to     100
-#    SubscriptionPage.Update the payment of changed plan     proceed
-#    Sleep   ${yop_sleep}
-#    TechnologyPage.Click on asset limit exceeded pop up
-#    Generic.Verify your current page location contains      technology-list
-#    TechnologyPage.Search by AssetId      ${generated_AssetID}
-#    TechnologyPage.Select and restore asset
-#    TechnologyPage.Click on proceed button of technology list page
-#    SubscriptionPage.Select the payment method    ach
-#    SubscriptionPage.Select the account for payment
-#    SubscriptionPage.Proceed the payment     proceed
-#    Generic.Fetch alert message text and compare it with      Payment Successful
+Inactive asset - Restore asset from Technology Details page
+    [Tags]      smoke       Stable
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form     chirag@dmts.fr.nf    Test@123
+#    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     subscription-dropdown
+    Generic.Verify your current page location contains      subscription
+    SubscriptionPage.Select if you want to change plan or asset    Change Plan
+    TechnologyPage.Click on current plan of subscription
+    Generic.Scroll the page till    200
+    SubscriptionPage.Set asset range to     500
+    SubscriptionPage.Set asset range to     200
+    SubscriptionPage.Update the payment of changed plan     proceed
+    TechnologyPage.Click on pop up of available Inactive Asset   cancel
+    SubscriptionPage.Select the payment method    ach
+    SubscriptionPage.Select the account for payment
+    SubscriptionPage.Proceed the payment     proceed
+    Generic.Fetch alert message text and compare it with      Payment Successful      ############
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list       Product_00337612322
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select purchase date
+    TechnologyPage.Select warranty end date    12/12/2028
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Add technology lifecycle comment    Technology Lifecycle Information- comment
+    TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
+    TechnologyPage.Add assignment information department name      TestQA Department Up31840619
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology-list
+    Generic.Wait until table get load
+    Generic.Click on the profile name
+    Generic.Select option from profile list     subscription-dropdown
+    Generic.Verify your current page location contains      subscription
+    SubscriptionPage.Select if you want to change plan or asset    Change Plan
+    TechnologyPage.Click on current plan of subscription
+    Generic.Scroll the page till    200
+    SubscriptionPage.Set asset range to     100
+    SubscriptionPage.Update the payment of changed plan     proceed
+    Sleep   ${yop_sleep}
+    TechnologyPage.Click on asset limit exceeded pop up
+    Generic.Verify your current page location contains      technology-list
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Select and restore asset
+    TechnologyPage.Click on proceed button of technology list page
+    SubscriptionPage.Select the payment method    ach
+    SubscriptionPage.Select the account for payment
+    SubscriptionPage.Proceed the payment     proceed
+    Generic.Fetch alert message text and compare it with      Payment Successful
+    Generic.Click on the profile name
+    Generic.Select option from profile list     subscription-dropdown
+    Generic.Verify your current page location contains      subscription
+    SubscriptionPage.Select if you want to change plan or asset    Change Plan
+    TechnologyPage.Click on current plan of subscription
+    Generic.Scroll the page till    200
+    SubscriptionPage.Set asset range to     200
+    SubscriptionPage.Update the payment of changed plan     proceed
+    Sleep   ${yop_sleep}
+    TechnologyPage.Click on pop up of available Inactive Asset      cancel
+    SubscriptionPage.Select the payment method    ach
+    SubscriptionPage.Select the account for payment
+    SubscriptionPage.Proceed the payment     proceed
+    Generic.Fetch alert message text and compare it with      Payment Successful
+    Generic.select the option from the side menu    Technology
+    TechnologyPage.Click on manage technology sub option      Removed Assets
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+    TechnologyPage.Click on restore button of technology Details Page
+    TechnologyPage.Click on back to list of technology
+    Generic.Verify your current page location contains      technology-list
+    TechnologyPage.Click on manage technology sub option       Technology List
+    TechnologyPage.Search by AssetId   ${generated_AssetID}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     subscription-dropdown
+    Generic.Verify your current page location contains      subscription
+    SubscriptionPage.Select if you want to change plan or asset    Change Plan
+    TechnologyPage.Click on current plan of subscription
+    Generic.Scroll the page till    200
+    SubscriptionPage.Set asset range to     100
+    SubscriptionPage.Update the payment of changed plan     proceed
+    Sleep   ${yop_sleep}
+    TechnologyPage.Click on asset limit exceeded pop up
+    Generic.Verify your current page location contains      technology-list
+    TechnologyPage.Search by AssetId      ${generated_AssetID}
+    TechnologyPage.Select and restore asset
+    TechnologyPage.Click on proceed button of technology list page
+    SubscriptionPage.Select the payment method    ach
+    SubscriptionPage.Select the account for payment
+    SubscriptionPage.Proceed the payment     proceed
+    Generic.Fetch alert message text and compare it with      Payment Successful
 
 Verify the technology data while applying agent Filters
     [Tags]      Unstable
@@ -1946,6 +1934,7 @@ Click on the attachment tab under technology
     Switch Window       NEW
     Generic.Verify your current page location contains    amazonaws
     Generic.Verify your current page location contains    .pdf
+    Generic.Verify your current page contains this text    Dummy PDF file
     Switch Window       Main
     TechnologyPage.Download the file by clicking on download icon over file    .jpg
     Sleep    ${yop_sleep}
@@ -1988,6 +1977,7 @@ Upload file: Image and Document files while adding Technology
     Switch Window       NEW
     Generic.Verify your current page location contains    amazonaws
     Generic.Verify your current page location contains    .pdf
+    Generic.Verify your current page contains this text    Dummy PDF file
     Switch Window       Main
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
@@ -2042,6 +2032,7 @@ Upload file: Image and Document files while Edit Technology
     Switch Window       NEW
     Generic.Verify your current page location contains    amazonaws
     Generic.Verify your current page location contains    .pdf
+    Generic.Verify your current page contains this text    Dummy PDF file
     Switch Window       Main
     TechnologyPage.Click on update button of edit_technology page      Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
@@ -2088,6 +2079,7 @@ Upload file: Image and document files while Clone the Technology
     Switch Window       NEW
     Generic.Verify your current page location contains    amazonaws
     Generic.Verify your current page location contains    .pdf
+    Generic.Verify your current page contains this text    Dummy PDF file
     Switch Window       Main
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
@@ -2250,7 +2242,7 @@ Verify cross icon and reset icon while adding product
     TechnologyPage.Verify the invisibility of technology type after clicking on reset icon
 
 Creating technology while creating cancellation notice period and contract end date
-    [Tags]      Unstable
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -2404,9 +2396,7 @@ Add the technology from profile listing
     TechnologyPage.Click on save product pop inside technology page
     Generic.Fetch alert message text and compare it with    Product created successfully
     TechnologyPage.Wait until brand loder is invisible
-#    TechnologyPage.Select parameter from technology dropdown list    ${generated_product}
     TechnologyPage.Add assetID for technology lifecycle information random
-    TechnologyPage.Select technology lifecycle status      Active
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
@@ -2419,7 +2409,7 @@ Add the technology from profile listing
     Generic.Fetch alert message text and compare it with      Technology Removed Successfully
 
 Verify_Asset_ID_Changing_settings_from_Profile_list
-    [Tags]      Stable
+    [Tags]      Stable    yy
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -2501,8 +2491,11 @@ Verify_Asset_ID_Changing_settings_from_Profile_list
     PartnersPage.Select option from the pop up  Yes
     Generic.Fetch alert message text and compare it with      Technology Removed Successfully
 
-Zz kill browser
-    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+
+#Zz kill browser
+#    [Tags]      Smoke     Sanity      Time      rerun       Stable    yy
+#    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+#    Run Process    cmd.exe    /C    taskkill /IM python.exe /F
 
 
 

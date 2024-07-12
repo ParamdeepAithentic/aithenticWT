@@ -269,23 +269,23 @@ Update the payment of changed plan
 
 Click on the three dots of subscription connector
     [Arguments]     ${option}
-    wait until element is visible  //td[normalize-space()='${option}']//parent::tr//td//div//button    ${wait_time}
-    wait until element is enabled   //td[normalize-space()='${option}']//parent::tr//td//div//button  ${wait_time}
-    click element  //td[normalize-space()='${option}']//parent::tr//td//div//button
+    wait until element is visible  //td[normalize-space()='${option}']//parent::tr//td//button//i    ${wait_time}
+    wait until element is enabled  //td[normalize-space()='${option}']//parent::tr//td//button//i  ${wait_time}
+    click element  //td[normalize-space()='${option}']//parent::tr//td//button//i
     sleep   ${search_sleep}
     wait until element is not visible       ${shadow}          ${wait_time}
 
 Click on option under three dots of subscription connector
-    [Arguments]     ${option}
-    wait until element is visible  (//div[contains(@class,'dropdown-menu')])[2]//a[normalize-space()='${option}']     ${wait_time}
-    wait until element is enabled   (//div[contains(@class,'dropdown-menu')])[2]//a[normalize-space()='${option}']    ${wait_time}
-    click element   (//div[contains(@class,'dropdown-menu')])[2]//a[normalize-space()='${option}']
+    [Arguments]     ${option1}       ${option2}
+    wait until element is visible  //td[normalize-space()='${option1}']//parent::tr//td//button//i//parent::button//following-sibling::div//a[normalize-space()='${option2}']     ${wait_time}
+    wait until element is enabled   //td[normalize-space()='${option1}']//parent::tr//td//button//i//parent::button//following-sibling::div//a[normalize-space()='${option2}']    ${wait_time}
+    click element   //td[normalize-space()='${option1}']//parent::tr//td//button//i//parent::button//following-sibling::div//a[normalize-space()='${option2}']
     sleep  ${search_sleep}
 
 Fetch text of delete under table of subscription connector
-    [Arguments]     ${option}
-    wait until element is visible    //td[normalize-space()='Google']//parent::tr//td//span        ${wait_time}
-    ${value} =    get text    //td[normalize-space()='Google']//parent::tr//td//span
+    [Arguments]     ${option1}      ${option}
+    wait until element is visible    //td[normalize-space()='${option1}']//parent::tr//td//span        ${wait_time}
+    ${value} =    get text    //td[normalize-space()='${option1}']//parent::tr//td//span
     log to console     ${value}
     should be equal    ${value}    ${option}
     Wait Until Element Is Not Visible     ${value}        ${wait_time}
@@ -343,9 +343,11 @@ Enter input in the input field of date under create scheduler
     input text      //div[@id='editScheduler']//input[@formcontrolname='Date']      ${option}
 
 Click on the activate option under subscription connector table
-    wait until element is visible   //td[normalize-space()='Google']//parent::tr//td[normalize-space()='Activate']      ${wait_time}
-    wait until element is enabled   //td[normalize-space()='Google']//parent::tr//td[normalize-space()='Activate']      ${wait_time}
-    click element   //td[normalize-space()='Google']//parent::tr//td[normalize-space()='Activate']
+    [Arguments]         ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible   //td[normalize-space()='${option}']//parent::tr//td[normalize-space()='Activate']      ${wait_time}
+    wait until element is enabled   //td[normalize-space()='${option}']//parent::tr//td[normalize-space()='Activate']      ${wait_time}
+    click element   //td[normalize-space()='${option}']//parent::tr//td[normalize-space()='Activate']
 
 Click on the suspend my account button link under billing details
     wait until element is visible   //div[@class='row'][1]//span[contains(text(),'Suspend My Account')]     ${wait_time}
@@ -358,10 +360,11 @@ Enter input in the start date field of billing details
     Generic.Enter current date       css:#startDate
 
 Enter input in the end date field of billing details
+    [Arguments]     ${option}
     wait until element is visible   css:#endDate      ${wait_time}
     wait until element is enabled   css:#endDate      ${wait_time}
     click element   css:#endDate
-    input text      css:#endDate      07/02/2024
+    input text      css:#endDate      ${option}
     Press Keys      css:#endDate       ENTER
 
 Enter input in the description field of billing details
@@ -419,6 +422,18 @@ Click on option under three dots of Microsoft coorporation
     click element   (//div[contains(@class,'dropdown-menu')])[3]//a[normalize-space()='${option}']
     sleep  ${search_sleep}
 
+Click on the service now tab under discovery assets
+    wait until element is visible  css:#service-now-first-parent-tab     ${wait_time}
+    wait until element is enabled   css:#service-now-first-parent-tab    ${wait_time}
+    click element   css:#service-now-first-parent-tab
+    sleep  ${search_sleep}
+
+Click on the settings icon under service now via discovery assets
+    wait until element is visible  //div[contains(@class,'flex-space')]//div//i    ${wait_time}
+    wait until element is enabled  //div[contains(@class,'flex-space')]//div//i  ${wait_time}
+    click element  //div[contains(@class,'flex-space')]//div//i
+    sleep   ${search_sleep}
+#    wait until element is not visible       ${shadow}          ${wait_time}
 
 My Failure Handling
     Generic.Click on the profile name
@@ -436,3 +451,101 @@ My Failure Handling
     Generic.click on the tab    Connectors
     SubscriptionPage.Click on the activate option under subscription connector table
     Generic.Fetch alert message text and compare it with        Status Updated
+
+Verify the visibility of no records under view details under sentinel one
+     wait until element is visible   //span[normalize-space()='No Records']    ${wait_time}
+     wait until element is enabled   //span[normalize-space()='No Records']  ${wait_time}
+
+Click on the create button link of service now under subscription connector
+    [Arguments]     ${option}       ${option1}
+    wait until element is visible  //td[normalize-space()='${option}']//parent::tr//td[normalize-space()='${option1}']    ${wait_time}
+    wait until element is enabled  //td[normalize-space()='${option}']//parent::tr//td[normalize-space()='${option1}']  ${wait_time}
+    click element  //td[normalize-space()='${option}']//parent::tr//td[normalize-space()='${option1}']
+    sleep   ${search_sleep}
+
+Enter input in the url end point field of service now
+    [Arguments]     ${option}
+    wait until element is visible  css:#urlEndPoint    ${wait_time}
+    wait until element is enabled  css:#urlEndPoint      ${wait_time}
+    click element  css:#urlEndPoint
+    input text      css:#urlEndPoint        ${option}
+
+Enter input in the username field of service now
+    [Arguments]     ${option}
+    wait until element is visible  css:#username    ${wait_time}
+    wait until element is enabled  css:#username      ${wait_time}
+    click element  css:#username
+    input text      css:#username       ${option}
+
+Enter input in the password field of service now
+    [Arguments]     ${option}
+    wait until element is visible  css:#password_sn    ${wait_time}
+    wait until element is enabled  css:#password_sn      ${wait_time}
+    click element  css:#password_sn
+    input text      css:#password_sn       ${option}
+
+ Enter input in the client id field of service now
+    [Arguments]     ${option}
+    wait until element is visible  css:#clientId    ${wait_time}
+    wait until element is enabled  css:#clientId      ${wait_time}
+    click element  css:#clientId
+    input text      css:#clientId        ${option}
+
+Enter input in the secret key field of service now
+    [Arguments]     ${option}
+    wait until element is visible  css:#clientSecret    ${wait_time}
+    wait until element is enabled  css:#clientSecret     ${wait_time}
+    click element  css:#clientSecret
+    input text      css:#clientSecret        ${option}
+
+Click on cross icon of details under service now
+    wait until element is visible  //div[@id='viewDetails']//span[normalize-space()='×']    ${wait_time}
+    wait until element is enabled  //div[@id='viewDetails']//span[normalize-space()='×']     ${wait_time}
+    click element    //div[@id='viewDetails']//span[normalize-space()='×']
+    sleep   ${search_sleep}
+
+Fetch and compare the product from the table
+    [Arguments]    ${option}
+    wait until element is visible       //td[normalize-space()='${option}']     ${wait_time}
+    ${fetch_azureproductName} =    get text    //td[normalize-space()='${option}']
+    set global variable    ${fetch_azureproductName}
+    log to console     Azure_Product_Name=${fetch_azureproductName}
+    should be equal     ${option}      ${fetch_azureproductName}
+
+Enter input in the input field of frequency under asset discovery
+    [Arguments]     ${option}
+    wait until element is visible  //div[@id='openEditScheduler']//ng-select[@formcontrolname='schedulerFrequency']    ${wait_time}
+    wait until element is enabled   //div[@id='openEditScheduler']//ng-select[@formcontrolname='schedulerFrequency']    ${wait_time}
+    click element   //div[@id='openEditScheduler']//ng-select[@formcontrolname='schedulerFrequency']
+    Generic.Select parameter    ${option}
+
+Enter input in the input field of day asset discovery
+    [Arguments]     ${option}
+    wait until element is visible  //div[@id='openEditScheduler']//ng-select[@formcontrolname='schedulerDay']    ${wait_time}
+    wait until element is enabled  //div[@id='openEditScheduler']//ng-select[@formcontrolname='schedulerDay']    ${wait_time}
+    click element   //div[@id='openEditScheduler']//ng-select[@formcontrolname='schedulerDay']
+    Generic.Select parameter    ${option}
+
+Enter input in the input field of time under asset discovery
+    [Arguments]     ${option}
+    wait until element is visible  //div[@id='openEditScheduler']//input[@formcontrolname='schedulerTime']    ${wait_time}
+    wait until element is enabled   //div[@id='openEditScheduler']//input[@formcontrolname='schedulerTime']    ${wait_time}
+    clear element text  //div[@id='openEditScheduler']//input[@formcontrolname='schedulerTime']
+    sleep    ${search_sleep}
+    input text  //div[@id='openEditScheduler']//input[@formcontrolname='schedulerTime']     ${option}
+
+Enter input in the start date field of service now under asset discovery
+    Generic.Enter current date       //div[@id='openEditScheduler']//input[@formcontrolname='schedulerDate']
+
+click on the cross icon of service now under asset discovery
+    [Arguments]     ${option}
+    wait until element is visible   (//div[@id='openEditScheduler']//span[@title='Clear all'])[${option}]    ${wait_time}
+    wait until element is enabled   (//div[@id='openEditScheduler']//span[@title='Clear all'])[${option}]     ${wait_time}
+    click element   (//div[@id='openEditScheduler']//span[@title='Clear all'])[${option}]
+
+click on the cross icon of delete pop up under asset discovery
+    wait until element is visible   //div[@id='deleteServicenowlConnector']//span[normalize-space()='×']    ${wait_time}
+    wait until element is enabled   //div[@id='deleteServicenowlConnector']//span[normalize-space()='×']     ${wait_time}
+    click element   //div[@id='deleteServicenowlConnector']//span[normalize-space()='×']
+    sleep   ${search_sleep}
+    wait until element is not visible       ${shadow}          ${wait_time}

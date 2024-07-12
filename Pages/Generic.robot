@@ -41,9 +41,6 @@ Resource        ../Pages/DisconnectConnectorAPI.robot
 Resource        ../Pages/UnselectAssetAPI.robot
 *** Variables ***
 
-${browser_name}         firefox
-
-${email}                 testqa29j@mailinator.com
 ${SheetLocationAndName}   LoadTimeSheet.xlsx
 ${SheetTabName}     Load_Time_tracking
 
@@ -59,15 +56,16 @@ ${click_countryTag}     css:.iti__arrow
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
-${wait_time}        60
+
+${wait_time}       60
 ${yop_sleep}       10
 ${search_sleep}       1
+
 ${CASE}       pre-prod      #qa , uat , pre-prod
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
 
 *** Keywords ***
 Simulate Switch Case
-#    ${CASE} =    Set Variable    option2
     Run Keyword If    '${CASE}' == 'qa'    Set QA Variables
     ...    ELSE IF    '${CASE}' == 'uat'   Set UAT Variables
     ...    ELSE IF    '${CASE}' == 'pre-prod'    Set Pre-Prod Variables
@@ -83,6 +81,14 @@ Set QA Variables
     Set Suite Variable    ${admin_password}       Admin@123
     Set Suite Variable    ${browser_name}         firefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
+    Set Suite Variable    ${discovered_asset_brand}                 MSI
+    Set Suite Variable    ${existing_mac}                       D8:CB:8A:CA:6A:39
+    Set Suite Variable    ${discovered_existing_brand}          QABrand555
+    Set Suite Variable    ${discovered_existing_product}        QAHardwareProduct
+    Set Suite Variable    ${discovered_existing_department}    Customer Support
+    Set Suite Variable    ${discovered_IP}   192.168.18.23
+    Set Suite Variable    ${discovery_asset_list_brand}       Apple, Inc.
+#    Run Keyword    Set Plan range in pre requites    ${admin_name}    ${admin_password}
 
 Set UAT Variables
     Set Suite Variable    ${url}    https://uat-app.aithentic.com/
@@ -94,12 +100,18 @@ Set UAT Variables
     Set Suite Variable    ${admin_password}       Admin@123
     Set Suite Variable    ${browser_name}         firefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
+    Set Suite Variable    ${discovered_asset_brand}                 Apple Inc
+    Set Suite Variable    ${discovered_existing_brand}              Apple Inc.
+    Set Suite Variable    ${discovered_existing_product}            Macmini9,1
+    Set Suite Variable    ${discovered_existing_department}        Quality Assurance
+    Set Suite Variable    ${discovered_IP}    00:17:61:10:C6:A1
+    Set Suite Variable    ${discovery_asset_list_brand}     AKKA Germany GmbH
 
 Set Pre-Prod Variables
     Set Suite Variable    ${url}    https://pre-prod-app.aithentic.com/
     Set Suite Variable    ${valid_password}    Test@123     #pre prod
     Set Suite Variable    ${apiURL}    https://pre-prod-api.aithentic.com/api/v1
-    Set Suite Variable    ${browser_name}         firefox
+    Set Suite Variable    ${browser_name}         headlessfirefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
 
 Set Default Variables
@@ -110,7 +122,7 @@ Set Default Variables
     Set Suite Variable    ${admin_url}        https://uat-admin.aithentic.com/
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
-    Set Suite Variable    ${browser_name}         firefox
+    Set Suite Variable    ${browser_name}         headlessfirefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
 
 Fix the column number
@@ -161,6 +173,7 @@ click on the button
 
 click on the button link
     [Arguments]    ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible        //a[normalize-space()='${option}']        ${wait_time}
     wait until element is enabled      //a[normalize-space()='${option}']          ${wait_time}
     click element       //a[normalize-space()='${option}']
@@ -370,6 +383,8 @@ Click keyboard button
     [Arguments]     ${locator}      ${button}
     Press keys      ${locator}      ${button}
 
+wait for the shadow to get hide from the current screen
+    wait until element is not visible       ${shadow}          ${wait_time}
 
 Update settings for Asset_ID, employee_id and location
     Generic.open the browser with the url
@@ -404,5 +419,6 @@ Update settings for Asset_ID, employee_id and location
     Run Process    cmd.exe    /C    taskkill /IM chrome.exe /F
     Run Process    cmd.exe    /C    taskkill /IM skype.exe /F
     Run Process    cmd.exe    /C    taskkill /IM msedge.exe /F
+
 
 

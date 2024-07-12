@@ -48,7 +48,6 @@ Test Teardown   Close Browser session
 
 
 *** Test Cases ***
-
 Export Partner list
     [Tags]      Stable
     Generic.click on the tab	    Login
@@ -583,7 +582,7 @@ Export component tab list
     Generic.click on the button     Okay, Thanks!
 
 Export account overview tab data
-    [Tags]      Unstable
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -615,8 +614,3 @@ Export account overview tab data
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
 
-
-
-
-Zz kill browser
-    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

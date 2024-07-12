@@ -140,6 +140,16 @@ Double click
     Press Keys    css:.ag-center-cols-container div[col-id='${option}']     CONTROL+A
     Press Keys    css:.ag-center-cols-container div[col-id='${option}']     DELETE
 
+Verify the upload message text - bulk import tech
+    [Arguments]    ${option}    ${text}
+    wait until element is not visible      ${loaderIcon}     ${wait_time}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}']     ${wait_time}
+    wait until element is enabled       css:.ag-center-cols-container div[col-id='${option}']     ${wait_time}
+    wait until element contains      css:.ag-center-cols-container div[col-id='${option}']      Upload is prepared      ${wait_time}
+    ${fetch_text} =    get text    css:.ag-center-cols-container div[col-id='${option}']
+    log to console  uploadtext:${fetch_text}
+    should be equal    ${fetch_text}    ${text}
+
 Verify the upload message text
     [Arguments]    ${option}    ${text}
     wait until element is not visible      ${loaderIcon}     ${wait_time}
@@ -148,6 +158,7 @@ Verify the upload message text
     ${fetch_text} =    get text    css:.ag-center-cols-container div[col-id='${option}']
     log to console  uploadtext:${fetch_text}
     should be equal    ${fetch_text}    ${text}
+
 
 Click on I_m_done button when popup appears
     [Arguments]     ${option}
