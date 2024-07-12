@@ -937,6 +937,15 @@ Verify Account_overview Recent Activities Filters
     LandingPage.Fill the login Form      ${email}       ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    RegisterUserPage.Select the option from the personal details sidebar        personal-profile
+    Generic.Verify your current page location contains    personal-profile
+    RegisterUserPage.Click on edit button to edit the profile details    Edit
+    RegisterUserPage.Create self register first name    Test QA31280530
+    RegisterUserPage.Create self register last name     Up3128
+    RegisterUserPage.Save the Profile details       Save
+    Generic.Fetch alert message text and compare it with    Profile saved successfully
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -1377,7 +1386,7 @@ Verifying the Renewals Overview section of Management console - Overdue certific
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
-    TechnologyPage.Select parameter from technology dropdown list      Certificate1 product
+    TechnologyPage.Select parameter from technology dropdown list      Product_certificate
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date self    05/13/2024
     TechnologyPage.Input current Date
@@ -1413,7 +1422,7 @@ Verifying the Renewals Overview section of Management console - Overdue certific
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
-    TechnologyPage.Select parameter from technology dropdown list       Certificate1 product
+    TechnologyPage.Select parameter from technology dropdown list       Product_certificate
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date self    05/13/2024
     TechnologyPage.Input future Date
