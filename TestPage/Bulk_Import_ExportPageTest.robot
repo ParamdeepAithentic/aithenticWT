@@ -50,8 +50,8 @@ Product Bulk import
     [Tags]    Sanity        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     product-dropdown
     Generic.Verify your current page location contains      product
@@ -80,8 +80,8 @@ Product Bulk Edit
     [Tags]    Sanity        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     product-dropdown
     Generic.Verify your current page location contains      product
@@ -130,8 +130,8 @@ Department Bulk Import
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     department-dropdown
     Generic.Verify your current page location contains      department-list
@@ -156,8 +156,8 @@ Department Bulk Edit
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     department-dropdown
     Generic.Verify your current page location contains      department-list
@@ -198,8 +198,8 @@ Add Product Bulk Edit
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     product-dropdown
     Generic.Verify your current page location contains      product
@@ -241,8 +241,8 @@ Add Department Bulk Edit
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     department-dropdown
     Generic.Verify your current page location contains      department-list
@@ -274,8 +274,8 @@ Location Bulk Edit
     [Tags]    Sanity        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Location
     Generic.Verify your current page location contains      locationlist
     LocationPage.Click on Location action button
@@ -330,8 +330,8 @@ Assigned Users Bulk Edit
     [Tags]    Sanity     Time       Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
@@ -371,8 +371,8 @@ Team Member Bulk Edit
     [Tags]    Sanity        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     Generic.Click on the profile name
@@ -434,8 +434,8 @@ Technology Bulk edit
     [Tags]       sanity       Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     Generic.Verify your current page location contains     technology-list
@@ -507,8 +507,8 @@ Team member Bulk Import
     [Tags]    Sanity        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     I_iconPage.Choose options inside personal_details        Organization
@@ -555,8 +555,8 @@ Assigned User Bulk Import
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Team Members
     MemberPage.Click on assigned user tab      Assigned Users
     MemberPage.Click on action button of assigned users
@@ -583,8 +583,8 @@ Location Bulk Import
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Location
     Generic.Verify your current page location contains      locationlist
     LocationPage.Click on Location action button
@@ -620,8 +620,8 @@ Technology Bulk import
     [Tags]    Sanity        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains     technology-list
     TechnologyPage.Click on action button of technology

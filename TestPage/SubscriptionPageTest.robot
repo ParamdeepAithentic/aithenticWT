@@ -47,29 +47,31 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 
-Create the scheduler
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      dashboard
-    Generic.Click on the profile name
-    Generic.Select option from profile list     subscription-connector
-    Generic.Verify your current page location contains      technology-settings
-    SubscriptionPage.Click on the three dots of subscription connector      Google
-    SubscriptionPage.Click on option under three dots of subscription connector     Create Scheduler
-    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Monthly
-    SubscriptionPage.Enter input in the start date field of billing details
-    SubscriptionPage.Enter input in the input field of time under create scheduler      2:00
-    sleep   ${search_sleep}
-    Generic.click on the button     Create
-    Generic.Fetch alert message text and compare it with        Scheduler created sucessfully
+
+#Create the scheduler
+#    Generic.click on the tab	Login
+#    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
+#    Generic.Verify your current page location contains      dashboard
+#    LandingPage.Verify you are on dashboard page
+#    Generic.Click on the profile name
+#    Generic.Select option from profile list     subscription-connector
+#    Generic.Verify your current page location contains      technology-settings
+#    SubscriptionPage.Click on the three dots of subscription connector      Google
+#    SubscriptionPage.Click on option under three dots of subscription connector     Create Scheduler
+#    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Monthly
+#    SubscriptionPage.Enter input in the start date field of billing details
+#    SubscriptionPage.Enter input in the input field of time under create scheduler      2:00
+#    sleep   ${search_sleep}
+#    Generic.click on the button     Create
+#    Generic.Fetch alert message text and compare it with        Scheduler created sucessfully
+
 
 Edit the scheduler
     [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     subscription-connector
     Generic.Verify your current page location contains      technology-settings
@@ -117,8 +119,8 @@ Run now from view details
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     subscription-connector
     Generic.Verify your current page location contains      technology-settings
@@ -149,8 +151,8 @@ Suspend and unsuspend the account
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
-#       LandingPage.Verify you are on dashboard page
         Generic.Verify your current page location contains      dashboard
+       LandingPage.Verify you are on dashboard page
         Generic.Click on the profile name
         Generic.Select option from profile list     billing-dropdown
         Generic.Verify your current page location contains      billing-details
@@ -230,8 +232,8 @@ Edit the scheduler of Sentinelone
     [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     subscription-connector
     Generic.Verify your current page location contains      technology-settings
@@ -279,8 +281,8 @@ Run_now_delete_view-details_of_sentinelOne
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     subscription-connector
     Generic.Verify your current page location contains      technology-settings

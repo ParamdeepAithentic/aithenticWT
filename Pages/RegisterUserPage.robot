@@ -172,4 +172,30 @@ Choose register user country
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  3  ${pageHeading}   RegisterUserPage - Select the option from country dropdown on register new member     3    ${pageTime}     ${ActualTime}    RegisterPage_Time
 
+Click on edit button to edit the profile details
+    [Arguments]     ${option}
+    Generic.click on the button    ${option}
 
+Select the option from the personal details sidebar
+    [Arguments]         ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible     css:.sidebar-${option}-qa         ${wait_time}
+    Wait Until Element Is Enabled    css:.sidebar-${option}-qa          ${wait_time}
+    Click Element    css:.sidebar-${option}-qa
+
+Fetch the profile personal_details and compare with registration details
+    [Arguments]     ${option1}      ${option2}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    ${option1}      ${wait_time}
+    ${profile_details}=      get value          ${option1}
+    Log To Console    ${profile_details}
+    Set Global Variable    ${profile_details}
+    Should Be Equal    ${profile_details}       ${option2}
+
+
+Save the Profile details
+    [Arguments]     ${option1}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //div[contains(@class,'buttons')]//button[normalize-space()='${option1}']          ${wait_time}
+    Wait Until Element Is Enabled    //div[contains(@class,'buttons')]//button[normalize-space()='${option1}']          ${wait_time}
+    Click Element    //div[contains(@class,'buttons')]//button[normalize-space()='${option1}']
