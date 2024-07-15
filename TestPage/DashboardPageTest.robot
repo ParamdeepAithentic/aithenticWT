@@ -298,7 +298,7 @@ Invite user into Aithentic
 
 
 Verify Help Center
-    [Tags]      Sanity      Stable
+    [Tags]      Sanity      Stable      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -932,7 +932,7 @@ Click and verify the count of the tabs under renewal overview by choosing the va
     DashboardPage.Get And Verify The Count Of tabs under renewal overview by management console
 
 Verify Account_overview Recent Activities Filters
-    [Tags]      Stable
+    [Tags]      Stable      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}       ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1228,6 +1228,7 @@ Verifying the Renewals Overview section of Management console - Overdue Renewals
     Generic.Verify your current page location contains    management-console
 
 Verifying the Renewals Overview section of Management console - Overdue contracts
+    [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1375,6 +1376,7 @@ Verifying the Renewals Overview section of Management console - Expired warranti
     Generic.Verify your current page location contains    management-console
 
 Verifying the Renewals Overview section of Management console - Overdue certificates
+    [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1447,6 +1449,7 @@ Verifying the Renewals Overview section of Management console - Overdue certific
     Generic.Verify your current page location contains    management-console
 
 Verifying the Subscription Overview section of Management console
+    [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard

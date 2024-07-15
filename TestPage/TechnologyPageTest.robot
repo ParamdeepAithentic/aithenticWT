@@ -366,7 +366,7 @@ Restore asset type one
 
 
 Restore asset from removed asset details page
-    [Tags]      Stable
+    [Tags]      Stable      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -406,6 +406,8 @@ Restore asset from removed asset details page
 #    TechnologyPage.Verify that after saving technology form user redirect to technology page
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+
+    TechnologyPage.Click on manage technology sub option       Technology List
 
     TechnologyPage.Select an option from technology table actions      Remove
     TechnologyPage.Remove asset from technology table
@@ -1829,7 +1831,7 @@ Inactive asset - Restore asset from Technology Details page
     Generic.Fetch alert message text and compare it with      Payment Successful
 
 Verify the technology data while applying agent Filters
-    [Tags]      Unstable
+    [Tags]      Unstable        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.Verify your current page location contains      dashboard
@@ -2380,7 +2382,7 @@ Dispose the technology while adding new brand and product
     Generic.Fetch alert message text and compare it with      Technology Removed Successfully
 
 Add the technology from profile listing
-    [Tags]      Stable
+    [Tags]      Stable      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -2411,7 +2413,7 @@ Add the technology from profile listing
     Generic.Fetch alert message text and compare it with      Technology Removed Successfully
 
 Verify_Asset_ID_Changing_settings_from_Profile_list
-    [Tags]      Stable    yy
+    [Tags]      Stable    yy        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard

@@ -50,7 +50,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Register new user for key clock functionality
-    [Tags]      Stable
+    [Tags]      Stable      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
 

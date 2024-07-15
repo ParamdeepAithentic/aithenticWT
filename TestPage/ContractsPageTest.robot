@@ -51,6 +51,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 ######## UN comment when to use ##############
 Fill contract form
+    [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Contracts
@@ -78,7 +79,7 @@ Fill contract form
 
 
 Technology Auto removed from dynamic contract When edit Brand and product
-    [Tags]      Sanity      Smoke       Time        Unstable
+    [Tags]      Sanity      Smoke       Time        Unstable        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -237,7 +238,7 @@ Technology Auto removed from dynamic contract When edit Brand and product
 
 
 Technology Auto removed from static contract When edit Brand and product
-    [Tags]      Sanity      Unstable
+    [Tags]      Sanity      Unstable        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard

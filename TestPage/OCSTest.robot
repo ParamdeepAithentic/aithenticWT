@@ -63,7 +63,7 @@ Test Setup      open the browser with the url
 #    PaginationPage.Run the remove asset journey
 
 Search Discovered Assets
-    [Tags]      Stable
+    [Tags]      Stable      rerun
     TRY
        Generic.click on the tab	Login
        LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -205,7 +205,7 @@ Match Discovery and Existing Asset
     END
 
 Apply filters and clear filter on Discovered Asset
-    [Tags]      Stable
+    [Tags]      Stable      rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form     johns@mai.25u.com         Test@123
@@ -331,7 +331,7 @@ Apply filters and clear filter on Existing Assets
     END
 
 Add Discovery Asset
-    [Tags]        Unstable
+    [Tags]        Unstable      rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -455,7 +455,7 @@ Create Asset from Add Assets Page
     END
 
 Add component as an asset from Agent Discovery page
-    [Tags]        Unstable
+    [Tags]        Unstable      rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -536,7 +536,7 @@ Add component as an asset from Agent Discovery page
     END
 
 Upload Image and Document File while Add Discovery Asset
-    [Tags]        Unstable
+    [Tags]        Unstable      rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -1138,7 +1138,7 @@ Network discovery: search on discovered asset list with Tag Name, IP_address and
     END
 
 Search with containing fields under advance search of discovered asset
-    [Tags]        Unstable
+    [Tags]        Unstable      rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -1267,7 +1267,7 @@ Search with containing fields under advance search of discovered asset
     END
 
 Search with containing fields under advance search of component of discovered asset
-    [Tags]        Unstable
+    [Tags]        Unstable      rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -1446,7 +1446,7 @@ Search with containing fields under advance search of component of discovered as
     END
 
 Search with containing fields under advance search of IP Address of discovered asset
-    [Tags]      Sanity          Unstable
+    [Tags]      Sanity          Unstable        rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123

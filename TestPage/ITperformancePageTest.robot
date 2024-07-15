@@ -49,7 +49,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Download sheet for Forecasts
-    [Tags]      Stable
+    [Tags]      Stable      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -116,7 +116,7 @@ It performnace drill down agging analytics
     ITperformancePage.Get and verify the count of aging analytics table     Upcoming End Of Life        Upcoming End Of Life
 
 IT perfomance drill down data quality
-    [Tags]      Stable
+    [Tags]      Stable      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
     Generic.Verify your current page location contains      dashboard
