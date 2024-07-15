@@ -41,16 +41,16 @@ Resource        ../Pages/DisconnectConnectorAPI.robot
 Resource        ../Pages/UnselectAssetAPI.robot
 
 
-Test Setup      open the browser with the url
-Test Teardown   Close Browser session
+#Test Setup      open the browser with the url
+#Test Teardown   Close Browser session
 
 
 
 *** Test Cases ***
-Zz kill browser
-    [Tags]      Smoke     Sanity      Time      rerun       Stable    yy
-    Sleep     ${wait_time}
-    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+#Zz kill browser
+#    [Tags]      Smoke     Sanity      Time      rerun       Stable    yy
+##    Sleep     ${wait_time}
+#    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
 
 
 

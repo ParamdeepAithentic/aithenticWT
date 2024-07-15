@@ -58,10 +58,10 @@ ${phone}     css:#phone
 
 
 ${wait_time}       120
-${yop_sleep}       20
+${yop_sleep}       20git commit -m "final run for so"
 ${search_sleep}       1
 
-${CASE}        qa      #qa , uat , pre-prod
+${CASE}        pre-prod      #qa , uat , pre-prod
 
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
 
@@ -112,7 +112,7 @@ Set Pre-Prod Variables
     Set Suite Variable    ${url}    https://pre-prod-app.aithentic.com/
     Set Suite Variable    ${valid_password}    Test@123     #pre prod
     Set Suite Variable    ${apiURL}    https://pre-prod-api.aithentic.com/api/v1
-    Set Suite Variable    ${browser_name}         headlessfirefox
+    Set Suite Variable    ${browser_name}         firefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
 
 Set Default Variables
