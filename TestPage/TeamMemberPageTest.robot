@@ -369,7 +369,7 @@ Search asset history with Asset ID
     TeamMemberPage.verify status of first name in member list   ${generated_AssetID}
 
 Verify user is able to export team member asset history list
-    [Tags]     Smoke      rerun     Stable
+    [Tags]     Smoke         Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form   debut@cool.fr.nf    Test@123
     Generic.Verify your current page location contains      dashboard

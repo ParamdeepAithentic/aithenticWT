@@ -49,7 +49,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Download sheet for Forecasts
-    [Tags]      Stable      rerun
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
     Generic.Verify your current page location contains      dashboard

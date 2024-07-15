@@ -76,7 +76,7 @@ Search Discovered Assets
        I_iconPage.Choose tab under Discovery Assets       network-discovery
        OCS.Click on newly discovered tab under network discovery
        OCS.Click on search icon of discovery assets
-       OCS.Enter text to search discovery asset    ${full_tagname}
+       OCS.Enter text to search discovery asset    ${agentDiscovery_OnlyTagName}
        OCS.Click on the down arrow icon of discovered asset
        Generic.Scroll Window To End
        OCS.Mouse Hover over searched Discovered Assets
@@ -236,13 +236,13 @@ Apply filters and clear filter on Discovered Asset
         OCS.verify Text by hovering over assets  ${hover_MAC_address1}       ${existing_mac}
         OCS.Click on the down arrow icon of discovered asset
         OCS.Click on clear filter button link of discovered assets    Clear Filters
-        OCS.Choose filters for discovered asset     Select Agent Tags       ${full_tagname}
+        OCS.Choose filters for discovered asset     Select Agent Tags       ${agentDiscovery_OnlyTagName}
         Generic.click on the button     Apply
         sleep  ${search_sleep}
         OCS.Click on the down arrow icon of discovered asset
         OCS.Mouse Hover over searched Discovered Assets
         OCS.Get text by hovering over assets    Tag:
-        OCS.verify Text by hovering over assets  ${substring}       ${full_tagname}
+        OCS.verify Text by hovering over assets  ${substring}       ${agentDiscovery_OnlyTagName}
         OCS.Click on clear filter button link of discovered assets    Clear Filters
         sleep   ${search_sleep}
         OCS.Click on the down arrow icon of discovered asset
@@ -331,7 +331,7 @@ Apply filters and clear filter on Existing Assets
     END
 
 Add Discovery Asset
-    [Tags]        Unstable      rerun
+    [Tags]        Unstable
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -455,7 +455,7 @@ Create Asset from Add Assets Page
     END
 
 Add component as an asset from Agent Discovery page
-    [Tags]        Unstable      rerun
+    [Tags]        Unstable
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -536,7 +536,7 @@ Add component as an asset from Agent Discovery page
     END
 
 Upload Image and Document File while Add Discovery Asset
-    [Tags]        Unstable      rerun
+    [Tags]        Unstable
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -655,7 +655,7 @@ Upload Image and Document File while Add Discovery Asset
     END
 
 Upload Image and Document File while Add component as an asset from Agent Discovery page
-    [Tags]    rerun     Unstable
+    [Tags]      Unstable
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123

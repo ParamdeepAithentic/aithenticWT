@@ -298,7 +298,7 @@ Invite user into Aithentic
 
 
 Verify Help Center
-    [Tags]      Sanity      Stable      rerun
+    [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -647,7 +647,7 @@ Remove Brand and address via brand under profile list
     Generic.Fetch alert message text and compare it with      Brand deleted successfully
 
 Verify adding a new brand from profile listing
-    [Tags]      Sanity     rerun        Stable
+    [Tags]      Sanity             Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -932,7 +932,7 @@ Click and verify the count of the tabs under renewal overview by choosing the va
     DashboardPage.Get And Verify The Count Of tabs under renewal overview by management console
 
 Verify Account_overview Recent Activities Filters
-    [Tags]      Stable      rerun
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}       ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1228,7 +1228,7 @@ Verifying the Renewals Overview section of Management console - Overdue Renewals
     Generic.Verify your current page location contains    management-console
 
 Verifying the Renewals Overview section of Management console - Overdue contracts
-    [Tags]      rerun
+    [Tags]
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1376,7 +1376,6 @@ Verifying the Renewals Overview section of Management console - Expired warranti
     Generic.Verify your current page location contains    management-console
 
 Verifying the Renewals Overview section of Management console - Overdue certificates
-    [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard

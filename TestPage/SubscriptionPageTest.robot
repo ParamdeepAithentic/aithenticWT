@@ -66,7 +66,7 @@ Test Teardown   Close Browser session
 #    Generic.Fetch alert message text and compare it with        Scheduler created sucessfully
 
 Edit the scheduler
-    [Tags]      Sanity      Stable      rerun
+    [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -115,7 +115,7 @@ Edit the scheduler
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
 
 Run now from view details
-    [Tags]      Stable      rerun
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -211,7 +211,7 @@ View Scheduler from view Result
     SubscriptionPage.Fetch and compare the Brand from the table    Microsoft Corporation
 
 Edit the scheduler of Sentinelone
-    [Tags]      Sanity      Stable      rerun
+    [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -260,7 +260,7 @@ Edit the scheduler of Sentinelone
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
 
 Run_now_delete_view-details_of_sentinelOne
-    [Tags]      Stable      rerun
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -291,7 +291,7 @@ Run_now_delete_view-details_of_sentinelOne
     SubscriptionPage.Get the value of fields under view details of subscription connector   2       Samuel John
 
 View Scheduler from view Result of sentinelone
-    [Tags]      Stable      rerun
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard

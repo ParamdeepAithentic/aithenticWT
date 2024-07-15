@@ -189,7 +189,7 @@ Click preview selection button on contact
      wait until element is enabled    ${previewSelectionButton}      ${wait_time}
      click element      ${previewSelectionButton}
      Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-     wait until element is not visible       ${shadow}          ${wait_time}
+#     wait until element is not visible       ${shadow}          ${wait_time}
 
 Enter contract description comment
      [Arguments]    ${option}

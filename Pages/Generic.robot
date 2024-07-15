@@ -76,6 +76,7 @@ Set QA Variables
     Set Suite Variable    ${valid_password}    Test@123       #QA User
     Set Suite Variable    ${apiURL}    https://qa-api.aithentic.com/api/v1
     Set Suite Variable    ${agentDiscovery_TagName}    Tag Name - johnsoftwaresolutions-1192-4         #qa
+    Set Suite Variable    ${agentDiscovery_OnlyTagName}     johnsoftwaresolutions-1192-4
     Set Suite Variable    ${admin_url}        https://qa-admin.aithentic.com/
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
@@ -95,6 +96,7 @@ Set UAT Variables
     Set Suite Variable    ${valid_password}    Test!@5897     #UAT user
     Set Suite Variable    ${apiURL}    https://uat-api.aithentic.com/api/v1
     Set Suite Variable    ${agentDiscovery_TagName}    Tag Name - johnsoftwaresolutions-1428-4        #uat
+    Set Suite Variable    ${agentDiscovery_OnlyTagName}         Johnsoftwaresolutions-1428-4
     Set Suite Variable    ${admin_url}        https://uat-admin.aithentic.com/
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
