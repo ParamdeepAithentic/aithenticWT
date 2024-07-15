@@ -79,7 +79,7 @@ Fill contract form
 
 
 Technology Auto removed from dynamic contract When edit Brand and product
-    [Tags]      Sanity      Smoke       Time        Unstable        rerun
+    [Tags]      Sanity      Smoke       Time        Unstable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
