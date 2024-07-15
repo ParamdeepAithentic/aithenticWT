@@ -48,9 +48,13 @@ Resource        ../Pages/UnselectAssetAPI.robot
 
 *** Test Cases ***
 #Zz kill browser
-#    [Tags]      Smoke     Sanity      Time      rerun       Stable    yy
-##    Sleep     ${wait_time}
-#    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+ #   [Tags]      Smoke     Sanity      Time      rerun       Stable    yy
+  #  Sleep     ${wait_time}
+   # Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+   # Run Process    cmd.exe    /C    taskkill /IM chrome.exe /F
+#    Run Process    cmd.exe    /C    taskkill /IM skype.exe /F
+ #   Run Process    cmd.exe    /C    taskkill /IM msedge.exe /F
+
 
 
 
