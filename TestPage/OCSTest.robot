@@ -63,7 +63,7 @@ Test Setup      open the browser with the url
 #    PaginationPage.Run the remove asset journey
 
 Search Discovered Assets
-    [Tags]      Stable
+    [Tags]      Stable      rerun
     TRY
        Generic.click on the tab	Login
        LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
