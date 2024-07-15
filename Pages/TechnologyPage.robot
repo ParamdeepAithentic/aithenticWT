@@ -541,7 +541,7 @@ Accept updated edited technology pop up
      wait until element is visible     //div[@id='confirmUpdates']//button[normalize-space()='${option}']      ${wait_time}
      wait until element is enabled     //div[@id='confirmUpdates']//button[normalize-space()='${option}']      ${wait_time}
      click element      //div[@id='confirmUpdates']//button[normalize-space()='${option}']
-     wait until element is not visible       ${shadow}          ${wait_time}
+#     wait until element is not visible       ${shadow}          ${wait_time}
 
 ###############Technology Cost Information#################
 Add order number of technology cost information
