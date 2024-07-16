@@ -61,8 +61,7 @@ ${wait_time}       60
 ${yop_sleep}       10
 ${search_sleep}       1
 
-${CASE}        uat      #qa , uat , pre-prod
-
+${CASE}       uat      #qa , uat , pre-prod
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
 
 *** Keywords ***
@@ -77,10 +76,11 @@ Set QA Variables
     Set Suite Variable    ${valid_password}    Test@123       #QA User
     Set Suite Variable    ${apiURL}    https://qa-api.aithentic.com/api/v1
     Set Suite Variable    ${agentDiscovery_TagName}    Tag Name - johnsoftwaresolutions-1192-4         #qa
+    Set Suite Variable    ${agentDiscovery_OnlyTagName}     johnsoftwaresolutions-1192-4
     Set Suite Variable    ${admin_url}        https://qa-admin.aithentic.com/
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
-    Set Suite Variable    ${browser_name}         firefox
+    Set Suite Variable    ${browser_name}         headlessfirefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
     Set Suite Variable    ${discovered_asset_brand}                 MSI
     Set Suite Variable    ${existing_mac}                       D8:CB:8A:CA:6A:39
@@ -95,13 +95,15 @@ Set UAT Variables
     Set Suite Variable    ${url}    https://uat-app.aithentic.com/
     Set Suite Variable    ${valid_password}    Test!@5897     #UAT user
     Set Suite Variable    ${apiURL}    https://uat-api.aithentic.com/api/v1
-    Set Suite Variable    ${agentDiscovery_TagName}    Tag Name - johnsoftwaresolutions-1428-10        #uat
+    Set Suite Variable    ${agentDiscovery_TagName}    Tag Name - johnsoftwaresolutions-1428-4        #uat
+    Set Suite Variable    ${agentDiscovery_OnlyTagName}         Johnsoftwaresolutions-1428-4
     Set Suite Variable    ${admin_url}        https://uat-admin.aithentic.com/
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
-    Set Suite Variable    ${browser_name}         firefox
+    Set Suite Variable    ${browser_name}         headlessfirefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
     Set Suite Variable    ${discovered_asset_brand}                 Apple Inc
+    Set Suite Variable    ${existing_mac}                       98:5a:eb:cb:c8:ed
     Set Suite Variable    ${discovered_existing_brand}              Apple Inc.
     Set Suite Variable    ${discovered_existing_product}            Macmini9,1
     Set Suite Variable    ${discovered_existing_department}        Quality Assurance
@@ -119,7 +121,7 @@ Set Default Variables
     Set Suite Variable    ${url}    https://uat-app.aithentic.com/
     Set Suite Variable    ${valid_password}    Test!@5897     #UAT user
     Set Suite Variable    ${apiURL}    https://uat-api.aithentic.com/api/v1
-    Set Suite Variable    ${agentDiscovery_TagName}    Tag Name - johnsoftwaresolutions-1428-10        #uat
+    Set Suite Variable    ${agentDiscovery_TagName}    Tag Name - johnsoftwaresolutions-1428-4        #uat
     Set Suite Variable    ${admin_url}        https://uat-admin.aithentic.com/
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
@@ -398,8 +400,10 @@ Update settings for Asset_ID, employee_id and location
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     Generic.Verify your current page location contains     organization
+    DashboardPage.Select the asset ID checkbox      yes
     DashboardPage.Select the employee ID checkbox   yes
     DashboardPage.Select the location ID checkbox   yes
+    sleep   ${search_sleep}
     DashboardPage.Select the asset ID checkbox      no
 #    Generic.Click on the profile name
 #    Generic.Select option from profile list     subscription-dropdown
@@ -416,10 +420,10 @@ Update settings for Asset_ID, employee_id and location
 #    Generic.Fetch alert message text and compare it with      Payment Successful
     sleep       ${yop_sleep}
     close browser
-    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
-    Run Process    cmd.exe    /C    taskkill /IM chrome.exe /F
-    Run Process    cmd.exe    /C    taskkill /IM skype.exe /F
-    Run Process    cmd.exe    /C    taskkill /IM msedge.exe /F
+#    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+#    Run Process    cmd.exe    /C    taskkill /IM chrome.exe /F
+#    Run Process    cmd.exe    /C    taskkill /IM skype.exe /F
+#    Run Process    cmd.exe    /C    taskkill /IM msedge.exe /F
 
 
 
