@@ -57,5 +57,5 @@ Replace the existing domain
 
 
 
-Clear the process
-    ReplaceDomainAPI.Run Command
+#Clear the process
+ #   ReplaceDomainAPI.Run Command

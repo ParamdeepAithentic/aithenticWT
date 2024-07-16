@@ -485,8 +485,8 @@ Network Discovery in case of no records
 #    Switch Window       aithentic | Service Now Newly-Discovered
 #    Generic.Verify your current page location contains     discovery-assets
 
-Zz kill browser
-    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+#Zz kill browser
+ #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
 
 #Refresh search text on discovered asset list page
 #    Generic.click on the tab	Login
