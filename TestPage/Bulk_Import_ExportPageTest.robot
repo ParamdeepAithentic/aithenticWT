@@ -740,6 +740,82 @@ Verify Bulk Import on the Technology Page by adding all parameters
     Bulk_Import_ExportPage.click on all checkbox under technology bulk import       - Create Products
     Bulk_Import_ExportPage.click on all checkbox under technology bulk import       -All partners (manufacturer, supplier & support partners)
     Generic.click on the button     Next
+    Generic.click on the tab        Add Department
+    Bulk_Import_ExportPage.Create unique department name random under technology bulk import
+#    Bulk_Import_ExportPage.Select department status ynder technology bulk import        Active
+    Bulk_Import_ExportPage.Select department cost center under technology bulk import   316546
+    TechnologyPage.Save the department       add
+    Generic.Fetch alert message text and compare it with        Department added successfully
+    Generic.Verify your current page location contains      department-list
+    DepartmentPage.Search by department name      ${generated_Department_bulk}
+    Generic.click on the button     Next
+    Generic.click on the tab        Add Location
+    Generic.Verify your current page location contains      addLocation
+    LocationPage.Select location country        United States
+    LocationPage.Select location building name   Trump tower
+    LocationPage.Select location floor   Third
+    LocationPage.Select location room    203
+    LocationPage.Select location address one     this address one of the location
+    LocationPage.Select location address two     this address two of the location
+    LocationPage.Select location state       Texas
+    LocationPage.Select location city        Austin
+    LocationPage.Select location zip     147001
+    LocationPage.Enter random cost center value
+    LocationPage.Create random location name
+    LocationPage.Create random IP subnet
+    LocationPage.Save location form     save
+    Generic.Fetch alert message text and compare it with    Location created successfully
+    Bulk_Import_ExportPage.Search by location name under technology bulk import    ${generated_location}
+#    LocationPage.Fetch the location Name from the row       ${generated_location}
+    Generic.click on the button     Next
+    Generic.click on the button     Add Member
+    TeamMemberPage.Enter team member first name
+    TeamMemberPage.Enter team member last name
+    Generic.Enter phone number      India   +91     9646289871
+    TeamMemberPage.Enter team member business email_mailinator
+    TeamMemberPage.Enter the Position in member form        QA
+    TeamMemberPage.Create random employee id
+    TeamMemberPage.Click on team member department
+    TeamMemberPage.Select team member department       ${generated_Department_bulk}
+    TeamMemberPage.Select team member role     Admin
+    TeamMemberPage.Click on team member location
+    TeamMemberPage.Select team member location with new domain
+    TeamMemberPage.Save the team member form   save
+    Generic.Fetch alert message text and compare it with        Team Member created successfully
+    TeamMemberPage.Search Team Member by name       ${generated_TMFname}
+    Generic.click on the button     Next
+    Generic.click on the button    Add Brand
+    DashboardPage.Create random brandName
+    DashboardPage.Create random brandName
+    DashboardPage.Add business manufacturer URL       ${generated_BrandName}
+    DashboardPage.Add brand manufacturer country      United States
+    DashboardPage.Save added brand details
+    Generic.Fetch alert message text and compare it with        Brand created successfully.
+    DashboardPage.Verify Brand added      ${generated_BrandName}
+    Generic.click on the button     Next
+    Generic.click on the tab        Add Product
+    DashboardPage.Create random productName
+    DashboardPage.Add product brand name      ${generated_BrandName}
+    DashboardPage.Add product description
+    DashboardPage.Add product feature
+    DashboardPage.Select product technology type     Hardware
+    DashboardPage.Select product technology group     Applications
+    DashboardPage.Select product status   Active
+    DashboardPage.Save added product details
+    Generic.Fetch alert message text and compare it with        Product created successfully
+    DashboardPage.Search by brand name      ${generated_BrandName}
+    Generic.click on the button     Next
+    Generic.click on the tab        Add Partner
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -673,6 +673,42 @@ click on all checkbox under technology bulk import
     click element   //label[contains(text(),'${option}')]
     wait until element is not visible       ${loaderIcon}       ${wait_time}
 
-click
+Create unique department name random under technology bulk import
+    wait until element is visible       //div[contains(@class,'full-page-block')]//ng-select[contains(@id,'department-name')]//input        ${wait_time}
+    wait until element is enabled       //div[contains(@class,'full-page-block')]//ng-select[contains(@id,'department-name')]//input        ${wait_time}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_Department_bulk}=    Catenate    DeptNo_${random_string}
+    input text   //div[contains(@class,'full-page-block')]//ng-select[contains(@id,'department-name')]//input   ${generated_Department_bulk}
+    sleep       1
+    click element     css:div[role='option']
+    log to console      ${generated_Department_bulk}
+    set global variable    ${generated_Department_bulk}
+
+Select department status ynder technology bulk import
+    [Arguments]    ${option}
+    wait until element is visible       css:.qa-statusFilterDropdown input        ${wait_time}
+    wait until element is enabled       css:.qa-statusFilterDropdown input       ${wait_time}
+    click element    css:.qa-statusFilterDropdown input
+    Clear Element Text      ${add_dept_status}
+    Generic.Select parameter    ${option}
+
+Select department cost center under technology bulk import
+    [Arguments]    ${option}
+    wait until element is visible       //form[contains(@class,'ng-dirty')]//input[@id='costCenter']        ${wait_time}
+    wait until element is enabled       //form[contains(@class,'ng-dirty')]//input[@id='costCenter']        ${wait_time}
+    input text    //form[contains(@class,'ng-dirty')]//input[@id='costCenter']   ${option}
+
+ Search by location name under technology bulk import
+    [Arguments]    ${LocationName}
+     wait until element is not visible      ${loaderIcon}     ${wait_time}
+     wait until element is visible       css:thead tr       ${wait_time}
+     click element      css:.searchLocation-QA
+     Clear Element Text     css:.searchLocation-QA
+     input text   css:.searchLocation-QA   ${LocationName}
+     sleep   ${search_sleep}
+     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+     Fetch the location Name from the row   ${LocationName}
+     should be equal    ${fetch_locationName}     ${LocationName}
+
 
 
