@@ -1813,3 +1813,7 @@ Verify reset icon while adding component
         sleep   ${search_sleep}
         TechnologyPage.Click on reset icon while adding technology
         TechnologyPage.Verify the invisibility of brand after clicking on reset icon
+
+#Zz kill browser
+#    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+
