@@ -51,31 +51,33 @@ Test Setup      open the browser with the url
 
 
 *** Test Cases ***
-#
-#Free the asset limit
-#    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form     johns@mai.25u.com        Test@123
-#    Generic.Verify your current page location contains      dashboard
-#    Generic.select the option from the side menu    Technology
-#    Generic.Verify your current page location contains      technology
-#    PaginationPage.Check the table get load
-#    PaginationPage.Fetch the total count
-#    PaginationPage.Run the remove asset journey
+Free the asset limit
+    [Tags]      Smoke     Sanity      Time      rerun       Stable
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form     johns@mai.25u.com        Test@123
+    Generic.Verify your current page location contains      dashboard
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    PaginationPage.Check the table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Run the remove asset journey
+
 
 Search Discovered Assets
     [Tags]      Stable
     TRY
        Generic.click on the tab	Login
        LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-#       LandingPage.Verify you are on dashboard page
        Generic.Verify your current page location contains      dashboard
+       LandingPage.Verify you are on dashboard page
        Generic.Click on the profile name
        Generic.Select option from profile list     view-discovery
        Generic.Verify your current page location contains    ocs
+       OCS.Get value of Tag_name from Agent discovery
        I_iconPage.Choose tab under Discovery Assets       network-discovery
        OCS.Click on newly discovered tab under network discovery
        OCS.Click on search icon of discovery assets
-       OCS.Enter text to search discovery asset    1428-4
+       OCS.Enter text to search discovery asset    ${full_tagname}
        OCS.Click on the down arrow icon of discovered asset
        Generic.Scroll Window To End
        OCS.Mouse Hover over searched Discovered Assets
@@ -102,8 +104,8 @@ Search Existing Assets
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-#        LandingPage.Verify you are on dashboard page
         Generic.Verify your current page location contains      dashboard
+        LandingPage.Verify you are on dashboard page
         Generic.select the option from the side menu    Technology
         Generic.Verify your current page location contains      technology
         TechnologyPage.Click on action button of technology
@@ -141,7 +143,8 @@ Match Discovery and Existing Asset
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-#        LandingPage.Verify you are on dashboard page
+        Generic.Verify your current page location contains    dashboard
+        LandingPage.Verify you are on dashboard page
         Generic.select the option from the side menu    Technology
         Generic.Verify your current page location contains      technology
         TechnologyPage.Click on action button of technology
@@ -161,7 +164,7 @@ Match Discovery and Existing Asset
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
-        OCS.Enter text to search discovery asset    Apple Inc
+        OCS.Enter text to search discovery asset    ${discovered_asset_brand}
         OCS.Click on the down arrow icon of discovered asset
         Generic.Scroll Window To End
         OCS.Mouse Hover over searched Discovered Assets
@@ -207,39 +210,40 @@ Apply filters and clear filter on Discovered Asset
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form     johns@mai.25u.com         Test@123
-#        LandingPage.Verify you are on dashboard page
         Generic.Verify your current page location contains      dashboard
+        LandingPage.Verify you are on dashboard page
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains      discovery-assets
+        OCS.Get value of Tag_name from Agent discovery
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.click on filter icon of discovered assets
-        OCS.Choose filters for discovered asset     Select Brand        Apple Inc
+        OCS.Choose filters for discovered asset     Select Brand        ${discovered_asset_brand}
         Generic.click on the button     Apply
         sleep   ${search_sleep}
         OCS.Click on the down arrow icon of discovered asset
         OCS.Mouse Hover over searched Discovered Assets
         OCS.Get text by hovering over assets    Brand:
-        OCS.verify Text by hovering over assets  ${substring}       Apple Inc
+        OCS.verify Text by hovering over assets  ${substring}       ${discovered_asset_brand}
         OCS.Click on the down arrow icon of discovered asset
         OCS.Click on clear filter button link of discovered assets    Clear Filters
-        OCS.Choose filters for discovered asset     Select MAC Address      98:5a:eb:cb:c8:ed
+        OCS.Choose filters for discovered asset     Select MAC Address      ${existing_mac}
         Generic.click on the button     Apply
         sleep  ${search_sleep}
         OCS.Click on the down arrow icon of discovered asset
         OCS.Mouse Hover over searched IP Assets
         OCS.Get MAC_Address by hovering over discovered assets     MacAddress:
-        OCS.verify Text by hovering over assets  ${hover_MAC_address1}       98:5a:eb:cb:c8:ed
+        OCS.verify Text by hovering over assets  ${hover_MAC_address1}       ${existing_mac}
         OCS.Click on the down arrow icon of discovered asset
         OCS.Click on clear filter button link of discovered assets    Clear Filters
-        OCS.Choose filters for discovered asset     Select Agent Tags       johnsoftwaresolutions-1428-4
+        OCS.Choose filters for discovered asset     Select Agent Tags       ${full_tagname}
         Generic.click on the button     Apply
         sleep  ${search_sleep}
         OCS.Click on the down arrow icon of discovered asset
         OCS.Mouse Hover over searched Discovered Assets
         OCS.Get text by hovering over assets    Tag:
-        OCS.verify Text by hovering over assets  ${substring}       johnsoftwaresolutions-1428-4
+        OCS.verify Text by hovering over assets  ${substring}       ${full_tagname}
         OCS.Click on clear filter button link of discovered assets    Clear Filters
         sleep   ${search_sleep}
         OCS.Click on the down arrow icon of discovered asset
@@ -260,46 +264,46 @@ Apply filters and clear filter on Existing Assets
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form     johns@mai.25u.com     Test@123
-#        LandingPage.Verify you are on dashboard page
         Generic.Verify your current page location contains      dashboard
+        LandingPage.Verify you are on dashboard page
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains      discovery-assets
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.click on filter icon of existing assets
-        OCS.Enter input in the brand field of existing asset       Apple Inc.
+        OCS.Enter input in the brand field of existing asset       ${discovered_existing_brand}
         Generic.click on the button     Apply
         OCS.Click on the down arrow icon of existing assets
         OCS.Mouse Hover over filters of existing asset
         OCS.Get text by hovering over existing assets   Brand:
-        OCS.verify Text by hovering over assets  ${substring1}       Apple Inc.
+        OCS.verify Text by hovering over assets  ${substring1}       ${discovered_existing_brand}
         OCS.Click on the down arrow icon of existing assets
         OCS.Click on clear filter button link of discovered assets      Clear Filters
-        OCS.Choose filters for discovered asset     Select Product      Macmini9,1
+        OCS.Choose filters for discovered asset     Select Product      ${discovered_existing_product}
         Generic.click on the button     Apply
         Generic.Scroll Window To End
         OCS.Click on the down arrow icon of existing assets
         sleep   ${search_sleep}
         OCS.Mouse Hover over filters of existing asset
         OCS.Get text by hovering over existing assets   Model/Product Name:
-        OCS.verify Text by hovering over assets  ${substring1}      Macmini9,1
+        OCS.verify Text by hovering over assets  ${substring1}      ${discovered_existing_product}
         OCS.Click on the down arrow icon of existing assets
         OCS.Click on clear filter button link of discovered assets  Clear Filters
-        OCS.Choose filters for discovered asset    Select Department    Quality Assurance
+        OCS.Choose filters for discovered asset    Select Department    ${discovered_existing_department}
         Generic.click on the button     Apply
         OCS.Click on the down arrow icon of existing assets
         OCS.Mouse Hover over filters of existing asset
         OCS.Get text by hovering over existing assets   Department Name:
-        OCS.verify Text by hovering over assets  ${substring1}      Quality Assurance
+        OCS.verify Text by hovering over assets  ${substring1}     ${discovered_existing_department}
         OCS.click on the right text asset result of existing asset
         sleep       ${yop_sleep}
         Switch Window   aithentic | Technology - Details
         TechnologyPage.Click on Location tab of technology- list page
         TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     DepartmentName
-        OCS.verify Text by hovering over assets  ${assign_loc_input_value}       Quality Assurance
+        OCS.verify Text by hovering over assets  ${assign_loc_input_value}      ${discovered_existing_department}
         sleep       ${yop_sleep}
-        Switch Window   aithentic | Service Now Newly-Discovered
+        Switch Window  aithentic | Sentinel One Newly-Discovered
         OCS.Click on the down arrow icon of existing assets
         OCS.Click on clear filter button link of discovered assets  Clear Filters
         OCS.Choose filters for discovered asset    Select Location      *Main Office
@@ -316,7 +320,7 @@ Apply filters and clear filter on Existing Assets
         TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     LocationName
         OCS.verify Text by hovering over assets  ${assign_loc_input_value}      *Main Office
         sleep       ${yop_sleep}
-        Switch Window   aithentic | Service Now Newly-Discovered
+        Switch Window  aithentic | Sentinel One Newly-Discovered
         OCS.Click on the down arrow icon of existing assets
         OCS.Click on clear filter button link of discovered assets      Clear Filters
     EXCEPT
@@ -332,15 +336,15 @@ Add Discovery Asset
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-#        LandingPage.Verify you are on dashboard page
         Generic.Verify your current page location contains      dashboard
+        LandingPage.Verify you are on dashboard page
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    ocs
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
-        OCS.Enter text to search discovery asset    Apple Inc
+        OCS.Enter text to search discovery asset    ${discovered_asset_brand}
         OCS.Click on the down arrow icon of discovered asset
         Generic.Scroll Window To End
         OCS.Mouse Hover over searched Discovered Assets
@@ -356,10 +360,11 @@ Add Discovery Asset
         TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
         OCS.Enter The Asset_id in Add Technology Page
         TechnologyPage.Create random unique serial number
+        TechnologyPage.Verify the visibility of assign to field
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window       aithentic | Service Now Newly-Discovered
+        Switch Window       aithentic | Sentinel One Newly-Discovered
         Generic.Refresh the existing page
         OCS.Choose Tab under Asset Discovery    agent-discovery
         Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -383,6 +388,7 @@ Add Discovery Asset
         OCS.Edit the MAC_Address of Asset
         OCS.Edit The Host_Name of Asset
         OCS.Edit the Serial_No. of Asset
+        TechnologyPage.Select technology lifecycle status      Active
         sleep   ${search_sleep}
         TechnologyPage.Click on update button of edit_technology page       Update
         Generic.Fetch alert message text and compare it with        Technology updated successfully
@@ -399,15 +405,15 @@ Create Asset from Add Assets Page
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-#        LandingPage.Verify you are on dashboard page
         Generic.Verify your current page location contains      dashboard
+        LandingPage.Verify you are on dashboard page
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    ocs
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
-        OCS.Enter text to search discovery asset  Apple Inc
+        OCS.Enter text to search discovery asset      ${discovered_asset_brand}
         OCS.Click on the down arrow icon of discovered asset
         Generic.Scroll Window To End
         OCS.Mouse Hover over searched Discovered Assets
@@ -419,10 +425,11 @@ Create Asset from Add Assets Page
         TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
         OCS.Enter The Asset_id in Add Technology Page
         TechnologyPage.Create unique serial number random
+        TechnologyPage.Verify the visibility of assign to field
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window       aithentic | Service Now Newly-Discovered
+        Switch Window       aithentic | Sentinel One Newly-Discovered
         Generic.Refresh the existing page
         OCS.Choose Tab under Asset Discovery    agent-discovery
         Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -436,6 +443,7 @@ Create Asset from Add Assets Page
         OCS.Edit the MAC_Address of Asset
         OCS.Edit the Serial_No. of Asset
         OCS.Edit The Host_Name of Asset
+        TechnologyPage.Select technology lifecycle status      Active
         sleep   ${search_sleep}
         TechnologyPage.Click on update button of edit_technology page       Update
         Generic.Fetch alert message text and compare it with        Technology updated successfully
@@ -452,15 +460,15 @@ Add component as an asset from Agent Discovery page
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-#        LandingPage.Verify you are on dashboard page
         Generic.Verify your current page location contains      dashboard
+        LandingPage.Verify you are on dashboard page
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    ocs
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
-        OCS.Enter text to search discovery asset    Apple Inc
+        OCS.Enter text to search discovery asset    ${discovered_asset_brand}
         OCS.Click on the down arrow icon of discovered asset
         Generic.Scroll Window To End
         OCS.Mouse Hover over searched Discovered Assets
@@ -476,10 +484,11 @@ Add component as an asset from Agent Discovery page
         TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
         OCS.Enter The Asset_id in Add Technology Page
         TechnologyPage.Create unique serial number random
+        TechnologyPage.Verify the visibility of assign to field
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window       aithentic | Service Now Newly-Discovered
+        Switch Window       aithentic | Sentinel One Newly-Discovered
         Generic.Refresh the existing page
         OCS.Choose Tab under Asset Discovery    agent-discovery
         Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -504,6 +513,7 @@ Add component as an asset from Agent Discovery page
         Generic.Verify your current page contains this text    Add Technology
         TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
         OCS.Create Asset_id for software component
+        TechnologyPage.Verify the visibility of assign to field
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
@@ -513,6 +523,7 @@ Add component as an asset from Agent Discovery page
         Generic.Verify your current page location contains      edit-technology
         OCS.Edit the MAC_Address of Asset
         OCS.Edit The Host_Name of Asset
+        TechnologyPage.Select technology lifecycle status      Active
 #        OCS.Edit the Serial_No. of Asset
         sleep   ${search_sleep}
         TechnologyPage.Click on update button of edit_technology page       Update
@@ -530,15 +541,15 @@ Upload Image and Document File while Add Discovery Asset
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-#        LandingPage.Verify you are on dashboard page
         Generic.Verify your current page location contains      dashboard
+        LandingPage.Verify you are on dashboard page
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    ocs
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
-        OCS.Enter text to search discovery asset   Apple Inc
+        OCS.Enter text to search discovery asset   ${discovered_asset_brand}
         OCS.Click on the down arrow icon of discovered asset
         Generic.Scroll Window To End
         OCS.Mouse Hover over searched Discovered Assets
@@ -554,6 +565,7 @@ Upload Image and Document File while Add Discovery Asset
         TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
         TechnologyPage.Create unique serial number random
         OCS.Enter The Asset_id in Add Technology Page
+        TechnologyPage.Verify the visibility of assign to field
         TechnologyPage.Upload file      Image_01.jpg       Image_02.png     Document_02.pdf
         Generic.Scroll Window To End
         Generic.Fetch alert message text and compare it with        Technology documents uploaded successfully
@@ -570,11 +582,13 @@ Upload Image and Document File while Add Discovery Asset
         Switch Window       NEW
         Generic.Verify your current page location contains    amazonaws
         Generic.Verify your current page location contains    .pdf
+        Generic.Verify your current page contains this text    Dummy PDF file
+        Sleep    ${yop_sleep}
         Switch Window       aithentic | Add Discovery Asset
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window       aithentic | Service Now Newly-Discovered
+        Switch Window       aithentic | Sentinel One Newly-Discovered
         Generic.Refresh the existing page
          OCS.Choose Tab under Asset Discovery    agent-discovery
         Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -629,6 +643,8 @@ Upload Image and Document File while Add Discovery Asset
         Generic.Verify your current page location contains    .pdf
         Sleep    ${yop_sleep}
         Switch Window       aithentic | Edit - Technology
+        Generic.Verify your current page location contains      edit-technology
+        TechnologyPage.Select technology lifecycle status      Active
         TechnologyPage.Click on update button of edit_technology page       Update
         Generic.Fetch alert message text and compare it with        Technology updated successfully
         UnselectAssetAPI.Hit API Endpoint
@@ -644,8 +660,8 @@ Upload Image and Document File while Add component as an asset from Agent Discov
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-#        LandingPage.Verify you are on dashboard page
         Generic.Verify your current page location contains      dashboard
+        LandingPage.Verify you are on dashboard page
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    ocs
@@ -653,7 +669,7 @@ Upload Image and Document File while Add component as an asset from Agent Discov
         OCS.Click on newly discovered tab under network discovery
         Generic.Verify your current page location contains    ocs
         OCS.Click on search icon of discovery assets
-        OCS.Enter text to search discovery asset   Apple Inc
+        OCS.Enter text to search discovery asset   ${discovered_asset_brand}
         OCS.Click on the down arrow icon of discovered asset
         Generic.Scroll Window To End
         OCS.Mouse Hover over searched Discovered Assets
@@ -668,6 +684,7 @@ Upload Image and Document File while Add component as an asset from Agent Discov
         Generic.Verify your current page contains this text    Add Technology
         TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
         OCS.Enter The Asset_id in Add Technology Page
+        TechnologyPage.Verify the visibility of assign to field
         TechnologyPage.Upload file      Image_01.jpg       Image_02.png     Document_02.pdf
         Generic.Scroll Window To End
         Generic.Fetch alert message text and compare it with        Technology documents uploaded successfully
@@ -684,11 +701,13 @@ Upload Image and Document File while Add component as an asset from Agent Discov
         Switch Window       NEW
         Generic.Verify your current page location contains    amazonaws
         Generic.Verify your current page location contains    .pdf
+        Generic.Verify your current page contains this text    Dummy PDF file
+        Sleep    ${yop_sleep}
         Switch Window       aithentic | Add Discovery Asset
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window       aithentic | Service Now Newly-Discovered
+        Switch Window       aithentic | Sentinel One Newly-Discovered
         Generic.Refresh the existing page
         OCS.Choose Tab under Asset Discovery    agent-discovery
         Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -713,6 +732,7 @@ Upload Image and Document File while Add component as an asset from Agent Discov
         Generic.Verify your current page contains this text    Add Technology
         TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
         OCS.Create Asset_id for software component
+        TechnologyPage.Verify the visibility of assign to field
         TechnologyPage.Upload file      Image_01.jpg      Document_02.pdf       Image_02.png
         Generic.Scroll Window To End
         Generic.Fetch alert message text and compare it with        Technology documents uploaded successfully
@@ -763,15 +783,15 @@ Match IP Discovered asset with Existing asset
     [Tags]        Unstable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    ocs
     I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.Click on search icon of discovery assets
-    OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
+    OCS.Enter text to search discovery asset    ${discovered_IP}
     OCS.Click on the down arrow icon of discovered asset
     Generic.Scroll Window To End
     OCS.Mouse Hover over searched IP Assets
@@ -795,6 +815,7 @@ Match IP Discovered asset with Existing asset
     Generic.Verify your current page location contains      edit-technology
     OCS.Edit the MAC_Address of Asset
     OCS.Edit The Host_Name of Asset
+    TechnologyPage.Select technology lifecycle status      Active
     sleep   ${search_sleep}
     TechnologyPage.Click on update button of edit_technology page       Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
@@ -805,15 +826,15 @@ Match Discovery Asset with Static Existing Asset
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-#        LandingPage.Verify you are on dashboard page
         Generic.Verify your current page location contains      dashboard
+        LandingPage.Verify you are on dashboard page
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    ocs
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
-        OCS.Enter text to search discovery asset    Apple Inc
+        OCS.Enter text to search discovery asset    ${discovered_asset_brand}
         OCS.Click on the down arrow icon of discovered asset
         Generic.Scroll Window To End
         OCS.Mouse Hover over searched Discovered Assets
@@ -842,6 +863,7 @@ Match Discovery Asset with Static Existing Asset
         OCS.Edit the MAC_Address of Asset
         OCS.Edit the Serial_No. of Asset
         OCS.Edit The Host_Name of Asset
+        TechnologyPage.Select technology lifecycle status      Active
         sleep   ${search_sleep}
         TechnologyPage.Click on update button of edit_technology page       Update
         Generic.Fetch alert message text and compare it with        Technology updated successfully
@@ -858,8 +880,8 @@ Match IP Discovered Asset with Dynamic Existing Asset
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-#        LandingPage.Verify you are on dashboard page
         Generic.Verify your current page location contains      dashboard
+        LandingPage.Verify you are on dashboard page
         Generic.select the option from the side menu    Technology
         Generic.Verify your current page location contains      technology
         TechnologyPage.Click on action button of technology
@@ -869,6 +891,7 @@ Match IP Discovered Asset with Dynamic Existing Asset
         TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
         TechnologyPage.Add assetID for technology lifecycle information random
         TechnologyPage.Create random unique serial number
+        TechnologyPage.Select technology lifecycle status      Active
         TechnologyPage.Click on save technology form button
         Generic.Fetch alert message text and compare it with        Technology created successfully
         TechnologyPage.Click on save technology form pop button
@@ -880,11 +903,11 @@ Match IP Discovered Asset with Dynamic Existing Asset
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
-        OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
+        OCS.Enter text to search discovery asset    ${discovered_IP}
         Click on the down arrow icon of discovered asset
         Generic.Scroll Window To End
         OCS.Mouse Hover over searched IP Assets
-        OCS.Verify Searched discovery asset    00:17:61:10:C6:A1
+        OCS.Verify Searched discovery asset    ${discovered_IP}
         OCS.Get MAC_Address by hovering over IP discovered assets    MacAddress:
         OCS.Select any Discovered asset
         OCS.Click on search icon of discovery assets
@@ -907,6 +930,7 @@ Match IP Discovered Asset with Dynamic Existing Asset
         Generic.Verify your current page location contains      edit-technology
         OCS.Edit the Serial_No. of Asset
         OCS.Edit the MAC_Address of Asset
+        TechnologyPage.Select technology lifecycle status      Active
         sleep   ${search_sleep}
         TechnologyPage.Click on update button of edit_technology page       Update
         Generic.Fetch alert message text and compare it with        Technology updated successfully
@@ -923,8 +947,8 @@ Add asset with IP Address under discovered asset list
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-#        LandingPage.Verify you are on dashboard page
         Generic.Verify your current page location contains      dashboard
+        LandingPage.Verify you are on dashboard page
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    ocs
@@ -964,13 +988,14 @@ Add asset with IP Address under discovered asset list
         TechnologyPage.Add host name for technology group information for hardware random
         TechnologyPage.Create random unique serial number
         OCS.Enter The Asset_id in Add Technology Page
+        TechnologyPage.Verify the visibility of assign to field
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window       aithentic | Service Now Newly-Discovered
+        Switch Window       aithentic | Sentinel One Newly-Discovered
         Generic.Verify your current page location contains      ocs
         OCS.Choose tab under Discovery Assets   agent-discovery
-        Generic.Verify your current page location contains    ocs
+        Generic.Verify your current page location contains   ocs
         OCS.click on the value of IP discovered devices of inside table
         Sleep    ${yop_sleep}
         Switch Window       aithentic | Discovered Assets
@@ -989,6 +1014,7 @@ Add asset with IP Address under discovered asset list
         OCS.Edit the MAC_Address of Asset
         OCS.Edit The Host_Name of Asset
         OCS.Edit the Serial_No. of Asset
+        TechnologyPage.Select technology lifecycle status      Active
         sleep   ${search_sleep}
         TechnologyPage.Click on update button of edit_technology page       Update
         Generic.Fetch alert message text and compare it with        Technology updated successfully
@@ -1005,19 +1031,19 @@ Add Asset with IP address from Network Discovery Page
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-#        LandingPage.Verify you are on dashboard page
         Generic.Verify your current page location contains      dashboard
+        LandingPage.Verify you are on dashboard page
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    ocs
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
-        OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
+        OCS.Enter text to search discovery asset    ${discovered_IP}
         OCS.Click on the down arrow icon of discovered asset
         Generic.Scroll Window To End
         OCS.Mouse Hover over searched IP Assets
-        OCS.Verify Searched discovery asset         00:17:61:10:C6:A1
+        OCS.Verify Searched discovery asset         ${discovered_IP}
         OCS.Get MAC_Address by hovering over IP discovered assets   MacAddress:
         OCS.Mark check-box of Agent/Discovered Asset
         OCS.Click on Button inside Network Discovery Page       Add Assets
@@ -1028,10 +1054,11 @@ Add Asset with IP address from Network Discovery Page
         TechnologyPage.Add host name for technology group information for hardware random
         TechnologyPage.Create random unique serial number
         OCS.Enter The Asset_id in Add Technology Page
+        TechnologyPage.Verify the visibility of assign to field
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window       aithentic | Service Now Newly-Discovered
+        Switch Window       aithentic | Sentinel One Newly-Discovered
         Generic.select the option from the side menu        Technology
         Generic.Verify your current page location contains      technology-list
         TechnologyPage.Search by AssetId       ${generated_AssetID}
@@ -1043,6 +1070,7 @@ Add Asset with IP address from Network Discovery Page
         OCS.Edit the MAC_Address of Asset
         OCS.Edit The Host_Name of Asset
         OCS.Edit the Serial_No. of Asset
+        TechnologyPage.Select technology lifecycle status      Active
         sleep   ${search_sleep}
         TechnologyPage.Click on update button of edit_technology page       Update
         Generic.Fetch alert message text and compare it with        Technology updated successfully
@@ -1059,8 +1087,8 @@ Network discovery: search on discovered asset list with Tag Name, IP_address and
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-#        LandingPage.Verify you are on dashboard page
         Generic.Verify your current page location contains      dashboard
+        LandingPage.Verify you are on dashboard page
         Generic.select the option from the side menu    Asset Discovery
         Generic.Verify your current page location contains     discovery-assets
 #        OCS.Fetch the IP address tagname from agent discovery page
@@ -1085,7 +1113,7 @@ Network discovery: search on discovered asset list with Tag Name, IP_address and
         Generic.Verify your current page location contains    discovery-assets-list
         Generic.Refresh the existing page
         OCS.Search with MAC address and IP Address on the search bar of Discovered Asset List       ${Brand_name}
-        TechnologyPage.verify Text from Assignment Information     ${Brand_name}          AKKA Germany GmbH
+        TechnologyPage.verify Text from Assignment Information     ${Brand_name}          ${discovery_asset_list_brand}
         OCS.Click on Refresh Icon of discovered asset lists
         OCS.Search with MAC address and IP Address on the search bar of Discovered Asset List       ${generated_AssetID}
         TechnologyPage.verify Text from Assignment Information     ${generated_AssetID}          ${generated_AssetID}
@@ -1115,8 +1143,8 @@ Search with containing fields under advance search of discovered asset
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-#        LandingPage.Verify you are on dashboard page
         Generic.Verify your current page location contains      dashboard
+        LandingPage.Verify you are on dashboard page
         Generic.select the option from the side menu    Asset Discovery
         Generic.Verify your current page location contains     discovery-assets
         I_iconPage.Choose tab under Discovery Assets       network-discovery
@@ -1244,15 +1272,15 @@ Search with containing fields under advance search of component of discovered as
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-#        LandingPage.Verify you are on dashboard page
         Generic.Verify your current page location contains      dashboard
+        LandingPage.Verify you are on dashboard page
         Generic.select the option from the side menu        Asset Discovery
         Generic.Verify your current page location contains      discovery-assets
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         Generic.Verify your current page location contains    ocs
         OCS.Click on search icon of discovery assets
-        OCS.Enter text to search discovery asset   Apple Inc
+        OCS.Enter text to search discovery asset   ${discovered_asset_brand}
         OCS.Click on the down arrow icon of discovered asset
         Generic.Scroll Window To End
         OCS.Mark check-box of Agent/Discovered Asset
@@ -1268,7 +1296,7 @@ Search with containing fields under advance search of component of discovered as
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        switch window    aithentic | Service Now Newly-Discovered
+        switch window    aithentic | Sentinel One Newly-Discovered
         OCS.Choose tab under Discovery Assets   agent-discovery
         Generic.Verify your current page location contains      ocs
         Generic.Refresh the existing page
@@ -1423,19 +1451,19 @@ Search with containing fields under advance search of IP Address of discovered a
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-#        LandingPage.Verify you are on dashboard page
         Generic.Verify your current page location contains      dashboard
+        LandingPage.Verify you are on dashboard page
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
-        Generic.Verify your current page location contains    ocs
+        Generic.Verify your current page location contains   ocs
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
-        OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
+        OCS.Enter text to search discovery asset    ${discovered_IP}
         OCS.Click on the down arrow icon of discovered asset
         Generic.Scroll Window To End
         OCS.Mouse Hover over searched IP Assets
-        OCS.Verify Searched discovery asset    00:17:61:10:C6:A1
+        OCS.Verify Searched discovery asset    ${discovered_IP}
         OCS.Get MAC_Address by hovering over IP discovered assets   MacAddress:
         Generic.select the option from the side menu    Asset Discovery
         Generic.Verify your current page location contains     discovery-assets
@@ -1567,15 +1595,15 @@ Upload Image and Document file during Add Asset with IP address from Agent Disco
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-#        LandingPage.Verify you are on dashboard page
         Generic.Verify your current page location contains      dashboard
+        LandingPage.Verify you are on dashboard page
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    ocs
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
-        OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
+        OCS.Enter text to search discovery asset    ${discovered_IP}
         OCS.Click on the down arrow icon of discovered asset
         Generic.Scroll Window To End
         OCS.Mouse Hover over searched IP Assets
@@ -1607,11 +1635,13 @@ Upload Image and Document file during Add Asset with IP address from Agent Disco
         Switch Window       NEW
         Generic.Verify your current page location contains    amazonaws
         Generic.Verify your current page location contains    .pdf
+        Generic.Verify your current page contains this text    Dummy PDF file
+        Sleep    ${yop_sleep}
         Switch Window       aithentic | Add Discovery Asset
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window       aithentic | Service Now Newly-Discovered
+        Switch Window       aithentic | Sentinel One Newly-Discovered
         Generic.Verify your current page location contains      discovery-assets
         Generic.select the option from the side menu        Technology
         Generic.Verify your current page location contains      technology-list
@@ -1663,19 +1693,19 @@ Upload Image and Document file during Add Asset with IP address from Agent Disco
 Verify cross icon an reset icon while adding IP discovered asset
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-#        LandingPage.Verify you are on dashboard page
         Generic.Verify your current page location contains      dashboard
+        LandingPage.Verify you are on dashboard page
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    ocs
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
-        OCS.Enter text to search discovery asset    00:17:61:10:C6:A1
+        OCS.Enter text to search discovery asset   ${discovered_IP}
         OCS.Click on the down arrow icon of discovered asset
         Generic.Scroll Window To End
         OCS.Mouse Hover over searched IP Assets
-        OCS.Verify Searched discovery asset    00:17:61:10:C6:A1
+        OCS.Verify Searched discovery asset    ${discovered_IP}
         OCS.Get MAC_Address by hovering over IP discovered assets   MacAddress:
         Generic.select the option from the side menu    Asset Discovery
         Generic.Verify your current page location contains     discovery-assets
@@ -1700,15 +1730,15 @@ Verify cross icon an reset icon while adding IP discovered asset
 Verify reset icon while adding discovery asset
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-#        LandingPage.Verify you are on dashboard page
         Generic.Verify your current page location contains      dashboard
+        LandingPage.Verify you are on dashboard page
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    ocs
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
-        OCS.Enter text to search discovery asset    Apple Inc
+        OCS.Enter text to search discovery asset    ${discovered_asset_brand}
         OCS.Click on the down arrow icon of discovered asset
         Generic.Scroll Window To End
         OCS.Mouse Hover over searched Discovered Assets
@@ -1729,15 +1759,15 @@ Verify reset icon while adding discovery asset
 Verify reset icon while adding component
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-#        LandingPage.Verify you are on dashboard page
         Generic.Verify your current page location contains      dashboard
+        LandingPage.Verify you are on dashboard page
         Generic.select the option from the side menu        Asset Discovery
         Generic.Verify your current page location contains      discovery-assets
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         Generic.Verify your current page location contains    ocs
         OCS.Click on search icon of discovery assets
-        OCS.Enter text to search discovery asset   Apple Inc
+        OCS.Enter text to search discovery asset   ${discovered_asset_brand}
         OCS.Click on the down arrow icon of discovered asset
         Generic.Scroll Window To End
         OCS.Mark check-box of Agent/Discovered Asset
@@ -1753,7 +1783,7 @@ Verify reset icon while adding component
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        switch window    aithentic | Service Now Newly-Discovered
+        switch window    aithentic | Sentinel One Newly-Discovered
         OCS.Choose tab under Discovery Assets   agent-discovery
         Generic.Verify your current page location contains      ocs
         Generic.Refresh the existing page
@@ -1786,3 +1816,4 @@ Verify reset icon while adding component
 
 #Zz kill browser
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+

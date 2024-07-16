@@ -51,8 +51,8 @@ Test Teardown   Close Browser session
 #    [
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
-#    LandingPage.Verify you are on dashboard page
 #    Generic.Verify your current page location contains      dashboard
+#    LandingPage.Verify you are on dashboard page
 #    Generic.Click on the profile name
 #    Generic.Select option from profile list     subscription-connector
 #    Generic.Verify your current page location contains      technology-settings
@@ -69,8 +69,8 @@ Edit the scheduler
     [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     subscription-connector
     Generic.Verify your current page location contains      technology-settings
@@ -118,8 +118,8 @@ Run now from view details
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     subscription-connector
     Generic.Verify your current page location contains      technology-settings
@@ -150,15 +150,17 @@ Suspend and unsuspend the account
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
-#       LandingPage.Verify you are on dashboard page
         Generic.Verify your current page location contains      dashboard
+       LandingPage.Verify you are on dashboard page
         Generic.Click on the profile name
         Generic.Select option from profile list     billing-dropdown
         Generic.Verify your current page location contains      billing-details
         SubscriptionPage.Click on the suspend my account button link under billing details
         SubscriptionPage.Enter input in the description field of billing details
         SubscriptionPage.Enter input in the start date field of billing details
+
         TechnologyPage.Input future Date
+
         SubscriptionPage.Enter input in the end date field of billing details       ${formatted_future_date}
         sleep   ${search_sleep}
         Generic.click on the button     Suspend
@@ -206,6 +208,7 @@ View Scheduler from view Result
     Generic.Verify your current page location contains      technology-settings
     SubscriptionPage.Click on the three dots of subscription connector      Microsoft Corporation
     SubscriptionPage.Click on option under three dots of subscription connector     Microsoft Corporation          View Results
+
     Generic.Verify your current page location contains    subscription
     SubscriptionPage.Choose tab under subscription page after clicking on view_result
     SubscriptionPage.Fetch and compare the Brand from the table    Microsoft Corporation
@@ -214,8 +217,8 @@ Edit the scheduler of Sentinelone
     [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     subscription-connector
     Generic.Verify your current page location contains      technology-settings
@@ -263,8 +266,8 @@ Run_now_delete_view-details_of_sentinelOne
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     subscription-connector
     Generic.Verify your current page location contains      technology-settings
