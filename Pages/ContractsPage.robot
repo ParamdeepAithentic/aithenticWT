@@ -98,7 +98,7 @@ Enter contract type
     Generic.Select parameter    ${option}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  3  ${pageHeading}   ContractPage - Enter contract type      3    ${pageTime}     ${ActualTime}    ContractPage_Time
+    Calculate Running time  3  ${pageHeading}   ContractPage - Select the option from contract type dropdown via add new contract      3    ${pageTime}     ${ActualTime}    ContractPage_Time
 
 
 Enter contract with
@@ -113,7 +113,7 @@ Enter contract with
     Press Keys     ${companyId}       ENTER
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  4  ${pageHeading}   ContractPage - Enter contract with business name       4    ${pageTime}     ${ActualTime}    ContractPage_Time
+    Calculate Running time  4  ${pageHeading}   ContractPage - Select the business name option from contract with dropdown via add new contract       4    ${pageTime}     ${ActualTime}    ContractPage_Time
 
 
 
@@ -128,7 +128,7 @@ Enter contract brand
     click element       //ng-select[@labelforid='brand']//ng-dropdown-panel//span[normalize-space()='${option}']
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  5  ${pageHeading}   ContractPage - Enter contract brand      5    ${pageTime}     ${ActualTime}    ContractPage_Time
+    Calculate Running time  5  ${pageHeading}   ContractPage - Select the option from brand dropdown via add new contract      5    ${pageTime}     ${ActualTime}    ContractPage_Time
 
 
 
@@ -142,7 +142,7 @@ Enter contract location
     Press Keys      ${location}      ENTER
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  6  ${pageHeading}   ContractPage - Enter contract location      6    ${pageTime}     ${ActualTime}    ContractPage_Time
+    Calculate Running time  6  ${pageHeading}   ContractPage - Select the option from location dropdown via add new contract      6    ${pageTime}     ${ActualTime}    ContractPage_Time
 
 Enter contract permission
     [Arguments]    ${option}
@@ -174,7 +174,7 @@ Select contract function
     Generic.Select parameter    ${option}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  7  ${pageHeading}   ContractPage - Select contract function      7    ${pageTime}     ${ActualTime}    ContractPage_Time
+    Calculate Running time  7  ${pageHeading}   ContractPage - Select the option from contract function dropdown via add new contract      7    ${pageTime}     ${ActualTime}    ContractPage_Time
 
 
 Click on generate contract button on select asset page
@@ -259,7 +259,7 @@ Search by contract BrandName
      should be equal    ${fetch_Contract_BrandName}     ${BrandName}
      ${EndTime1} =     Get Current Time in Milliseconds
      ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-     Calculate Running time  8  ${pageHeading}   ContractPage - Search by contract BrandName      8    ${pageTime}     ${ActualTime}    ContractPage_Time
+     Calculate Running time  8  ${pageHeading}   ContractPage - Search the contract Business Name on contract listing     8    ${pageTime}     ${ActualTime}    ContractPage_Time
 
 Click on the first tab row of contract list page table
     [Arguments]

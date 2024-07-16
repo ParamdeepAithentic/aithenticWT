@@ -55,5 +55,5 @@ Validate Succesful Login
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains    dashboard
+    LandingPage.Verify you are on dashboard page

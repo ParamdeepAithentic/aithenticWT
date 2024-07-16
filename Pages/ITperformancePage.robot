@@ -346,3 +346,14 @@ Get and verify the count of table of brand spend by supplier and supplier spend 
         ...    AND    Click Element    css:span[class='back']  AND  Sleep    ${yop_sleep}
         ...    ELSE    Log    Custom action for element ${index} with value ${element}
     END
+
+Hover the text of download icon under it performance
+    [Arguments]     ${option}
+    Wait Until Element Is Visible    //div[@id='SpendForecastsReports']//i      ${wait_time}
+    Wait Until Element Is Enabled    //div[@id='SpendForecastsReports']//i      ${wait_time}
+    Mouse Over      //div[@id='SpendForecastsReports']//i
+    ${download_text}=    Get Element Attribute    //div[@id='SpendForecastsReports']//i    title
+    Log To Console    ${download_text}
+    Set Global Variable    ${download_text}
+    Should be equal   ${download_text}     ${option}
+
