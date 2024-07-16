@@ -310,6 +310,7 @@ View Scheduler from view Result of sentinelone
     Generic.Verify your current page location contains      technology-settings
     SubscriptionPage.Click on the three dots of subscription connector      Microsoft Corporation
 
+
 Create service now with invalid data
    Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
