@@ -52,8 +52,8 @@ Change plan- Assign commercial plan and change it to slotted
     [Tags]      Smoke     Sanity      Time      rerun       Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     mehak@mynes.com     Test@123
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
 #    Generic.Click on the profile name
 #    Generic.Select option from profile list     billing-dropdown
 #    Generic.Verify your current page location contains      billing
@@ -115,3 +115,27 @@ Free the asset limit
     PaginationPage.Check the table get load
     PaginationPage.Fetch the total count
     PaginationPage.Run the remove asset journey
+
+
+Set Plan range in pre requites
+    TRY
+        Generic.click on the tab	Login
+        LandingPage.Fill the login Form     ${email}    ${valid_password}
+        Generic.Click on the profile name
+        Generic.Select option from profile list     subscription-dropdown
+        Generic.Verify your current page location contains      subscription
+        SubscriptionPage.Select if you want to change plan or asset    Change Plan
+        TechnologyPage.Select plan for subscription     Premium
+        Generic.Scroll the page till    500
+        Admin_PanelPage.Select the higest plan
+        sleep   ${search_sleep}
+#        SubscriptionPage.Set asset range to     900
+        SubscriptionPage.Update the payment of changed plan     proceed
+        TechnologyPage.Click on pop up of available Inactive Asset   cancel
+        SubscriptionPage.Select the payment method    ach
+        SubscriptionPage.Select the account for payment
+        SubscriptionPage.Proceed the payment     proceed
+        Generic.Fetch alert message text and compare it with      Payment Successful
+    EXCEPT
+        Admin_PanelPage.Welcome to the code
+    END
