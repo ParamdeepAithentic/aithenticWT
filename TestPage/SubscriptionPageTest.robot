@@ -304,3 +304,4 @@ View Scheduler from view Result of sentinelone
     Go Back
     Generic.Verify your current page location contains      technology-settings
     SubscriptionPage.Click on the three dots of subscription connector      Microsoft Corporation
+    
