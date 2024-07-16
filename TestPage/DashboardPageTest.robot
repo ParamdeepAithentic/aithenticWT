@@ -52,8 +52,8 @@ Click the option from side drawer
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Dashboard
     Generic.Verify your current page location contains      dashboard
     DashboardPage.select the option from the dashboard drawer   IT Performances
@@ -64,10 +64,10 @@ Verify the drawer list
     [Tags]      Time        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.Verify your current page location contains      dashboard
     Generic.Verify your current page location contains      home
+    LandingPage.Verify you are on dashboard page
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  24  ${pageHeading}   Page Load - Total Page Load Time of Home Page after login      24    ${pageTime}     ${ActualTime}    PageLoad_Time
@@ -76,21 +76,20 @@ Verify the drawer list
     Generic.Verify your current page location contains      dashboard
     DashboardPage.Verify the drawer list parameters
 
-#
-#Verify the side options list
-#    [Tags]      Unstable
-#    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form      ${email}    ${valid_password}
-##    LandingPage.Verify you are on dashboard page
-#    Generic.Verify your current page location contains      dashboard
-#    DashboardPage.Verify the side option list parameters
+Verify the side options list
+    [Tags]      Unstable
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    DashboardPage.Verify the side option list parameters
 
 click the option from menu
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
 
@@ -98,16 +97,16 @@ Verify the profile option list
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.Verify the profile option list parameters
 
 Create and verify new brand
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     brand-dropdown
     Generic.Verify your current page location contains      brand
@@ -124,8 +123,8 @@ Create a new product with adding new brand
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     brand-dropdown
     Generic.Verify your current page location contains      brand
@@ -158,8 +157,8 @@ Add Brand via personal detail under technology
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -202,8 +201,8 @@ Invite user into Aithentic
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Dashboard
     Generic.Verify your current page location contains      dashboard
     ReplaceDomainAPI.Replace Domain
@@ -302,8 +301,8 @@ Verify Help Center
     [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Dashboard
     Generic.Verify your current page location contains      dashboard
     DashboardPage.click on Help center icon of dashboard page
@@ -312,28 +311,28 @@ Verify Help Center
     Switch Window       Get Started Guide - Jira Service Management
     Generic.Verify your current page location contains     servicedesk
     Generic.Verify your current page contains this text     Get Started Guide
-    Switch Window      aithentic | Dashboard
+    Switch Window      aithentic | Management - Console
     DashboardPage.Click on link of information center list      Knowledge Base
 
     sleep       ${yop_sleep}
     Switch Window       Help Center Home - Jira Service Management
     Generic.Verify your current page location contains     servicedesk
     Generic.Verify your current page contains this text     SEARCH OUR KNOWLEDGE BASE
-    Switch Window       aithentic | Dashboard
+    Switch Window       aithentic | Management - Console
     DashboardPage.Click on link of information center list      What’s New!
 
     sleep       ${yop_sleep}
     Switch Window       What's New! - Jira Service Management
     Generic.Verify your current page location contains     servicedesk
     Generic.Verify your current page contains this text     What's New!
-    Switch Window       aithentic | Dashboard
+    Switch Window       aithentic | Management - Console
     DashboardPage.Click on link of Support      Customer
 
     sleep       ${yop_sleep}
     Switch Window       Customer Service Desk - Jira Service Management
     Generic.Verify your current page location contains      servicedesk
     Generic.Verify your current page contains this text     Customer Service Desk
-    Switch Window       aithentic | Dashboard
+    Switch Window       aithentic | Management - Console
     DashboardPage.Search any keyword of FAQ section     How do I complete my account setup?
     DashboardPage.Verify the keyword        How do I complete my account setup?
     DashboardPage.Search any keyword of FAQ section     Testing
@@ -343,8 +342,8 @@ Edit Brand and address via brand under profile list
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -416,8 +415,8 @@ Deactivate Brand and address via brand under profile list
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -493,8 +492,8 @@ Activate Brand and address via brand under profile list
     [Tags]   Smoke      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      dashboard
+    Generic.Verify your current page location contains
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -574,8 +573,8 @@ Remove Brand and address via brand under profile list
     [Tags]    Smoke     Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -651,8 +650,8 @@ Verify adding a new brand from profile listing
     [Tags]      Sanity     rerun        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     brand-dropdown
     ReplaceDomainAPI.Replace Domain
@@ -679,8 +678,8 @@ Verify Department quick_links in profile settings dropdown
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list      department-dropdown
     Generic.Verify your current page location contains       department-list
@@ -691,8 +690,8 @@ Search By Technology Group in product list
     [Tags]      Time        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     brand-dropdown
     Generic.Verify your current page location contains      brand
@@ -726,8 +725,8 @@ Verify Brand quick_links in profile settings Dropdown
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     brand-dropdown
     Generic.Verify your current page location contains      brand-list
@@ -738,8 +737,8 @@ Verify Product quick_links in profile settings dropdown
     [Tags]     Sanity       Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list      product-dropdown
     Generic.Verify your current page location contains       product-list
@@ -750,8 +749,8 @@ Search By Brand name in product list
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     brand-dropdown
     Generic.Verify your current page location contains      brand
@@ -785,8 +784,8 @@ Verify Reports Asset Alert
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}       ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -802,8 +801,8 @@ Verify Reports Asset Alert
     Generic.Verify your current page location contains      technology
     Generic.Wait until table get load
     Generic.select the option from the side menu    Dashboard
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview
     Generic.Verify your current page contains this text     Billing Details
@@ -826,8 +825,8 @@ Verify Reports Asset Alert
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     Generic.Verify your current page location contains      technology
     Generic.select the option from the side menu    Dashboard
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview
     Generic.Verify your current page contains this text     Billing Details
@@ -842,8 +841,8 @@ Verify Reports Asset Alert
     Generic.Verify your current page location contains      technology
     Generic.Verify your current page contains this text     No Records
     Generic.select the option from the side menu    Dashboard
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview
     Generic.Verify your current page contains this text     Billing Details
@@ -857,8 +856,8 @@ Verify Reports Asset Alert
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
     Generic.select the option from the side menu    Dashboard
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview
     Generic.Verify your current page contains this text    Billing Details
@@ -872,8 +871,8 @@ Verify Reports Asset Alert
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
     Generic.select the option from the side menu    Dashboard
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview
     Generic.Verify your current page contains this text     Billing Details
@@ -887,8 +886,8 @@ Verify Reports Asset Alert
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
     Generic.select the option from the side menu    Dashboard
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview
     Generic.Verify your current page contains this text     Billing Details
@@ -901,16 +900,16 @@ Click and verify the count of the tabs under renewal overview by management cons
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.Get And Verify The Count Of tabs under renewal overview by management console
 
 Click and verify the count of the tabs under renewal overview by choosing the value from the dropdown by management console
     [Tags]     Sanity       Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.Click on the dropdown of quarter end under management console
     DashboardPage.Select the first value of To dropdown of quarter     0
     DashboardPage.Get And Verify The Count Of tabs under renewal overview by management console
@@ -936,8 +935,17 @@ Verify Account_overview Recent Activities Filters
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}       ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    RegisterUserPage.Select the option from the personal details sidebar        personal-profile
+    Generic.Verify your current page location contains    personal-profile
+    RegisterUserPage.Click on edit button to edit the profile details    Edit
+    RegisterUserPage.Create self register first name    Test QA31280530
+    RegisterUserPage.Create self register last name     Up3128
+    RegisterUserPage.Save the Profile details       Save
+    Generic.Fetch alert message text and compare it with    Profile saved successfully
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -952,8 +960,8 @@ Verify Account_overview Recent Activities Filters
     Generic.Verify your current page location contains      technology
     Generic.Wait until table get load
     Generic.select the option from the side menu    Dashboard
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview
     Generic.Verify your current page contains this text     Billing Details
@@ -980,6 +988,7 @@ Add and delete product from profile listing
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     brand-dropdown
     Generic.Verify your current page location contains      brand
@@ -1016,7 +1025,8 @@ Add and delete product from profile listing
 View Predefined brand
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.Verify your current page location contains      dashboard
+    Generic.Verify your current page location contains
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -1027,7 +1037,8 @@ View Predefined brand
 View Predefined product
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.Verify your current page location contains      dashboard
+    Generic.Verify your current page location contains
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -1039,7 +1050,8 @@ Verifying the Renewals Overview section of Management console - End of Life
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.Verify your current page location contains      dashboard
+    Generic.Verify your current page location contains
+    LandingPage.Verify you are on dashboard page
     DashboardPage.Fetch the count renewals overview subtabs      End of life
     DashboardPage.Set Globally the count from renewal overview subtabs
     Generic.select the option from the side menu    Technology
@@ -1074,6 +1086,7 @@ Verifying the Renewals Overview section of Management console - End of Life
     Generic.Wait until table get load
     Generic.select the option from the side menu    Dashboard
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.Fetch the count renewals overview subtabs         End of life
     DashboardPage.Compare the counts of renewal overview after adding the asset
     DashboardPage.Click on the subtabs          End of life
@@ -1133,6 +1146,7 @@ Verifying the Renewals Overview section of Management console - Overdue Renewals
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.Fetch the count renewals overview subtabs      Overdue renewals
     DashboardPage.Set Globally the count from renewal overview subtabs
     Generic.select the option from the side menu    Technology
@@ -1155,6 +1169,7 @@ Verifying the Renewals Overview section of Management console - Overdue Renewals
     Generic.Wait until table get load
     Generic.select the option from the side menu    Dashboard
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.Fetch the count renewals overview subtabs        Overdue renewals
     DashboardPage.Compare the counts of renewal overview after adding the asset
     DashboardPage.Click on the subtabs          Overdue renewals
@@ -1216,6 +1231,7 @@ Verifying the Renewals Overview section of Management console - Overdue contract
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.Fetch the count renewals overview subtabs      Overdue contracts
     DashboardPage.Set Globally the count from renewal overview subtabs
     Generic.select the option from the side menu    Technology
@@ -1240,6 +1256,7 @@ Verifying the Renewals Overview section of Management console - Overdue contract
     Generic.Wait until table get load
     Generic.select the option from the side menu    Dashboard
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.Fetch the count renewals overview subtabs        Overdue contracts
     DashboardPage.Compare the counts of renewal overview after adding the asset
     DashboardPage.Click on the subtabs          Overdue contracts
@@ -1289,6 +1306,7 @@ Verifying the Renewals Overview section of Management console - Expired warranti
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.Fetch the count renewals overview subtabs      Expired warranties
     DashboardPage.Set Globally the count from renewal overview subtabs
     Generic.select the option from the side menu    Technology
@@ -1312,7 +1330,8 @@ Verifying the Renewals Overview section of Management console - Expired warranti
     Generic.Verify your current page location contains      technology
     Generic.Wait until table get load
     Generic.select the option from the side menu    Dashboard
-    Generic.Verify your current page location contains      dashboard
+    Generic.Verify your current page location contains
+    LandingPage.Verify you are on dashboard page
     DashboardPage.Fetch the count renewals overview subtabs        Expired warranties
     DashboardPage.Compare the counts of renewal overview after adding the asset
     DashboardPage.Click on the subtabs          Expired warranties
@@ -1359,6 +1378,7 @@ Verifying the Renewals Overview section of Management console - Overdue certific
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.Fetch the count renewals overview subtabs      Overdue certificates
     DashboardPage.Set Globally the count from renewal overview subtabs
     Generic.select the option from the side menu    Technology
@@ -1366,7 +1386,7 @@ Verifying the Renewals Overview section of Management console - Overdue certific
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
-    TechnologyPage.Select parameter from technology dropdown list      Certificate1 product
+    TechnologyPage.Select parameter from technology dropdown list      Product_certificate
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date self    05/13/2024
     TechnologyPage.Input current Date
@@ -1382,6 +1402,7 @@ Verifying the Renewals Overview section of Management console - Overdue certific
     Generic.Wait until table get load
     Generic.select the option from the side menu    Dashboard
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.Fetch the count renewals overview subtabs        Overdue certificates
     DashboardPage.Compare the counts of renewal overview after adding the asset
     DashboardPage.Click on the subtabs          Overdue certificates
@@ -1401,7 +1422,7 @@ Verifying the Renewals Overview section of Management console - Overdue certific
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
-    TechnologyPage.Select parameter from technology dropdown list       Certificate1 product
+    TechnologyPage.Select parameter from technology dropdown list       Product_certificate
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date self    05/13/2024
     TechnologyPage.Input future Date
@@ -1535,5 +1556,3 @@ Verifying the Subscription Overview section of Management console
     Generic.Verify your current page contains this text     Renewals overview details
     DashboardPage.Click on done button of subscription overview    Done
 
-Zz kill browser
-    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

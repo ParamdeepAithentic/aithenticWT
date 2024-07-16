@@ -236,7 +236,7 @@ Search by location name
      should be equal    ${fetch_locationName}     ${LocationName}
      ${EndTime1} =     Get Current Time in Milliseconds
      ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-     Calculate Running time    3    ${pageHeading}   Location Page - Search location name in the table    3    ${pageTime}     ${ActualTime}    LocationPage_Time
+     Calculate Running time    3    ${pageHeading}   Location Page - Search location name on the location page listing    3    ${pageTime}     ${ActualTime}    LocationPage_Time
 
 Enter random cost center value
     ${random_string} =    Generate Random String       5      [NUMBERS]

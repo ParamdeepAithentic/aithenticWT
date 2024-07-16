@@ -50,8 +50,8 @@ Product Bulk import
     [Tags]    Sanity        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     product-dropdown
     Generic.Verify your current page location contains      product
@@ -80,8 +80,8 @@ Product Bulk Edit
     [Tags]    Sanity        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     product-dropdown
     Generic.Verify your current page location contains      product
@@ -117,6 +117,7 @@ Product Bulk Edit
     Generic.Click on the button     Update      #Check Data,Edit
     MemberPage.Confirm the exit import process pop appers
     Generic.Click on the button     Confirm
+    Generic.wait for the shadow to get hide from the current screen
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
     Generic.Click on the button     Finish
     Bulk_Import_ExportPage.Click on the confirm button of finish pop up
@@ -129,8 +130,8 @@ Department Bulk Import
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     department-dropdown
     Generic.Verify your current page location contains      department-list
@@ -155,8 +156,8 @@ Department Bulk Edit
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     department-dropdown
     Generic.Verify your current page location contains      department-list
@@ -197,8 +198,8 @@ Add Product Bulk Edit
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     product-dropdown
     Generic.Verify your current page location contains      product
@@ -240,8 +241,8 @@ Add Department Bulk Edit
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     department-dropdown
     Generic.Verify your current page location contains      department-list
@@ -273,8 +274,8 @@ Location Bulk Edit
     [Tags]    Sanity        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Location
     Generic.Verify your current page location contains      locationlist
     LocationPage.Click on Location action button
@@ -329,8 +330,8 @@ Assigned Users Bulk Edit
     [Tags]    Sanity     Time       Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
@@ -370,8 +371,8 @@ Team Member Bulk Edit
     [Tags]    Sanity        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     Generic.Click on the profile name
@@ -433,8 +434,8 @@ Technology Bulk edit
     [Tags]       sanity       Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     Generic.Verify your current page location contains     technology-list
@@ -505,8 +506,8 @@ Team member Bulk Import
     [Tags]    Sanity        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     I_iconPage.Choose options inside personal_details        Organization
@@ -553,8 +554,8 @@ Assigned User Bulk Import
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Team Members
     MemberPage.Click on assigned user tab      Assigned Users
     MemberPage.Click on action button of assigned users
@@ -581,8 +582,8 @@ Location Bulk Import
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Location
     Generic.Verify your current page location contains      locationlist
     LocationPage.Click on Location action button
@@ -618,8 +619,8 @@ Technology Bulk import
     [Tags]    Sanity        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains     technology-list
     TechnologyPage.Click on action button of technology
@@ -691,10 +692,10 @@ Technology Bulk import
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_3
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_4      CPU
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_4
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_5      Paramdeep
-    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_5
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_6      Test@123
-    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_6
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_5      Paramdeep
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_5
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_6      Test@123
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_6
 
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_7      100
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_7
@@ -720,6 +721,3 @@ Technology Bulk import
     TechnologyPage.Search by AssetId       ${generated_assetid}
     Generic.Wait until table get load
 
-
-Zz kill browser
-    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
