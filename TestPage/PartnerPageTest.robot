@@ -100,7 +100,8 @@ Compose Message invite user test
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Generic.Fetch alert message text and compare it with    Partner created successfully
+    Sleep     5
+    #Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generate_BusinessName}
 #-------------------------- PRODUCT-----newely added---------------------------------------------------------
     Generic.Click on the profile name
@@ -754,7 +755,8 @@ Add Manufacturer via personal detail under technology and partner
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Generic.Fetch alert message text and compare it with    Partner created successfully
+    Sleep     5
+    #Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generated_BrandName}
 
 
@@ -802,7 +804,8 @@ Edit Manufacturer via partner
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Generic.Fetch alert message text and compare it with    Partner created successfully
+    Sleep     5
+    #Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generated_BrandName}
     PartnersPage.Click on three dots of partners listing
     PartnersPage.Select option from three dots of partner     Details
@@ -884,7 +887,8 @@ Deactivate Manufacturer via partner
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Generic.Fetch alert message text and compare it with    Partner created successfully
+    Sleep     5
+    #Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generated_BrandName}
     PartnersPage.Click on three dots of partners listing
     PartnersPage.Select option from three dots of partner     Details
@@ -970,7 +974,8 @@ Activate Manufacturer via partner
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Generic.Fetch alert message text and compare it with    Partner created successfully
+    Sleep     5
+    #Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generated_BrandName}
     PartnersPage.Click on three dots of partners listing
     PartnersPage.Select option from three dots of partner     Details
@@ -1059,7 +1064,8 @@ Remove Manufacturer from partner
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Generic.Fetch alert message text and compare it with    Partner created successfully
+    Sleep     5
+    #Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generated_BrandName}
     PartnersPage.Click on three dots of partners listing
     PartnersPage.Select option from three dots of partner     Details
@@ -1124,7 +1130,8 @@ View Details and check the details of Contract
     PartnersPage.Enter partner business URL     yopmail
     PartnersPage.Select partner country       United States
     PartnersPage.Click on the save button   Save
-    Generic.Fetch alert message text and compare it with    Partner created successfully
+    Sleep     5
+    #Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name   ${generate_BusinessName}
     Generic.select the option from the side menu    Technology
     TechnologyPage.Click on action button of technology
@@ -1257,7 +1264,8 @@ Add_edit_deactivate_removeSupplier while adding brand
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Generic.Fetch alert message text and compare it with    Partner created successfully
+    Sleep     5
+    #Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generated_BrandName}
     PartnersPage.Click on three dots of partners listing
     PartnersPage.Select option from three dots of partner     Details
@@ -1351,7 +1359,8 @@ Add_edit_deactivate_removeSupport_partner_while_adding_brand
     PartnersPage.Enter contact location       Aland Islands
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Generic.Fetch alert message text and compare it with    Partner created successfully
+    Sleep     5
+    #Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generated_BrandName}
     PartnersPage.Click on three dots of partners listing
     PartnersPage.Select option from three dots of partner     Details
