@@ -134,6 +134,12 @@ Set Default Variables
     Set Suite Variable    ${admin_password}       Admin@123
     Set Suite Variable    ${browser_name}         headlessfirefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
+    Set Suite Variable    ${discovered_asset_brand}                 Apple Inc
+    Set Suite Variable    ${discovered_existing_brand}              Apple Inc.
+    Set Suite Variable    ${discovered_existing_product}            Macmini9,1
+    Set Suite Variable    ${discovered_existing_department}        Quality Assurance
+    Set Suite Variable    ${discovered_IP}    00:17:61:10:C6:A1
+    Set Suite Variable    ${discovery_asset_list_brand}     AKKA Germany GmbH
 
 Fix the column number
     ${pageHeading}=   Catenate    2
