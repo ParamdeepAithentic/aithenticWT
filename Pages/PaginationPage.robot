@@ -300,7 +300,7 @@ Click on the checkbox of technology listing
 
 
 Run the remove asset journey
-    Run Keyword If    ${total_data_count} >= 800
+    Run Keyword If    ${total_data_count} >= 500
         ...    PaginationPage.Remove the old assets to free the space
         ...    ELSE  Run Keywords     Generic.Close Browser session
         ...    AND    Return From Keyword
@@ -324,7 +324,7 @@ Remove the old assets to free the space
     SortingPage.Click on specific column for method one     Created Date
     SortingPage.Click on specific column for method one     Created Date
     PaginationPage.Click on the pagination dropdown     technology
-    PaginationPage.Select the value from the pagination drop down count    500
+    PaginationPage.Select the value from the pagination drop down count    100
 
     Generic.Wait until table get load
     PaginationPage.Click on the checkbox of technology listing
@@ -342,7 +342,7 @@ Remove the old assets to free the space
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     TechnologyPage.Click on plan of subscription        Premium
     Generic.Scroll the page till    200
-    SubscriptionPage.Set asset range to     900
+    SubscriptionPage.Set asset range to     10000
     sleep    5
     SubscriptionPage.Update the payment of changed plan     proceed
 

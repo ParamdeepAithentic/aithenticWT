@@ -71,6 +71,8 @@ ${search_technology_group}     css:.qa-selectedTechnologyGroups input
 
 ${search_technology_group}      (//div[@class='ng-input']//input)[2]
 ${search_by_brand_name}            (//div[@class='ng-input']//input)[3]
+${COLUMN_LOCATOR}  .ag-center-cols-container div[col-id='Supplier']
+${SCROLL_POSITION}  100  # Adjust this as needed for your scroll position
 
 *** Keywords ***
 
@@ -204,11 +206,18 @@ Select option from status column in bulk_edit
     click element       css:div[class='ag-rich-select-row']
 
 Select option from technology type column in bulk_edit
-    [Arguments]    ${option}    ${option2}
-    wait until element is visible      css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
-    Double click element      css:.ag-center-cols-container div[col-id='${option}']
-    wait until element is visible      css:div[aria-label='List'] div:nth-child(${option2}) div    ${wait_time}
-    click element       css:div[aria-label='List'] div:nth-child(${option2}) div
+#    [Arguments]    ${option}    ${option2}
+#    wait until element is visible      css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
+#    Double click element      css:.ag-center-cols-container div[col-id='${option}']
+#    wait until element is visible      css:div[aria-label='List'] div:nth-child(${option2}) div    ${wait_time}
+#    click element       css:div[aria-label='List'] div:nth-child(${option2}) div
+    Wait Until Element Is Visible    ${COLUMN_LOCATOR}    timeout=10s
+    ${element} =  Get WebElement    ${COLUMN_LOCATOR}
+    # Execute JavaScript to scroll within the specific element
+    Execute JavaScript    arguments[0].scrollTop = ${SCROLL_POSITION};    ${element}
+    # Now locate the option you want to select within the scrolled element
+    ${option} =  Get WebElement    xpath=${COLUMN_LOCATOR}//td[normalize-space()='${OPTION_TEXT}']
+    Click Element    ${option}
 
 Click on Refresh icon of product-list page
     wait until element is visible       css:.reset-product-qa        ${wait_time}
@@ -698,7 +707,7 @@ Select department cost center under technology bulk import
     wait until element is enabled       //form[contains(@class,'ng-dirty')]//input[@id='costCenter']        ${wait_time}
     input text    //form[contains(@class,'ng-dirty')]//input[@id='costCenter']   ${option}
 
- Search by location name under technology bulk import
+Search by location name under technology bulk import
     [Arguments]    ${LocationName}
      wait until element is not visible      ${loaderIcon}     ${wait_time}
      wait until element is visible       css:thead tr       ${wait_time}
@@ -710,5 +719,38 @@ Select department cost center under technology bulk import
      Fetch the location Name from the row   ${LocationName}
      should be equal    ${fetch_locationName}     ${LocationName}
 
+Add product feature bulk import
+    wait until element is visible       css:#features     ${wait_time}
+    wait until element is enabled       css:#features     ${wait_time}
+    input text    css:#features    This is the features of new product added.
 
+Select product status technology bulk import
+    [Arguments]    ${option}
+    wait until element is visible       css:#Product-Status     ${wait_time}
+    click element  css:#Product-Status
+    input text   css:#Product-Status  ${option}
+    Generic.Select parameter     ${option}
+
+Save added product details technology bulk import
+    wait until element is visible      //div[@class='modal-footer']//button[normalize-space()='Save']       ${wait_time}
+    wait until element is enabled      //div[@class='modal-footer']//button[normalize-space()='Save']       ${wait_time}
+    click element   //div[@class='modal-footer']//button[normalize-space()='Save']
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+
+Select partner business URL technology bulk import
+    wait until element is visible       //input[@id='businessUrl']        ${wait_time}
+    wait until element is enabled       //input[@id='businessUrl']        ${wait_time}
+    sleep      2
+    click element   //input[@id='businessUrl']
+    wait until element is visible     //div[contains (@id, '-0')]       ${wait_time}
+    wait until element is enabled     //div[contains (@id, '-0')]       ${wait_time}
+    click element   //div[contains (@id, '-0')]
+
+Enter contact business email via link
+    [Arguments]    ${Pname}
+    wait until element is not visible   ${loaderIcon}   ${wait_time}
+    wait until element is visible   css:#businessEmail        ${wait_time}
+    wait until element is enabled      css:#businessEmail       ${wait_time}
+    click element   css:#businessEmail
+    input text   css:#businessEmail  ${Pname}
 

@@ -791,21 +791,184 @@ Verify Bulk Import on the Technology Page by adding all parameters
     DashboardPage.Add brand manufacturer country      United States
     DashboardPage.Save added brand details
     Generic.Fetch alert message text and compare it with        Brand created successfully.
+    DashboardPage.Click added brand main save button
     DashboardPage.Verify Brand added      ${generated_BrandName}
     Generic.click on the button     Next
     Generic.click on the tab        Add Product
     DashboardPage.Create random productName
     DashboardPage.Add product brand name      ${generated_BrandName}
-    DashboardPage.Add product description
-    DashboardPage.Add product feature
+    DashboardPage.Add product description via link
+    Bulk_Import_ExportPage.Add product feature bulk import
     DashboardPage.Select product technology type     Hardware
     DashboardPage.Select product technology group     Applications
-    DashboardPage.Select product status   Active
-    DashboardPage.Save added product details
-    Generic.Fetch alert message text and compare it with        Product created successfully
-    DashboardPage.Search by brand name      ${generated_BrandName}
+    Bulk_Import_ExportPage.Select product status technology bulk import   Active
+    Bulk_Import_ExportPage.Save added product details technology bulk import
+#    Generic.Fetch alert message text and compare it with        Product created successfully
+    DashboardPage.Verify product added    ${generated_product}
     Generic.click on the button     Next
     Generic.click on the tab        Add Partner
+    Generic.Verify your current page location contains      addpartner
+    PartnersPage.Select partner type of new partner     Manufacturer
+    PartnersPage.Select partner business_name     ${generated_BrandName}
+    Bulk_Import_ExportPage.Select partner business URL technology bulk import
+    PartnersPage.Select partner country       United States
+    PartnersPage.Click on Add new Address of partner        Add new Address
+    PartnersPage.Add Unique address_one of partner
+    PartnersPage.Add Unique address_two of partner
+    PartnersPage.Select State       Alaska
+    PartnersPage.Select City        Akutan
+    PartnersPage.Zip code Input     24015
+    PartnersPage.Save new Address
+    Generic.Scroll the page till        700
+    PartnersPage.Click on Add new Contact of partner        Add new Contact
+    PartnersPage.Enter random contact person
+    Bulk_Export_ImportPage.Enter contact business email via link    ${generated_BrandURL}
+    Generic.Enter phone number      India   +91     9646289871
+    PartnersPage.Enter contact location      United States - Main Office - 21 - 2
+    PartnersPage.Save the new contact
+    PartnersPage.Click contact main save button
+    Generic.Fetch alert message text and compare it with    Partner created successfully
+    PartnersPage.Search by business name    ${generated_BrandName}
+    Generic.click on the tab        Add Partner
+    Generic.Verify your current page location contains      addpartner
+    PartnersPage.Select partner type of new partner     Supplier
+    PartnersPage.Select partner business_name     ${generated_BrandName}
+    Bulk_Import_ExportPage.Select partner business URL technology bulk import
+    PartnersPage.Select partner country       United States
+    PartnersPage.Click on Add new Address of partner        Add new Address
+    PartnersPage.Add Unique address_one of partner
+    PartnersPage.Add Unique address_two of partner
+    PartnersPage.Select State       Alaska
+    PartnersPage.Select City        Akutan
+    PartnersPage.Zip code Input     24015
+    PartnersPage.Save new Address
+    Generic.Scroll the page till        700
+    PartnersPage.Click on Add new Contact of partner        Add new Contact
+    PartnersPage.Enter random contact person
+    Bulk_Export_ImportPage.Enter contact business email via link    ${generated_BrandURL}
+    Generic.Enter phone number      India   +91     9646289871
+    PartnersPage.Enter contact location      United States - Main Office - 21 - 2
+    PartnersPage.Save the new contact
+    PartnersPage.Click contact main save button
+    Generic.Fetch alert message text and compare it with    Partner created successfully
+    PartnersPage.Search by business name    ${generated_BrandName}
+    Generic.click on the tab        Add Partner
+    Generic.Verify your current page location contains      addpartner
+    PartnersPage.Select partner type of new partner     Support Partner
+    PartnersPage.Select partner business_name     ${generated_BrandName}
+    Bulk_Import_ExportPage.Select partner business URL technology bulk import
+    PartnersPage.Select partner country       United States
+    PartnersPage.Click on Add new Address of partner        Add new Address
+    PartnersPage.Add Unique address_one of partner
+    PartnersPage.Add Unique address_two of partner
+    PartnersPage.Select State       Alaska
+    PartnersPage.Select City        Akutan
+    PartnersPage.Zip code Input     24015
+    PartnersPage.Save new Address
+    Generic.Scroll the page till        700
+    PartnersPage.Click on Add new Contact of partner        Add new Contact
+    PartnersPage.Enter random contact person
+    Bulk_Export_ImportPage.Enter contact business email via link    ${generated_BrandURL}
+    Generic.Enter phone number      India   +91     9646289871
+    PartnersPage.Enter contact location      United States - Main Office - 21 - 2
+    PartnersPage.Save the new contact
+    PartnersPage.Click contact main save button
+    Generic.Fetch alert message text and compare it with    Partner created successfully
+    PartnersPage.Search by business name    ${generated_BrandName}
+    Generic.click on the button     Next
+    Generic.Verify your current page location contains     add-technology
+    Bulk_Import_ExportPage.Enter the new value in the fields of technology bulk import       Brand        ${generated_BrandName}
+    Bulk_Import_ExportPage.Enter the new value in the fields of technology bulk import     Product         ${generated_product}
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      ItemTechCount         1
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       Supplier        1
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       SupportPartner        1
+    Generic.Click on the button     Check Data      #Update,Edit
+    Generic.Click on the button     Upload
+    Bulk_Import_ExportPage.Verify the upload message text - bulk import tech    Upload       Upload is prepared
+    Generic.click on the button     Next
+    Generic.Verify your current page location contains     add-technology-templates
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       LocationName        1
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       DepartmentName        1
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       AssignTo        1
+    Bulk_Import_Exportpage.Enter the new value of asset id of technology bulk import      AssetId
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       Status        1
+    Bulk_Import_ExportPage.Perform the keyboard action      Status
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      PurchaseOrderNo         25
+    Bulk_Import_ExportPage.Perform the keyboard action      PurchaseOrderNo
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import     PurchaseDt         01/21/2021
+    Bulk_Import_ExportPage.Perform the keyboard action      PurchaseDt
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import     WarrantyEndDt         03/23/2025
+    Bulk_Import_ExportPage.Perform the keyboard action      WarrantyEndDt
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      Comment         Testing
+    Bulk_Import_ExportPage.Perform the keyboard action      Comment
+    Bulk_Import_Exportpage.Enter the new value in cost type field of technology bulk import      CostType        Rented
+    Bulk_Import_ExportPage.Perform the keyboard action      CostType
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      PaymentPartner        testqa 20Feb
+    Bulk_Import_ExportPage.Perform the keyboard action      PaymentPartner
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      PaymentType        FixedPayment
+    Bulk_Import_ExportPage.Perform the keyboard action      PaymentType
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      PaymentPeriod      Monthly
+    Bulk_Import_ExportPage.Perform the keyboard action      PaymentPeriod
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      FirstPaymentDate        02/03/2023
+    Bulk_Import_ExportPage.Perform the keyboard action      FirstPaymentDate
+    Bulk_Import_Exportpage.Enter the new value in last Payment date field of technology bulk import      LastPaymentDate       02/03/2024
+    Bulk_Import_ExportPage.Perform the keyboard action      LastPaymentDate
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      RenewalDate      02/11/2024
+    Bulk_Import_ExportPage.Perform the keyboard action      RenewalDate
+    Bulk_Import_Exportpage.Select option from technology type column in bulk_edit      BudgetCurrency      1
+    Bulk_Import_ExportPage.Perform the keyboard action      BudgetCurrency
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      BudgetPaymentValue      2500
+    Bulk_Import_ExportPage.Perform the keyboard action      BudgetPaymentValue
+    Bulk_Import_Exportpage.Select option from technology type column in bulk_edit      ActualPaymentCurrency      1
+    Bulk_Import_ExportPage.Perform the keyboard action      ActualPaymentCurrency
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      LastActualPaymentValue      2000
+    Bulk_Import_ExportPage.Perform the keyboard action      LastActualPaymentValue
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       CostCenter        1
+    Bulk_Import_ExportPage.Perform the keyboard action      CostCenter
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       Supplier        1
+    Bulk_Import_ExportPage.Perform the keyboard action      Supplier
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       SupportPartner        1
+    Bulk_Import_ExportPage.Perform the keyboard action      SupportPartner
+    Bulk_Import_Exportpage.Enter the new value of serial number of technology bulk import      DYNA_21
+    Bulk_Import_ExportPage.Perform the keyboard action      DYNA_21
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_2      Capex
+    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_2
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_9      Account123
+    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_9
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_3      1654
+    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_3
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_4      CPU
+    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_4
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_5      Paramdeep
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_5
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_6      Test@123
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_6
+
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_7      100
+    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_7
+
+
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_8      12
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_8
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_10      01/01/2023
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_10
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_11     01/01/2024
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_11
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_12     1
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_12
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      LastPaymentDate     03/12/2024
+    Generic.Click on the button     Check Data      #Update,Edit
+    Generic.Click on the button     Upload
+    Bulk_Import_ExportPage.Verify the upload message text   UploadMessage       Upload Successful
+    Generic.click on the button     Next
+    Bulk_Import_ExportPage.Click on I_m_done button when popup appears     no-im-done
+    Sleep      ${yop_sleep}
+    Switch Window       aithentic | Technology - List
+    Generic.Verify your current page location contains     technology-list
+    TechnologyPage.Search by AssetId       ${generated_assetid}
+    Generic.Wait until table get load
+
+
 
 
 

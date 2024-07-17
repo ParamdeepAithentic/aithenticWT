@@ -260,6 +260,7 @@ Proceed the payment
     wait until element is visible      css:.qa-payment-method-${option1}        ${wait_time}
     wait until element is enabled      css:.qa-payment-method-${option1}          ${wait_time}
     click element      css:.qa-payment-method-${option1}
+    wait until element is not visible      ${loaderIcon}        ${wait_time}
 
 Update the payment of changed plan
     [Arguments]    ${option1}
