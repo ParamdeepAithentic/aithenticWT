@@ -614,3 +614,7 @@ Export account overview tab data
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
 
+
+#Zz kill browser
+ #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+

@@ -124,6 +124,7 @@ Edit Team member page - Edit New Department and assign that department to Team m
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     Generic.Verify your current page location contains     organization
+    DashboardPage.Select the asset ID checkbox      yes
     DashboardPage.Select the employee ID checkbox   no
     DashboardPage.Select the location ID checkbox   yes
     DashboardPage.Select the asset ID checkbox      no
@@ -778,6 +779,7 @@ Convert Assignee to team member in case of employee id is not system generated
     Generic.Select option from profile list     personal-details
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the employee ID checkbox   no
     DashboardPage.Select the employee ID checkbox   yes
     Generic.Fetch alert message text and compare it with       Settings Updated
 
@@ -1013,6 +1015,7 @@ Verify_Employee_ID_Changing_settings_from_Profile_list_while_add_edit_team_membe
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   no
     DashboardPage.Select the employee ID checkbox   yes
     Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.select the option from the side menu    Team Members
@@ -1037,6 +1040,7 @@ Verify_Employee_ID_Changing_settings_from_Profile_list_while_add_edit_team_membe
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   yes
     DashboardPage.Select the employee ID checkbox   no
     Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.select the option from the side menu    Team Members
@@ -1198,3 +1202,4 @@ Add Back Deleted Team member - Active
 
 #Zz kill browser
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+

@@ -61,7 +61,7 @@ ${wait_time}       60
 ${yop_sleep}       10
 ${search_sleep}       1
 
-${CASE}        uat     #qa , uat , pre-prod
+${CASE}      pre-prod     #qa , uat , pre-prod
 
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
 
@@ -80,7 +80,7 @@ Set QA Variables
     Set Suite Variable    ${admin_url}        https://qa-admin.aithentic.com/
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
-    Set Suite Variable    ${browser_name}         firefox
+    Set Suite Variable    ${browser_name}         headlessfirefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
     Set Suite Variable    ${discovered_asset_brand}                 MSI
     Set Suite Variable    ${existing_mac}                       D8:CB:8A:CA:6A:39
@@ -100,7 +100,7 @@ Set UAT Variables
     Set Suite Variable    ${admin_url}        https://uat-admin.aithentic.com/
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
-    Set Suite Variable    ${browser_name}         firefox
+    Set Suite Variable    ${browser_name}         headlessfirefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
     Set Suite Variable    ${discovered_asset_brand}                 Apple Inc
     Set Suite Variable    ${discovered_existing_brand}              Apple Inc.
@@ -116,6 +116,13 @@ Set Pre-Prod Variables
     Set Suite Variable    ${apiURL}    https://pre-prod-api.aithentic.com/api/v1
     Set Suite Variable    ${browser_name}         headlessfirefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
+    Set Suite Variable    ${discovered_asset_brand}                ECS
+    Set Suite Variable    ${existing_mac}                       b8:ae:ed:bc:1c:35
+    Set Suite Variable    ${discovered_existing_brand}          QABrand555
+    Set Suite Variable    ${discovered_existing_product}        Product_00337612322
+    Set Suite Variable    ${discovered_existing_department}    Operations
+    Set Suite Variable    ${discovered_IP}   192.168.18.86
+    Set Suite Variable    ${discovery_asset_list_brand}       Apple, Inc.
 
 Set Default Variables
     Set Suite Variable    ${url}    https://uat-app.aithentic.com/
@@ -400,6 +407,7 @@ Update settings for Asset_ID, employee_id and location
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     Generic.Verify your current page location contains     organization
+    DashboardPage.Select the asset ID checkbox      yes
     DashboardPage.Select the employee ID checkbox   yes
     DashboardPage.Select the location ID checkbox   yes
     DashboardPage.Select the asset ID checkbox      no
@@ -422,6 +430,7 @@ Update settings for Asset_ID, employee_id and location
 #    Run Process    cmd.exe    /C    taskkill /IM chrome.exe /F
 #    Run Process    cmd.exe    /C    taskkill /IM skype.exe /F
 #    Run Process    cmd.exe    /C    taskkill /IM msedge.exe /F
+
 
 
 

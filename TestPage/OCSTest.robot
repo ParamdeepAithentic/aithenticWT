@@ -1815,5 +1815,5 @@ Verify reset icon while adding component
         TechnologyPage.Verify the invisibility of brand after clicking on reset icon
 
 #Zz kill browser
-#    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+ #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
 

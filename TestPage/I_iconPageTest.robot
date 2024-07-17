@@ -579,3 +579,7 @@ Upload I-icon while adding IP Address
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     UnselectAssetAPI.Hit API Endpoint
 
+
+#Zz kill browser
+ #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+

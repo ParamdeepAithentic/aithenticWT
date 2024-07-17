@@ -217,6 +217,7 @@ Signup with ACH payment method
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
     Generic.Verify your current page location contains     organization
+    DashboardPage.Select the asset ID checkbox     yes
     DashboardPage.Select the employee ID checkbox   yes
     DashboardPage.Select the location ID checkbox   yes
     DashboardPage.Select the asset ID checkbox     no
@@ -251,6 +252,7 @@ Change plan and Change asset limit with ACH Payment method
     sleep       ${yop_sleep}
     Switch Window       aithentic | Create - Account
     Generic.Verify your current page location contains     create-account
+
 
 #----------------------------------------USER ACCOUNT---------------------------------------------------
     UserAccount.Enter the password      Paramdeep@112
@@ -343,3 +345,4 @@ Change plan and Change asset limit with ACH Payment method
     BillingPage.Confirm if you want to delect account   confirm
     Generic.Fetch alert message text and compare it with      Bank removed successfully
     BillingPage.Close the billing payment options module
+
