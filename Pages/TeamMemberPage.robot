@@ -348,7 +348,7 @@ Select option from remove TM warning pop-up
     wait until element is visible       css:.confirm-remove-members-qa span    ${wait_time}
     wait until element is enabled      css:.confirm-remove-members-qa span    ${wait_time}
     click element       css:.confirm-remove-members-qa span
-    TeamMemberPage.Close the remove warning pop-up      ## have to remove this line once fixed from dev side
+    #TeamMemberPage.Close the remove warning pop-up      ## have to remove this line once fixed from dev side
 
 Close the remove warning pop-up
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}

@@ -497,11 +497,11 @@ Create service now with valid data
     sleep       ${yop_sleep}
     Switch Window       aithentic | Create Connection
     Generic.Verify your current page location contains      create-connection
-    SubscriptionPage.Enter input in the url end point field of service now      https://dev201405.service-now.com
-    SubscriptionPage.Enter input in the username field of service now       PuneetD
-    SubscriptionPage.Enter input in the password field of service now        _.(PJL>4j
-    SubscriptionPage.Enter input in the client id field of service now     7ec640b860364210f67aa1dbd4fd56fa
-    SubscriptionPage.Enter input in the secret key field of service now     xFlv]:Fbyp
+    SubscriptionPage.Enter input in the url end point field of service now      https://dev258787.service-now.com
+    SubscriptionPage.Enter input in the username field of service now       ParamD
+    SubscriptionPage.Enter input in the password field of service now       sbd{Vc]x0P7t7h!We$ZI#j%b+_i1WNNnwam.rtD.5%@klTvb:P$4[A!Q1n&aYe$ScRLFNsJGH&d;m.
+    SubscriptionPage.Enter input in the client id field of service now     405229d86f230210f8a735c71f96d3af
+    SubscriptionPage.Enter input in the secret key field of service now     i[N(m1}|EO
     Generic.click on the button     Create Connection
     Generic.click on the button     By System
     Generic.Verify your current page location contains      technology-settings
