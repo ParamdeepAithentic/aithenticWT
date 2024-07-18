@@ -585,8 +585,8 @@ Verify Filters of Existing asets by adding assets of different tech type - HARDW
     OCS.Enter input in the brand field of existing asset       ${generated_BrandName}
     Generic.click on the button     Apply
     OCS.Click on the down arrow icon of existing assets
-    OCS.Mouse Hover over filters of existing asset
-    OCS.Get text by hovering over existing assets   Brand:
+    OCS.Mouse Hover over existing asset after applying filters      ${generated_BrandName}
+    OCS.Get text by hovering over existing assets of technology   Brand:
     OCS.verify Text by hovering over assets  ${substring1}       ${generated_BrandName}
     OCS.Click on the down arrow icon of existing assets
     OCS.Click on clear filter button link of discovered assets      Clear Filters
@@ -595,43 +595,26 @@ Verify Filters of Existing asets by adding assets of different tech type - HARDW
     Generic.Scroll Window To End
     OCS.Click on the down arrow icon of existing assets
     sleep   ${search_sleep}
-    OCS.Mouse Hover over filters of existing asset
-    OCS.Get text by hovering over existing assets   Model/Product Name:
+    OCS.Mouse Hover over existing asset after applying filters      ${generated_BrandName}
+    OCS.Get text by hovering over existing assets of technology   Model/Product Name:
     OCS.verify Text by hovering over assets  ${substring1}      ${generated_product}
     OCS.Click on the down arrow icon of existing assets
     OCS.Click on clear filter button link of discovered assets  Clear Filters
     OCS.Choose filters for discovered asset    Select Department    ${generated_DepartmentNumber}
     Generic.click on the button     Apply
     OCS.Click on the down arrow icon of existing assets
-    OCS.Mouse Hover over filters of existing asset
-    OCS.Get text by hovering over existing assets   Department Name:
+    OCS.Mouse Hover over existing asset after applying filters      ${generated_BrandName}
+    OCS.Get text by hovering over existing assets of technology   Department Name:
     OCS.verify Text by hovering over assets  ${substring1}      ${generated_DepartmentNumber}
-    OCS.click on the right text asset result of existing asset
-    sleep       ${yop_sleep}
-    Switch Window   aithentic | Technology - Details
-    TechnologyPage.Click on Location tab of technology- list page
-    TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     DepartmentName
-    OCS.verify Text by hovering over assets  ${assign_loc_input_value}       ${generated_DepartmentNumber}
-    sleep       ${yop_sleep}
-    Switch Window   aithentic | Service Now Newly-Discovered
-    OCS.Click on the down arrow icon of existing assets
     OCS.Click on clear filter button link of discovered assets  Clear Filters
-    OCS.Choose filters for discovered asset    Select Location     ${generated_buildingname}
+    OCS.Choose filters for discovered asset    Select Location     United States - ${generated_buildingname} - 6 - 30
     Generic.click on the button     Apply
     Generic.Scroll Window To End
     OCS.Click on the down arrow icon of existing assets
-    OCS.Mouse Hover over filters of existing asset
-    OCS.Get text by hovering over existing assets   Location Name:
-    OCS.verify Text by hovering over assets  ${substring1}      ${generated_buildingname}
-    OCS.click on the right text asset result of existing asset
-    sleep       ${yop_sleep}
-    Switch Window   aithentic | Technology - Details
-    Generic.Verify your current page location contains    technology-details
-    TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     LocationName
-    OCS.verify Text by hovering over assets  ${assign_loc_input_value}      ${generated_buildingname}
-    sleep       ${yop_sleep}
-    Switch Window   aithentic | Service Now Newly-Discovered
     OCS.Click on the down arrow icon of existing assets
+    OCS.Mouse Hover over existing asset after applying filters      ${generated_BrandName}
+    OCS.Get text by hovering over existing assets of technology   Location Name:
+    OCS.verify Text by hovering over assets  ${substring1}      United States - ${generated_buildingname} - 6 - 30
     OCS.Click on clear filter button link of discovered assets      Clear Filters
 
 ################################### LICENSE ASSET #######################################################################
@@ -712,56 +695,17 @@ Verify Filters of Existing asets by adding assets of different tech type - LICEN
     I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.click on filter icon of existing assets
-    OCS.Enter input in the brand field of existing asset       ${generated_BrandName}
-    Generic.click on the button     Apply
-    OCS.Click on the down arrow icon of existing assets
-    OCS.Mouse Hover over filters of existing asset
-    OCS.Get text by hovering over existing assets   Brand:
-    OCS.verify Text by hovering over assets  ${substring1}       ${generated_BrandName}
-    OCS.Click on the down arrow icon of existing assets
-    OCS.Click on clear filter button link of discovered assets      Clear Filters
-    OCS.Choose filters for discovered asset     Select Product      ${generated_product}
-    Generic.click on the button     Apply
-    Generic.Scroll Window To End
-    OCS.Click on the down arrow icon of existing assets
-    sleep   ${search_sleep}
-    OCS.Mouse Hover over filters of existing asset
-    OCS.Get text by hovering over existing assets   Model/Product Name:
-    OCS.verify Text by hovering over assets  ${substring1}      ${generated_product}
-    OCS.Click on the down arrow icon of existing assets
+    OCS.Enter input in brand filters field of existing asset with different tech type       ${generated_BrandName}
+    OCS.Verify that No items found with the selected filter
     OCS.Click on clear filter button link of discovered assets  Clear Filters
-    OCS.Choose filters for discovered asset    Select Department    ${generated_DepartmentNumber}
-    Generic.click on the button     Apply
-    OCS.Click on the down arrow icon of existing assets
-    OCS.Mouse Hover over filters of existing asset
-    OCS.Get text by hovering over existing assets   Department Name:
-    OCS.verify Text by hovering over assets  ${substring1}      ${generated_DepartmentNumber}
-    OCS.click on the right text asset result of existing asset
-    sleep       ${yop_sleep}
-    Switch Window   aithentic | Technology - Details
-    TechnologyPage.Click on Location tab of technology- list page
-    TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     DepartmentName
-    OCS.verify Text by hovering over assets  ${assign_loc_input_value}       ${generated_DepartmentNumber}
-    sleep       ${yop_sleep}
-    Switch Window   aithentic | Service Now Newly-Discovered
-    OCS.Click on the down arrow icon of existing assets
+    OCS.Choose filters for Existing asset with different tech type       Select Product      ${generated_product}
+    OCS.Verify that No items found with the selected filter
     OCS.Click on clear filter button link of discovered assets  Clear Filters
-    OCS.Choose filters for discovered asset    Select Location     ${generated_buildingname}
-    Generic.click on the button     Apply
-    Generic.Scroll Window To End
-    OCS.Click on the down arrow icon of existing assets
-    OCS.Mouse Hover over filters of existing asset
-    OCS.Get text by hovering over existing assets   Location Name:
-    OCS.verify Text by hovering over assets  ${substring1}      ${generated_buildingname}
-    OCS.click on the right text asset result of existing asset
-    sleep       ${yop_sleep}
-    Switch Window   aithentic | Technology - Details
-    Generic.Verify your current page location contains    technology-details
-    TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     LocationName
-    OCS.verify Text by hovering over assets  ${assign_loc_input_value}      ${generated_buildingname}
-    sleep       ${yop_sleep}
-    Switch Window   aithentic | Service Now Newly-Discovered
-    OCS.Click on the down arrow icon of existing assets
+    OCS.Choose filters for Existing asset with different tech type       Select Department    ${generated_DepartmentNumber}
+    OCS.Verify that No items found with the selected filter
+    OCS.Click on clear filter button link of discovered assets  Clear Filters
+    OCS.Choose filters for Existing asset with different tech type       Select Location     ${generated_buildingname}
+    OCS.Verify that No items found with the selected filter
     OCS.Click on clear filter button link of discovered assets      Clear Filters
 
 ################################### SUBSCRIPTION ASSET #########################################################################
@@ -842,61 +786,21 @@ Verify Filters of Existing asets by adding assets of different tech type - SUBSC
     I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.click on filter icon of existing assets
-    OCS.Enter input in the brand field of existing asset       ${generated_BrandName}
-    Generic.click on the button     Apply
-    OCS.Click on the down arrow icon of existing assets
-    OCS.Mouse Hover over filters of existing asset
-    OCS.Get text by hovering over existing assets   Brand:
-    OCS.verify Text by hovering over assets  ${substring1}       ${generated_BrandName}
-    OCS.Click on the down arrow icon of existing assets
-    OCS.Click on clear filter button link of discovered assets      Clear Filters
-    OCS.Choose filters for discovered asset     Select Product      ${generated_product}
-    Generic.click on the button     Apply
-    Generic.Scroll Window To End
-    OCS.Click on the down arrow icon of existing assets
-    sleep   ${search_sleep}
-    OCS.Mouse Hover over filters of existing asset
-    OCS.Get text by hovering over existing assets   Model/Product Name:
-    OCS.verify Text by hovering over assets  ${substring1}      ${generated_product}
-    OCS.Click on the down arrow icon of existing assets
+    OCS.Enter input in brand filters field of existing asset with different tech type       ${generated_BrandName}
+    OCS.Verify that No items found with the selected filter
     OCS.Click on clear filter button link of discovered assets  Clear Filters
-    OCS.Choose filters for discovered asset    Select Department    ${generated_DepartmentNumber}
-    Generic.click on the button     Apply
-    OCS.Click on the down arrow icon of existing assets
-    OCS.Mouse Hover over filters of existing asset
-    OCS.Get text by hovering over existing assets   Department Name:
-    OCS.verify Text by hovering over assets  ${substring1}      ${generated_DepartmentNumber}
-    OCS.click on the right text asset result of existing asset
-    sleep       ${yop_sleep}
-    Switch Window   aithentic | Technology - Details
-    TechnologyPage.Click on Location tab of technology- list page
-    TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     DepartmentName
-    OCS.verify Text by hovering over assets  ${assign_loc_input_value}       ${generated_DepartmentNumber}
-    sleep       ${yop_sleep}
-    Switch Window   aithentic | Service Now Newly-Discovered
-    OCS.Click on the down arrow icon of existing assets
+    OCS.Choose filters for Existing asset with different tech type       Select Product      ${generated_product}
+    OCS.Verify that No items found with the selected filter
     OCS.Click on clear filter button link of discovered assets  Clear Filters
-    OCS.Choose filters for discovered asset    Select Location     ${generated_buildingname}
-    Generic.click on the button     Apply
-    Generic.Scroll Window To End
-    OCS.Click on the down arrow icon of existing assets
-    OCS.Mouse Hover over filters of existing asset
-    OCS.Get text by hovering over existing assets   Location Name:
-    OCS.verify Text by hovering over assets  ${substring1}      ${generated_buildingname}
-    OCS.click on the right text asset result of existing asset
-    sleep       ${yop_sleep}
-    Switch Window   aithentic | Technology - Details
-    Generic.Verify your current page location contains    technology-details
-    TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     LocationName
-    OCS.verify Text by hovering over assets  ${assign_loc_input_value}      ${generated_buildingname}
-    sleep       ${yop_sleep}
-    Switch Window   aithentic | Service Now Newly-Discovered
-    OCS.Click on the down arrow icon of existing assets
+    OCS.Choose filters for Existing asset with different tech type       Select Department    ${generated_DepartmentNumber}
+    OCS.Verify that No items found with the selected filter
+    OCS.Click on clear filter button link of discovered assets  Clear Filters
+    OCS.Choose filters for Existing asset with different tech type       Select Location     ${generated_buildingname}
+    OCS.Verify that No items found with the selected filter
     OCS.Click on clear filter button link of discovered assets      Clear Filters
 
-
-################################### MAINTAINANCE #########################################################################
-Verify Filters of Existing asets by adding assets of different tech type - MAINTAINANCE
+################################### MAINTENANCE #########################################################################
+Verify Filters of Existing asets by adding assets of different tech type - MAINTENANCE
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.Verify your current page location contains      dashboard
@@ -921,7 +825,7 @@ Verify Filters of Existing asets by adding assets of different tech type - MAINT
     DashboardPage.Add product brand name      ${generated_BrandName}
     DashboardPage.Add product description
     DashboardPage.Add product feature
-    DashboardPage.Select product technology type     Maintainance
+    DashboardPage.Select product technology type      Maintenance
     DashboardPage.Select product technology group     Applications
     DashboardPage.Select product status   Active
     DashboardPage.Save added product details
@@ -973,56 +877,17 @@ Verify Filters of Existing asets by adding assets of different tech type - MAINT
     I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.click on filter icon of existing assets
-    OCS.Enter input in the brand field of existing asset       ${generated_BrandName}
-    Generic.click on the button     Apply
-    OCS.Click on the down arrow icon of existing assets
-    OCS.Mouse Hover over filters of existing asset
-    OCS.Get text by hovering over existing assets   Brand:
-    OCS.verify Text by hovering over assets  ${substring1}       ${generated_BrandName}
-    OCS.Click on the down arrow icon of existing assets
-    OCS.Click on clear filter button link of discovered assets      Clear Filters
-    OCS.Choose filters for discovered asset     Select Product      ${generated_product}
-    Generic.click on the button     Apply
-    Generic.Scroll Window To End
-    OCS.Click on the down arrow icon of existing assets
-    sleep   ${search_sleep}
-    OCS.Mouse Hover over filters of existing asset
-    OCS.Get text by hovering over existing assets   Model/Product Name:
-    OCS.verify Text by hovering over assets  ${substring1}      ${generated_product}
-    OCS.Click on the down arrow icon of existing assets
+    OCS.Enter input in brand filters field of existing asset with different tech type       ${generated_BrandName}
+    OCS.Verify that No items found with the selected filter
     OCS.Click on clear filter button link of discovered assets  Clear Filters
-    OCS.Choose filters for discovered asset    Select Department    ${generated_DepartmentNumber}
-    Generic.click on the button     Apply
-    OCS.Click on the down arrow icon of existing assets
-    OCS.Mouse Hover over filters of existing asset
-    OCS.Get text by hovering over existing assets   Department Name:
-    OCS.verify Text by hovering over assets  ${substring1}      ${generated_DepartmentNumber}
-    OCS.click on the right text asset result of existing asset
-    sleep       ${yop_sleep}
-    Switch Window   aithentic | Technology - Details
-    TechnologyPage.Click on Location tab of technology- list page
-    TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     DepartmentName
-    OCS.verify Text by hovering over assets  ${assign_loc_input_value}       ${generated_DepartmentNumber}
-    sleep       ${yop_sleep}
-    Switch Window   aithentic | Service Now Newly-Discovered
-    OCS.Click on the down arrow icon of existing assets
+    OCS.Choose filters for Existing asset with different tech type       Select Product      ${generated_product}
+    OCS.Verify that No items found with the selected filter
     OCS.Click on clear filter button link of discovered assets  Clear Filters
-    OCS.Choose filters for discovered asset    Select Location     ${generated_buildingname}
-    Generic.click on the button     Apply
-    Generic.Scroll Window To End
-    OCS.Click on the down arrow icon of existing assets
-    OCS.Mouse Hover over filters of existing asset
-    OCS.Get text by hovering over existing assets   Location Name:
-    OCS.verify Text by hovering over assets  ${substring1}      ${generated_buildingname}
-    OCS.click on the right text asset result of existing asset
-    sleep       ${yop_sleep}
-    Switch Window   aithentic | Technology - Details
-    Generic.Verify your current page location contains    technology-details
-    TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     LocationName
-    OCS.verify Text by hovering over assets  ${assign_loc_input_value}      ${generated_buildingname}
-    sleep       ${yop_sleep}
-    Switch Window   aithentic | Service Now Newly-Discovered
-    OCS.Click on the down arrow icon of existing assets
+    OCS.Choose filters for Existing asset with different tech type       Select Department    ${generated_DepartmentNumber}
+    OCS.Verify that No items found with the selected filter
+    OCS.Click on clear filter button link of discovered assets  Clear Filters
+    OCS.Choose filters for Existing asset with different tech type       Select Location     ${generated_buildingname}
+    OCS.Verify that No items found with the selected filter
     OCS.Click on clear filter button link of discovered assets      Clear Filters
 
 ################################################# FREEWARE ASSET ##########################################################
@@ -1103,56 +968,17 @@ Verify Filters of Existing asets by adding assets of different tech type - FREEW
     I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.click on filter icon of existing assets
-    OCS.Enter input in the brand field of existing asset       ${generated_BrandName}
-    Generic.click on the button     Apply
-    OCS.Click on the down arrow icon of existing assets
-    OCS.Mouse Hover over filters of existing asset
-    OCS.Get text by hovering over existing assets   Brand:
-    OCS.verify Text by hovering over assets  ${substring1}       ${generated_BrandName}
-    OCS.Click on the down arrow icon of existing assets
-    OCS.Click on clear filter button link of discovered assets      Clear Filters
-    OCS.Choose filters for discovered asset     Select Product      ${generated_product}
-    Generic.click on the button     Apply
-    Generic.Scroll Window To End
-    OCS.Click on the down arrow icon of existing assets
-    sleep   ${search_sleep}
-    OCS.Mouse Hover over filters of existing asset
-    OCS.Get text by hovering over existing assets   Model/Product Name:
-    OCS.verify Text by hovering over assets  ${substring1}      ${generated_product}
-    OCS.Click on the down arrow icon of existing assets
+    OCS.Enter input in brand filters field of existing asset with different tech type       ${generated_BrandName}
+    OCS.Verify that No items found with the selected filter
     OCS.Click on clear filter button link of discovered assets  Clear Filters
-    OCS.Choose filters for discovered asset    Select Department    ${generated_DepartmentNumber}
-    Generic.click on the button     Apply
-    OCS.Click on the down arrow icon of existing assets
-    OCS.Mouse Hover over filters of existing asset
-    OCS.Get text by hovering over existing assets   Department Name:
-    OCS.verify Text by hovering over assets  ${substring1}      ${generated_DepartmentNumber}
-    OCS.click on the right text asset result of existing asset
-    sleep       ${yop_sleep}
-    Switch Window   aithentic | Technology - Details
-    TechnologyPage.Click on Location tab of technology- list page
-    TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     DepartmentName
-    OCS.verify Text by hovering over assets  ${assign_loc_input_value}       ${generated_DepartmentNumber}
-    sleep       ${yop_sleep}
-    Switch Window   aithentic | Service Now Newly-Discovered
-    OCS.Click on the down arrow icon of existing assets
+    OCS.Choose filters for Existing asset with different tech type       Select Product      ${generated_product}
+    OCS.Verify that No items found with the selected filter
     OCS.Click on clear filter button link of discovered assets  Clear Filters
-    OCS.Choose filters for discovered asset    Select Location     ${generated_buildingname}
-    Generic.click on the button     Apply
-    Generic.Scroll Window To End
-    OCS.Click on the down arrow icon of existing assets
-    OCS.Mouse Hover over filters of existing asset
-    OCS.Get text by hovering over existing assets   Location Name:
-    OCS.verify Text by hovering over assets  ${substring1}      ${generated_buildingname}
-    OCS.click on the right text asset result of existing asset
-    sleep       ${yop_sleep}
-    Switch Window   aithentic | Technology - Details
-    Generic.Verify your current page location contains    technology-details
-    TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     LocationName
-    OCS.verify Text by hovering over assets  ${assign_loc_input_value}      ${generated_buildingname}
-    sleep       ${yop_sleep}
-    Switch Window   aithentic | Service Now Newly-Discovered
-    OCS.Click on the down arrow icon of existing assets
+    OCS.Choose filters for Existing asset with different tech type       Select Department    ${generated_DepartmentNumber}
+    OCS.Verify that No items found with the selected filter
+    OCS.Click on clear filter button link of discovered assets  Clear Filters
+    OCS.Choose filters for Existing asset with different tech type       Select Location     ${generated_buildingname}
+    OCS.Verify that No items found with the selected filter
     OCS.Click on clear filter button link of discovered assets      Clear Filters
 
 ####################################### CERTIFICATE #########################################################
@@ -1233,54 +1059,106 @@ Verify Filters of Existing asets by adding assets of different tech type - CERTI
     I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.click on filter icon of existing assets
-    OCS.Enter input in the brand field of existing asset       ${generated_BrandName}
-    Generic.click on the button     Apply
-    OCS.Click on the down arrow icon of existing assets
-    OCS.Mouse Hover over filters of existing asset
-    OCS.Get text by hovering over existing assets   Brand:
-    OCS.verify Text by hovering over assets  ${substring1}       ${generated_BrandName}
-    OCS.Click on the down arrow icon of existing assets
+    OCS.Enter input in brand filters field of existing asset with different tech type       ${generated_BrandName}
+    OCS.Verify that No items found with the selected filter
+    OCS.Click on clear filter button link of discovered assets  Clear Filters
+    OCS.Choose filters for Existing asset with different tech type       Select Product      ${generated_product}
+    OCS.Verify that No items found with the selected filter
+    OCS.Click on clear filter button link of discovered assets  Clear Filters
+    OCS.Choose filters for Existing asset with different tech type       Select Department    ${generated_DepartmentNumber}
+    OCS.Verify that No items found with the selected filter
+    OCS.Click on clear filter button link of discovered assets  Clear Filters
+    OCS.Choose filters for Existing asset with different tech type       Select Location     ${generated_buildingname}
+    OCS.Verify that No items found with the selected filter
     OCS.Click on clear filter button link of discovered assets      Clear Filters
-    OCS.Choose filters for discovered asset     Select Product      ${generated_product}
-    Generic.click on the button     Apply
-    Generic.Scroll Window To End
-    OCS.Click on the down arrow icon of existing assets
-    sleep   ${search_sleep}
-    OCS.Mouse Hover over filters of existing asset
-    OCS.Get text by hovering over existing assets   Model/Product Name:
-    OCS.verify Text by hovering over assets  ${substring1}      ${generated_product}
-    OCS.Click on the down arrow icon of existing assets
+
+####################################### VIRTUAL MACHINE #########################################################
+Verify Filters of Existing asets by adding assets of different tech type - VIRTUAL MACHINE
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     brand-dropdown
+    Generic.Verify your current page location contains      brand
+    DashboardPage.Click add brand button
+    DashboardPage.Create random brandName
+    DashboardPage.Add business manufacturer URL     qwerty
+    DashboardPage.Add brand manufacturer country      Australia
+    DashboardPage.Save added brand details
+    Generic.Fetch alert message text and compare it with        Brand created successfully.
+    DashboardPage.Click added brand main save button
+    DashboardPage.Verify Brand added      ${generated_BrandName}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     product-dropdown
+    Generic.Verify your current page location contains      product
+    Generic.Wait until table get load
+    DashboardPage.Click on action button
+    DashboardPage.Click add product button
+    DashboardPage.Create product name random
+    DashboardPage.Add product brand name      ${generated_BrandName}
+    DashboardPage.Add product description
+    DashboardPage.Add product feature
+    DashboardPage.Select product technology type     Virtual Machines
+    DashboardPage.Select product technology group     Applications
+    DashboardPage.Select product status   Active
+    DashboardPage.Save added product details
+    Generic.Fetch alert message text and compare it with        Product created successfully
+    DashboardPage.Verify product added        ${generated_product}
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       ${generated_BrandName}
+    TechnologyPage.Select parameter from technology dropdown list       ${generated_product}
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Click on add location
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Add - Location
+    Generic.Verify your current page location contains      add-location
+    TechnologyPage.Select country of the location   United States
+    TechnologyPage.Enter building_name of the location
+    TechnologyPage.Enter floor of the location      6
+    TechnologyPage.Enter room of the location       30
+    TechnologyPage.Enter unique address_one of the location
+    TechnologyPage.Enter unique address_two of the location
+    TechnologyPage.Select state of location     Alaska
+    TechnologyPage.Select city of location      Akutan
+    TechnologyPage.Enter Zip_code       67540
+    TechnologyPage.Save the new added location         save
+    Generic.Verify alertify is visible
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Add - Technology
+    TechnologyPage.Click on refresh location icon
+    TechnologyPage.Add assignment information location     ${generated_buildingname}
+    TechnologyPage.Click on add department
+    TechnologyPage.Create unique department name random
+    TechnologyPage.Select department cost center     1300
+    TechnologyPage.Save the department       add
+    Generic.Fetch alert message text and compare it with        Department added successfully
+    TechnologyPage.Add assignment information department name      ${generated_DepartmentNumber}
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    Generic.select the option from the side menu    Asset Discovery
+    Generic.Click on the profile name
+    Generic.Select option from profile list     view-discovery
+    Generic.Verify your current page location contains    ocs
+    I_iconPage.Choose tab under Discovery Assets       network-discovery
+    OCS.Click on newly discovered tab under network discovery
+    OCS.click on filter icon of existing assets
+    OCS.Enter input in brand filters field of existing asset with different tech type       ${generated_BrandName}
+    OCS.Verify that No items found with the selected filter
     OCS.Click on clear filter button link of discovered assets  Clear Filters
-    OCS.Choose filters for discovered asset    Select Department    ${generated_DepartmentNumber}
-    Generic.click on the button     Apply
-    OCS.Click on the down arrow icon of existing assets
-    OCS.Mouse Hover over filters of existing asset
-    OCS.Get text by hovering over existing assets   Department Name:
-    OCS.verify Text by hovering over assets  ${substring1}      ${generated_DepartmentNumber}
-    OCS.click on the right text asset result of existing asset
-    sleep       ${yop_sleep}
-    Switch Window   aithentic | Technology - Details
-    TechnologyPage.Click on Location tab of technology- list page
-    TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     DepartmentName
-    OCS.verify Text by hovering over assets  ${assign_loc_input_value}       ${generated_DepartmentNumber}
-    sleep       ${yop_sleep}
-    Switch Window   aithentic | Service Now Newly-Discovered
-    OCS.Click on the down arrow icon of existing assets
+    OCS.Choose filters for Existing asset with different tech type       Select Product      ${generated_product}
+    OCS.Verify that No items found with the selected filter
     OCS.Click on clear filter button link of discovered assets  Clear Filters
-    OCS.Choose filters for discovered asset    Select Location     ${generated_buildingname}
-    Generic.click on the button     Apply
-    Generic.Scroll Window To End
-    OCS.Click on the down arrow icon of existing assets
-    OCS.Mouse Hover over filters of existing asset
-    OCS.Get text by hovering over existing assets   Location Name:
-    OCS.verify Text by hovering over assets  ${substring1}      ${generated_buildingname}
-    OCS.click on the right text asset result of existing asset
-    sleep       ${yop_sleep}
-    Switch Window   aithentic | Technology - Details
-    Generic.Verify your current page location contains    technology-details
-    TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     LocationName
-    OCS.verify Text by hovering over assets  ${assign_loc_input_value}      ${generated_buildingname}
-    sleep       ${yop_sleep}
-    Switch Window   aithentic | Service Now Newly-Discovered
-    OCS.Click on the down arrow icon of existing assets
+    OCS.Choose filters for Existing asset with different tech type       Select Department    ${generated_DepartmentNumber}
+    OCS.Verify that No items found with the selected filter
+    OCS.Click on clear filter button link of discovered assets  Clear Filters
+    OCS.Choose filters for Existing asset with different tech type       Select Location     ${generated_buildingname}
+    OCS.Verify that No items found with the selected filter
     OCS.Click on clear filter button link of discovered assets      Clear Filters

@@ -407,7 +407,7 @@ Restore asset from removed asset details page
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
-#    TechnologyPage.Click on manage technology sub option       Technology List
+    TechnologyPage.Click on manage technology sub option       Technology List
 
     TechnologyPage.Select an option from technology table actions      Remove
     TechnologyPage.Remove asset from technology table
@@ -466,6 +466,7 @@ Restore asset by selecting checkbox
 #    TechnologyPage.Verify that after saving technology form user redirect to technology page
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
     TechnologyPage.Select an option from technology table actions      Remove
     TechnologyPage.Remove asset from technology table
     Generic.Fetch alert message text and compare it with        Technology Removed Successfully
