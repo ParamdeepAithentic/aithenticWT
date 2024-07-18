@@ -71,8 +71,6 @@ ${search_technology_group}     css:.qa-selectedTechnologyGroups input
 
 ${search_technology_group}      (//div[@class='ng-input']//input)[2]
 ${search_by_brand_name}            (//div[@class='ng-input']//input)[3]
-${COLUMN_LOCATOR}  .ag-center-cols-container div[col-id='Supplier']
-${SCROLL_POSITION}  100  # Adjust this as needed for your scroll position
 
 *** Keywords ***
 
@@ -206,19 +204,11 @@ Select option from status column in bulk_edit
     click element       css:div[class='ag-rich-select-row']
 
 Select option from technology type column in bulk_edit
-#    [Arguments]    ${option}    ${option2}
-#    wait until element is visible      css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
-#    Double click element      css:.ag-center-cols-container div[col-id='${option}']
-#    wait until element is visible      css:div[aria-label='List'] div:nth-child(${option2}) div    ${wait_time}
-#    click element       css:div[aria-label='List'] div:nth-child(${option2}) div
-    Wait Until Element Is Visible    ${COLUMN_LOCATOR}    timeout=10s
-    ${element} =  Get WebElement    ${COLUMN_LOCATOR}
-    # Execute JavaScript to scroll within the specific element
-    Execute JavaScript    arguments[0].scrollTop = ${SCROLL_POSITION};    ${element}
-    # Now locate the option you want to select within the scrolled element
-    ${option} =  Get WebElement    xpath=${COLUMN_LOCATOR}//td[normalize-space()='${OPTION_TEXT}']
-    Click Element    ${option}
-
+    [Arguments]    ${option}    ${option2}
+    wait until element is visible      css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
+    Double click element      css:.ag-center-cols-container div[col-id='${option}']
+    wait until element is visible      css:div[aria-label='List'] div:nth-child(${option2}) div    ${wait_time}
+    click element       css:div[aria-label='List'] div:nth-child(${option2}) div
 Click on Refresh icon of product-list page
     wait until element is visible       css:.reset-product-qa        ${wait_time}
     click element       css:.reset-product-qa
@@ -616,10 +606,11 @@ Enter the new value of asset id of technology bulk import
     [Arguments]    ${option}
     MemberPage.Double click    ${option}
     ${random_string} =    Generate Random String       8      [NUMBERS]
-    ${generated_assetid}=    Catenate    AssetID_${random_string}
+    ${generated_bulk_import_assetid}=    Catenate    AssetID_${random_string}
     wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    ${wait_time}
-    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assetid}
-    set global variable    ${generated_assetid}
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_bulk_import_assetid}
+    log to console      ${generated_bulk_import_assetid}
+    set global variable    ${generated_bulk_import_assetid}
 
 Enter the new value in the fields of technology bulk import
     [Arguments]    ${option}    ${address}
@@ -746,11 +737,23 @@ Select partner business URL technology bulk import
     wait until element is enabled     //div[contains (@id, '-0')]       ${wait_time}
     click element   //div[contains (@id, '-0')]
 
-Enter contact business email via link
-    [Arguments]    ${Pname}
-    wait until element is not visible   ${loaderIcon}   ${wait_time}
-    wait until element is visible   css:#businessEmail        ${wait_time}
-    wait until element is enabled      css:#businessEmail       ${wait_time}
-    click element   css:#businessEmail
-    input text   css:#businessEmail  ${Pname}
+Enter contact business email via link under technology bulk import
+    [Arguments]    ${Pname}    ${Bname}
+    wait until element is visible   css:#ContactEmail        ${wait_time}
+    wait until element is enabled      css:#ContactEmail       ${wait_time}
+    click element   css:#ContactEmail
+    clear element text    css:#ContactEmail
+    input text  css:#ContactEmail   ${Pname}@${Bname}
+    ${generate_ContactBusinessEmail}=    Catenate    ${Pname}@${Bname}
+    log to console  ${Pname}@${Bname}
+    set global variable    ${generate_ContactBusinessEmail}
 
+Click on team member location technology bulk import
+    [Arguments]     ${option}
+    wait until element is visible     ${TMLocation}     ${wait_time}
+    wait until element is enabled     ${TMLocation}      ${wait_time}
+    click element   ${TMLocation}
+    input text     ${TMLocation}        ${option}
+    wait until element is visible   //span[normalize-space()='${option}']       ${wait_time}
+    wait until element is visible   //span[normalize-space()='${option}']       ${wait_time}
+    click element   //span[normalize-space()='${option}']

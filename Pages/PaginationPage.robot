@@ -300,7 +300,7 @@ Click on the checkbox of technology listing
 
 
 Run the remove asset journey
-    Run Keyword If    ${total_data_count} >= 500
+    Run Keyword If    ${total_data_count} >= 800
         ...    PaginationPage.Remove the old assets to free the space
         ...    ELSE  Run Keywords     Generic.Close Browser session
         ...    AND    Return From Keyword
@@ -342,7 +342,7 @@ Remove the old assets to free the space
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     TechnologyPage.Click on plan of subscription        Premium
     Generic.Scroll the page till    200
-    SubscriptionPage.Set asset range to     10000
+    SubscriptionPage.Set asset range to     900
     sleep    5
     SubscriptionPage.Update the payment of changed plan     proceed
 

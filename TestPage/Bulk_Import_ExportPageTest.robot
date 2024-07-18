@@ -718,7 +718,7 @@ Technology Bulk import
     Sleep      ${yop_sleep}
     Switch Window       aithentic | Technology - List
     Generic.Verify your current page location contains     technology-list
-    TechnologyPage.Search by AssetId       ${generated_assetid}
+    TechnologyPage.Search by AssetId       ${generated_bulk_import_assetid}
     Generic.Wait until table get load
 
 
@@ -728,6 +728,26 @@ Verify Bulk Import on the Technology Page by adding all parameters
     Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains     technology-list
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    PartnersPage.Click here to add link of contract details
+    DashboardPage.Create random productName
+    DashboardPage.Add product brand name      QABrand555
+    TechnologyPage.Add product description via technology
+    TechnologyPage.Add product feature via technology
+    TechnologyPage.Select product technology type via technology     Hardware
+    TechnologyPage.Select product technology group via technology   Applications
+    TechnologyPage.Click on save product pop inside technology page
+    Generic.Fetch alert message text and compare it with    Product created successfully
+    TechnologyPage.Wait until brand loder is invisible
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology-list
+    Generic.Wait until table get load
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
     TechnologyPage.Click on action button of technology
     TechnologyPage.click on bulk import under action button of technology
     sleep   ${yop_sleep}
@@ -739,6 +759,7 @@ Verify Bulk Import on the Technology Page by adding all parameters
     Bulk_Import_ExportPage.click on all checkbox under technology bulk import       - Create Brands
     Bulk_Import_ExportPage.click on all checkbox under technology bulk import       - Create Products
     Bulk_Import_ExportPage.click on all checkbox under technology bulk import       -All partners (manufacturer, supplier & support partners)
+    Bulk_Import_ExportPage.click on all checkbox under technology bulk import        Parent Child components
     Generic.click on the button     Next
     Generic.click on the tab        Add Department
     Bulk_Import_ExportPage.Create unique department name random under technology bulk import
@@ -778,8 +799,7 @@ Verify Bulk Import on the Technology Page by adding all parameters
     TeamMemberPage.Click on team member department
     TeamMemberPage.Select team member department       ${generated_Department_bulk}
     TeamMemberPage.Select team member role     Admin
-    TeamMemberPage.Click on team member location
-    TeamMemberPage.Select team member location with new domain
+    Bulk_Import_ExportPage.Click on team member location technology bulk import     ${generated_location}
     TeamMemberPage.Save the team member form   save
     Generic.Fetch alert message text and compare it with        Team Member created successfully
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
@@ -822,9 +842,9 @@ Verify Bulk Import on the Technology Page by adding all parameters
     Generic.Scroll the page till        700
     PartnersPage.Click on Add new Contact of partner        Add new Contact
     PartnersPage.Enter random contact person
-    Bulk_Export_ImportPage.Enter contact business email via link    ${generated_BrandURL}
+    Bulk_Import_ExportPage.Enter contact business email via link under technology bulk import    ${generate_PersonName}      ${generated_BrandURL}
     Generic.Enter phone number      India   +91     9646289871
-    PartnersPage.Enter contact location      United States - Main Office - 21 - 2
+    PartnersPage.Enter contact location      ${generated_location}
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
     Generic.Fetch alert message text and compare it with    Partner created successfully
@@ -845,9 +865,9 @@ Verify Bulk Import on the Technology Page by adding all parameters
     Generic.Scroll the page till        700
     PartnersPage.Click on Add new Contact of partner        Add new Contact
     PartnersPage.Enter random contact person
-    Bulk_Export_ImportPage.Enter contact business email via link    ${generated_BrandURL}
+    Bulk_Import_ExportPage.Enter contact business email via link under technology bulk import    ${generate_PersonName}      ${generated_BrandURL}
     Generic.Enter phone number      India   +91     9646289871
-    PartnersPage.Enter contact location      United States - Main Office - 21 - 2
+    PartnersPage.Enter contact location      ${generated_location}
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
     Generic.Fetch alert message text and compare it with    Partner created successfully
@@ -868,9 +888,9 @@ Verify Bulk Import on the Technology Page by adding all parameters
     Generic.Scroll the page till        700
     PartnersPage.Click on Add new Contact of partner        Add new Contact
     PartnersPage.Enter random contact person
-    Bulk_Export_ImportPage.Enter contact business email via link    ${generated_BrandURL}
+    Bulk_Import_ExportPage.Enter contact business email via link under technology bulk import   ${generate_PersonName}      ${generated_BrandURL}
     Generic.Enter phone number      India   +91     9646289871
-    PartnersPage.Enter contact location      United States - Main Office - 21 - 2
+    PartnersPage.Enter contact location      ${generated_location}
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
     Generic.Fetch alert message text and compare it with    Partner created successfully
@@ -881,7 +901,7 @@ Verify Bulk Import on the Technology Page by adding all parameters
     Bulk_Import_ExportPage.Enter the new value in the fields of technology bulk import     Product         ${generated_product}
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      ItemTechCount         1
     Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       Supplier        1
-    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       SupportPartner        1
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       SupportPartner       1
     Generic.Click on the button     Check Data      #Update,Edit
     Generic.Click on the button     Upload
     Bulk_Import_ExportPage.Verify the upload message text - bulk import tech    Upload       Upload is prepared
@@ -939,48 +959,26 @@ Verify Bulk Import on the Technology Page by adding all parameters
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_3
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_4      CPU
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_4
-#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_5      Paramdeep
-#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_5
-#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_6      Test@123
-#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_6
-
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_7      100
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_7
-
-
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_8      12
-#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_8
-#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_10      01/01/2023
-#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_10
-#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_11     01/01/2024
-#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_11
-#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_12     1
-#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_12
-#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      LastPaymentDate     03/12/2024
     Generic.Click on the button     Check Data      #Update,Edit
     Generic.Click on the button     Upload
     Bulk_Import_ExportPage.Verify the upload message text   UploadMessage       Upload Successful
     Generic.click on the button     Next
+    Bulk_Import_ExportPage.Enter the new value in the fields of technology bulk import       ParentId     ${generated_AssetID}
+    sleep   2
+    Generic.Click on the button     Check Data      #Update,Edit
+    Generic.Click on the button     Upload
+    Bulk_Import_ExportPage.Verify the upload message text   UploadMessage       Upload Successful
+    Generic.Fetch alert message text and compare it with    Assets linked successfully
+    Generic.Click on the button     Finish
     Bulk_Import_ExportPage.Click on I_m_done button when popup appears     no-im-done
     Sleep      ${yop_sleep}
     Switch Window       aithentic | Technology - List
     Generic.Verify your current page location contains     technology-list
-    TechnologyPage.Search by AssetId       ${generated_assetid}
+    TechnologyPage.Search by AssetId       ${generated_bulk_import_assetid}
     Generic.Wait until table get load
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 Zz kill browser
     Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
