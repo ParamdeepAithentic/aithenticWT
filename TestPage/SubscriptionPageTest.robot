@@ -158,7 +158,9 @@ Suspend and unsuspend the account
         SubscriptionPage.Click on the suspend my account button link under billing details
         SubscriptionPage.Enter input in the description field of billing details
         SubscriptionPage.Enter input in the start date field of billing details
+
         TechnologyPage.Input future Date
+
         SubscriptionPage.Enter input in the end date field of billing details       ${formatted_future_date}
         sleep   ${search_sleep}
         Generic.click on the button     Suspend
@@ -207,6 +209,7 @@ View Scheduler from view Result
     SubscriptionPage.Click on the three dots of subscription connector      Microsoft Corporation
     SubscriptionPage.Click on option under three dots of subscription connector     Google        View Results
     SubscriptionPage.Click on option under three dots of subscription connector     Microsoft Corporation          View Results
+
     Generic.Verify your current page location contains    subscription
     SubscriptionPage.Choose tab under subscription page after clicking on view_result
     SubscriptionPage.Fetch and compare the Brand from the table    Microsoft Corporation

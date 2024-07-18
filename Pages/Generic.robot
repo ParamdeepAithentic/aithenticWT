@@ -61,7 +61,8 @@ ${wait_time}       60
 ${yop_sleep}       10
 ${search_sleep}       1
 
-${CASE}       uat      #qa , uat , pre-prod
+${CASE}        uat     #qa , uat , pre-prod
+
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
 
 *** Keywords ***
@@ -91,6 +92,7 @@ Set QA Variables
     Set Suite Variable    ${discovery_asset_list_brand}       Apple, Inc.
 #    Run Keyword    Set Plan range in pre requites    ${admin_name}    ${admin_password}
 
+
 Set UAT Variables
     Set Suite Variable    ${url}    https://uat-app.aithentic.com/
     Set Suite Variable    ${valid_password}    Test!@5897     #UAT user
@@ -109,6 +111,7 @@ Set UAT Variables
     Set Suite Variable    ${discovered_existing_department}        Quality Assurance
     Set Suite Variable    ${discovered_IP}    00:17:61:10:C6:A1
     Set Suite Variable    ${discovery_asset_list_brand}     AKKA Germany GmbH
+
 
 Set Pre-Prod Variables
     Set Suite Variable    ${url}    https://pre-prod-app.aithentic.com/
