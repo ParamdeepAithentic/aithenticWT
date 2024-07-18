@@ -51,16 +51,17 @@ Test Setup      open the browser with the url
 
 
 *** Test Cases ***
-#
-#Free the asset limit
-#    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form     johns@mai.25u.com        Test@123
-#    Generic.Verify your current page location contains      dashboard
-#    Generic.select the option from the side menu    Technology
-#    Generic.Verify your current page location contains      technology
-#    PaginationPage.Check the table get load
-#    PaginationPage.Fetch the total count
-#    PaginationPage.Run the remove asset journey
+Free the asset limit
+    [Tags]      Smoke     Sanity      Time      rerun       Stable
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form     johns@mai.25u.com        Test@123
+    Generic.Verify your current page location contains      dashboard
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    PaginationPage.Check the table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Run the remove asset journey
+
 
 Search Discovered Assets
     [Tags]      Stable      rerun
@@ -1812,3 +1813,7 @@ Verify reset icon while adding component
         sleep   ${search_sleep}
         TechnologyPage.Click on reset icon while adding technology
         TechnologyPage.Verify the invisibility of brand after clicking on reset icon
+
+#Zz kill browser
+#    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+
