@@ -436,6 +436,21 @@ Click on the settings icon under service now via discovery assets
     sleep   ${search_sleep}
 #    wait until element is not visible       ${shadow}          ${wait_time}
 
+Input future Date
+    ${current_date}=    Get Current Date    result_format=%m/%d/%Y
+    Log To Console      Current Date is: ${current_date}
+
+    ${current_date_parts}=    Split String    ${current_date}    -
+    ${current_date_without_time}=    Set Variable    ${current_date_parts[0]}
+
+    ${future_date}=    Evaluate    datetime.datetime.strptime($current_date_without_time, "%m/%d/%Y") + datetime.timedelta(days=30)
+    ${formatted_future_date}=    Convert Date    ${future_date}    result_format=%m/%d/%Y
+
+    Log To Console      Future Date is: ${formatted_future_date}
+    Set Global Variable    ${formatted_future_date}
+
+
+
 My Failure Handling
     Generic.Click on the profile name
     Generic.Select option from profile list     billing-dropdown
