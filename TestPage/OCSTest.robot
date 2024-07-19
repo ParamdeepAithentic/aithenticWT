@@ -1693,6 +1693,7 @@ Upload Image and Document file during Add Asset with IP address from Agent Disco
     END
 
 Verify cross icon an reset icon while adding IP discovered asset
+        [Tags]    Sanity
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
         Generic.Verify your current page location contains      dashboard
@@ -1759,6 +1760,7 @@ Verify reset icon while adding discovery asset
         TechnologyPage.Verify the invisibility of brand after clicking on reset icon
 
 Verify reset icon while adding component
+        [Tags]    Sanity
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
         Generic.Verify your current page location contains      dashboard

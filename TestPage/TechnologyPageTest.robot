@@ -2347,7 +2347,7 @@ Creating technology while creating cancellation notice period and contract end d
     Generic.Fetch alert message text and compare it with        Technology updated successfully
 
 Dispose the technology while adding new brand and product
-    [Tags]      Stable
+    [Tags]      Stable      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -2451,7 +2451,7 @@ Add the technology from profile listing
     Generic.Fetch alert message text and compare it with      Technology Removed Successfully
 
 Verify_Asset_ID_Changing_settings_from_Profile_list
-    [Tags]      Stable    yy
+    [Tags]      Stable    Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
