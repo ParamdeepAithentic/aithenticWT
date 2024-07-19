@@ -201,6 +201,7 @@ Click on three dots of Team Member listing
 Select option from three dots of Team Member
     [Arguments]     ${option}
     Generic.Select other option from profile list       ${option}
+    sleep       ${search_sleep}
 
 Click on the tab
     [Arguments]         ${option}
@@ -340,7 +341,7 @@ Enter team member last name while editing
 
 Click on remove option under three dots
     wait until element is visible       css:.member-remove-qa    ${wait_time}
-    wait until element is visible       css:.member-remove-qa   ${wait_time}
+    wait until element is enabled       css:.member-remove-qa   ${wait_time}
     click element       css:.member-remove-qa
 
 Select option from remove TM warning pop-up
@@ -348,6 +349,7 @@ Select option from remove TM warning pop-up
     wait until element is visible       css:.confirm-remove-members-qa span    ${wait_time}
     wait until element is enabled      css:.confirm-remove-members-qa span    ${wait_time}
     click element       css:.confirm-remove-members-qa span
+    sleep       ${search_sleep}
     #TeamMemberPage.Close the remove warning pop-up      ## have to remove this line once fixed from dev side
 
 Close the remove warning pop-up

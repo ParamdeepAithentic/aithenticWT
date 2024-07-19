@@ -200,7 +200,8 @@ Export Assigned User Asset History list
     Generic.Verify your current page location contains      memberslist
     MemberPage.Click on assigned user tab     Assigned Users
     MemberPage.Search assigned user by first name   Assign_Param Deep
-    sleep   ${search_sleep}
+#    sleep   ${search_sleep}
+    MemberPage.Click on assigned user tab     Assigned Users
     MemberPage.Click on three dots of Team Member listing
     MemberPage.Select option from three dots of Team Member     Asset History
     Generic.Verify your current page location contains      asset-history
