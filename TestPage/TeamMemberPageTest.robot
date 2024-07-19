@@ -618,6 +618,7 @@ Convert Assignee to Team Member
     TechnologyPage.Select parameter from brand dropdown list    QABrand555
     TechnologyPage.Select parameter from technology dropdown list       OPMR815324
     TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select technology lifecycle status      Active
     TechnologyPage.Add assignment information assign to   ${generated_AssigneduserFirstName}       ${generated_TMLname}
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
@@ -1228,4 +1229,3 @@ Add Back Deleted Team member - Active
 
 #Zz kill browser
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
-

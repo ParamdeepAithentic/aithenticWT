@@ -1415,6 +1415,5 @@ Add_edit_deactivate_removeSupport_partner_while_adding_brand
     Generic.Fetch alert message text and compare it with      Partner deleted successfully
 
 #Zz kill browser
- #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
-
-
+#    sleep       ${wait_time}
+#    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
