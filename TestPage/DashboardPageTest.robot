@@ -1037,7 +1037,7 @@ View Predefined brand
 View Predefined product
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.Verify your current page location contains       dashboard
+    Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
@@ -1050,7 +1050,7 @@ Verifying the Renewals Overview section of Management console - End of Life
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.Verify your current page location contains       dashboard
+    Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     DashboardPage.Fetch the count renewals overview subtabs      End of life
     DashboardPage.Set Globally the count from renewal overview subtabs

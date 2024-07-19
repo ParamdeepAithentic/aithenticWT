@@ -411,7 +411,9 @@ Restore asset from removed asset details page
 #    TechnologyPage.Verify that after saving technology form user redirect to technology page
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+
     TechnologyPage.Click on manage technology sub option       Technology List
+
     TechnologyPage.Select an option from technology table actions      Remove
     TechnologyPage.Remove asset from technology table
     Generic.Fetch alert message text and compare it with        Technology Removed Successfully
@@ -2531,10 +2533,8 @@ Verify_Asset_ID_Changing_settings_from_Profile_list
     PartnersPage.Select option from the pop up  Yes
     Generic.Fetch alert message text and compare it with      Technology Removed Successfully
 
-
 #Zz kill browser
- #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
-
-
-
+#    [Tags]      Smoke     Sanity      Time      rerun       Stable    yy
+#    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+#    Run Process    cmd.exe    /C    taskkill /IM python.exe /F
 
