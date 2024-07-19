@@ -1158,3 +1158,21 @@ Click on arrow icon inside subscription overview tables
 Click on done button of subscription overview
     [Arguments]     ${option}
     Generic.click on the button         ${option}
+
+Verify your current page cotains this element
+     wait until element is not visible   ${loaderIcon}      ${wait_time}
+     Page Should Contain Element        //div[contains(text(),'No Financial Year Settings Found')]
+     Page should contain element        //a[normalize-space()='here']
+
+Click on 'click here to add' link
+    wait until element is not visible   ${loaderIcon}       ${wait_time}
+    wait until element is visible       //a[normalize-space()='here']
+    wait until element is enabled       //a[normalize-space()='here']
+    click element       //a[normalize-space()='here']
+
+Enter Financial Year end date
+    wait until element is visible   css:#financialYear     ${wait_time}
+    wait until element is enabled   css:#financialYear     ${wait_time}
+    click element   css:#financialYear
+    input text  css:#financialYear    12/31/2024
+
