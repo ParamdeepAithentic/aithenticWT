@@ -481,7 +481,6 @@ Restore asset by selecting checkbox
     TechnologyPage.Click on three dots of action button
     TechnologyPage.Select an option from recovery table actions    Restore
     Generic.Fetch alert message text and compare it with        Assets restored successfully.
-    TechnologyPage.Click on manage technology sub option       Technology List
     TechnologyPage.Search by AssetId   ${generated_AssetID}
 
 
@@ -503,7 +502,6 @@ Restore asset by selecting checkbox
 #    Search by AssetId      ${self_searchId}
 #    Select and restore asset
 #    Fetch alert message text and compare it with        Assets restored successfully.
-#    Click on manage technology sub option       Technology List
 #    Search by AssetId      ${self_searchId}
 
 
