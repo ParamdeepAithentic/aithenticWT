@@ -679,7 +679,7 @@ Create unique department name random under technology bulk import
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_Department_bulk}=    Catenate    DeptNo_${random_string}
     input text   //div[contains(@class,'full-page-block')]//ng-select[contains(@id,'department-name')]//input   ${generated_Department_bulk}
-    sleep       1
+    sleep      ${search_sleep}
     click element     css:div[role='option']
     log to console      ${generated_Department_bulk}
     set global variable    ${generated_Department_bulk}

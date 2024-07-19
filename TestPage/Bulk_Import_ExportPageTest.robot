@@ -980,5 +980,5 @@ Verify Bulk Import on the Technology Page by adding all parameters
     TechnologyPage.Search by AssetId       ${generated_bulk_import_assetid}
     Generic.Wait until table get load
 
-Zz kill browser
-    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+#Zz kill browser
+#    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
