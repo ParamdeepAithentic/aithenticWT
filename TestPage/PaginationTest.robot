@@ -204,6 +204,7 @@ Verify Pagination of Product Dropdown when Add and Edit Technology
     PaginationPage.Log WebElements of Product Dropdown      location-list
     TechnologyPage.Select parameter from technology dropdown list       ACK42014
     TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select technology lifecycle status      Active
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button

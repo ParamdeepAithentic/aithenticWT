@@ -324,7 +324,7 @@ Remove the old assets to free the space
     SortingPage.Click on specific column for method one     Created Date
     SortingPage.Click on specific column for method one     Created Date
     PaginationPage.Click on the pagination dropdown     technology
-    PaginationPage.Select the value from the pagination drop down count    500
+    PaginationPage.Select the value from the pagination drop down count    250
 
     Generic.Wait until table get load
     PaginationPage.Click on the checkbox of technology listing
