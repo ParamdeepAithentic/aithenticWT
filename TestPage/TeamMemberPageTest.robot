@@ -124,6 +124,7 @@ Edit Team member page - Edit New Department and assign that department to Team m
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     Generic.Verify your current page location contains     organization
+    DashboardPage.Select the asset ID checkbox      yes
     DashboardPage.Select the employee ID checkbox   no
     DashboardPage.Select the location ID checkbox   yes
     DashboardPage.Select the asset ID checkbox      no
@@ -778,6 +779,7 @@ Convert Assignee to team member in case of employee id is not system generated
     Generic.Select option from profile list     personal-details
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the employee ID checkbox   no
     DashboardPage.Select the employee ID checkbox   yes
     Generic.Fetch alert message text and compare it with       Settings Updated
 
@@ -786,6 +788,13 @@ Verify Invitation and signup as team member
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the employee ID checkbox   no
+    DashboardPage.Select the employee ID checkbox   yes
+    Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Click on add team member action button
@@ -917,6 +926,13 @@ Verify Invitation and signup as team member via company details
     Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the employee ID checkbox   no
+    DashboardPage.Select the employee ID checkbox   yes
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
     DashboardPage.Select an option from company details side list    Team Members
     Generic.Verify your current page location contains    member
@@ -1013,6 +1029,7 @@ Verify_Employee_ID_Changing_settings_from_Profile_list_while_add_edit_team_membe
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   no
     DashboardPage.Select the employee ID checkbox   yes
     Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.select the option from the side menu    Team Members
@@ -1037,6 +1054,7 @@ Verify_Employee_ID_Changing_settings_from_Profile_list_while_add_edit_team_membe
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   yes
     DashboardPage.Select the employee ID checkbox   no
     Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.select the option from the side menu    Team Members
@@ -1063,11 +1081,22 @@ Verify_Employee_ID_Changing_settings_from_Profile_list_while_add_edit_team_membe
     Generic.Select parameter        Yes
     Generic.Fetch alert message text and compare it with        Team member deleted successfully
 
+
 Add Back Deleted Team member - Active
     [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
+
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   no
+    DashboardPage.Select the employee ID checkbox   yes
+    Generic.Fetch alert message text and compare it with       Settings Updated
+
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Click on add team member action button
@@ -1199,3 +1228,4 @@ Add Back Deleted Team member - Active
 
 #Zz kill browser
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+

@@ -342,7 +342,8 @@ Remove the old assets to free the space
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     TechnologyPage.Click on plan of subscription        Premium
     Generic.Scroll the page till    200
-    SubscriptionPage.Set asset range to     900
+#    SubscriptionPage.Set asset range to     900
+    Admin_PanelPage.Select the higest plan
     sleep    5
     SubscriptionPage.Update the payment of changed plan     proceed
 

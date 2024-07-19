@@ -139,3 +139,5 @@ Set Plan range in pre requites
     EXCEPT
         Admin_PanelPage.Welcome to the code
     END
+    PaginationPage.Run the remove asset journey
+

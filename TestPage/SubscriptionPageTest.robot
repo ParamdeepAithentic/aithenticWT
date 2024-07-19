@@ -158,7 +158,9 @@ Suspend and unsuspend the account
         SubscriptionPage.Click on the suspend my account button link under billing details
         SubscriptionPage.Enter input in the description field of billing details
         SubscriptionPage.Enter input in the start date field of billing details
+
         TechnologyPage.Input future Date
+
         SubscriptionPage.Enter input in the end date field of billing details       ${formatted_future_date}
         sleep   ${search_sleep}
         Generic.click on the button     Suspend
@@ -206,6 +208,7 @@ View Scheduler from view Result
     Generic.Verify your current page location contains      technology-settings
     SubscriptionPage.Click on the three dots of subscription connector      Microsoft Corporation
     SubscriptionPage.Click on option under three dots of subscription connector     Microsoft Corporation          View Results
+
     Generic.Verify your current page location contains    subscription
     SubscriptionPage.Choose tab under subscription page after clicking on view_result
     SubscriptionPage.Fetch and compare the Brand from the table    Microsoft Corporation
@@ -307,6 +310,7 @@ View Scheduler from view Result of sentinelone
     Generic.Verify your current page location contains      technology-settings
     SubscriptionPage.Click on the three dots of subscription connector      Microsoft Corporation
 
+
 Create service now with invalid data
    Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
@@ -384,6 +388,7 @@ Create service now with invalid data
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
     Generic.Verify your current page location contains     organization
+    DashboardPage.Select the asset ID checkbox     yes
     DashboardPage.Select the employee ID checkbox   yes
     DashboardPage.Select the location ID checkbox   yes
     DashboardPage.Select the asset ID checkbox     no
@@ -481,6 +486,7 @@ Create service now with valid data
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
     Generic.Verify your current page location contains     organization
+    DashboardPage.Select the asset ID checkbox     yes
     DashboardPage.Select the employee ID checkbox   yes
     DashboardPage.Select the location ID checkbox   yes
     DashboardPage.Select the asset ID checkbox     no
@@ -492,11 +498,11 @@ Create service now with valid data
     sleep       ${yop_sleep}
     Switch Window       aithentic | Create Connection
     Generic.Verify your current page location contains      create-connection
-    SubscriptionPage.Enter input in the url end point field of service now      https://dev201405.service-now.com
-    SubscriptionPage.Enter input in the username field of service now       PuneetD
-    SubscriptionPage.Enter input in the password field of service now        _.(PJL>4j
-    SubscriptionPage.Enter input in the client id field of service now     7ec640b860364210f67aa1dbd4fd56fa
-    SubscriptionPage.Enter input in the secret key field of service now     xFlv]:Fbyp
+    SubscriptionPage.Enter input in the url end point field of service now      https://dev258787.service-now.com
+    SubscriptionPage.Enter input in the username field of service now       ParamD
+    SubscriptionPage.Enter input in the password field of service now       sbd{Vc]x0P7t7h!We$ZI#j%b+_i1WNNnwam.rtD.5%@klTvb:P$4[A!Q1n&aYe$ScRLFNsJGH&d;m.
+    SubscriptionPage.Enter input in the client id field of service now     405229d86f230210f8a735c71f96d3af
+    SubscriptionPage.Enter input in the secret key field of service now     i[N(m1}|EO
     Generic.click on the button     Create Connection
     Generic.click on the button     By System
     Generic.Verify your current page location contains      technology-settings

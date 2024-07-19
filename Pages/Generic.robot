@@ -61,7 +61,8 @@ ${wait_time}       60
 ${yop_sleep}       10
 ${search_sleep}       1
 
-${CASE}       uat      #qa , uat , pre-prod
+${CASE}      pre-prod     #qa , uat , pre-prod
+
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
 
 *** Keywords ***
@@ -91,6 +92,7 @@ Set QA Variables
     Set Suite Variable    ${discovery_asset_list_brand}       Apple, Inc.
 #    Run Keyword    Set Plan range in pre requites    ${admin_name}    ${admin_password}
 
+
 Set UAT Variables
     Set Suite Variable    ${url}    https://uat-app.aithentic.com/
     Set Suite Variable    ${valid_password}    Test!@5897     #UAT user
@@ -100,7 +102,7 @@ Set UAT Variables
     Set Suite Variable    ${admin_url}        https://uat-admin.aithentic.com/
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
-    Set Suite Variable    ${browser_name}         firefox
+    Set Suite Variable    ${browser_name}         headlessfirefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
     Set Suite Variable    ${discovered_asset_brand}                 Apple Inc
     Set Suite Variable    ${existing_mac}                       98:5a:eb:cb:c8:ed
@@ -110,12 +112,20 @@ Set UAT Variables
     Set Suite Variable    ${discovered_IP}    00:17:61:10:C6:A1
     Set Suite Variable    ${discovery_asset_list_brand}     AKKA Germany GmbH
 
+
 Set Pre-Prod Variables
     Set Suite Variable    ${url}    https://pre-prod-app.aithentic.com/
     Set Suite Variable    ${valid_password}    Test@123     #pre prod
     Set Suite Variable    ${apiURL}    https://pre-prod-api.aithentic.com/api/v1
     Set Suite Variable    ${browser_name}         headlessfirefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
+    Set Suite Variable    ${discovered_asset_brand}                ECS
+    Set Suite Variable    ${existing_mac}                       b8:ae:ed:bc:1c:35
+    Set Suite Variable    ${discovered_existing_brand}          QABrand555
+    Set Suite Variable    ${discovered_existing_product}        Product_00337612322
+    Set Suite Variable    ${discovered_existing_department}    Operations
+    Set Suite Variable    ${discovered_IP}   192.168.18.86
+    Set Suite Variable    ${discovery_asset_list_brand}       Apple, Inc.
 
 Set Default Variables
     Set Suite Variable    ${url}    https://uat-app.aithentic.com/
@@ -127,6 +137,12 @@ Set Default Variables
     Set Suite Variable    ${admin_password}       Admin@123
     Set Suite Variable    ${browser_name}         headlessfirefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
+    Set Suite Variable    ${discovered_asset_brand}                 Apple Inc
+    Set Suite Variable    ${discovered_existing_brand}              Apple Inc.
+    Set Suite Variable    ${discovered_existing_product}            Macmini9,1
+    Set Suite Variable    ${discovered_existing_department}        Quality Assurance
+    Set Suite Variable    ${discovered_IP}    00:17:61:10:C6:A1
+    Set Suite Variable    ${discovery_asset_list_brand}     AKKA Germany GmbH
 
 Fix the column number
     ${pageHeading}=   Catenate    2
@@ -424,6 +440,7 @@ Update settings for Asset_ID, employee_id and location
 #    Run Process    cmd.exe    /C    taskkill /IM chrome.exe /F
 #    Run Process    cmd.exe    /C    taskkill /IM skype.exe /F
 #    Run Process    cmd.exe    /C    taskkill /IM msedge.exe /F
+
 
 
 

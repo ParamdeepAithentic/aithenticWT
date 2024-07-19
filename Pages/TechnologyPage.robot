@@ -1314,10 +1314,6 @@ Input current Date
     set global variable         ${current_date1}
 
 Input future Date
-#    ${future_date} =    Add Time To Date   ${current_date1}    7    days    result_format=%m/%d/%Y
-#    Log To Console    ${future_date}
-#    Set Global Variable    ${future_date}
-
     ${current_date}=    Get Current Date    result_format=%m/%d/%Y
     Log To Console      Current Date is: ${current_date}
 

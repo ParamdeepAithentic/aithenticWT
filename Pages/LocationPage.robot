@@ -333,6 +333,7 @@ Edit location country
     Clear Element Text      ${location_country}
     Input Text    ${location_country}    ${option}
     Generic.Select parameter    ${option}
+    click element       //ng-select[contains(@class,'qa-country-name')]//ng-dropdown-panel//span[normalize-space()='${option}']
 
 Edit location state
     [Arguments]    ${option}

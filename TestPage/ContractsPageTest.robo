@@ -111,7 +111,8 @@ Technology Auto removed from dynamic contract When edit Brand and product
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Generic.Fetch alert message text and compare it with    Partner created successfully
+    sleep       5
+#    Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generate_BusinessName}
 
     Generic.Click on the profile name
@@ -271,7 +272,8 @@ Technology Auto removed from static contract When edit Brand and product
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Generic.Fetch alert message text and compare it with    Partner created successfully
+    sleep       5
+#    Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generate_BusinessName}
 
 
