@@ -513,14 +513,17 @@ Select warranty end date
 
 Select technology lifecycle status
     [Arguments]    ${option1}
+    #Scroll Element Into View        css:#Comment
+    wait until element is visible   //ng-select[@id='LifeCycleStatusId']//span[@title='Clear all']    ${wait_time}
+    wait until element is enabled   //ng-select[@id='LifeCycleStatusId']//span[@title='Clear all']    ${wait_time}
+    click element       //ng-select[@id='LifeCycleStatusId']//span[@title='Clear all']
     wait until element is visible    ${LifeCycleStatusId}      ${wait_time}
     wait until element is enabled    ${LifeCycleStatusId}      ${wait_time}
     click element       ${LifeCycleStatusId}
-    wait until element is visible   //ng-select[@id='LifeCycleStatusId']//span[@title='Clear all']//span    ${wait_time}
-    wait until element is enabled   //ng-select[@id='LifeCycleStatusId']//span[@title='Clear all']//span    ${wait_time}
-    click element       //ng-select[@id='LifeCycleStatusId']//span[@title='Clear all']//span
     wait until element is visible   //ng-select[contains(@class,'qa-LifeCycleStatusId')]//ng-dropdown-panel//span[normalize-space()='Active']      ${wait_time}
-    Generic.Select parameter    ${option1}
+    wait until element is enabled  //ng-select[contains(@class,'qa-LifeCycleStatusId')]//ng-dropdown-panel//span[normalize-space()='Active']      ${wait_time}
+    click element   //ng-select[contains(@class,'qa-LifeCycleStatusId')]//ng-dropdown-panel//span[normalize-space()='Active']
+    #Generic.Select parameter    ${option1}
 
 
 Select edited technology lifecycle status
