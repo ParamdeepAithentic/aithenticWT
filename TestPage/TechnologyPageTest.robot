@@ -85,9 +85,10 @@ Fill the technology form for license product
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date
     TechnologyPage.Select warranty end date    12/12/2028
+    TechnologyPage.Add order number of technology cost information     56
     TechnologyPage.Select technology lifecycle status      Active
     TechnologyPage.Add technology lifecycle comment    Technology Lifecycle Information- comment
-    TechnologyPage.Add order number of technology cost information     56
+
     TechnologyPage.Add payment partner of technology cost information      testqa 20Feb
     TechnologyPage.Add cost type of technology cost information        Fixed Length Contract
     TechnologyPage.Add payment type of technology cost information     FixedPayment
