@@ -519,7 +519,7 @@ Select technology lifecycle status
     wait until element is visible   //ng-select[@id='LifeCycleStatusId']//span[@title='Clear all']//span    ${wait_time}
     wait until element is enabled   //ng-select[@id='LifeCycleStatusId']//span[@title='Clear all']//span    ${wait_time}
     click element       //ng-select[@id='LifeCycleStatusId']//span[@title='Clear all']//span
-    wait until element is visible   //span[normalize-space()='Active']      ${wait_time}
+    wait until element is visible   //ng-select[contains(@class,'qa-LifeCycleStatusId')]//ng-dropdown-panel//span[normalize-space()='Active']      ${wait_time}
     Generic.Select parameter    ${option1}
 
 
