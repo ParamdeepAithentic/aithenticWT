@@ -764,7 +764,7 @@ Add Manufacturer via personal detail under technology and partner
 
 
 Edit Manufacturer via partner
-    [Tags]      Sanity      Stable      mil
+    [Tags]      Sanity      Stable
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard

@@ -1266,7 +1266,7 @@ Add new Technology- Add New Assignee and assign that Assignee
     Generic.Fetch alert message text and compare it with       Settings Updated
 
 Add new Technology- Add New support-partner and assign that support partner
-    [Tags]     Sanity       Stable      mil
+    [Tags]     Sanity       Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1303,7 +1303,7 @@ Add new Technology- Add New support-partner and assign that support partner
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
 Add new Technology- Add New Supplier and assign that supplier
-    [Tags]      Stable      mil
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -2414,7 +2414,7 @@ Dispose the technology while adding new brand and product
     Generic.Fetch alert message text and compare it with      Technology Removed Successfully
 
 Add the technology from profile listing
-    [Tags]      Stable      mil
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard

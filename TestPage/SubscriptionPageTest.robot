@@ -66,7 +66,7 @@ Test Teardown   Close Browser session
 #    Generic.Fetch alert message text and compare it with        Scheduler created sucessfully
 
 Edit the scheduler
-    [Tags]      Sanity      Stable      mil
+    [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -214,7 +214,7 @@ View Scheduler from view Result
     SubscriptionPage.Fetch and compare the Brand from the table    Microsoft Corporation
 
 Edit the scheduler of Sentinelone
-    [Tags]      Sanity      Stable      mil
+    [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
