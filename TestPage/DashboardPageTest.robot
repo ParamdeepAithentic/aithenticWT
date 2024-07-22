@@ -492,7 +492,7 @@ Activate Brand and address via brand under profile list
     [Tags]   Smoke      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.Verify your current page location contains
+    Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
@@ -1331,7 +1331,7 @@ Verifying the Renewals Overview section of Management console - Expired warranti
     Generic.Verify your current page location contains      technology
     Generic.Wait until table get load
     Generic.select the option from the side menu    Dashboard
-    Generic.Verify your current page location contains
+    Generic.Verify your current page location contains    dashboard
     LandingPage.Verify you are on dashboard page
     DashboardPage.Fetch the count renewals overview subtabs        Expired warranties
     DashboardPage.Compare the counts of renewal overview after adding the asset
@@ -1645,4 +1645,5 @@ Management Console - Quarters filter dropdown
     sleep   100
 
 
-
+#Zz kill browser
+ #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

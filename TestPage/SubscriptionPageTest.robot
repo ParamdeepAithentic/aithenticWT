@@ -47,8 +47,8 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 
+
 #Create the scheduler
-#    [
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
 #    Generic.Verify your current page location contains      dashboard
@@ -64,6 +64,7 @@ Test Teardown   Close Browser session
 #    sleep   ${search_sleep}
 #    Generic.click on the button     Create
 #    Generic.Fetch alert message text and compare it with        Scheduler created sucessfully
+
 
 Edit the scheduler
     [Tags]      Sanity      Stable
@@ -214,6 +215,23 @@ View Scheduler from view Result
     SubscriptionPage.Choose tab under subscription page after clicking on view_result
     SubscriptionPage.Fetch and compare the Brand from the table    Microsoft Corporation
 
+Create the scheduler of sentinel one
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
+    LandingPage.Verify you are on dashboard page
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     subscription-connector
+    Generic.Verify your current page location contains      technology-settings
+    SubscriptionPage.Click on the three dots of subscription connector      SentinelOne
+    SubscriptionPage.Click on option under three dots of subscription connector     Create Scheduler
+    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Monthly
+    SubscriptionPage.Enter input in the start date field of billing details
+    SubscriptionPage.Enter input in the input field of time under create scheduler      2:00
+    sleep   ${search_sleep}
+    Generic.click on the button     Create
+    Generic.Fetch alert message text and compare it with        Scheduler created sucessfully
+
 Edit the scheduler of Sentinelone
     [Tags]      Sanity      Stable
     Generic.click on the tab	Login
@@ -311,6 +329,7 @@ View Scheduler from view Result of sentinelone
     Generic.Verify your current page location contains      technology-settings
     SubscriptionPage.Click on the three dots of subscription connector      Microsoft Corporation
 
+
 Create service now with invalid data
    Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
@@ -388,6 +407,7 @@ Create service now with invalid data
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
     Generic.Verify your current page location contains     organization
+    DashboardPage.Select the asset ID checkbox     yes
     DashboardPage.Select the employee ID checkbox   yes
     DashboardPage.Select the location ID checkbox   yes
     DashboardPage.Select the asset ID checkbox     no
@@ -485,6 +505,7 @@ Create service now with valid data
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
     Generic.Verify your current page location contains     organization
+    DashboardPage.Select the asset ID checkbox     yes
     DashboardPage.Select the employee ID checkbox   yes
     DashboardPage.Select the location ID checkbox   yes
     DashboardPage.Select the asset ID checkbox     no
@@ -496,11 +517,11 @@ Create service now with valid data
     sleep       ${yop_sleep}
     Switch Window       aithentic | Create Connection
     Generic.Verify your current page location contains      create-connection
-    SubscriptionPage.Enter input in the url end point field of service now      https://dev201405.service-now.com
-    SubscriptionPage.Enter input in the username field of service now       PuneetD
-    SubscriptionPage.Enter input in the password field of service now        _.(PJL>4j
-    SubscriptionPage.Enter input in the client id field of service now     7ec640b860364210f67aa1dbd4fd56fa
-    SubscriptionPage.Enter input in the secret key field of service now     xFlv]:Fbyp
+    SubscriptionPage.Enter input in the url end point field of service now      https://dev258787.service-now.com
+    SubscriptionPage.Enter input in the username field of service now       ParamD
+    SubscriptionPage.Enter input in the password field of service now       sbd{Vc]x0P7t7h!We$ZI#j%b+_i1WNNnwam.rtD.5%@klTvb:P$4[A!Q1n&aYe$ScRLFNsJGH&d;m.
+    SubscriptionPage.Enter input in the client id field of service now     405229d86f230210f8a735c71f96d3af
+    SubscriptionPage.Enter input in the secret key field of service now     i[N(m1}|EO
     Generic.click on the button     Create Connection
     Generic.click on the button     By System
     Generic.Verify your current page location contains      technology-settings

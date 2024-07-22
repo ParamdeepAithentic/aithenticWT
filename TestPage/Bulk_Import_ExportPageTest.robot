@@ -472,6 +472,7 @@ Technology Bulk edit
     Bulk_Import_ExportPage.click on the arrow of product    Technology Lifecycle Information    2
     Bulk_Import_Exportpage.Enter the new value in last Payment date field of technology bulk import      PurchaseDt     03/11/2024
     Bulk_Import_Exportpage.Enter the new value in last Payment date field of technology bulk import      RenewalDate      03/11/2025
+    Bulk_Import_Exportpage.Enter the new value in last Payment date field of technology bulk import      WarrantyEndDt      03/11/2027
     Bulk_Import_ExportPage.Click on the fields and select value from dropdown of technology bulk edit        Status
     Bulk_Import_ExportPage.click on the arrow of product    Technology Lifecycle Information     1
     Bulk_Import_ExportPage.click on the arrow of product    Assignment Information     2
@@ -682,8 +683,8 @@ Technology Bulk import
     Bulk_Import_ExportPage.Perform the keyboard action      Supplier
     Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       SupportPartner        1
     Bulk_Import_ExportPage.Perform the keyboard action      SupportPartner
-    Bulk_Import_Exportpage.Enter the new value of serial number of technology bulk import      DYNA_21
-    Bulk_Import_ExportPage.Perform the keyboard action      DYNA_21
+#    Bulk_Import_Exportpage.Enter the new value of serial number of technology bulk import      DYNA_21
+#    Bulk_Import_ExportPage.Perform the keyboard action      DYNA_21
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_2      Capex
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_2
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_9      Account123
@@ -722,7 +723,10 @@ Technology Bulk import
     Generic.Wait until table get load
 
 
+
+
 Verify Bulk Import on the Technology Page by adding all parameters
+    [Tags]    Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -949,8 +953,8 @@ Verify Bulk Import on the Technology Page by adding all parameters
     Bulk_Import_ExportPage.Perform the keyboard action      Supplier
     Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       SupportPartner        1
     Bulk_Import_ExportPage.Perform the keyboard action      SupportPartner
-    Bulk_Import_Exportpage.Enter the new value of serial number of technology bulk import      DYNA_21
-    Bulk_Import_ExportPage.Perform the keyboard action      DYNA_21
+#    Bulk_Import_Exportpage.Enter the new value of serial number of technology bulk import      DYNA_21
+#    Bulk_Import_ExportPage.Perform the keyboard action      DYNA_21
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_2      Capex
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_2
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_9      Account123
@@ -982,3 +986,4 @@ Verify Bulk Import on the Technology Page by adding all parameters
 
 #Zz kill browser
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+

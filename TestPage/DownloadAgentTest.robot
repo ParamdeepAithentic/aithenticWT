@@ -459,7 +459,7 @@ Network Discovery in case of no records
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
-    Generic.Verify your current page location contains    ocs
+    Generic.Verify your current page location contains   aad
     I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.Fetch text from Agent/Discovered assets column and compare it with      No records
@@ -485,9 +485,12 @@ Visit discovered asset list when click on No. IP discovered devices
     Switch Window       aithentic | Sentinel One Newly-Discovered
     Generic.Verify your current page location contains     discovery-assets
 
+
 #Zz kill browser
-#    [Tags]      Smoke     Sanity      Time      rerun       Stable    yy
-#    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+ #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+
+
+
 
 #Refresh search text on discovered asset list page
 #    Generic.click on the tab	Login
