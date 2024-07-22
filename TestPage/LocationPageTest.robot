@@ -100,7 +100,7 @@ Activate and deactivate the location
     LocationPage.Fetch and verify the location status from the row   Active
 
 Edit the Location
-    [Tags]      Stable
+    [Tags]      Stable      mil
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard

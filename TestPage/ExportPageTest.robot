@@ -49,7 +49,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Export Partner list
-    [Tags]      Stable
+    [Tags]      Stable  mil
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -231,7 +231,7 @@ Export location list of location under technology details page
     Generic.click on the button     Okay, Thanks!
 
 Export partner list while adding new partner
-    [Tags]      Stable
+    [Tags]      Stable    mil
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -246,8 +246,8 @@ Export partner list while adding new partner
     PartnersPage.Enter partner business URL     yopmail
     PartnersPage.Select partner country       United States
     PartnersPage.Click on the save button   Save
-    sleep       5
-#    Generic.Fetch alert message text and compare it with    Partner created successfully
+   # sleep       5
+    Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name   ${generate_BusinessName}
     PartnersPage.Click on three dots of partners listing
     PartnersPage.Select option from three dots of partner     Details
