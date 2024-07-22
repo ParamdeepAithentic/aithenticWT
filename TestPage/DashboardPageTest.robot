@@ -1638,11 +1638,18 @@ Management Console - Quarters filter dropdown
     Generic.select the option from the side menu    Dashboard
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
-    DashboardPage.Verify your current page cotains this element
+    DashboardPage.Verify your current page contains this element
     DashboardPage.Click on 'click here to add' link
     Generic.Verify your current page location contains      company-info
     Enter Financial Year end date
     sleep   100
+    Generic.Fetch alert message text and compare it with        Company financial data updated successfully
+    Generic.select the option from the side menu    Dashboard
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    DashboardPage.Verify your current page not contains this element
+
+
 
 
 #Zz kill browser

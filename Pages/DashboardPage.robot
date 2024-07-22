@@ -1159,7 +1159,7 @@ Click on done button of subscription overview
     [Arguments]     ${option}
     Generic.click on the button         ${option}
 
-Verify your current page cotains this element
+Verify your current page contains this element
      wait until element is not visible   ${loaderIcon}      ${wait_time}
      Page Should Contain Element        //div[contains(text(),'No Financial Year Settings Found')]
      Page should contain element        //a[normalize-space()='here']
@@ -1175,4 +1175,9 @@ Enter Financial Year end date
     wait until element is enabled   css:#financialYear     ${wait_time}
     click element   css:#financialYear
     input text  css:#financialYear    12/31/2024
+
+Verify your current page not contains this element
+     wait until element is not visible   ${loaderIcon}      ${wait_time}
+     Page Should not Contain Element        //div[contains(text(),'No Financial Year Settings Found')]
+     Page should not contain element        //a[normalize-space()='here']
 
