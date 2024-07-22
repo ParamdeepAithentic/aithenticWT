@@ -1706,12 +1706,6 @@ Change password and login with new password
     LandingPage.Fill the login Form     ${generate_register_Email}   Test@123
     Generic.Verify your current page location contains      dashboard
 
-
-
-
-
-
-
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
 
