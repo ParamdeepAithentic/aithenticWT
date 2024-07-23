@@ -1108,6 +1108,7 @@ Network discovery: search on discovered asset list with Tag Name, IP_address and
         TechnologyPage.Select parameter from technology dropdown list      Product_aithentic
         TechnologyPage.Create unique serial number random
         OCS.Enter The Asset_id in Add Technology Page
+        TechnologyPage.Verify the visibility of assign to field
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
@@ -1129,6 +1130,7 @@ Network discovery: search on discovered asset list with Tag Name, IP_address and
         Generic.Verify your current page location contains      edit-technology
         OCS.Edit the MAC_Address of Asset
         OCS.Edit the Serial_No. of Asset
+        TechnologyPage.Select technology lifecycle status      Active
         sleep   ${search_sleep}
         TechnologyPage.Click on update button of edit_technology page       Update
         Generic.Fetch alert message text and compare it with        Technology updated successfully
