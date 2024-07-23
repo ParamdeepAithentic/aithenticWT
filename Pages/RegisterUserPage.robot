@@ -199,3 +199,31 @@ Save the Profile details
     Wait Until Element Is Visible    //div[contains(@class,'buttons')]//button[normalize-space()='${option1}']          ${wait_time}
     Wait Until Element Is Enabled    //div[contains(@class,'buttons')]//button[normalize-space()='${option1}']          ${wait_time}
     Click Element    //div[contains(@class,'buttons')]//button[normalize-space()='${option1}']
+
+Choose Industry under company financial information
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    css:.qa-industry-code-data         ${wait_time}
+    Wait Until Element Is Enabled   css:.qa-industry-code-data          ${wait_time}
+    Click Element    css:.qa-industry-code-data
+    Generic.Select parameter        ${option}
+
+Choose Currency under company financial information
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    css:.qa-currency-code         ${wait_time}
+    Wait Until Element Is Enabled   css:.qa-currency-code         ${wait_time}
+    Click Element    css:.qa-currency-code
+    Generic.Select parameter        ${option}
+
+Enter the following company information
+    [Arguments]     ${option1}      ${option2}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    css:#${option1}       ${wait_time}
+    Wait Until Element Is Enabled   css:#${option1}         ${wait_time}
+    clear element text      css:#${option1}
+    input text      css:#${option1}       ${option2}
+
+
+
+
