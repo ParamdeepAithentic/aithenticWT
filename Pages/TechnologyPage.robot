@@ -1863,3 +1863,13 @@ Search by hostname
     input text      ${asset_SearchBar}     ${name}
     sleep       ${search_sleep}
     wait until element is visible       css:thead tr       ${wait_time}
+
+Select particular technology group via link while adding technology
+    [Arguments]    ${option}
+    wait until element is visible       css:nz-tree-select[formcontrolname=TechGroupId] input     ${wait_time}
+    wait until element is enabled       css:nz-tree-select[formcontrolname=TechGroupId] input     ${wait_time}
+    click element   css:nz-tree-select[formcontrolname=TechGroupId] input
+    input text      css:nz-tree-select[formcontrolname=TechGroupId] input       ${option}
+    wait until element is visible      //span[normalize-space()='${option}']       ${wait_time}
+    wait until element is enabled      //span[normalize-space()='${option}']       ${wait_time}
+    click element       //span[normalize-space()='${option}']

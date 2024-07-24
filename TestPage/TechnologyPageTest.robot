@@ -2552,7 +2552,7 @@ Search with hostname on the technology search bar
     TechnologyPage.Add product description via technology
     TechnologyPage.Add product feature via technology
     TechnologyPage.Select product technology type via technology     Hardware
-    TechnologyPage.Select product technology group via technology   Intel Notebooks
+    TechnologyPage.Select particular technology group via link while adding technology    Notebooks & Accessories
     TechnologyPage.Click on save product pop inside technology page
     Generic.Fetch alert message text and compare it with    Product created successfully
     TechnologyPage.Wait until brand loder is invisible
@@ -2568,11 +2568,6 @@ Search with hostname on the technology search bar
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
     OCS.Get Value of Host-Name and compare it with    ${result}
-
-
-
-
-
 
 #Zz kill browser
 #    [Tags]      Smoke     Sanity      Time      rerun       Stable    yy
