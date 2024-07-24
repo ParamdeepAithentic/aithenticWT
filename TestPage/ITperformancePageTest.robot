@@ -186,7 +186,6 @@ Verify the text of download icon under IT performance
     Generic.Verify your current page location contains      it-performance
     ITperformancePage.Hover the text of download icon under it performance      Download the file.
 
-
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
 
