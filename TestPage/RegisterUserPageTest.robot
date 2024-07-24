@@ -349,6 +349,7 @@ Change plan and Change asset limit with ACH Payment method
     BillingPage.Close the billing payment options module
 
 Verify company domain and submit financial details
+
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
