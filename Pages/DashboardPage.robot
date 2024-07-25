@@ -1205,3 +1205,9 @@ Click on the checkboxes under auhtentication tab
     wait until element is visible      //label[normalize-space()='Use email authentication']      ${wait_time}
     wait until element is enabled      //label[normalize-space()='Use email authentication']        ${wait_time}
     click element  //label[normalize-space()='Use email authentication']
+
+Wait for the visibility of the validation of password field under create account
+    wait until element is visible      //li[normalize-space()='Eight to Thirty Two Characters']     ${wait_time}
+    wait until element is visible      //li[normalize-space()='One Uppercase Letter']      ${wait_time}
+    wait until element is visible      //li[normalize-space()='One Lowercase Letter']      ${wait_time}
+    wait until element is visible      //li[normalize-space()='One Special Character']      ${wait_time}
