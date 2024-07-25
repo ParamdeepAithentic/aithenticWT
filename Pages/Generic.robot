@@ -82,7 +82,7 @@ Set QA Variables
     Set Suite Variable    ${admin_url}        https://qa-admin.aithentic.com/
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
-    Set Suite Variable    ${browser_name}         firefox
+    Set Suite Variable    ${browser_name}         headlessfirefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
     Set Suite Variable    ${discovered_asset_brand}                 MSI
     Set Suite Variable    ${existing_mac}                       D8:CB:8A:CA:6A:39
