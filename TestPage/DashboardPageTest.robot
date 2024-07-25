@@ -1735,7 +1735,7 @@ Enter password more than the limit of the password
 
 #----------------------------------------USER ACCOUNT---------------------------------------------------
     UserAccount.Enter the password      Test@123Test@123Test@123Test@123Test@123
-    UserAccount.Click on term and condition checkbox
+    sleep   1
     DashboardPage.Wait for the visibility of the validation of password field under create account
 
 #Zz kill browser
