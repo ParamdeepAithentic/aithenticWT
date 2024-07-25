@@ -786,7 +786,7 @@ Enter password of more than the limit while forgot password
     RegisterUserPage.Click on the reset password link under mail
     sleep       ${yop_sleep}
     Switch Window   Sign in to Aithentic
-    Generic.Verify your current page contains this text      Update password 
+    Generic.Verify your current page contains this text      Update password
     RegisterUserPage.Enter new password under reset password page   Test@1235Test@1235Test@1235Test@1235
     RegisterUserPage.Enter confirm password under reset password page   Test@1235Test@1235Test@1235Test@1235
     RegisterUserPage.Click on the submit button under forgot password page

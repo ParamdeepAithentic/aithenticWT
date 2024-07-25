@@ -1208,3 +1208,9 @@ Click on the checkboxes under auhtentication tab
 
 Verify the visibility of validation message under change password
      wait until element is visible      //span[@class='invalidInput ng-star-inserted']      ${wait_time}
+
+Wait for the visibility of the validation of password field under create account
+    wait until element is visible      //li[normalize-space()='Eight to Thirty Two Characters']     ${wait_time}
+    wait until element is visible      //li[normalize-space()='One Uppercase Letter']      ${wait_time}
+    wait until element is visible      //li[normalize-space()='One Lowercase Letter']      ${wait_time}
+    wait until element is visible      //li[normalize-space()='One Special Character']      ${wait_time}
