@@ -671,6 +671,8 @@ Subscription Connector - M365 assets drilldown
     DashboardPage.select the option from the dashboard drawer     Subscription
     Generic.Verify your current page location contains      subscription
     SubscriptionPage.Choose the tab under Subscription page     2
-
+    SubscriptionPage.Verify that page contains correct details      M365
+    Generic.Verify your current page contains this text     Subscription Overview
+    Subscription
 
 

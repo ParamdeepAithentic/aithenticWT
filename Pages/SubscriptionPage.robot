@@ -574,4 +574,13 @@ Choose the tab under Subscription page
     wait until element is enabled       (//div[@id='dashboardCharts']//child::a)[${option}]       ${wait_time}
     click element        (//div[@id='dashboardCharts']//child::a)[${option}]
 
+Verify that page contains correct details
+    [Arguments]         ${option}
+    wait until element is not visible   ${loaderIcon}     ${wait_time}
+    wait until element is visible       //td[normalize-space()='${opiton}']      ${wait_time}
+    Page should contain element         //td[normalize-space()='${option}']
 
+Click on the row of the subscription overview table
+    wait until element is not visible   ${loaderIcon}     ${wait_time}
+    wait until element is visible       //td[normalize-space()='${opiton}']      ${wait_time}
+    Page should contain element         //td[normalize-space()='${option}']
