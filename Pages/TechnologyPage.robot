@@ -116,6 +116,7 @@ ${iamDone_BTN}      //button[text()="Done "]
 ${Yes_BTN}      //span[contains(text(),'Yes')]
 
 ####################### search asset id #####################
+
 #${asset_SearchBar}      css:input[placeholder='Ssearch by Brand, Product, Asset ID, Serial Num, Software VS, Assignee or Host Name']
 ${asset_SearchBar}      //input[contains(@placeholder,'Search by Brand, Product, Asset ID')]
 ${search_loader}     css:div[role='status']
@@ -373,6 +374,9 @@ Add host name for technology group information for hardware random
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${result}=    Catenate    HostName_${random_string}
     input text   ${host_name}   ${result}
+    log to console      ${result}
+    set global variable    ${result}
+
 
 #================================ CREATE SERIAL NUMBER ==========================
 Create unique serial number random
@@ -515,13 +519,17 @@ Select warranty end date
 
 Select technology lifecycle status
     [Arguments]    ${option1}
+    #Scroll Element Into View        css:#Comment
+    wait until element is visible   //ng-select[@id='LifeCycleStatusId']//span[@title='Clear all']    ${wait_time}
+    wait until element is enabled   //ng-select[@id='LifeCycleStatusId']//span[@title='Clear all']    ${wait_time}
+    click element       //ng-select[@id='LifeCycleStatusId']//span[@title='Clear all']
     wait until element is visible    ${LifeCycleStatusId}      ${wait_time}
     wait until element is enabled    ${LifeCycleStatusId}      ${wait_time}
     click element       ${LifeCycleStatusId}
-    wait until element is visible   //ng-select[@id='LifeCycleStatusId']//span[@title='Clear all']    ${wait_time}
-    click element       //ng-select[@id='LifeCycleStatusId']//span[@title='Clear all']
-    wait until element is visible   //span[normalize-space()='Active']      ${wait_time}
-    Generic.Select parameter    ${option1}
+    wait until element is visible   //ng-select[contains(@class,'qa-LifeCycleStatusId')]//ng-dropdown-panel//span[normalize-space()='Active']      ${wait_time}
+    wait until element is enabled  //ng-select[contains(@class,'qa-LifeCycleStatusId')]//ng-dropdown-panel//span[normalize-space()='Active']      ${wait_time}
+    click element   //ng-select[contains(@class,'qa-LifeCycleStatusId')]//ng-dropdown-panel//span[normalize-space()='Active']
+    #Generic.Select parameter    ${option1}
 
 
 Select edited technology lifecycle status
@@ -1846,3 +1854,22 @@ Get inner text of feature under product information
     Log To Console    Value of Textarea: ${textarea_value}
     set global variable     ${textarea_value}
     should be equal    ${textarea_value}     This is the features of new product added.
+
+Search by hostname
+    [Arguments]     ${name}
+    wait until element is visible       css:thead tr       ${wait_time}
+    wait until element is visible       ${asset_SearchBar}       ${wait_time}
+    Clear Element Text      ${asset_SearchBar}
+    input text      ${asset_SearchBar}     ${name}
+    sleep       ${search_sleep}
+    wait until element is visible       css:thead tr       ${wait_time}
+
+Select particular technology group via link while adding technology
+    [Arguments]    ${option}
+    wait until element is visible       css:nz-tree-select[formcontrolname=TechGroupId] input     ${wait_time}
+    wait until element is enabled       css:nz-tree-select[formcontrolname=TechGroupId] input     ${wait_time}
+    click element   css:nz-tree-select[formcontrolname=TechGroupId] input
+    input text      css:nz-tree-select[formcontrolname=TechGroupId] input       ${option}
+    wait until element is visible      //span[normalize-space()='${option}']       ${wait_time}
+    wait until element is enabled      //span[normalize-space()='${option}']       ${wait_time}
+    click element       //span[normalize-space()='${option}']
