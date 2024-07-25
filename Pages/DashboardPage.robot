@@ -1205,3 +1205,6 @@ Click on the checkboxes under auhtentication tab
     wait until element is visible      //label[normalize-space()='Use email authentication']      ${wait_time}
     wait until element is enabled      //label[normalize-space()='Use email authentication']        ${wait_time}
     click element  //label[normalize-space()='Use email authentication']
+
+Verify the visibility of validation message under change password
+     wait until element is visible      //span[@class='invalidInput ng-star-inserted']      ${wait_time}
