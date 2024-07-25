@@ -98,7 +98,7 @@ Set QA Variables
 
 Set UAT Variables
     Set Suite Variable    ${url}    https://uat-app.aithentic.com/
-    Set Suite Variable    ${valid_password}    Test!@5897     #UAT user
+    Set Suite Variable    ${valid_password}    Test@123     #UAT user
     Set Suite Variable    ${apiURL}    https://uat-api.aithentic.com/api/v1
     Set Suite Variable    ${agentDiscovery_TagName}    Tag Name - johnsoftwaresolutions-1428-4        #uat
     Set Suite Variable    ${IP_Discovered_devices}    Tag Name - johnsoftwaresolutions-1428-10        #uat
