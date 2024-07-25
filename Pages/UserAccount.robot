@@ -70,6 +70,7 @@ Enter the password
     Clear Element Text      ${user_accountPassword}
     input text      ${user_accountPassword}     ${password}
 
+
 Confirm the entered password
     [Arguments]    ${confirmPassword}
     wait until element is visible       ${user_accountConfirmPassword}       ${wait_time}
