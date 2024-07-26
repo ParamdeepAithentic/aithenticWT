@@ -1730,7 +1730,7 @@ Technology-Inactive asset and Restore asset
     TechnologyPage.Click on pop up of available Inactive Asset       technology
     Generic.Verify your current page location contains      manage-technology-list
     TechnologyPage.Search by AssetId       ${generated_AssetID}
-    TechnologyPage.Click on manage technology sub option       Technology List
+#    TechnologyPage.Click on manage technology sub option       Technology List
     TechnologyPage.Select and restore asset
     Generic.click on the button     Restore
     SubscriptionPage.Select the payment method    ach
@@ -2550,11 +2550,8 @@ Add Technology: Verify Renewal Date get auto-populate when enter contract end da
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Select parameter from technology dropdown list      OPMR815309
     TechnologyPage.Add assetID for technology lifecycle information random
-#    TechnologyPage.Select purchase date
-#    TechnologyPage.Select warranty end date    12/12/2028
     TechnologyPage.Add cost type of technology cost information        Fixed Length Contract
     TechnologyPage.Add payment type of technology cost information     FixedPayment
-#    TechnologyPage.Add payment peroid of technology cost information       Monthly
     TechnologyPage.Input current Date
     TechnologyPage.Add technology group information contract end date       ${current_date1}
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
@@ -2576,7 +2573,6 @@ Add Technology: Verify Renewal Date get auto-populate when enter contract end da
     Generic.Scroll the page till    1000
     TechnologyPage.Fetch the date from renewal date in add technology
     TechnologyPage.Compare Renewal date and contract end date in add technology
-
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
@@ -2590,19 +2586,38 @@ Add Technology: Verify Renewal Date get auto-populate when enter contract end da
     TechnologyPage.Compare Renewal date and contract end date on Technology details page
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+Search with hostname on the technology search bar
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    PartnersPage.Click here to add link of contract details
+    DashboardPage.Create random productName
+    DashboardPage.Add product brand name       QABrand555
+    TechnologyPage.Add product description via technology
+    TechnologyPage.Add product feature via technology
+    TechnologyPage.Select product technology type via technology     Hardware
+    TechnologyPage.Select particular technology group via link while adding technology    Notebooks & Accessories
+    TechnologyPage.Click on save product pop inside technology page
+    Generic.Fetch alert message text and compare it with    Product created successfully
+    TechnologyPage.Wait until brand loder is invisible
+    TechnologyPage.Add host name for technology group information for hardware random
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology-list
+    Generic.Wait until table get load
+    TechnologyPage.Search by hostname       ${result}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+    OCS.Get Value of Host-Name and compare it with    ${result}
 
 #Zz kill browser
 #    [Tags]      Smoke     Sanity      Time      rerun       Stable    yy

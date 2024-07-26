@@ -61,11 +61,7 @@ ${yop_sleep}       10
 
 ${search_sleep}       1
 
-
-
 ${CASE}        qa     #qa , uat , pre-prod
-
-
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
 
 *** Keywords ***
@@ -98,7 +94,7 @@ Set QA Variables
 
 Set UAT Variables
     Set Suite Variable    ${url}    https://uat-app.aithentic.com/
-    Set Suite Variable    ${valid_password}    Test!@5897     #UAT user
+    Set Suite Variable    ${valid_password}    Test@123     #UAT user
     Set Suite Variable    ${apiURL}    https://uat-api.aithentic.com/api/v1
     Set Suite Variable    ${agentDiscovery_TagName}    Tag Name - johnsoftwaresolutions-1428-4        #uat
     Set Suite Variable    ${IP_Discovered_devices}    Tag Name - johnsoftwaresolutions-1428-10        #uat
@@ -106,7 +102,7 @@ Set UAT Variables
     Set Suite Variable    ${admin_url}        https://uat-admin.aithentic.com/
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
-    Set Suite Variable    ${browser_name}         firefox
+    Set Suite Variable    ${browser_name}         headlessfirefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
     Set Suite Variable    ${discovered_asset_brand}                 Apple Inc
     Set Suite Variable    ${existing_mac}                       98:5a:eb:cb:c8:ed
@@ -121,7 +117,7 @@ Set Pre-Prod Variables
     Set Suite Variable    ${url}    https://pre-prod-app.aithentic.com/
     Set Suite Variable    ${valid_password}    Test@123     #pre prod
     Set Suite Variable    ${apiURL}    https://pre-prod-api.aithentic.com/api/v1
-    Set Suite Variable    ${browser_name}         firefox
+    Set Suite Variable    ${browser_name}         headlessfirefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
     Set Suite Variable    ${discovered_asset_brand}                ECS
     Set Suite Variable    ${existing_mac}                       b8:ae:ed:bc:1c:35
@@ -133,7 +129,7 @@ Set Pre-Prod Variables
 
 Set Default Variables
     Set Suite Variable    ${url}    https://uat-app.aithentic.com/
-    Set Suite Variable    ${valid_password}    Test!@5897     #UAT user
+    Set Suite Variable    ${valid_password}    Test@123     #UAT user
     Set Suite Variable    ${apiURL}    https://uat-api.aithentic.com/api/v1
     Set Suite Variable    ${agentDiscovery_TagName}    Tag Name - johnsoftwaresolutions-1428-4        #uat
     Set Suite Variable    ${admin_url}        https://uat-admin.aithentic.com/

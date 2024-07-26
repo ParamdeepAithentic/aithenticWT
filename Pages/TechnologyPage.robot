@@ -374,6 +374,9 @@ Add host name for technology group information for hardware random
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${result}=    Catenate    HostName_${random_string}
     input text   ${host_name}   ${result}
+    log to console      ${result}
+    set global variable    ${result}
+
 
 #================================ CREATE SERIAL NUMBER ==========================
 Create unique serial number random
@@ -1910,13 +1913,21 @@ Select option from contract end date warning pop-up
     click element       //div[@id='renewalDateWarning']//button[contains(@class,'qa-${option}-export')]
 # confirm, close
 
+Search by hostname
+    [Arguments]     ${name}
+    wait until element is visible       css:thead tr       ${wait_time}
+    wait until element is visible       ${asset_SearchBar}       ${wait_time}
+    Clear Element Text      ${asset_SearchBar}
+    input text      ${asset_SearchBar}     ${name}
+    sleep       ${search_sleep}
+    wait until element is visible       css:thead tr       ${wait_time}
 
-
-
-
-
-
-
-
-
-
+Select particular technology group via link while adding technology
+    [Arguments]    ${option}
+    wait until element is visible       css:nz-tree-select[formcontrolname=TechGroupId] input     ${wait_time}
+    wait until element is enabled       css:nz-tree-select[formcontrolname=TechGroupId] input     ${wait_time}
+    click element   css:nz-tree-select[formcontrolname=TechGroupId] input
+    input text      css:nz-tree-select[formcontrolname=TechGroupId] input       ${option}
+    wait until element is visible      //span[normalize-space()='${option}']       ${wait_time}
+    wait until element is enabled      //span[normalize-space()='${option}']       ${wait_time}
+    click element       //span[normalize-space()='${option}']
