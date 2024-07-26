@@ -1170,14 +1170,28 @@ Click on 'click here to add' link
     wait until element is enabled       //a[normalize-space()='here']
     click element       //a[normalize-space()='here']
 
+
 Enter Financial Year end date
     wait until element is visible   css:#financialYear     ${wait_time}
     wait until element is enabled   css:#financialYear     ${wait_time}
-    click element   css:#financialYear
+#    click element   css:#financialYear
     input text  css:#financialYear    12/31/2024
+    Press Keys   css:#financialYear   TAB
+
+Enter dates in Quarter
+    [Arguments]         ${option1}      ${option2}
+    wait until element is visible       css:.qa-company-information-financial-industry      ${wait_time}
+    sleep       ${search_sleep}
+    wait until element is visible   css:#financialYearq${option1}     ${wait_time}
+    wait until element is enabled   css:#financialYearq${option1}     ${wait_time}
+    input text  css:#financialYearq${option1}       ${option2}
+#    sleep       10
+    Press Keys   css:#financialYearq${option1}   TAB
+
 
 Verify your current page not contains this element
      wait until element is not visible   ${loaderIcon}      ${wait_time}
      Page Should not Contain Element        //div[contains(text(),'No Financial Year Settings Found')]
      Page should not contain element        //a[normalize-space()='here']
+
 

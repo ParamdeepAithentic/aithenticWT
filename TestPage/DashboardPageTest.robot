@@ -1641,8 +1641,13 @@ Management Console - Quarters filter dropdown
     DashboardPage.Verify your current page contains this element
     DashboardPage.Click on 'click here to add' link
     Generic.Verify your current page location contains      company-info
-    Enter Financial Year end date
-    sleep   100
+    DashboardPage.Enter dates in Quarter        1       03/31/2024
+    Generic.Fetch alert message text and compare it with        Company financial data updated successfully
+    DashboardPage.Enter dates in Quarter        2       06/30/2024
+    Generic.Fetch alert message text and compare it with        Company financial data updated successfully
+    DashboardPage.Enter dates in Quarter        3       09/30/2024
+    Generic.Fetch alert message text and compare it with        Company financial data updated successfully
+    DashboardPage.Enter Financial Year end date
     Generic.Fetch alert message text and compare it with        Company financial data updated successfully
     Generic.select the option from the side menu    Dashboard
     Generic.Verify your current page location contains      dashboard
