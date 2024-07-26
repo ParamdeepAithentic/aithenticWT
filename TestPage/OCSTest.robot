@@ -658,7 +658,7 @@ Upload Image and Document File while Add Discovery Asset
     END
 
 Upload Image and Document File while Add component as an asset from Agent Discovery page
-    [Tags]      Unstable
+    [Tags]      Unstable    rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -878,7 +878,7 @@ Match Discovery Asset with Static Existing Asset
     END
 
 Match IP Discovered Asset with Dynamic Existing Asset
-    [Tags]        Unstable
+    [Tags]        Unstable      rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -901,7 +901,7 @@ Match IP Discovered Asset with Dynamic Existing Asset
         Generic.Wait until table get load
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
-        Generic.Verify your current page location contains    ocs
+        Generic.Verify your current page location contains    aad
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
@@ -1108,6 +1108,7 @@ Network discovery: search on discovered asset list with Tag Name, IP_address and
         TechnologyPage.Select parameter from technology dropdown list      Product_aithentic
         TechnologyPage.Create unique serial number random
         OCS.Enter The Asset_id in Add Technology Page
+        TechnologyPage.Verify the visibility of assign to field
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
@@ -1129,6 +1130,7 @@ Network discovery: search on discovered asset list with Tag Name, IP_address and
         Generic.Verify your current page location contains      edit-technology
         OCS.Edit the MAC_Address of Asset
         OCS.Edit the Serial_No. of Asset
+        TechnologyPage.Select technology lifecycle status      Active
         sleep   ${search_sleep}
         TechnologyPage.Click on update button of edit_technology page       Update
         Generic.Fetch alert message text and compare it with        Technology updated successfully

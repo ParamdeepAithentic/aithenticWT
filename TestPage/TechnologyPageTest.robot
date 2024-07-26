@@ -85,9 +85,10 @@ Fill the technology form for license product
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date
     TechnologyPage.Select warranty end date    12/12/2028
+    TechnologyPage.Add order number of technology cost information     56
     TechnologyPage.Select technology lifecycle status      Active
     TechnologyPage.Add technology lifecycle comment    Technology Lifecycle Information- comment
-    TechnologyPage.Add order number of technology cost information     56
+
     TechnologyPage.Add payment partner of technology cost information      testqa 20Feb
     TechnologyPage.Add cost type of technology cost information        Fixed Length Contract
     TechnologyPage.Add payment type of technology cost information     FixedPayment
@@ -430,7 +431,7 @@ Restore asset from removed asset details page
 
 ################# Still have to work on this testcase ###############
 Restore asset by selecting checkbox
-    [Tags]    Smoke     Stable
+    [Tags]    Smoke     Stable      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -483,6 +484,7 @@ Restore asset by selecting checkbox
     TechnologyPage.Click on three dots of action button
     TechnologyPage.Select an option from recovery table actions    Restore
     Generic.Fetch alert message text and compare it with        Assets restored successfully.
+    TechnologyPage.Click on manage technology sub option        Technology List
     TechnologyPage.Search by AssetId   ${generated_AssetID}
 
 
@@ -1729,7 +1731,7 @@ Technology-Inactive asset and Restore asset
     TechnologyPage.Click on pop up of available Inactive Asset       technology
     Generic.Verify your current page location contains      manage-technology-list
     TechnologyPage.Search by AssetId       ${generated_AssetID}
-    TechnologyPage.Click on manage technology sub option       Technology List
+#    TechnologyPage.Click on manage technology sub option       Technology List
     TechnologyPage.Select and restore asset
     Generic.click on the button     Restore
     SubscriptionPage.Select the payment method    ach
@@ -1859,72 +1861,72 @@ Inactive asset - Restore asset from Technology Details page
     SubscriptionPage.Proceed the payment     proceed
     Generic.Fetch alert message text and compare it with      Payment Successful
 
-#Verify the technology data while applying agent Filters
-#    [Tags]      Unstable
-#    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-#    Generic.Verify your current page location contains      dashboard
-#    LandingPage.Verify you are on dashboard page
-#    Generic.select the option from the side menu    Technology
-#    Generic.Verify your current page location contains      technology
-#    TechnologyPage.Click on action button of technology
-#    TechnologyPage.Choose add technology from action button of technology
-#    Generic.Verify your current page location contains      addtechnology
-#    TechnologyPage.Click technology brand input field
-#    TechnologyPage.Select parameter from brand dropdown list       QABrand555
-#    TechnologyPage.Select parameter from technology dropdown list       Product_00337612322
-#    TechnologyPage.Create random unique serial number
-#    TechnologyPage.Add assetID for technology lifecycle information random
-#    TechnologyPage.Click on save technology form button
-#    Generic.Fetch alert message text and compare it with        Technology created successfully
-#    TechnologyPage.Click on save technology form pop button
-#    Generic.Verify your current page location contains      technology-list
-#    Generic.Wait until table get load
-#    Generic.Click on the profile name
-#    Generic.Select option from profile list     view-discovery
-#    Generic.Verify your current page location contains    ocs
-#    I_iconPage.Choose tab under Discovery Assets       network-discovery
-#    OCS.Click on newly discovered tab under network discovery
-#    OCS.Click on search icon of discovery assets
-#    OCS.Enter text to search discovery asset    Apple Inc
-#    OCS.Click on the down arrow icon of discovered asset
-#    Generic.Scroll Window To End
-#    OCS.Mouse Hover over searched Discovered Assets
-#    OCS.Get Tagname by hovering over discovered assets    Tag:
-#    OCS.Select any Discovered asset
-#    OCS.Click on search icon of discovery assets
-#    OCS.Click on search icon of Existing assets
-#    OCS.Enter text to search existing asset    ${generated_AssetID}
-#    OCS.Click on the down arrow icon of existing assets
-#    Generic.Scroll Window To End
-#    OCS.Mouse Hover over searched existing assets
-#    OCS.Verify searched existing asset    ${generated_AssetID}
-#    OCS.Select any existing asset
-#    OCS.Click on search icon of Existing assets
-#    OCS.Verify that line appears between selected assets
-#    OCS.Click on Button inside Network Discovery Page     Confirm Matches
-#    Generic.Fetch alert message text and compare it with      Matched Assets updated successfully
-#    Generic.select the option from the side menu    Technology
-#    Generic.Verify your current page location contains      technology
-#    TechnologyPage.Choose filter from Technology Page       Agent
-#    TechnologyPage.Select checkbox from Agent Filters       Assets with Agent
-#    Generic.Wait until table get load
-#    TechnologyPage.Verify that Agent column should contain text     ${hover_tagname}
-#    TechnologyPage.Select checkbox from Agent Filters       Assets without Agent
-#    Generic.Wait until table get load
-#    TechnologyPage.Verify that Agent column should contain text     -
-#    TechnologyPage.Search by AssetId       ${generated_AssetID}
-#    TechnologyPage.Click on manage technology sub option       Technology List
-#    TechnologyPage.Click on the first row of the technology table
-#    Generic.Verify your current page location contains    technology-details
-#    TechnologyPage.Click on edit button on product details page        Edit
-#    Generic.Verify your current page location contains      edit-technology
-#    OCS.Edit the MAC_Address of Asset
-#    OCS.Edit the Serial_No. of Asset
-#    OCS.Edit The Host_Name of Asset
-#    TechnologyPage.Click on update button of edit_technology page       Update
-#    Generic.Fetch alert message text and compare it with        Technology updated successfully
-#    UnselectAssetAPI.Hit API Endpoint
+Verify the technology data while applying agent Filters
+    [Tags]      Unstable
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list       Product_00337612322
+    TechnologyPage.Create random unique serial number
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology-list
+    Generic.Wait until table get load
+    Generic.Click on the profile name
+    Generic.Select option from profile list     view-discovery
+    Generic.Verify your current page location contains    ocs
+    I_iconPage.Choose tab under Discovery Assets       network-discovery
+    OCS.Click on newly discovered tab under network discovery
+    OCS.Click on search icon of discovery assets
+    OCS.Enter text to search discovery asset    Apple Inc
+    OCS.Click on the down arrow icon of discovered asset
+    Generic.Scroll Window To End
+    OCS.Mouse Hover over searched Discovered Assets
+    OCS.Get Tagname by hovering over discovered assets    Tag:
+    OCS.Select any Discovered asset
+    OCS.Click on search icon of discovery assets
+    OCS.Click on search icon of Existing assets
+    OCS.Enter text to search existing asset    ${generated_AssetID}
+    OCS.Click on the down arrow icon of existing assets
+    Generic.Scroll Window To End
+    OCS.Mouse Hover over searched existing assets
+    OCS.Verify searched existing asset    ${generated_AssetID}
+    OCS.Select any existing asset
+    OCS.Click on search icon of Existing assets
+    OCS.Verify that line appears between selected assets
+    OCS.Click on Button inside Network Discovery Page     Confirm Matches
+    Generic.Fetch alert message text and compare it with      Matched Assets updated successfully
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Choose filter from Technology Page       Agent
+    TechnologyPage.Select checkbox from Agent Filters       Assets with Agent
+    Generic.Wait until table get load
+    TechnologyPage.Verify that Agent column should contain text     ${hover_tagname}
+    TechnologyPage.Select checkbox from Agent Filters       Assets without Agent
+    Generic.Wait until table get load
+    TechnologyPage.Verify that Agent column should contain text     -
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains    technology-details
+    TechnologyPage.Click on edit button on product details page        Edit
+    Generic.Verify your current page location contains      edit-technology
+    OCS.Edit the MAC_Address of Asset
+    OCS.Edit the Serial_No. of Asset
+    OCS.Edit The Host_Name of Asset
+    TechnologyPage.Click on update button of edit_technology page       Update
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+    UnselectAssetAPI.Hit API Endpoint
 
 Click on the attachment tab under technology
     [Tags]      Stable
@@ -2279,7 +2281,7 @@ Verify cross icon and reset icon while adding product
     TechnologyPage.Verify the invisibility of technology type after clicking on reset icon
 
 Creating technology while creating cancellation notice period and contract end date
-    [Tags]      Stable
+    [Tags]      Stable      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -2418,7 +2420,7 @@ Dispose the technology while adding new brand and product
     Generic.Fetch alert message text and compare it with      Technology Removed Successfully
 
 Add the technology from profile listing
-    [Tags]      Stable
+    [Tags]      Stable      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -2534,6 +2536,40 @@ Verify_Asset_ID_Changing_settings_from_Profile_list
     TechnologyPage.Select an option from recovery table actions    Remove
     PartnersPage.Select option from the pop up  Yes
     Generic.Fetch alert message text and compare it with      Technology Removed Successfully
+
+Search with hostname on the technology search bar
+    [Tags]      rerun
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    PartnersPage.Click here to add link of contract details
+    DashboardPage.Create random productName
+    DashboardPage.Add product brand name       QABrand555
+    TechnologyPage.Add product description via technology
+    TechnologyPage.Add product feature via technology
+    TechnologyPage.Select product technology type via technology     Hardware
+    TechnologyPage.Select particular technology group via link while adding technology    Notebooks & Accessories
+    TechnologyPage.Click on save product pop inside technology page
+    Generic.Fetch alert message text and compare it with    Product created successfully
+    TechnologyPage.Wait until brand loder is invisible
+    TechnologyPage.Add host name for technology group information for hardware random
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology-list
+    Generic.Wait until table get load
+    TechnologyPage.Search by hostname       ${result}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+    OCS.Get Value of Host-Name and compare it with    ${result}
 
 #Zz kill browser
 #    [Tags]      Smoke     Sanity      Time      rerun       Stable    yy

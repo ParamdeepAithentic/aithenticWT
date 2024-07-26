@@ -110,3 +110,19 @@ Get verification OTP from email
     Log to console  The passcode is:${passcode}
 
     set global variable    ${passcode}
+
+
+Get security key of password
+    [Arguments]    ${text}
+    wait until element is visible   ${otp_mail_content}      ${wait_time}
+    ${mailContent}=     get text   ${otp_mail_content}
+
+    ${parts}    Split String    ${mailContent}    ${text}
+    log     mail:${parts}
+
+    ${passcode}    Get Substring    ${parts[1]}    1    8
+
+    Log    The passcode is: ${passcode}
+    Log to console  The passcode is:${passcode}
+
+    set global variable    ${passcode}
