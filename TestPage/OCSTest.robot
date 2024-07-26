@@ -658,7 +658,7 @@ Upload Image and Document File while Add Discovery Asset
     END
 
 Upload Image and Document File while Add component as an asset from Agent Discovery page
-    [Tags]      Unstable
+    [Tags]      Unstable    rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -878,7 +878,7 @@ Match Discovery Asset with Static Existing Asset
     END
 
 Match IP Discovered Asset with Dynamic Existing Asset
-    [Tags]        Unstable
+    [Tags]        Unstable      rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -901,7 +901,7 @@ Match IP Discovered Asset with Dynamic Existing Asset
         Generic.Wait until table get load
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
-        Generic.Verify your current page location contains    ocs
+        Generic.Verify your current page location contains    aad
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets

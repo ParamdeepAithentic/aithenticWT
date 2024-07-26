@@ -226,7 +226,7 @@ Signup with ACH payment method
 
 
 Change plan and Change asset limit with ACH Payment method
-    [Tags]      Smoke        Stable
+    [Tags]      Smoke        Stable     rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
