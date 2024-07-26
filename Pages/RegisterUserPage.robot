@@ -213,6 +213,7 @@ Click on the submit button under forgot password page
     Wait Until Element Is Visible    //input[@value='Submit']          ${wait_time}
     Wait Until Element Is Enabled    //input[@value='Submit']          ${wait_time}
     Click Element    //input[@value='Submit']
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
 
 Click on the reset password link under mail
     Wait Until Element Is Visible    //div[@id='mail']//a[normalize-space()='Link to reset credentials']          ${wait_time}
