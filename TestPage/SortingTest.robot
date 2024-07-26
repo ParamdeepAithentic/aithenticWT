@@ -425,7 +425,7 @@ Test the sorting of bulk edit grid under assigned users
     SortingPage.Verify the sorting of the table method five    2      First Name
 
 Test the sorting of Recent Activities Table under Dashboard page
-    [Tags]      Unstable
+    [Tags]      Unstable    rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
 #    LandingPage.Verify you are on dashboard page
