@@ -63,7 +63,7 @@ ${search_sleep}       1
 
 
 
-${CASE}        uat      #qa , uat , pre-prod
+${CASE}        qa     #qa , uat , pre-prod
 
 
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
@@ -84,7 +84,7 @@ Set QA Variables
     Set Suite Variable    ${admin_url}        https://qa-admin.aithentic.com/
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
-    Set Suite Variable    ${browser_name}         headlessfirefox
+    Set Suite Variable    ${browser_name}         firefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
     Set Suite Variable    ${discovered_asset_brand}                 MSI
     Set Suite Variable    ${existing_mac}                       D8:CB:8A:CA:6A:39

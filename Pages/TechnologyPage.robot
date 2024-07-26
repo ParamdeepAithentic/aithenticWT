@@ -1851,3 +1851,72 @@ Get inner text of feature under product information
     Log To Console    Value of Textarea: ${textarea_value}
     set global variable     ${textarea_value}
     should be equal    ${textarea_value}     This is the features of new product added.
+
+Fetch the date from renewal date in add technology
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait until element is visible       ${renewal_date}     ${wait_time}
+    ${fetch_renewal_date}=      Get value          ${renewal_date}
+    log to console      ${fetch_renewal_date}
+    set global variable     ${fetch_renewal_date}
+
+Change contract end date
+    [Arguments]     ${option}
+    wait until element is not visible       ${loaderIcon}   ${wait_time}
+    wait until element is visible       ${Contract_endDate}     ${Wait_time}
+    clear element text      ${Contract_endDate}
+    input text      ${Contract_endDate}         ${option}
+    Press keys    ${Contract_endDate}   Enter
+
+Compare Renewal date and contract end date in add technology
+    should be equal    ${current_date1}          ${fetch_renewal_date}
+
+Fetch contract end date from technology details page
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait until element is visible       ${Contract_endDate}     ${wait_time}
+    ${details_contract_date}=      Get value            ${Contract_endDate}
+    log to console      ${details_contract_date}
+    set global variable     ${details_contract_date}
+
+Fetch renewal date from technology details page
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait until element is visible       css:#renewalDate     ${wait_time}
+    ${details_renewal_date}=      Get value           css:#renewalDate
+    log to console      ${details_renewal_date}
+    set global variable     ${details_renewal_date}
+
+Compare Renewal date and contract end date on Technology details page
+    should be equal     ${details_contract_date}        ${details_renewal_date}
+
+Verify warning pop-up is visible when change contract end date
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait until element is visible       //div[@id='renewalDateWarning']//div[contains(@class,'modal-content')]     ${wait_time}
+    wait until element is enabled       //div[@id='renewalDateWarning']//div[contains(@class,'modal-content')]     ${wait_time}
+
+Verify pop-up is invisible
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait until element is not visible       //div[@id='renewalDateWarning']//div[contains(@class,'modal-content')]     ${wait_time}
+
+Close the warning contract date pop-up
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait until element is visible     //div[@id='renewalDateWarning']//button[@class='close']     ${wait_time}
+    wait until element is enabled     //div[@id='renewalDateWarning']//button[@class='close']     ${wait_time}
+    click element       //div[@id='renewalDateWarning']//button[@class='close']
+
+Select option from contract end date warning pop-up
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait until element is visible     //div[@id='renewalDateWarning']//button[contains(@class,'qa-${option}-export')]     ${wait_time}
+    wait until element is enabled     //div[@id='renewalDateWarning']//button[contains(@class,'qa-${option}-export')]     ${wait_time}
+    click element       //div[@id='renewalDateWarning']//button[contains(@class,'qa-${option}-export')]
+# confirm, close
+
+
+
+
+
+
+
+
+
+
+

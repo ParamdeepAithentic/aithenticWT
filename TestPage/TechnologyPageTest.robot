@@ -2536,6 +2536,74 @@ Verify_Asset_ID_Changing_settings_from_Profile_list
     PartnersPage.Select option from the pop up  Yes
     Generic.Fetch alert message text and compare it with      Technology Removed Successfully
 
+Add Technology: Verify Renewal Date get auto-populate when enter contract end date
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list      OPMR815309
+    TechnologyPage.Add assetID for technology lifecycle information random
+#    TechnologyPage.Select purchase date
+#    TechnologyPage.Select warranty end date    12/12/2028
+    TechnologyPage.Add cost type of technology cost information        Fixed Length Contract
+    TechnologyPage.Add payment type of technology cost information     FixedPayment
+#    TechnologyPage.Add payment peroid of technology cost information       Monthly
+    TechnologyPage.Input current Date
+    TechnologyPage.Add technology group information contract end date       ${current_date1}
+    TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
+    Generic.Scroll the page till    1000
+    sleep       20
+    TechnologyPage.Fetch the date from renewal date in add technology
+    TechnologyPage.Compare Renewal date and contract end date in add technology
+    TechnologyPage.Change contract end date
+    TechnologyPage.Verify warning pop-up is visible when change contract end date
+    TechnologyPage.Close the warning contract date pop-up
+    TechnologyPage.Verify pop-up is invisible
+    TechnologyPage.Change contract end date
+    TechnologyPage.Verify warning pop-up is visible when change contract end date
+    TechnologyPage.Select option from contract end date warning pop-up      close
+    TechnologyPage.Verify pop-up is invisible
+    TechnologyPage.Change contract end date         09/30/2024
+    TechnologyPage.Verify warning pop-up is visible when change contract end date
+    TechnologyPage.Select option from contract end date warning pop-up      confirm
+    Generic.Scroll the page till    1000
+    TechnologyPage.Fetch the date from renewal date in add technology
+    TechnologyPage.Compare Renewal date and contract end date in add technology
+
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology-list
+    Generic.Wait until table get load
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+    TechnologyPage.Fetch renewal date from technology details page
+    TechnologyPage.Fetch contract end date from technology details page
+    TechnologyPage.Compare Renewal date and contract end date on Technology details page
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #Zz kill browser
 #    [Tags]      Smoke     Sanity      Time      rerun       Stable    yy
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
