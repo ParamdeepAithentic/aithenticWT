@@ -241,5 +241,3 @@ Verify the visibility of validation when entering password more than the limit
 
 Verify the visibility of validation when entering password less than the limit
     Wait Until Element Is Visible    //span[normalize-space()='Invalid password: minimum length 8.']         ${wait_time}
-
-
