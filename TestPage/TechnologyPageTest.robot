@@ -372,7 +372,7 @@ Restore asset type one
 
 
 Restore asset from removed asset details page
-    [Tags]      Stable      rerun
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -431,7 +431,7 @@ Restore asset from removed asset details page
 
 ################# Still have to work on this testcase ###############
 Restore asset by selecting checkbox
-    [Tags]    Smoke     Stable      rerun
+    [Tags]    Smoke     Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -2538,7 +2538,7 @@ Verify_Asset_ID_Changing_settings_from_Profile_list
     Generic.Fetch alert message text and compare it with      Technology Removed Successfully
 
 Search with hostname on the technology search bar
-    [Tags]      rerun
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
