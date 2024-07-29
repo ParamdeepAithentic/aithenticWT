@@ -347,4 +347,3 @@ Change plan and Change asset limit with ACH Payment method
     BillingPage.Confirm if you want to delect account   confirm
     Generic.Fetch alert message text and compare it with      Bank removed successfully
     BillingPage.Close the billing payment options module
-
