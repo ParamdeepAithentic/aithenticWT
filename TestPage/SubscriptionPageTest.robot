@@ -195,7 +195,7 @@ Suspend and unsuspend the account
     END
 
 View Scheduler from view Result
-    [Tags]      Stable      rerun
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard

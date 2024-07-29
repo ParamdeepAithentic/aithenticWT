@@ -208,7 +208,7 @@ Match Discovery and Existing Asset
     END
 
 Apply filters and clear filter on Discovered Asset
-    [Tags]      Stable      rerun
+    [Tags]      Stable
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form     johns@mai.25u.com         Test@123
@@ -878,7 +878,7 @@ Match Discovery Asset with Static Existing Asset
     END
 
 Match IP Discovered Asset with Dynamic Existing Asset
-    [Tags]        Unstable      rerun
+    [Tags]        Unstable
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
