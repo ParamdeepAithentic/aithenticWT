@@ -1024,3 +1024,4 @@ Enter password of 8 characters while forgot password
     RegisterUserPage.Enter confirm password under reset password page   Test@123
     RegisterUserPage.Click on the submit button under forgot password page
     Generic.Verify your current page location contains      dashboard
+
