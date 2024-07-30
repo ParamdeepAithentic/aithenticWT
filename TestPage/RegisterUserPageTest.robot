@@ -348,6 +348,118 @@ Change plan and Change asset limit with ACH Payment method
     Generic.Fetch alert message text and compare it with      Bank removed successfully
     BillingPage.Close the billing payment options module
 
+
+Verify company domain and submit financial details
+    Generic.click on the tab	Register
+    Generic.Verify your current page location contains      register
+    ReplaceDomainAPI.Replace Domain
+    RegisterUserPage.Create random register first name
+    RegisterUserPage.Create random register last name
+    RegisterUserPage.Create random register company name
+    RegisterUserPage.Click on member type
+    RegisterUserPage.Select the member type      End User
+    RegisterUserPage.Create partner random business email
+    RegisterUserPage.Choose register user country      India   +91     9646289871
+    RegisterUserPage.Select the checkbox
+    RegisterUserPage.Save the register form
+    Generic.Verify your current page location contains      update-email
+    Generic.Open new window     yopmail
+    Generic.Refresh the existing page
+    Generic.Search yopmail emails for       ${generate_register_Email}
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   Email Register Verification Required.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Click on sign In button in yopmail email
+    Unselect Frame
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Create - Account
+    Generic.Verify your current page location contains     create-account
+    UserAccount.Enter the password      Paramdeep@112
+    UserAccount.Confirm the entered password    Paramdeep@112
+    UserAccount.Click on term and condition checkbox
+    UserAccount.Click create account button
+    Generic.Fetch alert message text and compare it with       Account created successfully.
+    Generic.Verify your current page location contains     auth
+    LandingPage.Fill the login Form      ${generate_register_Email}    Paramdeep@112
+    Switch Window    Inbox
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   OTP Verification.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Get verification OTP from email    Your passcode is
+    sleep       ${yop_sleep}
+    Switch Window   aithentic | OTP
+    TwoFactorAuth.Enter the otp     ${passcode}
+    TwoFactorAuth.Click verification button
+    Generic.Verify your current page location contains     subscription
+    SubscriptionPage.Select country of manufacturer profile     United States
+    SubscriptionPage.Select state of manufacturer profile   Texas
+    SubscriptionPage.Select city of manufacturer profile    Abram
+    SubscriptionPage.Input text into manufacturer address one       This is address 1
+    SubscriptionPage.Input text into manufacturer address two       This is address 2
+    SubscriptionPage.Input text into manufacturer zip code      73301
+    SubscriptionPage.Select department of manufacturer profile      Customer Support
+    SubscriptionPage.Input text into manufacturer position/title    Agent
+    SubscriptionPage.Save the manufacturer profile
+    Generic.Verify your current page location contains     subscription-menu
+    Generic.Fetch alert message text and compare it with       Profile saved successfully
+    SubscriptionPage.Select plan of subscription
+    SubscriptionPage.Select and move next with subscription
+    Generic.Verify your current page location contains     subscription-payment
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Select card type university
+    SubscriptionPage.Enter card account number    000123456789
+    SubscriptionPage.Enter card routing number      110000000
+    SubscriptionPage.Enter account holder name    Paramdeep Singh
+    SubscriptionPage.Check the authorization checkbox
+    SubscriptionPage.Check the acknowledgement checkbox
+    SubscriptionPage.Click on complete process button
+    Generic.Verify your current page location contains     welcome
+    Generic.Fetch alert message text and compare it with       Payment Successful
+    DashboardPage.Click on complete setup button      Complete Setup
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the asset ID checkbox     yes
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the location ID checkbox   yes
+    DashboardPage.Select the asset ID checkbox     no
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    I_iconPage.Choose tabs under organization        company
+    RegisterUserPage.Choose Industry under company financial information        Accomodation and Food Services
+    Generic.Fetch alert message text and compare it with        Company financial data updated successfully
+    RegisterUserPage.Choose Currency under company financial information        USD
+    Generic.Fetch alert message text and compare it with        Company financial data updated successfully
+    RegisterUserPage.Enter the following company information     revenue      5432
+    Generic.Fetch alert message text and compare it with        Company financial data updated successfully
+    RegisterUserPage.Enter the following company information     employees   50
+    Generic.Fetch alert message text and compare it with        Company financial data updated successfully
+    RegisterUserPage.Enter the following company information     financialYearq1    03/30/2024
+    Generic.Fetch alert message text and compare it with        Company financial data updated successfully
+    RegisterUserPage.Enter the following company information     financialYearq2    06/30/2024
+    Generic.Fetch alert message text and compare it with        Company financial data updated successfully
+    RegisterUserPage.Enter the following company information     financialYearq3    09/30/2024
+    RegisterUserPage.Enter the following company information     financialYear     12/30/2024
+    Generic.Fetch alert message text and compare it with        Company financial data updated successfully
+    Generic.Click on the profile name
+    Generic.Select option from profile list     company-details
+    Generic.Verify your current page location contains      company-profile
+    Generic.Scroll the page till            500
+    RegisterUserPage.Click on plus icon to add new company domain
+    RegisterUserPage.Add the new domain
+    Generic.Scroll Window To End
+    RegisterUserPage.Save the company domain
+    Generic.Fetch alert message text and compare it with        Domain created successfully
+    Generic.Verify your current page contains this text         View Added Domains
+    RegisterUserPage.View the added domains under company information
+    RegisterUserPage.Delete the company domain
+    Generic.click on the button      Yes
+    Generic.Fetch alert message text and compare it with        Domain deleted successfully
+
 Enter password more than the limit while changing password
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
@@ -374,8 +486,6 @@ Enter password more than the limit while changing password
     sleep       ${yop_sleep}
     Switch Window       aithentic | Create - Account
     Generic.Verify your current page location contains     create-account
-
-#----------------------------------------USER ACCOUNT---------------------------------------------------
     UserAccount.Enter the password      Test@123
     UserAccount.Confirm the entered password   Test@123
     UserAccount.Click on term and condition checkbox
@@ -396,7 +506,6 @@ Enter password more than the limit while changing password
     Switch Window   aithentic | OTP
     TwoFactorAuth.Enter the otp     ${passcode}
     TwoFactorAuth.Click verification button
-#--------------------------------------SUBSCRIPTION------------------------------------------------------------
     Generic.Verify your current page location contains     subscription
     SubscriptionPage.Select country of manufacturer profile     United States
     SubscriptionPage.Select state of manufacturer profile   Texas
@@ -412,7 +521,11 @@ Enter password more than the limit while changing password
     SubscriptionPage.Select plan of subscription
     SubscriptionPage.Select and move next with subscription
     Generic.Verify your current page location contains     subscription-payment
-#-------------------------------------------BILLING-----------------------------------------------------
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Select card type university
+    SubscriptionPage.Enter card account number    000123456789
+    SubscriptionPage.Enter card routing number      110000000
+    SubscriptionPage.Enter account holder name    Paramdeep Singh
     SubscriptionPage.Click on same billing address checkbox
     SubscriptionPage.Click on same billing address checkbox
     SubscriptionPage.Click on same billing address checkbox
