@@ -1959,7 +1959,6 @@ Download invoice pdf
     Generic.Verify your current page location contains     invoice-pdf
     Generic.Verify your current page contains this text     Client ID:
     Generic.click on the button     Download Pdf Version
-#    TechnologyPage.View the file by clicking on view icon over file     .pdf
     Sleep    ${Yop_Sleep}
     Switch Window       NEW
     Generic.Verify your current page location contains    .pdf
