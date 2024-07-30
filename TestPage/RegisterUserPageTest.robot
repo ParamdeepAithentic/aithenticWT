@@ -1108,10 +1108,6 @@ Update billing address via profile list
     DashboardPage.Select the location ID checkbox   yes
     DashboardPage.Select the asset ID checkbox      no
     Generic.Fetch alert message text and compare it with       Settings Updated
-#    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form      businessemail0284264468@yopmail.net    Test@123
-#    Generic.Verify your current page location contains      dashboard
-#    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     billing-dropdown
     Generic.Verify your current page location contains      billing-details
