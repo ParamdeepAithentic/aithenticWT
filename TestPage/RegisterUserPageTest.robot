@@ -226,7 +226,7 @@ Signup with ACH payment method
 
 
 Change plan and Change asset limit with ACH Payment method
-    [Tags]      Smoke        Stable
+    [Tags]      Smoke        Stable     rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -348,14 +348,8 @@ Change plan and Change asset limit with ACH Payment method
     Generic.Fetch alert message text and compare it with      Bank removed successfully
     BillingPage.Close the billing payment options module
 
+
 Verify company domain and submit financial details
-#    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form      BusinessEmail5292942479@yopmail.net    Paramdeep@112
-#    Generic.Verify your current page location contains      dashboard
-#    LandingPage.Verify you are on dashboard page
-#    Generic.Click on the profile name
-#    Generic.Select option from profile list     personal-details
-#    I_iconPage.Choose options inside personal_details        Organization
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -417,6 +411,8 @@ Verify company domain and submit financial details
     SubscriptionPage.Select and move next with subscription
     Generic.Verify your current page location contains     subscription-payment
     SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
     SubscriptionPage.Select card type university
     SubscriptionPage.Enter card account number    000123456789
     SubscriptionPage.Enter card routing number      110000000
@@ -449,7 +445,6 @@ Verify company domain and submit financial details
     RegisterUserPage.Enter the following company information     financialYearq3    09/30/2024
     RegisterUserPage.Enter the following company information     financialYear     12/30/2024
     Generic.Fetch alert message text and compare it with        Company financial data updated successfully
-#    DashboardPage.Select an option from company details side list    Profile
     Generic.Click on the profile name
     Generic.Select option from profile list     company-details
     Generic.Verify your current page location contains      company-profile
@@ -464,3 +459,681 @@ Verify company domain and submit financial details
     RegisterUserPage.Delete the company domain
     Generic.click on the button      Yes
     Generic.Fetch alert message text and compare it with        Domain deleted successfully
+
+Enter password more than the limit while changing password
+    Generic.click on the tab	Register
+    Generic.Verify your current page location contains      register
+    ReplaceDomainAPI.Replace Domain
+    RegisterUserPage.Create random register first name
+    RegisterUserPage.Create random register last name
+    RegisterUserPage.Create random register company name
+    RegisterUserPage.Click on member type
+    RegisterUserPage.Select the member type      End User
+    RegisterUserPage.Create partner random business email
+    RegisterUserPage.Choose register user country      India   +91     9646289871
+    RegisterUserPage.Select the checkbox
+    RegisterUserPage.Save the register form
+    Generic.Verify your current page location contains      update-email
+    Generic.Open new window     yopmail
+    Generic.Refresh the existing page
+    Generic.Search yopmail emails for       ${generate_register_Email}
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   Email Register Verification Required.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Click on sign In button in yopmail email
+    Unselect Frame
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Create - Account
+    Generic.Verify your current page location contains     create-account
+    UserAccount.Enter the password      Test@123
+    UserAccount.Confirm the entered password   Test@123
+    UserAccount.Click on term and condition checkbox
+    UserAccount.Click create account button
+    Generic.Fetch alert message text and compare it with       Account created successfully.
+    Generic.Verify your current page location contains     auth
+    LandingPage.Fill the login Form      ${generate_register_Email}    Test@123
+    Switch Window    Inbox
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   OTP Verification.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Get verification OTP from email    Your passcode is
+    sleep       ${yop_sleep}
+    Switch Window   aithentic | OTP
+    TwoFactorAuth.Enter the otp     ${passcode}
+    TwoFactorAuth.Click verification button
+    Generic.Verify your current page location contains     subscription
+    SubscriptionPage.Select country of manufacturer profile     United States
+    SubscriptionPage.Select state of manufacturer profile   Texas
+    SubscriptionPage.Select city of manufacturer profile    Abram
+    SubscriptionPage.Input text into manufacturer address one       This is address 1
+    SubscriptionPage.Input text into manufacturer address two       This is address 2
+    SubscriptionPage.Input text into manufacturer zip code      73301
+    SubscriptionPage.Select department of manufacturer profile      Customer Support
+    SubscriptionPage.Input text into manufacturer position/title    Agent
+    SubscriptionPage.Save the manufacturer profile
+    Generic.Verify your current page location contains     subscription-menu
+    Generic.Fetch alert message text and compare it with       Profile saved successfully
+    SubscriptionPage.Select plan of subscription
+    SubscriptionPage.Select and move next with subscription
+    Generic.Verify your current page location contains     subscription-payment
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Select card type university
+    SubscriptionPage.Enter card account number    000123456789
+    SubscriptionPage.Enter card routing number      110000000
+    SubscriptionPage.Enter account holder name    Paramdeep Singh
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Switch to card iframe
+    SubscriptionPage.Enter cardnumber    42424242424242420429242
+    Unselect Frame
+    SubscriptionPage.Enter card user name    Paramdeep Singh
+    SubscriptionPage.Check the authorization checkbox
+    SubscriptionPage.Check the acknowledgement checkbox
+    SubscriptionPage.Click on complete process button
+    Generic.Verify your current page location contains     welcome
+    Generic.Fetch alert message text and compare it with       Payment Successful
+    DashboardPage.Click on complete setup button      Complete Setup
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the location ID checkbox   yes
+    DashboardPage.Select the asset ID checkbox      no
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    DashboardPage.Select an option from company details side list   Security
+    Generic.Verify your current page location contains  security
+    DashboardPage.Click on change password link under security
+    Generic.Fetch alert message text and compare it with       OTP sent successfully
+    Switch Window    Inbox
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   Change Password
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Get security key of password    Here is your authorized OTP access code:
+    sleep       ${yop_sleep}
+    Switch Window   aithentic | Security
+    Generic.Verify your current page location contains     security
+    DashboardPage.Enter the security key    ${passcode}
+    DashboardPage.Enter input in the new password field     Test@1234Test@1234Test@1234Test@1234
+    DashboardPage.Enter input in the confirm password field      Test@1234Test@1234Test@1234Test@1234
+    DashboardPage.Click on save button under change password
+    DashboardPage.Verify the visibility of validation message under change password
+
+Enter password less than the limit while changing password
+    Generic.click on the tab	Register
+    Generic.Verify your current page location contains      register
+    ReplaceDomainAPI.Replace Domain
+    RegisterUserPage.Create random register first name
+    RegisterUserPage.Create random register last name
+    RegisterUserPage.Create random register company name
+    RegisterUserPage.Click on member type
+    RegisterUserPage.Select the member type      End User
+    RegisterUserPage.Create partner random business email
+    RegisterUserPage.Choose register user country      India   +91     9646289871
+    RegisterUserPage.Select the checkbox
+    RegisterUserPage.Save the register form
+    Generic.Verify your current page location contains      update-email
+    Generic.Open new window     yopmail
+    Generic.Refresh the existing page
+    Generic.Search yopmail emails for       ${generate_register_Email}
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   Email Register Verification Required.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Click on sign In button in yopmail email
+    Unselect Frame
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Create - Account
+    Generic.Verify your current page location contains     create-account
+
+#----------------------------------------USER ACCOUNT---------------------------------------------------
+    UserAccount.Enter the password      Test@123
+    UserAccount.Confirm the entered password   Test@123
+    UserAccount.Click on term and condition checkbox
+    UserAccount.Click create account button
+    Generic.Fetch alert message text and compare it with       Account created successfully.
+    Generic.Verify your current page location contains     auth
+    LandingPage.Fill the login Form      ${generate_register_Email}    Test@123
+    Switch Window    Inbox
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   OTP Verification.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Get verification OTP from email    Your passcode is
+    sleep       ${yop_sleep}
+    Switch Window   aithentic | OTP
+    TwoFactorAuth.Enter the otp     ${passcode}
+    TwoFactorAuth.Click verification button
+#--------------------------------------SUBSCRIPTION------------------------------------------------------------
+    Generic.Verify your current page location contains     subscription
+    SubscriptionPage.Select country of manufacturer profile     United States
+    SubscriptionPage.Select state of manufacturer profile   Texas
+    SubscriptionPage.Select city of manufacturer profile    Abram
+    SubscriptionPage.Input text into manufacturer address one       This is address 1
+    SubscriptionPage.Input text into manufacturer address two       This is address 2
+    SubscriptionPage.Input text into manufacturer zip code      73301
+    SubscriptionPage.Select department of manufacturer profile      Customer Support
+    SubscriptionPage.Input text into manufacturer position/title    Agent
+    SubscriptionPage.Save the manufacturer profile
+    Generic.Verify your current page location contains     subscription-menu
+    Generic.Fetch alert message text and compare it with       Profile saved successfully
+    SubscriptionPage.Select plan of subscription
+    SubscriptionPage.Select and move next with subscription
+    Generic.Verify your current page location contains     subscription-payment
+#-------------------------------------------BILLING-----------------------------------------------------
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Switch to card iframe
+    SubscriptionPage.Enter cardnumber    42424242424242420429242
+    Unselect Frame
+    SubscriptionPage.Enter card user name    Paramdeep Singh
+    SubscriptionPage.Check the authorization checkbox
+    SubscriptionPage.Check the acknowledgement checkbox
+    SubscriptionPage.Click on complete process button
+    Generic.Verify your current page location contains     welcome
+    Generic.Fetch alert message text and compare it with       Payment Successful
+    DashboardPage.Click on complete setup button      Complete Setup
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the location ID checkbox   yes
+    DashboardPage.Select the asset ID checkbox      no
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    DashboardPage.Select an option from company details side list   Security
+    Generic.Verify your current page location contains  security
+    DashboardPage.Click on change password link under security
+    Generic.Fetch alert message text and compare it with       OTP sent successfully
+    Switch Window    Inbox
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   Change Password
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Get security key of password    Here is your authorized OTP access code:
+    sleep       ${yop_sleep}
+    Switch Window   aithentic | Security
+    Generic.Verify your current page location contains     security
+    DashboardPage.Enter the security key    ${passcode}
+    DashboardPage.Enter input in the new password field     Test@12
+    DashboardPage.Enter input in the confirm password field      Test@12
+    DashboardPage.Click on save button under change password
+    DashboardPage.Verify the visibility of validation message under change password
+
+Enter password of 32 characters while changing password
+    Generic.click on the tab	Register
+    Generic.Verify your current page location contains      register
+    ReplaceDomainAPI.Replace Domain
+    RegisterUserPage.Create random register first name
+    RegisterUserPage.Create random register last name
+    RegisterUserPage.Create random register company name
+    RegisterUserPage.Click on member type
+    RegisterUserPage.Select the member type      End User
+    RegisterUserPage.Create partner random business email
+    RegisterUserPage.Choose register user country      India   +91     9646289871
+    RegisterUserPage.Select the checkbox
+    RegisterUserPage.Save the register form
+    Generic.Verify your current page location contains      update-email
+    Generic.Open new window     yopmail
+    Generic.Refresh the existing page
+    Generic.Search yopmail emails for       ${generate_register_Email}
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   Email Register Verification Required.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Click on sign In button in yopmail email
+    Unselect Frame
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Create - Account
+    Generic.Verify your current page location contains     create-account
+
+#----------------------------------------USER ACCOUNT---------------------------------------------------
+    UserAccount.Enter the password      Test@123
+    UserAccount.Confirm the entered password   Test@123
+    UserAccount.Click on term and condition checkbox
+    UserAccount.Click create account button
+    Generic.Fetch alert message text and compare it with       Account created successfully.
+    Generic.Verify your current page location contains     auth
+    LandingPage.Fill the login Form      ${generate_register_Email}    Test@123
+    Switch Window    Inbox
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   OTP Verification.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Get verification OTP from email    Your passcode is
+    sleep       ${yop_sleep}
+    Switch Window   aithentic | OTP
+    TwoFactorAuth.Enter the otp     ${passcode}
+    TwoFactorAuth.Click verification button
+#--------------------------------------SUBSCRIPTION------------------------------------------------------------
+    Generic.Verify your current page location contains     subscription
+    SubscriptionPage.Select country of manufacturer profile     United States
+    SubscriptionPage.Select state of manufacturer profile   Texas
+    SubscriptionPage.Select city of manufacturer profile    Abram
+    SubscriptionPage.Input text into manufacturer address one       This is address 1
+    SubscriptionPage.Input text into manufacturer address two       This is address 2
+    SubscriptionPage.Input text into manufacturer zip code      73301
+    SubscriptionPage.Select department of manufacturer profile      Customer Support
+    SubscriptionPage.Input text into manufacturer position/title    Agent
+    SubscriptionPage.Save the manufacturer profile
+    Generic.Verify your current page location contains     subscription-menu
+    Generic.Fetch alert message text and compare it with       Profile saved successfully
+    SubscriptionPage.Select plan of subscription
+    SubscriptionPage.Select and move next with subscription
+    Generic.Verify your current page location contains     subscription-payment
+#-------------------------------------------BILLING-----------------------------------------------------
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Switch to card iframe
+    SubscriptionPage.Enter cardnumber    42424242424242420429242
+    Unselect Frame
+    SubscriptionPage.Enter card user name    Paramdeep Singh
+    SubscriptionPage.Check the authorization checkbox
+    SubscriptionPage.Check the acknowledgement checkbox
+    SubscriptionPage.Click on complete process button
+    Generic.Verify your current page location contains     welcome
+    Generic.Fetch alert message text and compare it with       Payment Successful
+    DashboardPage.Click on complete setup button      Complete Setup
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the location ID checkbox   yes
+    DashboardPage.Select the asset ID checkbox      no
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    DashboardPage.Select an option from company details side list   Security
+    Generic.Verify your current page location contains  security
+    DashboardPage.Click on change password link under security
+    Generic.Fetch alert message text and compare it with       OTP sent successfully
+    Switch Window    Inbox
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   Change Password
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Get security key of password    Here is your authorized OTP access code:
+    sleep       ${yop_sleep}
+    Switch Window   aithentic | Security
+    Generic.Verify your current page location contains     security
+    DashboardPage.Enter the security key    ${passcode}
+    DashboardPage.Enter input in the new password field     Test@1234Test@1234Test@1234Test@
+    DashboardPage.Enter input in the confirm password field     Test@1234Test@1234Test@1234Test@
+    DashboardPage.Click on save button under change password
+    Generic.Fetch alert message text and compare it with       Password changed successfully
+    DashboardPage.click on the authentication tab under security
+    Generic.Verify your current page location contains     security
+    DashboardPage.Click on the checkboxes under auhtentication tab
+    Generic.Fetch alert message text and compare it with       Two factor updated successfully
+    Generic.Click on the profile name
+    Generic.Select other option from profile list     Logout
+    Generic.Fetch log_out alert message
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form     ${generate_register_Email}   Test@1234Test@1234Test@1234Test@
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+
+Enter password of more than the limit while forgot password
+    Generic.click on the tab	Register
+    Generic.Verify your current page location contains      register
+    ReplaceDomainAPI.Replace Domain
+    RegisterUserPage.Create random register first name
+    RegisterUserPage.Create random register last name
+    RegisterUserPage.Create random register company name
+    RegisterUserPage.Click on member type
+    RegisterUserPage.Select the member type      End User
+    RegisterUserPage.Create partner random business email
+    RegisterUserPage.Choose register user country      India   +91     9646289871
+    RegisterUserPage.Select the checkbox
+    RegisterUserPage.Save the register form
+    Generic.Verify your current page location contains      update-email
+    Generic.Open new window     yopmail
+    Generic.Refresh the existing page
+    Generic.Search yopmail emails for       ${generate_register_Email}
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   Email Register Verification Required.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Click on sign In button in yopmail email
+    Unselect Frame
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Create - Account
+    Generic.Verify your current page location contains     create-account
+
+#----------------------------------------USER ACCOUNT---------------------------------------------------
+    UserAccount.Enter the password      Test@123
+    UserAccount.Confirm the entered password   Test@123
+    UserAccount.Click on term and condition checkbox
+    UserAccount.Click create account button
+    Generic.Fetch alert message text and compare it with       Account created successfully.
+    Generic.Verify your current page location contains     auth
+    LandingPage.Fill the login Form      ${generate_register_Email}    Test@123
+    Switch Window    Inbox
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   OTP Verification.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Get verification OTP from email    Your passcode is
+    sleep       ${yop_sleep}
+    Switch Window   aithentic | OTP
+    TwoFactorAuth.Enter the otp     ${passcode}
+    TwoFactorAuth.Click verification button
+#--------------------------------------SUBSCRIPTION------------------------------------------------------------
+    Generic.Verify your current page location contains     subscription
+    SubscriptionPage.Select country of manufacturer profile     United States
+    SubscriptionPage.Select state of manufacturer profile   Texas
+    SubscriptionPage.Select city of manufacturer profile    Abram
+    SubscriptionPage.Input text into manufacturer address one       This is address 1
+    SubscriptionPage.Input text into manufacturer address two       This is address 2
+    SubscriptionPage.Input text into manufacturer zip code      73301
+    SubscriptionPage.Select department of manufacturer profile      Customer Support
+    SubscriptionPage.Input text into manufacturer position/title    Agent
+    SubscriptionPage.Save the manufacturer profile
+    Generic.Verify your current page location contains     subscription-menu
+    Generic.Fetch alert message text and compare it with       Profile saved successfully
+    SubscriptionPage.Select plan of subscription
+    SubscriptionPage.Select and move next with subscription
+    Generic.Verify your current page location contains     subscription-payment
+#-------------------------------------------BILLING-----------------------------------------------------
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Switch to card iframe
+    SubscriptionPage.Enter cardnumber    42424242424242420429242
+    Unselect Frame
+    SubscriptionPage.Enter card user name    Paramdeep Singh
+    SubscriptionPage.Check the authorization checkbox
+    SubscriptionPage.Check the acknowledgement checkbox
+    SubscriptionPage.Click on complete process button
+    Generic.Verify your current page location contains     welcome
+    Generic.Fetch alert message text and compare it with       Payment Successful
+    DashboardPage.Click on complete setup button      Complete Setup
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the location ID checkbox   yes
+    DashboardPage.Select the asset ID checkbox      no
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    DashboardPage.Select an option from company details side list   Security
+    DashboardPage.click on the authentication tab under security
+    Generic.Verify your current page location contains     security
+    DashboardPage.Click on the checkboxes under auhtentication tab
+    Generic.Fetch alert message text and compare it with       Two factor updated successfully
+    Generic.Click on the profile name
+    Generic.Select other option from profile list     Logout
+    Generic.Fetch log_out alert message
+    Generic.click on the tab	Login
+    Generic.click on the tab        Forgot Password?
+    RegisterUserPage.Enter user name under forgot password page     ${generate_register_Email}
+    RegisterUserPage.Click on the submit button under forgot password page
+    Switch Window    Inbox
+    Generic.Refresh the existing page
+    Switch Window   Sign in to Aithentic
+    sleep       2
+    close window
+    sleep       2
+    Switch Window    Inbox
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifmail
+    RegisterUserPage.Click on the reset password link under mail
+    sleep       ${yop_sleep}
+    Switch Window   Sign in to Aithentic
+    Generic.Verify your current page contains this text      Update password
+    RegisterUserPage.Enter new password under reset password page   Test@1235Test@1235Test@1235Test@1235
+    RegisterUserPage.Enter confirm password under reset password page   Test@1235Test@1235Test@1235Test@1235
+    RegisterUserPage.Click on the submit button under forgot password page
+    RegisterUserPage.Verify the visibility of validation when entering password more than the limit
+
+Enter password of less than the limit while forgot password
+    Generic.click on the tab	Register
+    Generic.Verify your current page location contains      register
+    ReplaceDomainAPI.Replace Domain
+    RegisterUserPage.Create random register first name
+    RegisterUserPage.Create random register last name
+    RegisterUserPage.Create random register company name
+    RegisterUserPage.Click on member type
+    RegisterUserPage.Select the member type      End User
+    RegisterUserPage.Create partner random business email
+    RegisterUserPage.Choose register user country      India   +91     9646289871
+    RegisterUserPage.Select the checkbox
+    RegisterUserPage.Save the register form
+    Generic.Verify your current page location contains      update-email
+    Generic.Open new window     yopmail
+    Generic.Refresh the existing page
+    Generic.Search yopmail emails for       ${generate_register_Email}
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   Email Register Verification Required.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Click on sign In button in yopmail email
+    Unselect Frame
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Create - Account
+    Generic.Verify your current page location contains     create-account
+
+#----------------------------------------USER ACCOUNT---------------------------------------------------
+    UserAccount.Enter the password      Test@123
+    UserAccount.Confirm the entered password   Test@123
+    UserAccount.Click on term and condition checkbox
+    UserAccount.Click create account button
+    Generic.Fetch alert message text and compare it with       Account created successfully.
+    Generic.Verify your current page location contains     auth
+    LandingPage.Fill the login Form      ${generate_register_Email}    Test@123
+    Switch Window    Inbox
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   OTP Verification.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Get verification OTP from email    Your passcode is
+    sleep       ${yop_sleep}
+    Switch Window   aithentic | OTP
+    TwoFactorAuth.Enter the otp     ${passcode}
+    TwoFactorAuth.Click verification button
+#--------------------------------------SUBSCRIPTION------------------------------------------------------------
+    Generic.Verify your current page location contains     subscription
+    SubscriptionPage.Select country of manufacturer profile     United States
+    SubscriptionPage.Select state of manufacturer profile   Texas
+    SubscriptionPage.Select city of manufacturer profile    Abram
+    SubscriptionPage.Input text into manufacturer address one       This is address 1
+    SubscriptionPage.Input text into manufacturer address two       This is address 2
+    SubscriptionPage.Input text into manufacturer zip code      73301
+    SubscriptionPage.Select department of manufacturer profile      Customer Support
+    SubscriptionPage.Input text into manufacturer position/title    Agent
+    SubscriptionPage.Save the manufacturer profile
+    Generic.Verify your current page location contains     subscription-menu
+    Generic.Fetch alert message text and compare it with       Profile saved successfully
+    SubscriptionPage.Select plan of subscription
+    SubscriptionPage.Select and move next with subscription
+    Generic.Verify your current page location contains     subscription-payment
+#-------------------------------------------BILLING-----------------------------------------------------
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Switch to card iframe
+    SubscriptionPage.Enter cardnumber    42424242424242420429242
+    Unselect Frame
+    SubscriptionPage.Enter card user name    Paramdeep Singh
+    SubscriptionPage.Check the authorization checkbox
+    SubscriptionPage.Check the acknowledgement checkbox
+    SubscriptionPage.Click on complete process button
+    Generic.Verify your current page location contains     welcome
+    Generic.Fetch alert message text and compare it with       Payment Successful
+    DashboardPage.Click on complete setup button      Complete Setup
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the location ID checkbox   yes
+    DashboardPage.Select the asset ID checkbox      no
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    DashboardPage.Select an option from company details side list   Security
+    DashboardPage.click on the authentication tab under security
+    Generic.Verify your current page location contains     security
+    DashboardPage.Click on the checkboxes under auhtentication tab
+    Generic.Fetch alert message text and compare it with       Two factor updated successfully
+    Generic.Click on the profile name
+    Generic.Select other option from profile list     Logout
+    Generic.Fetch log_out alert message
+    Generic.click on the tab	Login
+    Generic.click on the tab        Forgot Password?
+    RegisterUserPage.Enter user name under forgot password page     ${generate_register_Email}
+    RegisterUserPage.Click on the submit button under forgot password page
+    Switch Window    Inbox
+    Generic.Refresh the existing page
+    Switch Window   Sign in to Aithentic
+    sleep       2
+    close window
+    sleep       2
+    Switch Window    Inbox
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifmail
+    RegisterUserPage.Click on the reset password link under mail
+    sleep       ${yop_sleep}
+    Switch Window   Sign in to Aithentic
+    Generic.Verify your current page contains this text      Update password
+    RegisterUserPage.Enter new password under reset password page   Test@12
+    RegisterUserPage.Enter confirm password under reset password page   Test@12
+    RegisterUserPage.Click on the submit button under forgot password page
+    RegisterUserPage.Verify the visibility of validation when entering password less than the limit
+
+Enter password of 8 characters while forgot password
+    Generic.click on the tab	Register
+    Generic.Verify your current page location contains      register
+    ReplaceDomainAPI.Replace Domain
+    RegisterUserPage.Create random register first name
+    RegisterUserPage.Create random register last name
+    RegisterUserPage.Create random register company name
+    RegisterUserPage.Click on member type
+    RegisterUserPage.Select the member type      End User
+    RegisterUserPage.Create partner random business email
+    RegisterUserPage.Choose register user country      India   +91     9646289871
+    RegisterUserPage.Select the checkbox
+    RegisterUserPage.Save the register form
+    Generic.Verify your current page location contains      update-email
+    Generic.Open new window     yopmail
+    Generic.Refresh the existing page
+    Generic.Search yopmail emails for       ${generate_register_Email}
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   Email Register Verification Required.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Click on sign In button in yopmail email
+    Unselect Frame
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Create - Account
+    Generic.Verify your current page location contains     create-account
+
+#----------------------------------------USER ACCOUNT---------------------------------------------------
+    UserAccount.Enter the password      Test@123
+    UserAccount.Confirm the entered password   Test@123
+    UserAccount.Click on term and condition checkbox
+    UserAccount.Click create account button
+    Generic.Fetch alert message text and compare it with       Account created successfully.
+    Generic.Verify your current page location contains     auth
+    LandingPage.Fill the login Form      ${generate_register_Email}    Test@123
+    Switch Window    Inbox
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   OTP Verification.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Get verification OTP from email    Your passcode is
+    sleep       ${yop_sleep}
+    Switch Window   aithentic | OTP
+    TwoFactorAuth.Enter the otp     ${passcode}
+    TwoFactorAuth.Click verification button
+#--------------------------------------SUBSCRIPTION------------------------------------------------------------
+    Generic.Verify your current page location contains     subscription
+    SubscriptionPage.Select country of manufacturer profile     United States
+    SubscriptionPage.Select state of manufacturer profile   Texas
+    SubscriptionPage.Select city of manufacturer profile    Abram
+    SubscriptionPage.Input text into manufacturer address one       This is address 1
+    SubscriptionPage.Input text into manufacturer address two       This is address 2
+    SubscriptionPage.Input text into manufacturer zip code      73301
+    SubscriptionPage.Select department of manufacturer profile      Customer Support
+    SubscriptionPage.Input text into manufacturer position/title    Agent
+    SubscriptionPage.Save the manufacturer profile
+    Generic.Verify your current page location contains     subscription-menu
+    Generic.Fetch alert message text and compare it with       Profile saved successfully
+    SubscriptionPage.Select plan of subscription
+    SubscriptionPage.Select and move next with subscription
+    Generic.Verify your current page location contains     subscription-payment
+#-------------------------------------------BILLING-----------------------------------------------------
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Switch to card iframe
+    SubscriptionPage.Enter cardnumber    42424242424242420429242
+    Unselect Frame
+    SubscriptionPage.Enter card user name    Paramdeep Singh
+    SubscriptionPage.Check the authorization checkbox
+    SubscriptionPage.Check the acknowledgement checkbox
+    SubscriptionPage.Click on complete process button
+    Generic.Verify your current page location contains     welcome
+    Generic.Fetch alert message text and compare it with       Payment Successful
+    DashboardPage.Click on complete setup button      Complete Setup
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the location ID checkbox   yes
+    DashboardPage.Select the asset ID checkbox      no
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    DashboardPage.Select an option from company details side list   Security
+    DashboardPage.click on the authentication tab under security
+    Generic.Verify your current page location contains     security
+    DashboardPage.Click on the checkboxes under auhtentication tab
+    Generic.Fetch alert message text and compare it with       Two factor updated successfully
+    Generic.Click on the profile name
+    Generic.Select other option from profile list     Logout
+    Generic.Fetch log_out alert message
+    Generic.click on the tab	Login
+    Generic.click on the tab        Forgot Password?
+    RegisterUserPage.Enter user name under forgot password page     ${generate_register_Email}
+    RegisterUserPage.Click on the submit button under forgot password page
+    Switch Window    Inbox
+    Generic.Refresh the existing page
+    Switch Window   Sign in to Aithentic
+    sleep       2
+    close window
+    sleep       2
+    Switch Window    Inbox
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifmail
+    RegisterUserPage.Click on the reset password link under mail
+    sleep       ${yop_sleep}
+    Switch Window   Sign in to Aithentic
+    Generic.Verify your current page contains this text      Update password
+    RegisterUserPage.Enter new password under reset password page   Test@123
+    RegisterUserPage.Enter confirm password under reset password page   Test@123
+    RegisterUserPage.Click on the submit button under forgot password page
+    Generic.Verify your current page location contains      dashboard
