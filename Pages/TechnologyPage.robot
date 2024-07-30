@@ -1868,7 +1868,7 @@ Change contract end date
     wait until element is visible       ${Contract_endDate}     ${Wait_time}
     clear element text      ${Contract_endDate}
     input text      ${Contract_endDate}         ${option}
-    Press keys    ${Contract_endDate}   Enter
+    Press keys    ${Contract_endDate}   TAB
 
 Compare Renewal date and contract end date in add technology
     should be equal    ${current_date1}          ${fetch_renewal_date}
@@ -1903,6 +1903,7 @@ Close the warning contract date pop-up
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     Wait until element is visible     //div[@id='renewalDateWarning']//button[@class='close']     ${wait_time}
     wait until element is enabled     //div[@id='renewalDateWarning']//button[@class='close']     ${wait_time}
+    sleep       ${search_sleep}
     click element       //div[@id='renewalDateWarning']//button[@class='close']
 
 Select option from contract end date warning pop-up

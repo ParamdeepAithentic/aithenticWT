@@ -2557,18 +2557,19 @@ Add Technology: Verify Renewal Date get auto-populate when enter contract end da
     TechnologyPage.Add technology group information contract end date       ${current_date1}
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     Generic.Scroll the page till    1000
-    sleep       20
+#    sleep       20
     TechnologyPage.Fetch the date from renewal date in add technology
     TechnologyPage.Compare Renewal date and contract end date in add technology
-    TechnologyPage.Change contract end date
+    TechnologyPage.Input future Date
+    TechnologyPage.Change contract end date     ${formatted_future_date}
     TechnologyPage.Verify warning pop-up is visible when change contract end date
     TechnologyPage.Close the warning contract date pop-up
     TechnologyPage.Verify pop-up is invisible
-    TechnologyPage.Change contract end date
+    TechnologyPage.Change contract end date     ${formatted_future_date}
     TechnologyPage.Verify warning pop-up is visible when change contract end date
     TechnologyPage.Select option from contract end date warning pop-up      close
     TechnologyPage.Verify pop-up is invisible
-    TechnologyPage.Change contract end date         09/30/2024
+    TechnologyPage.Change contract end date         ${formatted_future_date}
     TechnologyPage.Verify warning pop-up is visible when change contract end date
     TechnologyPage.Select option from contract end date warning pop-up      confirm
     Generic.Scroll the page till    1000
