@@ -184,5 +184,3 @@ Add new zip code of billing
     clear element text      css:#zipCode
     click element    css:#zipCode
     input text   css:#zipCode    ${code}
-
-
