@@ -586,7 +586,7 @@ Upload I-icon under clone add technology
 
 
 Upload I-icon while adding discovery and component asset
-    [Tags]    rerun     Unstable
+    [Tags]    rerun     Unstable    rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.Verify your current page location contains      dashboard

@@ -199,3 +199,45 @@ Save the Profile details
     Wait Until Element Is Visible    //div[contains(@class,'buttons')]//button[normalize-space()='${option1}']          ${wait_time}
     Wait Until Element Is Enabled    //div[contains(@class,'buttons')]//button[normalize-space()='${option1}']          ${wait_time}
     Click Element    //div[contains(@class,'buttons')]//button[normalize-space()='${option1}']
+
+Enter user name under forgot password page
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //input[@id='username']          ${wait_time}
+    Wait Until Element Is Enabled    //input[@id='username']          ${wait_time}
+    Click Element    //input[@id='username']
+    input text      //input[@id='username']     ${option}
+
+Click on the submit button under forgot password page
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //input[@value='Submit']          ${wait_time}
+    Wait Until Element Is Enabled    //input[@value='Submit']          ${wait_time}
+    Click Element    //input[@value='Submit']
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+
+Click on the reset password link under mail
+    Wait Until Element Is Visible    //div[@id='mail']//a[normalize-space()='Link to reset credentials']          ${wait_time}
+    Wait Until Element Is Enabled    //div[@id='mail']//a[normalize-space()='Link to reset credentials']          ${wait_time}
+    Click Element    //div[@id='mail']//a[normalize-space()='Link to reset credentials']
+
+Enter new password under reset password page
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //input[@id='password-new']          ${wait_time}
+    Wait Until Element Is Enabled    //input[@id='password-new']         ${wait_time}
+    Click Element    //input[@id='password-new']
+    input text      //input[@id='password-new']     ${option}
+
+Enter confirm password under reset password page
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //input[@id='password-confirm']          ${wait_time}
+    Wait Until Element Is Enabled    //input[@id='password-confirm']         ${wait_time}
+    Click Element    //input[@id='password-confirm']
+    input text      //input[@id='password-confirm']     ${option}
+
+Verify the visibility of validation when entering password more than the limit
+    Wait Until Element Is Visible    //span[normalize-space()='Invalid password: maximum length 32.']         ${wait_time}
+
+Verify the visibility of validation when entering password less than the limit
+    Wait Until Element Is Visible    //span[normalize-space()='Invalid password: minimum length 8.']         ${wait_time}

@@ -1159,6 +1159,38 @@ Click on done button of subscription overview
     [Arguments]     ${option}
     Generic.click on the button         ${option}
 
+Verify your current page contains this element
+     wait until element is not visible   ${loaderIcon}      ${wait_time}
+     Page Should Contain Element        //div[contains(text(),'No Financial Year Settings Found')]
+     Page should contain element        //a[normalize-space()='here']
+
+Click on 'click here to add' link
+    wait until element is not visible   ${loaderIcon}       ${wait_time}
+    wait until element is visible       //a[normalize-space()='here']
+    wait until element is enabled       //a[normalize-space()='here']
+    click element       //a[normalize-space()='here']
+
+Enter Financial Year end date
+    wait until element is visible   css:#financialYear     ${wait_time}
+    wait until element is enabled   css:#financialYear     ${wait_time}
+#    click element   css:#financialYear
+    input text  css:#financialYear    12/31/2024
+    Press Keys   css:#financialYear   TAB
+
+Enter dates in Quarter
+    [Arguments]         ${option1}      ${option2}
+    wait until element is visible       css:.qa-company-information-financial-industry      ${wait_time}
+    sleep       ${search_sleep}
+    wait until element is visible   css:#financialYearq${option1}     ${wait_time}
+    wait until element is enabled   css:#financialYearq${option1}     ${wait_time}
+    input text  css:#financialYearq${option1}       ${option2}
+    Press Keys   css:#financialYearq${option1}   TAB
+
+Verify your current page not contains this element
+     wait until element is not visible   ${loaderIcon}      ${wait_time}
+     Page Should not Contain Element        //div[contains(text(),'No Financial Year Settings Found')]
+     Page should not contain element        //a[normalize-space()='here']
+
 Click on change password link under security
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     Wait Until Element Is Visible    css:.change-password-qa     ${wait_time}
@@ -1205,6 +1237,9 @@ Click on the checkboxes under auhtentication tab
     wait until element is visible      //label[normalize-space()='Use email authentication']      ${wait_time}
     wait until element is enabled      //label[normalize-space()='Use email authentication']        ${wait_time}
     click element  //label[normalize-space()='Use email authentication']
+
+Verify the visibility of validation message under change password
+     wait until element is visible      //span[@class='invalidInput ng-star-inserted']      ${wait_time}
 
 Wait for the visibility of the validation of password field under create account
     wait until element is visible      //li[normalize-space()='Eight to Thirty Two Characters']     ${wait_time}
