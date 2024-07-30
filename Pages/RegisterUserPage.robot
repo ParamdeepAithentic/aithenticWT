@@ -224,6 +224,45 @@ Enter the following company information
     clear element text      css:#${option1}
     input text      css:#${option1}       ${option2}
 
+Click on plus icon to add new company domain
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    css:.add-companyDomain-qa       ${wait_time}
+    Wait Until Element Is Enabled    css:.add-companyDomain-qa        ${wait_time}
+    click element    css:.add-companyDomain-qa
+
+Add the new domain
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    (//input[contains(@class,'company-domain-qa')])[2]       ${wait_time}
+    Wait Until Element Is Enabled    (//input[contains(@class,'company-domain-qa')])[2]        ${wait_time}
+    click element    (//input[contains(@class,'company-domain-qa')])[2]
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_domain_name}=    Catenate    ${random_string}.com
+    input text      (//input[contains(@class,'company-domain-qa')])[2]      ${generated_domain_name}
+
+Save the company domain
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait until element is visible       //button[contains(@class,'save-company-qa')]        ${wait_time}
+    wait until element is enabled     //button[contains(@class,'save-company-qa')]      ${wait_time}
+    click element       //button[contains(@class,'save-company-qa')]
+
+View the added domains under company information
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait until element is visible       css:.view-added-domains        ${wait_time}
+    wait until element is enabled     css:.view-added-domains      ${wait_time}
+    click element       css:.view-added-domains
+
+Delete the company domain
+    wait until element is not visible       ${loaderIcon}       ${wait_time}
+    wait until element is visible        css:.delete-company-domain-qa       ${wait_time}
+    wait until element is enabled       css:.delete-company-domain-qa       ${wait_time}
+    click element       css:.delete-company-domain-qa
+
+
+
+
+
+
+
 
 
 
