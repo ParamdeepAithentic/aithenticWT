@@ -223,6 +223,7 @@ Enter the following company information
     Wait Until Element Is Enabled   css:#${option1}         ${wait_time}
     clear element text      css:#${option1}
     input text      css:#${option1}       ${option2}
+    press keys      css:#${option1}     TAB
 
 Click on plus icon to add new company domain
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
