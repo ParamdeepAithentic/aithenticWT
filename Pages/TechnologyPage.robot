@@ -1903,15 +1903,15 @@ Close the warning contract date pop-up
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     Wait until element is visible     //div[@id='renewalDateWarning']//button[@class='close']     ${wait_time}
     wait until element is enabled     //div[@id='renewalDateWarning']//button[@class='close']     ${wait_time}
-    sleep       ${search_sleep}
     click element       //div[@id='renewalDateWarning']//button[@class='close']
 
 Select option from contract end date warning pop-up
     [Arguments]     ${option}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    Wait until element is visible     //div[@id='renewalDateWarning']//button[contains(@class,'qa-${option}-export')]     ${wait_time}
-    wait until element is enabled     //div[@id='renewalDateWarning']//button[contains(@class,'qa-${option}-export')]     ${wait_time}
-    click element       //div[@id='renewalDateWarning']//button[contains(@class,'qa-${option}-export')]
+    Wait until element is visible     css:.qa-${option}-export     ${wait_time}
+    wait until element is enabled     css:.qa-${option}-export     ${wait_time}
+    sleep       ${search_sleep}
+    click element       css:.qa-${option}-export
 # confirm, close
 
 Search by hostname

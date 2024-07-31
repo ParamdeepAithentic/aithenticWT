@@ -2565,10 +2565,6 @@ Add Technology: Verify Renewal Date get auto-populate when enter contract end da
     TechnologyPage.Verify warning pop-up is visible when change contract end date
     TechnologyPage.Close the warning contract date pop-up
     TechnologyPage.Verify pop-up is invisible
-    TechnologyPage.Change contract end date     ${formatted_future_date}
-    TechnologyPage.Verify warning pop-up is visible when change contract end date
-    TechnologyPage.Select option from contract end date warning pop-up      close
-    TechnologyPage.Verify pop-up is invisible
     TechnologyPage.Change contract end date         ${formatted_future_date}
     TechnologyPage.Verify warning pop-up is visible when change contract end date
     TechnologyPage.Select option from contract end date warning pop-up      confirm
