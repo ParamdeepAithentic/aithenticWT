@@ -1946,7 +1946,6 @@ Enter password with 32 characters while register
     DashboardPage.Select the asset ID checkbox      no
     Generic.Fetch alert message text and compare it with       Settings Updated
 
-<<<<<<< HEAD
 Download invoice pdf
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
