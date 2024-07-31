@@ -379,5 +379,3 @@ Log WebElements of invoice
         click element   //div[contains (@id, '-${index}')]
         Run Keywords    Fetch the selected value of the dropdown of invoice table    AND      Check the table get load       AND      Get count of total rows     AND     Verify Pagination and Row Count     AND     PaginationPage.Fetch the total count   AND     Click on the pagination dropdown of invoice table
     END
-
-

@@ -123,6 +123,19 @@ Click on billing trash to remove card
     Wait Until Element Is Enabled       ${billing_trash_icon}    ${wait_time}
     click element      ${billing_trash_icon}
 
+Click on the invoice history tab under billing
+    wait until element is not visible       ${loaderIcon}    ${wait_time}
+    wait until element is visible     css:#history   ${wait_time}
+    wait until element is enabled      css:#history    ${wait_time}
+    click element    css:#history
+    wait until element is not visible       ${loaderIcon}    ${wait_time}
+
+Click on the pdf option under the table of invoice
+    wait until element is visible     //tbody//tr[1]//td[3]   ${wait_time}
+    wait until element is enabled      //tbody//tr[1]//td[3]    ${wait_time}
+    click element    //tbody//tr[1]//td[3]
+    wait until element is not visible       ${loaderIcon}    ${wait_time}
+
 Enter input in address line1 under billing
     wait until element is not visible       ${loaderIcon}    ${wait_time}
     wait until element is visible       css:#addressLine1     ${wait_time}
