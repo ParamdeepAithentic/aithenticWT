@@ -175,12 +175,14 @@ Choose register user country
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  3  ${pageHeading}   RegisterUserPage - Select the option from country dropdown on register new member     3    ${pageTime}     ${ActualTime}    RegisterPage_Time
 
+
 Select the option from the personal details sidebar
     [Arguments]         ${option}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     Wait Until Element Is Visible     css:.sidebar-${option}-qa         ${wait_time}
     Wait Until Element Is Enabled    css:.sidebar-${option}-qa          ${wait_time}
     Click Element    css:.sidebar-${option}-qa
+
 
 Fetch the profile personal_details and compare with registration details
     [Arguments]     ${option1}      ${option2}
@@ -332,14 +334,8 @@ select number of days inside alerts section
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     Wait Until Element Is Visible    //label[@for='YesEmailPingAlert']//span[@class='checkmark']        ${wait_time}
     click element           //label[@for='YesEmailPingAlert']//span[@class='checkmark']
-#    Sleep    10
-#    Wait Until Element Is Visible    //span[@title='Clear all']     ${wait_time}
-#    Wait Until Element Is Enabled    //span[@title='Clear all']     ${wait_time}
-#    Click Element       //span[@title='Clear all']
     Wait Until Element Is Visible    css:.qa-${option1}      ${wait_time}
     Wait Until Element Is Enabled    css:.qa-${option1}      ${wait_time}
-
-#    Clear Element Text   css:.qa-${option1} input
     Click Element    css:.qa-${option1} input
     Generic.Select parameter    ${option2}
 
@@ -367,3 +363,103 @@ Select number of days                          #This method is replaced with "se
     wait until element is visible     //span[normalize-space()='${address1}  ${address2}']        ${wait_time}
     wait until element is enabled       //span[normalize-space()='${address1}  ${address2}']          ${wait_time}
     click element      //span[normalize-space()='${address1}  ${address2}']
+
+Choose Industry under company financial information
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    css:.qa-industry-code-data         ${wait_time}
+    Wait Until Element Is Enabled   css:.qa-industry-code-data          ${wait_time}
+    Click Element    css:.qa-industry-code-data
+    Generic.Select parameter        ${option}
+
+Choose Currency under company financial information
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    css:.qa-currency-code         ${wait_time}
+    Wait Until Element Is Enabled   css:.qa-currency-code         ${wait_time}
+    Click Element    css:.qa-currency-code
+    Generic.Select parameter        ${option}
+
+Enter the following company information
+    [Arguments]     ${option1}      ${option2}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    css:#${option1}       ${wait_time}
+    Wait Until Element Is Enabled   css:#${option1}         ${wait_time}
+    clear element text      css:#${option1}
+    input text      css:#${option1}       ${option2}
+    press keys      css:#${option1}     TAB
+
+Click on plus icon to add new company domain
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    css:.add-companyDomain-qa       ${wait_time}
+    Wait Until Element Is Enabled    css:.add-companyDomain-qa        ${wait_time}
+    click element    css:.add-companyDomain-qa
+
+Add the new domain
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    (//input[contains(@class,'company-domain-qa')])[2]       ${wait_time}
+    Wait Until Element Is Enabled    (//input[contains(@class,'company-domain-qa')])[2]        ${wait_time}
+    click element    (//input[contains(@class,'company-domain-qa')])[2]
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_domain_name}=    Catenate    ${random_string}.com
+    input text      (//input[contains(@class,'company-domain-qa')])[2]      ${generated_domain_name}
+
+Save the company domain
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait until element is visible       //button[contains(@class,'save-company-qa')]        ${wait_time}
+    wait until element is enabled     //button[contains(@class,'save-company-qa')]      ${wait_time}
+    click element       //button[contains(@class,'save-company-qa')]
+
+View the added domains under company information
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait until element is visible       css:.view-added-domains        ${wait_time}
+    wait until element is enabled     css:.view-added-domains      ${wait_time}
+    click element       css:.view-added-domains
+
+Delete the company domain
+    wait until element is not visible       ${loaderIcon}       ${wait_time}
+    wait until element is visible        css:.delete-company-domain-qa       ${wait_time}
+    wait until element is enabled       css:.delete-company-domain-qa       ${wait_time}
+    click element       css:.delete-company-domain-qa
+
+Enter user name under forgot password page
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //input[@id='username']          ${wait_time}
+    Wait Until Element Is Enabled    //input[@id='username']          ${wait_time}
+    Click Element    //input[@id='username']
+    input text      //input[@id='username']     ${option}
+
+Click on the submit button under forgot password page
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //input[@value='Submit']          ${wait_time}
+    Wait Until Element Is Enabled    //input[@value='Submit']          ${wait_time}
+    Click Element    //input[@value='Submit']
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+
+Click on the reset password link under mail
+    Wait Until Element Is Visible    //div[@id='mail']//a[normalize-space()='Link to reset credentials']          ${wait_time}
+    Wait Until Element Is Enabled    //div[@id='mail']//a[normalize-space()='Link to reset credentials']          ${wait_time}
+    Click Element    //div[@id='mail']//a[normalize-space()='Link to reset credentials']
+
+Enter new password under reset password page
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //input[@id='password-new']          ${wait_time}
+    Wait Until Element Is Enabled    //input[@id='password-new']         ${wait_time}
+    Click Element    //input[@id='password-new']
+    input text      //input[@id='password-new']     ${option}
+
+Enter confirm password under reset password page
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //input[@id='password-confirm']          ${wait_time}
+    Wait Until Element Is Enabled    //input[@id='password-confirm']         ${wait_time}
+    Click Element    //input[@id='password-confirm']
+    input text      //input[@id='password-confirm']     ${option}
+
+Verify the visibility of validation when entering password more than the limit
+    Wait Until Element Is Visible    //span[normalize-space()='Invalid password: maximum length 32.']         ${wait_time}
+
+Verify the visibility of validation when entering password less than the limit
+    Wait Until Element Is Visible    //span[normalize-space()='Invalid password: minimum length 8.']         ${wait_time}

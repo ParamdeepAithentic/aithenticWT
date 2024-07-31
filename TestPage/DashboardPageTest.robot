@@ -52,8 +52,8 @@ Click the option from side drawer
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Dashboard
     Generic.Verify your current page location contains      dashboard
     DashboardPage.select the option from the dashboard drawer   IT Performances
@@ -64,10 +64,10 @@ Verify the drawer list
     [Tags]      Time        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.Verify your current page location contains      dashboard
     Generic.Verify your current page location contains      home
+    LandingPage.Verify you are on dashboard page
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  24  ${pageHeading}   Page Load - Total Page Load Time of Home Page after login      24    ${pageTime}     ${ActualTime}    PageLoad_Time
@@ -76,21 +76,20 @@ Verify the drawer list
     Generic.Verify your current page location contains      dashboard
     DashboardPage.Verify the drawer list parameters
 
-#
-#Verify the side options list
-#    [Tags]      Unstable
-#    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form      ${email}    ${valid_password}
-##    LandingPage.Verify you are on dashboard page
-#    Generic.Verify your current page location contains      dashboard
-#    DashboardPage.Verify the side option list parameters
+Verify the side options list
+    [Tags]      Unstable
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    DashboardPage.Verify the side option list parameters
 
 click the option from menu
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
 
@@ -98,16 +97,16 @@ Verify the profile option list
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.Verify the profile option list parameters
 
 Create and verify new brand
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     brand-dropdown
     Generic.Verify your current page location contains      brand
@@ -124,8 +123,8 @@ Create a new product with adding new brand
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     brand-dropdown
     Generic.Verify your current page location contains      brand
@@ -158,8 +157,8 @@ Add Brand via personal detail under technology
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -202,8 +201,8 @@ Invite user into Aithentic
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Dashboard
     Generic.Verify your current page location contains      dashboard
     ReplaceDomainAPI.Replace Domain
@@ -302,8 +301,8 @@ Verify Help Center
     [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Dashboard
     Generic.Verify your current page location contains      dashboard
     DashboardPage.click on Help center icon of dashboard page
@@ -343,8 +342,8 @@ Edit Brand and address via brand under profile list
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -416,8 +415,8 @@ Deactivate Brand and address via brand under profile list
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -493,8 +492,8 @@ Activate Brand and address via brand under profile list
     [Tags]   Smoke      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -574,8 +573,8 @@ Remove Brand and address via brand under profile list
     [Tags]    Smoke     Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -648,11 +647,11 @@ Remove Brand and address via brand under profile list
     Generic.Fetch alert message text and compare it with      Brand deleted successfully
 
 Verify adding a new brand from profile listing
-    [Tags]      Sanity     rerun        Stable
+    [Tags]      Sanity             Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     brand-dropdown
     ReplaceDomainAPI.Replace Domain
@@ -679,8 +678,8 @@ Verify Department quick_links in profile settings dropdown
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list      department-dropdown
     Generic.Verify your current page location contains       department-list
@@ -691,8 +690,8 @@ Search By Technology Group in product list
     [Tags]      Time        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     brand-dropdown
     Generic.Verify your current page location contains      brand
@@ -726,8 +725,8 @@ Verify Brand quick_links in profile settings Dropdown
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     brand-dropdown
     Generic.Verify your current page location contains      brand-list
@@ -738,8 +737,8 @@ Verify Product quick_links in profile settings dropdown
     [Tags]     Sanity       Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list      product-dropdown
     Generic.Verify your current page location contains       product-list
@@ -750,8 +749,8 @@ Search By Brand name in product list
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     brand-dropdown
     Generic.Verify your current page location contains      brand
@@ -782,11 +781,11 @@ Search By Brand name in product list
     DashboardPage.Verify product added    ${generated_product}
 
 Verify Reports Asset Alert
-    [Tags]      Stable
+    [Tags]      Stable      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}       ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -802,8 +801,8 @@ Verify Reports Asset Alert
     Generic.Verify your current page location contains      technology
     Generic.Wait until table get load
     Generic.select the option from the side menu    Dashboard
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview
     Generic.Verify your current page contains this text     Billing Details
@@ -826,8 +825,8 @@ Verify Reports Asset Alert
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     Generic.Verify your current page location contains      technology
     Generic.select the option from the side menu    Dashboard
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview
     Generic.Verify your current page contains this text     Billing Details
@@ -842,8 +841,8 @@ Verify Reports Asset Alert
     Generic.Verify your current page location contains      technology
     Generic.Verify your current page contains this text     No Records
     Generic.select the option from the side menu    Dashboard
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview
     Generic.Verify your current page contains this text     Billing Details
@@ -857,8 +856,8 @@ Verify Reports Asset Alert
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
     Generic.select the option from the side menu    Dashboard
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview
     Generic.Verify your current page contains this text    Billing Details
@@ -872,8 +871,8 @@ Verify Reports Asset Alert
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
     Generic.select the option from the side menu    Dashboard
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview
     Generic.Verify your current page contains this text     Billing Details
@@ -887,8 +886,8 @@ Verify Reports Asset Alert
     OCS.Verify that agent is ready to get download
     Generic.click on the button link    Download
     Generic.select the option from the side menu    Dashboard
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview
     Generic.Verify your current page contains this text     Billing Details
@@ -901,16 +900,16 @@ Click and verify the count of the tabs under renewal overview by management cons
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.Get And Verify The Count Of tabs under renewal overview by management console
 
 Click and verify the count of the tabs under renewal overview by choosing the value from the dropdown by management console
     [Tags]     Sanity       Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.Click on the dropdown of quarter end under management console
     DashboardPage.Select the first value of To dropdown of quarter     0
     DashboardPage.Get And Verify The Count Of tabs under renewal overview by management console
@@ -933,11 +932,20 @@ Click and verify the count of the tabs under renewal overview by choosing the va
     DashboardPage.Get And Verify The Count Of tabs under renewal overview by management console
 
 Verify Account_overview Recent Activities Filters
-    [Tags]      Stable
+    [Tags]      Stable      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}       ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    RegisterUserPage.Select the option from the personal details sidebar        personal-profile
+    Generic.Verify your current page location contains    personal-profile
+    RegisterUserPage.Click on edit button to edit the profile details    Edit
+    RegisterUserPage.Create self register first name    Test QA31280530
+    RegisterUserPage.Create self register last name     Up3128
+    RegisterUserPage.Save the Profile details       Save
+    Generic.Fetch alert message text and compare it with    Profile saved successfully
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -952,8 +960,8 @@ Verify Account_overview Recent Activities Filters
     Generic.Verify your current page location contains      technology
     Generic.Wait until table get load
     Generic.select the option from the side menu    Dashboard
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview
     Generic.Verify your current page contains this text     Billing Details
@@ -980,6 +988,7 @@ Add and delete product from profile listing
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     brand-dropdown
     Generic.Verify your current page location contains      brand
@@ -1017,6 +1026,7 @@ View Predefined brand
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -1028,6 +1038,7 @@ View Predefined product
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -1040,6 +1051,7 @@ Verifying the Renewals Overview section of Management console - End of Life
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.Fetch the count renewals overview subtabs      End of life
     DashboardPage.Set Globally the count from renewal overview subtabs
     Generic.select the option from the side menu    Technology
@@ -1074,6 +1086,7 @@ Verifying the Renewals Overview section of Management console - End of Life
     Generic.Wait until table get load
     Generic.select the option from the side menu    Dashboard
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.Fetch the count renewals overview subtabs         End of life
     DashboardPage.Compare the counts of renewal overview after adding the asset
     DashboardPage.Click on the subtabs          End of life
@@ -1133,6 +1146,7 @@ Verifying the Renewals Overview section of Management console - Overdue Renewals
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.Fetch the count renewals overview subtabs      Overdue renewals
     DashboardPage.Set Globally the count from renewal overview subtabs
     Generic.select the option from the side menu    Technology
@@ -1155,6 +1169,7 @@ Verifying the Renewals Overview section of Management console - Overdue Renewals
     Generic.Wait until table get load
     Generic.select the option from the side menu    Dashboard
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.Fetch the count renewals overview subtabs        Overdue renewals
     DashboardPage.Compare the counts of renewal overview after adding the asset
     DashboardPage.Click on the subtabs          Overdue renewals
@@ -1213,9 +1228,11 @@ Verifying the Renewals Overview section of Management console - Overdue Renewals
     Generic.Verify your current page location contains    management-console
 
 Verifying the Renewals Overview section of Management console - Overdue contracts
+    [Tags]
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.Fetch the count renewals overview subtabs      Overdue contracts
     DashboardPage.Set Globally the count from renewal overview subtabs
     Generic.select the option from the side menu    Technology
@@ -1240,6 +1257,7 @@ Verifying the Renewals Overview section of Management console - Overdue contract
     Generic.Wait until table get load
     Generic.select the option from the side menu    Dashboard
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.Fetch the count renewals overview subtabs        Overdue contracts
     DashboardPage.Compare the counts of renewal overview after adding the asset
     DashboardPage.Click on the subtabs          Overdue contracts
@@ -1289,6 +1307,7 @@ Verifying the Renewals Overview section of Management console - Expired warranti
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.Fetch the count renewals overview subtabs      Expired warranties
     DashboardPage.Set Globally the count from renewal overview subtabs
     Generic.select the option from the side menu    Technology
@@ -1312,7 +1331,8 @@ Verifying the Renewals Overview section of Management console - Expired warranti
     Generic.Verify your current page location contains      technology
     Generic.Wait until table get load
     Generic.select the option from the side menu    Dashboard
-    Generic.Verify your current page location contains      dashboard
+    Generic.Verify your current page location contains    dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.Fetch the count renewals overview subtabs        Expired warranties
     DashboardPage.Compare the counts of renewal overview after adding the asset
     DashboardPage.Click on the subtabs          Expired warranties
@@ -1359,6 +1379,7 @@ Verifying the Renewals Overview section of Management console - Overdue certific
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.Fetch the count renewals overview subtabs      Overdue certificates
     DashboardPage.Set Globally the count from renewal overview subtabs
     Generic.select the option from the side menu    Technology
@@ -1366,7 +1387,7 @@ Verifying the Renewals Overview section of Management console - Overdue certific
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
-    TechnologyPage.Select parameter from technology dropdown list      Certificate1 product
+    TechnologyPage.Select parameter from technology dropdown list      Product_certificate
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date self    05/13/2024
     TechnologyPage.Input current Date
@@ -1382,6 +1403,7 @@ Verifying the Renewals Overview section of Management console - Overdue certific
     Generic.Wait until table get load
     Generic.select the option from the side menu    Dashboard
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.Fetch the count renewals overview subtabs        Overdue certificates
     DashboardPage.Compare the counts of renewal overview after adding the asset
     DashboardPage.Click on the subtabs          Overdue certificates
@@ -1401,7 +1423,7 @@ Verifying the Renewals Overview section of Management console - Overdue certific
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
-    TechnologyPage.Select parameter from technology dropdown list       Certificate1 product
+    TechnologyPage.Select parameter from technology dropdown list       Product_certificate
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date self    05/13/2024
     TechnologyPage.Input future Date
@@ -1426,6 +1448,7 @@ Verifying the Renewals Overview section of Management console - Overdue certific
     Generic.Verify your current page location contains    management-console
 
 Verifying the Subscription Overview section of Management console
+    [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -1535,5 +1558,410 @@ Verifying the Subscription Overview section of Management console
     Generic.Verify your current page contains this text     Renewals overview details
     DashboardPage.Click on done button of subscription overview    Done
 
-Zz kill browser
-    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+Management Console - Quarters filter dropdown
+    Generic.click on the tab	Register
+    Generic.Verify your current page location contains      register
+    ReplaceDomainAPI.Replace Domain
+    RegisterUserPage.Create random register first name
+    RegisterUserPage.Create random register last name
+    RegisterUserPage.Create random register company name
+    RegisterUserPage.Click on member type
+    RegisterUserPage.Select the member type      End User
+    RegisterUserPage.Create partner random business email
+    RegisterUserPage.Choose register user country      India   +91     9646289871
+    RegisterUserPage.Select the checkbox
+    RegisterUserPage.Save the register form
+    Generic.Verify your current page location contains      update-email
+    Generic.Open new window     yopmail
+    Generic.Refresh the existing page
+    Generic.Search yopmail emails for       ${generate_register_Email}
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   Email Register Verification Required.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Click on sign In button in yopmail email
+    Unselect Frame
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Create - Account
+    Generic.Verify your current page location contains     create-account
+    UserAccount.Enter the password      Paramdeep@112
+    UserAccount.Confirm the entered password    Paramdeep@112
+    UserAccount.Click on term and condition checkbox
+    UserAccount.Click create account button
+    Generic.Fetch alert message text and compare it with       Account created successfully.
+    Generic.Verify your current page location contains     auth
+    LandingPage.Fill the login Form      ${generate_register_Email}    Paramdeep@112
+    Switch Window    Inbox
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   OTP Verification.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Get verification OTP from email    Your passcode is
+    sleep       ${yop_sleep}
+    Switch Window   aithentic | OTP
+    TwoFactorAuth.Enter the otp     ${passcode}
+    TwoFactorAuth.Click verification button
+    Generic.Verify your current page location contains     subscription
+    SubscriptionPage.Select country of manufacturer profile     United States
+    SubscriptionPage.Select state of manufacturer profile   Texas
+    SubscriptionPage.Select city of manufacturer profile    Abram
+    SubscriptionPage.Input text into manufacturer address one       This is address 1
+    SubscriptionPage.Input text into manufacturer address two       This is address 2
+    SubscriptionPage.Input text into manufacturer zip code      73301
+    SubscriptionPage.Select department of manufacturer profile      Customer Support
+    SubscriptionPage.Input text into manufacturer position/title    Agent
+    SubscriptionPage.Save the manufacturer profile
+    Generic.Verify your current page location contains     subscription-menu
+    Generic.Fetch alert message text and compare it with       Profile saved successfully
+    SubscriptionPage.Select plan of subscription
+    SubscriptionPage.Select and move next with subscription
+    Generic.Verify your current page location contains     subscription-payment
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Select card type university
+    SubscriptionPage.Enter card account number    000123456789
+    SubscriptionPage.Enter card routing number      110000000
+    SubscriptionPage.Enter account holder name    Paramdeep Singh
+    SubscriptionPage.Check the authorization checkbox
+    SubscriptionPage.Check the acknowledgement checkbox
+    SubscriptionPage.Click on complete process button
+    Generic.Verify your current page location contains     welcome
+    Generic.Fetch alert message text and compare it with       Payment Successful
+    DashboardPage.Click on complete setup button      Complete Setup
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the asset ID checkbox     yes
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the location ID checkbox   yes
+    DashboardPage.Select the asset ID checkbox     no
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    Generic.select the option from the side menu    Dashboard
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    DashboardPage.Verify your current page contains this element
+    DashboardPage.Click on 'click here to add' link
+    Generic.Verify your current page location contains      company-info
+    DashboardPage.Enter dates in Quarter        1       03/31/2024
+    Generic.Fetch alert message text and compare it with        Company financial data updated successfully
+    DashboardPage.Enter dates in Quarter        2       06/30/2024
+    Generic.Fetch alert message text and compare it with        Company financial data updated successfully
+    DashboardPage.Enter dates in Quarter        3       09/30/2024
+    Generic.Fetch alert message text and compare it with        Company financial data updated successfully
+    DashboardPage.Enter Financial Year end date
+    Generic.Fetch alert message text and compare it with        Company financial data updated successfully
+    Generic.select the option from the side menu    Dashboard
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    DashboardPage.Verify your current page not contains this element
+
+Change password and login with new password
+    Generic.click on the tab	Register
+    Generic.Verify your current page location contains      register
+    ReplaceDomainAPI.Replace Domain
+    RegisterUserPage.Create random register first name
+    RegisterUserPage.Create random register last name
+    RegisterUserPage.Create random register company name
+    RegisterUserPage.Click on member type
+    RegisterUserPage.Select the member type      End User
+    RegisterUserPage.Create partner random business email
+    RegisterUserPage.Choose register user country      India   +91     9646289871
+    RegisterUserPage.Select the checkbox
+    RegisterUserPage.Save the register form
+    Generic.Verify your current page location contains      update-email
+    Generic.Open new window     yopmail
+    Generic.Refresh the existing page
+    Generic.Search yopmail emails for       ${generate_register_Email}
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   Email Register Verification Required.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Click on sign In button in yopmail email
+    Unselect Frame
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Create - Account
+    Generic.Verify your current page location contains     create-account
+    UserAccount.Enter the password      Test@123
+    UserAccount.Confirm the entered password   Test@123
+    UserAccount.Click on term and condition checkbox
+    UserAccount.Click create account button
+    Generic.Fetch alert message text and compare it with       Account created successfully.
+    Generic.Verify your current page location contains     auth
+    LandingPage.Fill the login Form      ${generate_register_Email}    Test@123
+    Switch Window    Inbox
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   OTP Verification.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Get verification OTP from email    Your passcode is
+    sleep       ${yop_sleep}
+    Switch Window   aithentic | OTP
+    TwoFactorAuth.Enter the otp     ${passcode}
+    TwoFactorAuth.Click verification button
+    Generic.Verify your current page location contains     subscription
+    SubscriptionPage.Select country of manufacturer profile     United States
+    SubscriptionPage.Select state of manufacturer profile   Texas
+    SubscriptionPage.Select city of manufacturer profile    Abram
+    SubscriptionPage.Input text into manufacturer address one       This is address 1
+    SubscriptionPage.Input text into manufacturer address two       This is address 2
+    SubscriptionPage.Input text into manufacturer zip code      73301
+    SubscriptionPage.Select department of manufacturer profile      Customer Support
+    SubscriptionPage.Input text into manufacturer position/title    Agent
+    SubscriptionPage.Save the manufacturer profile
+    Generic.Verify your current page location contains     subscription-menu
+    Generic.Fetch alert message text and compare it with       Profile saved successfully
+    SubscriptionPage.Select plan of subscription
+    SubscriptionPage.Select and move next with subscription
+    Generic.Verify your current page location contains     subscription-payment
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Select card type university
+    SubscriptionPage.Enter card account number    000123456789
+    SubscriptionPage.Enter card routing number      110000000
+    SubscriptionPage.Enter account holder name    Paramdeep Singh
+    SubscriptionPage.Check the authorization checkbox
+    SubscriptionPage.Check the acknowledgement checkbox
+    SubscriptionPage.Click on complete process button
+    Generic.Verify your current page location contains     welcome
+    Generic.Fetch alert message text and compare it with       Payment Successful
+    DashboardPage.Click on complete setup button      Complete Setup
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the asset ID checkbox     yes
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the location ID checkbox   yes
+    DashboardPage.Select the asset ID checkbox     no
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    DashboardPage.Select an option from company details side list   Security
+    Generic.Verify your current page location contains  security
+    DashboardPage.Click on change password link under security
+    Generic.Fetch alert message text and compare it with       OTP sent successfully
+    Switch Window    Inbox
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   Change Password
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Get security key of password    Here is your authorized OTP access code:
+    sleep       ${yop_sleep}
+    Switch Window   aithentic | Security
+    Generic.Verify your current page location contains     security
+    DashboardPage.Enter the security key    ${passcode}
+    DashboardPage.Enter input in the new password field     Test@1234
+    DashboardPage.Enter input in the confirm password field     Test@1234
+    DashboardPage.Click on save button under change password
+    Generic.Fetch alert message text and compare it with       Password changed successfully
+    DashboardPage.click on the authentication tab under security
+    Generic.Verify your current page location contains     security
+    DashboardPage.Click on the checkboxes under auhtentication tab
+    Generic.Fetch alert message text and compare it with       Two factor updated successfully
+    Generic.Click on the profile name
+    Generic.Select other option from profile list     Logout
+    Generic.Fetch log_out alert message
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form     ${generate_register_Email}   Test@1234
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    DashboardPage.Select an option from company details side list   Security
+    Generic.Verify your current page location contains  security
+    DashboardPage.Click on change password link under security
+    Generic.Fetch alert message text and compare it with       OTP sent successfully
+    Switch Window    Inbox
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   Change Password
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Get security key of password    Here is your authorized OTP access code:
+    sleep       ${yop_sleep}
+    Switch Window   aithentic | Security
+    DashboardPage.Enter the security key     ${passcode}
+    sleep   ${search_sleep}
+    DashboardPage.Enter input in the new password field     Test@123
+    DashboardPage.Enter input in the confirm password field     Test@123
+    DashboardPage.Click on save button under change password
+    Generic.Fetch alert message text and compare it with       Password changed successfully
+    Generic.Click on the profile name
+    Generic.Select other option from profile list     Logout
+    Generic.Fetch log_out alert message
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form     ${generate_register_Email}   Test@123
+    Generic.Verify your current page location contains      dashboard
+
+Enter password more than the limit of the password while register
+    Generic.click on the tab	Register
+    Generic.Verify your current page location contains      register
+    ReplaceDomainAPI.Replace Domain
+    RegisterUserPage.Create random register first name
+    RegisterUserPage.Create random register last name
+    RegisterUserPage.Create random register company name
+    RegisterUserPage.Click on member type
+    RegisterUserPage.Select the member type      End User
+    RegisterUserPage.Create partner random business email
+    RegisterUserPage.Choose register user country      India   +91     9646289871
+    RegisterUserPage.Select the checkbox
+    RegisterUserPage.Save the register form
+    Generic.Verify your current page location contains      update-email
+    Generic.Open new window     yopmail
+    Generic.Refresh the existing page
+    Generic.Search yopmail emails for       ${generate_register_Email}
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   Email Register Verification Required.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Click on sign In button in yopmail email
+    Unselect Frame
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Create - Account
+    Generic.Verify your current page location contains     create-account
+
+#----------------------------------------USER ACCOUNT---------------------------------------------------
+    UserAccount.Enter the password      Test@123Test@123Test@123Test@123Test@123
+    UserAccount.Click on term and condition checkbox
+    DashboardPage.Wait for the visibility of the validation of password field under create account
+
+Enter password less than the limit of the password while register
+    Generic.click on the tab	Register
+    Generic.Verify your current page location contains      register
+    ReplaceDomainAPI.Replace Domain
+    RegisterUserPage.Create random register first name
+    RegisterUserPage.Create random register last name
+    RegisterUserPage.Create random register company name
+    RegisterUserPage.Click on member type
+    RegisterUserPage.Select the member type      End User
+    RegisterUserPage.Create partner random business email
+    RegisterUserPage.Choose register user country      India   +91     9646289871
+    RegisterUserPage.Select the checkbox
+    RegisterUserPage.Save the register form
+    Generic.Verify your current page location contains      update-email
+    Generic.Open new window     yopmail
+    Generic.Refresh the existing page
+    Generic.Search yopmail emails for       ${generate_register_Email}
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   Email Register Verification Required.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Click on sign In button in yopmail email
+    Unselect Frame
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Create - Account
+    Generic.Verify your current page location contains     create-account
+
+#----------------------------------------USER ACCOUNT---------------------------------------------------
+    UserAccount.Enter the password      Test@12
+    UserAccount.Click on term and condition checkbox
+    DashboardPage.Wait for the visibility of the validation of password field under create account
+
+Enter password with 32 characters while register
+    Generic.click on the tab	Register
+    Generic.Verify your current page location contains      register
+    ReplaceDomainAPI.Replace Domain
+    RegisterUserPage.Create random register first name
+    RegisterUserPage.Create random register last name
+    RegisterUserPage.Create random register company name
+    RegisterUserPage.Click on member type
+    RegisterUserPage.Select the member type      End User
+    RegisterUserPage.Create partner random business email
+    RegisterUserPage.Choose register user country      India   +91     9646289871
+    RegisterUserPage.Select the checkbox
+    RegisterUserPage.Save the register form
+    Generic.Verify your current page location contains      update-email
+    Generic.Open new window     yopmail
+    Generic.Refresh the existing page
+    Generic.Search yopmail emails for       ${generate_register_Email}
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   Email Register Verification Required.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Click on sign In button in yopmail email
+    Unselect Frame
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Create - Account
+    Generic.Verify your current page location contains     create-account
+
+#----------------------------------------USER ACCOUNT---------------------------------------------------
+    UserAccount.Enter the password      Paramdeep@112Paramdeep@11234
+    UserAccount.Confirm the entered password   Paramdeep@112Paramdeep@11234
+    UserAccount.Click on term and condition checkbox
+    UserAccount.Click create account button
+    Generic.Fetch alert message text and compare it with       Account created successfully.
+    Generic.Verify your current page location contains     auth
+    LandingPage.Fill the login Form      ${generate_register_Email}   Paramdeep@112Paramdeep@11234
+    Switch Window    Inbox
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   OTP Verification.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Get verification OTP from email    Your passcode is
+    sleep       ${yop_sleep}
+    Switch Window   aithentic | OTP
+    TwoFactorAuth.Enter the otp     ${passcode}
+    TwoFactorAuth.Click verification button
+#--------------------------------------SUBSCRIPTION------------------------------------------------------------
+    Generic.Verify your current page location contains     subscription
+    SubscriptionPage.Select country of manufacturer profile     United States
+    SubscriptionPage.Select state of manufacturer profile   Texas
+    SubscriptionPage.Select city of manufacturer profile    Abram
+    SubscriptionPage.Input text into manufacturer address one       This is address 1
+    SubscriptionPage.Input text into manufacturer address two       This is address 2
+    SubscriptionPage.Input text into manufacturer zip code      73301
+    SubscriptionPage.Select department of manufacturer profile      Customer Support
+    SubscriptionPage.Input text into manufacturer position/title    Agent
+    SubscriptionPage.Save the manufacturer profile
+    Generic.Verify your current page location contains     subscription-menu
+    Generic.Fetch alert message text and compare it with       Profile saved successfully
+    SubscriptionPage.Select plan of subscription
+    SubscriptionPage.Select and move next with subscription
+    Generic.Verify your current page location contains     subscription-payment
+#-------------------------------------------BILLING-----------------------------------------------------
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Switch to card iframe
+    SubscriptionPage.Enter cardnumber    42424242424242420429242
+    Unselect Frame
+    SubscriptionPage.Enter card user name    Paramdeep Singh
+    SubscriptionPage.Check the authorization checkbox
+    SubscriptionPage.Check the acknowledgement checkbox
+    SubscriptionPage.Click on complete process button
+    Generic.Verify your current page location contains     welcome
+    Generic.Fetch alert message text and compare it with       Payment Successful
+    DashboardPage.Click on complete setup button      Complete Setup
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the location ID checkbox   yes
+    DashboardPage.Select the asset ID checkbox      no
+    Generic.Fetch alert message text and compare it with       Settings Updated
+
+Download invoice pdf
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     billing-dropdown
+    Generic.Verify your current page location contains      billing-details
+    BillingPage.Click on the invoice history tab under billing
+    BillingPage.Click on the pdf option under the table of invoice
+    Generic.Verify your current page location contains     invoice-pdf
+    Generic.Verify your current page contains this text     Client ID:
+    Generic.click on the button     Download Pdf Version
+    Sleep    ${Yop_Sleep}
+    Switch Window       NEW
+    Generic.Verify your current page location contains    .pdf
+
+#Zz kill browser
+ #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

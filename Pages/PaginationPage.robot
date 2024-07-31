@@ -324,7 +324,7 @@ Remove the old assets to free the space
     SortingPage.Click on specific column for method one     Created Date
     SortingPage.Click on specific column for method one     Created Date
     PaginationPage.Click on the pagination dropdown     technology
-    PaginationPage.Select the value from the pagination drop down count    500
+    PaginationPage.Select the value from the pagination drop down count    250
 
     Generic.Wait until table get load
     PaginationPage.Click on the checkbox of technology listing
@@ -342,7 +342,8 @@ Remove the old assets to free the space
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     TechnologyPage.Click on plan of subscription        Premium
     Generic.Scroll the page till    200
-    SubscriptionPage.Set asset range to     900
+#    SubscriptionPage.Set asset range to     900
+    Admin_PanelPage.Select the higest plan
     sleep    5
     SubscriptionPage.Update the payment of changed plan     proceed
 
@@ -356,4 +357,25 @@ Remove the old assets to free the space
     sleep       1
     Generic.Fetch alert message text and compare it with      Payment Successful
 
+Click on the pagination dropdown of invoice table
+    wait until element is visible   css:.perPageClass ng-select .ng-value span.ng-value-label      ${wait_time}
+    wait until element is enabled   css:.perPageClass ng-select .ng-value span.ng-value-label      ${wait_time}
+    click element       css:.perPageClass ng-select .ng-value span.ng-value-label
 
+Fetch the selected value of the dropdown of invoice table
+    wait until element is visible       (//td[normalize-space()='1'])[1]      ${wait_time}
+    wait until element is enabled       (//td[normalize-space()='1'])[1]      ${wait_time}
+    ${get_count_of_dropDown_value} =    get text    css:.perPageClass ng-select .ng-value span.ng-value-label
+    ${dropDown_value_as_number}=   Convert To Integer   ${get_count_of_dropDown_value}
+    set global variable    ${dropDown_value_as_number}
+    Log to console  Selected value :${dropDown_value_as_number}
+
+Log WebElements of invoice
+    ${elements} =    Get WebElements    //div[contains(@class, 'scroll-host')]//span
+    ${element_count} =    Get Length    ${elements}
+    FOR    ${index}    IN RANGE    0    ${element_count}
+        wait until element is visible     //div[contains (@id, '-${index}')]       ${wait_time}
+        wait until element is enabled     //div[contains (@id, '-${index}')]       ${wait_time}
+        click element   //div[contains (@id, '-${index}')]
+        Run Keywords    Fetch the selected value of the dropdown of invoice table    AND      Check the table get load       AND      Get count of total rows     AND     Verify Pagination and Row Count     AND     PaginationPage.Fetch the total count   AND     Click on the pagination dropdown of invoice table
+    END

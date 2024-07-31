@@ -332,7 +332,10 @@ Edit location country
     Wait Until Element Is Enabled      ${location_country}     ${wait_time}
     Clear Element Text      ${location_country}
     Input Text    ${location_country}    ${option}
-    Generic.Select parameter    ${option}
+#    Generic.Select parameter    ${option}
+    Wait Until Element Is Visible       //ng-select[contains(@class,'qa-country-name')]//ng-dropdown-panel//span[normalize-space()='${option}']    ${wait_time}
+    Wait Until Element Is Enabled       //ng-select[contains(@class,'qa-country-name')]//ng-dropdown-panel//span[normalize-space()='${option}']     ${wait_time}
+    click element       //ng-select[contains(@class,'qa-country-name')]//ng-dropdown-panel//span[normalize-space()='${option}']
 
 Edit location state
     [Arguments]    ${option}

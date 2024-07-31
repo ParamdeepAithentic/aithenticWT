@@ -221,6 +221,7 @@ Enter random contact person
     wait until element is not visible   ${loaderIcon}       ${wait_time}
     wait until element is visible      ${contactPerson}       ${wait_time}
     wait until element is enabled      ${contactPerson}       ${wait_time}
+    sleep       ${search_sleep}
     click element   ${contactPerson}
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generate_PersonName}=    Catenate    Person_${random_string}
@@ -375,6 +376,7 @@ Download the selected extension file
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible      //a[contains(text(),'${option}')]       ${wait_time}
     wait until element is enabled     //a[contains(text(),'${option}')]       ${wait_time}
+    sleep   ${search_sleep}
     click element   //a[contains(text(),'${option}')]
 
 Verify that the selected extension file is downloaded
@@ -682,4 +684,4 @@ Wait for add address pop up hide
 
 Wait for add contact pop up hide
     wait until element is not visible      //div[@id='contactModal']//div[contains(@class,'modal-content')]     ${wait_time}
-    wait until element is not visible       ${shadow}          ${wait_time}
+#    wait until element is not visible       ${shadow}          ${wait_time}

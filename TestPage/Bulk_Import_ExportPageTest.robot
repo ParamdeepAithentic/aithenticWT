@@ -50,8 +50,8 @@ Product Bulk import
     [Tags]    Sanity        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     product-dropdown
     Generic.Verify your current page location contains      product
@@ -80,8 +80,8 @@ Product Bulk Edit
     [Tags]    Sanity        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     product-dropdown
     Generic.Verify your current page location contains      product
@@ -130,8 +130,8 @@ Department Bulk Import
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     department-dropdown
     Generic.Verify your current page location contains      department-list
@@ -156,8 +156,8 @@ Department Bulk Edit
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     department-dropdown
     Generic.Verify your current page location contains      department-list
@@ -198,8 +198,8 @@ Add Product Bulk Edit
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     product-dropdown
     Generic.Verify your current page location contains      product
@@ -241,8 +241,8 @@ Add Department Bulk Edit
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     department-dropdown
     Generic.Verify your current page location contains      department-list
@@ -274,8 +274,8 @@ Location Bulk Edit
     [Tags]    Sanity        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Location
     Generic.Verify your current page location contains      locationlist
     LocationPage.Click on Location action button
@@ -330,8 +330,8 @@ Assigned Users Bulk Edit
     [Tags]    Sanity     Time       Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
@@ -371,8 +371,8 @@ Team Member Bulk Edit
     [Tags]    Sanity        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     Generic.Click on the profile name
@@ -434,8 +434,8 @@ Technology Bulk edit
     [Tags]       sanity       Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     Generic.Verify your current page location contains     technology-list
@@ -472,6 +472,7 @@ Technology Bulk edit
     Bulk_Import_ExportPage.click on the arrow of product    Technology Lifecycle Information    2
     Bulk_Import_Exportpage.Enter the new value in last Payment date field of technology bulk import      PurchaseDt     03/11/2024
     Bulk_Import_Exportpage.Enter the new value in last Payment date field of technology bulk import      RenewalDate      03/11/2025
+    Bulk_Import_Exportpage.Enter the new value in last Payment date field of technology bulk import      WarrantyEndDt      03/11/2027
     Bulk_Import_ExportPage.Click on the fields and select value from dropdown of technology bulk edit        Status
     Bulk_Import_ExportPage.click on the arrow of product    Technology Lifecycle Information     1
     Bulk_Import_ExportPage.click on the arrow of product    Assignment Information     2
@@ -506,8 +507,8 @@ Team member Bulk Import
     [Tags]    Sanity        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     I_iconPage.Choose options inside personal_details        Organization
@@ -554,8 +555,8 @@ Assigned User Bulk Import
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Team Members
     MemberPage.Click on assigned user tab      Assigned Users
     MemberPage.Click on action button of assigned users
@@ -582,8 +583,8 @@ Location Bulk Import
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Location
     Generic.Verify your current page location contains      locationlist
     LocationPage.Click on Location action button
@@ -619,8 +620,8 @@ Technology Bulk import
     [Tags]    Sanity        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains     technology-list
     TechnologyPage.Click on action button of technology
@@ -682,8 +683,8 @@ Technology Bulk import
     Bulk_Import_ExportPage.Perform the keyboard action      Supplier
     Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       SupportPartner        1
     Bulk_Import_ExportPage.Perform the keyboard action      SupportPartner
-    Bulk_Import_Exportpage.Enter the new value of serial number of technology bulk import      DYNA_21
-    Bulk_Import_ExportPage.Perform the keyboard action      DYNA_21
+#    Bulk_Import_Exportpage.Enter the new value of serial number of technology bulk import      DYNA_21
+#    Bulk_Import_ExportPage.Perform the keyboard action      DYNA_21
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_2      Capex
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_2
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_9      Account123
@@ -718,9 +719,285 @@ Technology Bulk import
     Sleep      ${yop_sleep}
     Switch Window       aithentic | Technology - List
     Generic.Verify your current page location contains     technology-list
-    TechnologyPage.Search by AssetId       ${generated_assetid}
+    TechnologyPage.Search by AssetId       ${generated_bulk_import_assetid}
     Generic.Wait until table get load
 
 
-Zz kill browser
-    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+
+
+Verify Bulk Import on the Technology Page by adding all parameters
+    [Tags]    Sanity
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the employee ID checkbox   no
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains     technology-list
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    PartnersPage.Click here to add link of contract details
+    DashboardPage.Create random productName
+    DashboardPage.Add product brand name      QABrand555
+    TechnologyPage.Add product description via technology
+    TechnologyPage.Add product feature via technology
+    TechnologyPage.Select product technology type via technology     Hardware
+    TechnologyPage.Select product technology group via technology   Applications
+    TechnologyPage.Click on save product pop inside technology page
+    Generic.Fetch alert message text and compare it with    Product created successfully
+    TechnologyPage.Wait until brand loder is invisible
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology-list
+    Generic.Wait until table get load
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.click on bulk import under action button of technology
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Data-Wizard
+    Bulk_Import_ExportPage.click on checkbox under technology bulk import
+    Bulk_Import_ExportPage.click on all checkbox under technology bulk import        Any new department names
+    Bulk_Import_ExportPage.click on all checkbox under technology bulk import       - Location Names
+    Bulk_Import_ExportPage.click on all checkbox under technology bulk import       Admin, Asset managers and Asset users.
+    Bulk_Import_ExportPage.click on all checkbox under technology bulk import       - Create Brands
+    Bulk_Import_ExportPage.click on all checkbox under technology bulk import       - Create Products
+    Bulk_Import_ExportPage.click on all checkbox under technology bulk import       -All partners (manufacturer, supplier & support partners)
+    Bulk_Import_ExportPage.click on all checkbox under technology bulk import        Parent Child components
+    Generic.click on the button     Next
+    Generic.click on the tab        Add Department
+    Bulk_Import_ExportPage.Create unique department name random under technology bulk import
+#    Bulk_Import_ExportPage.Select department status ynder technology bulk import        Active
+    Bulk_Import_ExportPage.Select department cost center under technology bulk import   316546
+    TechnologyPage.Save the department       add
+    Generic.Fetch alert message text and compare it with        Department added successfully
+    Generic.Verify your current page location contains      department-list
+    DepartmentPage.Search by department name      ${generated_Department_bulk}
+    Generic.click on the button     Next
+    Generic.click on the tab        Add Location
+    Generic.Verify your current page location contains      addLocation
+    LocationPage.Select location country        United States
+    LocationPage.Select location building name   Trump tower
+    LocationPage.Select location floor   Third
+    LocationPage.Select location room    203
+    LocationPage.Select location address one     this address one of the location
+    LocationPage.Select location address two     this address two of the location
+    LocationPage.Select location state       Texas
+    LocationPage.Select location city        Austin
+    LocationPage.Select location zip     147001
+    LocationPage.Enter random cost center value
+    LocationPage.Create random location name
+    LocationPage.Create random IP subnet
+    LocationPage.Save location form     save
+    Generic.Fetch alert message text and compare it with    Location created successfully
+    Bulk_Import_ExportPage.Search by location name under technology bulk import    ${generated_location}
+#    LocationPage.Fetch the location Name from the row       ${generated_location}
+    Generic.click on the button     Next
+    Generic.click on the button     Add Member
+    TeamMemberPage.Enter team member first name
+    TeamMemberPage.Enter team member last name
+    Generic.Enter phone number      India   +91     9646289871
+    TeamMemberPage.Enter team member business email_mailinator
+    TeamMemberPage.Enter the Position in member form        QA
+    TeamMemberPage.Create random employee id
+    TeamMemberPage.Click on team member department
+    TeamMemberPage.Select team member department       ${generated_Department_bulk}
+    TeamMemberPage.Select team member role     Admin
+    Bulk_Import_ExportPage.Click on team member location technology bulk import     ${generated_location}
+    TeamMemberPage.Save the team member form   save
+    Generic.Fetch alert message text and compare it with        Team Member created successfully
+    TeamMemberPage.Search Team Member by name       ${generated_TMFname}
+    Generic.click on the button     Next
+    Generic.click on the button    Add Brand
+    DashboardPage.Create random brandName
+    DashboardPage.Create random brandName
+    DashboardPage.Add business manufacturer URL       ${generated_BrandName}
+    DashboardPage.Add brand manufacturer country      United States
+    DashboardPage.Save added brand details
+    Generic.Fetch alert message text and compare it with        Brand created successfully.
+    DashboardPage.Click added brand main save button
+    DashboardPage.Verify Brand added      ${generated_BrandName}
+    Generic.click on the button     Next
+    Generic.click on the tab        Add Product
+    DashboardPage.Create random productName
+    DashboardPage.Add product brand name      ${generated_BrandName}
+    DashboardPage.Add product description via link
+    Bulk_Import_ExportPage.Add product feature bulk import
+    DashboardPage.Select product technology type     Hardware
+    DashboardPage.Select product technology group     Applications
+    Bulk_Import_ExportPage.Select product status technology bulk import   Active
+    Bulk_Import_ExportPage.Save added product details technology bulk import
+#    Generic.Fetch alert message text and compare it with        Product created successfully
+    DashboardPage.Verify product added    ${generated_product}
+    Generic.click on the button     Next
+    Generic.click on the tab        Add Partner
+    Generic.Verify your current page location contains      addpartner
+    PartnersPage.Select partner type of new partner     Manufacturer
+    PartnersPage.Select partner business_name     ${generated_BrandName}
+    Bulk_Import_ExportPage.Select partner business URL technology bulk import
+    PartnersPage.Select partner country       United States
+    PartnersPage.Click on Add new Address of partner        Add new Address
+    PartnersPage.Add Unique address_one of partner
+    PartnersPage.Add Unique address_two of partner
+    PartnersPage.Select State       Alaska
+    PartnersPage.Select City        Akutan
+    PartnersPage.Zip code Input     24015
+    PartnersPage.Save new Address
+    Generic.Scroll the page till        700
+    PartnersPage.Click on Add new Contact of partner        Add new Contact
+    PartnersPage.Enter random contact person
+    Bulk_Import_ExportPage.Enter contact business email via link under technology bulk import    ${generate_PersonName}      ${generated_BrandURL}
+    Generic.Enter phone number      India   +91     9646289871
+    PartnersPage.Enter contact location      ${generated_location}
+    PartnersPage.Save the new contact
+    PartnersPage.Click contact main save button
+    Generic.Fetch alert message text and compare it with    Partner created successfully
+    PartnersPage.Search by business name    ${generated_BrandName}
+    Generic.click on the tab        Add Partner
+    Generic.Verify your current page location contains      addpartner
+    PartnersPage.Select partner type of new partner     Supplier
+    PartnersPage.Select partner business_name     ${generated_BrandName}
+    Bulk_Import_ExportPage.Select partner business URL technology bulk import
+    PartnersPage.Select partner country       United States
+    PartnersPage.Click on Add new Address of partner        Add new Address
+    PartnersPage.Add Unique address_one of partner
+    PartnersPage.Add Unique address_two of partner
+    PartnersPage.Select State       Alaska
+    PartnersPage.Select City        Akutan
+    PartnersPage.Zip code Input     24015
+    PartnersPage.Save new Address
+    Generic.Scroll the page till        700
+    PartnersPage.Click on Add new Contact of partner        Add new Contact
+    PartnersPage.Enter random contact person
+    Bulk_Import_ExportPage.Enter contact business email via link under technology bulk import    ${generate_PersonName}      ${generated_BrandURL}
+    Generic.Enter phone number      India   +91     9646289871
+    PartnersPage.Enter contact location      ${generated_location}
+    PartnersPage.Save the new contact
+    PartnersPage.Click contact main save button
+    Generic.Fetch alert message text and compare it with    Partner created successfully
+    PartnersPage.Search by business name    ${generated_BrandName}
+    Generic.click on the tab        Add Partner
+    Generic.Verify your current page location contains      addpartner
+    PartnersPage.Select partner type of new partner     Support Partner
+    PartnersPage.Select partner business_name     ${generated_BrandName}
+    Bulk_Import_ExportPage.Select partner business URL technology bulk import
+    PartnersPage.Select partner country       United States
+    PartnersPage.Click on Add new Address of partner        Add new Address
+    PartnersPage.Add Unique address_one of partner
+    PartnersPage.Add Unique address_two of partner
+    PartnersPage.Select State       Alaska
+    PartnersPage.Select City        Akutan
+    PartnersPage.Zip code Input     24015
+    PartnersPage.Save new Address
+    Generic.Scroll the page till        700
+    PartnersPage.Click on Add new Contact of partner        Add new Contact
+    PartnersPage.Enter random contact person
+    Bulk_Import_ExportPage.Enter contact business email via link under technology bulk import   ${generate_PersonName}      ${generated_BrandURL}
+    Generic.Enter phone number      India   +91     9646289871
+    PartnersPage.Enter contact location      ${generated_location}
+    PartnersPage.Save the new contact
+    PartnersPage.Click contact main save button
+    Generic.Fetch alert message text and compare it with    Partner created successfully
+    PartnersPage.Search by business name    ${generated_BrandName}
+    Generic.click on the button     Next
+    Generic.Verify your current page location contains     add-technology
+    Bulk_Import_ExportPage.Enter the new value in the fields of technology bulk import       Brand        ${generated_BrandName}
+    Bulk_Import_ExportPage.Enter the new value in the fields of technology bulk import     Product         ${generated_product}
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      ItemTechCount         1
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       Supplier        1
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       SupportPartner       1
+    Generic.Click on the button     Check Data      #Update,Edit
+    Generic.Click on the button     Upload
+    Bulk_Import_ExportPage.Verify the upload message text - bulk import tech    Upload       Upload is prepared
+    Generic.click on the button     Next
+    Generic.Verify your current page location contains     add-technology-templates
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       LocationName        1
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       DepartmentName        1
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       AssignTo        1
+    Bulk_Import_Exportpage.Enter the new value of asset id of technology bulk import      AssetId
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       Status        1
+    Bulk_Import_ExportPage.Perform the keyboard action      Status
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      PurchaseOrderNo         25
+    Bulk_Import_ExportPage.Perform the keyboard action      PurchaseOrderNo
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import     PurchaseDt         01/21/2021
+    Bulk_Import_ExportPage.Perform the keyboard action      PurchaseDt
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import     WarrantyEndDt         03/23/2025
+    Bulk_Import_ExportPage.Perform the keyboard action      WarrantyEndDt
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      Comment         Testing
+    Bulk_Import_ExportPage.Perform the keyboard action      Comment
+    Bulk_Import_Exportpage.Enter the new value in cost type field of technology bulk import      CostType        Rented
+    Bulk_Import_ExportPage.Perform the keyboard action      CostType
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      PaymentPartner        testqa 20Feb
+    Bulk_Import_ExportPage.Perform the keyboard action      PaymentPartner
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      PaymentType        FixedPayment
+    Bulk_Import_ExportPage.Perform the keyboard action      PaymentType
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      PaymentPeriod      Monthly
+    Bulk_Import_ExportPage.Perform the keyboard action      PaymentPeriod
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      FirstPaymentDate        02/03/2023
+    Bulk_Import_ExportPage.Perform the keyboard action      FirstPaymentDate
+    Bulk_Import_Exportpage.Enter the new value in last Payment date field of technology bulk import      LastPaymentDate       02/03/2024
+    Bulk_Import_ExportPage.Perform the keyboard action      LastPaymentDate
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      RenewalDate      02/11/2024
+    Bulk_Import_ExportPage.Perform the keyboard action      RenewalDate
+    Bulk_Import_Exportpage.Select option from technology type column in bulk_edit      BudgetCurrency      1
+    Bulk_Import_ExportPage.Perform the keyboard action      BudgetCurrency
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      BudgetPaymentValue      2500
+    Bulk_Import_ExportPage.Perform the keyboard action      BudgetPaymentValue
+    Bulk_Import_Exportpage.Select option from technology type column in bulk_edit      ActualPaymentCurrency      1
+    Bulk_Import_ExportPage.Perform the keyboard action      ActualPaymentCurrency
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      LastActualPaymentValue      2000
+    Bulk_Import_ExportPage.Perform the keyboard action      LastActualPaymentValue
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       CostCenter        1
+    Bulk_Import_ExportPage.Perform the keyboard action      CostCenter
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       Supplier        1
+    Bulk_Import_ExportPage.Perform the keyboard action      Supplier
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       SupportPartner        1
+    Bulk_Import_ExportPage.Perform the keyboard action      SupportPartner
+#    Bulk_Import_Exportpage.Enter the new value of serial number of technology bulk import      DYNA_21
+#    Bulk_Import_ExportPage.Perform the keyboard action      DYNA_21
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_2      Capex
+    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_2
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_9      Account123
+    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_9
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_3      1654
+    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_3
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_4      CPU
+    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_4
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_7      100
+    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_7
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_8      12
+    Generic.Click on the button     Check Data      #Update,Edit
+    Generic.Click on the button     Upload
+    Bulk_Import_ExportPage.Verify the upload message text   UploadMessage       Upload Successful
+    Generic.click on the button     Next
+    Bulk_Import_ExportPage.Enter the new value in the fields of technology bulk import       ParentId     ${generated_AssetID}
+    sleep   2
+    Generic.Click on the button     Check Data      #Update,Edit
+    Generic.Click on the button     Upload
+    Bulk_Import_ExportPage.Verify the upload message text   UploadMessage       Upload Successful
+    Generic.Fetch alert message text and compare it with    Assets linked successfully
+    Generic.Click on the button     Finish
+    Bulk_Import_ExportPage.Click on I_m_done button when popup appears     no-im-done
+    Sleep      ${yop_sleep}
+    Switch Window       aithentic | Technology - List
+    Generic.Verify your current page location contains     technology-list
+    TechnologyPage.Search by AssetId       ${generated_bulk_import_assetid}
+    Generic.Wait until table get load
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the employee ID checkbox   no
+    DashboardPage.Select the employee ID checkbox   yes
+    Generic.Fetch alert message text and compare it with       Settings Updated
+
+#Zz kill browser
+#    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+

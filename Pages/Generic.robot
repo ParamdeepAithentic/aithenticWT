@@ -56,12 +56,12 @@ ${click_countryTag}     css:.iti__arrow
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
-${wait_time}        60
+${wait_time}       60
 ${yop_sleep}       10
+
 ${search_sleep}       1
 
-${CASE}       qa      #qa , uat , pre-prod
-
+${CASE}        uat      #qa , uat , pre-prod
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
 
 *** Keywords ***
@@ -76,24 +76,42 @@ Set QA Variables
     Set Suite Variable    ${valid_password}    Test@123       #QA User
     Set Suite Variable    ${apiURL}    https://qa-api.aithentic.com/api/v1
     Set Suite Variable    ${agentDiscovery_TagName}    Tag Name - johnsoftwaresolutions-1192-4         #qa
+    Set Suite Variable    ${agentDiscovery_OnlyTagName}     johnsoftwaresolutions-1192-4
     Set Suite Variable    ${admin_url}        https://qa-admin.aithentic.com/
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
     Set Suite Variable    ${browser_name}         firefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
     Set Suite Variable    ${discovered_asset_brand}                 MSI
+    Set Suite Variable    ${existing_mac}                       D8:CB:8A:CA:6A:39
+    Set Suite Variable    ${discovered_existing_brand}          QABrand555
+    Set Suite Variable    ${discovered_existing_product}        QAHardwareProduct
+    Set Suite Variable    ${discovered_existing_department}    Customer Support
+    Set Suite Variable    ${discovered_IP}   192.168.18.23
+    Set Suite Variable    ${discovery_asset_list_brand}       Apple, Inc.
+
+
 
 Set UAT Variables
     Set Suite Variable    ${url}    https://uat-app.aithentic.com/
     Set Suite Variable    ${valid_password}    Test@123     #UAT user
     Set Suite Variable    ${apiURL}    https://uat-api.aithentic.com/api/v1
-    Set Suite Variable    ${agentDiscovery_TagName}    Tag Name - johnsoftwaresolutions-1428-10        #uat
+    Set Suite Variable    ${agentDiscovery_TagName}    Tag Name - johnsoftwaresolutions-1428-4        #uat
+    Set Suite Variable    ${IP_Discovered_devices}    Tag Name - johnsoftwaresolutions-1428-10        #uat
+    Set Suite Variable    ${agentDiscovery_OnlyTagName}         johnsoftwaresolutions-1428-4
     Set Suite Variable    ${admin_url}        https://uat-admin.aithentic.com/
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
     Set Suite Variable    ${browser_name}         firefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
     Set Suite Variable    ${discovered_asset_brand}                 Apple Inc
+    Set Suite Variable    ${existing_mac}                       98:5a:eb:cb:c8:ed
+    Set Suite Variable    ${discovered_existing_brand}              Apple Inc.
+    Set Suite Variable    ${discovered_existing_product}            Macmini9,1
+    Set Suite Variable    ${discovered_existing_department}        Quality Assurance
+    Set Suite Variable    ${discovered_IP}    00:17:61:10:C6:A1
+    Set Suite Variable    ${discovery_asset_list_brand}     AKKA Germany GmbH
+
 
 Set Pre-Prod Variables
     Set Suite Variable    ${url}    https://pre-prod-app.aithentic.com/
@@ -101,17 +119,31 @@ Set Pre-Prod Variables
     Set Suite Variable    ${apiURL}    https://pre-prod-api.aithentic.com/api/v1
     Set Suite Variable    ${browser_name}         firefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
+    Set Suite Variable    ${discovered_asset_brand}                ECS
+    Set Suite Variable    ${existing_mac}                       b8:ae:ed:bc:1c:35
+    Set Suite Variable    ${discovered_existing_brand}          QABrand555
+    Set Suite Variable    ${discovered_existing_product}        Product_00337612322
+    Set Suite Variable    ${discovered_existing_department}    Operations
+    Set Suite Variable    ${discovered_IP}   192.168.18.86
+    Set Suite Variable    ${discovery_asset_list_brand}       Apple, Inc.
 
 Set Default Variables
     Set Suite Variable    ${url}    https://uat-app.aithentic.com/
-    Set Suite Variable    ${valid_password}    Test!@5897     #UAT user
+    Set Suite Variable    ${valid_password}    Test@123     #UAT user
     Set Suite Variable    ${apiURL}    https://uat-api.aithentic.com/api/v1
-    Set Suite Variable    ${agentDiscovery_TagName}    Tag Name - johnsoftwaresolutions-1428-10        #uat
+    Set Suite Variable    ${agentDiscovery_TagName}    Tag Name - johnsoftwaresolutions-1428-4        #uat
     Set Suite Variable    ${admin_url}        https://uat-admin.aithentic.com/
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
     Set Suite Variable    ${browser_name}         headlessfirefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
+    Set Suite Variable    ${discovered_asset_brand}                 Apple Inc
+    Set Suite Variable    ${discovered_existing_brand}              Apple Inc.
+    Set Suite Variable    ${discovered_existing_product}            Macmini9,1
+    Set Suite Variable    ${discovered_existing_department}        Quality Assurance
+    Set Suite Variable    ${discovered_IP}    00:17:61:10:C6:A1
+    Set Suite Variable    ${discovery_asset_list_brand}     AKKA Germany GmbH
+
 
 Fix the column number
     ${pageHeading}=   Catenate    2
@@ -161,6 +193,7 @@ click on the button
 
 click on the button link
     [Arguments]    ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible        //a[normalize-space()='${option}']        ${wait_time}
     wait until element is enabled      //a[normalize-space()='${option}']          ${wait_time}
     click element       //a[normalize-space()='${option}']
@@ -384,8 +417,10 @@ Update settings for Asset_ID, employee_id and location
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     Generic.Verify your current page location contains     organization
+    DashboardPage.Select the asset ID checkbox      yes
     DashboardPage.Select the employee ID checkbox   yes
     DashboardPage.Select the location ID checkbox   yes
+    sleep   ${search_sleep}
     DashboardPage.Select the asset ID checkbox      no
 #    Generic.Click on the profile name
 #    Generic.Select option from profile list     subscription-dropdown
@@ -402,9 +437,11 @@ Update settings for Asset_ID, employee_id and location
 #    Generic.Fetch alert message text and compare it with      Payment Successful
     sleep       ${yop_sleep}
     close browser
-    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
-    Run Process    cmd.exe    /C    taskkill /IM chrome.exe /F
-    Run Process    cmd.exe    /C    taskkill /IM skype.exe /F
-    Run Process    cmd.exe    /C    taskkill /IM msedge.exe /F
+#    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+#    Run Process    cmd.exe    /C    taskkill /IM chrome.exe /F
+#    Run Process    cmd.exe    /C    taskkill /IM skype.exe /F
+#    Run Process    cmd.exe    /C    taskkill /IM msedge.exe /F
+
+
 
 

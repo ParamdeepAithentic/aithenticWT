@@ -62,12 +62,13 @@ Free the asset limit
     PaginationPage.Run the remove asset journey
 
 
+
 Fill the technology form for license product
     [Tags]      Time        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
 #    TechnologyPage.click on add technology button
@@ -84,9 +85,10 @@ Fill the technology form for license product
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date
     TechnologyPage.Select warranty end date    12/12/2028
+    TechnologyPage.Add order number of technology cost information     56
     TechnologyPage.Select technology lifecycle status      Active
     TechnologyPage.Add technology lifecycle comment    Technology Lifecycle Information- comment
-    TechnologyPage.Add order number of technology cost information     56
+
     TechnologyPage.Add payment partner of technology cost information      testqa 20Feb
     TechnologyPage.Add cost type of technology cost information        Fixed Length Contract
     TechnologyPage.Add payment type of technology cost information     FixedPayment
@@ -116,8 +118,8 @@ Fill the technology form for hardware product
     [Tags]      Sanity      Smoke       Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -156,8 +158,8 @@ Fill the technology form for maintenance product
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -198,8 +200,8 @@ Fill the technology form for subscription product
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -240,8 +242,8 @@ Create new asset with new brand and product
     [Tags]      Sanity      Smoke       Time        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     brand-dropdown
     Generic.Verify your current page location contains      brand
@@ -315,8 +317,8 @@ Restore asset type one
     [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -353,11 +355,15 @@ Restore asset type one
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
+    TechnologyPage.Click on manage technology sub option       Technology List
+
     TechnologyPage.Select an option from technology table actions      Remove
     TechnologyPage.Remove asset from technology table
     Generic.Fetch alert message text and compare it with        Technology Removed Successfully
     TechnologyPage.Click on manage technology sub option       Removed Assets
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Removed Assets
+
     TechnologyPage.Click on three dots of action button
     TechnologyPage.Select an option from recovery table actions    Restore
     Generic.Fetch alert message text and compare it with        Assets restored successfully.
@@ -369,8 +375,8 @@ Restore asset from removed asset details page
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -407,11 +413,14 @@ Restore asset from removed asset details page
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
+    TechnologyPage.Click on manage technology sub option       Technology List
+
     TechnologyPage.Select an option from technology table actions      Remove
     TechnologyPage.Remove asset from technology table
     Generic.Fetch alert message text and compare it with        Technology Removed Successfully
     TechnologyPage.Click on manage technology sub option       Removed Assets
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Removed Assets
     TechnologyPage.Click on three dots of action button
     TechnologyPage.Select an option from recovery table actions    Restore
     Generic.Fetch alert message text and compare it with        Assets restored successfully.
@@ -425,8 +434,8 @@ Restore asset by selecting checkbox
     [Tags]    Smoke     Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
 #    TechnologyPage.click on add technology button
@@ -464,16 +473,18 @@ Restore asset by selecting checkbox
 #    TechnologyPage.Verify that after saving technology form user redirect to technology page
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
     TechnologyPage.Select an option from technology table actions      Remove
     TechnologyPage.Remove asset from technology table
     Generic.Fetch alert message text and compare it with        Technology Removed Successfully
     TechnologyPage.Click on manage technology sub option       Removed Assets
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Removed Assets
     TechnologyPage.Select and restore asset
     TechnologyPage.Click on three dots of action button
     TechnologyPage.Select an option from recovery table actions    Restore
     Generic.Fetch alert message text and compare it with        Assets restored successfully.
-    TechnologyPage.Click on manage technology sub option       Technology List
+    TechnologyPage.Click on manage technology sub option        Technology List
     TechnologyPage.Search by AssetId   ${generated_AssetID}
 
 
@@ -483,6 +494,7 @@ Restore asset by selecting checkbox
 #
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      ${email}    ${valid_password}
+#    Generic.Verify your current page location contains      dashboard
 #    LandingPage.Verify you are on dashboard page
 #    Generic.select the option from the side menu    Technology
 #    Generic.Verify your current page location contains      technology
@@ -494,7 +506,6 @@ Restore asset by selecting checkbox
 #    Search by AssetId      ${self_searchId}
 #    Select and restore asset
 #    Fetch alert message text and compare it with        Assets restored successfully.
-#    Click on manage technology sub option       Technology List
 #    Search by AssetId      ${self_searchId}
 
 
@@ -502,8 +513,8 @@ Edit brand and product via details
     [Tags]     Smoke        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
 #    TechnologyPage.click on add technology button
@@ -539,6 +550,7 @@ Edit brand and product via details
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
     TechnologyPage.Click on edit button on product details page        Edit
@@ -556,8 +568,8 @@ Sent Message should show in the Sent Tab
     [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -592,6 +604,7 @@ Sent Message should show in the Sent Tab
 #    TechnologyPage.Verify that after saving technology form user redirect to technology page
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
     TechnologyPage.Verify assetID is visible       ${generated_AssetID}
@@ -612,8 +625,8 @@ Add Products with 10 combinations of Tech Type and Tech group
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     product-dropdown
     Generic.Verify your current page location contains      product
@@ -752,8 +765,8 @@ Add Technology Page - Add New location and assign that location
     [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
 #    TechnologyPage.click on add technology button
@@ -794,8 +807,8 @@ Add New Support Partner and Assign that Partner
     [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -831,6 +844,7 @@ Add New Support Partner and Assign that Partner
 #    TechnologyPage.Verify that after saving technology form user redirect to technology page
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
 
@@ -874,8 +888,8 @@ Add New Support Partner and Assign that Partner via technology form only
     [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
 #    TechnologyPage.click on add technology button
@@ -934,6 +948,7 @@ Add New Support Partner and Assign that Partner via technology form only
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
 
@@ -945,8 +960,8 @@ Verify the history of added technology
     [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
 #    TechnologyPage.click on add technology button
@@ -981,6 +996,7 @@ Verify the history of added technology
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
 
@@ -1032,11 +1048,13 @@ Verify the history of added technology
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Select parameter from technology dropdown list       Product_00337612322
     TechnologyPage.Add New_Parent assetID for technology lifecycle information random
+    TechnologyPage.Select technology lifecycle status      Active
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
     TechnologyPage.Select tab under technology details      history
@@ -1050,11 +1068,13 @@ Verify the history of added technology
 #    TechnologyPage.Click technology product input field
     TechnologyPage.Select parameter from technology dropdown list       Product_00337612322
     TechnologyPage.Add New_Component assetID for technology lifecycle information random
+    TechnologyPage.Select technology lifecycle status      Active
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
     TechnologyPage.Select tab under technology details      history
@@ -1063,6 +1083,7 @@ Verify the history of added technology
 #Upload the new attachment file
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      ${email}    ${valid_password}
+#    Generic.Verify your current page location contains      dashboard
 #    LandingPage.Verify you are on dashboard page
 #    Generic.select the option from the side menu    Technology
 #    Generic.Verify your current page location contains      technology
@@ -1090,8 +1111,8 @@ Add Technology Page - Add New Supplier and support partner and assign them
     [Tags]     Sanity       Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
 #    TechnologyPage.click on add technology button
@@ -1136,8 +1157,8 @@ Add new Technology- Add New Location and assign that location
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
 #    TechnologyPage.click on add technology button
@@ -1179,8 +1200,8 @@ Add new Technology- Add New Department and assign that department
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
 #    TechnologyPage.click on add technology button
@@ -1209,8 +1230,8 @@ Add new Technology- Add New Assignee and assign that Assignee
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     I_iconPage.Choose options inside personal_details        Organization
@@ -1242,6 +1263,7 @@ Add new Technology- Add New Assignee and assign that Assignee
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     I_iconPage.Choose options inside personal_details        Organization
@@ -1253,8 +1275,8 @@ Add new Technology- Add New support-partner and assign that support partner
     [Tags]     Sanity       Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
 #    TechnologyPage.click on add technology button
@@ -1290,8 +1312,8 @@ Add new Technology- Add New Supplier and assign that supplier
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
 #    TechnologyPage.click on add technology button
@@ -1327,8 +1349,8 @@ Edit Technology Page - Add New location and assign that location
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
 #    TechnologyPage.click on add technology button
@@ -1347,6 +1369,7 @@ Edit Technology Page - Add New location and assign that location
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
     TechnologyPage.Click on edit button on product details page        Edit
@@ -1378,8 +1401,8 @@ Edit Technology Page - Add New Department and assign that Department
     [Tags]     Smoke        Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
 #    TechnologyPage.click on add technology button
@@ -1398,6 +1421,7 @@ Edit Technology Page - Add New Department and assign that Department
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
     TechnologyPage.Click on edit button on product details page        Edit
@@ -1415,8 +1439,8 @@ Edit Technology Page - Add New Assignee and assign that Assignee
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     I_iconPage.Choose options inside personal_details        Organization
@@ -1442,6 +1466,7 @@ Edit Technology Page - Add New Assignee and assign that Assignee
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
     TechnologyPage.Click on edit button on product details page        Edit
@@ -1467,8 +1492,8 @@ Edit Technology Page - Add New Supplier and assign that Supplier
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
 #    TechnologyPage.click on add technology button
@@ -1487,6 +1512,7 @@ Edit Technology Page - Add New Supplier and assign that Supplier
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
     TechnologyPage.Click on edit button on product details page        Edit
@@ -1510,8 +1536,8 @@ Edit Technology Page - Add New Support Partner and assign that Support Partner
     [Tags]      Sanity     Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
 #    TechnologyPage.click on add technology button
@@ -1530,6 +1556,7 @@ Edit Technology Page - Add New Support Partner and assign that Support Partner
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
     TechnologyPage.Click on edit button on product details page        Edit
@@ -1553,8 +1580,8 @@ Technology Details- Verify the Location Details
     [Tags]      sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
 #    TechnologyPage.click on add technology button
@@ -1604,6 +1631,7 @@ Technology Details- Verify the Location Details
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
 
@@ -1630,25 +1658,12 @@ Technology Details- Verify the Location Details
     Generic.Verify your current page contains this text     Past Location
     TechnologyPage.Verify parameter from past location table    ${generated_buildingname}
 
-Technology Details- Verify the Location Details-2
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
-    LandingPage.Verify you are on dashboard page
-    Generic.select the option from the side menu    Technology
-    Generic.Verify your current page location contains      technology
-    sleep   6
-    TechnologyPage.Search by AssetId       AssetID_3480632009
-    TechnologyPage.Click on the first row of the technology table
-    Generic.Verify your current page location contains     technology-details
-    TechnologyPage.Click on Location tab of technology- list page
-    TechnologyPage.Get Value of Assignment Information Location Name
-
 Technology-Inactive asset and Restore asset
     [Tags]      smoke           Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     chirag@dmts.fr.nf    Test@123
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     subscription-dropdown
     Generic.Verify your current page location contains      subscription
@@ -1697,6 +1712,7 @@ Technology-Inactive asset and Restore asset
     TechnologyPage.Click on asset limit exceeded pop up
     Generic.Verify your current page location contains      technology-list
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
     TechnologyPage.Select and restore asset
     TechnologyPage.Click on proceed button of technology list page
     SubscriptionPage.Select the payment method    ach
@@ -1715,6 +1731,7 @@ Technology-Inactive asset and Restore asset
     TechnologyPage.Click on pop up of available Inactive Asset       technology
     Generic.Verify your current page location contains      manage-technology-list
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+#    TechnologyPage.Click on manage technology sub option       Technology List
     TechnologyPage.Select and restore asset
     Generic.click on the button     Restore
     SubscriptionPage.Select the payment method    ach
@@ -1730,6 +1747,7 @@ Technology-Inactive asset and Restore asset
     TechnologyPage.Click on asset limit exceeded pop up
     Generic.Verify your current page location contains      technology-list
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
     TechnologyPage.Select and restore asset
     TechnologyPage.Click on proceed button of technology list page
     SubscriptionPage.Select the payment method    ach
@@ -1741,8 +1759,8 @@ Inactive asset - Restore asset from Technology Details page
     [Tags]      smoke       Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     chirag@dmts.fr.nf    Test@123
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     subscription-dropdown
     Generic.Verify your current page location contains      subscription
@@ -1790,6 +1808,7 @@ Inactive asset - Restore asset from Technology Details page
     TechnologyPage.Click on asset limit exceeded pop up
     Generic.Verify your current page location contains      technology-list
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
     TechnologyPage.Select and restore asset
     TechnologyPage.Click on proceed button of technology list page
     SubscriptionPage.Select the payment method    ach
@@ -1813,6 +1832,8 @@ Inactive asset - Restore asset from Technology Details page
     Generic.select the option from the side menu    Technology
     TechnologyPage.Click on manage technology sub option      Removed Assets
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Removed Assets
+    Generic.Wait until table get load
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
     TechnologyPage.Click on restore button of technology Details Page
@@ -1820,6 +1841,7 @@ Inactive asset - Restore asset from Technology Details page
     Generic.Verify your current page location contains      technology-list
     TechnologyPage.Click on manage technology sub option       Technology List
     TechnologyPage.Search by AssetId   ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
     Generic.Click on the profile name
     Generic.Select option from profile list     subscription-dropdown
     Generic.Verify your current page location contains      subscription
@@ -1843,8 +1865,8 @@ Verify the technology data while applying agent Filters
     [Tags]      Unstable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -1894,6 +1916,7 @@ Verify the technology data while applying agent Filters
     Generic.Wait until table get load
     TechnologyPage.Verify that Agent column should contain text     -
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains    technology-details
     TechnologyPage.Click on edit button on product details page        Edit
@@ -1909,8 +1932,8 @@ Click on the attachment tab under technology
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -1926,6 +1949,7 @@ Click on the attachment tab under technology
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
     TechnologyPage.Click on attachment tab
@@ -1947,6 +1971,7 @@ Click on the attachment tab under technology
     Switch Window       NEW
     Generic.Verify your current page location contains    amazonaws
     Generic.Verify your current page location contains    .pdf
+    Generic.Verify your current page contains this text    Dummy PDF file
     Switch Window       Main
     TechnologyPage.Download the file by clicking on download icon over file    .jpg
     Sleep    ${yop_sleep}
@@ -1961,8 +1986,8 @@ Upload file: Image and Document files while adding Technology
     [Tags]    Smoke     Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -1989,6 +2014,7 @@ Upload file: Image and Document files while adding Technology
     Switch Window       NEW
     Generic.Verify your current page location contains    amazonaws
     Generic.Verify your current page location contains    .pdf
+    Generic.Verify your current page contains this text    Dummy PDF file
     Switch Window       Main
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
@@ -1998,8 +2024,8 @@ Upload file: Image and Document files while Edit Technology
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -2025,6 +2051,7 @@ Upload file: Image and Document files while Edit Technology
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
     TechnologyPage.Click on edit button on product details page        Edit
@@ -2043,6 +2070,7 @@ Upload file: Image and Document files while Edit Technology
     Switch Window       NEW
     Generic.Verify your current page location contains    amazonaws
     Generic.Verify your current page location contains    .pdf
+    Generic.Verify your current page contains this text    Dummy PDF file
     Switch Window       Main
     TechnologyPage.Click on update button of edit_technology page      Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
@@ -2051,8 +2079,8 @@ Upload file: Image and document files while Clone the Technology
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -2067,6 +2095,7 @@ Upload file: Image and document files while Clone the Technology
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
     TechnologyPage.Click on clone button on techonology details page       Clone
@@ -2089,6 +2118,7 @@ Upload file: Image and document files while Clone the Technology
     Switch Window       NEW
     Generic.Verify your current page location contains    amazonaws
     Generic.Verify your current page location contains    .pdf
+    Generic.Verify your current page contains this text    Dummy PDF file
     Switch Window       Main
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
@@ -2098,8 +2128,8 @@ Search with brand_product_technologytype_technologygroup on advanced search
     [Tags]     Sanity       Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -2206,8 +2236,8 @@ Search Technnology with Product Version
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -2234,8 +2264,8 @@ Verify cross icon and reset icon while adding product
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -2251,11 +2281,11 @@ Verify cross icon and reset icon while adding product
     TechnologyPage.Verify the invisibility of technology type after clicking on reset icon
 
 Creating technology while creating cancellation notice period and contract end date
-    [Tags]      Stable
+    [Tags]      Stable      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
 #    TechnologyPage.click on add technology button
@@ -2303,6 +2333,7 @@ Creating technology while creating cancellation notice period and contract end d
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
     TechnologyPage.Click on edit button on product details page        Edit
@@ -2318,11 +2349,11 @@ Creating technology while creating cancellation notice period and contract end d
     Generic.Fetch alert message text and compare it with        Technology updated successfully
 
 Dispose the technology while adding new brand and product
-    [Tags]      Stable
+    [Tags]      Stable      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     brand-dropdown
     Generic.Verify your current page location contains      brand
@@ -2366,6 +2397,7 @@ Dispose the technology while adding new brand and product
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
     TechnologyPage.Click on three dots of action button
     TechnologyPage.Select an option from recovery table actions    Disposal
     Generic.Select parameter    Yes
@@ -2379,6 +2411,7 @@ Dispose the technology while adding new brand and product
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
     Generic.Wait until table get load
     TechnologyPage.Verify status is visible of added technology
     TechnologyPage.Click on three dots of action button
@@ -2387,11 +2420,11 @@ Dispose the technology while adding new brand and product
     Generic.Fetch alert message text and compare it with      Technology Removed Successfully
 
 Add the technology from profile listing
-    [Tags]      Stable
+    [Tags]      Stable      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     add-technology-dropdown
     Generic.Verify your current page location contains      addtechnology
@@ -2405,26 +2438,26 @@ Add the technology from profile listing
     TechnologyPage.Click on save product pop inside technology page
     Generic.Fetch alert message text and compare it with    Product created successfully
     TechnologyPage.Wait until brand loder is invisible
-#    TechnologyPage.Select parameter from technology dropdown list    ${generated_product}
     TechnologyPage.Add assetID for technology lifecycle information random
-    TechnologyPage.Select edited technology lifecycle status      Active
+    TechnologyPage.Select technology lifecycle status      Active
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology-list
     Generic.Wait until table get load
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
     TechnologyPage.Click on three dots of action button
     TechnologyPage.Select an option from recovery table actions    Remove
     PartnersPage.Select option from the pop up  Yes
     Generic.Fetch alert message text and compare it with      Technology Removed Successfully
 
 Verify_Asset_ID_Changing_settings_from_Profile_list
-    [Tags]      Stable
+    [Tags]      Stable    Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     I_iconPage.Choose options inside personal_details        Organization
@@ -2480,6 +2513,7 @@ Verify_Asset_ID_Changing_settings_from_Profile_list
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     Generic.Verify your current page location contains     organization
+    DashboardPage.Select the asset ID checkbox      yes
     DashboardPage.Select the asset ID checkbox      no
     Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.select the option from the side menu    Technology
@@ -2497,13 +2531,48 @@ Verify_Asset_ID_Changing_settings_from_Profile_list
     Generic.Verify your current page location contains      technology
     Generic.Wait until table get load
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
     TechnologyPage.Click on three dots of action button
     TechnologyPage.Select an option from recovery table actions    Remove
     PartnersPage.Select option from the pop up  Yes
     Generic.Fetch alert message text and compare it with      Technology Removed Successfully
 
-Zz kill browser
-    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+Search with hostname on the technology search bar
+    [Tags]      Sanity
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    PartnersPage.Click here to add link of contract details
+    DashboardPage.Create random productName
+    DashboardPage.Add product brand name       QABrand555
+    TechnologyPage.Add product description via technology
+    TechnologyPage.Add product feature via technology
+    TechnologyPage.Select product technology type via technology     Hardware
+    TechnologyPage.Select particular technology group via link while adding technology    Notebooks & Accessories
+    TechnologyPage.Click on save product pop inside technology page
+    Generic.Fetch alert message text and compare it with    Product created successfully
+    TechnologyPage.Wait until brand loder is invisible
+    TechnologyPage.Add host name for technology group information for hardware random
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology-list
+    Generic.Wait until table get load
+    TechnologyPage.Search by hostname       ${result}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+    OCS.Get Value of Host-Name and compare it with    ${result}
 
-
+#Zz kill browser
+#    [Tags]      Smoke     Sanity      Time      rerun       Stable    yy
+#    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+#    Run Process    cmd.exe    /C    taskkill /IM python.exe /F
 

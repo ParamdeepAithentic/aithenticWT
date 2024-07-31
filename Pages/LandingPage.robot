@@ -65,8 +65,8 @@ Fill the login Form
 
 Verify you are on dashboard page
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    wait until element is visible    //div[normalize-space()='End of life']    ${wait_time}
-    wait until element is enabled    //div[normalize-space()='End of life']    ${wait_time}
+    wait until element is visible    //div[@id='renewal-overview-section']//following-sibling::div//div[contains(@class,'renew-card p')]    ${wait_time}
+    wait until element is enabled    //div[@id='renewal-overview-section']//following-sibling::div//div[contains(@class,'renew-card p')]    ${wait_time}
 
 
 Fill the login form of Admin panel

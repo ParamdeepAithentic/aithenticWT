@@ -112,12 +112,13 @@ ${saveBTN}      css:button[class='btn button-green mt-0 mx-2']
 
 ######################### Do you need another asset################
 ${savePOPup}      //div[@class='modal-content ng-star-inserted']//div[@class='modal-body']
-${iamDone_BTN}      //button[text()="I'm Done,Save "]
+${iamDone_BTN}      //button[text()="Done "]
 ${Yes_BTN}      //span[contains(text(),'Yes')]
 
 ####################### search asset id #####################
-${asset_SearchBar}      css:input[placeholder='Search by Brand, Product, Asset ID, Serial number, Software version or Assignee']
-#${asset_SearchBar}      //input[@placeholder='Search by Brand, Product, Asset ID, Serial number or Assignee']
+
+#${asset_SearchBar}      css:input[placeholder='Ssearch by Brand, Product, Asset ID, Serial Num, Software VS, Assignee or Host Name']
+${asset_SearchBar}      //input[contains(@placeholder,'Search by Brand, Product, Asset ID')]
 ${search_loader}     css:div[role='status']
 ${fetch_assetID}     //td[@class='technology-asset-width pr-4']//a
 ${fetch_productID}      css:tbody tr:nth-child(1) td:nth-child(4)
@@ -213,7 +214,7 @@ Select and restore asset
     wait until element is visible   ${removedTechnology_chkBox}     ${wait_time}
     wait until element is enabled   ${removedTechnology_chkBox}     ${wait_time}
     sleep   3
-   Wait Until Element Is not Visible  xpath=//div[@class='fade-shadow']  ${wait_time}s
+    Wait Until Element Is not Visible  xpath=//div[@class='fade-shadow']  ${wait_time}s
     click element   ${removedTechnology_chkBox}
 #    Wait Until Element Is Enabled      ${restore_BTN}       ${wait_time}
 #    click element   ${restore_BTN}
@@ -278,10 +279,12 @@ Inactive or Removed technology
     click element      ${removedTechnology_threeDot}
 
 Remove asset from technology table
-     wait until element is visible      ${removePopUp}        ${wait_time}
-     wait until element is enabled       ${removePopUp}        ${wait_time}
+#     wait until element is visible      ${removePopUp}        ${wait_time}
+#     wait until element is enabled       ${removePopUp}        ${wait_time}
+     sleep      ${search_sleep}
      Wait Until Element Is Enabled      ${select_remove_popUp_Yes}      ${wait_time}
      click element      ${select_remove_popUp_Yes}
+     sleep      ${search_sleep}
 
 
 Search and remove asset
@@ -371,6 +374,9 @@ Add host name for technology group information for hardware random
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${result}=    Catenate    HostName_${random_string}
     input text   ${host_name}   ${result}
+    log to console      ${result}
+    set global variable    ${result}
+
 
 #================================ CREATE SERIAL NUMBER ==========================
 Create unique serial number random
@@ -513,20 +519,25 @@ Select warranty end date
 
 Select technology lifecycle status
     [Arguments]    ${option1}
+    #Scroll Element Into View        css:#Comment
+    wait until element is visible   //ng-select[@id='LifeCycleStatusId']//span[@title='Clear all']    ${wait_time}
+    wait until element is enabled   //ng-select[@id='LifeCycleStatusId']//span[@title='Clear all']    ${wait_time}
+    click element       //ng-select[@id='LifeCycleStatusId']//span[@title='Clear all']
     wait until element is visible    ${LifeCycleStatusId}      ${wait_time}
     wait until element is enabled    ${LifeCycleStatusId}      ${wait_time}
     click element       ${LifeCycleStatusId}
-    wait until element is visible   //ng-select[@id='LifeCycleStatusId']//span[@title='Clear all']    ${wait_time}
-    click element       //ng-select[@id='LifeCycleStatusId']//span[@title='Clear all']
-    wait until element is visible   //span[normalize-space()='Active']      ${wait_time}
-    Generic.Select parameter    ${option1}
+    wait until element is visible   //ng-select[contains(@class,'qa-LifeCycleStatusId')]//ng-dropdown-panel//span[normalize-space()='Active']      ${wait_time}
+    wait until element is enabled  //ng-select[contains(@class,'qa-LifeCycleStatusId')]//ng-dropdown-panel//span[normalize-space()='Active']      ${wait_time}
+    click element   //ng-select[contains(@class,'qa-LifeCycleStatusId')]//ng-dropdown-panel//span[normalize-space()='Active']
+    #Generic.Select parameter    ${option1}
 
 
 Select edited technology lifecycle status
     [Arguments]    ${option1}
     wait until element is not visible    ${loaderIcon}      ${wait_time}
     wait until element is visible    ${LifeCycleStatusId}      ${wait_time}
-    click element       ${LifeCycleStatusId}
+    Clear Element Text    ${LifeCycleStatusId}
+    click element     ${LifeCycleStatusId}
     wait until element is visible   //span[normalize-space()='${option1}']     ${wait_time}
     click element   //span[normalize-space()='${option1}']
 
@@ -540,7 +551,7 @@ Accept updated edited technology pop up
      wait until element is visible     //div[@id='confirmUpdates']//button[normalize-space()='${option}']      ${wait_time}
      wait until element is enabled     //div[@id='confirmUpdates']//button[normalize-space()='${option}']      ${wait_time}
      click element      //div[@id='confirmUpdates']//button[normalize-space()='${option}']
-     wait until element is not visible       ${shadow}          ${wait_time}
+#     wait until element is not visible       ${shadow}          ${wait_time}
 
 ###############Technology Cost Information#################
 Add order number of technology cost information
@@ -792,6 +803,7 @@ Search by AssetId
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  17  ${pageHeading}   Technology Page - Search the technology by AssetId on technology list page     17    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+#    TechnologyPage.Click on manage technology sub option       Technology List
 
 Search by BrandName
     [Arguments]    ${BrandName}
@@ -1312,10 +1324,6 @@ Input current Date
     set global variable         ${current_date1}
 
 Input future Date
-#    ${future_date} =    Add Time To Date   ${current_date1}    7    days    result_format=%m/%d/%Y
-#    Log To Console    ${future_date}
-#    Set Global Variable    ${future_date}
-
     ${current_date}=    Get Current Date    result_format=%m/%d/%Y
     Log To Console      Current Date is: ${current_date}
 
@@ -1401,7 +1409,7 @@ Click on pop up of available Inactive Asset
     wait until element is visible   css:.qa-available-inactive-assests-${option}   ${wait_time}
     wait until element is enabled   css:.qa-available-inactive-assests-${option}   ${wait_time}
     click element   css:.qa-available-inactive-assests-${option}
-    wait until element is not visible       ${shadow}          ${wait_time}
+#    wait until element is not visible       ${shadow}          ${wait_time}
 
 Select option from exceed asset limit pop
     [Arguments]     ${option}
@@ -1846,3 +1854,22 @@ Get inner text of feature under product information
     Log To Console    Value of Textarea: ${textarea_value}
     set global variable     ${textarea_value}
     should be equal    ${textarea_value}     This is the features of new product added.
+
+Search by hostname
+    [Arguments]     ${name}
+    wait until element is visible       css:thead tr       ${wait_time}
+    wait until element is visible       ${asset_SearchBar}       ${wait_time}
+    Clear Element Text      ${asset_SearchBar}
+    input text      ${asset_SearchBar}     ${name}
+    sleep       ${search_sleep}
+    wait until element is visible       css:thead tr       ${wait_time}
+
+Select particular technology group via link while adding technology
+    [Arguments]    ${option}
+    wait until element is visible       css:nz-tree-select[formcontrolname=TechGroupId] input     ${wait_time}
+    wait until element is enabled       css:nz-tree-select[formcontrolname=TechGroupId] input     ${wait_time}
+    click element   css:nz-tree-select[formcontrolname=TechGroupId] input
+    input text      css:nz-tree-select[formcontrolname=TechGroupId] input       ${option}
+    wait until element is visible      //span[normalize-space()='${option}']       ${wait_time}
+    wait until element is enabled      //span[normalize-space()='${option}']       ${wait_time}
+    click element       //span[normalize-space()='${option}']
