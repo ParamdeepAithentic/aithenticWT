@@ -1946,5 +1946,22 @@ Enter password with 32 characters while register
     DashboardPage.Select the asset ID checkbox      no
     Generic.Fetch alert message text and compare it with       Settings Updated
 
+Download invoice pdf
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     billing-dropdown
+    Generic.Verify your current page location contains      billing-details
+    BillingPage.Click on the invoice history tab under billing
+    BillingPage.Click on the pdf option under the table of invoice
+    Generic.Verify your current page location contains     invoice-pdf
+    Generic.Verify your current page contains this text     Client ID:
+    Generic.click on the button     Download Pdf Version
+    Sleep    ${Yop_Sleep}
+    Switch Window       NEW
+    Generic.Verify your current page location contains    .pdf
+
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

@@ -122,3 +122,78 @@ Click on billing trash to remove card
     Wait Until Element Is Visible       ${billing_trash_icon}   ${wait_time}
     Wait Until Element Is Enabled       ${billing_trash_icon}    ${wait_time}
     click element      ${billing_trash_icon}
+
+Click on the invoice history tab under billing
+    wait until element is not visible       ${loaderIcon}    ${wait_time}
+    wait until element is visible     css:#history   ${wait_time}
+    wait until element is enabled      css:#history    ${wait_time}
+    click element    css:#history
+    wait until element is not visible       ${loaderIcon}    ${wait_time}
+
+Click on the pdf option under the table of invoice
+    wait until element is visible     //tbody//tr[1]//td[3]   ${wait_time}
+    wait until element is enabled      //tbody//tr[1]//td[3]    ${wait_time}
+    click element    //tbody//tr[1]//td[3]
+    wait until element is not visible       ${loaderIcon}    ${wait_time}
+
+Enter input in address line1 under billing
+    wait until element is not visible       ${loaderIcon}    ${wait_time}
+    wait until element is visible       css:#addressLine1     ${wait_time}
+    wait until element is enabled       css:#addressLine1      ${wait_time}
+    click element   css:#addressLine1
+    clear element text   css:#addressLine1
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generate_address_one_billing}=    Catenate    ${random_string}
+    input text      css:#addressLine1      Address_${generate_address_one_billing}
+    log to console      ${generate_address_one_billing}
+    set global variable   ${generate_address_one_billing}
+
+Enter input in address line2 under billing
+    wait until element is visible       css:#addressLine2     ${wait_time}
+    wait until element is enabled       css:#addressLine2      ${wait_time}
+    click element   css:#addressLine2
+    clear element text   css:#addressLine2
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generate_address_two_billing}=    Catenate    ${random_string}
+    input text      css:#addressLine2      Address_${generate_address_two_billing}
+    log to console      ${generate_address_two_billing}
+    set global variable   ${generate_address_two_billing}
+
+Select billing country under billing tab
+    [Arguments]    ${country}
+    wait until element is not visible       ${loaderIcon}    ${wait_time}
+    wait until element is visible       css:#billing-country        ${wait_time}
+    wait until element is enabled       css:#billing-country          ${wait_time}
+    click element   css:#billing-country
+    Clear element text      css:#billing-country
+    input text   css:#billing-country     ${country}
+    Generic.Select parameter    ${country}
+
+Select billing state under billing tab
+    [Arguments]    ${state}
+    wait until element is not visible       ${loaderIcon}    ${wait_time}
+    wait until element is visible       css:#billing-state        ${wait_time}
+    wait until element is enabled       css:#billing-state          ${wait_time}
+    click element   css:#billing-state
+    input text   css:#billing-state     ${state}
+    Generic.Select parameter    ${state}
+
+Select billing city under billing tab
+    [Arguments]    ${city}
+    wait until element is not visible       ${loaderIcon}    ${wait_time}
+    wait until element is visible       css:#billing-city        ${wait_time}
+    wait until element is enabled       css:#billing-city          ${wait_time}
+    click element   css:#billing-city
+    input text   css:#billing-city     ${city}
+    wait until element is visible       //span[@title='${city}']        ${wait_time}
+    wait until element is enabled       //span[@title='${city}']          ${wait_time}
+    click element       //span[@title='${city}']
+
+Add new zip code of billing
+    [Arguments]     ${code}
+    wait until element is not visible       ${loaderIcon}    ${wait_time}
+    wait until element is visible     css:#zipCode   ${wait_time}
+    wait until element is enabled      css:#zipCode    ${wait_time}
+    clear element text      css:#zipCode
+    click element    css:#zipCode
+    input text   css:#zipCode    ${code}
