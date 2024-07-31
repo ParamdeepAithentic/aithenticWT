@@ -60,7 +60,7 @@ ${wait_time}        60
 ${yop_sleep}       10
 ${search_sleep}       1
 
-${CASE}        qa      #qa , uat , pre-prod
+${CASE}       uat      #qa , uat , pre-prod
 
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
 
@@ -85,7 +85,7 @@ Set QA Variables
 
 Set UAT Variables
     Set Suite Variable    ${url}    https://uat-app.aithentic.com/
-    Set Suite Variable    ${valid_password}    Test!@5897     #UAT user
+    Set Suite Variable    ${valid_password}    Test@123     #UAT user
     Set Suite Variable    ${apiURL}    https://uat-api.aithentic.com/api/v1
     Set Suite Variable    ${agentDiscovery_TagName}    Tag Name - johnsoftwaresolutions-1428-10        #uat
     Set Suite Variable    ${admin_url}        https://uat-admin.aithentic.com/
