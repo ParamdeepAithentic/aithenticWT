@@ -356,5 +356,3 @@ Remove the old assets to free the space
     SubscriptionPage.Proceed the payment     proceed
     sleep       1
     Generic.Fetch alert message text and compare it with      Payment Successful
-
-

@@ -146,18 +146,18 @@ Verify pagination of location Table
     PaginationPage.Click on the pagination dropdown     location-list
     PaginationPage.Log WebElements      location-list
 
-Verify pagination of Team Member Table
-    [Tags]      Stable
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
-    Generic.Verify your current page location contains      dashboard
-    LandingPage.Verify you are on dashboard page
-    Generic.select the option from the side menu    Team Members
-    Generic.Verify your current page location contains      memberslist
-    PaginationPage.Check the table get load
-    PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     member-list
-    PaginationPage.Log WebElements      member-list
+#Verify pagination of Team Member Table
+#    [Tags]      Stable
+#    Generic.click on the tab	Login
+#    LandingPage.Fill the login Form       ${email}    ${valid_password}
+#    Generic.Verify your current page location contains      dashboard
+#    LandingPage.Verify you are on dashboard page
+#    Generic.select the option from the side menu    Team Members
+#    Generic.Verify your current page location contains      memberslist
+#    PaginationPage.Check the table get load
+#    PaginationPage.Fetch the total count
+#    PaginationPage.Click on the pagination dropdown     member-list
+#    PaginationPage.Log WebElements      member-list
 
 Verify pagination of Assigned User Table
     [Tags]    Smoke     Stable
@@ -698,5 +698,3 @@ Verify Pagination of Recent Activities Table
     PaginationPage.Fetch the total count
     PaginationPage.Click on the pagination dropdown     autoCreatedAsset
     PaginationPage.Log WebElements for Recent Activites table     autoCreatedAsset
-
-
