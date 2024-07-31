@@ -330,11 +330,12 @@ Verify the email change warning pop-up and choose option
 select number of days inside alerts section
     [Arguments]         ${option1}        ${option2}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-#    Wait Until Element Is Visible    //label[@for='YesEmailPingAlert']//span[@class='checkmark']        ${wait_time}
-    Sleep    ${search_sleep}
-    Wait Until Element Is Visible    //span[@title='Clear all']     ${wait_time}
-    Wait Until Element Is Enabled    //span[@title='Clear all']     ${wait_time}
-    Click Element       //span[@title='Clear all']
+    Wait Until Element Is Visible    //label[@for='YesEmailPingAlert']//span[@class='checkmark']        ${wait_time}
+    click element           //label[@for='YesEmailPingAlert']//span[@class='checkmark']
+#    Sleep    10
+#    Wait Until Element Is Visible    //span[@title='Clear all']     ${wait_time}
+#    Wait Until Element Is Enabled    //span[@title='Clear all']     ${wait_time}
+#    Click Element       //span[@title='Clear all']
     Wait Until Element Is Visible    css:.qa-${option1}      ${wait_time}
     Wait Until Element Is Enabled    css:.qa-${option1}      ${wait_time}
 
@@ -347,6 +348,7 @@ Select asset limit exhausation inside alerts section
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     Wait Until Element Is Visible    (//ng-select[contains(@class,'qa-audit-interval')])[${option}]      ${wait_time}
     Wait Until Element Is Enabled    (//ng-select[contains(@class,'qa-audit-interval')])[${option}]      ${wait_time}
+#    clear element text      (//ng-select[contains(@class,'qa-audit-interval')])[${option}]//input
     Click Element    (//ng-select[contains(@class,'qa-audit-interval')])[${option}]//input
     Generic.Select parameter    ${option1}
 
@@ -355,6 +357,7 @@ Select asset center notifications inside alerts section
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     Wait Until Element Is Visible    css:.alertCenter-notification-qa      ${wait_time}
     Wait Until Element Is Enabled    css:.alertCenter-notification-qa      ${wait_time}
+#    clear element text          css:.alertCenter-notification-qa input
     Click Element    css:.alertCenter-notification-qa input
     Generic.Select parameter    ${option}
 
