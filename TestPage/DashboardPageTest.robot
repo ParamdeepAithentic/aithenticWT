@@ -1993,6 +1993,5 @@ Click and verify on manage subscription under billing
     BillingPage.Get the value of manage subscription under subscription page
     TechnologyPage.verify Text from Assignment Information       ${subscription_plan}       ${plan_name}
 
-
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
