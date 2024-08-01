@@ -2557,9 +2557,8 @@ Add Technology: Verify Renewal Date get auto-populate when enter contract end da
     TechnologyPage.Add technology group information contract end date       ${current_date1}
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     Generic.Scroll the page till    1000
-#    sleep       20
     TechnologyPage.Fetch the date from renewal date in add technology
-    TechnologyPage.Compare Renewal date and contract end date in add technology
+    TechnologyPage.Compare Renewal date and contract end date in add technology     ${current_date1}        ${fetch_renewal_date}
     TechnologyPage.Input future Date
     TechnologyPage.Change contract end date     ${formatted_future_date}
     sleep       ${search_sleep}
@@ -2571,16 +2570,137 @@ Add Technology: Verify Renewal Date get auto-populate when enter contract end da
     TechnologyPage.Verify warning pop-up is visible when change contract end date
     TechnologyPage.Select option from contract end date warning pop-up      close
     TechnologyPage.Verify pop-up is invisible
-#    TechnologyPage.Change contract end date         ${formatted_future_date}
-    TechnologyPage.Add technology group information contract end date       ${formatted_future_date}
+    TechnologyPage.Change contract end date         ${formatted_future_date}
     sleep       ${search_sleep}
     TechnologyPage.Verify warning pop-up is visible when change contract end date
     TechnologyPage.Select option from contract end date warning pop-up      confirm
     Enter input in the cancellation notice period field     2
-#    TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     Generic.Scroll the page till    1000
     TechnologyPage.Fetch the date from renewal date in add technology
-    TechnologyPage.Compare Renewal date and contract end date in add technology
+    TechnologyPage.Compare Renewal date and contract end date in add technology     ${formatted_future_date}         ${fetch_renewal_date}
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology-list
+    Generic.Wait until table get load
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+    TechnologyPage.Fetch renewal date from technology details page
+    TechnologyPage.Fetch contract end date from technology details page
+    TechnologyPage.Compare Renewal date and contract end date on Technology details page
+
+Edit Technology: Verify Renewal Date and contract end date
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list      OPMR815309
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Add cost type of technology cost information        Fixed Length Contract
+    TechnologyPage.Add payment type of technology cost information     FixedPayment
+    TechnologyPage.Input current Date
+    TechnologyPage.Add technology group information contract end date       ${current_date1}
+    TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology-list
+    Generic.Wait until table get load
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+    TechnologyPage.Click on edit button on product details page        Edit
+    Generic.Verify your current page location contains      edit-technology
+    Generic.Refresh the existing page
+    TechnologyPage.Input current Date
+    TechnologyPage.Enter current or future date as renewal date     ${current_date1}
+    TechnologyPage.Select technology lifecycle status      Active
+    Generic.Scroll the page till    2000
+    TechnologyPage.Input future Date
+    TechnologyPage.Change contract end date         ${formatted_future_date}
+    sleep       ${search_sleep}
+    TechnologyPage.Verify warning pop-up is visible when change contract end date
+    TechnologyPage.Select option from contract end date warning pop-up      close
+    TechnologyPage.Verify pop-up is invisible
+    TechnologyPage.Click on update button of edit_technology page      Update
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+    Generic.Verify your current page location contains     technology-details
+    TechnologyPage.Fetch renewal date from technology details page
+    TechnologyPage.Fetch contract end date from technology details page
+    TechnologyPage.Verify Renewal date and contract end date are not equal    ${details_renewal_date}       ${details_contract_date}
+    TechnologyPage.Click on edit button on product details page        Edit
+    Generic.Verify your current page location contains      edit-technology
+    Generic.Refresh the existing page
+    TechnologyPage.Select technology lifecycle status      Active
+    Generic.Scroll the page till    2000
+    TechnologyPage.Change contract end date         07/25/2024
+    sleep       ${search_sleep}
+    TechnologyPage.Verify warning pop-up is visible when change contract end date
+    TechnologyPage.Select option from contract end date warning pop-up      confirm
+    TechnologyPage.Fetch the date from renewal date in add technology
+    TechnologyPage.Compare Renewal date and contract end date in add technology     ${fetch_renewal_date}           07/25/2024
+    TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
+    TechnologyPage.Click on update button of edit_technology page      Update
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+    Generic.Verify your current page location contains     technology-details
+    TechnologyPage.Fetch renewal date from technology details page
+    TechnologyPage.Fetch contract end date from technology details page
+    TechnologyPage.Compare Renewal date and contract end date on Technology details page
+
+Clone Technology: Verify Renewal Date and contract end date
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list      OPMR815309
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Add cost type of technology cost information        Fixed Length Contract
+    TechnologyPage.Add payment type of technology cost information     FixedPayment
+    TechnologyPage.Input current Date
+    TechnologyPage.Add technology group information contract end date       ${current_date1}
+    TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology-list
+    Generic.Wait until table get load
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+    TechnologyPage.Click on clone button on techonology details page       Clone
+    Generic.Verify your current page location contains      clone-addtechnology
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Input future Date
+    TechnologyPage.Enter current or future date as renewal date     ${formatted_future_date}
+    TechnologyPage.Change contract end date      07/25/2024
+    sleep       ${search_sleep}
+    TechnologyPage.Verify warning pop-up is visible when change contract end date
+    TechnologyPage.Select option from contract end date warning pop-up      close
+    TechnologyPage.Verify pop-up is invisible
+    TechnologyPage.Input current Date
+    TechnologyPage.Change contract end date     ${current_date1}
+    sleep       ${search_sleep}
+    TechnologyPage.Verify warning pop-up is visible when change contract end date
+    TechnologyPage.Select option from contract end date warning pop-up      confirm
+    Enter input in the cancellation notice period field     2
+    Generic.Scroll the page till    1000
+    TechnologyPage.Fetch the date from renewal date in add technology
+    TechnologyPage.Compare Renewal date and contract end date in add technology     ${fetch_renewal_date}     ${current_date1}
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button

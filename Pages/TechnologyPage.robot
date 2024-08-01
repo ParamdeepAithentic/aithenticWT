@@ -1871,7 +1871,12 @@ Change contract end date
     Press keys    ${Contract_endDate}   TAB
 
 Compare Renewal date and contract end date in add technology
-    should be equal    ${current_date1}          ${fetch_renewal_date}
+    [Arguments]     ${option1}      ${option2}
+    should be equal    ${option1}          ${option2}
+
+Verify Renewal date and contract end date are not equal
+    [Arguments]     ${option1}      ${option2}
+    should not be equal    ${option1}          ${option2}
 
 Fetch contract end date from technology details page
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
