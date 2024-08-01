@@ -197,3 +197,25 @@ Add new zip code of billing
     clear element text      css:#zipCode
     click element    css:#zipCode
     input text   css:#zipCode    ${code}
+
+Get the value of team member under billing
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible    //div[normalize-space()='Team Members']//following-sibling::div//h4   ${wait_time}
+    ${Team_member_billing_string} =    Get text   //div[normalize-space()='Team Members']//following-sibling::div//h4
+    ${tam_member_billing_int}=   Convert To Integer   ${Team_member_billing_string}
+    Log To Console    Total count is : ${tam_member_billing_int}
+    Set Global Variable     ${tam_member_billing_int}
+
+Get the value of manage subscription under billing
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible    //div[normalize-space()='Current Plan']//following-sibling::div//h4   ${wait_time}
+    ${subscription_plan} =    Get text   //div[normalize-space()='Current Plan']//following-sibling::div//h4
+    Log To Console    Current Plan is : ${subscription_plan}
+    Set Global Variable     ${subscription_plan}
+
+Get the value of manage subscription under subscription page
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible   //div[contains(@class,'active-plan')]//h4   ${wait_time}
+    ${plan_name} =    Get text   //div[contains(@class,'active-plan')]//h4
+    Log To Console    Current Plan is : ${plan_name}
+    Set Global Variable     ${plan_name}
