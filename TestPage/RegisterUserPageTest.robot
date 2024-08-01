@@ -1526,3 +1526,25 @@ Update billing address via profile list
     BillingPage.Add new zip code of billing     52214
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with       Billing address updated successfully
+
+Verfying the validation of the Address 1 field from the company details
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form     BusinessEmail5292942479@yopmail.net       Paramdeep@112
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     company-details
+    Generic.Verify your current page location contains    company-profile
+    RegisterUserPage.Click on edit button to edit the profile details    Edit
+    RegisterUserPage.Clear the data from Address1 field
+    RegisterUserPage.Save the Profile details       Save
+    Generic.Fetch alert message text and compare it with    Profile saved successfully
+    Generic.Verify your current page contains this text          Please enter Address Line1
+    RegisterUserPage.Input text into manufacturer address one inside comapny details       T        1
+    RegisterUserPage.Input text into manufacturer address one inside comapny details       T        2
+    RegisterUserPage.Save the Profile details       Save
+    Generic.Fetch alert message text and compare it with    Profile saved successfully
+
+
+
+

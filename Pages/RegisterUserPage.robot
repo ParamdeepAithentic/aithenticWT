@@ -321,6 +321,12 @@ Input text into manufacturer address one inside comapny details
     [Arguments]    ${option}        ${option1}
     Generic.Enter value into field      css:#StreetAddress${option1}     ${option}
 
+Clear the data from Address1 field
+    wait until element is not visible   ${loaderIcon}      ${wait_time}
+    wait until element is visible        css:#StreetAddress1     ${wait_time}
+    clear element text      css:#StreetAddress1
+    Press Keys    css:#StreetAddress1    Enter
+
 Verify the email change warning pop-up and choose option
     [Arguments]     ${option}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
