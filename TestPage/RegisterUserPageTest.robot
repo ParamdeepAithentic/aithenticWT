@@ -1556,8 +1556,3 @@ Verfying the validation of the Address 1 field from the company details
     RegisterUserPage.Input text into manufacturer address one inside comapny details       This is address 2        2
     RegisterUserPage.Save the Profile details       Save
     Generic.Fetch alert message text and compare it with    Profile saved successfully
-
-
-
-
-
