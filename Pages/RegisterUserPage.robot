@@ -324,8 +324,11 @@ Input text into manufacturer address one inside comapny details
 Clear the data from Address1 field
     wait until element is not visible   ${loaderIcon}      ${wait_time}
     wait until element is visible        css:#StreetAddress1     ${wait_time}
-    clear element text      css:#StreetAddress1
-    Press Keys    css:#StreetAddress1    Enter
+    click element      css:#StreetAddress1
+    Press Keys    css:#StreetAddress1   CTRL+A
+    input text      css:#StreetAddress1     A
+    Double Click Element   css:#StreetAddress1
+    Press Keys    css:#StreetAddress1    BACKSPACE
 
 Verify the email change warning pop-up and choose option
     [Arguments]     ${option}
@@ -469,3 +472,10 @@ Verify the visibility of validation when entering password more than the limit
 
 Verify the visibility of validation when entering password less than the limit
     Wait Until Element Is Visible    //span[normalize-space()='Invalid password: minimum length 8.']         ${wait_time}
+
+wait for the invisiblity of the city field loader
+    wait until element is not visible       ${loaderIcon}      ${wait_time}
+    wait until element is visible       css:.qa-City .ng-spinner-loader         ${wait_time}
+    wait until element is not visible    css:.qa-City .ng-spinner-loader         ${wait_time}
+
+
