@@ -1526,3 +1526,33 @@ Update billing address via profile list
     BillingPage.Add new zip code of billing     52214
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with       Billing address updated successfully
+
+Verfying the validation of the Address 1 field from the company details
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}       ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     company-details
+    Generic.Verify your current page location contains    company-profile
+    RegisterUserPage.wait for the invisiblity of the city field loader
+    Generic.Scroll Window To End
+    RegisterUserPage.Click on edit button to edit the profile details    Edit
+    RegisterUserPage.Clear the data from Address1 field
+    Generic.Verify your current page contains this text          Please enter Address Line1
+    RegisterUserPage.Input text into manufacturer address one inside comapny details       T        1
+    RegisterUserPage.Input text into manufacturer address one inside comapny details       T        2
+    RegisterUserPage.Save the Profile details       Save
+    Generic.Fetch alert message text and compare it with    Profile saved successfully
+    Generic.Scroll Window To End
+    RegisterUserPage.Click on edit button to edit the profile details    Edit
+    RegisterUserPage.Input text into manufacturer address one inside comapny details       T Address1        1
+    RegisterUserPage.Input text into manufacturer address one inside comapny details       T address2        2
+    RegisterUserPage.Save the Profile details       Save
+    Generic.Fetch alert message text and compare it with    Profile saved successfully
+    Generic.Scroll Window To End
+    RegisterUserPage.Click on edit button to edit the profile details    Edit
+    RegisterUserPage.Input text into manufacturer address one inside comapny details       This is address 1        1
+    RegisterUserPage.Input text into manufacturer address one inside comapny details       This is address 2        2
+    RegisterUserPage.Save the Profile details       Save
+    Generic.Fetch alert message text and compare it with    Profile saved successfully
