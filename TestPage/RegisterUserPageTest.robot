@@ -1764,7 +1764,3 @@ Add new credit card and delete that card
     RegisterUserPage.Click on the delete icon to delete the ach card
     BillingPage.Confirm if you want to delect account       confirm
     Generic.Fetch alert message text and compare it with       Card removed successfully
-
-
-
-
