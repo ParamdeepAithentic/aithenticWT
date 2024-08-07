@@ -2086,6 +2086,9 @@ Compose Message reply and delete that message
     LandingPage.Fill the login Form  ${generated_TMbusinessEmail}    Test@456
     Generic.Verify your current page location contains      dashboard
 #    LandingPage.Verify you are on dashboard page
+    DashboardPage.Click on the notifications icon under dashbaord page
+    sleep   ${search_sleep}
+    DashboardPage.Get the text of the recent notification        New message received from Milan Johar
     Generic.select the option from the side menu    Messages
     Generic.Verify your current page location contains      message
     Generic.Select parameter      Inbox
@@ -2104,6 +2107,9 @@ Compose Message reply and delete that message
     LandingPage.Fill the login Form   debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
 #    LandingPage.Verify you are on dashboard page
+    DashboardPage.Click on the notifications icon under dashbaord page
+    sleep   ${search_sleep}
+    DashboardPage.Get the text of the recent notification        New message received from ${generated_TMFname} ${generated_Tmlname}
     Generic.select the option from the side menu    Messages
     Generic.Verify your current page location contains      message
     Generic.Select parameter      Inbox

@@ -1324,5 +1324,20 @@ Click on the remove option to remove the message
     Click element     css:.remove-message-qa
     wait until element is not visible   ${loaderIcon}       ${wait_time}
 
+Click on the notifications icon under dashbaord page
+    wait until element is visible       css:#bellIconId      ${wait_time}
+    wait until element is visible      css:#bellIconId    ${wait_time}
+    Click element     css:#bellIconId
+
+Get the text of the recent notification
+    [Arguments]      ${option}
+    wait until element is visible       css:#alertTabs>div>.notifications-container >ul>li:nth-child(1)>div:nth-child(1)
+    wait until element is enabled       css:#alertTabs>div>.notifications-container >ul>li:nth-child(1)>div:nth-child(1)     ${wait_time}
+    ${notification} =    get text    css:#alertTabs>div>.notifications-container >ul>li:nth-child(1)>div:nth-child(1)
+    set global variable     ${notification}
+    log to console     ${notification}
+    should be equal    ${notification}     ${option}
+
+
 
 
