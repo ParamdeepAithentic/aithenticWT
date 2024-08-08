@@ -879,7 +879,7 @@ Verify Invitation and signup as team member
     Generic.Fetch alert message text and compare it with        Team member deleted successfully
 
 Add Back Deleted Team member - Invited
-    [Tags]      Stable      Sanity      rerun
+    [Tags]      Stable      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -921,7 +921,7 @@ Add Back Deleted Team member - Invited
     TeamMemberPage.Verify Team member added after delete        ${generated_TMFname} ${generated_TMLname}
 
 Verify Invitation and signup as team member via company details
-    [Tags]      Stable     Sanity       rerun
+    [Tags]      Stable     Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
@@ -1162,7 +1162,7 @@ Add Back Deleted Team member - Active
     TeamMemberPage.verify status of first name in member list   Active
     TeamMemberPage.Click on three dots of Team Member listing
     TeamMemberPage.Select option from three dots of Team Member     Remove
-    TeamMemberPage.Select option from remove TM warning pop-up
+    TeamMemberPage.Click on the yes option under remove team member pop up
     Generic.Fetch alert message text and compare it with        Team member deleted successfully
     TeamMemberPage.Click on add team member action button
     TeamMemberPage.Select option from team member action menu

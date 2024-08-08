@@ -230,7 +230,7 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
         LandingPage.Verify you are on dashboard page
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
-        Generic.Verify your current page location contains    ocs
+        Generic.Verify your current page location contains    aad
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
