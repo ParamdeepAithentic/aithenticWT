@@ -1950,7 +1950,52 @@ Enter password with 32 characters while register
     DashboardPage.Select the asset ID checkbox      no
     Generic.Fetch alert message text and compare it with       Settings Updated
 
+Download invoice pdf
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     billing-dropdown
+    Generic.Verify your current page location contains      billing-details
+    BillingPage.Click on the invoice history tab under billing
+    BillingPage.Click on the pdf option under the table of invoice
+    Generic.Verify your current page location contains     invoice-pdf
+    Generic.Verify your current page contains this text     Client ID:
+    Generic.click on the button     Download Pdf Version
+    Sleep    ${Yop_Sleep}
+    Switch Window       NEW
+    Generic.Verify your current page location contains    .pdf
 
+Click and verify view manage member under billing
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       chirag@dmts.fr.nf    Test@123
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     billing-dropdown
+    Generic.Verify your current page location contains      billing-details
+    BillingPage.Get the value of team member under billing
+    Generic.click on the tab        Manage Members
+    Generic.Verify your current page location contains      memberslist
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    TechnologyPage.verify Text from Assignment Information       ${tam_member_billing_int}       ${total_data_count}
+
+Click and verify on manage subscription under billing
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       chirag@dmts.fr.nf    Test@123
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     billing-dropdown
+    Generic.Verify your current page location contains      billing-details
+    BillingPage.Get the value of manage subscription under billing
+    Generic.click on the tab       Manage Subscription
+    Generic.Verify your current page location contains     subscription
+    Generic.click on the button     Change Plan
+    BillingPage.Get the value of manage subscription under subscription page
+    TechnologyPage.verify Text from Assignment Information       ${subscription_plan}       ${plan_name}
 
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

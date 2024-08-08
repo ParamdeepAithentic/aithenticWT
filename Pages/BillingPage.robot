@@ -123,6 +123,19 @@ Click on billing trash to remove card
     Wait Until Element Is Enabled       ${billing_trash_icon}    ${wait_time}
     click element      ${billing_trash_icon}
 
+Click on the invoice history tab under billing
+    wait until element is not visible       ${loaderIcon}    ${wait_time}
+    wait until element is visible     css:#history   ${wait_time}
+    wait until element is enabled      css:#history    ${wait_time}
+    click element    css:#history
+    wait until element is not visible       ${loaderIcon}    ${wait_time}
+
+Click on the pdf option under the table of invoice
+    wait until element is visible     //tbody//tr[1]//td[3]   ${wait_time}
+    wait until element is enabled      //tbody//tr[1]//td[3]    ${wait_time}
+    click element    //tbody//tr[1]//td[3]
+    wait until element is not visible       ${loaderIcon}    ${wait_time}
+
 Enter input in address line1 under billing
     wait until element is not visible       ${loaderIcon}    ${wait_time}
     wait until element is visible       css:#addressLine1     ${wait_time}
@@ -184,3 +197,25 @@ Add new zip code of billing
     clear element text      css:#zipCode
     click element    css:#zipCode
     input text   css:#zipCode    ${code}
+
+Get the value of team member under billing
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible    //div[normalize-space()='Team Members']//following-sibling::div//h4   ${wait_time}
+    ${Team_member_billing_string} =    Get text   //div[normalize-space()='Team Members']//following-sibling::div//h4
+    ${tam_member_billing_int}=   Convert To Integer   ${Team_member_billing_string}
+    Log To Console    Total count is : ${tam_member_billing_int}
+    Set Global Variable     ${tam_member_billing_int}
+
+Get the value of manage subscription under billing
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible    //div[normalize-space()='Current Plan']//following-sibling::div//h4   ${wait_time}
+    ${subscription_plan} =    Get text   //div[normalize-space()='Current Plan']//following-sibling::div//h4
+    Log To Console    Current Plan is : ${subscription_plan}
+    Set Global Variable     ${subscription_plan}
+
+Get the value of manage subscription under subscription page
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible   //div[contains(@class,'active-plan')]//h4   ${wait_time}
+    ${plan_name} =    Get text   //div[contains(@class,'active-plan')]//h4
+    Log To Console    Current Plan is : ${plan_name}
+    Set Global Variable     ${plan_name}
