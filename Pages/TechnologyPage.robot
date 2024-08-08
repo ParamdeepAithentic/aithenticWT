@@ -1938,3 +1938,33 @@ Select particular technology group via link while adding technology
     wait until element is visible      //span[normalize-space()='${option}']       ${wait_time}
     wait until element is enabled      //span[normalize-space()='${option}']       ${wait_time}
     click element       //span[normalize-space()='${option}']
+
+Click on message tab of technology- list page
+    wait until element is visible   css:#PrintQrButton   ${wait_time}
+    wait until element is enabled   css:#PrintQrButton   ${wait_time}
+    wait until element is visible   css:#messages-tab   ${wait_time}
+    click element   css:#messages-tab
+
+Enter input in the recipient list field under compose message via technology details
+    [Arguments]     ${message}
+    wait until element is visible      //input[@id='to']     ${wait_time}
+    wait until element is visible      //input[@id='to']      ${wait_time}
+    click element   //input[@id='to']
+    input text      //input[@id='to']       ${message}
+    wait until element is visible     //span[contains(@title,'${message}')]    ${wait_time}
+    wait until element is visible      //span[contains(@title,'${message}')]      ${wait_time}
+    click element       //span[contains(@title,'${message}')]
+
+Get the text of the recent notification of added assets
+    [Arguments]      ${option}
+    wait until element is visible       css:#assetsAlert >div>.notifications-container >ul>li:nth-child(1)>div:nth-child(1)
+    wait until element is enabled       css:#assetsAlert >div>.notifications-container >ul>li:nth-child(1)>div:nth-child(1)     ${wait_time}
+    ${notification} =    get text    css:#assetsAlert >div>.notifications-container >ul>li:nth-child(1)>div:nth-child(1)
+    set global variable     ${notification}
+    log to console     ${notification}
+    should be equal    ${notification}     ${option}
+
+Click on the asset alert option under notifications
+    wait until element is visible      //a[@id='assets-alert']     ${wait_time}
+    wait until element is visible     //a[@id='assets-alert']     ${wait_time}
+    click element   //a[@id='assets-alert']

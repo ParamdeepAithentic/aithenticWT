@@ -1268,18 +1268,24 @@ Enter input in the message status field under compose message
     click element       //span[normalize-space()='${message_status}']
 
 Enter text in the subject field under compose message
-    [Arguments]     ${subject}
     wait until element is visible      css:#ClientMessageSubject     ${wait_time}
     wait until element is visible     css:#ClientMessageSubject      ${wait_time}
     click element   css:#ClientMessageSubject
-    input text     css:#ClientMessageSubject      ${subject}
+    ${random_string} =    Generate Random String       20      [LETTERS]
+    ${generated_subject}=    Catenate    Subject:${random_string}
+    input text     css:#ClientMessageSubject      ${generated_subject}
+    log to console     ${generated_subject}
+    set global variable    ${generated_subject}
 
 Enter text in the client message field under compose message
-    [Arguments]     ${client_message}
     wait until element is visible      css:#ClientMessageDetail     ${wait_time}
     wait until element is visible     css:#ClientMessageDetail      ${wait_time}
     click element   css:#ClientMessageDetail
+    ${random_string} =    Generate Random String       20      [LETTERS]
+    ${generated_client_message}=    Catenate    Client_Message:${random_string}
     input text     css:#ClientMessageDetail       ${client_message}
+    log to console     ${generated_client_message}
+    set global variable    ${generated_client_message}
 
 Search by subject under sent serach bar
     [Arguments]     ${data}
@@ -1306,11 +1312,14 @@ Click on the reply option to reply the message
     wait until element is not visible   ${loaderIcon}       ${wait_time}
 
 Enter input in the reply back page
-    [Arguments]     ${reply_message}
     wait until element is visible      //div[@class='form-fields-login']//textarea[contains(@class,'message-body')]      ${wait_time}
     wait until element is visible      //div[@class='form-fields-login']//textarea[contains(@class,'message-body')]   ${wait_time}
     Click element     //div[@class='form-fields-login']//textarea[contains(@class,'message-body')]
-    input text      //div[@class='form-fields-login']//textarea[contains(@class,'message-body')]        ${reply_message}
+    ${random_string} =    Generate Random String       20      [LETTERS]
+    ${generated_reply}=    Catenate    Reply:${random_string}
+    input text      //div[@class='form-fields-login']//textarea[contains(@class,'message-body')]         ${generated_reply}
+    log to console     ${generated_reply}
+    set global variable   ${generated_reply}
 
 Click on the flag icon to flag the message
     wait until element is visible       css:.flag-message-qa       ${wait_time}
