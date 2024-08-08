@@ -207,6 +207,7 @@ Verify all i-icon of Discovery assets
     OCS.Click on newly discovered tab under network discovery
     I_iconPage.Click on i_icon under network_discovery tab
 
+<<<<<<< HEAD
 #Verify all i-icon of advanced search
 #    [Tags]     Smoke    Unstable
 #    Generic.click on the tab	Login
@@ -223,6 +224,100 @@ Verify all i-icon of Discovery assets
 #    Generic.Verify pop-up is visible after clicking on i-icon
 #    I_iconPage.Click on i_icon of advanced search under add technology
 #    I_iconPage.Click on the cross icon of advanced search under technology
+=======
+Verify all i-icon of advanced search
+    [Tags]     Smoke    Unstable
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click on advanced search button link under add technology
+    I_iconPage.Click on i_icon of advanced search under add technology
+    Generic.Verify pop-up is visible after clicking on i-icon
+    I_iconPage.Click on i_icon of advanced search under add technology
+    I_iconPage.Click on the cross icon of advanced search under technology
+    sleep   ${search_sleep}
+    Generic.Verify your current page location contains      addtechnology
+    Generic.select the option from the side menu        Asset Discovery
+    Generic.Verify your current page location contains      discovery-assets
+    I_iconPage.Choose tab under Discovery Assets       network-discovery
+    Generic.Verify your current page location contains    aad
+    OCS.Click on newly discovered tab under network discovery
+    Generic.Verify your current page location contains    aad
+    OCS.Click on search icon of discovery assets
+    OCS.Enter text to search discovery asset  ${discovered_asset_brand}
+    Generic.Scroll Window To End
+    OCS.Click on the down arrow icon of discovered asset
+    OCS.Mouse Hover over searched Discovered Assets
+    OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
+    OCS.Get Serial number by hovering over discovered assets     Serial Number:
+    OCS.Get Host name by hovering over discovered assets     Host name:
+    OCS.Mark check-box of Agent/Discovered Asset
+    OCS.Click on Button inside Network Discovery Page       Add Assets
+    Sleep    ${yop_sleep}
+    Switch Window       aithentic | Add Discovery Asset
+    Generic.Verify your current page contains this text    Add Technology
+    I_iconPage.Click on advanced search link under create asset network discovery
+    sleep   ${search_sleep}
+    I_iconPage.Click on i_icon of advanced search under add discovered asset
+    I_iconPage.Verify pop is visible after clicking i-icon of advancede search under discovered asset
+    I_iconPage.Click on i_icon of advanced search under add discovered asset
+    I_iconPage.Click on the cross icon of advanced search under technology
+    TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
+    OCS.Enter The Asset_id in Add Technology Page
+    TechnologyPage.Create unique serial number random
+    Generic.Scroll Window To End
+    OCS.Click on save button of Add Technology Page
+    OCS.Wait for the invisiblity of alert msg        Technology created successfully
+    Sleep    ${yop_sleep}
+    switch window    aithentic | Sentinel One Newly-Discovered
+    Generic.Refresh the existing page
+    OCS.Choose Tab under Asset Discovery    agent-discovery
+    Generic.Verify your current page contains this text    ${generated_AssetID}
+    sleep   ${search_sleep}
+    Generic.select the option from the side menu        Technology
+    Generic.Verify your current page location contains      technology-list
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    sleep   ${search_sleep}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains    technology-details
+    OCS.Get Value of MAC-Address from technology details and compare it with      ${hover_MAC_address1}
+    OCS.Get Value of Host-Name and compare it with    ${hover_host name}
+    OCS.Visible the print qr button to for data loading
+    OCS.Click on Discovery_info tab on Technology details Page
+    OCS.Verify Discovery_info contains following tab    hardware-tab
+    OCS.Verify Discovery_info contains following tab    software-tab
+    sleep   ${search_sleep}
+    OCS.Enter input in search bar of software tab under technology details page     python
+    Generic.Scroll the page till   499
+    OCS.Hover Over Add component button and verify text         Please click on the 'plus' icon to add component
+    OCS.Click on plus icon of any component
+    Sleep    ${yop_sleep}
+    Switch Window       aithentic | Add Discovery Asset
+    Generic.Verify your current page contains this text    Add Technology
+    I_iconPage.Click on advanced search link under create asset network discovery
+    sleep   ${search_sleep}
+    I_iconPage.Click on i_icon of advanced search under add discovered asset
+    I_iconPage.Verify pop is visible after clicking i-icon of advancede search under discovered asset
+    I_iconPage.Click on i_icon of advanced search under add discovered asset
+    I_iconPage.Click on the cross icon of advanced search under technology
+    TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
+    OCS.Create Asset_id for software component
+    Generic.Scroll Window To End
+    OCS.Click on save button of Add Technology Page
+
+    OCS.Wait for the invisiblity of alert msg       Technology created successfully
+    Sleep    ${yop_sleep}
+    Switch Window      aithentic | Technology - Details
+
+
+    Generic.Verify your current page location contains    technology-details
+>>>>>>> 577f335c57ca69e9d87626d65c3bb7eeaf0ecf54
 #    sleep   ${search_sleep}
 #    Generic.Verify your current page location contains      addtechnology
 #    Generic.select the option from the side menu        Asset Discovery
@@ -452,6 +547,7 @@ Upload I-icon under clone add technology
     TechnologyPage.Add assetID for technology lifecycle information random
     Generic.Scroll Window To End
     I_iconPage.Fetch the text of I-icon of upload file while adding technology     You can upload 1 file of 8MB or 8 files of 1MB each.
+
 
 #Upload I-icon while adding discovery and component asset
 #    [Tags]    rerun     Unstable

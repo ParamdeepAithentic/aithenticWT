@@ -472,6 +472,7 @@ Technology Bulk edit
     Bulk_Import_ExportPage.click on the arrow of product    Technology Lifecycle Information    2
     Bulk_Import_Exportpage.Enter the new value in last Payment date field of technology bulk import      PurchaseDt     03/11/2024
     Bulk_Import_Exportpage.Enter the new value in last Payment date field of technology bulk import      RenewalDate      03/11/2025
+    Bulk_Import_Exportpage.Enter the new value in last Payment date field of technology bulk import      WarrantyEndDt      03/11/2027
     Bulk_Import_ExportPage.Click on the fields and select value from dropdown of technology bulk edit        Status
     Bulk_Import_ExportPage.click on the arrow of product    Technology Lifecycle Information     1
     Bulk_Import_ExportPage.click on the arrow of product    Assignment Information     2

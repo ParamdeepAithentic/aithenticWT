@@ -491,7 +491,6 @@ Visit discovered asset list when click on No. IP discovered devices
 
 
 
-
 #Refresh search text on discovered asset list page
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
