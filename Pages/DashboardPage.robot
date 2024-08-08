@@ -1337,7 +1337,3 @@ Get the text of the recent notification
     set global variable     ${notification}
     log to console     ${notification}
     should be equal    ${notification}     ${option}
-
-
-
-
