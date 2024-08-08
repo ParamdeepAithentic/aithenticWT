@@ -1246,3 +1246,94 @@ Wait for the visibility of the validation of password field under create account
     wait until element is visible      //li[normalize-space()='One Uppercase Letter']      ${wait_time}
     wait until element is visible      //li[normalize-space()='One Lowercase Letter']      ${wait_time}
     wait until element is visible      //li[normalize-space()='One Special Character']      ${wait_time}
+
+Enter input in the recipient list field under compose message
+    [Arguments]     ${message}
+    wait until element is visible      //input[@id='Recipient_list']     ${wait_time}
+    wait until element is visible      //input[@id='Recipient_list']      ${wait_time}
+    click element   //input[@id='Recipient_list']
+    input text      //input[@id='Recipient_list']       ${message}
+    wait until element is visible     //span[contains(@title,'${message}')]    ${wait_time}
+    wait until element is visible      //span[contains(@title,'${message}')]      ${wait_time}
+    click element       //span[contains(@title,'${message}')]
+
+Enter input in the message status field under compose message
+    [Arguments]     ${message_status}
+    wait until element is visible      //input[@id='message-Status']     ${wait_time}
+    wait until element is visible      //input[@id='message-Status']      ${wait_time}
+    click element   //input[@id='message-Status']
+    input text     //input[@id='message-Status']       ${message_status}
+    wait until element is visible     //span[normalize-space()='${message_status}']    ${wait_time}
+    wait until element is visible     //span[normalize-space()='${message_status}']      ${wait_time}
+    click element       //span[normalize-space()='${message_status}']
+
+Enter text in the subject field under compose message
+    [Arguments]     ${subject}
+    wait until element is visible      css:#ClientMessageSubject     ${wait_time}
+    wait until element is visible     css:#ClientMessageSubject      ${wait_time}
+    click element   css:#ClientMessageSubject
+    input text     css:#ClientMessageSubject      ${subject}
+
+Enter text in the client message field under compose message
+    [Arguments]     ${client_message}
+    wait until element is visible      css:#ClientMessageDetail     ${wait_time}
+    wait until element is visible     css:#ClientMessageDetail      ${wait_time}
+    click element   css:#ClientMessageDetail
+    input text     css:#ClientMessageDetail       ${client_message}
+
+Search by subject under sent serach bar
+    [Arguments]     ${data}
+    wait until element is visible       css:thead tr       ${wait_time}
+    wait until element is visible       //input[@placeholder='Search by To and Subject']       ${wait_time}
+    Clear Element Text      //input[@placeholder='Search by To and Subject']
+    input text      //input[@placeholder='Search by To and Subject']     ${data}
+    sleep       ${search_sleep}
+    wait until element is visible       css:thead tr       ${wait_time}
+
+Search by subject under inbox serach bar
+    [Arguments]     ${data}
+    wait until element is visible       css:thead tr       ${wait_time}
+    wait until element is visible      //input[@placeholder='Search by From and Subject']      ${wait_time}
+    Clear Element Text      //input[@placeholder='Search by From and Subject']
+    input text      //input[@placeholder='Search by From and Subject']     ${data}
+    sleep       ${search_sleep}
+    wait until element is visible       css:thead tr       ${wait_time}
+
+Click on the reply option to reply the message
+    wait until element is visible       css:.reply-message-qa       ${wait_time}
+    wait until element is visible      css:.reply-message-qa     ${wait_time}
+    Click element     css:.reply-message-qa
+    wait until element is not visible   ${loaderIcon}       ${wait_time}
+
+Enter input in the reply back page
+    [Arguments]     ${reply_message}
+    wait until element is visible      //div[@class='form-fields-login']//textarea[contains(@class,'message-body')]      ${wait_time}
+    wait until element is visible      //div[@class='form-fields-login']//textarea[contains(@class,'message-body')]   ${wait_time}
+    Click element     //div[@class='form-fields-login']//textarea[contains(@class,'message-body')]
+    input text      //div[@class='form-fields-login']//textarea[contains(@class,'message-body')]        ${reply_message}
+
+Click on the flag icon to flag the message
+    wait until element is visible       css:.flag-message-qa       ${wait_time}
+    wait until element is visible      css:.flag-message-qa    ${wait_time}
+    Click element     css:.flag-message-qa
+    wait until element is not visible   ${loaderIcon}       ${wait_time}
+
+Click on the remove option to remove the message
+    wait until element is visible       css:.remove-message-qa       ${wait_time}
+    wait until element is visible      css:.remove-message-qa    ${wait_time}
+    Click element     css:.remove-message-qa
+    wait until element is not visible   ${loaderIcon}       ${wait_time}
+
+Click on the notifications icon under dashbaord page
+    wait until element is visible       css:#bellIconId      ${wait_time}
+    wait until element is visible      css:#bellIconId    ${wait_time}
+    Click element     css:#bellIconId
+
+Get the text of the recent notification
+    [Arguments]      ${option}
+    wait until element is visible       css:#alertTabs>div>.notifications-container >ul>li:nth-child(1)>div:nth-child(1)
+    wait until element is enabled       css:#alertTabs>div>.notifications-container >ul>li:nth-child(1)>div:nth-child(1)     ${wait_time}
+    ${notification} =    get text    css:#alertTabs>div>.notifications-container >ul>li:nth-child(1)>div:nth-child(1)
+    set global variable     ${notification}
+    log to console     ${notification}
+    should be equal    ${notification}     ${option}
