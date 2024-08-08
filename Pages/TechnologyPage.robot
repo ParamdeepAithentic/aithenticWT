@@ -1968,3 +1968,13 @@ Click on the asset alert option under notifications
     wait until element is visible      //a[@id='assets-alert']     ${wait_time}
     wait until element is visible     //a[@id='assets-alert']     ${wait_time}
     click element   //a[@id='assets-alert']
+
+Enter input in the message status field under compose message via technology detail
+    [Arguments]     ${message_status}
+    wait until element is visible      //input[@id='messageStatus']     ${wait_time}
+    wait until element is visible      //input[@id='messageStatus']      ${wait_time}
+    click element   //input[@id='messageStatus']
+    input text     //input[@id='messageStatus']       ${message_status}
+    wait until element is visible     //span[normalize-space()='${message_status}']    ${wait_time}
+    wait until element is visible     //span[normalize-space()='${message_status}']      ${wait_time}
+    click element       //span[normalize-space()='${message_status}']

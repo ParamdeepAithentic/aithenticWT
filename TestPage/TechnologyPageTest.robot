@@ -2790,6 +2790,7 @@ Compose reply and remove the message via technology details
     TechnologyPage.Search by AssetId       ${generated_AssetID}
     Generic.Refresh the existing page
     Generic.Verify your current page location contains      technology
+    sleep       2
     DashboardPage.Click on the notifications icon under dashbaord page
     TechnologyPage.Click on the asset alert option under notifications
     sleep   ${search_sleep}
@@ -2850,8 +2851,8 @@ Compose reply and remove the message via technology details
     TechnologyPage.Click on the first row of the technology table
     TechnologyPage.Click on message tab of technology- list page
     Generic.click on the button     Compose Message
-    TechnologyPage.Enter input in the recipient list field under compose message via technology details      ${generated_TMFname}
-    DashboardPage.Enter input in the message status field under compose message     Public
+    TechnologyPage.Enter input in the recipient list field under compose message via technology details      ${generated_TMbusinessEmail}
+    TechnologyPage.Enter input in the message status field under compose message via technology detail     Public
     DashboardPage.Enter text in the subject field under compose message
     DashboardPage.Enter text in the client message field under compose message
     Generic.click on the button     Send
@@ -2865,12 +2866,36 @@ Compose reply and remove the message via technology details
     Generic.Select other option from profile list     Logout
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
+    LandingPage.Fill the login Form  ${generated_TMbusinessEmail}    Test@456
+    Generic.Verify your current page location contains      dashboard
+#    LandingPage.Verify you are on dashboard page
+    DashboardPage.Click on the notifications icon under dashbaord page
+    sleep   ${search_sleep}
+    DashboardPage.Get the text of the recent notification        New message received from Milan Johar for Asset ${generated_AssetID}
+    Generic.select the option from the side menu    Messages
+    Generic.Verify your current page location contains      message
+    Generic.Select parameter      Inbox
+    Generic.Verify your current page location contains      message
+    DashboardPage.Search by subject under inbox serach bar       ${generated_subject}
+    Dashboardpage.Click on three dots
+    DashboardPage.Click on the reply option to reply the message
+    Generic.Verify your current page location contains      reply
+    DashboardPage.Enter input in the reply back page
+    Generic.click on the button     Send
+    Generic.Fetch alert message text and compare it with       Message sent successfully
+    Generic.Select parameter      Sent
+    Generic.Verify your current page location contains      message
+    DashboardPage.Search by subject under sent serach bar     ${generated_TMFname}
+    Generic.Click on the profile name
+    Generic.Select other option from profile list     Logout
+    Generic.Fetch log_out alert message
+    Generic.click on the tab	Login
     LandingPage.Fill the login Form   debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
 #    LandingPage.Verify you are on dashboard page
     DashboardPage.Click on the notifications icon under dashbaord page
     sleep   ${search_sleep}
-    DashboardPage.Get the text of the recent notification        New message received from ${generated_TMFname} ${generated_Tmlname}
+    DashboardPage.Get the text of the recent notification       New message received from ${generated_TMFname} ${generated_Tmlname} for Asset ${generated_AssetID}
     Generic.select the option from the side menu    Messages
     Generic.Verify your current page location contains      message
     Generic.Select parameter      Inbox
@@ -2883,10 +2908,6 @@ Compose reply and remove the message via technology details
     DashboardPage.Click on the remove option to remove the message
     Generic.Select parameter        Yes
     Generic.Fetch alert message text and compare it with       Message removed successfully
-
-
-
-
 
 #Zz kill browser
 #    [Tags]      Smoke     Sanity      Time      rerun       Stable    yy

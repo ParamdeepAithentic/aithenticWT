@@ -1283,7 +1283,7 @@ Enter text in the client message field under compose message
     click element   css:#ClientMessageDetail
     ${random_string} =    Generate Random String       20      [LETTERS]
     ${generated_client_message}=    Catenate    Client_Message:${random_string}
-    input text     css:#ClientMessageDetail       ${client_message}
+    input text     css:#ClientMessageDetail       ${generated_client_message}
     log to console     ${generated_client_message}
     set global variable    ${generated_client_message}
 
