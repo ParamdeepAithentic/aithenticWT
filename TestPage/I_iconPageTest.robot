@@ -153,8 +153,10 @@ Verify all i-icon of Technology page
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
     TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select technology lifecycle status      Active
     I_iconPage.Click on i-icon of cost_center in add technology
     Generic.Verify pop-up is visible after clicking on i-icon
+    I_iconPage.Click on i-icon of cost_center in add technology
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
@@ -364,6 +366,7 @@ Verify all i-icon of Discovery assets
 #    Generic.Fetch alert message text and compare it with        Technology updated successfully
 #    UnselectAssetAPI.Hit API Endpoint
 
+
 Upload File I-icon while add and edit technology
     [Tags]      Stable
     Generic.click on the tab	Login
@@ -526,6 +529,7 @@ Upload I-icon under clone add technology
 #    Generic.Fetch alert message text and compare it with        Technology updated successfully
 #    UnselectAssetAPI.Hit API Endpoint
 
+
 #Upload I-icon while adding IP Address
 #    [Tags]      Unstable
 #    Generic.click on the tab	Login
@@ -582,4 +586,5 @@ Upload I-icon under clone add technology
 
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+
 

@@ -175,14 +175,15 @@ click on confirm button to change plan
     wait until element is not visible       ${shadow}          ${wait_time}
 
 
+
 Welcome to the code
     Log     Plan not required to be changed
 
+
 Select the higest plan
-    Scroll Element Into View      //div[@id='cost-range']//div[contains(@class,'ngx-slider-inner-tooltip')]//ancestor::span//ngx-slider-tooltip-wrapper[contains(@class,'ngx-slider-span')]
     ${element_count}=    Get Element Count    //div[@id='cost-range']//div[contains(@class,'ngx-slider-inner-tooltip')]//ancestor::span//ngx-slider-tooltip-wrapper[contains(@class,'ngx-slider-span')]
     Log      ${element_count}
     Wait Until Element Is Visible   (//div[@id='cost-range']//div[contains(@class,'ngx-slider-inner-tooltip')]//ancestor::span//ngx-slider-tooltip-wrapper[contains(@class,'ngx-slider-span')])[${element_count}]       ${wait_time}
     Wait Until Element Is enabled   (//div[@id='cost-range']//div[contains(@class,'ngx-slider-inner-tooltip')]//ancestor::span//ngx-slider-tooltip-wrapper[contains(@class,'ngx-slider-span')])[${element_count}]       ${wait_time}
     Click element    (//div[@id='cost-range']//div[contains(@class,'ngx-slider-inner-tooltip')]//ancestor::span//ngx-slider-tooltip-wrapper[contains(@class,'ngx-slider-span')])[${element_count}]
- 
+

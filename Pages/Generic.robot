@@ -80,7 +80,7 @@ Set QA Variables
     Set Suite Variable    ${admin_url}        https://qa-admin.aithentic.com/
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
-    Set Suite Variable    ${browser_name}         headlessfirefox
+    Set Suite Variable    ${browser_name}         firefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
     Set Suite Variable    ${discovered_asset_brand}                 MSI
     Set Suite Variable    ${existing_mac}                       D8:CB:8A:CA:6A:39
@@ -108,6 +108,7 @@ Set UAT Variables
     Set Suite Variable    ${discovered_existing_department}        Quality Assurance
     Set Suite Variable    ${discovered_IP}    00:17:61:10:C6:A1
     Set Suite Variable    ${discovery_asset_list_brand}     AKKA Germany GmbH
+    Set Suite Variable    ${existing_mac}                       DC:21:5C:9C:3E:57
 
 
 Set Pre-Prod Variables

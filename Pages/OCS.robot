@@ -86,9 +86,9 @@ Click on search icon of discovery assets
 Enter text to search discovery asset
     [Arguments]     ${option}
     wait until element is not visible   ${loaderIcon}        ${wait_time}
-    Wait Until Element Is Visible    //input[@placeholder='Search OCS Discovered Assets']       ${wait_time}
-    Wait Until Element Is enabled    //input[@placeholder='Search OCS Discovered Assets']       ${wait_time}
-    Input Text    //input[@placeholder='Search OCS Discovered Assets']    ${option}
+    Wait Until Element Is Visible    //input[@placeholder='Search Agent/Network Discovered Assets']       ${wait_time}
+    Wait Until Element Is enabled    //input[@placeholder='Search Agent/Network Discovered Assets']       ${wait_time}
+    Input Text    //input[@placeholder='Search Agent/Network Discovered Assets']    ${option}
     Sleep    ${yop_sleep}
     Wait Until Element Is Not Visible    ${loaderIcon}  ${wait_time}
     wait until element is not visible       ${shadow}          ${wait_time}
@@ -873,7 +873,7 @@ Close Browser Session for OCS file
 My Failure Handling
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
-    Generic.Verify your current page location contains    ocs
+    Generic.Verify your current page location contains    aad
     I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     UnselectAssetAPI.Hit API Endpoint
