@@ -117,6 +117,7 @@ Input text into manufacturer address two
     [Arguments]    ${option}
     Generic.Enter value into field      ${address2}     ${option}
     Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+
 Input text into manufacturer zip code
     [Arguments]    ${option}
     Generic.Enter value into field      ${zip}     ${option}
@@ -565,3 +566,21 @@ click on the cross icon of delete pop up under asset discovery
     click element   //div[@id='deleteServicenowlConnector']//span[normalize-space()='×']
     sleep   ${search_sleep}
     wait until element is not visible       ${shadow}          ${wait_time}
+
+Choose the tab under Subscription page
+    [Arguments]         ${option}
+    wait until element is not visible   ${loaderIcon}     ${wait_time}
+    wait until element is visible       (//div[@id='dashboardCharts']//child::a)[${option}]       ${wait_time}
+    wait until element is enabled       (//div[@id='dashboardCharts']//child::a)[${option}]       ${wait_time}
+    click element        (//div[@id='dashboardCharts']//child::a)[${option}]
+
+Verify that page contains correct details
+    [Arguments]         ${option}
+    wait until element is not visible   ${loaderIcon}     ${wait_time}
+    wait until element is visible       //td[normalize-space()='${opiton}']      ${wait_time}
+    Page should contain element         //td[normalize-space()='${option}']
+
+Click on the row of the subscription overview table
+    wait until element is not visible   ${loaderIcon}     ${wait_time}
+    wait until element is visible       //td[normalize-space()='${opiton}']      ${wait_time}
+    Page should contain element         //td[normalize-space()='${option}']

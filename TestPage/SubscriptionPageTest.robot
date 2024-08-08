@@ -663,3 +663,18 @@ Create service now with valid data
     Generic.click on the tab       Details
     SubscriptionPage.Get the value of fields under view details of subscription connector   1       ServiceNow
     SubscriptionPage.Get the value of fields under view details of subscription connector   2       ${generate_register_Fname} ${generate_register_Lname}
+
+Subscription Connector - M365 assets drilldown
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}     ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    DashboardPage.select the option from the dashboard drawer     Subscription
+    Generic.Verify your current page location contains      subscription
+    SubscriptionPage.Choose the tab under Subscription page     2
+    SubscriptionPage.Verify that page contains correct details      M365
+    Generic.Verify your current page contains this text     Subscription Overview
+    Subscription
+
+
+>>>>>>> a23e849b06affed68bad657475002cb7a308c206
