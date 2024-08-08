@@ -195,7 +195,7 @@ Suspend and unsuspend the account
     END
 
 View Scheduler from view Result
-    [Tags]      Stable
+    [Tags]      Stable      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -208,14 +208,15 @@ View Scheduler from view Result
     Go Back
     Generic.Verify your current page location contains      technology-settings
     SubscriptionPage.Click on the three dots of subscription connector      Microsoft Corporation
-    SubscriptionPage.Click on option under three dots of subscription connector     Google        View Results
-    SubscriptionPage.Click on option under three dots of subscription connector     Microsoft Corporation          View Results
+    SubscriptionPage.Click on option under three dots of subscription connector     Microsoft Corporation        View Results
+    #SubscriptionPage.Click on option under three dots of subscription connector     Microsoft Corporation          View Results
 
     Generic.Verify your current page location contains    subscription
     SubscriptionPage.Choose tab under subscription page after clicking on view_result
     SubscriptionPage.Fetch and compare the Brand from the table    Microsoft Corporation
 
 Create the scheduler of sentinel one
+    [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     LandingPage.Verify you are on dashboard page
@@ -224,7 +225,7 @@ Create the scheduler of sentinel one
     Generic.Select option from profile list     subscription-connector
     Generic.Verify your current page location contains      technology-settings
     SubscriptionPage.Click on the three dots of subscription connector      SentinelOne
-    SubscriptionPage.Click on option under three dots of subscription connector     Create Scheduler
+    SubscriptionPage.Click on option under three dots of subscription connector     SentinelOne     Create Scheduler
     SubscriptionPage.Enter input in the input field of frequency under create scheduler    Monthly
     SubscriptionPage.Enter input in the start date field of billing details
     SubscriptionPage.Enter input in the input field of time under create scheduler      2:00

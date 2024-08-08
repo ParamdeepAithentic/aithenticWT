@@ -580,7 +580,7 @@ Verify Filters of Existing asets by adding assets of different tech type - HARDW
     Generic.select the option from the side menu    Asset Discovery
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
-    Generic.Verify your current page location contains    ocs
+    Generic.Verify your current page location contains    aad
     I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.click on filter icon of existing assets
@@ -693,7 +693,7 @@ Verify Filters of Existing asets by adding assets of different tech type - LICEN
     Generic.select the option from the side menu    Asset Discovery
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
-    Generic.Verify your current page location contains    ocs
+    Generic.Verify your current page location contains    aad
     I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.click on filter icon of existing assets
@@ -784,7 +784,7 @@ Verify Filters of Existing asets by adding assets of different tech type - SUBSC
     Generic.select the option from the side menu    Asset Discovery
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
-    Generic.Verify your current page location contains    ocs
+    Generic.Verify your current page location contains    aad
     I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.click on filter icon of existing assets
@@ -875,7 +875,7 @@ Verify Filters of Existing asets by adding assets of different tech type - MAINT
     Generic.select the option from the side menu    Asset Discovery
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
-    Generic.Verify your current page location contains    ocs
+    Generic.Verify your current page location contains    aad
     I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.click on filter icon of existing assets
@@ -966,7 +966,7 @@ Verify Filters of Existing asets by adding assets of different tech type - FREEW
     Generic.select the option from the side menu    Asset Discovery
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
-    Generic.Verify your current page location contains    ocs
+    Generic.Verify your current page location contains    aad
     I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.click on filter icon of existing assets
@@ -1057,7 +1057,7 @@ Verify Filters of Existing asets by adding assets of different tech type - CERTI
     Generic.select the option from the side menu    Asset Discovery
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
-    Generic.Verify your current page location contains    ocs
+    Generic.Verify your current page location contains    aad
     I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.click on filter icon of existing assets
@@ -1148,7 +1148,7 @@ Verify Filters of Existing asets by adding assets of different tech type - VIRTU
     Generic.select the option from the side menu    Asset Discovery
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
-    Generic.Verify your current page location contains    ocs
+    Generic.Verify your current page location contains    aad
     I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.click on filter icon of existing assets

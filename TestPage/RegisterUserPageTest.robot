@@ -226,7 +226,7 @@ Signup with ACH payment method
 
 
 Change plan and Change asset limit with ACH Payment method
-    [Tags]      Smoke        Stable
+    [Tags]      Smoke        Stable     rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -347,4 +347,3 @@ Change plan and Change asset limit with ACH Payment method
     BillingPage.Confirm if you want to delect account   confirm
     Generic.Fetch alert message text and compare it with      Bank removed successfully
     BillingPage.Close the billing payment options module
-

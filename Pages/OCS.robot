@@ -538,9 +538,9 @@ Fetch text from Agent Discovery tab and compare it with
 
 click on the value of IP discovered devices of inside table
     wait until element is not visible    ${loaderIcon}    ${wait_time}
-    wait until element is visible   //h5[normalize-space()='${agentDiscovery_TagName}']//parent::div//div//table//td[8]   ${wait_time}
-    wait until element is enabled   //h5[normalize-space()='${agentDiscovery_TagName}']//parent::div//div//table//td[8]   ${wait_time}
-    click element   //h5[normalize-space()='${agentDiscovery_TagName}']//parent::div//div//table//td[8]
+    wait until element is visible   //h5[normalize-space()='${IP_Discovered_devices}']//parent::div//div//table//td[8]   ${wait_time}
+    wait until element is enabled   //h5[normalize-space()='${IP_Discovered_devices}']//parent::div//div//table//td[8]   ${wait_time}
+    click element   //h5[normalize-space()='${IP_Discovered_devices}']//parent::div//div//table//td[8]
 
 Fetch the Tagname from agent discovery page
     wait until element is not visible    ${loaderIcon}    ${wait_time}

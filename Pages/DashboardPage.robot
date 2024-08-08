@@ -1158,3 +1158,88 @@ Click on arrow icon inside subscription overview tables
 Click on done button of subscription overview
     [Arguments]     ${option}
     Generic.click on the button         ${option}
+
+Verify your current page contains this element
+     wait until element is not visible   ${loaderIcon}      ${wait_time}
+     Page Should Contain Element        //div[contains(text(),'No Financial Year Settings Found')]
+     Page should contain element        //a[normalize-space()='here']
+
+Click on 'click here to add' link
+    wait until element is not visible   ${loaderIcon}       ${wait_time}
+    wait until element is visible       //a[normalize-space()='here']
+    wait until element is enabled       //a[normalize-space()='here']
+    click element       //a[normalize-space()='here']
+
+Enter Financial Year end date
+    wait until element is visible   css:#financialYear     ${wait_time}
+    wait until element is enabled   css:#financialYear     ${wait_time}
+#    click element   css:#financialYear
+    input text  css:#financialYear    12/31/2024
+    Press Keys   css:#financialYear   TAB
+
+Enter dates in Quarter
+    [Arguments]         ${option1}      ${option2}
+    wait until element is visible       css:.qa-company-information-financial-industry      ${wait_time}
+    sleep       ${search_sleep}
+    wait until element is visible   css:#financialYearq${option1}     ${wait_time}
+    wait until element is enabled   css:#financialYearq${option1}     ${wait_time}
+    input text  css:#financialYearq${option1}       ${option2}
+    Press Keys   css:#financialYearq${option1}   TAB
+
+Verify your current page not contains this element
+     wait until element is not visible   ${loaderIcon}      ${wait_time}
+     Page Should not Contain Element        //div[contains(text(),'No Financial Year Settings Found')]
+     Page should not contain element        //a[normalize-space()='here']
+
+Click on change password link under security
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    css:.change-password-qa     ${wait_time}
+    Wait Until Element Is Enabled    css:.change-password-qa     ${wait_time}
+    Click Element      css:.change-password-qa
+
+Enter input in the new password field
+    [Arguments]     ${new_password}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //input[@id='Password']     ${wait_time}
+    Wait Until Element Is Enabled    //input[@id='Password']     ${wait_time}
+    Click Element      //input[@id='Password']
+    input text     //input[@id='Password']     ${new_password}
+
+Enter input in the confirm password field
+    [Arguments]     ${confirm_password}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //input[@id='Password_confirmation']     ${wait_time}
+    Wait Until Element Is Enabled    //input[@id='Password_confirmation']     ${wait_time}
+    Click Element      //input[@id='Password_confirmation']
+    input text     //input[@id='Password_confirmation']     ${confirm_password}
+
+Enter the security key
+    [Arguments]    ${key}
+     wait until element is visible      //input[@id='SecurityCode']       ${wait_time}
+     wait until element is enabled      //input[@id='SecurityCode']       ${wait_time}
+     input text     //input[@id='SecurityCode']    ${key}
+
+Click on save button under change password
+    wait until element is visible      css:.security-save-password-qa       ${wait_time}
+    wait until element is enabled      css:.security-save-password-qa        ${wait_time}
+    click element   css:.security-save-password-qa
+    wait until element is not visible       ${loaderIcon}      ${wait_time}
+
+click on the authentication tab under security
+    wait until element is visible      css:#profile-tab      ${wait_time}
+    wait until element is enabled      css:#profile-tab        ${wait_time}
+    click element   css:#profile-tab
+
+Click on the checkboxes under auhtentication tab
+    wait until element is visible      //label[normalize-space()='Use mobile(cell) authentication']      ${wait_time}
+    wait until element is enabled      //label[normalize-space()='Use mobile(cell) authentication']        ${wait_time}
+    click element   //label[normalize-space()='Use mobile(cell) authentication']
+    wait until element is visible      //label[normalize-space()='Use email authentication']      ${wait_time}
+    wait until element is enabled      //label[normalize-space()='Use email authentication']        ${wait_time}
+    click element  //label[normalize-space()='Use email authentication']
+
+Wait for the visibility of the validation of password field under create account
+    wait until element is visible      //li[normalize-space()='Eight to Thirty Two Characters']     ${wait_time}
+    wait until element is visible      //li[normalize-space()='One Uppercase Letter']      ${wait_time}
+    wait until element is visible      //li[normalize-space()='One Lowercase Letter']      ${wait_time}
+    wait until element is visible      //li[normalize-space()='One Special Character']      ${wait_time}

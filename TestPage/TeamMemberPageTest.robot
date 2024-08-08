@@ -879,7 +879,7 @@ Verify Invitation and signup as team member
     Generic.Fetch alert message text and compare it with        Team member deleted successfully
 
 Add Back Deleted Team member - Invited
-    [Tags]      Stable
+    [Tags]      Stable      Sanity      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -902,7 +902,7 @@ Add Back Deleted Team member - Invited
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
     TeamMemberPage.Click on three dots of Team Member listing
     TeamMemberPage.Select option from three dots of Team Member     Remove
-    TeamMemberPage.Select option from remove TM warning pop-up
+    TeamMemberPage.Click on the yes option under remove team member pop up
     Generic.Fetch alert message text and compare it with        Team member deleted successfully
     TeamMemberPage.Click on add team member action button
     TeamMemberPage.Select option from team member action menu
@@ -921,7 +921,7 @@ Add Back Deleted Team member - Invited
     TeamMemberPage.Verify Team member added after delete        ${generated_TMFname} ${generated_TMLname}
 
 Verify Invitation and signup as team member via company details
-    [Tags]      Stable
+    [Tags]      Stable     Sanity       rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
@@ -1020,7 +1020,7 @@ Verify Invitation and signup as team member via company details
     Generic.Fetch alert message text and compare it with        Team member deleted successfully
 
 Verify_Employee_ID_Changing_settings_from_Profile_list_while_add_edit_team_member
-    [Tags]      Stable      rerun
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
@@ -1084,7 +1084,7 @@ Verify_Employee_ID_Changing_settings_from_Profile_list_while_add_edit_team_membe
 
 
 Add Back Deleted Team member - Active
-    [Tags]      rerun
+    [Tags]      Sanity      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard

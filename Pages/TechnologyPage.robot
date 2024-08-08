@@ -117,9 +117,9 @@ ${Yes_BTN}      //span[contains(text(),'Yes')]
 
 ####################### search asset id #####################
 
+<<<<<<< HEAD
 ${asset_SearchBar}      //input[contains(@placeholder,'Search by Brand, Product, Asset ID')]
 #${asset_SearchBar}      //input[@placeholder='Search by Brand, Product, Asset ID, Serial number or Assignee']
-
 ${search_loader}     css:div[role='status']
 ${fetch_assetID}     //td[@class='technology-asset-width pr-4']//a
 ${fetch_productID}      css:tbody tr:nth-child(1) td:nth-child(4)
@@ -375,6 +375,9 @@ Add host name for technology group information for hardware random
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${result}=    Catenate    HostName_${random_string}
     input text   ${host_name}   ${result}
+    log to console      ${result}
+    set global variable    ${result}
+
 
 #================================ CREATE SERIAL NUMBER ==========================
 Create unique serial number random
@@ -1852,3 +1855,22 @@ Get inner text of feature under product information
     Log To Console    Value of Textarea: ${textarea_value}
     set global variable     ${textarea_value}
     should be equal    ${textarea_value}     This is the features of new product added.
+
+Search by hostname
+    [Arguments]     ${name}
+    wait until element is visible       css:thead tr       ${wait_time}
+    wait until element is visible       ${asset_SearchBar}       ${wait_time}
+    Clear Element Text      ${asset_SearchBar}
+    input text      ${asset_SearchBar}     ${name}
+    sleep       ${search_sleep}
+    wait until element is visible       css:thead tr       ${wait_time}
+
+Select particular technology group via link while adding technology
+    [Arguments]    ${option}
+    wait until element is visible       css:nz-tree-select[formcontrolname=TechGroupId] input     ${wait_time}
+    wait until element is enabled       css:nz-tree-select[formcontrolname=TechGroupId] input     ${wait_time}
+    click element   css:nz-tree-select[formcontrolname=TechGroupId] input
+    input text      css:nz-tree-select[formcontrolname=TechGroupId] input       ${option}
+    wait until element is visible      //span[normalize-space()='${option}']       ${wait_time}
+    wait until element is enabled      //span[normalize-space()='${option}']       ${wait_time}
+    click element       //span[normalize-space()='${option}']

@@ -362,3 +362,10 @@ Verify Team member added after delete
     [Arguments]     ${option}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible   //td[normalize-space()='${option}']     ${wait_time}
+
+
+Click on the yes option under remove team member pop up
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible      css:.confirm-status-members-qa    ${wait_time}
+    wait until element is enabled      css:.confirm-status-members-qa       ${wait_time}
+    click element       css:.confirm-status-members-qa
