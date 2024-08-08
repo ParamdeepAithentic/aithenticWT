@@ -152,7 +152,7 @@ Suspend and unsuspend the account
         Generic.click on the tab	Login
         LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
         Generic.Verify your current page location contains      dashboard
-       LandingPage.Verify you are on dashboard page
+        LandingPage.Verify you are on dashboard page
         Generic.Click on the profile name
         Generic.Select option from profile list     billing-dropdown
         Generic.Verify your current page location contains      billing-details
