@@ -370,7 +370,7 @@ Search asset history with Asset ID
     TeamMemberPage.verify status of first name in member list   ${generated_AssetID}
 
 Verify user is able to export team member asset history list
-    [Tags]     Smoke      rerun     Stable
+    [Tags]     Smoke         Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form   debut@cool.fr.nf    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -1020,7 +1020,7 @@ Verify Invitation and signup as team member via company details
     Generic.Fetch alert message text and compare it with        Team member deleted successfully
 
 Verify_Employee_ID_Changing_settings_from_Profile_list_while_add_edit_team_member
-    [Tags]      Stable
+    [Tags]      Stable      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
@@ -1084,6 +1084,7 @@ Verify_Employee_ID_Changing_settings_from_Profile_list_while_add_edit_team_membe
 
 
 Add Back Deleted Team member - Active
+    [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard

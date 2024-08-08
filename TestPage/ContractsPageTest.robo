@@ -51,6 +51,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 ######## UN comment when to use ##############
 Fill contract form
+    [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Contracts

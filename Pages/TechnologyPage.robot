@@ -549,7 +549,7 @@ Accept updated edited technology pop up
      wait until element is visible     //div[@id='confirmUpdates']//button[normalize-space()='${option}']      ${wait_time}
      wait until element is enabled     //div[@id='confirmUpdates']//button[normalize-space()='${option}']      ${wait_time}
      click element      //div[@id='confirmUpdates']//button[normalize-space()='${option}']
-     wait until element is not visible       ${shadow}          ${wait_time}
+#     wait until element is not visible       ${shadow}          ${wait_time}
 
 ###############Technology Cost Information#################
 Add order number of technology cost information
@@ -801,6 +801,7 @@ Search by AssetId
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  17  ${pageHeading}   Technology Page - Search the technology by AssetId on technology list page     17    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+    TechnologyPage.Click on manage technology sub option       Technology List
 
 Search by BrandName
     [Arguments]    ${BrandName}

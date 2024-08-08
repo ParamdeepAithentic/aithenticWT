@@ -59,4 +59,3 @@ Resource        ../Pages/UnselectAssetAPI.robot
 #Clear the process
 #    ReplaceDomainAPI.Run Command
 
-

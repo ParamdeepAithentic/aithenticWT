@@ -427,6 +427,7 @@ Create service now with invalid data
     Generic.Verify your current page contains this text     Service Now Connection Failed.
 
 Create service now with valid data
+    [Tags]      rerun
    Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
