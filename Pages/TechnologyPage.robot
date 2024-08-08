@@ -801,7 +801,7 @@ Search by AssetId
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  17  ${pageHeading}   Technology Page - Search the technology by AssetId on technology list page     17    ${pageTime}     ${ActualTime}    TechnologyPage_Time
-    TechnologyPage.Click on manage technology sub option       Technology List
+#    TechnologyPage.Click on manage technology sub option       Technology List
 
 Search by BrandName
     [Arguments]    ${BrandName}

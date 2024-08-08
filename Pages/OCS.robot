@@ -212,14 +212,14 @@ Hover Existing Agent
     Mouse Over    css:.right-text
 
 Get text by hovering over existing assets of technology
-    [Arguments]     ${text}
-    Wait Until Element Is Visible   css:.right-text     ${wait_time}
-    Wait Until Element Is enabled   css:.right-text     ${wait_time}
-    ${hover_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
-    ${parts}    Split String    ${hover_text}    ${text}
-    ${hover_details}    Get Substring    ${parts[1]}    1
-    Log to console      ${hover_details}
-    set global variable     ${hover_details}
+    [Arguments]     ${option}
+    Wait Until Element Is Visible   //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${option}')]//ancestor::li    ${wait_time}
+    Wait Until Element Is enabled   //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${option}')]//ancestor::li     ${wait_time}
+    ${text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${option}')]//ancestor::li
+    ${parts}    Split String    ${text}    ${option}
+    ${substring1}    Get Substring    ${parts[1]}    1
+    Log to console      ${substring1}
+    set global variable     ${substring1}
 
 Hover over searched Agent/Discovered Asset
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
@@ -356,8 +356,8 @@ Choose filters for discovered asset
     Click element   //*[@placeholder='${option1}']
     Clear Element Text      //ng-select[@placeholder='${option1}']//input[@type='text']
     input text      //ng-select[@placeholder='${option1}']//input[@type='text']         ${option2}
-    wait until element is visible   //*[@placeholder='${option1}']//input[@type='text']//following::span[normalize-space()='${option2}']
-    wait until element is enabled   //*[@placeholder='${option1}']//input[@type='text']//following::span[normalize-space()='${option2}']
+    wait until element is visible   //*[@placeholder='${option1}']//input[@type='text']//following::span[normalize-space()='${option2}']        ${wait_time}
+    wait until element is enabled   //*[@placeholder='${option1}']//input[@type='text']//following::span[normalize-space()='${option2}']        ${wait_time}
     click element   //*[@placeholder='${option1}']//input[@type='text']//following::span[normalize-space()='${option2}']
 
 
@@ -713,6 +713,7 @@ Click on the down arrow icon of existing assets
     wait until element is visible  (//div[contains(@class,'qa-assets-boxes-right')]//following-sibling::div//img)[1]       ${wait_time}
     wait until element is enabled    (//div[contains(@class,'qa-assets-boxes-right')]//following-sibling::div//img)[1]       ${wait_time}
     click element     (//div[contains(@class,'qa-assets-boxes-right')]//following-sibling::div//img)[1]
+#    click image       (//div[contains(@class,'qa-assets-boxes-right')]//following-sibling::div//img)[1]
 
 Enter input in the brand field of existing asset
     [Arguments]     ${option}
@@ -910,3 +911,49 @@ Wait for the invisiblity of alert msg
     ${get_alertMsg} =    get text    ${alert_Msg}
     log to console     ${get_alertMsg}
     should be equal    ${get_alertMsg}     ${option}
+
+Search filters and verify results
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[1]      ${wait_time}
+    Wait Until Element Is enabled    (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[1]      ${wait_time}
+    click element    (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[1]
+    sleep   ${search_sleep}
+    input text    (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[1]       ${option}
+    Wait Until Element Is Visible    //ng-dropdown-panel[contains (@id, '0')]//div//div//div        ${wait_time}
+    ${filter_text}=         get text        //ng-dropdown-panel[contains (@id, '0')]//div//div//div
+    Set Global Variable    ${filter_text}
+
+Mouse Hover over existing asset after applying filters
+    [Arguments]         ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible   (//div[contains(text(),'${option}')]//ancestor::div[contains(@class,'box')]//child::div[contains(@class,'assets-text')])[2]     ${wait_time}
+    Wait Until Element Is Enabled    (//div[contains(text(),'${option}')]//ancestor::div[contains(@class,'box')]//child::div[contains(@class,'assets-text')])[2]     ${wait_time}
+    Mouse Over   (//div[contains(text(),'${option}')]//ancestor::div[contains(@class,'box')]//child::div[contains(@class,'assets-text')])[2]
+
+
+Enter input in brand filters field of existing asset with different tech type
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[1]      ${wait_time}
+    Wait Until Element Is enabled    (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[1]      ${wait_time}
+    click element    (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[1]
+    sleep   ${search_sleep}
+    input text    (//div[contains(@class,'right-side-filter')]//following-sibling::div//input)[1]       ${option}
+
+Choose filters for Existing asset with different tech type
+    [Arguments]     ${option1}      ${option2}
+    wait until element is not visible   ${loaderIcon}        ${wait_time}
+    wait until element is visible       //*[@placeholder='${option1}']        ${wait_time}
+    wait until element is enabled       //*[@placeholder='${option1}']        ${wait_time}
+    Click element   //*[@placeholder='${option1}']
+    Clear Element Text      //ng-select[@placeholder='${option1}']//input[@type='text']
+    input text      //ng-select[@placeholder='${option1}']//input[@type='text']         ${option2}
+
+Verify that No items found with the selected filter
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       //div[contains(@class,'ng-option-disabled')]        ${wait_time}
+    ${filter_existing_text}=        get text        //div[contains(@class,'ng-option-disabled')]
+    log to console          ${filter_existing_text}
+    set global variable     ${filter_existing_text}
+    Should be equal         ${filter_existing_text}         No items found
