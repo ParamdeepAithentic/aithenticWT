@@ -424,6 +424,12 @@ Click on option under three dots of Microsoft coorporation
     click element   (//div[contains(@class,'dropdown-menu')])[3]//a[normalize-space()='${option}']
     sleep  ${search_sleep}
 
+click on the connector tab under technoogy settings
+    wait until element is visible    //ul[@id='myTab']//a[normalize-space()='Connectors']   ${wait_time}
+    wait until element is enabled   //ul[@id='myTab']//a[normalize-space()='Connectors']  ${wait_time}
+    click element    //ul[@id='myTab']//a[normalize-space()='Connectors']
+
+
 Click on the service now tab under discovery assets
     wait until element is visible  css:#service-now-first-parent-tab     ${wait_time}
     wait until element is enabled   css:#service-now-first-parent-tab    ${wait_time}
