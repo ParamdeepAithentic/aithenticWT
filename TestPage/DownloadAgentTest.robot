@@ -635,6 +635,23 @@ Network Discovery in case of no records
 #    Generic.Fetch alert message text and compare it with        Brand created successfully.
 #    DashboardPage.Click added brand main save button
 #    DashboardPage.Verify Brand added      ${generated_BrandName}
+
+################################### LICENSE ASSET #######################################################################
+#Verify Filters of Existing asets by adding assets of different tech type - LICENSE
+#    Generic.click on the tab	Login
+#    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+#    Generic.Verify your current page location contains      dashboard
+#    Generic.Click on the profile name
+#    Generic.Select option from profile list     brand-dropdown
+#    Generic.Verify your current page location contains      brand
+#    DashboardPage.Click add brand button
+#    DashboardPage.Create random brandName
+#    DashboardPage.Add business manufacturer URL     qwerty
+#    DashboardPage.Add brand manufacturer country      Australia
+#    DashboardPage.Save added brand details
+#    Generic.Fetch alert message text and compare it with        Brand created successfully.
+#    DashboardPage.Click added brand main save button
+#    DashboardPage.Verify Brand added      ${generated_BrandName}
 #    Generic.Click on the profile name
 #    Generic.Select option from profile list     product-dropdown
 #    Generic.Verify your current page location contains      product
@@ -709,7 +726,7 @@ Network Discovery in case of no records
 #    OCS.Choose filters for Existing asset with different tech type       Select Location     ${generated_buildingname}
 #    OCS.Verify that No items found with the selected filter
 #    OCS.Click on clear filter button link of discovered assets      Clear Filters
-#
+
 #################################### SUBSCRIPTION ASSET #########################################################################
 #Verify Filters of Existing asets by adding assets of different tech type - SUBSCRIPTION
 #    Generic.click on the tab	Login

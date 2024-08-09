@@ -1670,9 +1670,9 @@ Technology-Inactive asset and Restore asset
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     TechnologyPage.Click on current plan of subscription
     Generic.Scroll the page till    200
+    SubscriptionPage.Set asset range to     1000
+    SubscriptionPage.Set asset range to     250
     SubscriptionPage.Set asset range to     500
-    SubscriptionPage.Set asset range to     100
-    SubscriptionPage.Set asset range to     200
     SubscriptionPage.Update the payment of changed plan     proceed
     TechnologyPage.Click on pop up of available Inactive Asset   cancel
     SubscriptionPage.Select the payment method    ach
@@ -1768,7 +1768,7 @@ Inactive asset - Restore asset from Technology Details page
     TechnologyPage.Click on current plan of subscription
     Generic.Scroll the page till    200
     SubscriptionPage.Set asset range to     500
-    SubscriptionPage.Set asset range to     200
+    SubscriptionPage.Set asset range to     250
     SubscriptionPage.Update the payment of changed plan     proceed
     TechnologyPage.Click on pop up of available Inactive Asset   cancel
     SubscriptionPage.Select the payment method    ach
@@ -1916,7 +1916,7 @@ Inactive asset - Restore asset from Technology Details page
 #    Generic.Wait until table get load
 #    TechnologyPage.Verify that Agent column should contain text     -
 #    TechnologyPage.Search by AssetId       ${generated_AssetID}
-#    TechnologyPage.Click on manage technology sub option       Technology List
+#    TechnologyPage.Click on manage technology sub option    echnology-Inactive asset and Restore asset   Technology List
 #    TechnologyPage.Click on the first row of the technology table
 #    Generic.Verify your current page location contains    technology-details
 #    TechnologyPage.Click on edit button on product details page        Edit
@@ -2546,6 +2546,12 @@ Add Technology: Verify Renewal Date get auto-populate when enter contract end da
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the asset ID checkbox      no
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology

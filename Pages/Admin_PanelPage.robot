@@ -181,6 +181,8 @@ Welcome to the code
 
 
 Select the higest plan
+    Wait Until Element Is Visible   //div[@id='cost-range']//div[contains(@class,'ngx-slider-inner-tooltip')]//ancestor::span//ngx-slider-tooltip-wrapper[contains(@class,'ngx-slider-span')]       ${wait_time}
+    Wait Until Element Is enabled    //div[@id='cost-range']//div[contains(@class,'ngx-slider-inner-tooltip')]//ancestor::span//ngx-slider-tooltip-wrapper[contains(@class,'ngx-slider-span')]       ${wait_time}
     ${element_count}=    Get Element Count    //div[@id='cost-range']//div[contains(@class,'ngx-slider-inner-tooltip')]//ancestor::span//ngx-slider-tooltip-wrapper[contains(@class,'ngx-slider-span')]
     Log      ${element_count}
     Wait Until Element Is Visible   (//div[@id='cost-range']//div[contains(@class,'ngx-slider-inner-tooltip')]//ancestor::span//ngx-slider-tooltip-wrapper[contains(@class,'ngx-slider-span')])[${element_count}]       ${wait_time}
