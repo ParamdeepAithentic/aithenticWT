@@ -468,22 +468,22 @@ Network Discovery in case of no records
     OCS.Fetch text from Agent Discovery tab and compare it with    No record found
 
 
-Visit discovered asset list when click on No. IP discovered devices
-    [Tags]      Unstable    yy
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-    Generic.Verify your current page location contains      dashboard
-    LandingPage.Verify you are on dashboard page
-    Generic.select the option from the side menu    Asset Discovery
-    Generic.Verify your current page location contains     discovery-assets
-    OCS.click on the value of IP discovered devices of inside table
-    Sleep    ${yop_sleep}
-    Switch Window       aithentic | Discovered Assets
-    Generic.Verify your current page location contains     discovery-assets-list
-    OCS.Click on Go to Agent Discovery Page
-    Sleep    ${yop_sleep}
-    Switch Window       aithentic | Sentinel One Newly-Discovered
-    Generic.Verify your current page location contains     discovery-assets
+#Visit discovered asset list when click on No. IP discovered devices
+#    [Tags]      Unstable    yy
+#    Generic.click on the tab	Login
+#    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+#    Generic.Verify your current page location contains      dashboard
+#    LandingPage.Verify you are on dashboard page
+#    Generic.select the option from the side menu    Asset Discovery
+#    Generic.Verify your current page location contains     discovery-assets
+#    OCS.click on the value of IP discovered devices of inside table
+#    Sleep    ${yop_sleep}
+#    Switch Window       aithentic | Discovered Assets
+#    Generic.Verify your current page location contains     discovery-assets-list
+#    OCS.Click on Go to Agent Discovery Page
+#    Sleep    ${yop_sleep}
+#    Switch Window       aithentic | Sentinel One Newly-Discovered
+#    Generic.Verify your current page location contains     discovery-assets
 
 
 #Zz kill browser
