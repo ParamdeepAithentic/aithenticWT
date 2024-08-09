@@ -134,7 +134,7 @@ Click on the pdf option under the table of invoice
     wait until element is visible     //tbody//tr[1]//td[3]   ${wait_time}
     wait until element is enabled      //tbody//tr[1]//td[3]    ${wait_time}
     click element    //tbody//tr[1]//td[3]
-    wait until element is not visible       ${loaderIcon}    ${wait_time}
+#    wait until element is not visible       ${loaderIcon}    ${wait_time}
 
 Enter input in address line1 under billing
     wait until element is not visible       ${loaderIcon}    ${wait_time}
