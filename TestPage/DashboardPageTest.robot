@@ -2071,14 +2071,14 @@ Compose Message reply and delete that message
     Generic.Verify your current page location contains      message
     DashboardPage.Enter input in the recipient list field under compose message    ${generated_TMFname}
     DashboardPage.Enter input in the message status field under compose message     Public
-    DashboardPage.Enter text in the subject field under compose message     Message is for testing purpose please reply back
-    DashboardPage.Enter text in the client message field under compose message      Message is for testing purpose please reply back
+    DashboardPage.Enter text in the subject field under compose message
+    DashboardPage.Enter text in the client message field under compose message
     Generic.click on the button     Send
     Generic.Fetch alert message text and compare it with       Message sent successfully
     Generic.Verify your current page location contains      message
     Generic.Select parameter      Sent
     Generic.Verify your current page location contains      message
-    DashboardPage.Search by subject under sent serach bar       Message is for testing purpose please reply back
+    DashboardPage.Search by subject under sent serach bar      ${generated_subject}
     Generic.Click on the profile name
     Generic.Select other option from profile list     Logout
     Generic.Fetch log_out alert message
@@ -2093,11 +2093,11 @@ Compose Message reply and delete that message
     Generic.Verify your current page location contains      message
     Generic.Select parameter      Inbox
     Generic.Verify your current page location contains      message
-    DashboardPage.Search by subject under inbox serach bar       Message is for testing purpose please reply back
+    DashboardPage.Search by subject under inbox serach bar       ${generated_subject}
     Dashboardpage.Click on three dots
     DashboardPage.Click on the reply option to reply the message
     Generic.Verify your current page location contains      reply
-    DashboardPage.Enter input in the reply back page        I have replied back the message that you have sent
+    DashboardPage.Enter input in the reply back page
     Generic.click on the button     Send
     Generic.Fetch alert message text and compare it with       Message sent successfully
     Generic.Click on the profile name
@@ -2114,7 +2114,7 @@ Compose Message reply and delete that message
     Generic.Verify your current page location contains      message
     Generic.Select parameter      Inbox
     Generic.Verify your current page location contains      message
-    DashboardPage.Search by subject under inbox serach bar       I have replied back the message that you have sent
+    DashboardPage.Search by subject under inbox serach bar       ${generated_reply}
     DashboardPage.Search by subject under inbox serach bar       ${generated_TMFname}
     DashboardPage.Click on the flag icon to flag the message
     Generic.Fetch alert message text and compare it with       Message flagged successfully
