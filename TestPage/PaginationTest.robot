@@ -358,6 +358,7 @@ Verify Pagination of Product Dropdown when Add and Edit Technology
 #    PaginationPage.Click on the pagination dropdown     contracts
 #    PaginationPage.Log WebElements      contracts
 
+
 Verify pagination of Department table
     [Tags]      Stable
     Generic.click on the tab	Login

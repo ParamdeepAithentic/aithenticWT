@@ -51,9 +51,9 @@ Resource        ../Pages/UnselectAssetAPI.robot
 
 *** Test Cases ***
 #Replace the existing domain
-#    LoginPage.Fetch the refresh token from the login api
-#    ReplaceDomainAPI.Replace Domain     ${refresh_Token}
-    ReplaceDomainAPI.Replace Domain
+##    LoginPage.Fetch the refresh token from the login api
+##    ReplaceDomainAPI.Replace Domain     ${refresh_Token}
+#    ReplaceDomainAPI.Replace Domain
 
 
 #Clear the process
