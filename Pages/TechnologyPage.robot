@@ -1939,3 +1939,4 @@ Select particular technology group via link while adding technology
     wait until element is visible      //span[normalize-space()='${option}']       ${wait_time}
     wait until element is enabled      //span[normalize-space()='${option}']       ${wait_time}
     click element       //span[normalize-space()='${option}']
+
