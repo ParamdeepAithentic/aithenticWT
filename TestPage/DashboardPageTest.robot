@@ -1420,7 +1420,7 @@ Verifying the Renewals Overview section of Management console - Overdue certific
     DashboardPage.wait until renewal overview section is load
     DashboardPage.Click on the dropdown of quarter end under management console
     DashboardPage.Select the first value of To dropdown of quarter     4
-    DashboardPage.Fetch the count renewals overview subtabs     Upcoming cerificates
+    DashboardPage.Fetch the count renewals overview subtabs     Upcoming certificates
     DashboardPage.Set Globally the count from renewal overview subtabs
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology

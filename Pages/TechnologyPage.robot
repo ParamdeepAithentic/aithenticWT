@@ -117,7 +117,7 @@ ${Yes_BTN}      //span[contains(text(),'Yes')]
 
 ####################### search asset id #####################
 
-<<<<<<< HEAD
+
 ${asset_SearchBar}      //input[contains(@placeholder,'Search by Brand, Product, Asset ID')]
 #${asset_SearchBar}      //input[@placeholder='Search by Brand, Product, Asset ID, Serial number or Assignee']
 ${search_loader}     css:div[role='status']
@@ -1939,3 +1939,4 @@ Select particular technology group via link while adding technology
     wait until element is visible      //span[normalize-space()='${option}']       ${wait_time}
     wait until element is enabled      //span[normalize-space()='${option}']       ${wait_time}
     click element       //span[normalize-space()='${option}']
+
