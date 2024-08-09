@@ -117,7 +117,7 @@ ${Yes_BTN}      //span[contains(text(),'Yes')]
 
 ####################### search asset id #####################
 
-<<<<<<< HEAD
+
 ${asset_SearchBar}      //input[contains(@placeholder,'Search by Brand, Product, Asset ID')]
 #${asset_SearchBar}      //input[@placeholder='Search by Brand, Product, Asset ID, Serial number or Assignee']
 ${search_loader}     css:div[role='status']
