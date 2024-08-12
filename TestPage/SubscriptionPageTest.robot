@@ -67,7 +67,7 @@ Test Teardown   Close Browser session
 
 
 Edit the scheduler
-    [Tags]      Sanity      Stable
+    [Tags]      Sanity      Stable      Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -147,7 +147,7 @@ Run now from view details
     SubscriptionPage.Get the value of fields under view details of subscription connector   2       Samuel John
 
 Suspend and unsuspend the account
-    [Tags]      Smoke       Stable
+    [Tags]      Smoke       Stable      Sanity
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
@@ -216,7 +216,7 @@ View Scheduler from view Result
     SubscriptionPage.Fetch and compare the Brand from the table    Microsoft Corporation
 
 Create the scheduler of sentinel one
-    [Tags]      rerun
+    [Tags]      Sanity      Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     LandingPage.Verify you are on dashboard page
@@ -429,7 +429,7 @@ Create service now with invalid data
     Generic.Verify your current page contains this text     Service Now Connection Failed.
 
 Create service now with valid data
-    [Tags]      rerun
+    [Tags]      Sanity      Smoke
    Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain

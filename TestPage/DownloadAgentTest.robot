@@ -469,7 +469,7 @@ Network Discovery in case of no records
 
 
 Visit discovered asset list when click on No. IP discovered devices
-    [Tags]      Unstable    yy
+    [Tags]      Unstable    Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.Verify your current page location contains      dashboard
@@ -622,6 +622,7 @@ Verify Filters of Existing asets by adding assets of different tech type - HARDW
 
 ################################### LICENSE ASSET #######################################################################
 Verify Filters of Existing asets by adding assets of different tech type - LICENSE
+    [Tags]      Sanity      Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.Verify your current page location contains      dashboard
@@ -1077,6 +1078,7 @@ Verify Filters of Existing asets by adding assets of different tech type - CERTI
 
 ####################################### VIRTUAL MACHINE #########################################################
 Verify Filters of Existing asets by adding assets of different tech type - VIRTUAL MACHINE
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.Verify your current page location contains      dashboard

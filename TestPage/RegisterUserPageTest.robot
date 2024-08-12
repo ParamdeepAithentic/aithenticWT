@@ -49,7 +49,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Register new user
-    [Tags]      Smoke       Time        Stable
+    [Tags]      Smoke       Time        Stable      Sanity
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
@@ -140,7 +140,7 @@ Register new user
 
 
 Signup with ACH payment method
-    [Tags]       Stable
+    [Tags]       Stable     Sanity
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain

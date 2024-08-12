@@ -1656,6 +1656,7 @@ Management Console - Quarters filter dropdown
     DashboardPage.Verify your current page not contains this element
 
 Change password and login with new password
+    [Tags]      Sanity      Smoke
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1799,6 +1800,7 @@ Change password and login with new password
     Generic.Verify your current page location contains      dashboard
 
 Enter password more than the limit of the password while register
+    [Tags]      Sanity      Smoke
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1831,6 +1833,7 @@ Enter password more than the limit of the password while register
     DashboardPage.Wait for the visibility of the validation of password field under create account
 
 Enter password less than the limit of the password while register
+    [Tags]      Sanity
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
