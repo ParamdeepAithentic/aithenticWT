@@ -2909,6 +2909,87 @@ Compose reply and remove the message via technology details
     Generic.Select parameter        Yes
     Generic.Fetch alert message text and compare it with       Message removed successfully
 
+Download QR for an asset as PNG and SVG
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+    TechnologyPage.Click on Print QR button
+    TechnologyPage.Select option by clicking on Print QR button     PNG File
+    TechnologyPage.Confirm to download QR file      Confirm
+    TechnologyPage.Click on Print QR button
+    TechnologyPage.Select option by clicking on Print QR button     PNG File
+    TechnologyPage.Confirm to download QR file      Confirm
+    TechnologyPage.Select tab under technology details      components
+    TechnologyPage.Click on add new entry component button under technology details page       Add New Entry
+    TechnologyPage.Select add new entry        New Asset
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list       Product_00337612322
+    TechnologyPage.Add New_Component assetID for technology lifecycle information random
+    TechnologyPage.Select technology lifecycle status      Active
+    Generic.Scroll Window To End
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    sleep   ${search_sleep}
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+#    TechnologyPage.Click on Print QR button
+#    TechnologyPage.Select option by clicking on Print QR button     PNG File
+#    TechnologyPage.Confirm to download QR file      Confirm
+#    TechnologyPage.Click on Print QR button
+#    TechnologyPage.Select option by clicking on Print QR button     PNG File
+#    TechnologyPage.Confirm to download QR file      Confirm
+    OCS.Visible the print qr button to for data loading
+    TechnologyPage.Select tab under technology details      parent-components
+    Generic.Scroll the page till    500
+    TechnologyPage.click on the three dots inside table of parent tab from tehnology details page
+    TechnologyPage.Select option from three-dots from technology details page       Print QR
+
+
+
+
+    OCS.Visible the print qr button to for data loading
+    TechnologyPage.Select tab under technology details      parent-components
+    TechnologyPage.Click on add new entry parent button under technology details page      Add New Entry
+    TechnologyPage.Select add new entry        New Asset
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list       Product_00337612322
+    TechnologyPage.Add New_Parent assetID for technology lifecycle information random
+    TechnologyPage.Select technology lifecycle status      Active
+    Generic.Scroll Window To End
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+
+
+
+
+
+
+
 #Zz kill browser
 #    [Tags]      Smoke     Sanity      Time      rerun       Stable    yy
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

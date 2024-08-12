@@ -1978,3 +1978,56 @@ Enter input in the message status field under compose message via technology det
     wait until element is visible     //span[normalize-space()='${message_status}']    ${wait_time}
     wait until element is visible     //span[normalize-space()='${message_status}']      ${wait_time}
     click element       //span[normalize-space()='${message_status}']
+
+Click on Print QR button
+    Wait Until Element Is Not Visible    ${loaderIcon}        ${wait_time}
+    Wait until element is visible     css:#PrintQrButton      ${wait_time}
+    wait until element is enabled     css:#PrintQrButton      ${wait_time}
+    click element       css:#PrintQrButton
+
+Select option by clicking on Print QR button
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}        ${wait_time}
+    Generic.click on the button link        ${option}
+
+Confirm to download QR file
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}        ${wait_time}
+    Wait until element is visible     //div[@id='downloadQrCode']//button[normalize-space()='${option}']      ${wait_time}
+    wait until element is enabled     //div[@id='downloadQrCode']//button[normalize-space()='${option}']      ${wait_time}
+    click element       //div[@id='downloadQrCode']//button[normalize-space()='${option}']
+
+click on the three dots inside table of parent tab from tehnology details page
+    Wait Until Element Is Not Visible    ${loaderIcon}        ${wait_time}
+    Wait until element is visible     //tbody//i      ${wait_time}
+    wait until element is enabled     //tbody//i      ${wait_time}
+    click element       //tbody//i
+
+Select option from three-dots from technology details page
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}        ${wait_time}
+    Wait until element is visible     //a[normalize-space()='${option}']      ${wait_time}
+    wait until element is enabled     //a[normalize-space()='${option}']      ${wait_time}
+    Mouse Over       //a[normalize-space()='${option}']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
