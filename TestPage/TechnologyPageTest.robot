@@ -2975,6 +2975,54 @@ Verify notification update location in asset
     DashboardPage.Wait until alert is visible in the Recent Notifiation tab     You changed location of Asset ID      ${generated_AssetID}.
     TechnologyPage.Get the text of the recent notification of added assets      You changed location of Asset ID ${generated_AssetID}.
 
+Verify_Notification_Update_Asset
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list       OPMR815274
+    TechnologyPage.Add assetID for technology lifecycle information random
+
+    TechnologyPage.Select technology lifecycle status      Active
+
+    TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
+    TechnologyPage.Add assignment information department name      TestQA Department Up31840619
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+    TechnologyPage.Click on edit button on product details page        Edit
+    Generic.Verify your current page location contains      edit-technology
+    TechnologyPage.Click on the edit icon on the edit technology page
+    TechnologyPage.Click on cross icon of product while editing technology
+    TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
+    TechnologyPage.Select edited technology lifecycle status      Active
+    TechnologyPage.Click on update button of edit_technology page       Update
+    TechnologyPage.Accept updated edited technology pop up     Update
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+    Generic.select the option from the side menu    Dashboard
+    Generic.Verify your current page location contains      dashboard
+    Generic.Refresh the existing page
+    Generic.Verify your current page location contains      dashboard
+    DashboardPage.Click on the notifications icon under dashbaord page
+    sleep  ${search_sleep}
+    TechnologyPage.Click on the asset alert option under notifications
+    sleep  ${search_sleep}
+    DashboardPage.Wait until alert is visible in the Recent Notifiation tab     You updated Asset ID      ${generated_AssetID}.
+    TechnologyPage.Get the text of the recent notification of added assets      You updated Asset ID ${generated_AssetID}.
+
 #Zz kill browser
 #    [Tags]      Smoke     Sanity      Time      rerun       Stable    yy
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
