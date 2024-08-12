@@ -83,7 +83,6 @@ Edit the scheduler
     SubscriptionPage.Enter input in the input field of time under create scheduler      12:00
     sleep   ${search_sleep}
     Generic.click on the button     Update
-    Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the three dots of subscription connector      Google
     SubscriptionPage.Click on option under three dots of subscription connector     Google       Scheduler
@@ -91,7 +90,6 @@ Edit the scheduler
     SubscriptionPage.Enter input in the input field of frequency under create scheduler    Daily
     SubscriptionPage.Enter input in the input field of time under create scheduler      1:00
     sleep   ${search_sleep}
-    Generic.click on the button     Update
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the three dots of subscription connector      Google
@@ -102,7 +100,6 @@ Edit the scheduler
     SubscriptionPage.Enter input in the input field of time under create scheduler      2:00
     sleep   ${search_sleep}
     Generic.click on the button     Update
-    Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the three dots of subscription connector      Google
     SubscriptionPage.Click on option under three dots of subscription connector     Google       Scheduler
@@ -111,7 +108,6 @@ Edit the scheduler
     SubscriptionPage.Enter input in the start date field of billing details
     SubscriptionPage.Enter input in the input field of time under create scheduler      3:00
     sleep   ${search_sleep}
-    Generic.click on the button     Update
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
 
@@ -250,7 +246,6 @@ Edit the scheduler of Sentinelone
     SubscriptionPage.Enter input in the input field of time under create scheduler      12:00
     sleep   ${search_sleep}
     Generic.click on the button     Update
-    Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the three dots of subscription connector      SentinelOne
     SubscriptionPage.Click on option under three dots of subscription connector    SentinelOne      Scheduler
@@ -258,7 +253,6 @@ Edit the scheduler of Sentinelone
     SubscriptionPage.Enter input in the input field of frequency under create scheduler    Daily
     SubscriptionPage.Enter input in the input field of time under create scheduler      1:00
     sleep   ${search_sleep}
-    Generic.click on the button     Update
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the three dots of subscription connector      SentinelOne
@@ -269,7 +263,6 @@ Edit the scheduler of Sentinelone
     SubscriptionPage.Enter input in the input field of time under create scheduler      2:00
     sleep   ${search_sleep}
     Generic.click on the button     Update
-    Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the three dots of subscription connector      SentinelOne
     SubscriptionPage.Click on option under three dots of subscription connector     SentinelOne       Scheduler
@@ -278,7 +271,6 @@ Edit the scheduler of Sentinelone
     SubscriptionPage.Enter input in the start date field of billing details
     SubscriptionPage.Enter input in the input field of time under create scheduler      3:00
     sleep   ${search_sleep}
-    Generic.click on the button     Update
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
 
@@ -537,7 +529,6 @@ Create service now with valid data
     SubscriptionPage.Enter input in the input field of time under create scheduler      12:00
     sleep   ${search_sleep}
     Generic.click on the button     Update
-    Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the three dots of subscription connector      ServiceNow
     SubscriptionPage.Click on option under three dots of subscription connector     ServiceNow      Scheduler
@@ -547,7 +538,6 @@ Create service now with valid data
     SubscriptionPage.Enter input in the input field of time under create scheduler      2:00
     sleep   ${search_sleep}
     Generic.click on the button     Update
-    Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the three dots of subscription connector      ServiceNow
     SubscriptionPage.Click on option under three dots of subscription connector     ServiceNow     Scheduler
@@ -555,7 +545,6 @@ Create service now with valid data
     SubscriptionPage.Enter input in the input field of frequency under create scheduler    Daily
     SubscriptionPage.Enter input in the input field of time under create scheduler      1:00
     sleep   ${search_sleep}
-    Generic.click on the button     Update
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the three dots of subscription connector      ServiceNow
@@ -565,7 +554,6 @@ Create service now with valid data
     SubscriptionPage.Enter input in the start date field of billing details
     SubscriptionPage.Enter input in the input field of time under create scheduler      3:00
     sleep   ${search_sleep}
-    Generic.click on the button     Update
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the three dots of subscription connector      ServiceNow
@@ -610,7 +598,6 @@ Create service now with valid data
     SubscriptionPage.Enter input in the input field of time under asset discovery      12:00
     sleep   ${search_sleep}
     Generic.click on the button     Update
-    Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the settings icon under service now via discovery assets
     Generic.click on the tab       Edit
@@ -620,7 +607,6 @@ Create service now with valid data
     SubscriptionPage.Enter input in the input field of time under asset discovery       2:00
     sleep   ${search_sleep}
     Generic.click on the button     Update
-    Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the settings icon under service now via discovery assets
     Generic.click on the tab       Edit
@@ -628,7 +614,6 @@ Create service now with valid data
     SubscriptionPage.Enter input in the input field of frequency under asset discovery    Daily
     SubscriptionPage.Enter input in the input field of time under asset discovery      1:00
     sleep   ${search_sleep}
-    Generic.click on the button     Update
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the settings icon under service now via discovery assets
@@ -639,12 +624,11 @@ Create service now with valid data
     SubscriptionPage.Enter input in the input field of time under asset discovery      3:00
     sleep   ${search_sleep}
     Generic.click on the button     Update
-    Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the settings icon under service now via discovery assets
     Generic.click on the tab       Details
     Generic.click on the button     Run Now
-    SubscriptionPage.Click on cross icon of details under service now          #  delete this line after bug got fixed #
+#    SubscriptionPage.Click on cross icon of details under service now          #  delete this line after bug got fixed #
     SubscriptionPage.Fetch alert message text of subscription connector and compare it with
     sleep   ${search_sleep}
     SubscriptionPage.Click on the settings icon under service now via discovery assets
