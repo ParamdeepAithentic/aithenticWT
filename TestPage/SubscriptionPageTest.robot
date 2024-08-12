@@ -185,7 +185,7 @@ Suspend and unsuspend the account
         Generic.Verify your curren t page location contains      personal-profile
         Generic.Select parameter    Technology
         Generic.Verify your current page location contains      technology-settings
-        Generic.click on the tab    Connectors
+        SubscriptionPage.click on the connector tab under technoogy settings
         SubscriptionPage.Click on the activate option under subscription connector table        Google
         SubscriptionPage.Click on the activate option under subscription connector table        Microsoft Corporation
         Generic.Fetch alert message text and compare it with        Status Updated
