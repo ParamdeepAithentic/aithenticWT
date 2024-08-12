@@ -2909,6 +2909,72 @@ Compose reply and remove the message via technology details
     Generic.Select parameter        Yes
     Generic.Fetch alert message text and compare it with       Message removed successfully
 
+Verify notification update location in asset
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list       OPMR815274
+    TechnologyPage.Add assetID for technology lifecycle information random
+
+    TechnologyPage.Select technology lifecycle status      Active
+
+    TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
+    TechnologyPage.Add assignment information department name      TestQA Department Up31840619
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+    TechnologyPage.Click on edit button on product details page        Edit
+    Generic.Verify your current page location contains      edit-technology
+#    TechnologyPage.Select edited technology lifecycle status      Active
+    TechnologyPage.Click on add location
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Add - Location
+    Generic.Verify your current page location contains      add-location
+    TechnologyPage.Select country of the location   Albania
+    TechnologyPage.Enter building_name of the location
+    TechnologyPage.Enter floor of the location      8
+    TechnologyPage.Enter room of the location       27
+    TechnologyPage.Enter unique address_one of the location
+    TechnologyPage.Enter unique address_two of the location
+    TechnologyPage.Select state of location     Berat District
+    TechnologyPage.Select city of location      Banaj
+    TechnologyPage.Enter Zip_code       203061
+    LocationPage.Create random IP subnet
+    TechnologyPage.Save the new added location         save
+    Generic.Verify alertify is visible
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Edit - Technology
+    TechnologyPage.Click on refresh location icon
+    TechnologyPage.Add assignment information location     ${generated_buildingname}
+    TechnologyPage.Click on update button of edit_technology page      Update
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+    Generic.Verify your current page location contains     technology-details
+    TechnologyPage.Click on Location tab of technology- list page
+    TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     LocationName
+    TechnologyPage.verify Text from Assignment Information     ${assign_loc_input_value}          Albania - ${generated_buildingname} - 8 - 27
+    Generic.Refresh the existing page
+    Generic.Verify your current page location contains     technology-details
+    DashboardPage.Click on the notifications icon under dashbaord page
+    sleep  ${search_sleep}
+    TechnologyPage.Click on the asset alert option under notifications
+    sleep  ${search_sleep}
+    DashboardPage.Wait until alert is visible in the Recent Notifiation tab     You changed location of Asset ID      ${generated_AssetID}.
+    TechnologyPage.Get the text of the recent notification of added assets      You changed location of Asset ID ${generated_AssetID}.
+
 #Zz kill browser
 #    [Tags]      Smoke     Sanity      Time      rerun       Stable    yy
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
