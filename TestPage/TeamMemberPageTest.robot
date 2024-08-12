@@ -61,7 +61,7 @@ Free the asset limit
     PaginationPage.Run the remove asset journey
 
 Create team member form
-    [Tags]      Stable
+    [Tags]      Stable    Sanity    Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
