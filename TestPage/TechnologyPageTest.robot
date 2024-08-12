@@ -2969,9 +2969,9 @@ Verify notification update location in asset
     Generic.Refresh the existing page
     Generic.Verify your current page location contains     technology-details
     DashboardPage.Click on the notifications icon under dashbaord page
-     sleep   1
+    sleep  ${search_sleep}
     TechnologyPage.Click on the asset alert option under notifications
-    sleep   1
+    sleep  ${search_sleep}
     DashboardPage.Wait until alert is visible in the Recent Notifiation tab     You changed location of Asset ID      ${generated_AssetID}.
     TechnologyPage.Get the text of the recent notification of added assets      You changed location of Asset ID ${generated_AssetID}.
 
