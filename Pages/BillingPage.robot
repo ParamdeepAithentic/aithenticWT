@@ -216,6 +216,7 @@ Get the value of manage subscription under billing
 Get the value of manage subscription under subscription page
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible   //div[contains(@class,'active-plan')]//h4   ${wait_time}
+     sleep  ${search_sleep}
     ${plan_name} =    Get text   //div[contains(@class,'active-plan')]//h4
     Log To Console    Current Plan is : ${plan_name}
     Set Global Variable     ${plan_name}
