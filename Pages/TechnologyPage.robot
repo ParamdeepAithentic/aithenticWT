@@ -1978,3 +1978,4 @@ Enter input in the message status field under compose message via technology det
     wait until element is visible     //span[normalize-space()='${message_status}']    ${wait_time}
     wait until element is visible     //span[normalize-space()='${message_status}']      ${wait_time}
     click element       //span[normalize-space()='${message_status}']
+
