@@ -209,6 +209,7 @@ Get the value of team member under billing
 Get the value of manage subscription under billing
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible    //div[normalize-space()='Current Plan']//following-sibling::div//h4   ${wait_time}
+    sleep       ${search_sleep}
     ${subscription_plan} =    Get text   //div[normalize-space()='Current Plan']//following-sibling::div//h4
     Log To Console    Current Plan is : ${subscription_plan}
     Set Global Variable     ${subscription_plan}
@@ -220,3 +221,12 @@ Get the value of manage subscription under subscription page
     ${plan_name} =    Get text   //div[contains(@class,'active-plan')]//h4
     Log To Console    Current Plan is : ${plan_name}
     Set Global Variable     ${plan_name}
+
+Get the text of the recent notification of added assets in system tab
+    [Arguments]      ${option}
+    wait until element is visible       css:#alertTabs >div>.notifications-container >ul>li:nth-child(1)>div:nth-child(1)
+    wait until element is enabled       css:#alertTabs >div>.notifications-container >ul>li:nth-child(1)>div:nth-child(1)     ${wait_time}
+    ${notification1} =    get text      css:#alertTabs >div>.notifications-container >ul>li:nth-child(1)>div:nth-child(1)
+    set global variable     ${notification1}
+    log to console     ${notification1}
+    should be equal    ${notification1}     ${option}

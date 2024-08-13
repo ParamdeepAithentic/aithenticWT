@@ -1865,7 +1865,7 @@ Update the subscription Plan and verify the notification
     Generic.Click on the profile name
     Generic.Select option from profile list     billing-dropdown
     Generic.Verify your current page location contains     billing
-    sleep  ${search_sleep}
+    sleep   ${search_sleep}
     BillingPage.Get the value of manage subscription under billing
     Generic.click on the tab       Manage Subscription
     Generic.Verify your current page location contains     subscription
@@ -1876,7 +1876,4 @@ Update the subscription Plan and verify the notification
     Generic.Verify your current page location contains     subscription
     DashboardPage.Click on the notifications icon under dashbaord page
     sleep  ${search_sleep}
-    TechnologyPage.Click on the asset alert option under notifications
-    sleep  ${search_sleep}
-#    DashboardPage.Wait until alert is visible in the Recent Notifiation tab     You updated Asset ID      ${generated_AssetID}.
-    TechnologyPage.Get the text of the recent notification of added assets       Your Monthly plan has been changed.
+    BillingPage.Get the text of the recent notification of added assets in system tab       Your Monthly plan has been changed.
