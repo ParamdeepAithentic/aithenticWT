@@ -2935,8 +2935,9 @@ Download QR for an asset as PNG and SVG
     TechnologyPage.Select option by clicking on Print QR button     PNG File
     TechnologyPage.Confirm to download QR file      Confirm
     TechnologyPage.Click on Print QR button
-    TechnologyPage.Select option by clicking on Print QR button     PNG File
+    TechnologyPage.Select option by clicking on Print QR button     SVG File
     TechnologyPage.Confirm to download QR file      Confirm
+    OCS.Visible the print qr button to for data loading
     TechnologyPage.Select tab under technology details      components
     TechnologyPage.Click on add new entry component button under technology details page       Add New Entry
     TechnologyPage.Select add new entry        New Asset
@@ -2945,31 +2946,26 @@ Download QR for an asset as PNG and SVG
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Select parameter from technology dropdown list       Product_00337612322
     TechnologyPage.Add New_Component assetID for technology lifecycle information random
-    TechnologyPage.Select technology lifecycle status      Active
     Generic.Scroll Window To End
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
-    sleep   ${search_sleep}
     Generic.Verify your current page location contains      technology
-    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Search by AssetId       ${generated_NewComponent_AssetID}        #${generated_AssetID}
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
-#    TechnologyPage.Click on Print QR button
-#    TechnologyPage.Select option by clicking on Print QR button     PNG File
-#    TechnologyPage.Confirm to download QR file      Confirm
-#    TechnologyPage.Click on Print QR button
-#    TechnologyPage.Select option by clicking on Print QR button     PNG File
-#    TechnologyPage.Confirm to download QR file      Confirm
     OCS.Visible the print qr button to for data loading
     TechnologyPage.Select tab under technology details      parent-components
-    Generic.Scroll the page till    500
     TechnologyPage.click on the three dots inside table of parent tab from tehnology details page
     TechnologyPage.Select option from three-dots from technology details page       Print QR
-
-
-
-    OCS.Visible the print qr button to for data loading
+    TechnologyPage.Select the format to download QR        PNG File
+    TechnologyPage.Confirm to download QR file      Confirm
+#    TechnologyPage.Select tab under technology details      parent-components
+    TechnologyPage.click on the three dots inside table of parent tab from tehnology details page
+    Generic.Scroll Window To End
+    TechnologyPage.Select option from three-dots from technology details page       Print QR
+    TechnologyPage.Select the format to download QR        SVG File
+    TechnologyPage.Confirm to download QR file      Confirm
     TechnologyPage.Select tab under technology details      parent-components
     TechnologyPage.Click on add new entry parent button under technology details page      Add New Entry
     TechnologyPage.Select add new entry        New Asset
@@ -2978,11 +2974,25 @@ Download QR for an asset as PNG and SVG
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Select parameter from technology dropdown list       Product_00337612322
     TechnologyPage.Add New_Parent assetID for technology lifecycle information random
-    TechnologyPage.Select technology lifecycle status      Active
     Generic.Scroll Window To End
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
-
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_NewParentAssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+    OCS.Visible the print qr button to for data loading
+    TechnologyPage.Select tab under technology details      components
+    TechnologyPage.click on the three dots inside table of parent tab from tehnology details page
+    TechnologyPage.Select option from three-dots from technology details page       Print QR
+    TechnologyPage.Select the format to download QR        PNG File
+    TechnologyPage.Confirm to download QR file      Confirm
+    TechnologyPage.Scroll the element into view
+    TechnologyPage.click on the three dots inside table of parent tab from tehnology details page
+    TechnologyPage.Select option from three-dots from technology details page       Print QR
+    TechnologyPage.Select the format to download QR        SVG File
+    TechnologyPage.Confirm to download QR file      Confirm
 
 Verify notification update location in asset
     Generic.click on the tab	Login
