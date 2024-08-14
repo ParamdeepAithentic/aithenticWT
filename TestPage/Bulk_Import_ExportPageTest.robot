@@ -485,7 +485,8 @@ Technology Bulk edit
     Bulk_Import_ExportPage.Click on the fields and select value from dropdown of technology bulk edit        SupplierName
     Bulk_Import_ExportPage.click on the arrow of product    Partners Information     1
     Bulk_Import_ExportPage.click on the arrow of product    Technology Cost Information    2
-    Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology       PaymentPartnerName      Dell
+#    Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology       PaymentPartnerName      Dell
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       PaymentPartnerName        1
     Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology       CostTypeName      Purchased
     Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology       PaymentPeriod      Once
     Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology       CostCenter      123456
@@ -657,7 +658,8 @@ Technology Bulk import
     Bulk_Import_ExportPage.Perform the keyboard action      Comment
     Bulk_Import_Exportpage.Enter the new value in cost type field of technology bulk import      CostType        Rented
     Bulk_Import_ExportPage.Perform the keyboard action      CostType
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      PaymentPartner        testqa 20Feb
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      PaymentPartner        testqa 20Feb / for uat and pre prod use this method /
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit      PaymentPartner       1
     Bulk_Import_ExportPage.Perform the keyboard action      PaymentPartner
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      PaymentType        FixedPayment
     Bulk_Import_ExportPage.Perform the keyboard action      PaymentType
@@ -691,18 +693,19 @@ Technology Bulk import
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_9
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_3      1654
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_3
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_4      CPU
-    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_4
+    Bulk_Import_Exportpage.Enter the new value of serial number of technology bulk import      DYNA_21
+#    Bulk_Import_ExportPage.Perform the keyboard action      DYNA_21
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_4      CPU
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_4
 #    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_5      Paramdeep
 #    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_5
 #    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_6      Test@123
 #    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_6
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_7      100
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_7
 
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_7      100
-    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_7
 
-
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_8      12
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_8      12
 #    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_8
 #    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_10      01/01/2023
 #    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_10
@@ -934,7 +937,8 @@ Verify Bulk Import on the Technology Page by adding all parameters
     Bulk_Import_ExportPage.Perform the keyboard action      Comment
     Bulk_Import_Exportpage.Enter the new value in cost type field of technology bulk import      CostType        Rented
     Bulk_Import_ExportPage.Perform the keyboard action      CostType
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      PaymentPartner        testqa 20Feb
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      PaymentPartner        testqa 20Feb / for uat and pre prod this method /
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit      PaymentPartner       1
     Bulk_Import_ExportPage.Perform the keyboard action      PaymentPartner
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      PaymentType        FixedPayment
     Bulk_Import_ExportPage.Perform the keyboard action      PaymentType
@@ -960,19 +964,19 @@ Verify Bulk Import on the Technology Page by adding all parameters
     Bulk_Import_ExportPage.Perform the keyboard action      Supplier
     Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       SupportPartner        1
     Bulk_Import_ExportPage.Perform the keyboard action      SupportPartner
-#    Bulk_Import_Exportpage.Enter the new value of serial number of technology bulk import      DYNA_21
-#    Bulk_Import_ExportPage.Perform the keyboard action      DYNA_21
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_2      Capex
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_2
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_9      Account123
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_9
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_3      1654
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_3
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_4      CPU
-    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_4
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_7      100
-    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_7
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_8      12
+    Bulk_Import_Exportpage.Enter the new value of serial number of technology bulk import      DYNA_21
+#    Bulk_Import_ExportPage.Perform the keyboard action      DYNA_21
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_4      CPU
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_4
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_7      100
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_7
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_8      12
     Generic.Click on the button     Check Data      #Update,Edit
     Generic.Click on the button     Upload
     Bulk_Import_ExportPage.Verify the upload message text   UploadMessage       Upload Successful
@@ -997,6 +1001,97 @@ Verify Bulk Import on the Technology Page by adding all parameters
     DashboardPage.Select the employee ID checkbox   no
     DashboardPage.Select the employee ID checkbox   yes
     Generic.Fetch alert message text and compare it with       Settings Updated
+
+
+Technology bulk import while entering invalid data in payment period field
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains     technology-list
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.click on bulk import under action button of technology
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Data-Wizard
+    Bulk_Import_ExportPage.click on checkbox under technology bulk import
+    Generic.click on the button     Next
+    Generic.Verify your current page location contains     add-technology
+    Bulk_Import_ExportPage.Enter the new value in the fields of technology bulk import       Brand        QABrand555
+    Bulk_Import_ExportPage.Enter the new value in the fields of technology bulk import     Product        Product_00337612322
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      ItemTechCount         1
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       Supplier        1
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       SupportPartner        1
+    Generic.Click on the button     Check Data      #Update,Edit
+    Generic.Click on the button     Upload
+    Bulk_Import_ExportPage.Verify the upload message text - bulk import tech    Upload       Upload is prepared
+    Generic.click on the button     Next
+    Generic.Verify your current page location contains     add-technology-templates
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       LocationName        1
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       DepartmentName        1
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       AssignTo        1
+    Bulk_Import_Exportpage.Enter the new value of asset id of technology bulk import      AssetId
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       Status        1
+    Bulk_Import_ExportPage.Perform the keyboard action      Status
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      PurchaseOrderNo         25
+    Bulk_Import_ExportPage.Perform the keyboard action      PurchaseOrderNo
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import     PurchaseDt         01/21/2021
+    Bulk_Import_ExportPage.Perform the keyboard action      PurchaseDt
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import     WarrantyEndDt         03/23/2025
+    Bulk_Import_ExportPage.Perform the keyboard action      WarrantyEndDt
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      Comment         Testing
+    Bulk_Import_ExportPage.Perform the keyboard action      Comment
+    Bulk_Import_Exportpage.Enter the new value in cost type field of technology bulk import      CostType        Rented
+    Bulk_Import_ExportPage.Perform the keyboard action      CostType
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      PaymentPartner        testqa 20Feb  /   for uat and pre prod this method /
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit      PaymentPartner       1
+    Bulk_Import_ExportPage.Perform the keyboard action      PaymentPartner
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      PaymentType        FixedPayment
+    Bulk_Import_ExportPage.Perform the keyboard action      PaymentType
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      PaymentPeriod      2 years
+    Bulk_Import_ExportPage.Perform the keyboard action      PaymentPeriod
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      FirstPaymentDate        02/03/2023
+    Bulk_Import_ExportPage.Perform the keyboard action      FirstPaymentDate
+    Bulk_Import_Exportpage.Enter the new value in last Payment date field of technology bulk import      LastPaymentDate       02/03/2024
+    Bulk_Import_ExportPage.Perform the keyboard action      LastPaymentDate
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      RenewalDate      02/11/2024
+    Bulk_Import_ExportPage.Perform the keyboard action      RenewalDate
+    Bulk_Import_Exportpage.Select option from technology type column in bulk_edit      BudgetCurrency      1
+    Bulk_Import_ExportPage.Perform the keyboard action      BudgetCurrency
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      BudgetPaymentValue      2500
+    Bulk_Import_ExportPage.Perform the keyboard action      BudgetPaymentValue
+    Bulk_Import_Exportpage.Select option from technology type column in bulk_edit      ActualPaymentCurrency      1
+    Bulk_Import_ExportPage.Perform the keyboard action      ActualPaymentCurrency
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      LastActualPaymentValue      2000
+    Bulk_Import_ExportPage.Perform the keyboard action      LastActualPaymentValue
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       CostCenter        1
+    Bulk_Import_ExportPage.Perform the keyboard action      CostCenter
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       Supplier        1
+    Bulk_Import_ExportPage.Perform the keyboard action      Supplier
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       SupportPartner        1
+    Bulk_Import_ExportPage.Perform the keyboard action      SupportPartner
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_2      Capex
+    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_2
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_9      Account123
+    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_9
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_3      1654
+    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_3
+    Bulk_Import_Exportpage.Enter the new value of serial number of technology bulk import      DYNA_21
+#    Bulk_Import_ExportPage.Perform the keyboard action      DYNA_21
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_4      CPU
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_4
+#
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_7      100
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_7
+#
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_8      12
+
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text   ValidationError       Payment period is invalid
+    Generic.Click on the button     Upload
+    Bulk_Import_ExportPage.Click on the confirm button under pop up in technology bulk import
+    Bulk_Import_ExportPage.Verify the upload message text   UploadMessage       Upload failed
+
 
 #Zz kill browser
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
