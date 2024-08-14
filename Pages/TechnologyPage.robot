@@ -2025,25 +2025,3 @@ Scroll the element into view
     Wait until element is visible    //div[@id='components']//h6[normalize-space()='Hardware']      ${wait_time}
     wait until element is enabled    //div[@id='components']//h6[normalize-space()='Hardware']      ${wait_time}
     scroll element into view       //div[@id='components']//h6[normalize-space()='Hardware']
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
