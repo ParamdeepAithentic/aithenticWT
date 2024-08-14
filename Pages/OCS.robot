@@ -957,3 +957,7 @@ Verify that No items found with the selected filter
     log to console          ${filter_existing_text}
     set global variable     ${filter_existing_text}
     Should be equal         ${filter_existing_text}         No items found
+
+Wait until brand loader is invisible
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+     wait until element is not visible   //div[@class='full-width-field']//ancestor::ng-select[@id='BrandName']//following-sibling::div[contains(@class,'spinner-loader')]    ${wait_time}

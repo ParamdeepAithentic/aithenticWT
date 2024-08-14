@@ -1884,7 +1884,7 @@ Verify the technology data while applying agent Filters
     Generic.Wait until table get load
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
-    Generic.Verify your current page location contains    ocs
+    Generic.Verify your current page location contains   aad
     I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.Click on search icon of discovery assets
