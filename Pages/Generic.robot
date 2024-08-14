@@ -61,7 +61,9 @@ ${yop_sleep}       10
 
 ${search_sleep}       1
 
-${CASE}        qa     #qa , uat , pre-prod
+
+${CASE}        uat    #qa , uat , pre-prod
+
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
 
 *** Keywords ***
@@ -186,7 +188,7 @@ click on the button
     wait until element is not visible   ${loaderIcon}          ${wait_time}
     wait until element is visible      //button[normalize-space()='${option}']          ${wait_time}
     wait until element is enabled      //button[normalize-space()='${option}']          ${wait_time}
-#    sleep   ${search_sleep}
+    sleep   ${search_sleep}
     click element       //button[normalize-space()='${option}']
     sleep   ${search_sleep}
 

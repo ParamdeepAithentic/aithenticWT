@@ -83,7 +83,7 @@ Edit the scheduler
     SubscriptionPage.Enter input in the input field of time under create scheduler      12:00
     sleep   ${search_sleep}
     Generic.click on the button     Update
-    Generic.click on the button     Update
+#    Generic.click on the button     Update                                                    # Remove this line after bug got fixed #
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the three dots of subscription connector      Google
     SubscriptionPage.Click on option under three dots of subscription connector     Google       Scheduler
@@ -92,7 +92,7 @@ Edit the scheduler
     SubscriptionPage.Enter input in the input field of time under create scheduler      1:00
     sleep   ${search_sleep}
     Generic.click on the button     Update
-    Generic.click on the button     Update
+#    Generic.click on the button     Update                                                    # Remove this line after bug got fixed #
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the three dots of subscription connector      Google
     SubscriptionPage.Click on option under three dots of subscription connector     Google       Scheduler
@@ -102,7 +102,7 @@ Edit the scheduler
     SubscriptionPage.Enter input in the input field of time under create scheduler      2:00
     sleep   ${search_sleep}
     Generic.click on the button     Update
-    Generic.click on the button     Update
+#    Generic.click on the button     Update                                                    # Remove this line after bug got fixed #
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the three dots of subscription connector      Google
     SubscriptionPage.Click on option under three dots of subscription connector     Google       Scheduler
@@ -112,7 +112,7 @@ Edit the scheduler
     SubscriptionPage.Enter input in the input field of time under create scheduler      3:00
     sleep   ${search_sleep}
     Generic.click on the button     Update
-    Generic.click on the button     Update
+#    Generic.click on the button     Update                                                    # Remove this line after bug got fixed #
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
 
 Run now from view details
@@ -250,7 +250,7 @@ Edit the scheduler of Sentinelone
     SubscriptionPage.Enter input in the input field of time under create scheduler      12:00
     sleep   ${search_sleep}
     Generic.click on the button     Update
-    Generic.click on the button     Update
+#    Generic.click on the button     Update                                                    # Remove this line after bug got fixed #
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the three dots of subscription connector      SentinelOne
     SubscriptionPage.Click on option under three dots of subscription connector    SentinelOne      Scheduler
@@ -259,7 +259,7 @@ Edit the scheduler of Sentinelone
     SubscriptionPage.Enter input in the input field of time under create scheduler      1:00
     sleep   ${search_sleep}
     Generic.click on the button     Update
-    Generic.click on the button     Update
+#    Generic.click on the button     Update                                                    # Remove this line after bug got fixed #
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the three dots of subscription connector      SentinelOne
     SubscriptionPage.Click on option under three dots of subscription connector     SentinelOne       Scheduler
@@ -269,7 +269,7 @@ Edit the scheduler of Sentinelone
     SubscriptionPage.Enter input in the input field of time under create scheduler      2:00
     sleep   ${search_sleep}
     Generic.click on the button     Update
-    Generic.click on the button     Update
+#    Generic.click on the button     Update                                                    # Remove this line after bug got fixed #
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the three dots of subscription connector      SentinelOne
     SubscriptionPage.Click on option under three dots of subscription connector     SentinelOne       Scheduler
@@ -279,7 +279,7 @@ Edit the scheduler of Sentinelone
     SubscriptionPage.Enter input in the input field of time under create scheduler      3:00
     sleep   ${search_sleep}
     Generic.click on the button     Update
-    Generic.click on the button     Update
+#    Generic.click on the button     Update                                               # Remove this line after bug got fixed #
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
 
 Run_now_delete_view-details_of_sentinelOne
@@ -518,11 +518,11 @@ Create service now with valid data
     sleep       ${yop_sleep}
     Switch Window       aithentic | Create Connection
     Generic.Verify your current page location contains      create-connection
-    SubscriptionPage.Enter input in the url end point field of service now      https://dev258787.service-now.com
-    SubscriptionPage.Enter input in the username field of service now       ParamD
-    SubscriptionPage.Enter input in the password field of service now       sbd{Vc]x0P7t7h!We$ZI#j%b+_i1WNNnwam.rtD.5%@klTvb:P$4[A!Q1n&aYe$ScRLFNsJGH&d;m.
-    SubscriptionPage.Enter input in the client id field of service now     405229d86f230210f8a735c71f96d3af
-    SubscriptionPage.Enter input in the secret key field of service now     i[N(m1}|EO
+    SubscriptionPage.Enter input in the url end point field of service now      https://dev231279.service-now.com
+    SubscriptionPage.Enter input in the username field of service now       gurmilan
+    SubscriptionPage.Enter input in the password field of service now       [xNZ5w5t(_[EJKMOM(dL7jC*gwyAqeYR
+    SubscriptionPage.Enter input in the client id field of service now     b736c1fecf3b021092418c18e0464b57
+    SubscriptionPage.Enter input in the secret key field of service now     }6@ENaGIQy
     Generic.click on the button     Create Connection
     Generic.click on the button     By System
     Generic.Verify your current page location contains      technology-settings
@@ -537,7 +537,7 @@ Create service now with valid data
     SubscriptionPage.Enter input in the input field of time under create scheduler      12:00
     sleep   ${search_sleep}
     Generic.click on the button     Update
-    Generic.click on the button     Update
+#    Generic.click on the button     Update         # Remove this line after bug got fixed #
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the three dots of subscription connector      ServiceNow
     SubscriptionPage.Click on option under three dots of subscription connector     ServiceNow      Scheduler
@@ -547,7 +547,7 @@ Create service now with valid data
     SubscriptionPage.Enter input in the input field of time under create scheduler      2:00
     sleep   ${search_sleep}
     Generic.click on the button     Update
-    Generic.click on the button     Update
+#    Generic.click on the button     Update         # Remove this line after bug got fixed #
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the three dots of subscription connector      ServiceNow
     SubscriptionPage.Click on option under three dots of subscription connector     ServiceNow     Scheduler
@@ -556,7 +556,7 @@ Create service now with valid data
     SubscriptionPage.Enter input in the input field of time under create scheduler      1:00
     sleep   ${search_sleep}
     Generic.click on the button     Update
-    Generic.click on the button     Update
+#    Generic.click on the button     Update     # Remove this line after bug got fixed #
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the three dots of subscription connector      ServiceNow
     SubscriptionPage.Click on option under three dots of subscription connector     ServiceNow      Scheduler
@@ -566,7 +566,7 @@ Create service now with valid data
     SubscriptionPage.Enter input in the input field of time under create scheduler      3:00
     sleep   ${search_sleep}
     Generic.click on the button     Update
-    Generic.click on the button     Update
+#    Generic.click on the button     Update         # Remove this line after bug got fixed #
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the three dots of subscription connector      ServiceNow
     SubscriptionPage.Click on option under three dots of subscription connector    ServiceNow       Details
@@ -594,7 +594,7 @@ Create service now with valid data
     SubscriptionPage.Click on option under three dots of subscription connector     ServiceNow     View Results
     Generic.Verify your current page location contains      discovery-assets
     Generic.Verify your current page contains this text    Asset Discovery
-    SubscriptionPage.Fetch and compare the product from the table       ATI Control Panel
+    SubscriptionPage.Fetch and compare the product from the table
     Generic.Wait until table get load
     Go Back
     Generic.Verify your current page location contains      technology-settings
@@ -610,7 +610,7 @@ Create service now with valid data
     SubscriptionPage.Enter input in the input field of time under asset discovery      12:00
     sleep   ${search_sleep}
     Generic.click on the button     Update
-    Generic.click on the button     Update
+#    Generic.click on the button     Update         # Remove this line after bug got fixed #
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the settings icon under service now via discovery assets
     Generic.click on the tab       Edit
@@ -620,7 +620,7 @@ Create service now with valid data
     SubscriptionPage.Enter input in the input field of time under asset discovery       2:00
     sleep   ${search_sleep}
     Generic.click on the button     Update
-    Generic.click on the button     Update
+#    Generic.click on the button     Update         # Remove this line after bug got fixed #
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the settings icon under service now via discovery assets
     Generic.click on the tab       Edit
@@ -629,7 +629,7 @@ Create service now with valid data
     SubscriptionPage.Enter input in the input field of time under asset discovery      1:00
     sleep   ${search_sleep}
     Generic.click on the button     Update
-    Generic.click on the button     Update
+#    Generic.click on the button     Update         # Remove this line after bug got fixed #
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the settings icon under service now via discovery assets
     Generic.click on the tab       Edit
@@ -639,12 +639,12 @@ Create service now with valid data
     SubscriptionPage.Enter input in the input field of time under asset discovery      3:00
     sleep   ${search_sleep}
     Generic.click on the button     Update
-    Generic.click on the button     Update
+#    Generic.click on the button     Update     # Remove this line after bug got fixed #
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the settings icon under service now via discovery assets
     Generic.click on the tab       Details
     Generic.click on the button     Run Now
-    SubscriptionPage.Click on cross icon of details under service now          #  delete this line after bug got fixed #
+#    SubscriptionPage.Click on cross icon of details under service now          #  delete this line after bug got fixed #
     SubscriptionPage.Fetch alert message text of subscription connector and compare it with
     sleep   ${search_sleep}
     SubscriptionPage.Click on the settings icon under service now via discovery assets
