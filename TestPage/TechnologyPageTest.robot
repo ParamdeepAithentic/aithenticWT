@@ -2748,6 +2748,281 @@ Search with hostname on the technology search bar
     Generic.Verify your current page location contains     technology-details
     OCS.Get Value of Host-Name and compare it with    ${result}
 
+Compose reply and remove the message via technology details
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Click on add team member action button
+    TeamMemberPage.Choose option after clicking on Action button        Add New Member
+    TeamMemberPage.Enter team member first name
+    TeamMemberPage.Enter team member last name
+    Generic.Enter phone number      India   +91     9646289871
+    TeamMemberPage.Enter team member business email with cool fr nf email
+    TeamMemberPage.Enter the Position in member form        QA
+    TeamMemberPage.Click on team member department
+    TeamMemberPage.Select team member department        DepartmentName0451927202
+    TeamMemberPage.Select team member role     Admin
+    TeamMemberPage.Click on team member location
+    TeamMemberPage.Select team member location with new domain
+    TeamMemberPage.Save the team member form   save
+    Generic.Fetch alert message text and compare it with        Team Member created successfully
+    TeamMemberPage.Search Team Member by name       ${generated_TMFname}
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+#    TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    #           TechnologyPage.Click technology product input field
+    TechnologyPage.Select parameter from technology dropdown list       OPMR815274
+    TechnologyPage.Create unique serial number random
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    Generic.Refresh the existing page
+    Generic.Verify your current page location contains      technology
+    sleep       2
+    DashboardPage.Click on the notifications icon under dashbaord page
+    TechnologyPage.Click on the asset alert option under notifications
+    sleep   ${search_sleep}
+    TechnologyPage.Get the text of the recent notification of added assets      You added Asset ID ${generated_AssetID}.
+    Generic.Click on the profile name
+    Generic.Select other option from profile list     Logout
+    Generic.Fetch log_out alert message
+    Generic.Open new window     yopmail
+    Generic.Refresh the existing page
+    Generic.Search yopmail emails for   ${generated_TMbusinessEmail}
+    sleep       ${search_sleep}
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifmail
+    Generic.click on the button     Verify
+    Unselect Frame
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Create - Account
+    Generic.Verify your current page location contains     create-account
+    UserAccount.Enter the password      Test@456
+    UserAccount.Confirm the entered password    Test@456
+    UserAccount.Click on term and condition checkbox
+    UserAccount.Click create account button
+    Generic.Fetch alert message text and compare it with       Account created successfully.
+    Generic.Verify your current page location contains     auth
+    LandingPage.Fill the login Form      ${generated_TMbusinessEmail}    Test@456
+    Switch Window    Inbox
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Click on email of yopmail   OTP Verification.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Get verification OTP from email    Your passcode is
+    sleep       ${yop_sleep}
+    Switch Window   aithentic | OTP
+    TwoFactorAuth.Enter the otp     ${passcode}
+    TwoFactorAuth.Click verification button
+    Generic.Verify your current page location contains     dashboard
+    Generic.Click on the profile name
+     Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    DashboardPage.Select an option from company details side list   Security
+    Generic.Verify your current page location contains  security
+    DashboardPage.click on the authentication tab under security
+    Generic.Verify your current page location contains     security
+    DashboardPage.Click on the checkboxes under auhtentication tab
+    Generic.Fetch alert message text and compare it with       Two factor updated successfully
+    Generic.Click on the profile name
+    Generic.Select other option from profile list     Logout
+    Generic.Fetch log_out alert message
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
+    Generic.Verify your current page location contains      dashboard
+#    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    TechnologyPage.Click on message tab of technology- list page
+    Generic.click on the button     Compose Message
+    TechnologyPage.Enter input in the recipient list field under compose message via technology details      ${generated_TMbusinessEmail}
+    TechnologyPage.Enter input in the message status field under compose message via technology detail     Public
+    DashboardPage.Enter text in the subject field under compose message
+    DashboardPage.Enter text in the client message field under compose message
+    Generic.click on the button     Send
+    Generic.Fetch alert message text and compare it with       Message sent successfully
+    Generic.select the option from the side menu    Messages
+    Generic.Verify your current page location contains      message
+    Generic.Select parameter      Sent
+    Generic.Verify your current page location contains      message
+    DashboardPage.Search by subject under sent serach bar     ${generated_TMFname}
+    Generic.Click on the profile name
+    Generic.Select other option from profile list     Logout
+    Generic.Fetch log_out alert message
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form  ${generated_TMbusinessEmail}    Test@456
+    Generic.Verify your current page location contains      dashboard
+#    LandingPage.Verify you are on dashboard page
+    DashboardPage.Click on the notifications icon under dashbaord page
+    sleep   ${search_sleep}
+    DashboardPage.Get the text of the recent notification        New message received from Milan Johar for Asset ${generated_AssetID}
+    Generic.select the option from the side menu    Messages
+    Generic.Verify your current page location contains      message
+    Generic.Select parameter      Inbox
+    Generic.Verify your current page location contains      message
+    DashboardPage.Search by subject under inbox serach bar       ${generated_subject}
+    Dashboardpage.Click on three dots
+    DashboardPage.Click on the reply option to reply the message
+    Generic.Verify your current page location contains      reply
+    DashboardPage.Enter input in the reply back page
+    Generic.click on the button     Send
+    Generic.Fetch alert message text and compare it with       Message sent successfully
+    Generic.Select parameter      Sent
+    Generic.Verify your current page location contains      message
+    DashboardPage.Search by subject under sent serach bar     ${generated_TMFname}
+    Generic.Click on the profile name
+    Generic.Select other option from profile list     Logout
+    Generic.Fetch log_out alert message
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form   debut@cool.fr.nf   Test@123
+    Generic.Verify your current page location contains      dashboard
+#    LandingPage.Verify you are on dashboard page
+    DashboardPage.Click on the notifications icon under dashbaord page
+    sleep   ${search_sleep}
+    DashboardPage.Get the text of the recent notification       New message received from ${generated_TMFname} ${generated_Tmlname} for Asset ${generated_AssetID}
+    Generic.select the option from the side menu    Messages
+    Generic.Verify your current page location contains      message
+    Generic.Select parameter      Inbox
+    Generic.Verify your current page location contains      message
+    DashboardPage.Search by subject under inbox serach bar       ${generated_reply}
+    DashboardPage.Search by subject under inbox serach bar       ${generated_TMFname}
+    DashboardPage.Click on the flag icon to flag the message
+    Generic.Fetch alert message text and compare it with       Message flagged successfully
+    Dashboardpage.Click on three dots
+    DashboardPage.Click on the remove option to remove the message
+    Generic.Select parameter        Yes
+    Generic.Fetch alert message text and compare it with       Message removed successfully
+
+Verify notification update location in asset
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list       OPMR815274
+    TechnologyPage.Add assetID for technology lifecycle information random
+
+    TechnologyPage.Select technology lifecycle status      Active
+
+    TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
+    TechnologyPage.Add assignment information department name      TestQA Department Up31840619
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+    TechnologyPage.Click on edit button on product details page        Edit
+    Generic.Verify your current page location contains      edit-technology
+#    TechnologyPage.Select edited technology lifecycle status      Active
+    TechnologyPage.Click on add location
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Add - Location
+    Generic.Verify your current page location contains      add-location
+    TechnologyPage.Select country of the location   Albania
+    TechnologyPage.Enter building_name of the location
+    TechnologyPage.Enter floor of the location      8
+    TechnologyPage.Enter room of the location       27
+    TechnologyPage.Enter unique address_one of the location
+    TechnologyPage.Enter unique address_two of the location
+    TechnologyPage.Select state of location     Berat District
+    TechnologyPage.Select city of location      Banaj
+    TechnologyPage.Enter Zip_code       203061
+    LocationPage.Create random IP subnet
+    TechnologyPage.Save the new added location         save
+    Generic.Verify alertify is visible
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Edit - Technology
+    TechnologyPage.Click on refresh location icon
+    TechnologyPage.Add assignment information location     ${generated_buildingname}
+    TechnologyPage.Click on update button of edit_technology page      Update
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+    Generic.Verify your current page location contains     technology-details
+    TechnologyPage.Click on Location tab of technology- list page
+    TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     LocationName
+    TechnologyPage.verify Text from Assignment Information     ${assign_loc_input_value}          Albania - ${generated_buildingname} - 8 - 27
+    Generic.Refresh the existing page
+    Generic.Verify your current page location contains     technology-details
+    DashboardPage.Click on the notifications icon under dashbaord page
+    sleep  ${search_sleep}
+    TechnologyPage.Click on the asset alert option under notifications
+    sleep  ${search_sleep}
+    DashboardPage.Wait until alert is visible in the Recent Notifiation tab     You changed location of Asset ID      ${generated_AssetID}.
+    TechnologyPage.Get the text of the recent notification of added assets      You changed location of Asset ID ${generated_AssetID}.
+
+Verify_Notification_Update_Asset
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list       OPMR815274
+    TechnologyPage.Add assetID for technology lifecycle information random
+
+    TechnologyPage.Select technology lifecycle status      Active
+
+    TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
+    TechnologyPage.Add assignment information department name      TestQA Department Up31840619
+    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+    TechnologyPage.Click on edit button on product details page        Edit
+    Generic.Verify your current page location contains      edit-technology
+    TechnologyPage.Click on the edit icon on the edit technology page
+    TechnologyPage.Click on cross icon of product while editing technology
+    TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
+    TechnologyPage.Select edited technology lifecycle status      Active
+    TechnologyPage.Click on update button of edit_technology page       Update
+    TechnologyPage.Accept updated edited technology pop up     Update
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+    Generic.select the option from the side menu    Dashboard
+    Generic.Verify your current page location contains      dashboard
+    Generic.Refresh the existing page
+    Generic.Verify your current page location contains      dashboard
+    DashboardPage.Click on the notifications icon under dashbaord page
+    sleep  ${search_sleep}
+    TechnologyPage.Click on the asset alert option under notifications
+    sleep  ${search_sleep}
+    DashboardPage.Wait until alert is visible in the Recent Notifiation tab     You updated Asset ID      ${generated_AssetID}.
+    TechnologyPage.Get the text of the recent notification of added assets      You updated Asset ID ${generated_AssetID}.
+
 #Zz kill browser
 #    [Tags]      Smoke     Sanity      Time      rerun       Stable    yy
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

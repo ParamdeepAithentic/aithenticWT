@@ -1154,6 +1154,8 @@ Search with containing fields under advance search of discovered asset
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         Generic.Verify your current page location contains   aad
         OCS.Click on newly discovered tab under network discovery
+        OCS.Click on search icon of discovery assets
+        OCS.Enter text to search discovery asset    ${discovered_asset_brand}
         OCS.Click on the down arrow icon of discovered asset
         Generic.Scroll Window To End
         OCS.Mouse Hover over searched Discovered Assets
