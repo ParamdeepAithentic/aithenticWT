@@ -753,5 +753,6 @@ Click on connetors button link under asset discovery
     Generic.click on the button     Create Connection
     Generic.Verify your current page location contains     connector
     Generic.Wait until table get load
+    
 
 
