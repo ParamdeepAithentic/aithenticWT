@@ -429,10 +429,10 @@ Click on the service now tab under discovery assets
     click element   css:#service-now-first-parent-tab
     sleep  ${search_sleep}
 
-Click on the settings icon under service now via discovery assets
-    wait until element is visible  //div[contains(@class,'flex-space')]//div//i    ${wait_time}
-    wait until element is enabled  //div[contains(@class,'flex-space')]//div//i  ${wait_time}
-    click element  //div[contains(@class,'flex-space')]//div//i
+Click on the action button of service now under discovery assets
+    wait until element is visible  //button[@id='servicenow-list-actions']    ${wait_time}
+    wait until element is enabled  //button[@id='servicenow-list-actions']  ${wait_time}
+    click element  //button[@id='servicenow-list-actions']
     sleep   ${search_sleep}
 #    wait until element is not visible       ${shadow}          ${wait_time}
 
@@ -565,3 +565,10 @@ click on the cross icon of delete pop up under asset discovery
     click element   //div[@id='deleteServicenowlConnector']//span[normalize-space()='×']
     sleep   ${search_sleep}
     wait until element is not visible       ${shadow}          ${wait_time}
+
+Click on the options under action button of service now under discovery assets
+    [Arguments]     ${option}
+    wait until element is visible   //div[contains(@id,'service-now')]//a[normalize-space()='${option}']    ${wait_time}
+    wait until element is enabled   //div[contains(@id,'service-now')]//a[normalize-space()='${option}']     ${wait_time}
+    click element   //div[contains(@id,'service-now')]//a[normalize-space()='${option}']
+    sleep   ${search_sleep}
