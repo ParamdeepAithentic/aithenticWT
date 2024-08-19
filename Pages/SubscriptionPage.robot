@@ -500,7 +500,7 @@ Enter input in the password field of service now
     click element  css:#password_sn
     input text      css:#password_sn       ${option}
 
- Enter input in the client id field of service now
+Enter input in the client id field of service now
     [Arguments]     ${option}
     wait until element is visible  css:#clientId    ${wait_time}
     wait until element is enabled  css:#clientId      ${wait_time}
@@ -572,3 +572,13 @@ Click on the options under action button of service now under discovery assets
     wait until element is enabled   //div[contains(@id,'service-now')]//a[normalize-space()='${option}']     ${wait_time}
     click element   //div[contains(@id,'service-now')]//a[normalize-space()='${option}']
     sleep   ${search_sleep}
+
+Click on the jamff tab under asset discovery
+    wait until element is visible   //a[@id='jamf-first-parent-tab']    ${wait_time}
+    wait until element is enabled   //a[@id='jamf-first-parent-tab']     ${wait_time}
+    click element   //a[@id='jamf-first-parent-tab']
+
+Click on the sentinel one tab under asset discovery
+    wait until element is visible   //a[@id='sentinelone-first-parent-tab']   ${wait_time}
+    wait until element is enabled   //a[@id='sentinelone-first-parent-tab']     ${wait_time}
+    click element   //a[@id='sentinelone-first-parent-tab']
