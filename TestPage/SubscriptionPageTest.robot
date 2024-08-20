@@ -729,10 +729,12 @@ Click on connetors button link under asset discovery
     Generic.Verify your current page location contains     subscription-payment
 #-------------------------------------------BILLING-----------------------------------------------------
     SubscriptionPage.Click on same billing address checkbox
-    SubscriptionPage.Select card type university
-    SubscriptionPage.Enter card account number    000123456789
-    SubscriptionPage.Enter card routing number      110000000
-    SubscriptionPage.Enter account holder name    Paramdeep Singh
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Switch to card iframe
+    SubscriptionPage.Enter cardnumber    42424242424242420429242
+    Unselect Frame
+    SubscriptionPage.Enter card user name    Paramdeep Singh
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
@@ -740,18 +742,25 @@ Click on connetors button link under asset discovery
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
     Generic.Verify your current page location contains     organization
-    DashboardPage.Select the asset ID checkbox     yes
     DashboardPage.Select the employee ID checkbox   yes
     DashboardPage.Select the location ID checkbox   yes
-    DashboardPage.Select the asset ID checkbox     no
+    DashboardPage.Select the asset ID checkbox      no
     Generic.Fetch alert message text and compare it with       Settings Updated
+
     Generic.select the option from the side menu    Asset Discovery
     Generic.Verify your current page location contains     discovery-assets
-#    Generic.click on the button     No, thanks
+    Generic.click on the button     No, thanks
     SubscriptionPage.Click on the sentinel one tab under asset discovery
     Generic.click on the button     Create Connection
     Generic.Verify your current page location contains     connector
     Generic.Wait until table get load
+    Generic.select the option from the side menu    Asset Discovery
+    Generic.Verify your current page location contains     discovery-assets
+    SubscriptionPage.Click on the service now tab under discovery assets
+    Generic.click on the button     Create Connection
+    Generic.Verify your current page location contains     connector
+    Generic.Wait until table get load
+
     
 Create JAMFF account with valid data
     Generic.click on the tab	Register
@@ -819,10 +828,12 @@ Create JAMFF account with valid data
     Generic.Verify your current page location contains     subscription-payment
 #-------------------------------------------BILLING-----------------------------------------------------
     SubscriptionPage.Click on same billing address checkbox
-    SubscriptionPage.Select card type university
-    SubscriptionPage.Enter card account number    000123456789
-    SubscriptionPage.Enter card routing number      110000000
-    SubscriptionPage.Enter account holder name    Paramdeep Singh
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Switch to card iframe
+    SubscriptionPage.Enter cardnumber    42424242424242420429242
+    Unselect Frame
+    SubscriptionPage.Enter card user name    Paramdeep Singh
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
@@ -830,10 +841,9 @@ Create JAMFF account with valid data
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
     Generic.Verify your current page location contains     organization
-    DashboardPage.Select the asset ID checkbox     yes
     DashboardPage.Select the employee ID checkbox   yes
     DashboardPage.Select the location ID checkbox   yes
-    DashboardPage.Select the asset ID checkbox     no
+    DashboardPage.Select the asset ID checkbox      no
     Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.select the option from the side menu    Asset Discovery
     Generic.Verify your current page location contains     discovery-assets
@@ -849,7 +859,7 @@ Create JAMFF account with valid data
     SubscriptionPage.Enter input in the username field of service now       tokenGenerator
     SubscriptionPage.Enter input in the password field of service now       Abhishek@1234#
     Generic.click on the button     Create Connection
-    Generic.click on the button     By System
+#    Generic.click on the button     By System
     Generic.Verify your current page location contains      technology-settings
     Generic.Fetch alert message text and compare it with       Technology created successfully
     Generic.Wait until table get load
@@ -920,10 +930,12 @@ Create jamff account with invalid data
     Generic.Verify your current page location contains     subscription-payment
 #-------------------------------------------BILLING-----------------------------------------------------
     SubscriptionPage.Click on same billing address checkbox
-    SubscriptionPage.Select card type university
-    SubscriptionPage.Enter card account number    000123456789
-    SubscriptionPage.Enter card routing number      110000000
-    SubscriptionPage.Enter account holder name    Paramdeep Singh
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Switch to card iframe
+    SubscriptionPage.Enter cardnumber    42424242424242420429242
+    Unselect Frame
+    SubscriptionPage.Enter card user name    Paramdeep Singh
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
@@ -931,10 +943,9 @@ Create jamff account with invalid data
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
     Generic.Verify your current page location contains     organization
-    DashboardPage.Select the asset ID checkbox     yes
     DashboardPage.Select the employee ID checkbox   yes
     DashboardPage.Select the location ID checkbox   yes
-    DashboardPage.Select the asset ID checkbox     no
+    DashboardPage.Select the asset ID checkbox      no
     Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.select the option from the side menu    Asset Discovery
     Generic.Verify your current page location contains     discovery-assets
@@ -950,7 +961,7 @@ Create jamff account with invalid data
     SubscriptionPage.Enter input in the username field of service now       tokenGenerator
     SubscriptionPage.Enter input in the password field of service now       Abhishek@12#
     Generic.click on the button     Create Connection
-    Generic.Verify your current page contains this text     Service Now Connection Failed.
+    Generic.Verify your current page contains this text     Jamf Pro Connection Failed.
 
 
 
