@@ -397,10 +397,12 @@ Create service now with invalid data
     Generic.Verify your current page location contains     subscription-payment
 #-------------------------------------------BILLING-----------------------------------------------------
     SubscriptionPage.Click on same billing address checkbox
-    SubscriptionPage.Select card type university
-    SubscriptionPage.Enter card account number    000123456789
-    SubscriptionPage.Enter card routing number      110000000
-    SubscriptionPage.Enter account holder name    Paramdeep Singh
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Switch to card iframe
+    SubscriptionPage.Enter cardnumber    42424242424242420429242
+    Unselect Frame
+    SubscriptionPage.Enter card user name    Paramdeep Singh
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
@@ -408,10 +410,9 @@ Create service now with invalid data
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
     Generic.Verify your current page location contains     organization
-    DashboardPage.Select the asset ID checkbox     yes
     DashboardPage.Select the employee ID checkbox   yes
     DashboardPage.Select the location ID checkbox   yes
-    DashboardPage.Select the asset ID checkbox     no
+    DashboardPage.Select the asset ID checkbox      no
     Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.Click on the profile name
     Generic.Select option from profile list     subscription-connector
@@ -495,10 +496,12 @@ Create service now with valid data
     Generic.Verify your current page location contains     subscription-payment
 #-------------------------------------------BILLING-----------------------------------------------------
     SubscriptionPage.Click on same billing address checkbox
-    SubscriptionPage.Select card type university
-    SubscriptionPage.Enter card account number    000123456789
-    SubscriptionPage.Enter card routing number      110000000
-    SubscriptionPage.Enter account holder name    Paramdeep Singh
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Switch to card iframe
+    SubscriptionPage.Enter cardnumber    42424242424242420429242
+    Unselect Frame
+    SubscriptionPage.Enter card user name    Paramdeep Singh
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
@@ -506,10 +509,9 @@ Create service now with valid data
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
     Generic.Verify your current page location contains     organization
-    DashboardPage.Select the asset ID checkbox     yes
     DashboardPage.Select the employee ID checkbox   yes
     DashboardPage.Select the location ID checkbox   yes
-    DashboardPage.Select the asset ID checkbox     no
+    DashboardPage.Select the asset ID checkbox      no
     Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.Click on the profile name
     Generic.Select option from profile list     subscription-connector
@@ -859,7 +861,6 @@ Create JAMFF account with valid data
     SubscriptionPage.Enter input in the username field of service now       tokenGenerator
     SubscriptionPage.Enter input in the password field of service now       Abhishek@1234#
     Generic.click on the button     Create Connection
-#    Generic.click on the button     By System
     Generic.Verify your current page location contains      technology-settings
     Generic.Fetch alert message text and compare it with       Technology created successfully
     Generic.Wait until table get load
@@ -962,6 +963,3 @@ Create jamff account with invalid data
     SubscriptionPage.Enter input in the password field of service now       Abhishek@12#
     Generic.click on the button     Create Connection
     Generic.Verify your current page contains this text     Jamf Pro Connection Failed.
-
-
-
