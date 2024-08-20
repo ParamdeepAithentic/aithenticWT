@@ -1079,6 +1079,3 @@ View Results of jamff account
     Generic.Verify your current page location contains      discovery-assets
     Generic.Verify your current page contains this text    Asset Discovery
     Generic.Verify your current page contains this text    No Records
-
-
-
