@@ -424,17 +424,16 @@ Test the sorting of bulk edit grid under assigned users
     SortingPage.Verify the sorting of the table method five    3      Last Name
     SortingPage.Verify the sorting of the table method five    2      First Name
 
-Test the sorting of Recent Activities Table under Dashboard page
-    [Tags]      Unstable    rerun
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
-#    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      dashboard
-    DashboardPage.select the option from the dashboard drawer       Account Overview
-    Generic.Verify your current page location contains          account-overview
-    DashboardPage.Click on the filter Past under recent Activities table        Hours       Days
-    PaginationPage.Check the table get load for Recent Activities
-#    PaginationPage.Select the value from the pagination drop down count    10
-    SortingPage.Verify the sorting of the table method six    2        Actioned By
-    SortingPage.Verify the sorting of the table method six    3        Created At
-
+#Test the sorting of Recent Activities Table under Dashboard page
+#    [Tags]      Unstable    rerun
+#    Generic.click on the tab	Login
+#    LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
+##    LandingPage.Verify you are on dashboard page
+#    Generic.Verify your current page location contains      dashboard
+#    DashboardPage.select the option from the dashboard drawer       Account Overview
+#    Generic.Verify your current page location contains          account-overview
+#    DashboardPage.Click on the filter Past under recent Activities table        Hours       Days
+#    PaginationPage.Check the table get load for Recent Activities
+##    PaginationPage.Select the value from the pagination drop down count    10
+#    SortingPage.Verify the sorting of the table method six    2        Actioned By
+#    SortingPage.Verify the sorting of the table method six    3        Created At

@@ -1346,3 +1346,38 @@ Get the text of the recent notification
     set global variable     ${notification}
     log to console     ${notification}
     should be equal    ${notification}     ${option}
+
+Verify that Management console page contains No data chart
+    [Arguments]     ${option}
+    wait until element is not visible       ${loaderIcon}      ${wait_time}
+    wait until element is visible      //div[@id='${option}']//div[contains(@class,'width-no-chart')]     ${wait_time}
+    wait until element is enabled      //div[@id='${option}']//div[contains(@class,'width-no-chart')]      ${wait_time}
+
+Click on No key Data under chart
+    [Arguments]     ${option}
+    wait until element is not visible       ${loaderIcon}      ${wait_time}
+    wait until element is visible      //div[@id='${option}']//span[normalize-space()='Key Data Check']     ${wait_time}
+    wait until element is enabled      //div[@id='${option}']//span[normalize-space()='Key Data Check']      ${wait_time}
+    click element       //div[@id='${option}']//span[normalize-space()='Key Data Check']
+
+Verify and click on the finance filter under technology
+    wait until element is not visible       ${loaderIcon}      ${wait_time}
+    wait until element is visible      //span[normalize-space()='3']     ${wait_time}
+    wait until element is enabled      //span[normalize-space()='3']      ${wait_time}
+    click element       //span[normalize-space()='3']
+
+Verify all the checkmark boxes of finance filter are auto-check
+    [Arguments]     ${option}
+    wait until element is not visible       ${loaderIcon}      ${wait_time}
+    wait until element is visible      //label[normalize-space()='${option}']//span     ${wait_time}
+    wait until element is enabled      //label[normalize-space()='${option}']//span      ${wait_time}
+
+Remove the Download Agent pop-up
+    wait until element is not visible       ${loaderIcon}      ${wait_time}
+    wait until element is visible      //h4[normalize-space()='Download Agent for Single Install']//parent::div//button[contains(@class,'close')]     ${wait_time}
+    wait until element is enabled      //h4[normalize-space()='Download Agent for Single Install']//parent::div//button[contains(@class,'close')]      ${wait_time}
+    click element   //h4[normalize-space()='Download Agent for Single Install']//parent::div//button[contains(@class,'close')]
+    sleep       ${search_sleep}
+
+
+
