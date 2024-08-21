@@ -1378,6 +1378,3 @@ Remove the Download Agent pop-up
     wait until element is enabled      //h4[normalize-space()='Download Agent for Single Install']//parent::div//button[contains(@class,'close')]      ${wait_time}
     click element   //h4[normalize-space()='Download Agent for Single Install']//parent::div//button[contains(@class,'close')]
     sleep       ${search_sleep}
-
-
-

@@ -2233,12 +2233,5 @@ No data in the charts of the management console page
     DashboardPage.Verify all the checkmark boxes of finance filter are auto-check       Expense Type
     DashboardPage.Verify all the checkmark boxes of finance filter are auto-check       Budget
 
-
-
-
-
-
-
-
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
