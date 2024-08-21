@@ -403,4 +403,14 @@ Get the value of page number under existing asset
     wait until element is enabled   //div[@id='right-column']//parent::div[contains(@class,'item')]//child::span[contains(@class,'current-pageCount')]   ${wait_time}
     ${page_number_count} =    Get text    //div[@id='right-column']//parent::div[contains(@class,'item')]//child::span[contains(@class,'current-pageCount')]
     Set Global Variable    ${page_number_count}
-    Log To Console    ${page_number_count}
+    Log To Console    Page Number: ${page_number_count}
+
+Fetch the brand name under existing assets without searching
+    [Arguments]     ${text}
+    wait until element is not visible    ${loaderIcon}    ${wait_time}
+    wait until element is visible   //div[contains(@class,'qa-column-boxes-right')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'redirection-text')][1]    ${wait_time}
+    wait until element is enabled   //div[contains(@class,'qa-column-boxes-right')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'redirection-text')][1]     ${wait_time}
+    sleep       ${search_sleep}
+    ${Brand_existing_asset}=      Get text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
+    Log To Console    ${Brand_existing_asset}
+    Set Global Variable   ${Brand_existing_asset}

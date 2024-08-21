@@ -730,6 +730,7 @@ Click and verify the pagination under existing assets
     Generic.Verify your current page location contains     aad
     OCS.Click on the down arrow icon of existing assets
     PaginationPage.Mouse over existing asset without searching
+    PaginationPage.Fetch the brand name under existing assets without searching     Brand:
     PaginationPage.Mouse over confirm matches button without searching
     Generic.Scroll Window To End
     PaginationPage.Get the value of page number under existing asset
@@ -738,6 +739,7 @@ Click and verify the pagination under existing assets
     Generic.Verify your current page location contains     aad
     OCS.Click on the down arrow icon of existing assets
     PaginationPage.Mouse over existing asset without searching
+    PaginationPage.Fetch the brand name under existing assets without searching     Brand:
     PaginationPage.Mouse over confirm matches button without searching
     Generic.Scroll Window To End
     PaginationPage.Get the value of page number under existing asset
@@ -746,6 +748,7 @@ Click and verify the pagination under existing assets
     Generic.Verify your current page location contains     aad
     OCS.Click on the down arrow icon of existing assets
     PaginationPage.Mouse over existing asset without searching
+    PaginationPage.Fetch the brand name under existing assets without searching     Brand:
     PaginationPage.Mouse over confirm matches button without searching
     Generic.Scroll Window To End
     PaginationPage.Get the value of page number under existing asset
