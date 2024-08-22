@@ -2269,9 +2269,5 @@ Renewals overview drilldown - Add column Host name
     DashboardPage.Search and verify through asset_id      ${generated_AssetID}
     Generic.Verify your current page contains this text   ${result}
 
-#    DashboardPage.Click on Back to management console tab
-#    Generic.Verify your current page location contains    management-console
-
-
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
