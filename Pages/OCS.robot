@@ -658,9 +658,9 @@ Click on the down arrow icon of discovered asset
 
 Mouse Hover over searched Discovered Assets
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    Wait Until Element Is Visible    //div[contains(text(),'${discovered_asset_brand}')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')][1]     ${wait_time}
-    Wait Until Element Is Enabled    //div[contains(text(),'${discovered_asset_brand}')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')][1]     ${wait_time}
-    Mouse Over    //div[contains(text(),'${discovered_asset_brand}')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')][1]
+    Wait Until Element Is Visible    (//div[contains(text(),'${discovered_asset_brand}')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')])[1]     ${wait_time}
+    Wait Until Element Is Enabled    (//div[contains(text(),'${discovered_asset_brand}')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')])[1]       ${wait_time}
+    Mouse Over    (//div[contains(text(),'${discovered_asset_brand}')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'box position-relative')])[1]  
 
 
 Get MAC_Address by hovering over discovered assets
