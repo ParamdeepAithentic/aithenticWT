@@ -2798,6 +2798,7 @@ Compose reply and remove the message via technology details
     DashboardPage.Click on the notifications icon under dashbaord page
     TechnologyPage.Click on the asset alert option under notifications
     sleep   ${search_sleep}
+    DashboardPage.Wait until alert is visible in the Recent Notifiation tab     You added Asset ID      ${generated_AssetID}.
     TechnologyPage.Get the text of the recent notification of added assets      You added Asset ID ${generated_AssetID}.
     Generic.Click on the profile name
     Generic.Select other option from profile list     Logout
