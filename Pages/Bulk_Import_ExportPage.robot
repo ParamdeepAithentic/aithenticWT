@@ -759,7 +759,7 @@ Click on team member location technology bulk import
     click element   //span[normalize-space()='${option}']
 
 Click on the confirm button under pop up in technology bulk import
-    wait until element is visible     ${loaderIcon}    ${wait_time}
+#    wait until element is visible     ${loaderIcon}    ${wait_time}
     wait until element is visible     //div[@id='confirmUpload']//button[@type='button'][normalize-space()='Confirm']    ${wait_time}
     wait until element is enabled    //div[@id='confirmUpload']//button[@type='button'][normalize-space()='Confirm']      ${wait_time}
     click element   //div[@id='confirmUpload']//button[@type='button'][normalize-space()='Confirm']

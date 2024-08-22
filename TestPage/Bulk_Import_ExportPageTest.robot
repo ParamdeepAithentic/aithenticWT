@@ -1092,6 +1092,80 @@ Technology bulk import while entering invalid data in payment period field
     Bulk_Import_ExportPage.Click on the confirm button under pop up in technology bulk import
     Bulk_Import_ExportPage.Verify the upload message text   UploadMessage       Upload failed
 
+Check the payment period period alert when entering valid data
+    [Tags]       sanity       Stable
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    Generic.Verify your current page location contains     technology-list
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list      OPMR815277
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Renewal Date via technology
+    TechnologyPage.Add cost type of technology cost information         Open Ended Contract
+    TechnologyPage.Add payment type of technology cost information     FixedPayment
+    TechnologyPage.Add payment peroid of technology cost information       Monthly
+    sleep   ${search_sleep}
+    TechnologyPage.Add payment partner of technology cost information      testqa 20Feb
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Click on Bulk_edit under action button
+    sleep     ${yop_sleep}
+    switch window     aithentic | Edit - Assets
+    Generic.Verify your current page location contains      technology-bulk-edit
+    Bulk_Import_ExportPage.click on the arrow of product    Product Information     2
+    Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology    ModelProductName_1     Product_2589283776
+#    Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology    Brand      BrandName2556763617
+#    Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology    TechnologyGroup      Applications
+#    Bulk_Import_ExportPage.Select the new value of technology group in bulk edit of technology    TechnologyType      Hardware
+    Bulk_Import_ExportPage.click on the arrow of product    Product Information     1
+    Bulk_Import_ExportPage.Enter the new value of asset id of bulk edit of technology   AssetId
+    Bulk_Import_ExportPage.click on the arrow of product    Technology Lifecycle Information    2
+    Bulk_Import_Exportpage.Enter the new value in last Payment date field of technology bulk import      PurchaseDt     03/11/2024
+    Bulk_Import_Exportpage.Enter the new value in last Payment date field of technology bulk import      RenewalDate      03/11/2025
+    Bulk_Import_Exportpage.Enter the new value in last Payment date field of technology bulk import      WarrantyEndDt      03/11/2027
+    Bulk_Import_ExportPage.Click on the fields and select value from dropdown of technology bulk edit        Status
+    Bulk_Import_ExportPage.click on the arrow of product    Technology Lifecycle Information     1
+    Bulk_Import_ExportPage.click on the arrow of product    Assignment Information     2
+    Bulk_Import_ExportPage.Click on the fields and select value from dropdown of technology bulk edit    LocationTypeName_1
+    Bulk_Import_ExportPage.Click on the fields and select value from dropdown of technology bulk edit    DepartmentName
+    Bulk_Import_ExportPage.Click on the fields and select value from dropdown of technology bulk edit    AssignedName
+    Bulk_Import_ExportPage.click on the arrow of product    Assignment Information     1
+    Bulk_Import_ExportPage.click on the arrow of product    Partners Information     2
+    Bulk_Import_ExportPage.Click on the fields and select value from dropdown of technology bulk edit        SupportPartnerName_1
+    Bulk_Import_ExportPage.Click on the fields and select value from dropdown of technology bulk edit        SupplierName
+    Bulk_Import_ExportPage.click on the arrow of product    Partners Information     1
+    Bulk_Import_ExportPage.click on the arrow of product    Technology Cost Information    2
+#    Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology       PaymentPartnerName      Dell
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       PaymentPartnerName        1
+    Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology       CostTypeName      Purchased
+    Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology       PaymentPeriod       10 Years
+    Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology       CostCenter      123456
+    Bulk_Import_ExportPage.click on the arrow of product    Technology Cost Information    1
+    Generic.Click on the button     Check data      #Update,Edit
+    Generic.Click on the button     Update
+    sleep   ${search_sleep}
+    Bulk_Import_ExportPage.Click on confirm warning button after update
+    Sleep    ${yop_sleep}
+    Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
+    Generic.Click on the button     Finish
+    sleep   ${search_sleep}
+    Bulk_Import_ExportPage.Click on the confirm button of finish pop up
+    sleep       ${search_sleep}
+    Switch Window       aithentic | Technology - List
+    TechnologyPage.Search by AssetId       ${generated_assetidbulkedit}
+
 
 #Zz kill browser
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
