@@ -2234,5 +2234,44 @@ No data in the charts of the management console page
     DashboardPage.Verify all the checkmark boxes of finance filter are auto-check       Expense Type
     DashboardPage.Verify all the checkmark boxes of finance filter are auto-check       Budget
 
+Renewals overview drilldown - Add column Host name
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    DashboardPage.Fetch the count renewals overview subtabs      Overdue renewals
+    DashboardPage.Set Globally the count from renewal overview subtabs
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Select parameter from technology dropdown list      Product_renewal_overview
+    TechnologyPage.Add host name for technology group information for hardware random
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Input current Date
+    TechnologyPage.Enter current or future date as renewal date    ${current_date1}
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Add technology lifecycle comment    Technology Lifecycle Information- comment
+    TechnologyPage.Add budget payment of technology cost information       11000
+    TechnologyPage.Add actual payment of technology cost information       1050
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    Generic.Wait until table get load
+    Generic.select the option from the side menu    Dashboard
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    DashboardPage.Fetch the count renewals overview subtabs        Overdue renewals
+    DashboardPage.Compare the counts of renewal overview after adding the asset
+    DashboardPage.Click on the subtabs          Overdue renewals
+    DashboardPage.Search and verify through asset_id      ${generated_AssetID}
+    Generic.Verify your current page contains this text   ${result}
+
+#    DashboardPage.Click on Back to management console tab
+#    Generic.Verify your current page location contains    management-console
+
+
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
