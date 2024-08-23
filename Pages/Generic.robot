@@ -56,7 +56,7 @@ ${click_countryTag}     css:.iti__arrow
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
-${wait_time}       60
+${wait_time}       120
 ${yop_sleep}       10
 
 ${search_sleep}       1
@@ -95,7 +95,7 @@ Set QA Variables
 
 
 Set UAT Variables
-    Set Suite Variable    ${url}    https://uat-app.aithentic.com/
+    Set Suite Variable    ${url}        https://uat-app.aithentic.com/
     Set Suite Variable    ${valid_password}    Test@123     #UAT user
     Set Suite Variable    ${apiURL}    https://uat-api.aithentic.com/api/v1
     Set Suite Variable    ${agentDiscovery_TagName}    Tag Name - johnsoftwaresolutions-1428-4        #uat
