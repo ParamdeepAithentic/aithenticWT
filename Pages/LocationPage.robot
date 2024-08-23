@@ -350,3 +350,24 @@ Edit location city
     Wait Until Element Is Enabled      ${location_City}     ${wait_time}
     Input Text      ${location_City}        ${option}
     Generic.Select parameter    ${option}
+
+Click on the status filter under location
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    css:.qa-location-filter-status       ${wait_time}
+    Wait Until Element Is Visible    css:.qa-location-filter-status       ${wait_time}
+    click element    css:.qa-location-filter-status
+
+Select the option from status filter under location
+    [Arguments]     ${option}
+    Wait Until Element Is Visible    //div[contains(@class,'sidenav-content ')]//following-sibling::div//label[normalize-space()=' ${option}']      ${wait_time}
+    Wait Until Element Is Visible    //div[contains(@class,'sidenav-content ')]//following-sibling::div//label[normalize-space()=' ${option}']      ${wait_time}
+    click element    //div[contains(@class,'sidenav-content ')]//following-sibling::div//label[normalize-space()=' ${option}']
+
+
+Fetch the status from the first row and compare it
+    [Arguments]     ${option}
+    wait until element is visible       //tbody//tr[1]//td[7]    ${wait_time}
+    ${fetch_locationNstatus} =    get text    //tbody//tr[1]//td[7]
+    set global variable     ${fetch_locationNstatus}
+    log to console     Location_Status= ${fetch_locationNstatus}
+    should be equal    ${fetch_locationNstatus}     ${option}

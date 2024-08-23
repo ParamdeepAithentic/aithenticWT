@@ -258,3 +258,27 @@ Verify Location_name Hide and show after changes it from settings
     LocationPage.Save location form     save
     Generic.Fetch alert message text and compare it with    Location created successfully
     LocationPage.Search by location name        ${generated_location}
+
+Click on the select status filter and verify it
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Click on the status filter under location
+    LocationPage.Select the option from status filter under location        Active
+    Generic.Wait until table get load
+    LocationPage.Fetch the status from the first row and compare it     Active
+    LocationPage.Select the option from status filter under location        Active
+    LocationPage.Select the option from status filter under location        Inactive
+    Generic.Wait until table get load
+    sleep      ${search_sleep}
+    LocationPage.Fetch the status from the first row and compare it     Inactive
+    LocationPage.Select the option from status filter under location        Inactive
+    LocationPage.Select the option from status filter under location        All
+    Generic.Wait until table get load
+    LocationPage.Fetch the status from the first row and compare it     Active
+
+
+
