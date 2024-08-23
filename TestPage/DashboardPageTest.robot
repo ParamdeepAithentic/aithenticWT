@@ -2234,5 +2234,17 @@ No data in the charts of the management console page
     DashboardPage.Verify all the checkmark boxes of finance filter are auto-check       Expense Type
     DashboardPage.Verify all the checkmark boxes of finance filter are auto-check       Budget
 
+Message Side bar filters
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.select the option from the side menu    Messages
+    Generic.Verify your current page location contains      message
+    MessagePage.Click on select partner filter from message side bar list
+    MessagePage.Select the filter from partner      End User
+    ReportsPage.Fetch the total count
+
+
+
+
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

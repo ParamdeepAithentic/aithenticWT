@@ -143,3 +143,48 @@ Save team member
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is not visible       ${shadow}          ${wait_time}
 #save/cancel
+
+Click on select partner filter from message side bar list
+    wait until element is not visible   ${loaderIcon}      ${wait_time}
+    wait until element is visible    css:.partner-filters-qa   ${wait_time}
+    wait until element is enabled    css:.partner-filters-qa   ${wait_time}
+    click element       css:.partner-filters-qa
+
+Select the filter from partner
+    [Arguments]     ${option}
+    wait until element is not visible   ${loaderIcon}      ${wait_time}
+    wait until element is visible    //div[contains(@class,'SubGroupNew ')]//following-sibling::div//label[normalize-space()=' ${option}']   ${wait_time}
+    wait until element is enabled    //div[contains(@class,'SubGroupNew ')]//following-sibling::div//label[normalize-space()=' ${option}']   ${wait_time}
+    click element       //div[contains(@class,'SubGroupNew ')]//following-sibling::div//label[normalize-space()=' ${option}']
+
+Fetch and verify the partner type from the table of the message
+    wait until element is not visible   ${loaderIcon}      ${wait_time}
+    wait until element is visible       (//tbody//td)[4]        ${wait_time}
+    wait until element is enabled       (//tbody//td)[4]        ${wait_time}
+    ${text}=        Get text        (//tbody//td)[4]            ${wait_time}
+    log to console      ${text}
+    set global variable     ${text}
+
+
+Table has no records
+    wait until element is not visible   ${loaderIcon}      ${wait_time}
+    wait until element is visible       //td//span        ${wait_time}
+    wait until element is enabled      //td//span        ${wait_time}
+    ${fetch_no_records}=        Get text        //td//span            ${wait_time}
+    log to console      ${fetch_no_records}
+    set global variable     ${fetch_no_records}
+
+Verify that data is correct after implementing the filter
+    Run Keyword If ReportsPage.Fetch the total count
+
+    Else  Table has no records
+
+
+
+
+
+
+
+
+
+
