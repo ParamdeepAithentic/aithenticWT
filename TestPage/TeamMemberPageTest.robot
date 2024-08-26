@@ -1227,5 +1227,20 @@ Add Back Deleted Team member - Active
     TeamMemberPage.Search Team Member by name   ${generated_Tmfname}
     TeamMemberPage.Verify Team member added after delete        ${generated_TMFname} ${generated_TMLname}
 
+Click on the location filter under team member and verify it
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      jasdeep@15963.fr.nf     Paramdeep@112
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Click on the location filter under team member
+    LocationPage.Select the option from location filter under location        *Main Office
+    LocationPage.Get the text of selected filter under location    *Main Office
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click       Location      *Main Office         ${New_Name}
+
+
 #Zz kill browser
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
