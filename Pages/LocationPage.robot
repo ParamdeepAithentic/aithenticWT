@@ -364,14 +364,6 @@ Select the option from status filter under location
     click element    //div[contains(@class,'sidenav-content ')]//following-sibling::div//label[normalize-space()=' ${option}']
 
 
-Fetch the status from the first row and compare it
-    [Arguments]     ${option}
-    wait until element is visible       //tbody//tr[1]//td[7]    ${wait_time}
-    ${fetch_locationNstatus} =    get text    //tbody//tr[1]//td[7]
-    set global variable     ${fetch_locationNstatus}
-    log to console     Location_Status= ${fetch_locationNstatus}
-    should be equal    ${fetch_locationNstatus}     ${option}
-
 Get the text of selected filter under location
     [Arguments]     ${option}
     wait until element is visible      //div[contains(@class,'sidenav-content ')]//following-sibling::div[contains(@class,'row')]//label[contains(text(),'${option}')]    ${wait_time}
