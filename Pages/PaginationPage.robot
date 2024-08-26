@@ -379,3 +379,9 @@ Log WebElements of invoice
         click element   //div[contains (@id, '-${index}')]
         Run Keywords    Fetch the selected value of the dropdown of invoice table    AND      Check the table get load       AND      Get count of total rows     AND     Verify Pagination and Row Count     AND     PaginationPage.Fetch the total count   AND     Click on the pagination dropdown of invoice table
     END
+
+Mouse over confirm matches button without searching
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //button[normalize-space()='Confirm Matches']     ${wait_time}
+    Wait Until Element Is Enabled    //button[normalize-space()='Confirm Matches']     ${wait_time}
+    Mouse Over   //button[normalize-space()='Confirm Matches']
