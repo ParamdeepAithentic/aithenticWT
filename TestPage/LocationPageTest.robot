@@ -267,10 +267,6 @@ Click on the select status filter and verify it
     Generic.select the option from the side menu    Location
     Generic.Verify your current page location contains      locationlist
     LocationPage.Click on the status filter under location
-#    LocationPage.Select the option from status filter under location        Active
-#    Generic.Wait until table get load
-#    LocationPage.Fetch the status from the first row and compare it     Active
-#    LocationPage.Select the option from status filter under location        Active
     LocationPage.Select the option from status filter under location        Inactive
     LocationPage.Get the text of selected status filter under location      Inactive
     Generic.Wait until table get load
@@ -320,3 +316,21 @@ Click on the select location filter and verify it
     PaginationPage.Fetch the selected value of the dropdown     location-list
     PaginationPage.Fetch the total count
     LocationPage.Fetch the country from location filter and click       Country     Turkey        ${New_Name}
+
+Click on the select Active status filter and verify it
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      johns@mai.25u.com         Test@123
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Click on the status filter under location
+    LocationPage.Select the option from status filter under location        Active
+    LocationPage.Get the text of selected status filter under location      Active
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     location-list
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     location-list
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click       Status     Active         ${New_status}
