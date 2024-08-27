@@ -2269,5 +2269,28 @@ Renewals overview drilldown - Add column Host name
     DashboardPage.Search and verify through asset_id      ${generated_AssetID}
     Generic.Verify your current page contains this text   ${result}
 
+Message Side bar filters
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.select the option from the side menu    Messages
+    Generic.Verify your current page location contains      message
+    MessagePage.Click on select partner filter from message side bar list
+    MessagePage.Select the filter from partner      End User
+    ReportsPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     inbox
+    PaginationPage.Select the value from the pagination drop down count    500
+    MessagePage.Fetch the country from location filter and click     Partner Type         End User    End User
+    Generic.Click on the reset filters link
+    MessagePage.Select the filter from partner    Manufacturer
+    ReportsPage.Fetch the total count
+    MessagePage.Fetch the country from location filter and click     Partner Type         Manufacturer    Manufacturer
+    Generic.Click on the reset filters link
+    Generic.Refresh the existing page
+    ReportsPage.Fetch the total count
+    MessagePage.Click on select partner filter from message side bar list
+    MessagePage.Select the filter from partner      All Partners
+    ReportsPage.Fetch the total count After selecting filter
+    MessagePage.Comapre the total count after selecting filter
+
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

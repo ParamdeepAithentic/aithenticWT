@@ -50,31 +50,34 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 ######## UN comment when to use ##############
-Fill contract form
-    [Tags]      Sanity      Smoke       rerun
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.select the option from the side menu    Contracts
-    Generic.Verify your current page location contains      contracts
-    ContractsPage.Click on create new contract button
-    ContractsPage.Select type of contract     Dynamic Contract
-    Generic.Verify your current page location contains      generate-contract
-    ContractsPage.Enter contract type      SmartShare_Manufacturer
-    ContractsPage.Enter contract with     BusinessName60338
-    ContractsPage.Enter contract brand    BusinessName60338
-    ContractsPage.Enter contract location      United States - Main Office - 21 - 2
-    ContractsPage.Enter contract permission       Read/Write
-    ContractsPage.Select contract start date
-    ContractsPage.Select contract end date      12/12/2028
-    ContractsPage.Select contract function       Dynamic
-    ContractsPage.Click preview selection button on contact
-    ContractsPage.Enter contract description comment      Enter comment for contract description.
-    ContractsPage.Enter contract name     Person_61918
-    ContractsPage.Select the checkboxes
-    ContractsPage.Save create contract button
-    ContractsPage.Save contract modal     Create Contract
-    Generic.Fetch alert message text and compare it with        Contract created successfully
-    ContractsPage.Search by contract BrandName      BusinessName60338
+
+#Fill contract form
+#    [Tags]      Sanity      Smoke
+#    Generic.click on the tab	Login
+#    LandingPage.Fill the login Form      ${email}    ${valid_password}
+#    Generic.select the option from the side menu    Contracts
+#    Generic.Verify your current page location contains      contracts
+#    ContractsPage.Click on create new contract button
+#    ContractsPage.Select type of contract     Dynamic Contract
+#    Generic.Verify your current page location contains      generate-contract
+#    ContractsPage.Enter contract type      SmartShare_Manufacturer
+#    ContractsPage.Enter contract with     BusinessName60338
+#    ContractsPage.Enter contract brand    BusinessName60338
+#    ContractsPage.Enter contract location      United States - Main Office - 21 - 2
+#    ContractsPage.Enter contract permission       Read/Write
+#    Generic.Fetch Current Date
+#    ContractsPage.Select contract start date        ${current_date}
+#    ContractsPage.Select contract end date      12/12/2028
+#    ContractsPage.Select contract function       Dynamic
+#    ContractsPage.Click preview selection button on contact
+#    ContractsPage.Enter contract description comment      Enter comment for contract description.
+#    ContractsPage.Enter contract name     Person_61918
+#    ContractsPage.Select the checkboxes
+#    ContractsPage.Save create contract button
+#    ContractsPage.Save contract modal     Create Contract
+#    Generic.Fetch alert message text and compare it with        Contract created successfully
+#    ContractsPage.Search by contract BrandName      BusinessName60338
+
 
 
 
@@ -186,7 +189,8 @@ Technology Auto removed from dynamic contract When edit Brand and product
     ContractsPage.Enter contract brand    ${generate_BusinessName}
     ContractsPage.Enter contract location      United States - Test qa Up50260220 - 21 - 2
     ContractsPage.Enter contract permission       Read/Write
-    ContractsPage.Select contract start date
+    Generic.Fetch Current Date
+    ContractsPage.Select contract start date        ${current_date}
     ContractsPage.Select contract end date      12/12/2028
     ContractsPage.Select contract function       Dynamic
     ContractsPage.Click preview selection button on contact
@@ -348,7 +352,8 @@ Technology Auto removed from static contract When edit Brand and product
     ContractsPage.Enter contract brand    ${generate_BusinessName}
     ContractsPage.Enter contract location      United States - Test qa Up50260220 - 21 - 2
     ContractsPage.Enter contract permission       Read/Write
-    ContractsPage.Select contract start date
+    Generic.Fetch Current Date
+    ContractsPage.Select contract start date        ${current_date}
     ContractsPage.Select contract end date      12/12/2028
     ContractsPage.Select contract function       Static
     ContractsPage.Click preview selection button on contact

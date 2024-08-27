@@ -162,7 +162,9 @@ Fix the row number
 Fetch Current Date
     ${current_date}=    Get Current Date    result_format=%m/%d/%Y
     Log to console   Current Date: ${current_date}
+    set global variable    ${current_date}
     RETURN    ${current_date}
+
 
 Fetch Current Time
     ${current_time}=    Get Current Date    result_format=%H:%M:%S
@@ -445,6 +447,5 @@ Update settings for Asset_ID, employee_id and location
 #    Run Process    cmd.exe    /C    taskkill /IM skype.exe /F
 #    Run Process    cmd.exe    /C    taskkill /IM msedge.exe /F
 
-
-
-
+Click on the reset filters link
+    Generic.click on the button link        reset filters

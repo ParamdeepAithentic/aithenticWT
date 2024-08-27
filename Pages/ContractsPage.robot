@@ -152,7 +152,12 @@ Enter contract permission
     Generic.Select parameter    ${option}
 
 Select contract start date
-    Generic.Enter current date      ${startDate}
+    [Arguments]    ${date}
+    Wait Until Element Is Visible       ${startDate}      ${wait_time}
+    Wait Until Element Is enabled       ${startDate}      ${wait_time}
+    Clear Element Text      ${startDate}
+    input text  ${startDate}    ${date}
+#    Generic.Enter current date   ${date}
     Press Keys      ${location}      ENTER
 
 
