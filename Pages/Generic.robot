@@ -161,7 +161,9 @@ Fix the row number
 Fetch Current Date
     ${current_date}=    Get Current Date    result_format=%m/%d/%Y
     Log to console   Current Date: ${current_date}
+    set global variable    ${current_date}
     RETURN    ${current_date}
+
 
 Fetch Current Time
     ${current_time}=    Get Current Date    result_format=%H:%M:%S
