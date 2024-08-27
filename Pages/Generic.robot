@@ -438,7 +438,7 @@ Update settings for Asset_ID, employee_id and location
 #    SubscriptionPage.Proceed the payment     proceed
 #    Generic.Fetch alert message text and compare it with      Payment Successful
     sleep       ${yop_sleep}
-    close browserv
+    close browser
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
 #    Run Process    cmd.exe    /C    taskkill /IM chrome.exe /F
 #    Run Process    cmd.exe    /C    taskkill /IM skype.exe /F
