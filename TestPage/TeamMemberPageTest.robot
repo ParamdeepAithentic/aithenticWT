@@ -1234,13 +1234,59 @@ Click on the location filter under team member and verify it
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
-    TeamMemberPage.Click on the location filter under team member
+    TeamMemberPage.Click on the location filter under team member       location
     LocationPage.Select the option from location filter under location        *Main Office
     LocationPage.Get the text of selected filter under location    *Main Office
     Generic.Wait until table get load
     PaginationPage.Fetch the total count
     TeamMemberPage.Fetch the country from team member filter and click       Location      *Main Office         ${New_Name}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TeamMemberPage.Click on the location filter under team member       location
+    LocationPage.Select the option from location filter under location         Colombia - Twinhead123 - 56 - 21
+    LocationPage.Get the text of selected filter under location     Colombia - Twinhead123 - 56 - 21
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click       Location       Colombia - Twinhead123 - 56 - 21          ${New_Name}
+    Generic.Click on the profile name
+    Generic.Select other option from profile list     Logout
+    Generic.Fetch log_out alert message
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form     chirag@dmts.fr.nf   Test@123
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Click on the location filter under team member       location
+    LocationPage.Select the option from location filter under location        Afgahniastan
+    LocationPage.Get the text of selected filter under location    Afgahniastan
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click       Location      Afgahniastan         ${New_Name}
 
+Click on the status filter under team member and verify it
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu     Team Members
+    Generic.Verify your current page location contains     memberslist
+    TeamMemberPage.Click on the location filter under team member       status
+    LocationPage.Select the option from status filter under location        Active
+    LocationPage.Get the text of selected status filter under location      Active
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     member-list
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     member-list
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click       Status     Active         ${New_status}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TeamMemberPage.Click on the location filter under team member       status
+    LocationPage.Select the option from status filter under location        Inactive
+    LocationPage.Get the text of selected status filter under location      Inactive
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click       Status     Inactive         ${New_status}
 
 #Zz kill browser
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

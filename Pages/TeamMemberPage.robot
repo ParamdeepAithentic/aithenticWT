@@ -371,19 +371,20 @@ Click on the yes option under remove team member pop up
     click element       css:.confirm-status-members-qa
 
 Click on the location filter under team member
+    [Arguments]     ${option}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    Wait Until Element Is Visible    css:.select-location-filter-toggle-qa       ${wait_time}
-    Wait Until Element Is Visible    css:.select-location-filter-toggle-qa     ${wait_time}
-    click element    css:.select-location-filter-toggle-qa
+    Wait Until Element Is Visible    css:.select-${option}-filter-toggle-qa       ${wait_time}
+    Wait Until Element Is Visible    css:.select-${option}-filter-toggle-qa     ${wait_time}
+    click element    css:.select-${option}-filter-toggle-qa
 
 Fetch the country from team member filter and click
     [Arguments]     ${option}       ${option1}      ${option2}
 #    ${element_count}=    Get Element Count    css:.qa-total-count-list
 #    Log      ${element_count}
     FOR    ${index}    IN RANGE    1    ${total_data_count + 1}
-        Wait Until Element Is Visible   (//div[normalize-space()=' ${option} ']//parent::div//div[normalize-space()=' ${option} ']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]     ${wait_time}
-        Wait Until Element Is Enabled  (//div[normalize-space()=' ${option} ']//parent::div//div[normalize-space()=' ${option} ']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]       ${wait_time}
-        ${element1}=    Get Text    (//div[normalize-space()=' ${option} ']//parent::div//div[normalize-space()=' ${option} ']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]
+        Wait Until Element Is Visible  (//div[normalize-space()='${option}']//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]     ${wait_time}
+        Wait Until Element Is Enabled  (//div[normalize-space()='${option}']//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]       ${wait_time}
+        ${element1}=    Get Text   (//div[normalize-space()='${option}']//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]
         ${original_string}=    Set Variable    ${element1}
         ${New_Country}=    Evaluate    '${original_string}'.strip()
         Log    Element ${index}: ${New_Country}
