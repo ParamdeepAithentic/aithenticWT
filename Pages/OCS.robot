@@ -961,3 +961,15 @@ Verify that No items found with the selected filter
 Wait until brand loader is invisible
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
      wait until element is not visible   //div[@class='full-width-field']//ancestor::ng-select[@id='BrandName']//following-sibling::div[contains(@class,'spinner-loader')]    ${wait_time}
+
+Mouse Hover over current page after hovering over ip and discovered assets
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible  //div[@id='right-column']//parent::div[contains(@class,'item')]//child::span[@title='Current Page']     ${wait_time}
+    Wait Until Element Is Enabled    //div[@id='right-column']//parent::div[contains(@class,'item')]//child::span[@title='Current Page']     ${wait_time}
+    Mouse Over   //div[@id='right-column']//parent::div[contains(@class,'item')]//child::span[@title='Current Page']
+
+Mouse Hover over apply button after hovering over existing assets filter
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible  //button[normalize-space()='Apply']     ${wait_time}
+    Wait Until Element Is Enabled    //button[normalize-space()='Apply']     ${wait_time}
+    Mouse Over   //button[normalize-space()='Apply']
