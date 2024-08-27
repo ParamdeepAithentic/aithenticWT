@@ -114,7 +114,7 @@ Verify Searched discovery asset
 Verify searched existing asset
     [Arguments]     ${option}
     wait until element is not visible   ${loaderIcon}        ${wait_time}
-    Sleep    ${yop_sleep}
+    Sleep    ${search_sleep}
     Wait Until Element Is Visible   (//div[contains(text(),'QABrand555')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]      ${wait_time}
     Element Should Contain   (//div[contains(text(),'QABrand555')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]     ${option}
 
@@ -133,8 +133,8 @@ Select any Discovered asset
 
 Select any existing asset
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    wait until element is visible       //div[contains(@class,"qa-assets-boxes-right")]/div[1]/div[2]//div[contains(@class,'circle')]       ${wait_time}
-    Click Element    //div[contains(@class,"qa-assets-boxes-right")]/div[1]/div[2]//div[contains(@class,'circle')]
+    wait until element is visible       (//div[contains(@class,'qa-column-boxes-right')]//div[contains(@class,'accordion-child-container')]//div[contains(@class,'circle')])[1]       ${wait_time}
+    Click Element    (//div[contains(@class,'qa-column-boxes-right')]//div[contains(@class,'accordion-child-container')]//div[contains(@class,'circle')])[1]
     Wait Until Element Is Not Visible    ${alert_Msg}       ${wait_time}
 
 Verify that line appears between selected assets
@@ -961,3 +961,21 @@ Verify that No items found with the selected filter
 Wait until brand loader is invisible
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
      wait until element is not visible   //div[@class='full-width-field']//ancestor::ng-select[@id='BrandName']//following-sibling::div[contains(@class,'spinner-loader')]    ${wait_time}
+
+Mouse Hover over current page after hovering over ip and discovered assets
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible  //div[@id='right-column']//parent::div[contains(@class,'item')]//child::span[@title='Current Page']     ${wait_time}
+    Wait Until Element Is Enabled    //div[@id='right-column']//parent::div[contains(@class,'item')]//child::span[@title='Current Page']     ${wait_time}
+    Mouse Over   //div[@id='right-column']//parent::div[contains(@class,'item')]//child::span[@title='Current Page']
+
+Mouse Hover over apply button after hovering over existing assets filter
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible  //button[normalize-space()='Apply']     ${wait_time}
+    Wait Until Element Is Enabled    //button[normalize-space()='Apply']     ${wait_time}
+    Mouse Over   //button[normalize-space()='Apply']
+
+Mouse Hover over searched existing assets after craeting technology
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible   (//div[contains(text(),'${discovered_existing_brand1} ')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]     ${wait_time}
+    Wait Until Element Is Enabled    (//div[contains(text(),'${discovered_existing_brand1} ')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]     ${wait_time}
+    Mouse Over    (//div[contains(text(),'${discovered_existing_brand1} ')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]
