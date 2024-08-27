@@ -129,8 +129,10 @@ Search Existing Assets
         OCS.Click on search icon of Existing assets
         OCS.Enter text to search existing asset    ${generated_AssetID}
         OCS.Click on the down arrow icon of existing assets
+        OCS.Click on the down arrow icon of existing assets
+        OCS.Click on the down arrow icon of existing assets
         Generic.Scroll Window To End
-        OCS.Mouse Hover over searched existing assets
+        OCS.Mouse Hover over searched existing assets after craeting technology
         OCS.Verify searched existing asset    ${generated_AssetID}
     EXCEPT
         OCS.My Failure Handling
@@ -178,10 +180,12 @@ Match Discovery and Existing Asset
         OCS.Click on search icon of Existing assets
         OCS.Enter text to search existing asset    ${generated_AssetID}
         OCS.Click on the down arrow icon of existing assets
+        OCS.Click on the down arrow icon of existing assets
+        OCS.Click on the down arrow icon of existing assets
         Generic.Scroll Window To End
-        OCS.Mouse Hover over searched existing assets
+        OCS.Mouse Hover over searched existing assets after craeting technology
         OCS.Verify searched existing asset    ${generated_AssetID}
-        PaginationPage.Mouse over confirm matches button without searching
+        OCS.Mouse Hover over current page after hovering over ip and discovered assets
         OCS.Select any existing asset
         OCS.Click on Button inside Network Discovery Page     Confirm Matches
         Generic.Fetch alert message text and compare it with      Matched Assets updated successfully
@@ -820,9 +824,10 @@ Match IP Discovered asset with Existing asset
     OCS.Select any Discovered asset
     OCS.Click on search icon of discovery assets
     OCS.Click on the down arrow icon of existing assets
+    OCS.Click on the down arrow icon of existing assets
+    OCS.Click on the down arrow icon of existing assets
     OCS.Mouse Hover over searched existing assets
     OCS.Get asset id by hovering over existing assets    Asset Id:
-    PaginationPage.Mouse over confirm matches button without searching
     OCS.Select any existing asset
     OCS.Verify that line appears between selected assets
     OCS.Click on Button inside Network Discovery Page     Confirm Matches
@@ -867,8 +872,11 @@ Match Discovery Asset with Static Existing Asset
         OCS.Select any Discovered asset
         OCS.Click on search icon of discovery assets
         OCS.Click on the down arrow icon of existing assets
+        OCS.Click on the down arrow icon of existing assets
+        OCS.Click on the down arrow icon of existing assets
         OCS.Mouse Hover over searched existing assets
         OCS.Get asset id by hovering over existing assets    Asset Id:
+        PaginationPage.Mouse over confirm matches button without searching
         OCS.Select any existing asset
         OCS.Verify that line appears between selected assets
         OCS.Click on Button inside Network Discovery Page     Confirm Matches
@@ -1853,4 +1861,3 @@ Verify reset icon while adding component
 
 #Zz kill browser
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
-
