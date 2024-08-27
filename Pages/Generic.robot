@@ -438,12 +438,11 @@ Update settings for Asset_ID, employee_id and location
 #    SubscriptionPage.Proceed the payment     proceed
 #    Generic.Fetch alert message text and compare it with      Payment Successful
     sleep       ${yop_sleep}
-    close browser
+    close browserv
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
 #    Run Process    cmd.exe    /C    taskkill /IM chrome.exe /F
 #    Run Process    cmd.exe    /C    taskkill /IM skype.exe /F
 #    Run Process    cmd.exe    /C    taskkill /IM msedge.exe /F
 
-
-
-
+Click on the reset filters link
+    Generic.click on the button link        reset filters

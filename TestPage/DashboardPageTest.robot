@@ -2277,6 +2277,20 @@ Message Side bar filters
     MessagePage.Click on select partner filter from message side bar list
     MessagePage.Select the filter from partner      End User
     ReportsPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     inbox
+    PaginationPage.Select the value from the pagination drop down count    500
+    MessagePage.Fetch the country from location filter and click     Partner Type         End User    End User
+    Generic.Click on the reset filters link
+    MessagePage.Select the filter from partner    Manufacturer
+    ReportsPage.Fetch the total count
+    MessagePage.Fetch the country from location filter and click     Partner Type         Manufacturer    Manufacturer
+    Generic.Click on the reset filters link
+    Generic.Refresh the existing page
+    ReportsPage.Fetch the total count
+    MessagePage.Click on select partner filter from message side bar list
+    MessagePage.Select the filter from partner      All Partners
+    ReportsPage.Fetch the total count After selecting filter
+    MessagePage.Comapre the total count after selecting filter
 
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
