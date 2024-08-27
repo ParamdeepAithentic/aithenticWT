@@ -50,6 +50,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 ######## UN comment when to use ##############
+
 #Fill contract form
 #    [Tags]      Sanity      Smoke
 #    Generic.click on the tab	Login
@@ -76,6 +77,7 @@ Test Teardown   Close Browser session
 #    ContractsPage.Save contract modal     Create Contract
 #    Generic.Fetch alert message text and compare it with        Contract created successfully
 #    ContractsPage.Search by contract BrandName      BusinessName60338
+
 
 
 

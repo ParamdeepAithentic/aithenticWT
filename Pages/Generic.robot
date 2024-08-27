@@ -447,6 +447,5 @@ Update settings for Asset_ID, employee_id and location
 #    Run Process    cmd.exe    /C    taskkill /IM skype.exe /F
 #    Run Process    cmd.exe    /C    taskkill /IM msedge.exe /F
 
-
-
-
+Click on the reset filters link
+    Generic.click on the button link        reset filters
