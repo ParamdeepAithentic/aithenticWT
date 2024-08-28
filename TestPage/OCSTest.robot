@@ -1011,7 +1011,7 @@ Add asset with IP Address under discovered asset list
         Generic.Scroll Window To End
         OCS.Mouse Hover over searched IP Assets
         OCS.Get MAC_Address by hovering over IP discovered assets    MacAddress:
-        OCSPage.Mouse Hover over current page after hovering over ip and discovered assets
+        OCS.Mouse Hover over current page after hovering over ip and discovered assets
         OCS.Mark check-box of Agent/Discovered Asset
         OCS.Click on Button inside Network Discovery Page       Add Assets
         Sleep    ${yop_sleep}
@@ -1503,7 +1503,7 @@ Search with containing fields under advance search of IP Address of discovered a
         OCS.Mouse Hover over searched IP Assets
         OCS.Verify Searched discovery asset    ${discovered_IP}
         OCS.Get MAC_Address by hovering over IP discovered assets   MacAddress:
-        OCSPage.Mouse Hover over current page after hovering over ip and discovered assets
+        OCS.Mouse Hover over current page after hovering over ip and discovered assets
         Generic.select the option from the side menu    Asset Discovery
         Generic.Verify your current page location contains     discovery-assets
         OCS.click on the value of IP discovered devices of inside table
