@@ -396,6 +396,7 @@ Export Team member list
 
 Export Assigned User list
     [Tags]      Stable    Sanity
+
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -435,6 +436,7 @@ Export Assigned User list
 
 Export technology details page list
     [Tags]      Stable   Sanity
+
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard

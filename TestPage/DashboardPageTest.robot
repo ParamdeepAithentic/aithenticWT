@@ -1661,6 +1661,7 @@ Management Console - Quarters filter dropdown
 
 Change password and login with new password
     [Tags]      Sanity      smoke
+
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain

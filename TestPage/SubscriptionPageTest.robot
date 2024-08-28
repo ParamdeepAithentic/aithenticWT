@@ -430,7 +430,7 @@ Create service now with invalid data
 
 Create service now with valid data
     [Tags]      Sanity     Smoke
-   Generic.click on the tab	Register
+    Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
     RegisterUserPage.Create random register first name

@@ -1025,6 +1025,7 @@ Activate Manufacturer via partner
 
 Remove Manufacturer from partner
     [Tags]      Stable    Sanity   Smoke
+
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard

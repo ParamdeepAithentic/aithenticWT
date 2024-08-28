@@ -468,6 +468,7 @@ Network Discovery in case of no records
     OCS.Fetch text from Agent Discovery tab and compare it with    No record found
 
 
+
 #Visit discovered asset list when click on No. IP discovered devices
 #    [Tags]      Unstable    Sanity
 #    Generic.click on the tab	Login
@@ -484,6 +485,7 @@ Network Discovery in case of no records
 #    Sleep    ${yop_sleep}
 #    Switch Window       aithentic | Sentinel One Newly-Discovered
 #    Generic.Verify your current page location contains     discovery-assets
+
 
 
 #Zz kill browser
@@ -1183,3 +1185,4 @@ Network Discovery in case of no records
 #    OCS.Choose filters for Existing asset with different tech type       Select Location     ${generated_buildingname}
 #    OCS.Verify that No items found with the selected filter
 #    OCS.Click on clear filter button link of discovered assets      Clear Filters
+
