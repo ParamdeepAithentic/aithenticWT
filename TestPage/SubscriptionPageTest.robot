@@ -666,16 +666,96 @@ Create service now with valid data
     SubscriptionPage.Get the value of fields under view details of subscription connector   1       ServiceNow
     SubscriptionPage.Get the value of fields under view details of subscription connector   2       ${generate_register_Fname} ${generate_register_Lname}
 
-Subscription Connector - M365 assets drilldown
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}     ${valid_password}
-    Generic.Verify your current page location contains      dashboard
-    LandingPage.Verify you are on dashboard page
-    DashboardPage.select the option from the dashboard drawer     Subscription
-    Generic.Verify your current page location contains      subscription
-    SubscriptionPage.Choose the tab under Subscription page     2
-    SubscriptionPage.Verify that page contains correct details      M365
-    Generic.Verify your current page contains this text     Subscription Overview
-    Subscription
+
+Click on connetors button link under asset discovery
+    Generic.click on the tab	Register
+    Generic.Verify your current page location contains      register
+    ReplaceDomainAPI.Replace Domain
+    RegisterUserPage.Create random register first name
+    RegisterUserPage.Create random register last name
+    RegisterUserPage.Create random register company name
+    RegisterUserPage.Click on member type
+    RegisterUserPage.Select the member type      End User
+    RegisterUserPage.Create partner random business email
+    RegisterUserPage.Choose register user country      India   +91     9646289871
+    RegisterUserPage.Select the checkbox
+    RegisterUserPage.Save the register form
+    Generic.Verify your current page location contains      update-email
+    Generic.Open new window     yopmail
+    Generic.Refresh the existing page
+    Generic.Search yopmail emails for       ${generate_register_Email}
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   Email Register Verification Required.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Click on sign In button in yopmail email
+    Unselect Frame
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Create - Account
+    Generic.Verify your current page location contains     create-account
+
+#----------------------------------------USER ACCOUNT---------------------------------------------------
+    UserAccount.Enter the password      Paramdeep@112
+    UserAccount.Confirm the entered password    Paramdeep@112
+    UserAccount.Click on term and condition checkbox
+    UserAccount.Click create account button
+    Generic.Fetch alert message text and compare it with       Account created successfully.
+    Generic.Verify your current page location contains     auth
+    LandingPage.Fill the login Form      ${generate_register_Email}    Paramdeep@112
+    Switch Window    Inbox
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   OTP Verification.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Get verification OTP from email    Your passcode is
+    sleep       ${yop_sleep}
+    Switch Window   aithentic | OTP
+    TwoFactorAuth.Enter the otp     ${passcode}
+    TwoFactorAuth.Click verification button
+#--------------------------------------SUBSCRIPTION------------------------------------------------------------
+    Generic.Verify your current page location contains     subscription
+    SubscriptionPage.Select country of manufacturer profile     United States
+    SubscriptionPage.Select state of manufacturer profile   Texas
+    SubscriptionPage.Select city of manufacturer profile    Abram
+    SubscriptionPage.Input text into manufacturer address one       This is address 1
+    SubscriptionPage.Input text into manufacturer address two       This is address 2
+    SubscriptionPage.Input text into manufacturer zip code      73301
+    SubscriptionPage.Select department of manufacturer profile      Customer Support
+    SubscriptionPage.Input text into manufacturer position/title    Agent
+    SubscriptionPage.Save the manufacturer profile
+    Generic.Verify your current page location contains     subscription-menu
+    Generic.Fetch alert message text and compare it with       Profile saved successfully
+    SubscriptionPage.Select plan of subscription
+    SubscriptionPage.Select and move next with subscription
+    Generic.Verify your current page location contains     subscription-payment
+#-------------------------------------------BILLING-----------------------------------------------------
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Select card type university
+    SubscriptionPage.Enter card account number    000123456789
+    SubscriptionPage.Enter card routing number      110000000
+    SubscriptionPage.Enter account holder name    Paramdeep Singh
+    SubscriptionPage.Check the authorization checkbox
+    SubscriptionPage.Check the acknowledgement checkbox
+    SubscriptionPage.Click on complete process button
+    Generic.Verify your current page location contains     welcome
+    Generic.Fetch alert message text and compare it with       Payment Successful
+    DashboardPage.Click on complete setup button      Complete Setup
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the asset ID checkbox     yes
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the location ID checkbox   yes
+    DashboardPage.Select the asset ID checkbox     no
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    Generic.select the option from the side menu    Asset Discovery
+    Generic.Verify your current page location contains     discovery-assets
+    Generic.click on the button     No, thanks
+    SubscriptionPage.Click on the service now tab under discovery assets
+    Generic.click on the button     Create Connection
+    Generic.Verify your current page location contains     connector
+    Generic.Wait until table get load
+
 
 
