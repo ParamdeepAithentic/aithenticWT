@@ -1154,9 +1154,9 @@ Search with containing fields under advance search of discovered asset
         I_iconPage.Choose tab under Discovery Assets       network-discovery
         Generic.Verify your current page location contains   aad
         OCS.Click on newly discovered tab under network discovery
+        OCS.Enter text to search discovery asset    ${discovered_asset_brand}
         OCS.Click on the down arrow icon of discovered asset
         Generic.Scroll Window To End
-        OCS.Mouse Hover over searched Discovered Assets
         OCS.Mark check-box of Agent/Discovered Asset
         OCS.Click on Button inside Network Discovery Page       Add Assets
         Sleep    ${yop_sleep}
@@ -1174,6 +1174,7 @@ Search with containing fields under advance search of discovered asset
         Generic.click on the button     Select
         sleep   ${search_sleep}
         Generic.Verify your current page contains this text    Add Technology
+        OCS.Wait until brand loader is invisible
         OCS.Fetch the Brand Name from the brand field of discovered asset
         TechnologyPage.verify Text from Assignment Information      Lenovo       ${brand_name}
         Generic.Refresh the existing page
@@ -1335,6 +1336,7 @@ Search with containing fields under advance search of component of discovered as
         Generic.click on the button     Select
         sleep   ${search_sleep}
         Generic.Verify your current page contains this text    Add Technology
+        OCS.Wait until brand loader is invisible
         OCS.Fetch the Brand Name from the brand field of discovered asset
         TechnologyPage.verify Text from Assignment Information      Lenovo       ${brand_name}
         Generic.Refresh the existing page
@@ -1493,6 +1495,7 @@ Search with containing fields under advance search of IP Address of discovered a
         Generic.click on the button     Select
         sleep   ${search_sleep}
         Generic.Verify your current page contains this text    Add Technology
+        OCS.Wait until brand loader is invisible
         OCS.Fetch the Brand Name from the brand field of discovered asset
         TechnologyPage.verify Text from Assignment Information      Lenovo       ${brand_name}
         sleep   ${yop_sleep}

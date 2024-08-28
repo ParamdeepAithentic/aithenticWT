@@ -2000,5 +2000,135 @@ Click and verify on manage subscription under billing
     BillingPage.Get the value of manage subscription under subscription page
     TechnologyPage.verify Text from Assignment Information       ${subscription_plan}       ${plan_name}
 
+Compose Message reply and delete that message
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Click on add team member action button
+    TeamMemberPage.Choose option after clicking on Action button        Add New Member
+    TeamMemberPage.Enter team member first name
+    TeamMemberPage.Enter team member last name
+    Generic.Enter phone number      India   +91     9646289871
+    TeamMemberPage.Enter team member business email with cool fr nf email
+    TeamMemberPage.Enter the Position in member form        QA
+    TeamMemberPage.Click on team member department
+    TeamMemberPage.Select team member department        DepartmentName0451927202
+    TeamMemberPage.Select team member role     Admin
+    TeamMemberPage.Click on team member location
+    TeamMemberPage.Select team member location with new domain
+    TeamMemberPage.Save the team member form   save
+    Generic.Fetch alert message text and compare it with        Team Member created successfully
+    TeamMemberPage.Search Team Member by name       ${generated_TMFname}
+    Generic.Click on the profile name
+    Generic.Select other option from profile list     Logout
+    Generic.Fetch log_out alert message
+    Generic.Open new window     yopmail
+    Generic.Refresh the existing page
+    Generic.Search yopmail emails for   ${generated_TMbusinessEmail}
+    sleep       ${search_sleep}
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifmail
+    Generic.click on the button     Verify
+    Unselect Frame
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Create - Account
+    Generic.Verify your current page location contains     create-account
+    UserAccount.Enter the password      Test@456
+    UserAccount.Confirm the entered password    Test@456
+    UserAccount.Click on term and condition checkbox
+    UserAccount.Click create account button
+    Generic.Fetch alert message text and compare it with       Account created successfully.
+    Generic.Verify your current page location contains     auth
+    LandingPage.Fill the login Form      ${generated_TMbusinessEmail}    Test@456
+    Switch Window    Inbox
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Click on email of yopmail   OTP Verification.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Get verification OTP from email    Your passcode is
+    sleep       ${yop_sleep}
+    Switch Window   aithentic | OTP
+    TwoFactorAuth.Enter the otp     ${passcode}
+    TwoFactorAuth.Click verification button
+    Generic.Verify your current page location contains     dashboard
+    Generic.Click on the profile name
+     Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    DashboardPage.Select an option from company details side list   Security
+    Generic.Verify your current page location contains  security
+    DashboardPage.click on the authentication tab under security
+    Generic.Verify your current page location contains     security
+    DashboardPage.Click on the checkboxes under auhtentication tab
+    Generic.Fetch alert message text and compare it with       Two factor updated successfully
+    Generic.Click on the profile name
+    Generic.Select other option from profile list     Logout
+    Generic.Fetch log_out alert message
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
+    Generic.Verify your current page location contains      dashboard
+#    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Messages
+    Generic.Verify your current page location contains      message
+    Generic.Select parameter     Compose
+    Generic.Verify your current page location contains      message
+    DashboardPage.Enter input in the recipient list field under compose message    ${generated_TMFname}
+    DashboardPage.Enter input in the message status field under compose message     Public
+    DashboardPage.Enter text in the subject field under compose message
+    DashboardPage.Enter text in the client message field under compose message
+    Generic.click on the button     Send
+    Generic.Fetch alert message text and compare it with       Message sent successfully
+    Generic.Verify your current page location contains      message
+    Generic.Select parameter      Sent
+    Generic.Verify your current page location contains      message
+    DashboardPage.Search by subject under sent serach bar      ${generated_subject}
+    Generic.Click on the profile name
+    Generic.Select other option from profile list     Logout
+    Generic.Fetch log_out alert message
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form  ${generated_TMbusinessEmail}    Test@456
+    Generic.Verify your current page location contains      dashboard
+#    LandingPage.Verify you are on dashboard page
+    DashboardPage.Click on the notifications icon under dashbaord page
+    sleep   ${search_sleep}
+    DashboardPage.Get the text of the recent notification        New message received from Milan Johar
+    Generic.select the option from the side menu    Messages
+    Generic.Verify your current page location contains      message
+    Generic.Select parameter      Inbox
+    Generic.Verify your current page location contains      message
+    DashboardPage.Search by subject under inbox serach bar       ${generated_subject}
+    Dashboardpage.Click on three dots
+    DashboardPage.Click on the reply option to reply the message
+    Generic.Verify your current page location contains      reply
+    DashboardPage.Enter input in the reply back page
+    Generic.click on the button     Send
+    Generic.Fetch alert message text and compare it with       Message sent successfully
+    Generic.Click on the profile name
+    Generic.Select other option from profile list     Logout
+    Generic.Fetch log_out alert message
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form   debut@cool.fr.nf   Test@123
+    Generic.Verify your current page location contains      dashboard
+#    LandingPage.Verify you are on dashboard page
+    DashboardPage.Click on the notifications icon under dashbaord page
+    sleep   ${search_sleep}
+    DashboardPage.Get the text of the recent notification        New message received from ${generated_TMFname} ${generated_Tmlname}
+    Generic.select the option from the side menu    Messages
+    Generic.Verify your current page location contains      message
+    Generic.Select parameter      Inbox
+    Generic.Verify your current page location contains      message
+    DashboardPage.Search by subject under inbox serach bar       ${generated_reply}
+    DashboardPage.Search by subject under inbox serach bar       ${generated_TMFname}
+    DashboardPage.Click on the flag icon to flag the message
+    Generic.Fetch alert message text and compare it with       Message flagged successfully
+    Dashboardpage.Click on three dots
+    DashboardPage.Click on the remove option to remove the message
+    Generic.Select parameter        Yes
+    Generic.Fetch alert message text and compare it with       Message removed successfully
+
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

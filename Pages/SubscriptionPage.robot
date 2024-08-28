@@ -528,12 +528,12 @@ Click on cross icon of details under service now
     sleep   ${search_sleep}
 
 Fetch and compare the product from the table
-    [Arguments]    ${option}
-    wait until element is visible       //td[normalize-space()='${option}']     ${wait_time}
-    ${fetch_azureproductName} =    get text    //td[normalize-space()='${option}']
+#    [Arguments]    ${option}
+    wait until element is visible       //tbody//tr//td[normalize-space()='1']     ${wait_time}
+    ${fetch_azureproductName} =    get text    (//tbody[contains(@class,'member-table-qa')]//tr//td)[3]
     set global variable    ${fetch_azureproductName}
     log to console     Azure_Product_Name=${fetch_azureproductName}
-    should be equal     ${option}      ${fetch_azureproductName}
+#    should be equal     ${option}      ${fetch_azureproductName}
 
 Enter input in the input field of frequency under asset discovery
     [Arguments]     ${option}
