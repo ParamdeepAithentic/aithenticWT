@@ -2025,3 +2025,40 @@ Scroll the element into view
     Wait until element is visible    //div[@id='components']//h6[normalize-space()='Hardware']      ${wait_time}
     wait until element is enabled    //div[@id='components']//h6[normalize-space()='Hardware']      ${wait_time}
     scroll element into view       //div[@id='components']//h6[normalize-space()='Hardware']
+
+Click on the filters under technology page
+    [Arguments]     ${option}
+     Wait Until Element Is Not Visible    ${loaderIcon}        ${wait_time}
+    Wait until element is visible    //div[contains(@class,'technology position-relative')]//b[normalize-space()='${option}']      ${wait_time}
+    wait until element is enabled    //div[contains(@class,'technology position-relative')]//b[normalize-space()='${option}']      ${wait_time}
+    click element      //div[contains(@class,'technology position-relative')]//b[normalize-space()='${option}']
+
+Click on the value under the filters of technology page
+    [Arguments]     ${option}
+     Wait Until Element Is Not Visible    ${loaderIcon}        ${wait_time}
+     Wait until element is visible    //div[contains(@class,'technology position-relative')]//label[normalize-space()='${option}']        ${wait_time}
+     wait until element is enabled    //div[contains(@class,'technology position-relative')]//label[normalize-space()='${option}']      ${wait_time}
+     click element      //div[contains(@class,'technology position-relative')]//label[normalize-space()='${option}']
+
+Get the text of selected filter under technology
+    [Arguments]     ${option}
+    wait until element is visible      //div[contains(@class,'technology position-relative')]//label[normalize-space()='${option}']    ${wait_time}
+    ${fetch_Name_of_selected_filter} =    get text    //div[contains(@class,'technology position-relative')]//label[normalize-space()='${option}']
+    ${original_string}=    Set Variable    ${fetch_Name_of_selected_filter}
+    ${New_Namee}=    Evaluate    '${original_string}'.strip()
+    log to console    ${New_Namee}
+    set global variable    ${New_Namee}
+
+Click on the value under the tech typen filters of technology page
+    [Arguments]     ${option}
+     Wait Until Element Is Not Visible    ${loaderIcon}        ${wait_time}
+     Wait until element is visible   //div[contains(@class,'technology position-relative')]//following-sibling::div//label[normalize-space()='${option}']        ${wait_time}
+     wait until element is enabled     //div[contains(@class,'technology position-relative')]//following-sibling::div//label[normalize-space()='${option}']      ${wait_time}
+     click element       //div[contains(@class,'technology position-relative')]//following-sibling::div//label[normalize-space()='${option}']
+
+Click on the tech type filter under technology
+    [Arguments]     ${option}
+     Wait Until Element Is Not Visible    ${loaderIcon}        ${wait_time}
+     Wait until element is visible   //div[contains(@class,'technology position-relative')]//following-sibling::div//b[normalize-space()='${option}']        ${wait_time}
+     wait until element is enabled     //div[contains(@class,'technology position-relative')]//following-sibling::div//b[normalize-space()='${option}']      ${wait_time}
+     click element       //div[contains(@class,'technology position-relative')]//following-sibling::div//b[normalize-space()='${option}']
