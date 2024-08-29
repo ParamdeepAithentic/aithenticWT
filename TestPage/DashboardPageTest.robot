@@ -2292,5 +2292,16 @@ Message Side bar filters
     ReportsPage.Fetch the total count After selecting filter
     MessagePage.Comapre the total count after selecting filter
 
+Click on the status filter under brand via profile list
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form     jasdeep@15963.fr.nf     Paramdeep@112
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     product-dropdown
+    Generic.Verify your current page location contains      product
+    DashboardPage.Click on the status filter under Brand via profile
+
+
+
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

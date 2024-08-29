@@ -1378,3 +1378,9 @@ Remove the Download Agent pop-up
     wait until element is enabled      //h4[normalize-space()='Download Agent for Single Install']//parent::div//button[contains(@class,'close')]      ${wait_time}
     click element   //h4[normalize-space()='Download Agent for Single Install']//parent::div//button[contains(@class,'close')]
     sleep       ${search_sleep}
+
+Click on the status filter under Brand via profile
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //div[contains(@class,'multi-select-dropdown')]//ng-select[contains(@class,'statusFilter')]       ${wait_time}
+    Wait Until Element Is Visible   //div[contains(@class,'multi-select-dropdown')]//ng-select[contains(@class,'statusFilter')]   ${wait_time}
+    click element    //div[contains(@class,'multi-select-dropdown')]//ng-select[contains(@class,'statusFilter')]
