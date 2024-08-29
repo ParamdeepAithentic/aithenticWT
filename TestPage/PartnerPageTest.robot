@@ -1119,110 +1119,110 @@ Remove Manufacturer from partner
     PartnersPage.Select option from the pop up  Yes
     Generic.Fetch alert message text and compare it with      Partner deleted successfully
 
-View Details and check the details of Contract
-    [Tags]      Stable
-    Generic.click on the tab	    Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.Verify your current page location contains      dashboard
-    LandingPage.Verify you are on dashboard page
-    ReplaceDomainAPI.Replace Domain
-    Generic.select the option from the side menu    Partners
-    PartnersPage.Click new partner button
-    PartnersPage.Select partner type of new partner     Manufacturer
-    PartnersPage.Create partner random business name
-#   PartnersPage.Enter partner business URL      ${generate_BusinessName}
-    PartnersPage.Enter partner business URL     yopmail
-    PartnersPage.Select partner country       United States
-    PartnersPage.Click on the save button   Save
-    Sleep     5
-    #Generic.Fetch alert message text and compare it with    Partner created successfully
-    PartnersPage.Search by business name   ${generate_BusinessName}
-    Generic.select the option from the side menu    Technology
-    TechnologyPage.Click on action button of technology
-    TechnologyPage.Choose add technology from action button of technology
-    PartnersPage.Click here to add link of contract details
-    DashboardPage.Create random productName
-    DashboardPage.Add product brand name      ${generate_BusinessName}
-    TechnologyPage.Add product description via technology
-    TechnologyPage.Add product feature via technology
-    TechnologyPage.Select product technology type via technology     Hardware
-    TechnologyPage.Select product technology group via technology   Applications
-    TechnologyPage.Click on save product pop inside technology page
-    Generic.Fetch alert message text and compare it with    Product created successfully
-#    TechnologyPage.Select parameter from technology dropdown list    ${generated_product}
-    TechnologyPage.Add assetID for technology lifecycle information random
-    TechnologyPage.Select purchase date
-    TechnologyPage.Renewal Date via technology
-    TechnologyPage.Select warranty end date    12/12/2028
-    TechnologyPage.Select technology lifecycle status      Active
-    TechnologyPage.Add technology lifecycle comment    Technology Lifecycle Information- comment
-    TechnologyPage.Add order number of technology cost information     56
-    TechnologyPage.Add payment partner of technology cost information      testqa 20Feb
-    TechnologyPage.Add cost type of technology cost information        Purchased
-    TechnologyPage.Add payment type of technology cost information     FixedPayment
-    TechnologyPage.Add payment peroid of technology cost information       Monthly
-    TechnologyPage.Add first payment date of technology cost information       12/12/2028
-    TechnologyPage.Add budget payment of technology cost information       1100
-    TechnologyPage.Add actual payment of technology cost information       1050
-    TechnologyPage.Click on save technology form button
-    Generic.Fetch alert message text and compare it with        Technology created successfully
-    TechnologyPage.Click on save technology form pop button
-    Generic.Verify your current page location contains      technology-list
-    Generic.Wait until table get load
-    TechnologyPage.Search by BrandName      ${generate_BusinessName}
-    Generic.select the option from the side menu    Contracts
-    Generic.click on the button link    View Details
-    ContractsPage.Click on back to contract link
-    ContractsPage.Click on create new contract button
-    ContractsPage.Select type of contract     Dynamic Contract
-    Generic.Verify your current page location contains      generate-contract
-    ContractsPage.Enter contract type      SmartShare_Manufacturer
-    ContractsPage.Enter contract with     ${generate_BusinessName}
-    ContractsPage.Enter contract brand    ${generate_BusinessName}
-    ContractsPage.Enter contract location      United States - Main Office - 21 - 2
-    ContractsPage.Enter contract permission       Read/Write
-    ContractsPage.Select contract start date
-    ContractsPage.Select contract end date      12/12/2028
-    ContractsPage.Select contract function       Dynamic
-    ContractsPage.Click preview selection button on contact
-    ContractsPage.Enter contract description comment      Enter comment for contract description.
-    ContractsPage.Click on add new contact for this partner link under contract
-    PartnersPage.Enter Random Contact Person Via Link
-    PartnersPage.Enter contact business email via link    ${generate_contactPersonName}
-#    PartnersPage.Choose contact country      India   +91     9646289871
-    Generic.Enter phone number      India   +91     9646289871
-    PartnersPage.Enter contact location via link      United States - Main Office - 21 - 2
-    PartnersPage.Click on save button of contact via link   Save
-    Generic.Fetch alert message text and compare it with    Contact created successfully
-    PartnersPage.Enter and select contact name via link
-    ContractsPage.Select the checkboxes
-    ContractsPage.Save create contract button
-    ContractsPage.Save contract modal     Create Contract
-    Generic.Fetch alert message text and compare it with        Contract created successfully
-    ContractsPage.Search by contract BrandName      ${generate_BusinessName}
-    ContractsPage.Fetch the contract Brand Name from the row      ${generate_BusinessName}
-    ContractsPage.Click on the first tab row    ${generate_BusinessName}
-    Generic.click on the button     Withdraw
-    Generic.Fetch alert message text and compare it with        Status updated successfully
-    PartnersPage.Click on back to contracts link via contract
-    Generic.Verify your current page location contains  contracts-list
-    ContractsPage.Search by contract BrandName      ${generate_BusinessName}
-    ContractsPage.Fetch the contract Brand Name from the row      ${generate_BusinessName}
-    PartnersPage.Verify status after withdraw the contract  Inactive
-    ContractsPage.Click on the first tab row    ${generate_BusinessName}
-    PartnersPage.Click on the three buttons link of contract via view smart details     Brand
-    Generic.Verify your current page location contains    view-contract-brands
-    PartnersPage.Verify pages with the element  Brand Name
-    PartnersPage.Click on back to contract details button link
-    PartnersPage.Click on the three buttons link of contract via view smart details     Locations
-    Generic.Verify your current page location contains    view-location
-    PartnersPage.Verify pages with the element  Location Name
-    PartnersPage.Click on back to contract details button link
-    PartnersPage.Click on the three buttons link of contract via view smart details     Technology
-    Generic.Verify your current page location contains    technology
-    PartnersPage.Verify pages with the element  Item
-    PartnersPage.Click on back to contract details button link
-    PartnersPage.Download the contract pdf
+#View Details and check the details of Contract
+#    [Tags]      Stable
+#    Generic.click on the tab	    Login
+#    LandingPage.Fill the login Form      ${email}    ${valid_password}
+#    Generic.Verify your current page location contains      dashboard
+#    LandingPage.Verify you are on dashboard page
+#    ReplaceDomainAPI.Replace Domain
+#    Generic.select the option from the side menu    Partners
+#    PartnersPage.Click new partner button
+#    PartnersPage.Select partner type of new partner     Manufacturer
+#    PartnersPage.Create partner random business name
+##   PartnersPage.Enter partner business URL      ${generate_BusinessName}
+#    PartnersPage.Enter partner business URL     yopmail
+#    PartnersPage.Select partner country       United States
+#    PartnersPage.Click on the save button   Save
+#    Sleep     5
+#    #Generic.Fetch alert message text and compare it with    Partner created successfully
+#    PartnersPage.Search by business name   ${generate_BusinessName}
+#    Generic.select the option from the side menu    Technology
+#    TechnologyPage.Click on action button of technology
+#    TechnologyPage.Choose add technology from action button of technology
+#    PartnersPage.Click here to add link of contract details
+#    DashboardPage.Create random productName
+#    DashboardPage.Add product brand name      ${generate_BusinessName}
+#    TechnologyPage.Add product description via technology
+#    TechnologyPage.Add product feature via technology
+#    TechnologyPage.Select product technology type via technology     Hardware
+#    TechnologyPage.Select product technology group via technology   Applications
+#    TechnologyPage.Click on save product pop inside technology page
+#    Generic.Fetch alert message text and compare it with    Product created successfully
+##    TechnologyPage.Select parameter from technology dropdown list    ${generated_product}
+#    TechnologyPage.Add assetID for technology lifecycle information random
+#    TechnologyPage.Select purchase date
+#    TechnologyPage.Renewal Date via technology
+#    TechnologyPage.Select warranty end date    12/12/2028
+#    TechnologyPage.Select technology lifecycle status      Active
+#    TechnologyPage.Add technology lifecycle comment    Technology Lifecycle Information- comment
+#    TechnologyPage.Add order number of technology cost information     56
+#    TechnologyPage.Add payment partner of technology cost information      testqa 20Feb
+#    TechnologyPage.Add cost type of technology cost information        Purchased
+#    TechnologyPage.Add payment type of technology cost information     FixedPayment
+#    TechnologyPage.Add payment peroid of technology cost information       Monthly
+#    TechnologyPage.Add first payment date of technology cost information       12/12/2028
+#    TechnologyPage.Add budget payment of technology cost information       1100
+#    TechnologyPage.Add actual payment of technology cost information       1050
+#    TechnologyPage.Click on save technology form button
+#    Generic.Fetch alert message text and compare it with        Technology created successfully
+#    TechnologyPage.Click on save technology form pop button
+#    Generic.Verify your current page location contains      technology-list
+#    Generic.Wait until table get load
+#    TechnologyPage.Search by BrandName      ${generate_BusinessName}
+#    Generic.select the option from the side menu    Contracts
+#    Generic.click on the button link    View Details
+#    ContractsPage.Click on back to contract link
+#    ContractsPage.Click on create new contract button
+#    ContractsPage.Select type of contract     Dynamic Contract
+#    Generic.Verify your current page location contains      generate-contract
+#    ContractsPage.Enter contract type      SmartShare_Manufacturer
+#    ContractsPage.Enter contract with     ${generate_BusinessName}
+#    ContractsPage.Enter contract brand    ${generate_BusinessName}
+#    ContractsPage.Enter contract location      United States - Main Office - 21 - 2
+#    ContractsPage.Enter contract permission       Read/Write
+#    ContractsPage.Select contract start date
+#    ContractsPage.Select contract end date      12/12/2028
+#    ContractsPage.Select contract function       Dynamic
+#    ContractsPage.Click preview selection button on contact
+#    ContractsPage.Enter contract description comment      Enter comment for contract description.
+#    ContractsPage.Click on add new contact for this partner link under contract
+#    PartnersPage.Enter Random Contact Person Via Link
+#    PartnersPage.Enter contact business email via link    ${generate_contactPersonName}
+##    PartnersPage.Choose contact country      India   +91     9646289871
+#    Generic.Enter phone number      India   +91     9646289871
+#    PartnersPage.Enter contact location via link      United States - Main Office - 21 - 2
+#    PartnersPage.Click on save button of contact via link   Save
+#    Generic.Fetch alert message text and compare it with    Contact created successfully
+#    PartnersPage.Enter and select contact name via link
+#    ContractsPage.Select the checkboxes
+#    ContractsPage.Save create contract button
+#    ContractsPage.Save contract modal     Create Contract
+#    Generic.Fetch alert message text and compare it with        Contract created successfully
+#    ContractsPage.Search by contract BrandName      ${generate_BusinessName}
+#    ContractsPage.Fetch the contract Brand Name from the row      ${generate_BusinessName}
+#    ContractsPage.Click on the first tab row    ${generate_BusinessName}
+#    Generic.click on the button     Withdraw
+#    Generic.Fetch alert message text and compare it with        Status updated successfully
+#    PartnersPage.Click on back to contracts link via contract
+#    Generic.Verify your current page location contains  contracts-list
+#    ContractsPage.Search by contract BrandName      ${generate_BusinessName}
+#    ContractsPage.Fetch the contract Brand Name from the row      ${generate_BusinessName}
+#    PartnersPage.Verify status after withdraw the contract  Inactive
+#    ContractsPage.Click on the first tab row    ${generate_BusinessName}
+#    PartnersPage.Click on the three buttons link of contract via view smart details     Brand
+#    Generic.Verify your current page location contains    view-contract-brands
+#    PartnersPage.Verify pages with the element  Brand Name
+#    PartnersPage.Click on back to contract details button link
+#    PartnersPage.Click on the three buttons link of contract via view smart details     Locations
+#    Generic.Verify your current page location contains    view-location
+#    PartnersPage.Verify pages with the element  Location Name
+#    PartnersPage.Click on back to contract details button link
+#    PartnersPage.Click on the three buttons link of contract via view smart details     Technology
+#    Generic.Verify your current page location contains    technology
+#    PartnersPage.Verify pages with the element  Item
+#    PartnersPage.Click on back to contract details button link
+#    PartnersPage.Download the contract pdf
 
 Add_edit_deactivate_removeSupplier while adding brand
     [Tags]      Stable

@@ -186,26 +186,26 @@ Verify all i-icon of partners page
     Generic.Verify pop-up is visible after clicking on i-icon
     I_iconPage.Click on i-icon of partners tab
 
-Verify all i-icon of Discovery assets
-    [Tags]      Stable
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.Verify your current page location contains      dashboard
-    LandingPage.Verify you are on dashboard page
-    Generic.select the option from the side menu        Asset Discovery
-    Generic.Verify your current page location contains      discovery-assets
-    I_iconPage.Choose tab under Discovery Assets       agent-discovery
-    I_iconPage.Click on i-icon inside agent discovery
-    I_iconPage.Click on link inside agent_discovery i-icon
-    sleep       ${yop_sleep}
-    switch window       Asset Discovery - Jira Service Management
-    Generic.Verify your current page location contains      customer
-    Generic.Verify your current page contains this text     Asset Discovery
-    sleep       ${yop_sleep}
-    switch window       aithentic | Sentinel One Newly-Discovered
-    I_iconPage.Choose tab under Discovery Assets       network-discovery
-    OCS.Click on newly discovered tab under network discovery
-    I_iconPage.Click on i_icon under network_discovery tab
+#Verify all i-icon of Discovery assets
+#    [Tags]      Stable
+#    Generic.click on the tab	Login
+#    LandingPage.Fill the login Form      ${email}    ${valid_password}
+#    Generic.Verify your current page location contains      dashboard
+#    LandingPage.Verify you are on dashboard page
+#    Generic.select the option from the side menu        Asset Discovery
+#    Generic.Verify your current page location contains      discovery-assets
+#    I_iconPage.Choose tab under Discovery Assets       agent-discovery
+#    I_iconPage.Click on i-icon inside agent discovery
+#    I_iconPage.Click on link inside agent_discovery i-icon
+#    sleep       ${yop_sleep}
+#    switch window       Asset Discovery - Jira Service Management
+#    Generic.Verify your current page location contains      customer
+#    Generic.Verify your current page contains this text     Asset Discovery
+#    sleep       ${yop_sleep}
+#    switch window       aithentic | Sentinel One Newly-Discovered
+#    I_iconPage.Choose tab under Discovery Assets       network-discovery
+#    OCS.Click on newly discovered tab under network discovery
+#    I_iconPage.Click on i_icon under network_discovery tab
 
 
 

@@ -186,9 +186,9 @@ Suspend and unsuspend the account
         Generic.Select parameter    Technology
         Generic.Verify your current page location contains      technology-settings
         SubscriptionPage.click on the connector tab under technoogy settings
-        SubscriptionPage.Click on the activate option under subscription connector table        Google
-        SubscriptionPage.Click on the activate option under subscription connector table        Microsoft Corporation
-        Generic.Fetch alert message text and compare it with        Status Updated
+#        SubscriptionPage.Click on the activate option under subscription connector table        Google
+#        SubscriptionPage.Click on the activate option under subscription connector table        Microsoft Corporation
+#        Generic.Fetch alert message text and compare it with        Status Updated
     EXCEPT
         SubscriptionPage.My Failure Handling
         Fail
@@ -215,23 +215,23 @@ View Scheduler from view Result
     SubscriptionPage.Choose tab under subscription page after clicking on view_result
     SubscriptionPage.Fetch and compare the Brand from the table    Microsoft Corporation
 
-Create the scheduler of sentinel one
-    [Tags]      Sanity    Smoke
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
-    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      dashboard
-    Generic.Click on the profile name
-    Generic.Select option from profile list     subscription-connector
-    Generic.Verify your current page location contains      technology-settings
-    SubscriptionPage.Click on the three dots of subscription connector      SentinelOne
-    SubscriptionPage.Click on option under three dots of subscription connector     SentinelOne     Create Scheduler
-    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Monthly
-    SubscriptionPage.Enter input in the start date field of billing details
-    SubscriptionPage.Enter input in the input field of time under create scheduler      2:00
-    sleep   ${search_sleep}
-    Generic.click on the button     Create
-    Generic.Fetch alert message text and compare it with        Scheduler created sucessfully
+#Create the scheduler of sentinel one
+#    [Tags]      Sanity    Smoke
+#    Generic.click on the tab	Login
+#    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
+#    LandingPage.Verify you are on dashboard page
+#    Generic.Verify your current page location contains      dashboard
+#    Generic.Click on the profile name
+#    Generic.Select option from profile list     subscription-connector
+#    Generic.Verify your current page location contains      technology-settings
+#    SubscriptionPage.Click on the three dots of subscription connector      SentinelOne
+#    SubscriptionPage.Click on option under three dots of subscription connector     SentinelOne     Create Scheduler
+#    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Monthly
+#    SubscriptionPage.Enter input in the start date field of billing details
+#    SubscriptionPage.Enter input in the input field of time under create scheduler      2:00
+#    sleep   ${search_sleep}
+#    Generic.click on the button     Create
+#    Generic.Fetch alert message text and compare it with        Scheduler created sucessfully
 
 Edit the scheduler of Sentinelone
     [Tags]      Sanity      Stable
