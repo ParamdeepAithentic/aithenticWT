@@ -2297,11 +2297,33 @@ Click on the status filter under brand via profile list
     LandingPage.Fill the login Form     jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
-    Generic.Select option from profile list     product-dropdown
-    Generic.Verify your current page location contains      product
+    Generic.Select option from profile list     brand-dropdown
+    Generic.Verify your current page location contains     brand-list
     DashboardPage.Click on the status filter under Brand via profile
-
-
-
+    DashboardPage.Select the option from the filters under brand via profile     0
+    DashboardPage.Click on the added brands heading
+    DashboardPage.Get the text of selected status filter under brand via profile       Active
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click       Status     ${New_status_Brand}        ${New_status_Brand}
+    Generic.Click on the profile name
+    Generic.Select other option from profile list     Logout
+    Generic.Fetch log_out alert message
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     brand-dropdown
+    Generic.Verify your current page location contains     brand-list
+    DashboardPage.Click on the status filter under Brand via profile
+    DashboardPage.Select the option from the filters under brand via profile     1
+    DashboardPage.Click on the added brands heading
+    DashboardPage.Get the text of selected status filter under brand via profile       Inactive
+    Generic.Wait until table get load
+    PaginationPage.Click on the pagination dropdown    brand
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     brand
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click       Status     ${New_status_Brand}        ${New_status_Brand}
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

@@ -1384,3 +1384,23 @@ Click on the status filter under Brand via profile
     Wait Until Element Is Visible    //div[contains(@class,'multi-select-dropdown')]//ng-select[contains(@class,'statusFilter')]       ${wait_time}
     Wait Until Element Is Visible   //div[contains(@class,'multi-select-dropdown')]//ng-select[contains(@class,'statusFilter')]   ${wait_time}
     click element    //div[contains(@class,'multi-select-dropdown')]//ng-select[contains(@class,'statusFilter')]
+
+Select the option from the filters under brand via profile
+    [Arguments]     ${ID}
+    Wait Until Element Is Visible    //ng-select[contains(@class,'statusFilter')]//following-sibling::div//input[contains(@id,'item-${ID}')]       ${wait_time}
+    Wait Until Element Is Visible  //ng-select[contains(@class,'statusFilter')]//following-sibling::div//input[contains(@id,'item-${ID}')]   ${wait_time}
+    click element    //ng-select[contains(@class,'statusFilter')]//following-sibling::div//input[contains(@id,'item-${ID}')]
+
+Get the text of selected status filter under brand via profile
+    [Arguments]     ${option}
+    wait until element is visible      //ng-select[contains(@class,'statusFilter')]//following-sibling::div//span[normalize-space()='${option}']    ${wait_time}
+    ${fetch_Name_of_selected_status} =    get text  //ng-select[contains(@class,'statusFilter')]//following-sibling::div//span[normalize-space()='${option}']
+    ${original_string}=    Set Variable    ${fetch_Name_of_selected_status}
+    ${New_status_Brand}=    Evaluate    '${original_string}'.strip()
+    log to console   ${New_status_Brand}
+    set global variable  ${New_status_Brand}
+
+Click on the added brands heading
+    Wait Until Element Is Visible    //p[normalize-space()='Added Brands']       ${wait_time}
+    Wait Until Element Is Visible  //p[normalize-space()='Added Brands']   ${wait_time}
+    click element    //p[normalize-space()='Added Brands']
