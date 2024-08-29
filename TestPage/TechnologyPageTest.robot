@@ -3170,6 +3170,275 @@ Click on the technology group filters and verify it
     PaginationPage.Fetch the total count
     PaginationPage.Get count of total rows from Product Dropdown
     TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Tech Type
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under the tech typen filters of technology page       License
+    Generic.Wait until table get load
+    PaginationPage.Click on the pagination dropdown     technology
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     technology
+    PaginationPage.Fetch the total count
+    PaginationPage.Get count of total rows from Product Dropdown
+    TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Tech Type
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under the tech typen filters of technology page       Subscription
+    Generic.Wait until table get load
+    PaginationPage.Click on the pagination dropdown     technology
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     technology
+    PaginationPage.Fetch the total count
+    PaginationPage.Get count of total rows from Product Dropdown
+    TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Tech Type
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under the tech typen filters of technology page      Maintenance
+    Generic.Wait until table get load
+    PaginationPage.Click on the pagination dropdown     technology
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     technology
+    PaginationPage.Fetch the total count
+    PaginationPage.Get count of total rows from Product Dropdown
+    TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Partner
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Manufacturers
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value      1
+    TechnologyPage.Get the text of the value you selected under filter      1
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click    Brand       ${random_Namee}        ${random_Namee}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Partner
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Manufacturers
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value      2
+    TechnologyPage.Get the text of the value you selected under filter      2
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click    Brand       ${random_Namee}       ${random_Namee}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Partner
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Manufacturers
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value      3
+    TechnologyPage.Get the text of the value you selected under filter      3
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click    Brand       ${random_Namee}       ${random_Namee}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Partner
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Suppliers
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value      2
+    TechnologyPage.Get the text of the value you selected under filter     2
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+     PaginationPage.Get count of total rows from Product Dropdown
+    TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Partner
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Suppliers
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value      5
+    TechnologyPage.Get the text of the value you selected under filter      5
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+     PaginationPage.Get count of total rows from Product Dropdown
+    TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Partner
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Suppliers
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value     6
+    TechnologyPage.Get the text of the value you selected under filter     6
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Get count of total rows from Product Dropdown
+    TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Partner
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       SupportPartners
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value    3
+    TechnologyPage.Get the text of the value you selected under filter     3
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Get count of total rows from Product Dropdown
+    TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Partner
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       SupportPartners
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value    4
+    TechnologyPage.Get the text of the value you selected under filter     4
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Get count of total rows from Product Dropdown
+    TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Partner
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       SupportPartners
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value    5
+    TechnologyPage.Get the text of the value you selected under filter     5
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Get count of total rows from Product Dropdown
+    TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Location
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value    2
+    TechnologyPage.Get the text of the value you selected under filter    2
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click    Location      ${random_Namee}       ${random_Namee}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Location
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value    3
+    TechnologyPage.Get the text of the value you selected under filter    3
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click    Location      ${random_Namee}       ${random_Namee}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Location
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value   6
+    TechnologyPage.Get the text of the value you selected under filter    6
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click    Location      ${random_Namee}       ${random_Namee}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Brand
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value   2
+    TechnologyPage.Get the text of the value you selected under filter    2
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click    Brand      ${random_Namee}       ${random_Namee}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Brand
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value   6
+    TechnologyPage.Get the text of the value you selected under filter    6
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click    Brand      ${random_Namee}       ${random_Namee}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Brand
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value   7
+    TechnologyPage.Get the text of the value you selected under filter    7
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click    Brand      ${random_Namee}       ${random_Namee}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Department
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value   1
+    TechnologyPage.Get the text of the value you selected under filter   1
+    Generic.Wait until table get load
+    PaginationPage.Click on the pagination dropdown     technology
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     technology
+    PaginationPage.Fetch the total count
+    PaginationPage.Get count of total rows from Product Dropdown
+    TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Department
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value   2
+    TechnologyPage.Get the text of the value you selected under filter   2
+    Generic.Wait until table get load
+    PaginationPage.Click on the pagination dropdown     technology
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     technology
+    PaginationPage.Fetch the total count
+    PaginationPage.Get count of total rows from Product Dropdown
+    TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Status
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value   2
+    TechnologyPage.Get the text of the value you selected under filter   2
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click    Status      ${random_Namee}       ${random_Namee}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Status
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value   5
+    TechnologyPage.Get the text of the value you selected under filter   5
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click    Status      ${random_Namee}       ${random_Namee}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Agent
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value  1
+    TechnologyPage.Get the text of the value you selected under filter   1
+    Generic.Wait until table get load
+    PaginationPage.Click on the pagination dropdown     technology
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     technology
+    PaginationPage.Fetch the total count
+    PaginationPage.Get count of total rows from Product Dropdown
+    TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
+    Generic.Click on the profile name
+    Generic.Select other option from profile list     Logout
+    Generic.Fetch log_out alert message
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form     jasdeep@15963.fr.nf     Paramdeep@112
+    Generic.Verify your current page location contains      dashboard
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Agent
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value  2
+    TechnologyPage.Get the text of the value you selected under filter   2
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Get count of total rows from Product Dropdown
+    TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
 
 #Zz kill browser
 #    [Tags]      Smoke     Sanity      Time      rerun       Stable    yy

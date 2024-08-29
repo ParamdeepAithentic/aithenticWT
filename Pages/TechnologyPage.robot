@@ -2062,3 +2062,19 @@ Click on the tech type filter under technology
      Wait until element is visible   //div[contains(@class,'technology position-relative')]//following-sibling::div//b[normalize-space()='${option}']        ${wait_time}
      wait until element is enabled     //div[contains(@class,'technology position-relative')]//following-sibling::div//b[normalize-space()='${option}']      ${wait_time}
      click element       //div[contains(@class,'technology position-relative')]//following-sibling::div//b[normalize-space()='${option}']
+
+Click on the value under filters for selecting random value
+    [Arguments]     ${option}
+     Wait Until Element Is Not Visible    ${loaderIcon}        ${wait_time}
+     Wait until element is visible   (//div[contains(@class,'technology position-relative')]//following-sibling::div//label)[${option}]        ${wait_time}
+     wait until element is enabled    (//div[contains(@class,'technology position-relative')]//following-sibling::div//label)[${option}]      ${wait_time}
+     click element       (//div[contains(@class,'technology position-relative')]//following-sibling::div//label)[${option}]
+
+Get the text of the value you selected under filter
+    [Arguments]     ${option}
+    wait until element is visible      (//div[contains(@class,'technology position-relative')]//following-sibling::div//label)[${option}]    ${wait_time}
+    ${fetch_Name_of_selected_random_filter} =    get text    (//div[contains(@class,'technology position-relative')]//following-sibling::div//label)[${option}]
+    ${original_string}=    Set Variable    ${fetch_Name_of_selected_random_filter}
+    ${random_Namee}=    Evaluate    '${original_string}'.strip()
+    log to console    ${random_Namee}
+    set global variable    ${random_Namee}
