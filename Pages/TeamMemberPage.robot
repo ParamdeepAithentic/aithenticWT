@@ -391,3 +391,28 @@ Fetch the country from team member filter and click
         Run Keyword If    '${New_Country}' == '${option2}'    Run Keywords    Empty Action of location   AND     Continue For Loop
 
     END
+
+Click on the status filter under team member via profile
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //div[contains(@class,'multi-select-dropdown')]//ng-select[contains(@class,'qa-status')]       ${wait_time}
+    Wait Until Element Is Visible   //div[contains(@class,'multi-select-dropdown')]//ng-select[contains(@class,'qa-status')]   ${wait_time}
+    click element    //div[contains(@class,'multi-select-dropdown')]//ng-select[contains(@class,'qa-status')]
+
+Select the option from the filters under team member via profile
+    [Arguments]     ${ID}
+    Wait Until Element Is Visible    //ng-select[contains(@class,'qa-status')]//following-sibling::div//input[contains(@id,'item-${ID}')]       ${wait_time}
+    Wait Until Element Is Visible  //ng-select[contains(@class,'qa-status')]//following-sibling::div//input[contains(@id,'item-${ID}')]   ${wait_time}
+    click element    //ng-select[contains(@class,'qa-status')]//following-sibling::div//input[contains(@id,'item-${ID}')]
+
+click on the members tab under team member via profile
+    wait until element is visible      css:#home-tab      ${wait_time}
+    wait until element is enabled      css:#home-tab        ${wait_time}
+    click element   css:#home-tab
+
+Get the text of selected status filter under team meber via profile
+    wait until element is visible      //ng-select[contains(@class,'qa-status')]//following-sibling::div//span    ${wait_time}
+    ${fetch_Name_of_selected_status} =    get text  //ng-select[contains(@class,'qa-status')]//following-sibling::div//span
+    ${original_string}=    Set Variable    ${fetch_Name_of_selected_status}
+    ${New_status1}=    Evaluate    '${original_string}'.strip()
+    log to console    ${New_status1}
+    set global variable   ${New_status1}

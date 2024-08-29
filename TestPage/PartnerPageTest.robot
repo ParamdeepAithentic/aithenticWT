@@ -208,7 +208,8 @@ Compose Message invite user test
     ContractsPage.Enter contract brand    ${generate_BusinessName}
     ContractsPage.Enter contract location      United States - Main Office - 21 - 2
     ContractsPage.Enter contract permission       Read/Write
-    ContractsPage.Select contract start date
+    Generic.Fetch Current Date
+    ContractsPage.Select contract start date        ${current_date}
     ContractsPage.Select contract end date      12/12/2028
     ContractsPage.Select contract function       Dynamic
     ContractsPage.Click preview selection button on contact
@@ -1180,7 +1181,8 @@ View Details and check the details of Contract
     ContractsPage.Enter contract brand    ${generate_BusinessName}
     ContractsPage.Enter contract location      United States - Main Office - 21 - 2
     ContractsPage.Enter contract permission       Read/Write
-    ContractsPage.Select contract start date
+    Generic.Fetch Current Date
+    ContractsPage.Select contract start date        ${current_date}
     ContractsPage.Select contract end date      12/12/2028
     ContractsPage.Select contract function       Dynamic
     ContractsPage.Click preview selection button on contact
