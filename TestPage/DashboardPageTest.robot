@@ -2326,6 +2326,84 @@ Click on the status filter under brand via profile list
     PaginationPage.Fetch the total count
     TeamMemberPage.Fetch the country from team member filter and click       Status     ${New_status_Brand}        ${New_status_Brand}
 
+Verify Team member in permissions according to user roles
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    RegisterUserPage.Select the option from the personal details sidebar        member
+    DashboardPage.Choose permission tab under members profile
+    Generic.Verify your current page location contains      member
+    DashboardPage.Pick User role of the member      Account Manager
+    DashboardPage.Verify user role have permissions     permission-write
+    DashboardPage.Verify user role have permissions     permission-read
+    DashboardPage.Verify user role have permissions     no-permission
+    DashboardPage.Select the permission of member according to user role        permission-write
+    DashboardPage.Verify that user contains permissions         Edit-Personal-Profile       Manage-Personal-Profile
+    DashboardPage.Pick User role of the member      Account Manager
+    DashboardPage.Select the permission of member according to user role        permission-read
+    DashboardPage.Verify that user contains read-permissions    Add-Subscription-Deleted
+    DashboardPage.Pick User role of the member      Account Manager
+    DashboardPage.Select the permission of member according to user role        no-permission
+    DashboardPage.Verify that user contains permissions     Manage-Subscription     Change-Plan
+    DashboardPage.Pick User role of the member      Admin
+    DashboardPage.Verify user role have permissions     permission-write
+    DashboardPage.Verify user role have permissions     no-permission
+    DashboardPage.Select the permission of member according to user role        permission-write
+    DashboardPage.Verify that user contains permissions         Edit-Personal-Profile       Manage-Personal-Profile
+    DashboardPage.Pick User role of the member      Admin
+    DashboardPage.Select the permission of member according to user role        no-permission
+    DashboardPage.Verify that user contains permissions     Manage-Subscription     Add-Subscription-Deleted
+    DashboardPage.Pick User role of the member      Admin
+    DashboardPage.Pick User role of the member      Asset Manager
+    DashboardPage.Verify user role have permissions     permission-write
+    DashboardPage.Verify user role have permissions     permission-read
+    DashboardPage.Verify user role have permissions     no-permission
+    DashboardPage.Select the permission of member according to user role        permission-write
+    DashboardPage.Verify that user contains permissions         Edit-Personal-Profile       Manage-Personal-Profile
+    DashboardPage.Select the permission of member according to user role        permission-write
+    DashboardPage.Select the permission of member according to user role        permission-read
+    DashboardPage.Verify that user contains read-permissions        Export-Technology-Details
+    DashboardPage.Select the permission of member according to user role        permission-read
+    DashboardPage.Select the permission of member according to user role        no-permission
+    DashboardPage.Verify that user contains permissions     Manage-Subscription     Add-Subscription-Deleted
+    DashboardPage.Select the permission of member according to user role        no-permission
+    DashboardPage.Pick User role of the member      Asset Reader
+    DashboardPage.Verify user role have permissions     permission-write
+    DashboardPage.Verify user role have permissions     no-permission
+    DashboardPage.Select the permission of member according to user role        permission-write
+    DashboardPage.Verify that user contains permissions         Edit-Personal-Profile       Manage-Personal-Profile
+    DashboardPage.Select the permission of member according to user role        permission-write
+    DashboardPage.Select the permission of member according to user role        no-permission
+    DashboardPage.Verify that user contains permissions     Manage-Subscription     Add-Subscription-Deleted
+    DashboardPage.Select the permission of member according to user role        no-permission
+    DashboardPage.Pick User role of the member      Asset User
+    DashboardPage.Verify user role have permissions     permission-write
+    DashboardPage.Verify user role have permissions     no-permission
+    DashboardPage.Select the permission of member according to user role        permission-write
+    DashboardPage.Verify that user contains permissions         Edit-Personal-Profile       Manage-Personal-Profile
+    DashboardPage.Select the permission of member according to user role        permission-write
+    DashboardPage.Select the permission of member according to user role        no-permission
+    DashboardPage.Verify that user contains permissions     Manage-Subscription     Change-Plan
+    DashboardPage.Select the permission of member according to user role        no-permission
+    DashboardPage.Pick User role of the member      CSPM
+    DashboardPage.Verify user role have permissions     permission-write
+    DashboardPage.Verify user role have permissions     no-permission
+    DashboardPage.Select the permission of member according to user role        permission-write
+    DashboardPage.Verify that user contains permissions         Edit-Personal-Profile       Manage-Personal-Profile
+    DashboardPage.Select the permission of member according to user role        permission-write
+    DashboardPage.Select the permission of member according to user role        no-permission
+    DashboardPage.Verify that user contains permissions     Manage-Subscription     Change-Plan
+    DashboardPage.Select the permission of member according to user role        no-permission
+    DashboardPage.Pick User role of the member      Subscriber
+    DashboardPage.Verify user role have permissions     permission-write
+    DashboardPage.Select the permission of member according to user role        permission-write
+    DashboardPage.Verify that user contains permissions         Manage-Subscription       Change-Plan
+    DashboardPage.Select the permission of member according to user role        permission-write
+
 Click on the product filters via profile list
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     jasdeep@15963.fr.nf     Paramdeep@112
