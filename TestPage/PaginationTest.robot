@@ -231,7 +231,6 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    aad
-        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    ${discovered_asset_brand}
@@ -497,7 +496,6 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    aad
-        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset     ${discovered_asset_brand}
@@ -619,7 +617,6 @@ Verify Pagination of Product Dropdown when Add IP discovered asset
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    aad
-        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    ${discovered_IP}
@@ -716,3 +713,39 @@ Verify pagination of invoice table under billing
     PaginationPage.Fetch the total count
     PaginationPage.Click on the pagination dropdown of invoice table
     PaginationPage.Log WebElements of invoice
+
+Click and verify the pagination under existing assets
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Asset Discovery
+    Generic.Verify your current page location contains     discovery-assets
+    Generic.Verify your current page location contains     aad
+    OCS.Click on newly discovered tab under network discovery
+    Generic.Verify your current page location contains     aad
+    OCS.Click on the down arrow icon of existing assets
+    PaginationPage.Mouse over existing asset without searching
+    PaginationPage.Fetch the brand name under existing assets without searching     Brand:
+    PaginationPage.Mouse over confirm matches button without searching
+    Generic.Scroll Window To End
+    PaginationPage.Get the value of page number under existing asset
+    TechnologyPage.verify Text from Assignment Information      1          ${page_number_count}
+    PaginationPage.Click on the previous or next button of pagination of existing assets        Next
+    Generic.Verify your current page location contains     aad
+    OCS.Click on the down arrow icon of existing assets
+    PaginationPage.Mouse over existing asset without searching
+    PaginationPage.Fetch the brand name under existing assets without searching     Brand:
+    PaginationPage.Mouse over confirm matches button without searching
+    Generic.Scroll Window To End
+    PaginationPage.Get the value of page number under existing asset
+    TechnologyPage.verify Text from Assignment Information      2          ${page_number_count}
+    PaginationPage.Click on the previous or next button of pagination of existing assets        Previous
+    Generic.Verify your current page location contains     aad
+    OCS.Click on the down arrow icon of existing assets
+    PaginationPage.Mouse over existing asset without searching
+    PaginationPage.Fetch the brand name under existing assets without searching     Brand:
+    PaginationPage.Mouse over confirm matches button without searching
+    Generic.Scroll Window To End
+    PaginationPage.Get the value of page number under existing asset
+    TechnologyPage.verify Text from Assignment Information      1          ${page_number_count}

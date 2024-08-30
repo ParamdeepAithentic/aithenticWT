@@ -460,7 +460,6 @@ Network Discovery in case of no records
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains   aad
-    I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.Fetch text from Agent/Discovered assets column and compare it with      No records
     OCS.Fetch text from Existing assets column and compare it with     No records
@@ -582,7 +581,6 @@ Verify Filters of Existing asets by adding assets of different tech type - HARDW
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    aad
-    I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.click on filter icon of existing assets
     OCS.Enter input in the brand field of existing asset       ${generated_BrandName}
@@ -695,7 +693,6 @@ Verify Filters of Existing asets by adding assets of different tech type - LICEN
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    aad
-    I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.click on filter icon of existing assets
     OCS.Enter input in brand filters field of existing asset with different tech type       ${generated_BrandName}
@@ -786,7 +783,6 @@ Verify Filters of Existing asets by adding assets of different tech type - SUBSC
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    aad
-    I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.click on filter icon of existing assets
     OCS.Enter input in brand filters field of existing asset with different tech type       ${generated_BrandName}
@@ -877,7 +873,6 @@ Verify Filters of Existing asets by adding assets of different tech type - MAINT
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    aad
-    I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.click on filter icon of existing assets
     OCS.Enter input in brand filters field of existing asset with different tech type       ${generated_BrandName}
@@ -968,7 +963,6 @@ Verify Filters of Existing asets by adding assets of different tech type - FREEW
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    aad
-    I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.click on filter icon of existing assets
     OCS.Enter input in brand filters field of existing asset with different tech type       ${generated_BrandName}
@@ -1059,7 +1053,6 @@ Verify Filters of Existing asets by adding assets of different tech type - CERTI
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    aad
-    I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.click on filter icon of existing assets
     OCS.Enter input in brand filters field of existing asset with different tech type       ${generated_BrandName}
