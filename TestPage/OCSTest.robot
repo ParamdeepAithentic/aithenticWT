@@ -77,14 +77,14 @@ Search Discovered Assets
        I_iconPage.Choose tab under Discovery Assets       network-discovery
        OCS.Click on newly discovered tab under network discovery
        OCS.Click on search icon of discovery assets
-       OCS.Enter text to search discovery asset    ${agentDiscovery_OnlyTagName}
+       OCS.Enter text to search discovery asset    ${discovered_asset_brand}
        OCS.Click on the down arrow icon of discovered asset
        Generic.Scroll Window To End
        OCS.Mouse Hover over searched Discovered Assets
        OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
        OCS.Get Serial number by hovering over discovered assets     Serial Number:
        OCS.Get Host name by hovering over discovered assets     Host name:
-       PaginationPage.Mouse over confirm matches button without searching
+       OCS.Mouse Hover over current page after hovering over ip and discovered assets
        OCS.Click on Searched Discovered asset
        Sleep    ${yop_sleep}
        Switch Window       aithentic | Discovery Asset Detail
@@ -129,8 +129,10 @@ Search Existing Assets
         OCS.Click on search icon of Existing assets
         OCS.Enter text to search existing asset    ${generated_AssetID}
         OCS.Click on the down arrow icon of existing assets
+        OCS.Click on the down arrow icon of existing assets
+        OCS.Click on the down arrow icon of existing assets
         Generic.Scroll Window To End
-        OCS.Mouse Hover over searched existing assets
+        OCS.Mouse Hover over searched existing assets after craeting technology
         OCS.Verify searched existing asset    ${generated_AssetID}
     EXCEPT
         OCS.My Failure Handling
@@ -173,15 +175,17 @@ Match Discovery and Existing Asset
         OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
         OCS.Get Serial number by hovering over discovered assets     Serial Number:
         OCS.Get Host name by hovering over discovered assets     Host name:
-        PaginationPage.Mouse over confirm matches button without searching
+        OCS.Mouse Hover over current page after hovering over ip and discovered assets
         OCS.Select any Discovered asset
         OCS.Click on search icon of Existing assets
         OCS.Enter text to search existing asset    ${generated_AssetID}
         OCS.Click on the down arrow icon of existing assets
+        OCS.Click on the down arrow icon of existing assets
+        OCS.Click on the down arrow icon of existing assets
         Generic.Scroll Window To End
-        OCS.Mouse Hover over searched existing assets
+        OCS.Mouse Hover over searched existing assets after craeting technology
         OCS.Verify searched existing asset    ${generated_AssetID}
-        PaginationPage.Mouse over confirm matches button without searching
+        OCS.Mouse Hover over current page after hovering over ip and discovered assets
         OCS.Select any existing asset
         OCS.Click on Button inside Network Discovery Page     Confirm Matches
         Generic.Fetch alert message text and compare it with      Matched Assets updated successfully
@@ -297,16 +301,18 @@ Apply filters and clear filter on Existing Assets
         OCS.Mouse Hover over filters of existing asset
         OCS.Get text by hovering over existing assets   Model/Product Name:
         OCS.verify Text by hovering over assets  ${substring1}      ${discovered_existing_product}
-        PaginationPage.Mouse over confirm matches button without searching
+        OCS.Mouse Hover over apply button after hovering over existing assets filter
         OCS.Click on the down arrow icon of existing assets
         OCS.Click on clear filter button link of discovered assets  Clear Filters
         OCS.Choose filters for discovered asset    Select Department    ${discovered_existing_department}
         Generic.click on the button     Apply
         OCS.Click on the down arrow icon of existing assets
+        OCS.Click on the down arrow icon of existing assets
+        OCS.Click on the down arrow icon of existing assets
         OCS.Mouse Hover over filters of existing asset
         OCS.Get text by hovering over existing assets   Department Name:
         OCS.verify Text by hovering over assets  ${substring1}     ${discovered_existing_department}
-        PaginationPage.Mouse over confirm matches button without searching
+        OCS.Mouse Hover over apply button after hovering over existing assets filter
         OCS.click on the right text asset result of existing asset
         sleep       ${yop_sleep}
         Switch Window   aithentic | Technology - Details
@@ -321,10 +327,12 @@ Apply filters and clear filter on Existing Assets
         Generic.click on the button     Apply
         Generic.Scroll Window To End
         OCS.Click on the down arrow icon of existing assets
+        OCS.Click on the down arrow icon of existing assets
+        OCS.Click on the down arrow icon of existing assets
         OCS.Mouse Hover over filters of existing asset
         OCS.Get text by hovering over existing assets   Location Name:
         OCS.verify Text by hovering over assets  ${substring1}      *Main Office
-        PaginationPage.Mouse over confirm matches button without searching
+        OCS.Mouse Hover over apply button after hovering over existing assets filter
         OCS.click on the right text asset result of existing asset
         sleep       ${yop_sleep}
         Switch Window   aithentic | Technology - Details
@@ -363,7 +371,7 @@ Add Discovery Asset
         OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
         OCS.Get Serial number by hovering over discovered assets     Serial Number:
         OCS.Get Host name by hovering over discovered assets     Host name:
-        PaginationPage.Mouse over confirm matches button without searching
+        OCS.Mouse Hover over current page after hovering over ip and discovered assets
         OCS.Choose Tab under Asset Discovery    agent-discovery
         OCS.Click on plus icon under table of agent discovery
         Sleep    ${Yop_Sleep}
@@ -488,7 +496,7 @@ Add component as an asset from Agent Discovery page
         OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
         OCS.Get Serial number by hovering over discovered assets     Serial Number:
         OCS.Get Host name by hovering over discovered assets     Host name:
-        PaginationPage.Mouse over confirm matches button without searching
+        OCS.Mouse Hover over current page after hovering over ip and discovered assets
         OCS.Choose Tab under Asset Discovery    agent-discovery
         OCS.Click on plus icon under table of agent discovery
         Sleep    ${Yop_Sleep}
@@ -570,7 +578,7 @@ Upload Image and Document File while Add Discovery Asset
         OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
         OCS.Get Serial number by hovering over discovered assets     Serial Number:
         OCS.Get Host name by hovering over discovered assets     Host name:
-        PaginationPage.Mouse over confirm matches button without searching
+        OCS.Mouse Hover over current page after hovering over ip and discovered assets
         OCS.Choose Tab under Asset Discovery    agent-discovery
         OCS.Click on plus icon under table of agent discovery
         Sleep    ${Yop_Sleep}
@@ -691,7 +699,7 @@ Upload Image and Document File while Add component as an asset from Agent Discov
         OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
         OCS.Get Serial number by hovering over discovered assets     Serial Number:
         OCS.Get Host name by hovering over discovered assets     Host name:
-        PaginationPage.Mouse over confirm matches button without searching
+        OCS.Mouse Hover over current page after hovering over ip and discovered assets
         OCS.Choose Tab under Asset Discovery    agent-discovery
         OCS.Click on plus icon under table of agent discovery
         Sleep    ${Yop_Sleep}
@@ -812,13 +820,14 @@ Match IP Discovered asset with Existing asset
     Generic.Scroll Window To End
     OCS.Mouse Hover over searched IP Assets
     OCS.Get MAC_Address by hovering over IP discovered assets    MacAddress:
-    PaginationPage.Mouse over confirm matches button without searching
+    OCS.Mouse Hover over current page after hovering over ip and discovered assets
     OCS.Select any Discovered asset
     OCS.Click on search icon of discovery assets
     OCS.Click on the down arrow icon of existing assets
+    OCS.Click on the down arrow icon of existing assets
+    OCS.Click on the down arrow icon of existing assets
     OCS.Mouse Hover over searched existing assets
     OCS.Get asset id by hovering over existing assets    Asset Id:
-    PaginationPage.Mouse over confirm matches button without searching
     OCS.Select any existing asset
     OCS.Verify that line appears between selected assets
     OCS.Click on Button inside Network Discovery Page     Confirm Matches
@@ -859,12 +868,15 @@ Match Discovery Asset with Static Existing Asset
         OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
         OCS.Get Serial number by hovering over discovered assets     Serial Number:
         OCS.Get Host name by hovering over discovered assets     Host name:
-        PaginationPage.Mouse over confirm matches button without searching
+        OCS.Mouse Hover over current page after hovering over ip and discovered assets
         OCS.Select any Discovered asset
         OCS.Click on search icon of discovery assets
         OCS.Click on the down arrow icon of existing assets
+        OCS.Click on the down arrow icon of existing assets
+        OCS.Click on the down arrow icon of existing assets
         OCS.Mouse Hover over searched existing assets
         OCS.Get asset id by hovering over existing assets    Asset Id:
+        PaginationPage.Mouse over confirm matches button without searching
         OCS.Select any existing asset
         OCS.Verify that line appears between selected assets
         OCS.Click on Button inside Network Discovery Page     Confirm Matches
@@ -928,7 +940,7 @@ Match IP Discovered Asset with Dynamic Existing Asset
         OCS.Mouse Hover over searched IP Assets
         OCS.Verify Searched discovery asset    ${discovered_IP}
         OCS.Get MAC_Address by hovering over IP discovered assets    MacAddress:
-        PaginationPage.Mouse over confirm matches button without searching
+        OCS.Mouse Hover over current page after hovering over ip and discovered assets
         OCS.Select any Discovered asset
         OCS.Click on search icon of discovery assets
         OCS.Click on search icon of Existing assets
@@ -999,7 +1011,7 @@ Add asset with IP Address under discovered asset list
         Generic.Scroll Window To End
         OCS.Mouse Hover over searched IP Assets
         OCS.Get MAC_Address by hovering over IP discovered assets    MacAddress:
-        PaginationPage.Mouse over confirm matches button without searching
+        OCS.Mouse Hover over current page after hovering over ip and discovered assets
         OCS.Mark check-box of Agent/Discovered Asset
         OCS.Click on Button inside Network Discovery Page       Add Assets
         Sleep    ${yop_sleep}
@@ -1066,7 +1078,7 @@ Add Asset with IP address from Network Discovery Page
         OCS.Mouse Hover over searched IP Assets
         OCS.Verify Searched discovery asset         ${discovered_IP}
         OCS.Get MAC_Address by hovering over IP discovered assets   MacAddress:
-        PaginationPage.Mouse over confirm matches button without searching
+        OCS.Mouse Hover over current page after hovering over ip and discovered assets
         OCS.Mark check-box of Agent/Discovered Asset
         OCS.Click on Button inside Network Discovery Page       Add Assets
         Sleep    ${yop_sleep}
@@ -1491,7 +1503,7 @@ Search with containing fields under advance search of IP Address of discovered a
         OCS.Mouse Hover over searched IP Assets
         OCS.Verify Searched discovery asset    ${discovered_IP}
         OCS.Get MAC_Address by hovering over IP discovered assets   MacAddress:
-        PaginationPage.Mouse over confirm matches button without searching
+        OCS.Mouse Hover over current page after hovering over ip and discovered assets
         Generic.select the option from the side menu    Asset Discovery
         Generic.Verify your current page location contains     discovery-assets
         OCS.click on the value of IP discovered devices of inside table
@@ -1637,7 +1649,7 @@ Upload Image and Document file during Add Asset with IP address from Agent Disco
         OCS.Mouse Hover over searched IP Assets
 #        OCS.Verify Searched discovery asset    00:17:61:10:C6:A1
         OCS.Get MAC_Address by hovering over IP discovered assets    MacAddress:
-        PaginationPage.Mouse over confirm matches button without searching
+        OCS.Mouse Hover over current page after hovering over ip and discovered assets
         OCS.Mark check-box of Agent/Discovered Asset
         OCS.Click on Button inside Network Discovery Page       Add Assets
         Sleep    ${yop_sleep}
@@ -1737,7 +1749,7 @@ Verify cross icon an reset icon while adding IP discovered asset
         OCS.Mouse Hover over searched IP Assets
         OCS.Verify Searched discovery asset    ${discovered_IP}
         OCS.Get MAC_Address by hovering over IP discovered assets   MacAddress:
-        PaginationPage.Mouse over confirm matches button without searching
+        OCS.Mouse Hover over current page after hovering over ip and discovered assets
         Generic.select the option from the side menu    Asset Discovery
         Generic.Verify your current page location contains     discovery-assets
         OCS.click on the value of IP discovered devices of inside table
@@ -1849,4 +1861,3 @@ Verify reset icon while adding component
 
 #Zz kill browser
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
-

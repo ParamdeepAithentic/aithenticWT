@@ -2269,5 +2269,238 @@ Renewals overview drilldown - Add column Host name
     DashboardPage.Search and verify through asset_id      ${generated_AssetID}
     Generic.Verify your current page contains this text   ${result}
 
+Message Side bar filters
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.select the option from the side menu    Messages
+    Generic.Verify your current page location contains      message
+    MessagePage.Click on select partner filter from message side bar list
+    MessagePage.Select the filter from partner      End User
+    ReportsPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     inbox
+    PaginationPage.Select the value from the pagination drop down count    500
+    MessagePage.Fetch the country from location filter and click     Partner Type         End User    End User
+    Generic.Click on the reset filters link
+    MessagePage.Select the filter from partner    Manufacturer
+    ReportsPage.Fetch the total count
+    MessagePage.Fetch the country from location filter and click     Partner Type         Manufacturer    Manufacturer
+    Generic.Click on the reset filters link
+    Generic.Refresh the existing page
+    ReportsPage.Fetch the total count
+    MessagePage.Click on select partner filter from message side bar list
+    MessagePage.Select the filter from partner      All Partners
+    ReportsPage.Fetch the total count After selecting filter
+    MessagePage.Comapre the total count after selecting filter
+
+Click on the status filter under brand via profile list
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form     jasdeep@15963.fr.nf     Paramdeep@112
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     brand-dropdown
+    Generic.Verify your current page location contains     brand-list
+    DashboardPage.Click on the status filter under Brand via profile
+    DashboardPage.Select the option from the filters under brand via profile     0
+    DashboardPage.Click on the added brands heading
+    DashboardPage.Get the text of selected status filter under brand via profile       Active
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click       Status     ${New_status_Brand}        ${New_status_Brand}
+    Generic.Click on the profile name
+    Generic.Select other option from profile list     Logout
+    Generic.Fetch log_out alert message
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     brand-dropdown
+    Generic.Verify your current page location contains     brand-list
+    DashboardPage.Click on the status filter under Brand via profile
+    DashboardPage.Select the option from the filters under brand via profile     1
+    DashboardPage.Click on the added brands heading
+    DashboardPage.Get the text of selected status filter under brand via profile       Inactive
+    Generic.Wait until table get load
+    PaginationPage.Click on the pagination dropdown    brand
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     brand
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click       Status     ${New_status_Brand}        ${New_status_Brand}
+
+Verify Team member in permissions according to user roles
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    RegisterUserPage.Select the option from the personal details sidebar        member
+    DashboardPage.Choose permission tab under members profile
+    Generic.Verify your current page location contains      member
+    DashboardPage.Pick User role of the member      Account Manager
+    DashboardPage.Verify user role have permissions     permission-write
+    DashboardPage.Verify user role have permissions     permission-read
+    DashboardPage.Verify user role have permissions     no-permission
+    DashboardPage.Select the permission of member according to user role        permission-write
+    DashboardPage.Verify that user contains permissions         Edit-Personal-Profile       Manage-Personal-Profile
+    DashboardPage.Pick User role of the member      Account Manager
+    DashboardPage.Select the permission of member according to user role        permission-read
+    DashboardPage.Verify that user contains read-permissions    Add-Subscription-Deleted
+    DashboardPage.Pick User role of the member      Account Manager
+    DashboardPage.Select the permission of member according to user role        no-permission
+    DashboardPage.Verify that user contains permissions     Manage-Subscription     Change-Plan
+    DashboardPage.Pick User role of the member      Admin
+    DashboardPage.Verify user role have permissions     permission-write
+    DashboardPage.Verify user role have permissions     no-permission
+    DashboardPage.Select the permission of member according to user role        permission-write
+    DashboardPage.Verify that user contains permissions         Edit-Personal-Profile       Manage-Personal-Profile
+    DashboardPage.Pick User role of the member      Admin
+    DashboardPage.Select the permission of member according to user role        no-permission
+    DashboardPage.Verify that user contains permissions     Manage-Subscription     Add-Subscription-Deleted
+    DashboardPage.Pick User role of the member      Admin
+    DashboardPage.Pick User role of the member      Asset Manager
+    DashboardPage.Verify user role have permissions     permission-write
+    DashboardPage.Verify user role have permissions     permission-read
+    DashboardPage.Verify user role have permissions     no-permission
+    DashboardPage.Select the permission of member according to user role        permission-write
+    DashboardPage.Verify that user contains permissions         Edit-Personal-Profile       Manage-Personal-Profile
+    DashboardPage.Select the permission of member according to user role        permission-write
+    DashboardPage.Select the permission of member according to user role        permission-read
+    DashboardPage.Verify that user contains read-permissions        Export-Technology-Details
+    DashboardPage.Select the permission of member according to user role        permission-read
+    DashboardPage.Select the permission of member according to user role        no-permission
+    DashboardPage.Verify that user contains permissions     Manage-Subscription     Add-Subscription-Deleted
+    DashboardPage.Select the permission of member according to user role        no-permission
+    DashboardPage.Pick User role of the member      Asset Reader
+    DashboardPage.Verify user role have permissions     permission-write
+    DashboardPage.Verify user role have permissions     no-permission
+    DashboardPage.Select the permission of member according to user role        permission-write
+    DashboardPage.Verify that user contains permissions         Edit-Personal-Profile       Manage-Personal-Profile
+    DashboardPage.Select the permission of member according to user role        permission-write
+    DashboardPage.Select the permission of member according to user role        no-permission
+    DashboardPage.Verify that user contains permissions     Manage-Subscription     Add-Subscription-Deleted
+    DashboardPage.Select the permission of member according to user role        no-permission
+    DashboardPage.Pick User role of the member      Asset User
+    DashboardPage.Verify user role have permissions     permission-write
+    DashboardPage.Verify user role have permissions     no-permission
+    DashboardPage.Select the permission of member according to user role        permission-write
+    DashboardPage.Verify that user contains permissions         Edit-Personal-Profile       Manage-Personal-Profile
+    DashboardPage.Select the permission of member according to user role        permission-write
+    DashboardPage.Select the permission of member according to user role        no-permission
+    DashboardPage.Verify that user contains permissions     Manage-Subscription     Change-Plan
+    DashboardPage.Select the permission of member according to user role        no-permission
+    DashboardPage.Pick User role of the member      CSPM
+    DashboardPage.Verify user role have permissions     permission-write
+    DashboardPage.Verify user role have permissions     no-permission
+    DashboardPage.Select the permission of member according to user role        permission-write
+    DashboardPage.Verify that user contains permissions         Edit-Personal-Profile       Manage-Personal-Profile
+    DashboardPage.Select the permission of member according to user role        permission-write
+    DashboardPage.Select the permission of member according to user role        no-permission
+    DashboardPage.Verify that user contains permissions     Manage-Subscription     Change-Plan
+    DashboardPage.Select the permission of member according to user role        no-permission
+    DashboardPage.Pick User role of the member      Subscriber
+    DashboardPage.Verify user role have permissions     permission-write
+    DashboardPage.Select the permission of member according to user role        permission-write
+    DashboardPage.Verify that user contains permissions         Manage-Subscription       Change-Plan
+    DashboardPage.Select the permission of member according to user role        permission-write
+
+Click on the product filters via profile list
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form     jasdeep@15963.fr.nf     Paramdeep@112
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     product-dropdown
+    Generic.Verify your current page location contains     product
+    DashboardPage.Click on the status filter under product via profile
+    DashboardPage.Select the option from the filters under product via profile      0
+    DashboardPage.Click on the added products heading
+    DashboardPage.Get the text of selected status filter under product via profile
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click       Status      ${New_product_Status}         ${New_product_Status}
+     Generic.Click on the profile name
+    Generic.Select other option from profile list     Logout
+    Generic.Fetch log_out alert message
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     product-dropdown
+    Generic.Verify your current page location contains     product
+    DashboardPage.Click on the status filter under product via profile
+    DashboardPage.Select the option from the filters under product via profile      1
+    DashboardPage.Click on the added products heading
+    DashboardPage.Get the text of selected status filter under product via profile
+    Generic.Wait until table get load
+    PaginationPage.Click on the pagination dropdown    products
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown      products
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click       Status     ${New_product_Status}        ${New_product_Status}
+    DashboardPage.Click on the reset button under product
+    DashboardPage.Click on the brand filter under product via profile
+    DashboardPage.Select the option from the brand filter under product via profile     2
+    DashboardPage.Click on the added products heading
+    DashboardPage.Get the text of selected brand filter under product via profile
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click        Brand Name       ${selected_Brand}        ${selected_Brand}
+    DashboardPage.Click on the reset button under product
+    DashboardPage.Click on the brand filter under product via profile
+    DashboardPage.Select the option from the brand filter under product via profile     3
+    DashboardPage.Click on the added products heading
+    DashboardPage.Get the text of selected brand filter under product via profile
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click        Brand Name       ${selected_Brand}        ${selected_Brand}
+    DashboardPage.Click on the reset button under product
+    DashboardPage.Click on the brand filter under product via profile
+    DashboardPage.Select the option from the brand filter under product via profile    5
+    DashboardPage.Click on the added products heading
+    DashboardPage.Get the text of selected brand filter under product via profile
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click        Brand Name      ${selected_Brand}        ${selected_Brand}
+    DashboardPage.Click on the reset button under product
+    DashboardPage.Click on the technology group filter under product via profile
+    DashboardPage.Select the option from the technology group filter under product via profile      1
+    DashboardPage.Click on the added products heading
+    DashboardPage.Get the text of selected technology group filter under product via profile
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click         Technology Group        ${New_product_tech_group}        ${New_product_tech_group}
+    DashboardPage.Click on the reset button under product
+    DashboardPage.Click on the technology group filter under product via profile
+    DashboardPage.Select the option from the technology group filter under product via profile      3
+    DashboardPage.Click on the added products heading
+    DashboardPage.Get the text of selected technology group filter under product via profile
+    Generic.Wait until table get load
+     PaginationPage.Click on the pagination dropdown    products
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown      products
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click         Technology Group        ${New_product_tech_group}        ${New_product_tech_group}
+    DashboardPage.Click on the reset button under product
+    DashboardPage.Click on the technology group filter under product via profile
+    DashboardPage.Select the option from the technology group filter under product via profile      4
+    DashboardPage.Click on the added products heading
+    DashboardPage.Get the text of selected technology group filter under product via profile
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click         Technology Group        ${New_product_tech_group}        ${New_product_tech_group}
+
+Suspend the account while the contract active
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     billing-dropdown
+    Generic.Verify your current page location contains      billing-details
+    SubscriptionPage.Click on the suspend my account button link under billing details
+    DashboardPage.Get the text of the pop up while suspending the account when contract is active
+    Generic.click on the button     Okay, I will manage Contracts first
+    Generic.Verify your current page location contains      contracts-list
+    Generic.Wait until table get load
+
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
