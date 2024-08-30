@@ -1514,3 +1514,11 @@ Get the text of selected technology group filter under product via profile
     ${New_product_tech_group}=    Evaluate    '${original_string}'.strip()
     log to console     ${New_product_tech_group}
     set global variable   ${New_product_tech_group}
+
+Get the text of the pop up while suspending the account when contract is active
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible      //div[contains(@id,'activeContractSubscriptionCheckModal')]//div[contains(@class,'modal-body')]//p       ${wait_time}
+    wait until element is enabled      //div[contains(@id,'activeContractSubscriptionCheckModal')]//div[contains(@class,'modal-body')]//p    ${wait_time}
+    ${fetch_text_pop_up} =    get text  //div[contains(@id,'activeContractSubscriptionCheckModal')]//div[contains(@class,'modal-body')]//p
+    log to console     ${fetch_text_pop_up}
+    set global variable   ${fetch_text_pop_up}

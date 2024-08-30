@@ -2489,6 +2489,18 @@ Click on the product filters via profile list
     PaginationPage.Fetch the total count
     TeamMemberPage.Fetch the country from team member filter and click         Technology Group        ${New_product_tech_group}        ${New_product_tech_group}
 
+Suspend the account while the contract active
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     billing-dropdown
+    Generic.Verify your current page location contains      billing-details
+    SubscriptionPage.Click on the suspend my account button link under billing details
+    DashboardPage.Get the text of the pop up while suspending the account when contract is active
+    Generic.click on the button     Okay, I will manage Contracts first
+    Generic.Verify your current page location contains      contracts-list
+    Generic.Wait until table get load
 
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
