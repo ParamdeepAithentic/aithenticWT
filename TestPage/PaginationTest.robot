@@ -231,7 +231,6 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    aad
-        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    ${discovered_asset_brand}
@@ -497,7 +496,6 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    aad
-        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset     ${discovered_asset_brand}
@@ -619,7 +617,6 @@ Verify Pagination of Product Dropdown when Add IP discovered asset
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    aad
-        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    ${discovered_IP}
@@ -724,7 +721,6 @@ Click and verify the pagination under existing assets
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Asset Discovery
     Generic.Verify your current page location contains     discovery-assets
-#    I_iconPage.Choose tab under Discovery Assets       network-discovery
     Generic.Verify your current page location contains     aad
     OCS.Click on newly discovered tab under network discovery
     Generic.Verify your current page location contains     aad
