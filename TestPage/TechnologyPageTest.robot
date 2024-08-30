@@ -2932,6 +2932,7 @@ Compose reply and remove the message via technology details
     Generic.Fetch alert message text and compare it with       Message removed successfully
 
 Download QR for an asset as PNG and SVG
+    [Tags]      Smoke       Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -3083,6 +3084,7 @@ Verify notification update location in asset
     TechnologyPage.Get the text of the recent notification of added assets      You changed location of Asset ID ${generated_AssetID}.
 
 Verify_Notification_Update_Asset
+    [Tags]      Smoke       Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
