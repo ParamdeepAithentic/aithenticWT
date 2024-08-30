@@ -208,7 +208,8 @@ Compose Message invite user test
     ContractsPage.Enter contract brand    ${generate_BusinessName}
     ContractsPage.Enter contract location      United States - Main Office - 21 - 2
     ContractsPage.Enter contract permission       Read/Write
-    ContractsPage.Select contract start date
+    Generic.Fetch Current Date
+    ContractsPage.Select contract start date        ${current_date}
     ContractsPage.Select contract end date      12/12/2028
     ContractsPage.Select contract function       Dynamic
     ContractsPage.Click preview selection button on contact
@@ -1180,7 +1181,8 @@ View Details and check the details of Contract
     ContractsPage.Enter contract brand    ${generate_BusinessName}
     ContractsPage.Enter contract location      United States - Main Office - 21 - 2
     ContractsPage.Enter contract permission       Read/Write
-    ContractsPage.Select contract start date
+    Generic.Fetch Current Date
+    ContractsPage.Select contract start date        ${current_date}
     ContractsPage.Select contract end date      12/12/2028
     ContractsPage.Select contract function       Dynamic
     ContractsPage.Click preview selection button on contact
@@ -1413,6 +1415,63 @@ Add_edit_deactivate_removeSupport_partner_while_adding_brand
     PartnersPage.Select option from three dots of partner     Remove
     PartnersPage.Select option from the pop up  Yes
     Generic.Fetch alert message text and compare it with      Partner deleted successfully
+
+Partner Side bar Filters
+    Generic.click on the tab	    Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Partners
+    PartnersPage.Click on the filters from partner module       Select Partner
+    PartnersPage.Checkmark after clicking on the filters        Manufacturer
+    ReportsPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     partner-list
+    PaginationPage.Select the value from the pagination drop down count    500
+    PartnersPage.Fetch the selected filter and verify from Table    Partner Type        Manufacturer        Manufacturer
+    Generic.Click on the reset filters link
+    Generic.Refresh the existing page
+    PartnersPage.Click on the filters from partner module       Select Partner
+    PartnersPage.Checkmark after clicking on the filters        Supplier
+    ReportsPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     partner-list
+    PaginationPage.Select the value from the pagination drop down count    500
+    PartnersPage.Fetch the selected filter and verify from Table    Partner Type        Supplier        Supplier
+    Generic.Click on the reset filters link
+    Generic.Refresh the existing page
+    PartnersPage.Click on the filters from partner module       Select Partner
+    PartnersPage.Checkmark after clicking on the filters        Support Partner
+    ReportsPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     partner-list
+    PaginationPage.Select the value from the pagination drop down count    500
+    PartnersPage.Fetch the selected filter and verify from Table    Partner Type        Support Partner        Support Partner
+    Generic.Click on the reset filters link
+    ReportsPage.Fetch the total count
+    PartnersPage.Click on the filters from partner module       Select Partner
+    PartnersPage.Checkmark after clicking on the filters        All Partners
+    ReportsPage.Fetch the total count After selecting filter
+    MessagePage.Comapre the total count after selecting filter
+######################################### STATUS ###############################################################################
+    Generic.Click on the reset filters link
+    PartnersPage.Click on the filters from partner module       Select Status
+    PartnersPage.Checkmark after clicking on the filters        Active
+    PaginationPage.Click on the pagination dropdown     partner-list
+    PaginationPage.Select the value from the pagination drop down count    500
+    PartnersPage.Fetch the selected filter and verify from Table    Status       Active        Active
+    Generic.Click on the reset filters link
+    Generic.Refresh the existing page
+    PartnersPage.Click on the filters from partner module       Select Status
+    PartnersPage.Checkmark after clicking on the filters        Inactive
+    PaginationPage.Click on the pagination dropdown     partner-list
+    PaginationPage.Select the value from the pagination drop down count    500
+    ReportsPage.Fetch the total count
+    PartnersPage.Fetch the selected filter and verify from Table    Status       Inactive        Inactive
+    Generic.Click on the reset filters link
+    ReportsPage.Fetch the total count
+    PartnersPage.Click on the filters from partner module       Select Status
+    PartnersPage.Checkmark after clicking on the filters        All
+    ReportsPage.Fetch the total count After selecting filter
+    MessagePage.Comapre the total count after selecting filter
+
 
 #Zz kill browser
 #    sleep       ${wait_time}

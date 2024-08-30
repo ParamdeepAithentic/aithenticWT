@@ -1378,3 +1378,147 @@ Remove the Download Agent pop-up
     wait until element is enabled      //h4[normalize-space()='Download Agent for Single Install']//parent::div//button[contains(@class,'close')]      ${wait_time}
     click element   //h4[normalize-space()='Download Agent for Single Install']//parent::div//button[contains(@class,'close')]
     sleep       ${search_sleep}
+
+Click on the status filter under Brand via profile
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //div[contains(@class,'multi-select-dropdown')]//ng-select[contains(@class,'statusFilter')]       ${wait_time}
+    Wait Until Element Is Enabled   //div[contains(@class,'multi-select-dropdown')]//ng-select[contains(@class,'statusFilter')]   ${wait_time}
+    click element    //div[contains(@class,'multi-select-dropdown')]//ng-select[contains(@class,'statusFilter')]
+
+Select the option from the filters under brand via profile
+    [Arguments]     ${ID}
+    Wait Until Element Is Visible    //ng-select[contains(@class,'statusFilter')]//following-sibling::div//input[contains(@id,'item-${ID}')]       ${wait_time}
+    Wait Until Element Is Enabled  //ng-select[contains(@class,'statusFilter')]//following-sibling::div//input[contains(@id,'item-${ID}')]   ${wait_time}
+    click element    //ng-select[contains(@class,'statusFilter')]//following-sibling::div//input[contains(@id,'item-${ID}')]
+
+Get the text of selected status filter under brand via profile
+    [Arguments]     ${option}
+    wait until element is visible      //ng-select[contains(@class,'statusFilter')]//following-sibling::div//span[normalize-space()='${option}']    ${wait_time}
+    wait until element is enabled      //ng-select[contains(@class,'statusFilter')]//following-sibling::div//span[normalize-space()='${option}']    ${wait_time}
+    ${fetch_Name_of_selected_status} =    get text  //ng-select[contains(@class,'statusFilter')]//following-sibling::div//span[normalize-space()='${option}']
+    ${original_string}=    Set Variable    ${fetch_Name_of_selected_status}
+    ${New_status_Brand}=    Evaluate    '${original_string}'.strip()
+    log to console   ${New_status_Brand}
+    set global variable  ${New_status_Brand}
+
+Click on the added brands heading
+    Wait Until Element Is Visible    //p[normalize-space()='Added Brands']       ${wait_time}
+    Wait Until Element Is enabled  //p[normalize-space()='Added Brands']   ${wait_time}
+    click element    //p[normalize-space()='Added Brands']
+
+Choose permission tab under members profile
+    wait until element is not visible       ${loaderIcon}      ${wait_time}
+    wait until element is visible       css:#profile-tab           ${wait_time}
+    wait until element is enabled       css:#profile-tab     ${wait_time}
+    click element       css:#profile-tab
+
+Pick User role of the member
+    [Arguments]     ${options}
+    wait until element is not visible       ${loaderIcon}      ${wait_time}
+    wait until element is visible       //button[normalize-space()='${options}']           ${wait_time}
+    wait until element is enabled       //button[normalize-space()='${options}']     ${wait_time}
+    click element       //button[normalize-space()='${options}']
+
+Verify user role have permissions
+    [Arguments]     ${options}
+    wait until element is not visible       ${loaderIcon}      ${wait_time}
+    wait until element is visible       css:#member-${options}           ${wait_time}
+    wait until element is enabled       css:#member-${options}     ${wait_time}
+
+Select the permission of member according to user role
+    [Arguments]     ${options}
+    wait until element is not visible       ${loaderIcon}      ${wait_time}
+    wait until element is visible       css:#member-${options}          ${wait_time}
+    wait until element is enabled       css:#member-${options}     ${wait_time}
+    sleep       ${search_sleep}
+    click element       css:#member-${options}
+
+Verify that user contains permissions
+    [Arguments]         ${option1}      ${option2}
+    wait until page contains    ${option1}       ${wait_time}
+    wait until page contains    ${option2}       ${wait_time}
+
+Verify that user contains read-permissions
+    [Arguments]         ${option1}
+    wait until page contains    ${option1}       ${wait_time}
+
+Click on the status filter under product via profile
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //div[contains(@class,'multi-select-dropdown')]//ng-select[contains(@class,'selectedStatus')]       ${wait_time}
+    Wait Until Element Is Enabled   //div[contains(@class,'multi-select-dropdown')]//ng-select[contains(@class,'selectedStatus')]   ${wait_time}
+    click element    //div[contains(@class,'multi-select-dropdown')]//ng-select[contains(@class,'selectedStatus')]
+
+Get the text of selected status filter under product via profile
+    wait until element is visible      //ng-select[contains(@class,'selectedStatus')]//following-sibling::div//span    ${wait_time}
+    wait until element is enabled      //ng-select[contains(@class,'selectedStatus')]//following-sibling::div//span    ${wait_time}
+    ${fetch_Name_of_selected_status} =    get text  //ng-select[contains(@class,'selectedStatus')]//following-sibling::div//span
+    ${original_string}=    Set Variable    ${fetch_Name_of_selected_status}
+    ${New_product_Status}=    Evaluate    '${original_string}'.strip()
+    log to console    ${New_product_Status}
+    set global variable  ${New_product_Status}
+
+Select the option from the filters under product via profile
+    [Arguments]     ${ID}
+    Wait Until Element Is Visible    //ng-select[contains(@class,'selectedStatus')]//following-sibling::div//input[contains(@id,'item-${ID}')]       ${wait_time}
+    Wait Until Element Is Enabled  //ng-select[contains(@class,'selectedStatus')]//following-sibling::div//input[contains(@id,'item-${ID}')]   ${wait_time}
+    click element    //ng-select[contains(@class,'selectedStatus')]//following-sibling::div//input[contains(@id,'item-${ID}')]
+
+Click on the added products heading
+    Wait Until Element Is Visible    //p[normalize-space()='Added Products']       ${wait_time}
+    Wait Until Element Is Visible  //p[normalize-space()='Added Products']   ${wait_time}
+    Wait Until Element Is Enabled  //p[normalize-space()='Added Products']   ${wait_time}
+    click element    //p[normalize-space()='Added Products']
+
+Click on the brand filter under product via profile
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //div[contains(@class,'multi-select-dropdown')]//ng-select[contains(@class,'brandFilter')]       ${wait_time}
+    Wait Until Element Is Enabled  //div[contains(@class,'multi-select-dropdown')]//ng-select[contains(@class,'brandFilter')]   ${wait_time}
+    click element    //div[contains(@class,'multi-select-dropdown')]//ng-select[contains(@class,'brandFilter')]
+
+Click on the reset button under product
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //div[contains(@class,'reset-button')]       ${wait_time}
+    Wait Until Element Is Enabled  //div[contains(@class,'reset-button')]   ${wait_time}
+    click element    //div[contains(@class,'reset-button')]
+
+Select the option from the brand filter under product via profile
+    [Arguments]     ${ID}
+    Wait Until Element Is Visible    //ng-select[contains(@class,'brandFilter')]//following-sibling::div//input[contains(@id,'item-${ID}')]       ${wait_time}
+    Wait Until Element Is enabled  //ng-select[contains(@class,'brandFilter')]//following-sibling::div//input[contains(@id,'item-${ID}')]   ${wait_time}
+    click element    //ng-select[contains(@class,'brandFilter')]//following-sibling::div//input[contains(@id,'item-${ID}')]
+
+Get the text of selected brand filter under product via profile
+    wait until element is visible      //ng-select[contains(@class,'brandFilter')]//following-sibling::div//span    ${wait_time}
+    wait until element is enabled      //ng-select[contains(@class,'brandFilter')]//following-sibling::div//span    ${wait_time}
+   ${selected_Brand} =    get text    //ng-select[contains(@class,'brandFilter')]//following-sibling::div//span
+    log to console    ${selected_Brand}
+    Set Global Variable    ${selected_Brand}
+
+Click on the technology group filter under product via profile
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //div[contains(@class,'multi-select-dropdown')]//ng-select[contains(@class,'qa-selectedTechnology')]       ${wait_time}
+    Wait Until Element Is Enabled  //div[contains(@class,'multi-select-dropdown')]//ng-select[contains(@class,'qa-selectedTechnology')]   ${wait_time}
+    click element    //div[contains(@class,'multi-select-dropdown')]//ng-select[contains(@class,'qa-selectedTechnology')]
+
+Select the option from the technology group filter under product via profile
+    [Arguments]     ${ID}
+    Wait Until Element Is Visible    //ng-select[contains(@class,'qa-selectedTechnology')]//following-sibling::div//input[contains(@id,'item-${ID}')]       ${wait_time}
+    Wait Until Element Is enabled  //ng-select[contains(@class,'qa-selectedTechnology')]//following-sibling::div//input[contains(@id,'item-${ID}')]   ${wait_time}
+    click element    //ng-select[contains(@class,'qa-selectedTechnology')]//following-sibling::div//input[contains(@id,'item-${ID}')]
+
+Get the text of selected technology group filter under product via profile
+    wait until element is visible      //ng-select[contains(@class,'qa-selectedTechnology')]//following-sibling::div//span    ${wait_time}
+    wait until element is enabled      //ng-select[contains(@class,'qa-selectedTechnology')]//following-sibling::div//span    ${wait_time}
+    ${fetch_Name_of_selected_status} =    get text  //ng-select[contains(@class,'qa-selectedTechnology')]//following-sibling::div//span
+    ${original_string}=    Set Variable    ${fetch_Name_of_selected_status}
+    ${New_product_tech_group}=    Evaluate    '${original_string}'.strip()
+    log to console     ${New_product_tech_group}
+    set global variable   ${New_product_tech_group}
+
+Get the text of the pop up while suspending the account when contract is active
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible      //div[contains(@id,'activeContractSubscriptionCheckModal')]//div[contains(@class,'modal-body')]//p       ${wait_time}
+    wait until element is enabled      //div[contains(@id,'activeContractSubscriptionCheckModal')]//div[contains(@class,'modal-body')]//p    ${wait_time}
+    ${fetch_text_pop_up} =    get text  //div[contains(@id,'activeContractSubscriptionCheckModal')]//div[contains(@class,'modal-body')]//p
+    log to console     ${fetch_text_pop_up}
+    set global variable   ${fetch_text_pop_up}

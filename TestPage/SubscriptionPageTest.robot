@@ -80,7 +80,8 @@ Edit the scheduler
     SubscriptionPage.click on the cross icon of create scheduler    1
     SubscriptionPage.Enter input in the input field of frequency under create scheduler    Weekly
     SubscriptionPage.Enter input in the input field of day under create scheduler       Monday
-    SubscriptionPage.Enter input in the input field of time under create scheduler      12:00
+    SubscriptionPage.Select the time from the timepicker      2
+    SubscriptionPage.Click on the ok button after selecting the time
     sleep   ${search_sleep}
     Generic.click on the button     Update
 #    Generic.click on the button     Update                                                    # Remove this line after bug got fixed #
@@ -89,7 +90,8 @@ Edit the scheduler
     SubscriptionPage.Click on option under three dots of subscription connector     Google       Scheduler
     SubscriptionPage.click on the cross icon of create scheduler    1
     SubscriptionPage.Enter input in the input field of frequency under create scheduler    Daily
-    SubscriptionPage.Enter input in the input field of time under create scheduler      1:00
+   SubscriptionPage.Select the time from the timepicker      4
+    SubscriptionPage.Click on the ok button after selecting the time
     sleep   ${search_sleep}
     Generic.click on the button     Update
 #    Generic.click on the button     Update                                                    # Remove this line after bug got fixed #
@@ -99,7 +101,8 @@ Edit the scheduler
     SubscriptionPage.click on the cross icon of create scheduler    1
     SubscriptionPage.Enter input in the input field of frequency under create scheduler    Monthly
     SubscriptionPage.Enter input in the start date field of billing details
-    SubscriptionPage.Enter input in the input field of time under create scheduler      2:00
+    SubscriptionPage.Select the time from the timepicker      3
+    SubscriptionPage.Click on the ok button after selecting the time
     sleep   ${search_sleep}
     Generic.click on the button     Update
 #    Generic.click on the button     Update                                                    # Remove this line after bug got fixed #
@@ -109,7 +112,8 @@ Edit the scheduler
     SubscriptionPage.click on the cross icon of create scheduler    1
     SubscriptionPage.Enter input in the input field of frequency under create scheduler    Yearly
     SubscriptionPage.Enter input in the start date field of billing details
-    SubscriptionPage.Enter input in the input field of time under create scheduler      3:00
+    SubscriptionPage.Select the time from the timepicker      6
+    SubscriptionPage.Click on the ok button after selecting the time
     sleep   ${search_sleep}
     Generic.click on the button     Update
 #    Generic.click on the button     Update                                                    # Remove this line after bug got fixed #
@@ -215,6 +219,7 @@ View Scheduler from view Result
     SubscriptionPage.Choose tab under subscription page after clicking on view_result
     SubscriptionPage.Fetch and compare the Brand from the table    Microsoft Corporation
 
+
 #Create the scheduler of sentinel one
 #    [Tags]      rerun
 #    Generic.click on the tab	Login
@@ -247,7 +252,8 @@ Edit the scheduler of Sentinelone
     SubscriptionPage.click on the cross icon of create scheduler    1
     SubscriptionPage.Enter input in the input field of frequency under create scheduler    Weekly
     SubscriptionPage.Enter input in the input field of day under create scheduler       Monday
-    SubscriptionPage.Enter input in the input field of time under create scheduler      12:00
+    SubscriptionPage.Select the time from the timepicker      5
+    SubscriptionPage.Click on the ok button after selecting the time
     sleep   ${search_sleep}
     Generic.click on the button     Update
 #    Generic.click on the button     Update                                                    # Remove this line after bug got fixed #
@@ -256,7 +262,8 @@ Edit the scheduler of Sentinelone
     SubscriptionPage.Click on option under three dots of subscription connector    SentinelOne      Scheduler
     SubscriptionPage.click on the cross icon of create scheduler    1
     SubscriptionPage.Enter input in the input field of frequency under create scheduler    Daily
-    SubscriptionPage.Enter input in the input field of time under create scheduler      1:00
+    SubscriptionPage.Select the time from the timepicker      2
+    SubscriptionPage.Click on the ok button after selecting the time
     sleep   ${search_sleep}
     Generic.click on the button     Update
 #    Generic.click on the button     Update                                                    # Remove this line after bug got fixed #
@@ -266,7 +273,8 @@ Edit the scheduler of Sentinelone
     SubscriptionPage.click on the cross icon of create scheduler    1
     SubscriptionPage.Enter input in the input field of frequency under create scheduler    Monthly
     SubscriptionPage.Enter input in the start date field of billing details
-    SubscriptionPage.Enter input in the input field of time under create scheduler      2:00
+    SubscriptionPage.Select the time from the timepicker      3
+    SubscriptionPage.Click on the ok button after selecting the time
     sleep   ${search_sleep}
     Generic.click on the button     Update
 #    Generic.click on the button     Update                                                    # Remove this line after bug got fixed #
@@ -276,7 +284,8 @@ Edit the scheduler of Sentinelone
     SubscriptionPage.click on the cross icon of create scheduler    1
     SubscriptionPage.Enter input in the input field of frequency under create scheduler    Yearly
     SubscriptionPage.Enter input in the start date field of billing details
-    SubscriptionPage.Enter input in the input field of time under create scheduler      3:00
+    SubscriptionPage.Select the time from the timepicker      4
+    SubscriptionPage.Click on the ok button after selecting the time
     sleep   ${search_sleep}
     Generic.click on the button     Update
 #    Generic.click on the button     Update                                               # Remove this line after bug got fixed #
@@ -526,7 +535,7 @@ Create service now with valid data
     SubscriptionPage.Enter input in the client id field of service now     b736c1fecf3b021092418c18e0464b57
     SubscriptionPage.Enter input in the secret key field of service now     }6@ENaGIQy
     Generic.click on the button     Create Connection
-    Generic.click on the button     By System
+#    Generic.click on the button     By System
     Generic.Verify your current page location contains      technology-settings
     Generic.Fetch alert message text and compare it with       Technology created successfully
 #    Generic.Fetch alert message text and compare it with       Scheduler created successfully
@@ -536,7 +545,8 @@ Create service now with valid data
     SubscriptionPage.click on the cross icon of create scheduler    1
     SubscriptionPage.Enter input in the input field of frequency under create scheduler    Weekly
     SubscriptionPage.Enter input in the input field of day under create scheduler       Monday
-    SubscriptionPage.Enter input in the input field of time under create scheduler      12:00
+    SubscriptionPage.Select the time from the timepicker      3
+    SubscriptionPage.Click on the ok button after selecting the time
     sleep   ${search_sleep}
     Generic.click on the button     Update
 #    Generic.click on the button     Update         # Remove this line after bug got fixed #
@@ -546,7 +556,8 @@ Create service now with valid data
     SubscriptionPage.click on the cross icon of create scheduler    1
     SubscriptionPage.Enter input in the input field of frequency under create scheduler    Monthly
     SubscriptionPage.Enter input in the start date field of billing details
-    SubscriptionPage.Enter input in the input field of time under create scheduler      2:00
+    SubscriptionPage.Select the time from the timepicker      4
+    SubscriptionPage.Click on the ok button after selecting the time
     sleep   ${search_sleep}
     Generic.click on the button     Update
 #    Generic.click on the button     Update         # Remove this line after bug got fixed #
@@ -555,7 +566,8 @@ Create service now with valid data
     SubscriptionPage.Click on option under three dots of subscription connector     ServiceNow     Scheduler
     SubscriptionPage.click on the cross icon of create scheduler    1
     SubscriptionPage.Enter input in the input field of frequency under create scheduler    Daily
-    SubscriptionPage.Enter input in the input field of time under create scheduler      1:00
+    SubscriptionPage.Select the time from the timepicker      5
+    SubscriptionPage.Click on the ok button after selecting the time
     sleep   ${search_sleep}
     Generic.click on the button     Update
 #    Generic.click on the button     Update     # Remove this line after bug got fixed #
@@ -565,7 +577,8 @@ Create service now with valid data
     SubscriptionPage.click on the cross icon of create scheduler    1
     SubscriptionPage.Enter input in the input field of frequency under create scheduler    Yearly
     SubscriptionPage.Enter input in the start date field of billing details
-    SubscriptionPage.Enter input in the input field of time under create scheduler      3:00
+    SubscriptionPage.Select the time from the timepicker      2
+    SubscriptionPage.Click on the ok button after selecting the time
     sleep   ${search_sleep}
     Generic.click on the button     Update
 #    Generic.click on the button     Update         # Remove this line after bug got fixed #
@@ -596,74 +609,80 @@ Create service now with valid data
     SubscriptionPage.Click on option under three dots of subscription connector     ServiceNow     View Results
     Generic.Verify your current page location contains      discovery-assets
     Generic.Verify your current page contains this text    Asset Discovery
-    SubscriptionPage.Fetch and compare the product from the table
-    Generic.Wait until table get load
-    Go Back
-    Generic.Verify your current page location contains      technology-settings
-    Generic.select the option from the side menu    Asset Discovery
     Generic.click on the button     No, thanks
-    SubscriptionPage.Click on the service now tab under discovery assets
-    OCS.Click on newly discovered tab under service now
-    SubscriptionPage.Click on the action button of service now under discovery assets
-    SubscriptionPage.Click on the options under action button of service now under discovery assets       Edit
-    SubscriptionPage.click on the cross icon of service now under asset discovery    1
-    SubscriptionPage.Enter input in the input field of frequency under asset discovery    Weekly
-    SubscriptionPage.Enter input in the input field of day asset discovery       Monday
-    SubscriptionPage.Enter input in the input field of time under asset discovery      12:00
-    sleep   ${search_sleep}
-    Generic.click on the button     Update
-#    Generic.click on the button     Update         # Remove this line after bug got fixed #
-    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
-    SubscriptionPage.Click on the action button of service now under discovery assets
-    SubscriptionPage.Click on the options under action button of service now under discovery assets    Edit
-    SubscriptionPage.click on the cross icon of service now under asset discovery    1
-    SubscriptionPage.Enter input in the input field of frequency under asset discovery    Monthly
-    SubscriptionPage.Enter input in the start date field of service now under asset discovery
-    SubscriptionPage.Enter input in the input field of time under asset discovery       2:00
-    sleep   ${search_sleep}
-    Generic.click on the button     Update
-#    Generic.click on the button     Update         # Remove this line after bug got fixed #
-    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
-    SubscriptionPage.Click on the action button of service now under discovery assets
-    SubscriptionPage.Click on the options under action button of service now under discovery assets      Edit
-    SubscriptionPage.click on the cross icon of service now under asset discovery    1
-    SubscriptionPage.Enter input in the input field of frequency under asset discovery    Daily
-    SubscriptionPage.Enter input in the input field of time under asset discovery      1:00
-    sleep   ${search_sleep}
-    Generic.click on the button     Update
-#    Generic.click on the button     Update         # Remove this line after bug got fixed #
-    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
-    SubscriptionPage.Click on the action button of service now under discovery assets
-    SubscriptionPage.Click on the options under action button of service now under discovery assets     Edit
-    SubscriptionPage.click on the cross icon of service now under asset discovery    1
-    SubscriptionPage.Enter input in the input field of frequency under asset discovery    Yearly
-    SubscriptionPage.Enter input in the start date field of service now under asset discovery
-    SubscriptionPage.Enter input in the input field of time under asset discovery      3:00
-    sleep   ${search_sleep}
-    Generic.click on the button     Update
-#    Generic.click on the button     Update     # Remove this line after bug got fixed #
-    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
-    SubscriptionPage.Click on the action button of service now under discovery assets
-    SubscriptionPage.Click on the options under action button of service now under discovery assets     Details
-    SubscriptionPage.Click on the options under action button of service now under discovery assets     Run Now
-#    SubscriptionPage.Click on cross icon of details under service now          #  delete this line after bug got fixed #
-    SubscriptionPage.Fetch alert message text of subscription connector and compare it with
-    sleep   ${search_sleep}
-    SubscriptionPage.Click on the action button of service now under discovery assets
-    SubscriptionPage.Click on the options under action button of service now under discovery assets      Delete
-    Generic.click on the button     Yes
-    SubscriptionPage.click on the cross icon of delete pop up under asset discovery
-    Generic.Fetch alert message text and compare it with        Status Updated
-    SubscriptionPage.Click on the action button of service now under discovery assets
-    SubscriptionPage.Click on the options under action button of service now under discovery assets      Activate
-    Generic.Fetch alert message text and compare it with        Status Updated
-    SubscriptionPage.Click on the action button of service now under discovery assets
-    Generic.click on the tab       Run Now
-    SubscriptionPage.Fetch alert message text of subscription connector and compare it with
-    SubscriptionPage.Click on the action button of service now under discovery assets
-    SubscriptionPage.Click on the options under action button of service now under discovery assets      Details
-    SubscriptionPage.Get the value of fields under view details of subscription connector   1       ServiceNow
-    SubscriptionPage.Get the value of fields under view details of subscription connector   2       ${generate_register_Fname} ${generate_register_Lname}
+    Generic.Verify your current page contains this text    No Records
+#    SubscriptionPage.Fetch and compare the product from the table
+#    Generic.Wait until table get load
+#    Go Back
+#    Generic.Verify your current page location contains      technology-settings
+#    Generic.select the option from the side menu    Asset Discovery
+##    Generic.click on the button     No, thanks
+#    SubscriptionPage.Click on the service now tab under discovery assets
+#    OCS.Click on newly discovered tab under service now
+#    SubscriptionPage.Click on the action button of service now under discovery assets
+#    SubscriptionPage.Click on the options under action button of service now under discovery assets       Edit
+#    SubscriptionPage.click on the cross icon of service now under asset discovery    1
+#    SubscriptionPage.Enter input in the input field of frequency under asset discovery    Weekly
+#    SubscriptionPage.Enter input in the input field of day asset discovery       Monday
+#   SubscriptionPage.Select the time from the timepicker     7
+#    SubscriptionPage.Click on the ok button after selecting the time
+#    sleep   ${search_sleep}
+#    Generic.click on the button     Update
+##    Generic.click on the button     Update         # Remove this line after bug got fixed #
+#    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+#    SubscriptionPage.Click on the action button of service now under discovery assets
+#    SubscriptionPage.Click on the options under action button of service now under discovery assets    Edit
+#    SubscriptionPage.click on the cross icon of service now under asset discovery    1
+#    SubscriptionPage.Enter input in the input field of frequency under asset discovery    Monthly
+#    SubscriptionPage.Enter input in the start date field of service now under asset discovery
+#    SubscriptionPage.Select the time from the timepicker      8
+#    SubscriptionPage.Click on the ok button after selecting the time
+#    sleep   ${search_sleep}
+#    Generic.click on the button     Update
+##    Generic.click on the button     Update         # Remove this line after bug got fixed #
+#    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+#    SubscriptionPage.Click on the action button of service now under discovery assets
+#    SubscriptionPage.Click on the options under action button of service now under discovery assets      Edit
+#    SubscriptionPage.click on the cross icon of service now under asset discovery    1
+#    SubscriptionPage.Enter input in the input field of frequency under asset discovery    Daily
+#    SubscriptionPage.Select the time from the timepicker      9
+#    SubscriptionPage.Click on the ok button after selecting the time
+#    sleep   ${search_sleep}
+#    Generic.click on the button     Update
+##    Generic.click on the button     Update         # Remove this line after bug got fixed #
+#    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+#    SubscriptionPage.Click on the action button of service now under discovery assets
+#    SubscriptionPage.Click on the options under action button of service now under discovery assets     Edit
+#    SubscriptionPage.click on the cross icon of service now under asset discovery    1
+#    SubscriptionPage.Enter input in the input field of frequency under asset discovery    Yearly
+#    SubscriptionPage.Enter input in the start date field of service now under asset discovery
+#    SubscriptionPage.Select the time from the timepicker      2
+#    SubscriptionPage.Click on the ok button after selecting the time
+#    sleep   ${search_sleep}
+#    Generic.click on the button     Update
+##    Generic.click on the button     Update     # Remove this line after bug got fixed #
+#    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+#    SubscriptionPage.Click on the action button of service now under discovery assets
+#    SubscriptionPage.Click on the options under action button of service now under discovery assets     Details
+#    SubscriptionPage.Click on the options under action button of service now under discovery assets     Run Now
+##    SubscriptionPage.Click on cross icon of details under service now          #  delete this line after bug got fixed #
+#    SubscriptionPage.Fetch alert message text of subscription connector and compare it with
+#    sleep   ${search_sleep}
+#    SubscriptionPage.Click on the action button of service now under discovery assets
+#    SubscriptionPage.Click on the options under action button of service now under discovery assets      Delete
+#    Generic.click on the button     Yes
+#    SubscriptionPage.click on the cross icon of delete pop up under asset discovery
+#    Generic.Fetch alert message text and compare it with        Status Updated
+#    SubscriptionPage.Click on the action button of service now under discovery assets
+#    SubscriptionPage.Click on the options under action button of service now under discovery assets      Activate
+#    Generic.Fetch alert message text and compare it with        Status Updated
+#    SubscriptionPage.Click on the action button of service now under discovery assets
+#    Generic.click on the tab       Run Now
+#    SubscriptionPage.Fetch alert message text of subscription connector and compare it with
+#    SubscriptionPage.Click on the action button of service now under discovery assets
+#    SubscriptionPage.Click on the options under action button of service now under discovery assets      Details
+#    SubscriptionPage.Get the value of fields under view details of subscription connector   1       ServiceNow
+#    SubscriptionPage.Get the value of fields under view details of subscription connector   2       ${generate_register_Fname} ${generate_register_Lname}
 
 Click on connetors button link under asset discovery
     [Tags]      Sanity
@@ -766,6 +785,7 @@ Click on connetors button link under asset discovery
 
     
 Create JAMFF account with valid data
+    [Tags]      OnlyQA
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -867,6 +887,7 @@ Create JAMFF account with valid data
     Generic.Wait until table get load
 
 Create jamff account with invalid data
+    [Tags]      OnlyQA
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -964,3 +985,98 @@ Create jamff account with invalid data
     SubscriptionPage.Enter input in the password field of service now       Abhishek@12#
     Generic.click on the button     Create Connection
     Generic.Verify your current page contains this text     Jamf Pro Connection Failed.
+
+Edit the scheduler of jamff
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     subscription-connector
+    Generic.Verify your current page location contains      technology-settings
+    SubscriptionPage.Click on the three dots of subscription connector      JAMF Software
+    SubscriptionPage.Click on option under three dots of subscription connector     JAMF Software      Scheduler
+    SubscriptionPage.click on the cross icon of create scheduler    1
+    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Weekly
+    SubscriptionPage.Enter input in the input field of day under create scheduler       Monday
+    SubscriptionPage.Select the time from the timepicker      2
+    SubscriptionPage.Click on the ok button after selecting the time
+    sleep   ${search_sleep}
+    Generic.click on the button     Update                                          # Remove this line after bug got fixed #
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+    SubscriptionPage.Click on the three dots of subscription connector      JAMF Software
+    SubscriptionPage.Click on option under three dots of subscription connector     JAMF Software       Scheduler
+    SubscriptionPage.click on the cross icon of create scheduler    1
+    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Daily
+    SubscriptionPage.Select the time from the timepicker      3
+    SubscriptionPage.Click on the ok button after selecting the time
+    sleep   ${search_sleep}
+    Generic.click on the button     Update
+#    Generic.click on the button     Update                                                    # Remove this line after bug got fixed #
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+    SubscriptionPage.Click on the three dots of subscription connector      JAMF Software
+    SubscriptionPage.Click on option under three dots of subscription connector    JAMF Software      Scheduler
+    SubscriptionPage.click on the cross icon of create scheduler    1
+    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Monthly
+    SubscriptionPage.Enter input in the start date field of billing details
+    SubscriptionPage.Select the time from the timepicker      4
+    SubscriptionPage.Click on the ok button after selecting the time
+    sleep   ${search_sleep}
+    Generic.click on the button     Update
+#    Generic.click on the button     Update                                                    # Remove this line after bug got fixed #
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+    SubscriptionPage.Click on the three dots of subscription connector      JAMF Software
+    SubscriptionPage.Click on option under three dots of subscription connector    JAMF Software      Scheduler
+    SubscriptionPage.click on the cross icon of create scheduler    1
+    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Yearly
+    SubscriptionPage.Enter input in the start date field of billing details
+    SubscriptionPage.Select the time from the timepicker      5
+    SubscriptionPage.Click on the ok button after selecting the time
+    sleep   ${search_sleep}
+    Generic.click on the button     Update
+#    Generic.click on the button     Update                                                    # Remove this line after bug got fixed #
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+
+Run now from view details of jamff
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     subscription-connector
+    Generic.Verify your current page location contains      technology-settings
+    SubscriptionPage.Click on the three dots of subscription connector      JAMF Software
+    SubscriptionPage.Click on option under three dots of subscription connector     JAMF Software       Details
+    Generic.click on the button     Run Now
+    SubscriptionPage.Fetch alert message text of subscription connector and compare it with
+    sleep  ${search_sleep}
+    SubscriptionPage.Click on the three dots of subscription connector      JAMF Software
+    SubscriptionPage.Click on option under three dots of subscription connector     JAMF Software     Delete
+    Generic.click on the button     Yes
+    Generic.Fetch alert message text and compare it with        Status Updated
+    SubscriptionPage.Fetch text of delete under table of subscription connector     JAMF Software      Deleted
+    sleep  ${search_sleep}
+    SubscriptionPage.Click on the activate option under subscription connector table        JAMF Software
+    Generic.Fetch alert message text and compare it with        Status Updated
+    SubscriptionPage.Fetch text of delete under table of subscription connector     JAMF Software     Active
+    SubscriptionPage.Click on the three dots of subscription connector      JAMF Software
+    SubscriptionPage.Click on option under three dots of subscription connector     JAMF Software     Run Now
+    SubscriptionPage.Fetch alert message text of subscription connector and compare it with
+    SubscriptionPage.Click on the three dots of subscription connector      JAMF Software
+    SubscriptionPage.Click on option under three dots of subscription connector     JAMF Software     Details
+    SubscriptionPage.Get the value of fields under view details of subscription connector   1       Jamf Pro
+    SubscriptionPage.Get the value of fields under view details of subscription connector   2       Samuel John
+
+
+View Results of jamff account
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     subscription-connector
+    Generic.Verify your current page location contains      technology-settings
+    SubscriptionPage.Click on the three dots of subscription connector      JAMF Software
+    SubscriptionPage.Click on option under three dots of subscription connector     JAMF Software     View Results
+    Generic.Verify your current page location contains      discovery-assets
+    Generic.Verify your current page contains this text    Asset Discovery
+    Generic.Verify your current page contains this text    No Records

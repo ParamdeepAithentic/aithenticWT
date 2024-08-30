@@ -258,3 +258,79 @@ Verify Location_name Hide and show after changes it from settings
     LocationPage.Save location form     save
     Generic.Fetch alert message text and compare it with    Location created successfully
     LocationPage.Search by location name        ${generated_location}
+
+Click on the select status filter and verify it
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Click on the status filter under location
+    LocationPage.Select the option from status filter under location        Inactive
+    LocationPage.Get the text of selected status filter under location      Inactive
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     location-list
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     location-list
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click       Status     Inactive         ${New_status}
+
+Click on the select location filter and verify it
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Click on the location filter under location
+    LocationPage.Select the option from location filter under location         Afghanistan
+    LocationPage.Get the text of selected filter under location     Afghanistan
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     location-list
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     location-list
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click       Country     Afghanistan         ${New_Name}
+    LocationPage.Select the option from location filter under location         Afghanistan
+    LocationPage.Select the option from location filter under location         Canada
+    LocationPage.Get the text of selected filter under location     Canada
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click       Country     Canada          ${New_Name}
+    LocationPage.Select the option from location filter under location         Canada
+    LocationPage.Select the option from location filter under location          India
+    LocationPage.Get the text of selected filter under location      India
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click       Country      India          ${New_Name}
+    LocationPage.Select the option from location filter under location         India
+    LocationPage.Select the option from location filter under location         Turkey
+    LocationPage.Get the text of selected filter under location    Turkey
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     location-list
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     location-list
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click       Country     Turkey        ${New_Name}
+
+Click on the select Active status filter and verify it
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      johns@mai.25u.com         Test@123
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Click on the status filter under location
+    LocationPage.Select the option from status filter under location        Active
+    LocationPage.Get the text of selected status filter under location      Active
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     location-list
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     location-list
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click       Status     Active         ${New_status}

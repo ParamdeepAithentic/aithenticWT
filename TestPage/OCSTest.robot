@@ -74,7 +74,6 @@ Search Discovered Assets
        Generic.Select option from profile list     view-discovery
        Generic.Verify your current page location contains    aad
        OCS.Get value of Tag_name from Agent discovery
-       I_iconPage.Choose tab under Discovery Assets       network-discovery
        OCS.Click on newly discovered tab under network discovery
        OCS.Click on search icon of discovery assets
        OCS.Enter text to search discovery asset    ${discovered_asset_brand}
@@ -84,6 +83,7 @@ Search Discovered Assets
        OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
        OCS.Get Serial number by hovering over discovered assets     Serial Number:
        OCS.Get Host name by hovering over discovered assets     Host name:
+       OCS.Mouse Hover over current page after hovering over ip and discovered assets
        OCS.Click on Searched Discovered asset
        Sleep    ${yop_sleep}
        Switch Window       aithentic | Discovery Asset Detail
@@ -123,13 +123,14 @@ Search Existing Assets
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains   aad
-        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of Existing assets
         OCS.Enter text to search existing asset    ${generated_AssetID}
         OCS.Click on the down arrow icon of existing assets
+        OCS.Click on the down arrow icon of existing assets
+        OCS.Click on the down arrow icon of existing assets
         Generic.Scroll Window To End
-        OCS.Mouse Hover over searched existing assets
+        OCS.Mouse Hover over searched existing assets after craeting technology
         OCS.Verify searched existing asset    ${generated_AssetID}
     EXCEPT
         OCS.My Failure Handling
@@ -162,7 +163,6 @@ Match Discovery and Existing Asset
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    aad
-        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    ${discovered_asset_brand}
@@ -172,13 +172,17 @@ Match Discovery and Existing Asset
         OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
         OCS.Get Serial number by hovering over discovered assets     Serial Number:
         OCS.Get Host name by hovering over discovered assets     Host name:
+        OCS.Mouse Hover over current page after hovering over ip and discovered assets
         OCS.Select any Discovered asset
         OCS.Click on search icon of Existing assets
         OCS.Enter text to search existing asset    ${generated_AssetID}
         OCS.Click on the down arrow icon of existing assets
+        OCS.Click on the down arrow icon of existing assets
+        OCS.Click on the down arrow icon of existing assets
         Generic.Scroll Window To End
-        OCS.Mouse Hover over searched existing assets
+        OCS.Mouse Hover over searched existing assets after craeting technology
         OCS.Verify searched existing asset    ${generated_AssetID}
+        OCS.Mouse Hover over current page after hovering over ip and discovered assets
         OCS.Select any existing asset
         OCS.Click on Button inside Network Discovery Page     Confirm Matches
         Generic.Fetch alert message text and compare it with      Matched Assets updated successfully
@@ -218,7 +222,6 @@ Apply filters and clear filter on Discovered Asset
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains      discovery-assets
         OCS.Get value of Tag_name from Agent discovery
-        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.click on filter icon of discovered assets
         OCS.Choose filters for discovered asset     Select Brand        ${discovered_asset_brand}
@@ -228,6 +231,7 @@ Apply filters and clear filter on Discovered Asset
         OCS.Mouse Hover over searched Discovered Assets
         OCS.Get text by hovering over assets    Brand:
         OCS.verify Text by hovering over assets  ${substring}       ${discovered_asset_brand}
+        PaginationPage.Mouse over confirm matches button without searching
         OCS.Click on the down arrow icon of discovered asset
         OCS.Click on clear filter button link of discovered assets    Clear Filters
         OCS.Choose filters for discovered asset     Select MAC Address      ${existing_mac}
@@ -237,6 +241,7 @@ Apply filters and clear filter on Discovered Asset
         OCS.Mouse Hover over searched IP Assets
         OCS.Get MAC_Address by hovering over discovered assets     MacAddress:
         OCS.verify Text by hovering over assets  ${hover_MAC_address1}       ${existing_mac}
+        PaginationPage.Mouse over confirm matches button without searching
         OCS.Click on the down arrow icon of discovered asset
         OCS.Click on clear filter button link of discovered assets    Clear Filters
         OCS.Choose filters for discovered asset     Select Agent Tags       ${agentDiscovery_OnlyTagName}
@@ -246,6 +251,7 @@ Apply filters and clear filter on Discovered Asset
         OCS.Mouse Hover over searched Discovered Assets
         OCS.Get text by hovering over assets    Tag:
         OCS.verify Text by hovering over assets  ${substring}       ${agentDiscovery_OnlyTagName}
+        PaginationPage.Mouse over confirm matches button without searching
         OCS.Click on clear filter button link of discovered assets    Clear Filters
         sleep   ${search_sleep}
         OCS.Click on the down arrow icon of discovered asset
@@ -271,7 +277,6 @@ Apply filters and clear filter on Existing Assets
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains      discovery-assets
-        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.click on filter icon of existing assets
         OCS.Enter input in the brand field of existing asset       ${discovered_existing_brand}
@@ -280,6 +285,7 @@ Apply filters and clear filter on Existing Assets
         OCS.Mouse Hover over filters of existing asset
         OCS.Get text by hovering over existing assets   Brand:
         OCS.verify Text by hovering over assets  ${substring1}       ${discovered_existing_brand}
+        PaginationPage.Mouse over confirm matches button without searching
         OCS.Click on the down arrow icon of existing assets
         OCS.Click on clear filter button link of discovered assets      Clear Filters
         OCS.Choose filters for discovered asset     Select Product      ${discovered_existing_product}
@@ -290,14 +296,18 @@ Apply filters and clear filter on Existing Assets
         OCS.Mouse Hover over filters of existing asset
         OCS.Get text by hovering over existing assets   Model/Product Name:
         OCS.verify Text by hovering over assets  ${substring1}      ${discovered_existing_product}
+        OCS.Mouse Hover over apply button after hovering over existing assets filter
         OCS.Click on the down arrow icon of existing assets
         OCS.Click on clear filter button link of discovered assets  Clear Filters
         OCS.Choose filters for discovered asset    Select Department    ${discovered_existing_department}
         Generic.click on the button     Apply
         OCS.Click on the down arrow icon of existing assets
+        OCS.Click on the down arrow icon of existing assets
+        OCS.Click on the down arrow icon of existing assets
         OCS.Mouse Hover over filters of existing asset
         OCS.Get text by hovering over existing assets   Department Name:
         OCS.verify Text by hovering over assets  ${substring1}     ${discovered_existing_department}
+        OCS.Mouse Hover over apply button after hovering over existing assets filter
         OCS.click on the right text asset result of existing asset
         sleep       ${yop_sleep}
         Switch Window   aithentic | Technology - Details
@@ -312,9 +322,12 @@ Apply filters and clear filter on Existing Assets
         Generic.click on the button     Apply
         Generic.Scroll Window To End
         OCS.Click on the down arrow icon of existing assets
+        OCS.Click on the down arrow icon of existing assets
+        OCS.Click on the down arrow icon of existing assets
         OCS.Mouse Hover over filters of existing asset
         OCS.Get text by hovering over existing assets   Location Name:
         OCS.verify Text by hovering over assets  ${substring1}      *Main Office
+        OCS.Mouse Hover over apply button after hovering over existing assets filter
         OCS.click on the right text asset result of existing asset
         sleep       ${yop_sleep}
         Switch Window   aithentic | Technology - Details
@@ -343,7 +356,6 @@ Add Discovery Asset
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    aad
-        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    ${discovered_asset_brand}
@@ -353,6 +365,7 @@ Add Discovery Asset
         OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
         OCS.Get Serial number by hovering over discovered assets     Serial Number:
         OCS.Get Host name by hovering over discovered assets     Host name:
+        OCS.Mouse Hover over current page after hovering over ip and discovered assets
         OCS.Choose Tab under Asset Discovery    agent-discovery
         OCS.Click on plus icon under table of agent discovery
         Sleep    ${Yop_Sleep}
@@ -412,7 +425,6 @@ Create Asset from Add Assets Page
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    aad
-        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset      ${discovered_asset_brand}
@@ -467,7 +479,6 @@ Add component as an asset from Agent Discovery page
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    aad
-        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    ${discovered_asset_brand}
@@ -477,6 +488,7 @@ Add component as an asset from Agent Discovery page
         OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
         OCS.Get Serial number by hovering over discovered assets     Serial Number:
         OCS.Get Host name by hovering over discovered assets     Host name:
+        OCS.Mouse Hover over current page after hovering over ip and discovered assets
         OCS.Choose Tab under Asset Discovery    agent-discovery
         OCS.Click on plus icon under table of agent discovery
         Sleep    ${Yop_Sleep}
@@ -548,7 +560,6 @@ Upload Image and Document File while Add Discovery Asset
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains   aad
-        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset   ${discovered_asset_brand}
@@ -558,6 +569,7 @@ Upload Image and Document File while Add Discovery Asset
         OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
         OCS.Get Serial number by hovering over discovered assets     Serial Number:
         OCS.Get Host name by hovering over discovered assets     Host name:
+        OCS.Mouse Hover over current page after hovering over ip and discovered assets
         OCS.Choose Tab under Asset Discovery    agent-discovery
         OCS.Click on plus icon under table of agent discovery
         Sleep    ${Yop_Sleep}
@@ -667,7 +679,6 @@ Upload Image and Document File while Add component as an asset from Agent Discov
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    aad
-        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         Generic.Verify your current page location contains   aad
         OCS.Click on search icon of discovery assets
@@ -678,6 +689,7 @@ Upload Image and Document File while Add component as an asset from Agent Discov
         OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
         OCS.Get Serial number by hovering over discovered assets     Serial Number:
         OCS.Get Host name by hovering over discovered assets     Host name:
+        OCS.Mouse Hover over current page after hovering over ip and discovered assets
         OCS.Choose Tab under Asset Discovery    agent-discovery
         OCS.Click on plus icon under table of agent discovery
         Sleep    ${Yop_Sleep}
@@ -790,7 +802,6 @@ Match IP Discovered asset with Existing asset
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    aad
-    I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.Click on search icon of discovery assets
     OCS.Enter text to search discovery asset    ${discovered_IP}
@@ -798,8 +809,11 @@ Match IP Discovered asset with Existing asset
     Generic.Scroll Window To End
     OCS.Mouse Hover over searched IP Assets
     OCS.Get MAC_Address by hovering over IP discovered assets    MacAddress:
+    OCS.Mouse Hover over current page after hovering over ip and discovered assets
     OCS.Select any Discovered asset
     OCS.Click on search icon of discovery assets
+    OCS.Click on the down arrow icon of existing assets
+    OCS.Click on the down arrow icon of existing assets
     OCS.Click on the down arrow icon of existing assets
     OCS.Mouse Hover over searched existing assets
     OCS.Get asset id by hovering over existing assets    Asset Id:
@@ -833,7 +847,6 @@ Match Discovery Asset with Static Existing Asset
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains   aad
-        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    ${discovered_asset_brand}
@@ -843,11 +856,15 @@ Match Discovery Asset with Static Existing Asset
         OCS.Get MAC_Address by hovering over discovered assets    MacAddress:
         OCS.Get Serial number by hovering over discovered assets     Serial Number:
         OCS.Get Host name by hovering over discovered assets     Host name:
+        OCS.Mouse Hover over current page after hovering over ip and discovered assets
         OCS.Select any Discovered asset
         OCS.Click on search icon of discovery assets
         OCS.Click on the down arrow icon of existing assets
+        OCS.Click on the down arrow icon of existing assets
+        OCS.Click on the down arrow icon of existing assets
         OCS.Mouse Hover over searched existing assets
         OCS.Get asset id by hovering over existing assets    Asset Id:
+        PaginationPage.Mouse over confirm matches button without searching
         OCS.Select any existing asset
         OCS.Verify that line appears between selected assets
         OCS.Click on Button inside Network Discovery Page     Confirm Matches
@@ -902,7 +919,6 @@ Match IP Discovered Asset with Dynamic Existing Asset
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    aad
-        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    ${discovered_IP}
@@ -911,6 +927,7 @@ Match IP Discovered Asset with Dynamic Existing Asset
         OCS.Mouse Hover over searched IP Assets
         OCS.Verify Searched discovery asset    ${discovered_IP}
         OCS.Get MAC_Address by hovering over IP discovered assets    MacAddress:
+        OCS.Mouse Hover over current page after hovering over ip and discovered assets
         OCS.Select any Discovered asset
         OCS.Click on search icon of discovery assets
         OCS.Click on search icon of Existing assets
@@ -972,7 +989,6 @@ Add asset with IP Address under discovered asset list
         Generic.Verify your current page location contains     discovery-assets-list
         TechnologyPage.Click on back to list of technology
         Generic.Verify your current page location contains   aad
-        I_iconPage.Choose tab under Discovery Assets       network-discovery
         Generic.Verify your current page location contains    aad
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
@@ -981,6 +997,7 @@ Add asset with IP Address under discovered asset list
         Generic.Scroll Window To End
         OCS.Mouse Hover over searched IP Assets
         OCS.Get MAC_Address by hovering over IP discovered assets    MacAddress:
+        OCS.Mouse Hover over current page after hovering over ip and discovered assets
         OCS.Mark check-box of Agent/Discovered Asset
         OCS.Click on Button inside Network Discovery Page       Add Assets
         Sleep    ${yop_sleep}
@@ -1038,7 +1055,6 @@ Add Asset with IP address from Network Discovery Page
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains  aad
-        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    ${discovered_IP}
@@ -1047,6 +1063,7 @@ Add Asset with IP address from Network Discovery Page
         OCS.Mouse Hover over searched IP Assets
         OCS.Verify Searched discovery asset         ${discovered_IP}
         OCS.Get MAC_Address by hovering over IP discovered assets   MacAddress:
+        OCS.Mouse Hover over current page after hovering over ip and discovered assets
         OCS.Mark check-box of Agent/Discovered Asset
         OCS.Click on Button inside Network Discovery Page       Add Assets
         Sleep    ${yop_sleep}
@@ -1151,7 +1168,6 @@ Search with containing fields under advance search of discovered asset
         LandingPage.Verify you are on dashboard page
         Generic.select the option from the side menu    Asset Discovery
         Generic.Verify your current page location contains     discovery-assets
-        I_iconPage.Choose tab under Discovery Assets       network-discovery
         Generic.Verify your current page location contains   aad
         OCS.Click on newly discovered tab under network discovery
         OCS.Enter text to search discovery asset    ${discovered_asset_brand}
@@ -1281,7 +1297,6 @@ Search with containing fields under advance search of component of discovered as
         LandingPage.Verify you are on dashboard page
         Generic.select the option from the side menu        Asset Discovery
         Generic.Verify your current page location contains      discovery-assets
-        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         Generic.Verify your current page location contains    aad
         OCS.Click on search icon of discovery assets
@@ -1462,7 +1477,6 @@ Search with containing fields under advance search of IP Address of discovered a
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains   aad
-        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    ${discovered_IP}
@@ -1471,6 +1485,7 @@ Search with containing fields under advance search of IP Address of discovered a
         OCS.Mouse Hover over searched IP Assets
         OCS.Verify Searched discovery asset    ${discovered_IP}
         OCS.Get MAC_Address by hovering over IP discovered assets   MacAddress:
+        OCS.Mouse Hover over current page after hovering over ip and discovered assets
         Generic.select the option from the side menu    Asset Discovery
         Generic.Verify your current page location contains     discovery-assets
         OCS.click on the value of IP discovered devices of inside table
@@ -1607,7 +1622,6 @@ Upload Image and Document file during Add Asset with IP address from Agent Disco
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    aad
-        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    ${discovered_IP}
@@ -1616,6 +1630,7 @@ Upload Image and Document file during Add Asset with IP address from Agent Disco
         OCS.Mouse Hover over searched IP Assets
 #        OCS.Verify Searched discovery asset    00:17:61:10:C6:A1
         OCS.Get MAC_Address by hovering over IP discovered assets    MacAddress:
+        OCS.Mouse Hover over current page after hovering over ip and discovered assets
         OCS.Mark check-box of Agent/Discovered Asset
         OCS.Click on Button inside Network Discovery Page       Add Assets
         Sleep    ${yop_sleep}
@@ -1706,7 +1721,6 @@ Verify cross icon an reset icon while adding IP discovered asset
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    aad
-        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset   ${discovered_IP}
@@ -1715,6 +1729,7 @@ Verify cross icon an reset icon while adding IP discovered asset
         OCS.Mouse Hover over searched IP Assets
         OCS.Verify Searched discovery asset    ${discovered_IP}
         OCS.Get MAC_Address by hovering over IP discovered assets   MacAddress:
+        OCS.Mouse Hover over current page after hovering over ip and discovered assets
         Generic.select the option from the side menu    Asset Discovery
         Generic.Verify your current page location contains     discovery-assets
         OCS.click on the value of IP discovered devices of inside table
@@ -1743,13 +1758,13 @@ Verify reset icon while adding discovery asset
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains   aad
-        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    ${discovered_asset_brand}
         OCS.Click on the down arrow icon of discovered asset
         Generic.Scroll Window To End
         OCS.Mouse Hover over searched Discovered Assets
+        PaginationPage.Mouse over confirm matches button without searching
         OCS.Mark check-box of Agent/Discovered Asset
         OCS.Click on Button inside Network Discovery Page       Add Assets
         Sleep    ${Yop_Sleep}
@@ -1772,7 +1787,6 @@ Verify reset icon while adding component
         LandingPage.Verify you are on dashboard page
         Generic.select the option from the side menu        Asset Discovery
         Generic.Verify your current page location contains      discovery-assets
-        I_iconPage.Choose tab under Discovery Assets       network-discovery
         OCS.Click on newly discovered tab under network discovery
         Generic.Verify your current page location contains    aad
         OCS.Click on search icon of discovery assets
@@ -1825,4 +1839,3 @@ Verify reset icon while adding component
 
 #Zz kill browser
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
-

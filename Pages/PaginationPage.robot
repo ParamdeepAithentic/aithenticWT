@@ -379,3 +379,39 @@ Log WebElements of invoice
         click element   //div[contains (@id, '-${index}')]
         Run Keywords    Fetch the selected value of the dropdown of invoice table    AND      Check the table get load       AND      Get count of total rows     AND     Verify Pagination and Row Count     AND     PaginationPage.Fetch the total count   AND     Click on the pagination dropdown of invoice table
     END
+
+
+Click on the previous or next button of pagination of existing assets
+    [Arguments]     ${button}
+    wait until element is visible   //div[@id='right-column']//parent::div[contains(@class,'item')]//child::button[normalize-space()='${button}']      ${wait_time}
+    wait until element is enabled  //div[@id='right-column']//parent::div[contains(@class,'item')]//child::button[normalize-space()='${button}']      ${wait_time}
+    click element       //div[@id='right-column']//parent::div[contains(@class,'item')]//child::button[normalize-space()='${button}']
+
+Mouse over existing asset without searching
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //div[contains(@class,'qa-column-boxes-right')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'redirection-text')][1]     ${wait_time}
+    Wait Until Element Is Enabled    //div[contains(@class,'qa-column-boxes-right')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'redirection-text')][1]     ${wait_time}
+    Mouse Over   //div[contains(@class,'qa-column-boxes-right')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'redirection-text')][1]
+
+Mouse over confirm matches button without searching
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //button[normalize-space()='Confirm Matches']     ${wait_time}
+    Wait Until Element Is Enabled    //button[normalize-space()='Confirm Matches']     ${wait_time}
+    Mouse Over   //button[normalize-space()='Confirm Matches']
+
+Get the value of page number under existing asset
+    wait until element is visible   //div[@id='right-column']//parent::div[contains(@class,'item')]//child::span[contains(@class,'current-pageCount')]   ${wait_time}
+    wait until element is enabled   //div[@id='right-column']//parent::div[contains(@class,'item')]//child::span[contains(@class,'current-pageCount')]   ${wait_time}
+    ${page_number_count} =    Get text    //div[@id='right-column']//parent::div[contains(@class,'item')]//child::span[contains(@class,'current-pageCount')]
+    Set Global Variable    ${page_number_count}
+    Log To Console    Page Number: ${page_number_count}
+
+Fetch the brand name under existing assets without searching
+    [Arguments]     ${text}
+    wait until element is not visible    ${loaderIcon}    ${wait_time}
+    wait until element is visible   //div[contains(@class,'qa-column-boxes-right')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'redirection-text')][1]    ${wait_time}
+    wait until element is enabled   //div[contains(@class,'qa-column-boxes-right')]//ancestor::div[contains(@class,'qa-assets-boxes')]//child::div[contains(@class,'redirection-text')][1]     ${wait_time}
+    sleep       ${search_sleep}
+    ${Brand_existing_asset}=      Get text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
+    Log To Console    ${Brand_existing_asset}
+    Set Global Variable   ${Brand_existing_asset}
