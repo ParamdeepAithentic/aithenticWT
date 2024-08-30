@@ -109,3 +109,13 @@ Click on tab under key data
     log to console      key data: ${count}
     set global variable     ${count}
     click element       //p[normalize-space()='${tab_name}']//following-sibling::p
+
+Fetch the total count After selecting filter
+    wait until element is not visible       ${loaderIcon}       ${wait_time}
+    wait until element is visible       ${Totalcount_field}      ${wait_time}
+    wait until element is enabled   ${Totalcount_field}      ${wait_time}
+    ${text}=     get text   ${Totalcount_field}
+    ${parts}    Split String    ${text}    Total Count :
+    ${total_count_again}    Get Substring    ${parts[1]}    3
+    Log to console  Total count is :${total_count_again}
+    set global variable    ${total_count_again}

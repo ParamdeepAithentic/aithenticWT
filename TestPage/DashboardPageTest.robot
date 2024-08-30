@@ -2123,5 +2123,294 @@ Compose Message reply and delete that message
     Generic.Select parameter        Yes
     Generic.Fetch alert message text and compare it with       Message removed successfully
 
+No data in the charts of the management console page
+    [Tags]      Sanity
+    Generic.click on the tab	Register
+    Generic.Verify your current page location contains      register
+    ReplaceDomainAPI.Replace Domain
+    RegisterUserPage.Create random register first name
+    RegisterUserPage.Create random register last name
+    RegisterUserPage.Create random register company name
+    RegisterUserPage.Click on member type
+    RegisterUserPage.Select the member type      End User
+    RegisterUserPage.Create partner random business email
+    RegisterUserPage.Choose register user country      India   +91     9646289871
+    RegisterUserPage.Select the checkbox
+    RegisterUserPage.Save the register form
+    Generic.Verify your current page location contains      update-email
+    Generic.Open new window     yopmail
+    Generic.Refresh the existing page
+    Generic.Search yopmail emails for       ${generate_register_Email}
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   Email Register Verification Required.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Click on sign In button in yopmail email
+    Unselect Frame
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Create - Account
+    Generic.Verify your current page location contains     create-account
+    UserAccount.Enter the password      Paramdeep@112
+    UserAccount.Confirm the entered password    Paramdeep@112
+    UserAccount.Click on term and condition checkbox
+    UserAccount.Click create account button
+    Generic.Fetch alert message text and compare it with       Account created successfully.
+    Generic.Verify your current page location contains     auth
+    LandingPage.Fill the login Form      ${generate_register_Email}    Paramdeep@112
+    Switch Window    Inbox
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   OTP Verification.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Get verification OTP from email    Your passcode is
+    sleep       ${yop_sleep}
+    Switch Window   aithentic | OTP
+    TwoFactorAuth.Enter the otp     ${passcode}
+    TwoFactorAuth.Click verification button
+    Generic.Verify your current page location contains     subscription
+    SubscriptionPage.Select country of manufacturer profile     United States
+    SubscriptionPage.Select state of manufacturer profile   Texas
+    SubscriptionPage.Select city of manufacturer profile    Abram
+    SubscriptionPage.Input text into manufacturer address one       This is address 1
+    SubscriptionPage.Input text into manufacturer address two       This is address 2
+    SubscriptionPage.Input text into manufacturer zip code      73301
+    SubscriptionPage.Select department of manufacturer profile      Customer Support
+    SubscriptionPage.Input text into manufacturer position/title    Agent
+    SubscriptionPage.Save the manufacturer profile
+    Generic.Verify your current page location contains     subscription-menu
+    Generic.Fetch alert message text and compare it with       Profile saved successfully
+    SubscriptionPage.Select plan of subscription
+    SubscriptionPage.Select and move next with subscription
+    Generic.Verify your current page location contains     subscription-payment
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Switch to card iframe
+    SubscriptionPage.Enter cardnumber    42424242424242420429242
+    Unselect Frame
+    SubscriptionPage.Enter card user name    Paramdeep Singh
+    SubscriptionPage.Check the authorization checkbox
+    SubscriptionPage.Check the acknowledgement checkbox
+    SubscriptionPage.Click on complete process button
+    Generic.Verify your current page location contains     welcome
+    Generic.Fetch alert message text and compare it with       Payment Successful
+    DashboardPage.Click on complete setup button      Complete Setup
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the location ID checkbox   yes
+    DashboardPage.Select the asset ID checkbox      no
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    Generic.select the option from the side menu    Dashboard
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    DashboardPage.Verify your current page contains this element
+    DashboardPage.Verify that Management console page contains No data chart        budget-overview-main
+    DashboardPage.Click on No key Data under chart          budget-overview-main
+    Generic.Verify your current page location contains     technology-list
+    DashboardPage.Remove the Download Agent pop-up
+    DashboardPage.Verify and click on the finance filter under technology
+    DashboardPage.Verify all the checkmark boxes of finance filter are auto-check       Cost Type
+    DashboardPage.Verify all the checkmark boxes of finance filter are auto-check       Expense Type
+    DashboardPage.Verify all the checkmark boxes of finance filter are auto-check       Budget
+    Generic.select the option from the side menu    Dashboard
+    Generic.Verify your current page location contains      dashboard
+    DashboardPage.Verify that Management console page contains No data chart        subscription-overview-main
+    DashboardPage.Click on No key Data under chart          subscription-overview-main
+    Generic.Verify your current page location contains     technology-list
+    DashboardPage.Verify and click on the finance filter under technology
+    DashboardPage.Verify all the checkmark boxes of finance filter are auto-check       Cost Type
+    DashboardPage.Verify all the checkmark boxes of finance filter are auto-check       Expense Type
+    DashboardPage.Verify all the checkmark boxes of finance filter are auto-check       Budget
+    Generic.select the option from the side menu    Dashboard
+    Generic.Verify your current page location contains      dashboard
+    DashboardPage.Verify that Management console page contains No data chart        contracts-licenses-main
+    DashboardPage.Click on No key Data under chart          contracts-licenses-main
+    Generic.Verify your current page location contains     technology-list
+    DashboardPage.Verify and click on the finance filter under technology
+    DashboardPage.Verify all the checkmark boxes of finance filter are auto-check       Cost Type
+    DashboardPage.Verify all the checkmark boxes of finance filter are auto-check       Expense Type
+    DashboardPage.Verify all the checkmark boxes of finance filter are auto-check       Budget
+
+Renewals overview drilldown - Add column Host name
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    DashboardPage.Fetch the count renewals overview subtabs      Overdue renewals
+    DashboardPage.Set Globally the count from renewal overview subtabs
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Select parameter from technology dropdown list      Product_renewal_overview
+    TechnologyPage.Add host name for technology group information for hardware random
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Input current Date
+    TechnologyPage.Enter current or future date as renewal date    ${current_date1}
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Add technology lifecycle comment    Technology Lifecycle Information- comment
+    TechnologyPage.Add budget payment of technology cost information       11000
+    TechnologyPage.Add actual payment of technology cost information       1050
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    Generic.Wait until table get load
+    Generic.select the option from the side menu    Dashboard
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    DashboardPage.Fetch the count renewals overview subtabs        Overdue renewals
+    DashboardPage.Compare the counts of renewal overview after adding the asset
+    DashboardPage.Click on the subtabs          Overdue renewals
+    DashboardPage.Search and verify through asset_id      ${generated_AssetID}
+    Generic.Verify your current page contains this text   ${result}
+
+Message Side bar filters
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.select the option from the side menu    Messages
+    Generic.Verify your current page location contains      message
+    MessagePage.Click on select partner filter from message side bar list
+    MessagePage.Select the filter from partner      End User
+    ReportsPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     inbox
+    PaginationPage.Select the value from the pagination drop down count    500
+    MessagePage.Fetch the country from location filter and click     Partner Type         End User    End User
+    Generic.Click on the reset filters link
+    MessagePage.Select the filter from partner    Manufacturer
+    ReportsPage.Fetch the total count
+    MessagePage.Fetch the country from location filter and click     Partner Type         Manufacturer    Manufacturer
+    Generic.Click on the reset filters link
+    Generic.Refresh the existing page
+    ReportsPage.Fetch the total count
+    MessagePage.Click on select partner filter from message side bar list
+    MessagePage.Select the filter from partner      All Partners
+    ReportsPage.Fetch the total count After selecting filter
+    MessagePage.Comapre the total count after selecting filter
+
+Click on the status filter under brand via profile list
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form     jasdeep@15963.fr.nf     Paramdeep@112
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     brand-dropdown
+    Generic.Verify your current page location contains     brand-list
+    DashboardPage.Click on the status filter under Brand via profile
+    DashboardPage.Select the option from the filters under brand via profile     0
+    DashboardPage.Click on the added brands heading
+    DashboardPage.Get the text of selected status filter under brand via profile       Active
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click       Status     ${New_status_Brand}        ${New_status_Brand}
+    Generic.Click on the profile name
+    Generic.Select other option from profile list     Logout
+    Generic.Fetch log_out alert message
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     brand-dropdown
+    Generic.Verify your current page location contains     brand-list
+    DashboardPage.Click on the status filter under Brand via profile
+    DashboardPage.Select the option from the filters under brand via profile     1
+    DashboardPage.Click on the added brands heading
+    DashboardPage.Get the text of selected status filter under brand via profile       Inactive
+    Generic.Wait until table get load
+    PaginationPage.Click on the pagination dropdown    brand
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     brand
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click       Status     ${New_status_Brand}        ${New_status_Brand}
+
+Click on the product filters via profile list
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form     jasdeep@15963.fr.nf     Paramdeep@112
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     product-dropdown
+    Generic.Verify your current page location contains     product
+    DashboardPage.Click on the status filter under product via profile
+    DashboardPage.Select the option from the filters under product via profile      0
+    DashboardPage.Click on the added products heading
+    DashboardPage.Get the text of selected status filter under product via profile
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click       Status      ${New_product_Status}         ${New_product_Status}
+     Generic.Click on the profile name
+    Generic.Select other option from profile list     Logout
+    Generic.Fetch log_out alert message
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     product-dropdown
+    Generic.Verify your current page location contains     product
+    DashboardPage.Click on the status filter under product via profile
+    DashboardPage.Select the option from the filters under product via profile      1
+    DashboardPage.Click on the added products heading
+    DashboardPage.Get the text of selected status filter under product via profile
+    Generic.Wait until table get load
+    PaginationPage.Click on the pagination dropdown    products
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown      products
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click       Status     ${New_product_Status}        ${New_product_Status}
+    DashboardPage.Click on the reset button under product
+    DashboardPage.Click on the brand filter under product via profile
+    DashboardPage.Select the option from the brand filter under product via profile     2
+    DashboardPage.Click on the added products heading
+    DashboardPage.Get the text of selected brand filter under product via profile
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click        Brand Name       ${selected_Brand}        ${selected_Brand}
+    DashboardPage.Click on the reset button under product
+    DashboardPage.Click on the brand filter under product via profile
+    DashboardPage.Select the option from the brand filter under product via profile     3
+    DashboardPage.Click on the added products heading
+    DashboardPage.Get the text of selected brand filter under product via profile
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click        Brand Name       ${selected_Brand}        ${selected_Brand}
+    DashboardPage.Click on the reset button under product
+    DashboardPage.Click on the brand filter under product via profile
+    DashboardPage.Select the option from the brand filter under product via profile    5
+    DashboardPage.Click on the added products heading
+    DashboardPage.Get the text of selected brand filter under product via profile
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click        Brand Name      ${selected_Brand}        ${selected_Brand}
+    DashboardPage.Click on the reset button under product
+    DashboardPage.Click on the technology group filter under product via profile
+    DashboardPage.Select the option from the technology group filter under product via profile      1
+    DashboardPage.Click on the added products heading
+    DashboardPage.Get the text of selected technology group filter under product via profile
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click         Technology Group        ${New_product_tech_group}        ${New_product_tech_group}
+    DashboardPage.Click on the reset button under product
+    DashboardPage.Click on the technology group filter under product via profile
+    DashboardPage.Select the option from the technology group filter under product via profile      3
+    DashboardPage.Click on the added products heading
+    DashboardPage.Get the text of selected technology group filter under product via profile
+    Generic.Wait until table get load
+     PaginationPage.Click on the pagination dropdown    products
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown      products
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click         Technology Group        ${New_product_tech_group}        ${New_product_tech_group}
+    DashboardPage.Click on the reset button under product
+    DashboardPage.Click on the technology group filter under product via profile
+    DashboardPage.Select the option from the technology group filter under product via profile      4
+    DashboardPage.Click on the added products heading
+    DashboardPage.Get the text of selected technology group filter under product via profile
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click         Technology Group        ${New_product_tech_group}        ${New_product_tech_group}
+
+
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

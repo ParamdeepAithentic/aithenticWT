@@ -143,3 +143,54 @@ Save team member
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is not visible       ${shadow}          ${wait_time}
 #save/cancel
+
+Click on select partner filter from message side bar list
+    wait until element is not visible   ${loaderIcon}      ${wait_time}
+    wait until element is visible    //tbody      ${wait_time}
+    wait until element is visible    css:.partner-filters-qa   ${wait_time}
+    wait until element is enabled    css:.partner-filters-qa   ${wait_time}
+    click element       css:.partner-filters-qa
+
+Select the filter from partner
+    [Arguments]     ${option}
+    wait until element is not visible   ${loaderIcon}      ${wait_time}
+    wait until element is visible    //div[contains(@class,'SubGroupNew ')]//following-sibling::div//label[normalize-space()=' ${option}']   ${wait_time}
+    wait until element is enabled    //div[contains(@class,'SubGroupNew ')]//following-sibling::div//label[normalize-space()=' ${option}']   ${wait_time}
+    click element       //div[contains(@class,'SubGroupNew ')]//following-sibling::div//label[normalize-space()=' ${option}']
+    sleep       ${search_sleep}
+    wait until element is visible      //tbody      ${wait_time}
+
+Fetch and verify the partner type from the table of the message
+    wait until element is not visible   ${loaderIcon}      ${wait_time}
+    wait until element is visible       (//tbody//td)[4]        ${wait_time}
+    wait until element is enabled       (//tbody//td)[4]        ${wait_time}
+    ${text}=        Get text        (//tbody//td)[4]            ${wait_time}
+    log to console      ${text}
+    set global variable     ${text}
+
+
+Table has no records
+    wait until element is not visible   ${loaderIcon}      ${wait_time}
+    wait until element is visible       //td//span        ${wait_time}
+    wait until element is enabled      //td//span        ${wait_time}
+    ${fetch_no_records}=        Get text        //td//span            ${wait_time}
+    log to console      ${fetch_no_records}
+    set global variable     ${fetch_no_records}
+
+Fetch the country from location filter and click
+    [Arguments]     ${option}       ${option1}      ${option2}
+#    ${element_count}=    Get Element Count    css:.qa-total-count-list
+#    Log      ${element_count}
+    FOR    ${index}    IN RANGE    1    ${total_count} + 1
+        Wait Until Element Is Visible   (//div[normalize-space()='${option}']//following-sibling::div//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]      ${wait_time}
+        Wait Until Element Is Enabled   (//div[normalize-space()='${option}']//following-sibling::div//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]       ${wait_time}
+        ${element1}=    Get Text    (//div[normalize-space()='${option}']//following-sibling::div//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]
+        ${original_string}=    Set Variable    ${element1}
+        ${New_Country}=    Evaluate    '${original_string}'.strip()
+        Log    Element ${index}: ${New_Country}
+        Run Keyword If    '${New_Country}' == '${option2}'    Run Keyword       Continue For Loop
+
+    END
+
+Comapre the total count after selecting filter
+    Should be equal     ${total_count_again}        ${total_count}

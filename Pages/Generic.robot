@@ -62,7 +62,8 @@ ${yop_sleep}       10
 ${search_sleep}       1
 
 
-${CASE}        qa    #qa , uat , pre-prod
+
+${CASE}     uat    #qa , uat , pre-prod
 
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
 
@@ -109,6 +110,7 @@ Set UAT Variables
     Set Suite Variable    ${discovered_asset_brand}                 Apple Inc
     Set Suite Variable    ${existing_mac}                       98:5a:eb:cb:c8:ed
     Set Suite Variable    ${discovered_existing_brand}              Apple Inc.
+    Set Suite Variable    ${discovered_existing_brand1}              QABrand555
     Set Suite Variable    ${discovered_existing_product}            Macmini9,1
     Set Suite Variable    ${discovered_existing_department}        Quality Assurance
     Set Suite Variable    ${discovered_IP}    00:17:61:10:C6:A1
@@ -161,7 +163,9 @@ Fix the row number
 Fetch Current Date
     ${current_date}=    Get Current Date    result_format=%m/%d/%Y
     Log to console   Current Date: ${current_date}
+    set global variable    ${current_date}
     RETURN    ${current_date}
+
 
 Fetch Current Time
     ${current_time}=    Get Current Date    result_format=%H:%M:%S
@@ -444,6 +448,5 @@ Update settings for Asset_ID, employee_id and location
 #    Run Process    cmd.exe    /C    taskkill /IM skype.exe /F
 #    Run Process    cmd.exe    /C    taskkill /IM msedge.exe /F
 
-
-
-
+Click on the reset filters link
+    Generic.click on the button link        reset filters
