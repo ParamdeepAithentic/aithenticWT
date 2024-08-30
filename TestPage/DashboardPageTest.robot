@@ -61,7 +61,7 @@ Click the option from side drawer
 
 
 Verify the drawer list
-    [Tags]      Time        Stable
+    [Tags]      Time        Stable      Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     ${StartTime1} =     Get Current Time in Milliseconds
@@ -687,7 +687,7 @@ Verify Department quick_links in profile settings dropdown
     DashboardPage.Get and verify the text and compare it with     Added Departments
 
 Search By Technology Group in product list
-    [Tags]      Time        Stable
+    [Tags]      Time        Stable      Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard

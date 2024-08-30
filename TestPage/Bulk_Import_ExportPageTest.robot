@@ -327,7 +327,7 @@ Location Bulk Edit
     Bulk_Import_ExportPage.Search by location name     ${generated_NewLocationName}
 
 Assigned Users Bulk Edit
-    [Tags]    Sanity     Time       Stable
+    [Tags]    Sanity     Time       Stable      Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -633,7 +633,8 @@ Technology Bulk import
     Generic.click on the button     Next
     Generic.Verify your current page location contains     add-technology
     Bulk_Import_ExportPage.Enter the new value in the fields of technology bulk import       Brand        QABrand555
-    Bulk_Import_ExportPage.Enter the new value in the fields of technology bulk import     Product        Product_00337612322
+    Bulk_Import_ExportPage.Enter the new value in the fields of technology bulk import     Product
+
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      ItemTechCount         1
     Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       Supplier        1
     Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       SupportPartner        1
