@@ -62,11 +62,7 @@ ${yop_sleep}       10
 ${search_sleep}       1
 
 
-<<<<<<< HEAD
-${CASE}        qa   #qa , uat , pre-prod
-=======
 ${CASE}     uat    #qa , uat , pre-prod
->>>>>>> 7dd11a3d4c72ae29fecb0c9fad1096d0954f9972
 
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
 
