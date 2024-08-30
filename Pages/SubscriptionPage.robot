@@ -575,6 +575,11 @@ Click on the sentinel one tab under asset discovery
     wait until element is enabled   //a[@id='sentinelone-first-parent-tab']     ${wait_time}
     click element   //a[@id='sentinelone-first-parent-tab']
 
+Click on the connectors button link under technology settings page
+   wait until element is visible   //ul[@id='myTab']//a[normalize-space()='Connectors']         ${wait_time}
+    wait until element is enabled    //ul[@id='myTab']//a[normalize-space()='Connectors']          ${wait_time}
+    click element          //ul[@id='myTab']//a[normalize-space()='Connectors']
+
 Select the time from the timepicker
     [Arguments]     ${option}
     wait until element is visible  //div[@id='editScheduler']//input[@formcontrolname='schedulerTime']    ${wait_time}

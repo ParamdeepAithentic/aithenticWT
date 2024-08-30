@@ -2339,7 +2339,11 @@ Creating technology while creating cancellation notice period and contract end d
     TechnologyPage.Click on edit button on product details page        Edit
     Generic.Verify your current page location contains      edit-technology
     TechnologyPage.Click on the edit icon on the edit technology page
-    TechnologyPage.Add technology group information contract end date      12/12/2028
+    TechnologyPage.Change contract end date      11/12/2028
+    sleep       ${search_sleep}
+    TechnologyPage.Verify warning pop-up is visible when change contract end date
+    TechnologyPage.Select option from contract end date warning pop-up      close
+    TechnologyPage.Verify pop-up is invisible
     TechnologyPage.Enter input in the cancellation notice period field      -99
     sleep   ${search_sleep}
     TechnologyPage.Verify the validation when entering negative value in cancellation notice period field
@@ -2794,6 +2798,7 @@ Compose reply and remove the message via technology details
     DashboardPage.Click on the notifications icon under dashbaord page
     TechnologyPage.Click on the asset alert option under notifications
     sleep   ${search_sleep}
+    DashboardPage.Wait until alert is visible in the Recent Notifiation tab     You added Asset ID      ${generated_AssetID}.
     TechnologyPage.Get the text of the recent notification of added assets      You added Asset ID ${generated_AssetID}.
     Generic.Click on the profile name
     Generic.Select other option from profile list     Logout
