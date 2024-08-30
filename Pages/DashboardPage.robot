@@ -1404,3 +1404,40 @@ Click on the added brands heading
     Wait Until Element Is Visible    //p[normalize-space()='Added Brands']       ${wait_time}
     Wait Until Element Is Visible  //p[normalize-space()='Added Brands']   ${wait_time}
     click element    //p[normalize-space()='Added Brands']
+
+Choose permission tab under members profile
+    wait until element is not visible       ${loaderIcon}      ${wait_time}
+    wait until element is visible       css:#profile-tab           ${wait_time}
+    wait until element is enabled       css:#profile-tab     ${wait_time}
+    click element       css:#profile-tab
+
+Pick User role of the member
+    [Arguments]     ${options}
+    wait until element is not visible       ${loaderIcon}      ${wait_time}
+    wait until element is visible       //button[normalize-space()='${options}']           ${wait_time}
+    wait until element is enabled       //button[normalize-space()='${options}']     ${wait_time}
+    click element       //button[normalize-space()='${options}']
+
+Verify user role have permissions
+    [Arguments]     ${options}
+    wait until element is not visible       ${loaderIcon}      ${wait_time}
+    wait until element is visible       css:#member-${options}           ${wait_time}
+    wait until element is enabled       css:#member-${options}     ${wait_time}
+#    click element       css:#member-permission-write
+
+Select the permission of member according to user role
+    [Arguments]     ${options}
+    wait until element is not visible       ${loaderIcon}      ${wait_time}
+    wait until element is visible       css:#member-${options}          ${wait_time}
+    wait until element is enabled       css:#member-${options}     ${wait_time}
+    sleep       ${search_sleep}
+    click element       css:#member-${options}
+
+Verify that user contains permissions
+    [Arguments]         ${option1}      ${option2}
+    wait until page contains    ${option1}       ${wait_time}
+    wait until page contains    ${option2}       ${wait_time}
+
+Verify that user contains read-permissions
+    [Arguments]         ${option1}
+    wait until page contains    ${option1}       ${wait_time}
