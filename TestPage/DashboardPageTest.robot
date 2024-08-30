@@ -2404,5 +2404,91 @@ Verify Team member in permissions according to user roles
     DashboardPage.Verify that user contains permissions         Manage-Subscription       Change-Plan
     DashboardPage.Select the permission of member according to user role        permission-write
 
+Click on the product filters via profile list
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form     jasdeep@15963.fr.nf     Paramdeep@112
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     product-dropdown
+    Generic.Verify your current page location contains     product
+    DashboardPage.Click on the status filter under product via profile
+    DashboardPage.Select the option from the filters under product via profile      0
+    DashboardPage.Click on the added products heading
+    DashboardPage.Get the text of selected status filter under product via profile
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click       Status      ${New_product_Status}         ${New_product_Status}
+     Generic.Click on the profile name
+    Generic.Select other option from profile list     Logout
+    Generic.Fetch log_out alert message
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     product-dropdown
+    Generic.Verify your current page location contains     product
+    DashboardPage.Click on the status filter under product via profile
+    DashboardPage.Select the option from the filters under product via profile      1
+    DashboardPage.Click on the added products heading
+    DashboardPage.Get the text of selected status filter under product via profile
+    Generic.Wait until table get load
+    PaginationPage.Click on the pagination dropdown    products
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown      products
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click       Status     ${New_product_Status}        ${New_product_Status}
+    DashboardPage.Click on the reset button under product
+    DashboardPage.Click on the brand filter under product via profile
+    DashboardPage.Select the option from the brand filter under product via profile     2
+    DashboardPage.Click on the added products heading
+    DashboardPage.Get the text of selected brand filter under product via profile
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click        Brand Name       ${selected_Brand}        ${selected_Brand}
+    DashboardPage.Click on the reset button under product
+    DashboardPage.Click on the brand filter under product via profile
+    DashboardPage.Select the option from the brand filter under product via profile     3
+    DashboardPage.Click on the added products heading
+    DashboardPage.Get the text of selected brand filter under product via profile
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click        Brand Name       ${selected_Brand}        ${selected_Brand}
+    DashboardPage.Click on the reset button under product
+    DashboardPage.Click on the brand filter under product via profile
+    DashboardPage.Select the option from the brand filter under product via profile    5
+    DashboardPage.Click on the added products heading
+    DashboardPage.Get the text of selected brand filter under product via profile
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click        Brand Name      ${selected_Brand}        ${selected_Brand}
+    DashboardPage.Click on the reset button under product
+    DashboardPage.Click on the technology group filter under product via profile
+    DashboardPage.Select the option from the technology group filter under product via profile      1
+    DashboardPage.Click on the added products heading
+    DashboardPage.Get the text of selected technology group filter under product via profile
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click         Technology Group        ${New_product_tech_group}        ${New_product_tech_group}
+    DashboardPage.Click on the reset button under product
+    DashboardPage.Click on the technology group filter under product via profile
+    DashboardPage.Select the option from the technology group filter under product via profile      3
+    DashboardPage.Click on the added products heading
+    DashboardPage.Get the text of selected technology group filter under product via profile
+    Generic.Wait until table get load
+     PaginationPage.Click on the pagination dropdown    products
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown      products
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click         Technology Group        ${New_product_tech_group}        ${New_product_tech_group}
+    DashboardPage.Click on the reset button under product
+    DashboardPage.Click on the technology group filter under product via profile
+    DashboardPage.Select the option from the technology group filter under product via profile      4
+    DashboardPage.Click on the added products heading
+    DashboardPage.Get the text of selected technology group filter under product via profile
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click         Technology Group        ${New_product_tech_group}        ${New_product_tech_group}
+
+
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
