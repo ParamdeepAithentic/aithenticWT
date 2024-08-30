@@ -327,7 +327,7 @@ Location Bulk Edit
     Bulk_Import_ExportPage.Search by location name     ${generated_NewLocationName}
 
 Assigned Users Bulk Edit
-    [Tags]    Sanity     Time       Stable
+    [Tags]    Sanity     Time       Stable      Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
