@@ -49,7 +49,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Activate and deactivate the location
-    [Tags]      Time      Sanity        Stable
+    [Tags]      Time      Sanity        Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -100,7 +100,6 @@ Activate and deactivate the location
     LocationPage.Fetch and verify the location status from the row   Active
 
 Edit the Location
-    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -145,7 +144,7 @@ Edit the Location
     Generic.Fetch alert message text and compare it with    Location updated successfully
 
 Remove Location from listing
-    [Tags]      Stable
+    [Tags]      Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -176,7 +175,6 @@ Remove Location from listing
     Generic.Fetch alert message text and compare it with    Location deleted successfully
 
 Add Location from profile Listing
-    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -199,7 +197,7 @@ Add Location from profile Listing
     Generic.Fetch alert message text and compare it with    Location created successfully
 
 Verify Location_name Hide and show after changes it from settings
-    [Tags]      Stable
+    [Tags]      Smoke
     Generic.open the browser with the url
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}    ${valid_password}
@@ -260,6 +258,7 @@ Verify Location_name Hide and show after changes it from settings
     LocationPage.Search by location name        ${generated_location}
 
 Click on the select status filter and verify it
+    [Tags]     time     smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -285,6 +284,7 @@ Click on the select status filter and verify it
     LocationPage.Fetch the country from location filter and click       Status     Inactive         ${New_status}
 
 Click on the select location filter and verify it
+    [Tags]    time     smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard

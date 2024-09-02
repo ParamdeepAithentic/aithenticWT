@@ -510,7 +510,7 @@ Restore asset by selecting checkbox
 
 
 Edit brand and product via details
-    [Tags]     Smoke        Stable
+    [Tags]     Smoke        Stable     time
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -811,7 +811,7 @@ Add Technology Page - Add New location and assign that location
     Generic.Fetch alert message text and compare it with       Assigned Users created successfully
 
 Add New Support Partner and Assign that Partner
-    [Tags]      Sanity      Stable
+    [Tags]      Sanity      Stable     time
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -2087,7 +2087,7 @@ Upload file: Image and Document files while Edit Technology
     Generic.Fetch alert message text and compare it with        Technology updated successfully
 
 Upload file: Image and document files while Clone the Technology
-    [Tags]      Stable
+    [Tags]      Stable     time
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -3131,6 +3131,7 @@ Verify_Notification_Update_Asset
     TechnologyPage.Get the text of the recent notification of added assets      You updated Asset ID ${generated_AssetID}.
 
 Click on the technology group filters and verify it
+    [Tags]     time     smoke     sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard

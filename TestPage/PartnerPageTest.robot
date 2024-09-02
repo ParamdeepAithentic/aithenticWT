@@ -1417,6 +1417,7 @@ Add_edit_deactivate_removeSupport_partner_while_adding_brand
     Generic.Fetch alert message text and compare it with      Partner deleted successfully
 
 Partner Side bar Filters
+    [Tags]     time     smoke
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard

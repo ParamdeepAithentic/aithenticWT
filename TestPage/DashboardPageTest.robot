@@ -61,7 +61,7 @@ Click the option from side drawer
 
 
 Verify the drawer list
-    [Tags]      Time        Stable
+    [Tags]      Time
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     ${StartTime1} =     Get Current Time in Milliseconds
@@ -2270,6 +2270,7 @@ Renewals overview drilldown - Add column Host name
     Generic.Verify your current page contains this text   ${result}
 
 Message Side bar filters
+    [Tags]     time
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Messages
@@ -2411,6 +2412,7 @@ Verify Team member in permissions according to user roles
     DashboardPage.Select the permission of member according to user role        permission-write
 
 Click on the product filters via profile list
+    [Tags]      time      smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard

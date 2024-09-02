@@ -1228,6 +1228,7 @@ Add Back Deleted Team member - Active
     TeamMemberPage.Verify Team member added after delete        ${generated_TMFname} ${generated_TMLname}
 
 Click on the location filter under team member and verify it
+    [Tags]    time     smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
@@ -1269,6 +1270,7 @@ Click on the location filter under team member and verify it
     TeamMemberPage.Fetch the country from team member filter and click       Location      Afgahniastan         ${New_Name}
 
 Click on the status filter under team member and verify it
+    [Tags]     time     smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1301,6 +1303,7 @@ Click on the status filter under team member and verify it
     TeamMemberPage.Fetch the country from team member filter and click       Status     Inactive         ${New_status}
 
 Click on the status filter under team member via profile list and verify it
+    [Tags]     time     smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1334,7 +1337,7 @@ Click on the status filter under team member via profile list and verify it
     TeamMemberPage.Click on the status filter under team member via profile
     TeamMemberPage.Select the option from the filters under team member via profile     0
     TeamMemberPage.Select the option from the filters under team member via profile     1
-     TeamMemberPage.Get the text of selected status filter under team meber via profile
+    TeamMemberPage.Get the text of selected status filter under team meber via profile
     DashboardPage.click on the authentication tab under security
     TeamMemberPage.click on the members tab under team member via profile
     Generic.Wait until table get load
