@@ -203,7 +203,6 @@ Verify all i-icon of Discovery assets
     Generic.Verify your current page contains this text     Asset Discovery
     sleep       ${yop_sleep}
     switch window       aithentic | Sentinel One Newly-Discovered
-    I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     I_iconPage.Click on i_icon under network_discovery tab
 
@@ -228,7 +227,6 @@ Verify all i-icon of advanced search
     Generic.Verify your current page location contains      addtechnology
     Generic.select the option from the side menu        Asset Discovery
     Generic.Verify your current page location contains      discovery-assets
-    I_iconPage.Choose tab under Discovery Assets       network-discovery
     Generic.Verify your current page location contains    aad
     OCS.Click on newly discovered tab under network discovery
     Generic.Verify your current page location contains    aad
@@ -304,7 +302,6 @@ Verify all i-icon of advanced search
 #    Generic.Verify your current page location contains      addtechnology
 #    Generic.select the option from the side menu        Asset Discovery
 #    Generic.Verify your current page location contains      discovery-assets
-#    I_iconPage.Choose tab under Discovery Assets       network-discovery
 #    Generic.Verify your current page location contains    ocs
 #    OCS.Click on newly discovered tab under network discovery
 #    Generic.Verify your current page location contains    ocs
@@ -394,7 +391,6 @@ Verify all i-icon of advanced search
 #    Generic.Click on the profile name
 #    Generic.Select option from profile list     view-discovery
 #    Generic.Verify your current page location contains    ocs
-#    I_iconPage.Choose tab under Discovery Assets       network-discovery
 #    OCS.Click on newly discovered tab under network discovery
 #    OCS.Click on search icon of discovery assets
 #    OCS.Enter text to search discovery asset    ${discovered_IP}
@@ -448,7 +444,6 @@ Verify all i-icon of advanced search
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    aad
-    I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.Click on search icon of discovery assets
     OCS.Enter text to search discovery asset    ${discovered_IP}

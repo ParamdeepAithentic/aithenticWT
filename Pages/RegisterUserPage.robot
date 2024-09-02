@@ -475,7 +475,6 @@ Verify the visibility of validation when entering password less than the limit
 
 wait for the invisiblity of the city field loader
     wait until element is not visible       ${loaderIcon}      ${wait_time}
-#    wait until element is visible       css:.qa-City .ng-spinner-loader         ${wait_time}
     sleep       ${search_sleep}
     wait until element is not visible    css:.qa-City .ng-spinner-loader         ${wait_time}
 

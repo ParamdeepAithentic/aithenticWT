@@ -183,7 +183,7 @@ Choose tab under Discovery Assets
 #option: agent-discovery, network-discovery
 
 Click on i_icon under network_discovery tab
-    Wait Until Page Contains element       //p[normalize-space()='Discovered Assets List']     ${wait_time}
+#    Wait Until Page Contains element       //p[normalize-space()='Discovered Assets List']     ${wait_time}
     wait until element is visible       css:.qa-iIconSection-network-discovery      ${wait_time}
     click element       css:.qa-iIconSection-network-discovery
 
