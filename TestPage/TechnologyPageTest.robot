@@ -553,9 +553,16 @@ Edit brand and product via details
     TechnologyPage.Click on manage technology sub option       Technology List
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
+
+    ${StartTime1} =     Get Current Time in Milliseconds
     TechnologyPage.Click on edit button on product details page        Edit
     Generic.Verify your current page location contains      edit-technology
     TechnologyPage.Click on the edit icon on the edit technology page
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  26  ${pageHeading}   Page Load - Total Page Load Time of clicking edit technology to edit technology form      26    ${pageTime}     ${ActualTime}    PageLoad_Time
+
+
     TechnologyPage.Click on cross icon of product while editing technology
     TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
     TechnologyPage.Select edited technology lifecycle status      Active
@@ -845,9 +852,13 @@ Add New Support Partner and Assign that Partner
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
     TechnologyPage.Click on manage technology sub option       Technology List
+
+    ${StartTime1} =     Get Current Time in Milliseconds
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
-
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  27  ${pageHeading}   Page Load - Total Page Load Time of clicking first row of technology list to its details apge       27    ${pageTime}     ${ActualTime}    PageLoad_Time
 
     TechnologyPage.Select tab under technology details      partners
     TechnologyPage.Click on assign partner button under technology details page        Assign Partner
@@ -2098,8 +2109,14 @@ Upload file: Image and document files while Clone the Technology
     TechnologyPage.Click on manage technology sub option       Technology List
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
+
+    ${StartTime1} =     Get Current Time in Milliseconds
     TechnologyPage.Click on clone button on techonology details page       Clone
     Generic.Verify your current page location contains      clone-addtechnology
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  28  ${pageHeading}   Page Load - Total Page Load Time of clicking clone button of technology deatils to its clone form       28    ${pageTime}     ${ActualTime}    PageLoad_Time
+
     TechnologyPage.Add assetID for technology lifecycle information random
     Generic.Scroll Window To End
     TechnologyPage.Upload file      Image_01.jpg       Image_02.png     Document_02.pdf
