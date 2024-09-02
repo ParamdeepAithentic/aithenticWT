@@ -90,6 +90,8 @@ ${partner_edit_icon}        css:.fa-pencil-alt.pencil
 ${contactP_country}     css:#country
 ${contact_name}     css:#contactName
 
+${Page_Fetch}       css:.pagination ul a
+
 *** Keywords ***
 
 Search by business name
@@ -685,3 +687,68 @@ Wait for add address pop up hide
 Wait for add contact pop up hide
     wait until element is not visible      //div[@id='contactModal']//div[contains(@class,'modal-content')]     ${wait_time}
 #    wait until element is not visible       ${shadow}          ${wait_time}
+
+Click on the filters from partner module
+    [Arguments]     ${option}
+    wait until element is not visible       ${loaderIcon}       ${wait_time}
+    wait until element is visible       //tbody
+    wait until element is visible       //span[contains(text(),'${option}')]       ${wait_time}
+    wait until element is enabled       //span[contains(text(),'${option}')]       ${wait_time}
+    click element       //span[contains(text(),'${option}')]
+
+Checkmark after clicking on the filters
+    [Arguments]     ${filter}
+    wait until element is not visible       ${loaderIcon}       ${wait_time}
+    wait until element is visible       //label[normalize-space()=' ${filter}']     ${wait_time}
+    wait until element is enabled       //label[normalize-space()=' ${filter}']      ${wait_time}
+    click element       //label[normalize-space()=' ${filter}']
+    sleep       ${search_sleep}
+    wait until element is not visible       ${loaderIcon}       ${wait_time}
+    Generic.Wait until table get load
+
+Fetch the selected filter and verify from Table
+    [Arguments]     ${option}       ${option1}      ${option2}
+    Run Keyword IF      ${total_count} > 500       Filter and verify with pagination    ${option}       ${option1}      ${option2}    ELSE     Filter and verify without pagination  ${option}       ${option1}      ${option2}
+
+Click Next Button And Wait For Page To Load
+    Wait Until Element Is enabled    //a[@aria-label='Next page']       ${wait_time}
+    click element       //a[@aria-label='Next page']
+
+Page fetch method
+    wait until element is visible   css:.pagination ul a        ${wait_time}
+    ${Page_Fetchstr}=      get element count        css:.pagination ul a
+    ${Page_Fetch}=  convert to integer   ${Page_Fetchstr}
+    log to console      ${Page_Fetch}
+    set global variable     ${Page_Fetch}
+
+Filter and verify with pagination
+    [Arguments]     ${option}       ${option1}      ${option2}
+    sleep   ${yop_sleep}
+    PartnersPage.Page fetch method
+    FOR    ${page}    IN RANGE    1   ${Page_Fetch}
+            FOR    ${index}    IN RANGE    1        501              #${total_count} + 1
+                Wait Until Element Is Visible   (//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]      ${wait_time}
+                Wait Until Element Is Enabled   (//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]       ${wait_time}
+                ${element1}=    Get Text    (//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]
+                ${original_string}=    Set Variable    ${element1}
+                ${New_filter}=    Evaluate    '${original_string}'.strip()
+                Log    Element ${index}: ${New_filter}
+                Run Keyword If    '${New_filter}' == '${option2}'    Run Keyword       Continue For Loop
+
+            END
+            ${till_last_page}=    Run Keyword     Click Next Button And Wait For Page To Load      #//a[@aria-label='Next page']
+            Exit For Loop If    ${till_last_page}
+        END
+
+Filter and verify without pagination
+    [Arguments]     ${option}       ${option1}      ${option2}
+    FOR    ${index}    IN RANGE    1    ${total_count} + 1
+            Wait Until Element Is Visible   (//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]      ${wait_time}
+            Wait Until Element Is Enabled   (//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]       ${wait_time}
+            ${element1}=    Get Text    (//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]
+            ${original_string}=    Set Variable    ${element1}
+            ${New_filter}=    Evaluate    '${original_string}'.strip()
+            Log    Element ${index}: ${New_filter}
+            Run Keyword If    '${New_filter}' == '${option2}'    Run Keyword       Continue For Loop
+
+         END

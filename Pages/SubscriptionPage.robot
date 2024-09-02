@@ -542,14 +542,6 @@ Enter input in the input field of day asset discovery
     click element   //div[@id='openEditScheduler']//ng-select[@formcontrolname='schedulerDay']
     Generic.Select parameter    ${option}
 
-Enter input in the input field of time under asset discovery
-    [Arguments]     ${option}
-    wait until element is visible  //div[@id='openEditScheduler']//input[@formcontrolname='schedulerTime']    ${wait_time}
-    wait until element is enabled   //div[@id='openEditScheduler']//input[@formcontrolname='schedulerTime']    ${wait_time}
-    clear element text  //div[@id='openEditScheduler']//input[@formcontrolname='schedulerTime']
-    sleep    ${search_sleep}
-    input text  //div[@id='openEditScheduler']//input[@formcontrolname='schedulerTime']     ${option}
-
 Enter input in the start date field of service now under asset discovery
     Generic.Enter current date       //div[@id='openEditScheduler']//input[@formcontrolname='schedulerDate']
 
@@ -582,3 +574,25 @@ Click on the sentinel one tab under asset discovery
     wait until element is visible   //a[@id='sentinelone-first-parent-tab']   ${wait_time}
     wait until element is enabled   //a[@id='sentinelone-first-parent-tab']     ${wait_time}
     click element   //a[@id='sentinelone-first-parent-tab']
+
+Click on the connectors button link under technology settings page
+   wait until element is visible   //ul[@id='myTab']//a[normalize-space()='Connectors']         ${wait_time}
+    wait until element is enabled    //ul[@id='myTab']//a[normalize-space()='Connectors']          ${wait_time}
+    click element          //ul[@id='myTab']//a[normalize-space()='Connectors']
+
+Select the time from the timepicker
+    [Arguments]     ${option}
+    wait until element is visible  //div[@id='editScheduler']//input[@formcontrolname='schedulerTime']    ${wait_time}
+    wait until element is enabled   //div[@id='editScheduler']//input[@formcontrolname='schedulerTime']    ${wait_time}
+    clear element text  //div[@id='editScheduler']//input[@formcontrolname='schedulerTime']
+    sleep    ${search_sleep}
+    click element       //div[@id='editScheduler']//input[@formcontrolname='schedulerTime']
+    wait until element is visible  //div[contains(@class,'clock-face')]//following-sibling::div//span[normalize-space()='${option}']    ${wait_time}
+    wait until element is enabled   //div[contains(@class,'clock-face')]//following-sibling::div//span[normalize-space()='${option}']    ${wait_time}
+    click element       //div[contains(@class,'clock-face')]//following-sibling::div//span[normalize-space()='${option}']
+
+Click on the ok button after selecting the time
+    Wait Until Element Is Not Visible    ${loaderIcon}     ${wait_time}
+    wait until element is visible   //button[contains(@class,'timepicker-button')]//span[normalize-space()='Ok']      ${wait_time}
+    wait until element is enabled   //button[contains(@class,'timepicker-button')]//span[normalize-space()='Ok']      ${wait_time}
+    click element   //button[contains(@class,'timepicker-button')]//span[normalize-space()='Ok']

@@ -1288,5 +1288,64 @@ Click on the status filter under team member and verify it
     PaginationPage.Fetch the total count
     TeamMemberPage.Fetch the country from team member filter and click       Status     Inactive         ${New_status}
 
+Click on the status filter under team member via profile list and verify it
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    Generic.Select parameter      Team Members
+    Generic.Verify your current page location contains      dashboard
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Click on the status filter under team member via profile
+    TeamMemberPage.Select the option from the filters under team member via profile     0
+    TeamMemberPage.Get the text of selected status filter under team meber via profile
+    DashboardPage.click on the authentication tab under security
+    TeamMemberPage.click on the members tab under team member via profile
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     profile-team-member
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     profile-team-member
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click       Status     Active         ${New_status1}
+    TeamMemberPage.Click on the status filter under team member via profile
+    TeamMemberPage.Select the option from the filters under team member via profile     0
+    TeamMemberPage.Select the option from the filters under team member via profile     1
+     TeamMemberPage.Get the text of selected status filter under team meber via profile
+    DashboardPage.click on the authentication tab under security
+    TeamMemberPage.click on the members tab under team member via profile
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click       Status     Inactive         ${New_status1}
+    Generic.Click on the profile name
+    Generic.Select other option from profile list     Logout
+    Generic.Fetch log_out alert message
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    Generic.Select parameter      Team Members
+    Generic.Verify your current page location contains      dashboard
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Click on the status filter under team member via profile
+    TeamMemberPage.Select the option from the filters under team member via profile     2
+    TeamMemberPage.Get the text of selected status filter under team meber via profile
+    DashboardPage.click on the authentication tab under security
+    TeamMemberPage.click on the members tab under team member via profile
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     profile-team-member
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     profile-team-member
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click       Status     Invited         ${New_status1}
+
 #Zz kill browser
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
