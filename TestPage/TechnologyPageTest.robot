@@ -3444,6 +3444,7 @@ Click on the technology group filters and verify it
     PaginationPage.Fetch the total count
     PaginationPage.Get count of total rows from Product Dropdown
     TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
+    
 
 #Zz kill browser
 #    [Tags]      Smoke     Sanity      Time      rerun       Stable    yy
