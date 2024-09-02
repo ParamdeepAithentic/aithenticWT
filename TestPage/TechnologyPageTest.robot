@@ -3139,9 +3139,15 @@ Click on the technology group filters and verify it
     Generic.Wait until table get load
     TechnologyPage.Click on the filters under technology page       Technology Group
     Generic.Wait until table get load
+
+    ${StartTime1} =     Get Current Time in Milliseconds
     TechnologyPage.Click on the value under the filters of technology page      Applications
     TechnologyPage.Get the text of selected filter under technology     Applications
     Generic.Wait until table get load
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  6  ${pageHeading}   Filter Page - Data load time of filter Applications under technology group      6    ${pageTime}     ${ActualTime}    Filter_Time
+
     PaginationPage.Fetch the total count
     PaginationPage.Click on the pagination dropdown     technology
     PaginationPage.Select the value from the pagination drop down count     500
@@ -3152,9 +3158,15 @@ Click on the technology group filters and verify it
     Generic.Wait until table get load
     TechnologyPage.Click on the filters under technology page       Technology Group
     Generic.Wait until table get load
+
+    ${StartTime1} =     Get Current Time in Milliseconds
     TechnologyPage.Click on the value under the filters of technology page      Accessories
     TechnologyPage.Get the text of selected filter under technology    Accessories
     Generic.Wait until table get load
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  7  ${pageHeading}   Filter Page - Data load time of filter Accessories under technology group      7    ${pageTime}     ${ActualTime}    Filter_Time
+
     PaginationPage.Fetch the total count
     PaginationPage.Click on the pagination dropdown     technology
     PaginationPage.Select the value from the pagination drop down count     500
@@ -3165,9 +3177,15 @@ Click on the technology group filters and verify it
     Generic.Wait until table get load
     TechnologyPage.Click on the filters under technology page       Technology Group
     Generic.Wait until table get load
+
+    ${StartTime1} =     Get Current Time in Milliseconds
     TechnologyPage.Click on the value under the filters of technology page       CRT TVs
     TechnologyPage.Get the text of selected filter under technology     CRT TVs
     Generic.Wait until table get load
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  8  ${pageHeading}   Filter Page - Data load time of filter CRT under technology group      8    ${pageTime}     ${ActualTime}    Filter_Time
+
     PaginationPage.Fetch the total count
     LocationPage.Fetch the country from location filter and click    Group       CRT TVs        ${New_Namee}
     Generic.click on the tab        reset filters
@@ -3271,7 +3289,7 @@ Click on the technology group filters and verify it
     TechnologyPage.Get the text of the value you selected under filter     2
     Generic.Wait until table get load
     PaginationPage.Fetch the total count
-     PaginationPage.Get count of total rows from Product Dropdown
+    PaginationPage.Get count of total rows from Product Dropdown
     TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
     Generic.click on the tab        reset filters
     Generic.Wait until table get load
@@ -3283,7 +3301,7 @@ Click on the technology group filters and verify it
     TechnologyPage.Get the text of the value you selected under filter      5
     Generic.Wait until table get load
     PaginationPage.Fetch the total count
-     PaginationPage.Get count of total rows from Product Dropdown
+    PaginationPage.Get count of total rows from Product Dropdown
     TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
     Generic.click on the tab        reset filters
     Generic.Wait until table get load

@@ -1427,7 +1427,13 @@ Partner Side bar Filters
     ReportsPage.Fetch the total count
     PaginationPage.Click on the pagination dropdown     partner-list
     PaginationPage.Select the value from the pagination drop down count    500
+
+    ${StartTime1} =     Get Current Time in Milliseconds
     PartnersPage.Fetch the selected filter and verify from Table    Partner Type        Manufacturer        Manufacturer
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  14  ${pageHeading}   Filter Page - Data load time of filter select partner under partner page      14    ${pageTime}     ${ActualTime}    Filter_Time
+
     Generic.Click on the reset filters link
     Generic.Refresh the existing page
     PartnersPage.Click on the filters from partner module       Select Partner
@@ -1453,7 +1459,13 @@ Partner Side bar Filters
 ######################################### STATUS ###############################################################################
     Generic.Click on the reset filters link
     PartnersPage.Click on the filters from partner module       Select Status
+
+    ${StartTime1} =     Get Current Time in Milliseconds
     PartnersPage.Checkmark after clicking on the filters        Active
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  15  ${pageHeading}   Filter Page - Data load time of filter status under partner page      15    ${pageTime}     ${ActualTime}    Filter_Time
+
     PaginationPage.Click on the pagination dropdown     partner-list
     PaginationPage.Select the value from the pagination drop down count    500
     PartnersPage.Fetch the selected filter and verify from Table    Status       Active        Active

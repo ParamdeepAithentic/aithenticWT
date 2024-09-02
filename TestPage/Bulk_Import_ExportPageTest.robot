@@ -780,8 +780,14 @@ Verify Bulk Import on the Technology Page by adding all parameters
     Bulk_Import_ExportPage.click on all checkbox under technology bulk import       - Create Products
     Bulk_Import_ExportPage.click on all checkbox under technology bulk import       -All partners (manufacturer, supplier & support partners)
     Bulk_Import_ExportPage.click on all checkbox under technology bulk import        Parent Child components
+
+    ${StartTime1} =     Get Current Time in Milliseconds
     Generic.click on the button     Next
     Generic.click on the tab        Add Department
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  6  ${pageHeading}   Asset wizard - Page redirect from setup to department      6    ${pageTime}     ${ActualTime}    AssetWizardPage_Time
+
     Bulk_Import_ExportPage.Create unique department name random under technology bulk import
 #    Bulk_Import_ExportPage.Select department status ynder technology bulk import        Active
     Bulk_Import_ExportPage.Select department cost center under technology bulk import   316546
@@ -789,8 +795,12 @@ Verify Bulk Import on the Technology Page by adding all parameters
     Generic.Fetch alert message text and compare it with        Department added successfully
     Generic.Verify your current page location contains      department-list
     DepartmentPage.Search by department name      ${generated_Department_bulk}
+    ${StartTime1} =     Get Current Time in Milliseconds
     Generic.click on the button     Next
     Generic.click on the tab        Add Location
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  7  ${pageHeading}   Asset wizard - Page redirect from department to location      7    ${pageTime}     ${ActualTime}    AssetWizardPage_Time
     Generic.Verify your current page location contains      addLocation
     LocationPage.Select location country        United States
     LocationPage.Select location building name   Trump tower
@@ -808,8 +818,12 @@ Verify Bulk Import on the Technology Page by adding all parameters
     Generic.Fetch alert message text and compare it with    Location created successfully
     Bulk_Import_ExportPage.Search by location name under technology bulk import    ${generated_location}
 #    LocationPage.Fetch the location Name from the row       ${generated_location}
+    ${StartTime1} =     Get Current Time in Milliseconds
     Generic.click on the button     Next
     Generic.click on the button     Add Member
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  8  ${pageHeading}   Asset wizard - Page redirect from location to team member      8    ${pageTime}     ${ActualTime}    AssetWizardPage_Time
     TeamMemberPage.Enter team member first name
     TeamMemberPage.Enter team member last name
     Generic.Enter phone number      India   +91     9646289871
@@ -823,8 +837,12 @@ Verify Bulk Import on the Technology Page by adding all parameters
     TeamMemberPage.Save the team member form   save
     Generic.Fetch alert message text and compare it with        Team Member created successfully
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
+    ${StartTime1} =     Get Current Time in Milliseconds
     Generic.click on the button     Next
     Generic.click on the button    Add Brand
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  9  ${pageHeading}   Asset wizard - Page redirect from team member to brand      9    ${pageTime}     ${ActualTime}    AssetWizardPage_Time
     DashboardPage.Create random brandName
     DashboardPage.Create random brandName
     DashboardPage.Add business manufacturer URL       ${generated_BrandName}
@@ -833,8 +851,12 @@ Verify Bulk Import on the Technology Page by adding all parameters
     Generic.Fetch alert message text and compare it with        Brand created successfully.
     DashboardPage.Click added brand main save button
     DashboardPage.Verify Brand added      ${generated_BrandName}
+    ${StartTime1} =     Get Current Time in Milliseconds
     Generic.click on the button     Next
     Generic.click on the tab        Add Product
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  10  ${pageHeading}   Asset wizard - Page redirect from brand to product      10    ${pageTime}     ${ActualTime}    AssetWizardPage_Time
     DashboardPage.Create random productName
     DashboardPage.Add product brand name      ${generated_BrandName}
     DashboardPage.Add product description via link
@@ -845,8 +867,12 @@ Verify Bulk Import on the Technology Page by adding all parameters
     Bulk_Import_ExportPage.Save added product details technology bulk import
 #    Generic.Fetch alert message text and compare it with        Product created successfully
     DashboardPage.Verify product added    ${generated_product}
+    ${StartTime1} =     Get Current Time in Milliseconds
     Generic.click on the button     Next
     Generic.click on the tab        Add Partner
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  11  ${pageHeading}   Asset wizard - Page redirect from product to partners      11    ${pageTime}     ${ActualTime}    AssetWizardPage_Time
     Generic.Verify your current page location contains      addpartner
     PartnersPage.Select partner type of new partner     Manufacturer
     PartnersPage.Select partner business_name     ${generated_BrandName}
@@ -915,8 +941,13 @@ Verify Bulk Import on the Technology Page by adding all parameters
     PartnersPage.Click contact main save button
     Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generated_BrandName}
+    ${StartTime1} =     Get Current Time in Milliseconds
     Generic.click on the button     Next
     Generic.Verify your current page location contains     add-technology
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  12  ${pageHeading}   Asset wizard - Page redirect from partners to technology assets      12    ${pageTime}     ${ActualTime}    AssetWizardPage_Time
+
     Bulk_Import_ExportPage.Enter the new value in the fields of technology bulk import       Brand        ${generated_BrandName}
     Bulk_Import_ExportPage.Enter the new value in the fields of technology bulk import     Product         ${generated_product}
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      ItemTechCount         1
@@ -925,8 +956,12 @@ Verify Bulk Import on the Technology Page by adding all parameters
     Generic.Click on the button     Check Data      #Update,Edit
     Generic.Click on the button     Upload
     Bulk_Import_ExportPage.Verify the upload message text - bulk import tech    Upload       Upload is prepared
+    ${StartTime1} =     Get Current Time in Milliseconds
     Generic.click on the button     Next
     Generic.Verify your current page location contains     add-technology-templates
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  13  ${pageHeading}   Asset wizard - Page redirect from technology asset grid  to technology template      13    ${pageTime}     ${ActualTime}    AssetWizardPage_Time
     Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       LocationName        1
     Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       DepartmentName        1
     Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       AssignTo        1
@@ -991,18 +1026,26 @@ Verify Bulk Import on the Technology Page by adding all parameters
     Generic.Click on the button     Check Data      #Update,Edit
     Generic.Click on the button     Upload
     Bulk_Import_ExportPage.Verify the upload message text   UploadMessage       Upload Successful
+    ${StartTime1} =     Get Current Time in Milliseconds
     Generic.click on the button     Next
     Bulk_Import_ExportPage.Enter the new value in the fields of technology bulk import       ParentId     ${generated_AssetID}
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  14  ${pageHeading}   Asset wizard - Page redirect from technology template to allocate component      14    ${pageTime}     ${ActualTime}    AssetWizardPage_Time
     sleep   2
     Generic.Click on the button     Check Data      #Update,Edit
     Generic.Click on the button     Upload
     Bulk_Import_ExportPage.Verify the upload message text   UploadMessage       Upload Successful
     Generic.Fetch alert message text and compare it with    Assets linked successfully
+    ${StartTime1} =     Get Current Time in Milliseconds
     Generic.Click on the button     Finish
     Bulk_Import_ExportPage.Click on I_m_done button when popup appears     no-im-done
     Sleep      ${yop_sleep}
     Switch Window       aithentic | Technology - List
     Generic.Verify your current page location contains     technology-list
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  15  ${pageHeading}   Asset wizard - Page redirect from allocate component to technology listing      15    ${pageTime}     ${ActualTime}    AssetWizardPage_Time
     TechnologyPage.Search by AssetId       ${generated_bulk_import_assetid}
     Generic.Wait until table get load
     Generic.Click on the profile name

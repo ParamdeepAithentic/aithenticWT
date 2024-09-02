@@ -266,10 +266,17 @@ Click on the select status filter and verify it
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Location
     Generic.Verify your current page location contains      locationlist
+
+    ${StartTime1} =     Get Current Time in Milliseconds
     LocationPage.Click on the status filter under location
     LocationPage.Select the option from status filter under location        Inactive
     LocationPage.Get the text of selected status filter under location      Inactive
     Generic.Wait until table get load
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  9  ${pageHeading}   Filter Page - Data load time of filter inactive under location status      9    ${pageTime}     ${ActualTime}    Filter_Time
+
+
     PaginationPage.Fetch the total count
     PaginationPage.Click on the pagination dropdown     location-list
     PaginationPage.Select the value from the pagination drop down count     500
@@ -293,7 +300,13 @@ Click on the select location filter and verify it
     PaginationPage.Select the value from the pagination drop down count     500
     PaginationPage.Fetch the selected value of the dropdown     location-list
     PaginationPage.Fetch the total count
+
+    ${StartTime1} =     Get Current Time in Milliseconds
     LocationPage.Fetch the country from location filter and click       Country     Afghanistan         ${New_Name}
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  10  ${pageHeading}   Filter Page - Data load time of filter Country under location group      10    ${pageTime}     ${ActualTime}    Filter_Time
+
     LocationPage.Select the option from location filter under location         Afghanistan
     LocationPage.Select the option from location filter under location         Canada
     LocationPage.Get the text of selected filter under location     Canada

@@ -2279,7 +2279,13 @@ Message Side bar filters
     ReportsPage.Fetch the total count
     PaginationPage.Click on the pagination dropdown     inbox
     PaginationPage.Select the value from the pagination drop down count    500
+
+    ${StartTime1} =     Get Current Time in Milliseconds
     MessagePage.Fetch the country from location filter and click     Partner Type         End User    End User
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  16  ${pageHeading}   Filter Page - Data load time of filter select partner under message page      16    ${pageTime}     ${ActualTime}    Filter_Time
+
     Generic.Click on the reset filters link
     MessagePage.Select the filter from partner    Manufacturer
     ReportsPage.Fetch the total count
@@ -2412,13 +2418,19 @@ Click on the product filters via profile list
     Generic.Select option from profile list     product-dropdown
     Generic.Verify your current page location contains     product
     DashboardPage.Click on the status filter under product via profile
+
+    ${StartTime1} =     Get Current Time in Milliseconds
     DashboardPage.Select the option from the filters under product via profile      0
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  17  ${pageHeading}   Filter Page - Data load time of filter status under product page via profile list      17    ${pageTime}     ${ActualTime}    Filter_Time
+
     DashboardPage.Click on the added products heading
     DashboardPage.Get the text of selected status filter under product via profile
     Generic.Wait until table get load
     PaginationPage.Fetch the total count
     TeamMemberPage.Fetch the country from team member filter and click       Status      ${New_product_Status}         ${New_product_Status}
-     Generic.Click on the profile name
+    Generic.Click on the profile name
     Generic.Select other option from profile list     Logout
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login

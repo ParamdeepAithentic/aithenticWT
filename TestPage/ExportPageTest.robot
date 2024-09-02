@@ -407,16 +407,25 @@ Export Assigned User list
     TeamMemberPage.Choose option after clicking on Action button    Export Data
     TeamMemberPage.Download the selected extension file of team member      Excel(.xlsx)
     PartnersPage.Confirm to export file        confirm
+
+    ${StartTime1} =     Get Current Time in Milliseconds
     PartnersPage.Verify that the selected extension file is downloaded       .xlsx
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  6  ${pageHeading}   Member Page - Export the .xlsx file      6    ${pageTime}     ${ActualTime}    ExportPageTest_Time
     MemberPage.Click on action button of assigned users
     TeamMemberPage.Choose option after clicking on Action button    Export Data
     TeamMemberPage.Download the selected extension file of team member      OpenDocument(.ods)
     PartnersPage.Confirm to export file        confirm
+    ${StartTime1} =     Get Current Time in Milliseconds
     PartnersPage.Verify that the selected extension file is downloaded       .ods
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  7  ${pageHeading}   Member Page - Export the .ods file      7    ${pageTime}     ${ActualTime}    ExportPageTest_Time
     MemberPage.Click on action button of assigned users
     TeamMemberPage.Choose option after clicking on Action button    Export Data
     TeamMemberPage.Download the selected extension file of team member      Comma Separated Values(.csv)
@@ -480,9 +489,13 @@ Export technology details page list
     TechnologyPage.Click on the export button of deatils tab under technology details page
     TechnologyPage.Download the selected extension file of parent under technology details      .xlsx
     PartnersPage.Confirm to export file        confirm
+    ${StartTime1} =     Get Current Time in Milliseconds
     PartnersPage.Verify that the selected extension file is downloaded       .xlsx
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  8  ${pageHeading}   Technology details - Export the .xls file      8    ${pageTime}     ${ActualTime}    ExportPageTest_Time
     TechnologyPage.Click on the export button of deatils tab under technology details page
     TechnologyPage.Download the selected extension file of parent under technology details      .ods
     PartnersPage.Confirm to export file        confirm
@@ -492,9 +505,13 @@ Export technology details page list
     TechnologyPage.Click on the export button of deatils tab under technology details page
     TechnologyPage.Download the selected extension file of parent under technology details      .csv
     PartnersPage.Confirm to export file        confirm
+    ${StartTime1} =     Get Current Time in Milliseconds
     PartnersPage.Verify that the selected extension file is downloaded       .csv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  9  ${pageHeading}   Technology details - Export the .cvs file    9    ${pageTime}     ${ActualTime}    ExportPageTest_Time
     TechnologyPage.Click on the export button of deatils tab under technology details page
     TechnologyPage.Download the selected extension file of parent under technology details      .tsv
     PartnersPage.Confirm to export file        confirm
@@ -560,9 +577,13 @@ Export component tab list
     TechnologyPage.Click on the export button of component tab under technology details page
     TechnologyPage.Download the selected extension file of parent under technology details      .xlsx
     PartnersPage.Confirm to export file        confirm
+    ${StartTime1} =     Get Current Time in Milliseconds
     PartnersPage.Verify that the selected extension file is downloaded       .xlsx
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  10  ${pageHeading}   Technology details components - Export the .cvs file    10    ${pageTime}     ${ActualTime}    ExportPageTest_Time
     TechnologyPage.Click on the export button of component tab under technology details page
     TechnologyPage.Download the selected extension file of parent under technology details      .ods
     PartnersPage.Confirm to export file        confirm
@@ -599,9 +620,13 @@ Export account overview tab data
     DashboardPage.Click on the export button under account overview tab
     TeamMemberPage.Download the selected extension file of team member      OpenDocument(.ods)
     PartnersPage.Confirm to export file        confirm
+    ${StartTime1} =     Get Current Time in Milliseconds
     PartnersPage.Verify that the selected extension file is downloaded       .ods
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  11  ${pageHeading}   Dashboard Account overview - Export the .ods file    11    ${pageTime}     ${ActualTime}    ExportPageTest_Time
     DashboardPage.Click on the export button under account overview tab
     TeamMemberPage.Download the selected extension file of team member     Comma Separated Values(.csv)
     PartnersPage.Confirm to export file        confirm

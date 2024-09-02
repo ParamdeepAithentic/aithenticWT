@@ -1235,7 +1235,13 @@ Click on the location filter under team member and verify it
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Click on the location filter under team member       location
+
+    ${StartTime1} =     Get Current Time in Milliseconds
     LocationPage.Select the option from location filter under location        *Main Office
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  11  ${pageHeading}   Filter Page - Data load time of location filter under team member      11    ${pageTime}     ${ActualTime}    Filter_Time
+
     LocationPage.Get the text of selected filter under location    *Main Office
     Generic.Wait until table get load
     PaginationPage.Fetch the total count
@@ -1270,7 +1276,13 @@ Click on the status filter under team member and verify it
     Generic.select the option from the side menu     Team Members
     Generic.Verify your current page location contains     memberslist
     TeamMemberPage.Click on the location filter under team member       status
+
+    ${StartTime1} =     Get Current Time in Milliseconds
     LocationPage.Select the option from status filter under location        Active
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  12  ${pageHeading}   Filter Page - Data load time of status filter under team member      12    ${pageTime}     ${ActualTime}    Filter_Time
+
     LocationPage.Get the text of selected status filter under location      Active
     Generic.Wait until table get load
     PaginationPage.Fetch the total count
@@ -1301,7 +1313,14 @@ Click on the status filter under team member via profile list and verify it
     Generic.Wait until table get load
     PaginationPage.Fetch the total count
     TeamMemberPage.Click on the status filter under team member via profile
+
+    ${StartTime1} =     Get Current Time in Milliseconds
     TeamMemberPage.Select the option from the filters under team member via profile     0
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  13  ${pageHeading}   Filter Page - Data load time of status under team member via personal details      13    ${pageTime}     ${ActualTime}    Filter_Time
+
+
     TeamMemberPage.Get the text of selected status filter under team meber via profile
     DashboardPage.click on the authentication tab under security
     TeamMemberPage.click on the members tab under team member via profile
