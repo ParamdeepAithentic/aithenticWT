@@ -184,9 +184,9 @@ Compose Message invite user test
 #-------------------------- CONTRACT-----------------------------------------------------------
 
     ${StartTime1} =     Get Current Time in Milliseconds
-    Generic.select the option from the side menu    Contracts
-    Generic.Verify your current page location contains      contracts
-    Generic.Verify your current page contains this text     Contracts
+    Generic.select the option from the side menu    Smart Share
+    Generic.Verify your current page location contains      contract
+    Generic.Verify your current page contains this text     Smart Share
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  10  ${pageHeading}   Page Load - Total load time from clicking contract option from side listing to contract page listing      10    ${pageTime}     ${ActualTime}    PageLoad_Time
@@ -195,9 +195,9 @@ Compose Message invite user test
     ContractsPage.Click on create new contract button
 
     ${StartTime1} =     Get Current Time in Milliseconds
-    ContractsPage.Select type of contract     Dynamic Contract
+    ContractsPage.Select type of contract     Dynamic Smart Share
     Generic.Verify your current page location contains      generate-contract
-    Generic.Verify your current page contains this text     Generate New Contract
+    Generic.Verify your current page contains this text     Generate New Smart Share
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  11  ${pageHeading}   Page Load - Total load time from clicking Dynamic Contract option from pop up to generate new contract page      11    ${pageTime}     ${ActualTime}    PageLoad_Time
@@ -387,12 +387,12 @@ Compose Message invite user test
     DashboardPage.Select the location ID checkbox   yes
     Generic.Fetch alert message text and compare it with       Settings Updated
 
-    Generic.select the option from the side menu    Contracts
+    Generic.select the option from the side menu    Smart Share
     Generic.Verify your current page location contains      contracts-list
 #    ContractsPage.Fetch the contract ID from the row
 #    ContractsPage.Click on the first tab row    ${generate_BusinessName}
 #    sleep   50000
-    Generic.Verify your current page contains this text     Create New Contract
+    Generic.Verify your current page contains this text     Create New Smart Share
     ContractsPage.Click on the first tab row of contract list page table
     Generic.Verify your current page location contains      view-smartshare
     ContractsPage.Save the contract details     Accept
@@ -1170,11 +1170,11 @@ View Details and check the details of Contract
     Generic.Verify your current page location contains      technology-list
     Generic.Wait until table get load
     TechnologyPage.Search by BrandName      ${generate_BusinessName}
-    Generic.select the option from the side menu    Contracts
+    Generic.select the option from the side menu    Smart Share
     Generic.click on the button link    View Details
     ContractsPage.Click on back to contract link
     ContractsPage.Click on create new contract button
-    ContractsPage.Select type of contract     Dynamic Contract
+    ContractsPage.Select type of contract     Dynamic Smart Share
     Generic.Verify your current page location contains      generate-contract
     ContractsPage.Enter contract type      SmartShare_Manufacturer
     ContractsPage.Enter contract with     ${generate_BusinessName}
