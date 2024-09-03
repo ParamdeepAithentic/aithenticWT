@@ -324,7 +324,7 @@ Remove the old assets to free the space
     SortingPage.Click on specific column for method one     Created Date
     SortingPage.Click on specific column for method one     Created Date
     PaginationPage.Click on the pagination dropdown     technology
-    PaginationPage.Select the value from the pagination drop down count    250
+    PaginationPage.Select the value from the pagination drop down count    500
 
     Generic.Wait until table get load
     PaginationPage.Click on the checkbox of technology listing
@@ -341,7 +341,7 @@ Remove the old assets to free the space
     Generic.Verify your current page location contains      subscription
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     TechnologyPage.Click on plan of subscription        Premium
-    Generic.Scroll the page till    200
+    Generic.Scroll the page till    1000
 #    SubscriptionPage.Set asset range to     900
     Admin_PanelPage.Select the higest plan
     sleep    5

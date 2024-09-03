@@ -84,7 +84,7 @@ Verify pagination of partner table
 #    LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    Generic.Verify your current page location contains      dashboard
 #    LandingPage.Verify you are on dashboard page
-#    Generic.select the option from the side menu    Contracts
+#    Generic.select the option from the side menu    Smart Share
 #    Generic.Verify your current page location contains      contracts-list
 #    PaginationPage.Check the table get load
 #    PaginationPage.Fetch the total count
@@ -350,7 +350,7 @@ Verify pagination of contract table
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
-    Generic.select the option from the side menu    Contracts
+    Generic.select the option from the side menu    Smart Share
     Generic.Verify your current page location contains      contracts-list
     PaginationPage.Check the table get load
     PaginationPage.Fetch the total count

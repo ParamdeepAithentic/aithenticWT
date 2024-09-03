@@ -249,7 +249,7 @@ Test the sorting of contract page table
     LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
-    Generic.select the option from the side menu    Contracts
+    Generic.select the option from the side menu    Smart Share
     Generic.Verify your current page location contains      contracts-list
     Generic.Wait until table get load
     SortingPage.Verify the sorting of the table method two     2       Business Name

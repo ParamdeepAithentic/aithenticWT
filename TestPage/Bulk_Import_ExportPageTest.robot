@@ -481,8 +481,8 @@ Technology Bulk edit
     Bulk_Import_ExportPage.Click on the fields and select value from dropdown of technology bulk edit    AssignedName
     Bulk_Import_ExportPage.click on the arrow of product    Assignment Information     1
     Bulk_Import_ExportPage.click on the arrow of product    Partners Information     2
-    Bulk_Import_ExportPage.Click on the fields and select value from dropdown of technology bulk edit        SupportPartnerName_1
-    Bulk_Import_ExportPage.Click on the fields and select value from dropdown of technology bulk edit        SupplierName
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit        SupportPartnerName_1       1
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit        SupplierName           1
     Bulk_Import_ExportPage.click on the arrow of product    Partners Information     1
     Bulk_Import_ExportPage.click on the arrow of product    Technology Cost Information    2
 #    Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology       PaymentPartnerName      Dell
@@ -671,11 +671,11 @@ Technology Bulk import
     Bulk_Import_ExportPage.Perform the keyboard action      LastPaymentDate
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      RenewalDate      02/11/2024
     Bulk_Import_ExportPage.Perform the keyboard action      RenewalDate
-    Bulk_Import_Exportpage.Select option from technology type column in bulk_edit      BudgetCurrency      1
+    Bulk_Import_Exportpage.Select option from budget currency in technology bulk import      BudgetCurrency      1
     Bulk_Import_ExportPage.Perform the keyboard action      BudgetCurrency
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      BudgetPaymentValue      2500
     Bulk_Import_ExportPage.Perform the keyboard action      BudgetPaymentValue
-    Bulk_Import_Exportpage.Select option from technology type column in bulk_edit      ActualPaymentCurrency      1
+    Bulk_Import_Exportpage.Select option from budget currency in technology bulk import      ActualPaymentCurrency      1
     Bulk_Import_ExportPage.Perform the keyboard action      ActualPaymentCurrency
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      LastActualPaymentValue      2000
     Bulk_Import_ExportPage.Perform the keyboard action      LastActualPaymentValue
@@ -693,12 +693,12 @@ Technology Bulk import
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_9
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_3      1654
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_3
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_4      CPU
-    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_4
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_5      Paramdeep
-    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_5
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_6      Test@123
-    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_6
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_4      CPU
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_4
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_5      Paramdeep
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_5
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_6      Test@123
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_6
     Bulk_Import_Exportpage.Enter the new value of serial number of technology bulk import      DYNA_21
 #    Bulk_Import_ExportPage.Perform the keyboard action      DYNA_21
 #    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_4      CPU
@@ -961,7 +961,7 @@ Verify Bulk Import on the Technology Page by adding all parameters
     Generic.Verify your current page location contains     add-technology-templates
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  13  ${pageHeading}   Asset wizard - Page redirect from technology asset grid  to technology template      13    ${pageTime}     ${ActualTime}    AssetWizardPage_Time
+    Calculate Running time  13  ${pageHeading}   Asset wizard - Page redirect from technology asset grid to technology template      13    ${pageTime}     ${ActualTime}    AssetWizardPage_Time
     Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       LocationName        1
     Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       DepartmentName        1
     Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       AssignTo        1
@@ -991,11 +991,11 @@ Verify Bulk Import on the Technology Page by adding all parameters
     Bulk_Import_ExportPage.Perform the keyboard action      LastPaymentDate
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      RenewalDate      02/11/2024
     Bulk_Import_ExportPage.Perform the keyboard action      RenewalDate
-    Bulk_Import_Exportpage.Select option from technology type column in bulk_edit      BudgetCurrency      1
+    Bulk_Import_Exportpage.Select option from budget currency in technology bulk import      BudgetCurrency      1
     Bulk_Import_ExportPage.Perform the keyboard action      BudgetCurrency
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      BudgetPaymentValue      2500
     Bulk_Import_ExportPage.Perform the keyboard action      BudgetPaymentValue
-    Bulk_Import_Exportpage.Select option from technology type column in bulk_edit      ActualPaymentCurrency      1
+    Bulk_Import_Exportpage.Select option from budget currency in technology bulk import      ActualPaymentCurrency      1
     Bulk_Import_ExportPage.Perform the keyboard action      ActualPaymentCurrency
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      LastActualPaymentValue      2000
     Bulk_Import_ExportPage.Perform the keyboard action      LastActualPaymentValue
@@ -1011,11 +1011,11 @@ Verify Bulk Import on the Technology Page by adding all parameters
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_9
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_3      1654
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_3
-    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_4
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_5      Paramdeep
-    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_5
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_6      Test@123
-    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_6
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_4
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_5      Paramdeep
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_5
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_6      Test@123
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_6
     Bulk_Import_Exportpage.Enter the new value of serial number of technology bulk import      DYNA_21
 #    Bulk_Import_ExportPage.Perform the keyboard action      DYNA_21
 #    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_4      CPU
