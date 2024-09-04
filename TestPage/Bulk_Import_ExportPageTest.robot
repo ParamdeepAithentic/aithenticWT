@@ -1110,11 +1110,11 @@ Technology bulk import while entering invalid data in payment period field
     Bulk_Import_ExportPage.Perform the keyboard action      LastPaymentDate
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      RenewalDate      02/11/2024
     Bulk_Import_ExportPage.Perform the keyboard action      RenewalDate
-    Bulk_Import_Exportpage.Select option from technology type column in bulk_edit      BudgetCurrency      1
+    Bulk_Import_Exportpage.Select option from budget currency in technology bulk import      BudgetCurrency      1
     Bulk_Import_ExportPage.Perform the keyboard action      BudgetCurrency
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      BudgetPaymentValue      2500
     Bulk_Import_ExportPage.Perform the keyboard action      BudgetPaymentValue
-    Bulk_Import_Exportpage.Select option from technology type column in bulk_edit      ActualPaymentCurrency      1
+    Bulk_Import_Exportpage.Select option from budget currency in technology bulk import      ActualPaymentCurrency      1
     Bulk_Import_ExportPage.Perform the keyboard action      ActualPaymentCurrency
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      LastActualPaymentValue      2000
     Bulk_Import_ExportPage.Perform the keyboard action      LastActualPaymentValue
@@ -1202,8 +1202,8 @@ Check the payment period period alert when entering valid data
     Bulk_Import_ExportPage.Click on the fields and select value from dropdown of technology bulk edit    AssignedName
     Bulk_Import_ExportPage.click on the arrow of product    Assignment Information     1
     Bulk_Import_ExportPage.click on the arrow of product    Partners Information     2
-    Bulk_Import_ExportPage.Click on the fields and select value from dropdown of technology bulk edit        SupportPartnerName_1
-    Bulk_Import_ExportPage.Click on the fields and select value from dropdown of technology bulk edit        SupplierName
+   Bulk_Import_ExportPage.Select option from technology type column in bulk_edit        SupportPartnerName_1       1
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit        SupplierName           1
     Bulk_Import_ExportPage.click on the arrow of product    Partners Information     1
     Bulk_Import_ExportPage.click on the arrow of product    Technology Cost Information    2
 #    Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology       PaymentPartnerName      Dell
