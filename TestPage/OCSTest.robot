@@ -1837,5 +1837,17 @@ Verify reset icon while adding component
         TechnologyPage.Click on reset icon while adding technology
         TechnologyPage.Verify the invisibility of brand after clicking on reset icon
 
+Search with inavlid MAC Address under newly discovered
+        Generic.click on the tab	Login
+        LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+        Generic.Verify your current page location contains      dashboard
+        LandingPage.Verify you are on dashboard page
+        Generic.select the option from the side menu        Asset Discovery
+        Generic.Verify your current page location contains      discovery-assets
+        OCS.Click on newly discovered tab under network discovery
+        Generic.Verify your current page location contains    aad
+        OCS.Click on search icon of discovery assets
+        OCS.Enter text to search discovery asset   00:00:00:00
+        Get the text of no records after searching with inavlid mac address under newly discovery tab      No records
 #Zz kill browser
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
