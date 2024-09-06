@@ -569,5 +569,5 @@ Login as Support_Partner with different roles
     Generic.Fetch log_out alert message
 
 #Zz kill browser
-#    [Tags]      Smoke     Sanity      Time      rerun       Stable    yy
+#    [Tags]      Smoke     Sanity      Time      Stable    yy
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

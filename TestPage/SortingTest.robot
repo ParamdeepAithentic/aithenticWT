@@ -263,7 +263,7 @@ Test the sorting of contract page table
     SortingPage.Verify the sorting of the table method two     10      Technology
 
 Test the sorting of department page list via bulk import of technology table
-    [Tags]    Smoke     Stable
+    [Tags]    Smoke     Stable     Rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
@@ -306,6 +306,7 @@ Test the sorting of department page list via bulk import of technology table
 #    SortingPage.Verify the sorting of the table method two     2       Brand Name       #Data is more than 10
 
     Generic.click on the button      Next
+    sleep       60
     SortingPage.Verify the sorting of the table method two     3       Brand Name
     SortingPage.Verify the sorting of the table method two     2       Product Name
     SortingPage.Verify the sorting of the table method two     4       Description
@@ -378,7 +379,7 @@ Test the sorting of sent table page under message page
 
 
 Test the sorting of bulk edit grid under team members
-    [Tags]    Smoke     rerun       Unstable
+    [Tags]    Smoke       Unstable     Rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
@@ -425,7 +426,7 @@ Test the sorting of bulk edit grid under assigned users
     SortingPage.Verify the sorting of the table method five    2      First Name
 
 #Test the sorting of Recent Activities Table under Dashboard page
-#    [Tags]      Unstable    rerun
+#    [Tags]      Unstable
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
 ##    LandingPage.Verify you are on dashboard page

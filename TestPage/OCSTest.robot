@@ -64,7 +64,7 @@ Free the asset limit
 
 
 Search Discovered Assets
-    [Tags]      Stable      rerun
+    [Tags]      Stable
     TRY
        Generic.click on the tab	Login
        LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -314,8 +314,8 @@ Apply filters and clear filter on Existing Assets
         TechnologyPage.Click on Location tab of technology- list page
         TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     DepartmentName
         OCS.verify Text by hovering over assets  ${assign_loc_input_value}      ${discovered_existing_department}
-        sleep       ${yop_sleep}
-        Switch Window  aithentic | Sentinel One Newly-Discovered
+#        sleep       ${yop_sleep}
+#        Switch Window     aithentic | Sentinel One Newly-Discovered
         OCS.Click on the down arrow icon of existing assets
         OCS.Click on clear filter button link of discovered assets  Clear Filters
         OCS.Choose filters for discovered asset    Select Location      *Main Office
@@ -334,8 +334,8 @@ Apply filters and clear filter on Existing Assets
         Generic.Verify your current page location contains    technology-details
         TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     LocationName
         OCS.verify Text by hovering over assets  ${assign_loc_input_value}      *Main Office
-        sleep       ${yop_sleep}
-        Switch Window  aithentic | Sentinel One Newly-Discovered
+#        sleep       ${yop_sleep}
+#        Switch Window      aithentic | Sentinel One Newly-Discovered
         OCS.Click on the down arrow icon of existing assets
         OCS.Click on clear filter button link of discovered assets      Clear Filters
     EXCEPT
@@ -443,7 +443,7 @@ Create Asset from Add Assets Page
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window       aithentic | Sentinel One Newly-Discovered
+        Switch Window       aithentic | Discovered Assets
         Generic.Refresh the existing page
         OCS.Choose Tab under Asset Discovery    agent-discovery
         Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -502,7 +502,7 @@ Add component as an asset from Agent Discovery page
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window       aithentic | Sentinel One Newly-Discovered
+        Switch Window       aithentic | Discovered Assets
         Generic.Refresh the existing page
         OCS.Choose Tab under Asset Discovery    agent-discovery
         Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -602,7 +602,7 @@ Upload Image and Document File while Add Discovery Asset
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window       aithentic | Sentinel One Newly-Discovered
+        Switch Window       aithentic | Discovered Assets
         Generic.Refresh the existing page
          OCS.Choose Tab under Asset Discovery    agent-discovery
         Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -670,7 +670,7 @@ Upload Image and Document File while Add Discovery Asset
     END
 
 Upload Image and Document File while Add component as an asset from Agent Discovery page
-    [Tags]      Unstable    rerun
+    [Tags]      Unstable
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -721,7 +721,7 @@ Upload Image and Document File while Add component as an asset from Agent Discov
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window       aithentic | Sentinel One Newly-Discovered
+        Switch Window       aithentic | Discovered Assets
         Generic.Refresh the existing page
         OCS.Choose Tab under Asset Discovery    agent-discovery
         Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -1011,7 +1011,7 @@ Add asset with IP Address under discovered asset list
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window       aithentic | Sentinel One Newly-Discovered
+        Switch Window       aithentic | Discovered Assets
         Generic.Verify your current page location contains      aad
         OCS.Choose tab under Discovery Assets   agent-discovery
         Generic.Verify your current page location contains   aad
@@ -1077,7 +1077,7 @@ Add Asset with IP address from Network Discovery Page
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window       aithentic | Sentinel One Newly-Discovered
+        Switch Window       aithentic | Discovered Assets
         Generic.select the option from the side menu        Technology
         Generic.Verify your current page location contains      technology-list
         TechnologyPage.Search by AssetId       ${generated_AssetID}
@@ -1160,7 +1160,7 @@ Network discovery: search on discovered asset list with Tag Name, IP_address and
     END
 
 Search with containing fields under advance search of discovered asset
-    [Tags]        Unstable      rerun
+    [Tags]        Unstable
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -1289,7 +1289,7 @@ Search with containing fields under advance search of discovered asset
     END
 
 Search with containing fields under advance search of component of discovered asset
-    [Tags]        Unstable      rerun
+    [Tags]        Unstable
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -1316,7 +1316,7 @@ Search with containing fields under advance search of component of discovered as
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        switch window    aithentic | Sentinel One Newly-Discovered
+        Switch Window       aithentic | Discovered Assets
         OCS.Choose tab under Discovery Assets   agent-discovery
         Generic.Verify your current page location contains      aad
         Generic.Refresh the existing page
@@ -1468,7 +1468,7 @@ Search with containing fields under advance search of component of discovered as
     END
 
 Search with containing fields under advance search of IP Address of discovered asset
-    [Tags]      Sanity          Unstable        rerun
+    [Tags]      Sanity          Unstable
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
