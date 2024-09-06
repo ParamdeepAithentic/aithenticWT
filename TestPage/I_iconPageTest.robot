@@ -208,7 +208,7 @@ Verify all i-icon of Discovery assets
 
 
 Verify all i-icon of advanced search
-    [Tags]     Smoke    Unstable
+    [Tags]     Smoke    Unstable    rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.Verify your current page location contains      dashboard
@@ -250,8 +250,8 @@ Verify all i-icon of advanced search
     I_iconPage.Click on i_icon of advanced search under add discovered asset
     I_iconPage.Click on the cross icon of advanced search under technology
     TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
-    OCS.Enter The Asset_id in Add Technology Page
     TechnologyPage.Create unique serial number random
+    OCS.Enter The Asset_id in Add Technology Page
     Generic.Scroll Window To End
     OCS.Click on save button of Add Technology Page
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
@@ -581,7 +581,7 @@ Upload I-icon under clone add technology
 
 
 Upload I-icon while adding discovery and component asset
-    [Tags]    rerun     Unstable    rerun
+    [Tags]    rerun     Unstable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.Verify your current page location contains      dashboard
@@ -589,7 +589,7 @@ Upload I-icon while adding discovery and component asset
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    aad
-    OCS.Choose Tab under Asset Discovery    network-discovery
+#    OCS.Choose Tab under Asset Discovery    network-discovery
     OCS.Click on newly discovered tab under network discovery
     Generic.Verify your current page location contains   aad
     OCS.Click on search icon of discovery assets
@@ -602,7 +602,7 @@ Upload I-icon while adding discovery and component asset
     OCS.Get Host name by hovering over discovered assets     Host name:
     OCS.Mark check-box of Agent/Discovered Asset
     OCS.Click on Button inside Network Discovery Page       Add Assets
-     Sleep    ${yop_sleep}
+    Sleep    ${yop_sleep}
     Switch Window       aithentic | Add Discovery Asset
     Generic.Verify your current page contains this text    Add Technology
     TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
@@ -613,7 +613,7 @@ Upload I-icon while adding discovery and component asset
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
     Sleep    ${yop_sleep}
 
-    switch window    aithentic | Sentinel One Newly-Discovered
+    Switch Window       aithentic | Discovered Assets
 
     Generic.Refresh the existing page
     OCS.Choose Tab under Asset Discovry    agent-discovery
@@ -638,6 +638,29 @@ Upload I-icon while adding discovery and component asset
     Switch Window       aithentic | Add Discovery Asset
     Generic.Verify your current page contains this text    Add Technology
     TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
+    OCS.Create Asset_id for software component
+        TechnologyPage.Verify the visibility of assign to field
+        OCS.Click on save button of Add Technology Page
+        OCS.Wait for the invisiblity of alert msg        Technology created successfully
+        Sleep    ${yop_sleep}
+        Switch Window       aithentic | Technology - Details
+        OCS.Verify Software tab Should contain Element
+        TechnologyPage.Click on edit button on product details page        Edit
+        Generic.Verify your current page location contains      edit-technology
+        OCS.Edit the MAC_Address of Asset
+        OCS.Edit The Host_Name of Asset
+        TechnologyPage.Select technology lifecycle status      Active
+#        OCS.Edit the Serial_No. of Asset
+        sleep   ${search_sleep}
+        TechnologyPage.Click on update button of edit_technology page       Update
+        Generic.Fetch alert message text and compare it with        Technology updated successfully
+        UnselectAssetAPI.Hit API Endpoint
+    EXCEPT
+        OCS.My Failure Handling
+        Fail
+    FINALLY
+        OCS.Welcome to the code
+    END
 
 
 
