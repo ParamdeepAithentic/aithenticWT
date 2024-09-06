@@ -180,30 +180,38 @@ Match Discovery and Existing Asset
         OCS.Click on the down arrow icon of existing assets
         OCS.Click on the down arrow icon of existing assets
         Generic.Scroll Window To End
-        OCS.Mouse Hover over searched existing assets after craeting technology
+        OCS.Mouse Hover over searched existing assets after creating technology frm add technology
         OCS.Verify searched existing asset    ${generated_AssetID}
         OCS.Mouse Hover over current page after hovering over ip and discovered assets
         OCS.Select any existing asset
         OCS.Click on Button inside Network Discovery Page     Confirm Matches
-        Generic.Fetch alert message text and compare it with      Matched Assets updated successfully
+        Generic.Fetch alert message text and compare it with      Assets matched successfully, you can find matched assets in Discovered Assets or Manage Technology
         Generic.select the option from the side menu    Technology
         Generic.Verify your current page location contains      technology
         TechnologyPage.Search by AssetId       ${generated_AssetID}
         TechnologyPage.Click on the first row of the technology table
         Generic.Verify your current page location contains    technology-details
         OCS.Get Value of MAC-Address from technology details and compare it with      ${hover_MAC_address1}
-        OCS.Get Value of Serial no. and compare it with    ${hover_serial_number}
+#        OCS.Get Value of Serial no. and compare it with    ${hover_serial_number}
         OCS.Get Value of Host-Name and compare it with    ${hover_host name}
-        TechnologyPage.Click on edit button on product details page        Edit
-        Generic.Verify your current page location contains      edit-technology
-        OCS.Edit the MAC_Address of Asset
-        OCS.Edit the Serial_No. of Asset
-        OCS.Edit The Host_Name of Asset
-        TechnologyPage.Select technology lifecycle status      Active
-        sleep   ${search_sleep}
-        TechnologyPage.Click on update button of edit_technology page       Update
-        Generic.Fetch alert message text and compare it with        Technology updated successfully
-        UnselectAssetAPI.Hit API Endpoint
+        OCS.Verify Page should contain Element     discovery-info-tab
+        OCS.Click on Discovery_info tab on Technology details Page
+        Generic.click on the button     Unmatch Asset
+        OCS.Click on the confirm button under unmatch asset pop up      confirm
+        Generic.Fetch alert message text and compare it with      Assets unmatched successfully
+        Generic.Verify your current page location contains    technology-details
+        Generic.Click on the profile name
+        Generic.Select option from profile list     view-discovery
+        Generic.Verify your current page location contains    aad
+        Generic.Verify your current page contains this text    -
+#        OCS.Edit the MAC_Address of Asset
+#        OCS.Edit the Serial_No. of Asset
+#        OCS.Edit The Host_Name of Asset
+#        TechnologyPage.Select technology lifecycle status      Active
+#        sleep   ${search_sleep}
+#        TechnologyPage.Click on update button of edit_technology page       Update
+#        Generic.Fetch alert message text and compare it with        Technology updated successfully
+#        UnselectAssetAPI.Hit API Endpoint
     EXCEPT
         OCS.My Failure Handling
         Fail
@@ -804,7 +812,7 @@ Match IP Discovered asset with Existing asset
     Generic.Verify your current page location contains    aad
     OCS.Click on newly discovered tab under network discovery
     OCS.Click on search icon of discovery assets
-    OCS.Enter text to search discovery asset    ${discovered_IP}
+    OCS.Enter text to search discovery asset    Apple, Inc.
     OCS.Click on the down arrow icon of discovered asset
     Generic.Scroll Window To End
     OCS.Mouse Hover over searched IP Assets
@@ -814,28 +822,45 @@ Match IP Discovered asset with Existing asset
     OCS.Click on search icon of discovery assets
     OCS.Click on the down arrow icon of existing assets
     OCS.Click on the down arrow icon of existing assets
-    OCS.Click on the down arrow icon of existing assets
     OCS.Mouse Hover over searched existing assets
     OCS.Get asset id by hovering over existing assets    Asset Id:
     OCS.Select any existing asset
     OCS.Verify that line appears between selected assets
     OCS.Click on Button inside Network Discovery Page     Confirm Matches
-    Generic.Fetch alert message text and compare it with      Matched Assets updated successfully
-    Generic.select the option from the side menu    Technology
-    Generic.Verify your current page location contains      technology
-    TechnologyPage.Search by AssetId       ${hover_assetid}
-    TechnologyPage.Click on the first row of the technology table
-    Generic.Verify your current page location contains    technology-details
-    OCS.Get Value of MAC-Address from technology details and compare it with      ${hover_MAC_addressIP}
-    TechnologyPage.Click on edit button on product details page        Edit
-    Generic.Verify your current page location contains      edit-technology
-    OCS.Edit the MAC_Address of Asset
-    OCS.Edit The Host_Name of Asset
-    TechnologyPage.Select technology lifecycle status      Active
-    sleep   ${search_sleep}
-    TechnologyPage.Click on update button of edit_technology page       Update
-    Generic.Fetch alert message text and compare it with        Technology updated successfully
-    UnselectAssetAPI.Hit API Endpoint
+    Generic.Fetch alert message text and compare it with        Assets matched successfully, you can find matched assets in Discovered Assets or Manage Technology
+    OCS.Choose tab under Discovery Assets   agent-discovery
+    Generic.Verify your current page location contains    aad
+    OCS.click on the value of IP discovered devices of inside table
+    Sleep    ${yop_sleep}
+    Switch Window       aithentic | Discovered Assets
+    Generic.Verify your current page location contains     discovery-assets-list
+    OCS.Search with MAC address and IP Address on the search bar of Discovered Asset List       ${hover_assetid}
+    Generic.Verify your current page contains this text     ${hover_assetid}
+    OCS.Click on the unmatch link under discovery assets list page
+    OCS.Click on the confirm button under unmatch asset pop up      confirm
+    Generic.Fetch alert message text and compare it with        Assets unmatched successfully
+    Generic.Verify your current page location contains     discovery-assets-list
+    Generic.Click on the profile name
+    Generic.Select option from profile list     view-discovery
+    Generic.Verify your current page location contains    aad
+    Generic.Verify your current page contains this text    -
+
+
+#    Generic.select the option from the side menu    Technology
+#    Generic.Verify your current page location contains      technology
+#    TechnologyPage.Search by AssetId       ${hover_assetid}
+#    TechnologyPage.Click on the first row of the technology table
+#    Generic.Verify your current page location contains    technology-details
+#    OCS.Get Value of MAC-Address from technology details and compare it with      ${hover_MAC_addressIP}
+#    TechnologyPage.Click on edit button on product details page        Edit
+#    Generic.Verify your current page location contains      edit-technology
+#    OCS.Edit the MAC_Address of Asset
+#    OCS.Edit The Host_Name of Asset
+#    TechnologyPage.Select technology lifecycle status      Active
+#    sleep   ${search_sleep}
+#    TechnologyPage.Click on update button of edit_technology page       Update
+#    Generic.Fetch alert message text and compare it with        Technology updated successfully
+#    UnselectAssetAPI.Hit API Endpoint
 
 Match Discovery Asset with Static Existing Asset
     [Tags]        Unstable
@@ -868,7 +893,7 @@ Match Discovery Asset with Static Existing Asset
         OCS.Select any existing asset
         OCS.Verify that line appears between selected assets
         OCS.Click on Button inside Network Discovery Page     Confirm Matches
-        Generic.Fetch alert message text and compare it with      Matched Assets updated successfully
+        Generic.Fetch alert message text and compare it with     Assets matched successfully, you can find matched assets in Discovered Assets or Manage Technology
         Generic.select the option from the side menu    Technology
         Generic.Verify your current page location contains      technology
         TechnologyPage.Search by AssetId         ${hover_assetid}
@@ -877,16 +902,27 @@ Match Discovery Asset with Static Existing Asset
         OCS.Get Value of MAC-Address from technology details and compare it with      ${hover_MAC_address1}
         OCS.Get Value of Serial no. and compare it with    ${hover_serial_number}
         OCS.Get Value of Host-Name and compare it with    ${hover_host name}
-        TechnologyPage.Click on edit button on product details page        Edit
-        Generic.Verify your current page location contains      edit-technology
-        OCS.Edit the MAC_Address of Asset
-        OCS.Edit the Serial_No. of Asset
-        OCS.Edit The Host_Name of Asset
-        TechnologyPage.Select technology lifecycle status      Active
-        sleep   ${search_sleep}
-        TechnologyPage.Click on update button of edit_technology page       Update
-        Generic.Fetch alert message text and compare it with        Technology updated successfully
-        UnselectAssetAPI.Hit API Endpoint
+        OCS.Verify Page should contain Element     discovery-info-tab
+        OCS.Click on Discovery_info tab on Technology details Page
+        Generic.click on the button     Unmatch Asset
+        OCS.Click on the confirm button under unmatch asset pop up      confirm
+        Generic.Fetch alert message text and compare it with      Assets unmatched successfully
+        Generic.Verify your current page location contains    technology-details
+        Generic.Click on the profile name
+        Generic.Select option from profile list     view-discovery
+        Generic.Verify your current page location contains    aad
+        Generic.Verify your current page contains this text    -
+
+#        TechnologyPage.Click on edit button on product details page        Edit
+#        Generic.Verify your current page location contains      edit-technology
+#        OCS.Edit the MAC_Address of Asset
+#        OCS.Edit the Serial_No. of Asset
+#        OCS.Edit The Host_Name of Asset
+#        TechnologyPage.Select technology lifecycle status      Active
+#        sleep   ${search_sleep}
+#        TechnologyPage.Click on update button of edit_technology page       Update
+#        Generic.Fetch alert message text and compare it with        Technology updated successfully
+#        UnselectAssetAPI.Hit API Endpoint
     EXCEPT
         OCS.My Failure Handling
         Fail

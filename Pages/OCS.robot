@@ -978,3 +978,22 @@ Mouse Hover over searched existing assets after craeting technology
     Wait Until Element Is Visible   (//div[contains(text(),'${discovered_existing_brand1} ')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]     ${wait_time}
     Wait Until Element Is Enabled    (//div[contains(text(),'${discovered_existing_brand1} ')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]     ${wait_time}
     Mouse Over    (//div[contains(text(),'${discovered_existing_brand1} ')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]
+
+Click on the confirm button under unmatch asset pop up
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible  css:.qa-convert-assignee-tm-${option}    ${wait_time}
+    Wait Until Element Is Enabled   css:.qa-convert-assignee-tm-${option}     ${wait_time}
+    click element   css:.qa-convert-assignee-tm-${option}
+
+Mouse Hover over searched existing assets after creating technology frm add technology
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible   (//div[contains(text(),'${discovered_existing_brand} ')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]     ${wait_time}
+    Wait Until Element Is Enabled    (//div[contains(text(),'${discovered_existing_brand} ')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]     ${wait_time}
+    Mouse Over    (//div[contains(text(),'${discovered_existing_brand} ')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]
+
+Click on the unmatch link under discovery assets list page
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible  //i[contains(@class,'fa-unlink')]    ${wait_time}
+    Wait Until Element Is Enabled  //i[contains(@class,'fa-unlink')]     ${wait_time}
+    click element   //i[contains(@class,'fa-unlink')]
