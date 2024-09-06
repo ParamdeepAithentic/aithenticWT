@@ -613,7 +613,7 @@ Upload I-icon while adding discovery and component asset
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
     Sleep    ${yop_sleep}
 
-    Switch Window       aithentic | Discovered Assets
+   Switch Window      aithentic | Sentinel One Newly-Discovered
 
     Generic.Refresh the existing page
     OCS.Choose Tab under Asset Discovry    agent-discovery
