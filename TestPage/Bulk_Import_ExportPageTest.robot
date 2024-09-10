@@ -735,7 +735,7 @@ Technology Bulk import
 
 
 Verify Bulk Import on the Technology Page by adding all parameters
-    [Tags]    Sanity     time
+    [Tags]    Sanity     time     rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
