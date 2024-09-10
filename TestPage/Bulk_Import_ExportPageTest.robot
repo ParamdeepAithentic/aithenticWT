@@ -214,7 +214,7 @@ Add Product Bulk Edit
     DashboardPage.Select product status   Active
     DashboardPage.Save added product details
     Generic.Fetch alert message text and compare it with        Product created successfully
-    DashboardPage.Verify product added    ${generated_product}
+    Bulk_Import_ExportPage.Verify product added using bulk_import_export    ${generated_product}
     DashboardPage.Click on action button
     DashboardPage.Select the option from action menu      edit
     sleep   ${yop_sleep}
@@ -543,7 +543,7 @@ Team member Bulk Import
     Bulk_Import_ExportPage.Click on I_m_done button when popup appears     no-im-done
     Sleep      ${yop_sleep}
     Switch Window       aithentic | Member - List
-    TeamMemberPage.Search Team Member by name       ${generated_Firstname}
+    Bulk_Import_ExportPage.Search Team Member by name under asset wizard       ${generated_Firstname}
     Generic.Wait until table get load
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
@@ -836,7 +836,7 @@ Verify Bulk Import on the Technology Page by adding all parameters
     Bulk_Import_ExportPage.Click on team member location technology bulk import     ${generated_location}
     TeamMemberPage.Save the team member form   save
     Generic.Fetch alert message text and compare it with        Team Member created successfully
-    TeamMemberPage.Search Team Member by name       ${generated_TMFname}
+    Bulk_Import_ExportPage.Search Team Member by name under asset wizard       ${generated_TMFname}
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.click on the button     Next
     Generic.click on the button    Add Brand
@@ -850,7 +850,7 @@ Verify Bulk Import on the Technology Page by adding all parameters
     DashboardPage.Save added brand details
     Generic.Fetch alert message text and compare it with        Brand created successfully.
     DashboardPage.Click added brand main save button
-    DashboardPage.Verify Brand added      ${generated_BrandName}
+    Bulk_Import_ExportPage.Verify Brand added under asset wizard      ${generated_BrandName}
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.click on the button     Next
     Generic.click on the tab        Add Product
@@ -866,7 +866,7 @@ Verify Bulk Import on the Technology Page by adding all parameters
     Bulk_Import_ExportPage.Select product status technology bulk import   Active
     Bulk_Import_ExportPage.Save added product details technology bulk import
 #    Generic.Fetch alert message text and compare it with        Product created successfully
-    DashboardPage.Verify product added    ${generated_product}
+    Bulk_Import_ExportPage.Verify product added using bulk_import_export    ${generated_product}
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.click on the button     Next
     Generic.click on the tab        Add Partner
@@ -894,7 +894,7 @@ Verify Bulk Import on the Technology Page by adding all parameters
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
     Generic.Fetch alert message text and compare it with    Partner created successfully
-    PartnersPage.Search by business name    ${generated_BrandName}
+    Bulk_Import_ExportPage.Search by business name under asset wizard    ${generated_BrandName}
     Generic.click on the tab        Add Partner
     Generic.Verify your current page location contains      addpartner
     PartnersPage.Select partner type of new partner     Supplier
@@ -917,7 +917,7 @@ Verify Bulk Import on the Technology Page by adding all parameters
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
     Generic.Fetch alert message text and compare it with    Partner created successfully
-    PartnersPage.Search by business name    ${generated_BrandName}
+    Bulk_Import_ExportPage.Search by business name under asset wizard    ${generated_BrandName}
     Generic.click on the tab        Add Partner
     Generic.Verify your current page location contains      addpartner
     PartnersPage.Select partner type of new partner     Support Partner
@@ -940,7 +940,7 @@ Verify Bulk Import on the Technology Page by adding all parameters
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
     Generic.Fetch alert message text and compare it with    Partner created successfully
-    PartnersPage.Search by business name    ${generated_BrandName}
+    Bulk_Import_ExportPage.Search by business name under asset wizard    ${generated_BrandName}
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.click on the button     Next
     Generic.Verify your current page location contains     add-technology

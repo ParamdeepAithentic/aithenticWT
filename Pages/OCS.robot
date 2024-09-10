@@ -86,9 +86,9 @@ Click on search icon of discovery assets
 Enter text to search discovery asset
     [Arguments]     ${option}
     wait until element is not visible   ${loaderIcon}        ${wait_time}
-    Wait Until Element Is Visible    //input[@placeholder='Search Agent/Network Discovered Assets']       ${wait_time}
-    Wait Until Element Is enabled    //input[@placeholder='Search Agent/Network Discovered Assets']       ${wait_time}
-    Input Text    //input[@placeholder='Search Agent/Network Discovered Assets']    ${option}
+    Wait Until Element Is Visible    css:#aad-searchbar       ${wait_time}
+    Wait Until Element Is enabled    css:#aad-searchbar       ${wait_time}
+    Input Text     css:#aad-searchbar    ${option}
     Sleep    ${yop_sleep}
     Wait Until Element Is Not Visible    ${loaderIcon}  ${wait_time}
     wait until element is not visible       ${shadow}          ${wait_time}
@@ -96,9 +96,9 @@ Enter text to search discovery asset
 Enter text to search existing asset
     [Arguments]     ${option}
     wait until element is not visible   ${loaderIcon}        ${wait_time}
-    Wait Until Element Is Visible    //input[@placeholder='Search Existing Assets']       ${wait_time}
-    Wait Until Element Is enabled    //input[@placeholder='Search Existing Assets']       ${wait_time}
-    Input Text    //input[@placeholder='Search Existing Assets']    ${option}
+    Wait Until Element Is Visible    css:#searchbar-existingAssets       ${wait_time}
+    Wait Until Element Is enabled    css:#searchbar-existingAssets       ${wait_time}
+    Input Text   css:#searchbar-existingAssets    ${option}
     wait until element is not visible   ${loaderIcon}        ${wait_time}
     wait until element is not visible       ${shadow}          ${wait_time}
 
@@ -572,9 +572,9 @@ Search with MAC address and IP Address on the search bar of Discovered Asset Lis
     wait until element is not visible    ${loaderIcon}    ${wait_time}
     wait until element is visible       (//thead//tr)[2]       ${wait_time}
     wait until element is enabled       (//thead//tr)[2]       ${wait_time}
-    wait until element is visible   css:input[placeholder='Search by Brand or Name or Description or Asset ID']     ${wait_time}
-    wait until element is enabled   css:input[placeholder='Search by Brand or Name or Description or Asset ID']     ${wait_time}
-    input text  css:input[placeholder='Search by Brand or Name or Description or Asset ID']     ${MAC_Address}
+    wait until element is visible   css:#searchbar-discoveredassetList     ${wait_time}
+    wait until element is enabled   css:#searchbar-discoveredassetList    ${wait_time}
+    input text  css:#searchbar-discoveredassetList     ${MAC_Address}
     sleep       ${search_sleep}
 #    wait until element is visible       css:thead tr       ${wait_time}
      wait until element is visible       (//thead//tr)[2]       ${wait_time}
@@ -836,10 +836,10 @@ Visible the print qr button to for data loading
 
 Enter input in search bar of software tab under technology details page
     [Arguments]     ${option}
-    wait until element is visible   //input[@placeholder='Search by Publisher, Software Name and Asset Id']     ${wait_time}
-    wait until element is enabled   //input[@placeholder='Search by Publisher, Software Name and Asset Id']     ${wait_time}
-    click element   //input[@placeholder='Search by Publisher, Software Name and Asset Id']
-    input text  //input[@placeholder='Search by Publisher, Software Name and Asset Id']     ${option}
+    wait until element is visible   css:#searchbar-softwareTab     ${wait_time}
+    wait until element is enabled   css:#searchbar-softwareTab     ${wait_time}
+    click element   css:#searchbar-softwareTab
+    input text  css:#searchbar-softwareTab     ${option}
     Sleep    ${yop_sleep}
     Wait Until Element Is Not Visible    ${loaderIcon}  ${wait_time}
 
