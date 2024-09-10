@@ -51,7 +51,7 @@ ${self_searchId} =   AssetID_1803536655
 *** Test Cases ***
 
 Free the asset limit
-    [Tags]      Smoke     Sanity      Time      rerun       Stable
+    [Tags]      Smoke     Sanity      Time     Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -2298,7 +2298,7 @@ Verify cross icon and reset icon while adding product
     TechnologyPage.Verify the invisibility of technology type after clicking on reset icon
 
 Creating technology while creating cancellation notice period and contract end date
-    [Tags]      Stable      rerun
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -2441,7 +2441,7 @@ Dispose the technology while adding new brand and product
     Generic.Fetch alert message text and compare it with      Technology Removed Successfully
 
 Add the technology from profile listing
-    [Tags]      Stable      rerun
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -3131,7 +3131,7 @@ Verify_Notification_Update_Asset
     TechnologyPage.Get the text of the recent notification of added assets      You updated Asset ID ${generated_AssetID}.
 
 Click on the technology group filters and verify it
-    [Tags]     time     smoke     sanity
+    [Tags]     time     smoke     sanity     Rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
@@ -3483,7 +3483,7 @@ Click on the technology group filters and verify it
     
 
 #Zz kill browser
-#    [Tags]      Smoke     Sanity      Time      rerun       Stable    yy
+#    [Tags]      Smoke     Sanity      Time        Stable    yy
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
 #    Run Process    cmd.exe    /C    taskkill /IM python.exe /F
 

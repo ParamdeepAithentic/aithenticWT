@@ -226,7 +226,7 @@ Signup with ACH payment method
 
 
 Change plan and Change asset limit with ACH Payment method
-    [Tags]      Smoke        Stable     rerun
+    [Tags]      Smoke        Stable    rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -312,7 +312,9 @@ Change plan and Change asset limit with ACH Payment method
     Generic.Select option from profile list     subscription-dropdown
     Generic.Verify your current page location contains      subscription
     SubscriptionPage.Select if you want to change plan or asset    Change Asset Limit
-    sleep       5
+    sleep       ${search_sleep}
+    Generic.Scroll Window To End
+    sleep       2
     Admin_PanelPage.Select the higest plan
     SubscriptionPage.Update the asset range     Update
     SubscriptionPage.Select the payment method    ach

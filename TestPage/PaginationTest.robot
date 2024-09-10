@@ -223,7 +223,7 @@ Verify Pagination of Product Dropdown when Add and Edit Technology
 
 
 Verify Pagination of Product Dropdown when Add discovered asset and component
-        [Tags]      Unstable    rerun
+        [Tags]      Unstable
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
         Generic.Verify your current page location contains      dashboard
@@ -440,7 +440,7 @@ Verify pagination of Assigned User Table
     PaginationPage.Log WebElements      assignee-list
 
 Verify Pagination of Product Dropdown when Add and Edit Technology
-    [Tags]      Stable      rerun
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -609,7 +609,7 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
 
 
 Verify Pagination of Product Dropdown when Add IP discovered asset
-        [Tags]      Unstable    rerun
+        [Tags]      Unstable
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
         Generic.Verify your current page location contains      dashboard

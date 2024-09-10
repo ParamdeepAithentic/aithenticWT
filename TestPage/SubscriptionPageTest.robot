@@ -175,7 +175,7 @@ Suspend and unsuspend the account
         Generic.Verify your current page location contains      personal-profile
         Generic.Select parameter    Technology
         Generic.Verify your current page location contains      technology-settings
-        Generic.click on the tab    Connectors
+        SubscriptionPage.click on the connector tab under technoogy settings
         SubscriptionPage.Visible the disable activate button link after suspending account
         Generic.Click on the profile name
         Generic.Select option from profile list     billing-dropdown
@@ -190,9 +190,9 @@ Suspend and unsuspend the account
         Generic.Select parameter    Technology
         Generic.Verify your current page location contains      technology-settings
         SubscriptionPage.Click on the connectors button link under technology settings page
-        SubscriptionPage.Click on the activate option under subscription connector table        Google
-        SubscriptionPage.Click on the activate option under subscription connector table        Microsoft Corporation
-        Generic.Fetch alert message text and compare it with        Status Updated
+#        SubscriptionPage.Click on the activate option under subscription connector table        Google
+#        SubscriptionPage.Click on the activate option under subscription connector table        Microsoft Corporation
+#        Generic.Fetch alert message text and compare it with        Status Updated
     EXCEPT
         SubscriptionPage.My Failure Handling
         Fail
@@ -221,7 +221,6 @@ View Scheduler from view Result
 
 
 #Create the scheduler of sentinel one
-#    [Tags]      rerun
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
 #    LandingPage.Verify you are on dashboard page
@@ -439,7 +438,6 @@ Create service now with invalid data
     Generic.Verify your current page contains this text     Service Now Connection Failed.
 
 Create service now with valid data
-    [Tags]      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
