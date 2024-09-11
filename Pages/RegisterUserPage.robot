@@ -252,7 +252,9 @@ Edit Location from profile details
     Wait Until Element Is Enabled     css:.qa-profile-location-update    ${wait_time}
     Click Element    css:.qa-profile-location-update
     input text      css:.qa-profile-location-update input      ${option1}
-    Generic.Select parameter    ${option1}
+    wait until element is visible           //span[contains(text(),'${option1}')]
+    wait until element is enabled           //span[contains(text(),'${option1}')]
+    click element   //span[contains(text(),'${option1}')]
 
 Save the Profile details
     [Arguments]     ${option1}
@@ -483,3 +485,17 @@ Click on the delete icon to delete the ach card
     wait until element is visible      //div[contains(@class,'edit-bill')]//following-sibling::div//i[contains(@class,'trash-alt')]        ${wait_time}
     wait until element is enabled    //div[contains(@class,'edit-bill')]//following-sibling::div//i[contains(@class,'trash-alt')]         ${wait_time}
     click element   //div[contains(@class,'edit-bill')]//following-sibling::div//i[contains(@class,'trash-alt')]
+
+Click on click here to add new location
+    [Arguments]     ${option}
+    wait until element is not visible       ${loaderIcon}      ${wait_time}
+    wait until element is visible      //span[@title='Add new Location']//a[normalize-space()='${option}']        ${wait_time}
+    wait until element is enabled    //span[@title='Add new Location']//a[normalize-space()='${option}']        ${wait_time}
+    click element   //span[@title='Add new Location']//a[normalize-space()='${option}']
+
+Click on refresh icon of user location
+    wait until element is not visible       ${loaderIcon}      ${wait_time}
+    wait until element is visible      //b[normalize-space()='click here to refresh the location list']        ${wait_time}
+    wait until element is enabled    //b[normalize-space()='click here to refresh the location list']        ${wait_time}
+    click element   //b[normalize-space()='click here to refresh the location list']
+
