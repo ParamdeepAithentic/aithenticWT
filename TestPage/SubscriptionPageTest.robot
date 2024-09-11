@@ -1325,5 +1325,4 @@ Create sentinel account and verify the options
     SubscriptionPage.Click on option under three dots of subscription connector    SentinelOne    View Results
     Generic.Verify your current page location contains      discovery-assets
     Generic.Verify your current page contains this text    Asset Discovery
-#    Generic.click on the button     No, thanks
     Generic.Verify your current page contains this text    No Records
