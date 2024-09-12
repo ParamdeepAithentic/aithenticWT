@@ -207,8 +207,8 @@ Select option from technology type column in bulk_edit
     [Arguments]    ${option}    ${option2}
     wait until element is visible      css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
     Double click element      css:.ag-center-cols-container div[col-id='${option}']
-    wait until element is visible      css:div[aria-label='List'] div:nth-child(${option2}) div    ${wait_time}
-    click element       css:div[aria-label='List'] div:nth-child(${option2}) div
+    wait until element is visible      css:div[aria-label='Rich Select Field'] div:nth-child(${option2}) div    ${wait_time}
+    click element       css:div[aria-label='Rich Select Field'] div:nth-child(${option2}) div
 Click on Refresh icon of product-list page
     wait until element is visible       css:.reset-product-qa        ${wait_time}
     click element       css:.reset-product-qa
@@ -759,8 +759,15 @@ Click on team member location technology bulk import
     click element   //span[normalize-space()='${option}']
 
 Click on the confirm button under pop up in technology bulk import
-    wait until element is visible     ${loaderIcon}    ${wait_time}
+#    wait until element is visible     ${loaderIcon}    ${wait_time}
     wait until element is visible     //div[@id='confirmUpload']//button[@type='button'][normalize-space()='Confirm']    ${wait_time}
     wait until element is enabled    //div[@id='confirmUpload']//button[@type='button'][normalize-space()='Confirm']      ${wait_time}
     click element   //div[@id='confirmUpload']//button[@type='button'][normalize-space()='Confirm']
     wait until element is not visible     ${loaderIcon}    ${wait_time}
+
+Select option from budget currency in technology bulk import
+    [Arguments]    ${option}    ${option2}
+    wait until element is visible      css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
+#    Double click element      css:.ag-center-cols-container div[col-id='${option}']
+    wait until element is visible      css:div[aria-label='Rich Select Field'] div:nth-child(${option2}) div    ${wait_time}
+    click element       css:div[aria-label='Rich Select Field'] div:nth-child(${option2}) div

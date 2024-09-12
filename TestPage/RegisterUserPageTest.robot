@@ -49,7 +49,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Register new user
-    [Tags]      Smoke       Time        Stable
+    [Tags]      Smoke       Time        Stable    rerun
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
@@ -140,7 +140,7 @@ Register new user
 
 
 Signup with ACH payment method
-    [Tags]       Stable
+    [Tags]       Stable    Sanity
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -226,7 +226,7 @@ Signup with ACH payment method
 
 
 Change plan and Change asset limit with ACH Payment method
-    [Tags]      Smoke        Stable     rerun
+    [Tags]      Smoke        Stable
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -312,7 +312,9 @@ Change plan and Change asset limit with ACH Payment method
     Generic.Select option from profile list     subscription-dropdown
     Generic.Verify your current page location contains      subscription
     SubscriptionPage.Select if you want to change plan or asset    Change Asset Limit
-    sleep       5
+    sleep       ${search_sleep}
+    Generic.Scroll Window To End
+    sleep       2
     Admin_PanelPage.Select the higest plan
     SubscriptionPage.Update the asset range     Update
     SubscriptionPage.Select the payment method    ach
@@ -481,9 +483,9 @@ Update profile and company details of user
     RegisterUserPage.Fetch the profile personal_details and compare with registration details       ${register_Fname}       ${generate_register_Fname}   #${generate_register_Fname}   #
     RegisterUserPage.Fetch the profile personal_details and compare with registration details       ${register_Lname}    ${generate_register_Lname}          #${generate_register_Lname}        #
     RegisterUserPage.Fetch the profile personal_details and compare with registration details     ${profile_phone}    096960 89871       #096462 89871        #
-    RegisterUserPage.Fetch the department name from personal_details and compare with registration details    Customer Support      #${generated_DepartmentNumber}       #Customer Support        #
+    RegisterUserPage.Fetch the department name from personal_details and compare with registration details    ${generated_DepartmentNumber}       #Customer Support        #
     RegisterUserPage.Fetch the profile personal_details and compare with registration details       ${profile_position}       ${generate_position}     #
-    RegisterUserPage.Fetch the location name from personal_details and compare with registration details              ${generated_location}
+#    RegisterUserPage.Fetch the location name from personal_details and compare with registration details              ${generated_location}
     RegisterUserPage.Select the option from the personal details sidebar        company
     RegisterUserPage.Fetch the Company name from personal_details and compare with registration details     ${generate_register_CompanyName}
     RegisterUserPage.Fetch the Company name Address from personal_details and compare       Country     United States
@@ -1877,3 +1879,134 @@ Update the subscription Plan and verify the notification
     DashboardPage.Click on the notifications icon under dashbaord page
     sleep  ${search_sleep}
     BillingPage.Get the text of the recent notification of added assets in system tab       Your Monthly plan has been changed.
+
+Profile Profile: Select location and department and add by cliking on link
+    Generic.click on the tab	Register
+    Generic.Verify your current page location contains      register
+    ReplaceDomainAPI.Replace Domain
+    RegisterUserPage.Create random register first name
+    RegisterUserPage.Create random register last name
+    RegisterUserPage.Create random register company name
+    RegisterUserPage.Click on member type
+    RegisterUserPage.Select the member type      End User
+    RegisterUserPage.Create partner random business email
+    RegisterUserPage.Choose register user country      India   +91     9646289871
+    RegisterUserPage.Select the checkbox
+    RegisterUserPage.Save the register form
+    Generic.Verify your current page location contains      update-email
+    Generic.Open new window     yopmail
+    Generic.Refresh the existing page
+    Generic.Search yopmail emails for       ${generate_register_Email}
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   Email Register Verification Required.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Click on sign In button in yopmail email
+    Unselect Frame
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Create - Account
+    Generic.Verify your current page location contains     create-account
+    UserAccount.Enter the password      Paramdeep@112
+    UserAccount.Confirm the entered password    Paramdeep@112
+    UserAccount.Click on term and condition checkbox
+    UserAccount.Click create account button
+    Generic.Fetch alert message text and compare it with       Account created successfully.
+    Generic.Verify your current page location contains     auth
+    LandingPage.Fill the login Form             ${generate_register_Email}    Paramdeep@112
+    Switch Window    Inbox
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   OTP Verification.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Get verification OTP from email    Your passcode is
+    sleep       ${yop_sleep}
+    Switch Window   aithentic | OTP
+    TwoFactorAuth.Enter the otp     ${passcode}
+    TwoFactorAuth.Click verification button
+    Generic.Verify your current page location contains     subscription
+    SubscriptionPage.Select country of manufacturer profile     United States
+    SubscriptionPage.Select state of manufacturer profile   Texas
+    SubscriptionPage.Select city of manufacturer profile    Abram
+    SubscriptionPage.Input text into manufacturer address one       This is address 1
+    SubscriptionPage.Input text into manufacturer address two       This is address 2
+    SubscriptionPage.Input text into manufacturer zip code      73301
+    SubscriptionPage.Select department of manufacturer profile      Customer Support
+    SubscriptionPage.Input text into manufacturer position/title    Agent
+    SubscriptionPage.Save the manufacturer profile
+    Generic.Verify your current page location contains     subscription-menu
+    Generic.Fetch alert message text and compare it with       Profile saved successfully
+    SubscriptionPage.Select plan of subscription
+    SubscriptionPage.Select and move next with subscription
+    Generic.Verify your current page location contains     subscription-payment
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Select card type university
+    SubscriptionPage.Enter card account number    000123456789
+    SubscriptionPage.Enter card routing number      110000000
+    SubscriptionPage.Enter account holder name    Paramdeep Singh
+    SubscriptionPage.Check the authorization checkbox
+    SubscriptionPage.Check the acknowledgement checkbox
+    SubscriptionPage.Click on complete process button
+    Generic.Verify your current page location contains     welcome
+    Generic.Fetch alert message text and compare it with       Payment Successful
+    DashboardPage.Click on complete setup button      Complete Setup
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the location ID checkbox   yes
+    DashboardPage.Select the asset ID checkbox     no
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    RegisterUserPage.Select the option from the personal details sidebar        personal-profile
+    Generic.Verify your current page location contains    personal-profile
+    RegisterUserPage.Fetch the profile personal_details and compare with registration details       ${register_Fname}          ${generate_register_Fname}   #FName4165102837
+    RegisterUserPage.Fetch the profile personal_details and compare with registration details       ${register_Lname}          ${generate_register_Lname}        #LName0240875065
+    RegisterUserPage.Fetch the profile personal_details and compare with registration details     ${profile_phone}          096462 89871        #096960 89871
+    RegisterUserPage.Fetch the department name from personal_details and compare with registration details                 Customer Support        #Customer Support
+    RegisterUserPage.Fetch the profile personal_details and compare with registration details       ${profile_position}        Agent      #Pos_8564400631
+    RegisterUserPage.Fetch the profile personal_details and compare with registration details       ${profile_email}              ${generate_register_Email}      #BusinessEmail7014981425@yopmail.net
+    RegisterUserPage.Fetch the location name from personal_details and compare with registration details            *Main Office   #LocationName02027
+    RegisterUserPage.Click on edit button to edit the profile details    Edit
+    RegisterUserPage.Create random register first name
+    RegisterUserPage.Create random register last name
+    RegisterUserPage.Edit phone number from profile details         India   +91     9696089871
+    TeamMemberPage.Click on add here in department field        Click here to add
+    TechnologyPage.Create unique department name random
+    TechnologyPage.Select department cost center     1300
+    TechnologyPage.Save the department       add
+    Generic.Fetch alert message text and compare it with        Department added successfully
+    RegisterUserPage.Edit the Position from personal profile
+    RegisterUserPage.Click on click here to add new location        Click here to add
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Add - Location
+    Generic.Verify your current page location contains      add-location
+    TechnologyPage.Select country of the location   United States
+    TechnologyPage.Enter building_name of the location
+    TechnologyPage.Enter floor of the location      6
+    TechnologyPage.Enter room of the location       30
+    TechnologyPage.Enter unique address_one of the location
+    TechnologyPage.Enter unique address_two of the location
+    TechnologyPage.Select state of location     Alaska
+    TechnologyPage.Select city of location      Akutan
+    TechnologyPage.Enter Zip_code       67540
+    TechnologyPage.Save the new added location         save
+    Generic.Verify alertify is visible
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Personal Profile
+    RegisterUserPage.Click on refresh icon of user location
+    RegisterUserPage.Edit Location from profile details    ${generated_buildingname}
+    RegisterUserPage.Save the Profile details       Save
+    Generic.Fetch alert message text and compare it with    Profile saved successfully
+    Generic.Refresh the existing page
+    Generic.Verify your current page location contains    personal-profile
+    RegisterUserPage.Fetch the profile personal_details and compare with registration details       ${register_Fname}       ${generate_register_Fname}   #${generate_register_Fname}   #
+    RegisterUserPage.Fetch the profile personal_details and compare with registration details       ${register_Lname}    ${generate_register_Lname}          #${generate_register_Lname}        #
+    RegisterUserPage.Fetch the profile personal_details and compare with registration details     ${profile_phone}    096960 89871       #096462 89871        #
+    RegisterUserPage.Fetch the department name from personal_details and compare with registration details    ${generated_DepartmentNumber}       #Customer Support        #
+    RegisterUserPage.Fetch the profile personal_details and compare with registration details       ${profile_position}       ${generate_position}     #

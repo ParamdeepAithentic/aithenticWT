@@ -51,7 +51,7 @@ ${self_searchId} =   AssetID_1803536655
 *** Test Cases ***
 
 Free the asset limit
-    [Tags]      Smoke     Sanity      Time      rerun       Stable
+    [Tags]      Smoke     Sanity      Time     Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -64,7 +64,7 @@ Free the asset limit
 
 
 Fill the technology form for license product
-    [Tags]      Time        Stable
+    [Tags]      Time        Stable      Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -510,7 +510,7 @@ Restore asset by selecting checkbox
 
 
 Edit brand and product via details
-    [Tags]     Smoke        Stable
+    [Tags]     Smoke        Stable     time
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -553,9 +553,16 @@ Edit brand and product via details
     TechnologyPage.Click on manage technology sub option       Technology List
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
+
+    ${StartTime1} =     Get Current Time in Milliseconds
     TechnologyPage.Click on edit button on product details page        Edit
     Generic.Verify your current page location contains      edit-technology
     TechnologyPage.Click on the edit icon on the edit technology page
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  26  ${pageHeading}   Page Load - Total Page Load Time of clicking edit technology to edit technology form      26    ${pageTime}     ${ActualTime}    PageLoad_Time
+
+
     TechnologyPage.Click on cross icon of product while editing technology
     TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
     TechnologyPage.Select edited technology lifecycle status      Active
@@ -804,7 +811,7 @@ Add Technology Page - Add New location and assign that location
     Generic.Fetch alert message text and compare it with       Assigned Users created successfully
 
 Add New Support Partner and Assign that Partner
-    [Tags]      Sanity      Stable
+    [Tags]      Sanity      Stable     time
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -845,9 +852,13 @@ Add New Support Partner and Assign that Partner
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
     TechnologyPage.Click on manage technology sub option       Technology List
+
+    ${StartTime1} =     Get Current Time in Milliseconds
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
-
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  27  ${pageHeading}   Page Load - Total Page Load Time of clicking first row of technology list to its details apge       27    ${pageTime}     ${ActualTime}    PageLoad_Time
 
     TechnologyPage.Select tab under technology details      partners
     TechnologyPage.Click on assign partner button under technology details page        Assign Partner
@@ -1670,9 +1681,9 @@ Technology-Inactive asset and Restore asset
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     TechnologyPage.Click on current plan of subscription
     Generic.Scroll the page till    200
+    SubscriptionPage.Set asset range to     1000
+    SubscriptionPage.Set asset range to     250
     SubscriptionPage.Set asset range to     500
-    SubscriptionPage.Set asset range to     100
-    SubscriptionPage.Set asset range to     200
     SubscriptionPage.Update the payment of changed plan     proceed
     TechnologyPage.Click on pop up of available Inactive Asset   cancel
     SubscriptionPage.Select the payment method    ach
@@ -1768,7 +1779,7 @@ Inactive asset - Restore asset from Technology Details page
     TechnologyPage.Click on current plan of subscription
     Generic.Scroll the page till    200
     SubscriptionPage.Set asset range to     500
-    SubscriptionPage.Set asset range to     200
+    SubscriptionPage.Set asset range to     250
     SubscriptionPage.Update the payment of changed plan     proceed
     TechnologyPage.Click on pop up of available Inactive Asset   cancel
     SubscriptionPage.Select the payment method    ach
@@ -1861,72 +1872,74 @@ Inactive asset - Restore asset from Technology Details page
     SubscriptionPage.Proceed the payment     proceed
     Generic.Fetch alert message text and compare it with      Payment Successful
 
-Verify the technology data while applying agent Filters
-    [Tags]      Unstable
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
-    Generic.Verify your current page location contains      dashboard
-    LandingPage.Verify you are on dashboard page
-    Generic.select the option from the side menu    Technology
-    Generic.Verify your current page location contains      technology
-    TechnologyPage.Click on action button of technology
-    TechnologyPage.Choose add technology from action button of technology
-    Generic.Verify your current page location contains      addtechnology
-    TechnologyPage.Click technology brand input field
-    TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Select parameter from technology dropdown list       Product_00337612322
-    TechnologyPage.Create random unique serial number
-    TechnologyPage.Add assetID for technology lifecycle information random
-    TechnologyPage.Click on save technology form button
-    Generic.Fetch alert message text and compare it with        Technology created successfully
-    TechnologyPage.Click on save technology form pop button
-    Generic.Verify your current page location contains      technology-list
-    Generic.Wait until table get load
-    Generic.Click on the profile name
-    Generic.Select option from profile list     view-discovery
-    Generic.Verify your current page location contains   aad
-    I_iconPage.Choose tab under Discovery Assets       network-discovery
-    OCS.Click on newly discovered tab under network discovery
-    OCS.Click on search icon of discovery assets
-    OCS.Enter text to search discovery asset    Apple Inc
-    OCS.Click on the down arrow icon of discovered asset
-    Generic.Scroll Window To End
-    OCS.Mouse Hover over searched Discovered Assets
-    OCS.Get Tagname by hovering over discovered assets    Tag:
-    OCS.Select any Discovered asset
-    OCS.Click on search icon of discovery assets
-    OCS.Click on search icon of Existing assets
-    OCS.Enter text to search existing asset    ${generated_AssetID}
-    OCS.Click on the down arrow icon of existing assets
-    Generic.Scroll Window To End
-    OCS.Mouse Hover over searched existing assets
-    OCS.Verify searched existing asset    ${generated_AssetID}
-    OCS.Select any existing asset
-    OCS.Click on search icon of Existing assets
-    OCS.Verify that line appears between selected assets
-    OCS.Click on Button inside Network Discovery Page     Confirm Matches
-    Generic.Fetch alert message text and compare it with      Matched Assets updated successfully
-    Generic.select the option from the side menu    Technology
-    Generic.Verify your current page location contains      technology
-    TechnologyPage.Choose filter from Technology Page       Agent
-    TechnologyPage.Select checkbox from Agent Filters       Assets with Agent
-    Generic.Wait until table get load
-    TechnologyPage.Verify that Agent column should contain text     ${hover_tagname}
-    TechnologyPage.Select checkbox from Agent Filters       Assets without Agent
-    Generic.Wait until table get load
-    TechnologyPage.Verify that Agent column should contain text     -
-    TechnologyPage.Search by AssetId       ${generated_AssetID}
-    TechnologyPage.Click on manage technology sub option       Technology List
-    TechnologyPage.Click on the first row of the technology table
-    Generic.Verify your current page location contains    technology-details
-    TechnologyPage.Click on edit button on product details page        Edit
-    Generic.Verify your current page location contains      edit-technology
-    OCS.Edit the MAC_Address of Asset
-    OCS.Edit the Serial_No. of Asset
-    OCS.Edit The Host_Name of Asset
-    TechnologyPage.Click on update button of edit_technology page       Update
-    Generic.Fetch alert message text and compare it with        Technology updated successfully
-    UnselectAssetAPI.Hit API Endpoint
+
+#Verify the technology data while applying agent Filters
+#    [Tags]      Unstable
+#    Generic.click on the tab	Login
+#    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+#    Generic.Verify your current page location contains      dashboard
+#    LandingPage.Verify you are on dashboard page
+#    Generic.select the option from the side menu    Technology
+#    Generic.Verify your current page location contains      technology
+#    TechnologyPage.Click on action button of technology
+#    TechnologyPage.Choose add technology from action button of technology
+#    Generic.Verify your current page location contains      addtechnology
+#    TechnologyPage.Click technology brand input field
+#    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+#    TechnologyPage.Select parameter from technology dropdown list       Product_00337612322
+#    TechnologyPage.Create random unique serial number
+#    TechnologyPage.Add assetID for technology lifecycle information random
+#    TechnologyPage.Click on save technology form button
+#    Generic.Fetch alert message text and compare it with        Technology created successfully
+#    TechnologyPage.Click on save technology form pop button
+#    Generic.Verify your current page location contains      technology-list
+#    Generic.Wait until table get load
+#    Generic.Click on the profile name
+#    Generic.Select option from profile list     view-discovery
+#    Generic.Verify your current page location contains    ocs
+#    I_iconPage.Choose tab under Discovery Assets       network-discovery
+#    OCS.Click on newly discovered tab under network discovery
+#    OCS.Click on search icon of discovery assets
+#    OCS.Enter text to search discovery asset    Apple Inc
+#    OCS.Click on the down arrow icon of discovered asset
+#    Generic.Scroll Window To End
+#    OCS.Mouse Hover over searched Discovered Assets
+#    OCS.Get Tagname by hovering over discovered assets    Tag:
+#    OCS.Select any Discovered asset
+#    OCS.Click on search icon of discovery assets
+#    OCS.Click on search icon of Existing assets
+#    OCS.Enter text to search existing asset    ${generated_AssetID}
+#    OCS.Click on the down arrow icon of existing assets
+#    Generic.Scroll Window To End
+#    OCS.Mouse Hover over searched existing assets
+#    OCS.Verify searched existing asset    ${generated_AssetID}
+#    OCS.Select any existing asset
+#    OCS.Click on search icon of Existing assets
+#    OCS.Verify that line appears between selected assets
+#    OCS.Click on Button inside Network Discovery Page     Confirm Matches
+#    Generic.Fetch alert message text and compare it with      Matched Assets updated successfully
+#    Generic.select the option from the side menu    Technology
+#    Generic.Verify your current page location contains      technology
+#    TechnologyPage.Choose filter from Technology Page       Agent
+#    TechnologyPage.Select checkbox from Agent Filters       Assets with Agent
+#    Generic.Wait until table get load
+#    TechnologyPage.Verify that Agent column should contain text     ${hover_tagname}
+#    TechnologyPage.Select checkbox from Agent Filters       Assets without Agent
+#    Generic.Wait until table get load
+#    TechnologyPage.Verify that Agent column should contain text     -
+#    TechnologyPage.Search by AssetId       ${generated_AssetID}
+#    TechnologyPage.Click on manage technology sub option    echnology-Inactive asset and Restore asset   Technology List
+#    TechnologyPage.Click on the first row of the technology table
+#    Generic.Verify your current page location contains    technology-details
+#    TechnologyPage.Click on edit button on product details page        Edit
+#    Generic.Verify your current page location contains      edit-technology
+#    OCS.Edit the MAC_Address of Asset
+#    OCS.Edit the Serial_No. of Asset
+#    OCS.Edit The Host_Name of Asset
+#    TechnologyPage.Click on update button of edit_technology page       Update
+#    Generic.Fetch alert message text and compare it with        Technology updated successfully
+#    UnselectAssetAPI.Hit API Endpoint
+
 
 Click on the attachment tab under technology
     [Tags]      Stable
@@ -2076,7 +2089,7 @@ Upload file: Image and Document files while Edit Technology
     Generic.Fetch alert message text and compare it with        Technology updated successfully
 
 Upload file: Image and document files while Clone the Technology
-    [Tags]      Stable
+    [Tags]      Stable     time
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -2098,8 +2111,14 @@ Upload file: Image and document files while Clone the Technology
     TechnologyPage.Click on manage technology sub option       Technology List
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
+
+    ${StartTime1} =     Get Current Time in Milliseconds
     TechnologyPage.Click on clone button on techonology details page       Clone
     Generic.Verify your current page location contains      clone-addtechnology
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  28  ${pageHeading}   Page Load - Total Page Load Time of clicking clone button of technology deatils to its clone form       28    ${pageTime}     ${ActualTime}    PageLoad_Time
+
     TechnologyPage.Add assetID for technology lifecycle information random
     Generic.Scroll Window To End
     TechnologyPage.Upload file      Image_01.jpg       Image_02.png     Document_02.pdf
@@ -2281,7 +2300,7 @@ Verify cross icon and reset icon while adding product
     TechnologyPage.Verify the invisibility of technology type after clicking on reset icon
 
 Creating technology while creating cancellation notice period and contract end date
-    [Tags]      Stable      rerun
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -2318,7 +2337,7 @@ Creating technology while creating cancellation notice period and contract end d
     TechnologyPage.Add chargeable basis of contract information self      User
     TechnologyPage.Add max contracted of contract information random
     TechnologyPage.Add technology group information contract start date
-    TechnologyPage.Add technology group information contract end date      12/12/2028
+    TechnologyPage.Add technology group information contract end date      12/12/2026
     TechnologyPage.Enter input in the cancellation notice period field      -9974
     sleep   ${search_sleep}
     TechnologyPage.Verify the validation when entering negative value in cancellation notice period field
@@ -2339,7 +2358,11 @@ Creating technology while creating cancellation notice period and contract end d
     TechnologyPage.Click on edit button on product details page        Edit
     Generic.Verify your current page location contains      edit-technology
     TechnologyPage.Click on the edit icon on the edit technology page
-    TechnologyPage.Add technology group information contract end date      12/12/2028
+    TechnologyPage.Change contract end date      11/12/2028
+    sleep       ${search_sleep}
+    TechnologyPage.Verify warning pop-up is visible when change contract end date
+    TechnologyPage.Select option from contract end date warning pop-up      close
+    TechnologyPage.Verify pop-up is invisible
     TechnologyPage.Enter input in the cancellation notice period field      -99
     sleep   ${search_sleep}
     TechnologyPage.Verify the validation when entering negative value in cancellation notice period field
@@ -2420,7 +2443,7 @@ Dispose the technology while adding new brand and product
     Generic.Fetch alert message text and compare it with      Technology Removed Successfully
 
 Add the technology from profile listing
-    [Tags]      Stable      rerun
+    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -2454,94 +2477,110 @@ Add the technology from profile listing
 
 Verify_Asset_ID_Changing_settings_from_Profile_list
     [Tags]      Stable    Sanity
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.Verify your current page location contains      dashboard
-    LandingPage.Verify you are on dashboard page
-    Generic.Click on the profile name
-    Generic.Select option from profile list     personal-details
-    I_iconPage.Choose options inside personal_details        Organization
-    I_iconPage.Choose tabs under organization        system
-    Generic.Verify your current page location contains     organization
-    DashboardPage.Select the asset ID checkbox      yes
-    Generic.Fetch alert message text and compare it with       Settings Updated
-    Generic.Click on the profile name
-    Generic.Select option from profile list     brand-dropdown
-    Generic.Verify your current page location contains      brand
-    DashboardPage.Click add brand button
-    DashboardPage.Create random brandName
-    DashboardPage.Add business manufacturer URL       ${generated_BrandName}
-    DashboardPage.Add brand manufacturer country      Australia
-    DashboardPage.Save added brand details
-    DashboardPage.Click added brand main save button
-    Generic.Fetch alert message text and compare it with        Brand created successfully.
-    Generic.select the option from the side menu    Technology
-    Generic.Verify your current page location contains      technology
-    TechnologyPage.Click on action button of technology
-    TechnologyPage.Choose add technology from action button of technology
-    Generic.Verify your current page location contains      addtechnology
-    PartnersPage.Click here to add link of contract details
-    DashboardPage.Create random productName
-    DashboardPage.Add product brand name      ${generated_BrandName}
-    TechnologyPage.Add product description via technology
-    TechnologyPage.Add product feature via technology
-    TechnologyPage.Select product technology type via technology     Hardware
-    TechnologyPage.Select product technology group via technology   Applications
-    TechnologyPage.Click on save product pop inside technology page
-    Generic.Fetch alert message text and compare it with    Product created successfully
-    TechnologyPage.Wait until brand loder is invisible
-    TechnologyPage.Get Inner Text of Brand under product information tab
-    TechnologyPage.Get Inner Text of Product under product information tab
-    TechnologyPage.Get inner text of description under product information
-    TechnologyPage.Get inner text of feature under product information
-    TechnologyPage.Select warranty end date    12/12/2028
-    TechnologyPage.Select technology lifecycle status      Active
-    TechnologyPage.Add technology lifecycle comment    Technology Lifecycle Information- comment
-    TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
-    TechnologyPage.Add assignment information department name      TestQA Department Up31840619
-    TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
-    TechnologyPage.Add support partner of partners information     QABusiness04191432
-    TechnologyPage.Add supplier of partners information        qabrand10050505
-    TechnologyPage.Click on save technology form button
-    Generic.Fetch alert message text and compare it with        Technology created successfully
-    TechnologyPage.Click on save technology form pop button
-    Generic.Verify your current page location contains      technology
-    Generic.Wait until table get load
-    TechnologyPage.Search by BrandName   ${generated_BrandName}
-    Generic.Click on the profile name
-    Generic.Select option from profile list     personal-details
-    I_iconPage.Choose options inside personal_details        Organization
-    I_iconPage.Choose tabs under organization        system
-    Generic.Verify your current page location contains     organization
-    DashboardPage.Select the asset ID checkbox      yes
-    DashboardPage.Select the asset ID checkbox      no
-    Generic.Fetch alert message text and compare it with       Settings Updated
-    Generic.select the option from the side menu    Technology
-    Generic.Verify your current page location contains      technology
-    TechnologyPage.Search by BrandName   ${generated_BrandName}
-    TechnologyPage.Click on the first row of the technology table
-    Generic.Verify your current page location contains     technology-details
-    TechnologyPage.Click on edit button on product details page        Edit
-    Generic.Verify your current page location contains      edit-technology
-    TechnologyPage.Add assetID for technology lifecycle information random
-    TechnologyPage.Select technology lifecycle status      Active
-    TechnologyPage.Click on update button of edit_technology page       Update
-    Generic.Fetch alert message text and compare it with        Technology updated successfully
-    Generic.select the option from the side menu    Technology
-    Generic.Verify your current page location contains      technology
-    Generic.Wait until table get load
-    TechnologyPage.Search by AssetId       ${generated_AssetID}
-    TechnologyPage.Click on manage technology sub option       Technology List
-    TechnologyPage.Click on three dots of action button
-    TechnologyPage.Select an option from recovery table actions    Remove
-    PartnersPage.Select option from the pop up  Yes
-    Generic.Fetch alert message text and compare it with      Technology Removed Successfully
+    TRY
+        Generic.click on the tab	Login
+        LandingPage.Fill the login Form      ${email}    ${valid_password}
+        Generic.Verify your current page location contains      dashboard
+        LandingPage.Verify you are on dashboard page
+        Generic.Click on the profile name
+        Generic.Select option from profile list     personal-details
+        I_iconPage.Choose options inside personal_details        Organization
+        I_iconPage.Choose tabs under organization        system
+        Generic.Verify your current page location contains     organization
+        DashboardPage.Select the asset ID checkbox      yes
+        Generic.Fetch alert message text and compare it with       Settings Updated
+        Generic.Click on the profile name
+        Generic.Select option from profile list     brand-dropdown
+        Generic.Verify your current page location contains      brand
+        DashboardPage.Click add brand button
+        DashboardPage.Create random brandName
+        DashboardPage.Add business manufacturer URL       ${generated_BrandName}
+        DashboardPage.Add brand manufacturer country      Australia
+        DashboardPage.Save added brand details
+        DashboardPage.Click added brand main save button
+        Generic.Fetch alert message text and compare it with        Brand created successfully.
+        Generic.select the option from the side menu    Technology
+        Generic.Verify your current page location contains      technology
+        TechnologyPage.Click on action button of technology
+        TechnologyPage.Choose add technology from action button of technology
+        Generic.Verify your current page location contains      addtechnology
+        PartnersPage.Click here to add link of contract details
+        DashboardPage.Create random productName
+        DashboardPage.Add product brand name      ${generated_BrandName}
+        TechnologyPage.Add product description via technology
+        TechnologyPage.Add product feature via technology
+        TechnologyPage.Select product technology type via technology     Hardware
+        TechnologyPage.Select product technology group via technology   Applications
+        TechnologyPage.Click on save product pop inside technology page
+        Generic.Fetch alert message text and compare it with    Product created successfully
+        TechnologyPage.Wait until brand loder is invisible
+        TechnologyPage.Get Inner Text of Brand under product information tab
+        TechnologyPage.Get Inner Text of Product under product information tab
+        TechnologyPage.Get inner text of description under product information
+        TechnologyPage.Get inner text of feature under product information
+        TechnologyPage.Select warranty end date    12/12/2028
+        TechnologyPage.Select technology lifecycle status      Active
+        TechnologyPage.Add technology lifecycle comment    Technology Lifecycle Information- comment
+        TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
+        TechnologyPage.Add assignment information department name      TestQA Department Up31840619
+        TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
+        TechnologyPage.Add support partner of partners information     QABusiness04191432
+        TechnologyPage.Add supplier of partners information        qabrand10050505
+        TechnologyPage.Click on save technology form button
+        Generic.Fetch alert message text and compare it with        Technology created successfully
+        TechnologyPage.Click on save technology form pop button
+        Generic.Verify your current page location contains      technology
+        Generic.Wait until table get load
+        TechnologyPage.Search by BrandName   ${generated_BrandName}
+        Generic.Click on the profile name
+        Generic.Select option from profile list     personal-details
+        I_iconPage.Choose options inside personal_details        Organization
+        I_iconPage.Choose tabs under organization        system
+        Generic.Verify your current page location contains     organization
+        DashboardPage.Select the asset ID checkbox      yes
+        DashboardPage.Select the asset ID checkbox      no
+        Generic.Fetch alert message text and compare it with       Settings Updated
+        Generic.select the option from the side menu    Technology
+        Generic.Verify your current page location contains      technology
+        TechnologyPage.Search by BrandName   ${generated_BrandName}
+        TechnologyPage.Click on the first row of the technology table
+        Generic.Verify your current page location contains     technology-details
+        TechnologyPage.Click on edit button on product details page        Edit
+        Generic.Verify your current page location contains      edit-technology
+        TechnologyPage.Add assetID for technology lifecycle information random
+        TechnologyPage.Select technology lifecycle status      Active
+        TechnologyPage.Click on update button of edit_technology page       Update
+        Generic.Fetch alert message text and compare it with        Technology updated successfully
+        Generic.select the option from the side menu    Technology
+        Generic.Verify your current page location contains      technology
+        Generic.Wait until table get load
+        TechnologyPage.Search by AssetId       ${generated_AssetID}
+        TechnologyPage.Click on manage technology sub option       Technology List
+        TechnologyPage.Click on three dots of action button
+        TechnologyPage.Select an option from recovery table actions    Remove
+        PartnersPage.Select option from the pop up  Yes
+        Generic.Fetch alert message text and compare it with      Technology Removed Successfully
+    EXCEPT
+        Generic.Click on the profile name
+        Generic.Select option from profile list     personal-details
+        I_iconPage.Choose options inside personal_details        Organization
+        I_iconPage.Choose tabs under organization        system
+        Generic.Verify your current page location contains     organization
+        DashboardPage.Select the asset ID checkbox      no
+        fail
+    END
 
 Add Technology: Verify Renewal Date get auto-populate when enter contract end date
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the asset ID checkbox      no
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -2794,6 +2833,7 @@ Compose reply and remove the message via technology details
     DashboardPage.Click on the notifications icon under dashbaord page
     TechnologyPage.Click on the asset alert option under notifications
     sleep   ${search_sleep}
+    DashboardPage.Wait until alert is visible in the Recent Notifiation tab     You added Asset ID      ${generated_AssetID}.
     TechnologyPage.Get the text of the recent notification of added assets      You added Asset ID ${generated_AssetID}.
     Generic.Click on the profile name
     Generic.Select other option from profile list     Logout
@@ -2910,6 +2950,7 @@ Compose reply and remove the message via technology details
     Generic.Fetch alert message text and compare it with       Message removed successfully
 
 Download QR for an asset as PNG and SVG
+    [Tags]      Smoke       Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -3061,6 +3102,7 @@ Verify notification update location in asset
     TechnologyPage.Get the text of the recent notification of added assets      You changed location of Asset ID ${generated_AssetID}.
 
 Verify_Notification_Update_Asset
+    [Tags]      Smoke       Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -3074,9 +3116,7 @@ Verify_Notification_Update_Asset
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Select parameter from technology dropdown list       OPMR815274
     TechnologyPage.Add assetID for technology lifecycle information random
-
     TechnologyPage.Select technology lifecycle status      Active
-
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      TestQA Department Up31840619
     TechnologyPage.Add assignment information assign to        Testqaup94590327      QA
@@ -3108,10 +3148,361 @@ Verify_Notification_Update_Asset
     DashboardPage.Wait until alert is visible in the Recent Notifiation tab     You updated Asset ID      ${generated_AssetID}.
     TechnologyPage.Get the text of the recent notification of added assets      You updated Asset ID ${generated_AssetID}.
 
+Click on the technology group filters and verify it
+    [Tags]     time     smoke     sanity     Rerun
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
+    Generic.Verify your current page location contains      dashboard
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    Generic.Wait until table get load
+    TechnologyPage.Click on the filters under technology page       Technology Group
+    Generic.Wait until table get load
+
+    ${StartTime1} =     Get Current Time in Milliseconds
+    TechnologyPage.Click on the value under the filters of technology page      Applications
+    TechnologyPage.Get the text of selected filter under technology     Applications
+    Generic.Wait until table get load
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  6  ${pageHeading}   Filter Page - Data load time of filter Applications under technology group      6    ${pageTime}     ${ActualTime}    Filter_Time
+
+    PaginationPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     technology
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     technology
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click    Group      Applications        ${New_Namee}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the filters under technology page       Technology Group
+    Generic.Wait until table get load
+
+    ${StartTime1} =     Get Current Time in Milliseconds
+    TechnologyPage.Click on the value under the filters of technology page      Accessories
+    TechnologyPage.Get the text of selected filter under technology    Accessories
+    Generic.Wait until table get load
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  7  ${pageHeading}   Filter Page - Data load time of filter Accessories under technology group      7    ${pageTime}     ${ActualTime}    Filter_Time
+
+    PaginationPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     technology
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     technology
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click    Group      Accessories        ${New_Namee}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the filters under technology page       Technology Group
+    Generic.Wait until table get load
+
+    ${StartTime1} =     Get Current Time in Milliseconds
+    TechnologyPage.Click on the value under the filters of technology page       CRT TVs
+    TechnologyPage.Get the text of selected filter under technology     CRT TVs
+    Generic.Wait until table get load
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  8  ${pageHeading}   Filter Page - Data load time of filter CRT under technology group      8    ${pageTime}     ${ActualTime}    Filter_Time
+
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click    Group       CRT TVs        ${New_Namee}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    Generic.Fetch alert message text and compare it with       No additional sub-groups found!
+    Generic.Click on the profile name
+    Generic.Select other option from profile list     Logout
+    Generic.Fetch log_out alert message
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Tech Type
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under the tech typen filters of technology page       Hardware
+    Generic.Wait until table get load
+    PaginationPage.Click on the pagination dropdown     technology
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     technology
+    PaginationPage.Fetch the total count
+    PaginationPage.Get count of total rows from Product Dropdown
+    TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Tech Type
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under the tech typen filters of technology page       License
+    Generic.Wait until table get load
+    PaginationPage.Click on the pagination dropdown     technology
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     technology
+    PaginationPage.Fetch the total count
+    PaginationPage.Get count of total rows from Product Dropdown
+    TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Tech Type
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under the tech typen filters of technology page       Subscription
+    Generic.Wait until table get load
+    PaginationPage.Click on the pagination dropdown     technology
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     technology
+    PaginationPage.Fetch the total count
+    PaginationPage.Get count of total rows from Product Dropdown
+    TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Tech Type
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under the tech typen filters of technology page      Maintenance
+    Generic.Wait until table get load
+    PaginationPage.Click on the pagination dropdown     technology
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     technology
+    PaginationPage.Fetch the total count
+    PaginationPage.Get count of total rows from Product Dropdown
+    TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Partner
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Manufacturers
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value      1
+    TechnologyPage.Get the text of the value you selected under filter      1
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click    Brand       ${random_Namee}        ${random_Namee}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Partner
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Manufacturers
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value      2
+    TechnologyPage.Get the text of the value you selected under filter      2
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click    Brand       ${random_Namee}       ${random_Namee}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Partner
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Manufacturers
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value      3
+    TechnologyPage.Get the text of the value you selected under filter      3
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click    Brand       ${random_Namee}       ${random_Namee}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Partner
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Suppliers
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value      2
+    TechnologyPage.Get the text of the value you selected under filter     2
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Get count of total rows from Product Dropdown
+    TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Partner
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Suppliers
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value      5
+    TechnologyPage.Get the text of the value you selected under filter      5
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Get count of total rows from Product Dropdown
+    TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Partner
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Suppliers
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value     6
+    TechnologyPage.Get the text of the value you selected under filter     6
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Get count of total rows from Product Dropdown
+    TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Partner
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       SupportPartners
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value    3
+    TechnologyPage.Get the text of the value you selected under filter     3
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Get count of total rows from Product Dropdown
+    TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Partner
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       SupportPartners
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value    4
+    TechnologyPage.Get the text of the value you selected under filter     4
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Get count of total rows from Product Dropdown
+    TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Partner
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       SupportPartners
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value    5
+    TechnologyPage.Get the text of the value you selected under filter     5
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Get count of total rows from Product Dropdown
+    TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Location
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value    2
+    TechnologyPage.Get the text of the value you selected under filter    2
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click    Location      ${random_Namee}       ${random_Namee}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Location
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value    3
+    TechnologyPage.Get the text of the value you selected under filter    3
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click    Location      ${random_Namee}       ${random_Namee}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Location
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value   6
+    TechnologyPage.Get the text of the value you selected under filter    6
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click    Location      ${random_Namee}       ${random_Namee}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Brand
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value   2
+    TechnologyPage.Get the text of the value you selected under filter    2
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click    Brand      ${random_Namee}       ${random_Namee}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Brand
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value   6
+    TechnologyPage.Get the text of the value you selected under filter    6
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click    Brand      ${random_Namee}       ${random_Namee}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Brand
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value   7
+    TechnologyPage.Get the text of the value you selected under filter    7
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click    Brand      ${random_Namee}       ${random_Namee}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Department
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value   1
+    TechnologyPage.Get the text of the value you selected under filter   1
+    Generic.Wait until table get load
+    PaginationPage.Click on the pagination dropdown     technology
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     technology
+    PaginationPage.Fetch the total count
+    PaginationPage.Get count of total rows from Product Dropdown
+    TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Department
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value   2
+    TechnologyPage.Get the text of the value you selected under filter   2
+    Generic.Wait until table get load
+    PaginationPage.Click on the pagination dropdown     technology
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     technology
+    PaginationPage.Fetch the total count
+    PaginationPage.Get count of total rows from Product Dropdown
+    TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Status
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value   2
+    TechnologyPage.Get the text of the value you selected under filter   2
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click    Status      ${random_Namee}       ${random_Namee}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Select Status
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value   5
+    TechnologyPage.Get the text of the value you selected under filter   5
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click    Status      ${random_Namee}       ${random_Namee}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Agent
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value  1
+    TechnologyPage.Get the text of the value you selected under filter   1
+    Generic.Wait until table get load
+    PaginationPage.Click on the pagination dropdown     technology
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     technology
+    PaginationPage.Fetch the total count
+    PaginationPage.Get count of total rows from Product Dropdown
+    TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
+    Generic.Click on the profile name
+    Generic.Select other option from profile list     Logout
+    Generic.Fetch log_out alert message
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form     jasdeep@15963.fr.nf     Paramdeep@112
+    Generic.Verify your current page location contains      dashboard
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Agent
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under filters for selecting random value  2
+    TechnologyPage.Get the text of the value you selected under filter   2
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Get count of total rows from Product Dropdown
+    TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
     
 
 #Zz kill browser
-#    [Tags]      Smoke     Sanity      Time      rerun       Stable    yy
+#    [Tags]      Smoke     Sanity      Time        Stable    yy
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
 #    Run Process    cmd.exe    /C    taskkill /IM python.exe /F
+
 

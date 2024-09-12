@@ -55,10 +55,10 @@ Test Teardown   Close Browser session
 #    [Tags]      Sanity      Smoke
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    Generic.select the option from the side menu    Contracts
-#    Generic.Verify your current page location contains      contracts
+#    Generic.select the option from the side menu    Smart Share
+#    Generic.Verify your current page location contains      contract
 #    ContractsPage.Click on create new contract button
-#    ContractsPage.Select type of contract     Dynamic Contract
+#    ContractsPage.Select type of contract     Dynamic Smart Share
 #    Generic.Verify your current page location contains      generate-contract
 #    ContractsPage.Enter contract type      SmartShare_Manufacturer
 #    ContractsPage.Enter contract with     BusinessName60338
@@ -82,7 +82,7 @@ Test Teardown   Close Browser session
 
 
 Technology Auto removed from dynamic contract When edit Brand and product
-    [Tags]      Sanity      Smoke       Time        Unstable
+    [Tags]      Sanity      Smoke       Time        Unstable      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -175,13 +175,13 @@ Technology Auto removed from dynamic contract When edit Brand and product
 #-------------------------- CONTRACT-----------------------------------------------------------
 
 
-    Generic.select the option from the side menu    Contracts
-    Generic.Verify your current page location contains      contracts
+    Generic.select the option from the side menu    Smart Share
+    Generic.Verify your current page location contains      contract
 
 
     ContractsPage.Click on create new contract button
 
-    ContractsPage.Select type of contract     Dynamic Contract
+    ContractsPage.Select type of contract     Dynamic Smart Share
     Generic.Verify your current page location contains      generate-contract
 
     ContractsPage.Enter contract type      SmartShare_Manufacturer
@@ -231,8 +231,8 @@ Technology Auto removed from dynamic contract When edit Brand and product
 
 #-----------------------------    CONTRACT -------------------------------------
 
-    Generic.select the option from the side menu    Contracts
-    Generic.Verify your current page location contains      contracts
+    Generic.select the option from the side menu    Smart Share
+    Generic.Verify your current page location contains      contract
     ContractsPage.Search by contract BrandName      ${generate_BusinessName}
     ContractsPage.Click on the first tab row    ${generate_BusinessName}
     ContractsPage.Verify technology is null
@@ -338,13 +338,13 @@ Technology Auto removed from static contract When edit Brand and product
 #-------------------------- CONTRACT-----------------------------------------------------------
 
 
-    Generic.select the option from the side menu    Contracts
-    Generic.Verify your current page location contains      contracts
+    Generic.select the option from the side menu    Smart Share
+    Generic.Verify your current page location contains      contract
 
 
     ContractsPage.Click on create new contract button
 
-    ContractsPage.Select type of contract     Static Contract
+    ContractsPage.Select type of contract     Static Smart Share
     Generic.Verify your current page location contains      generate-contract
 
     ContractsPage.Enter contract type      SmartShare_Manufacturer
@@ -400,8 +400,8 @@ Technology Auto removed from static contract When edit Brand and product
 
 #-----------------------------    CONTRACT -------------------------------------
 
-    Generic.select the option from the side menu    Contracts
-    Generic.Verify your current page location contains      contracts
+    Generic.select the option from the side menu    Smart Share
+    Generic.Verify your current page location contains      contract
     ContractsPage.Search by contract BrandName      ${generate_BusinessName}
     ContractsPage.Click on the first tab row    ${generate_BusinessName}
     ContractsPage.Verify technology is null

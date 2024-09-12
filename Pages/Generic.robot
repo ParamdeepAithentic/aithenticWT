@@ -63,7 +63,9 @@ ${search_sleep}       1
 
 
 
+
 ${CASE}        uat    #qa , uat , pre-prod
+
 
 
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
@@ -97,7 +99,7 @@ Set QA Variables
 
 
 Set UAT Variables
-    Set Suite Variable    ${url}    https://uat-app.aithentic.com/
+    Set Suite Variable    ${url}        https://uat-app.aithentic.com/
     Set Suite Variable    ${valid_password}    Test@123     #UAT user
     Set Suite Variable    ${apiURL}    https://uat-api.aithentic.com/api/v1
     Set Suite Variable    ${agentDiscovery_TagName}    Tag Name - johnsoftwaresolutions-1428-4        #uat
@@ -116,13 +118,14 @@ Set UAT Variables
     Set Suite Variable    ${discovered_existing_department}        Quality Assurance
     Set Suite Variable    ${discovered_IP}    00:17:61:10:C6:A1
     Set Suite Variable    ${discovery_asset_list_brand}     AKKA Germany GmbH
+    Set Suite Variable    ${existing_mac}                       DC:21:5C:9C:3E:57
 
 
 Set Pre-Prod Variables
     Set Suite Variable    ${url}    https://pre-prod-app.aithentic.com/
     Set Suite Variable    ${valid_password}    Test@123     #pre prod
     Set Suite Variable    ${apiURL}    https://pre-prod-api.aithentic.com/api/v1
-    Set Suite Variable    ${browser_name}         headlessfirefox
+    Set Suite Variable    ${browser_name}         firefox
     Set Suite Variable    ${email}                 testqa29j@mailinator.com
     Set Suite Variable    ${discovered_asset_brand}                ECS
     Set Suite Variable    ${existing_mac}                       b8:ae:ed:bc:1c:35

@@ -117,8 +117,9 @@ ${Yes_BTN}      //span[contains(text(),'Yes')]
 
 ####################### search asset id #####################
 
-#${asset_SearchBar}      css:input[placeholder='Ssearch by Brand, Product, Asset ID, Serial Num, Software VS, Assignee or Host Name']
+
 ${asset_SearchBar}      //input[contains(@placeholder,'Search by Brand, Product, Asset ID')]
+#${asset_SearchBar}      //input[@placeholder='Search by Brand, Product, Asset ID, Serial number or Assignee']
 ${search_loader}     css:div[role='status']
 ${fetch_assetID}     //td[@class='technology-asset-width pr-4']//a
 ${fetch_productID}      css:tbody tr:nth-child(1) td:nth-child(4)
@@ -1939,6 +1940,7 @@ Select particular technology group via link while adding technology
     wait until element is enabled      //span[normalize-space()='${option}']       ${wait_time}
     click element       //span[normalize-space()='${option}']
 
+
 Click on message tab of technology- list page
     wait until element is visible   css:#PrintQrButton   ${wait_time}
     wait until element is enabled   css:#PrintQrButton   ${wait_time}
@@ -1957,7 +1959,7 @@ Enter input in the recipient list field under compose message via technology det
 
 Get the text of the recent notification of added assets
     [Arguments]      ${option}
-    wait until element is visible       css:#assetsAlert >div>.notifications-container >ul>li:nth-child(1)>div:nth-child(1)
+    wait until element is visible       css:#assetsAlert >div>.notifications-container >ul>li:nth-child(1)>div:nth-child(1)     ${wait_time}
     wait until element is enabled       css:#assetsAlert >div>.notifications-container >ul>li:nth-child(1)>div:nth-child(1)     ${wait_time}
     ${notification} =    get text    css:#assetsAlert >div>.notifications-container >ul>li:nth-child(1)>div:nth-child(1)
     set global variable     ${notification}
@@ -2025,3 +2027,56 @@ Scroll the element into view
     Wait until element is visible    //div[@id='components']//h6[normalize-space()='Hardware']      ${wait_time}
     wait until element is enabled    //div[@id='components']//h6[normalize-space()='Hardware']      ${wait_time}
     scroll element into view       //div[@id='components']//h6[normalize-space()='Hardware']
+
+Click on the filters under technology page
+    [Arguments]     ${option}
+     Wait Until Element Is Not Visible    ${loaderIcon}        ${wait_time}
+    Wait until element is visible    //div[contains(@class,'technology position-relative')]//b[normalize-space()='${option}']      ${wait_time}
+    wait until element is enabled    //div[contains(@class,'technology position-relative')]//b[normalize-space()='${option}']      ${wait_time}
+    click element      //div[contains(@class,'technology position-relative')]//b[normalize-space()='${option}']
+
+Click on the value under the filters of technology page
+    [Arguments]     ${option}
+     Wait Until Element Is Not Visible    ${loaderIcon}        ${wait_time}
+     Wait until element is visible    //div[contains(@class,'technology position-relative')]//label[normalize-space()='${option}']        ${wait_time}
+     wait until element is enabled    //div[contains(@class,'technology position-relative')]//label[normalize-space()='${option}']      ${wait_time}
+     click element      //div[contains(@class,'technology position-relative')]//label[normalize-space()='${option}']
+
+Get the text of selected filter under technology
+    [Arguments]     ${option}
+    wait until element is visible      //div[contains(@class,'technology position-relative')]//label[normalize-space()='${option}']    ${wait_time}
+    ${fetch_Name_of_selected_filter} =    get text    //div[contains(@class,'technology position-relative')]//label[normalize-space()='${option}']
+    ${original_string}=    Set Variable    ${fetch_Name_of_selected_filter}
+    ${New_Namee}=    Evaluate    '${original_string}'.strip()
+    log to console    ${New_Namee}
+    set global variable    ${New_Namee}
+
+Click on the value under the tech typen filters of technology page
+    [Arguments]     ${option}
+     Wait Until Element Is Not Visible    ${loaderIcon}        ${wait_time}
+     Wait until element is visible   //div[contains(@class,'technology position-relative')]//following-sibling::div//label[normalize-space()='${option}']        ${wait_time}
+     wait until element is enabled     //div[contains(@class,'technology position-relative')]//following-sibling::div//label[normalize-space()='${option}']      ${wait_time}
+     click element       //div[contains(@class,'technology position-relative')]//following-sibling::div//label[normalize-space()='${option}']
+
+Click on the tech type filter under technology
+    [Arguments]     ${option}
+     Wait Until Element Is Not Visible    ${loaderIcon}        ${wait_time}
+     Wait until element is visible   //div[contains(@class,'technology position-relative')]//following-sibling::div//b[normalize-space()='${option}']        ${wait_time}
+     wait until element is enabled     //div[contains(@class,'technology position-relative')]//following-sibling::div//b[normalize-space()='${option}']      ${wait_time}
+     click element       //div[contains(@class,'technology position-relative')]//following-sibling::div//b[normalize-space()='${option}']
+
+Click on the value under filters for selecting random value
+    [Arguments]     ${option}
+     Wait Until Element Is Not Visible    ${loaderIcon}        ${wait_time}
+     Wait until element is visible   (//div[contains(@class,'technology position-relative')]//following-sibling::div//label)[${option}]        ${wait_time}
+     wait until element is enabled    (//div[contains(@class,'technology position-relative')]//following-sibling::div//label)[${option}]      ${wait_time}
+     click element       (//div[contains(@class,'technology position-relative')]//following-sibling::div//label)[${option}]
+
+Get the text of the value you selected under filter
+    [Arguments]     ${option}
+    wait until element is visible      (//div[contains(@class,'technology position-relative')]//following-sibling::div//label)[${option}]    ${wait_time}
+    ${fetch_Name_of_selected_random_filter} =    get text    (//div[contains(@class,'technology position-relative')]//following-sibling::div//label)[${option}]
+    ${original_string}=    Set Variable    ${fetch_Name_of_selected_random_filter}
+    ${random_Namee}=    Evaluate    '${original_string}'.strip()
+    log to console    ${random_Namee}
+    set global variable    ${random_Namee}

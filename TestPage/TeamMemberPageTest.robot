@@ -61,11 +61,18 @@ Free the asset limit
     PaginationPage.Run the remove asset journey
 
 Create team member form
-    [Tags]      Stable
+    [Tags]      Stable    Sanity    Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   yes
+    Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Click on add team member action button
@@ -1084,7 +1091,7 @@ Verify_Employee_ID_Changing_settings_from_Profile_list_while_add_edit_team_membe
 
 
 Add Back Deleted Team member - Active
-    [Tags]      Sanity      rerun
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
@@ -1228,6 +1235,7 @@ Add Back Deleted Team member - Active
     TeamMemberPage.Verify Team member added after delete        ${generated_TMFname} ${generated_TMLname}
 
 Click on the location filter under team member and verify it
+    [Tags]    time     smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
@@ -1235,7 +1243,13 @@ Click on the location filter under team member and verify it
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Click on the location filter under team member       location
+
+    ${StartTime1} =     Get Current Time in Milliseconds
     LocationPage.Select the option from location filter under location        *Main Office
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  11  ${pageHeading}   Filter Page - Data load time of location filter under team member      11    ${pageTime}     ${ActualTime}    Filter_Time
+
     LocationPage.Get the text of selected filter under location    *Main Office
     Generic.Wait until table get load
     PaginationPage.Fetch the total count
@@ -1263,6 +1277,7 @@ Click on the location filter under team member and verify it
     TeamMemberPage.Fetch the country from team member filter and click       Location      Afgahniastan         ${New_Name}
 
 Click on the status filter under team member and verify it
+    [Tags]     time     smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1270,7 +1285,13 @@ Click on the status filter under team member and verify it
     Generic.select the option from the side menu     Team Members
     Generic.Verify your current page location contains     memberslist
     TeamMemberPage.Click on the location filter under team member       status
+
+    ${StartTime1} =     Get Current Time in Milliseconds
     LocationPage.Select the option from status filter under location        Active
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  12  ${pageHeading}   Filter Page - Data load time of status filter under team member      12    ${pageTime}     ${ActualTime}    Filter_Time
+
     LocationPage.Get the text of selected status filter under location      Active
     Generic.Wait until table get load
     PaginationPage.Fetch the total count
@@ -1288,5 +1309,73 @@ Click on the status filter under team member and verify it
     PaginationPage.Fetch the total count
     TeamMemberPage.Fetch the country from team member filter and click       Status     Inactive         ${New_status}
 
+Click on the status filter under team member via profile list and verify it
+    [Tags]     time     smoke
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    Generic.Select parameter      Team Members
+    Generic.Verify your current page location contains      dashboard
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Click on the status filter under team member via profile
+
+    ${StartTime1} =     Get Current Time in Milliseconds
+    TeamMemberPage.Select the option from the filters under team member via profile     0
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  13  ${pageHeading}   Filter Page - Data load time of status under team member via personal details      13    ${pageTime}     ${ActualTime}    Filter_Time
+
+
+    TeamMemberPage.Get the text of selected status filter under team meber via profile
+    DashboardPage.click on the authentication tab under security
+    TeamMemberPage.click on the members tab under team member via profile
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     profile-team-member
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     profile-team-member
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click       Status     Active         ${New_status1}
+    TeamMemberPage.Click on the status filter under team member via profile
+    TeamMemberPage.Select the option from the filters under team member via profile     0
+    TeamMemberPage.Select the option from the filters under team member via profile     1
+    TeamMemberPage.Get the text of selected status filter under team meber via profile
+    DashboardPage.click on the authentication tab under security
+    TeamMemberPage.click on the members tab under team member via profile
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click       Status     Inactive         ${New_status1}
+    Generic.Click on the profile name
+    Generic.Select other option from profile list     Logout
+    Generic.Fetch log_out alert message
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    Generic.Select parameter      Team Members
+    Generic.Verify your current page location contains      dashboard
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Click on the status filter under team member via profile
+    TeamMemberPage.Select the option from the filters under team member via profile     2
+    TeamMemberPage.Get the text of selected status filter under team meber via profile
+    DashboardPage.click on the authentication tab under security
+    TeamMemberPage.click on the members tab under team member via profile
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     profile-team-member
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     profile-team-member
+    PaginationPage.Fetch the total count
+    TeamMemberPage.Fetch the country from team member filter and click       Status     Invited         ${New_status1}
+
 #Zz kill browser
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+

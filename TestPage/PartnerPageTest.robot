@@ -184,9 +184,9 @@ Compose Message invite user test
 #-------------------------- CONTRACT-----------------------------------------------------------
 
     ${StartTime1} =     Get Current Time in Milliseconds
-    Generic.select the option from the side menu    Contracts
-    Generic.Verify your current page location contains      contracts
-    Generic.Verify your current page contains this text     Contracts
+    Generic.select the option from the side menu    Smart Share
+    Generic.Verify your current page location contains      contract
+    Generic.Verify your current page contains this text     Smart Share
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  10  ${pageHeading}   Page Load - Total load time from clicking contract option from side listing to contract page listing      10    ${pageTime}     ${ActualTime}    PageLoad_Time
@@ -195,9 +195,9 @@ Compose Message invite user test
     ContractsPage.Click on create new contract button
 
     ${StartTime1} =     Get Current Time in Milliseconds
-    ContractsPage.Select type of contract     Dynamic Contract
+    ContractsPage.Select type of contract     Dynamic Smart Share
     Generic.Verify your current page location contains      generate-contract
-    Generic.Verify your current page contains this text     Generate New Contract
+    Generic.Verify your current page contains this text     Generate New Smart Share
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  11  ${pageHeading}   Page Load - Total load time from clicking Dynamic Contract option from pop up to generate new contract page      11    ${pageTime}     ${ActualTime}    PageLoad_Time
@@ -208,7 +208,8 @@ Compose Message invite user test
     ContractsPage.Enter contract brand    ${generate_BusinessName}
     ContractsPage.Enter contract location      United States - Main Office - 21 - 2
     ContractsPage.Enter contract permission       Read/Write
-    ContractsPage.Select contract start date
+    Generic.Fetch Current Date
+    ContractsPage.Select contract start date        ${current_date}
     ContractsPage.Select contract end date      12/12/2028
     ContractsPage.Select contract function       Dynamic
     ContractsPage.Click preview selection button on contact
@@ -386,12 +387,12 @@ Compose Message invite user test
     DashboardPage.Select the location ID checkbox   yes
     Generic.Fetch alert message text and compare it with       Settings Updated
 
-    Generic.select the option from the side menu    Contracts
+    Generic.select the option from the side menu    Smart Share
     Generic.Verify your current page location contains      contracts-list
 #    ContractsPage.Fetch the contract ID from the row
 #    ContractsPage.Click on the first tab row    ${generate_BusinessName}
 #    sleep   50000
-    Generic.Verify your current page contains this text     Create New Contract
+    Generic.Verify your current page contains this text     Create New Smart Share
     ContractsPage.Click on the first tab row of contract list page table
     Generic.Verify your current page location contains      view-smartshare
     ContractsPage.Save the contract details     Accept
@@ -422,7 +423,7 @@ Compose Message invite user test
     PartnersPage.Click on edit button
     PartnersPage.Click on contact person button
     PartnersPage.Enter random contact name
-#    PartnersPage.Enter random contact person
+
     PartnersPage.Enter secondary contact business email    ${generate_PersonName}     yopmail
 #    PartnersPage.Choose contact country      India   +91     9646289871
     Generic.Enter phone number      India   +91     9646289871
@@ -1024,7 +1025,8 @@ Activate Manufacturer via partner
     Generic.Fetch alert message text and compare it with      Status updated successfully
 
 Remove Manufacturer from partner
-    [Tags]      Stable
+    [Tags]      Stable    Sanity   Smoke
+
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1118,8 +1120,9 @@ Remove Manufacturer from partner
     PartnersPage.Select option from the pop up  Yes
     Generic.Fetch alert message text and compare it with      Partner deleted successfully
 
+
 View Details and check the details of Contract
-    [Tags]      Stable      rerun
+    [Tags]      Stable
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1169,18 +1172,19 @@ View Details and check the details of Contract
     Generic.Verify your current page location contains      technology-list
     Generic.Wait until table get load
     TechnologyPage.Search by BrandName      ${generate_BusinessName}
-    Generic.select the option from the side menu    Contracts
+    Generic.select the option from the side menu    Smart Share
     Generic.click on the button link    View Details
     ContractsPage.Click on back to contract link
     ContractsPage.Click on create new contract button
-    ContractsPage.Select type of contract     Dynamic Contract
+    ContractsPage.Select type of contract     Dynamic Smart Share
     Generic.Verify your current page location contains      generate-contract
     ContractsPage.Enter contract type      SmartShare_Manufacturer
     ContractsPage.Enter contract with     ${generate_BusinessName}
     ContractsPage.Enter contract brand    ${generate_BusinessName}
     ContractsPage.Enter contract location      United States - Main Office - 21 - 2
     ContractsPage.Enter contract permission       Read/Write
-    ContractsPage.Select contract start date
+    Generic.Fetch Current Date
+    ContractsPage.Select contract start date        ${current_date}
     ContractsPage.Select contract end date      12/12/2028
     ContractsPage.Select contract function       Dynamic
     ContractsPage.Click preview selection button on contact
@@ -1222,6 +1226,7 @@ View Details and check the details of Contract
     PartnersPage.Verify pages with the element  Item
     PartnersPage.Click on back to contract details button link
     PartnersPage.Download the contract pdf
+
 
 Add_edit_deactivate_removeSupplier while adding brand
     [Tags]      Stable
@@ -1414,6 +1419,76 @@ Add_edit_deactivate_removeSupport_partner_while_adding_brand
     PartnersPage.Select option from the pop up  Yes
     Generic.Fetch alert message text and compare it with      Partner deleted successfully
 
+Partner Side bar Filters
+    [Tags]     time     smoke
+    Generic.click on the tab	    Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Partners
+    PartnersPage.Click on the filters from partner module       Select Partner
+    PartnersPage.Checkmark after clicking on the filters        Manufacturer
+    ReportsPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     partner-list
+    PaginationPage.Select the value from the pagination drop down count    500
+
+    ${StartTime1} =     Get Current Time in Milliseconds
+    PartnersPage.Fetch the selected filter and verify from Table    Partner Type        Manufacturer        Manufacturer
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  14  ${pageHeading}   Filter Page - Data load time of filter select partner under partner page      14    ${pageTime}     ${ActualTime}    Filter_Time
+
+    Generic.Click on the reset filters link
+    Generic.Refresh the existing page
+    PartnersPage.Click on the filters from partner module       Select Partner
+    PartnersPage.Checkmark after clicking on the filters        Supplier
+    ReportsPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     partner-list
+    PaginationPage.Select the value from the pagination drop down count    500
+    PartnersPage.Fetch the selected filter and verify from Table    Partner Type        Supplier        Supplier
+    Generic.Click on the reset filters link
+    Generic.Refresh the existing page
+    PartnersPage.Click on the filters from partner module       Select Partner
+    PartnersPage.Checkmark after clicking on the filters        Support Partner
+    ReportsPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     partner-list
+    PaginationPage.Select the value from the pagination drop down count    500
+    PartnersPage.Fetch the selected filter and verify from Table    Partner Type        Support Partner        Support Partner
+    Generic.Click on the reset filters link
+    ReportsPage.Fetch the total count
+    PartnersPage.Click on the filters from partner module       Select Partner
+    PartnersPage.Checkmark after clicking on the filters        All Partners
+    ReportsPage.Fetch the total count After selecting filter
+    MessagePage.Comapre the total count after selecting filter
+######################################### STATUS ###############################################################################
+    Generic.Click on the reset filters link
+    PartnersPage.Click on the filters from partner module       Select Status
+
+    ${StartTime1} =     Get Current Time in Milliseconds
+    PartnersPage.Checkmark after clicking on the filters        Active
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  15  ${pageHeading}   Filter Page - Data load time of filter status under partner page      15    ${pageTime}     ${ActualTime}    Filter_Time
+
+    PaginationPage.Click on the pagination dropdown     partner-list
+    PaginationPage.Select the value from the pagination drop down count    500
+    PartnersPage.Fetch the selected filter and verify from Table    Status       Active        Active
+    Generic.Click on the reset filters link
+    Generic.Refresh the existing page
+    PartnersPage.Click on the filters from partner module       Select Status
+    PartnersPage.Checkmark after clicking on the filters        Inactive
+    PaginationPage.Click on the pagination dropdown     partner-list
+    PaginationPage.Select the value from the pagination drop down count    500
+    ReportsPage.Fetch the total count
+    PartnersPage.Fetch the selected filter and verify from Table    Status       Inactive        Inactive
+    Generic.Click on the reset filters link
+    ReportsPage.Fetch the total count
+    PartnersPage.Click on the filters from partner module       Select Status
+    PartnersPage.Checkmark after clicking on the filters        All
+    ReportsPage.Fetch the total count After selecting filter
+    MessagePage.Comapre the total count after selecting filter
+
+
 #Zz kill browser
-#    sleep       ${wait_time}
-#    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+ #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+
