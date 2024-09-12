@@ -1959,7 +1959,7 @@ Enter input in the recipient list field under compose message via technology det
 
 Get the text of the recent notification of added assets
     [Arguments]      ${option}
-    wait until element is visible       css:#assetsAlert >div>.notifications-container >ul>li:nth-child(1)>div:nth-child(1)
+    wait until element is visible       css:#assetsAlert >div>.notifications-container >ul>li:nth-child(1)>div:nth-child(1)     ${wait_time}
     wait until element is enabled       css:#assetsAlert >div>.notifications-container >ul>li:nth-child(1)>div:nth-child(1)     ${wait_time}
     ${notification} =    get text    css:#assetsAlert >div>.notifications-container >ul>li:nth-child(1)>div:nth-child(1)
     set global variable     ${notification}
