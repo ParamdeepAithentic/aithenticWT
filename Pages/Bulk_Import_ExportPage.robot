@@ -105,18 +105,18 @@ Select option from technology type column in bulk_import
     wait until element is visible      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]    ${wait_time}
     wait until element is enabled      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]    ${wait_time}
     Double click element      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]
-    wait until element is visible      css:div[aria-label='List'] div:nth-child(4) div    ${wait_time}
-    wait until element is enabled      css:div[aria-label='List'] div:nth-child(4) div    ${wait_time}
-    click element       css:div[aria-label='List'] div:nth-child(4) div
+    wait until element is visible      css:div[aria-label='Rich Select Field'] div:nth-child(4) div    ${wait_time}
+    wait until element is enabled      css:div[aria-label='Rich Select Field'] div:nth-child(4) div    ${wait_time}
+    click element       css:div[aria-label='Rich Select Field'] div:nth-child(4) div
 
 Select option from technology group column in bulk_import
     [Arguments]    ${option}
     wait until element is visible      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]    ${wait_time}
     wait until element is enabled      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]    ${wait_time}
     Double click element      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]
-    wait until element is visible      css:div[aria-label='List'] div:nth-child(4) div    ${wait_time}
-    wait until element is enabled      css:div[aria-label='List'] div:nth-child(4) div    ${wait_time}
-    click element       css:div[aria-label='List'] div:nth-child(4) div
+    wait until element is visible      css:div[aria-label='Rich Select Field'] div:nth-child(4) div    ${wait_time}
+    wait until element is enabled      css:div[aria-label='Rich Select Field'] div:nth-child(4) div    ${wait_time}
+    click element       css:div[aria-label='Rich Select Field'] div:nth-child(4) div
 
 Enter the value in the product_description column in bulk_import
     [Arguments]    ${option}
@@ -467,6 +467,7 @@ click on the arrow of product
 
 Enter the new value in the product, brand, group and type value in bulk_edit of technology
     [Arguments]     ${option}   ${text}
+    sleep       ${search_sleep}
     wait until element is not visible   ${loaderIcon}       ${wait_time}
     wait until element is visible   (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]   ${wait_time}
     wait until element is enabled   (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]   ${wait_time}
