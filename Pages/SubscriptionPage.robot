@@ -149,6 +149,7 @@ Select and move next with subscription
 Click on same billing address checkbox
     wait until element is visible       ${same_address_chkbox}       ${wait_time}
     wait until element is enabled       ${same_address_chkbox}       ${wait_time}
+    sleep   ${search_sleep}
     click element        ${same_address_chkbox}
     click element        ${same_address_chkbox}
     click element        ${same_address_chkbox}
