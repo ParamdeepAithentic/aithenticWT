@@ -62,7 +62,7 @@ ${yop_sleep}       10
 ${search_sleep}       1
 
 
-${CASE}    qa    #qa , uat , pre-prod
+${CASE}   qa   #qa , uat , pre-prod
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
 
 *** Keywords ***
@@ -77,6 +77,7 @@ Set QA Variables
     Set Suite Variable    ${valid_password}    Test@123       #QA User
     Set Suite Variable    ${apiURL}    https://qa-api.aithentic.com/api/v1
     Set Suite Variable    ${agentDiscovery_TagName}    Tag Name - johnsoftwaresolutions-1192-4         #qa
+    Set Suite Variable    ${IP_Discovered_devices}    Tag Name - johnsoftwaresolutions-1192-4
     Set Suite Variable    ${agentDiscovery_OnlyTagName}     johnsoftwaresolutions-1192-4
     Set Suite Variable    ${admin_url}        https://qa-admin.aithentic.com/
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com

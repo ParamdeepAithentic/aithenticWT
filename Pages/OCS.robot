@@ -985,6 +985,8 @@ Click on the confirm button under unmatch asset pop up
     Wait Until Element Is Visible  css:.qa-convert-assignee-tm-${option}    ${wait_time}
     Wait Until Element Is Enabled   css:.qa-convert-assignee-tm-${option}     ${wait_time}
     click element   css:.qa-convert-assignee-tm-${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+
 
 Mouse Hover over searched existing assets after creating technology frm add technology
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
@@ -997,3 +999,22 @@ Click on the unmatch link under discovery assets list page
     Wait Until Element Is Visible  //i[contains(@class,'fa-unlink')]    ${wait_time}
     Wait Until Element Is Enabled  //i[contains(@class,'fa-unlink')]     ${wait_time}
     click element   //i[contains(@class,'fa-unlink')]
+    sleep   2
+
+Mouse hover over first existing asset
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    (//div[contains(@class,'column-boxes-right')]//div[contains(@class,'child-container')]//div[contains(@class,'assets-text')]//parent::div)[1]     ${wait_time}
+    Wait Until Element Is Enabled    (//div[contains(@class,'column-boxes-right')]//div[contains(@class,'child-container')]//div[contains(@class,'assets-text')]//parent::div)[1]     ${wait_time}
+    Mouse Over   (//div[contains(@class,'column-boxes-right')]//div[contains(@class,'child-container')]//div[contains(@class,'assets-text')]//parent::div)[1]
+    sleep   5
+Get asset id by hovering over first existing assets
+    [Arguments]     ${text}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible  (//div[contains(@class,'column-boxes-right')]//div[contains(@class,'child-container')]//div[contains(@class,'assets-text')]//parent::div)[1]      ${wait_time}
+    Wait Until Element Is Enabled   (//div[contains(@class,'column-boxes-right')]//div[contains(@class,'child-container')]//div[contains(@class,'assets-text')]//parent::div)[1]     ${wait_time}
+    sleep       ${search_sleep}
+    ${hover_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
+    ${parts}    Split String    ${hover_text}    ${text}
+    ${hover_assetid1}    Get Substring    ${parts[1]}    1
+    Log to console      ${hover_assetid1}
+    set global variable     ${hover_assetid1}
