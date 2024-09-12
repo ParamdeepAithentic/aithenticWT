@@ -61,7 +61,7 @@ Click the option from side drawer
 
 
 Verify the drawer list
-    [Tags]      Time
+    [Tags]      Time     Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     ${StartTime1} =     Get Current Time in Milliseconds
@@ -687,7 +687,7 @@ Verify Department quick_links in profile settings dropdown
     DashboardPage.Get and verify the text and compare it with     Added Departments
 
 Search By Technology Group in product list
-    [Tags]      Time        Stable
+    [Tags]      Time        Stable      Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1037,7 +1037,9 @@ View Predefined brand
 View Predefined product
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.Verify your current page location contains      dashboard
+
+    Generic.Verify your current page location contains       dashboard
+
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
@@ -1050,7 +1052,9 @@ Verifying the Renewals Overview section of Management console - End of Life
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.Verify your current page location contains      dashboard
+
+    Generic.Verify your current page location contains       dashboard
+
     LandingPage.Verify you are on dashboard page
     DashboardPage.Fetch the count renewals overview subtabs      End of life
     DashboardPage.Set Globally the count from renewal overview subtabs
@@ -1656,6 +1660,8 @@ Management Console - Quarters filter dropdown
     DashboardPage.Verify your current page not contains this element
 
 Change password and login with new password
+    [Tags]      Sanity      smoke
+
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1799,6 +1805,7 @@ Change password and login with new password
     Generic.Verify your current page location contains      dashboard
 
 Enter password more than the limit of the password while register
+    [Tags]      Sanity      Smoke
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1831,6 +1838,7 @@ Enter password more than the limit of the password while register
     DashboardPage.Wait for the visibility of the validation of password field under create account
 
 Enter password less than the limit of the password while register
+    [Tags]      Sanity
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
