@@ -978,6 +978,7 @@ Match IP Discovered Asset with Dynamic Existing Asset
     OCS.Search with MAC address and IP Address on the search bar of Discovered Asset List       ${generated_AssetID}
     Generic.Verify your current page contains this text     ${generated_AssetID}
     OCS.Click on the unmatch link under discovery assets list page
+    sleep  ${search_sleep}
     OCS.Click on the confirm button under unmatch asset pop up      confirm
     Generic.Fetch alert message text and compare it with        Assets unmatched successfully
     Generic.Verify your current page location contains     discovery-assets-list
