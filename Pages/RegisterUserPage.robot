@@ -478,8 +478,11 @@ wait for the invisiblity of the city field loader
     sleep       ${search_sleep}
     wait until element is not visible    css:.qa-City .ng-spinner-loader         ${wait_time}
 
+
+
 Click on the delete icon to delete the ach card
     wait until element is not visible       ${loaderIcon}      ${wait_time}
     wait until element is visible      //div[contains(@class,'edit-bill')]//following-sibling::div//i[contains(@class,'trash-alt')]        ${wait_time}
     wait until element is enabled    //div[contains(@class,'edit-bill')]//following-sibling::div//i[contains(@class,'trash-alt')]         ${wait_time}
     click element   //div[contains(@class,'edit-bill')]//following-sibling::div//i[contains(@class,'trash-alt')]
+

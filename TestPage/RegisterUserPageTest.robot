@@ -140,7 +140,7 @@ Register new user
 
 
 Signup with ACH payment method
-    [Tags]       Stable
+    [Tags]       Stable    Sanity
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain

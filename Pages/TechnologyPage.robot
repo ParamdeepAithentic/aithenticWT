@@ -117,8 +117,9 @@ ${Yes_BTN}      //span[contains(text(),'Yes')]
 
 ####################### search asset id #####################
 
-#${asset_SearchBar}      css:input[placeholder='Ssearch by Brand, Product, Asset ID, Serial Num, Software VS, Assignee or Host Name']
+
 ${asset_SearchBar}      //input[contains(@placeholder,'Search by Brand, Product, Asset ID')]
+#${asset_SearchBar}      //input[@placeholder='Search by Brand, Product, Asset ID, Serial number or Assignee']
 ${search_loader}     css:div[role='status']
 ${fetch_assetID}     //td[@class='technology-asset-width pr-4']//a
 ${fetch_productID}      css:tbody tr:nth-child(1) td:nth-child(4)
@@ -1938,6 +1939,7 @@ Select particular technology group via link while adding technology
     wait until element is visible      //span[normalize-space()='${option}']       ${wait_time}
     wait until element is enabled      //span[normalize-space()='${option}']       ${wait_time}
     click element       //span[normalize-space()='${option}']
+
 
 Click on message tab of technology- list page
     wait until element is visible   css:#PrintQrButton   ${wait_time}
