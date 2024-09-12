@@ -962,22 +962,29 @@ Match IP Discovered Asset with Dynamic Existing Asset
         OCS.Get MAC_Address by hovering over IP discovered assets    MacAddress:
         OCS.Mouse Hover over current page after hovering over ip and discovered assets
         OCS.Select any Discovered asset
-        OCS.Click on search icon of discovery assets
         OCS.Click on search icon of Existing assets
         OCS.Enter text to search existing asset    ${generated_AssetID}
         sleep   ${search_sleep}
         OCS.Click on the down arrow icon of existing assets
         OCS.Select any existing asset
-        OCS.Click on search icon of Existing assets
-        OCS.Verify that line appears between selected assets
         OCS.Click on Button inside Network Discovery Page     Confirm Matches
-        Generic.Fetch alert message text and compare it with      Matched Assets updated successfully
-        OCS.Choose tab under Discovery Assets   agent-discovery
-        Generic.Verify your current page location contains   aad
-        OCS.click on the value of IP discovered devices of inside table
-        Sleep    ${yop_sleep}
-        Switch Window       aithentic | Discovered Assets
-        Generic.Verify your current page location contains     discovery-assets-list
+    Generic.Fetch alert message text and compare it with        Assets matched successfully, you can find matched assets in Discovered Assets or Manage Technology
+    OCS.Choose tab under Discovery Assets   agent-discovery
+    Generic.Verify your current page location contains    aad
+    OCS.click on the value of IP discovered devices of inside table
+    Sleep    ${yop_sleep}
+    Switch Window       aithentic | Discovered Assets
+    Generic.Verify your current page location contains     discovery-assets-list
+    OCS.Search with MAC address and IP Address on the search bar of Discovered Asset List       ${generated_AssetID}
+    Generic.Verify your current page contains this text     ${generated_AssetID}
+    OCS.Click on the unmatch link under discovery assets list page
+    OCS.Click on the confirm button under unmatch asset pop up      confirm
+    Generic.Fetch alert message text and compare it with        Assets unmatched successfully
+    Generic.Verify your current page location contains     discovery-assets-list
+    Generic.Click on the profile name
+    Generic.Select option from profile list     view-discovery
+    Generic.Verify your current page location contains    aad
+    Generic.Verify your current page contains this text    -
 
 #        Generic.select the option from the side menu    Technology
 #        Generic.Verify your current page location contains      technology
