@@ -880,8 +880,6 @@ Match Discovery Asset with Static Existing Asset
         OCS.Get Host name by hovering over discovered assets     Host name:
         OCS.Mouse Hover over current page after hovering over ip and discovered assets
         OCS.Select any Discovered asset
-        OCS.Click on search icon of discovery assets
-        OCS.Click on the down arrow icon of existing assets
         OCS.Click on the down arrow icon of existing assets
         OCS.Click on the down arrow icon of existing assets
         OCS.Mouse Hover over searched existing assets
