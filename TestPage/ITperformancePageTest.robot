@@ -95,7 +95,7 @@ Download all sheets with download all button
     ITperformancePage.Click on download all button
 
 It performnace drill down agging analytics
-    [Tags]      Stable
+    [Tags]      Stable      Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}     ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -134,7 +134,7 @@ IT perfomance drill down data quality
     ITperformancePage.Get And Verify The Count Of Data Quality Under Tabs   dataquality3        dataquality3
 
 IT perfomance drill down data quality of Investments by partner tab
-    [Tags]     sanity       Stable
+    [Tags]     Sanity       Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -156,7 +156,7 @@ IT perfomance drill down data quality of Investments by partner tab
     ITperformancePage.Get And Verify The Count Of Data Quality Under Investment by partner tab   dataquality-partner-4        dataquality-partner-4
 
 It performnace drill down investment by partner
-    [Tags]      Stable      Sanity
+    [Tags]      Stable      Sanity      Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}     ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -185,7 +185,6 @@ Verify the text of download icon under IT performance
     DashboardPage.select the option from the dashboard drawer     IT Performances
     Generic.Verify your current page location contains      it-performance
     ITperformancePage.Hover the text of download icon under it performance      Download the file.
-
 
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
