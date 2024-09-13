@@ -222,3 +222,7 @@ Fetch the text of I-icon of upload file while adding technology
     set global variable     ${I_icon}
     should be equal    ${I_icon}    ${option}
 
+Click on i-icon of management console page
+    wait until element is visible       css:.qa-member-list-Iicon       ${wait_time}
+    wait until element is enabled       css:.qa-member-list-Iicon       ${wait_time}
+    click element       css:.qa-member-list-Iicon

@@ -1018,3 +1018,13 @@ Get asset id by hovering over first existing assets
     ${hover_assetid1}    Get Substring    ${parts[1]}    1
     Log to console      ${hover_assetid1}
     set global variable     ${hover_assetid1}
+
+Get the text of no records after searching with inavlid mac address under newly discovery tab
+    [Arguments]         ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible      //div[contains(@class,'qa-column-boxes-left')]//following-sibling::div//p       ${wait_time}
+    wait until element is enabled      //div[contains(@class,'qa-column-boxes-left')]//following-sibling::div//p    ${wait_time}
+    ${fetch_text_newly_discovered} =    get text  //div[contains(@class,'qa-column-boxes-left')]//following-sibling::div//p
+    log to console     ${fetch_text_newly_discovered}
+    set global variable   ${fetch_text_newly_discovered}
+    should be equal    ${option}    ${fetch_text_newly_discovered}
