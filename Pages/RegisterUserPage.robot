@@ -480,11 +480,14 @@ wait for the invisiblity of the city field loader
     sleep       ${search_sleep}
     wait until element is not visible    css:.qa-City .ng-spinner-loader         ${wait_time}
 
+
+
 Click on the delete icon to delete the ach card
     wait until element is not visible       ${loaderIcon}      ${wait_time}
     wait until element is visible      //div[contains(@class,'edit-bill')]//following-sibling::div//i[contains(@class,'trash-alt')]        ${wait_time}
     wait until element is enabled    //div[contains(@class,'edit-bill')]//following-sibling::div//i[contains(@class,'trash-alt')]         ${wait_time}
     click element   //div[contains(@class,'edit-bill')]//following-sibling::div//i[contains(@class,'trash-alt')]
+
 
 Click on click here to add new location
     [Arguments]     ${option}
@@ -498,4 +501,5 @@ Click on refresh icon of user location
     wait until element is visible      //b[normalize-space()='click here to refresh the location list']        ${wait_time}
     wait until element is enabled    //b[normalize-space()='click here to refresh the location list']        ${wait_time}
     click element   //b[normalize-space()='click here to refresh the location list']
+
 

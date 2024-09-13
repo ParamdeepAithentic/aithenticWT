@@ -86,9 +86,9 @@ Click on search icon of discovery assets
 Enter text to search discovery asset
     [Arguments]     ${option}
     wait until element is not visible   ${loaderIcon}        ${wait_time}
-    Wait Until Element Is Visible    //input[@placeholder='Search Agent/Network Discovered Assets']       ${wait_time}
-    Wait Until Element Is enabled    //input[@placeholder='Search Agent/Network Discovered Assets']       ${wait_time}
-    Input Text    //input[@placeholder='Search Agent/Network Discovered Assets']    ${option}
+    Wait Until Element Is Visible    css:#aad-searchbar       ${wait_time}
+    Wait Until Element Is enabled    css:#aad-searchbar       ${wait_time}
+    Input Text     css:#aad-searchbar    ${option}
     Sleep    ${yop_sleep}
     Wait Until Element Is Not Visible    ${loaderIcon}  ${wait_time}
     wait until element is not visible       ${shadow}          ${wait_time}
@@ -96,9 +96,9 @@ Enter text to search discovery asset
 Enter text to search existing asset
     [Arguments]     ${option}
     wait until element is not visible   ${loaderIcon}        ${wait_time}
-    Wait Until Element Is Visible    //input[@placeholder='Search Existing Assets']       ${wait_time}
-    Wait Until Element Is enabled    //input[@placeholder='Search Existing Assets']       ${wait_time}
-    Input Text    //input[@placeholder='Search Existing Assets']    ${option}
+    Wait Until Element Is Visible    css:#searchbar-existingAssets       ${wait_time}
+    Wait Until Element Is enabled    css:#searchbar-existingAssets       ${wait_time}
+    Input Text   css:#searchbar-existingAssets    ${option}
     wait until element is not visible   ${loaderIcon}        ${wait_time}
     wait until element is not visible       ${shadow}          ${wait_time}
 
@@ -572,9 +572,9 @@ Search with MAC address and IP Address on the search bar of Discovered Asset Lis
     wait until element is not visible    ${loaderIcon}    ${wait_time}
     wait until element is visible       (//thead//tr)[2]       ${wait_time}
     wait until element is enabled       (//thead//tr)[2]       ${wait_time}
-    wait until element is visible   css:input[placeholder='Search by Brand or Name or Description or Asset ID']     ${wait_time}
-    wait until element is enabled   css:input[placeholder='Search by Brand or Name or Description or Asset ID']     ${wait_time}
-    input text  css:input[placeholder='Search by Brand or Name or Description or Asset ID']     ${MAC_Address}
+    wait until element is visible   css:#searchbar-discoveredassetList     ${wait_time}
+    wait until element is enabled   css:#searchbar-discoveredassetList    ${wait_time}
+    input text  css:#searchbar-discoveredassetList     ${MAC_Address}
     sleep       ${search_sleep}
 #    wait until element is visible       css:thead tr       ${wait_time}
      wait until element is visible       (//thead//tr)[2]       ${wait_time}
@@ -836,10 +836,10 @@ Visible the print qr button to for data loading
 
 Enter input in search bar of software tab under technology details page
     [Arguments]     ${option}
-    wait until element is visible   //input[@placeholder='Search by Publisher, Software Name and Asset Id']     ${wait_time}
-    wait until element is enabled   //input[@placeholder='Search by Publisher, Software Name and Asset Id']     ${wait_time}
-    click element   //input[@placeholder='Search by Publisher, Software Name and Asset Id']
-    input text  //input[@placeholder='Search by Publisher, Software Name and Asset Id']     ${option}
+    wait until element is visible   css:#searchbar-softwareTab     ${wait_time}
+    wait until element is enabled   css:#searchbar-softwareTab     ${wait_time}
+    click element   css:#searchbar-softwareTab
+    input text  css:#searchbar-softwareTab     ${option}
     Sleep    ${yop_sleep}
     Wait Until Element Is Not Visible    ${loaderIcon}  ${wait_time}
 
@@ -978,3 +978,53 @@ Mouse Hover over searched existing assets after craeting technology
     Wait Until Element Is Visible   (//div[contains(text(),'${discovered_existing_brand1} ')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]     ${wait_time}
     Wait Until Element Is Enabled    (//div[contains(text(),'${discovered_existing_brand1} ')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]     ${wait_time}
     Mouse Over    (//div[contains(text(),'${discovered_existing_brand1} ')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]
+
+Click on the confirm button under unmatch asset pop up
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible  css:.qa-convert-assignee-tm-${option}    ${wait_time}
+    Wait Until Element Is Enabled   css:.qa-convert-assignee-tm-${option}     ${wait_time}
+    click element   css:.qa-convert-assignee-tm-${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+
+
+Mouse Hover over searched existing assets after creating technology frm add technology
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible   (//div[contains(text(),'${discovered_existing_brand} ')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]     ${wait_time}
+    Wait Until Element Is Enabled    (//div[contains(text(),'${discovered_existing_brand} ')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]     ${wait_time}
+    Mouse Over    (//div[contains(text(),'${discovered_existing_brand} ')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]
+
+Click on the unmatch link under discovery assets list page
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible  //i[contains(@class,'fa-unlink')]    ${wait_time}
+    Wait Until Element Is Enabled  //i[contains(@class,'fa-unlink')]     ${wait_time}
+    click element   //i[contains(@class,'fa-unlink')]
+    sleep   2
+
+Mouse hover over first existing asset
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    (//div[contains(@class,'column-boxes-right')]//div[contains(@class,'child-container')]//div[contains(@class,'assets-text')]//parent::div)[1]     ${wait_time}
+    Wait Until Element Is Enabled    (//div[contains(@class,'column-boxes-right')]//div[contains(@class,'child-container')]//div[contains(@class,'assets-text')]//parent::div)[1]     ${wait_time}
+    Mouse Over   (//div[contains(@class,'column-boxes-right')]//div[contains(@class,'child-container')]//div[contains(@class,'assets-text')]//parent::div)[1]
+    sleep   5
+Get asset id by hovering over first existing assets
+    [Arguments]     ${text}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible  (//div[contains(@class,'column-boxes-right')]//div[contains(@class,'child-container')]//div[contains(@class,'assets-text')]//parent::div)[1]      ${wait_time}
+    Wait Until Element Is Enabled   (//div[contains(@class,'column-boxes-right')]//div[contains(@class,'child-container')]//div[contains(@class,'assets-text')]//parent::div)[1]     ${wait_time}
+    sleep       ${search_sleep}
+    ${hover_text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
+    ${parts}    Split String    ${hover_text}    ${text}
+    ${hover_assetid1}    Get Substring    ${parts[1]}    1
+    Log to console      ${hover_assetid1}
+    set global variable     ${hover_assetid1}
+
+Get the text of no records after searching with inavlid mac address under newly discovery tab
+    [Arguments]         ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible      //div[contains(@class,'qa-column-boxes-left')]//following-sibling::div//p       ${wait_time}
+    wait until element is enabled      //div[contains(@class,'qa-column-boxes-left')]//following-sibling::div//p    ${wait_time}
+    ${fetch_text_newly_discovered} =    get text  //div[contains(@class,'qa-column-boxes-left')]//following-sibling::div//p
+    log to console     ${fetch_text_newly_discovered}
+    set global variable   ${fetch_text_newly_discovered}
+    should be equal    ${option}    ${fetch_text_newly_discovered}

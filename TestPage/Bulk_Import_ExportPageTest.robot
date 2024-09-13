@@ -214,7 +214,7 @@ Add Product Bulk Edit
     DashboardPage.Select product status   Active
     DashboardPage.Save added product details
     Generic.Fetch alert message text and compare it with        Product created successfully
-    DashboardPage.Verify product added    ${generated_product}
+    Bulk_Import_ExportPage.Verify product added using bulk_import_export    ${generated_product}
     DashboardPage.Click on action button
     DashboardPage.Select the option from action menu      edit
     sleep   ${yop_sleep}
@@ -543,7 +543,7 @@ Team member Bulk Import
     Bulk_Import_ExportPage.Click on I_m_done button when popup appears     no-im-done
     Sleep      ${yop_sleep}
     Switch Window       aithentic | Member - List
-    TeamMemberPage.Search Team Member by name       ${generated_Firstname}
+    Bulk_Import_ExportPage.Search Team Member by name under asset wizard       ${generated_Firstname}
     Generic.Wait until table get load
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
@@ -633,7 +633,8 @@ Technology Bulk import
     Generic.click on the button     Next
     Generic.Verify your current page location contains     add-technology
     Bulk_Import_ExportPage.Enter the new value in the fields of technology bulk import       Brand        QABrand555
-    Bulk_Import_ExportPage.Enter the new value in the fields of technology bulk import     Product        Product_00337612322
+    Bulk_Import_ExportPage.Enter the new value in the fields of technology bulk import     Product        OPMR815274
+
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      ItemTechCount         1
     Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       Supplier        1
     Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       SupportPartner        1
@@ -693,22 +694,16 @@ Technology Bulk import
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_9
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_3      1654
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_3
+
 #    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_4      CPU
 #    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_4
 #    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_5      Paramdeep
 #    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_5
 #    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_6      Test@123
 #    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_6
+
     Bulk_Import_Exportpage.Enter the new value of serial number of technology bulk import      DYNA_21
-#    Bulk_Import_ExportPage.Perform the keyboard action      DYNA_21
-#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_4      CPU
-#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_4
-#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_5      Paramdeep
-#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_5
-#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_6      Test@123
-#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_6
-#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_7      100
-#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_7
+
 
 
 #    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_8      12
@@ -730,7 +725,6 @@ Technology Bulk import
     Generic.Verify your current page location contains     technology-list
     TechnologyPage.Search by AssetId       ${generated_bulk_import_assetid}
     Generic.Wait until table get load
-
 
 
 
@@ -836,7 +830,7 @@ Verify Bulk Import on the Technology Page by adding all parameters
     Bulk_Import_ExportPage.Click on team member location technology bulk import     ${generated_location}
     TeamMemberPage.Save the team member form   save
     Generic.Fetch alert message text and compare it with        Team Member created successfully
-    TeamMemberPage.Search Team Member by name       ${generated_TMFname}
+    Bulk_Import_ExportPage.Search Team Member by name under asset wizard       ${generated_TMFname}
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.click on the button     Next
     Generic.click on the button    Add Brand
@@ -850,7 +844,7 @@ Verify Bulk Import on the Technology Page by adding all parameters
     DashboardPage.Save added brand details
     Generic.Fetch alert message text and compare it with        Brand created successfully.
     DashboardPage.Click added brand main save button
-    DashboardPage.Verify Brand added      ${generated_BrandName}
+    Bulk_Import_ExportPage.Verify Brand added under asset wizard      ${generated_BrandName}
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.click on the button     Next
     Generic.click on the tab        Add Product
@@ -866,7 +860,7 @@ Verify Bulk Import on the Technology Page by adding all parameters
     Bulk_Import_ExportPage.Select product status technology bulk import   Active
     Bulk_Import_ExportPage.Save added product details technology bulk import
 #    Generic.Fetch alert message text and compare it with        Product created successfully
-    DashboardPage.Verify product added    ${generated_product}
+    Bulk_Import_ExportPage.Verify product added using bulk_import_export    ${generated_product}
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.click on the button     Next
     Generic.click on the tab        Add Partner
@@ -894,7 +888,7 @@ Verify Bulk Import on the Technology Page by adding all parameters
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
     Generic.Fetch alert message text and compare it with    Partner created successfully
-    PartnersPage.Search by business name    ${generated_BrandName}
+    Bulk_Import_ExportPage.Search by business name under asset wizard    ${generated_BrandName}
     Generic.click on the tab        Add Partner
     Generic.Verify your current page location contains      addpartner
     PartnersPage.Select partner type of new partner     Supplier
@@ -917,7 +911,7 @@ Verify Bulk Import on the Technology Page by adding all parameters
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
     Generic.Fetch alert message text and compare it with    Partner created successfully
-    PartnersPage.Search by business name    ${generated_BrandName}
+    Bulk_Import_ExportPage.Search by business name under asset wizard    ${generated_BrandName}
     Generic.click on the tab        Add Partner
     Generic.Verify your current page location contains      addpartner
     PartnersPage.Select partner type of new partner     Support Partner
@@ -940,7 +934,7 @@ Verify Bulk Import on the Technology Page by adding all parameters
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
     Generic.Fetch alert message text and compare it with    Partner created successfully
-    PartnersPage.Search by business name    ${generated_BrandName}
+    Bulk_Import_ExportPage.Search by business name under asset wizard    ${generated_BrandName}
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.click on the button     Next
     Generic.Verify your current page location contains     add-technology
@@ -1057,6 +1051,7 @@ Verify Bulk Import on the Technology Page by adding all parameters
     Generic.Fetch alert message text and compare it with       Settings Updated
 
 
+
 Technology bulk import while entering invalid data in payment period field
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
@@ -1110,11 +1105,11 @@ Technology bulk import while entering invalid data in payment period field
     Bulk_Import_ExportPage.Perform the keyboard action      LastPaymentDate
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      RenewalDate      02/11/2024
     Bulk_Import_ExportPage.Perform the keyboard action      RenewalDate
-    Bulk_Import_Exportpage.Select option from technology type column in bulk_edit      BudgetCurrency      1
+    Bulk_Import_Exportpage.Select option from budget currency in technology bulk import      BudgetCurrency      1
     Bulk_Import_ExportPage.Perform the keyboard action      BudgetCurrency
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      BudgetPaymentValue      2500
     Bulk_Import_ExportPage.Perform the keyboard action      BudgetPaymentValue
-    Bulk_Import_Exportpage.Select option from technology type column in bulk_edit      ActualPaymentCurrency      1
+    Bulk_Import_Exportpage.Select option from budget currency in technology bulk import      ActualPaymentCurrency      1
     Bulk_Import_ExportPage.Perform the keyboard action      ActualPaymentCurrency
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      LastActualPaymentValue      2000
     Bulk_Import_ExportPage.Perform the keyboard action      LastActualPaymentValue
@@ -1202,8 +1197,8 @@ Check the payment period period alert when entering valid data
     Bulk_Import_ExportPage.Click on the fields and select value from dropdown of technology bulk edit    AssignedName
     Bulk_Import_ExportPage.click on the arrow of product    Assignment Information     1
     Bulk_Import_ExportPage.click on the arrow of product    Partners Information     2
-    Bulk_Import_ExportPage.Click on the fields and select value from dropdown of technology bulk edit        SupportPartnerName_1
-    Bulk_Import_ExportPage.Click on the fields and select value from dropdown of technology bulk edit        SupplierName
+   Bulk_Import_ExportPage.Select option from technology type column in bulk_edit        SupportPartnerName_1       1
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit        SupplierName           1
     Bulk_Import_ExportPage.click on the arrow of product    Partners Information     1
     Bulk_Import_ExportPage.click on the arrow of product    Technology Cost Information    2
 #    Bulk_Import_ExportPage.Enter the new value in the product, brand, group and type value in bulk_edit of technology       PaymentPartnerName      Dell
@@ -1316,4 +1311,5 @@ Check the payment period alert when entering inavalid data
 
 #Zz kill browser
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+
 

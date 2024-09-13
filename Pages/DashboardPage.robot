@@ -60,7 +60,7 @@ ${select_country}   css:.ng-option-label.ng-star-inserted
 
 ${brand_saveBTN}        //button[@title='Click here to Save']
 ${brand_saveBtn_main}     css:.add-brand-qa
-${search_brandName}     css:input[placeholder='Search by Brand Name']
+${search_brandName}     css:#searchbar-brand
 ${fetch_brandName}    css:td:nth-child(2)
 
 
@@ -86,7 +86,7 @@ ${select_technology_group}     css:nz-tree-select[id='TechGroupId'] div nz-selec
 ${select_technology_type}     //div[@class='ng-select-container'][normalize-space()='Select Technology Type']
 ${select_technology_type_via link}  css:#addProductType
 ${save_product_modal}     css:button[class='btn button-green mt-0 mx-2 ng-star-inserted']
-${search_productName}     css:input[placeholder='Search by Product Name or Description']
+${search_productName}     css:#searchbar-product
 ${fetch_productName}    css:td:nth-child(2)
 
 ${add_dept_btn}     //a[normalize-space()='Add Department']
@@ -95,7 +95,7 @@ ${add_dept_status}     css:.profile-section-department div ng-select.qa-add-depa
 ${add_dept_costCenter}     css:.profile-section-department .qa-add-department-costCenter
 
 
-${searchBar_department}     css:input[placeholder='Search by Department Name']
+${searchBar_department}     css:#searchbar-departmentlist
 ${fetch_departmentName}     css:td:nth-child(2)
 
 ${address_Line}     css:#addressLine1
@@ -122,7 +122,7 @@ ${Select_state while adding brand}  css:#State
 ${clickadd_newaddress}  //span[@title='Click here to add address']
 ${share_toEmail}      css:#toEmail
 ${Totalcount_field}        css:.qa-total-count-list
-${dept_searchbar}       css:input[placeholder='Search by Department Name']
+${dept_searchbar}       css:#searchbar-departmentlist
 ${three_dots_dept}      css:.three-dots
 
 
@@ -488,7 +488,7 @@ Verify department added
 
 Verify the side option list parameters
    wait until element is visible   ${side_options}      ${wait_time}
-   @{expectedList} =    Create List        Aithentic logo    Dashboard       Messages        Location        Team Members      Partners      Contracts      Technology      CSPM     Asset Discovery
+   @{expectedList} =    Create List        Aithentic logo    Dashboard       Messages        Location        Team Members      Partners      Technology      CSPM     Asset Discovery
    ${elements} =  Get WebElements     ${side_options}
    @{actualList} =   Create List
    FOR  ${element}  IN      @{elements}
@@ -499,7 +499,7 @@ Verify the side option list parameters
 
 Verify the drawer list parameters
    wait until element is visible   ${drawerList}        ${wait_time}
-   @{expectedList} =    Create List     Management Console    Account Overview      Asset Overview     IT Performances     Subscription
+   @{expectedList} =    Create List     Management Console    Account Overview      Asset Overview     IT Performances     Usage Analytics
    ${elements} =  Get WebElements     ${drawerList}
    @{actualList} =   Create List
    FOR  ${element}  IN      @{elements}
@@ -1290,18 +1290,18 @@ Enter text in the client message field under compose message
 Search by subject under sent serach bar
     [Arguments]     ${data}
     wait until element is visible       css:thead tr       ${wait_time}
-    wait until element is visible       //input[@placeholder='Search by To and Subject']       ${wait_time}
-    Clear Element Text      //input[@placeholder='Search by To and Subject']
-    input text      //input[@placeholder='Search by To and Subject']     ${data}
+    wait until element is visible       css:#searchbar-sent       ${wait_time}
+    Clear Element Text     css:#searchbar-sent
+    input text      css:#searchbar-sent     ${data}
     sleep       ${search_sleep}
     wait until element is visible       css:thead tr       ${wait_time}
 
 Search by subject under inbox serach bar
     [Arguments]     ${data}
     wait until element is visible       css:thead tr       ${wait_time}
-    wait until element is visible      //input[@placeholder='Search by From and Subject']      ${wait_time}
-    Clear Element Text      //input[@placeholder='Search by From and Subject']
-    input text      //input[@placeholder='Search by From and Subject']     ${data}
+    wait until element is visible      css:#searchbar-inbox      ${wait_time}
+    Clear Element Text      css:#searchbar-inbox
+    input text      css:#searchbar-inbox    ${data}
     sleep       ${search_sleep}
     wait until element is visible       css:thead tr       ${wait_time}
 
@@ -1522,3 +1522,47 @@ Get the text of the pop up while suspending the account when contract is active
     ${fetch_text_pop_up} =    get text  //div[contains(@id,'activeContractSubscriptionCheckModal')]//div[contains(@class,'modal-body')]//p
     log to console     ${fetch_text_pop_up}
     set global variable   ${fetch_text_pop_up}
+
+Click on Mark all as read option
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible     //div[contains(text(),'Mark all as read')]      ${wait_time}
+    wait until element is enabled     //div[contains(text(),'Mark all as read')]    ${wait_time}
+    click element       //div[contains(text(),'Mark all as read')]
+
+Analyse text is bold before click on Mark all as read
+    [Arguments]         ${option1}       ${option2}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       //div[contains(@class,'font-weight-bold')][normalize-space()='${option1} ${option2}.']        ${wait_time}
+    wait until element is enabled       //div[contains(@class,'font-weight-bold')][normalize-space()='${option1} ${option2}.']        ${wait_time}
+
+Verify text is normal after clicking Mark all as read
+    [Arguments]         ${option1}       ${option2}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is not visible       //div[contains(@class,'font-weight-bold')][normalize-space()='${option1} ${option2}.']        ${wait_time}
+
+Click on alerts tabs
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible      //a[@id='${option}']     ${wait_time}
+    wait until element is enabled     //a[@id='${option}']     ${wait_time}
+    click element   //a[@id='${option}']
+
+Get and verify the text from system notification
+    [Arguments]      ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       //div[@id='systemAlerts']//li[1]//div[1]     ${wait_time}
+    wait until element is enabled       //div[@id='systemAlerts']//li[1]//div[1]     ${wait_time}
+    ${notification} =    get text    //div[@id='systemAlerts']//li[1]//div[1]
+    set global variable     ${notification}
+    log to console     ${notification}
+    should be equal    ${notification}     ${option}
+
+Get and verify the text from Contract notification
+    [Arguments]      ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       //div[@id='contractAlert']//li[1]//div[1]     ${wait_time}
+    wait until element is enabled       //div[@id='contractAlert']//li[1]//div[1]     ${wait_time}
+    ${notification} =    get text    //div[@id='contractAlert']//li[1]//div[1]
+    set global variable     ${notification}
+    log to console     ${notification}
+    should be equal    ${notification}     ${option}

@@ -41,16 +41,22 @@ Resource        ../Pages/PaginationPage.robot
 Resource        ../Pages/DisconnectConnectorAPI.robot
 Resource        ../Pages/UnselectAssetAPI.robot
 
-#Suite Setup    Get Current Date and Time
-#Test Setup      open the browser with the url
-#Test Teardown   Close Browser session
+Suite Setup    Get Current Date and Time
+Test Setup      open the browser with the url
+Test Teardown   Close Browser session
 
 
 *** Variables ***
 
 
 *** Test Cases ***
+
 #Replace the existing domain
-#    LoginPage.Fetch the refresh token from the login api
-#    ReplaceDomainAPI.Replace Domain     ${refresh_Token}
-   # ReplaceDomainAPI.Replace Domain
+##    LoginPage.Fetch the refresh token from the login api
+##    ReplaceDomainAPI.Replace Domain     ${refresh_Token}
+#    ReplaceDomainAPI.Replace Domain
+
+
+#Clear the process
+#    ReplaceDomainAPI.Run Command
+

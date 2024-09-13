@@ -117,6 +117,7 @@ Input text into manufacturer address two
     [Arguments]    ${option}
     Generic.Enter value into field      ${address2}     ${option}
     Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+
 Input text into manufacturer zip code
     [Arguments]    ${option}
     Generic.Enter value into field      ${zip}     ${option}
@@ -399,8 +400,8 @@ click on the confirm button of unsuspend pop up
     wait until element is visible   //button[@type='submit'][normalize-space()='Confirm']       ${wait_time}
     wait until element is enabled   //button[@type='submit'][normalize-space()='Confirm']       ${wait_time}
     click element   //button[@type='submit'][normalize-space()='Confirm']
-    wait until element is not visible       ${loaderIcon}    ${wait_time}
-    wait until element is not visible       ${shadow}          ${wait_time}
+#    wait until element is not visible       ${loaderIcon}    ${wait_time}
+#    wait until element is not visible       ${shadow}          ${wait_time}
 
 
 Choose tab under subscription page after clicking on view_result
@@ -428,6 +429,7 @@ click on the connector tab under technoogy settings
     wait until element is visible    //ul[@id='myTab']//a[normalize-space()='Connectors']   ${wait_time}
     wait until element is enabled   //ul[@id='myTab']//a[normalize-space()='Connectors']  ${wait_time}
     click element    //ul[@id='myTab']//a[normalize-space()='Connectors']
+
 
 Click on the service now tab under discovery assets
     wait until element is visible  css:#service-now-first-parent-tab     ${wait_time}
@@ -564,6 +566,25 @@ click on the cross icon of delete pop up under asset discovery
     sleep   ${search_sleep}
     wait until element is not visible       ${shadow}          ${wait_time}
 
+
+Choose the tab under Subscription page
+    [Arguments]         ${option}
+    wait until element is not visible   ${loaderIcon}     ${wait_time}
+    wait until element is visible       (//div[@id='dashboardCharts']//child::a)[${option}]       ${wait_time}
+    wait until element is enabled       (//div[@id='dashboardCharts']//child::a)[${option}]       ${wait_time}
+    click element        (//div[@id='dashboardCharts']//child::a)[${option}]
+
+Verify that page contains correct details
+    [Arguments]         ${option}
+    wait until element is not visible   ${loaderIcon}     ${wait_time}
+    wait until element is visible       //td[normalize-space()='${opiton}']      ${wait_time}
+    Page should contain element         //td[normalize-space()='${option}']
+
+Click on the row of the subscription overview table
+    wait until element is not visible   ${loaderIcon}     ${wait_time}
+    wait until element is visible       //td[normalize-space()='${opiton}']      ${wait_time}
+    Page should contain element         //td[normalize-space()='${option}']
+
 Click on the options under action button of service now under discovery assets
     [Arguments]     ${option}
     wait until element is visible   //div[contains(@id,'service-now')]//a[normalize-space()='${option}']    ${wait_time}
@@ -602,3 +623,18 @@ Click on the ok button after selecting the time
     wait until element is visible   //button[contains(@class,'timepicker-button')]//span[normalize-space()='Ok']      ${wait_time}
     wait until element is enabled   //button[contains(@class,'timepicker-button')]//span[normalize-space()='Ok']      ${wait_time}
     click element   //button[contains(@class,'timepicker-button')]//span[normalize-space()='Ok']
+
+Fetch text of status under the table of subscription connector
+    [Arguments]     ${option1}      ${option}
+    wait until element is visible    //td[normalize-space()='${option1}']//parent::tr//td[9]        ${wait_time}
+    ${value} =    get text    //td[normalize-space()='${option1}']//parent::tr//td[9]
+    log to console     ${value}
+    should be equal    ${value}    ${option}
+    Wait Until Element Is Not Visible     ${value}        ${wait_time}
+
+Enter input in the token field of sentinelone
+    [Arguments]     ${option}
+    wait until element is visible  css:#apiToken    ${wait_time}
+    wait until element is enabled  css:#apiToken      ${wait_time}
+    click element  css:#apiToken
+    input text      css:#apiToken       ${option}

@@ -50,7 +50,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Verify asset history of assigned users
-    [Tags]    smoke     Stable
+    [Tags]    Smoke     Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -191,7 +191,7 @@ Search asset history with Asset ID of Assigned User
     MemberPage.verify status of first name in member list of assigned user   ${generated_AssetID}
 
 Export Assigned User Asset History list
-    [Tags]   smoke     Sanity       Stable
+    [Tags]   Smoke     Sanity       Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
