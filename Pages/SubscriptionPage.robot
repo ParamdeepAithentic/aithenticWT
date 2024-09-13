@@ -150,6 +150,7 @@ Select and move next with subscription
 Click on same billing address checkbox
     wait until element is visible       ${same_address_chkbox}       ${wait_time}
     wait until element is enabled       ${same_address_chkbox}       ${wait_time}
+    sleep   ${search_sleep}
     click element        ${same_address_chkbox}
     sleep   ${search_sleep}
     click element        ${same_address_chkbox}
@@ -626,3 +627,17 @@ Click on the ok button after selecting the time
     wait until element is enabled   //button[contains(@class,'timepicker-button')]//span[normalize-space()='Ok']      ${wait_time}
     click element   //button[contains(@class,'timepicker-button')]//span[normalize-space()='Ok']
 
+Fetch text of status under the table of subscription connector
+    [Arguments]     ${option1}      ${option}
+    wait until element is visible    //td[normalize-space()='${option1}']//parent::tr//td[9]        ${wait_time}
+    ${value} =    get text    //td[normalize-space()='${option1}']//parent::tr//td[9]
+    log to console     ${value}
+    should be equal    ${value}    ${option}
+    Wait Until Element Is Not Visible     ${value}        ${wait_time}
+
+Enter input in the token field of sentinelone
+    [Arguments]     ${option}
+    wait until element is visible  css:#apiToken    ${wait_time}
+    wait until element is enabled  css:#apiToken      ${wait_time}
+    click element  css:#apiToken
+    input text      css:#apiToken       ${option}

@@ -482,7 +482,7 @@ Upload I-icon while adding discovery and component asset
     OCS.Click on save button of Add Technology Page
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
     Sleep    ${yop_sleep}
-    Switch Window       aithentic | Sentinel One Newly-Discovered
+    Switch Window      aithentic | Sentinel One Newly-Discovered
     Generic.Refresh the existing page
     OCS.Choose Tab under Asset Discovery    agent-discovery
     Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -526,13 +526,15 @@ Upload I-icon while adding discovery and component asset
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     UnselectAssetAPI.Hit API Endpoint
 
-
-
-
-
+Verify I-icon of management console page
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    I_iconPage.Click on i-icon of management console page
+    Generic.Verify pop-up is visible after clicking on i-icon
+    I_iconPage.Click on i-icon of management console page
 
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
-
-
 
