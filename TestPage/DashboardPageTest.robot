@@ -1661,7 +1661,6 @@ Management Console - Quarters filter dropdown
 
 Change password and login with new password
     [Tags]      Sanity      smoke
-
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1800,6 +1799,7 @@ Change password and login with new password
     Generic.Click on the profile name
     Generic.Select other option from profile list     Logout
     Generic.Fetch log_out alert message
+    Refresh the existing page
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     ${generate_register_Email}   Test@123
     Generic.Verify your current page location contains      dashboard
