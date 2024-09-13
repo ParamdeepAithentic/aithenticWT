@@ -488,7 +488,7 @@ Verify department added
 
 Verify the side option list parameters
    wait until element is visible   ${side_options}      ${wait_time}
-   @{expectedList} =    Create List        Aithentic logo    Dashboard       Messages        Location        Team Members      Partners      Contracts      Technology      CSPM     Asset Discovery
+   @{expectedList} =    Create List        Aithentic logo    Dashboard       Messages        Location        Team Members      Partners      Technology      CSPM     Asset Discovery
    ${elements} =  Get WebElements     ${side_options}
    @{actualList} =   Create List
    FOR  ${element}  IN      @{elements}
@@ -499,7 +499,7 @@ Verify the side option list parameters
 
 Verify the drawer list parameters
    wait until element is visible   ${drawerList}        ${wait_time}
-   @{expectedList} =    Create List     Management Console    Account Overview      Asset Overview     IT Performances     Subscription
+   @{expectedList} =    Create List     Management Console    Account Overview      Asset Overview     IT Performances     Usage Analytics
    ${elements} =  Get WebElements     ${drawerList}
    @{actualList} =   Create List
    FOR  ${element}  IN      @{elements}
@@ -1522,3 +1522,47 @@ Get the text of the pop up while suspending the account when contract is active
     ${fetch_text_pop_up} =    get text  //div[contains(@id,'activeContractSubscriptionCheckModal')]//div[contains(@class,'modal-body')]//p
     log to console     ${fetch_text_pop_up}
     set global variable   ${fetch_text_pop_up}
+
+Click on Mark all as read option
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible     //div[contains(text(),'Mark all as read')]      ${wait_time}
+    wait until element is enabled     //div[contains(text(),'Mark all as read')]    ${wait_time}
+    click element       //div[contains(text(),'Mark all as read')]
+
+Analyse text is bold before click on Mark all as read
+    [Arguments]         ${option1}       ${option2}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       //div[contains(@class,'font-weight-bold')][normalize-space()='${option1} ${option2}.']        ${wait_time}
+    wait until element is enabled       //div[contains(@class,'font-weight-bold')][normalize-space()='${option1} ${option2}.']        ${wait_time}
+
+Verify text is normal after clicking Mark all as read
+    [Arguments]         ${option1}       ${option2}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is not visible       //div[contains(@class,'font-weight-bold')][normalize-space()='${option1} ${option2}.']        ${wait_time}
+
+Click on alerts tabs
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible      //a[@id='${option}']     ${wait_time}
+    wait until element is enabled     //a[@id='${option}']     ${wait_time}
+    click element   //a[@id='${option}']
+
+Get and verify the text from system notification
+    [Arguments]      ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       //div[@id='systemAlerts']//li[1]//div[1]     ${wait_time}
+    wait until element is enabled       //div[@id='systemAlerts']//li[1]//div[1]     ${wait_time}
+    ${notification} =    get text    //div[@id='systemAlerts']//li[1]//div[1]
+    set global variable     ${notification}
+    log to console     ${notification}
+    should be equal    ${notification}     ${option}
+
+Get and verify the text from Contract notification
+    [Arguments]      ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       //div[@id='contractAlert']//li[1]//div[1]     ${wait_time}
+    wait until element is enabled       //div[@id='contractAlert']//li[1]//div[1]     ${wait_time}
+    ${notification} =    get text    //div[@id='contractAlert']//li[1]//div[1]
+    set global variable     ${notification}
+    log to console     ${notification}
+    should be equal    ${notification}     ${option}
