@@ -482,7 +482,7 @@ Upload I-icon while adding discovery and component asset
     OCS.Click on save button of Add Technology Page
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
     Sleep    ${yop_sleep}
-    Switch Window       aithentic | Sentinel One Newly-Discovered
+    Switch Window      aithentic | Sentinel One Newly-Discovered
     Generic.Refresh the existing page
     OCS.Choose Tab under Asset Discovery    agent-discovery
     Generic.Verify your current page contains this text    ${generated_AssetID}

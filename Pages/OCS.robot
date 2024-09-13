@@ -978,3 +978,13 @@ Mouse Hover over searched existing assets after craeting technology
     Wait Until Element Is Visible   (//div[contains(text(),'${discovered_existing_brand1} ')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]     ${wait_time}
     Wait Until Element Is Enabled    (//div[contains(text(),'${discovered_existing_brand1} ')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]     ${wait_time}
     Mouse Over    (//div[contains(text(),'${discovered_existing_brand1} ')]//ancestor::div[contains(@class,'qa-assets-boxes-right')]//child::div[contains(@class,'assets-text')])[2]
+
+Get the text of no records after searching with inavlid mac address under newly discovery tab
+    [Arguments]         ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible      //div[contains(@class,'qa-column-boxes-left')]//following-sibling::div//p       ${wait_time}
+    wait until element is enabled      //div[contains(@class,'qa-column-boxes-left')]//following-sibling::div//p    ${wait_time}
+    ${fetch_text_newly_discovered} =    get text  //div[contains(@class,'qa-column-boxes-left')]//following-sibling::div//p
+    log to console     ${fetch_text_newly_discovered}
+    set global variable   ${fetch_text_newly_discovered}
+    should be equal    ${option}    ${fetch_text_newly_discovered}

@@ -314,8 +314,8 @@ Apply filters and clear filter on Existing Assets
         TechnologyPage.Click on Location tab of technology- list page
         TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     DepartmentName
         OCS.verify Text by hovering over assets  ${assign_loc_input_value}      ${discovered_existing_department}
-#        sleep       ${yop_sleep}
-#        Switch Window     aithentic | Sentinel One Newly-Discovered
+        sleep       ${yop_sleep}
+        Switch Window     aithentic | Sentinel One Newly-Discovered
         OCS.Click on the down arrow icon of existing assets
         OCS.Click on clear filter button link of discovered assets  Clear Filters
         OCS.Choose filters for discovered asset    Select Location      *Main Office
@@ -334,8 +334,8 @@ Apply filters and clear filter on Existing Assets
         Generic.Verify your current page location contains    technology-details
         TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     LocationName
         OCS.verify Text by hovering over assets  ${assign_loc_input_value}      *Main Office
-#        sleep       ${yop_sleep}
-#        Switch Window      aithentic | Sentinel One Newly-Discovered
+        sleep       ${yop_sleep}
+        Switch Window      aithentic | Sentinel One Newly-Discovered
         OCS.Click on the down arrow icon of existing assets
         OCS.Click on clear filter button link of discovered assets      Clear Filters
     EXCEPT
@@ -443,7 +443,7 @@ Create Asset from Add Assets Page
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window       aithentic | Discovered Assets
+        Switch Window     aithentic | Sentinel One Newly-Discovered
         Generic.Refresh the existing page
         OCS.Choose Tab under Asset Discovery    agent-discovery
         Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -502,7 +502,7 @@ Add component as an asset from Agent Discovery page
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window       aithentic | Discovered Assets
+        Switch Window     aithentic | Sentinel One Newly-Discovered
         Generic.Refresh the existing page
         OCS.Choose Tab under Asset Discovery    agent-discovery
         Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -602,7 +602,7 @@ Upload Image and Document File while Add Discovery Asset
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window       aithentic | Discovered Assets
+       Switch Window      aithentic | Sentinel One Newly-Discovered
         Generic.Refresh the existing page
          OCS.Choose Tab under Asset Discovery    agent-discovery
         Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -721,7 +721,7 @@ Upload Image and Document File while Add component as an asset from Agent Discov
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window       aithentic | Discovered Assets
+        Switch Window     aithentic | Sentinel One Newly-Discovered
         Generic.Refresh the existing page
         OCS.Choose Tab under Asset Discovery    agent-discovery
         Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -1077,7 +1077,7 @@ Add Asset with IP address from Network Discovery Page
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window       aithentic | Discovered Assets
+        Switch Window     aithentic | Sentinel One Newly-Discovered
         Generic.select the option from the side menu        Technology
         Generic.Verify your current page location contains      technology-list
         TechnologyPage.Search by AssetId       ${generated_AssetID}
@@ -1316,7 +1316,7 @@ Search with containing fields under advance search of component of discovered as
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window       aithentic | Discovered Assets
+       Switch Window      aithentic | Sentinel One Newly-Discovered
         OCS.Choose tab under Discovery Assets   agent-discovery
         Generic.Verify your current page location contains      aad
         Generic.Refresh the existing page
@@ -1837,6 +1837,18 @@ Verify reset icon while adding component
         TechnologyPage.Click on reset icon while adding technology
         TechnologyPage.Verify the invisibility of brand after clicking on reset icon
 
+Search with inavlid MAC Address under newly discovered
+        Generic.click on the tab	Login
+        LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+        Generic.Verify your current page location contains      dashboard
+        LandingPage.Verify you are on dashboard page
+        Generic.select the option from the side menu        Asset Discovery
+        Generic.Verify your current page location contains      discovery-assets
+        OCS.Click on newly discovered tab under network discovery
+        Generic.Verify your current page location contains    aad
+        OCS.Click on search icon of discovery assets
+        OCS.Enter text to search discovery asset   00:00:00:00
+        Get the text of no records after searching with inavlid mac address under newly discovery tab      No records
 #Zz kill browser
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
 
