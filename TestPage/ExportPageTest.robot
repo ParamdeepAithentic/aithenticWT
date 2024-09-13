@@ -357,7 +357,7 @@ Export list of parent tab under technology details
 
 
 Export Team member list
-    [Tags]      Stable
+    [Tags]      Stable      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
