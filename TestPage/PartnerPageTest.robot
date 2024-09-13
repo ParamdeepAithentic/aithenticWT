@@ -423,7 +423,7 @@ Compose Message invite user test
     PartnersPage.Click on edit button
     PartnersPage.Click on contact person button
     PartnersPage.Enter random contact name
-#    PartnersPage.Enter random contact person
+
     PartnersPage.Enter secondary contact business email    ${generate_PersonName}     yopmail
 #    PartnersPage.Choose contact country      India   +91     9646289871
     Generic.Enter phone number      India   +91     9646289871
@@ -1025,7 +1025,8 @@ Activate Manufacturer via partner
     Generic.Fetch alert message text and compare it with      Status updated successfully
 
 Remove Manufacturer from partner
-    [Tags]      Stable
+    [Tags]      Stable    Sanity   Smoke
+
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1119,8 +1120,9 @@ Remove Manufacturer from partner
     PartnersPage.Select option from the pop up  Yes
     Generic.Fetch alert message text and compare it with      Partner deleted successfully
 
+
 View Details and check the details of Contract
-    [Tags]      Stable      rerun
+    [Tags]      Stable
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1224,6 +1226,7 @@ View Details and check the details of Contract
     PartnersPage.Verify pages with the element  Item
     PartnersPage.Click on back to contract details button link
     PartnersPage.Download the contract pdf
+
 
 Add_edit_deactivate_removeSupplier while adding brand
     [Tags]      Stable
@@ -1487,5 +1490,5 @@ Partner Side bar Filters
 
 
 #Zz kill browser
-#    sleep       ${wait_time}
-#    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+ #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+

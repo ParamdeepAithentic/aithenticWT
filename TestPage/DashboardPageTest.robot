@@ -61,7 +61,7 @@ Click the option from side drawer
 
 
 Verify the drawer list
-    [Tags]      Time
+    [Tags]      Time     Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     ${StartTime1} =     Get Current Time in Milliseconds
@@ -687,7 +687,7 @@ Verify Department quick_links in profile settings dropdown
     DashboardPage.Get and verify the text and compare it with     Added Departments
 
 Search By Technology Group in product list
-    [Tags]      Time        Stable
+    [Tags]      Time        Stable      Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1037,7 +1037,9 @@ View Predefined brand
 View Predefined product
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.Verify your current page location contains      dashboard
+
+    Generic.Verify your current page location contains       dashboard
+
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
@@ -1050,7 +1052,9 @@ Verifying the Renewals Overview section of Management console - End of Life
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.Verify your current page location contains      dashboard
+
+    Generic.Verify your current page location contains       dashboard
+
     LandingPage.Verify you are on dashboard page
     DashboardPage.Fetch the count renewals overview subtabs      End of life
     DashboardPage.Set Globally the count from renewal overview subtabs
@@ -1656,6 +1660,8 @@ Management Console - Quarters filter dropdown
     DashboardPage.Verify your current page not contains this element
 
 Change password and login with new password
+    [Tags]      Sanity      smoke
+
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1799,6 +1805,7 @@ Change password and login with new password
     Generic.Verify your current page location contains      dashboard
 
 Enter password more than the limit of the password while register
+    [Tags]      Sanity      Smoke
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1831,6 +1838,7 @@ Enter password more than the limit of the password while register
     DashboardPage.Wait for the visibility of the validation of password field under create account
 
 Enter password less than the limit of the password while register
+    [Tags]      Sanity
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -2515,6 +2523,139 @@ Suspend the account while the contract active
     Generic.click on the button     Okay, I will manage Contracts first
     Generic.Verify your current page location contains      contracts-list
     Generic.Wait until table get load
+
+Verify Notification Mark all as read
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list       Product_00337612322
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+    TechnologyPage.Click on edit button on product details page        Edit
+    Generic.Verify your current page location contains      edit-technology
+    TechnologyPage.Click on update button of edit_technology page      Update
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+    Generic.Verify your current page location contains     technology-details
+    Generic.select the option from the side menu    Dashboard
+    LandingPage.Verify you are on dashboard page
+    DashboardPage.Click on the notifications icon under dashbaord page
+    TechnologyPage.Click on the asset alert option under notifications
+    DashboardPage.Wait until alert is visible in the Recent Notifiation tab     You updated Asset ID      ${generated_AssetID}.
+    TechnologyPage.Get the text of the recent notification of added assets      You updated Asset ID ${generated_AssetID}.
+    DashboardPage.Analyse text is bold before click on Mark all as read         You updated Asset ID      ${generated_AssetID}
+    DashboardPage.Click on Mark all as read option
+    DashboardPage.Verify text is normal after clicking Mark all as read         You added Asset ID      ${generated_AssetID}
+    DashboardPage.Verify text is normal after clicking Mark all as read         You updated Asset ID      ${generated_AssetID}
+    Generic.select the option from the side menu    Asset Discovery
+    Generic.Verify your current page location contains      discovery-assets
+    DashboardPage.Click on download agent button to download        Download Agent
+    OCS.Choose options to install from download agent button    single
+    OCS.Select the agent type    Linux
+    OCS.Verify that agent is ready to get download
+    Generic.click on the button link    Download
+    Generic.select the option from the side menu    Dashboard
+    LandingPage.Verify you are on dashboard page
+    DashboardPage.Click on the notifications icon under dashbaord page
+    DashboardPage.Click on alerts tabs      system-alert
+    DashboardPage.Wait until alert is visible in the Recent Notifiation tab     A new agent has been downloaded for     Linux.
+    DashboardPage.Get and verify the text from system notification       A new agent has been downloaded for Linux.
+    DashboardPage.Analyse text is bold before click on Mark all as read         A new agent has been downloaded for     Linux
+    Generic.select the option from the side menu    Asset Discovery
+    Generic.Verify your current page location contains      discovery-assets
+    DashboardPage.Click on download agent button to download        Download Agent
+    OCS.Choose options to install from download agent button    single
+    OCS.Select the agent type    Windows
+    OCS.Verify that agent is ready to get download
+    Generic.click on the button link    Download
+    Generic.select the option from the side menu    Dashboard
+    LandingPage.Verify you are on dashboard page
+    DashboardPage.Click on the notifications icon under dashbaord page
+    DashboardPage.Click on alerts tabs      system-alert
+    DashboardPage.Wait until alert is visible in the Recent Notifiation tab     A new agent has been downloaded for     Windows.
+    DashboardPage.Get and verify the text from system notification       A new agent has been downloaded for Windows.
+    DashboardPage.Analyse text is bold before click on Mark all as read         A new agent has been downloaded for     Windows
+    Generic.select the option from the side menu    Asset Discovery
+    Generic.Verify your current page location contains      discovery-assets
+    DashboardPage.Click on download agent button to download        Download Agent
+    OCS.Choose options to install from download agent button    single
+    OCS.Select the agent type    macOS
+    OCS.Verify that agent is ready to get download
+    Generic.click on the button link    Download
+    Generic.select the option from the side menu    Dashboard
+    LandingPage.Verify you are on dashboard page
+    DashboardPage.Click on the notifications icon under dashbaord page
+    DashboardPage.Click on alerts tabs      system-alert
+    DashboardPage.Wait until alert is visible in the Recent Notifiation tab     A new agent has been downloaded for     Macos.
+    DashboardPage.Get and verify the text from system notification       A new agent has been downloaded for Macos.
+    DashboardPage.Analyse text is bold before click on Mark all as read         A new agent has been downloaded for     Macos
+    DashboardPage.Click on Mark all as read option
+    DashboardPage.Verify text is normal after clicking Mark all as read         A new agent has been downloaded for      Macos
+    DashboardPage.Verify text is normal after clicking Mark all as read         A new agent has been downloaded for      Windows
+    DashboardPage.Verify text is normal after clicking Mark all as read         A new agent has been downloaded for      Linux
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Partners
+    Generic.Verify your current page location contains      partner
+    ReplaceDomainAPI.Replace Domain
+    PartnersPage.Click new partner button
+    Generic.Verify your current page location contains      addpartner
+    PartnersPage.Select partner type of new partner     Manufacturer
+    PartnersPage.Create partner random business name
+    PartnersPage.Enter partner business URL      ${generate_BusinessName}
+    PartnersPage.Select partner country       United States
+    PartnersPage.Click on contact person button
+    PartnersPage.Enter random contact person
+    PartnersPage.Enter contact business email    ${generate_PersonName}     ${generate_BusinessName}
+    Generic.Enter phone number      India   +91     9646289871
+    PartnersPage.Enter contact location      United States - Main Office - 21 - 2
+    PartnersPage.Save the new contact
+    PartnersPage.Click contact main save button
+    Generic.Fetch alert message text and compare it with    Partner created successfully
+    PartnersPage.Search by business name    ${generate_BusinessName}
+    Generic.select the option from the side menu    Smart Share
+    Generic.Verify your current page location contains      contract
+    ContractsPage.Click on create new contract button
+    ContractsPage.Select type of contract     Dynamic Smart Share
+    Generic.Verify your current page location contains      generate-contract
+    ContractsPage.Enter contract type      SmartShare_Manufacturer
+    ContractsPage.Enter contract with     ${generate_BusinessName}
+    ContractsPage.Enter contract brand    ${generate_BusinessName}
+    ContractsPage.Enter contract location      United States - Test qa Up50260220 - 21 - 2
+    ContractsPage.Enter contract permission       Read/Write
+    Generic.Fetch Current Date
+    ContractsPage.Select contract start date        ${current_date}
+    ContractsPage.Select contract end date      12/12/2028
+    ContractsPage.Select contract function       Dynamic
+    ContractsPage.Click preview selection button on contact
+    ContractsPage.Enter contract description comment      Enter comment for contract description.
+    ContractsPage.Enter contract name     ${generate_PersonName}
+    ContractsPage.Select the checkboxes
+    ContractsPage.Save create contract button
+    ContractsPage.Save contract modal     Create Contract
+    Generic.Fetch alert message text and compare it with        Contract created successfully
+    ContractsPage.Search by contract BrandName      ${generate_BusinessName}
+    ContractsPage.Fetch the contract ID from the row
+    Generic.select the option from the side menu    Dashboard
+    LandingPage.Verify you are on dashboard page
+    DashboardPage.Click on the notifications icon under dashbaord page
+    DashboardPage.Click on alerts tabs      contract-alert
+    DashboardPage.Get and verify the text from Contract notification        Contract ${fetch_contract_ID} with ${generate_BusinessName} is pending.
+    DashboardPage.Analyse text is bold before click on Mark all as read         Contract ${fetch_contract_ID} with      ${generate_BusinessName} is pending
+    DashboardPage.Click on Mark all as read option
+    DashboardPage.Verify text is normal after clicking Mark all as read         Contract ${fetch_contract_ID} with      ${generate_BusinessName} is pending
 
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
