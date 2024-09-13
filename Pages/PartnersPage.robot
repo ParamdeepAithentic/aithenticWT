@@ -72,7 +72,7 @@ ${add_custom_businessURL}     css:.fas.fa-plus.float-right
 ${add_secondaryURL}     css:input[formcontrolname='Businessurl']
 ${three_dots}       css:.three-dots
 ${save_address}     css:button[class='btn button-green mt-0 ml-1 ng-star-inserted']
-${partner_searchBar}    css:input[placeholder='Search by Business Name']
+${partner_searchBar}    css:#searchbar-partner
 ${partner_address_Line2}     css:#StreetAddress2
 ${partner_address_Line1}     css:#addressLine1
 ${partner_state}        css:#state

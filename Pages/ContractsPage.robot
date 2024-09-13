@@ -67,7 +67,7 @@ ${click_createContract_btn}     //button[normalize-space()='Create Contract']
 ${save_contract_modal}     css:div[id='createOrGenerateContract'] div div div div
 
 
-${contractID_SearchBar}      css:#searchInput
+${contractID_SearchBar}      css:#searchbar-Contracts
 ${fetch_Contract_BrandName}     css:tbody tr:nth-child(1) td:nth-child(2)
 
 
