@@ -51,8 +51,8 @@ ${TMRole}     css:.qa-member-role input
 
 
 ${teamMember_Action_btn}     css:#Team-Member-Actions
-${name_SearchBar}        //input[@placeholder='Search by Name']
-${Dept_SearchBar}       //input[@placeholder='Search by Department Name']
+${name_SearchBar}       css:#searchbar-memberlist
+${Dept_SearchBar}       css:#searchbar-departmentlist
 ${three_dots}       css:.three-dots
 
 

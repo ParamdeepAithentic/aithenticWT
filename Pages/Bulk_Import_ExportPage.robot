@@ -50,7 +50,7 @@ ${profileName}     css:#user-name-nav
 ${full_Profile_List}     //div[@class='dropdown-menu themeScrollBar profile-dropdown ng-tns-c166-0 show']/div/ul/li
 ${select_technology_type_via link}  css:#addProductType
 ${save_product_modal}     css:button[class='btn button-green mt-0 mx-2 ng-star-inserted']
-${search_productName}     css:input[placeholder='Search by Product Name or Description']
+${search_productName}     css:#seacrhbar-product-wizard
 ${fetch_productName}    css:td:nth-child(2)
 
 ${add_dept_btn}     //a[normalize-space()='Add Department']
@@ -105,18 +105,18 @@ Select option from technology type column in bulk_import
     wait until element is visible      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]    ${wait_time}
     wait until element is enabled      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]    ${wait_time}
     Double click element      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]
-    wait until element is visible      css:div[aria-label='List'] div:nth-child(4) div    ${wait_time}
-    wait until element is enabled      css:div[aria-label='List'] div:nth-child(4) div    ${wait_time}
-    click element       css:div[aria-label='List'] div:nth-child(4) div
+    wait until element is visible      css:div[aria-label='Rich Select Field'] div:nth-child(4) div    ${wait_time}
+    wait until element is enabled      css:div[aria-label='Rich Select Field'] div:nth-child(4) div    ${wait_time}
+    click element       css:div[aria-label='Rich Select Field'] div:nth-child(4) div
 
 Select option from technology group column in bulk_import
     [Arguments]    ${option}
     wait until element is visible      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]    ${wait_time}
     wait until element is enabled      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]    ${wait_time}
     Double click element      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]
-    wait until element is visible      css:div[aria-label='List'] div:nth-child(4) div    ${wait_time}
-    wait until element is enabled      css:div[aria-label='List'] div:nth-child(4) div    ${wait_time}
-    click element       css:div[aria-label='List'] div:nth-child(4) div
+    wait until element is visible      css:div[aria-label='Rich Select Field'] div:nth-child(4) div    ${wait_time}
+    wait until element is enabled      css:div[aria-label='Rich Select Field'] div:nth-child(4) div    ${wait_time}
+    click element       css:div[aria-label='Rich Select Field'] div:nth-child(4) div
 
 Enter the value in the product_description column in bulk_import
     [Arguments]    ${option}
@@ -467,6 +467,7 @@ click on the arrow of product
 
 Enter the new value in the product, brand, group and type value in bulk_edit of technology
     [Arguments]     ${option}   ${text}
+    sleep       ${search_sleep}
     wait until element is not visible   ${loaderIcon}       ${wait_time}
     wait until element is visible   (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]   ${wait_time}
     wait until element is enabled   (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]   ${wait_time}
@@ -771,3 +772,38 @@ Select option from budget currency in technology bulk import
 #    Double click element      css:.ag-center-cols-container div[col-id='${option}']
     wait until element is visible      css:div[aria-label='Rich Select Field'] div:nth-child(${option2}) div    ${wait_time}
     click element       css:div[aria-label='Rich Select Field'] div:nth-child(${option2}) div
+
+Search Team Member by name under asset wizard
+    [Arguments]    ${name}
+    wait until element is visible       css:thead tr       ${wait_time}
+    wait until element is visible      css:#seacrhbar-member-wizard     ${wait_time}
+    click element      css:#seacrhbar-member-wizard
+    Clear Element Text      css:#seacrhbar-member-wizard
+    ${StartTime1} =     Get Current Time in Milliseconds
+    input text   css:#seacrhbar-member-wizard   ${name}
+    sleep      ${search_sleep}
+    wait until element is visible       css:thead tr       ${wait_time}
+
+Verify Brand added under asset wizard
+   [Arguments]    ${BrandName}
+     wait until element is visible       css:thead tr       ${wait_time}
+     wait until element is visible      css:#seacrhbar-brand-wizard     ${wait_time}
+     click element      css:#seacrhbar-brand-wizard
+     Clear Element Text      css:#seacrhbar-brand-wizard
+     input text   css:#seacrhbar-brand-wizard   ${BrandName}
+     sleep       ${search_sleep}
+     Wait Until Element Contains    //td[normalize-space()='${BrandName}']      ${BrandName}     ${wait_time}
+     ${get_brandName} =    get text    ${fetch_brandName}
+     log to console     ${get_brandName}
+     should be equal    ${BrandName}     ${get_brandName}
+
+Search by business name under asset wizard
+    [Arguments]    ${BusinessName}
+    wait until element is visible       css:thead tr       ${wait_time}
+    wait until element is visible       css:#seacrhbar-partner-wizard       ${wait_time}
+    input text      css:#seacrhbar-partner-wizard     ${BusinessName}
+    sleep       ${search_sleep}
+    wait until element is visible       //td[normalize-space()='${BusinessName}']     ${wait_time}
+    ${get_businessName} =    get text    //td[normalize-space()='${BusinessName}']
+    log to console     ${get_businessName}
+    should be equal    ${BusinessName}     ${get_businessName}

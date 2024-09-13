@@ -175,6 +175,7 @@ Remove Location from listing
     Generic.Fetch alert message text and compare it with    Location deleted successfully
 
 Add Location from profile Listing
+    [Tags]      Stable     Sanity     Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
