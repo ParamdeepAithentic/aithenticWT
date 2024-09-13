@@ -152,7 +152,12 @@ Enter contract permission
     Generic.Select parameter    ${option}
 
 Select contract start date
-    Generic.Enter current date      ${startDate}
+    [Arguments]    ${date}
+    Wait Until Element Is Visible       ${startDate}      ${wait_time}
+    Wait Until Element Is enabled       ${startDate}      ${wait_time}
+    Clear Element Text      ${startDate}
+    input text  ${startDate}    ${date}
+#    Generic.Enter current date   ${date}
     Press Keys      ${location}      ENTER
 
 
@@ -187,9 +192,10 @@ Wait until PDF is loaded properly
 Click preview selection button on contact
      wait until element is visible    ${previewSelectionButton}      ${wait_time}
      wait until element is enabled    ${previewSelectionButton}      ${wait_time}
+     sleep       ${search_sleep}
      click element      ${previewSelectionButton}
      Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-     wait until element is not visible       ${shadow}          ${wait_time}
+#     wait until element is not visible       ${shadow}          ${wait_time}
 
 Enter contract description comment
      [Arguments]    ${option}

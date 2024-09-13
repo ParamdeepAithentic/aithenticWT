@@ -49,11 +49,11 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Activate and deactivate the location
-    [Tags]      Time      Sanity        Stable
+    [Tags]      Time      Sanity        Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.select the option from the side menu    Location
     Generic.Verify your current page location contains      locationlist
@@ -100,10 +100,10 @@ Activate and deactivate the location
     LocationPage.Fetch and verify the location status from the row   Active
 
 Edit the Location
-    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Location
     Generic.Verify your current page location contains      locationlist
     LocationPage.Click on Location action button
@@ -144,10 +144,11 @@ Edit the Location
     Generic.Fetch alert message text and compare it with    Location updated successfully
 
 Remove Location from listing
-    [Tags]      Stable
+    [Tags]      Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Location
     Generic.Verify your current page location contains      locationlist
     LocationPage.Click on Location action button
@@ -174,10 +175,11 @@ Remove Location from listing
     Generic.Fetch alert message text and compare it with    Location deleted successfully
 
 Add Location from profile Listing
-    [Tags]      Stable
+    [Tags]      Stable     Sanity     Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list    add-location-dropdown
     Generic.Verify your current page location contains      add-location
@@ -196,11 +198,12 @@ Add Location from profile Listing
     Generic.Fetch alert message text and compare it with    Location created successfully
 
 Verify Location_name Hide and show after changes it from settings
-    [Tags]      Stable
+    [Tags]      Smoke
     Generic.open the browser with the url
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     I_iconPage.Choose options inside personal_details        Organization
@@ -254,3 +257,94 @@ Verify Location_name Hide and show after changes it from settings
     LocationPage.Save location form     save
     Generic.Fetch alert message text and compare it with    Location created successfully
     LocationPage.Search by location name        ${generated_location}
+
+Click on the select status filter and verify it
+    [Tags]     time     smoke
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+
+    ${StartTime1} =     Get Current Time in Milliseconds
+    LocationPage.Click on the status filter under location
+    LocationPage.Select the option from status filter under location        Inactive
+    LocationPage.Get the text of selected status filter under location      Inactive
+    Generic.Wait until table get load
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  9  ${pageHeading}   Filter Page - Data load time of filter inactive under location status      9    ${pageTime}     ${ActualTime}    Filter_Time
+
+
+    PaginationPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     location-list
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     location-list
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click       Status     Inactive         ${New_status}
+
+Click on the select location filter and verify it
+    [Tags]    time     smoke
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Click on the location filter under location
+    LocationPage.Select the option from location filter under location         Afghanistan
+    LocationPage.Get the text of selected filter under location     Afghanistan
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     location-list
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     location-list
+    PaginationPage.Fetch the total count
+
+    ${StartTime1} =     Get Current Time in Milliseconds
+    LocationPage.Fetch the country from location filter and click       Country     Afghanistan         ${New_Name}
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  10  ${pageHeading}   Filter Page - Data load time of filter Country under location group      10    ${pageTime}     ${ActualTime}    Filter_Time
+
+    LocationPage.Select the option from location filter under location         Afghanistan
+    LocationPage.Select the option from location filter under location         Canada
+    LocationPage.Get the text of selected filter under location     Canada
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click       Country     Canada          ${New_Name}
+    LocationPage.Select the option from location filter under location         Canada
+    LocationPage.Select the option from location filter under location          India
+    LocationPage.Get the text of selected filter under location      India
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click       Country      India          ${New_Name}
+    LocationPage.Select the option from location filter under location         India
+    LocationPage.Select the option from location filter under location         Turkey
+    LocationPage.Get the text of selected filter under location    Turkey
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     location-list
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     location-list
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click       Country     Turkey        ${New_Name}
+
+Click on the select Active status filter and verify it
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      johns@mai.25u.com         Test@123
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Click on the status filter under location
+    LocationPage.Select the option from status filter under location        Active
+    LocationPage.Get the text of selected status filter under location      Active
+    Generic.Wait until table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     location-list
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     location-list
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click       Status     Active         ${New_status}

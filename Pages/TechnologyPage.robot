@@ -112,11 +112,13 @@ ${saveBTN}      css:button[class='btn button-green mt-0 mx-2']
 
 ######################### Do you need another asset################
 ${savePOPup}      //div[@class='modal-content ng-star-inserted']//div[@class='modal-body']
-${iamDone_BTN}      //button[text()="I'm Done,Save "]
+${iamDone_BTN}      //button[text()="Done "]
 ${Yes_BTN}      //span[contains(text(),'Yes')]
 
 ####################### search asset id #####################
-${asset_SearchBar}      css:input[placeholder='Search by Brand, Product, Asset ID, Serial number, Software version or Assignee']
+
+
+${asset_SearchBar}      //input[contains(@placeholder,'Search by Brand, Product, Asset ID')]
 #${asset_SearchBar}      //input[@placeholder='Search by Brand, Product, Asset ID, Serial number or Assignee']
 ${search_loader}     css:div[role='status']
 ${fetch_assetID}     //td[@class='technology-asset-width pr-4']//a
@@ -278,10 +280,12 @@ Inactive or Removed technology
     click element      ${removedTechnology_threeDot}
 
 Remove asset from technology table
-     wait until element is visible      ${removePopUp}        ${wait_time}
-     wait until element is enabled       ${removePopUp}        ${wait_time}
+#     wait until element is visible      ${removePopUp}        ${wait_time}
+#     wait until element is enabled       ${removePopUp}        ${wait_time}
+     sleep      ${search_sleep}
      Wait Until Element Is Enabled      ${select_remove_popUp_Yes}      ${wait_time}
      click element      ${select_remove_popUp_Yes}
+     sleep      ${search_sleep}
 
 
 Search and remove asset
@@ -371,6 +375,9 @@ Add host name for technology group information for hardware random
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${result}=    Catenate    HostName_${random_string}
     input text   ${host_name}   ${result}
+    log to console      ${result}
+    set global variable    ${result}
+
 
 #================================ CREATE SERIAL NUMBER ==========================
 Create unique serial number random
@@ -513,20 +520,25 @@ Select warranty end date
 
 Select technology lifecycle status
     [Arguments]    ${option1}
+    #Scroll Element Into View        css:#Comment
+    wait until element is visible   //ng-select[@id='LifeCycleStatusId']//span[@title='Clear all']    ${wait_time}
+    wait until element is enabled   //ng-select[@id='LifeCycleStatusId']//span[@title='Clear all']    ${wait_time}
+    click element       //ng-select[@id='LifeCycleStatusId']//span[@title='Clear all']
     wait until element is visible    ${LifeCycleStatusId}      ${wait_time}
     wait until element is enabled    ${LifeCycleStatusId}      ${wait_time}
     click element       ${LifeCycleStatusId}
-    wait until element is visible   //ng-select[@id='LifeCycleStatusId']//span[@title='Clear all']    ${wait_time}
-    click element       //ng-select[@id='LifeCycleStatusId']//span[@title='Clear all']
-    wait until element is visible   //span[normalize-space()='Active']      ${wait_time}
-    Generic.Select parameter    ${option1}
+    wait until element is visible   //ng-select[contains(@class,'qa-LifeCycleStatusId')]//ng-dropdown-panel//span[normalize-space()='Active']      ${wait_time}
+    wait until element is enabled  //ng-select[contains(@class,'qa-LifeCycleStatusId')]//ng-dropdown-panel//span[normalize-space()='Active']      ${wait_time}
+    click element   //ng-select[contains(@class,'qa-LifeCycleStatusId')]//ng-dropdown-panel//span[normalize-space()='Active']
+    #Generic.Select parameter    ${option1}
 
 
 Select edited technology lifecycle status
     [Arguments]    ${option1}
     wait until element is not visible    ${loaderIcon}      ${wait_time}
     wait until element is visible    ${LifeCycleStatusId}      ${wait_time}
-    click element       ${LifeCycleStatusId}
+    Clear Element Text    ${LifeCycleStatusId}
+    click element     ${LifeCycleStatusId}
     wait until element is visible   //span[normalize-space()='${option1}']     ${wait_time}
     click element   //span[normalize-space()='${option1}']
 
@@ -540,7 +552,7 @@ Accept updated edited technology pop up
      wait until element is visible     //div[@id='confirmUpdates']//button[normalize-space()='${option}']      ${wait_time}
      wait until element is enabled     //div[@id='confirmUpdates']//button[normalize-space()='${option}']      ${wait_time}
      click element      //div[@id='confirmUpdates']//button[normalize-space()='${option}']
-     wait until element is not visible       ${shadow}          ${wait_time}
+#     wait until element is not visible       ${shadow}          ${wait_time}
 
 ###############Technology Cost Information#################
 Add order number of technology cost information
@@ -792,6 +804,7 @@ Search by AssetId
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  17  ${pageHeading}   Technology Page - Search the technology by AssetId on technology list page     17    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+#    TechnologyPage.Click on manage technology sub option       Technology List
 
 Search by BrandName
     [Arguments]    ${BrandName}
@@ -1312,10 +1325,6 @@ Input current Date
     set global variable         ${current_date1}
 
 Input future Date
-#    ${future_date} =    Add Time To Date   ${current_date1}    7    days    result_format=%m/%d/%Y
-#    Log To Console    ${future_date}
-#    Set Global Variable    ${future_date}
-
     ${current_date}=    Get Current Date    result_format=%m/%d/%Y
     Log To Console      Current Date is: ${current_date}
 
@@ -1401,7 +1410,7 @@ Click on pop up of available Inactive Asset
     wait until element is visible   css:.qa-available-inactive-assests-${option}   ${wait_time}
     wait until element is enabled   css:.qa-available-inactive-assests-${option}   ${wait_time}
     click element   css:.qa-available-inactive-assests-${option}
-    wait until element is not visible       ${shadow}          ${wait_time}
+#    wait until element is not visible       ${shadow}          ${wait_time}
 
 Select option from exceed asset limit pop
     [Arguments]     ${option}
@@ -1846,3 +1855,228 @@ Get inner text of feature under product information
     Log To Console    Value of Textarea: ${textarea_value}
     set global variable     ${textarea_value}
     should be equal    ${textarea_value}     This is the features of new product added.
+
+Fetch the date from renewal date in add technology
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait until element is visible       ${renewal_date}     ${wait_time}
+    ${fetch_renewal_date}=      Get value          ${renewal_date}
+    log to console      ${fetch_renewal_date}
+    set global variable     ${fetch_renewal_date}
+
+Change contract end date
+    [Arguments]     ${option}
+    wait until element is not visible       ${loaderIcon}   ${wait_time}
+    wait until element is visible       ${Contract_endDate}     ${Wait_time}
+    clear element text      ${Contract_endDate}
+    input text      ${Contract_endDate}         ${option}
+    Press keys    ${Contract_endDate}   TAB
+
+Compare Renewal date and contract end date in add technology
+    [Arguments]     ${option1}      ${option2}
+    should be equal    ${option1}          ${option2}
+
+Verify Renewal date and contract end date are not equal
+    [Arguments]     ${option1}      ${option2}
+    should not be equal    ${option1}          ${option2}
+
+Fetch contract end date from technology details page
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait until element is visible       ${Contract_endDate}     ${wait_time}
+    ${details_contract_date}=      Get value            ${Contract_endDate}
+    log to console      ${details_contract_date}
+    set global variable     ${details_contract_date}
+
+Fetch renewal date from technology details page
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait until element is visible       css:#renewalDate     ${wait_time}
+    ${details_renewal_date}=      Get value           css:#renewalDate
+    log to console      ${details_renewal_date}
+    set global variable     ${details_renewal_date}
+
+Compare Renewal date and contract end date on Technology details page
+    should be equal     ${details_contract_date}        ${details_renewal_date}
+
+Verify warning pop-up is visible when change contract end date
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait until element is visible       //div[@id='renewalDateWarning']//div[contains(@class,'modal-content')]     ${wait_time}
+    wait until element is enabled       //div[@id='renewalDateWarning']//div[contains(@class,'modal-content')]     ${wait_time}
+
+Verify pop-up is invisible
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait until element is not visible       //div[@id='renewalDateWarning']//div[contains(@class,'modal-content')]     ${wait_time}
+
+Close the warning contract date pop-up
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait until element is visible     //div[@id='renewalDateWarning']//button[@class='close']     ${wait_time}
+    wait until element is enabled     //div[@id='renewalDateWarning']//button[@class='close']     ${wait_time}
+#    sleep       2
+    click element       //div[@id='renewalDateWarning']//button[@class='close']
+
+Select option from contract end date warning pop-up
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait until element is visible     css:.qa-${option}-export     ${wait_time}
+    wait until element is enabled     css:.qa-${option}-export     ${wait_time}
+#    sleep       ${search_sleep}
+    click element       css:.qa-${option}-export
+# confirm, close
+
+Search by hostname
+    [Arguments]     ${name}
+    wait until element is visible       css:thead tr       ${wait_time}
+    wait until element is visible       ${asset_SearchBar}       ${wait_time}
+    Clear Element Text      ${asset_SearchBar}
+    input text      ${asset_SearchBar}     ${name}
+    sleep       ${search_sleep}
+    wait until element is visible       css:thead tr       ${wait_time}
+
+Select particular technology group via link while adding technology
+    [Arguments]    ${option}
+    wait until element is visible       css:nz-tree-select[formcontrolname=TechGroupId] input     ${wait_time}
+    wait until element is enabled       css:nz-tree-select[formcontrolname=TechGroupId] input     ${wait_time}
+    click element   css:nz-tree-select[formcontrolname=TechGroupId] input
+    input text      css:nz-tree-select[formcontrolname=TechGroupId] input       ${option}
+    wait until element is visible      //span[normalize-space()='${option}']       ${wait_time}
+    wait until element is enabled      //span[normalize-space()='${option}']       ${wait_time}
+    click element       //span[normalize-space()='${option}']
+
+
+Click on message tab of technology- list page
+    wait until element is visible   css:#PrintQrButton   ${wait_time}
+    wait until element is enabled   css:#PrintQrButton   ${wait_time}
+    wait until element is visible   css:#messages-tab   ${wait_time}
+    click element   css:#messages-tab
+
+Enter input in the recipient list field under compose message via technology details
+    [Arguments]     ${message}
+    wait until element is visible      //input[@id='to']     ${wait_time}
+    wait until element is visible      //input[@id='to']      ${wait_time}
+    click element   //input[@id='to']
+    input text      //input[@id='to']       ${message}
+    wait until element is visible     //span[contains(@title,'${message}')]    ${wait_time}
+    wait until element is visible      //span[contains(@title,'${message}')]      ${wait_time}
+    click element       //span[contains(@title,'${message}')]
+
+Get the text of the recent notification of added assets
+    [Arguments]      ${option}
+    wait until element is visible       css:#assetsAlert >div>.notifications-container >ul>li:nth-child(1)>div:nth-child(1)     ${wait_time}
+    wait until element is enabled       css:#assetsAlert >div>.notifications-container >ul>li:nth-child(1)>div:nth-child(1)     ${wait_time}
+    ${notification} =    get text    css:#assetsAlert >div>.notifications-container >ul>li:nth-child(1)>div:nth-child(1)
+    set global variable     ${notification}
+    log to console     ${notification}
+    should be equal    ${notification}     ${option}
+
+Click on the asset alert option under notifications
+    wait until element is visible      //a[@id='assets-alert']     ${wait_time}
+    wait until element is visible     //a[@id='assets-alert']     ${wait_time}
+    click element   //a[@id='assets-alert']
+
+Enter input in the message status field under compose message via technology detail
+    [Arguments]     ${message_status}
+    wait until element is visible      //input[@id='messageStatus']     ${wait_time}
+    wait until element is visible      //input[@id='messageStatus']      ${wait_time}
+    click element   //input[@id='messageStatus']
+    input text     //input[@id='messageStatus']       ${message_status}
+    wait until element is visible     //span[normalize-space()='${message_status}']    ${wait_time}
+    wait until element is visible     //span[normalize-space()='${message_status}']      ${wait_time}
+    click element       //span[normalize-space()='${message_status}']
+
+Click on Print QR button
+    Wait Until Element Is Not Visible    ${loaderIcon}        ${wait_time}
+    Wait until element is visible     css:#PrintQrButton      ${wait_time}
+    wait until element is enabled     css:#PrintQrButton      ${wait_time}
+    click element       css:#PrintQrButton
+
+Select option by clicking on Print QR button
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}        ${wait_time}
+    Generic.click on the button link        ${option}
+
+Confirm to download QR file
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}        ${wait_time}
+    Wait until element is visible     //div[@id='downloadQrCode']//button[normalize-space()='${option}']      ${wait_time}
+    wait until element is enabled     //div[@id='downloadQrCode']//button[normalize-space()='${option}']      ${wait_time}
+    sleep    ${search_sleep}
+    click element       //div[@id='downloadQrCode']//button[normalize-space()='${option}']
+
+click on the three dots inside table of parent tab from tehnology details page
+    Wait Until Element Is Not Visible    ${loaderIcon}        ${wait_time}
+    Wait until element is visible     //tbody//i      ${wait_time}
+    wait until element is enabled     //tbody//i      ${wait_time}
+    click element       //tbody//i
+
+Select option from three-dots from technology details page
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}        ${wait_time}
+    Wait until element is visible     //a[normalize-space()='${option}']      ${wait_time}
+    wait until element is enabled     //a[normalize-space()='${option}']      ${wait_time}
+    sleep       ${search_sleep}
+    Mouse Over       //a[normalize-space()='${option}']
+
+Select the format to download QR
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}        ${wait_time}
+    Wait until element is visible     //li[@class='dropdown-item']//a[contains(text(),'${option}')]      ${wait_time}
+    wait until element is enabled     //li[@class='dropdown-item']//a[contains(text(),'${option}')]      ${wait_time}
+    click element       //li[@class='dropdown-item']//a[contains(text(),'${option}')]
+
+Scroll the element into view
+#    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}        ${wait_time}
+    Wait until element is visible    //div[@id='components']//h6[normalize-space()='Hardware']      ${wait_time}
+    wait until element is enabled    //div[@id='components']//h6[normalize-space()='Hardware']      ${wait_time}
+    scroll element into view       //div[@id='components']//h6[normalize-space()='Hardware']
+
+Click on the filters under technology page
+    [Arguments]     ${option}
+     Wait Until Element Is Not Visible    ${loaderIcon}        ${wait_time}
+    Wait until element is visible    //div[contains(@class,'technology position-relative')]//b[normalize-space()='${option}']      ${wait_time}
+    wait until element is enabled    //div[contains(@class,'technology position-relative')]//b[normalize-space()='${option}']      ${wait_time}
+    click element      //div[contains(@class,'technology position-relative')]//b[normalize-space()='${option}']
+
+Click on the value under the filters of technology page
+    [Arguments]     ${option}
+     Wait Until Element Is Not Visible    ${loaderIcon}        ${wait_time}
+     Wait until element is visible    //div[contains(@class,'technology position-relative')]//label[normalize-space()='${option}']        ${wait_time}
+     wait until element is enabled    //div[contains(@class,'technology position-relative')]//label[normalize-space()='${option}']      ${wait_time}
+     click element      //div[contains(@class,'technology position-relative')]//label[normalize-space()='${option}']
+
+Get the text of selected filter under technology
+    [Arguments]     ${option}
+    wait until element is visible      //div[contains(@class,'technology position-relative')]//label[normalize-space()='${option}']    ${wait_time}
+    ${fetch_Name_of_selected_filter} =    get text    //div[contains(@class,'technology position-relative')]//label[normalize-space()='${option}']
+    ${original_string}=    Set Variable    ${fetch_Name_of_selected_filter}
+    ${New_Namee}=    Evaluate    '${original_string}'.strip()
+    log to console    ${New_Namee}
+    set global variable    ${New_Namee}
+
+Click on the value under the tech typen filters of technology page
+    [Arguments]     ${option}
+     Wait Until Element Is Not Visible    ${loaderIcon}        ${wait_time}
+     Wait until element is visible   //div[contains(@class,'technology position-relative')]//following-sibling::div//label[normalize-space()='${option}']        ${wait_time}
+     wait until element is enabled     //div[contains(@class,'technology position-relative')]//following-sibling::div//label[normalize-space()='${option}']      ${wait_time}
+     click element       //div[contains(@class,'technology position-relative')]//following-sibling::div//label[normalize-space()='${option}']
+
+Click on the tech type filter under technology
+    [Arguments]     ${option}
+     Wait Until Element Is Not Visible    ${loaderIcon}        ${wait_time}
+     Wait until element is visible   //div[contains(@class,'technology position-relative')]//following-sibling::div//b[normalize-space()='${option}']        ${wait_time}
+     wait until element is enabled     //div[contains(@class,'technology position-relative')]//following-sibling::div//b[normalize-space()='${option}']      ${wait_time}
+     click element       //div[contains(@class,'technology position-relative')]//following-sibling::div//b[normalize-space()='${option}']
+
+Click on the value under filters for selecting random value
+    [Arguments]     ${option}
+     Wait Until Element Is Not Visible    ${loaderIcon}        ${wait_time}
+     Wait until element is visible   (//div[contains(@class,'technology position-relative')]//following-sibling::div//label)[${option}]        ${wait_time}
+     wait until element is enabled    (//div[contains(@class,'technology position-relative')]//following-sibling::div//label)[${option}]      ${wait_time}
+     click element       (//div[contains(@class,'technology position-relative')]//following-sibling::div//label)[${option}]
+
+Get the text of the value you selected under filter
+    [Arguments]     ${option}
+    wait until element is visible      (//div[contains(@class,'technology position-relative')]//following-sibling::div//label)[${option}]    ${wait_time}
+    ${fetch_Name_of_selected_random_filter} =    get text    (//div[contains(@class,'technology position-relative')]//following-sibling::div//label)[${option}]
+    ${original_string}=    Set Variable    ${fetch_Name_of_selected_random_filter}
+    ${random_Namee}=    Evaluate    '${original_string}'.strip()
+    log to console    ${random_Namee}
+    set global variable    ${random_Namee}

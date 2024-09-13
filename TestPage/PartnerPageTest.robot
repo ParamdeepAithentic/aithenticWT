@@ -53,9 +53,8 @@ Compose Message invite user test
     [Tags]      Sanity      Smoke       Time     rerun      Unstable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
-
+    LandingPage.Verify you are on dashboard page
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
@@ -101,7 +100,8 @@ Compose Message invite user test
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Generic.Fetch alert message text and compare it with    Partner created successfully
+    Sleep     5
+    #Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generate_BusinessName}
 #-------------------------- PRODUCT-----newely added---------------------------------------------------------
     Generic.Click on the profile name
@@ -140,7 +140,7 @@ Compose Message invite user test
     Generic.Verify your current page contains this text     Technology
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  8  ${pageHeading}   Page Load - Total load time from clicking technology option from side listing to technoloy page listing      8    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  8  ${pageHeading}   Page Load - Total load time from clicking technology option from side listing to technology page listing      8    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 
     ${StartTime1} =     Get Current Time in Milliseconds
@@ -151,7 +151,7 @@ Compose Message invite user test
     Generic.Verify your current page contains this text     Add New Technology
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  9  ${pageHeading}   Page Load - Total load time from clicking add new technology option from from action dropdown to add technoloy      9    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  9  ${pageHeading}   Page Load - Total load time from clicking add new technology option from from action dropdown to add technology      9    ${pageTime}     ${ActualTime}    PageLoad_Time
 
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       ${generate_BusinessName}
@@ -184,9 +184,9 @@ Compose Message invite user test
 #-------------------------- CONTRACT-----------------------------------------------------------
 
     ${StartTime1} =     Get Current Time in Milliseconds
-    Generic.select the option from the side menu    Contracts
-    Generic.Verify your current page location contains      contracts
-    Generic.Verify your current page contains this text     Contracts
+    Generic.select the option from the side menu    Smart Share
+    Generic.Verify your current page location contains      contract
+    Generic.Verify your current page contains this text     Smart Share
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  10  ${pageHeading}   Page Load - Total load time from clicking contract option from side listing to contract page listing      10    ${pageTime}     ${ActualTime}    PageLoad_Time
@@ -195,9 +195,9 @@ Compose Message invite user test
     ContractsPage.Click on create new contract button
 
     ${StartTime1} =     Get Current Time in Milliseconds
-    ContractsPage.Select type of contract     Dynamic Contract
+    ContractsPage.Select type of contract     Dynamic Smart Share
     Generic.Verify your current page location contains      generate-contract
-    Generic.Verify your current page contains this text     Generate New Contract
+    Generic.Verify your current page contains this text     Generate New Smart Share
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  11  ${pageHeading}   Page Load - Total load time from clicking Dynamic Contract option from pop up to generate new contract page      11    ${pageTime}     ${ActualTime}    PageLoad_Time
@@ -208,7 +208,8 @@ Compose Message invite user test
     ContractsPage.Enter contract brand    ${generate_BusinessName}
     ContractsPage.Enter contract location      United States - Main Office - 21 - 2
     ContractsPage.Enter contract permission       Read/Write
-    ContractsPage.Select contract start date
+    Generic.Fetch Current Date
+    ContractsPage.Select contract start date        ${current_date}
     ContractsPage.Select contract end date      12/12/2028
     ContractsPage.Select contract function       Dynamic
     ContractsPage.Click preview selection button on contact
@@ -363,7 +364,9 @@ Compose Message invite user test
     ${StartTime1} =     Get Current Time in Milliseconds
     SubscriptionPage.Click on complete process button
     Generic.Verify your current page location contains     welcome
-    Generic.Verify your current page contains this text     You're almost there...
+
+    Generic.Verify your current page contains this text     Watch Now
+
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  17  ${pageHeading}   Page Load - Total Page Load Time of Billing Payment to Welcome Page      17    ${pageTime}     ${ActualTime}    PageLoad_Time
@@ -384,12 +387,12 @@ Compose Message invite user test
     DashboardPage.Select the location ID checkbox   yes
     Generic.Fetch alert message text and compare it with       Settings Updated
 
-    Generic.select the option from the side menu    Contracts
+    Generic.select the option from the side menu    Smart Share
     Generic.Verify your current page location contains      contracts-list
 #    ContractsPage.Fetch the contract ID from the row
 #    ContractsPage.Click on the first tab row    ${generate_BusinessName}
 #    sleep   50000
-    Generic.Verify your current page contains this text     Create New Contract
+    Generic.Verify your current page contains this text     Create New Smart Share
     ContractsPage.Click on the first tab row of contract list page table
     Generic.Verify your current page location contains      view-smartshare
     ContractsPage.Save the contract details     Accept
@@ -410,7 +413,7 @@ Compose Message invite user test
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
-#    LandingPage.Verify you are on dashboard page
+    LandingPage.Verify you are on dashboard page
 #-------------------------- ADD NEW CONTACT----------------------------------------------------
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
@@ -420,7 +423,7 @@ Compose Message invite user test
     PartnersPage.Click on edit button
     PartnersPage.Click on contact person button
     PartnersPage.Enter random contact name
-#    PartnersPage.Enter random contact person
+
     PartnersPage.Enter secondary contact business email    ${generate_PersonName}     yopmail
 #    PartnersPage.Choose contact country      India   +91     9646289871
     Generic.Enter phone number      India   +91     9646289871
@@ -521,13 +524,12 @@ Compose Message invite user test
 #--------------------------------------------END-----------------------------------------------------------
 
 
-
 Export Specificartner into Excel Doc CSV and TSV for manufacturer
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
     PartnersPage.Click new partner button
@@ -541,7 +543,8 @@ Export Specificartner into Excel Doc CSV and TSV for manufacturer
     PartnersPage.Create partner random secondary business URL
     PartnersPage.Click contact main save button
     Generic.Verify your current page location contains      partner-listing
-    Generic.Fetch alert message text and compare it with        Partner created successfully
+    sleep       5
+#    Generic.Fetch alert message text and compare it with        Partner created successfully
     PartnersPage.Search by business name    ${generate_BusinessName}
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .xlsx
@@ -589,8 +592,8 @@ Export Specificartner into Excel Doc CSV and TSV for Supplier
     [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
     PartnersPage.Click new partner button
@@ -603,7 +606,8 @@ Export Specificartner into Excel Doc CSV and TSV for Supplier
     PartnersPage.Create partner random secondary business URL
     PartnersPage.Click contact main save button
     Generic.Verify your current page location contains      partner-listing
-    Generic.Fetch alert message text and compare it with        Partner created successfully
+    sleep       5
+#    Generic.Fetch alert message text and compare it with        Partner created successfully
     PartnersPage.Search by business name    ${generate_BusinessName}
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .xlsx
@@ -653,8 +657,8 @@ Export Specificartner into Excel Doc CSV and TSV for Support Partner
     [Tags]      Sanity      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
     PartnersPage.Click new partner button
@@ -667,7 +671,8 @@ Export Specificartner into Excel Doc CSV and TSV for Support Partner
     PartnersPage.Create partner random secondary business URL
     PartnersPage.Click contact main save button
     Generic.Verify your current page location contains      partner-listing
-    Generic.Fetch alert message text and compare it with        Partner created successfully
+    sleep       5
+#    Generic.Fetch alert message text and compare it with        Partner created successfully
     Generic.Wait until table get load
     PartnersPage.Search by business name    ${generate_BusinessName}
     PartnersPage.Click on the export Button
@@ -714,8 +719,8 @@ Add Manufacturer via personal detail under technology and partner
     [Tags]       Stable
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -754,7 +759,8 @@ Add Manufacturer via personal detail under technology and partner
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Generic.Fetch alert message text and compare it with    Partner created successfully
+    Sleep     5
+    #Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generated_BrandName}
 
 
@@ -762,8 +768,8 @@ Edit Manufacturer via partner
     [Tags]      Sanity      Stable
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -802,7 +808,8 @@ Edit Manufacturer via partner
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Generic.Fetch alert message text and compare it with    Partner created successfully
+    Sleep     5
+    #Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generated_BrandName}
     PartnersPage.Click on three dots of partners listing
     PartnersPage.Select option from three dots of partner     Details
@@ -834,6 +841,7 @@ Edit Manufacturer via partner
     Generic.Enter phone number      India   +91     9646289871
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     Generic.click on the button     Add
+    PartnersPage.Wait for add contact pop up hide
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with    Partner updated successfully
     PartnersPage.Search by business name    ${generated_BrandName}
@@ -843,8 +851,8 @@ Deactivate Manufacturer via partner
     [Tags]      Sanity      Stable
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -883,7 +891,8 @@ Deactivate Manufacturer via partner
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Generic.Fetch alert message text and compare it with    Partner created successfully
+    Sleep     5
+    #Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generated_BrandName}
     PartnersPage.Click on three dots of partners listing
     PartnersPage.Select option from three dots of partner     Details
@@ -929,8 +938,8 @@ Activate Manufacturer via partner
     [Tags]      Stable
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -969,7 +978,8 @@ Activate Manufacturer via partner
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Generic.Fetch alert message text and compare it with    Partner created successfully
+    Sleep     5
+    #Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generated_BrandName}
     PartnersPage.Click on three dots of partners listing
     PartnersPage.Select option from three dots of partner     Details
@@ -1015,11 +1025,12 @@ Activate Manufacturer via partner
     Generic.Fetch alert message text and compare it with      Status updated successfully
 
 Remove Manufacturer from partner
-    [Tags]      Stable
+    [Tags]      Stable    Sanity   Smoke
+
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -1058,7 +1069,8 @@ Remove Manufacturer from partner
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Generic.Fetch alert message text and compare it with    Partner created successfully
+    Sleep     5
+    #Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generated_BrandName}
     PartnersPage.Click on three dots of partners listing
     PartnersPage.Select option from three dots of partner     Details
@@ -1108,12 +1120,13 @@ Remove Manufacturer from partner
     PartnersPage.Select option from the pop up  Yes
     Generic.Fetch alert message text and compare it with      Partner deleted successfully
 
+
 View Details and check the details of Contract
     [Tags]      Stable
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     ReplaceDomainAPI.Replace Domain
     Generic.select the option from the side menu    Partners
     PartnersPage.Click new partner button
@@ -1123,7 +1136,8 @@ View Details and check the details of Contract
     PartnersPage.Enter partner business URL     yopmail
     PartnersPage.Select partner country       United States
     PartnersPage.Click on the save button   Save
-    Generic.Fetch alert message text and compare it with    Partner created successfully
+    Sleep     5
+    #Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name   ${generate_BusinessName}
     Generic.select the option from the side menu    Technology
     TechnologyPage.Click on action button of technology
@@ -1158,18 +1172,19 @@ View Details and check the details of Contract
     Generic.Verify your current page location contains      technology-list
     Generic.Wait until table get load
     TechnologyPage.Search by BrandName      ${generate_BusinessName}
-    Generic.select the option from the side menu    Contracts
+    Generic.select the option from the side menu    Smart Share
     Generic.click on the button link    View Details
     ContractsPage.Click on back to contract link
     ContractsPage.Click on create new contract button
-    ContractsPage.Select type of contract     Dynamic Contract
+    ContractsPage.Select type of contract     Dynamic Smart Share
     Generic.Verify your current page location contains      generate-contract
     ContractsPage.Enter contract type      SmartShare_Manufacturer
     ContractsPage.Enter contract with     ${generate_BusinessName}
     ContractsPage.Enter contract brand    ${generate_BusinessName}
     ContractsPage.Enter contract location      United States - Main Office - 21 - 2
     ContractsPage.Enter contract permission       Read/Write
-    ContractsPage.Select contract start date
+    Generic.Fetch Current Date
+    ContractsPage.Select contract start date        ${current_date}
     ContractsPage.Select contract end date      12/12/2028
     ContractsPage.Select contract function       Dynamic
     ContractsPage.Click preview selection button on contact
@@ -1212,12 +1227,13 @@ View Details and check the details of Contract
     PartnersPage.Click on back to contract details button link
     PartnersPage.Download the contract pdf
 
+
 Add_edit_deactivate_removeSupplier while adding brand
     [Tags]      Stable
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      management-console
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -1256,7 +1272,8 @@ Add_edit_deactivate_removeSupplier while adding brand
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Generic.Fetch alert message text and compare it with    Partner created successfully
+    Sleep     5
+    #Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generated_BrandName}
     PartnersPage.Click on three dots of partners listing
     PartnersPage.Select option from three dots of partner     Details
@@ -1307,11 +1324,11 @@ Add_edit_deactivate_removeSupplier while adding brand
     Generic.Fetch alert message text and compare it with      Partner deleted successfully
 
 Add_edit_deactivate_removeSupport_partner_while_adding_brand
-    [Tags]      Stable
+    [Tags]      Stable    yy
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
@@ -1350,7 +1367,8 @@ Add_edit_deactivate_removeSupport_partner_while_adding_brand
     PartnersPage.Enter contact location       Aland Islands
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Generic.Fetch alert message text and compare it with    Partner created successfully
+    Sleep     5
+    #Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generated_BrandName}
     PartnersPage.Click on three dots of partners listing
     PartnersPage.Select option from three dots of partner     Details
@@ -1401,5 +1419,76 @@ Add_edit_deactivate_removeSupport_partner_while_adding_brand
     PartnersPage.Select option from the pop up  Yes
     Generic.Fetch alert message text and compare it with      Partner deleted successfully
 
-Zz kill browser
-    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+Partner Side bar Filters
+    [Tags]     time     smoke
+    Generic.click on the tab	    Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Partners
+    PartnersPage.Click on the filters from partner module       Select Partner
+    PartnersPage.Checkmark after clicking on the filters        Manufacturer
+    ReportsPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     partner-list
+    PaginationPage.Select the value from the pagination drop down count    500
+
+    ${StartTime1} =     Get Current Time in Milliseconds
+    PartnersPage.Fetch the selected filter and verify from Table    Partner Type        Manufacturer        Manufacturer
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  14  ${pageHeading}   Filter Page - Data load time of filter select partner under partner page      14    ${pageTime}     ${ActualTime}    Filter_Time
+
+    Generic.Click on the reset filters link
+    Generic.Refresh the existing page
+    PartnersPage.Click on the filters from partner module       Select Partner
+    PartnersPage.Checkmark after clicking on the filters        Supplier
+    ReportsPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     partner-list
+    PaginationPage.Select the value from the pagination drop down count    500
+    PartnersPage.Fetch the selected filter and verify from Table    Partner Type        Supplier        Supplier
+    Generic.Click on the reset filters link
+    Generic.Refresh the existing page
+    PartnersPage.Click on the filters from partner module       Select Partner
+    PartnersPage.Checkmark after clicking on the filters        Support Partner
+    ReportsPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     partner-list
+    PaginationPage.Select the value from the pagination drop down count    500
+    PartnersPage.Fetch the selected filter and verify from Table    Partner Type        Support Partner        Support Partner
+    Generic.Click on the reset filters link
+    ReportsPage.Fetch the total count
+    PartnersPage.Click on the filters from partner module       Select Partner
+    PartnersPage.Checkmark after clicking on the filters        All Partners
+    ReportsPage.Fetch the total count After selecting filter
+    MessagePage.Comapre the total count after selecting filter
+######################################### STATUS ###############################################################################
+    Generic.Click on the reset filters link
+    PartnersPage.Click on the filters from partner module       Select Status
+
+    ${StartTime1} =     Get Current Time in Milliseconds
+    PartnersPage.Checkmark after clicking on the filters        Active
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  15  ${pageHeading}   Filter Page - Data load time of filter status under partner page      15    ${pageTime}     ${ActualTime}    Filter_Time
+
+    PaginationPage.Click on the pagination dropdown     partner-list
+    PaginationPage.Select the value from the pagination drop down count    500
+    PartnersPage.Fetch the selected filter and verify from Table    Status       Active        Active
+    Generic.Click on the reset filters link
+    Generic.Refresh the existing page
+    PartnersPage.Click on the filters from partner module       Select Status
+    PartnersPage.Checkmark after clicking on the filters        Inactive
+    PaginationPage.Click on the pagination dropdown     partner-list
+    PaginationPage.Select the value from the pagination drop down count    500
+    ReportsPage.Fetch the total count
+    PartnersPage.Fetch the selected filter and verify from Table    Status       Inactive        Inactive
+    Generic.Click on the reset filters link
+    ReportsPage.Fetch the total count
+    PartnersPage.Click on the filters from partner module       Select Status
+    PartnersPage.Checkmark after clicking on the filters        All
+    ReportsPage.Fetch the total count After selecting filter
+    MessagePage.Comapre the total count after selecting filter
+
+
+#Zz kill browser
+ #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
+

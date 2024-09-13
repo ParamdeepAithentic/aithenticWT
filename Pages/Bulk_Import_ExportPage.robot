@@ -105,18 +105,18 @@ Select option from technology type column in bulk_import
     wait until element is visible      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]    ${wait_time}
     wait until element is enabled      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]    ${wait_time}
     Double click element      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]
-    wait until element is visible      css:div[aria-label='List'] div:nth-child(4) div    ${wait_time}
-    wait until element is enabled      css:div[aria-label='List'] div:nth-child(4) div    ${wait_time}
-    click element       css:div[aria-label='List'] div:nth-child(4) div
+    wait until element is visible      css:div[aria-label='Rich Select Field'] div:nth-child(4) div    ${wait_time}
+    wait until element is enabled      css:div[aria-label='Rich Select Field'] div:nth-child(4) div    ${wait_time}
+    click element       css:div[aria-label='Rich Select Field'] div:nth-child(4) div
 
 Select option from technology group column in bulk_import
     [Arguments]    ${option}
     wait until element is visible      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]    ${wait_time}
     wait until element is enabled      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]    ${wait_time}
     Double click element      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]
-    wait until element is visible      css:div[aria-label='List'] div:nth-child(4) div    ${wait_time}
-    wait until element is enabled      css:div[aria-label='List'] div:nth-child(4) div    ${wait_time}
-    click element       css:div[aria-label='List'] div:nth-child(4) div
+    wait until element is visible      css:div[aria-label='Rich Select Field'] div:nth-child(4) div    ${wait_time}
+    wait until element is enabled      css:div[aria-label='Rich Select Field'] div:nth-child(4) div    ${wait_time}
+    click element       css:div[aria-label='Rich Select Field'] div:nth-child(4) div
 
 Enter the value in the product_description column in bulk_import
     [Arguments]    ${option}
@@ -207,9 +207,8 @@ Select option from technology type column in bulk_edit
     [Arguments]    ${option}    ${option2}
     wait until element is visible      css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
     Double click element      css:.ag-center-cols-container div[col-id='${option}']
-    wait until element is visible      css:div[aria-label='List'] div:nth-child(${option2}) div    ${wait_time}
-    click element       css:div[aria-label='List'] div:nth-child(${option2}) div
-
+    wait until element is visible      css:div[aria-label='Rich Select Field'] div:nth-child(${option2}) div    ${wait_time}
+    click element       css:div[aria-label='Rich Select Field'] div:nth-child(${option2}) div
 Click on Refresh icon of product-list page
     wait until element is visible       css:.reset-product-qa        ${wait_time}
     click element       css:.reset-product-qa
@@ -468,6 +467,7 @@ click on the arrow of product
 
 Enter the new value in the product, brand, group and type value in bulk_edit of technology
     [Arguments]     ${option}   ${text}
+    sleep       ${search_sleep}
     wait until element is not visible   ${loaderIcon}       ${wait_time}
     wait until element is visible   (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]   ${wait_time}
     wait until element is enabled   (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]   ${wait_time}
@@ -607,10 +607,11 @@ Enter the new value of asset id of technology bulk import
     [Arguments]    ${option}
     MemberPage.Double click    ${option}
     ${random_string} =    Generate Random String       8      [NUMBERS]
-    ${generated_assetid}=    Catenate    AssetID_${random_string}
+    ${generated_bulk_import_assetid}=    Catenate    AssetID_${random_string}
     wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    ${wait_time}
-    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assetid}
-    set global variable    ${generated_assetid}
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_bulk_import_assetid}
+    log to console      ${generated_bulk_import_assetid}
+    set global variable    ${generated_bulk_import_assetid}
 
 Enter the new value in the fields of technology bulk import
     [Arguments]    ${option}    ${address}
@@ -666,4 +667,108 @@ Click on confirm warning button after update
     click element   css:.qa-confirm-technology-bulk-edit-warning
     wait until element is not visible       ${shadow}          ${wait_time}
 
+click on all checkbox under technology bulk import
+    [Arguments]     ${option}
+    wait until element is visible   //label[contains(text(),'${option}')]      ${wait_time}
+    wait until element is enabled   //label[contains(text(),'${option}')]      ${wait_time}
+    click element   //label[contains(text(),'${option}')]
+    wait until element is not visible       ${loaderIcon}       ${wait_time}
 
+Create unique department name random under technology bulk import
+    wait until element is visible       //div[contains(@class,'full-page-block')]//ng-select[contains(@id,'department-name')]//input        ${wait_time}
+    wait until element is enabled       //div[contains(@class,'full-page-block')]//ng-select[contains(@id,'department-name')]//input        ${wait_time}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_Department_bulk}=    Catenate    DeptNo_${random_string}
+    input text   //div[contains(@class,'full-page-block')]//ng-select[contains(@id,'department-name')]//input   ${generated_Department_bulk}
+    sleep      ${search_sleep}
+    click element     css:div[role='option']
+    log to console      ${generated_Department_bulk}
+    set global variable    ${generated_Department_bulk}
+
+Select department status ynder technology bulk import
+    [Arguments]    ${option}
+    wait until element is visible       css:.qa-statusFilterDropdown input        ${wait_time}
+    wait until element is enabled       css:.qa-statusFilterDropdown input       ${wait_time}
+    click element    css:.qa-statusFilterDropdown input
+    Clear Element Text      ${add_dept_status}
+    Generic.Select parameter    ${option}
+
+Select department cost center under technology bulk import
+    [Arguments]    ${option}
+    wait until element is visible       //form[contains(@class,'ng-dirty')]//input[@id='costCenter']        ${wait_time}
+    wait until element is enabled       //form[contains(@class,'ng-dirty')]//input[@id='costCenter']        ${wait_time}
+    input text    //form[contains(@class,'ng-dirty')]//input[@id='costCenter']   ${option}
+
+Search by location name under technology bulk import
+    [Arguments]    ${LocationName}
+     wait until element is not visible      ${loaderIcon}     ${wait_time}
+     wait until element is visible       css:thead tr       ${wait_time}
+     click element      css:.searchLocation-QA
+     Clear Element Text     css:.searchLocation-QA
+     input text   css:.searchLocation-QA   ${LocationName}
+     sleep   ${search_sleep}
+     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+     Fetch the location Name from the row   ${LocationName}
+     should be equal    ${fetch_locationName}     ${LocationName}
+
+Add product feature bulk import
+    wait until element is visible       css:#features     ${wait_time}
+    wait until element is enabled       css:#features     ${wait_time}
+    input text    css:#features    This is the features of new product added.
+
+Select product status technology bulk import
+    [Arguments]    ${option}
+    wait until element is visible       css:#Product-Status     ${wait_time}
+    click element  css:#Product-Status
+    input text   css:#Product-Status  ${option}
+    Generic.Select parameter     ${option}
+
+Save added product details technology bulk import
+    wait until element is visible      //div[@class='modal-footer']//button[normalize-space()='Save']       ${wait_time}
+    wait until element is enabled      //div[@class='modal-footer']//button[normalize-space()='Save']       ${wait_time}
+    click element   //div[@class='modal-footer']//button[normalize-space()='Save']
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+
+Select partner business URL technology bulk import
+    wait until element is visible       //input[@id='businessUrl']        ${wait_time}
+    wait until element is enabled       //input[@id='businessUrl']        ${wait_time}
+    sleep      2
+    click element   //input[@id='businessUrl']
+    wait until element is visible     //div[contains (@id, '-0')]       ${wait_time}
+    wait until element is enabled     //div[contains (@id, '-0')]       ${wait_time}
+    click element   //div[contains (@id, '-0')]
+
+Enter contact business email via link under technology bulk import
+    [Arguments]    ${Pname}    ${Bname}
+    wait until element is visible   css:#ContactEmail        ${wait_time}
+    wait until element is enabled      css:#ContactEmail       ${wait_time}
+    click element   css:#ContactEmail
+    clear element text    css:#ContactEmail
+    input text  css:#ContactEmail   ${Pname}@${Bname}
+    ${generate_ContactBusinessEmail}=    Catenate    ${Pname}@${Bname}
+    log to console  ${Pname}@${Bname}
+    set global variable    ${generate_ContactBusinessEmail}
+
+Click on team member location technology bulk import
+    [Arguments]     ${option}
+    wait until element is visible     ${TMLocation}     ${wait_time}
+    wait until element is enabled     ${TMLocation}      ${wait_time}
+    click element   ${TMLocation}
+    input text     ${TMLocation}        ${option}
+    wait until element is visible   //span[normalize-space()='${option}']       ${wait_time}
+    wait until element is visible   //span[normalize-space()='${option}']       ${wait_time}
+    click element   //span[normalize-space()='${option}']
+
+Click on the confirm button under pop up in technology bulk import
+#    wait until element is visible     ${loaderIcon}    ${wait_time}
+    wait until element is visible     //div[@id='confirmUpload']//button[@type='button'][normalize-space()='Confirm']    ${wait_time}
+    wait until element is enabled    //div[@id='confirmUpload']//button[@type='button'][normalize-space()='Confirm']      ${wait_time}
+    click element   //div[@id='confirmUpload']//button[@type='button'][normalize-space()='Confirm']
+    wait until element is not visible     ${loaderIcon}    ${wait_time}
+
+Select option from budget currency in technology bulk import
+    [Arguments]    ${option}    ${option2}
+    wait until element is visible      css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
+#    Double click element      css:.ag-center-cols-container div[col-id='${option}']
+    wait until element is visible      css:div[aria-label='Rich Select Field'] div:nth-child(${option2}) div    ${wait_time}
+    click element       css:div[aria-label='Rich Select Field'] div:nth-child(${option2}) div

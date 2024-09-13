@@ -488,7 +488,7 @@ Verify department added
 
 Verify the side option list parameters
    wait until element is visible   ${side_options}      ${wait_time}
-   @{expectedList} =    Create List        Aithentic logo    Dashboard       Messages        Location        Team Members      Partners      Contracts      Technology      CSPM     Asset Discovery
+   @{expectedList} =    Create List        Aithentic logo    Dashboard       Messages        Location        Team Members      Partners      Technology      CSPM     Asset Discovery
    ${elements} =  Get WebElements     ${side_options}
    @{actualList} =   Create List
    FOR  ${element}  IN      @{elements}
@@ -499,7 +499,7 @@ Verify the side option list parameters
 
 Verify the drawer list parameters
    wait until element is visible   ${drawerList}        ${wait_time}
-   @{expectedList} =    Create List     Management Console    Account Overview      Asset Overview     IT Performances     Subscription
+   @{expectedList} =    Create List     Management Console    Account Overview      Asset Overview     IT Performances     Usage Analytics
    ${elements} =  Get WebElements     ${drawerList}
    @{actualList} =   Create List
    FOR  ${element}  IN      @{elements}
@@ -1158,3 +1158,411 @@ Click on arrow icon inside subscription overview tables
 Click on done button of subscription overview
     [Arguments]     ${option}
     Generic.click on the button         ${option}
+
+Verify your current page contains this element
+     wait until element is not visible   ${loaderIcon}      ${wait_time}
+     Page Should Contain Element        //div[contains(text(),'No Financial Year Settings Found')]
+     Page should contain element        //a[normalize-space()='here']
+
+Click on 'click here to add' link
+    wait until element is not visible   ${loaderIcon}       ${wait_time}
+    wait until element is visible       //a[normalize-space()='here']
+    wait until element is enabled       //a[normalize-space()='here']
+    click element       //a[normalize-space()='here']
+
+Enter Financial Year end date
+    wait until element is visible   css:#financialYear     ${wait_time}
+    wait until element is enabled   css:#financialYear     ${wait_time}
+#    click element   css:#financialYear
+    input text  css:#financialYear    12/31/2024
+    Press Keys   css:#financialYear   TAB
+
+Enter dates in Quarter
+    [Arguments]         ${option1}      ${option2}
+    wait until element is visible       css:.qa-company-information-financial-industry      ${wait_time}
+    sleep       ${search_sleep}
+    wait until element is visible   css:#financialYearq${option1}     ${wait_time}
+    wait until element is enabled   css:#financialYearq${option1}     ${wait_time}
+    input text  css:#financialYearq${option1}       ${option2}
+    Press Keys   css:#financialYearq${option1}   TAB
+
+Verify your current page not contains this element
+     wait until element is not visible   ${loaderIcon}      ${wait_time}
+     Page Should not Contain Element        //div[contains(text(),'No Financial Year Settings Found')]
+     Page should not contain element        //a[normalize-space()='here']
+
+Click on change password link under security
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    css:.change-password-qa     ${wait_time}
+    Wait Until Element Is Enabled    css:.change-password-qa     ${wait_time}
+    Click Element      css:.change-password-qa
+
+Enter input in the new password field
+    [Arguments]     ${new_password}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //input[@id='Password']     ${wait_time}
+    Wait Until Element Is Enabled    //input[@id='Password']     ${wait_time}
+    Click Element      //input[@id='Password']
+    input text     //input[@id='Password']     ${new_password}
+
+Enter input in the confirm password field
+    [Arguments]     ${confirm_password}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //input[@id='Password_confirmation']     ${wait_time}
+    Wait Until Element Is Enabled    //input[@id='Password_confirmation']     ${wait_time}
+    Click Element      //input[@id='Password_confirmation']
+    input text     //input[@id='Password_confirmation']     ${confirm_password}
+
+Enter the security key
+    [Arguments]    ${key}
+     wait until element is visible      //input[@id='SecurityCode']       ${wait_time}
+     wait until element is enabled      //input[@id='SecurityCode']       ${wait_time}
+     input text     //input[@id='SecurityCode']    ${key}
+
+Click on save button under change password
+    wait until element is visible      css:.security-save-password-qa       ${wait_time}
+    wait until element is enabled      css:.security-save-password-qa        ${wait_time}
+    click element   css:.security-save-password-qa
+    wait until element is not visible       ${loaderIcon}      ${wait_time}
+
+click on the authentication tab under security
+    wait until element is visible      css:#profile-tab      ${wait_time}
+    wait until element is enabled      css:#profile-tab        ${wait_time}
+    click element   css:#profile-tab
+
+Click on the checkboxes under auhtentication tab
+    wait until element is visible      //label[normalize-space()='Use mobile(cell) authentication']      ${wait_time}
+    wait until element is enabled      //label[normalize-space()='Use mobile(cell) authentication']        ${wait_time}
+    click element   //label[normalize-space()='Use mobile(cell) authentication']
+    wait until element is visible      //label[normalize-space()='Use email authentication']      ${wait_time}
+    wait until element is enabled      //label[normalize-space()='Use email authentication']        ${wait_time}
+    click element  //label[normalize-space()='Use email authentication']
+
+Verify the visibility of validation message under change password
+     wait until element is visible      //span[@class='invalidInput ng-star-inserted']      ${wait_time}
+
+Wait for the visibility of the validation of password field under create account
+    wait until element is visible      //li[normalize-space()='Eight to Thirty Two Characters']     ${wait_time}
+    wait until element is visible      //li[normalize-space()='One Uppercase Letter']      ${wait_time}
+    wait until element is visible      //li[normalize-space()='One Lowercase Letter']      ${wait_time}
+    wait until element is visible      //li[normalize-space()='One Special Character']      ${wait_time}
+
+Enter input in the recipient list field under compose message
+    [Arguments]     ${message}
+    wait until element is visible      //input[@id='Recipient_list']     ${wait_time}
+    wait until element is visible      //input[@id='Recipient_list']      ${wait_time}
+    click element   //input[@id='Recipient_list']
+    input text      //input[@id='Recipient_list']       ${message}
+    wait until element is visible     //span[contains(@title,'${message}')]    ${wait_time}
+    wait until element is visible      //span[contains(@title,'${message}')]      ${wait_time}
+    click element       //span[contains(@title,'${message}')]
+
+Enter input in the message status field under compose message
+    [Arguments]     ${message_status}
+    wait until element is visible      //input[@id='message-Status']     ${wait_time}
+    wait until element is visible      //input[@id='message-Status']      ${wait_time}
+    click element   //input[@id='message-Status']
+    input text     //input[@id='message-Status']       ${message_status}
+    wait until element is visible     //span[normalize-space()='${message_status}']    ${wait_time}
+    wait until element is visible     //span[normalize-space()='${message_status}']      ${wait_time}
+    click element       //span[normalize-space()='${message_status}']
+
+Enter text in the subject field under compose message
+    wait until element is visible      css:#ClientMessageSubject     ${wait_time}
+    wait until element is visible     css:#ClientMessageSubject      ${wait_time}
+    click element   css:#ClientMessageSubject
+    ${random_string} =    Generate Random String       20      [LETTERS]
+    ${generated_subject}=    Catenate    Subject:${random_string}
+    input text     css:#ClientMessageSubject      ${generated_subject}
+    log to console     ${generated_subject}
+    set global variable    ${generated_subject}
+
+Enter text in the client message field under compose message
+    wait until element is visible      css:#ClientMessageDetail     ${wait_time}
+    wait until element is visible     css:#ClientMessageDetail      ${wait_time}
+    click element   css:#ClientMessageDetail
+    ${random_string} =    Generate Random String       20      [LETTERS]
+    ${generated_client_message}=    Catenate    Client_Message:${random_string}
+    input text     css:#ClientMessageDetail       ${generated_client_message}
+    log to console     ${generated_client_message}
+    set global variable    ${generated_client_message}
+
+Search by subject under sent serach bar
+    [Arguments]     ${data}
+    wait until element is visible       css:thead tr       ${wait_time}
+    wait until element is visible       //input[@placeholder='Search by To and Subject']       ${wait_time}
+    Clear Element Text      //input[@placeholder='Search by To and Subject']
+    input text      //input[@placeholder='Search by To and Subject']     ${data}
+    sleep       ${search_sleep}
+    wait until element is visible       css:thead tr       ${wait_time}
+
+Search by subject under inbox serach bar
+    [Arguments]     ${data}
+    wait until element is visible       css:thead tr       ${wait_time}
+    wait until element is visible      //input[@placeholder='Search by From and Subject']      ${wait_time}
+    Clear Element Text      //input[@placeholder='Search by From and Subject']
+    input text      //input[@placeholder='Search by From and Subject']     ${data}
+    sleep       ${search_sleep}
+    wait until element is visible       css:thead tr       ${wait_time}
+
+Click on the reply option to reply the message
+    wait until element is visible       css:.reply-message-qa       ${wait_time}
+    wait until element is visible      css:.reply-message-qa     ${wait_time}
+    Click element     css:.reply-message-qa
+    wait until element is not visible   ${loaderIcon}       ${wait_time}
+
+Enter input in the reply back page
+    wait until element is visible      //div[@class='form-fields-login']//textarea[contains(@class,'message-body')]      ${wait_time}
+    wait until element is visible      //div[@class='form-fields-login']//textarea[contains(@class,'message-body')]   ${wait_time}
+    Click element     //div[@class='form-fields-login']//textarea[contains(@class,'message-body')]
+    ${random_string} =    Generate Random String       20      [LETTERS]
+    ${generated_reply}=    Catenate    Reply:${random_string}
+    input text      //div[@class='form-fields-login']//textarea[contains(@class,'message-body')]         ${generated_reply}
+    log to console     ${generated_reply}
+    set global variable   ${generated_reply}
+
+Click on the flag icon to flag the message
+    wait until element is visible       css:.flag-message-qa       ${wait_time}
+    wait until element is visible      css:.flag-message-qa    ${wait_time}
+    Click element     css:.flag-message-qa
+    wait until element is not visible   ${loaderIcon}       ${wait_time}
+
+Click on the remove option to remove the message
+    wait until element is visible       css:.remove-message-qa       ${wait_time}
+    wait until element is visible      css:.remove-message-qa    ${wait_time}
+    Click element     css:.remove-message-qa
+    wait until element is not visible   ${loaderIcon}       ${wait_time}
+
+Click on the notifications icon under dashbaord page
+    wait until element is visible       css:#bellIconId      ${wait_time}
+    wait until element is visible      css:#bellIconId    ${wait_time}
+    Click element     css:#bellIconId
+
+Get the text of the recent notification
+    [Arguments]      ${option}
+    wait until element is visible       css:#alertTabs>div>.notifications-container >ul>li:nth-child(1)>div:nth-child(1)
+    wait until element is enabled       css:#alertTabs>div>.notifications-container >ul>li:nth-child(1)>div:nth-child(1)     ${wait_time}
+    ${notification} =    get text    css:#alertTabs>div>.notifications-container >ul>li:nth-child(1)>div:nth-child(1)
+    set global variable     ${notification}
+    log to console     ${notification}
+    should be equal    ${notification}     ${option}
+
+Verify that Management console page contains No data chart
+    [Arguments]     ${option}
+    wait until element is not visible       ${loaderIcon}      ${wait_time}
+    wait until element is visible      //div[@id='${option}']//div[contains(@class,'width-no-chart')]     ${wait_time}
+    wait until element is enabled      //div[@id='${option}']//div[contains(@class,'width-no-chart')]      ${wait_time}
+
+Click on No key Data under chart
+    [Arguments]     ${option}
+    wait until element is not visible       ${loaderIcon}      ${wait_time}
+    wait until element is visible      //div[@id='${option}']//span[normalize-space()='Key Data Check']     ${wait_time}
+    wait until element is enabled      //div[@id='${option}']//span[normalize-space()='Key Data Check']      ${wait_time}
+    click element       //div[@id='${option}']//span[normalize-space()='Key Data Check']
+
+Verify and click on the finance filter under technology
+    wait until element is not visible       ${loaderIcon}      ${wait_time}
+    wait until element is visible      //span[normalize-space()='3']     ${wait_time}
+    wait until element is enabled      //span[normalize-space()='3']      ${wait_time}
+    click element       //span[normalize-space()='3']
+
+Verify all the checkmark boxes of finance filter are auto-check
+    [Arguments]     ${option}
+    wait until element is not visible       ${loaderIcon}      ${wait_time}
+    wait until element is visible      //label[normalize-space()='${option}']//span     ${wait_time}
+    wait until element is enabled      //label[normalize-space()='${option}']//span      ${wait_time}
+
+Remove the Download Agent pop-up
+    wait until element is not visible       ${loaderIcon}      ${wait_time}
+    wait until element is visible      //h4[normalize-space()='Download Agent for Single Install']//parent::div//button[contains(@class,'close')]     ${wait_time}
+    wait until element is enabled      //h4[normalize-space()='Download Agent for Single Install']//parent::div//button[contains(@class,'close')]      ${wait_time}
+    click element   //h4[normalize-space()='Download Agent for Single Install']//parent::div//button[contains(@class,'close')]
+    sleep       ${search_sleep}
+
+Click on the status filter under Brand via profile
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //div[contains(@class,'multi-select-dropdown')]//ng-select[contains(@class,'statusFilter')]       ${wait_time}
+    Wait Until Element Is Enabled   //div[contains(@class,'multi-select-dropdown')]//ng-select[contains(@class,'statusFilter')]   ${wait_time}
+    click element    //div[contains(@class,'multi-select-dropdown')]//ng-select[contains(@class,'statusFilter')]
+
+Select the option from the filters under brand via profile
+    [Arguments]     ${ID}
+    Wait Until Element Is Visible    //ng-select[contains(@class,'statusFilter')]//following-sibling::div//input[contains(@id,'item-${ID}')]       ${wait_time}
+    Wait Until Element Is Enabled  //ng-select[contains(@class,'statusFilter')]//following-sibling::div//input[contains(@id,'item-${ID}')]   ${wait_time}
+    click element    //ng-select[contains(@class,'statusFilter')]//following-sibling::div//input[contains(@id,'item-${ID}')]
+
+Get the text of selected status filter under brand via profile
+    [Arguments]     ${option}
+    wait until element is visible      //ng-select[contains(@class,'statusFilter')]//following-sibling::div//span[normalize-space()='${option}']    ${wait_time}
+    wait until element is enabled      //ng-select[contains(@class,'statusFilter')]//following-sibling::div//span[normalize-space()='${option}']    ${wait_time}
+    ${fetch_Name_of_selected_status} =    get text  //ng-select[contains(@class,'statusFilter')]//following-sibling::div//span[normalize-space()='${option}']
+    ${original_string}=    Set Variable    ${fetch_Name_of_selected_status}
+    ${New_status_Brand}=    Evaluate    '${original_string}'.strip()
+    log to console   ${New_status_Brand}
+    set global variable  ${New_status_Brand}
+
+Click on the added brands heading
+    Wait Until Element Is Visible    //p[normalize-space()='Added Brands']       ${wait_time}
+    Wait Until Element Is enabled  //p[normalize-space()='Added Brands']   ${wait_time}
+    click element    //p[normalize-space()='Added Brands']
+
+Choose permission tab under members profile
+    wait until element is not visible       ${loaderIcon}      ${wait_time}
+    wait until element is visible       css:#profile-tab           ${wait_time}
+    wait until element is enabled       css:#profile-tab     ${wait_time}
+    click element       css:#profile-tab
+
+Pick User role of the member
+    [Arguments]     ${options}
+    wait until element is not visible       ${loaderIcon}      ${wait_time}
+    wait until element is visible       //button[normalize-space()='${options}']           ${wait_time}
+    wait until element is enabled       //button[normalize-space()='${options}']     ${wait_time}
+    click element       //button[normalize-space()='${options}']
+
+Verify user role have permissions
+    [Arguments]     ${options}
+    wait until element is not visible       ${loaderIcon}      ${wait_time}
+    wait until element is visible       css:#member-${options}           ${wait_time}
+    wait until element is enabled       css:#member-${options}     ${wait_time}
+
+Select the permission of member according to user role
+    [Arguments]     ${options}
+    wait until element is not visible       ${loaderIcon}      ${wait_time}
+    wait until element is visible       css:#member-${options}          ${wait_time}
+    wait until element is enabled       css:#member-${options}     ${wait_time}
+    sleep       ${search_sleep}
+    click element       css:#member-${options}
+
+Verify that user contains permissions
+    [Arguments]         ${option1}      ${option2}
+    wait until page contains    ${option1}       ${wait_time}
+    wait until page contains    ${option2}       ${wait_time}
+
+Verify that user contains read-permissions
+    [Arguments]         ${option1}
+    wait until page contains    ${option1}       ${wait_time}
+
+Click on the status filter under product via profile
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //div[contains(@class,'multi-select-dropdown')]//ng-select[contains(@class,'selectedStatus')]       ${wait_time}
+    Wait Until Element Is Enabled   //div[contains(@class,'multi-select-dropdown')]//ng-select[contains(@class,'selectedStatus')]   ${wait_time}
+    click element    //div[contains(@class,'multi-select-dropdown')]//ng-select[contains(@class,'selectedStatus')]
+
+Get the text of selected status filter under product via profile
+    wait until element is visible      //ng-select[contains(@class,'selectedStatus')]//following-sibling::div//span    ${wait_time}
+    wait until element is enabled      //ng-select[contains(@class,'selectedStatus')]//following-sibling::div//span    ${wait_time}
+    ${fetch_Name_of_selected_status} =    get text  //ng-select[contains(@class,'selectedStatus')]//following-sibling::div//span
+    ${original_string}=    Set Variable    ${fetch_Name_of_selected_status}
+    ${New_product_Status}=    Evaluate    '${original_string}'.strip()
+    log to console    ${New_product_Status}
+    set global variable  ${New_product_Status}
+
+Select the option from the filters under product via profile
+    [Arguments]     ${ID}
+    Wait Until Element Is Visible    //ng-select[contains(@class,'selectedStatus')]//following-sibling::div//input[contains(@id,'item-${ID}')]       ${wait_time}
+    Wait Until Element Is Enabled  //ng-select[contains(@class,'selectedStatus')]//following-sibling::div//input[contains(@id,'item-${ID}')]   ${wait_time}
+    click element    //ng-select[contains(@class,'selectedStatus')]//following-sibling::div//input[contains(@id,'item-${ID}')]
+
+Click on the added products heading
+    Wait Until Element Is Visible    //p[normalize-space()='Added Products']       ${wait_time}
+    Wait Until Element Is Visible  //p[normalize-space()='Added Products']   ${wait_time}
+    Wait Until Element Is Enabled  //p[normalize-space()='Added Products']   ${wait_time}
+    click element    //p[normalize-space()='Added Products']
+
+Click on the brand filter under product via profile
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //div[contains(@class,'multi-select-dropdown')]//ng-select[contains(@class,'brandFilter')]       ${wait_time}
+    Wait Until Element Is Enabled  //div[contains(@class,'multi-select-dropdown')]//ng-select[contains(@class,'brandFilter')]   ${wait_time}
+    click element    //div[contains(@class,'multi-select-dropdown')]//ng-select[contains(@class,'brandFilter')]
+
+Click on the reset button under product
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //div[contains(@class,'reset-button')]       ${wait_time}
+    Wait Until Element Is Enabled  //div[contains(@class,'reset-button')]   ${wait_time}
+    click element    //div[contains(@class,'reset-button')]
+
+Select the option from the brand filter under product via profile
+    [Arguments]     ${ID}
+    Wait Until Element Is Visible    //ng-select[contains(@class,'brandFilter')]//following-sibling::div//input[contains(@id,'item-${ID}')]       ${wait_time}
+    Wait Until Element Is enabled  //ng-select[contains(@class,'brandFilter')]//following-sibling::div//input[contains(@id,'item-${ID}')]   ${wait_time}
+    click element    //ng-select[contains(@class,'brandFilter')]//following-sibling::div//input[contains(@id,'item-${ID}')]
+
+Get the text of selected brand filter under product via profile
+    wait until element is visible      //ng-select[contains(@class,'brandFilter')]//following-sibling::div//span    ${wait_time}
+    wait until element is enabled      //ng-select[contains(@class,'brandFilter')]//following-sibling::div//span    ${wait_time}
+   ${selected_Brand} =    get text    //ng-select[contains(@class,'brandFilter')]//following-sibling::div//span
+    log to console    ${selected_Brand}
+    Set Global Variable    ${selected_Brand}
+
+Click on the technology group filter under product via profile
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //div[contains(@class,'multi-select-dropdown')]//ng-select[contains(@class,'qa-selectedTechnology')]       ${wait_time}
+    Wait Until Element Is Enabled  //div[contains(@class,'multi-select-dropdown')]//ng-select[contains(@class,'qa-selectedTechnology')]   ${wait_time}
+    click element    //div[contains(@class,'multi-select-dropdown')]//ng-select[contains(@class,'qa-selectedTechnology')]
+
+Select the option from the technology group filter under product via profile
+    [Arguments]     ${ID}
+    Wait Until Element Is Visible    //ng-select[contains(@class,'qa-selectedTechnology')]//following-sibling::div//input[contains(@id,'item-${ID}')]       ${wait_time}
+    Wait Until Element Is enabled  //ng-select[contains(@class,'qa-selectedTechnology')]//following-sibling::div//input[contains(@id,'item-${ID}')]   ${wait_time}
+    click element    //ng-select[contains(@class,'qa-selectedTechnology')]//following-sibling::div//input[contains(@id,'item-${ID}')]
+
+Get the text of selected technology group filter under product via profile
+    wait until element is visible      //ng-select[contains(@class,'qa-selectedTechnology')]//following-sibling::div//span    ${wait_time}
+    wait until element is enabled      //ng-select[contains(@class,'qa-selectedTechnology')]//following-sibling::div//span    ${wait_time}
+    ${fetch_Name_of_selected_status} =    get text  //ng-select[contains(@class,'qa-selectedTechnology')]//following-sibling::div//span
+    ${original_string}=    Set Variable    ${fetch_Name_of_selected_status}
+    ${New_product_tech_group}=    Evaluate    '${original_string}'.strip()
+    log to console     ${New_product_tech_group}
+    set global variable   ${New_product_tech_group}
+
+Get the text of the pop up while suspending the account when contract is active
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible      //div[contains(@id,'activeContractSubscriptionCheckModal')]//div[contains(@class,'modal-body')]//p       ${wait_time}
+    wait until element is enabled      //div[contains(@id,'activeContractSubscriptionCheckModal')]//div[contains(@class,'modal-body')]//p    ${wait_time}
+    ${fetch_text_pop_up} =    get text  //div[contains(@id,'activeContractSubscriptionCheckModal')]//div[contains(@class,'modal-body')]//p
+    log to console     ${fetch_text_pop_up}
+    set global variable   ${fetch_text_pop_up}
+
+Click on Mark all as read option
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible     //div[contains(text(),'Mark all as read')]      ${wait_time}
+    wait until element is enabled     //div[contains(text(),'Mark all as read')]    ${wait_time}
+    click element       //div[contains(text(),'Mark all as read')]
+
+Analyse text is bold before click on Mark all as read
+    [Arguments]         ${option1}       ${option2}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       //div[contains(@class,'font-weight-bold')][normalize-space()='${option1} ${option2}.']        ${wait_time}
+    wait until element is enabled       //div[contains(@class,'font-weight-bold')][normalize-space()='${option1} ${option2}.']        ${wait_time}
+
+Verify text is normal after clicking Mark all as read
+    [Arguments]         ${option1}       ${option2}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is not visible       //div[contains(@class,'font-weight-bold')][normalize-space()='${option1} ${option2}.']        ${wait_time}
+
+Click on alerts tabs
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible      //a[@id='${option}']     ${wait_time}
+    wait until element is enabled     //a[@id='${option}']     ${wait_time}
+    click element   //a[@id='${option}']
+
+Get and verify the text from system notification
+    [Arguments]      ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       //div[@id='systemAlerts']//li[1]//div[1]     ${wait_time}
+    wait until element is enabled       //div[@id='systemAlerts']//li[1]//div[1]     ${wait_time}
+    ${notification} =    get text    //div[@id='systemAlerts']//li[1]//div[1]
+    set global variable     ${notification}
+    log to console     ${notification}
+    should be equal    ${notification}     ${option}
+
+Get and verify the text from Contract notification
+    [Arguments]      ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       //div[@id='contractAlert']//li[1]//div[1]     ${wait_time}
+    wait until element is enabled       //div[@id='contractAlert']//li[1]//div[1]     ${wait_time}
+    ${notification} =    get text    //div[@id='contractAlert']//li[1]//div[1]
+    set global variable     ${notification}
+    log to console     ${notification}
+    should be equal    ${notification}     ${option}

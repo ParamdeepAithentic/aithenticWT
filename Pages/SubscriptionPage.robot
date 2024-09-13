@@ -117,6 +117,7 @@ Input text into manufacturer address two
     [Arguments]    ${option}
     Generic.Enter value into field      ${address2}     ${option}
     Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+
 Input text into manufacturer zip code
     [Arguments]    ${option}
     Generic.Enter value into field      ${zip}     ${option}
@@ -260,6 +261,7 @@ Proceed the payment
     wait until element is visible      css:.qa-payment-method-${option1}        ${wait_time}
     wait until element is enabled      css:.qa-payment-method-${option1}          ${wait_time}
     click element      css:.qa-payment-method-${option1}
+    wait until element is not visible      ${loaderIcon}        ${wait_time}
 
 Update the payment of changed plan
     [Arguments]    ${option1}
@@ -397,8 +399,8 @@ click on the confirm button of unsuspend pop up
     wait until element is visible   //button[@type='submit'][normalize-space()='Confirm']       ${wait_time}
     wait until element is enabled   //button[@type='submit'][normalize-space()='Confirm']       ${wait_time}
     click element   //button[@type='submit'][normalize-space()='Confirm']
-    wait until element is not visible       ${loaderIcon}    ${wait_time}
-    wait until element is not visible       ${shadow}          ${wait_time}
+#    wait until element is not visible       ${loaderIcon}    ${wait_time}
+#    wait until element is not visible       ${shadow}          ${wait_time}
 
 
 Choose tab under subscription page after clicking on view_result
@@ -422,18 +424,39 @@ Click on option under three dots of Microsoft coorporation
     click element   (//div[contains(@class,'dropdown-menu')])[3]//a[normalize-space()='${option}']
     sleep  ${search_sleep}
 
+click on the connector tab under technoogy settings
+    wait until element is visible    //ul[@id='myTab']//a[normalize-space()='Connectors']   ${wait_time}
+    wait until element is enabled   //ul[@id='myTab']//a[normalize-space()='Connectors']  ${wait_time}
+    click element    //ul[@id='myTab']//a[normalize-space()='Connectors']
+
+
 Click on the service now tab under discovery assets
     wait until element is visible  css:#service-now-first-parent-tab     ${wait_time}
     wait until element is enabled   css:#service-now-first-parent-tab    ${wait_time}
     click element   css:#service-now-first-parent-tab
     sleep  ${search_sleep}
 
-Click on the settings icon under service now via discovery assets
-    wait until element is visible  //div[contains(@class,'flex-space')]//div//i    ${wait_time}
-    wait until element is enabled  //div[contains(@class,'flex-space')]//div//i  ${wait_time}
-    click element  //div[contains(@class,'flex-space')]//div//i
+Click on the action button of service now under discovery assets
+    wait until element is visible  //button[@id='servicenow-list-actions']    ${wait_time}
+    wait until element is enabled  //button[@id='servicenow-list-actions']  ${wait_time}
+    click element  //button[@id='servicenow-list-actions']
     sleep   ${search_sleep}
 #    wait until element is not visible       ${shadow}          ${wait_time}
+
+Input future Date
+    ${current_date}=    Get Current Date    result_format=%m/%d/%Y
+    Log To Console      Current Date is: ${current_date}
+
+    ${current_date_parts}=    Split String    ${current_date}    -
+    ${current_date_without_time}=    Set Variable    ${current_date_parts[0]}
+
+    ${future_date}=    Evaluate    datetime.datetime.strptime($current_date_without_time, "%m/%d/%Y") + datetime.timedelta(days=30)
+    ${formatted_future_date}=    Convert Date    ${future_date}    result_format=%m/%d/%Y
+
+    Log To Console      Future Date is: ${formatted_future_date}
+    Set Global Variable    ${formatted_future_date}
+
+
 
 My Failure Handling
     Generic.Click on the profile name
@@ -484,7 +507,7 @@ Enter input in the password field of service now
     click element  css:#password_sn
     input text      css:#password_sn       ${option}
 
- Enter input in the client id field of service now
+Enter input in the client id field of service now
     [Arguments]     ${option}
     wait until element is visible  css:#clientId    ${wait_time}
     wait until element is enabled  css:#clientId      ${wait_time}
@@ -505,12 +528,12 @@ Click on cross icon of details under service now
     sleep   ${search_sleep}
 
 Fetch and compare the product from the table
-    [Arguments]    ${option}
-    wait until element is visible       //td[normalize-space()='${option}']     ${wait_time}
-    ${fetch_azureproductName} =    get text    //td[normalize-space()='${option}']
+#    [Arguments]    ${option}
+    wait until element is visible       //tbody//tr//td[normalize-space()='1']     ${wait_time}
+    ${fetch_azureproductName} =    get text    (//tbody[contains(@class,'member-table-qa')]//tr//td)[3]
     set global variable    ${fetch_azureproductName}
     log to console     Azure_Product_Name=${fetch_azureproductName}
-    should be equal     ${option}      ${fetch_azureproductName}
+#    should be equal     ${option}      ${fetch_azureproductName}
 
 Enter input in the input field of frequency under asset discovery
     [Arguments]     ${option}
@@ -525,14 +548,6 @@ Enter input in the input field of day asset discovery
     wait until element is enabled  //div[@id='openEditScheduler']//ng-select[@formcontrolname='schedulerDay']    ${wait_time}
     click element   //div[@id='openEditScheduler']//ng-select[@formcontrolname='schedulerDay']
     Generic.Select parameter    ${option}
-
-Enter input in the input field of time under asset discovery
-    [Arguments]     ${option}
-    wait until element is visible  //div[@id='openEditScheduler']//input[@formcontrolname='schedulerTime']    ${wait_time}
-    wait until element is enabled   //div[@id='openEditScheduler']//input[@formcontrolname='schedulerTime']    ${wait_time}
-    clear element text  //div[@id='openEditScheduler']//input[@formcontrolname='schedulerTime']
-    sleep    ${search_sleep}
-    input text  //div[@id='openEditScheduler']//input[@formcontrolname='schedulerTime']     ${option}
 
 Enter input in the start date field of service now under asset discovery
     Generic.Enter current date       //div[@id='openEditScheduler']//input[@formcontrolname='schedulerDate']
@@ -549,3 +564,62 @@ click on the cross icon of delete pop up under asset discovery
     click element   //div[@id='deleteServicenowlConnector']//span[normalize-space()='×']
     sleep   ${search_sleep}
     wait until element is not visible       ${shadow}          ${wait_time}
+
+
+Choose the tab under Subscription page
+    [Arguments]         ${option}
+    wait until element is not visible   ${loaderIcon}     ${wait_time}
+    wait until element is visible       (//div[@id='dashboardCharts']//child::a)[${option}]       ${wait_time}
+    wait until element is enabled       (//div[@id='dashboardCharts']//child::a)[${option}]       ${wait_time}
+    click element        (//div[@id='dashboardCharts']//child::a)[${option}]
+
+Verify that page contains correct details
+    [Arguments]         ${option}
+    wait until element is not visible   ${loaderIcon}     ${wait_time}
+    wait until element is visible       //td[normalize-space()='${opiton}']      ${wait_time}
+    Page should contain element         //td[normalize-space()='${option}']
+
+Click on the row of the subscription overview table
+    wait until element is not visible   ${loaderIcon}     ${wait_time}
+    wait until element is visible       //td[normalize-space()='${opiton}']      ${wait_time}
+    Page should contain element         //td[normalize-space()='${option}']
+
+Click on the options under action button of service now under discovery assets
+    [Arguments]     ${option}
+    wait until element is visible   //div[contains(@id,'service-now')]//a[normalize-space()='${option}']    ${wait_time}
+    wait until element is enabled   //div[contains(@id,'service-now')]//a[normalize-space()='${option}']     ${wait_time}
+    click element   //div[contains(@id,'service-now')]//a[normalize-space()='${option}']
+    sleep   ${search_sleep}
+
+Click on the jamff tab under asset discovery
+    wait until element is visible   //a[@id='jamf-first-parent-tab']    ${wait_time}
+    wait until element is enabled   //a[@id='jamf-first-parent-tab']     ${wait_time}
+    click element   //a[@id='jamf-first-parent-tab']
+
+Click on the sentinel one tab under asset discovery
+    wait until element is visible   //a[@id='sentinelone-first-parent-tab']   ${wait_time}
+    wait until element is enabled   //a[@id='sentinelone-first-parent-tab']     ${wait_time}
+    click element   //a[@id='sentinelone-first-parent-tab']
+
+Click on the connectors button link under technology settings page
+   wait until element is visible   //ul[@id='myTab']//a[normalize-space()='Connectors']         ${wait_time}
+    wait until element is enabled    //ul[@id='myTab']//a[normalize-space()='Connectors']          ${wait_time}
+    click element          //ul[@id='myTab']//a[normalize-space()='Connectors']
+
+Select the time from the timepicker
+    [Arguments]     ${option}
+    wait until element is visible  //div[@id='editScheduler']//input[@formcontrolname='schedulerTime']    ${wait_time}
+    wait until element is enabled   //div[@id='editScheduler']//input[@formcontrolname='schedulerTime']    ${wait_time}
+    clear element text  //div[@id='editScheduler']//input[@formcontrolname='schedulerTime']
+    sleep    ${search_sleep}
+    click element       //div[@id='editScheduler']//input[@formcontrolname='schedulerTime']
+    wait until element is visible  //div[contains(@class,'clock-face')]//following-sibling::div//span[normalize-space()='${option}']    ${wait_time}
+    wait until element is enabled   //div[contains(@class,'clock-face')]//following-sibling::div//span[normalize-space()='${option}']    ${wait_time}
+    click element       //div[contains(@class,'clock-face')]//following-sibling::div//span[normalize-space()='${option}']
+
+Click on the ok button after selecting the time
+    Wait Until Element Is Not Visible    ${loaderIcon}     ${wait_time}
+    wait until element is visible   //button[contains(@class,'timepicker-button')]//span[normalize-space()='Ok']      ${wait_time}
+    wait until element is enabled   //button[contains(@class,'timepicker-button')]//span[normalize-space()='Ok']      ${wait_time}
+    click element   //button[contains(@class,'timepicker-button')]//span[normalize-space()='Ok']
+

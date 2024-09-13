@@ -201,6 +201,7 @@ Click on three dots of Team Member listing
 Select option from three dots of Team Member
     [Arguments]     ${option}
     Generic.Select other option from profile list       ${option}
+    sleep       ${search_sleep}
 
 Click on the tab
     [Arguments]         ${option}
@@ -340,16 +341,16 @@ Enter team member last name while editing
 
 Click on remove option under three dots
     wait until element is visible       css:.member-remove-qa    ${wait_time}
-    wait until element is visible       css:.member-remove-qa   ${wait_time}
+    wait until element is enabled       css:.member-remove-qa   ${wait_time}
     click element       css:.member-remove-qa
 
 Select option from remove TM warning pop-up
-    [Arguments]    ${option}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    wait until element is visible       css:.confirm-${option}-members-qa       ${wait_time}
-    wait until element is enabled       css:.confirm-${option}-members-qa       ${wait_time}
-    click element       css:.confirm-${option}-members-qa
-    TeamMemberPage.Close the remove warning pop-up      ## have to remove this line once fixed from dev side
+    wait until element is visible       css:.confirm-remove-members-qa span    ${wait_time}
+    wait until element is enabled      css:.confirm-remove-members-qa span    ${wait_time}
+    click element       css:.confirm-remove-members-qa span
+    sleep       ${search_sleep}
+    #TeamMemberPage.Close the remove warning pop-up      ## have to remove this line once fixed from dev side
 
 Close the remove warning pop-up
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
@@ -361,3 +362,57 @@ Verify Team member added after delete
     [Arguments]     ${option}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible   //td[normalize-space()='${option}']     ${wait_time}
+
+
+Click on the yes option under remove team member pop up
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible      css:.confirm-status-members-qa    ${wait_time}
+    wait until element is enabled      css:.confirm-status-members-qa       ${wait_time}
+    click element       css:.confirm-status-members-qa
+
+Click on the location filter under team member
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    css:.select-${option}-filter-toggle-qa       ${wait_time}
+    Wait Until Element Is Visible    css:.select-${option}-filter-toggle-qa     ${wait_time}
+    click element    css:.select-${option}-filter-toggle-qa
+
+Fetch the country from team member filter and click
+    [Arguments]     ${option}       ${option1}      ${option2}
+#    ${element_count}=    Get Element Count    css:.qa-total-count-list
+#    Log      ${element_count}
+    FOR    ${index}    IN RANGE    1    ${total_data_count + 1}
+        Wait Until Element Is Visible  (//div[normalize-space()='${option}']//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]     ${wait_time}
+        Wait Until Element Is Enabled  (//div[normalize-space()='${option}']//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]       ${wait_time}
+        ${element1}=    Get Text   (//div[normalize-space()='${option}']//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]
+        ${original_string}=    Set Variable    ${element1}
+        ${New_Country}=    Evaluate    '${original_string}'.strip()
+        Log    Element ${index}: ${New_Country}
+        Run Keyword If    '${New_Country}' == '${option2}'    Run Keywords    Empty Action of location   AND     Continue For Loop
+
+    END
+
+Click on the status filter under team member via profile
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //div[contains(@class,'multi-select-dropdown')]//ng-select[contains(@class,'qa-status')]       ${wait_time}
+    Wait Until Element Is Visible   //div[contains(@class,'multi-select-dropdown')]//ng-select[contains(@class,'qa-status')]   ${wait_time}
+    click element    //div[contains(@class,'multi-select-dropdown')]//ng-select[contains(@class,'qa-status')]
+
+Select the option from the filters under team member via profile
+    [Arguments]     ${ID}
+    Wait Until Element Is Visible    //ng-select[contains(@class,'qa-status')]//following-sibling::div//input[contains(@id,'item-${ID}')]       ${wait_time}
+    Wait Until Element Is Visible  //ng-select[contains(@class,'qa-status')]//following-sibling::div//input[contains(@id,'item-${ID}')]   ${wait_time}
+    click element    //ng-select[contains(@class,'qa-status')]//following-sibling::div//input[contains(@id,'item-${ID}')]
+
+click on the members tab under team member via profile
+    wait until element is visible      css:#home-tab      ${wait_time}
+    wait until element is enabled      css:#home-tab        ${wait_time}
+    click element   css:#home-tab
+
+Get the text of selected status filter under team meber via profile
+    wait until element is visible      //ng-select[contains(@class,'qa-status')]//following-sibling::div//span    ${wait_time}
+    ${fetch_Name_of_selected_status} =    get text  //ng-select[contains(@class,'qa-status')]//following-sibling::div//span
+    ${original_string}=    Set Variable    ${fetch_Name_of_selected_status}
+    ${New_status1}=    Evaluate    '${original_string}'.strip()
+    log to console    ${New_status1}
+    set global variable   ${New_status1}

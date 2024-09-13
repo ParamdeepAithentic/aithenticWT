@@ -52,8 +52,8 @@ Export Partner list
     [Tags]      Stable
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     ReplaceDomainAPI.Replace Domain
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner-listing
@@ -87,8 +87,8 @@ Export partner list under technology details
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -139,8 +139,8 @@ Export Location List
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Location
     Generic.Verify your current page location contains      locationlist
     Generic.Wait until table get load
@@ -178,8 +178,8 @@ Export location list of location under technology details page
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -234,8 +234,8 @@ Export partner list while adding new partner
     [Tags]      Stable
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     ReplaceDomainAPI.Replace Domain
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner-listing
@@ -246,6 +246,7 @@ Export partner list while adding new partner
     PartnersPage.Enter partner business URL     yopmail
     PartnersPage.Select partner country       United States
     PartnersPage.Click on the save button   Save
+   # sleep       5
     Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name   ${generate_BusinessName}
     PartnersPage.Click on three dots of partners listing
@@ -280,8 +281,8 @@ Export list of parent tab under technology details
     [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -356,11 +357,11 @@ Export list of parent tab under technology details
 
 
 Export Team member list
-    [Tags]      Stable
+    [Tags]      Stable      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Click on add team member action button
@@ -394,11 +395,11 @@ Export Team member list
 
 
 Export Assigned User list
-    [Tags]      Stable
+    [Tags]      Stable     time
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     MemberPage.Click on assigned user tab under team member      Assigned Users
@@ -406,16 +407,25 @@ Export Assigned User list
     TeamMemberPage.Choose option after clicking on Action button    Export Data
     TeamMemberPage.Download the selected extension file of team member      Excel(.xlsx)
     PartnersPage.Confirm to export file        confirm
+
+    ${StartTime1} =     Get Current Time in Milliseconds
     PartnersPage.Verify that the selected extension file is downloaded       .xlsx
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  6  ${pageHeading}   Member Page - Export the .xlsx file      6    ${pageTime}     ${ActualTime}    ExportPageTest_Time
     MemberPage.Click on action button of assigned users
     TeamMemberPage.Choose option after clicking on Action button    Export Data
     TeamMemberPage.Download the selected extension file of team member      OpenDocument(.ods)
     PartnersPage.Confirm to export file        confirm
+    ${StartTime1} =     Get Current Time in Milliseconds
     PartnersPage.Verify that the selected extension file is downloaded       .ods
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  7  ${pageHeading}   Member Page - Export the .ods file      7    ${pageTime}     ${ActualTime}    ExportPageTest_Time
     MemberPage.Click on action button of assigned users
     TeamMemberPage.Choose option after clicking on Action button    Export Data
     TeamMemberPage.Download the selected extension file of team member      Comma Separated Values(.csv)
@@ -433,11 +443,11 @@ Export Assigned User list
 
 
 Export technology details page list
-    [Tags]      Stable
+    [Tags]      Stable     time
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
 #    TechnologyPage.click on add technology button
@@ -479,9 +489,13 @@ Export technology details page list
     TechnologyPage.Click on the export button of deatils tab under technology details page
     TechnologyPage.Download the selected extension file of parent under technology details      .xlsx
     PartnersPage.Confirm to export file        confirm
+    ${StartTime1} =     Get Current Time in Milliseconds
     PartnersPage.Verify that the selected extension file is downloaded       .xlsx
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  8  ${pageHeading}   Technology details - Export the .xls file      8    ${pageTime}     ${ActualTime}    ExportPageTest_Time
     TechnologyPage.Click on the export button of deatils tab under technology details page
     TechnologyPage.Download the selected extension file of parent under technology details      .ods
     PartnersPage.Confirm to export file        confirm
@@ -491,9 +505,13 @@ Export technology details page list
     TechnologyPage.Click on the export button of deatils tab under technology details page
     TechnologyPage.Download the selected extension file of parent under technology details      .csv
     PartnersPage.Confirm to export file        confirm
+    ${StartTime1} =     Get Current Time in Milliseconds
     PartnersPage.Verify that the selected extension file is downloaded       .csv
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  9  ${pageHeading}   Technology details - Export the .cvs file    9    ${pageTime}     ${ActualTime}    ExportPageTest_Time
     TechnologyPage.Click on the export button of deatils tab under technology details page
     TechnologyPage.Download the selected extension file of parent under technology details      .tsv
     PartnersPage.Confirm to export file        confirm
@@ -502,11 +520,11 @@ Export technology details page list
     Generic.click on the button     Okay, Thanks!
 
 Export component tab list
-    [Tags]      Stable
+    [Tags]      Stable     time
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     TechnologyPage.Click on action button of technology
@@ -559,9 +577,13 @@ Export component tab list
     TechnologyPage.Click on the export button of component tab under technology details page
     TechnologyPage.Download the selected extension file of parent under technology details      .xlsx
     PartnersPage.Confirm to export file        confirm
+    ${StartTime1} =     Get Current Time in Milliseconds
     PartnersPage.Verify that the selected extension file is downloaded       .xlsx
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  10  ${pageHeading}   Technology details components - Export the .cvs file    10    ${pageTime}     ${ActualTime}    ExportPageTest_Time
     TechnologyPage.Click on the export button of component tab under technology details page
     TechnologyPage.Download the selected extension file of parent under technology details      .ods
     PartnersPage.Confirm to export file        confirm
@@ -582,11 +604,11 @@ Export component tab list
     Generic.click on the button     Okay, Thanks!
 
 Export account overview tab data
-    [Tags]      Stable
+    [Tags]      Stable     time
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
     Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
     DashboardPage.select the option from the dashboard drawer       Account Overview
     Generic.Verify your current page location contains          account-overview
     DashboardPage.Click on the export button under account overview tab
@@ -598,9 +620,13 @@ Export account overview tab data
     DashboardPage.Click on the export button under account overview tab
     TeamMemberPage.Download the selected extension file of team member      OpenDocument(.ods)
     PartnersPage.Confirm to export file        confirm
+    ${StartTime1} =     Get Current Time in Milliseconds
     PartnersPage.Verify that the selected extension file is downloaded       .ods
     PartnersPage.Remove the file from downloaded list
     Generic.click on the button     Okay, Thanks!
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  11  ${pageHeading}   Dashboard Account overview - Export the .ods file    11    ${pageTime}     ${ActualTime}    ExportPageTest_Time
     DashboardPage.Click on the export button under account overview tab
     TeamMemberPage.Download the selected extension file of team member     Comma Separated Values(.csv)
     PartnersPage.Confirm to export file        confirm
@@ -615,7 +641,6 @@ Export account overview tab data
     Generic.click on the button     Okay, Thanks!
 
 
+#Zz kill browser
+ #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
 
-
-Zz kill browser
-    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

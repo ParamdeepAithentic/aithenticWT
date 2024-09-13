@@ -122,3 +122,111 @@ Click on billing trash to remove card
     Wait Until Element Is Visible       ${billing_trash_icon}   ${wait_time}
     Wait Until Element Is Enabled       ${billing_trash_icon}    ${wait_time}
     click element      ${billing_trash_icon}
+
+Click on the invoice history tab under billing
+    wait until element is not visible       ${loaderIcon}    ${wait_time}
+    wait until element is visible     css:#history   ${wait_time}
+    wait until element is enabled      css:#history    ${wait_time}
+    click element    css:#history
+    wait until element is not visible       ${loaderIcon}    ${wait_time}
+
+Click on the pdf option under the table of invoice
+    wait until element is visible     //tbody//tr[1]//td[3]   ${wait_time}
+    wait until element is enabled      //tbody//tr[1]//td[3]    ${wait_time}
+    click element    //tbody//tr[1]//td[3]
+#    wait until element is not visible       ${loaderIcon}    ${wait_time}
+
+Enter input in address line1 under billing
+    wait until element is not visible       ${loaderIcon}    ${wait_time}
+    wait until element is visible       css:#addressLine1     ${wait_time}
+    wait until element is enabled       css:#addressLine1      ${wait_time}
+    click element   css:#addressLine1
+    clear element text   css:#addressLine1
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generate_address_one_billing}=    Catenate    ${random_string}
+    input text      css:#addressLine1      Address_${generate_address_one_billing}
+    log to console      ${generate_address_one_billing}
+    set global variable   ${generate_address_one_billing}
+
+Enter input in address line2 under billing
+    wait until element is visible       css:#addressLine2     ${wait_time}
+    wait until element is enabled       css:#addressLine2      ${wait_time}
+    click element   css:#addressLine2
+    clear element text   css:#addressLine2
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generate_address_two_billing}=    Catenate    ${random_string}
+    input text      css:#addressLine2      Address_${generate_address_two_billing}
+    log to console      ${generate_address_two_billing}
+    set global variable   ${generate_address_two_billing}
+
+Select billing country under billing tab
+    [Arguments]    ${country}
+    wait until element is not visible       ${loaderIcon}    ${wait_time}
+    wait until element is visible       css:#billing-country        ${wait_time}
+    wait until element is enabled       css:#billing-country          ${wait_time}
+    click element   css:#billing-country
+    Clear element text      css:#billing-country
+    input text   css:#billing-country     ${country}
+    Generic.Select parameter    ${country}
+
+Select billing state under billing tab
+    [Arguments]    ${state}
+    wait until element is not visible       ${loaderIcon}    ${wait_time}
+    wait until element is visible       css:#billing-state        ${wait_time}
+    wait until element is enabled       css:#billing-state          ${wait_time}
+    click element   css:#billing-state
+    input text   css:#billing-state     ${state}
+    Generic.Select parameter    ${state}
+
+Select billing city under billing tab
+    [Arguments]    ${city}
+    wait until element is not visible       ${loaderIcon}    ${wait_time}
+    wait until element is visible       css:#billing-city        ${wait_time}
+    wait until element is enabled       css:#billing-city          ${wait_time}
+    click element   css:#billing-city
+    input text   css:#billing-city     ${city}
+    wait until element is visible       //span[@title='${city}']        ${wait_time}
+    wait until element is enabled       //span[@title='${city}']          ${wait_time}
+    click element       //span[@title='${city}']
+
+Add new zip code of billing
+    [Arguments]     ${code}
+    wait until element is not visible       ${loaderIcon}    ${wait_time}
+    wait until element is visible     css:#zipCode   ${wait_time}
+    wait until element is enabled      css:#zipCode    ${wait_time}
+    clear element text      css:#zipCode
+    click element    css:#zipCode
+    input text   css:#zipCode    ${code}
+
+Get the value of team member under billing
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible    //div[normalize-space()='Team Members']//following-sibling::div//h4   ${wait_time}
+    ${Team_member_billing_string} =    Get text   //div[normalize-space()='Team Members']//following-sibling::div//h4
+    ${tam_member_billing_int}=   Convert To Integer   ${Team_member_billing_string}
+    Log To Console    Total count is : ${tam_member_billing_int}
+    Set Global Variable     ${tam_member_billing_int}
+
+Get the value of manage subscription under billing
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible    //div[normalize-space()='Current Plan']//following-sibling::div//h4   ${wait_time}
+    sleep       ${search_sleep}
+    ${subscription_plan} =    Get text   //div[normalize-space()='Current Plan']//following-sibling::div//h4
+    Log To Console    Current Plan is : ${subscription_plan}
+    Set Global Variable     ${subscription_plan}
+
+Get the value of manage subscription under subscription page
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible   //div[contains(@class,'active-plan')]//h4   ${wait_time}
+     sleep  ${search_sleep}
+    ${plan_name} =    Get text   //div[contains(@class,'active-plan')]//h4
+    Log To Console    Current Plan is : ${plan_name}
+    Set Global Variable     ${plan_name}
+
+Get the text of the recent notification of added assets in system tab
+    [Arguments]      ${option}
+    wait until element is visible       css:#alertTabs >div>.notifications-container >ul>li:nth-child(1)>div:nth-child(1)
+    wait until element is enabled       css:#alertTabs >div>.notifications-container >ul>li:nth-child(1)>div:nth-child(1)     ${wait_time}
+    ${notification1} =    get text      css:#alertTabs >div>.notifications-container >ul>li:nth-child(1)>div:nth-child(1)
+    set global variable     ${notification1}
+    log to console     ${notification1}
+    should be equal    ${notification1}     ${option}

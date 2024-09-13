@@ -212,8 +212,8 @@ Select option from country column
     [Arguments]    ${option}
     wait until element is visible      css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
     Double click element      css:.ag-center-cols-container div[col-id='${option}']
-    wait until element is visible      css:div[aria-label='List'] div:nth-child(3) div    ${wait_time}
-    click element       css:div[aria-label='List'] div:nth-child(3) div
+    wait until element is visible      css:div[aria-label='Rich Select Field'] div:nth-child(3) div    ${wait_time}
+    click element      css:div[aria-label='Rich Select Field'] div:nth-child(3) div
 
 Double click
     [Arguments]    ${option}
@@ -332,7 +332,10 @@ Edit location country
     Wait Until Element Is Enabled      ${location_country}     ${wait_time}
     Clear Element Text      ${location_country}
     Input Text    ${location_country}    ${option}
-    Generic.Select parameter    ${option}
+#    Generic.Select parameter    ${option}
+    Wait Until Element Is Visible       //ng-select[contains(@class,'qa-country-name')]//ng-dropdown-panel//span[normalize-space()='${option}']    ${wait_time}
+    Wait Until Element Is Enabled       //ng-select[contains(@class,'qa-country-name')]//ng-dropdown-panel//span[normalize-space()='${option}']     ${wait_time}
+    click element       //ng-select[contains(@class,'qa-country-name')]//ng-dropdown-panel//span[normalize-space()='${option}']
 
 Edit location state
     [Arguments]    ${option}
@@ -347,3 +350,64 @@ Edit location city
     Wait Until Element Is Enabled      ${location_City}     ${wait_time}
     Input Text      ${location_City}        ${option}
     Generic.Select parameter    ${option}
+
+Click on the status filter under location
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    css:.qa-location-filter-status       ${wait_time}
+    Wait Until Element Is Visible    css:.qa-location-filter-status       ${wait_time}
+    click element    css:.qa-location-filter-status
+
+Select the option from status filter under location
+    [Arguments]     ${option}
+    Wait Until Element Is Visible    //div[contains(@class,'sidenav-content ')]//following-sibling::div//label[normalize-space()=' ${option}']      ${wait_time}
+    Wait Until Element Is Visible    //div[contains(@class,'sidenav-content ')]//following-sibling::div//label[normalize-space()=' ${option}']      ${wait_time}
+    click element    //div[contains(@class,'sidenav-content ')]//following-sibling::div//label[normalize-space()=' ${option}']
+
+
+Get the text of selected filter under location
+    [Arguments]     ${option}
+    wait until element is visible      //div[contains(@class,'sidenav-content ')]//following-sibling::div[contains(@class,'row')]//label[contains(text(),'${option}')]    ${wait_time}
+    ${fetch_Name_of_selected_filter} =    get text    //div[contains(@class,'sidenav-content ')]//following-sibling::div[contains(@class,'row')]//label[contains(text(),'${option}')]
+    ${original_string}=    Set Variable    ${fetch_Name_of_selected_filter}
+    ${New_Name}=    Evaluate    '${original_string}'.strip()
+    log to console    ${New_Name}
+    set global variable    ${New_Name}
+
+Click on the location filter under location
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    css:.select-location-filters-qa       ${wait_time}
+    Wait Until Element Is Visible    css:.select-location-filters-qa      ${wait_time}
+    click element    css:.select-location-filters-qa
+
+Select the option from location filter under location
+    [Arguments]     ${option}
+    Wait Until Element Is Visible   //div[contains(@class,'sidenav-content ')]//following-sibling::div[contains(@class,'row')]//label[contains(text(),'${option}')]     ${wait_time}
+    Wait Until Element Is Visible    //div[contains(@class,'sidenav-content ')]//following-sibling::div[contains(@class,'row')]//label[contains(text(),'${option}')]      ${wait_time}
+    click element    //div[contains(@class,'sidenav-content ')]//following-sibling::div[contains(@class,'row')]//label[contains(text(),'${option}')]
+
+Fetch the country from location filter and click
+    [Arguments]     ${option}       ${option1}      ${option2}
+#    ${element_count}=    Get Element Count    css:.qa-total-count-list
+#    Log      ${element_count}
+    FOR    ${index}    IN RANGE    1    ${total_data_count + 1}
+        Wait Until Element Is Visible   (//div[normalize-space()='${option}']//following-sibling::div//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]      ${wait_time}
+        Wait Until Element Is Enabled   (//div[normalize-space()='${option}']//following-sibling::div//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]       ${wait_time}
+        ${element1}=    Get Text    (//div[normalize-space()='${option}']//following-sibling::div//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]
+        ${original_string}=    Set Variable    ${element1}
+        ${New_Country}=    Evaluate    '${original_string}'.strip()
+        Log    Element ${index}: ${New_Country}
+        Run Keyword If    '${New_Country}' == '${option2}'    Run Keywords    Empty Action of location   AND     Continue For Loop
+
+    END
+
+Empty Action of location
+    Log    Elements value are equal
+
+Get the text of selected status filter under location
+    [Arguments]     ${option}
+    wait until element is visible      //div[contains(@class,'sidenav-content ')]//following-sibling::div//label[normalize-space()=' ${option}']    ${wait_time}
+    ${fetch_Name_of_selected_status} =    get text  //div[contains(@class,'sidenav-content ')]//following-sibling::div//label[normalize-space()=' ${option}']
+    ${original_string}=    Set Variable    ${fetch_Name_of_selected_status}
+    ${New_status}=    Evaluate    '${original_string}'.strip()
+    log to console    ${New_status}
+    set global variable   ${New_status}
