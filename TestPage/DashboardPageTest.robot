@@ -2524,6 +2524,13 @@ Suspend the account while the contract active
     Generic.Verify your current page location contains      contracts-list
     Generic.Wait until table get load
 
+Click on the usage analytics tab under management console
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    Generic.Select parameter         Usage Analytics
+    Generic.Verify your current page location contains     usage-analytics
+
 Verify Notification Mark all as read
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
