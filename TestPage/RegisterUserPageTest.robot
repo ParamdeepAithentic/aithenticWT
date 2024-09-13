@@ -314,8 +314,8 @@ Change plan and Change asset limit with ACH Payment method
     SubscriptionPage.Select if you want to change plan or asset    Change Asset Limit
     sleep       ${search_sleep}
     Generic.Scroll Window To End
-    sleep       2
-    Admin_PanelPage.Select the higest plan
+    sleep          2
+    Admin_PanelPage.Select the higest asset
     SubscriptionPage.Update the asset range     Update
     SubscriptionPage.Select the payment method    ach
     SubscriptionPage.Select the account for payment

@@ -189,3 +189,11 @@ Select the higest plan
     Wait Until Element Is enabled   (//div[@id='cost-range']//div[contains(@class,'ngx-slider-inner-tooltip')]//ancestor::span//ngx-slider-tooltip-wrapper[contains(@class,'ngx-slider-span')])[${element_count}]       ${wait_time}
     Click element    (//div[@id='cost-range']//div[contains(@class,'ngx-slider-inner-tooltip')]//ancestor::span//ngx-slider-tooltip-wrapper[contains(@class,'ngx-slider-span')])[${element_count}]
 
+Select the higest asset
+    Wait Until Element Is Visible        //span//ngx-slider-tooltip-wrapper[contains(@class,'ngx-slider-span')]         ${wait_time}
+    Wait Until Element Is enabled   //span//ngx-slider-tooltip-wrapper[contains(@class,'ngx-slider-span')]       ${wait_time}
+    ${element_count}=    Get Element Count    //span//ngx-slider-tooltip-wrapper[contains(@class,'ngx-slider-span')]
+    Log      ${element_count}
+    Wait Until Element Is Visible   (//span//ngx-slider-tooltip-wrapper[contains(@class,'ngx-slider-span')])[${element_count}]       ${wait_time}
+    Wait Until Element Is enabled   (//span//ngx-slider-tooltip-wrapper[contains(@class,'ngx-slider-span')])[${element_count}]     ${wait_time}
+    Click element    (//span//ngx-slider-tooltip-wrapper[contains(@class,'ngx-slider-span')])[${element_count}]

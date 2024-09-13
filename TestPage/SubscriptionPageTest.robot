@@ -84,7 +84,6 @@ Edit the scheduler
     SubscriptionPage.Click on the ok button after selecting the time
     sleep   ${search_sleep}
     Generic.click on the button     Update
-    Generic.click on the button     Update                                                    # Remove this line after bug got fixed #
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the three dots of subscription connector      Google
     SubscriptionPage.Click on option under three dots of subscription connector     Google       Scheduler
@@ -94,7 +93,6 @@ Edit the scheduler
     SubscriptionPage.Click on the ok button after selecting the time
     sleep   ${search_sleep}
     Generic.click on the button     Update
-    Generic.click on the button     Update                                                    # Remove this line after bug got fixed #
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the three dots of subscription connector      Google
     SubscriptionPage.Click on option under three dots of subscription connector     Google       Scheduler
@@ -105,7 +103,6 @@ Edit the scheduler
     SubscriptionPage.Click on the ok button after selecting the time
     sleep   ${search_sleep}
     Generic.click on the button     Update
-    Generic.click on the button     Update                                                    # Remove this line after bug got fixed #
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the three dots of subscription connector      Google
     SubscriptionPage.Click on option under three dots of subscription connector     Google       Scheduler
@@ -116,7 +113,6 @@ Edit the scheduler
     SubscriptionPage.Click on the ok button after selecting the time
     sleep   ${search_sleep}
     Generic.click on the button     Update
-    Generic.click on the button     Update                                                    # Remove this line after bug got fixed #
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
 
 Run now from view details
@@ -237,6 +233,103 @@ View Scheduler from view Result
 #    sleep   ${search_sleep}
 #    Generic.click on the button     Create
 #    Generic.Fetch alert message text and compare it with        Scheduler created sucessfully
+
+#Edit the scheduler of Sentinelone
+#    [Tags]      Sanity      Stable
+#    Generic.click on the tab	Login
+#    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
+#    Generic.Verify your current page location contains      dashboard
+#    LandingPage.Verify you are on dashboard page
+#    Generic.Click on the profile name
+#    Generic.Select option from profile list     subscription-connector
+#    Generic.Verify your current page location contains      technology-settings
+#    SubscriptionPage.Click on the three dots of subscription connector      SentinelOne
+#    SubscriptionPage.Click on option under three dots of subscription connector     SentinelOne       Scheduler
+#    SubscriptionPage.click on the cross icon of create scheduler    1
+#    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Weekly
+#    SubscriptionPage.Enter input in the input field of day under create scheduler       Monday
+#    SubscriptionPage.Select the time from the timepicker      5
+#    SubscriptionPage.Click on the ok button after selecting the time
+#    sleep   ${search_sleep}
+#    Generic.click on the button     Update
+#    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+#    SubscriptionPage.Click on the three dots of subscription connector      SentinelOne
+#    SubscriptionPage.Click on option under three dots of subscription connector    SentinelOne      Scheduler
+#    SubscriptionPage.click on the cross icon of create scheduler    1
+#    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Daily
+#    SubscriptionPage.Select the time from the timepicker      2
+#    SubscriptionPage.Click on the ok button after selecting the time
+#    sleep   ${search_sleep}
+#    Generic.click on the button     Update
+#    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+#    SubscriptionPage.Click on the three dots of subscription connector      SentinelOne
+#    SubscriptionPage.Click on option under three dots of subscription connector     SentinelOne       Scheduler
+#    SubscriptionPage.click on the cross icon of create scheduler    1
+#    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Monthly
+#    SubscriptionPage.Enter input in the start date field of billing details
+#    SubscriptionPage.Select the time from the timepicker      3
+#    SubscriptionPage.Click on the ok button after selecting the time
+#    sleep   ${search_sleep}
+#    Generic.click on the button     Update
+#    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+#    SubscriptionPage.Click on the three dots of subscription connector      SentinelOne
+#    SubscriptionPage.Click on option under three dots of subscription connector     SentinelOne       Scheduler
+#    SubscriptionPage.click on the cross icon of create scheduler    1
+#    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Yearly
+#    SubscriptionPage.Enter input in the start date field of billing details
+#    SubscriptionPage.Select the time from the timepicker      4
+#    SubscriptionPage.Click on the ok button after selecting the time
+#    sleep   ${search_sleep}
+#    Generic.click on the button     Update
+#    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+#
+#Run_now_delete_view-details_of_sentinelOne
+#    [Tags]      Stable
+#    Generic.click on the tab	Login
+#    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
+#    Generic.Verify your current page location contains      dashboard
+#    LandingPage.Verify you are on dashboard page
+#    Generic.Click on the profile name
+#    Generic.Select option from profile list     subscription-connector
+#    Generic.Verify your current page location contains      technology-settings
+#    SubscriptionPage.Click on the three dots of subscription connector      SentinelOne
+#    SubscriptionPage.Click on option under three dots of subscription connector     SentinelOne       Details
+#    Generic.click on the button     Run Now
+#    SubscriptionPage.Fetch alert message text of subscription connector and compare it with
+#    sleep  ${search_sleep}
+#    SubscriptionPage.Click on the three dots of subscription connector      SentinelOne
+#    SubscriptionPage.Click on option under three dots of subscription connector     SentinelOne    Delete
+#    Generic.click on the button     Yes
+#    Generic.Fetch alert message text and compare it with        Status Updated
+#    SubscriptionPage.Fetch text of delete under table of subscription connector     SentinelOne      Deleted
+#    sleep  ${search_sleep}
+#    SubscriptionPage.Click on the activate option under subscription connector table        SentinelOne
+#    Generic.Fetch alert message text and compare it with        Status Updated
+#    SubscriptionPage.Fetch text of delete under table of subscription connector     SentinelOne      Active
+#    SubscriptionPage.Click on the three dots of subscription connector      SentinelOne
+#    SubscriptionPage.Click on option under three dots of subscription connector     SentinelOne    Run Now
+#    SubscriptionPage.Fetch alert message text of subscription connector and compare it with
+#    SubscriptionPage.Click on the three dots of subscription connector      SentinelOne
+#    SubscriptionPage.Click on option under three dots of subscription connector     SentinelOne    Details
+#    SubscriptionPage.Get the value of fields under view details of subscription connector   1       SentinelOne
+#    SubscriptionPage.Get the value of fields under view details of subscription connector   2       Samuel John
+#
+#View Scheduler from view Result of sentinelone
+#    [Tags]      Stable
+#    Generic.click on the tab	Login
+#    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
+#    Generic.Verify your current page location contains      dashboard
+#    Generic.Click on the profile name
+#    Generic.Select option from profile list     subscription-connector
+#    Generic.Verify your current page location contains      technology-settings
+#    SubscriptionPage.Click on the three dots of subscription connector      SentinelOne
+#    SubscriptionPage.Click on option under three dots of subscription connector     SentinelOne      View Results
+#    Generic.Verify your current page location contains      discovery-assets
+#    Generic.Verify your current page contains this text    Asset Discovery
+#    SubscriptionPage.Verify the visibility of no records under view details under sentinel one
+#    Go Back
+#    Generic.Verify your current page location contains      technology-settings
+#    SubscriptionPage.Click on the three dots of subscription connector      Microsoft Corporation
 
 #Edit the scheduler of Sentinelone
 #    [Tags]      Sanity      Stable
@@ -552,7 +645,6 @@ Create service now with valid data
     SubscriptionPage.Click on the ok button after selecting the time
     sleep   ${search_sleep}
     Generic.click on the button     Update
-    Generic.click on the button     Update         # Remove this line after bug got fixed #
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the three dots of subscription connector      ServiceNow
     SubscriptionPage.Click on option under three dots of subscription connector     ServiceNow      Scheduler
@@ -563,7 +655,6 @@ Create service now with valid data
     SubscriptionPage.Click on the ok button after selecting the time
     sleep   ${search_sleep}
     Generic.click on the button     Update
-    Generic.click on the button     Update         # Remove this line after bug got fixed #
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the three dots of subscription connector      ServiceNow
     SubscriptionPage.Click on option under three dots of subscription connector     ServiceNow     Scheduler
@@ -573,7 +664,6 @@ Create service now with valid data
     SubscriptionPage.Click on the ok button after selecting the time
     sleep   ${search_sleep}
     Generic.click on the button     Update
-    Generic.click on the button     Update     # Remove this line after bug got fixed #
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the three dots of subscription connector      ServiceNow
     SubscriptionPage.Click on option under three dots of subscription connector     ServiceNow      Scheduler
@@ -584,7 +674,6 @@ Create service now with valid data
     SubscriptionPage.Click on the ok button after selecting the time
     sleep   ${search_sleep}
     Generic.click on the button     Update
-    Generic.click on the button     Update         # Remove this line after bug got fixed #
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the three dots of subscription connector      ServiceNow
     SubscriptionPage.Click on option under three dots of subscription connector    ServiceNow       Details
@@ -633,8 +722,6 @@ Create service now with valid data
 #    SubscriptionPage.Click on the ok button after selecting the time
 #    sleep   ${search_sleep}
 #    Generic.click on the button     Update
-##    Generic.click on the button     Update         # Remove this line after bug got fixed #
-
 #    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
 #    SubscriptionPage.Click on the action button of service now under discovery assets
 #    SubscriptionPage.Click on the options under action button of service now under discovery assets    Edit
@@ -646,8 +733,6 @@ Create service now with valid data
 #    SubscriptionPage.Click on the ok button after selecting the time
 #    sleep   ${search_sleep}
 #    Generic.click on the button     Update
-##    Generic.click on the button     Update         # Remove this line after bug got fixed #
-
 #    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
 #    SubscriptionPage.Click on the action button of service now under discovery assets
 #    SubscriptionPage.Click on the options under action button of service now under discovery assets      Edit
@@ -659,7 +744,6 @@ Create service now with valid data
 
 #    sleep   ${search_sleep}
 #    Generic.click on the button     Update
-##    Generic.click on the button     Update         # Remove this line after bug got fixed #
 #    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
 #    SubscriptionPage.Click on the action button of service now under discovery assets
 #    SubscriptionPage.Click on the options under action button of service now under discovery assets     Edit
@@ -672,7 +756,6 @@ Create service now with valid data
 
 #    sleep   ${search_sleep}
 #    Generic.click on the button     Update
-##    Generic.click on the button     Update     # Remove this line after bug got fixed #
 #    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
 #    SubscriptionPage.Click on the action button of service now under discovery assets
 #    SubscriptionPage.Click on the options under action button of service now under discovery assets     Details
@@ -1277,7 +1360,6 @@ Create sentinel account and verify the options
     SubscriptionPage.Click on the ok button after selecting the time
     sleep   ${search_sleep}
     Generic.click on the button     Update
-#    Generic.click on the button     Update         # Remove this line after bug got fixed #
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the three dots of subscription connector      SentinelOne
     SubscriptionPage.Click on option under three dots of subscription connector     SentinelOne     Scheduler
@@ -1288,7 +1370,6 @@ Create sentinel account and verify the options
     SubscriptionPage.Click on the ok button after selecting the time
     sleep   ${search_sleep}
     Generic.click on the button     Update
-#    Generic.click on the button     Update         # Remove this line after bug got fixed #
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the three dots of subscription connector      SentinelOne
     SubscriptionPage.Click on option under three dots of subscription connector    SentinelOne     Scheduler
@@ -1298,7 +1379,6 @@ Create sentinel account and verify the options
     SubscriptionPage.Click on the ok button after selecting the time
     sleep   ${search_sleep}
     Generic.click on the button     Update
-#    Generic.click on the button     Update     # Remove this line after bug got fixed #
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the three dots of subscription connector      SentinelOne
     SubscriptionPage.Click on option under three dots of subscription connector     SentinelOne      Scheduler

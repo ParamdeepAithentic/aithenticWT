@@ -308,19 +308,22 @@ Click on the select location filter and verify it
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  10  ${pageHeading}   Filter Page - Data load time of filter Country under location group      10    ${pageTime}     ${ActualTime}    Filter_Time
 
-    LocationPage.Select the option from location filter under location         Afghanistan
+    Generic.Click on the reset filters link
+    LocationPage.Click on the location filter under location
     LocationPage.Select the option from location filter under location         Canada
     LocationPage.Get the text of selected filter under location     Canada
     Generic.Wait until table get load
     PaginationPage.Fetch the total count
     LocationPage.Fetch the country from location filter and click       Country     Canada          ${New_Name}
-    LocationPage.Select the option from location filter under location         Canada
+    Generic.Click on the reset filters link
+    LocationPage.Click on the location filter under location
     LocationPage.Select the option from location filter under location          India
     LocationPage.Get the text of selected filter under location      India
     Generic.Wait until table get load
     PaginationPage.Fetch the total count
     LocationPage.Fetch the country from location filter and click       Country      India          ${New_Name}
-    LocationPage.Select the option from location filter under location         India
+    Generic.Click on the reset filters link
+    LocationPage.Click on the location filter under location
     LocationPage.Select the option from location filter under location         Turkey
     LocationPage.Get the text of selected filter under location    Turkey
     Generic.Wait until table get load
