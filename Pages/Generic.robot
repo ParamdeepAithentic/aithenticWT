@@ -64,7 +64,7 @@ ${search_sleep}       1
 
 
 
-${CASE}        uat    #qa , uat , pre-prod
+${CASE}        qa    #qa , uat , pre-prod
 
 
 

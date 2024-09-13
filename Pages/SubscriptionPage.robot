@@ -151,8 +151,11 @@ Click on same billing address checkbox
     wait until element is visible       ${same_address_chkbox}       ${wait_time}
     wait until element is enabled       ${same_address_chkbox}       ${wait_time}
     click element        ${same_address_chkbox}
+    sleep   ${search_sleep}
     click element        ${same_address_chkbox}
+    sleep   ${search_sleep}
     click element        ${same_address_chkbox}
+    sleep   ${search_sleep}
 
 #    sleep   2
 

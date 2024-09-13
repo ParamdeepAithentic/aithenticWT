@@ -83,7 +83,7 @@ Register new user for key clock functionality
 
     Yopmail.Click on sign In button in yopmail email
     Unselect Frame
-    sleep       5
+    sleep        ${yop_sleep}
     Switch Window       aithentic | Create - Account
     Generic.Verify your current page location contains     create-account
 

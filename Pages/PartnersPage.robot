@@ -307,7 +307,6 @@ Save the secondary contact
 
 Click contact main save button
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-
     wait until element is visible      ${main_Save}       ${wait_time}
     wait until element is enabled      ${main_Save}       ${wait_time}
     wait until element is not visible       //span[normalize-space()='Please enter a valid Mobile Number']     ${wait_time}
