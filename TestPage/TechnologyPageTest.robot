@@ -1682,7 +1682,7 @@ Technology-Inactive asset and Restore asset
     TechnologyPage.Click on current plan of subscription
     Generic.Scroll the page till    200
     SubscriptionPage.Set asset range to     1000
-    SubscriptionPage.Set asset range to     250
+    SubscriptionPage.Set asset range to     200
     SubscriptionPage.Set asset range to     500
     SubscriptionPage.Update the payment of changed plan     proceed
     TechnologyPage.Click on pop up of available Inactive Asset   cancel
@@ -1779,7 +1779,7 @@ Inactive asset - Restore asset from Technology Details page
     TechnologyPage.Click on current plan of subscription
     Generic.Scroll the page till    200
     SubscriptionPage.Set asset range to     500
-    SubscriptionPage.Set asset range to     250
+    SubscriptionPage.Set asset range to     200
     SubscriptionPage.Update the payment of changed plan     proceed
     TechnologyPage.Click on pop up of available Inactive Asset   cancel
     SubscriptionPage.Select the payment method    ach
