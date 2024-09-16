@@ -629,7 +629,7 @@ Click on the ok button after selecting the time
 
 Fetch text of status under the table of subscription connector
     [Arguments]     ${option1}      ${option}
-    wait until element is visible    //td[normalize-space()='${option1}']//parent::tr//td[9]        ${wait_time}
+    wait until element is visible    //td[normalize-space()='${option1}']//parent::tr//td[9]        600
     ${value} =    get text    //td[normalize-space()='${option1}']//parent::tr//td[9]
     log to console     ${value}
     should be equal    ${value}    ${option}
