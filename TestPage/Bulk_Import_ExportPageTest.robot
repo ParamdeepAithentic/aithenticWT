@@ -543,7 +543,7 @@ Team member Bulk Import
     Bulk_Import_ExportPage.Click on I_m_done button when popup appears     no-im-done
     Sleep      ${yop_sleep}
     Switch Window       aithentic | Member - List
-    Bulk_Import_ExportPage.Search Team Member by name under asset wizard       ${generated_Firstname}
+    TeamMemberPage.Search Team Member by name       ${generated_Firstname}
     Generic.Wait until table get load
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details

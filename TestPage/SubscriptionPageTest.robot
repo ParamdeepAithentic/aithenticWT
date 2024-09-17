@@ -634,7 +634,7 @@ Create service now with valid data
     Generic.Fetch alert message text and compare it with       Technology created successfully
 #    Generic.Fetch alert message text and compare it with       Scheduler created successfully
     Generic.Wait until table get load
-    sleep   300s
+#    sleep   300s
     SubscriptionPage.Fetch text of status under the table of subscription connector     ServiceNow       Completed
     SubscriptionPage.Click on the three dots of subscription connector      ServiceNow
     SubscriptionPage.Click on option under three dots of subscription connector     ServiceNow       Scheduler
@@ -976,7 +976,7 @@ Create JAMFF account with valid data
     Generic.Verify your current page location contains      technology-settings
     Generic.Fetch alert message text and compare it with       Technology created successfully
     Generic.Wait until table get load
-    sleep   300s
+#    sleep   300s
     SubscriptionPage.Fetch text of status under the table of subscription connector     JAMF Software       Completed
     SubscriptionPage.Click on the three dots of subscription connector      JAMF Software
     SubscriptionPage.Click on option under three dots of subscription connector     JAMF Software       Scheduler
@@ -1337,7 +1337,7 @@ Create sentinel account and verify the options
     Generic.Verify your current page location contains      technology-settings
     Generic.Fetch alert message text and compare it with       Technology created successfully
     Generic.Wait until table get load
-    sleep   300s
+#    sleep   300s
     SubscriptionPage.Fetch text of status under the table of subscription connector     SentinelOne       Completed
     SubscriptionPage.Click on the three dots of subscription connector      SentinelOne
     SubscriptionPage.Click on option under three dots of subscription connector     SentinelOne      Scheduler
