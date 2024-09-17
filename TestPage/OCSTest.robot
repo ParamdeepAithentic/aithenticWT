@@ -816,6 +816,9 @@ Match IP Discovered asset with Existing asset
     OCS.Get MAC_Address by hovering over IP discovered assets    MacAddress:
     OCS.Mouse Hover over current page after hovering over ip and discovered assets
     OCS.Select any Discovered asset
+    OCS.Click on search icon of Existing assets
+    OCS.Enter text to search existing asset    ${discovered_existing_brand}
+    sleep   ${search_sleep}
     OCS.Click on the down arrow icon of existing assets
     OCS.Mouse hover over first existing asset
     OCS.Get asset id by hovering over first existing assets   Asset Id:
