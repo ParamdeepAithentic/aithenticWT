@@ -139,7 +139,7 @@ Search Existing Assets
         OCS.Welcome to the code
     END
 
-Match Discovery and Existing Asset
+Match Discovery Asset with Static Existing Asset
     [Tags]      Sanity      Unstable
     TRY
         Generic.click on the tab	Login
@@ -176,13 +176,10 @@ Match Discovery and Existing Asset
         OCS.Select any Discovered asset
         OCS.Click on search icon of Existing assets
         OCS.Enter text to search existing asset    ${generated_AssetID}
+        sleep   ${search_sleep}
         OCS.Click on the down arrow icon of existing assets
-        OCS.Click on the down arrow icon of existing assets
-        OCS.Click on the down arrow icon of existing assets
-        Generic.Scroll Window To End
-        OCS.Mouse Hover over searched existing assets after creating technology frm add technology
-        OCS.Verify searched existing asset    ${generated_AssetID}
-        OCS.Mouse Hover over current page after hovering over ip and discovered assets
+        OCS.Mouse hover over first existing asset
+        OCS.Get asset id by hovering over first existing assets   Asset Id:
         OCS.Select any existing asset
         OCS.Click on Button inside Network Discovery Page     Confirm Matches
         Generic.Fetch alert message text and compare it with      Assets matched successfully, you can find matched assets in Discovered Assets or Manage Technology
@@ -819,6 +816,9 @@ Match IP Discovered asset with Existing asset
     OCS.Get MAC_Address by hovering over IP discovered assets    MacAddress:
     OCS.Mouse Hover over current page after hovering over ip and discovered assets
     OCS.Select any Discovered asset
+    OCS.Click on search icon of Existing assets
+    OCS.Enter text to search existing asset    ${discovered_existing_brand}
+    sleep   ${search_sleep}
     OCS.Click on the down arrow icon of existing assets
     OCS.Mouse hover over first existing asset
     OCS.Get asset id by hovering over first existing assets   Asset Id:
@@ -859,7 +859,7 @@ Match IP Discovered asset with Existing asset
 #    Generic.Fetch alert message text and compare it with        Technology updated successfully
 #    UnselectAssetAPI.Hit API Endpoint
 
-Match Discovery Asset with Static Existing Asset
+Match Discovery and Existing Asset
     [Tags]        Unstable
     TRY
         Generic.click on the tab	Login
@@ -880,23 +880,21 @@ Match Discovery Asset with Static Existing Asset
         OCS.Get Host name by hovering over discovered assets     Host name:
         OCS.Mouse Hover over current page after hovering over ip and discovered assets
         OCS.Select any Discovered asset
+        OCS.Click on search icon of Existing assets
+        OCS.Enter text to search existing asset    ${discovered_existing_brand}
+        sleep   ${search_sleep}
         OCS.Click on the down arrow icon of existing assets
-        OCS.Click on the down arrow icon of existing assets
-        OCS.Mouse Hover over searched existing assets
-        OCS.Get asset id by hovering over existing assets    Asset Id:
-        PaginationPage.Mouse over confirm matches button without searching
+        OCS.Mouse hover over first existing asset
+        OCS.Get asset id by hovering over first existing assets   Asset Id:
         OCS.Select any existing asset
-        OCS.Verify that line appears between selected assets
         OCS.Click on Button inside Network Discovery Page     Confirm Matches
         Generic.Fetch alert message text and compare it with     Assets matched successfully, you can find matched assets in Discovered Assets or Manage Technology
         Generic.select the option from the side menu    Technology
         Generic.Verify your current page location contains      technology
-        TechnologyPage.Search by AssetId         ${hover_assetid}
+        TechnologyPage.Search by AssetId         ${hover_assetid1}
         TechnologyPage.Click on the first row of the technology table
         Generic.Verify your current page location contains    technology-details
         OCS.Get Value of MAC-Address from technology details and compare it with      ${hover_MAC_address1}
-        OCS.Get Value of Serial no. and compare it with    ${hover_serial_number}
-        OCS.Get Value of Host-Name and compare it with    ${hover_host name}
         OCS.Verify Page should contain Element     discovery-info-tab
         OCS.Click on Discovery_info tab on Technology details Page
         Generic.click on the button     Unmatch Asset

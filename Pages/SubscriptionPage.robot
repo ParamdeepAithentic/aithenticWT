@@ -626,6 +626,7 @@ Click on the ok button after selecting the time
     wait until element is visible   //button[contains(@class,'timepicker-button')]//span[normalize-space()='Ok']      ${wait_time}
     wait until element is enabled   //button[contains(@class,'timepicker-button')]//span[normalize-space()='Ok']      ${wait_time}
     click element   //button[contains(@class,'timepicker-button')]//span[normalize-space()='Ok']
+    sleep       ${search_sleep}
 
 Fetch text of status under the table of subscription connector
     [Arguments]     ${option1}      ${option}
