@@ -111,7 +111,7 @@ Set UAT Variables
     Set Suite Variable    ${discovered_existing_brand1}              QABrand555
     Set Suite Variable    ${discovered_existing_product}            Macmini9,1
     Set Suite Variable    ${discovered_existing_department}        Quality Assurance
-    Set Suite Variable    ${discovered_IP}    00:17:61:10:C6:A1
+    Set Suite Variable    ${discovered_IP}    192.168.29.176
     Set Suite Variable    ${discovery_asset_list_brand}     AKKA Germany GmbH
     Set Suite Variable    ${existing_mac}                       DC:21:5C:9C:3E:57
 
