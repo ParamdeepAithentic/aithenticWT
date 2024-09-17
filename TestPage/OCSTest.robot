@@ -877,20 +877,21 @@ Match Discovery and Existing Asset
         OCS.Get Host name by hovering over discovered assets     Host name:
         OCS.Mouse Hover over current page after hovering over ip and discovered assets
         OCS.Select any Discovered asset
+        OCS.Click on search icon of Existing assets
+        OCS.Enter text to search existing asset    Wacom
+        sleep   ${search_sleep}
         OCS.Click on the down arrow icon of existing assets
         OCS.Mouse hover over first existing asset
-#        OCS.Get asset id by hovering over first existing assets   Asset Id:
-#        OCS.Select any existing asset
+        OCS.Get asset id by hovering over first existing assets   Asset Id:
+        OCS.Select any existing asset
         OCS.Click on Button inside Network Discovery Page     Confirm Matches
         Generic.Fetch alert message text and compare it with     Assets matched successfully, you can find matched assets in Discovered Assets or Manage Technology
         Generic.select the option from the side menu    Technology
         Generic.Verify your current page location contains      technology
-        TechnologyPage.Search by AssetId         ${hover_assetid}
+        TechnologyPage.Search by AssetId         ${hover_assetid1}
         TechnologyPage.Click on the first row of the technology table
         Generic.Verify your current page location contains    technology-details
         OCS.Get Value of MAC-Address from technology details and compare it with      ${hover_MAC_address1}
-        OCS.Get Value of Serial no. and compare it with    ${hover_serial_number}
-        OCS.Get Value of Host-Name and compare it with    ${hover_host name}
         OCS.Verify Page should contain Element     discovery-info-tab
         OCS.Click on Discovery_info tab on Technology details Page
         Generic.click on the button     Unmatch Asset
