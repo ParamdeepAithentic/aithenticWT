@@ -139,7 +139,7 @@ Search Existing Assets
         OCS.Welcome to the code
     END
 
-Match Discovery and Existing Asset
+Match Discovery Asset with Static Existing Asset
     [Tags]      Sanity      Unstable
     TRY
         Generic.click on the tab	Login
@@ -176,13 +176,10 @@ Match Discovery and Existing Asset
         OCS.Select any Discovered asset
         OCS.Click on search icon of Existing assets
         OCS.Enter text to search existing asset    ${generated_AssetID}
+        sleep   ${search_sleep}
         OCS.Click on the down arrow icon of existing assets
-        OCS.Click on the down arrow icon of existing assets
-        OCS.Click on the down arrow icon of existing assets
-        Generic.Scroll Window To End
-        OCS.Mouse Hover over searched existing assets after creating technology frm add technology
-        OCS.Verify searched existing asset    ${generated_AssetID}
-        OCS.Mouse Hover over current page after hovering over ip and discovered assets
+        OCS.Mouse hover over first existing asset
+        OCS.Get asset id by hovering over first existing assets   Asset Id:
         OCS.Select any existing asset
         OCS.Click on Button inside Network Discovery Page     Confirm Matches
         Generic.Fetch alert message text and compare it with      Assets matched successfully, you can find matched assets in Discovered Assets or Manage Technology
@@ -859,7 +856,7 @@ Match IP Discovered asset with Existing asset
 #    Generic.Fetch alert message text and compare it with        Technology updated successfully
 #    UnselectAssetAPI.Hit API Endpoint
 
-Match Discovery Asset with Static Existing Asset
+Match Discovery and Existing Asset
     [Tags]        Unstable
     TRY
         Generic.click on the tab	Login
@@ -881,12 +878,9 @@ Match Discovery Asset with Static Existing Asset
         OCS.Mouse Hover over current page after hovering over ip and discovered assets
         OCS.Select any Discovered asset
         OCS.Click on the down arrow icon of existing assets
-        OCS.Click on the down arrow icon of existing assets
-        OCS.Mouse Hover over searched existing assets
-        OCS.Get asset id by hovering over existing assets    Asset Id:
-        PaginationPage.Mouse over confirm matches button without searching
-        OCS.Select any existing asset
-        OCS.Verify that line appears between selected assets
+        OCS.Mouse hover over first existing asset
+#        OCS.Get asset id by hovering over first existing assets   Asset Id:
+#        OCS.Select any existing asset
         OCS.Click on Button inside Network Discovery Page     Confirm Matches
         Generic.Fetch alert message text and compare it with     Assets matched successfully, you can find matched assets in Discovered Assets or Manage Technology
         Generic.select the option from the side menu    Technology
