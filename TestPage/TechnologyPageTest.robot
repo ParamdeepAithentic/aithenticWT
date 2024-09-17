@@ -3245,7 +3245,7 @@ Click on the technology group filters and verify it
     Generic.Wait until table get load
     TechnologyPage.Click on the tech type filter under technology       Tech Type
     Generic.Wait until table get load
-    TechnologyPage.Click on the value under the tech typen filters of technology page       Subscription
+    TechnologyPage.Click on the value under the tech typen filters of technology page       Freeware
     Generic.Wait until table get load
     PaginationPage.Click on the pagination dropdown     technology
     PaginationPage.Select the value from the pagination drop down count     500
@@ -3293,8 +3293,8 @@ Click on the technology group filters and verify it
     Generic.Wait until table get load
     TechnologyPage.Click on the tech type filter under technology       Manufacturers
     Generic.Wait until table get load
-    TechnologyPage.Click on the value under filters for selecting random value      3
-    TechnologyPage.Get the text of the value you selected under filter      3
+    TechnologyPage.Click on the value under filters for selecting random value      4
+    TechnologyPage.Get the text of the value you selected under filter      4
     Generic.Wait until table get load
     PaginationPage.Fetch the total count
     LocationPage.Fetch the country from location filter and click    Brand       ${random_Namee}       ${random_Namee}

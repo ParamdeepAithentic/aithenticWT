@@ -416,6 +416,7 @@ Verify user is able to export team member asset history list
     Generic.Verify your current page location contains     create-account
     UserAccount.Enter the password      Paramdeep@112
     UserAccount.Confirm the entered password    Paramdeep@112
+
     UserAccount.Click on term and condition checkbox
     UserAccount.Click create account button
     Generic.Fetch alert message text and compare it with       Account created successfully.
