@@ -170,11 +170,11 @@ Click on I_m_done button when popup appears
 Verify product added using bulk_import_export
    [Arguments]    ${productName}
      wait until element is visible       css:thead tr       ${wait_time}
-     wait until element is visible      ${search_productName}     ${wait_time}
-     wait until element is enabled      ${search_productName}     ${wait_time}
-     click element      ${search_productName}
-     Clear Element Text      ${search_productName}
-     input text   ${search_productName}   ${productName}
+     wait until element is visible      css:#seacrhbar-product-wizard     ${wait_time}
+     wait until element is enabled      css:#seacrhbar-product-wizard     ${wait_time}
+     click element      css:#seacrhbar-product-wizard
+     Clear Element Text      css:#seacrhbar-product-wizard
+     input text   css:#seacrhbar-product-wizard   ${productName}
      sleep       ${search_sleep}
      Wait Until Element Contains    //td[normalize-space()='${productName}']      ${productName}     ${wait_time}
      ${get_productName} =    get text    ${fetch_productName}
