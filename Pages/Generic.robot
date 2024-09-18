@@ -61,6 +61,7 @@ ${yop_sleep}       10
 
 ${search_sleep}       1
 
+
 ${CASE}        qa    #qa , uat , pre-prod
 
 
@@ -93,7 +94,6 @@ Set QA Variables
     Set Suite Variable    ${discovered_existing_department}    Customer Support
     Set Suite Variable    ${discovered_IP}   192.168.18.23
     Set Suite Variable    ${discovery_asset_list_brand}       Apple, Inc.
-
 
 
 Set UAT Variables
@@ -132,6 +132,27 @@ Set Pre-Prod Variables
     Set Suite Variable    ${discovered_existing_department}    Operations
     Set Suite Variable    ${discovered_IP}   192.168.18.86
     Set Suite Variable    ${discovery_asset_list_brand}       Apple, Inc.
+
+Set Research Variables
+    Set Suite Variable    ${url}    https://research-app.aithentic.com/
+    Set Suite Variable    ${valid_password}    Test@123       #QA User
+    Set Suite Variable    ${apiURL}    https://research-api.aithentic.com/api/v1
+    Set Suite Variable    ${agentDiscovery_TagName}    Tag Name - johnsoftwaresolutions-1192-4         #qa
+    Set Suite Variable    ${IP_Discovered_devices}    Tag Name - johnsoftwaresolutions-1192-4
+    Set Suite Variable    ${agentDiscovery_OnlyTagName}     johnsoftwaresolutions-1192-4
+    Set Suite Variable    ${admin_url}        https://research-admin.aithentic.com/
+    Set Suite Variable    ${admin_name}        aithentic@yopmail.com
+    Set Suite Variable    ${admin_password}       Admin@123
+    Set Suite Variable    ${browser_name}         firefox
+    Set Suite Variable    ${email}                 testqa29j@mailinator.com
+    Set Suite Variable    ${discovered_asset_brand}                 MSI
+    Set Suite Variable    ${existing_mac}                       D8:CB:8A:CA:6A:39
+    Set Suite Variable    ${discovered_existing_brand}          QABrand555
+    Set Suite Variable    ${discovered_existing_product}        QAHardwareProduct
+    Set Suite Variable    ${discovered_existing_department}    Customer Support
+    Set Suite Variable    ${discovered_IP}   192.168.18.23
+    Set Suite Variable    ${discovery_asset_list_brand}       Apple, Inc.
+
 
 Set Default Variables
     Set Suite Variable    ${url}    https://uat-app.aithentic.com/
