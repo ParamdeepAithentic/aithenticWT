@@ -2103,6 +2103,7 @@ Upload file: Image and document files while Clone the Technology
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
     TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select technology lifecycle status      Active
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
@@ -3179,8 +3180,8 @@ Click on the technology group filters and verify it
     Generic.Wait until table get load
 
     ${StartTime1} =     Get Current Time in Milliseconds
-    TechnologyPage.Click on the value under the filters of technology page      Accessories
-    TechnologyPage.Get the text of selected filter under technology    Accessories
+    TechnologyPage.Click on the value under the filters of technology page      ${Technology_group}
+    TechnologyPage.Get the text of selected filter under technology    ${Technology_group}
     Generic.Wait until table get load
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
@@ -3191,22 +3192,22 @@ Click on the technology group filters and verify it
     PaginationPage.Select the value from the pagination drop down count     500
     PaginationPage.Fetch the selected value of the dropdown     technology
     PaginationPage.Fetch the total count
-    LocationPage.Fetch the country from location filter and click    Group      Accessories        ${New_Namee}
+    LocationPage.Fetch the country from location filter and click    Group      ${Technology_group}      ${New_Namee}
     Generic.click on the tab        reset filters
     Generic.Wait until table get load
     TechnologyPage.Click on the filters under technology page       Technology Group
     Generic.Wait until table get load
 
     ${StartTime1} =     Get Current Time in Milliseconds
-    TechnologyPage.Click on the value under the filters of technology page       CRT TVs
-    TechnologyPage.Get the text of selected filter under technology     CRT TVs
+    TechnologyPage.Click on the value under the filters of technology page       ${Technology_group1}
+    TechnologyPage.Get the text of selected filter under technology    ${Technology_group1}
     Generic.Wait until table get load
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  8  ${pageHeading}   Filter Page - Data load time of filter CRT under technology group      8    ${pageTime}     ${ActualTime}    Filter_Time
 
     PaginationPage.Fetch the total count
-    LocationPage.Fetch the country from location filter and click    Group       CRT TVs        ${New_Namee}
+    LocationPage.Fetch the country from location filter and click    Group       ${Technology_group1}       ${New_Namee}
     Generic.click on the tab        reset filters
     Generic.Wait until table get load
     Generic.Fetch alert message text and compare it with       No additional sub-groups found!

@@ -60,7 +60,10 @@ ${wait_time}       60
 ${yop_sleep}       10
 
 ${search_sleep}       1
-${CASE}        qa    #qa , uat , pre-prod , research
+
+
+${CASE}        qa    #qa , uat , pre-prod
+
 
 
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
@@ -91,6 +94,9 @@ Set QA Variables
     Set Suite Variable    ${discovered_existing_department}    Customer Support
     Set Suite Variable    ${discovered_IP}   192.168.18.23
     Set Suite Variable    ${discovery_asset_list_brand}       Apple, Inc.
+    Set Suite Variable    ${Team_member_location}       United States - Main Office - 21 - 2
+    Set Suite Variable    ${Technology_group}      Communication
+    Set Suite Variable    ${Technology_group1}      DVD / TV Combos
 
 
 Set UAT Variables
@@ -114,6 +120,9 @@ Set UAT Variables
     Set Suite Variable    ${discovered_IP}    192.168.29.176
     Set Suite Variable    ${discovery_asset_list_brand}     AKKA Germany GmbH
     Set Suite Variable    ${existing_mac}                       DC:21:5C:9C:3E:57
+    Set Suite Variable    ${Team_member_location}        Colombia - Twinhead123 - 56 - 21
+    Set Suite Variable    ${Technology_group}      Accessories
+    Set Suite Variable    ${Technology_group1}     CRT TVs
 
 
 Set Pre-Prod Variables
@@ -129,6 +138,7 @@ Set Pre-Prod Variables
     Set Suite Variable    ${discovered_existing_department}    Operations
     Set Suite Variable    ${discovered_IP}   192.168.18.86
     Set Suite Variable    ${discovery_asset_list_brand}       Apple, Inc.
+    Set Suite Variable    ${Team_member_location}       United States - Building23 - 4 - 8
 
 Set Research Variables
     Set Suite Variable    ${url}    https://research-app.aithentic.com/

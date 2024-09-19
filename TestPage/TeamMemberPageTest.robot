@@ -1259,11 +1259,11 @@ Click on the location filter under team member and verify it
     Generic.click on the tab        reset filters
     Generic.Wait until table get load
     TeamMemberPage.Click on the location filter under team member       location
-    LocationPage.Select the option from location filter under location         Colombia - Twinhead123 - 56 - 21
-    LocationPage.Get the text of selected filter under location     Colombia - Twinhead123 - 56 - 21
+    LocationPage.Select the option from location filter under location       ${Team_member_location}
+    LocationPage.Get the text of selected filter under location     ${Team_member_location}
     Generic.Wait until table get load
     PaginationPage.Fetch the total count
-    TeamMemberPage.Fetch the country from team member filter and click       Location       Colombia - Twinhead123 - 56 - 21          ${New_Name}
+    TeamMemberPage.Fetch the country from team member filter and click       Location     ${Team_member_location}         ${New_Name}
     Generic.Click on the profile name
     Generic.Select other option from profile list     Logout
     Generic.Fetch log_out alert message
