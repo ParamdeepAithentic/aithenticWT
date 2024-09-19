@@ -50,7 +50,7 @@ ${profileName}     css:#user-name-nav
 ${full_Profile_List}     //div[@class='dropdown-menu themeScrollBar profile-dropdown ng-tns-c166-0 show']/div/ul/li
 ${select_technology_type_via link}  css:#addProductType
 ${save_product_modal}     css:button[class='btn button-green mt-0 mx-2 ng-star-inserted']
-${search_productName}     css:#seacrhbar-product-wizard
+${search_productName}     css:#searchbar-product
 ${fetch_productName}    css:td:nth-child(2)
 
 ${add_dept_btn}     //a[normalize-space()='Add Department']
@@ -170,11 +170,11 @@ Click on I_m_done button when popup appears
 Verify product added using bulk_import_export
    [Arguments]    ${productName}
      wait until element is visible       css:thead tr       ${wait_time}
-     wait until element is visible      css:#seacrhbar-product-wizard     ${wait_time}
-     wait until element is enabled      css:#seacrhbar-product-wizard     ${wait_time}
-     click element      css:#seacrhbar-product-wizard
-     Clear Element Text      css:#seacrhbar-product-wizard
-     input text   css:#seacrhbar-product-wizard   ${productName}
+     wait until element is visible      ${search_productName}    ${wait_time}
+     wait until element is enabled      ${search_productName}    ${wait_time}
+     click element     ${search_productName}
+     Clear Element Text     ${search_productName}
+     input text   ${search_productName}  ${productName}
      sleep       ${search_sleep}
      Wait Until Element Contains    //td[normalize-space()='${productName}']      ${productName}     ${wait_time}
      ${get_productName} =    get text    ${fetch_productName}
@@ -807,3 +807,16 @@ Search by business name under asset wizard
     ${get_businessName} =    get text    //td[normalize-space()='${BusinessName}']
     log to console     ${get_businessName}
     should be equal    ${BusinessName}     ${get_businessName}
+
+Verify product added using bulk_import_export under asset wizard
+    [Arguments]     ${productName}
+     wait until element is visible       css:thead tr       ${wait_time}
+     wait until element is visible      css:#seacrhbar-product-wizard    ${wait_time}
+     wait until element is enabled      css:#seacrhbar-product-wizard     ${wait_time}
+     click element     css:#seacrhbar-product-wizard
+     input text   css:#seacrhbar-product-wizard     ${productName}
+     sleep       ${search_sleep}
+     Wait Until Element Contains    //td[normalize-space()='${productName}']      ${productName}     ${wait_time}
+     ${get_productName1} =    get text    //td[normalize-space()='${productName}']
+     log to console     ${get_productName1}
+     should be equal    ${productName}     ${get_productName1}
