@@ -501,10 +501,10 @@ Refresh search text on discovered asset list page
     Sleep    ${yop_sleep}
     Switch Window       aithentic | Discovered Assets
     Generic.Verify your current page location contains     discovery-assets-list
-    OCS.Search with MAC address and IP Address on the search bar of Discovered Asset List         192.168.0.137
+    OCS.Search with MAC address and IP Address on the search bar of Discovered Asset List         ${discovery_asset_list_brand}
     sleep   ${search_sleep}
     Generic.Wait until table get load
-    Generic.Verify your current page contains this text      192.168.0.137
+    Generic.Verify your current page contains this text      ${discovery_asset_list_brand}
     OCS.Click on Refresh Icon of discovered asset lists
     Generic.Wait until table get load
 
@@ -582,7 +582,7 @@ Verify Filters of Existing asets by adding assets of different tech type - HARDW
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    aad
-    I_iconPage.Choose tab under Discovery Assets       network-discovery
+#    I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.click on filter icon of existing assets
     OCS.Enter input in the brand field of existing asset       ${generated_BrandName}
@@ -1146,7 +1146,7 @@ Verify Filters of Existing asets by adding assets of different tech type - VIRTU
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    aad
-    I_iconPage.Choose tab under Discovery Assets       network-discovery
+#    I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.click on filter icon of existing assets
     OCS.Enter input in brand filters field of existing asset with different tech type       ${generated_BrandName}

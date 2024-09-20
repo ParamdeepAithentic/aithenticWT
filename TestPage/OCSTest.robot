@@ -1807,7 +1807,7 @@ Verify reset icon while adding discovery asset
         OCS.Enter text to search discovery asset    ${discovered_asset_brand}
         OCS.Click on the down arrow icon of discovered asset
         Generic.Scroll Window To End
-        OCS.Mouse Hover over searched Discovered Assets
+        OCS.Mouse Hover over current page after hovering over ip and discovered assets
         PaginationPage.Mouse over confirm matches button without searching
         OCS.Mark check-box of Agent/Discovered Asset
         OCS.Click on Button inside Network Discovery Page       Add Assets

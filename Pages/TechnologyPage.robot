@@ -1738,6 +1738,7 @@ Click on the export button of component tab under technology details page
     wait until element is enabled   //div[@id='components']//button[@id='dropdownMenuButton']     ${wait_time}
     sleep       ${search_sleep}
     click element   //div[@id='components']//button[@id='dropdownMenuButton']
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
 
 
 Click button to proceed the asset restore

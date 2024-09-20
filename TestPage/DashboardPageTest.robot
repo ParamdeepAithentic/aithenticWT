@@ -1446,7 +1446,7 @@ Verifying the Renewals Overview section of Management console - Overdue certific
     DashboardPage.Select the first value of To dropdown of quarter     4
     DashboardPage.Fetch the count renewals overview subtabs         Upcoming certificates
     DashboardPage.Compare the counts of renewal overview after adding the asset
-    DashboardPage.Click on the subtabs          Upcoming cerificates
+    DashboardPage.Click on the subtabs          Upcoming certificates
     DashboardPage.Search and verify through asset_id      ${generated_AssetID}
     DashboardPage.Click on Back to management console tab
     Generic.Verify your current page location contains    management-console

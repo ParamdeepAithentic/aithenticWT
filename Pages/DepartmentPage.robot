@@ -83,11 +83,11 @@ Select option from side menu in department list
 Search by department name
     [Arguments]    ${department}
      wait until element is visible       css:thead tr       ${wait_time}
-     wait until element is visible      css:#seacrhbar-department-wizard     ${wait_time}
-     click element      css:#seacrhbar-department-wizard
-     Clear Element Text      css:#seacrhbar-department-wizard
+     wait until element is visible      css:#searchbar-departmentlist     ${wait_time}
+     click element      css:#searchbar-departmentlist
+     Clear Element Text      css:#searchbar-departmentlist
      ${StartTime1} =     Get Current Time in Milliseconds
-     input text   css:#seacrhbar-department-wizard   ${department}
+     input text   css:#searchbar-departmentlist   ${department}
      sleep      ${search_sleep}
      wait until element is visible      //td[normalize-space()='1']     ${wait_time}
      wait until element is visible       css:thead tr       ${wait_time}

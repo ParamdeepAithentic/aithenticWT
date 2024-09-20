@@ -461,7 +461,7 @@ Upload I-icon while adding discovery and component asset
     Generic.Verify your current page location contains    ocs
     OCS.Choose Tab under Asset Discovery    network-discovery
     OCS.Click on newly discovered tab under network discovery
-    Generic.Verify your current page location contains    ocs
+    Generic.Verify your current page location contains    aad
     OCS.Click on search icon of discovery assets
     OCS.Enter text to search discovery asset   ${discovered_asset_brand}
     Generic.Scroll Window To End
