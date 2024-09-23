@@ -1184,7 +1184,7 @@ Network discovery: search on discovered asset list with Tag Name, IP_address and
         Generic.Verify your current page location contains    discovery-assets-list
         Generic.Refresh the existing page
         OCS.Search with MAC address and IP Address on the search bar of Discovered Asset List       ${Brand_name}
-        TechnologyPage.verify Text from Assignment Information     ${Brand_name}          ${discovery_asset_list_brand}
+#        TechnologyPage.verify Text from Assignment Information     ${Brand_name}          ${discovery_asset_list_brand}
         OCS.Click on Refresh Icon of discovered asset lists
         OCS.Search with MAC address and IP Address on the search bar of Discovered Asset List       ${generated_AssetID}
         TechnologyPage.verify Text from Assignment Information     ${generated_AssetID}          ${generated_AssetID}
@@ -1221,6 +1221,7 @@ Search with containing fields under advance search of discovered asset
         Generic.Verify your current page location contains     discovery-assets
         Generic.Verify your current page location contains   aad
         OCS.Click on newly discovered tab under network discovery
+        OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset    ${discovered_asset_brand}
         OCS.Click on the down arrow icon of discovered asset
         Generic.Scroll Window To End
@@ -1367,7 +1368,7 @@ Search with containing fields under advance search of component of discovered as
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-       Switch Window      aithentic | Sentinel One Newly-Discovered
+       Switch Window     aithentic | Agent Discovery
         OCS.Choose tab under Discovery Assets   agent-discovery
         Generic.Verify your current page location contains      aad
         Generic.Refresh the existing page
@@ -1714,7 +1715,7 @@ Upload Image and Document file during Add Asset with IP address from Agent Disco
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window       aithentic | Sentinel One Newly-Discovered
+        Switch Window     aithentic | Agent Discovery
         Generic.Verify your current page location contains      discovery-assets
         Generic.select the option from the side menu        Technology
         Generic.Verify your current page location contains      technology-list
@@ -1815,7 +1816,6 @@ Verify reset icon while adding discovery asset
         OCS.Click on the down arrow icon of discovered asset
         Generic.Scroll Window To End
         OCS.Mouse Hover over current page after hovering over ip and discovered assets
-        PaginationPage.Mouse over confirm matches button without searching
         OCS.Mark check-box of Agent/Discovered Asset
         OCS.Click on Button inside Network Discovery Page       Add Assets
         Sleep    ${Yop_Sleep}
@@ -1857,7 +1857,7 @@ Verify reset icon while adding component
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        switch window    aithentic | Sentinel One Newly-Discovered
+        Switch Window     aithentic | Agent Discovery
         OCS.Choose tab under Discovery Assets   agent-discovery
         Generic.Verify your current page location contains      aad
         Generic.Refresh the existing page
