@@ -1028,3 +1028,11 @@ Get the text of no records after searching with inavlid mac address under newly 
     log to console     ${fetch_text_newly_discovered}
     set global variable   ${fetch_text_newly_discovered}
     should be equal    ${option}    ${fetch_text_newly_discovered}
+
+Mouse hover over first discovered asset
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    (//div[contains(@class,'column-boxes-left')]//div[contains(@class,'child-container')]//div[contains(@class,'left-text')])[1]     ${wait_time}
+    Wait Until Element Is Enabled    (//div[contains(@class,'column-boxes-left')]//div[contains(@class,'child-container')]//div[contains(@class,'left-text')])[1]     ${wait_time}
+    sleep   ${search_sleep}
+    Mouse Over   (//div[contains(@class,'column-boxes-left')]//div[contains(@class,'child-container')]//div[contains(@class,'left-text')])[1]
+    sleep   ${search_sleep}

@@ -130,7 +130,7 @@ Search Existing Assets
         OCS.Click on the down arrow icon of existing assets
         OCS.Click on the down arrow icon of existing assets
         Generic.Scroll Window To End
-        OCS.Mouse Hover over searched existing assets after craeting technology
+        OCS.Mouse hover over first existing asset
         OCS.Verify searched existing asset    ${generated_AssetID}
     EXCEPT
         OCS.My Failure Handling
@@ -233,7 +233,9 @@ Apply filters and clear filter on Discovered Asset
         Generic.click on the button     Apply
         sleep   ${search_sleep}
         OCS.Click on the down arrow icon of discovered asset
-        OCS.Mouse Hover over searched Discovered Assets
+        Generic.Scroll Window To End
+        OCS.Mouse hover over first discovered asset
+        sleep   ${search_sleep}
         OCS.Get text by hovering over assets    Brand:
         OCS.verify Text by hovering over assets  ${substring}       ${discovered_asset_brand}
         PaginationPage.Mouse over confirm matches button without searching
@@ -287,7 +289,7 @@ Apply filters and clear filter on Existing Assets
         OCS.Enter input in the brand field of existing asset       ${discovered_existing_brand}
         Generic.click on the button     Apply
         OCS.Click on the down arrow icon of existing assets
-        OCS.Mouse Hover over filters of existing asset
+        OCS.Mouse hover over first existing asset
         OCS.Get text by hovering over existing assets   Brand:
         OCS.verify Text by hovering over assets  ${substring1}       ${discovered_existing_brand}
         PaginationPage.Mouse over confirm matches button without searching
@@ -320,9 +322,11 @@ Apply filters and clear filter on Existing Assets
         TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     DepartmentName
         OCS.verify Text by hovering over assets  ${assign_loc_input_value}      ${discovered_existing_department}
         sleep       ${yop_sleep}
-        Switch Window     aithentic | Sentinel One Newly-Discovered
-        OCS.Click on the down arrow icon of existing assets
-        OCS.Click on clear filter button link of discovered assets  Clear Filters
+        Switch Window     aithentic | Agent Discovery
+        OCS.Click on newly discovered tab under network discovery
+        OCS.click on filter icon of existing assets
+#        OCS.Click on the down arrow icon of existing assets
+#        OCS.Click on clear filter button link of discovered assets  Clear Filters
         OCS.Choose filters for discovered asset    Select Location      *Main Office
         Generic.click on the button     Apply
         Generic.Scroll Window To End
@@ -340,9 +344,10 @@ Apply filters and clear filter on Existing Assets
         TechnologyPage.Get Value of Assignment Information Location_Department_AssginTo_IDFields     LocationName
         OCS.verify Text by hovering over assets  ${assign_loc_input_value}      *Main Office
         sleep       ${yop_sleep}
-        Switch Window      aithentic | Sentinel One Newly-Discovered
+        Switch Window     aithentic | Agent Discovery
+        OCS.Click on newly discovered tab under network discovery
         OCS.Click on the down arrow icon of existing assets
-        OCS.Click on clear filter button link of discovered assets      Clear Filters
+#        OCS.Click on clear filter button link of discovered assets      Clear Filters
     EXCEPT
         OCS.My Failure Handling
         Fail
@@ -384,9 +389,11 @@ Add Discovery Asset
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window       aithentic | Sentinel One Newly-Discovered
+#        Switch Window       aithentic | Sentinel One Newly-Discovered
+        Switch Window       aithentic | Agent Discovery
         Generic.Refresh the existing page
-        OCS.Choose Tab under Asset Discovery    agent-discovery
+#        OCS.Choose Tab under Asset Discovery    agent-discovery
+        Generic.Verify your current page location contains    aad
         Generic.Verify your current page contains this text    ${generated_AssetID}
         Generic.select the option from the side menu        Technology
         Generic.Verify your current page location contains      technology-list
@@ -448,7 +455,7 @@ Create Asset from Add Assets Page
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window     aithentic | Sentinel One Newly-Discovered
+        Switch Window     aithentic | Agent Discovery
         Generic.Refresh the existing page
         OCS.Choose Tab under Asset Discovery    agent-discovery
         Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -507,7 +514,7 @@ Add component as an asset from Agent Discovery page
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window     aithentic | Sentinel One Newly-Discovered
+        Switch Window     aithentic | Agent Discovery
         Generic.Refresh the existing page
         OCS.Choose Tab under Asset Discovery    agent-discovery
         Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -607,7 +614,7 @@ Upload Image and Document File while Add Discovery Asset
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-       Switch Window      aithentic | Sentinel One Newly-Discovered
+       Switch Window     aithentic | Agent Discovery
         Generic.Refresh the existing page
          OCS.Choose Tab under Asset Discovery    agent-discovery
         Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -726,7 +733,7 @@ Upload Image and Document File while Add component as an asset from Agent Discov
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window     aithentic | Sentinel One Newly-Discovered
+        Switch Window     aithentic | Agent Discovery
         Generic.Refresh the existing page
         OCS.Choose Tab under Asset Discovery    agent-discovery
         Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -1055,7 +1062,7 @@ Add asset with IP Address under discovered asset list
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window       aithentic | Discovered Assets
+        Switch Window     aithentic | Agent Discovery
         Generic.Verify your current page location contains      aad
         OCS.Choose tab under Discovery Assets   agent-discovery
         Generic.Verify your current page location contains   aad
@@ -1104,7 +1111,7 @@ Add Asset with IP address from Network Discovery Page
         OCS.Enter text to search discovery asset    ${discovered_IP}
         OCS.Click on the down arrow icon of discovered asset
         Generic.Scroll Window To End
-        OCS.Mouse Hover over searched IP Assets
+        OCS.Mouse hover over first discovered asset
         OCS.Verify Searched discovery asset         ${discovered_IP}
         OCS.Get MAC_Address by hovering over IP discovered assets   MacAddress:
         OCS.Mouse Hover over current page after hovering over ip and discovered assets
@@ -1121,7 +1128,7 @@ Add Asset with IP address from Network Discovery Page
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
-        Switch Window     aithentic | Sentinel One Newly-Discovered
+        Switch Window     aithentic | Agent Discovery
         Generic.select the option from the side menu        Technology
         Generic.Verify your current page location contains      technology-list
         TechnologyPage.Search by AssetId       ${generated_AssetID}
