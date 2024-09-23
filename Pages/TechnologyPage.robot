@@ -1684,7 +1684,7 @@ Enter product in the product not containing input field
     input text      css:input[formcontrolname='ProductNotContaining']     ${Product}
 
 Wait until advanced search table get load
-    wait until element is visible       //div[@class='table-responsive table-scrollable table-column-common ng-star-inserted']      ${wait_time}
+    wait until element is visible       //div[@class='table-responsive table-scrollable table-column-common ng-star-inserted']      120
 
 Search by Product Version
     [Arguments]    ${software_version}
