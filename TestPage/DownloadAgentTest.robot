@@ -582,7 +582,6 @@ Verify Filters of Existing asets by adding assets of different tech type - HARDW
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
     Generic.Verify your current page location contains    aad
-#    I_iconPage.Choose tab under Discovery Assets       network-discovery
     OCS.Click on newly discovered tab under network discovery
     OCS.click on filter icon of existing assets
     OCS.Enter input in the brand field of existing asset       ${generated_BrandName}

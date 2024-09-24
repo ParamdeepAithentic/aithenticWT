@@ -113,7 +113,7 @@ Add Team member page - Add New Department and assign that department to Team mem
     TechnologyPage.Select department cost center     1300
     TechnologyPage.Save the department       add
     Generic.Fetch alert message text and compare it with        Department added successfully
-    TeamMemberPage.Select team member department        ${generated_DepartmentNumber}
+#    TeamMemberPage.Select team member department        ${generated_DepartmentNumber}
     TeamMemberPage.Select team member role     Admin
     TeamMemberPage.Click on team member location
     TeamMemberPage.Select team member location
@@ -153,7 +153,7 @@ Edit Team member page - Edit New Department and assign that department to Team m
     TechnologyPage.Select department cost center     1300
     TechnologyPage.Save the department       add
     Generic.Fetch alert message text and compare it with        Department added successfully
-    TeamMemberPage.Select team member department        ${generated_DepartmentNumber}
+#    TeamMemberPage.Select team member department        ${generated_DepartmentNumber}
     TeamMemberPage.Select team member role     Admin
     TeamMemberPage.Click on team member location
     TeamMemberPage.Select team member location

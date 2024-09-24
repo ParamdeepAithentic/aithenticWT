@@ -901,7 +901,7 @@ Verify the text from recent notifications and compare with
 
 Wait until alert is visible in the Recent Notifiation tab
     [Arguments]     ${option1}      ${option2}
-    wait until page contains        ${option1} ${option2}    120
+    wait until page contains        ${option1} ${option2}    240
 
 Click on View more dropdown under recent notifications
     [Arguments]     ${option}

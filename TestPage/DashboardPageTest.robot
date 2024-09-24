@@ -2554,6 +2554,7 @@ Verify Notification Mark all as read
     Generic.Verify your current page location contains     technology-details
     TechnologyPage.Click on edit button on product details page        Edit
     Generic.Verify your current page location contains      edit-technology
+    TechnologyPage.Select technology lifecycle status      Active
     TechnologyPage.Click on update button of edit_technology page      Update
     Generic.Fetch alert message text and compare it with        Technology updated successfully
     Generic.Verify your current page location contains     technology-details
