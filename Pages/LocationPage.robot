@@ -411,3 +411,49 @@ Get the text of selected status filter under location
     ${New_status}=    Evaluate    '${original_string}'.strip()
     log to console    ${New_status}
     set global variable   ${New_status}
+
+Method 1
+    [Arguments]    ${option}
+    ${status}=    Run Keyword And Return Status    Element Should Be Visible    //td[normalize-space()='${option}']   ${wait_time}
+    Set Global Variable    ${status}
+    [Return]    ${status}
+
+
+Get new location
+    [Arguments]         ${option}
+    Run Keyword If    ${status} == True
+        ...    LocationPage.Skip case
+        ...    ELSE  Run Keywords     LocationPage.Create the location  ${option}
+        ...    AND    Return From Keyword
+
+
+Skip case
+     log   Element is already there
+
+Create the location
+    [Arguments]         ${option}
+    LocationPage.Click on Location action button
+    LocationPage.Click on add location button    Add New Location
+    Generic.Verify your current page location contains      add-location
+    LocationPage.Select location country     United States
+    LocationPage.Create static location name        ${option}
+    LocationPage.Save location form     save
+    Generic.Fetch alert message text and compare it with    Location created successfully
+
+
+Create static location name
+    [Arguments]     ${option}
+    wait until element is visible       ${location_Name}    ${wait_time}
+    wait until element is enabled          ${location_Name}    ${wait_time}
+    click element   ${location_Name}
+    input text   ${location_Name}   ${option}
+
+Search by location name using statc location
+    [Arguments]    ${LocationName}
+     wait until element is not visible      ${loaderIcon}     ${wait_time}
+     wait until element is visible       css:thead tr       ${wait_time}
+     click element      ${search_LocationName}
+     Clear Element Text      ${search_LocationName}
+     ${StartTime1} =     Get Current Time in Milliseconds
+     input text   ${search_LocationName}   ${LocationName}
+     sleep   ${search_sleep}

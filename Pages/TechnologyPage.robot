@@ -2083,3 +2083,50 @@ Get the text of the value you selected under filter
     ${random_Namee}=    Evaluate    '${original_string}'.strip()
     log to console    ${random_Namee}
     set global variable    ${random_Namee}
+
+Click on the product field under add technology
+    [Arguments]        ${product}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible   //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input      ${wait_time}
+    wait until element is enabled   //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input     ${wait_time}
+    Clear Element Text    //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input
+    click element    //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input
+    input text       //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input       ${product}
+
+Method 1
+    [Arguments]    ${option}
+    ${status}=    Run Keyword And Return Status    Element Should Be Visible    //td[normalize-space()='${option}']   ${wait_time}
+    Set Global Variable    ${status}
+    [Return]    ${status}
+
+
+Get new product
+    [Arguments]         ${option}   ${option1}   ${option2}
+    Run Keyword If    ${status} == True
+        ...    TechnologyPage.Skip case
+        ...    ELSE  Run Keywords     TechnologyPage.Create the product     ${option}   ${option1}   ${option2}
+        ...    AND    Return From Keyword
+
+
+Skip case
+     log   Element is already there
+
+Create the product
+    [Arguments]         ${option}     ${option1}   ${option2}
+    PartnersPage.Click here to add link of contract details
+    DashboardPage.Create static product via link        ${option}
+    DashboardPage.Add product brand name      QABrand555
+    TechnologyPage.Add product description via technology
+    TechnologyPage.Add product feature via technology
+    TechnologyPage.Select product technology type via technology     ${option1}
+    TechnologyPage.Select product technology group via technology   ${option2}
+    TechnologyPage.Click on save product pop inside technology page
+    Generic.Fetch alert message text and compare it with    Product created successfully
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology-list
+    Generic.Wait until table get load
+    TechnologyPage.Search by AssetId       ${generated_AssetID}

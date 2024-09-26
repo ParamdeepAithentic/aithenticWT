@@ -1566,3 +1566,34 @@ Get and verify the text from Contract notification
     set global variable     ${notification}
     log to console     ${notification}
     should be equal    ${notification}     ${option}
+
+Sending message 10 times to the same user
+    [Documentation]    Send message 12 times to the same user
+    ${element_count}=    Set Variable    12   # Send the message 12 times
+    ${element_count}=    Convert To Integer    ${element_count}
+    FOR    ${index}    IN RANGE    1    ${element_count + 1}
+        Log    Iteration ${index}
+        DashboardPage.Sending message to the user
+        Sleep    ${yop_sleep}
+    END
+
+Sending message to the user
+    Generic.Select parameter     Compose
+    Generic.Verify your current page location contains      message
+    DashboardPage.Enter input in the recipient list field under compose message    FName2569561645
+    DashboardPage.Enter input in the message status field under compose message     Public
+    DashboardPage.Enter text in the subject field under compose message       # Add unique subject for each message
+    DashboardPage.Enter text in the client message field under compose message
+    Generic.click on the button     Send
+    Generic.Fetch alert message text and compare it with       Message sent successfully
+
+
+Create static product via link
+    [Arguments]      ${option}
+    wait until element is visible       ${ProductName}      ${wait_time}
+    wait until element is enabled       ${ProductName}      ${wait_time}
+    click element      ${ProductName}
+    input text      ${ProductName}      ${option}
+    click element      ${ProductName}       TAB
+
+

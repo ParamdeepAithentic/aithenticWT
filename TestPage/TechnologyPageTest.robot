@@ -2871,7 +2871,7 @@ Compose reply and remove the message via technology details
     TwoFactorAuth.Click verification button
     Generic.Verify your current page location contains     dashboard
     Generic.Click on the profile name
-     Generic.Select option from profile list     personal-details
+    Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
     DashboardPage.Select an option from company details side list   Security
     Generic.Verify your current page location contains  security
