@@ -1647,7 +1647,7 @@ Create CrowdStrike Account and verify the details
     Generic.Verify your current page location contains      technology-settings
     Generic.select the option from the side menu    Asset Discovery
     SubscriptionPage.Click on the crowd strike tab under asset discovery
-    OCS.Click on newly discovered tab under service now
+    OCS.Click on the newly discovered tab under crowd strike
     SubscriptionPage.Click on the action button of crowd strike under discovery assets
     SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets       Edit
     SubscriptionPage.click on the cross icon of crowdstrike under asset discoveryy    1

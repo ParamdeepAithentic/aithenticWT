@@ -669,3 +669,8 @@ click on the cross icon of crowdstrike under asset discovery
     wait until element is visible   (//div[@id='openEditSchedulerCrowdstrike']//span[@title='Clear all'])[${option}]    ${wait_time}
     wait until element is enabled   (//div[@id='openEditSchedulerCrowdstrike']//span[@title='Clear all'])[${option}]     ${wait_time}
     click element   (//div[@id='openEditSchedulerCrowdstrike']//span[@title='Clear all'])[${option}]
+
+Click on the newly discovered tab under crowd strike
+    wait until element is visible   //a[@id='new-dicovered-crowdstrike']    ${wait_time}
+    wait until element is enabled   //a[@id='new-dicovered-crowdstrike']     ${wait_time}
+    click element  //a[@id='new-dicovered-crowdstrike']
