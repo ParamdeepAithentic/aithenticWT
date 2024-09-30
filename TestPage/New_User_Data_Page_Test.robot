@@ -245,7 +245,7 @@ Adding the data in the account
     PartnersPage.Get new support Partner        Supplier       qabrand10050505
     PartnersPage.Search by static business name   testqa 20Feb
     PartnersPage.Verify the search static support partner       testqa 20Feb
-    PartnersPage.Get new support Partner        Manufacturerl       testqa 20Feb
+    PartnersPage.Get new support Partner        Manufacturer       testqa 20Feb
 
 
 
