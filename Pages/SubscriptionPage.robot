@@ -642,3 +642,27 @@ Enter input in the token field of sentinelone
     wait until element is enabled  css:#apiToken      ${wait_time}
     click element  css:#apiToken
     input text      css:#apiToken       ${option}
+
+Click on the tanium tab under asset discovery
+    wait until element is visible   //a[@id='tanium-first-parent-tab']   ${wait_time}
+    wait until element is enabled   //a[@id='tanium-first-parent-tab']     ${wait_time}
+    click element   //a[@id='tanium-first-parent-tab']
+
+Click on the action button of tanium under discovery assets
+    wait until element is visible  //button[@id='tanium-list-actions']    ${wait_time}
+    wait until element is enabled  //button[@id='tanium-list-actions']  ${wait_time}
+    click element  //button[@id='tanium-list-actions']
+    sleep   ${search_sleep}
+
+Click on the options under action button of tanium under discovery assets
+    [Arguments]     ${option}
+    wait until element is visible   //div[contains(@id,'tanium')]//a[normalize-space()='${option}']    ${wait_time}
+    wait until element is enabled   //div[contains(@id,'tanium')]//a[normalize-space()='${option}']     ${wait_time}
+    click element   //div[contains(@id,'tanium')]//a[normalize-space()='${option}']
+    sleep   ${search_sleep}
+
+click on the cross icon of tanium under asset discovery
+    [Arguments]     ${option}
+    wait until element is visible   (//div[@id='openEditSchedulerTanium']//span[@title='Clear all'])[${option}]    ${wait_time}
+    wait until element is enabled   (//div[@id='openEditSchedulerTanium']//span[@title='Clear all'])[${option}]     ${wait_time}
+    click element   (//div[@id='openEditSchedulerTanium']//span[@title='Clear all'])[${option}]
