@@ -674,3 +674,21 @@ Click on the newly discovered tab under crowd strike
     wait until element is visible   //a[@id='new-dicovered-crowdstrike']    ${wait_time}
     wait until element is enabled   //a[@id='new-dicovered-crowdstrike']     ${wait_time}
     click element  //a[@id='new-dicovered-crowdstrike']
+
+Enter input in the input field of frequency of crowd strike under asset discovery
+    [Arguments]     ${option}
+    wait until element is visible  //div[@id='openEditSchedulerCrowdstrike']//ng-select[@formcontrolname='schedulerFrequency']    ${wait_time}
+    wait until element is enabled   //div[@id='openEditSchedulerCrowdstrike']//ng-select[@formcontrolname='schedulerFrequency']    ${wait_time}
+    click element   //div[@id='openEditSchedulerCrowdstrike']//ng-select[@formcontrolname='schedulerFrequency']
+    Generic.Select parameter    ${option}
+
+Enter input in the input field of day of crowd strike asset discovery
+    [Arguments]     ${option}
+    wait until element is visible  //div[@id='openEditSchedulerCrowdstrike']//ng-select[@formcontrolname='schedulerDay']    ${wait_time}
+    wait until element is enabled  //div[@id='openEditSchedulerCrowdstrike']//ng-select[@formcontrolname='schedulerDay']    ${wait_time}
+    click element   //div[@id='openEditSchedulerCrowdstrike']//ng-select[@formcontrolname='schedulerDay']
+    Generic.Select parameter    ${option}
+
+Enter input in the start date field of crowd strike under asset discovery
+    Generic.Enter current date      //div[@id='openEditSchedulerCrowdstrike']//input[@formcontrolname='schedulerDate']
+
