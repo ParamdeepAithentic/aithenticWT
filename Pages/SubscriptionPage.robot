@@ -642,3 +642,16 @@ Enter input in the token field of sentinelone
     wait until element is enabled  css:#apiToken      ${wait_time}
     click element  css:#apiToken
     input text      css:#apiToken       ${option}
+
+Click on the tenable tab under asset discovery
+    wait until element is visible     //a[@id='tenable-first-parent-tab']       ${wait_time}
+    wait until element is enabled     //a[@id='tenable-first-parent-tab']         ${wait_time}
+    click element   //a[@id='tenable-first-parent-tab']
+
+Enter input in the access key of tenable account
+    [Arguments]     ${option}
+    wait until element is visible  css:#accessKey    ${wait_time}
+    wait until element is enabled  css:#accessKey     ${wait_time}
+    click element  css:#accessKey
+    input text      css:#accessKey        ${option}
+
