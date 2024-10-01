@@ -692,3 +692,29 @@ Enter input in the input field of day of crowd strike asset discovery
 Enter input in the start date field of crowd strike under asset discovery
     Generic.Enter current date      //div[@id='openEditSchedulerCrowdstrike']//input[@formcontrolname='schedulerDate']
 
+Select the time from the timepicker under asset dicovery
+    [Arguments]     ${option}     ${option1}
+    wait until element is visible  //div[@id='${option}']//input[@formcontrolname='schedulerTime']    ${wait_time}
+    wait until element is enabled   //div[@id='${option}']//input[@formcontrolname='schedulerTime']    ${wait_time}
+    clear element text  //div[@id='${option}']//input[@formcontrolname='schedulerTime']
+    sleep    ${search_sleep}
+    click element       //div[@id='${option}']//input[@formcontrolname='schedulerTime']
+    wait until element is visible  //div[contains(@class,'clock-face')]//following-sibling::div//span[normalize-space()='${option1}']    ${wait_time}
+    wait until element is enabled   //div[contains(@class,'clock-face')]//following-sibling::div//span[normalize-space()='${option1}']    ${wait_time}
+    click element       //div[contains(@class,'clock-face')]//following-sibling::div//span[normalize-space()='${option1}']
+
+click on the yes button of delete pop up under asset discovery
+    wait until element is not visible   ${loaderIcon}          ${wait_time}
+    wait until element is visible      //div[contains(@id,'deleteCSConnector')]//button[normalize-space()='Yes']          ${wait_time}
+    wait until element is enabled      //div[contains(@id,'deleteCSConnector')]//button[normalize-space()='Yes']          ${wait_time}
+    sleep   ${search_sleep}
+    click element       //div[contains(@id,'deleteCSConnector')]//button[normalize-space()='Yes']
+    sleep   ${search_sleep}
+
+Get the value of fields under view details of subscription connector under asset discovery
+    [Arguments]     ${option1}      ${option2}
+    wait until element is not visible   ${loaderIcon}    ${wait_time}
+    wait until element is visible   (//div[@id='CrowdStrikeDetails']//input)[${option1}]   ${wait_time}
+    ${value} =    get value    (//div[@id='CrowdStrikeDetails']//input)[${option1}]
+    log to console     ${value}
+    should be equal    ${value}         ${option2}

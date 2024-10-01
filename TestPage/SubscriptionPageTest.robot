@@ -1653,7 +1653,7 @@ Create CrowdStrike Account and verify the details
     SubscriptionPage.click on the cross icon of crowdstrike under asset discovery    1
     SubscriptionPage.Enter input in the input field of frequency of crowd strike under asset discovery    Weekly
     SubscriptionPage.Enter input in the input field of day of crowd strike asset discovery       Monday
-    SubscriptionPage.Select the time from the timepicker     7
+    SubscriptionPage.Select the time from the timepicker under asset dicovery   openEditSchedulerCrowdstrike      7
     SubscriptionPage.Click on the ok button after selecting the time
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
@@ -1662,8 +1662,7 @@ Create CrowdStrike Account and verify the details
     SubscriptionPage.click on the cross icon of crowdstrike under asset discovery    1
     SubscriptionPage.Enter input in the input field of frequency of crowd strike under asset discovery    Monthly
     SubscriptionPage.Enter input in the start date field of crowd strike under asset discovery
-
-    SubscriptionPage.Select the time from the timepicker      8
+    SubscriptionPage.Select the time from the timepicker under asset dicovery   openEditSchedulerCrowdstrike      8
     SubscriptionPage.Click on the ok button after selecting the time
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
@@ -1672,7 +1671,7 @@ Create CrowdStrike Account and verify the details
     SubscriptionPage.click on the cross icon of crowdstrike under asset discovery    1
     SubscriptionPage.Enter input in the input field of frequency of crowd strike under asset discovery    Daily
 
-    SubscriptionPage.Select the time from the timepicker      9
+    SubscriptionPage.Select the time from the timepicker under asset dicovery   openEditSchedulerCrowdstrike      9
     SubscriptionPage.Click on the ok button after selecting the time
 
     Generic.click on the button     Update
@@ -1683,30 +1682,30 @@ Create CrowdStrike Account and verify the details
     SubscriptionPage.Enter input in the input field of frequency of crowd strike under asset discovery    Yearly
     SubscriptionPage.Enter input in the start date field of crowd strike under asset discovery
 
-    SubscriptionPage.Select the time from the timepicker      2
+    SubscriptionPage.Select the time from the timepicker under asset dicovery   openEditSchedulerCrowdstrike      2
     SubscriptionPage.Click on the ok button after selecting the time
 
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the action button of crowd strike under discovery assets
     SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets     Details
-    SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets    Run Now
+    Generic.click on the button    Run Now
 #    SubscriptionPage.Click on cross icon of details under service now          #  delete this line after bug got fixed #
     SubscriptionPage.Fetch alert message text of subscription connector and compare it with
     SubscriptionPage.Click on the action button of crowd strike under discovery assets
     SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets      Delete
-    Generic.click on the button     Yes
+    SubscriptionPage.click on the yes button of delete pop up under asset discovery
 #    SubscriptionPage.click on the cross icon of delete pop up under asset discovery
     Generic.Fetch alert message text and compare it with        Status Updated
-   SubscriptionPage.Click on the action button of crowd strike under discovery assets
+    SubscriptionPage.Click on the action button of crowd strike under discovery assets
     SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets   Activate
     Generic.Fetch alert message text and compare it with        Status Updated
-    SubscriptionPage.Click on the action button of service now under discovery assets
-    Generic.click on the tab       Run Now
+    sleep   ${search_sleep}
+    SubscriptionPage.Click on the action button of crowd strike under discovery assets
+    SubscriptionPage.Click on the action button of crowd strike under discovery assets
+    SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets       Run Now
     SubscriptionPage.Fetch alert message text of subscription connector and compare it with
     SubscriptionPage.Click on the action button of crowd strike under discovery assets
     SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets    Details
-    SubscriptionPage.Get the value of fields under view details of subscription connector   1       CrowdStrike
-    SubscriptionPage.Get the value of fields under view details of subscription connector   2       ${generate_register_Fname} ${generate_register_Lname}
-
-
+    SubscriptionPage.Get the value of fields under view details of subscription connector under asset discovery   1       CrowdStrike
+    SubscriptionPage.Get the value of fields under view details of subscription connector under asset discovery   2       ${generate_register_Fname} ${generate_register_Lname}
