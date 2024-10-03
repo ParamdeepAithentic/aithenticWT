@@ -322,6 +322,7 @@ Select parameter
     Wait Until Element Is Not Visible    ${loaderIcon}   ${wait_time}
     wait until element is visible     //span[normalize-space()='${address}']        ${wait_time}
     wait until element is enabled       //span[normalize-space()='${address}']          ${wait_time}
+    sleep       ${search_sleep}
     click element      //span[normalize-space()='${address}']
 
 

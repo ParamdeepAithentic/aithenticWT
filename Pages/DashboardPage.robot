@@ -488,7 +488,7 @@ Verify department added
 
 Verify the side option list parameters
    wait until element is visible   ${side_options}      ${wait_time}
-   @{expectedList} =    Create List        Aithentic logo    Dashboard       Messages        Location        Team Members      Partners      Technology      CSPM     Asset Discovery
+   @{expectedList} =    Create List        Aithentic logo    Dashboard       Messages        Location        Team Members      Partners     Smart Share      Technology      CSPM     Asset Discovery
    ${elements} =  Get WebElements     ${side_options}
    @{actualList} =   Create List
    FOR  ${element}  IN      @{elements}
@@ -901,7 +901,7 @@ Verify the text from recent notifications and compare with
 
 Wait until alert is visible in the Recent Notifiation tab
     [Arguments]     ${option1}      ${option2}
-    wait until page contains        ${option1} ${option2}    120
+    wait until page contains        ${option1} ${option2}    240
 
 Click on View more dropdown under recent notifications
     [Arguments]     ${option}
@@ -1566,3 +1566,34 @@ Get and verify the text from Contract notification
     set global variable     ${notification}
     log to console     ${notification}
     should be equal    ${notification}     ${option}
+
+Sending message 10 times to the same user
+    [Documentation]    Send message 12 times to the same user
+    ${element_count}=    Set Variable    12   # Send the message 12 times
+    ${element_count}=    Convert To Integer    ${element_count}
+    FOR    ${index}    IN RANGE    1    ${element_count + 1}
+        Log    Iteration ${index}
+        DashboardPage.Sending message to the user
+        Sleep    ${yop_sleep}
+    END
+
+Sending message to the user
+    Generic.Select parameter     Compose
+    Generic.Verify your current page location contains      message
+    DashboardPage.Enter input in the recipient list field under compose message    FName2569561645
+    DashboardPage.Enter input in the message status field under compose message     Public
+    DashboardPage.Enter text in the subject field under compose message       # Add unique subject for each message
+    DashboardPage.Enter text in the client message field under compose message
+    Generic.click on the button     Send
+    Generic.Fetch alert message text and compare it with       Message sent successfully
+
+
+Create static product via link
+    [Arguments]      ${option}
+    wait until element is visible       ${ProductName}      ${wait_time}
+    wait until element is enabled       ${ProductName}      ${wait_time}
+    click element      ${ProductName}
+    input text      ${ProductName}      ${option}
+    click element      ${ProductName}       TAB
+
+

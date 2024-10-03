@@ -820,3 +820,16 @@ Verify product added using bulk_import_export under asset wizard
      ${get_productName1} =    get text    //td[normalize-space()='${productName}']
      log to console     ${get_productName1}
      should be equal    ${productName}     ${get_productName1}
+
+Verify department added using bulk_import_export under asset wizard
+    [Arguments]     ${departmentName}
+     wait until element is visible       css:thead tr       ${wait_time}
+     wait until element is visible      css:#seacrhbar-department-wizard    ${wait_time}
+     wait until element is enabled      css:#seacrhbar-department-wizard     ${wait_time}
+     click element     css:#seacrhbar-department-wizard
+     input text   css:#seacrhbar-department-wizard     ${productName}
+     sleep       ${search_sleep}
+     Wait Until Element Contains    //td[normalize-space()='${departmentName} ']      ${departmentName}      ${wait_time}
+     ${get_departmentName1} =    get text    //td[normalize-space()='${departmentName} ']
+     log to console     ${get_departmentName1}
+     should be equal    ${departmentName}     ${get_departmentName1}

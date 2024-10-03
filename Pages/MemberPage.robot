@@ -371,3 +371,72 @@ Click on confirm button under remove pop up of assigned user
     click element       //div[contains(@id,'remove-assignee')]//div[contains(@class,'modal-body')]//following-sibling::button[normalize-space()='Confirm']
 #    sleep   ${search_sleep}
     wait until element is not visible       ${shadow}          ${wait_time}
+
+Search assigned user by static first name
+    [Arguments]    ${name}
+    wait until element is visible       css:thead tr       ${wait_time}
+    wait until element is visible      css:input[placeholder='Search by Assignee Name or Employee Id']     ${wait_time}
+    wait until element is enabled      css:input[placeholder='Search by Assignee Name or Employee Id']     ${wait_time}
+    click element      css:input[placeholder='Search by Assignee Name or Employee Id']
+    input text   css:input[placeholder='Search by Assignee Name or Employee Id']   ${name}
+    sleep      ${search_sleep}
+
+Verify the search static member
+    [Arguments]    ${option}
+    ${status}=    Run Keyword And Return Status    Element Should Be Visible    //td[normalize-space()='${option}']   ${wait_time}
+    Set Global Variable    ${status}
+    [Return]    ${status}
+
+
+Get new assignee
+    [Arguments]         ${option}
+    Run Keyword If    ${status} == True
+        ...    MemberPage.Skip case
+        ...    ELSE  Run Keywords     MemberPage.Create the Assignee     ${option}       ${option1}      ${option2}      ${option3}
+        ...    AND    Return From Keyword
+
+
+Skip case
+     log   Element is already there
+
+Create the Assignee
+    [Arguments]         ${option}       ${option1}      ${option2}      ${option3}
+    MemberPage.Click on action button of assigned users
+    MemberPage.Select option from action button of assigned user    Add Assignee
+    MemberPage.Enter first name of static assigned users        ${option}
+    MemberPage.Enter last name of static assigned users         ${option1}
+    MemberPage.Enter business email of static assigned users        ${option2}
+    MemberPage.Create static assign to employee_ID    ${option3}
+    MemberPage.Click on save button of assigned user
+    Generic.Fetch alert message text and compare it with        Assigned Users created successfully
+
+
+Enter first name of static assigned users
+    [Arguments]     ${option}
+    wait until element is visible       css:.qa-AssignedFirstName     ${wait_time}
+    wait until element is enabled       css:.qa-AssignedFirstName     ${wait_time}
+    click element       css:.qa-AssignedFirstName
+    input text   css:.qa-AssignedFirstName    ${option}
+
+Enter last name of static assigned users
+    [Arguments]     ${option1}
+    wait until element is visible       css:.qa-AssignedLastName    ${wait_time}
+    wait until element is enabled       css:.qa-AssignedLastName    ${wait_time}
+    click element   css:.qa-AssignedLastName
+    input text   css:.qa-AssignedLastName   ${option1}
+
+Enter business email of static assigned users
+    [Arguments]     ${option2}
+    wait until element is visible       css:.qa-AssignedEmail    ${wait_time}
+    wait until element is enabled       css:.qa-AssignedEmail    ${wait_time}
+    click element       css:.qa-AssignedEmail
+    input text   css:.qa-AssignedEmail   ${option2}
+
+Create static assign to employee_ID
+    [Arguments]     ${option3}
+    wait until element is not visible       ${loaderIcon}    ${wait_time}
+    wait until element is visible     ${technology_employeeid}         ${wait_time}
+    wait until element is enabled     ${technology_employeeid}         ${wait_time}
+    click element      ${technology_employeeid}
+    input text      ${technology_employeeid}      ${option3}
+#    set global variable    ${generate_employeeid}

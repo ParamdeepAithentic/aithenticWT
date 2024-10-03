@@ -83,11 +83,11 @@ Select option from side menu in department list
 Search by department name
     [Arguments]    ${department}
      wait until element is visible       css:thead tr       ${wait_time}
-     wait until element is visible      css:#seacrhbar-department-wizard     ${wait_time}
-     click element      css:#seacrhbar-department-wizard
-     Clear Element Text      css:#seacrhbar-department-wizard
+     wait until element is visible      css:#searchbar-departmentlist     ${wait_time}
+     click element      css:#searchbar-departmentlist
+     Clear Element Text      css:#searchbar-departmentlist
      ${StartTime1} =     Get Current Time in Milliseconds
-     input text   css:#seacrhbar-department-wizard   ${department}
+     input text   css:#searchbar-departmentlist   ${department}
      sleep      ${search_sleep}
      wait until element is visible      //td[normalize-space()='1']     ${wait_time}
      wait until element is visible       css:thead tr       ${wait_time}
@@ -125,4 +125,54 @@ Select department random cost center
     input text   css:#costCenter   ${generated_cost_center}
     log to console      ${generated_cost_center}
     set global variable    ${generated_cost_center}
+
+Search by static department name
+    [Arguments]    ${department}
+     wait until element is visible       css:thead tr       ${wait_time}
+     wait until element is visible      css:#searchbar-departmentlist     ${wait_time}
+     click element      css:#searchbar-departmentlist
+     Clear Element Text      css:#searchbar-departmentlist
+     ${StartTime1} =     Get Current Time in Milliseconds
+     input text   css:#searchbar-departmentlist   ${department}
+     sleep      ${search_sleep}
+
+Verify the search static department
+    [Arguments]    ${option}
+    ${status}=    Run Keyword And Return Status    Element Should Be Visible    //td[normalize-space()='${option}']   ${wait_time}
+    Set Global Variable    ${status}
+    [Return]    ${status}
+
+
+Get new department
+    [Arguments]         ${option}
+    Run Keyword If    ${status} == True
+        ...    DepartmentPage.Skip case
+        ...    ELSE  Run Keywords     DepartmentPage.Create the department     ${option}
+        ...    AND    Return From Keyword
+
+
+Skip case
+     log   Element is already there
+
+Create the department
+    [Arguments]         ${option}
+    DepartmentPage.Click on added department action button
+    DepartmentPage.Choose the option from the action menu   Add Department
+    DepartmentPage.Create static department name random     ${option}
+    DepartmentPage.Select department random cost center
+    TechnologyPage.Save the department       add
+    Generic.Fetch alert message text and compare it with        Department added successfully
+
+Create static department name random
+    [Arguments]        ${option}
+    wait until element is visible       ${add_tech_dept_name}        ${wait_time}
+    wait until element is enabled       ${add_tech_dept_name}        ${wait_time}
+    input text   ${add_tech_dept_name}   ${option}
+    sleep       ${search_sleep}
+    wait until element is visible     //span[normalize-space()='${option}']        ${wait_time}
+    wait until element is enabled       //span[normalize-space()='${option}']          ${wait_time}
+    sleep       ${search_sleep}
+    click element      //span[normalize-space()='${option}']
+
+
 
