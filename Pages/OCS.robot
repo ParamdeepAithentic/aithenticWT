@@ -1028,3 +1028,9 @@ Get the text of no records after searching with invalid mac address under newly 
     log to console     ${fetch_text_newly_discovered}
     set global variable   ${fetch_text_newly_discovered}
     should be equal    ${option}    ${fetch_text_newly_discovered}
+
+Click on newly discovered tab under tanium
+#    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is visible    css:#new-dicovered-tanium   ${wait_time}
+    Wait Until Element Is enabled    css:#new-dicovered-tanium     ${wait_time}
+    click element    css:#new-dicovered-tanium

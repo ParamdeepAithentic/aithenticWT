@@ -1572,13 +1572,13 @@ Create tanium Account and verify the details
     Switch Window       aithentic | Create Connection
     Generic.Verify your current page location contains      create-connection
     SubscriptionPage.Enter input in the url end point field of service now    https://tk-aithentic-api.titankube.com
-    SubscriptionPage.Enter input in the token field of sentinelone    token-4f35a51c39006573a2fd21cec94501d86cf0841ebacf280d38b41f5380
+    SubscriptionPage.Enter input in the token field of sentinelone    token-d53bda519331ac209e39883cbd4b6b5e7c4617bb4ea5b0d7235421b680
     Generic.click on the button     Create Connection
     Generic.Verify your current page location contains      technology-settings
     Generic.Fetch alert message text and compare it with       Technology created successfully
     Generic.Wait until table get load
     sleep   300s
-    SubscriptionPage.Fetch text of status under the table of subscription connector     Tanium      Completed
+    SubscriptionPage.Fetch text of status under the table of subscription connector     Tanium
     SubscriptionPage.Click on the three dots of subscription connector      Tanium
     SubscriptionPage.Click on option under three dots of subscription connector     Tanium      Scheduler
     SubscriptionPage.click on the cross icon of create scheduler    1
@@ -1646,7 +1646,7 @@ Create tanium Account and verify the details
     Generic.Verify your current page location contains      technology-settings
     Generic.select the option from the side menu    Asset Discovery
     SubscriptionPage.Click on the tanium tab under asset discovery
-    OCS.Click on newly discovered tab under service now
+    OCS.Click on newly discovered tab under tanium
     SubscriptionPage.Click on the action button of tanium under discovery assets
     SubscriptionPage.Click on the options under action button of tanium under discovery assets       Edit
     SubscriptionPage.click on the cross icon of tanium under asset discovery    1

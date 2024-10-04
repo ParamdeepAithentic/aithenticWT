@@ -629,11 +629,14 @@ Click on the ok button after selecting the time
     sleep       ${search_sleep}
 
 Fetch text of status under the table of subscription connector
-    [Arguments]     ${option1}      ${option}
-    wait until element is visible    //td[normalize-space()='${option1}']//parent::tr//td[9]        600
-    ${value} =    get text    //td[normalize-space()='${option1}']//parent::tr//td[9]
-    log to console     ${value}
-    should be equal    ${value}    ${option}
+    [Arguments]     ${option1}
+    wait until element is visible       //tbody//tr//td[normalize-space()='1']          ${wait_time}
+    wait until element is enabled      //tbody//tr//td[normalize-space()='1']         ${wait_time}
+    wait until element is visible    //td[normalize-space()='${option1}']//parent::tr//td[normalize-space()='Completed']     300
+    wait until element is enabled    //td[normalize-space()='${option1}']//parent::tr//td[normalize-space()='Completed']     300
+    ${value} =    get text    //td[normalize-space()='${option1}']//parent::tr//td[normalize-space()='Completed']
+    log      ${value}
+    should be equal    ${value}    Completed
     Wait Until Element Is Not Visible     ${value}        ${wait_time}
 
 Enter input in the token field of sentinelone
@@ -666,3 +669,31 @@ click on the cross icon of tanium under asset discovery
     wait until element is visible   (//div[@id='openEditSchedulerTanium']//span[@title='Clear all'])[${option}]    ${wait_time}
     wait until element is enabled   (//div[@id='openEditSchedulerTanium']//span[@title='Clear all'])[${option}]     ${wait_time}
     click element   (//div[@id='openEditSchedulerTanium']//span[@title='Clear all'])[${option}]
+
+Enter input in the input field of frequency under asset discovery under tanium
+    [Arguments]     ${option}
+    wait until element is visible  //div[@id='openEditSchedulerTanium']//ng-select[@formcontrolname='schedulerFrequency']    ${wait_time}
+    wait until element is enabled   //div[@id='openEditScheduler']//ng-select[@formcontrolname='schedulerFrequency']    ${wait_time}
+    click element   //div[@id='openEditScheduler']//ng-select[@formcontrolname='schedulerFrequency']
+    Generic.Select parameter    ${option}
+
+Enter input in the input field of day asset discovery under tanium
+    [Arguments]     ${option}
+    wait until element is visible  //div[@id='openEditSchedulerTanium']//ng-select[@formcontrolname='schedulerDay']    ${wait_time}
+    wait until element is enabled  //div[@id='openEditScheduler']//ng-select[@formcontrolname='schedulerDay']    ${wait_time}
+    click element   //div[@id='openEditScheduler']//ng-select[@formcontrolname='schedulerDay']
+    Generic.Select parameter    ${option}
+
+Enter input in the start date field of service now under asset discovery under tanium
+    Generic.Enter current date       //div[@id='openEditSchedulerTanium']//input[@formcontrolname='schedulerDate']
+
+Select the time from the timepicker of tanium under asset discovery
+    [Arguments]     ${option}
+    wait until element is visible  //div[@id='openEditSchedulerTanium']//input[@formcontrolname='schedulerTime']    ${wait_time}
+    wait until element is enabled   //div[@id='openEditSchedulerTanium']//input[@formcontrolname='schedulerTime']    ${wait_time}
+    clear element text  //div[@id='openEditSchedulerTanium']//input[@formcontrolname='schedulerTime']
+    sleep    ${search_sleep}
+    click element       //div[@id='openEditSchedulerTanium']//input[@formcontrolname='schedulerTime']
+    wait until element is visible  //div[contains(@class,'clock-face')]//following-sibling::div//span[normalize-space()='${option}']    ${wait_time}
+    wait until element is enabled   //div[contains(@class,'clock-face')]//following-sibling::div//span[normalize-space()='${option}']    ${wait_time}
+    click element       //div[contains(@class,'clock-face')]//following-sibling::div//span[normaliz
