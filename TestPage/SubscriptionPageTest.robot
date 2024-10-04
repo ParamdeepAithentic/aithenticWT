@@ -1338,7 +1338,7 @@ Create sentinel account and verify the options
     Generic.Fetch alert message text and compare it with       Technology created successfully
     Generic.Wait until table get load
 #    sleep   300s
-    SubscriptionPage.Fetch text of status under the table of subscription connector     SentinelOne     
+    SubscriptionPage.Fetch text of status under the table of subscription connector     SentinelOne
     SubscriptionPage.Click on the three dots of subscription connector      SentinelOne
     SubscriptionPage.Click on option under three dots of subscription connector     SentinelOne      Scheduler
     SubscriptionPage.click on the cross icon of create scheduler    1
