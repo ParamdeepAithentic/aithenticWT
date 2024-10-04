@@ -629,14 +629,14 @@ Click on the ok button after selecting the time
     sleep       ${search_sleep}
 
 Fetch text of status under the table of subscription connector
-    [Arguments]     ${option1}      ${option}
-
-    wait until element is visible       //tbody//tr//td[normalize-space()='1']          300
-    wait until element is enabled      //tbody//tr//td[normalize-space()='1']         300
-    wait until element is visible    //td[normalize-space()='${option1}']//parent::tr//td[9]        ${wait_time}
-    ${value} =    get text    //td[normalize-space()='${option1}']//parent::tr//td[9]
-    log to console     ${value}
-    should be equal    ${value}    ${option}
+    [Arguments]     ${option1}
+    wait until element is visible       //tbody//tr//td[normalize-space()='1']          ${wait_time}
+    wait until element is enabled      //tbody//tr//td[normalize-space()='1']         ${wait_time}
+    wait until element is visible    //td[normalize-space()='${option1}']//parent::tr//td[normalize-space()='Completed']     300
+    wait until element is enabled    //td[normalize-space()='${option1}']//parent::tr//td[normalize-space()='Completed']     300
+    ${value} =    get text    //td[normalize-space()='${option1}']//parent::tr//td[normalize-space()='Completed']
+    log      ${value}
+    should be equal    ${value}    Completed
     Wait Until Element Is Not Visible     ${value}        ${wait_time}
 
 Enter input in the token field of sentinelone

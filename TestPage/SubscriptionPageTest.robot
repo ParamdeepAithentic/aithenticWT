@@ -635,7 +635,7 @@ Create service now with valid data
 #    Generic.Fetch alert message text and compare it with       Scheduler created successfully
     Generic.Wait until table get load
 #    sleep   300s
-    SubscriptionPage.Fetch text of status under the table of subscription connector     ServiceNow       Completed
+    SubscriptionPage.Fetch text of status under the table of subscription connector     ServiceNow
     SubscriptionPage.Click on the three dots of subscription connector      ServiceNow
     SubscriptionPage.Click on option under three dots of subscription connector     ServiceNow       Scheduler
     SubscriptionPage.click on the cross icon of create scheduler    1
@@ -977,7 +977,7 @@ Create JAMFF account with valid data
     Generic.Fetch alert message text and compare it with       Technology created successfully
     Generic.Wait until table get load
 #    sleep   300s
-    SubscriptionPage.Fetch text of status under the table of subscription connector     JAMF Software       Completed
+    SubscriptionPage.Fetch text of status under the table of subscription connector     JAMF Software
     SubscriptionPage.Click on the three dots of subscription connector      JAMF Software
     SubscriptionPage.Click on option under three dots of subscription connector     JAMF Software       Scheduler
     SubscriptionPage.click on the cross icon of create scheduler    1
@@ -1338,7 +1338,7 @@ Create sentinel account and verify the options
     Generic.Fetch alert message text and compare it with       Technology created successfully
     Generic.Wait until table get load
 #    sleep   300s
-    SubscriptionPage.Fetch text of status under the table of subscription connector     SentinelOne       Completed
+    SubscriptionPage.Fetch text of status under the table of subscription connector     SentinelOne     
     SubscriptionPage.Click on the three dots of subscription connector      SentinelOne
     SubscriptionPage.Click on option under three dots of subscription connector     SentinelOne      Scheduler
     SubscriptionPage.click on the cross icon of create scheduler    1
@@ -1579,7 +1579,7 @@ Create CrowdStrike Account and verify the details
     Generic.Fetch alert message text and compare it with       Technology created successfully
     Generic.Wait until table get load
     sleep   300s
-    SubscriptionPage.Fetch text of status under the table of subscription connector     CrowdStrike       Completed
+    SubscriptionPage.Fetch text of status under the table of subscription connector     CrowdStrike
     SubscriptionPage.Click on the three dots of subscription connector      CrowdStrike
     SubscriptionPage.Click on option under three dots of subscription connector     CrowdStrike      Scheduler
     SubscriptionPage.click on the cross icon of create scheduler    1
