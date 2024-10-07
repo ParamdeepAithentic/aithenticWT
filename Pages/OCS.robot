@@ -1028,3 +1028,8 @@ Get the text of no records after searching with inavlid mac address under newly 
     log to console     ${fetch_text_newly_discovered}
     set global variable   ${fetch_text_newly_discovered}
     should be equal    ${option}    ${fetch_text_newly_discovered}
+
+Click on the newly dicovered of tenable tab under asset discovery
+    wait until element is visible   //a[@id='new-dicovered-tenable']    ${wait_time}
+    wait until element is enabled   //a[@id='new-dicovered-tenable']     ${wait_time}
+    click element   //a[@id='new-dicovered-tenable']

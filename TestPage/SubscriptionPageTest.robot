@@ -1646,64 +1646,64 @@ Create Tenable Account and verify the details
     Generic.Verify your current page location contains      technology-settings
     Generic.select the option from the side menu    Asset Discovery
     SubscriptionPage.Click on the tenable tab under asset discovery
-    OCS.Click on newly discovered tab under service now
-#    SubscriptionPage.Click on the action button of crowd strike under discovery assets
-#    SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets       Edit
-#    SubscriptionPage.click on the cross icon of crowdstrike under asset discoveryy    1
-#    SubscriptionPage.Enter input in the input field of frequency under asset discovery    Weekly
-#    SubscriptionPage.Enter input in the input field of day asset discovery       Monday
-#    SubscriptionPage.Select the time from the timepicker     7
-#    SubscriptionPage.Click on the ok button after selecting the time
-#    Generic.click on the button     Update
-#    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
-#    SubscriptionPage.Click on the action button of crowd strike under discovery assets
-#    SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets     Edit
-#    SubscriptionPage.click on the cross icon of crowdstrike under asset discovery    1
-#    SubscriptionPage.Enter input in the input field of frequency under asset discovery    Monthly
-#    SubscriptionPage.Enter input in the start date field of service now under asset discovery
-#
-#    SubscriptionPage.Select the time from the timepicker      8
-#    SubscriptionPage.Click on the ok button after selecting the time
-#    Generic.click on the button     Update
-#    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
-#    SubscriptionPage.Click on the action button of crowd strike under discovery assets
-#    SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets      Edit
-#    SubscriptionPage.click on the cross icon of crowdstrike under asset discovery    1
-#    SubscriptionPage.Enter input in the input field of frequency under asset discovery    Daily
-#
-#    SubscriptionPage.Select the time from the timepicker      9
-#    SubscriptionPage.Click on the ok button after selecting the time
-#
-#    Generic.click on the button     Update
-#    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
-#   SubscriptionPage.Click on the action button of crowd strike under discovery assets
-#    SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets     Edit
-#    SubscriptionPage.click on the cross icon of crowdstrike under asset discovery    1
-#    SubscriptionPage.Enter input in the input field of frequency under asset discovery    Yearly
-#    SubscriptionPage.Enter input in the start date field of service now under asset discovery
-#
-#    SubscriptionPage.Select the time from the timepicker      2
-#    SubscriptionPage.Click on the ok button after selecting the time
-#
-#    Generic.click on the button     Update
-#    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
-#    SubscriptionPage.Click on the action button of crowd strike under discovery assets
-#    SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets     Details
-#    SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets    Run Now
-##    SubscriptionPage.Click on cross icon of details under service now          #  delete this line after bug got fixed #
-#    SubscriptionPage.Fetch alert message text of subscription connector and compare it with
-#    SubscriptionPage.Click on the action button of crowd strike under discovery assets
-#    SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets      Delete
-#    Generic.click on the button     Yes
-##    SubscriptionPage.click on the cross icon of delete pop up under asset discovery
-#    Generic.Fetch alert message text and compare it with        Status Updated
-#   SubscriptionPage.Click on the action button of crowd strike under discovery assets
-#    SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets   Activate
-#    Generic.Fetch alert message text and compare it with        Status Updated
-#    SubscriptionPage.Click on the action button of service now under discovery assets
-#    Generic.click on the tab       Run Now
-#    SubscriptionPage.Fetch alert message text of subscription connector and compare it with
-#    SubscriptionPage.Click on the action button of crowd strike under discovery assets
-#    SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets    Details
-#    SubscriptionPage.Get the value of fields under view details of subscription connector   1       CrowdStrike
-#    SubscriptionPage.Get the value of fields under view details of subscription connector   2       ${generate_register_Fname} ${generate_register_Lname}
+    OCS.Click on the newly dicovered of tenable tab under asset discovery
+    SubscriptionPage.Click on the action button of tenable under discovery assets
+    SubscriptionPage.Click on the options under action button of tenable under discovery assets       Edit
+    SubscriptionPage.click on the cross icon of tenable under asset discovery    1
+    SubscriptionPage.Enter input in the input field of frequency under asset discovery under tenable    Weekly
+    SubscriptionPage.Enter input in the input field of day asset discovery under tenable       Monday
+    SubscriptionPage.Select the time from the timepicker of tenable under asset discovery     7
+    SubscriptionPage.Click on the ok button after selecting the time
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+    SubscriptionPage.Click on the action button of tenable under discovery assets
+    SubscriptionPage.Click on the options under action button of tenable under discovery assets     Edit
+    SubscriptionPage.click on the cross icon of tenable under asset discovery    1
+    SubscriptionPage.Enter input in the input field of frequency under asset discovery under tenable   Monthly
+    SubscriptionPage.Enter input in the start date field of service now under asset discovery under tenable
+
+    SubscriptionPage.Select the time from the timepicker of tenable under asset discovery      8
+    SubscriptionPage.Click on the ok button after selecting the time
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+    SubscriptionPage.Click on the action button of tenable under discovery assets
+    SubscriptionPage.Click on the options under action button of tenable under discovery assets     Edit
+    SubscriptionPage.click on the cross icon of tenable under asset discovery    1
+    SubscriptionPage.Enter input in the input field of frequency under asset discovery under tenable    Daily
+
+    SubscriptionPage.Select the time from the timepicker of tenable under asset discovery       9
+    SubscriptionPage.Click on the ok button after selecting the time
+
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+    SubscriptionPage.Click on the action button of tenable under discovery assets
+    SubscriptionPage.Click on the options under action button of tenable under discovery assets     Edit
+    SubscriptionPage.click on the cross icon of tenable under asset discovery    1
+    SubscriptionPage.Enter input in the input field of frequency under asset discovery under tenable     Yearly
+    SubscriptionPage.Enter input in the start date field of service now under asset discovery under tenable
+
+    SubscriptionPage.Select the time from the timepicker of tenable under asset discovery       2
+    SubscriptionPage.Click on the ok button after selecting the time
+
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+    SubscriptionPage.Click on the action button of tenable under discovery assets
+    SubscriptionPage.Click on the options under action button of tenable under discovery assets      Details
+    Generic.click on the button    Run Now
+    SubscriptionPage.Fetch alert message text of subscription connector and compare it with
+    SubscriptionPage.Click on the action button of tenable under discovery assets
+    SubscriptionPage.Click on the options under action button of tenable under discovery assets      Delete
+    SubscriptionPage.click on the yes option of delete pop up under asset discovery tenable
+#    SubscriptionPage.click on the cross icon of delete pop up under asset discovery
+    Generic.Fetch alert message text and compare it with        Status Updated
+    SubscriptionPage.Click on the action button of tenable under discovery assets
+    SubscriptionPage.Click on the options under action button of tenable under discovery assets   Activate
+    Generic.Fetch alert message text and compare it with        Status Updated
+    SubscriptionPage.Click on the action button of tenable under discovery assets
+    SubscriptionPage.Click on the action button of tenable under discovery assets
+    SubscriptionPage.Click on the options under action button of tenable under discovery assets     Run Now
+    SubscriptionPage.Fetch alert message text of subscription connector and compare it with
+    SubscriptionPage.Click on the action button of tenable under discovery assets
+    SubscriptionPage.Click on the options under action button of tenable under discovery assets    Details
+    SubscriptionPage.Get the value of fields under view details of subscription of tenable tab under asset discovery   1       Tenable
+    SubscriptionPage.Get the value of fields under view details of subscription of tenable tab under asset discovery   2       ${generate_register_Fname} ${generate_register_Lname}
