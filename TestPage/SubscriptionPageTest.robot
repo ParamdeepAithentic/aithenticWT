@@ -1690,20 +1690,19 @@ Create tanium Account and verify the details
     SubscriptionPage.Click on the action button of tanium under discovery assets
     SubscriptionPage.Click on the options under action button of tanium under discovery assets    Details
     Generic.click on the button    Run Now
-#    SubscriptionPage.Click on cross icon of details under service now          #  delete this line after bug got fixed #
     SubscriptionPage.Fetch alert message text of subscription connector and compare it with
     SubscriptionPage.Click on the action button of tanium under discovery assets
     SubscriptionPage.Click on the options under action button of tanium under discovery assets      Delete
-    Generic.click on the button     Yes
-#    SubscriptionPage.click on the cross icon of delete pop up under asset discovery
+    SubscriptionPage.click on the yes option of delete pop up under asset discovery tanium
     Generic.Fetch alert message text and compare it with        Status Updated
     SubscriptionPage.Click on the action button of tanium under discovery assets
     SubscriptionPage.Click on the options under action button of tanium under discovery assets   Activate
     Generic.Fetch alert message text and compare it with        Status Updated
     SubscriptionPage.Click on the action button of tanium under discovery assets
-    Generic.click on the tab       Run Now
+    SubscriptionPage.Click on the action button of tanium under discovery assets
+    SubscriptionPage.Click on the options under action button of tanium under discovery assets      Run Now
     SubscriptionPage.Fetch alert message text of subscription connector and compare it with
     SubscriptionPage.Click on the action button of tanium under discovery assets
     SubscriptionPage.Click on the options under action button of tanium under discovery assets   Details
-    SubscriptionPage.Get the value of fields under view details of subscription connector   1       Tanium
-    SubscriptionPage.Get the value of fields under view details of subscription connector   2       ${generate_register_Fname} ${generate_register_Lname}
+    SubscriptionPage.Get the value of fields under view details of subscription of tanium tab under asset discovery  1       Tanium
+    SubscriptionPage.Get the value of fields under view details of subscription of tanium tab under asset discovery   2       ${generate_register_Fname} ${generate_register_Lname}

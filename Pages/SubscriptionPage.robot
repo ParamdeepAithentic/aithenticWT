@@ -697,3 +697,20 @@ Select the time from the timepicker of tanium under asset discovery
     wait until element is visible  //div[contains(@class,'clock-face')]//following-sibling::div//span[normalize-space()='${option}']    ${wait_time}
     wait until element is enabled   //div[contains(@class,'clock-face')]//following-sibling::div//span[normalize-space()='${option}']    ${wait_time}
     click element      //div[contains(@class,'clock-face')]//following-sibling::div//span[normalize-space()='${option}']
+
+click on the yes option of delete pop up under asset discovery tanium
+    wait until element is visible  //div[contains(@id,'deleteTaniumConnector')]//button[normalize-space()='Yes']    ${wait_time}
+    wait until element is enabled   //div[contains(@id,'deleteTaniumConnector')]//button[normalize-space()='Yes']    ${wait_time}
+    click element   //div[contains(@id,'deleteTaniumConnector')]//button[normalize-space()='Yes']
+
+Get the value of fields under view details of subscription of tanium tab under asset discovery
+    [Arguments]     ${option1}      ${option2}
+    wait until element is not visible   ${loaderIcon}    ${wait_time}
+    wait until element is visible   (//div[@id='TaniumDetails']//input)[${option1}]   ${wait_time}
+    ${value} =    get value    (//div[@id='TaniumDetails']//input)[${option1}]
+    log to console     ${value}
+    should be equal    ${value}         ${option2}
+
+
+
+
