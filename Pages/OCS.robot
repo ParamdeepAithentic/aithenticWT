@@ -589,8 +589,8 @@ Enter input in the brand field of advanced search of discovered asset
     Generic.Select parameter    ${option}
 
 Click on the table inside advanced search of discovered asset for brand
-    wait until element is visible    (//div[contains(text(),'Lenovo')])[1]     ${wait_time}
-    wait until element is enabled  (//div[contains(text(),'Lenovo')])[1]     ${wait_time}
+    wait until element is visible    (//div[contains(text(),'Lenovo')])[1]     120
+    wait until element is enabled  (//div[contains(text(),'Lenovo')])[1]     120
     click element   (//div[contains(text(),'Lenovo')])[1]
 
 Fetch the Brand Name from the brand field of discovered asset
@@ -609,13 +609,13 @@ Enter and select technology type in advance search of discovered search
 #    wait until element is not visible       ${shadow}          ${wait_time}
 
 Click on the table inside advanced search of discovered asset for technology group
-    wait until element is visible    //div[contains(@class,'Contract-Form-Edit')]//tbody[contains(@class,'location-list-qa')]//tr//td     ${wait_time}
-    wait until element is enabled   //div[contains(@class,'Contract-Form-Edit')]//tbody[contains(@class,'location-list-qa')]//tr//td     ${wait_time}
+    wait until element is visible    //div[contains(@class,'Contract-Form-Edit')]//tbody[contains(@class,'location-list-qa')]//tr//td     120
+    wait until element is enabled   //div[contains(@class,'Contract-Form-Edit')]//tbody[contains(@class,'location-list-qa')]//tr//td     120
     click element    //div[contains(@class,'Contract-Form-Edit')]//tbody[contains(@class,'location-list-qa')]//tr//td
 
 Click on the table inside advanced search of discovered asset for technology type
-    wait until element is visible    (//div[contains(text(),'Extended service')])[1]     ${wait_time}
-    wait until element is enabled   (//div[contains(text(),'Extended service')])[1]     ${wait_time}
+    wait until element is visible    (//div[contains(text(),'Extended service')])[1]     120
+    wait until element is enabled   (//div[contains(text(),'Extended service')])[1]     120
     click element    (//div[contains(text(),'Extended service')])[1]
 
 
@@ -1034,3 +1034,11 @@ Click on newly discovered tab under tanium
     Wait Until Element Is visible    css:#new-dicovered-tanium   ${wait_time}
     Wait Until Element Is enabled    css:#new-dicovered-tanium     ${wait_time}
     click element    css:#new-dicovered-tanium
+    
+Mouse hover over first discovered asset
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    (//div[contains(@class,'column-boxes-left')]//div[contains(@class,'child-container')]//div[contains(@class,'left-text')])[1]     ${wait_time}
+    Wait Until Element Is Enabled    (//div[contains(@class,'column-boxes-left')]//div[contains(@class,'child-container')]//div[contains(@class,'left-text')])[1]     ${wait_time}
+    sleep   ${search_sleep}
+    Mouse Over   (//div[contains(@class,'column-boxes-left')]//div[contains(@class,'child-container')]//div[contains(@class,'left-text')])[1]
+    sleep   ${search_sleep}

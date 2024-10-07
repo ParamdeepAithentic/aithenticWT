@@ -752,3 +752,39 @@ Filter and verify without pagination
             Run Keyword If    '${New_filter}' == '${option2}'    Run Keyword       Continue For Loop
 
          END
+
+Search by static business name
+    [Arguments]    ${BusinessName}
+    wait until element is visible       css:thead tr       ${wait_time}
+    wait until element is visible       ${partner_searchBar}       ${wait_time}
+    input text      ${partner_searchBar}     ${BusinessName}
+    sleep       ${search_sleep}
+
+Verify the search static support partner
+    [Arguments]    ${option}
+    ${status}=    Run Keyword And Return Status    Element Should Be Visible    //td[normalize-space()='${option}']   ${wait_time}
+    Set Global Variable    ${status}
+    [Return]    ${status}
+
+
+Get new support Partner
+    [Arguments]         ${option}
+    Run Keyword If    ${status} == True
+        ...    PartnersPage.Skip case
+        ...    ELSE  Run Keywords     PartnersPage.Create the support partner     ${option1}       ${option}
+        ...    AND    Return From Keyword
+
+
+Skip case
+     log   Element is already there
+
+Create the support partner
+    [Arguments]         ${option1}       ${option}
+    PartnersPage.Select partner type of new partner     ${option1}
+    PartnersPage.Create partner self business name      ${option}
+#   PartnersPage.Enter partner business URL      ${generate_BusinessName}
+    PartnersPage.Select partner business URL
+    PartnersPage.Select partner country       United States
+    PartnersPage.Click on the save button   Save
+    Sleep     5
+    Generic.Fetch alert message text and compare it with    Partner created successfully

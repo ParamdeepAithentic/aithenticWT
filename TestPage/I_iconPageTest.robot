@@ -257,7 +257,7 @@ Verify all i-icon of advanced search
     OCS.Click on save button of Add Technology Page
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
     Sleep    ${yop_sleep}
-    switch window    aithentic | Sentinel One Newly-Discovered
+    Switch Window     aithentic | Agent Discovery
     Generic.Refresh the existing page
     OCS.Choose Tab under Asset Discovery    agent-discovery
     Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -458,10 +458,9 @@ Upload I-icon while adding discovery and component asset
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
     Generic.Select option from profile list     view-discovery
-    Generic.Verify your current page location contains    ocs
-    OCS.Choose Tab under Asset Discovery    network-discovery
+    Generic.Verify your current page location contains    aad
     OCS.Click on newly discovered tab under network discovery
-    Generic.Verify your current page location contains    ocs
+    Generic.Verify your current page location contains    aad
     OCS.Click on search icon of discovery assets
     OCS.Enter text to search discovery asset   ${discovered_asset_brand}
     Generic.Scroll Window To End
@@ -482,7 +481,7 @@ Upload I-icon while adding discovery and component asset
     OCS.Click on save button of Add Technology Page
     OCS.Wait for the invisiblity of alert msg        Technology created successfully
     Sleep    ${yop_sleep}
-    Switch Window      aithentic | Sentinel One Newly-Discovered
+    Switch Window     aithentic | Agent Discovery
     Generic.Refresh the existing page
     OCS.Choose Tab under Asset Discovery    agent-discovery
     Generic.Verify your current page contains this text    ${generated_AssetID}

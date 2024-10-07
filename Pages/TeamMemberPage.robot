@@ -416,3 +416,4 @@ Get the text of selected status filter under team meber via profile
     ${New_status1}=    Evaluate    '${original_string}'.strip()
     log to console    ${New_status1}
     set global variable   ${New_status1}
+    
