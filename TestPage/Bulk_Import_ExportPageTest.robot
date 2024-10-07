@@ -788,7 +788,7 @@ Verify Bulk Import on the Technology Page by adding all parameters
     TechnologyPage.Save the department       add
     Generic.Fetch alert message text and compare it with        Department added successfully
     Generic.Verify your current page location contains      department-list
-    DepartmentPage.Search by department name      ${generated_Department_bulk}
+    Bulk_Import_ExportPage.Verify department added using bulk_import_export under asset wizard      ${generated_Department_bulk}
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.click on the button     Next
     Generic.click on the tab        Add Location

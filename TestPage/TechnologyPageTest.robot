@@ -384,7 +384,7 @@ Restore asset from removed asset details page
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Select parameter from technology dropdown list       Product_2727984358
+    TechnologyPage.Select parameter from technology dropdown list       Product_665995755
 #    TechnologyPage.Add technology group information contract start date
 #    TechnologyPage.Add technology group information contract end date      12/12/2028
     TechnologyPage.Add assetID for technology lifecycle information random
@@ -2871,7 +2871,7 @@ Compose reply and remove the message via technology details
     TwoFactorAuth.Click verification button
     Generic.Verify your current page location contains     dashboard
     Generic.Click on the profile name
-     Generic.Select option from profile list     personal-details
+    Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
     DashboardPage.Select an option from company details side list   Security
     Generic.Verify your current page location contains  security
