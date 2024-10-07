@@ -1650,28 +1650,28 @@ Create tanium Account and verify the details
     SubscriptionPage.Click on the action button of tanium under discovery assets
     SubscriptionPage.Click on the options under action button of tanium under discovery assets       Edit
     SubscriptionPage.click on the cross icon of tanium under asset discovery    1
-    SubscriptionPage.Enter input in the input field of frequency under asset discovery    Weekly
-    SubscriptionPage.Enter input in the input field of day asset discovery       Monday
-    SubscriptionPage.Select the time from the timepicker     7
-    SubscriptionPage.Click on the ok button after selecting the time
-    Generic.click on the button     Update
-    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
-    SubscriptionPage.Click on the action button of tanium under discovery assets
-    SubscriptionPage.Click on the options under action button of tanium under discovery assets  s     Edit
-    SubscriptionPage.click on the cross icon of tanium under asset discovery    1
-    SubscriptionPage.Enter input in the input field of frequency under asset discovery    Monthly
-    SubscriptionPage.Enter input in the start date field of service now under asset discovery
-
-    SubscriptionPage.Select the time from the timepicker      8
+    SubscriptionPage.Enter input in the input field of frequency under asset discovery under tanium    Weekly
+    SubscriptionPage.Enter input in the input field of day asset discovery under tanium       Monday
+    SubscriptionPage.Select the time from the timepicker of tanium under asset discovery     7
     SubscriptionPage.Click on the ok button after selecting the time
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the action button of tanium under discovery assets
     SubscriptionPage.Click on the options under action button of tanium under discovery assets       Edit
     SubscriptionPage.click on the cross icon of tanium under asset discovery    1
-    SubscriptionPage.Enter input in the input field of frequency under asset discovery    Daily
+    SubscriptionPage.Enter input in the input field of frequency under asset discovery under tanium    Monthly
+    SubscriptionPage.Enter input in the start date field of service now under asset discovery under tanium
 
-    SubscriptionPage.Select the time from the timepicker      9
+    SubscriptionPage.Select the time from the timepicker of tanium under asset discovery     8
+    SubscriptionPage.Click on the ok button after selecting the time
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+    SubscriptionPage.Click on the action button of tanium under discovery assets
+    SubscriptionPage.Click on the options under action button of tanium under discovery assets       Edit
+    SubscriptionPage.click on the cross icon of tanium under asset discovery    1
+    SubscriptionPage.Enter input in the input field of frequency under asset discovery under tanium    Daily
+
+    SubscriptionPage.Select the time from the timepicker of tanium under asset discovery     9
     SubscriptionPage.Click on the ok button after selecting the time
 
     Generic.click on the button     Update
@@ -1679,17 +1679,17 @@ Create tanium Account and verify the details
     SubscriptionPage.Click on the action button of tanium under discovery assets
     SubscriptionPage.Click on the options under action button of tanium under discovery assets       Edit
     SubscriptionPage.click on the cross icon of tanium under asset discovery    1
-    SubscriptionPage.Enter input in the input field of frequency under asset discovery    Yearly
-    SubscriptionPage.Enter input in the start date field of service now under asset discovery
+    SubscriptionPage.Enter input in the input field of frequency under asset discovery under tanium    Yearly
+    SubscriptionPage.Enter input in the start date field of service now under asset discovery under tanium
 
-    SubscriptionPage.Select the time from the timepicker      2
+    SubscriptionPage.Select the time from the timepicker of tanium under asset discovery      2
     SubscriptionPage.Click on the ok button after selecting the time
 
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the action button of tanium under discovery assets
     SubscriptionPage.Click on the options under action button of tanium under discovery assets    Details
-    SubscriptionPage.Click on the options under action button of tanium under discovery assets    Run Now
+    Generic.click on the button    Run Now
 #    SubscriptionPage.Click on cross icon of details under service now          #  delete this line after bug got fixed #
     SubscriptionPage.Fetch alert message text of subscription connector and compare it with
     SubscriptionPage.Click on the action button of tanium under discovery assets

@@ -673,15 +673,15 @@ click on the cross icon of tanium under asset discovery
 Enter input in the input field of frequency under asset discovery under tanium
     [Arguments]     ${option}
     wait until element is visible  //div[@id='openEditSchedulerTanium']//ng-select[@formcontrolname='schedulerFrequency']    ${wait_time}
-    wait until element is enabled   //div[@id='openEditScheduler']//ng-select[@formcontrolname='schedulerFrequency']    ${wait_time}
-    click element   //div[@id='openEditScheduler']//ng-select[@formcontrolname='schedulerFrequency']
+    wait until element is enabled   //div[@id='openEditSchedulerTanium']//ng-select[@formcontrolname='schedulerFrequency']    ${wait_time}
+    click element   //div[@id='openEditSchedulerTanium']//ng-select[@formcontrolname='schedulerFrequency']
     Generic.Select parameter    ${option}
 
 Enter input in the input field of day asset discovery under tanium
     [Arguments]     ${option}
     wait until element is visible  //div[@id='openEditSchedulerTanium']//ng-select[@formcontrolname='schedulerDay']    ${wait_time}
-    wait until element is enabled  //div[@id='openEditScheduler']//ng-select[@formcontrolname='schedulerDay']    ${wait_time}
-    click element   //div[@id='openEditScheduler']//ng-select[@formcontrolname='schedulerDay']
+    wait until element is enabled  //div[@id='openEditSchedulerTanium']//ng-select[@formcontrolname='schedulerDay']    ${wait_time}
+    click element   //div[@id='openEditSchedulerTanium']//ng-select[@formcontrolname='schedulerDay']
     Generic.Select parameter    ${option}
 
 Enter input in the start date field of service now under asset discovery under tanium
@@ -696,4 +696,4 @@ Select the time from the timepicker of tanium under asset discovery
     click element       //div[@id='openEditSchedulerTanium']//input[@formcontrolname='schedulerTime']
     wait until element is visible  //div[contains(@class,'clock-face')]//following-sibling::div//span[normalize-space()='${option}']    ${wait_time}
     wait until element is enabled   //div[contains(@class,'clock-face')]//following-sibling::div//span[normalize-space()='${option}']    ${wait_time}
-    click element       //div[contains(@class,'clock-face')]//following-sibling::div//span[normaliz
+    click element      //div[contains(@class,'clock-face')]//following-sibling::div//span[normalize-space()='${option}']
