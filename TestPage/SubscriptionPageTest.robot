@@ -1709,3 +1709,4 @@ Create CrowdStrike Account and verify the details
     SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets    Details
     SubscriptionPage.Get the value of fields under view details of subscription connector under asset discovery   1       CrowdStrike
     SubscriptionPage.Get the value of fields under view details of subscription connector under asset discovery   2       ${generate_register_Fname} ${generate_register_Lname}
+    
