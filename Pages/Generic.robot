@@ -359,6 +359,7 @@ Enter current date
     Clear Element Text      ${option}
     ${curentDate}=    Generic.Fetch Current Date
     input text  ${option}    ${curentDate}
+    click element       ${option}
 
 Enter self date
     [Arguments]    ${option}    ${date}
