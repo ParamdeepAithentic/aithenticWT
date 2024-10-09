@@ -1707,10 +1707,6 @@ Generic.click on the tab	Register
     SubscriptionPage.Get the value of fields under view details of subscription of tanium tab under asset discovery  1       Tanium
     SubscriptionPage.Get the value of fields under view details of subscription of tanium tab under asset discovery   2       ${generate_register_Fname} ${generate_register_Lname}
 
-
-
-
-
 Create CrowdStrike Account and verify the details
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
