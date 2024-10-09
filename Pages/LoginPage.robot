@@ -90,3 +90,12 @@ Clear the element text of field under login page
     click element          ${option}
     clear element text         ${option}
 
+Get and Verify the validation after entering invalid email under forgot password
+    [Arguments]         ${text}
+    wait until element is visible       //span[contains(@id,'error-username')]     ${wait_time}
+    wait until element is enabled        //span[contains(@id,'error-username')]     ${wait_time}
+    ${get_forgotpassword_validation} =    get text    //span[contains(@id,'error-username')]
+    set global variable    ${get_forgotpassword_validation}
+    log to console    ${get_forgotpassword_validation}
+    should be equal   ${get_forgotpassword_validation}     ${text}
+
