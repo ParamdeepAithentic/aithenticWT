@@ -1899,7 +1899,7 @@ Search with inavlid MAC Address under newly discovered
         Generic.Verify your current page location contains    aad
         OCS.Click on search icon of discovery assets
         OCS.Enter text to search discovery asset   00:00:00:00
-        Get the text of no records after searching with inavlid mac address under newly discovery tab      No records
+        OCS.Get the text of no records after searching with invalid mac address under newly discovery tab      No records
 #Zz kill browser
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
 

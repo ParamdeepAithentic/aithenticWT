@@ -76,3 +76,17 @@ Wait until i_icon is visible
     Wait Until Element Is Visible    css:#technology-list-Iicon         ${wait_time}
     Wait Until Element Is Enabled    css:#technology-list-Iicon         ${wait_time}
 
+Get and Verify the validation after login with email only
+    [Arguments]         ${text}
+    wait until element is visible       //div[contains(@class,'error-custom')]//span     ${wait_time}
+    wait until element is enabled        //div[contains(@class,'error-custom')]//span     ${wait_time}
+    ${get_login_validation} =    get text    //div[contains(@class,'error-custom')]//span
+    set global variable    ${get_login_validation}
+    log to console    ${get_login_validation}
+    should be equal    ${get_login_validation}     ${text}
+
+Clear the element text of field under login page
+    [Arguments]         ${option}
+    click element          ${option}
+    clear element text         ${option}
+

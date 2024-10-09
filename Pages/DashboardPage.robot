@@ -488,7 +488,7 @@ Verify department added
 
 Verify the side option list parameters
    wait until element is visible   ${side_options}      ${wait_time}
-   @{expectedList} =    Create List        Aithentic logo    Dashboard       Messages        Location        Team Members      Partners     Smart Share      Technology      CSPM     Asset Discovery
+   @{expectedList} =    Create List        Aithentic logo    Dashboard       Messages        Location        Team Members      Partners     Smart Share      Technology      CSPM     Asset Discovery       Build Version
    ${elements} =  Get WebElements     ${side_options}
    @{actualList} =   Create List
    FOR  ${element}  IN      @{elements}

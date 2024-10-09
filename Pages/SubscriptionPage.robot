@@ -629,11 +629,14 @@ Click on the ok button after selecting the time
     sleep       ${search_sleep}
 
 Fetch text of status under the table of subscription connector
-    [Arguments]     ${option1}      ${option}
-    wait until element is visible    //td[normalize-space()='${option1}']//parent::tr//td[9]        600
-    ${value} =    get text    //td[normalize-space()='${option1}']//parent::tr//td[9]
-    log to console     ${value}
-    should be equal    ${value}    ${option}
+    [Arguments]     ${option1}
+    wait until element is visible       //tbody//tr//td[normalize-space()='1']          ${wait_time}
+    wait until element is enabled      //tbody//tr//td[normalize-space()='1']         ${wait_time}
+    wait until element is visible    //td[normalize-space()='${option1}']//parent::tr//td[normalize-space()='Completed']     300
+    wait until element is enabled    //td[normalize-space()='${option1}']//parent::tr//td[normalize-space()='Completed']     300
+    ${value} =    get text    //td[normalize-space()='${option1}']//parent::tr//td[normalize-space()='Completed']
+    log      ${value}
+    should be equal    ${value}    Completed
     Wait Until Element Is Not Visible     ${value}        ${wait_time}
 
 Enter input in the token field of sentinelone
@@ -699,6 +702,55 @@ Select the time from the timepicker of tenable under asset discovery
     clear element text  //div[@id='openEditSchedulerTenable']//input[@formcontrolname='schedulerTime']
     sleep    ${search_sleep}
     click element       //div[@id='openEditSchedulerTenable']//input[@formcontrolname='schedulerTime']
+
+Click on the tanium tab under asset discovery
+    wait until element is visible   //a[@id='tanium-first-parent-tab']   ${wait_time}
+    wait until element is enabled   //a[@id='tanium-first-parent-tab']     ${wait_time}
+    click element   //a[@id='tanium-first-parent-tab']
+
+Click on the action button of tanium under discovery assets
+    wait until element is visible  //button[@id='tanium-list-actions']    ${wait_time}
+    wait until element is enabled  //button[@id='tanium-list-actions']  ${wait_time}
+    click element  //button[@id='tanium-list-actions']
+    sleep   ${search_sleep}
+
+Click on the options under action button of tanium under discovery assets
+    [Arguments]     ${option}
+    wait until element is visible   //div[contains(@id,'tanium')]//a[normalize-space()='${option}']    ${wait_time}
+    wait until element is enabled   //div[contains(@id,'tanium')]//a[normalize-space()='${option}']     ${wait_time}
+    click element   //div[contains(@id,'tanium')]//a[normalize-space()='${option}']
+    sleep   ${search_sleep}
+
+click on the cross icon of tanium under asset discovery
+    [Arguments]     ${option}
+    wait until element is visible   (//div[@id='openEditSchedulerTanium']//span[@title='Clear all'])[${option}]    ${wait_time}
+    wait until element is enabled   (//div[@id='openEditSchedulerTanium']//span[@title='Clear all'])[${option}]     ${wait_time}
+    click element   (//div[@id='openEditSchedulerTanium']//span[@title='Clear all'])[${option}]
+
+Enter input in the input field of frequency under asset discovery under tanium
+    [Arguments]     ${option}
+    wait until element is visible  //div[@id='openEditSchedulerTanium']//ng-select[@formcontrolname='schedulerFrequency']    ${wait_time}
+    wait until element is enabled   //div[@id='openEditSchedulerTanium']//ng-select[@formcontrolname='schedulerFrequency']    ${wait_time}
+    click element   //div[@id='openEditSchedulerTanium']//ng-select[@formcontrolname='schedulerFrequency']
+    Generic.Select parameter    ${option}
+
+Enter input in the input field of day asset discovery under tanium
+    [Arguments]     ${option}
+    wait until element is visible  //div[@id='openEditSchedulerTanium']//ng-select[@formcontrolname='schedulerDay']    ${wait_time}
+    wait until element is enabled  //div[@id='openEditSchedulerTanium']//ng-select[@formcontrolname='schedulerDay']    ${wait_time}
+    click element   //div[@id='openEditSchedulerTanium']//ng-select[@formcontrolname='schedulerDay']
+    Generic.Select parameter    ${option}
+
+Enter input in the start date field of service now under asset discovery under tanium
+    Generic.Enter current date       //div[@id='openEditSchedulerTanium']//input[@formcontrolname='schedulerDate']
+
+Select the time from the timepicker of tanium under asset discovery
+    [Arguments]     ${option}
+    wait until element is visible  //div[@id='openEditSchedulerTanium']//input[@formcontrolname='schedulerTime']    ${wait_time}
+    wait until element is enabled   //div[@id='openEditSchedulerTanium']//input[@formcontrolname='schedulerTime']    ${wait_time}
+    clear element text  //div[@id='openEditSchedulerTanium']//input[@formcontrolname='schedulerTime']
+    sleep    ${search_sleep}
+    click element       //div[@id='openEditSchedulerTanium']//input[@formcontrolname='schedulerTime']
     wait until element is visible  //div[contains(@class,'clock-face')]//following-sibling::div//span[normalize-space()='${option}']    ${wait_time}
     wait until element is enabled   //div[contains(@class,'clock-face')]//following-sibling::div//span[normalize-space()='${option}']    ${wait_time}
     click element      //div[contains(@class,'clock-face')]//following-sibling::div//span[normalize-space()='${option}']
@@ -713,5 +765,90 @@ Get the value of fields under view details of subscription of tenable tab under 
     wait until element is not visible   ${loaderIcon}    ${wait_time}
     wait until element is visible   (//div[@id='TenableDetails']//input)[${option1}]   ${wait_time}
     ${value} =    get value    (//div[@id='TenableDetails']//input)[${option1}]
+
+click on the yes option of delete pop up under asset discovery tanium
+    wait until element is visible  //div[contains(@id,'deleteTaniumConnector')]//button[normalize-space()='Yes']    ${wait_time}
+    wait until element is enabled   //div[contains(@id,'deleteTaniumConnector')]//button[normalize-space()='Yes']    ${wait_time}
+    click element   //div[contains(@id,'deleteTaniumConnector')]//button[normalize-space()='Yes']
+
+Get the value of fields under view details of subscription of tanium tab under asset discovery
+    [Arguments]     ${option1}      ${option2}
+    wait until element is not visible   ${loaderIcon}    ${wait_time}
+    wait until element is visible   (//div[@id='TaniumDetails']//input)[${option1}]   ${wait_time}
+    ${value} =    get value    (//div[@id='TaniumDetails']//input)[${option1}]
+    log to console     ${value}
+    should be equal    ${value}         ${option2}
+
+
+Click on the crowd strike tab under asset discovery
+    wait until element is visible   //a[@id='crowdstrike-first-parent-tab']    ${wait_time}
+    wait until element is enabled   //a[@id='crowdstrike-first-parent-tab']     ${wait_time}
+    click element   //a[@id='crowdstrike-first-parent-tab']
+
+Click on the action button of crowd strike under discovery assets
+    wait until element is visible  //button[@id='crowdstrike-list-actions']    ${wait_time}
+    wait until element is enabled     //button[@id='crowdstrike-list-actions']      ${wait_time}
+    click element  //button[@id='crowdstrike-list-actions']
+    sleep   ${search_sleep}
+
+Click on the options under action button of crowdstrike under discovery assets
+    [Arguments]     ${option}
+    wait until element is visible   //div[contains(@id,'crowdstrike-first')]//a[normalize-space()='${option}']    ${wait_time}
+    wait until element is enabled  //div[contains(@id,'crowdstrike-first')]//a[normalize-space()='${option}']     ${wait_time}
+    click element   //div[contains(@id,'crowdstrike-first')]//a[normalize-space()='${option}']
+    sleep   ${search_sleep}
+
+click on the cross icon of crowdstrike under asset discovery
+    [Arguments]     ${option}
+    wait until element is visible   (//div[@id='openEditSchedulerCrowdstrike']//span[@title='Clear all'])[${option}]    ${wait_time}
+    wait until element is enabled   (//div[@id='openEditSchedulerCrowdstrike']//span[@title='Clear all'])[${option}]     ${wait_time}
+    click element   (//div[@id='openEditSchedulerCrowdstrike']//span[@title='Clear all'])[${option}]
+
+Click on the newly discovered tab under crowd strike
+    wait until element is visible   //a[@id='new-dicovered-crowdstrike']    ${wait_time}
+    wait until element is enabled   //a[@id='new-dicovered-crowdstrike']     ${wait_time}
+    click element  //a[@id='new-dicovered-crowdstrike']
+
+Enter input in the input field of frequency of crowd strike under asset discovery
+    [Arguments]     ${option}
+    wait until element is visible  //div[@id='openEditSchedulerCrowdstrike']//ng-select[@formcontrolname='schedulerFrequency']    ${wait_time}
+    wait until element is enabled   //div[@id='openEditSchedulerCrowdstrike']//ng-select[@formcontrolname='schedulerFrequency']    ${wait_time}
+    click element   //div[@id='openEditSchedulerCrowdstrike']//ng-select[@formcontrolname='schedulerFrequency']
+    Generic.Select parameter    ${option}
+
+Enter input in the input field of day of crowd strike asset discovery
+    [Arguments]     ${option}
+    wait until element is visible  //div[@id='openEditSchedulerCrowdstrike']//ng-select[@formcontrolname='schedulerDay']    ${wait_time}
+    wait until element is enabled  //div[@id='openEditSchedulerCrowdstrike']//ng-select[@formcontrolname='schedulerDay']    ${wait_time}
+    click element   //div[@id='openEditSchedulerCrowdstrike']//ng-select[@formcontrolname='schedulerDay']
+    Generic.Select parameter    ${option}
+
+Enter input in the start date field of crowd strike under asset discovery
+    Generic.Enter current date      //div[@id='openEditSchedulerCrowdstrike']//input[@formcontrolname='schedulerDate']
+
+Select the time from the timepicker under asset dicovery
+    [Arguments]     ${option}     ${option1}
+    wait until element is visible  //div[@id='${option}']//input[@formcontrolname='schedulerTime']    ${wait_time}
+    wait until element is enabled   //div[@id='${option}']//input[@formcontrolname='schedulerTime']    ${wait_time}
+    clear element text  //div[@id='${option}']//input[@formcontrolname='schedulerTime']
+    sleep    ${search_sleep}
+    click element       //div[@id='${option}']//input[@formcontrolname='schedulerTime']
+    wait until element is visible  //div[contains(@class,'clock-face')]//following-sibling::div//span[normalize-space()='${option1}']    ${wait_time}
+    wait until element is enabled   //div[contains(@class,'clock-face')]//following-sibling::div//span[normalize-space()='${option1}']    ${wait_time}
+    click element       //div[contains(@class,'clock-face')]//following-sibling::div//span[normalize-space()='${option1}']
+
+click on the yes button of delete pop up under asset discovery
+    wait until element is not visible   ${loaderIcon}          ${wait_time}
+    wait until element is visible      //div[contains(@id,'deleteCSConnector')]//button[normalize-space()='Yes']          ${wait_time}
+    wait until element is enabled      //div[contains(@id,'deleteCSConnector')]//button[normalize-space()='Yes']          ${wait_time}
+    sleep   ${search_sleep}
+    click element       //div[contains(@id,'deleteCSConnector')]//button[normalize-space()='Yes']
+    sleep   ${search_sleep}
+
+Get the value of fields under view details of subscription connector under asset discovery
+    [Arguments]     ${option1}      ${option2}
+    wait until element is not visible   ${loaderIcon}    ${wait_time}
+    wait until element is visible   (//div[@id='CrowdStrikeDetails']//input)[${option1}]   ${wait_time}
+    ${value} =    get value    (//div[@id='CrowdStrikeDetails']//input)[${option1}]
     log to console     ${value}
     should be equal    ${value}         ${option2}

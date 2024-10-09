@@ -78,5 +78,14 @@ Fill the login form of Admin panel
     Click Button        ${Admin_loginBtn}
     wait until element is not visible       ${shadow}          ${wait_time}
 
+Fill the login Form with email only
+    [Arguments]     ${email}
+    wait until element is visible    ${Kc_username}       ${wait_time}
+    Input Text          ${Kc_username}     ${email}
+    Click Button        ${Kc_loginBtn}
 
-
+Fill the login Form with password only
+    [Arguments]     ${valid_password}
+    wait until element is visible    ${Kc_password}       ${wait_time}
+    Input Text          ${Kc_password}    ${valid_password}
+    Click Button        ${Kc_password}
