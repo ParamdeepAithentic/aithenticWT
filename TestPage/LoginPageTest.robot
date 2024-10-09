@@ -569,6 +569,21 @@ Login as End_user with different roles
 #    Generic.Select other option from profile list    Logout
 #    Generic.Fetch log_out alert message
 
+Check all the validations of login page
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form with email only      ${email}
+    LoginPage.Get and Verify the validation after login with email only         Invalid user id or password.
+    LoginPage.Clear the element text of field under login page      ${Kc_username}
+    LandingPage.Fill the login Form       testqa29jmailinator.com       Test@123
+    LoginPage.Get and Verify the validation after login with email only         Invalid user id or password.
+    LoginPage.Clear the element text of field under login page      ${Kc_username}
+    LoginPage.Clear the element text of field under login page      ${Kc_password}
+    LandingPage.Fill the login Form with password only      ${valid_password}
+    LoginPage.Get and Verify the validation after login with email only         Invalid user id or password.
+    LoginPage.Clear the element text of field under login page      ${Kc_password}
+    LandingPage.Fill the login Form       testqa29j@mailinator.com       Test@12
+    LoginPage.Get and Verify the validation after login with email only         Invalid user id or password.
+
 #Zz kill browser
 #    [Tags]      Smoke     Sanity      Time      Stable    yy
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
