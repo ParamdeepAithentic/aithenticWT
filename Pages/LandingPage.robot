@@ -89,8 +89,3 @@ Fill the login Form with password only
     wait until element is visible    ${Kc_password}       ${wait_time}
     Input Text          ${Kc_password}    ${valid_password}
     Click Button        ${Kc_password}
-
-
-
-
-

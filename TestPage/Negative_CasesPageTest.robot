@@ -64,6 +64,3 @@ Check all the validations of login page
     LoginPage.Clear the element text of field under login page      ${Kc_password}
     LandingPage.Fill the login Form       testqa29j@mailinator.com       Test@12
     LoginPage.Get and Verify the validation after login with email only         Invalid user id or password.
-
-
-
