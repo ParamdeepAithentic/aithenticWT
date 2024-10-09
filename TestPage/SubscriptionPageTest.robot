@@ -1478,8 +1478,245 @@ Click on the three dots of Intune and verify the details
     Generic.Verify your current page contains this text    Asset Discovery
     Generic.Verify your current page contains this text    No Records
 
+
+Create Tenable Account and verify the details
+    Generic.click on the tab	Register
+    Generic.Verify your current page location contains      register
+    ReplaceDomainAPI.Replace Domain
+    RegisterUserPage.Create random register first name
+    RegisterUserPage.Create random register last name
+    RegisterUserPage.Create random register company name
+    RegisterUserPage.Click on member type
+    RegisterUserPage.Select the member type      End User
+    RegisterUserPage.Create partner random business email
+    RegisterUserPage.Choose register user country      India   +91     9646289871
+    RegisterUserPage.Select the checkbox
+    RegisterUserPage.Save the register form
+    Generic.Verify your current page location contains      update-email
+    Generic.Open new window     yopmail
+    Generic.Refresh the existing page
+    Generic.Search yopmail emails for       ${generate_register_Email}
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   Email Register Verification Required.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Click on sign In button in yopmail email
+    Unselect Frame
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Create - Account
+    Generic.Verify your current page location contains     create-account
+
+#----------------------------------------USER ACCOUNT---------------------------------------------------
+    UserAccount.Enter the password      Paramdeep@112
+    UserAccount.Confirm the entered password    Paramdeep@112
+    UserAccount.Click on term and condition checkbox
+    UserAccount.Click create account button
+    Generic.Fetch alert message text and compare it with       Account created successfully.
+    Generic.Verify your current page location contains     auth
+    LandingPage.Fill the login Form      ${generate_register_Email}    Paramdeep@112
+    Switch Window    Inbox
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   OTP Verification.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Get verification OTP from email    Your passcode is
+    sleep       ${yop_sleep}
+    Switch Window   aithentic | OTP
+    TwoFactorAuth.Enter the otp     ${passcode}
+    TwoFactorAuth.Click verification button
+#--------------------------------------SUBSCRIPTION------------------------------------------------------------
+    Generic.Verify your current page location contains     subscription
+    SubscriptionPage.Select country of manufacturer profile     United States
+    SubscriptionPage.Select state of manufacturer profile   Texas
+    SubscriptionPage.Select city of manufacturer profile    Abram
+    SubscriptionPage.Input text into manufacturer address one       This is address 1
+    SubscriptionPage.Input text into manufacturer address two       This is address 2
+    SubscriptionPage.Input text into manufacturer zip code      73301
+    SubscriptionPage.Select department of manufacturer profile      Customer Support
+    SubscriptionPage.Input text into manufacturer position/title    Agent
+    SubscriptionPage.Save the manufacturer profile
+    Generic.Verify your current page location contains     subscription-menu
+    Generic.Fetch alert message text and compare it with       Profile saved successfully
+    SubscriptionPage.Select plan of subscription
+    SubscriptionPage.Select and move next with subscription
+    Generic.Verify your current page location contains     subscription-payment
+#-------------------------------------------BILLING-----------------------------------------------------
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Switch to card iframe
+    SubscriptionPage.Enter cardnumber    42424242424242420429242
+    Unselect Frame
+    SubscriptionPage.Enter card user name    Paramdeep Singh
+    SubscriptionPage.Check the authorization checkbox
+    SubscriptionPage.Check the acknowledgement checkbox
+    SubscriptionPage.Click on complete process button
+    Generic.Verify your current page location contains     welcome
+    Generic.Fetch alert message text and compare it with       Payment Successful
+    DashboardPage.Click on complete setup button      Complete Setup
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the location ID checkbox   yes
+    DashboardPage.Select the asset ID checkbox      no
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    Generic.select the option from the side menu    Asset Discovery
+    Generic.Verify your current page location contains     discovery-assets
+#    Generic.click on the button     No, thanks
+    SubscriptionPage.Click on the tenable tab under asset discovery
+    Generic.click on the button     Create Connection
+    Generic.Verify your current page location contains     connector
+    Generic.Wait until table get load
+    SubscriptionPage.Click on the create button link of service now under subscription connector      Tenable       Create
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Create Connection
+    Generic.Verify your current page location contains      create-connection
+    SubscriptionPage.Enter input in the access key of tenable account     a632865206c0e117cd04af6b233f5ffc6908f651d0c250f415333adb1aaf9e61
+    SubscriptionPage.Enter input in the secret key field of service now     1002caed92c9ad78c3a95c994ba2c4ed834f1891438e1356fac2e1f167cd7907
+    Generic.click on the button     Create Connection
+    Generic.Verify your current page location contains      technology-settings
+    Generic.Fetch alert message text and compare it with       Technology created successfully
+    Generic.Wait until table get load
+    SubscriptionPage.Fetch text of status under the table of subscription connector    Tenable
+    SubscriptionPage.Click on the three dots of subscription connector      Tenable
+    SubscriptionPage.Click on option under three dots of subscription connector     Tenable      Scheduler
+     SubscriptionPage.click on the cross icon of create scheduler    1
+    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Weekly
+    SubscriptionPage.Enter input in the input field of day under create scheduler       Monday
+    SubscriptionPage.Select the time from the timepicker      3
+    SubscriptionPage.Click on the ok button after selecting the time
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+    SubscriptionPage.Click on the three dots of subscription connector      Tenable
+    SubscriptionPage.Click on option under three dots of subscription connector     Tenable     Scheduler
+    SubscriptionPage.click on the cross icon of create scheduler    1
+    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Monthly
+    SubscriptionPage.Enter input in the start date field of billing details
+    SubscriptionPage.Select the time from the timepicker      4
+    SubscriptionPage.Click on the ok button after selecting the time
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+
+    SubscriptionPage.Click on the three dots of subscription connector      Tenable
+    SubscriptionPage.Click on option under three dots of subscription connector    Tenable     Scheduler
+    SubscriptionPage.click on the cross icon of create scheduler    1
+    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Daily
+    SubscriptionPage.Select the time from the timepicker      5
+    SubscriptionPage.Click on the ok button after selecting the time
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+    SubscriptionPage.Click on the three dots of subscription connector      Tenable
+    SubscriptionPage.Click on option under three dots of subscription connector     Tenable     Scheduler
+    SubscriptionPage.click on the cross icon of create scheduler    1
+    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Yearly
+    SubscriptionPage.Enter input in the start date field of billing details
+    SubscriptionPage.Select the time from the timepicker      2
+    SubscriptionPage.Click on the ok button after selecting the time
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+    SubscriptionPage.Click on the three dots of subscription connector     Tenable
+    SubscriptionPage.Click on option under three dots of subscription connector   Tenable       Details
+    Generic.click on the button     Run Now
+    SubscriptionPage.Fetch alert message text of subscription connector and compare it with
+    sleep  ${search_sleep}
+    SubscriptionPage.Click on the three dots of subscription connector      Tenable
+    SubscriptionPage.Click on option under three dots of subscription connector    Tenable   Delete
+    Generic.click on the button     Yes
+    Generic.Fetch alert message text and compare it with        Status Updated
+    SubscriptionPage.Fetch text of delete under table of subscription connector    Tenable       Deleted
+    sleep  ${search_sleep}
+    SubscriptionPage.Click on the activate option under subscription connector table        Tenable
+    Generic.Fetch alert message text and compare it with        Status Updated
+    SubscriptionPage.Fetch text of delete under table of subscription connector    Tenable     Active
+    SubscriptionPage.Click on the three dots of subscription connector      Tenable
+    SubscriptionPage.Click on option under three dots of subscription connector    Tenable    Run Now
+    SubscriptionPage.Fetch alert message text of subscription connector and compare it with
+    SubscriptionPage.Click on the three dots of subscription connector      Tenable
+    SubscriptionPage.Click on option under three dots of subscription connector     Tenable    Details
+    SubscriptionPage.Get the value of fields under view details of subscription connector   1      Tenable
+    SubscriptionPage.Get the value of fields under view details of subscription connector   2       ${generate_register_Fname} ${generate_register_Lname}
+    SubscriptionPage.Click on cross icon of details under service now
+    SubscriptionPage.Click on the three dots of subscription connector      Tenable
+    SubscriptionPage.Click on option under three dots of subscription connector   Tenable    View Results
+    Generic.Verify your current page location contains      discovery-assets
+    Generic.Verify your current page contains this text    Asset Discovery
+    SubscriptionPage.Fetch and compare the product from the table
+    Generic.Wait until table get load
+    Go Back
+    Generic.Verify your current page location contains      technology-settings
+    Generic.select the option from the side menu    Asset Discovery
+    SubscriptionPage.Click on the tenable tab under asset discovery
+    OCS.Click on the newly dicovered of tenable tab under asset discovery
+    SubscriptionPage.Click on the action button of tenable under discovery assets
+    SubscriptionPage.Click on the options under action button of tenable under discovery assets       Edit
+    SubscriptionPage.click on the cross icon of tenable under asset discovery    1
+    SubscriptionPage.Enter input in the input field of frequency under asset discovery under tenable    Weekly
+    SubscriptionPage.Enter input in the input field of day asset discovery under tenable       Monday
+    SubscriptionPage.Select the time from the timepicker of tenable under asset discovery     7
+    SubscriptionPage.Click on the ok button after selecting the time
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+    SubscriptionPage.Click on the action button of tenable under discovery assets
+    SubscriptionPage.Click on the options under action button of tenable under discovery assets     Edit
+    SubscriptionPage.click on the cross icon of tenable under asset discovery    1
+    SubscriptionPage.Enter input in the input field of frequency under asset discovery under tenable   Monthly
+    SubscriptionPage.Enter input in the start date field of service now under asset discovery under tenable
+
+    SubscriptionPage.Select the time from the timepicker of tenable under asset discovery      8
+    SubscriptionPage.Click on the ok button after selecting the time
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+    SubscriptionPage.Click on the action button of tenable under discovery assets
+    SubscriptionPage.Click on the options under action button of tenable under discovery assets     Edit
+    SubscriptionPage.click on the cross icon of tenable under asset discovery    1
+    SubscriptionPage.Enter input in the input field of frequency under asset discovery under tenable    Daily
+
+    SubscriptionPage.Select the time from the timepicker of tenable under asset discovery       9
+    SubscriptionPage.Click on the ok button after selecting the time
+
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+
+    SubscriptionPage.Click on the action button of tenable under discovery assets
+    SubscriptionPage.Click on the options under action button of tenable under discovery assets     Edit
+    SubscriptionPage.click on the cross icon of tenable under asset discovery    1
+    SubscriptionPage.Enter input in the input field of frequency under asset discovery under tenable     Yearly
+    SubscriptionPage.Enter input in the start date field of service now under asset discovery under tenable
+
+    SubscriptionPage.Select the time from the timepicker of tenable under asset discovery       2
+     Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+    SubscriptionPage.Click on the action button of tenable under discovery assets
+    SubscriptionPage.Click on the options under action button of tenable under discovery assets      Details
+    Generic.click on the button    Run Now
+    SubscriptionPage.Fetch alert message text of subscription connector and compare it with
+    SubscriptionPage.Click on the action button of tenable under discovery assets
+    SubscriptionPage.Click on the options under action button of tenable under discovery assets      Delete
+    SubscriptionPage.click on the yes option of delete pop up under asset discovery tenable
+#    SubscriptionPage.click on the cross icon of delete pop up under asset discovery
+    Generic.Fetch alert message text and compare it with        Status Updated
+    SubscriptionPage.Click on the action button of tenable under discovery assets
+    SubscriptionPage.Click on the options under action button of tenable under discovery assets   Activate
+    Generic.Fetch alert message text and compare it with        Status Updated
+    SubscriptionPage.Click on the action button of tenable under discovery assets
+    SubscriptionPage.Click on the action button of tenable under discovery assets
+    SubscriptionPage.Click on the options under action button of tenable under discovery assets     Run Now
+    SubscriptionPage.Fetch alert message text of subscription connector and compare it with
+    SubscriptionPage.Click on the action button of tenable under discovery assets
+    SubscriptionPage.Click on the options under action button of tenable under discovery assets    Details
+    SubscriptionPage.Get the value of fields under view details of subscription of tenable tab under asset discovery   1       Tenable
+    SubscriptionPage.Get the value of fields under view details of subscription of tenable tab under asset discovery   2       ${generate_register_Fname} ${generate_register_Lname}
+
+
+
+
+
+
+
 Create tanium Account and verify the details
-Generic.click on the tab	Register
+    Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
     RegisterUserPage.Create random register first name
@@ -1870,6 +2107,7 @@ Create CrowdStrike Account and verify the details
     SubscriptionPage.Click on cross icon of details under service now
     SubscriptionPage.Click on the three dots of subscription connector      CrowdStrike
     SubscriptionPage.Click on option under three dots of subscription connector    CrowdStrike    View Results
+
     Generic.Verify your current page location contains      discovery-assets
     Generic.Verify your current page contains this text    Asset Discovery
     SubscriptionPage.Fetch and compare the product from the table
@@ -1877,7 +2115,6 @@ Create CrowdStrike Account and verify the details
     Go Back
     Generic.Verify your current page location contains      technology-settings
     Generic.select the option from the side menu    Asset Discovery
-
     SubscriptionPage.Click on the crowd strike tab under asset discovery
     OCS.Click on newly discovered tab under service now
     SubscriptionPage.Click on the action button of crowd strike under discovery assets
@@ -1905,12 +2142,11 @@ Create CrowdStrike Account and verify the details
     SubscriptionPage.Enter input in the input field of frequency under asset discovery    Daily
 
     SubscriptionPage.Select the time from the timepicker      9
-
     SubscriptionPage.Click on the ok button after selecting the time
 
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
-   SubscriptionPage.Click on the action button of crowd strike under discovery assets
+    SubscriptionPage.Click on the action button of crowd strike under discovery assets
     SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets     Edit
     SubscriptionPage.click on the cross icon of crowdstrike under asset discovery    1
     SubscriptionPage.Enter input in the input field of frequency under asset discovery    Yearly
