@@ -1380,7 +1380,8 @@ Create sentinel account and verify the options
     SubscriptionPage.Fetch alert message text of subscription connector and compare it with
     sleep  ${search_sleep}
     SubscriptionPage.Click on the three dots of subscription connector      SentinelOne
-    SubscriptionPage.Click on option under three dots of subscription connector     SentinelOne    Delete
+    SubscriptionPage.Click on option under three dots
+    of subscription connector     SentinelOne    Delete
     Generic.click on the button     Yes
     Generic.Fetch alert message text and compare it with        Status Updated
     SubscriptionPage.Fetch text of delete under table of subscription connector     SentinelOne         Deleted
@@ -1578,7 +1579,6 @@ Create CrowdStrike Account and verify the details
     Generic.Verify your current page location contains      technology-settings
     Generic.Fetch alert message text and compare it with       Technology created successfully
     Generic.Wait until table get load
-    sleep   300s
     SubscriptionPage.Fetch text of status under the table of subscription connector     CrowdStrike
     SubscriptionPage.Click on the three dots of subscription connector      CrowdStrike
     SubscriptionPage.Click on option under three dots of subscription connector     CrowdStrike      Scheduler
@@ -1647,31 +1647,32 @@ Create CrowdStrike Account and verify the details
     Generic.Verify your current page location contains      technology-settings
     Generic.select the option from the side menu    Asset Discovery
     SubscriptionPage.Click on the crowd strike tab under asset discovery
-    SubscriptionPage.Click on the newly discovered tab under crowd strike
+    OCS.Click on newly discovered tab under service now
     SubscriptionPage.Click on the action button of crowd strike under discovery assets
     SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets       Edit
-    SubscriptionPage.click on the cross icon of crowdstrike under asset discovery    1
-    SubscriptionPage.Enter input in the input field of frequency of crowd strike under asset discovery    Weekly
-    SubscriptionPage.Enter input in the input field of day of crowd strike asset discovery       Monday
-    SubscriptionPage.Select the time from the timepicker under asset dicovery   openEditSchedulerCrowdstrike      7
+    SubscriptionPage.click on the cross icon of crowdstrike under asset discoveryy    1
+    SubscriptionPage.Enter input in the input field of frequency under asset discovery    Weekly
+    SubscriptionPage.Enter input in the input field of day asset discovery       Monday
+    SubscriptionPage.Select the time from the timepicker     7
     SubscriptionPage.Click on the ok button after selecting the time
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the action button of crowd strike under discovery assets
     SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets     Edit
     SubscriptionPage.click on the cross icon of crowdstrike under asset discovery    1
-    SubscriptionPage.Enter input in the input field of frequency of crowd strike under asset discovery    Monthly
-    SubscriptionPage.Enter input in the start date field of crowd strike under asset discovery
-    SubscriptionPage.Select the time from the timepicker under asset dicovery   openEditSchedulerCrowdstrike      8
+    SubscriptionPage.Enter input in the input field of frequency under asset discovery    Monthly
+    SubscriptionPage.Enter input in the start date field of service now under asset discovery
+
+    SubscriptionPage.Select the time from the timepicker      8
     SubscriptionPage.Click on the ok button after selecting the time
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the action button of crowd strike under discovery assets
     SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets      Edit
     SubscriptionPage.click on the cross icon of crowdstrike under asset discovery    1
-    SubscriptionPage.Enter input in the input field of frequency of crowd strike under asset discovery    Daily
+    SubscriptionPage.Enter input in the input field of frequency under asset discovery    Daily
 
-    SubscriptionPage.Select the time from the timepicker under asset dicovery   openEditSchedulerCrowdstrike      9
+    SubscriptionPage.Select the time from the timepicker      9
     SubscriptionPage.Click on the ok button after selecting the time
 
     Generic.click on the button     Update
@@ -1679,34 +1680,100 @@ Create CrowdStrike Account and verify the details
    SubscriptionPage.Click on the action button of crowd strike under discovery assets
     SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets     Edit
     SubscriptionPage.click on the cross icon of crowdstrike under asset discovery    1
-    SubscriptionPage.Enter input in the input field of frequency of crowd strike under asset discovery    Yearly
-    SubscriptionPage.Enter input in the start date field of crowd strike under asset discovery
+    SubscriptionPage.Enter input in the input field of frequency under asset discovery    Yearly
+    SubscriptionPage.Enter input in the start date field of service now under asset discovery
 
-    SubscriptionPage.Select the time from the timepicker under asset dicovery   openEditSchedulerCrowdstrike      2
+    SubscriptionPage.Select the time from the timepicker      2
     SubscriptionPage.Click on the ok button after selecting the time
 
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the action button of crowd strike under discovery assets
     SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets     Details
-    Generic.click on the button    Run Now
+    SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets    Run Now
 #    SubscriptionPage.Click on cross icon of details under service now          #  delete this line after bug got fixed #
     SubscriptionPage.Fetch alert message text of subscription connector and compare it with
     SubscriptionPage.Click on the action button of crowd strike under discovery assets
     SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets      Delete
-    SubscriptionPage.click on the yes button of delete pop up under asset discovery
+    Generic.click on the button     Yes
 #    SubscriptionPage.click on the cross icon of delete pop up under asset discovery
     Generic.Fetch alert message text and compare it with        Status Updated
-    SubscriptionPage.Click on the action button of crowd strike under discovery assets
+   SubscriptionPage.Click on the action button of crowd strike under discovery assets
     SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets   Activate
     Generic.Fetch alert message text and compare it with        Status Updated
-    sleep   ${search_sleep}
-    SubscriptionPage.Click on the action button of crowd strike under discovery assets
-    SubscriptionPage.Click on the action button of crowd strike under discovery assets
-    SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets       Run Now
+    SubscriptionPage.Click on the action button of service now under discovery assets
+    Generic.click on the tab       Run Now
     SubscriptionPage.Fetch alert message text of subscription connector and compare it with
     SubscriptionPage.Click on the action button of crowd strike under discovery assets
     SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets    Details
-    SubscriptionPage.Get the value of fields under view details of subscription connector under asset discovery   1       CrowdStrike
-    SubscriptionPage.Get the value of fields under view details of subscription connector under asset discovery   2       ${generate_register_Fname} ${generate_register_Lname}
-    
+    SubscriptionPage.Get the value of fields under view details of subscription connector   1       CrowdStrike
+    SubscriptionPage.Get the value of fields under view details of subscription connector   2       ${generate_register_Fname} ${generate_register_Lname}
+
+Click on the three dots of Azure and verify the details
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      mailto:samuel@yopmail.net    Test@123
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     subscription-connector
+    Generic.Verify your current page location contains      technology-settings
+    SubscriptionPage.Click on the three dots of subscription connector      Azure Cloud Utilization
+    SubscriptionPage.Click on option under three dots of subscription connector     Azure Cloud Utilization      Scheduler
+    SubscriptionPage.click on the cross icon of create scheduler    1
+    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Weekly
+    SubscriptionPage.Enter input in the input field of day under create scheduler       Tuesday
+    SubscriptionPage.Select the time from the timepicker      3
+    SubscriptionPage.Click on the ok button after selecting the time
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+    SubscriptionPage.Click on the three dots of subscription connector      Azure Cloud Utilization
+    SubscriptionPage.Click on option under three dots of subscription connector     Azure Cloud Utilization     Scheduler
+    SubscriptionPage.click on the cross icon of create scheduler    1
+    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Monthly
+    SubscriptionPage.Enter input in the start date field of billing details
+    SubscriptionPage.Select the time from the timepicker      4
+    SubscriptionPage.Click on the ok button after selecting the time
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+    SubscriptionPage.Click on the three dots of subscription connector      Azure Cloud Utilization
+    SubscriptionPage.Click on option under three dots of subscription connector    Azure Cloud Utilization     Scheduler
+    SubscriptionPage.click on the cross icon of create scheduler    1
+    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Daily
+    SubscriptionPage.Select the time from the timepicker      5
+    SubscriptionPage.Click on the ok button after selecting the time
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+    SubscriptionPage.Click on the three dots of subscription connector      Azure Cloud Utilization
+    SubscriptionPage.Click on option under three dots of subscription connector     Azure Cloud Utilization      Scheduler
+    SubscriptionPage.click on the cross icon of create scheduler    1
+    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Yearly
+    SubscriptionPage.Enter input in the start date field of billing details
+    SubscriptionPage.Select the time from the timepicker      2
+    SubscriptionPage.Click on the ok button after selecting the time
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+    SubscriptionPage.Click on the three dots of subscription connector      Azure Cloud Utilization
+    SubscriptionPage.Click on option under three dots of subscription connector   Azure Cloud Utilization       Details
+    Generic.click on the button     Run Now
+    SubscriptionPage.Fetch alert message text of subscription connector and compare it with
+    SubscriptionPage.Click on the three dots of subscription connector      Azure Cloud Utilization
+    SubscriptionPage.Click on option under three dots of subscription connector     Azure Cloud Utilization    Delete
+    Generic.click on the button     Yes
+    Generic.Fetch alert message text and compare it with        Status Updated
+    SubscriptionPage.Fetch text of delete under table of subscription connector     Azure Cloud Utilization        Deleted
+    sleep  ${search_sleep}
+    SubscriptionPage.Click on the activate option under subscription connector table        Azure Cloud Utilization
+    Generic.Fetch alert message text and compare it with        Status Updated
+    SubscriptionPage.Fetch text of delete under table of subscription connector    Azure Cloud Utilization      Active
+    SubscriptionPage.Click on the three dots of subscription connector      Azure Cloud Utilization
+    SubscriptionPage.Click on option under three dots of subscription connector    Azure Cloud Utilization    Run Now
+    SubscriptionPage.Fetch alert message text of subscription connector and compare it with
+    SubscriptionPage.Click on the three dots of subscription connector      Azure Cloud Utilization
+    SubscriptionPage.Click on option under three dots of subscription connector     Azure Cloud Utilization    Details
+    SubscriptionPage.Get the value of fields under view details of subscription connector   1      Azure Cloud Utilization
+    SubscriptionPage.Get the value of fields under view details of subscription connector   2       Samuel John
+    SubscriptionPage.Click on cross icon of details under service now
+    SubscriptionPage.Click on the three dots of subscription connector      Azure Cloud Utilization
+    SubscriptionPage.Click on option under three dots of subscription connector    Azure Cloud Utilization    View Results
+    Generic.Verify your current page location contains      azurecloud
+    Generic.Verify your current page contains this text    Coming Soon
