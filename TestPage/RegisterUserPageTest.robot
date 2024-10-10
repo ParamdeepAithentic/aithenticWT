@@ -2035,9 +2035,3 @@ Check all the validations on register page
     LoginPage.Clear the element text of field under login page     ${register_Email}
     RegisterUserPage.Create self register invalid business name     ${generate_register_Fname}@yopmailcom
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page          Please enter valid Email
-
-
-
-
-
-
