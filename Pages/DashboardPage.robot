@@ -1596,11 +1596,5 @@ Create static product via link
     input text      ${ProductName}      ${option}
     click element      ${ProductName}       TAB
 
-Click on the subscription under profile list
-    [Arguments]         ${option}
-    wait until element is visible       css:.qa-${option}      ${wait_time}
-    wait until element is enabled       css:.qa-${option}      ${wait_time}
-    click element      css:.qa-${option}
-
 
 
