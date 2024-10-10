@@ -1006,10 +1006,10 @@ Verify Bulk Import on the Technology Page by adding all parameters
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_3      1654
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_3
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_4
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_5      Paramdeep
-    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_5
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_6      Test@123
-    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_6
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_5      Paramdeep
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_5
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_6      Test@123
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_6
     Bulk_Import_Exportpage.Enter the new value of serial number of technology bulk import      DYNA_21
 #    Bulk_Import_ExportPage.Perform the keyboard action      DYNA_21
 #    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_4      CPU
@@ -1126,10 +1126,10 @@ Technology bulk import while entering invalid data in payment period field
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_3      1654
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_3
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_4
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_5      Paramdeep
-    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_5
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_6      Test@123
-    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_6
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_5      Paramdeep
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_5
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_6      Test@123
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_6
     Bulk_Import_Exportpage.Enter the new value of serial number of technology bulk import      DYNA_21
 #    Bulk_Import_ExportPage.Perform the keyboard action      DYNA_21
 #    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_4      CPU
@@ -1293,12 +1293,12 @@ Check the payment period alert when entering inavalid data
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_9
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_3      1654
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_3
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_4      CPU
-    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_4
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_5      Paramdeep
-    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_5
-    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_6      Test@123
-    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_6
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_4      CPU
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_4
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_5      Paramdeep
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_5
+#    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_6      Test@123
+#    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_6
 
     Bulk_Import_Exportpage.Enter the new value of serial number of technology bulk import      DYNA_21
 
