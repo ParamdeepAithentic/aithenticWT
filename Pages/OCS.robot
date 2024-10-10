@@ -1019,7 +1019,7 @@ Get asset id by hovering over first existing assets
     Log to console      ${hover_assetid1}
     set global variable     ${hover_assetid1}
 
-Get the text of no records after searching with inavlid mac address under newly discovery tab
+Get the text of no records after searching with invalid mac address under newly discovery tab
     [Arguments]         ${option}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible      //div[contains(@class,'qa-column-boxes-left')]//following-sibling::div//p       ${wait_time}
@@ -1028,6 +1028,17 @@ Get the text of no records after searching with inavlid mac address under newly 
     log to console     ${fetch_text_newly_discovered}
     set global variable   ${fetch_text_newly_discovered}
     should be equal    ${option}    ${fetch_text_newly_discovered}
+
+Click on the newly dicovered of tenable tab under asset discovery
+    wait until element is visible   //a[@id='new-dicovered-tenable']    ${wait_time}
+    wait until element is enabled   //a[@id='new-dicovered-tenable']     ${wait_time}
+    click element   //a[@id='new-dicovered-tenable']
+
+Click on newly discovered tab under tanium
+#    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is visible    css:#new-dicovered-tanium   ${wait_time}
+    Wait Until Element Is enabled    css:#new-dicovered-tanium     ${wait_time}
+    click element    css:#new-dicovered-tanium
 
 Mouse hover over first discovered asset
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
