@@ -89,3 +89,12 @@ Fill the login Form with password only
     wait until element is visible    ${Kc_password}       ${wait_time}
     Input Text          ${Kc_password}    ${valid_password}
     Click Button        ${Kc_password}
+
+Click on the login button without input data in both the fields
+    [Arguments]     ${option}
+    Click Button       ${option}
+
+Fill the email under forgot password
+    [Arguments]     ${email}
+    wait until element is visible    ${Kc_username}       ${wait_time}
+    Input Text          ${Kc_username}     ${email}

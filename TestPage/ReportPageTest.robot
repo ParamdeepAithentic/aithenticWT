@@ -76,7 +76,7 @@ Verify Reports Key Data records count
     Go back
     Generic.Verify your current page location contains          account-overview
     ReportsPage.Click on tab under key data       Assigned Users
-    Generic.Verify your current page location contains          assignee-list
+    Generic.Verify your current page location contains          assigned
     Generic.Scroll Window To End
     ReportsPage.Fetch the total count
     ReportsPage.Verify that key_data is equals to total number of counts      Assigned_users

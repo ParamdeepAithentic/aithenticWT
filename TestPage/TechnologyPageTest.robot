@@ -1676,7 +1676,7 @@ Technology-Inactive asset and Restore asset
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
-    Generic.Select option from profile list     subscription-dropdown
+    DashboardPage.Click on the subscription under profile list     subscription-dropdown
     Generic.Verify your current page location contains      subscription
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     TechnologyPage.Click on current plan of subscription
@@ -1712,7 +1712,7 @@ Technology-Inactive asset and Restore asset
     Generic.Verify your current page location contains      technology-list
     Generic.Wait until table get load
     Generic.Click on the profile name
-    Generic.Select option from profile list     subscription-dropdown
+    DashboardPage.Click on the subscription under profile list     subscription-dropdown
     Generic.Verify your current page location contains      subscription
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     TechnologyPage.Click on current plan of subscription
@@ -1731,7 +1731,7 @@ Technology-Inactive asset and Restore asset
     SubscriptionPage.Proceed the payment     proceed
     Generic.Fetch alert message text and compare it with      Payment Successful
     Generic.Click on the profile name
-    Generic.Select option from profile list     subscription-dropdown
+    DashboardPage.Click on the subscription under profile list     subscription-dropdown
     Generic.Verify your current page location contains      subscription
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     TechnologyPage.Click on current plan of subscription
@@ -1773,7 +1773,7 @@ Inactive asset - Restore asset from Technology Details page
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
-    Generic.Select option from profile list     subscription-dropdown
+    DashboardPage.Click on the subscription under profile list     subscription-dropdown
     Generic.Verify your current page location contains      subscription
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     TechnologyPage.Click on current plan of subscription
@@ -1808,7 +1808,7 @@ Inactive asset - Restore asset from Technology Details page
     Generic.Verify your current page location contains      technology-list
     Generic.Wait until table get load
     Generic.Click on the profile name
-    Generic.Select option from profile list     subscription-dropdown
+    DashboardPage.Click on the subscription under profile list     subscription-dropdown
     Generic.Verify your current page location contains      subscription
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     TechnologyPage.Click on current plan of subscription
@@ -1827,7 +1827,7 @@ Inactive asset - Restore asset from Technology Details page
     SubscriptionPage.Proceed the payment     proceed
     Generic.Fetch alert message text and compare it with      Payment Successful
     Generic.Click on the profile name
-    Generic.Select option from profile list     subscription-dropdown
+    DashboardPage.Click on the subscription under profile list     subscription-dropdown
     Generic.Verify your current page location contains      subscription
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     TechnologyPage.Click on current plan of subscription
@@ -1854,7 +1854,7 @@ Inactive asset - Restore asset from Technology Details page
     TechnologyPage.Search by AssetId   ${generated_AssetID}
     TechnologyPage.Click on manage technology sub option       Technology List
     Generic.Click on the profile name
-    Generic.Select option from profile list     subscription-dropdown
+    DashboardPage.Click on the subscription under profile list     subscription-dropdown
     Generic.Verify your current page location contains      subscription
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     TechnologyPage.Click on current plan of subscription
@@ -3234,7 +3234,7 @@ Click on the technology group filters and verify it
     Generic.Wait until table get load
     TechnologyPage.Click on the tech type filter under technology       Tech Type
     Generic.Wait until table get load
-    TechnologyPage.Click on the value under the tech typen filters of technology page       License
+    TechnologyPage.Click on the value under the tech typen filters of technology page       Subscription
     Generic.Wait until table get load
     PaginationPage.Click on the pagination dropdown     technology
     PaginationPage.Select the value from the pagination drop down count     500

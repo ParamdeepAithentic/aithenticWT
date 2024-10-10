@@ -502,4 +502,22 @@ Click on refresh icon of user location
     wait until element is enabled    //b[normalize-space()='click here to refresh the location list']        ${wait_time}
     click element   //b[normalize-space()='click here to refresh the location list']
 
+Get and verify the validation in reset password page
+    [Arguments]         ${text}
+    wait until element is visible       //span[contains(@id,'error-password')]     ${wait_time}
+    wait until element is enabled        //span[contains(@id,'error-password')]     ${wait_time}
+    ${get_resetpassword_validation} =    get text    //span[contains(@id,'error-password')]
+    set global variable    ${get_resetpassword_validation}
+    log to console    ${get_resetpassword_validation}
+    should be equal   ${get_resetpassword_validation}     ${text}
+
+Get and verify the top validation under reset password
+    [Arguments]         ${text}
+    wait until element is visible       (//div[contains(@id,'content-wrapper')]//span)[2]     ${wait_time}
+    wait until element is enabled        (//div[contains(@id,'content-wrapper')]//span)[2]     ${wait_time}
+    ${get_resetpasswordtop_validation} =    get text    (//div[contains(@id,'content-wrapper')]//span)[2]
+    set global variable    ${get_resetpasswordtop_validation}
+    log to console    ${get_resetpasswordtop_validation}
+    should be equal   ${get_resetpasswordtop_validation}     ${text}
+
 

@@ -2097,7 +2097,7 @@ Method 1
     [Arguments]    ${option}
     ${status}=    Run Keyword And Return Status    Element Should Be Visible    //td[normalize-space()='${option}']   ${wait_time}
     Set Global Variable    ${status}
-    [Return]    ${status}
+    RETURN    ${status}
 
 
 Get new product
