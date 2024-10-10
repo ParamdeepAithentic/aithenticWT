@@ -520,4 +520,20 @@ Get and verify the top validation under reset password
     log to console    ${get_resetpasswordtop_validation}
     should be equal   ${get_resetpasswordtop_validation}     ${text}
 
+Create self register invalid business name
+    [Arguments]    ${option}
+    wait until element is enabled       ${register_Email}        ${wait_time}
+    click element   ${register_Email}
+    Clear element text      ${register_Email}
+    input text   ${register_Email}   ${option}
+
+Fetch the validation message after entering invalid data in register user page
+    [Arguments]         ${text}
+    wait until element is visible       //span[contains(@class,'invalidInput')]    ${wait_time}
+    wait until element is enabled        //span[contains(@class,'invalidInput')]     ${wait_time}
+    ${get_register_user_validation} =    get text    //span[contains(@class,'invalidInput')]
+    set global variable    ${get_register_user_validation}
+    log to console    ${get_register_user_validation}
+    should be equal   ${get_register_user_validation}     ${text}
+
 
