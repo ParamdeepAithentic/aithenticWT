@@ -313,6 +313,7 @@ Click on the select location filter and verify it
     LocationPage.Select the option from location filter under location         Canada
     LocationPage.Get the text of selected filter under location     Canada
     Generic.Wait until table get load
+    sleep   ${search_sleep}
     PaginationPage.Fetch the total count
     LocationPage.Fetch the country from location filter and click       Country     Canada          ${New_Name}
     Generic.Click on the reset filters link

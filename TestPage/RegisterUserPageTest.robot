@@ -309,7 +309,7 @@ Change plan and Change asset limit with ACH Payment method
     DashboardPage.Select the asset ID checkbox      no
     Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.Click on the profile name
-    Generic.Select option from profile list     subscription-dropdown
+    DashboardPage.Click on the subscription under profile list     subscription-dropdown
     Generic.Verify your current page location contains      subscription
     SubscriptionPage.Select if you want to change plan or asset    Change Asset Limit
     sleep       ${search_sleep}
@@ -1854,7 +1854,7 @@ Update the subscription Plan and verify the notification
     Generic.Verify your current page location contains     billing
     BillingPage.Get the value of manage subscription under billing
     Generic.Click on the profile name
-    Generic.Select option from profile list     subscription-dropdown
+    DashboardPage.Click on the subscription under profile list     subscription-dropdown
     Generic.Verify your current page location contains      subscription
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     sleep       ${wait_time}

@@ -177,9 +177,9 @@ Technology Auto removed from dynamic contract When edit Brand and product
 
     Generic.select the option from the side menu    Smart Share
     Generic.Verify your current page location contains      contract
+    Generic.click on the tab        Create New Smart Share
 
-
-    ContractsPage.Click on create new contract button
+#    ContractsPage.Click on create new contract button
 
     ContractsPage.Select type of contract     Dynamic Smart Share
     Generic.Verify your current page location contains      generate-contract
@@ -340,9 +340,9 @@ Technology Auto removed from static contract When edit Brand and product
 
     Generic.select the option from the side menu    Smart Share
     Generic.Verify your current page location contains      contract
+    Generic.click on the tab        Create New Smart Share
 
-
-    ContractsPage.Click on create new contract button
+#    ContractsPage.Click on create new contract button
 
     ContractsPage.Select type of contract     Static Smart Share
     Generic.Verify your current page location contains      generate-contract

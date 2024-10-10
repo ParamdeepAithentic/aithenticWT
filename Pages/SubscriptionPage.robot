@@ -403,7 +403,7 @@ click on the confirm button of unsuspend pop up
     wait until element is visible   //button[@type='submit'][normalize-space()='Confirm']       ${wait_time}
     wait until element is enabled   //button[@type='submit'][normalize-space()='Confirm']       ${wait_time}
     click element   //button[@type='submit'][normalize-space()='Confirm']
-#    wait until element is not visible       ${loaderIcon}    ${wait_time}
+    wait until element is not visible       ${loaderIcon}    ${wait_time}
 #    wait until element is not visible       ${shadow}          ${wait_time}
 
 

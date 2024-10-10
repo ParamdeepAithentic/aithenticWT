@@ -192,8 +192,8 @@ Compose Message invite user test
     Calculate Running time  10  ${pageHeading}   Page Load - Total load time from clicking contract option from side listing to contract page listing      10    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 
-    ContractsPage.Click on create new contract button
-
+#    ContractsPage.Click on create new contract button
+    Generic.click on the tab        Create New Smart Share
     ${StartTime1} =     Get Current Time in Milliseconds
     ContractsPage.Select type of contract     Dynamic Smart Share
     Generic.Verify your current page location contains      generate-contract
@@ -1175,7 +1175,8 @@ View Details and check the details of Contract
     Generic.select the option from the side menu    Smart Share
     Generic.click on the button link    View Details
     ContractsPage.Click on back to contract link
-    ContractsPage.Click on create new contract button
+#    ContractsPage.Click on create new contract button
+    Generic.click on the tab        Create New Smart Share
     ContractsPage.Select type of contract     Dynamic Smart Share
     Generic.Verify your current page location contains      generate-contract
     ContractsPage.Enter contract type      SmartShare_Manufacturer
