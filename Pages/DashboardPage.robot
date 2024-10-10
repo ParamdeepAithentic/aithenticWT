@@ -1595,6 +1595,7 @@ Create static product via link
     click element      ${ProductName}
     input text      ${ProductName}      ${option}
     click element      ${ProductName}       TAB
+    
 
 
 
