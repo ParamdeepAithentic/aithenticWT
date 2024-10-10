@@ -657,15 +657,6 @@ Check all the validations of forgot password page
     RegisterUserPage.Get and verify the top validation under reset password     Invalid password: must contain at least 1 lower case characters.
 
 
-
-
-
-
-
-
-
-
-
 #Zz kill browser
 #    [Tags]      Smoke     Sanity      Time      Stable    yy
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
