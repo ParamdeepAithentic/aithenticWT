@@ -611,11 +611,11 @@ Check all the validations of forgot password page
     RegisterUserPage.Click on the submit button under forgot password page
     LoginPage.Get and Verify the validation after entering invalid email under forgot password        Please specify user id.
     LoginPage.Clear the element text of field under login page      ${Kc_username}
-    LandingPage.Fill the email under forgot password    milan@dmts.fr.nf
+    LandingPage.Fill the email under forgot password    chirag@dmts.fr.nf
     RegisterUserPage.Click on the submit button under forgot password page
    Generic.Open new window     yopmail
     Generic.Refresh the existing page
-    Generic.Search yopmail emails for      milan@dmts.fr.nf
+    Generic.Search yopmail emails for      chirag@dmts.fr.nf
     Generic.Refresh the existing page
     Switch Window   Sign in to Aithentic
     sleep       2
