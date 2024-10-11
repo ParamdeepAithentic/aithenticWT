@@ -2057,5 +2057,3 @@ Check all the validations on register page
     RegisterUserPage.Select the checkbox
     RegisterUserPage.Save the register form
     Generic.Fetch alert message text and compare it with        Email already exists
-
-

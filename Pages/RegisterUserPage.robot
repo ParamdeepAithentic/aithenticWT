@@ -569,8 +569,3 @@ Click on the cross icon of member type
     wait until element is visible       //span[@title='Clear all']   ${wait_time}
     wait until element is enabled       //span[@title='Clear all']    ${wait_time}
     click element   //span[@title='Clear all']
-
-
-
-
-
