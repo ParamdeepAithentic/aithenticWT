@@ -1676,7 +1676,7 @@ Technology-Inactive asset and Restore asset
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
-    DashboardPage.Click on the subscription under profile list     subscription-dropdown
+    Generic.Select other option from profile list         Subscription
     Generic.Verify your current page location contains      subscription
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     TechnologyPage.Click on current plan of subscription
