@@ -2014,6 +2014,10 @@ Profile Profile: Select location and department and add by cliking on link
 Check all the validations on register page
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
+    RegisterUserPage.Save the register form
+    RegisterUserPage.Fetch the all validation message after entering invalid data in register user page
+    RegisterUserPage.Fetch the validation message of last name field under register     Please enter Last Name
+    RegisterUserPage.Fetch the validation message of checkbox under register             Please accept Terms of use and Privacy Policy
     RegisterUserPage.Create random register first name
     RegisterUserPage.Create random register last name
     RegisterUserPage.Create random register company name
@@ -2035,3 +2039,23 @@ Check all the validations on register page
     LoginPage.Clear the element text of field under login page     ${register_Email}
     RegisterUserPage.Create self register invalid business name     ${generate_register_Fname}@yopmailcom
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page          Please enter valid Email
+    LoginPage.Clear the element text of field under login page     ${register_Fname}
+    LoginPage.Clear the element text of field under login page      ${register_Lname}
+    LoginPage.Clear the element text of field under login page      ${register_CompanyName}
+    RegisterUserPage.Click on the cross icon of member type
+    LoginPage.Clear the element text of field under login page      ${register_Email}
+    LoginPage.Clear the element text of field under login page      ${phone}
+    ReplaceDomainAPI.Replace Domain
+    RegisterUserPage.Create random register first name
+    RegisterUserPage.Create random register last name
+    RegisterUserPage.Create random register company name
+    RegisterUserPage.Click on member type
+    RegisterUserPage.Select the member type      End User
+    RegisterUserPage.Create self register invalid business name     samuel@yopmail.net
+    RegisterUserPage.Choose register user country      India   +91     9646289871
+    RegisterUserPage.Select the checkbox
+    RegisterUserPage.Select the checkbox
+    RegisterUserPage.Save the register form
+    Generic.Fetch alert message text and compare it with        Email already exists
+
+

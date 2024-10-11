@@ -2181,7 +2181,7 @@ Create CrowdStrike Account and verify the details
 
 Click on the three dots of Azure and verify the details
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      mailto:samuel@yopmail.net    Test@123
+    LandingPage.Fill the login Form      samuel@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
