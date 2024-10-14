@@ -2110,12 +2110,59 @@ Verify all the validations on profile page
     Generic.Verify your current page location contains     subscription
     SubscriptionPage.Save the manufacturer profile
     RegisterUserPage.Fetch the all validation message on profile page
+    SubscriptionPage.Select country of manufacturer profile     United States
+    SubscriptionPage.Select state of manufacturer profile   Texas
+    SubscriptionPage.Select city of manufacturer profile    Abram
+    SubscriptionPage.Input text into manufacturer address one       This is address 1
+    SubscriptionPage.Input text into manufacturer address two       This is address 2
+    SubscriptionPage.Input text into manufacturer zip code      73301
+    SubscriptionPage.Select department of manufacturer profile      Customer Support
+    SubscriptionPage.Input text into manufacturer position/title    Agent
+    SubscriptionPage.Save the manufacturer profile
+    Generic.Verify your current page location contains     subscription-menu
+    Generic.Fetch alert message text and compare it with       Profile saved successfully
+    Generic.click on the button     Next
+    Generic.Fetch alert message text and compare it with       Please Select Your Plan
+    SubscriptionPage.Select plan of subscription
+    SubscriptionPage.Select and move next with subscription
+    Generic.Verify your current page location contains     subscription-payment
+##-------------------------------------------BILLING-----------------------------------------------------
+    SubscriptionPage.Click on complete process button
+    SubscriptionPage.Fetch the all validation message on subscription payment page
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Switch to card iframe
+    SubscriptionPage.Enter cardnumber    42424242424242
+    Unselect Frame
+    SubscriptionPage.Check the authorization checkbox
+    SubscriptionPage.Check the acknowledgement checkbox
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page      Your card number is incomplete.
+    SubscriptionPage.Switch to card iframe
+    LoginPage.Clear the element text of field under login page     ${CardNumber_locator}
+    Unselect Frame
+    SubscriptionPage.Switch to card iframe
+    SubscriptionPage.Enter cardnumber    42424242424242420423242
+    Unselect Frame
+    SubscriptionPage.Check the authorization checkbox
+    SubscriptionPage.Check the acknowledgement checkbox
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page       Your card's expiration year is in the past.
+    SubscriptionPage.Switch to card iframe
+    LoginPage.Clear the element text of field under login page      ${CardNumber_locator}
+    Unselect Frame
+    SubscriptionPage.Switch to card iframe
+    SubscriptionPage.Enter cardnumber    42424242424242420429242
+    Unselect Frame
+    SubscriptionPage.Enter card user name    Paramdeep Singh
+    SubscriptionPage.Check the authorization checkbox
+    SubscriptionPage.Check the acknowledgement checkbox
+    SubscriptionPage.Click on complete process button
+    Generic.Verify your current page location contains     welcome
+    Generic.Fetch alert message text and compare it with       Payment Successful
+    DashboardPage.Click on complete setup button      Complete Setup
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the location ID checkbox   yes
+    DashboardPage.Select the asset ID checkbox      no
+    Generic.Fetch alert message text and compare it with       Settings Updated
 
-#    SubscriptionPage.Select country of manufacturer profile     United States
-#    SubscriptionPage.Select state of manufacturer profile   Texas
-#    SubscriptionPage.Select city of manufacturer profile    Abram
-#    SubscriptionPage.Input text into manufacturer address one       This is address 1
-#    SubscriptionPage.Input text into manufacturer address two       This is address 2
-#    SubscriptionPage.Input text into manufacturer zip code      73301
-#    SubscriptionPage.Select department of manufacturer profile      Customer Support
-#    SubscriptionPage.Input text into manufacturer position/title    Agent
