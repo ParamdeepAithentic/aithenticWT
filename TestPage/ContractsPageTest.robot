@@ -58,6 +58,7 @@ Test Teardown   Close Browser session
 #    Generic.select the option from the side menu    Smart Share
 #    Generic.Verify your current page location contains      contract
 #    ContractsPage.Click on create new contract button
+#        sleep   ${seach_sleep}
 #    ContractsPage.Select type of contract     Dynamic Smart Share
 #    Generic.Verify your current page location contains      generate-contract
 #    ContractsPage.Enter contract type      SmartShare_Manufacturer
@@ -180,7 +181,7 @@ Technology Auto removed from dynamic contract When edit Brand and product
     Generic.click on the tab        Create New Smart Share
 
 #    ContractsPage.Click on create new contract button
-
+    sleep       ${search_sleep}
     ContractsPage.Select type of contract     Dynamic Smart Share
     Generic.Verify your current page location contains      generate-contract
 
@@ -343,7 +344,7 @@ Technology Auto removed from static contract When edit Brand and product
     Generic.click on the tab        Create New Smart Share
 
 #    ContractsPage.Click on create new contract button
-
+    sleep       ${search_sleep}
     ContractsPage.Select type of contract     Static Smart Share
     Generic.Verify your current page location contains      generate-contract
 

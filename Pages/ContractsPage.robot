@@ -110,7 +110,9 @@ Enter contract with
     ${StartTime1} =     Get Current Time in Milliseconds
     input text      ${companyId}      ${option}
     sleep       ${search_sleep}
-    Press Keys     ${companyId}       ENTER
+    Wait Until Element Is Visible       //div[contains(@class,'dropdown-panel')]//span[normalize-space()='${option}']    ${wait_time}
+    Wait Until Element Is Enabled      //div[contains(@class,'dropdown-panel')]//span[normalize-space()='${option}']     ${wait_time}
+    Click Element     //div[contains(@class,'dropdown-panel')]//span[normalize-space()='${option}']
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  4  ${pageHeading}   ContractPage - Select the business name option from contract with dropdown via add new contract       4    ${pageTime}     ${ActualTime}    ContractPage_Time

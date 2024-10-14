@@ -864,14 +864,3 @@ Fetch the all validation message on subscription payment page
       Append To List    ${actualList}     ${element.text}
    END
    lists should be equal    ${expectedList}    ${actualList}
-
-
-Fetch the validation of name on the card field under subscription payment page
-    [Arguments]         ${text}
-    wait until element is visible       //p[contains(@class,'invalidInput')]    ${wait_time}
-    wait until element is enabled       //p[contains(@class,'invalidInput')]    ${wait_time}
-    ${get_name_on_card_validation} =    get text    //p[contains(@class,'invalidInput')]
-    set global variable   ${get_name_on_card_validation}
-    log to console    ${get_name_on_card_validation}
-    should be equal   ${get_name_on_card_validation}     ${text}
-

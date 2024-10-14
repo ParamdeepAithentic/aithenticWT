@@ -2165,4 +2165,3 @@ Verify all the validations on profile page
     DashboardPage.Select the location ID checkbox   yes
     DashboardPage.Select the asset ID checkbox      no
     Generic.Fetch alert message text and compare it with       Settings Updated
-
