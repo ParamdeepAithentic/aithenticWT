@@ -2666,11 +2666,12 @@ Verify Notification Mark all as read
     DashboardPage.Verify text is normal after clicking Mark all as read         Contract ${fetch_contract_ID} with      ${generate_BusinessName} is pending
 
 Verify all the validations of Add and Edit product page
-    Generic.click on the tab	Login
+Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
+<<<<<<< HEAD
     Generic.Select option from profile list     product-dropdown
     Generic.Verify your current page location contains      product
     DashboardPage.Click on action button
@@ -2694,6 +2695,80 @@ Verify all the validations of Add and Edit product page
     LoginPage.Clear the element text of field under login page      ${Edit_ProductName}
     DashboardPage.Click on the save and cancel button under edit product       Save
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page      Please enter Product Name
+
+Verfying all field validations of Add Brand page
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     brand-dropdown
+    Generic.Verify your current page location contains      brand
+    DashboardPage.Click add brand button
+    DashboardPage.Save added brand details
+    DashboardPage.Verify the validation message of Brand name field
+    DashboardPage.Compare and verify the validation messages      ${Brandname_validation}     Please Enter Brand Name
+    DashboardPage.Verify the validation message of Brand manufacturer URL field
+    DashboardPage.Compare and verify the validation messages        ${brandURL_validation}      Please enter Business URL
+    DashboardPage.Verify the validation message of Brand manufacturer country field
+    DashboardPage.Compare and verify the validation messages        ${brandCountry_validation}       Please Select Country
+################################################# INPUT INVALID DATA ####################################################################################
+    DashboardPage.Add Invalid business manufacturer URL         invalidBrandURL
+    DashboardPage.Verify the validation message of Brand manufacturer URL field
+    DashboardPage.Compare and verify the validation messages        ${brandURL_validation}       Please enter valid Business URL
+    DashboardPage.Add invalid brand manufacturer country            475638InvalidCountry
+    DashboardPage.Cancel Brand details
+    Generic.Verify your current page location contains     brand-list
+    DashboardPage.Click add brand button
+    DashboardPage.Create random brandName
+    DashboardPage.Add business manufacturer URL       ${generated_BrandName}
+    DashboardPage.Add brand manufacturer country      Australia
+    DashboardPage.Save added brand details
+    Generic.Fetch alert message text and compare it with        Brand created successfully.
+    DashboardPage.Click on Edit address
+    DashboardPage.Clear the field of country in add adddress of brand       qa-country-name
+    DashboardPage.Verify the validation message of Brand_country field when add new address
+    DashboardPage.Compare and verify the validation messages        ${Country_validation1}           Please Select Country
+    DashboardPage.Cancel the added new address
+    DashboardPage.Click on Add New Address
+    DashboardPage.Enter the country in the new address when add brand   addressCountry   United States
+    DashboardPage.Clear the field of country in add adddress of brand       qa-country-name
+    DashboardPage.Verify the validation message of Brand_country field when add new address
+    DashboardPage.Compare and verify the validation messages        ${Country_validation1}           Please Select Country
+
+Verfying all field validations of Edit Brand page
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     brand-dropdown
+    Generic.Verify your current page location contains      brand
+    DashboardPage.Click add brand button
+    DashboardPage.Create random brandName
+    DashboardPage.Add business manufacturer URL       ${generated_BrandName}
+    DashboardPage.Add brand manufacturer country      Australia
+    DashboardPage.Save added brand details
+    Generic.Fetch alert message text and compare it with        Brand created successfully.
+    DashboardPage.Click on main Save Button
+    DashboardPage.Verify Brand added      ${generated_BrandName}
+    DashboardPage.Click on three dots
+    Generic.Select other option from profile list   Edit
+    DashboardPage.Edit the URL of edit brand page
+    Generic.click on the button   Update
+    Generic.Fetch alert message text and compare it with      domain is required.
+    DashboardPage.Click on Add New Address
+    DashboardPage.Enter the country in the new address when add brand   addressCountry   United States
+    DashboardPage.Clear the field of country in add adddress of brand       qa-country
+    DashboardPage.Verify the validation message of Brand_country field when add new address
+    DashboardPage.Compare and verify the validation messages        ${Country_validation1}           Please Select Country
+    DashboardPage.Close the Address pop-up of brand
+    DashboardPage.Clear the data of the field           brandName
+    DashboardPage.Verify the validation of edit brand name
+    DashboardPage.Compare and verify the validation messages      ${editbrand_name1}     Please Enter Brand Name
+    DashboardPage.Clear the data of brand manufacturer country
+    DashboardPage.Verify the validation message of Brand manufacturer country field
+    DashboardPage.Compare and verify the validation messages        ${brandCountry_validation}      Please Select Country
 
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
