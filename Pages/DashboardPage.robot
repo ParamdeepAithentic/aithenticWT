@@ -70,6 +70,7 @@ ${add_Product}     css:a[title='Click here to Add Product']
 ${actionBTN}       css:#Team-Member-Actions
 ${add_Product_modal}     css:div[id='addProductPopup'] div[role='document'] div[role='document'] div[class='modal-content']
 ${ProductName}     css:#ProductName
+${Edit_ProductName}     css:#productName
 ${enterAndSelect_Brand}     css:.qa-BrandName input
 #${ProductDescription}     //div[@class='card-container themeScrollBar mt-1 p-2']//textarea[@id='ProductDescription']
 ${ProductDescription}       css:.qa-add-product-description
@@ -1595,6 +1596,29 @@ Create static product via link
     click element      ${ProductName}
     input text      ${ProductName}      ${option}
     click element      ${ProductName}       TAB
+
+Fetch the all validation message of add product page
+   wait until element is visible   //span[contains(@class,'invalidInput')]       ${wait_time}
+   @{expectedList} =    Create List       Please enter Product Name        Please enter Brand Name      Brand name is not present in the list. Click here to add         Please Select Status        Please Select Technology Group        Please Select Technology Type
+   ${elements} =  Get WebElements     //span[contains(@class,'invalidInput')]
+   @{actualList} =   Create List
+   FOR  ${element}  IN      @{elements}
+      log to console    ${element.text}
+      Append To List    ${actualList}     ${element.text}
+   END
+   lists should be equal    ${expectedList}    ${actualList}
+
+Click on the edit option under three dots of product
+    [Arguments]      ${option}
+    wait until element is visible       //a[contains(@class,'edit-product-qa')][normalize-space()='${option}']      ${wait_time}
+    wait until element is enabled       //a[contains(@class,'edit-product-qa')][normalize-space()='${option}']      ${wait_time}
+    click element      //a[contains(@class,'edit-product-qa')][normalize-space()='${option}']
+
+Click on the save and cutton under edit product
+    [Arguments]      ${option}
+    wait until element is visible       //button[@type='button'][normalize-space()='${option}']      ${wait_time}
+    wait until element is enabled       //button[@type='button'][normalize-space()='${option}']      ${wait_time}
+    click element      //button[@type='button'][normalize-space()='${option}']
     
 
 
