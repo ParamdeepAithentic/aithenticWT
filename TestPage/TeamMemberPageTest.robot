@@ -1117,7 +1117,7 @@ Add Back Deleted Team member - Active
     TeamMemberPage.Enter team member business email with cool fr nf email
     TeamMemberPage.Enter the Position in member form        QA
     TeamMemberPage.Click on team member department
-    TeamMemberPage.Select team member department        DepartmentName0451927202
+#    TeamMemberPage.Select team member department        DepartmentName0451927202
     TeamMemberPage.Select team member role     Admin
     TeamMemberPage.Click on team member location
     TeamMemberPage.Select team member location with new domain

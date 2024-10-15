@@ -59,6 +59,7 @@ ${brand_country}    css:#brandCountry
 ${select_country}   css:.ng-option-label.ng-star-inserted
 
 ${brand_saveBTN}        //button[@title='Click here to Save']
+${brand_CancelBTN}      //button[contains(@class,'cancel-brand-qa')]
 ${brand_saveBtn_main}     css:.add-brand-qa
 ${search_brandName}     css:#searchbar-brand
 ${fetch_brandName}    css:td:nth-child(2)
@@ -532,6 +533,7 @@ Click on View Your Added Brand List
     click element   ${Viewyour_addedbrandlist}
 
 Click on Add New Address
+    wait until element is not visible   ${loaderIcon}    ${wait_time}
     wait until element is visible   ${clickadd_newaddress}    ${wait_time}
     click element   ${clickadd_newaddress}
 
@@ -1587,7 +1589,6 @@ Sending message to the user
     Generic.click on the button     Send
     Generic.Fetch alert message text and compare it with       Message sent successfully
 
-
 Create static product via link
     [Arguments]      ${option}
     wait until element is visible       ${ProductName}      ${wait_time}
@@ -1602,5 +1603,113 @@ Click on the subscription under profile list
     wait until element is enabled       css:.qa-${option}      ${wait_time}
     click element      css:.qa-${option}
 
+Verify the validation message of Brand name field
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       //input[@id='Name']//parent::app-text-input//following-sibling::p//span      ${wait_time}
+    wait until element is enabled       //input[@id='Name']//parent::app-text-input//following-sibling::p//span      ${wait_time}
+    ${Brandname_validation}=     Get text       //input[@id='Name']//parent::app-text-input//following-sibling::p//span
+    log     ${Brandname_validation}
+    set global variable     ${Brandname_validation}
+#    Textarea Should Contain    //input[@id='Name']//parent::app-text-input//following-sibling::p//span          Please Enter Brand Name
 
+Compare and verify the validation messages
+    [Arguments]         ${option1}      ${option2}
+    Should be equal       ${option1}      ${option2}
 
+Verify the validation message of Brand manufacturer URL field
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       (//label[normalize-space()='Business Manufacturer URL']//parent::div//p//span)[3]      ${wait_time}
+    wait until element is enabled       (//label[normalize-space()='Business Manufacturer URL']//parent::div//p//span)[3]      ${wait_time}
+    ${brandURL_validation}=     get text        (//label[normalize-space()='Business Manufacturer URL']//parent::div//p//span)[3]
+    log     ${brandURL_validation}
+    set global variable     ${brandURL_validation}
+
+Verify the validation message of Brand manufacturer country field
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       //label[normalize-space()='Brand Manufacturer Country']//parent::div//p//span      ${wait_time}
+    wait until element is enabled       //label[normalize-space()='Brand Manufacturer Country']//parent::div//p//span      ${wait_time}
+    ${brandCountry_validation}=     get text        //label[normalize-space()='Brand Manufacturer Country']//parent::div//p//span
+    log     ${brandCountry_validation}
+    set global variable     ${brandCountry_validation}
+
+Add Invalid business manufacturer URL
+    [Arguments]         ${option}
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible        ${add_brand_mfc_URL}     ${wait_time}
+    input text   ${add_brand_mfc_URL}    ${option}
+
+Add invalid brand manufacturer country
+    [Arguments]    ${country}
+    click element   ${brand_country}
+    Clear Element Text      ${brand_country}
+    input text   ${brand_country}   ${country}
+    wait until element is visible       //div[contains(@class,"ng-option-disabled")][normalize-space()='No items found']
+
+Cancel Brand details
+    wait until element is visible       ${brand_CancelBTN}        ${wait_time}
+    click element   ${brand_CancelBTN}
+    wait until element is not visible       ${loaderIcon}      ${wait_time}
+
+Cancel the added new address
+    wait until element is visible       css:.cancel-address-qa        ${wait_time}
+    click element   css:.cancel-address-qa
+    wait until element is not visible       ${loaderIcon}      ${wait_time}
+    sleep       2
+
+Clear the field of country in add adddress of brand
+    [Arguments]     ${option}
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    click element   css:.${option} span[title='Clear all']
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+
+Verify the validation message of Brand_country field when add new address
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       //label[normalize-space()='Country']//parent::div//p//span    ${wait_time}
+    wait until element is enabled       //label[normalize-space()='Country']//parent::div//p//span      ${wait_time}
+    ${Country_validation1}=     get text        //label[normalize-space()='Country']//parent::div//p//span
+    log     ${Country_validation1}
+    set global variable     ${Country_validation1}
+
+Enter the country in the new address when add brand
+    [Arguments]       ${option}      ${country}
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       css:#${option}         ${wait_time}
+    click element     css:#${option}
+    Clear Element Text       css:#${option}
+    input text   css:#${option}   ${country}
+    Generic.Select parameter     ${country}
+
+Edit the URL of edit brand page
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       //ng-select[contains(@class,'qa-Domain')]//span[contains(@class,'ng-value-icon')]        ${wait_time}
+    click element     //ng-select[contains(@class,'qa-Domain')]//span[contains(@class,'ng-value-icon')]
+
+Clear the data of the field
+    [Arguments]     ${option}
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       css:#${option}       ${wait_time}
+    click element     css:#${option}
+    Press Keys    css:#${option}     CONTROL+A
+    FOR    ${i}    IN RANGE    20
+        Press Keys    css:#${option}     BACKSPACE
+    END
+
+Verify the validation of edit brand name
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       //input[@id='brandName']//following-sibling::p//span      ${wait_time}
+    wait until element is enabled       //input[@id='brandName']//following-sibling::p//span     ${wait_time}
+    ${editbrand_name1}=     get text       //input[@id='brandName']//following-sibling::p//span
+    log     ${editbrand_name1}
+    set global variable     ${editbrand_name1}
+
+Close the Address pop-up of brand
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible   //h5[normalize-space()='Address']//parent::div//button      ${wait_time}
+    click element       //h5[normalize-space()='Address']//parent::div//button
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    sleep   2
+
+Clear the data of brand manufacturer country
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible   //ng-select[@placeholder='Select Country']//span[@title='Clear all']        ${wait_time}
+    click element       //ng-select[@placeholder='Select Country']//span[@title='Clear all']
