@@ -89,6 +89,7 @@ Clear the element text of field under login page
     [Arguments]         ${option}
     click element          ${option}
     clear element text         ${option}
+    sleep       ${search_sleep}
 
 Get and Verify the validation after entering invalid email under forgot password
     [Arguments]         ${text}

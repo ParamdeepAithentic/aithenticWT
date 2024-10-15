@@ -1614,11 +1614,17 @@ Click on the edit option under three dots of product
     wait until element is enabled       //a[contains(@class,'edit-product-qa')][normalize-space()='${option}']      ${wait_time}
     click element      //a[contains(@class,'edit-product-qa')][normalize-space()='${option}']
 
-Click on the save and cutton under edit product
+Click on the save and cancel button under edit product
     [Arguments]      ${option}
     wait until element is visible       //button[@type='button'][normalize-space()='${option}']      ${wait_time}
     wait until element is enabled       //button[@type='button'][normalize-space()='${option}']      ${wait_time}
     click element      //button[@type='button'][normalize-space()='${option}']
+    sleep       ${search_sleep}
+
+Verify the visibility of the product name under edit product pop up
+    wait until element is visible       //div[contains(@id,'editProductPopup')]//label[normalize-space()='Product Name']      ${wait_time}
+    wait until element is enabled       //div[contains(@id,'editProductPopup')]//label[normalize-space()='Product Name']      ${wait_time}
+
     
 
 

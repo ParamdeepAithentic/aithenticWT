@@ -2688,11 +2688,12 @@ Verify all the validations of Add and Edit product page
     DashboardPage.Save added product details
     Generic.Fetch alert message text and compare it with        Product created successfully
     DashboardPage.Verify product added    ${generated_product}
-    DashboardPage.Click on action button
+    DashboardPage.Click on three dots of Department list
     DashboardPage.Click on the edit option under three dots of product      Edit
+    DashboardPage.Verify the visibility of the product name under edit product pop up
     LoginPage.Clear the element text of field under login page      ${Edit_ProductName}
-    DashboardPage.Click on the save and cutton under edit product       Save
-    RegisterUserPage.Fetch the validation message of last name field under register      Please enter Product Name
+    DashboardPage.Click on the save and cancel button under edit product       Save
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page      Please enter Product Name
 
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
