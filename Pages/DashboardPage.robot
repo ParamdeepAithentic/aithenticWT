@@ -1596,12 +1596,7 @@ Create static product via link
     click element      ${ProductName}
     input text      ${ProductName}      ${option}
     click element      ${ProductName}       TAB
-
-Click on the subscription under profile list
-    [Arguments]         ${option}
-    wait until element is visible       css:.qa-${option}      ${wait_time}
-    wait until element is enabled       css:.qa-${option}      ${wait_time}
-    click element      css:.qa-${option}
+    
 
 Verify the validation message of Brand name field
     wait until element is not visible    ${loaderIcon}      ${wait_time}
