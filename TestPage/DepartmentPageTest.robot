@@ -112,3 +112,47 @@ Add department and verify via organisation
     Generic.Fetch alert message text and compare it with        Department added successfully
     Generic.Verify your current page location contains      department-list
     DepartmentPage.Search by department name      ${generated_Department}
+
+Verify the validations of all fields of Add department
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     department-dropdown
+    Generic.Verify your current page location contains      department
+    DepartmentPage.Click on added department action button
+    DepartmentPage.Choose the option from the action menu   Add Department
+    TechnologyPage.Save the department       add
+    DepartmentPage.Verify the validation department name field
+    DepartmentPage.Compare and verify the validation messages of department     ${Departmentname_validation}      Please enter Department Name
+    DepartmentPage.Verify the validation department status
+    DepartmentPage.Compare and verify the validation messages of department     ${Departmentstatus_validation}      Please Select Status
+    DepartmentPage.Enter the wrong status of department and verify      wrongstatus
+
+Verify the validations of all fields of Edit department
+   Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     department-dropdown
+    Generic.Verify your current page location contains      department
+    DepartmentPage.Click on added department action button
+    DepartmentPage.Choose the option from the action menu   Add Department
+    TechnologyPage.Create unique department name random
+    DepartmentPage.Select department random cost center
+    TechnologyPage.Save the department       add
+    Generic.Fetch alert message text and compare it with        Department added successfully
+    Generic.Verify your current page location contains      department-list
+    DepartmentPage.Search by department name      ${generated_departmentnumber}
+    TeamMemberPage.Click on three dots of Team Member listing
+    TeamMemberPage.Select option from three dots of Team Member     Edit
+    DepartmentPage.Clear the data of the field while adding department      add-department-name
+    DepartmentPage.Clear the data of the field while adding department      add-department-status
+    TechnologyPage.Save the department       add
+    DepartmentPage.Verify the validation department name field
+    DepartmentPage.Compare and verify the validation messages of department     ${Departmentname_validation}      Please enter Department Name
+    DepartmentPage.Verify the validation department status
+    DepartmentPage.Compare and verify the validation messages of department     ${Departmentstatus_validation}      Please Select Status
+    TechnologyPage.Save the department       close

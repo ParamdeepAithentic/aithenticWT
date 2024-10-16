@@ -174,5 +174,37 @@ Create static department name random
     sleep       ${search_sleep}
     click element      //span[normalize-space()='${option}']
 
+Verify the validation department name field
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       //ng-select[contains(@class,'qa-add-department-name')]//following-sibling::p//span      ${wait_time}
+    wait until element is enabled       //ng-select[contains(@class,'qa-add-department-name')]//following-sibling::p//span      ${wait_time}
+    ${Departmentname_validation}=     Get text       //ng-select[contains(@class,'qa-add-department-name')]//following-sibling::p//span
+    log     ${Departmentname_validation}
+    set global variable     ${Departmentname_validation}
 
+Verify the validation department status
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       //ng-select[contains(@class,'qa-add-department-status')]//parent::app-ng-select//following-sibling::p//span      ${wait_time}
+    wait until element is enabled       //ng-select[contains(@class,'qa-add-department-status')]//parent::app-ng-select//following-sibling::p//span      ${wait_time}
+    ${Departmentstatus_validation}=     Get text       //ng-select[contains(@class,'qa-add-department-status')]//parent::app-ng-select//following-sibling::p//span
+    log     ${Departmentstatus_validation}
+    set global variable     ${Departmentstatus_validation}
 
+Compare and verify the validation messages of department
+    [Arguments]         ${option1}      ${option2}
+    Should be equal       ${option1}      ${option2}
+
+Enter the wrong status of department and verify
+    [Arguments]    ${status}
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    click element       (//ng-select[contains(@class,'qa-add-department-status')]//input)[1]
+    Clear Element Text      (//ng-select[contains(@class,'qa-add-department-status')]//input)[1]
+    input text   (//ng-select[contains(@class,'qa-add-department-status')]//input)[1]   ${status}
+    wait until element is visible       //div[contains(@class,"ng-option-disabled")][normalize-space()='No items found']        ${wait_time}
+
+Clear the data of the field while adding department
+    [Arguments]         ${option}
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       //ng-select[contains(@class,'qa-${option}')]//span[@title='Clear all']      ${wait_time}
+    wait until element is enabled       //ng-select[contains(@class,'qa-${option}')]//span[@title='Clear all']     ${wait_time}
+    click element       //ng-select[contains(@class,'qa-${option}')]//span[@title='Clear all']

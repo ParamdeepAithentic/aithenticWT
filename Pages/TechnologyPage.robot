@@ -1111,7 +1111,7 @@ Save the department
     wait until element is visible       css:.qa-${option}-department-modal        ${wait_time}
     wait until element is enabled       css:.qa-${option}-department-modal        ${wait_time}
     click element        css:.qa-${option}-department-modal
-    wait until element is not visible       ${shadow}          ${wait_time}
+#    wait until element is not visible       ${shadow}          ${wait_time}
 # option: add, close
 
 Click on add assign to
