@@ -156,14 +156,3 @@ Verify the validations of all fields of Edit department
     DepartmentPage.Verify the validation department status
     DepartmentPage.Compare and verify the validation messages of department     ${Departmentstatus_validation}      Please Select Status
     TechnologyPage.Save the department       close
-
-
-
-#    Generic.Fetch alert message text and compare it with        Department updated successfully
-
-
-
-
-
-
-
