@@ -2666,12 +2666,11 @@ Verify Notification Mark all as read
     DashboardPage.Verify text is normal after clicking Mark all as read         Contract ${fetch_contract_ID} with      ${generate_BusinessName} is pending
 
 Verify all the validations of Add and Edit product page
-Generic.click on the tab	Login
+    Generic.click on the tab    	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
-<<<<<<< HEAD
     Generic.Select option from profile list     product-dropdown
     Generic.Verify your current page location contains      product
     DashboardPage.Click on action button
@@ -2692,8 +2691,11 @@ Generic.click on the tab	Login
     DashboardPage.Click on three dots of Department list
     DashboardPage.Click on the edit option under three dots of product      Edit
     DashboardPage.Verify the visibility of the product name under edit product pop up
+    DashboardPage.Click on the brand cross icon under edit product
     LoginPage.Clear the element text of field under login page      ${Edit_ProductName}
-    DashboardPage.Click on the save and cancel button under edit product       Save
+    DashboardPage.Verify the visibility of enter product placeholder
+#    DashboardPage.Click on the brand cross icon under edit product
+#    DashboardPage.Click on the save and cancel button under edit product       Save
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page      Please enter Product Name
 
 Verfying all field validations of Add Brand page

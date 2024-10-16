@@ -1626,7 +1626,12 @@ Verify the visibility of the product name under edit product pop up
     wait until element is visible       //div[contains(@id,'editProductPopup')]//label[normalize-space()='Product Name']      ${wait_time}
     wait until element is enabled       //div[contains(@id,'editProductPopup')]//label[normalize-space()='Product Name']      ${wait_time}
 
-    
+Click on the brand cross icon under edit product
+    wait until element is visible            //ng-select[@id='BrandName']//span[@title='Clear all']      ${wait_time}
+    wait until element is enabled       //ng-select[@id='BrandName']//span[@title='Clear all']      ${wait_time}
+    click element      //ng-select[@id='BrandName']//span[@title='Clear all']
+    sleep       ${search_sleep}
+
 
 Verify the validation message of Brand name field
     wait until element is not visible    ${loaderIcon}      ${wait_time}
@@ -1738,3 +1743,8 @@ Clear the data of brand manufacturer country
     wait until element is not visible    ${loaderIcon}      ${wait_time}
     wait until element is visible   //ng-select[@placeholder='Select Country']//span[@title='Clear all']        ${wait_time}
     click element       //ng-select[@placeholder='Select Country']//span[@title='Clear all']
+
+Verify the visibility of enter product placeholder
+    wait until element is visible       //div[contains(@id,'editProductPopup')]//input[@id='productName']      ${wait_time}
+     wait until element is enabled       //div[contains(@id,'editProductPopup')]//input[@id='productName']        ${wait_time}
+
