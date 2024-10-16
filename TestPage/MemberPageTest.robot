@@ -468,6 +468,34 @@ Verify all the validations of Add/Edit Assigned Users
     MemberPage.Click on confirm button under remove pop up of assigned user
     Generic.Fetch alert message text and compare it with       Assigned Users cannot removed as have assigned items
 
+Verify the validations while edit the assigned user
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    MemberPage.Click on assigned user tab     Assigned Users
+    MemberPage.Click on action button of assigned users
+    MemberPage.Select option from action button of assigned user    Add Assignee
+    MemberPage.Enter first name of assigned users
+    MemberPage.Enter last name of assigned users
+    MemberPage.Enter business email of assigned users
+    TechnologyPage.Create unique assign to employee_ID random
+    MemberPage.Click on save button of assigned user
+    Generic.Fetch alert message text and compare it with        Assigned Users created successfully
+    MemberPage.Search assigned user by first name   ${generated_AssigneduserFirstName}
+    MemberPage.Click on three dots of Team Member listing
+    MemberPage.Select option from three dots of Team Member     Details
+    Generic.click on the button    Edit
+    MemberPage.Clear the data of the field under member page      AssignedFirstName
+    MemberPage.Clear the data of the field under member page      AssignedLastName
+    MemberPage.Click on save button of assigned user
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page          Please enter Assignee Name
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page          Please enter Assignee Name
+
+
+
 
 
 
