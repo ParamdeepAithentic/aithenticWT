@@ -2692,11 +2692,11 @@ Verify all the validations of Add and Edit product page
     DashboardPage.Click on the edit option under three dots of product      Edit
     DashboardPage.Verify the visibility of the product name under edit product pop up
     DashboardPage.Click on the brand cross icon under edit product
-    LoginPage.Clear the element text of field under login page      ${Edit_ProductName}
+    DashboardPage.Clear the product from the edit product      productName
     DashboardPage.Verify the visibility of enter product placeholder
-#    DashboardPage.Click on the brand cross icon under edit product
-#    DashboardPage.Click on the save and cancel button under edit product       Save
+    DashboardPage.Click on the save and cancel button under edit product       Save
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page      Please enter Product Name
+
 
 Verfying all field validations of Add Brand page
     Generic.click on the tab	Login

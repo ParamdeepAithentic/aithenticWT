@@ -1748,3 +1748,19 @@ Verify the visibility of enter product placeholder
     wait until element is visible       //div[contains(@id,'editProductPopup')]//input[@id='productName']      ${wait_time}
      wait until element is enabled       //div[contains(@id,'editProductPopup')]//input[@id='productName']        ${wait_time}
 
+Clear the product from the edit product
+    [Arguments]     ${option}
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       css:#${option}       ${wait_time}
+    click element     css:#${option}
+    Press Keys    css:#${option}     CONTROL+A
+    FOR    ${i}    IN RANGE    20
+        Press Keys    css:#${option}     BACKSPACE
+    END
+
+
+
+
+
+
+
