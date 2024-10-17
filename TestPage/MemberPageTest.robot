@@ -481,9 +481,3 @@ Verify the validations while edit the assigned user
     MemberPage.Click on save button of assigned user
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page          Please enter Assignee Name
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page          Please enter Assignee Name
-
-
-
-
-
-
