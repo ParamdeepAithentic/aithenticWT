@@ -369,8 +369,7 @@ Click on confirm button under remove pop up of assigned user
     wait until element is visible      //div[contains(@id,'remove-assignee')]//div[contains(@class,'modal-body')]//following-sibling::button[normalize-space()='Confirm']        ${wait_time}
     wait until element is enabled     //div[contains(@id,'remove-assignee')]//div[contains(@class,'modal-body')]//following-sibling::button[normalize-space()='Confirm']        ${wait_time}
     click element       //div[contains(@id,'remove-assignee')]//div[contains(@class,'modal-body')]//following-sibling::button[normalize-space()='Confirm']
-#    sleep   ${search_sleep}
-    wait until element is not visible       ${shadow}          ${wait_time}
+    sleep   ${search_sleep}
 
 Search assigned user by static first name
     [Arguments]    ${name}
@@ -440,3 +439,20 @@ Create static assign to employee_ID
     click element      ${technology_employeeid}
     input text      ${technology_employeeid}      ${option3}
 #    set global variable    ${generate_employeeid}
+
+Enter invalid business email of assigned users
+    [Arguments]     ${option}
+    wait until element is visible       css:.qa-AssignedEmail    ${wait_time}
+    wait until element is visible       css:.qa-AssignedEmail    ${wait_time}
+    click element   css:.qa-AssignedEmail
+    input text   css:.qa-AssignedEmail   ${option}
+
+Clear the data of the field under member page
+    [Arguments]     ${option}
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       css:#${option}       ${wait_time}
+    click element     css:#${option}
+    Press Keys    css:#${option}     CONTROL+A
+    FOR    ${i}    IN RANGE    20
+        Press Keys    css:#${option}     BACKSPACE
+    END
