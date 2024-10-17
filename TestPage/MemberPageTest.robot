@@ -420,10 +420,10 @@ Verify all the validations of Add Assigned Users via technology
     MemberPage.Enter last name of assigned users
     MemberPage.Enter invalid business email of assigned users       samuel@yopmail
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page           Please enter valid Business Email
-    LoginPage.Clear the element text of field under login page      css:.qa-AssignedEmail
+    LoginPage.Clear the element text of field under login page      ${assigneeEmail}
     MemberPage.Enter invalid business email of assigned users       samuelyopmail
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page           Please enter valid Business Email
-    LoginPage.Clear the element text of field under login page      css:.qa-AssignedEmail
+    LoginPage.Clear the element text of field under login page      ${assigneeEmail}
     MemberPage.Enter business email of assigned users
     TechnologyPage.Create unique assign to employee_ID random
     MemberPage.Click on save button of assigned user
@@ -481,3 +481,144 @@ Verify the validations while edit the assigned user
     MemberPage.Click on save button of assigned user
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page          Please enter Assignee Name
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page          Please enter Assignee Name
+
+Verify all the validate validations of the assigned user while adding assigned user
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    MemberPage.Click on assigned user tab     Assigned Users
+    MemberPage.Click on action button of assigned users
+    MemberPage.Select option from action button of assigned user    Add Assignee
+    MemberPage.Enter first name of static assigned users       Johnny
+    MemberPage.Enter last name of static assigned users       Doe
+    MemberPage.Click on save button of assigned user
+    Generic.Fetch alert message text and compare it with        Same user name already exists
+    LoginPage.Clear the element text of field under login page      ${assigneeFname}
+    LoginPage.Clear the element text of field under login page     ${assigneeLname}
+    MemberPage.Enter first name of static assigned users       Johnny
+    MemberPage.Enter last name of static assigned users       Doe
+    MemberPage.Create random assignee email not link with fist name
+    MemberPage.Click on save button of assigned user
+    MemberPage.Verify the visibilty of same user exist validation
+    MemberPage.Click on the save button of add assignee pop up if user is same      save
+    Generic.Fetch alert message text and compare it with        Assigned Users created successfully
+    MemberPage.Click on action button of assigned users
+    MemberPage.Select option from action button of assigned user    Add Assignee
+    MemberPage.Enter first name of static assigned users       Johnny
+    MemberPage.Enter last name of static assigned users       Doe
+    MemberPage.Create static assign to employee_ID      EmployeeID_9001
+    MemberPage.Click on save button of assigned user
+    Generic.Fetch alert message text and compare it with        Same user name & employee Id already exists
+    LoginPage.Clear the element text of field under login page      ${assigneeFname}
+    LoginPage.Clear the element text of field under login page     ${assigneeLname}
+    LoginPage.Clear the element text of field under login page    ${assigneeEmpID}
+    MemberPage.Enter first name of static assigned users       Johnny
+    MemberPage.Enter last name of static assigned users       Doe
+    MemberPage.Create static assign to employee_ID      EmployeeID_9001
+    MemberPage.Create random assignee email not link with fist name
+    MemberPage.Click on save button of assigned user
+    Generic.Fetch alert message text and compare it with        Same user name & employee Id already exists
+    LoginPage.Clear the element text of field under login page      ${assigneeEmail}
+    LoginPage.Clear the element text of field under login page    ${assigneeEmpID}
+    MemberPage.Enter invalid business email of assigned users       Johnny@yopmail.net
+    TechnologyPage.Create unique assign to employee_ID random
+    MemberPage.Click on save button of assigned user
+    Generic.Fetch alert message text and compare it with        Same user name & email already exists
+    LoginPage.Clear the element text of field under login page      ${assigneeEmail}
+    LoginPage.Clear the element text of field under login page    ${assigneeEmpID}
+    MemberPage.Create random assignee email not link with fist name
+    MemberPage.Click on save button of assigned user
+    MemberPage.Verify the visibilty of same user exist validation for cancel button
+    MemberPage.Click on the save button of add assignee pop up if user is same      cancel
+    Generic.Verify your current page location contains      memberslist
+
+Verify all the validate validations of the assigned user while edit assigned user
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    MemberPage.Click on assigned user tab     Assigned Users
+    MemberPage.Click on action button of assigned users
+    MemberPage.Select option from action button of assigned user    Add Assignee
+    MemberPage.Enter first name of assigned users
+    MemberPage.Enter last name of assigned users
+    MemberPage.Enter business email of assigned users
+    TechnologyPage.Create unique assign to employee_ID random
+    MemberPage.Click on save button of assigned user
+    Generic.Fetch alert message text and compare it with        Assigned Users created successfully
+    MemberPage.Search assigned user by first name   ${generated_AssigneduserFirstName}
+    MemberPage.Click on three dots of Team Member listing
+    MemberPage.Click on the edit option under three dots of member
+    MemberPage.Clear the data of the field under member page      AssignedFirstName
+    MemberPage.Clear the data of the field under member page      AssignedLastName
+    LoginPage.Clear the element text of field under login page    ${assigneeEmpID}
+    MemberPage.Enter first name of static assigned users       Johnny
+    MemberPage.Enter last name of static assigned users       Doe
+    MemberPage.Click on save button of assigned user
+#    Generic.Fetch alert message text and compare it with        Same user name already exists
+#    LoginPage.Clear the element text of field under login page      ${assigneeFname}
+#    LoginPage.Clear the element text of field under login page     ${assigneeLname}
+#     MemberPage.Enter first name of static assigned users       Johnny
+#    MemberPage.Enter last name of static assigned users       Doe
+#    MemberPage.Create random assignee email not link with fist name
+#    MemberPage.Click on save button of assigned user
+    MemberPage.Verify the visibilty of same user exist validation for cancel button
+    MemberPage.Click on the save button of add assignee pop up if user is same      save
+    Generic.Fetch alert message text and compare it with        Assigned Users updated successfully
+    Generic.Verify your current page location contains      memberslist
+    MemberPage.Search assigned user by first name   Johnny
+    MemberPage.Click on three dots of Team Member listing
+    MemberPage.Click on the edit option under three dots of member
+    MemberPage.Clear the data of the field under member page      AssignedFirstName
+    MemberPage.Clear the data of the field under member page      AssignedLastName
+    LoginPage.Clear the element text of field under login page      ${assigneeEmail}
+    MemberPage.Clear the data of the field under member page     AssignedEmployeeId
+
+    MemberPage.Enter first name of static assigned users       Johnny
+    MemberPage.Enter last name of static assigned users       Doe
+    MemberPage.Create static assign to employee_ID      EmployeeID_9001
+    MemberPage.Click on save button of assigned user
+    MemberPage.Verify the visibilty of same user exist validation for cancel button
+    MemberPage.Click on the save button of add assignee pop up if user is same      save
+    Generic.Fetch alert message text and compare it with        Assigned Users updated successfully
+    Generic.Verify your current page location contains      memberslist
+    MemberPage.Search assigned user by first name   Johnny
+    MemberPage.Click on three dots of Team Member listing
+    MemberPage.Click on the edit option under three dots of member
+    LoginPage.Clear the element text of field under login page      ${assigneeFname}
+    LoginPage.Clear the element text of field under login page     ${assigneeLname}
+    LoginPage.Clear the element text of field under login page    ${assigneeEmpID}
+    MemberPage.Enter first name of static assigned users       Johnny
+    MemberPage.Enter last name of static assigned users       Doe
+    MemberPage.Create static assign to employee_ID      EmployeeID_9001
+    MemberPage.Create random assignee email not link with fist name
+    MemberPage.Click on save button of assigned user
+    MemberPage.Verify the visibilty of same user exist validation for cancel button
+    MemberPage.Click on the save button of add assignee pop up if user is same      save
+    Generic.Fetch alert message text and compare it with        Assigned Users updated successfully
+    Generic.Verify your current page location contains      memberslist
+    MemberPage.Search assigned user by first name   Johnny
+    MemberPage.Click on three dots of Team Member listing
+    MemberPage.Click on the edit option under three dots of member
+    MemberPage.Clear the data of the field under member page      AssignedEmail
+    MemberPage.Enter invalid business email of assigned users       Johnny@yopmail.net
+    TechnologyPage.Create unique assign to employee_ID random
+    MemberPage.Click on save button of assigned user
+    MemberPage.Verify the visibilty of same user exist validation for cancel button
+    MemberPage.Click on the save button of add assignee pop up if user is same      save
+    Generic.Fetch alert message text and compare it with        Assigned Users updated successfully
+    MemberPage.Search assigned user by first name   Johnny
+    MemberPage.Click on three dots of Team Member listing
+    MemberPage.Click on the edit option under three dots of member
+    MemberPage.Clear the data of the field under member page      AssignedEmail
+    LoginPage.Clear the element text of field under login page    ${assigneeEmpID}
+    MemberPage.Create random assignee email not link with fist name
+    MemberPage.Click on save button of assigned user
+    MemberPage.Verify the visibilty of same user exist validation for cancel button
+    MemberPage.Click on the save button of add assignee pop up if user is same      cancel
+    Generic.Verify your current page location contains      memberslist
