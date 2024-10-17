@@ -403,7 +403,7 @@ Add_edit_delete_assignee_via_profile_list_via_details
     MemberPage.Click on confirm button under remove pop up of assigned user
     Generic.Fetch alert message text and compare it with       Assigned Users deleted successfully
 
-Verify all the validations of Add/Edit Assigned Users
+Verify all the validations of Add Assigned Users via technology
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -452,18 +452,6 @@ Verify all the validations of Add/Edit Assigned Users
     Generic.Wait until table get load
     MemberPage.Search assigned user by first name   ${generated_AssigneduserFirstName}
     MemberPage.Click on three dots of Team Member listing
-#    MemberPage.Select option from three dots of Team Member     Details
-#    Generic.click on the button    Edit
-#    MemberPage.Clear the data of the field under member page      AssignedFirstName
-#    MemberPage.Clear the data of the field under member page      AssignedLastName
-#    MemberPage.Click on save button of assigned user
-#    RegisterUserPage.Fetch the validation message after entering invalid data in register user page          Please enter Assignee Name
-#    RegisterUserPage.Fetch the validation message after entering invalid data in register user page          Please enter Assignee Name
-#    MemberPage.Click on the cross icon of edit member pop up
-#    Generic.Verify your current page location contains      memberslist
-#    LoginPage.Clear the element text of field under login page      css:input[placeholder='Search by Assignee Name or Employee Id']
-#    MemberPage.Search assigned user by first name   ${generated_AssigneduserFirstName}
-#    MemberPage.Click on three dots of Team Member listing
     MemberPage.Select option from three dots of Team Member     Remove
     MemberPage.Click on confirm button under remove pop up of assigned user
     Generic.Fetch alert message text and compare it with       Assigned Users cannot removed as have assigned items
@@ -493,13 +481,6 @@ Verify the validations while edit the assigned user
     MemberPage.Click on save button of assigned user
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page          Please enter Assignee Name
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page          Please enter Assignee Name
-
-
-
-
-
-
-
 
 
 

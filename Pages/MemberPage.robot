@@ -369,8 +369,7 @@ Click on confirm button under remove pop up of assigned user
     wait until element is visible      //div[contains(@id,'remove-assignee')]//div[contains(@class,'modal-body')]//following-sibling::button[normalize-space()='Confirm']        ${wait_time}
     wait until element is enabled     //div[contains(@id,'remove-assignee')]//div[contains(@class,'modal-body')]//following-sibling::button[normalize-space()='Confirm']        ${wait_time}
     click element       //div[contains(@id,'remove-assignee')]//div[contains(@class,'modal-body')]//following-sibling::button[normalize-space()='Confirm']
-#    sleep   ${search_sleep}
-    wait until element is not visible       ${shadow}          ${wait_time}
+    sleep   ${search_sleep}
 
 Search assigned user by static first name
     [Arguments]    ${name}
@@ -457,4 +456,3 @@ Clear the data of the field under member page
     FOR    ${i}    IN RANGE    20
         Press Keys    css:#${option}     BACKSPACE
     END
-
