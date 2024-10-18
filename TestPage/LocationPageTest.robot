@@ -398,7 +398,7 @@ Verifying the validations of all fields of Add location
     LocationPage.Verify the validation of Location name field when organization settings is yes
     LocationPage.Compare and verify the validation messages of Location     ${Locationnameyes_validation}      Please Enter Location Name
     LocationPage.Add invalid Location Name      locationName     A*
-    LocationPage.Verify the validation of Location name field
+    LocationPage.Verify the validation of Location name field when organization settings is yes
     LocationPage.Compare and verify the validation messages of Location     ${Locationname_validation}      Please Enter Valid Location Name
     LocationPage.Click on cancel Location
 
