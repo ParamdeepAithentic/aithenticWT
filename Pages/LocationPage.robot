@@ -457,3 +457,74 @@ Search by location name using statc location
      ${StartTime1} =     Get Current Time in Milliseconds
      input text   ${search_LocationName}   ${LocationName}
      sleep   ${search_sleep}
+
+Verify the validation of country name field
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       //ng-select[contains(@class,'qa-country-name')]//following-sibling::p//span      ${wait_time}
+    wait until element is enabled       //ng-select[contains(@class,'qa-country-name')]//following-sibling::p//span      ${wait_time}
+    ${Locationcountry_validation}=     Get text       //ng-select[contains(@class,'qa-country-name')]//following-sibling::p//span
+    log     ${Locationcountry_validation}
+    set global variable     ${Locationcountry_validation}
+
+
+Verify the validation of Location name field
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       //input[contains(@class,'qa-LocationTypeName')]//parent::app-text-input//following-sibling::p//span      ${wait_time}
+    wait until element is enabled       //input[contains(@class,'qa-LocationTypeName')]//parent::app-text-input//following-sibling::p//span      ${wait_time}
+    ${Locationname_validation}=     Get text       //input[contains(@class,'qa-LocationTypeName')]//parent::app-text-input//following-sibling::p//span
+    log     ${Locationname_validation}
+    set global variable     ${Locationname_validation}
+
+Compare and verify the validation messages of Location
+    [Arguments]         ${option1}      ${option2}
+    Should be equal       ${option1}      ${option2}
+
+Add invalid Location country
+    [Arguments]    ${country}
+    wait until element is visible       ${location_country}        ${wait_time}
+    click element   ${location_country}
+    Clear Element Text      ${location_country}
+    input text   ${location_country}   ${country}
+    wait until element is visible       //div[contains(@class,"ng-option-disabled")][normalize-space()='No items found']        ${wait_time}
+
+Add invalid Location Name
+    [Arguments]    ${option1}       ${option2}
+    wait until element is visible      //input[@id='${option1}']        ${wait_time}
+    click element   //input[@id='${option1}']
+    Clear Element Text      //input[@id='${option1}']
+    input text   //input[@id='${option1}']   ${option2}
+
+Click on Save to add location
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       css:.saveLocation-QA        ${wait_time}
+    wait until element is enabled       css:.saveLocation-QA        ${wait_time}
+    click element   css:.saveLocation-QA
+
+Click on cancel Location
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       css:.qa-cancel-location        ${wait_time}
+    wait until element is enabled       css:.qa-cancel-location        ${wait_time}
+    click element   css:.qa-cancel-location
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+
+Verify the validation of Location name field when organization settings is yes
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       //input[contains(@class,'qa-LocationTypeName')]//parent::div//following-sibling::p//span      ${wait_time}
+    wait until element is enabled       //input[contains(@class,'qa-LocationTypeName')]//parent::div//following-sibling::p//span      ${wait_time}
+    ${Locationnameyes_validation}=     Get text       //input[contains(@class,'qa-LocationTypeName')]//parent::div//following-sibling::p//span
+    log     ${Locationnameyes_validation}
+    set global variable     ${Locationnameyes_validation}
+
+Clear the data of location country
+    [Arguments]    ${option}
+    Wait Until Element Is Visible       ${location_country}    ${wait_time}
+    Wait Until Element Is Enabled      ${location_country}     ${wait_time}
+    wait until element is visible     css:.${option} span[title='Clear all']        ${wait_time}
+    click element   css:.${option} span[title='Clear all']
+
+
+clear the data of location name
+    Wait Until Element Is Visible       ${location_Name}    ${wait_time}
+    Wait Until Element Is Enabled      ${location_Name}     ${wait_time}
+    click element       ${location_Name}
+    Clear Element Text      ${location_Name}
