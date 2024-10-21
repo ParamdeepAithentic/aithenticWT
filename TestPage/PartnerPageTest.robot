@@ -1490,6 +1490,22 @@ Partner Side bar Filters
     MessagePage.Comapre the total count after selecting filter
 
 
+Create partner 100 times
+    Generic.click on the tab	    Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Partners
+    Generic.Verify your current page location contains      partner
+
+    Generic.Verify your current page contains this text     Partners
+
+#-------------------------- PARTNER--------------------------------------------------------------
+#    LoginPage.Fetch the refresh token from the login api
+    ReplaceDomainAPI.Replace Domain
+    PartnersPage.Create many partners
+
+
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
 

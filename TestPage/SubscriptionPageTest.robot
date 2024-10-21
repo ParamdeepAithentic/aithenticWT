@@ -2119,7 +2119,7 @@ Create CrowdStrike Account and verify the details
     OCS.Click on newly discovered tab under service now
     SubscriptionPage.Click on the action button of crowd strike under discovery assets
     SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets       Edit
-    SubscriptionPage.click on the cross icon of crowdstrike under asset discoveryy    1
+    SubscriptionPage.click on the cross icon of crowdstrike under asset discovery    1
     SubscriptionPage.Enter input in the input field of frequency under asset discovery    Weekly
     SubscriptionPage.Enter input in the input field of day asset discovery       Monday
     SubscriptionPage.Select the time from the timepicker     7

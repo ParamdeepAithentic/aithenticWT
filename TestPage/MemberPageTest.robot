@@ -554,12 +554,15 @@ Verify all the validate validations of the assigned user while edit assigned use
     MemberPage.Search assigned user by first name   ${generated_AssigneduserFirstName}
     MemberPage.Click on three dots of Team Member listing
     MemberPage.Click on the edit option under three dots of member
+    sleep   10s
     LoginPage.Clear the element text of field under login page      ${assigneeFname}
     LoginPage.Clear the element text of field under login page      ${assigneeLname}
     LoginPage.Clear the element text of field under login page    ${assigneeEmpID}
+    LoginPage.Clear the element text of field under login page      ${assigneeEmail}
     MemberPage.Enter first name of static assigned users       Johnny
     MemberPage.Enter last name of static assigned users       Doe
     MemberPage.Click on save button of assigned user
+    sleep       10s
 #    Generic.Fetch alert message text and compare it with        Same user name already exists
 #    LoginPage.Clear the element text of field under login page      ${assigneeFname}
 #    LoginPage.Clear the element text of field under login page     ${assigneeLname}
@@ -577,8 +580,7 @@ Verify all the validate validations of the assigned user while edit assigned use
     LoginPage.Clear the element text of field under login page      ${assigneeFname}
     LoginPage.Clear the element text of field under login page      ${assigneeLname}
     LoginPage.Clear the element text of field under login page      ${assigneeEmail}
-    MemberPage.Clear the data of the field under member page     AssignedEmployeeId
-
+    LoginPage.Clear the element text of field under login page      ${assigneeEmpID}
     MemberPage.Enter first name of static assigned users       Johnny
     MemberPage.Enter last name of static assigned users       Doe
     MemberPage.Create static assign to employee_ID      EmployeeID_9001
@@ -615,7 +617,7 @@ Verify all the validate validations of the assigned user while edit assigned use
     MemberPage.Search assigned user by first name   Johnny
     MemberPage.Click on three dots of Team Member listing
     MemberPage.Click on the edit option under three dots of member
-    MemberPage.Clear the data of the field under member page      AssignedEmail
+    LoginPage.Clear the element text of field under login page    ${assigneeEmail}
     LoginPage.Clear the element text of field under login page    ${assigneeEmpID}
     MemberPage.Create random assignee email not link with fist name
     MemberPage.Click on save button of assigned user
