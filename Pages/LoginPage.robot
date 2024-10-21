@@ -86,9 +86,22 @@ Get and Verify the validation after login with email only
     should be equal    ${get_login_validation}     ${text}
 
 Clear the element text of field under login page
-    [Arguments]         ${option}
-    click element          ${option}
-    clear element text         ${option}
+#    [Arguments]         ${option}
+#    click element          ${option}
+#    clear element text         ${option}
+#    Press Keys    ${option}     BACKSPACE
+    Wait Until Element Is visible      css:#AssignedFirstName        ${wait_time}
+    Wait Until Element Is enabled      css:#AssignedFirstName        ${wait_time}
+    Execute Javascript    document.querySelector('#AssignedFirstName').value = ''
+    Wait Until Element Is visible      css:#AssignedLastName        ${wait_time}
+    Wait Until Element Is enabled      css:#AssignedLastName        ${wait_time}
+    Execute Javascript    document.querySelector('#AssignedLastName').value = ''
+    Wait Until Element Is visible      css:#AssignedEmail        ${wait_time}
+    Wait Until Element Is enabled      css:#AssignedEmail        ${wait_time}
+    Execute Javascript    document.querySelector('#AssignedEmail').value = ''
+    Wait Until Element Is visible         css:#AssignedEmployeeId        ${wait_time}
+    Wait Until Element Is enabled        css:#AssignedEmployeeId     ${wait_time}
+    Execute Javascript    document.querySelector('#AssignedEmployeeId').value = ''
 
 Get and Verify the validation after entering invalid email under forgot password
     [Arguments]         ${text}
@@ -98,4 +111,14 @@ Get and Verify the validation after entering invalid email under forgot password
     set global variable    ${get_forgotpassword_validation}
     log to console    ${get_forgotpassword_validation}
     should be equal   ${get_forgotpassword_validation}     ${text}
+
+Click on the fields
+    Wait Until Element Is visible      css:#AssignedEmail        ${wait_time}
+    Wait Until Element Is enabled      css:#AssignedEmail        ${wait_time}
+    click element       css:#AssignedEmail
+    Wait Until Element Is visible         css:#AssignedEmployeeId        ${wait_time}
+    Wait Until Element Is enabled        css:#AssignedEmployeeId     ${wait_time}
+    click element       css:#AssignedEmployeeId
+
+
 
