@@ -50,7 +50,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Verify asset history of assigned users
-    [Tags]    Smoke     Stable
+    [Tags]    Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -104,7 +104,7 @@ Verify asset history of assigned users
     Generic.Verify your current page contains this text     Technology
 
 Search asset history with Asset ID of Assigned User
-    [Tags]      Stable
+#    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -191,7 +191,7 @@ Search asset history with Asset ID of Assigned User
     MemberPage.verify status of first name in member list of assigned user   ${generated_AssetID}
 
 Export Assigned User Asset History list
-    [Tags]   Smoke     Sanity       Stable
+    [Tags]   Smoke     Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -275,7 +275,7 @@ Export Assigned User Asset History list
 #    Generic.Fetch alert message text and compare it with        Technology created successfully
 
 Update and delete assignee from side option
-    [Tags]      Stable
+#    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard

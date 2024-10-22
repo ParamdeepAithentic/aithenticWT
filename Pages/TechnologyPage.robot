@@ -1411,7 +1411,11 @@ Click on pop up of available Inactive Asset
     [Arguments]     ${option}
     wait until element is visible   css:.qa-available-inactive-assests-${option}   ${wait_time}
     wait until element is enabled   css:.qa-available-inactive-assests-${option}   ${wait_time}
+    ${status}=    Run Keyword And Return Status    Element Should Be Visible    css:.qa-available-inactive-assests-${option}   ${wait_time}
+    wait until element is not visible   ${loaderIcon}     ${wait_time}
+    sleep       2
     click element   css:.qa-available-inactive-assests-${option}
+    RETURN    ${status}
 #    wait until element is not visible       ${shadow}          ${wait_time}
 
 Select option from exceed asset limit pop
@@ -2130,3 +2134,19 @@ Create the product
     Generic.Verify your current page location contains      technology-list
     Generic.Wait until table get load
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+
+
+
+
+
+Run Code Based On Element Visibility
+    ${is_visible}=    Run Keyword And Return Status    TechnologyPage.Click on pop up of available Inactive Asset   cancel
+
+    Run Keyword If    ${is_visible}    TechnologyPage.Section 1 Code
+    ...    ELSE    TechnologyPage.Section 2 Code
+
+Section 1 Code
+    Log To Console    section one run successfully
+
+Section 2 Code
+    Log To Console    section two run successfully
