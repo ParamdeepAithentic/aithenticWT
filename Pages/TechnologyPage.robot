@@ -2139,14 +2139,14 @@ Create the product
 
 
 
-Run Code Based On Element Visibility
-    ${is_visible}=    Run Keyword And Return Status    TechnologyPage.Click on pop up of available Inactive Asset   cancel
-
-    Run Keyword If    ${is_visible}    TechnologyPage.Section 1 Code
-    ...    ELSE    TechnologyPage.Section 2 Code
-
-Section 1 Code
-    Log To Console    section one run successfully
-
-Section 2 Code
-    Log To Console    section two run successfully
+#Run Code Based On Element Visibility
+#    ${is_visible}=    Run Keyword And Return Status    TechnologyPage.Click on pop up of available Inactive Asset   cancel
+#
+#    Run Keyword If    ${is_visible}    TechnologyPage.Section 1 Code
+#    ...    ELSE    TechnologyPage.Section 2 Code
+#
+#Section 1 Code
+#    Log To Console    section one run successfully
+#
+#Section 2 Code
+#    Log To Console    section two run successfully

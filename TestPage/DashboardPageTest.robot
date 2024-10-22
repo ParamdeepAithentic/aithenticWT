@@ -76,7 +76,7 @@ Verify the drawer list
     DashboardPage.Verify the drawer list parameters
 
 Verify the side options list
-    [Tags]      Smoek
+    [Tags]      Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
