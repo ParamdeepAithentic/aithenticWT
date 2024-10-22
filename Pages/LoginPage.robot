@@ -90,12 +90,12 @@ Clear the element text of field under login page
 #    click element          ${option}
 #    clear element text         ${option}
 #    Press Keys    ${option}     BACKSPACE
-    Wait Until Element Is visible      css:#AssignedFirstName        ${wait_time}
-    Wait Until Element Is enabled      css:#AssignedFirstName        ${wait_time}
-    Execute Javascript    document.querySelector('#AssignedFirstName').value = ''
-    Wait Until Element Is visible      css:#AssignedLastName        ${wait_time}
-    Wait Until Element Is enabled      css:#AssignedLastName        ${wait_time}
-    Execute Javascript    document.querySelector('#AssignedLastName').value = ''
+#    Wait Until Element Is visible      css:#AssignedFirstName        ${wait_time}
+#    Wait Until Element Is enabled      css:#AssignedFirstName        ${wait_time}
+#    Execute Javascript    document.querySelector('#AssignedFirstName').value = ''
+#    Wait Until Element Is visible      css:#AssignedLastName        ${wait_time}
+#    Wait Until Element Is enabled      css:#AssignedLastName        ${wait_time}
+#    Execute Javascript    document.querySelector('#AssignedLastName').value = ''
     Wait Until Element Is visible      css:#AssignedEmail        ${wait_time}
     Wait Until Element Is enabled      css:#AssignedEmail        ${wait_time}
     Execute Javascript    document.querySelector('#AssignedEmail').value = ''
