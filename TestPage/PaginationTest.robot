@@ -78,18 +78,18 @@ Verify pagination of partner table
     PaginationPage.Log WebElements      partner-list
 
 
-#Verify pagination of contract table
-#    [Tags]      Unstable
-#    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form       ${email}    ${valid_password}
-#    Generic.Verify your current page location contains      dashboard
-#    LandingPage.Verify you are on dashboard page
-#    Generic.select the option from the side menu    Smart Share
-#    Generic.Verify your current page location contains      contracts-list
-#    PaginationPage.Check the table get load
-#    PaginationPage.Fetch the total count
-#    PaginationPage.Click on the pagination dropdown     contracts
-#    PaginationPage.Log WebElements      contracts
+Verify pagination of contract table
+    [Tags]      Unstable
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Smart Share
+    Generic.Verify your current page location contains      contracts-list
+    PaginationPage.Check the table get load
+    PaginationPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     contracts
+    PaginationPage.Log WebElements      contracts
 
 Verify pagination of Department table
 #    [Tags]      Stable

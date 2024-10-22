@@ -82,7 +82,7 @@ Test Teardown   Close Browser session
 
 
 Technology Auto removed from dynamic contract When edit Brand and product
-    [Tags]      Sanity      Smoke       Time       rerun
+    [Tags]      Sanity      Smoke       Time
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
