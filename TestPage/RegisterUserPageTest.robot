@@ -49,7 +49,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Register new user
-    [Tags]      Smoke       Time        Stable    rerun
+    [Tags]      Smoke       Time     rerun
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
@@ -140,7 +140,7 @@ Register new user
 
 
 Signup with ACH payment method
-    [Tags]       Stable    Sanity
+    [Tags]    Sanity
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -226,7 +226,7 @@ Signup with ACH payment method
 
 
 Change plan and Change asset limit with ACH Payment method
-    [Tags]      Smoke        Stable
+    [Tags]      Smoke
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -309,7 +309,7 @@ Change plan and Change asset limit with ACH Payment method
     DashboardPage.Select the asset ID checkbox      no
     Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.Click on the profile name
-    DashboardPage.Click on the subscription under profile list     subscription-dropdown
+    Generic.Select other option from profile list     subscription-dropdown
     Generic.Verify your current page location contains      subscription
     SubscriptionPage.Select if you want to change plan or asset    Change Asset Limit
     sleep       ${search_sleep}
@@ -1854,7 +1854,7 @@ Update the subscription Plan and verify the notification
     Generic.Verify your current page location contains     billing
     BillingPage.Get the value of manage subscription under billing
     Generic.Click on the profile name
-    DashboardPage.Click on the subscription under profile list     subscription-dropdown
+    Generic.Select other option from profile list     subscription-dropdown
     Generic.Verify your current page location contains      subscription
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     sleep       ${wait_time}

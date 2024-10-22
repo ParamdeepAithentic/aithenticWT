@@ -53,6 +53,7 @@ ${save_assigneeForm}     css:.w-100.modal-footer .button-green
 ${teamMember_FirstName}     css:#FirstName
 ${teamMember_LastName}     css:#LastName
 ${teamMember_Email}     css:#Email
+${search_bar_assigned_user}     //input[@id='searchbar-assigneelist']
 
 #mobile number - partner code       Choose contact country
 #css:.qa-DepartmentId input
@@ -456,3 +457,35 @@ Clear the data of the field under member page
     FOR    ${i}    IN RANGE    20
         Press Keys    css:#${option}     BACKSPACE
     END
+
+
+
+Create random assignee email not link with fist name
+    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${generated_assigneeemail}=    Catenate    Businessemail${random_string}@yopmail.net
+    wait until element is visible       ${assigneeEmail}    ${wait_time}
+    wait until element is enabled       ${assigneeEmail}    ${wait_time}
+    input text   ${assigneeEmail}   ${generated_assigneeemail}
+    set global variable    ${generated_assigneeemail}
+
+Verify the visibilty of same user exist validation
+    wait until element is visible       //div[contains(text(), 'Same user name already exists, Employee Id is missing.')]    ${wait_time}
+    wait until element is enabled       //div[contains(text(), 'Same user name already exists, Employee Id is missing.')]    ${wait_time}
+
+Click on the save button of add assignee pop up if user is same
+    [Arguments]     ${option}
+    Wait Until Element Is visible    //button[@id='${option}-assignee-modal']    ${wait_time}
+    Wait Until Element Is Enabled   //button[@id='${option}-assignee-modal']    ${wait_time}
+    click element      //button[@id='${option}-assignee-modal']
+    wait until element is not visible      ${loaderIcon}     ${wait_time}
+#    wait until element is not visible       ${shadow}          ${wait_time}
+
+
+Verify the visibilty of same user exist validation for cancel button
+    wait until element is visible       //div[contains(text(), 'Same user name already exists')]    ${wait_time}
+    wait until element is enabled       //div[contains(text(), 'Same user name already exists')]
+
+Click on the edit option under three dots of member
+    Wait Until Element Is visible   css:.assignee-edit-qa    ${wait_time}
+    Wait Until Element Is Enabled   css:.assignee-edit-qa    ${wait_time}
+    click element     css:.assignee-edit-qa
