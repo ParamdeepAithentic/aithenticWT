@@ -50,7 +50,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Compose Message invite user test
-    [Tags]      Sanity      Smoke       Time     rerun      Unstable
+    [Tags]      Sanity      Smoke       Time     rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -525,7 +525,7 @@ Compose Message invite user test
 
 
 Export Specificartner into Excel Doc CSV and TSV for manufacturer
-    [Tags]      Stable
+#    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -589,7 +589,7 @@ Export Specificartner into Excel Doc CSV and TSV for manufacturer
 
 
 Export Specificartner into Excel Doc CSV and TSV for Supplier
-    [Tags]      Sanity      Stable
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -654,7 +654,7 @@ Export Specificartner into Excel Doc CSV and TSV for Supplier
 
 
 Export Specificartner into Excel Doc CSV and TSV for Support Partner
-    [Tags]      Sanity      Stable
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -716,7 +716,7 @@ Export Specificartner into Excel Doc CSV and TSV for Support Partner
     Generic.Fetch alert message text and compare it with        Partner updated successfully
 
 Add Manufacturer via personal detail under technology and partner
-    [Tags]       Stable
+#    [Tags]       Stable
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -765,7 +765,7 @@ Add Manufacturer via personal detail under technology and partner
 
 
 Edit Manufacturer via partner
-    [Tags]      Sanity      Stable
+    [Tags]      Sanity
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -848,7 +848,7 @@ Edit Manufacturer via partner
 
 
 Deactivate Manufacturer via partner
-    [Tags]      Sanity      Stable
+    [Tags]      Sanity
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -935,7 +935,7 @@ Deactivate Manufacturer via partner
 
 
 Activate Manufacturer via partner
-    [Tags]      Stable
+#    [Tags]      Stable
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1025,8 +1025,7 @@ Activate Manufacturer via partner
     Generic.Fetch alert message text and compare it with      Status updated successfully
 
 Remove Manufacturer from partner
-    [Tags]      Stable    Sanity   Smoke
-
+    [Tags]    Sanity   Smoke
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1122,7 +1121,7 @@ Remove Manufacturer from partner
 
 
 View Details and check the details of Contract
-    [Tags]      Stable
+#    [Tags]      Stable
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1230,7 +1229,7 @@ View Details and check the details of Contract
 
 
 Add_edit_deactivate_removeSupplier while adding brand
-    [Tags]      Stable
+#    [Tags]      Stable
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1325,7 +1324,7 @@ Add_edit_deactivate_removeSupplier while adding brand
     Generic.Fetch alert message text and compare it with      Partner deleted successfully
 
 Add_edit_deactivate_removeSupport_partner_while_adding_brand
-    [Tags]      Stable    yy
+#    [Tags]      Stable    yy
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard

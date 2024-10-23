@@ -67,7 +67,7 @@ Test Teardown   Close Browser session
 
 
 Edit the scheduler
-    [Tags]      Sanity      Stable    Smoke
+    [Tags]      Sanity     Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -116,7 +116,7 @@ Edit the scheduler
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
 
 Run now from view details
-    [Tags]      Stable
+#    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -147,7 +147,7 @@ Run now from view details
     SubscriptionPage.Get the value of fields under view details of subscription connector   2       Samuel John
 
 Suspend and unsuspend the account
-    [Tags]      Smoke       Stable    Sanity
+    [Tags]      Smoke     Sanity
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
@@ -196,7 +196,7 @@ Suspend and unsuspend the account
     END
 
 View Scheduler from view Result
-    [Tags]      Stable
+#    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -876,7 +876,7 @@ Click on connetors button link under asset discovery
     Generic.Wait until table get load
 
 Create JAMFF account with valid data
-    [Tags]      OnlyQA
+#    [Tags]      OnlyQA
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1043,7 +1043,7 @@ Create JAMFF account with valid data
     Generic.Verify your current page contains this text    No Records
 
 Create jamff account with invalid data
-    [Tags]      OnlyQA
+#    [Tags]      OnlyQA
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1238,7 +1238,7 @@ Create jamff account with invalid data
 #    Generic.Verify your current page contains this text    No Records
 
 Create sentinel account and verify the options
-    [Tags]      OnlyQA
+#    [Tags]      OnlyQA
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1380,8 +1380,7 @@ Create sentinel account and verify the options
     SubscriptionPage.Fetch alert message text of subscription connector and compare it with
     sleep  ${search_sleep}
     SubscriptionPage.Click on the three dots of subscription connector      SentinelOne
-    SubscriptionPage.Click on option under three dots
-    of subscription connector     SentinelOne    Delete
+    SubscriptionPage.Click on option under three dots of subscription connector     SentinelOne    Delete
     Generic.click on the button     Yes
     Generic.Fetch alert message text and compare it with        Status Updated
     SubscriptionPage.Fetch text of delete under table of subscription connector     SentinelOne         Deleted
