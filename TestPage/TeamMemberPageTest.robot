@@ -50,7 +50,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Free the asset limit
-    [Tags]      Smoke     Sanity      Time      rerun       Stable
+    [Tags]      Smoke     Sanity      Time      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
@@ -61,7 +61,7 @@ Free the asset limit
     PaginationPage.Run the remove asset journey
 
 Create team member form
-    [Tags]      Stable    Sanity    Smoke
+    [Tags]    Sanity    Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -93,7 +93,7 @@ Create team member form
 
 
 Add Team member page - Add New Department and assign that department to Team member
-    [Tags]      Stable
+#    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -122,7 +122,7 @@ Add Team member page - Add New Department and assign that department to Team mem
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
 
 Edit Team member page - Edit New Department and assign that department to Team member
-    [Tags]      Sanity      Stable
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -175,7 +175,7 @@ Edit Team member page - Edit New Department and assign that department to Team m
     Generic.Verify your current page location contains          memberslist
 
 Verify team member Asset history
-    [Tags]      Sanity      Stable
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
@@ -267,7 +267,7 @@ Verify team member Asset history
     Generic.Verify your current page contains this text     Asset History
 
 Search asset history with Asset ID
-    [Tags]      Stable
+#    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
@@ -378,7 +378,7 @@ Search asset history with Asset ID
     TeamMemberPage.verify status of first name in member list   ${generated_AssetID}
 
 Verify user is able to export team member asset history list
-    [Tags]     Smoke         Stable
+    [Tags]     Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form   debut@cool.fr.nf    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -601,7 +601,7 @@ Verify user is able to export team member asset history list
     TeamMemberPage.verify status of first name in member list   ${generated_AssetID}
 
 Convert Assignee to Team Member
-    [Tags]      Sanity      Stable
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -709,7 +709,7 @@ Convert Assignee to Team Member
     Generic.Wait until table get load
 
 Check the validation of business email id
-    [Tags]      Stable
+#    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -743,7 +743,7 @@ Check the validation of business email id
 
 
 Convert Assignee to team member in case of employee id is not system generated
-    [Tags]      Stable
+#    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -794,7 +794,7 @@ Convert Assignee to team member in case of employee id is not system generated
     Generic.Fetch alert message text and compare it with       Settings Updated
 
 Verify Invitation and signup as team member
-    [Tags]      Stable
+#    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
@@ -888,7 +888,7 @@ Verify Invitation and signup as team member
     Generic.Fetch alert message text and compare it with        Team member deleted successfully
 
 Add Back Deleted Team member - Invited
-    [Tags]      Stable      Sanity
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -930,7 +930,7 @@ Add Back Deleted Team member - Invited
     TeamMemberPage.Verify Team member added after delete        ${generated_TMFname} ${generated_TMLname}
 
 Verify Invitation and signup as team member via company details
-    [Tags]      Stable     Sanity
+    [Tags]     Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
@@ -1029,7 +1029,7 @@ Verify Invitation and signup as team member via company details
     Generic.Fetch alert message text and compare it with        Team member deleted successfully
 
 Verify_Employee_ID_Changing_settings_from_Profile_list_while_add_edit_team_member
-    [Tags]      Stable
+#    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
