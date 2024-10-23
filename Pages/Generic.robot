@@ -410,6 +410,7 @@ Enter phone number
     input text  ${contact_Country_search}   ${country}
     Generic.Select parameter      ${code}
     input text     ${phone}     ${phoneNo}
+    Press Keys    ${phone}      ENTER
 #    click element   ${click_countryTag}
 #    Click element   css:#phone
 #    wait until element is not visible       //span[normalize-space()='Please enter a valid Mobile Number']     ${wait_time}
