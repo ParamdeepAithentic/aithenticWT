@@ -177,6 +177,7 @@ Save the team member form
     wait until element is visible     css:.${option}-member-qa       ${wait_time}
     wait until element is enabled     css:.${option}-member-qa       ${wait_time}
     click element   css:.${option}-member-qa
+    sleep       ${search_sleep}
 
 Enter the Position in member form
     [Arguments]    ${option}
@@ -416,4 +417,31 @@ Get the text of selected status filter under team meber via profile
     ${New_status1}=    Evaluate    '${original_string}'.strip()
     log to console    ${New_status1}
     set global variable   ${New_status1}
-    
+
+Fetch the all validation message after entering invalid data in add team member
+   wait until element is visible   //span[contains(@class,'invalidInput')]       ${wait_time}
+   @{expectedList} =    Create List      Please enter First Name       Please enter Last Name          Please enter Mobile Number        Please enter Business Email        Please enter Department          Please Select Member Location       Please Select Role
+   ${elements} =  Get WebElements     //span[contains(@class,'invalidInput')]
+   @{actualList} =   Create List
+   FOR  ${element}  IN      @{elements}
+      log to console    ${element.text}
+      Append To List    ${actualList}     ${element.text}
+   END
+   lists should be equal    ${expectedList}    ${actualList}
+
+
+Enter team member first name with 101 letters
+    ${random_string} =    Generate Random String       101      [LETTERS]
+    ${generated_TMFname1}=    Catenate    TMFname_${random_string}
+    wait until element is visible       ${TMFname}     ${wait_time}
+    input text   ${TMFname}    ${generated_TMFname1}
+    log to console      ${generated_TMFname1}
+    set global variable       ${generated_TMFname1}
+
+Enter team member last name with 101 letters
+    ${random_string} =    Generate Random String       101      [LETTERS]
+    ${generated_Lname1}=    Catenate    TLname_${random_string}
+    wait until element is visible       ${TMLname}     ${wait_time}
+    input text   ${TMLname}    ${generated_Lname1}
+    log to console      ${generated_Lname1}
+    set global variable       ${generated_Lname1}

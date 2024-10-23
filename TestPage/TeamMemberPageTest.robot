@@ -1383,17 +1383,58 @@ Verify all the validation of add team member
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
-    Generic.Click on the profile name
-    Generic.Select option from profile list     personal-details
-    I_iconPage.Choose options inside personal_details        Organization
-    I_iconPage.Choose tabs under organization        system
-    Generic.Verify your current page location contains     organization
-    DashboardPage.Select the employee ID checkbox   no
-    DashboardPage.Select the employee ID checkbox   yes
-    Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Click on add team member action button
+    TeamMemberPage.Choose option after clicking on Action button        Add New Member
     TeamMemberPage.Save the team member form   save
+    TeamMemberPage.Fetch the all validation message after entering invalid data in add team member
+    TeamMemberPage.Enter team member first name with 101 letters
+    TeamMemberPage.Save the team member form   save
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page      Please enter First Name with atmost 50 Characters
+    TeamMemberPage.Enter team member last name with 101 letters
+    TeamMemberPage.Save the team member form   save
+    LoginPage.Clear the element text of field under login page      ${TMFname}
+    LoginPage.Clear the element text of field under login page       ${TMLname}
+    TeamMemberPage.Enter team member first name
+    TeamMemberPage.Enter team member last name
+    Generic.Enter phone number      India   +91     96462898
+    TeamMemberPage.Enter team member business email_mailinator
+    TeamMemberPage.Enter the Position in member form        QA
+    TeamMemberPage.Click on team member department
+    TeamMemberPage.Select team member department        DepartmentName09041
+    TeamMemberPage.Select team member role     Admin
+    TeamMemberPage.Click on team member location
+    TeamMemberPage.Select team member location
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page       Please enter a valid Mobile Number
+    LoginPage.Clear the element text of field under login page       ${phone}
+    Generic.Enter phone number      India   +91     964628982342
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page       Please enter a valid Mobile Number
+    LoginPage.Clear the element text of field under login page       ${phone}
+    Generic.Enter phone number      India   +91     9646289823
+    LoginPage.Clear the element text of field under login page       ${TMBusinessEmail}
+    TeamMemberPage.Enter team member business email self        Milan
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Please enter valid Email
+    LoginPage.Clear the element text of field under login page       ${TMBusinessEmail}
+    TeamMemberPage.Enter team member business email self        Milan@
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Please enter valid Email
+    LoginPage.Clear the element text of field under login page       ${TMBusinessEmail}
+    TeamMemberPage.Enter team member business email self        Milan@dmts
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Please enter valid Email
+    LoginPage.Clear the element text of field under login page       ${TMBusinessEmail}
+    TeamMemberPage.Enter team member business email self        Milan@dmts.
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Please enter valid Email
+    LoginPage.Clear the element text of field under login page       ${TMBusinessEmail}
+    TeamMemberPage.Enter team member business email self        Milan@mailinator.
+    TeamMemberPage.Save the team member form   save
+    Generic.Fetch alert message text and compare it with       The Email Address must end with one of the following: mailinator.com, automationqa20240617173739.com.
+
+
+
+
+
+
+
 
 
 

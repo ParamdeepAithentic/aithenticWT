@@ -2081,7 +2081,7 @@ Create CrowdStrike Account and verify the details
     SubscriptionPage.Click on the ok button after selecting the time
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
-    SubscriptionPage.Click on cross icon of details under service now
+#    SubscriptionPage.Click on cross icon of details under service now
     SubscriptionPage.Click on the three dots of subscription connector      CrowdStrike
     SubscriptionPage.Click on option under three dots of subscription connector   CrowdStrike       Details
     Generic.click on the button     Run Now
