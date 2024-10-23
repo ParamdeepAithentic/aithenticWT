@@ -1396,8 +1396,8 @@ Verify all the validation of add team member
     TeamMemberPage.Save the team member form   save
     LoginPage.Clear the element text of field under login page      ${TMFname}
     LoginPage.Clear the element text of field under login page       ${TMLname}
-    TeamMemberPage.Enter team member first name
-    TeamMemberPage.Enter team member last name
+    TeamMemberPage.Enter team member first name self        Milan
+    TeamMemberPage.Enter team member last name self     Johar
     Generic.Enter phone number      India   +91     96462898
     TeamMemberPage.Enter team member business email_mailinator
     TeamMemberPage.Enter the Position in member form        QA
@@ -1426,6 +1426,9 @@ Verify all the validation of add team member
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Please enter valid Email
     LoginPage.Clear the element text of field under login page       ${TMBusinessEmail}
     TeamMemberPage.Enter team member business email self        Milan@mailinator.
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Please enter valid Email
+    LoginPage.Clear the element text of field under login page       ${TMBusinessEmail}
+    TeamMemberPage.Enter team member business email self        milan@dmts.fr.nf
     TeamMemberPage.Save the team member form   save
     Generic.Fetch alert message text and compare it with       The Email Address must end with one of the following: mailinator.com, automationqa20240617173739.com.
 
