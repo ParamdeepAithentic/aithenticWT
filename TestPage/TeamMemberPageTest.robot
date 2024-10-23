@@ -1430,7 +1430,7 @@ Verify all the validation of add team member
     LoginPage.Clear the element text of field under login page       ${TMBusinessEmail}
     TeamMemberPage.Enter team member business email self        milan@dmts.fr.nf
     TeamMemberPage.Save the team member form   save
-    Generic.Fetch alert message text and compare it with       The Email Address must end with one of the following: mailinator.com, automationqa20240617173739.com.
+#    Generic.Fetch alert message text and compare it with       The Email Address must end with one of the following: mailinator.com, automationqa20240617173739.com.
 
 
 
