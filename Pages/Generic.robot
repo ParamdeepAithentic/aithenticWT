@@ -343,7 +343,7 @@ Select subscription option from profile list
     click element    //a[contains(@class,'subscription-dropdown')]
 
 Select logout option from profile list
-    [Arguments]     ${option}
+#    [Arguments]     ${option}
     wait until element is not visible      ${loaderIcon}          ${wait_time}
     wait until element is visible    //li[contains(@class,'qa-logout-dropdown')]//a         ${wait_time}
     wait until element is enabled    //li[contains(@class,'qa-logout-dropdown')]//a          ${wait_time}
