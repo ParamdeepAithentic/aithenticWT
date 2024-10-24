@@ -1430,7 +1430,51 @@ Verify all the validation of add team member
     LoginPage.Clear the element text of field under login page       ${TMBusinessEmail}
     TeamMemberPage.Enter team member business email self        milan@dmts.fr.nf
     TeamMemberPage.Save the team member form   save
-#    Generic.Fetch alert message text and compare it with       The Email Address must end with one of the following: mailinator.com, automationqa20240617173739.com.
+    TeamMemberPage.Wait for the visibility of the alert text
+
+Verify all the validations of edit team member page
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Click on add team member action button
+    TeamMemberPage.Select option from team member action menu
+    TeamMemberPage.Enter team member first name
+    TeamMemberPage.Enter team member last name
+    Generic.Enter phone number      India   +91     9646289871
+    TeamMemberPage.Enter team member business email_mailinator
+    TeamMemberPage.Click on team member department
+    TeamMemberPage.Select team member department        DepartmentName09041
+    TeamMemberPage.Select team member role     CSPM
+    TeamMemberPage.Click on team member location
+    TeamMemberPage.Select team member location
+    TeamMemberPage.Save the team member form   save
+    Generic.Fetch alert message text and compare it with        Team Member created successfully
+    TeamMemberPage.Search Team Member by name       ${generated_TMFname}
+    TeamMemberPage.Click on three dots of Team Member listing
+    TeamMemberPage.Select option from three dots of Team Member     Details
+    TeamMemberPage.Click on the tab         details
+    TeamMemberPage.Click on the button      Edit
+    Generic.Verify your current page location contains      updatemembers
+
+    TeamMemberPage.Click on the cross icon of the dropdown under edit team member       LocationTypeId
+    TeamMemberPage.Click on the cross icon of the dropdown under edit team member       UserRoleId
+    TeamMemberPage.Click on the cross icon of the dropdown under edit team member      DepartmentId
+    TeamMemberPage.Clear the text of business email when editing team member   css:#businessEmail       milan@dmts.fr.nf
+    DashboardPage.Clear the data of the field       firstName
+    DashboardPage.Clear the data of the field       lastName
+    TeamMemberPage.Clear the text of business email when editing team member   css:#phone       milan@dmts.fr.nf
+    Generic.click on the button   Update
+    sleep       ${search_sleep}
+    TeamMemberPage.Fetch the all validation message after entering invalid data in add team member
+
+
+
+
+
+
 
 
 

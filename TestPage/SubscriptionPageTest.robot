@@ -1572,8 +1572,8 @@ Create Tenable Account and verify the details
     sleep       ${yop_sleep}
     Switch Window       aithentic | Create Connection
     Generic.Verify your current page location contains      create-connection
-    SubscriptionPage.Enter input in the access key of tenable account     a632865206c0e117cd04af6b233f5ffc6908f651d0c250f415333adb1aaf9e61
-    SubscriptionPage.Enter input in the secret key field of service now     1002caed92c9ad78c3a95c994ba2c4ed834f1891438e1356fac2e1f167cd7907
+    SubscriptionPage.Enter input in the access key of tenable account     3be40a9bc512268aa41c23ea1022fbbd7ff9530ba1f73a346d010650890ecc72
+    SubscriptionPage.Enter input in the secret key field of service now     aed031611b3eea2bf2b39359395716b05b29eadf8fea837c7962d3a93ef6db7c
     Generic.click on the button     Create Connection
     Generic.Verify your current page location contains      technology-settings
     Generic.Fetch alert message text and compare it with       Technology created successfully
@@ -1683,9 +1683,9 @@ Create Tenable Account and verify the details
     SubscriptionPage.click on the cross icon of tenable under asset discovery    1
     SubscriptionPage.Enter input in the input field of frequency under asset discovery under tenable     Yearly
     SubscriptionPage.Enter input in the start date field of service now under asset discovery under tenable
-
     SubscriptionPage.Select the time from the timepicker of tenable under asset discovery       2
-     Generic.click on the button     Update
+    SubscriptionPage.Click on the ok button after selecting the time
+    Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the action button of tenable under discovery assets
     SubscriptionPage.Click on the options under action button of tenable under discovery assets      Details
@@ -1707,11 +1707,6 @@ Create Tenable Account and verify the details
     SubscriptionPage.Click on the options under action button of tenable under discovery assets    Details
     SubscriptionPage.Get the value of fields under view details of subscription of tenable tab under asset discovery   1       Tenable
     SubscriptionPage.Get the value of fields under view details of subscription of tenable tab under asset discovery   2       ${generate_register_Fname} ${generate_register_Lname}
-
-
-
-
-
 
 
 Create tanium Account and verify the details
@@ -1872,6 +1867,7 @@ Create tanium Account and verify the details
     SubscriptionPage.Click on option under three dots of subscription connector     Tanium    Details
     SubscriptionPage.Get the value of fields under view details of subscription connector   1      Tanium
     SubscriptionPage.Get the value of fields under view details of subscription connector   2       ${generate_register_Fname} ${generate_register_Lname}
+    SubscriptionPage.Click on cross icon of details under service now
     SubscriptionPage.Click on the three dots of subscription connector      Tanium
     SubscriptionPage.Click on option under three dots of subscription connector    Tanium    View Results
     Generic.Verify your current page location contains      discovery-assets
@@ -2176,8 +2172,8 @@ Create CrowdStrike Account and verify the details
     SubscriptionPage.Fetch alert message text of subscription connector and compare it with
     SubscriptionPage.Click on the action button of crowd strike under discovery assets
     SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets    Details
-    SubscriptionPage.Get the value of fields under view details of subscription connector   1       CrowdStrike
-    SubscriptionPage.Get the value of fields under view details of subscription connector   2       ${generate_register_Fname} ${generate_register_Lname}
+    SubscriptionPage.Get the value of fields under view details of subscription connector under asset discovery   1       CrowdStrike
+    SubscriptionPage.Get the value of fields under view details of subscription connector under asset discovery   2       ${generate_register_Fname} ${generate_register_Lname}
 
 Click on the three dots of Azure and verify the details
     Generic.click on the tab	Login

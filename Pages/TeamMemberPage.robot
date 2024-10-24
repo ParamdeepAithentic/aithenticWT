@@ -445,3 +445,32 @@ Enter team member last name with 101 letters
     input text   ${TMLname}    ${generated_Lname1}
     log to console      ${generated_Lname1}
     set global variable       ${generated_Lname1}
+
+Wait for the visibility of the alert text
+     Wait Until Element Contains        ${alert_Msg}           The Email Address must end with one of the following:   ${wait_time}
+
+Click on the cross icon of the dropdown under edit team member
+    [Arguments]     ${Id}
+    wait until element is visible      //ng-select[contains(@class,'${Id}')]//span[@title='Clear all']      ${wait_time}
+    wait until element is enabled      //ng-select[contains(@class,'${Id}')]//span[@title='Clear all']        ${wait_time}
+    click element   //ng-select[contains(@class,'${Id}')]//span[@title='Clear all']
+
+Fetch the all validation message after entering invalid data in edit team member
+   wait until element is visible   //span[contains(@class,'invalidInput')]       ${wait_time}
+   @{expectedList} =    Create List      Please enter First Name       Please enter Last Name          Please enter Mobile Number        Please enter Business Email        Please enter Department           Select Member Location        Select Role          Please enter Status
+   ${elements} =  Get WebElements     //span[contains(@class,'invalidInput')]
+   @{actualList} =   Create List
+   FOR  ${element}  IN      @{elements}
+      log to console    ${element.text}
+      Append To List    ${actualList}     ${element.text}
+   END
+   lists should be equal    ${expectedList}    ${actualList}
+
+Clear the text of business email when editing team member
+    [Arguments]         ${option}       ${option1}
+    click element          ${option}
+    clear element text         ${option}
+    input text      ${option}       ${option1}
+    clear element text         ${option}
+
+
