@@ -62,7 +62,7 @@ ${yop_sleep}       10
 ${search_sleep}       1
 
 
-${CASE}        uat    #qa , uat , pre-prod
+${CASE}        qa    #qa , uat , pre-prod
 
 
 
@@ -335,12 +335,12 @@ Click on the profile name
 
 ###############################################################################################
 Select other option from profile list
-     [Arguments]     ${option}
+    [Arguments]     ${option}
     wait until element is not visible      ${loaderIcon}          ${wait_time}
-    wait until element is visible    //a[normalize-space()='${option}']          ${wait_time}
-    wait until element is enabled    //a[normalize-space()='${option}']          ${wait_time}
+    wait until element is visible    //a[normalize-space()='${option}']//span          ${wait_time}
+    wait until element is enabled    //a[normalize-space()='${option}']//span          ${wait_time}
     wait until element is not visible      ${loaderIcon}          ${wait_time}                  # Remove later
-    click element    //a[normalize-space()='${option}']
+    click element    //a[normalize-space()='${option}']//span
 
 Select option from profile list
      [Arguments]     ${option}
@@ -410,6 +410,7 @@ Enter phone number
     input text  ${contact_Country_search}   ${country}
     Generic.Select parameter      ${code}
     input text     ${phone}     ${phoneNo}
+    Press Keys    ${phone}      ENTER
 #    click element   ${click_countryTag}
 #    Click element   css:#phone
 #    wait until element is not visible       //span[normalize-space()='Please enter a valid Mobile Number']     ${wait_time}

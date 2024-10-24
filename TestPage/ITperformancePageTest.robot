@@ -49,7 +49,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Download sheet for Forecasts
-    [Tags]      Stable
+#    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -61,7 +61,7 @@ Download sheet for Forecasts
     ITperformancePage.Verify sheet is downloaded        SpendForecastsReports
 
 Download sheet for aging
-    [Tags]      Stable
+#    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -73,7 +73,7 @@ Download sheet for aging
     ITperformancePage.Verify sheet is downloaded        AgingAnalyticsReports
 
 Download sheet for investments
-    [Tags]     Sanity       Stable
+    [Tags]     Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -85,7 +85,7 @@ Download sheet for investments
     ITperformancePage.Verify sheet is downloaded        sspslReport
 
 Download all sheets with download all button
-    [Tags]      Stable
+#    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -95,7 +95,7 @@ Download all sheets with download all button
     ITperformancePage.Click on download all button
 
 It performnace drill down agging analytics
-    [Tags]      Stable      Smoke
+    [Tags]      Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}     ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -116,7 +116,7 @@ It performnace drill down agging analytics
     ITperformancePage.Get and verify the count of aging analytics table     Upcoming End Of Life        Upcoming End Of Life
 
 IT perfomance drill down data quality
-    [Tags]      Stable
+#    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -134,7 +134,7 @@ IT perfomance drill down data quality
     ITperformancePage.Get And Verify The Count Of Data Quality Under Tabs   dataquality3        dataquality3
 
 IT perfomance drill down data quality of Investments by partner tab
-    [Tags]     Sanity       Stable
+    [Tags]     Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -156,7 +156,7 @@ IT perfomance drill down data quality of Investments by partner tab
     ITperformancePage.Get And Verify The Count Of Data Quality Under Investment by partner tab   dataquality-partner-4        dataquality-partner-4
 
 It performnace drill down investment by partner
-    [Tags]      Stable      Sanity      Smoke
+    [Tags]      Sanity      Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}     ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -177,7 +177,7 @@ It performnace drill down investment by partner
     ITperformancePage.Get and verify the count of table of brand spend by supplier and supplier spend my location of investment by partner     QACompany96590301 Budget by Supplier and Location        QACompany96590301 Budget by Supplier and Location
 
 Verify the text of download icon under IT performance
-    [Tags]        Unstable
+#    [Tags]        Unstable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}     ${valid_password}
     Generic.Verify your current page location contains      dashboard

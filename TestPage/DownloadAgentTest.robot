@@ -50,7 +50,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Download agent for OCS from signup - Linux
-    [Tags]      Sanity      Smoke       Stable
+    [Tags]      Sanity      Smoke
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
 #    LoginPage.Fetch the refresh token from the login api
@@ -155,7 +155,7 @@ Download agent for OCS from signup - Linux
     Generic.click on the button link    Download
 
 Download agent for OCS from signup - Windows
-    [Tags]      Sanity      Stable
+    [Tags]      Sanity
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
 #    LoginPage.Fetch the refresh token from the login api
@@ -260,7 +260,7 @@ Download agent for OCS from signup - Windows
     Generic.click on the button link    Download
 
 Download agent for OCS from signup - macOS
-    [Tags]      Sanity      Stable
+    [Tags]      Sanity
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
 #    LoginPage.Fetch the refresh token from the login api
@@ -361,7 +361,7 @@ Download agent for OCS from signup - macOS
     Generic.click on the button link    Download
 
 Download Agent from network discovery - Linux
-    [Tags]      Sanity          Stable
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -375,7 +375,7 @@ Download Agent from network discovery - Linux
     Generic.click on the button link    Download
 
 Download Agent from network discovery - Windows
-    [Tags]      Sanity      Stable
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -389,7 +389,7 @@ Download Agent from network discovery - Windows
     Generic.click on the button link    Download
 
 Download Agent from network discovery - macOS
-    [Tags]      Sanity      Stable
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -403,7 +403,7 @@ Download Agent from network discovery - macOS
     Generic.click on the button link    Download
 
 Download Agent from asset discovery - Linux
-    [Tags]      Sanity      Stable
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -435,7 +435,7 @@ Download Agent from asset discovery - Windows
     Generic.click on the button link    Download
 
 Download Agent from asset discovery - macOS
-    [Tags]      Sanity      Stable
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -452,7 +452,6 @@ Download Agent from asset discovery - macOS
 
 
 Network Discovery in case of no records
-    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       raghu@yopmail.com         Test@001
     Generic.Verify your current page location contains      dashboard
@@ -469,7 +468,7 @@ Network Discovery in case of no records
 
 
 Visit discovered asset list when click on No. IP discovered devices
-    [Tags]      Unstable    Sanity
+    [Tags]    Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.Verify your current page location contains      dashboard

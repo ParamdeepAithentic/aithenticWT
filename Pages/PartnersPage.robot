@@ -712,8 +712,10 @@ Fetch the selected filter and verify from Table
     Run Keyword IF      ${total_count} > 500       Filter and verify with pagination    ${option}       ${option1}      ${option2}    ELSE     Filter and verify without pagination  ${option}       ${option1}      ${option2}
 
 Click Next Button And Wait For Page To Load
-    Wait Until Element Is enabled    //a[@aria-label='Next page']       ${wait_time}
-    click element       //a[@aria-label='Next page']
+    Generic.Scroll Window To End
+    Wait Until Element Is visible    //li[contains(@class,'pagination-next')]//a       ${wait_time}
+    Wait Until Element Is enabled    //li[contains(@class,'pagination-next')]//a       ${wait_time}
+    click element       //li[contains(@class,'pagination-next')]//a
 
 Page fetch method
     wait until element is visible   css:.pagination ul a        ${wait_time}
@@ -731,6 +733,7 @@ Filter and verify with pagination
                 Wait Until Element Is Visible   (//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]      ${wait_time}
                 Wait Until Element Is Enabled   (//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]       ${wait_time}
                 ${element1}=    Get Text    (//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]
+#                Scroll Element Into View    (//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]
                 ${original_string}=    Set Variable    ${element1}
                 ${New_filter}=    Evaluate    '${original_string}'.strip()
                 Log    Element ${index}: ${New_filter}
