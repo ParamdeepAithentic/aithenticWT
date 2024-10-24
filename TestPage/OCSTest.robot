@@ -52,7 +52,7 @@ Test Setup      open the browser with the url
 
 *** Test Cases ***
 Free the asset limit
-    [Tags]      Smoke     Sanity      Time      rerun
+    [Tags]      Smoke     Sanity      Time    rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     johns@mai.25u.com        Test@123
     Generic.Verify your current page location contains      dashboard

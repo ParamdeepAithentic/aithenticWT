@@ -47,7 +47,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Product Bulk import
-    [Tags]    Sanity        Stable
+    [Tags]    Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -77,7 +77,7 @@ Product Bulk import
     Bulk_Import_ExportPage.Verify product added using bulk_import_export   ${generated_addProductName}
 
 Product Bulk Edit
-    [Tags]    Sanity        Stable
+    [Tags]    Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -723,7 +723,7 @@ Technology Bulk import
 
 
 Verify Bulk Import on the Technology Page by adding all parameters
-    [Tags]    Sanity     time
+    [Tags]    Sanity     time   smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
