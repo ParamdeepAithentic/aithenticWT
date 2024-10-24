@@ -516,8 +516,8 @@ Verify all the validate validations of the assigned user while edit assigned use
 #    LoginPage.Clear the element text of field under login page     # ${assigneeLname}#
 #    LoginPage.Clear the element text of field under login page   # ${assigneeEmpID}#
 #    LoginPage.Clear the element text of field under login page     # ${assigneeEmail}#
-    DashboardPage.Clear the data of the field       AssignedFirstName
-    DashboardPage.Clear the data of the field       AssignedLastName
+#    DashboardPage.Clear the data of the field       AssignedFirstName
+#    DashboardPage.Clear the data of the field       AssignedLastName
     LoginPage.Clear the element text of field under login page
     MemberPage.Enter first name of static assigned users       Johnny
     MemberPage.Enter last name of static assigned users       Doe
