@@ -309,7 +309,7 @@ Change plan and Change asset limit with ACH Payment method
     DashboardPage.Select the asset ID checkbox      no
     Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.Click on the profile name
-    Generic.Select other option from profile list     subscription-dropdown
+    Generic.Select subscription option from profile list
     Generic.Verify your current page location contains      subscription
     SubscriptionPage.Select if you want to change plan or asset    Change Asset Limit
     sleep       ${search_sleep}
@@ -1084,7 +1084,7 @@ Enter password of 32 characters while changing password
     DashboardPage.Click on the checkboxes under auhtentication tab
     Generic.Fetch alert message text and compare it with       Two factor updated successfully
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select subscription option from profile list
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     ${generate_register_Email}   Test@1234Test@1234Test@1234Test@
@@ -1180,7 +1180,7 @@ Enter password of more than the limit while forgot password
     DashboardPage.Click on the checkboxes under auhtentication tab
     Generic.Fetch alert message text and compare it with       Two factor updated successfully
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select subscription option from profile list
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     Generic.click on the tab        Forgot Password?
@@ -1294,7 +1294,7 @@ Enter password of less than the limit while forgot password
     DashboardPage.Click on the checkboxes under auhtentication tab
     Generic.Fetch alert message text and compare it with       Two factor updated successfully
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select subscription option from profile list
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     Generic.click on the tab        Forgot Password?
@@ -1408,7 +1408,7 @@ Enter password of 8 characters while forgot password
     DashboardPage.Click on the checkboxes under auhtentication tab
     Generic.Fetch alert message text and compare it with       Two factor updated successfully
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select subscription option from profile list
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     Generic.click on the tab        Forgot Password?
@@ -1854,7 +1854,7 @@ Update the subscription Plan and verify the notification
     Generic.Verify your current page location contains     billing
     BillingPage.Get the value of manage subscription under billing
     Generic.Click on the profile name
-    Generic.Select other option from profile list     subscription-dropdown
+    Generic.Select subscription option from profile list
     Generic.Verify your current page location contains      subscription
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     sleep       ${wait_time}

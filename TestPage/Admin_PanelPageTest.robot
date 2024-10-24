@@ -122,7 +122,7 @@ Set Plan range in pre requites
         Generic.click on the tab	Login
         LandingPage.Fill the login Form     ${email}    ${valid_password}
         Generic.Click on the profile name
-        Generic.Select other option from profile list     Subscription
+        Generic.Select subscription option from profile list
         Generic.Verify your current page location contains      subscription
         SubscriptionPage.Select if you want to change plan or asset    Change Plan
         TechnologyPage.Select plan for subscription     Premium
