@@ -395,7 +395,7 @@ Export Team member list
 
 
 Export Assigned User list
-    [Tags]     time
+    [Tags]     time    smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -443,7 +443,7 @@ Export Assigned User list
 
 
 Export technology details page list
-    [Tags]     time
+    [Tags]     time    smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -520,7 +520,7 @@ Export technology details page list
     Generic.click on the button     Okay, Thanks!
 
 Export component tab list
-    [Tags]     time
+    [Tags]     time    smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -604,7 +604,7 @@ Export component tab list
     Generic.click on the button     Okay, Thanks!
 
 Export account overview tab data
-    [Tags]     time
+    [Tags]     time    smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
