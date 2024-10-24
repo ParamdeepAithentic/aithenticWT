@@ -3258,7 +3258,7 @@ Click on the technology group filters and verify it
     Generic.Wait until table get load
     TechnologyPage.Click on the tech type filter under technology       Tech Type
     Generic.Wait until table get load
-    TechnologyPage.Click on the value under the tech typen filters of technology page      Maintenance
+    TechnologyPage.Click on the value under the tech typen filters of technology page      Virtual Machines
     Generic.Wait until table get load
     PaginationPage.Click on the pagination dropdown     technology
     PaginationPage.Select the value from the pagination drop down count     500
