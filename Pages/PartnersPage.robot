@@ -471,7 +471,7 @@ Click on three dots of partners listing
 
 Select option from three dots of partner
     [Arguments]     ${option}
-    Generic.Select other option from profile list       ${option}
+    Generic.Select simple option from profile list       ${option}
 
 #option: Edit, Deactivate, Activate, Remove
 

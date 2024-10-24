@@ -198,7 +198,7 @@ Verify team member Asset history
     Generic.Fetch alert message text and compare it with        Team Member created successfully
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select logout option from profile list     Logout
     Generic.Fetch log_out alert message
     Generic.Open new window     yopmail
     Generic.Refresh the existing page
@@ -232,7 +232,7 @@ Verify team member Asset history
     TwoFactorAuth.Click verification button
     Generic.Verify your current page location contains     dashboard
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select logout option from profile list     Logout
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
@@ -290,7 +290,7 @@ Search asset history with Asset ID
     Generic.Fetch alert message text and compare it with        Team Member created successfully
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select logout option from profile list     Logout
     Generic.Fetch log_out alert message
     Generic.Open new window     yopmail
     Generic.Refresh the existing page
@@ -324,7 +324,7 @@ Search asset history with Asset ID
     TwoFactorAuth.Click verification button
     Generic.Verify your current page location contains     dashboard
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select logout option from profile list     Logout
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
@@ -401,7 +401,7 @@ Verify user is able to export team member asset history list
     Generic.Fetch alert message text and compare it with        Team Member created successfully
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select logout option from profile list     Logout
     Generic.Fetch log_out alert message
     Generic.Open new window     yopmail
     Generic.Refresh the existing page
@@ -438,7 +438,7 @@ Verify user is able to export team member asset history list
     TwoFactorAuth.Click verification button
     Generic.Verify your current page location contains     dashboard
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select logout option from profile list     Logout
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
@@ -824,7 +824,7 @@ Verify Invitation and signup as team member
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
     TeamMemberPage.verify status of first name in member list     Invited
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select logout option from profile list     Logout
     Generic.Fetch log_out alert message
     Generic.Open new window     yopmail
     Generic.Refresh the existing page
@@ -858,7 +858,7 @@ Verify Invitation and signup as team member
     TwoFactorAuth.Click verification button
     Generic.Verify your current page location contains     dashboard
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select logout option from profile list     Logout
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
@@ -962,7 +962,7 @@ Verify Invitation and signup as team member via company details
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
     TeamMemberPage.verify status of first name in member list     Invited
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select logout option from profile list     Logout
     Generic.Fetch log_out alert message
     Generic.Open new window     yopmail
     Generic.Refresh the existing page
@@ -996,7 +996,7 @@ Verify Invitation and signup as team member via company details
     TwoFactorAuth.Click verification button
     Generic.Verify your current page location contains     dashboard
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select logout option from profile list     Logout
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
@@ -1126,7 +1126,7 @@ Add Back Deleted Team member - Active
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
     TeamMemberPage.verify status of first name in member list     Invited
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select logout option from profile list     Logout
     Generic.Fetch log_out alert message
     Generic.Open new window     yopmail
     Generic.Refresh the existing page
@@ -1160,7 +1160,7 @@ Add Back Deleted Team member - Active
     TwoFactorAuth.Click verification button
     Generic.Verify your current page location contains     dashboard
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select logout option from profile list     Logout
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
@@ -1189,7 +1189,7 @@ Add Back Deleted Team member - Active
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
     TeamMemberPage.verify status of first name in member list     Invited
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select logout option from profile list     Logout
     Generic.Fetch log_out alert message
     Generic.Open new window     yopmail
     Generic.Refresh the existing page
@@ -1223,7 +1223,7 @@ Add Back Deleted Team member - Active
     TwoFactorAuth.Click verification button
     Generic.Verify your current page location contains     dashboard
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select logout option from profile list     Logout
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
@@ -1265,7 +1265,7 @@ Click on the location filter under team member and verify it
     PaginationPage.Fetch the total count
     TeamMemberPage.Fetch the country from team member filter and click       Location     ${Team_member_location}         ${New_Name}
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select logout option from profile list     Logout
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     chirag@dmts.fr.nf   Test@123
@@ -1353,7 +1353,7 @@ Click on the status filter under team member via profile list and verify it
     PaginationPage.Fetch the total count
     TeamMemberPage.Fetch the country from team member filter and click       Status     Inactive         ${New_status1}
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select logout option from profile list     Logout
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123

@@ -58,7 +58,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Register new user
-    [Tags]      Smoke       Time     rerun
+    [Tags]      Smoke       Time
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
@@ -270,7 +270,7 @@ Adding the data in the account
 #    TeamMemberPage.Search Team Member by name       ${generated_TMFname}
 #    TeamMemberPage.verify status of first name in member list     Invited
 #    Generic.Click on the profile name
-#    Generic.Select other option from profile list     Logout
+#    Generic.Select logout option from profile list     Logout
 #    Generic.Fetch log_out alert message
 #    Generic.Open new window     yopmail
 #    Generic.Refresh the existing page

@@ -110,6 +110,8 @@ Enter contract with
     ${StartTime1} =     Get Current Time in Milliseconds
     input text      ${companyId}      ${option}
     sleep       ${search_sleep}
+    Wait Until Element Is Visible       //label[normalize-space()='Smart Share With:']//parent::div//span[normalize-space()='${option}']    ${wait_time}
+    Wait Until Element Is Enabled      //label[normalize-space()='Smart Share With:']//parent::div//span[normalize-space()='${option}']     ${wait_time}
     Press Keys     ${companyId}       ENTER
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
