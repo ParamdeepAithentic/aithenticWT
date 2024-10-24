@@ -862,8 +862,29 @@ Clear the field of country on edit partner
     wait until element is enabled        css:.qa-Country .ng-clear-wrapper   ${wait_time}
     Click element     css:.qa-Country .ng-clear-wrapper
 
+Cancel the Edit partner
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible        //div[contains(@class,'welcome-main')]//button[contains(@class,'button-red')][normalize-space()='Cancel']   ${wait_time}
+    wait until element is enabled        //div[contains(@class,'welcome-main')]//button[contains(@class,'button-red')][normalize-space()='Cancel']   ${wait_time}
+    Click element     //div[contains(@class,'welcome-main')]//button[contains(@class,'button-red')][normalize-space()='Cancel']
 
+Edit the country of add new address
+    Wait Until Element Is Not Visible    ${alert_Msg}          ${wait_time}
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible        //ng-select[@placeholder='Select Country']//span[@title='Clear all']   ${wait_time}
+    wait until element is enabled        //ng-select[@placeholder='Select Country']//span[@title='Clear all']   ${wait_time}
+    Click element     //ng-select[@placeholder='Select Country']//span[@title='Clear all']
 
+Select the contact name when add new contact on edit partner
+    wait until element is not visible       ${loaderIcon}      ${wait_time}
+    wait until element is visible      ${contact_name}       ${wait_time}
+    wait until element is enabled     ${contact_name}       ${wait_time}
+    click element   ${contact_name}
+    wait until element is not visible       //div[contains(@id,'0')]        ${wait_time}
+    click element       //div[contains(@id,'0')]
 
-
-
+Add the contact of Edit partner
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       //h5[normalize-space()='Contact']//parent::div//following-sibling::div//button[normalize-space()='Add']   ${wait_time}
+    wait until element is enabled        //h5[normalize-space()='Contact']//parent::div//following-sibling::div//button[normalize-space()='Add']   ${wait_time}
+    Click element     //h5[normalize-space()='Contact']//parent::div//following-sibling::div//button[normalize-space()='Add']

@@ -1560,49 +1560,26 @@ Verify all the validations of Edit Partners
     PartnersPage.Select option from three dots of partner     Details
     Generic.Verify your current page location contains      partner-details
     Generic.click on the button     Edit
-
     PartnersPage.Clear the field for edit business URL
     PartnersPage.Verify the validation of Partner business URL while edit partner
     PartnersPage.Compare the Validations on Partner Page        ${Partner_validation_URL}       Please select Business URL
-    PartnersPage.Clear the field of country on edit partner
-    PartnersPage.Verify the validations of these fields     Country
-    PartnersPage.Compare the Validations on Partner Page        ${Partner_validation1}       Please select Country
-
-
-
-#    PartnersPage.click on plus icon to add another business_url
-#    PartnersPage.Add second business_url        ${generated_BrandName}
-#    PartnersPage.Click on Add new Address of partner        Add new Address
-#    PartnersPage.Select country     United States
-#    PartnersPage.Add Unique address_one of partner
-#    PartnersPage.Add new address_two of partner
-#    PartnersPage.Select State       Alaska
-#    PartnersPage.Select City        Akutan
-#    PartnersPage.Add new zip code of partner     56709
-#    Generic.click on the button     Add
-#    Generic.Scroll the page till        500
-#    PartnersPage.click on edit icon
-#    PartnersPage.Add Unique address_one of partner
-#    PartnersPage.Add new address_two of partner
-#    PartnersPage.Click on cross-icon for clearing text
-#    PartnersPage.Select State       Alaska
-#    PartnersPage.Select City        Akutan
-#    PartnersPage.Add new zip code of partner     56709
-#    PartnersPage.Update the partner information
-#    Generic.Scroll the page till        700
-#    PartnersPage.Click on Add new Contact of partner        Add new Contact
-#    PartnersPage.Enter random contact name
-#    PartnersPage.Enter new_business_email of contact    ${generate_PersonName}     yopmail
-#    Generic.Enter phone number      India   +91     9646289871
-#    PartnersPage.Enter contact location      United States - Main Office - 21 - 2
-#    Generic.click on the button     Add
-#    PartnersPage.Wait for add contact pop up hide
-#    Generic.click on the button     Update
-#    Generic.Fetch alert message text and compare it with    Partner updated successfully
-#    PartnersPage.Search by business name    ${generated_BrandName}
-
-
-
+#    PartnersPage.Clear the field of country on edit partner
+#    PartnersPage.Verify the validations of these fields     Country
+#    PartnersPage.Compare the Validations on Partner Page        ${Partner_validation1}       Please select Country
+    PartnersPage.Click on Add new Address of partner        Add new Address
+    PartnersPage.Select country     United States
+    PartnersPage.Edit the country of add new address
+    DashboardPage.Verify the validation message of Brand_country field when add new address
+    PartnersPage.Compare the Validations on Partner Page        ${Country_validation1}           Please Select Country
+    PartnersPage.Select country     United States
+    Generic.click on the button     Add
+    Generic.Fetch alert message text and compare it with            Address already exists
+    PartnersPage.Edit the country of add new address
+    PartnersPage.Select country     Albania
+    Generic.click on the button     Add
+    PartnersPage.Click on Add new Contact of partner        Add new Contact
+    PartnersPage.Add the contact of Edit partner
+    Generic.Fetch alert message text and compare it with        Please enter values to save contact.
 
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
