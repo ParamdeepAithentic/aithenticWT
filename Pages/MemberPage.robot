@@ -317,7 +317,7 @@ Click on three dots of Team Member listing
 
 Select option from three dots of Team Member
     [Arguments]     ${option}
-    Generic.Select other option from profile list       ${option}
+    Generic.Select simple option from profile list       ${option}
 
 Enter assign to field
     [Arguments]     ${option}

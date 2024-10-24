@@ -1676,7 +1676,7 @@ Technology-Inactive asset and Restore asset
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
-    Generic.Select other option from profile list         Subscription
+    Generic.Select subscription option from profile list
     Generic.Verify your current page location contains      subscription
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     TechnologyPage.Click on current plan of subscription
@@ -1712,7 +1712,7 @@ Technology-Inactive asset and Restore asset
     Generic.Verify your current page location contains      technology-list
     Generic.Wait until table get load
     Generic.Click on the profile name
-    Generic.Select other option from profile list    subscription-dropdown
+    Generic.Select subscription option from profile list
     Generic.Verify your current page location contains      subscription
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     TechnologyPage.Click on current plan of subscription
@@ -1731,7 +1731,7 @@ Technology-Inactive asset and Restore asset
     SubscriptionPage.Proceed the payment     proceed
     Generic.Fetch alert message text and compare it with      Payment Successful
     Generic.Click on the profile name
-    Generic.Select other option from profile list    subscription-dropdown
+    Generic.Select subscription option from profile list
     Generic.Verify your current page location contains      subscription
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     TechnologyPage.Click on current plan of subscription
@@ -1773,7 +1773,7 @@ Inactive asset - Restore asset from Technology Details page
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
-    Generic.Select other option from profile list    subscription-dropdown
+    Generic.Select subscription option from profile list
     Generic.Verify your current page location contains      subscription
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     TechnologyPage.Click on current plan of subscription
@@ -1808,7 +1808,7 @@ Inactive asset - Restore asset from Technology Details page
     Generic.Verify your current page location contains      technology-list
     Generic.Wait until table get load
     Generic.Click on the profile name
-    Generic.Select other option from profile list    subscription-dropdown
+    Generic.Select subscription option from profile list
     Generic.Verify your current page location contains      subscription
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     TechnologyPage.Click on current plan of subscription
@@ -1827,7 +1827,7 @@ Inactive asset - Restore asset from Technology Details page
     SubscriptionPage.Proceed the payment     proceed
     Generic.Fetch alert message text and compare it with      Payment Successful
     Generic.Click on the profile name
-    Generic.Select other option from profile list    subscription-dropdown
+    Generic.Select subscription option from profile list
     Generic.Verify your current page location contains      subscription
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     TechnologyPage.Click on current plan of subscription
@@ -1854,7 +1854,7 @@ Inactive asset - Restore asset from Technology Details page
     TechnologyPage.Search by AssetId   ${generated_AssetID}
     TechnologyPage.Click on manage technology sub option       Technology List
     Generic.Click on the profile name
-    Generic.Select other option from profile list    subscription-dropdown
+    Generic.Select subscription option from profile list
     Generic.Verify your current page location contains      subscription
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     TechnologyPage.Click on current plan of subscription
@@ -2837,7 +2837,7 @@ Compose reply and remove the message via technology details
     DashboardPage.Wait until alert is visible in the Recent Notifiation tab     You added Asset ID      ${generated_AssetID}.
     TechnologyPage.Get the text of the recent notification of added assets      You added Asset ID ${generated_AssetID}.
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select logout option from profile list    Logout
     Generic.Fetch log_out alert message
     Generic.Open new window     yopmail
     Generic.Refresh the existing page
@@ -2880,7 +2880,7 @@ Compose reply and remove the message via technology details
     DashboardPage.Click on the checkboxes under auhtentication tab
     Generic.Fetch alert message text and compare it with       Two factor updated successfully
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select logout option from profile list    Logout
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
@@ -2904,7 +2904,7 @@ Compose reply and remove the message via technology details
     Generic.Verify your current page location contains      message
     DashboardPage.Search by subject under sent serach bar     ${generated_TMFname}
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select logout option from profile list    Logout
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  ${generated_TMbusinessEmail}    Test@456
@@ -2928,7 +2928,7 @@ Compose reply and remove the message via technology details
     Generic.Verify your current page location contains      message
     DashboardPage.Search by subject under sent serach bar     ${generated_TMFname}
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select logout option from profile list    Logout
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form   debut@cool.fr.nf   Test@123
@@ -3212,7 +3212,7 @@ Click on the technology group filters and verify it
     Generic.Wait until table get load
     Generic.Fetch alert message text and compare it with       No additional sub-groups found!
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select logout option from profile list    Logout
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
@@ -3483,7 +3483,7 @@ Click on the technology group filters and verify it
     PaginationPage.Get count of total rows from Product Dropdown
     TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select logout option from profile list    Logout
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     jasdeep@15963.fr.nf     Paramdeep@112
@@ -3515,7 +3515,7 @@ Click on the technology group filters and verify it
 #    Generic.Verify your current page location contains      dashboard
 #    LandingPage.Verify you are on dashboard page
 #    Generic.Click on the profile name
-#    Generic.Select other option from profile list         Subscription
+#    Generic.Select other option from profile list
 #    Generic.Verify your current page location contains      subscription
 #    SubscriptionPage.Select if you want to change plan or asset    Change Plan
 #    TechnologyPage.Click on current plan of subscription

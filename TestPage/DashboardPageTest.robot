@@ -205,7 +205,7 @@ Invite user into Aithentic
     Generic.Verify alertify is visible
     Generic.Fetch alert message text and compare it with        Invite sent successfully
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select logout option from profile list       Logout
     Generic.Fetch log_out alert message
     Generic.Open new window      yopmail
     Generic.Refresh the existing page
@@ -372,7 +372,7 @@ Edit Brand and address via brand under profile list
     DashboardPage.Click on main Save Button
     DashboardPage.Verify Brand added      ${generated_BrandName}
     DashboardPage.Click on three dots
-    Generic.Select other option from profile list   Edit
+    Generic.Select simple option from profile list   Edit
     DashboardPage.click on Plus icon
     DashboardPage.Add static Business Manufacturer URL      yopmail.net
     Generic.click on the button   Update
@@ -444,7 +444,7 @@ Deactivate Brand and address via brand under profile list
     DashboardPage.Click on main Save Button
     DashboardPage.Verify Brand added      ${generated_BrandName}
     DashboardPage.Click on three dots
-    Generic.Select other option from profile list   Edit
+    Generic.Select simple option from profile list   Edit
     DashboardPage.click on Plus icon
     DashboardPage.Add static Business Manufacturer URL      yopmail.net
     Generic.click on the button   Update
@@ -475,7 +475,7 @@ Deactivate Brand and address via brand under profile list
     Generic.Fetch alert message text and compare it with      Brand Updated Successfully.
     DashboardPage.Click on back to brand list link
     DashboardPage.Click on three dots
-    Generic.Select other option from profile list   Deactivate
+    Generic.Select simple option from profile list   Deactivate
     DashboardPage.Select option from the pop up     yes
     Generic.Fetch alert message text and compare it with      Brand deactivated successfully
 
@@ -521,7 +521,7 @@ Activate Brand and address via brand under profile list
     DashboardPage.Click on main Save Button
     DashboardPage.Verify Brand added      ${generated_BrandName}
     DashboardPage.Click on three dots
-    Generic.Select other option from profile list   Edit
+    Generic.Select simple option from profile list   Edit
     DashboardPage.click on Plus icon
     DashboardPage.Add static Business Manufacturer URL      yopmail.net
     Generic.click on the button   Update
@@ -552,11 +552,11 @@ Activate Brand and address via brand under profile list
     Generic.Fetch alert message text and compare it with      Brand Updated Successfully.
     DashboardPage.Click on back to brand list link
     DashboardPage.Click on three dots
-    Generic.Select other option from profile list   Deactivate
+    Generic.Select simple option from profile list   Deactivate
     DashboardPage.Select option from the pop up     yes
     Generic.Fetch alert message text and compare it with      Brand deactivated successfully
     DashboardPage.Click on three dots
-    Generic.Select other option from profile list   Activate
+    Generic.Select simple option from profile list   Activate
     DashboardPage.Select option from the pop up     yes
     Generic.Fetch alert message text and compare it with      Brand activated successfully
 
@@ -602,7 +602,7 @@ Remove Brand and address via brand under profile list
     DashboardPage.Click on main Save Button
     DashboardPage.Verify Brand added      ${generated_BrandName}
     DashboardPage.Click on three dots
-    Generic.Select other option from profile list   Edit
+    Generic.Select simple option from profile list   Edit
     DashboardPage.click on Plus icon
     DashboardPage.Add static Business Manufacturer URL      yopmail.net
     Generic.click on the button   Update
@@ -633,7 +633,7 @@ Remove Brand and address via brand under profile list
     Generic.Fetch alert message text and compare it with      Brand Updated Successfully.
     DashboardPage.Click on back to brand list link
     DashboardPage.Click on three dots
-    Generic.Select other option from profile list   Remove
+    Generic.Select simple option from profile list   Remove
     DashboardPage.Select option from the pop up     yes
     Generic.Fetch alert message text and compare it with      Brand deleted successfully
 
@@ -661,7 +661,7 @@ Verify adding a new brand from profile listing
     DashboardPage.Click added brand main save button
     DashboardPage.Verify Brand added      ${generated_BrandName}
     DashboardPage.Click on three dots
-    Generic.Select other option from profile list   Remove
+    Generic.Select simple option from profile list   Remove
     DashboardPage.Select option from the pop up     yes
     Generic.Fetch alert message text and compare it with      Brand deleted successfully
 
@@ -1749,7 +1749,7 @@ Change password and login with new password
     DashboardPage.Click on the checkboxes under auhtentication tab
     Generic.Fetch alert message text and compare it with       Two factor updated successfully
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select logout option from profile list     Logout
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     ${generate_register_Email}   Test@1234
@@ -1779,7 +1779,7 @@ Change password and login with new password
     DashboardPage.Click on save button under change password
     Generic.Fetch alert message text and compare it with       Password changed successfully
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select logout option from profile list       Logout
     Generic.Fetch log_out alert message
     Refresh the existing page
     Generic.click on the tab	Login
@@ -2006,7 +2006,7 @@ Compose Message reply and delete that message
     Generic.Fetch alert message text and compare it with        Team Member created successfully
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select logout option from profile list       Logout
     Generic.Fetch log_out alert message
     Generic.Open new window     yopmail
     Generic.Refresh the existing page
@@ -2049,7 +2049,7 @@ Compose Message reply and delete that message
     DashboardPage.Click on the checkboxes under auhtentication tab
     Generic.Fetch alert message text and compare it with       Two factor updated successfully
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select logout option from profile list       Logout
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
@@ -2070,7 +2070,7 @@ Compose Message reply and delete that message
     Generic.Verify your current page location contains      message
     DashboardPage.Search by subject under sent serach bar      ${generated_subject}
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select logout option from profile list       Logout
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  ${generated_TMbusinessEmail}    Test@456
@@ -2091,7 +2091,7 @@ Compose Message reply and delete that message
     Generic.click on the button     Send
     Generic.Fetch alert message text and compare it with       Message sent successfully
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select logout option from profile list       Logout
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form   debut@cool.fr.nf   Test@123
@@ -2304,7 +2304,7 @@ Click on the status filter under brand via profile list
     PaginationPage.Fetch the total count
     TeamMemberPage.Fetch the country from team member filter and click       Status     ${New_status_Brand}        ${New_status_Brand}
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select logout option from profile list       Logout
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
@@ -2423,7 +2423,7 @@ Click on the product filters via profile list
     PaginationPage.Fetch the total count
     TeamMemberPage.Fetch the country from team member filter and click       Status      ${New_product_Status}         ${New_product_Status}
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select logout option from profile list       Logout
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
@@ -2704,7 +2704,7 @@ Verfying all field validations of Edit Brand page
     DashboardPage.Click on main Save Button
     DashboardPage.Verify Brand added      ${generated_BrandName}
     DashboardPage.Click on three dots
-    Generic.Select other option from profile list   Edit
+    Generic.Select simple option from profile list   Edit
     DashboardPage.Edit the URL of edit brand page
     Generic.click on the button   Update
     Generic.Fetch alert message text and compare it with      domain is required.
