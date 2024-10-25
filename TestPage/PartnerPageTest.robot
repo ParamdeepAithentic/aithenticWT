@@ -1488,7 +1488,97 @@ Partner Side bar Filters
     ReportsPage.Fetch the total count After selecting filter
     MessagePage.Comapre the total count after selecting filter
 
+Verify all the validations of Add Partners
+    Generic.click on the tab	    Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    ReplaceDomainAPI.Replace Domain
+    Generic.select the option from the side menu    Partners
+    PartnersPage.Click new partner button
+    PartnersPage.Select partner type of new partner     Manufacturer
+    PartnersPage.Create partner random business name
+    PartnersPage.Enter partner business URL     yopmail
+    PartnersPage.Select partner country       United States
+    PartnersPage.Click on Add new Address of partner        Add new Address
+    PartnersPage.Clear the field of country in add adddress of partner       country
+    DashboardPage.Enter the country in the new address when add brand    countryPartner    Albania
+    PartnersPage.Clear the field of country in add adddress of partner    country
+    DashboardPage.Verify the validation message of Brand_country field when add new address
+    PartnersPage.Compare the Validations on Partner Page        ${Country_validation1}           Please Select Country
+    PartnersPage.Cancel the pop-ups         addAddressModal
+    PartnersPage.Click on Add new Contact of partner        Add new Contact
+    PartnersPage.Save the new contact
+    Generic.Fetch alert message text and compare it with        Please enter values to save contact
+    PartnersPage.Cancel the pop-ups         addContactModal
+    PartnersPage.Clear the data of the fields while adding partner      Select Partner Type
+    PartnersPage.Verify the validations of these fields         Partner Type
+    PartnersPage.Compare the Validations on Partner Page        ${Partner_validation1}      Please select Partner Type
+    PartnersPage.Clear the data of the fields while adding partner      Select or Search a Business Name
+    PartnersPage.Verify the validations of these fields         Business Name
+    PartnersPage.Compare the Validations on Partner Page        ${Partner_validation1}       Please select or enter Business Name
+    PartnersPage.Clear the data of Partner Business URL
+    PartnersPage.Verify the validation of Partner business URL
+    PartnersPage.Compare the Validations on Partner Page        ${Partner_validation2}       Please select or enter valid Business URL
+    PartnersPage.Clear the data of the fields while adding partner      Select Country
+    PartnersPage.Verify the validations of these fields     Country
+    PartnersPage.Compare the Validations on Partner Page        ${Partner_validation1}       Please select Country
+
+Verify all the validations of Edit Partners
+    Generic.click on the tab	    Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    DashboardPage.Select an option from company details side list    Technology
+    Generic.Verify your current page location contains       technology-settings
+    ReplaceDomainAPI.Replace Domain
+    DashboardPage.Click on View Your Added Brand List
+    Generic.Verify your current page location contains      brand-list
+    DashboardPage.Click add brand button
+    DashboardPage.Create random brandName
+    DashboardPage.Add static Business Manufacturer URL      yopmail.net
+    DashboardPage.Add brand manufacturer country      United States
+    DashboardPage.Save added brand details
+    Generic.Fetch alert message text and compare it with        Brand created successfully.
+    DashboardPage.Click on main Save Button
+    Generic.select the option from the side menu    Partners
+    Generic.Verify your current page location contains      partner
+    PartnersPage.Click new partner button
+    Generic.Verify your current page location contains      addpartner
+    PartnersPage.Select partner type of new partner     Manufacturer
+    PartnersPage.Select partner business_name     ${generated_BrandName}
+    PartnersPage.Select partner business URL
+    PartnersPage.Select partner country       United States
+    PartnersPage.Click contact main save button
+    Generic.Fetch alert message text and compare it with    Partner created successfully
+    PartnersPage.Search by business name    ${generated_BrandName}
+    PartnersPage.Click on three dots of partners listing
+    PartnersPage.Select option from three dots of partner     Details
+    Generic.Verify your current page location contains      partner-details
+    Generic.click on the button     Edit
+    PartnersPage.Clear the field for edit business URL
+    PartnersPage.Verify the validation of Partner business URL while edit partner
+    PartnersPage.Compare the Validations on Partner Page        ${Partner_validation_URL}       Please select Business URL
+#    PartnersPage.Clear the field of country on edit partner
+#    PartnersPage.Verify the validations of these fields     Country
+#    PartnersPage.Compare the Validations on Partner Page        ${Partner_validation1}       Please select Country
+    PartnersPage.Click on Add new Address of partner        Add new Address
+    PartnersPage.Select country     United States
+    PartnersPage.Edit the country of add new address
+    DashboardPage.Verify the validation message of Brand_country field when add new address
+    PartnersPage.Compare the Validations on Partner Page        ${Country_validation1}           Please Select Country
+    PartnersPage.Select country     United States
+    Generic.click on the button     Add
+    Generic.Fetch alert message text and compare it with            Address already exists
+    PartnersPage.Edit the country of add new address
+    PartnersPage.Select country     Albania
+    Generic.click on the button     Add
+    PartnersPage.Click on Add new Contact of partner        Add new Contact
+    PartnersPage.Add the contact of Edit partner
+    Generic.Fetch alert message text and compare it with        Please enter values to save contact.
 
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
-
