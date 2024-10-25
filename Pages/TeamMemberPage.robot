@@ -201,7 +201,7 @@ Click on three dots of Team Member listing
 
 Select option from three dots of Team Member
     [Arguments]     ${option}
-    Generic.Select other option from profile list       ${option}
+    Generic.Select simple option from profile list       ${option}
     sleep       ${search_sleep}
 
 Click on the tab
@@ -457,7 +457,7 @@ Click on the cross icon of the dropdown under edit team member
 
 Fetch the all validation message after entering invalid data in edit team member
    wait until element is visible   //span[contains(@class,'invalidInput')]       ${wait_time}
-   @{expectedList} =    Create List      Please enter First Name       Please enter Last Name           Please enter Business Email        Please enter Department           Select Member Location        Select Role          Please enter Status
+   @{expectedList} =    Create List      Please enter First Name       Please enter Last Name           Please enter Business Email        Please enter Department           Select Member Location        Select Role
    ${elements} =  Get WebElements     //span[contains(@class,'invalidInput')]
    @{actualList} =   Create List
    FOR  ${element}  IN      @{elements}
@@ -467,13 +467,12 @@ Fetch the all validation message after entering invalid data in edit team member
    lists should be equal    ${expectedList}    ${actualList}
 
 Clear the text of business email when editing team member
-    [Arguments]     ${option}
     wait until element is not visible    ${loaderIcon}      ${wait_time}
-    wait until element is visible       css:#${option}       ${wait_time}
-    click element     css:#${option}
-    Press Keys    css:#${option}     CONTROL+A
-    FOR    ${i}    IN RANGE    30
-        Press Keys    css:#${option}     BACKSPACE
+    wait until element is visible       css:#businessEmail       ${wait_time}
+    click element     css:#businessEmail
+    Press Keys    css:#businessEmail     CONTROL+A
+    FOR    ${i}    IN RANGE    50
+        Press Keys    css:#businessEmail     BACKSPACE
     END
 
 

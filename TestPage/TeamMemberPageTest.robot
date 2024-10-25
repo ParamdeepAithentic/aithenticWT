@@ -1462,7 +1462,7 @@ Verify all the validations of edit team member page
     TeamMemberPage.Click on the cross icon of the dropdown under edit team member       LocationTypeId
     TeamMemberPage.Click on the cross icon of the dropdown under edit team member       UserRoleId
     TeamMemberPage.Click on the cross icon of the dropdown under edit team member      DepartmentId
-    TeamMemberPage.Clear the text of business email when editing team member   businessEmail
+    TeamMemberPage.Clear the text of business email when editing team member
     DashboardPage.Clear the data of the field       firstName
     DashboardPage.Clear the data of the field       lastName
 #    TeamMemberPage.Clear the text of business email when editing team member   css:#phone       milan@dmts.fr.nf
