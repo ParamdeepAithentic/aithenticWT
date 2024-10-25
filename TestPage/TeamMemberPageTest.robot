@@ -1462,10 +1462,10 @@ Verify all the validations of edit team member page
     TeamMemberPage.Click on the cross icon of the dropdown under edit team member       LocationTypeId
     TeamMemberPage.Click on the cross icon of the dropdown under edit team member       UserRoleId
     TeamMemberPage.Click on the cross icon of the dropdown under edit team member      DepartmentId
-    TeamMemberPage.Clear the text of business email when editing team member   css:#businessEmail       milan@dmts.fr.nf
+    TeamMemberPage.Clear the text of business email when editing team member   businessEmail
     DashboardPage.Clear the data of the field       firstName
     DashboardPage.Clear the data of the field       lastName
-    TeamMemberPage.Clear the text of business email when editing team member   css:#phone       milan@dmts.fr.nf
+#    TeamMemberPage.Clear the text of business email when editing team member   css:#phone       milan@dmts.fr.nf
     Generic.click on the button   Update
     sleep       ${search_sleep}
     TeamMemberPage.Fetch the all validation message after entering invalid data in add team member

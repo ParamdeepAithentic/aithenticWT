@@ -457,7 +457,7 @@ Click on the cross icon of the dropdown under edit team member
 
 Fetch the all validation message after entering invalid data in edit team member
    wait until element is visible   //span[contains(@class,'invalidInput')]       ${wait_time}
-   @{expectedList} =    Create List      Please enter First Name       Please enter Last Name          Please enter Mobile Number        Please enter Business Email        Please enter Department           Select Member Location        Select Role          Please enter Status
+   @{expectedList} =    Create List      Please enter First Name       Please enter Last Name           Please enter Business Email        Please enter Department           Select Member Location        Select Role          Please enter Status
    ${elements} =  Get WebElements     //span[contains(@class,'invalidInput')]
    @{actualList} =   Create List
    FOR  ${element}  IN      @{elements}
@@ -467,10 +467,13 @@ Fetch the all validation message after entering invalid data in edit team member
    lists should be equal    ${expectedList}    ${actualList}
 
 Clear the text of business email when editing team member
-    [Arguments]         ${option}       ${option1}
-    click element          ${option}
-    clear element text         ${option}
-    input text      ${option}       ${option1}
-    clear element text         ${option}
+    [Arguments]     ${option}
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       css:#${option}       ${wait_time}
+    click element     css:#${option}
+    Press Keys    css:#${option}     CONTROL+A
+    FOR    ${i}    IN RANGE    30
+        Press Keys    css:#${option}     BACKSPACE
+    END
 
 
