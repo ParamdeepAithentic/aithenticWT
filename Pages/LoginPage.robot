@@ -90,18 +90,18 @@ Clear the element text of field under login page
 #    click element          ${option}
 #    clear element text         ${option}
 #    Press Keys    ${option}     BACKSPACE
-    Wait Until Element Is visible      css:#AssignedFirstName        ${wait_time}
-    Wait Until Element Is enabled      css:#AssignedFirstName        ${wait_time}
-    Execute JavaScript    document.querySelector('#AssignedFirstName').innerHTML = ''
-    Wait Until Element Is visible      css:#AssignedLastName        ${wait_time}
-    Wait Until Element Is enabled      css:#AssignedLastName        ${wait_time}
-    Execute JavaScript    document.querySelector('#AssignedLastName').innerHTML = ''
+#    Wait Until Element Is visible      css:#AssignedFirstName        ${wait_time}
+#    Wait Until Element Is enabled      css:#AssignedFirstName        ${wait_time}
+#    Execute Javascript    document.querySelector('#AssignedFirstName').value = ''
+#    Wait Until Element Is visible      css:#AssignedLastName        ${wait_time}
+#    Wait Until Element Is enabled      css:#AssignedLastName        ${wait_time}
+#    Execute Javascript    document.querySelector('#AssignedLastName').value = ''
     Wait Until Element Is visible      css:#AssignedEmail        ${wait_time}
     Wait Until Element Is enabled      css:#AssignedEmail        ${wait_time}
-    Execute JavaScript    document.querySelector('#AssignedEmail').innerHTML = ''
+    Execute Javascript    document.querySelector('#AssignedEmail').value = ''
     Wait Until Element Is visible         css:#AssignedEmployeeId        ${wait_time}
     Wait Until Element Is enabled        css:#AssignedEmployeeId     ${wait_time}
-    Execute JavaScript    document.querySelector('#AssignedEmployeeId').innerHTML = ''
+    Execute Javascript    document.querySelector('#AssignedEmployeeId').value = ''
 
 Get and Verify the validation after entering invalid email under forgot password
     [Arguments]         ${text}
