@@ -62,7 +62,7 @@ ${yop_sleep}       10
 ${search_sleep}       1
 
 
-${CASE}        qa    #qa , uat , pre-prod
+${CASE}        pre-prod   #qa , uat , pre-prod
 
 
 
@@ -139,6 +139,8 @@ Set Pre-Prod Variables
     Set Suite Variable    ${discovered_IP}   192.168.18.86
     Set Suite Variable    ${discovery_asset_list_brand}       Apple, Inc.
     Set Suite Variable    ${Team_member_location}       United States - Building23 - 4 - 8
+    Set Suite Variable    ${Technology_group}      Applications
+    Set Suite Variable    ${Technology_group1}      Applications
 
 Set Research Variables
     Set Suite Variable    ${url}    https://research-app.aithentic.com/
