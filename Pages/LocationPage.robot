@@ -43,15 +43,15 @@ Resource        ../Pages/UnselectAssetAPI.robot
 
 ${location_Action}     css:.qa-location-actions
 ${location_country}     css:.qa-country-name input
-${location_buildingName}     css:#buildingName
-${location_floor}     css:#floor
-${location_room}     css:#room
-${location_addressOne}     css:#strretAddress1
-${location_addressTwo}     css:#strretAddress2
+${location_buildingName}     css:#BuildingName
+${location_floor}     css:#Floor
+${location_room}     css:#Room
+${location_addressOne}     css:#StreetAddress1
+${location_addressTwo}     css:#StreetAddress2
 ${location_State}     css:.qa-State input
 ${location_City}     css:.qa-City input
-${location_Zip}     css:#zip
-${location_Name}     css:#locationName
+${location_Zip}     css:#Zip
+${location_Name}     css:#LocationTypeName
 
 ${search_LocationName}     css:.search-location-qa
 
@@ -154,8 +154,8 @@ Select location zip
 Create random location name
     ${random_string} =    Generate Random String       5      [NUMBERS]
     ${generated_location}=    Catenate    LocationName${random_string}
-    wait until element is visible       ${location_Name}    ${wait_time}
-    input text   ${location_Name}   ${generated_location}
+    wait until element is visible       css:#LocationTypeName    ${wait_time}
+    input text   css:#LocationTypeName   ${generated_location}
     set global variable    ${generated_location}
 
 Create self location name
@@ -528,3 +528,21 @@ clear the data of location name
     Wait Until Element Is Enabled      ${location_Name}     ${wait_time}
     click element       ${location_Name}
     Clear Element Text      ${location_Name}
+
+Create more than one random IP subnet
+    [Arguments]     ${option}
+    ${random_string1} =     Evaluate    random.randint(1, 255)
+    ${random_string2} =     Evaluate    random.randint(1, 255)
+    ${random_string3} =     Evaluate    random.randint(1, 255)
+    ${random_string4} =     Evaluate    random.randint(1, 255)
+    ${generated_SubnetIP} =    Catenate    ${random_string1}.${random_string2}.${random_string3}.${random_string4}
+    Wait Until Element Is Visible    (//input[contains(@class,'ipsubnet')])[${option}]    ${wait_time}
+    Wait Until Element Is Enabled    (//input[contains(@class,'ipsubnet')])[${option}]   ${wait_time}
+    Input Text    (//input[contains(@class,'ipsubnet')])[${option}]    ${generated_SubnetIP}
+    set global variable    ${generated_SubnetIP}
+
+
+Click on the plus icon of the subnet
+    Wait Until Element Is Visible       //i[@title='Click here to add IP Subnet']    ${wait_time}
+    Wait Until Element Is Enabled      //i[@title='Click here to add IP Subnet']     ${wait_time}
+    click element       //i[@title='Click here to add IP Subnet']
