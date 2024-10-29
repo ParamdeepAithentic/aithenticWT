@@ -282,7 +282,7 @@ Click on the select status filter and verify it
     PaginationPage.Select the value from the pagination drop down count     500
     PaginationPage.Fetch the selected value of the dropdown     location-list
     PaginationPage.Fetch the total count
-    LocationPage.Fetch the country from location filter and click       Status     Inactive         ${New_status}
+    LocationPage.Fetch the country from location filter and click       Status      7     Inactive         ${New_status}
 
 Click on the select location filter and verify it
     [Tags]    time     smoke
@@ -303,7 +303,7 @@ Click on the select location filter and verify it
     PaginationPage.Fetch the total count
 
     ${StartTime1} =     Get Current Time in Milliseconds
-    LocationPage.Fetch the country from location filter and click       Country     Afghanistan         ${New_Name}
+    LocationPage.Fetch the country from location filter and click       Country     3     Afghanistan         ${New_Name}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  10  ${pageHeading}   Filter Page - Data load time of filter Country under location group      10    ${pageTime}     ${ActualTime}    Filter_Time
@@ -315,14 +315,14 @@ Click on the select location filter and verify it
     Generic.Wait until table get load
     sleep   ${search_sleep}
     PaginationPage.Fetch the total count
-    LocationPage.Fetch the country from location filter and click       Country     Canada          ${New_Name}
+    LocationPage.Fetch the country from location filter and click       Country     3        Canada          ${New_Name}
     Generic.Click on the reset filters link
     LocationPage.Click on the location filter under location
     LocationPage.Select the option from location filter under location          India
     LocationPage.Get the text of selected filter under location      India
     Generic.Wait until table get load
     PaginationPage.Fetch the total count
-    LocationPage.Fetch the country from location filter and click       Country      India          ${New_Name}
+    LocationPage.Fetch the country from location filter and click       Country     3        India          ${New_Name}
     Generic.Click on the reset filters link
     LocationPage.Click on the location filter under location
     LocationPage.Select the option from location filter under location         Turkey
@@ -333,7 +333,7 @@ Click on the select location filter and verify it
     PaginationPage.Select the value from the pagination drop down count     500
     PaginationPage.Fetch the selected value of the dropdown     location-list
     PaginationPage.Fetch the total count
-    LocationPage.Fetch the country from location filter and click       Country     Turkey        ${New_Name}
+    LocationPage.Fetch the country from location filter and click       Country     3     Turkey        ${New_Name}
 
 Click on the select Active status filter and verify it
     Generic.click on the tab	Login
@@ -351,7 +351,7 @@ Click on the select Active status filter and verify it
     PaginationPage.Select the value from the pagination drop down count     500
     PaginationPage.Fetch the selected value of the dropdown     location-list
     PaginationPage.Fetch the total count
-    LocationPage.Fetch the country from location filter and click       Status     Active         ${New_status}
+    LocationPage.Fetch the country from location filter and click       Status      7     Active         ${New_status}
 
 Verifying the validations of all fields of Add location
     Generic.click on the tab	Login
