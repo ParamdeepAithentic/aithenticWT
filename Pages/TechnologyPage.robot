@@ -2084,9 +2084,9 @@ Get the text of the value you selected under filter
     wait until element is visible      (//div[contains(@class,'technology position-relative')]//following-sibling::div//label)[${option}]    ${wait_time}
     ${fetch_Name_of_selected_random_filter} =    get text    (//div[contains(@class,'technology position-relative')]//following-sibling::div//label)[${option}]
     ${original_string}=    Set Variable    ${fetch_Name_of_selected_random_filter}
-    ${random_Namee}=    Evaluate    '${original_string}'.strip()
-    log to console    ${random_Namee}
-    set global variable    ${random_Namee}
+    ${random_Name}=    Evaluate    '${original_string}'.strip()
+    log to console    ${random_Name}
+    set global variable    ${random_Name}
 
 Click on the product field under add technology
     [Arguments]        ${product}
