@@ -3276,7 +3276,7 @@ Click on the technology group filters and verify it
     TechnologyPage.Get the text of the value you selected under filter      1
     Generic.Wait until table get load
     PaginationPage.Fetch the total count
-    LocationPage.Fetch the country from location filter and click    Brand      3       ${random_Namee}        ${random_Namee}
+    LocationPage.Fetch the country from location filter and click    Brand      3       ${random_Name}        ${random_Name}
     Generic.click on the tab        reset filters
     Generic.Wait until table get load
     TechnologyPage.Click on the tech type filter under technology       Select Partner
@@ -3287,7 +3287,7 @@ Click on the technology group filters and verify it
     TechnologyPage.Get the text of the value you selected under filter      2
     Generic.Wait until table get load
     PaginationPage.Fetch the total count
-    LocationPage.Fetch the country from location filter and click    Brand      3       ${random_Namee}       ${random_Namee}
+    LocationPage.Fetch the country from location filter and click    Brand      3       ${random_Name}       ${random_Name}
     Generic.click on the tab        reset filters
     Generic.Wait until table get load
     TechnologyPage.Click on the tech type filter under technology       Select Partner
@@ -3301,7 +3301,7 @@ Click on the technology group filters and verify it
     PaginationPage.Select the value from the pagination drop down count     500
     PaginationPage.Fetch the selected value of the dropdown     technology
     PaginationPage.Fetch the total count
-    LocationPage.Fetch the country from location filter and click    Brand      3       ${random_Namee}       ${random_Namee}
+    LocationPage.Fetch the country from location filter and click    Brand      3       ${random_Name}       ${random_Name}
     Generic.click on the tab        reset filters
     Generic.Wait until table get load
     TechnologyPage.Click on the tech type filter under technology       Select Partner
@@ -3382,7 +3382,7 @@ Click on the technology group filters and verify it
     TechnologyPage.Get the text of the value you selected under filter    2
     Generic.Wait until table get load
     PaginationPage.Fetch the total count
-    LocationPage.Fetch the country from location filter and click    Location      ${random_Namee}       ${random_Namee}
+    LocationPage.Fetch the country from location filter and click    Location      ${random_Name}       ${random_Name}
     Generic.click on the tab        reset filters
     Generic.Wait until table get load
     TechnologyPage.Click on the tech type filter under technology       Select Location
@@ -3391,7 +3391,7 @@ Click on the technology group filters and verify it
     TechnologyPage.Get the text of the value you selected under filter    3
     Generic.Wait until table get load
     PaginationPage.Fetch the total count
-    LocationPage.Fetch the country from location filter and click    Location       10     ${random_Namee}       ${random_Namee}
+    LocationPage.Fetch the country from location filter and click    Location       10     ${random_Name}       ${random_Name}
     Generic.click on the tab        reset filters
     Generic.Wait until table get load
     TechnologyPage.Click on the tech type filter under technology       Select Location
@@ -3400,7 +3400,7 @@ Click on the technology group filters and verify it
     TechnologyPage.Get the text of the value you selected under filter    6
     Generic.Wait until table get load
     PaginationPage.Fetch the total count
-    LocationPage.Fetch the country from location filter and click    Location       10      ${random_Namee}       ${random_Namee}
+    LocationPage.Fetch the country from location filter and click    Location       10      ${random_Name}       ${random_Name}
     Generic.click on the tab        reset filters
     Generic.Wait until table get load
     TechnologyPage.Click on the tech type filter under technology       Select Brand
@@ -3409,7 +3409,7 @@ Click on the technology group filters and verify it
     TechnologyPage.Get the text of the value you selected under filter    2
     Generic.Wait until table get load
     PaginationPage.Fetch the total count
-    LocationPage.Fetch the country from location filter and click    Brand      3      ${random_Namee}       ${random_Namee}
+    LocationPage.Fetch the country from location filter and click    Brand      3      ${random_Name}       ${random_Name}
     Generic.click on the tab        reset filters
     Generic.Wait until table get load
     TechnologyPage.Click on the tech type filter under technology       Select Brand
@@ -3418,7 +3418,7 @@ Click on the technology group filters and verify it
     TechnologyPage.Get the text of the value you selected under filter    6
     Generic.Wait until table get load
     PaginationPage.Fetch the total count
-    LocationPage.Fetch the country from location filter and click    Brand      3         ${random_Namee}       ${random_Namee}
+    LocationPage.Fetch the country from location filter and click    Brand      3         ${random_Name}       ${random_Name}
     Generic.click on the tab        reset filters
     Generic.Wait until table get load
     TechnologyPage.Click on the tech type filter under technology       Select Brand
@@ -3427,7 +3427,7 @@ Click on the technology group filters and verify it
     TechnologyPage.Get the text of the value you selected under filter    7
     Generic.Wait until table get load
     PaginationPage.Fetch the total count
-    LocationPage.Fetch the country from location filter and click    Brand      3      ${random_Namee}       ${random_Namee}
+    LocationPage.Fetch the country from location filter and click    Brand      3      ${random_Name}       ${random_Name}
     Generic.click on the tab        reset filters
     Generic.Wait until table get load
     TechnologyPage.Click on the tech type filter under technology       Select Department
@@ -3462,7 +3462,7 @@ Click on the technology group filters and verify it
     TechnologyPage.Get the text of the value you selected under filter   2
     Generic.Wait until table get load
     PaginationPage.Fetch the total count
-    LocationPage.Fetch the country from location filter and click    Status     8      ${random_Namee}       ${random_Namee}
+    LocationPage.Fetch the country from location filter and click    Status     8      ${random_Name}       ${random_Name}
     Generic.click on the tab        reset filters
     Generic.Wait until table get load
     TechnologyPage.Click on the tech type filter under technology       Select Status
@@ -3471,7 +3471,7 @@ Click on the technology group filters and verify it
     TechnologyPage.Get the text of the value you selected under filter   5
     Generic.Wait until table get load
     PaginationPage.Fetch the total count
-    LocationPage.Fetch the country from location filter and click    Status     8     ${select_date}      ${random_Namee}       ${random_Namee}
+    LocationPage.Fetch the country from location filter and click    Status     8     ${select_date}      ${random_Name}       ${random_Name}
     Generic.click on the tab        reset filters
     Generic.Wait until table get load
     TechnologyPage.Click on the tech type filter under technology       Agent
