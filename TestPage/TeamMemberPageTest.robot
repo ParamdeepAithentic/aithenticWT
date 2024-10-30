@@ -727,7 +727,6 @@ Convert Assignee to Team Member
     Generic.Verify your current page location contains     organization
     DashboardPage.Select the employee ID checkbox   yes
     DashboardPage.Select the employee ID checkbox   no
-    Generic.Wait until table get load
 
 Check the validation of business email id
 #    [Tags]      Stable
