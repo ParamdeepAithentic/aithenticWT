@@ -300,7 +300,7 @@ Apply filters and clear filter on Existing Assets
         Generic.Scroll Window To End
         OCS.Click on the down arrow icon of existing assets
         sleep   ${search_sleep}
-        OCS.Mouse Hover over filters of existing asset
+        OCS.Mouse hover over first existing asset
         OCS.Get text by hovering over existing assets   Model/Product Name:
         OCS.verify Text by hovering over assets  ${substring1}      ${discovered_existing_product}
         OCS.Mouse Hover over apply button after hovering over existing assets filter

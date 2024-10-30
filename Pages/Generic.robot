@@ -56,13 +56,13 @@ ${click_countryTag}     css:.iti__arrow
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
-${wait_time}       20
+${wait_time}       60
 ${yop_sleep}       10
 
 ${search_sleep}       1
 
 
-${CASE}        pre-prod   #qa , uat , pre-prod
+${CASE}        uat   #qa , uat , pre-prod
 
 
 
@@ -442,7 +442,7 @@ Scroll the page till
     wait until element is not visible       ${loaderIcon}       ${wait_time}
 
 Verify pop-up is visible after clicking on i-icon
-    wait until element is visible       css:.popover-content       ${wait_time} 
+    wait until element is visible       css:.popover-body div.iIcon-centent-section       ${wait_time}
     log to console      Yes, pop-up is visible for i-icon
 
 Scroll Window To End
