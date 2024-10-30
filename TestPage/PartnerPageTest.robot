@@ -225,7 +225,7 @@ Compose Message invite user test
     ContractsPage.Fetch the contract Brand Name from the row      ${generate_BusinessName}
 
     Generic.Click on the profile name
-    Generic.Select logout option from profile list       Logout
+    Generic.Select logout option from profile list
     Generic.Verify your current page location contains      logout
     Generic.Fetch log_out alert message
 
@@ -403,7 +403,7 @@ Compose Message invite user test
 #---------------------------------------------LOGOUT-------------------------------------------
     Generic.Click on the profile name
     ${StartTime1} =     Get Current Time in Milliseconds
-    Generic.Select logout option from profile list       Logout
+    Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
     Generic.Verify your current page contains this text      Login
     ${EndTime1} =     Get Current Time in Milliseconds

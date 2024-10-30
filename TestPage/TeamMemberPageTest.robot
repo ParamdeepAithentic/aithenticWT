@@ -198,7 +198,7 @@ Verify team member Asset history
     Generic.Fetch alert message text and compare it with        Team Member created successfully
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
     Generic.Click on the profile name
-    Generic.Select logout option from profile list     Logout
+    Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
     Generic.Open new window     yopmail
     Generic.Refresh the existing page
@@ -232,7 +232,7 @@ Verify team member Asset history
     TwoFactorAuth.Click verification button
     Generic.Verify your current page location contains     dashboard
     Generic.Click on the profile name
-    Generic.Select logout option from profile list     Logout
+    Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
@@ -290,7 +290,7 @@ Search asset history with Asset ID
     Generic.Fetch alert message text and compare it with        Team Member created successfully
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
     Generic.Click on the profile name
-    Generic.Select logout option from profile list     Logout
+    Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
     Generic.Open new window     yopmail
     Generic.Refresh the existing page
@@ -324,7 +324,7 @@ Search asset history with Asset ID
     TwoFactorAuth.Click verification button
     Generic.Verify your current page location contains     dashboard
     Generic.Click on the profile name
-    Generic.Select logout option from profile list     Logout
+    Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
@@ -376,6 +376,13 @@ Search asset history with Asset ID
     TeamMemberPage.Click on search by brand, product and asset id of asset history via team member  ${generated_AssetID}
     TeamMemberPage.Verify the first row of asset history under team member
     TeamMemberPage.verify status of first name in member list   ${generated_AssetID}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the employee ID checkbox   no
 
 Verify user is able to export team member asset history list
     [Tags]     Smoke
@@ -401,7 +408,7 @@ Verify user is able to export team member asset history list
     Generic.Fetch alert message text and compare it with        Team Member created successfully
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
     Generic.Click on the profile name
-    Generic.Select logout option from profile list     Logout
+    Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
     Generic.Open new window     yopmail
     Generic.Refresh the existing page
@@ -438,7 +445,7 @@ Verify user is able to export team member asset history list
     TwoFactorAuth.Click verification button
     Generic.Verify your current page location contains     dashboard
     Generic.Click on the profile name
-    Generic.Select logout option from profile list     Logout
+    Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
@@ -599,6 +606,13 @@ Verify user is able to export team member asset history list
     TeamMemberPage.Click on search by brand, product and asset id of asset history via team member   Product_78965
     TeamMemberPage.Verify the first row of asset history under team member
     TeamMemberPage.verify status of first name in member list   ${generated_AssetID}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the employee ID checkbox   no
 
 Convert Assignee to Team Member
     [Tags]      Sanity
@@ -706,6 +720,13 @@ Convert Assignee to Team Member
     TeamMemberPage.Click on asset history tab under team member
     Generic.Verify your current page contains this text     Previously Assigned Assets
     TeamMemberPage.Click on search by brand, product and asset id of asset history via team member      ${generated_AssetID}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the employee ID checkbox   no
     Generic.Wait until table get load
 
 Check the validation of business email id
@@ -740,6 +761,13 @@ Check the validation of business email id
     TeamMemberPage.Select team member role while converting assignee to team member    Admin
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with containing text        The Email Address must end with one of the following:
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the employee ID checkbox   no
 
 
 Convert Assignee to team member in case of employee id is not system generated
@@ -792,6 +820,13 @@ Convert Assignee to team member in case of employee id is not system generated
     DashboardPage.Select the employee ID checkbox   no
     DashboardPage.Select the employee ID checkbox   yes
     Generic.Fetch alert message text and compare it with       Settings Updated
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the employee ID checkbox   no
 
 Verify Invitation and signup as team member
 #    [Tags]      Stable
@@ -824,7 +859,7 @@ Verify Invitation and signup as team member
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
     TeamMemberPage.verify status of first name in member list     Invited
     Generic.Click on the profile name
-    Generic.Select logout option from profile list     Logout
+    Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
     Generic.Open new window     yopmail
     Generic.Refresh the existing page
@@ -858,7 +893,7 @@ Verify Invitation and signup as team member
     TwoFactorAuth.Click verification button
     Generic.Verify your current page location contains     dashboard
     Generic.Click on the profile name
-    Generic.Select logout option from profile list     Logout
+    Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
@@ -886,12 +921,27 @@ Verify Invitation and signup as team member
     TeamMemberPage.Click on remove option under three dots
     Generic.Select parameter        Yes
     Generic.Fetch alert message text and compare it with        Team member deleted successfully
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the employee ID checkbox   no
 
 Add Back Deleted Team member - Invited
     [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   yes
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    sleep   ${search_sleep}
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Click on add team member action button
@@ -928,6 +978,13 @@ Add Back Deleted Team member - Invited
     Generic.Fetch alert message text and compare it with        Team Member created successfully
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
     TeamMemberPage.Verify Team member added after delete        ${generated_TMFname} ${generated_TMLname}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the employee ID checkbox   no
 
 Verify Invitation and signup as team member via company details
     [Tags]     Sanity
@@ -962,7 +1019,7 @@ Verify Invitation and signup as team member via company details
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
     TeamMemberPage.verify status of first name in member list     Invited
     Generic.Click on the profile name
-    Generic.Select logout option from profile list     Logout
+    Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
     Generic.Open new window     yopmail
     Generic.Refresh the existing page
@@ -996,7 +1053,7 @@ Verify Invitation and signup as team member via company details
     TwoFactorAuth.Click verification button
     Generic.Verify your current page location contains     dashboard
     Generic.Click on the profile name
-    Generic.Select logout option from profile list     Logout
+    Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
@@ -1027,6 +1084,13 @@ Verify Invitation and signup as team member via company details
     TeamMemberPage.Click on remove option under three dots
     Generic.Select parameter        Yes
     Generic.Fetch alert message text and compare it with        Team member deleted successfully
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the employee ID checkbox   no
 
 Verify_Employee_ID_Changing_settings_from_Profile_list_while_add_edit_team_member
 #    [Tags]      Stable
@@ -1090,6 +1154,13 @@ Verify_Employee_ID_Changing_settings_from_Profile_list_while_add_edit_team_membe
     TeamMemberPage.Click on remove option under three dots
     Generic.Select parameter        Yes
     Generic.Fetch alert message text and compare it with        Team member deleted successfully
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the employee ID checkbox   no
 
 
 Add Back Deleted Team member - Active
@@ -1126,7 +1197,7 @@ Add Back Deleted Team member - Active
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
     TeamMemberPage.verify status of first name in member list     Invited
     Generic.Click on the profile name
-    Generic.Select logout option from profile list     Logout
+    Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
     Generic.Open new window     yopmail
     Generic.Refresh the existing page
@@ -1160,7 +1231,7 @@ Add Back Deleted Team member - Active
     TwoFactorAuth.Click verification button
     Generic.Verify your current page location contains     dashboard
     Generic.Click on the profile name
-    Generic.Select logout option from profile list     Logout
+    Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
@@ -1189,7 +1260,7 @@ Add Back Deleted Team member - Active
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
     TeamMemberPage.verify status of first name in member list     Invited
     Generic.Click on the profile name
-    Generic.Select logout option from profile list     Logout
+    Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
     Generic.Open new window     yopmail
     Generic.Refresh the existing page
@@ -1223,7 +1294,7 @@ Add Back Deleted Team member - Active
     TwoFactorAuth.Click verification button
     Generic.Verify your current page location contains     dashboard
     Generic.Click on the profile name
-    Generic.Select logout option from profile list     Logout
+    Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
@@ -1235,6 +1306,13 @@ Add Back Deleted Team member - Active
     Generic.Verify your current page location contains    member
     TeamMemberPage.Search Team Member by name   ${generated_Tmfname}
     TeamMemberPage.Verify Team member added after delete        ${generated_TMFname} ${generated_TMLname}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the employee ID checkbox   no
 
 Click on the location filter under team member and verify it
     [Tags]    time     smoke
@@ -1265,7 +1343,7 @@ Click on the location filter under team member and verify it
     PaginationPage.Fetch the total count
     TeamMemberPage.Fetch the country from team member filter and click       Location       3        ${Team_member_location}         ${New_Name}
     Generic.Click on the profile name
-    Generic.Select logout option from profile list     Logout
+    Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     chirag@dmts.fr.nf   Test@123
@@ -1353,7 +1431,7 @@ Click on the status filter under team member via profile list and verify it
     PaginationPage.Fetch the total count
     TeamMemberPage.Fetch the country from team member filter and click       Status     6     Inactive         ${New_status1}
     Generic.Click on the profile name
-    Generic.Select logout option from profile list     Logout
+    Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123

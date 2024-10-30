@@ -270,7 +270,7 @@ Adding the data in the account
 #    TeamMemberPage.Search Team Member by name       ${generated_TMFname}
 #    TeamMemberPage.verify status of first name in member list     Invited
 #    Generic.Click on the profile name
-#    Generic.Select logout option from profile list     Logout
+#    Generic.Select logout option from profile list
 #    Generic.Fetch log_out alert message
 #    Generic.Open new window     yopmail
 #    Generic.Refresh the existing page
