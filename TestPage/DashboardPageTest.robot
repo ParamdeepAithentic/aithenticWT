@@ -2114,7 +2114,7 @@ Compose Message reply and delete that message
     Generic.Fetch alert message text and compare it with       Message removed successfully
 
 No data in the charts of the management console page
-    [Tags]      Sanity      Rerun
+    [Tags]      Sanity
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain

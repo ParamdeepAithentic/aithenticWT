@@ -427,7 +427,7 @@ Team Member Bulk Edit
     Generic.Fetch alert message text and compare it with       Settings Updated
 
 Technology Bulk edit
-    [Tags]       sanity     Rerun
+    [Tags]       sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard

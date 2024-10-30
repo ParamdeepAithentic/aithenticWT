@@ -930,7 +930,7 @@ Verify Invitation and signup as team member
     DashboardPage.Select the employee ID checkbox   no
 
 Add Back Deleted Team member - Invited
-    [Tags]      Sanity      Rerun
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
