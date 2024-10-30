@@ -111,6 +111,16 @@ Fill the technology form for license product
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the asset ID checkbox      yes
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the location ID checkbox   yes
+    sleep   ${search_sleep}
+    DashboardPage.Select the asset ID checkbox      no
 
 
 
@@ -2581,6 +2591,7 @@ Add Technology: Verify Renewal Date get auto-populate when enter contract end da
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     Generic.Verify your current page location contains     organization
+    DashboardPage.Select the asset ID checkbox      yes
     DashboardPage.Select the asset ID checkbox      no
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
@@ -2837,7 +2848,7 @@ Compose reply and remove the message via technology details
     DashboardPage.Wait until alert is visible in the Recent Notifiation tab     You added Asset ID      ${generated_AssetID}.
     TechnologyPage.Get the text of the recent notification of added assets      You added Asset ID ${generated_AssetID}.
     Generic.Click on the profile name
-    Generic.Select logout option from profile list    Logout
+    Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
     Generic.Open new window     yopmail
     Generic.Refresh the existing page
@@ -2880,7 +2891,7 @@ Compose reply and remove the message via technology details
     DashboardPage.Click on the checkboxes under auhtentication tab
     Generic.Fetch alert message text and compare it with       Two factor updated successfully
     Generic.Click on the profile name
-    Generic.Select logout option from profile list    Logout
+    Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
@@ -2904,7 +2915,7 @@ Compose reply and remove the message via technology details
     Generic.Verify your current page location contains      message
     DashboardPage.Search by subject under sent serach bar     ${generated_TMFname}
     Generic.Click on the profile name
-    Generic.Select logout option from profile list    Logout
+    Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  ${generated_TMbusinessEmail}    Test@456
@@ -2928,7 +2939,7 @@ Compose reply and remove the message via technology details
     Generic.Verify your current page location contains      message
     DashboardPage.Search by subject under sent serach bar     ${generated_TMFname}
     Generic.Click on the profile name
-    Generic.Select logout option from profile list    Logout
+    Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form   debut@cool.fr.nf   Test@123
@@ -3152,122 +3163,125 @@ Verify_Notification_Update_Asset
 Click on the technology group filters and verify it
     [Tags]     time     smoke     sanity
     Generic.click on the tab	Login
-#    LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
-#    Generic.Verify your current page location contains      dashboard
-#    Generic.select the option from the side menu    Technology
-#    Generic.Verify your current page location contains      technology
-#    Generic.Wait until table get load
-#    TechnologyPage.Click on the filters under technology page       Technology Group
-#    Generic.Wait until table get load
-#
-#    ${StartTime1} =     Get Current Time in Milliseconds
-#    TechnologyPage.Click on the value under the filters of technology page      Applications
-#    TechnologyPage.Get the text of selected filter under technology     Applications
-#    Generic.Wait until table get load
-#    ${EndTime1} =     Get Current Time in Milliseconds
-#    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-#    Calculate Running time  6  ${pageHeading}   Filter Page - Data load time of filter Applications under technology group      6    ${pageTime}     ${ActualTime}    Filter_Time
-#
-#    PaginationPage.Fetch the total count
-#    PaginationPage.Click on the pagination dropdown     technology
-#    PaginationPage.Select the value from the pagination drop down count     500
-#    PaginationPage.Fetch the selected value of the dropdown     technology
-#    PaginationPage.Fetch the total count
-#    LocationPage.Fetch the country from location filter and click    Group      2     Applications        ${New_Namee}
-#    Generic.click on the tab        reset filters
-#    Generic.Wait until table get load
-#    TechnologyPage.Click on the filters under technology page       Technology Group
-#    Generic.Wait until table get load
-#
-#    ${StartTime1} =     Get Current Time in Milliseconds
-#    TechnologyPage.Click on the value under the filters of technology page      ${Technology_group}
-#    TechnologyPage.Get the text of selected filter under technology    ${Technology_group}
-#    Generic.Wait until table get load
-#    ${EndTime1} =     Get Current Time in Milliseconds
-#    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-#    Calculate Running time  7  ${pageHeading}   Filter Page - Data load time of filter Accessories under technology group      7    ${pageTime}     ${ActualTime}    Filter_Time
-#
-#    PaginationPage.Fetch the total count
-#    PaginationPage.Click on the pagination dropdown     technology
-#    PaginationPage.Select the value from the pagination drop down count     500
-#    PaginationPage.Fetch the selected value of the dropdown     technology
-#    PaginationPage.Fetch the total count
-#    LocationPage.Fetch the country from location filter and click    Group      2      ${Technology_group}      ${New_Namee}
-#    Generic.click on the tab        reset filters
-#    Generic.Wait until table get load
-#    TechnologyPage.Click on the filters under technology page       Technology Group
-#    Generic.Wait until table get load
-#
-#    ${StartTime1} =     Get Current Time in Milliseconds
-#    TechnologyPage.Click on the value under the filters of technology page       ${Technology_group1}
-#    TechnologyPage.Get the text of selected filter under technology    ${Technology_group1}
-#    Generic.Wait until table get load
-#    ${EndTime1} =     Get Current Time in Milliseconds
-#    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-#    Calculate Running time  8  ${pageHeading}   Filter Page - Data load time of filter CRT under technology group      8    ${pageTime}     ${ActualTime}    Filter_Time
-#
-#    PaginationPage.Fetch the total count
-#    LocationPage.Fetch the country from location filter and click    Group      2      ${Technology_group1}       ${New_Namee}
-#    Generic.click on the tab        reset filters
-#    Generic.Wait until table get load
+    LandingPage.Fill the login Form     mailto:debut@cool.fr.nf   Test@123
+    Generic.Verify your current page location contains      dashboard
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    Generic.Wait until table get load
+    TechnologyPage.Click on the filters under technology page       Technology Group
+    Generic.Wait until table get load
+
+    ${StartTime1} =     Get Current Time in Milliseconds
+    TechnologyPage.Click on the value under the filters of technology page      Applications
+    TechnologyPage.Get the text of selected filter under technology     Applications
+    Generic.Wait until table get load
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  6  ${pageHeading}   Filter Page - Data load time of filter Applications under technology group      6    ${pageTime}     ${ActualTime}    Filter_Time
+
+    PaginationPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     technology
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     technology
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click    Group      2     Applications        ${New_Name}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the filters under technology page       Technology Group
+    Generic.Wait until table get load
+
+    ${StartTime1} =     Get Current Time in Milliseconds
+    TechnologyPage.Click on the value under the filters of technology page      ${Technology_group}
+    TechnologyPage.Get the text of selected filter under technology    ${Technology_group}
+    Generic.Wait until table get load
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  7  ${pageHeading}   Filter Page - Data load time of filter Accessories under technology group      7    ${pageTime}     ${ActualTime}    Filter_Time
+
+    PaginationPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     technology
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     technology
+    PaginationPage.Fetch the total count
+    LocationPage.Fetch the country from location filter and click    Group      2     ${Technology_group}      ${New_Name}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the filters under technology page       Technology Group
+    Generic.Wait until table get load
+
+    ${StartTime1} =     Get Current Time in Milliseconds
+    TechnologyPage.Click on the value under the filters of technology page       ${Technology_group1}
+    TechnologyPage.Get the text of selected filter under technology    ${Technology_group1}
+    Generic.Wait until table get load
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  8  ${pageHeading}   Filter Page - Data load time of filter CRT under technology group      8    ${pageTime}     ${ActualTime}    Filter_Time
+
+    PaginationPage.Fetch the total count
+    PaginationPage.Click on the pagination dropdown     technology
+    PaginationPage.Select the value from the pagination drop down count    500
+    LocationPage.Fetch the country from location filter and click    Group      2       ${Technology_group1}       ${New_Name}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
 #    Generic.Fetch alert message text and compare it with       No additional sub-groups found!
-#    Generic.Click on the profile name
-#    Generic.Select logout option from profile list    Logout
-#    Generic.Fetch log_out alert message
-#    Generic.click on the tab	Login
+    Generic.Click on the profile name
+    Generic.Select logout option from profile list
+    Generic.Fetch log_out alert message
+    Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     Generic.Wait until table get load
-#    TechnologyPage.Click on the tech type filter under technology       Tech Type
-#    Generic.Wait until table get load
-#    TechnologyPage.Click on the value under the tech typen filters of technology page       Hardware
-#    Generic.Wait until table get load
-#    PaginationPage.Click on the pagination dropdown     technology
-#    PaginationPage.Select the value from the pagination drop down count     500
-#    PaginationPage.Fetch the selected value of the dropdown     technology
-#    PaginationPage.Fetch the total count
-#    PaginationPage.Get count of total rows from Product Dropdown
-#    TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
-#    Generic.click on the tab        reset filters
-#    Generic.Wait until table get load
-#    TechnologyPage.Click on the tech type filter under technology       Tech Type
-#    Generic.Wait until table get load
-#    TechnologyPage.Click on the value under the tech typen filters of technology page       Subscription
-#    Generic.Wait until table get load
-#    PaginationPage.Click on the pagination dropdown     technology
-#    PaginationPage.Select the value from the pagination drop down count     500
-#    PaginationPage.Fetch the selected value of the dropdown     technology
-#    PaginationPage.Fetch the total count
-#    PaginationPage.Get count of total rows from Product Dropdown
-#    TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
-#    Generic.click on the tab        reset filters
-#    Generic.Wait until table get load
-#    TechnologyPage.Click on the tech type filter under technology       Tech Type
-#    Generic.Wait until table get load
-#    TechnologyPage.Click on the value under the tech typen filters of technology page       Freeware
-#    Generic.Wait until table get load
-#    PaginationPage.Click on the pagination dropdown     technology
-#    PaginationPage.Select the value from the pagination drop down count     500
-#    PaginationPage.Fetch the selected value of the dropdown     technology
-#    PaginationPage.Fetch the total count
-#    PaginationPage.Get count of total rows from Product Dropdown
-#    TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
-#    Generic.click on the tab        reset filters
-#    Generic.Wait until table get load
-#    TechnologyPage.Click on the tech type filter under technology       Tech Type
-#    Generic.Wait until table get load
-#    TechnologyPage.Click on the value under the tech typen filters of technology page      Virtual Machines
-#    Generic.Wait until table get load
-#    PaginationPage.Click on the pagination dropdown     technology
-#    PaginationPage.Select the value from the pagination drop down count     500
-#    PaginationPage.Fetch the selected value of the dropdown     technology
-#    PaginationPage.Fetch the total count
-#    PaginationPage.Get count of total rows from Product Dropdown
-#    TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
-#    Generic.click on the tab        reset filters
-#    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Tech Type
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under the tech typen filters of technology page       Hardware
+
+    Generic.Wait until table get load
+    PaginationPage.Click on the pagination dropdown     technology
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     technology
+    PaginationPage.Fetch the total count
+    PaginationPage.Get count of total rows from Product Dropdown
+    TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Tech Type
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under the tech typen filters of technology page       Subscription
+    Generic.Wait until table get load
+    PaginationPage.Click on the pagination dropdown     technology
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     technology
+    PaginationPage.Fetch the total count
+    PaginationPage.Get count of total rows from Product Dropdown
+    TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Tech Type
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under the tech typen filters of technology page       Freeware
+    Generic.Wait until table get load
+    PaginationPage.Click on the pagination dropdown     technology
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     technology
+    PaginationPage.Fetch the total count
+    PaginationPage.Get count of total rows from Product Dropdown
+    TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
+    TechnologyPage.Click on the tech type filter under technology       Tech Type
+    Generic.Wait until table get load
+    TechnologyPage.Click on the value under the tech typen filters of technology page      Virtual Machines
+    Generic.Wait until table get load
+    PaginationPage.Click on the pagination dropdown     technology
+    PaginationPage.Select the value from the pagination drop down count     500
+    PaginationPage.Fetch the selected value of the dropdown     technology
+    PaginationPage.Fetch the total count
+    PaginationPage.Get count of total rows from Product Dropdown
+    TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
+    Generic.click on the tab        reset filters
+    Generic.Wait until table get load
     TechnologyPage.Click on the tech type filter under technology       Select Partner
     Generic.Wait until table get load
     TechnologyPage.Click on the tech type filter under technology       Manufacturers
@@ -3486,7 +3500,7 @@ Click on the technology group filters and verify it
     PaginationPage.Get count of total rows from Product Dropdown
     TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
     Generic.Click on the profile name
-    Generic.Select logout option from profile list    Logout
+    Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     jasdeep@15963.fr.nf     Paramdeep@112

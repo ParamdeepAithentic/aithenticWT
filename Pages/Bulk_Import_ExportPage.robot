@@ -469,15 +469,15 @@ Enter the new value in the product, brand, group and type value in bulk_edit of 
     [Arguments]     ${option}   ${text}
     sleep       ${search_sleep}
     wait until element is not visible   ${loaderIcon}       ${wait_time}
-    wait until element is visible   (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]   ${wait_time}
-    wait until element is enabled   (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]   ${wait_time}
-    double click element    (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]
-    Press Keys    (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]//input     CONTROL+A
-    Press Keys    (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]//input     DELETE
+    wait until element is visible   (//div[@data-ref='eBodyViewport']//div[@col-id='${option}'])[1]   ${wait_time}
+    wait until element is enabled   (//div[@data-ref='eBodyViewport']//div[@col-id='${option}'])[1]   ${wait_time}
+    double click element    (//div[@data-ref='eBodyViewport']//div[@col-id='${option}'])[1]
+    Press Keys    (//div[@data-ref='eBodyViewport']//div[@col-id='${option}'])[1]//input     CONTROL+A
+    Press Keys    (//div[@data-ref='eBodyViewport']//div[@col-id='${option}'])[1]//input     DELETE
     sleep   2
-    double click element    (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]
-    input text    (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]//input     ${text}
-    Press Keys      (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]       ENTER
+    double click element    (//div[@data-ref='eBodyViewport']//div[@col-id='${option}'])[1]
+    input text    (//div[@data-ref='eBodyViewport']//div[@col-id='${option}'])[1]//input     ${text}
+    Press Keys      (//div[@data-ref='eBodyViewport']//div[@col-id='${option}'])[1]       ENTER
     sleep   ${search_sleep}
 
 Select the new value of technology group in bulk edit of technology
@@ -827,9 +827,9 @@ Verify department added using bulk_import_export under asset wizard
      wait until element is visible      css:#seacrhbar-department-wizard    ${wait_time}
      wait until element is enabled      css:#seacrhbar-department-wizard     ${wait_time}
      click element     css:#seacrhbar-department-wizard
-     input text   css:#seacrhbar-department-wizard     ${productName}
+     input text   css:#seacrhbar-department-wizard     ${departmentName}
      sleep       ${search_sleep}
-     Wait Until Element Contains    //td[normalize-space()='${departmentName} ']      ${departmentName}      ${wait_time}
-     ${get_departmentName1} =    get text    //td[normalize-space()='${departmentName} ']
+     Wait Until Element Contains    //td[normalize-space()='${departmentName}']      ${departmentName}      ${wait_time}
+     ${get_departmentName1} =    get text    //td[normalize-space()='${departmentName}']
      log to console     ${get_departmentName1}
      should be equal    ${departmentName}     ${get_departmentName1}
