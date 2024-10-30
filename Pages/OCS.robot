@@ -251,9 +251,9 @@ Choose Tab under Asset Discovery
     Click Element    css:#nav-${option}-tab
 
 Click on Plus icon under table
-    Wait Until Element Is Visible     (//table[contains(@class,'table')]//thead//following-sibling::tbody//tr//td//i)[1]         ${wait_time}
-    wait until element is enabled     (//table[contains(@class,'table')]//thead//following-sibling::tbody//tr//td//i)[1]      ${wait_time}
-    Click Element   (//table[contains(@class,'table')]//thead//following-sibling::tbody//tr//td//i)[1]
+    Wait Until Element Is Visible     (//table[contains(@class,'table')]//thead//following-sibling::tbody//tr//td//i)[6]         ${wait_time}
+    wait until element is enabled     (//table[contains(@class,'table')]//thead//following-sibling::tbody//tr//td//i)[6]      ${wait_time}
+    Click Element   (//table[contains(@class,'table')]//thead//following-sibling::tbody//tr//td//i)[6]
 
 Click on plus icon under table of agent discovery
     Wait Until Element Is Visible     //h5[normalize-space()='${agentDiscovery_TagName}']//parent::div//td[normalize-space()='View']//following-sibling::td//i         ${wait_time}
