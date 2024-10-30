@@ -1642,7 +1642,7 @@ Management Console - Quarters filter dropdown
     DashboardPage.Verify your current page not contains this element
 
 Change password and login with new password
-    [Tags]      Sanity      smoke
+    [Tags]      Sanity      smoke       Rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -2114,7 +2114,7 @@ Compose Message reply and delete that message
     Generic.Fetch alert message text and compare it with       Message removed successfully
 
 No data in the charts of the management console page
-    [Tags]      Sanity
+    [Tags]      Sanity      Rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain

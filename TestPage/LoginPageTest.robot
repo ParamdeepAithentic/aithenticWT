@@ -239,7 +239,7 @@ Login as End_user with different roles
     Generic.Fetch log_out alert message
 
 #Login as Manufacturer with different roles
-#    [Tags]      Unstable
+#    [Tags]      Unstable       Rerun
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      manufacturer@yopmail.net    Test@123
 #    Generic.Verify your current page location contains      dashboard
