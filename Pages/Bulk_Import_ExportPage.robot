@@ -483,9 +483,9 @@ Enter the new value in the product, brand, group and type value in bulk_edit of 
 Select the new value of technology group in bulk edit of technology
     [Arguments]     ${option}   ${text}
     wait until element is not visible   ${loaderIcon}       ${wait_time}
-    wait until element is visible   (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]   ${wait_time}
-    wait until element is enabled   (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]   ${wait_time}
-    double click element    (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]
+    wait until element is visible   (//div[@data-ref='eBodyViewport']//div[@col-id='${option}'])[1]   ${wait_time}
+    wait until element is enabled   (//div[@data-ref='eBodyViewport']//div[@col-id='${option}'])[1]   ${wait_time}
+    double click element    (//div[@data-ref='eBodyViewport']//div[@col-id='${option}'])[1]
     wait until element is visible   //div[contains(text(),'${text}')]   ${wait_time}
     Press Keys      //div[contains(text(),'${text}')]       ENTER
 
@@ -494,9 +494,9 @@ Enter the new value of asset id of bulk edit of technology
     MemberPage.Double click    ${option}
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_assetidbulkedit}=    Catenate    AssetID_${random_string}
-    wait until element is visible       (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]//input    ${wait_time}
-    input text   (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]//input   ${generated_assetidbulkedit}
-    Press Keys      (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]       ENTER
+    wait until element is visible       (//div[@data-ref='eBodyViewport']//div[@col-id='${option}'])[1]//input    ${wait_time}
+    input text   (//div[@data-ref='eBodyViewport']//div[@col-id='${option}'])[1]//input   ${generated_assetidbulkedit}
+    Press Keys      (//div[@data-ref='eBodyViewport']//div[@col-id='${option}'])[1]       ENTER
     set global variable    ${generated_assetidbulkedit}
 
 Click on confirm pop up of update button
@@ -546,7 +546,7 @@ Enter position and title of team member bulk import
 Scroll Element
     [Arguments]  ${option}
     wait until element is not visible       ${loaderIcon}       ${wait_time}
-    scroll element into view    (//div[@ref='eBodyViewport']//div[@col-id='${option}'])[1]
+    scroll element into view    (//div[@data-ref='eBodyViewport']//div[@col-id='${option}'])[1]
 
 
 Click on the fields and select value from dropdown of technology bulk edit

@@ -144,6 +144,7 @@ Verify all i-icon of Technology page
     sleep   ${yop_sleep}
     switch window       aithentic | Technology - List
     I_iconPage.Click on i-icon of technology tab
+    I_iconPage.Click on i-icon of technology tab
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
@@ -166,11 +167,19 @@ Verify all i-icon of Technology page
     I_iconPage.Click on i-icon of cost_center in edit technology
     Generic.Verify pop-up is visible after clicking on i-icon
     I_iconPage.Click on i-icon of cost_center in edit technology
-    I_iconPage.Click on Back tab          Back to Technology Details
+#    I_iconPage.Click on Back tab          Back to Technology Details
+     sleep   ${yop_sleep}
+    switch window       aithentic | Edit - Technology
+    TechnologyPage.Click on update button of edit_technology page       Update
+#    TechnologyPage.Accept updated edited technology pop up     Update
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+    Generic.Verify your current page location contains      technology-details
     I_iconPage.Click on clone button on product details page        Clone
     I_iconPage.Click on i-icon of cost_center in clone technology
     Generic.Verify pop-up is visible after clicking on i-icon
-    I_iconPage.Click on Back tab          Back to Manage Technology
+#    I_iconPage.Click on Back tab          Back to Manage Technology
+    sleep   ${yop_sleep}
+    switch window       aithentic | Clone - Technology
 
 Verify all i-icon of partners page
     Generic.click on the tab	Login
