@@ -482,10 +482,18 @@ Click on the save button of add assignee pop up if user is same
 
 
 Verify the visibilty of same user exist validation for cancel button
-    wait until element is visible       //div[contains(text(), 'Same user name already exists')]    ${wait_time}
-    wait until element is enabled       //div[contains(text(), 'Same user name already exists')]
+    wait until element is visible       //div[contains(text(),' Employee Id is missing.')]    ${wait_time}
+    wait until element is enabled       //div[contains(text(),' Employee Id is missing.')]
 
 Click on the edit option under three dots of member
     Wait Until Element Is visible   css:.assignee-edit-qa    ${wait_time}
     Wait Until Element Is Enabled   css:.assignee-edit-qa    ${wait_time}
     click element     css:.assignee-edit-qa
+
+
+Clear the element text in search bar of assigned user
+    Wait Until Element Is visible   css:input[placeholder='Search by Assignee Name or Employee Id']    ${wait_time}
+    Wait Until Element Is Enabled   css:input[placeholder='Search by Assignee Name or Employee Id']    ${wait_time}
+    click element     css:input[placeholder='Search by Assignee Name or Employee Id']
+     clear element text      css:input[placeholder='Search by Assignee Name or Employee Id']
+

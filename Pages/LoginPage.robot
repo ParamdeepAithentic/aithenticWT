@@ -96,12 +96,18 @@ Clear the element text of field under login page
 #    Wait Until Element Is visible      css:#AssignedLastName        ${wait_time}
 #    Wait Until Element Is enabled      css:#AssignedLastName        ${wait_time}
 #    Execute Javascript    document.querySelector('#AssignedLastName').value = ''
-    Wait Until Element Is visible      css:#AssignedEmail        ${wait_time}
-    Wait Until Element Is enabled      css:#AssignedEmail        ${wait_time}
-    Execute Javascript    document.querySelector('#AssignedEmail').value = ''
-    Wait Until Element Is visible         css:#AssignedEmployeeId        ${wait_time}
-    Wait Until Element Is enabled        css:#AssignedEmployeeId     ${wait_time}
-    Execute Javascript    document.querySelector('#AssignedEmployeeId').value = ''
+    [Arguments]    ${locator}
+    Click Element    css:#${locator}
+    ${text}=    Execute JavaScript    return document.querySelector("#${locator}").value
+    Log    Initial text: ${text}
+
+    WHILE    '${text}' != ''
+        Press Keys    css:#${locator}    BACKSPACE
+        ${text}=    Execute JavaScript    return document.querySelector("#${locator}").value
+        Log    Updated text: ${text}
+    END
+    Log    Field is now cleared
+
 
 Get and Verify the validation after entering invalid email under forgot password
     [Arguments]         ${text}
