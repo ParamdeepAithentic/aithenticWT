@@ -1654,6 +1654,8 @@ Cancel the added new address
 Clear the field of country in add adddress of brand
     [Arguments]     ${option}
     wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       css:.${option} span[title='Clear all']        ${wait_time}
+    wait until element is enabled       css:.${option} span[title='Clear all']        ${wait_time}
     click element   css:.${option} span[title='Clear all']
     wait until element is not visible    ${loaderIcon}      ${wait_time}
 
