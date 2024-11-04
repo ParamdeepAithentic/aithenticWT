@@ -525,7 +525,7 @@ Compose Message invite user test
 
 
 Export Specificartner into Excel Doc CSV and TSV for manufacturer
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -716,7 +716,7 @@ Export Specificartner into Excel Doc CSV and TSV for Support Partner
     Generic.Fetch alert message text and compare it with        Partner updated successfully
 
 Add Manufacturer via personal detail under technology and partner
-#    [Tags]       Stable
+    [Tags]      NT
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -935,7 +935,7 @@ Deactivate Manufacturer via partner
 
 
 Activate Manufacturer via partner
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1121,7 +1121,7 @@ Remove Manufacturer from partner
 
 
 View Details and check the details of Contract
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1229,7 +1229,7 @@ View Details and check the details of Contract
 
 
 Add_edit_deactivate_removeSupplier while adding brand
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1324,7 +1324,7 @@ Add_edit_deactivate_removeSupplier while adding brand
     Generic.Fetch alert message text and compare it with      Partner deleted successfully
 
 Add_edit_deactivate_removeSupport_partner_while_adding_brand
-#    [Tags]      Stable    yy
+    [Tags]      NT
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1489,6 +1489,7 @@ Partner Side bar Filters
     MessagePage.Comapre the total count after selecting filter
 
 Verify all the validations of Add Partners
+    [Tags]      NT
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1525,6 +1526,7 @@ Verify all the validations of Add Partners
     PartnersPage.Compare the Validations on Partner Page        ${Partner_validation1}       Please select Country
 
 Verify all the validations of Edit Partners
+    [Tags]      NT
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
