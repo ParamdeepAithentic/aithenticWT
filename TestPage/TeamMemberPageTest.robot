@@ -1332,7 +1332,7 @@ Click on the location filter under team member and verify it
     LocationPage.Get the text of selected filter under location    *Main Office
     Generic.Wait until table get load
     PaginationPage.Fetch the total count
-    TeamMemberPage.Fetch the country from team member filter and click       Location      3          *Main Office         ${New_Name}
+    TeamMemberPage.Fetch the country from team member filter and click       Location             *Main Office         ${New_Name}
     Generic.click on the tab        reset filters
     Generic.Wait until table get load
     TeamMemberPage.Click on the location filter under team member       location
@@ -1340,7 +1340,7 @@ Click on the location filter under team member and verify it
     LocationPage.Get the text of selected filter under location     ${Team_member_location}
     Generic.Wait until table get load
     PaginationPage.Fetch the total count
-    TeamMemberPage.Fetch the country from team member filter and click       Location       3        ${Team_member_location}         ${New_Name}
+    TeamMemberPage.Fetch the country from team member filter and click       Location          ${Team_member_location}         ${New_Name}
     Generic.Click on the profile name
     Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
@@ -1353,7 +1353,7 @@ Click on the location filter under team member and verify it
     LocationPage.Get the text of selected filter under location    Afgahniastan
     Generic.Wait until table get load
     PaginationPage.Fetch the total count
-    TeamMemberPage.Fetch the country from team member filter and click       Location       3         Afgahniastan         ${New_Name}
+    TeamMemberPage.Fetch the country from team member filter and click       Location             Afgahniastan         ${New_Name}
 
 Click on the status filter under team member and verify it
     [Tags]     time     smoke
@@ -1378,7 +1378,7 @@ Click on the status filter under team member and verify it
     PaginationPage.Select the value from the pagination drop down count     500
     PaginationPage.Fetch the selected value of the dropdown     member-list
     PaginationPage.Fetch the total count
-    TeamMemberPage.Fetch the country from team member filter and click       Status     6        Active         ${New_status}
+    TeamMemberPage.Fetch the country from team member filter and click       Status           Active         ${New_status}
     Generic.click on the tab        reset filters
     Generic.Wait until table get load
     TeamMemberPage.Click on the location filter under team member       status
@@ -1386,7 +1386,7 @@ Click on the status filter under team member and verify it
     LocationPage.Get the text of selected status filter under location      Inactive
     Generic.Wait until table get load
     PaginationPage.Fetch the total count
-    TeamMemberPage.Fetch the country from team member filter and click       Status     6          Inactive         ${New_status}
+    TeamMemberPage.Fetch the country from team member filter and click       Status               Inactive         ${New_status}
 
 Click on the status filter under team member via profile list and verify it
     [Tags]     time     smoke
@@ -1419,7 +1419,7 @@ Click on the status filter under team member via profile list and verify it
     PaginationPage.Select the value from the pagination drop down count     500
     PaginationPage.Fetch the selected value of the dropdown     profile-team-member
     PaginationPage.Fetch the total count
-    TeamMemberPage.Fetch the country from team member filter and click       Status     6     Active         ${New_status1}
+    TeamMemberPage.Fetch the country from team member filter and click       Status          Active         ${New_status1}
     TeamMemberPage.Click on the status filter under team member via profile
     TeamMemberPage.Select the option from the filters under team member via profile     0
     TeamMemberPage.Select the option from the filters under team member via profile     1
@@ -1428,7 +1428,7 @@ Click on the status filter under team member via profile list and verify it
     TeamMemberPage.click on the members tab under team member via profile
     Generic.Wait until table get load
     PaginationPage.Fetch the total count
-    TeamMemberPage.Fetch the country from team member filter and click       Status     6     Inactive         ${New_status1}
+    TeamMemberPage.Fetch the country from team member filter and click       Status         Inactive         ${New_status1}
     Generic.Click on the profile name
     Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
@@ -1453,7 +1453,7 @@ Click on the status filter under team member via profile list and verify it
     PaginationPage.Select the value from the pagination drop down count     500
     PaginationPage.Fetch the selected value of the dropdown     profile-team-member
     PaginationPage.Fetch the total count
-    TeamMemberPage.Fetch the country from team member filter and click       Status     6     Invited         ${New_status1}
+    TeamMemberPage.Fetch the country from team member filter and click       Status         Invited         ${New_status1}
 
 #Zz kill browser
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
