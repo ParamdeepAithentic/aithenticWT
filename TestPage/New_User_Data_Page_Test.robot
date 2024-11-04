@@ -148,6 +148,7 @@ Register new user
 
 
 Adding the data in the account
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       BusinessEmail6632505237@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard

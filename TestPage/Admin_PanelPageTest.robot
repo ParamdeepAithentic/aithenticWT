@@ -118,6 +118,7 @@ Free the asset limit
 
 
 Set Plan range in pre requites
+    [Tags]    NT
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form     ${email}    ${valid_password}

@@ -49,6 +49,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Click the option from side drawer
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -84,6 +85,7 @@ Verify the side options list
     DashboardPage.Verify the side option list parameters
 
 click the option from menu
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -92,6 +94,7 @@ click the option from menu
     Generic.Verify your current page location contains      partner
 
 Verify the profile option list
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -99,6 +102,7 @@ Verify the profile option list
     DashboardPage.Verify the profile option list parameters
 
 Create and verify new brand
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -116,6 +120,7 @@ Create and verify new brand
     DashboardPage.Verify Brand added      ${generated_BrandName}
 
 Create a new product with adding new brand
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -149,6 +154,7 @@ Create a new product with adding new brand
 
 
 Add Brand via personal detail under technology
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -192,6 +198,7 @@ Add Brand via personal detail under technology
 
 
 Invite user into Aithentic
+    [Tags]      Smoke       Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -291,7 +298,7 @@ Invite user into Aithentic
 
 
 Verify Help Center
-    [Tags]      Sanity
+    [Tags]      Sanity      Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -332,6 +339,7 @@ Verify Help Center
     DashboardPage.Verify no result found with wrong FAQ
 
 Edit Brand and address via brand under profile list
+    [Tags]      Sanity      Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -404,6 +412,7 @@ Edit Brand and address via brand under profile list
 
 
 Deactivate Brand and address via brand under profile list
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -666,6 +675,7 @@ Verify adding a new brand from profile listing
     Generic.Fetch alert message text and compare it with      Brand deleted successfully
 
 Verify Department quick_links in profile settings dropdown
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -712,6 +722,7 @@ Search By Technology Group in product list
     DashboardPage.Verify product added    ${generated_product}
 
 Verify Brand quick_links in profile settings Dropdown
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -735,6 +746,7 @@ Verify Product quick_links in profile settings dropdown
     DashboardPage.Get and verify the text and compare it with       Added Products
 
 Search By Brand name in product list
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -769,6 +781,7 @@ Search By Brand name in product list
     DashboardPage.Verify product added    ${generated_product}
 
 Verify Reports Asset Alert
+    [Tags]    NT        Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}       ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -884,6 +897,7 @@ Verify Reports Asset Alert
 #    DashboardPage.Verify the invisiblity of view_more button
 
 Click and verify the count of the tabs under renewal overview by management console
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -918,6 +932,7 @@ Click and verify the count of the tabs under renewal overview by choosing the va
     DashboardPage.Get And Verify The Count Of tabs under renewal overview by management console
 
 Verify Account_overview Recent Activities Filters
+    [Tags]      Smoke       Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}       ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -969,6 +984,7 @@ Verify Account_overview Recent Activities Filters
     PaginationPage.Check the table get load for Recent Activities
 
 Add and delete product from profile listing
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1007,6 +1023,7 @@ Add and delete product from profile listing
     Generic.Fetch alert message text and compare it with      Product deleted successfully
 
 View Predefined brand
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1019,6 +1036,7 @@ View Predefined brand
     DashboardPage.Click on pre defined brand list       /n software
 
 View Predefined product
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 
@@ -1033,6 +1051,7 @@ View Predefined product
     DashboardPage.Click on pre defined product list       [W306MI0U247
 
 Verifying the Renewals Overview section of Management console - End of Life
+    [Tags]       Smoke       Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 
@@ -1130,6 +1149,7 @@ Verifying the Renewals Overview section of Management console - End of Life
     Generic.Verify your current page location contains    management-console
 
 Verifying the Renewals Overview section of Management console - Overdue Renewals
+    [Tags]       Sanity      Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1215,6 +1235,7 @@ Verifying the Renewals Overview section of Management console - Overdue Renewals
     Generic.Verify your current page location contains    management-console
 
 Verifying the Renewals Overview section of Management console - Overdue contracts
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1290,6 +1311,7 @@ Verifying the Renewals Overview section of Management console - Overdue contract
     Generic.Verify your current page location contains    management-console
 
 Verifying the Renewals Overview section of Management console - Expired warranties
+    [Tags]    NT        Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1435,6 +1457,7 @@ Verifying the Renewals Overview section of Management console - Overdue certific
     Generic.Verify your current page location contains    management-console
 
 Verifying the Subscription Overview section of Management console
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -1545,6 +1568,7 @@ Verifying the Subscription Overview section of Management console
     DashboardPage.Click on done button of subscription overview    Done
 
 Management Console - Quarters filter dropdown
+    [Tags]    NT
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1853,6 +1877,7 @@ Enter password less than the limit of the password while register
     DashboardPage.Wait for the visibility of the validation of password field under create account
 
 Enter password with 32 characters while register
+    [Tags]    NT
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1937,6 +1962,7 @@ Enter password with 32 characters while register
     Generic.Fetch alert message text and compare it with       Settings Updated
 
 Download invoice pdf
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1954,6 +1980,7 @@ Download invoice pdf
     Generic.Verify your current page location contains    .pdf
 
 Click and verify view manage member under billing
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       chirag@dmts.fr.nf    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -1969,6 +1996,7 @@ Click and verify view manage member under billing
     TechnologyPage.verify Text from Assignment Information       ${tam_member_billing_int}       ${total_data_count}
 
 Click and verify on manage subscription under billing
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       chirag@dmts.fr.nf    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -1984,6 +2012,7 @@ Click and verify on manage subscription under billing
     TechnologyPage.verify Text from Assignment Information       ${subscription_plan}       ${plan_name}
 
 Compose Message reply and delete that message
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
@@ -2225,6 +2254,7 @@ No data in the charts of the management console page
     DashboardPage.Verify all the checkmark boxes of finance filter are auto-check       Budget
 
 Renewals overview drilldown - Add column Host name
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -2290,6 +2320,7 @@ Message Side bar filters
     MessagePage.Comapre the total count after selecting filter
 
 Click on the status filter under brand via profile list
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
@@ -2324,6 +2355,7 @@ Click on the status filter under brand via profile list
     TeamMemberPage.Fetch the country from team member filter and click       Status     ${New_status_Brand}        ${New_status_Brand}
 
 Verify Team member in permissions according to user roles
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -2494,6 +2526,7 @@ Click on the product filters via profile list
     TeamMemberPage.Fetch the country from team member filter and click         Technology Group        ${New_product_tech_group}        ${New_product_tech_group}
 
 Suspend the account while the contract active
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -2507,6 +2540,7 @@ Suspend the account while the contract active
     Generic.Wait until table get load
 
 Click on the usage analytics tab under management console
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -2514,6 +2548,7 @@ Click on the usage analytics tab under management console
     Generic.Verify your current page location contains     usage-analytics
 
 Verify Notification Mark all as read
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -2648,6 +2683,7 @@ Verify Notification Mark all as read
     DashboardPage.Verify text is normal after clicking Mark all as read         Contract ${fetch_contract_ID} with      ${generate_BusinessName} is pending
 
 Verfying all field validations of Add Brand page
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -2688,6 +2724,7 @@ Verfying all field validations of Add Brand page
     DashboardPage.Compare and verify the validation messages        ${Country_validation1}           Please Select Country
 
 Verfying all field validations of Edit Brand page
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard

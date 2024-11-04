@@ -165,7 +165,7 @@ Fill the technology form for hardware product
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
 Fill the technology form for maintenance product
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -207,7 +207,7 @@ Fill the technology form for maintenance product
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
 Fill the technology form for subscription product
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -382,7 +382,7 @@ Restore asset type one
 
 
 Restore asset from removed asset details page
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -501,7 +501,7 @@ Restore asset by selecting checkbox
 
 ######## UN comment when to use ##############
 #Remove asset by self search
-#
+#   [Tags]      NT
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    Generic.Verify your current page location contains      dashboard
@@ -639,7 +639,7 @@ Sent Message should show in the Sent Tab
 
 
 Add Products with 10 combinations of Tech Type and Tech group
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1102,6 +1102,7 @@ Verify the history of added technology
     TechnologyPage.Verify area changed under history tab        New Component
 
 #Upload the new attachment file
+#   [Tags]      NT
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      ${email}    ${valid_password}
 #    Generic.Verify your current page location contains      dashboard
@@ -1175,7 +1176,7 @@ Add Technology Page - Add New Supplier and support partner and assign them
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
 Add new Technology- Add New Location and assign that location
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1218,7 +1219,7 @@ Add new Technology- Add New Location and assign that location
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
 Add new Technology- Add New Department and assign that department
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1248,7 +1249,7 @@ Add new Technology- Add New Department and assign that department
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
 Add new Technology- Add New Assignee and assign that Assignee
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1330,7 +1331,7 @@ Add new Technology- Add New support-partner and assign that support partner
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
 Add new Technology- Add New Supplier and assign that supplier
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1367,7 +1368,7 @@ Add new Technology- Add New Supplier and assign that supplier
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
 Edit Technology Page - Add New location and assign that location
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1457,7 +1458,7 @@ Edit Technology Page - Add New Department and assign that Department
     Generic.Fetch alert message text and compare it with        Technology updated successfully
 
 Edit Technology Page - Add New Assignee and assign that Assignee
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1510,7 +1511,7 @@ Edit Technology Page - Add New Assignee and assign that Assignee
     Generic.Fetch alert message text and compare it with       Settings Updated
 
 Edit Technology Page - Add New Supplier and assign that Supplier
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1884,7 +1885,7 @@ Inactive asset - Restore asset from Technology Details page
 
 
 #Verify the technology data while applying agent Filters
-#    [Tags]      Unstable
+#    [Tags]      NT
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
 #    Generic.Verify your current page location contains      dashboard
@@ -1952,7 +1953,7 @@ Inactive asset - Restore asset from Technology Details page
 
 
 Click on the attachment tab under technology
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -2044,7 +2045,7 @@ Upload file: Image and Document files while adding Technology
     TechnologyPage.Click on save technology form pop button
 
 Upload file: Image and Document files while Edit Technology
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -2263,7 +2264,7 @@ Search with brand_product_technologytype_technologygroup on advanced search
     Generic.Verify your current page location contains      addtechnology
 
 Search Technnology with Product Version
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -2291,7 +2292,7 @@ Search Technnology with Product Version
 
 
 Verify cross icon and reset icon while adding product
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -2311,7 +2312,7 @@ Verify cross icon and reset icon while adding product
     TechnologyPage.Verify the invisibility of technology type after clicking on reset icon
 
 Creating technology while creating cancellation notice period and contract end date
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -2454,7 +2455,7 @@ Dispose the technology while adding new brand and product
     Generic.Fetch alert message text and compare it with      Technology Removed Successfully
 
 Add the technology from profile listing
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -2582,6 +2583,7 @@ Verify_Asset_ID_Changing_settings_from_Profile_list
     END
 
 Add Technology: Verify Renewal Date get auto-populate when enter contract end date
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -2642,6 +2644,7 @@ Add Technology: Verify Renewal Date get auto-populate when enter contract end da
     TechnologyPage.Compare Renewal date and contract end date on Technology details page
 
 Edit Technology: Verify Renewal Date and contract end date
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -2707,6 +2710,7 @@ Edit Technology: Verify Renewal Date and contract end date
     TechnologyPage.Compare Renewal date and contract end date on Technology details page
 
 Clone Technology: Verify Renewal Date and contract end date
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -2800,6 +2804,7 @@ Search with hostname on the technology search bar
     OCS.Get Value of Host-Name and compare it with    ${result}
 
 Compose reply and remove the message via technology details
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
@@ -3048,6 +3053,7 @@ Download QR for an asset as PNG and SVG
     TechnologyPage.Confirm to download QR file      Confirm
 
 Verify notification update location in asset
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard

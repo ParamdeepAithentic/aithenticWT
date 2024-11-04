@@ -127,6 +127,7 @@ Product Bulk Edit
     Bulk_Import_ExportPage.Verify product added using bulk_import_export   ${generated_EditProductName}
 
 Department Bulk Import
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -152,6 +153,7 @@ Department Bulk Import
     Bulk_Import_ExportPage.Verify department added using bulk_import_export   ${generated_addDepartmentName}
 
 Department Bulk Edit
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -193,6 +195,7 @@ Department Bulk Edit
     Bulk_Import_ExportPage.Verify department added using bulk_import_export     ${generated_EditDepartmentName}
 
 Add Product Bulk Edit
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -235,6 +238,7 @@ Add Product Bulk Edit
     Bulk_Import_ExportPage.Verify product added using bulk_import_export    ${generated_EditProductName}
 
 Add Department Bulk Edit
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -549,6 +553,7 @@ Team member Bulk Import
     Generic.Fetch alert message text and compare it with       Settings Updated
 
 Assigned User Bulk Import
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -576,6 +581,7 @@ Assigned User Bulk Import
     Generic.Wait until table get load
 
 Location Bulk Import
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1054,6 +1060,7 @@ Verify Bulk Import on the Technology Page by adding all parameters
 
 
 Technology bulk import while entering invalid data in payment period field
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1222,6 +1229,7 @@ Check the payment period period alert when entering valid data
     TechnologyPage.Search by AssetId       ${generated_assetidbulkedit}
 
 Check the payment period alert when entering inavalid data
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
