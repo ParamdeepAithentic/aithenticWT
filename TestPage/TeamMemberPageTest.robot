@@ -171,7 +171,6 @@ Edit Team member page - Edit New Department and assign that department to Team m
     TechnologyPage.Save the department       add
     Generic.Fetch alert message text and compare it with        Department added successfully
     TeamMemberPage.Click on the button      Update
-    sleep       10
     Generic.Fetch alert message text and compare it with        Team Member updated successfully
     Generic.Verify your current page location contains          memberslist
 
