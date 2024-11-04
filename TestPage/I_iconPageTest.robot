@@ -46,6 +46,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Verify all i-icon of Dashboard page
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -116,6 +117,7 @@ Verify all i-icon of profile-listing
     I_iconPage.Click on i-icon inside technology
 
 Verify all i-icon of team member page
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -182,6 +184,7 @@ Verify all i-icon of Technology page
     switch window       aithentic | Clone - Technology
 
 Verify all i-icon of partners page
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -194,6 +197,7 @@ Verify all i-icon of partners page
 
 
 Verify all i-icon of Discovery assets
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -368,6 +372,7 @@ Verify all i-icon of advanced search
 
 
 Upload File I-icon while add and edit technology
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -399,6 +404,7 @@ Upload File I-icon while add and edit technology
     Generic.Fetch alert message text and compare it with        Technology updated successfully
 
 Upload I-icon under attachment tab
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -424,6 +430,7 @@ Upload I-icon under attachment tab
     I_iconPage.Fetch the text of I-icon of upload file while adding technology     You can upload 1 file of 8MB or 8 files of 1MB each.
 
 Upload I-icon under clone add technology
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -453,6 +460,7 @@ Upload I-icon under clone add technology
 
 
 Upload I-icon while adding discovery and component asset
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.Verify your current page location contains      dashboard
@@ -527,6 +535,7 @@ Upload I-icon while adding discovery and component asset
     UnselectAssetAPI.Hit API Endpoint
 
 Verify I-icon of management console page
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard

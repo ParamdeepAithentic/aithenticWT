@@ -64,7 +64,7 @@ Free the asset limit
 
 
 Search Discovered Assets
-#    [Tags]      Stable
+    [Tags]    NT
     TRY
        Generic.click on the tab	Login
        LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -100,7 +100,7 @@ Search Discovered Assets
     END
 
 Search Existing Assets
-#    [Tags]      Stable
+    [Tags]    NT
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -217,7 +217,7 @@ Match Discovery Asset with Static Existing Asset
     END
 
 Apply filters and clear filter on Discovered Asset
-#    [Tags]      Stable
+    [Tags]    NT
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form     johns@mai.25u.com         Test@123
@@ -357,7 +357,7 @@ Apply filters and clear filter on Existing Assets
     END
 
 Add Discovery Asset
-#    [Tags]        Unstable
+    [Tags]    NT
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -428,7 +428,7 @@ Add Discovery Asset
     END
 
 Create Asset from Add Assets Page
-#    [Tags]        Unstable
+    [Tags]    NT
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -482,7 +482,7 @@ Create Asset from Add Assets Page
     END
 
 Add component as an asset from Agent Discovery page
-#    [Tags]        Unstable
+    [Tags]    NT
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -563,7 +563,7 @@ Add component as an asset from Agent Discovery page
     END
 
 Upload Image and Document File while Add Discovery Asset
-#    [Tags]        Unstable
+    [Tags]    Smoke     Sanity
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -682,7 +682,7 @@ Upload Image and Document File while Add Discovery Asset
     END
 
 Upload Image and Document File while Add component as an asset from Agent Discovery page
-#    [Tags]      Unstable
+    [Tags]    NT
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -806,7 +806,7 @@ Upload Image and Document File while Add component as an asset from Agent Discov
     END
 
 Match IP Discovered asset with Existing asset
-#    [Tags]        Unstable
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.Verify your current page location contains      dashboard
@@ -867,7 +867,7 @@ Match IP Discovered asset with Existing asset
 #    UnselectAssetAPI.Hit API Endpoint
 
 Match Discovery and Existing Asset
-#    [Tags]        Unstable
+    [Tags]    NT
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -931,7 +931,7 @@ Match Discovery and Existing Asset
     END
 
 Match IP Discovered Asset with Dynamic Existing Asset
-#    [Tags]        Unstable
+    [Tags]    NT
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -1097,7 +1097,7 @@ Add asset with IP Address under discovered asset list
     END
 
 Add Asset with IP address from Network Discovery Page
-#    [Tags]      Unstable
+    [Tags]    NT
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -1153,7 +1153,7 @@ Add Asset with IP address from Network Discovery Page
     END
 
 Network discovery: search on discovered asset list with Tag Name, IP_address and MAC_address
-#    [Tags]        Unstable
+    [Tags]    NT
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -1211,7 +1211,7 @@ Network discovery: search on discovered asset list with Tag Name, IP_address and
     END
 
 Search with containing fields under advance search of discovered asset
-#    [Tags]        Unstable
+    [Tags]    NT
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -1341,7 +1341,7 @@ Search with containing fields under advance search of discovered asset
     END
 
 Search with containing fields under advance search of component of discovered asset
-#    [Tags]        Unstable
+    [Tags]    NT
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -1665,7 +1665,7 @@ Search with containing fields under advance search of IP Address of discovered a
     END
 
 Upload Image and Document file during Add Asset with IP address from Agent Discovery Page
-#    [Tags]        Unstable
+    [Tags]    NT
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -1803,6 +1803,7 @@ Verify cross icon an reset icon while adding IP discovered asset
         TechnologyPage.Verify the invisibility of brand after clicking on reset icon
 
 Verify reset icon while adding discovery asset
+        [Tags]    NT
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
         Generic.Verify your current page location contains      dashboard
@@ -1889,6 +1890,7 @@ Verify reset icon while adding component
         TechnologyPage.Verify the invisibility of brand after clicking on reset icon
 
 Search with inavlid MAC Address under newly discovered
+        [Tags]    NT
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
         Generic.Verify your current page location contains      dashboard

@@ -93,7 +93,7 @@ Create team member form
 
 
 Add Team member page - Add New Department and assign that department to Team member
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -267,7 +267,7 @@ Verify team member Asset history
     Generic.Verify your current page contains this text     Asset History
 
 Search asset history with Asset ID
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
@@ -729,7 +729,7 @@ Convert Assignee to Team Member
     DashboardPage.Select the employee ID checkbox   no
 
 Check the validation of business email id
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -770,7 +770,7 @@ Check the validation of business email id
 
 
 Convert Assignee to team member in case of employee id is not system generated
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -828,7 +828,7 @@ Convert Assignee to team member in case of employee id is not system generated
     DashboardPage.Select the employee ID checkbox   no
 
 Verify Invitation and signup as team member
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
@@ -1092,7 +1092,7 @@ Verify Invitation and signup as team member via company details
     DashboardPage.Select the employee ID checkbox   no
 
 Verify_Employee_ID_Changing_settings_from_Profile_list_while_add_edit_team_member
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
