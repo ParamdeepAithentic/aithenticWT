@@ -1666,7 +1666,7 @@ Management Console - Quarters filter dropdown
     DashboardPage.Verify your current page not contains this element
 
 Change password and login with new password
-    [Tags]      Sanity      smoke
+    [Tags]      Sanity      smoke       rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain

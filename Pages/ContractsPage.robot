@@ -90,7 +90,8 @@ Select type of contract
 
 Enter contract type
     [Arguments]    ${option}
-    Wait Until Element Is Not Visible       ${dd_loader}    ${wait_time}
+#    Wait Until Element Is Not Visible       ${dd_loader}    ${wait_time}
+    Wait Until Element Is Not Visible       ${loaderIcon}    120
     Wait Until Element Is Enabled      ${contactType}   ${wait_time}
     click element       ${contactType}
     ${StartTime1} =     Get Current Time in Milliseconds
