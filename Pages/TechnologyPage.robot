@@ -2054,9 +2054,9 @@ Get the text of selected filter under technology
     wait until element is visible      //div[contains(@class,'technology position-relative')]//label[normalize-space()='${option}']    ${wait_time}
     ${fetch_Name_of_selected_filter} =    get text    //div[contains(@class,'technology position-relative')]//label[normalize-space()='${option}']
     ${original_string}=    Set Variable    ${fetch_Name_of_selected_filter}
-    ${New_Namee}=    Evaluate    '${original_string}'.strip()
-    log to console    ${New_Namee}
-    set global variable    ${New_Namee}
+    ${New_Name}=    Evaluate    '${original_string}'.strip()
+    log to console    ${New_Name}
+    set global variable    ${New_Name}
 
 Click on the value under the tech typen filters of technology page
     [Arguments]     ${option}

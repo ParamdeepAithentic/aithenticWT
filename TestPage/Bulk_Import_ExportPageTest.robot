@@ -364,7 +364,7 @@ Assigned Users Bulk Edit
     Bulk_Import_ExportPage.Search by empID  ${generated_assigneeEmpID}
 
 Team Member Bulk Edit
-    [Tags]    Sanity
+    [Tags]    Sanity        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -427,7 +427,7 @@ Team Member Bulk Edit
     Generic.Fetch alert message text and compare it with       Settings Updated
 
 Technology Bulk edit
-    [Tags]       sanity
+    [Tags]       sanity     rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
