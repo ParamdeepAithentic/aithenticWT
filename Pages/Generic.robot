@@ -339,10 +339,10 @@ Click on the profile name
 Select subscription option from profile list
 #    [Arguments]     ${option}
     wait until element is not visible      ${loaderIcon}          ${wait_time}
-    wait until element is visible    //a[contains(@class,'subscription-dropdown')]          ${wait_time}
-    wait until element is enabled    //a[contains(@class,'subscription-dropdown')]          ${wait_time}
+    wait until element is visible    css:.qa-subscription-dropdown          ${wait_time}
+    wait until element is enabled    css:.qa-subscription-dropdown           ${wait_time}
     wait until element is not visible      ${loaderIcon}          ${wait_time}                  # Remove later
-    click element    //a[contains(@class,'subscription-dropdown')]
+    click element    css:.qa-subscription-dropdown
 
 Select logout option from profile list
 #    [Arguments]     ${option}

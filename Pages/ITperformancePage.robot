@@ -176,9 +176,11 @@ Click on tabs under it perfomance
 
 Click on data quality button link under it perfomance
     [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible   css:.qa-data-quality-${option} h4   ${wait_time}
     wait until element is enabled   css:.qa-data-quality-${option} h4     ${wait_time}
     sleep   ${search_sleep}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     click element   css:.qa-data-quality-${option} h4
     wait until element is not visible       ${shadow}          ${wait_time}
 

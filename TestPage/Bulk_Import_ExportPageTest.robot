@@ -415,6 +415,7 @@ Team Member Bulk Edit
     Bulk_Import_ExportPage.Perform the keyboard action      LocationName
     Bulk_Import_ExportPage.Enter the new value of team member in the role column     UserRoleName
     Bulk_Import_ExportPage.Perform the keyboard action      UserRoleName
+    Generic.Click on the button     Check data      #Update,Edit
     Generic.Click on the button     Update
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
     Generic.Click on the button     Finish

@@ -497,3 +497,7 @@ Clear the element text in search bar of assigned user
     Wait Until Element Is Enabled   css:input[placeholder='Search by Assignee Name or Employee Id']    ${wait_time}
     clear element text      css:input[placeholder='Search by Assignee Name or Employee Id']
 
+Verify the visibilty of same user exist validation while adding
+    wait until element is visible       //div[contains(text(), 'Same user name already exists, Employee Id is missing. ')]    ${wait_time}
+    wait until element is enabled       //div[contains(text(), 'Same user name already exists, Employee Id is missing. ')]    ${wait_time}
+
