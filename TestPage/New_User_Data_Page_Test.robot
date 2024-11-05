@@ -123,34 +123,40 @@ Register new user
     SubscriptionPage.Save the manufacturer profile
     Generic.Verify your current page location contains     subscription-menu
     Generic.Fetch alert message text and compare it with       Profile saved successfully
-#    SubscriptionPage.Select plan of subscription
-#    SubscriptionPage.Select and move next with subscription
-#    Generic.Verify your current page location contains     subscription-payment
-##-------------------------------------------BILLING-----------------------------------------------------
-#    SubscriptionPage.Click on same billing address checkbox
-#    SubscriptionPage.Click on same billing address checkbox
-#    SubscriptionPage.Click on same billing address checkbox
-#    SubscriptionPage.Switch to card iframe
-#    SubscriptionPage.Enter cardnumber    42424242424242420429242
-#    Unselect Frame
-#    SubscriptionPage.Enter card user name    Paramdeep Singh
-#    SubscriptionPage.Check the authorization checkbox
-#    SubscriptionPage.Check the acknowledgement checkbox
-#    SubscriptionPage.Click on complete process button
-#    Generic.Verify your current page location contains     welcome
-#    Generic.Fetch alert message text and compare it with       Payment Successful
-#    DashboardPage.Click on complete setup button      Complete Setup
-#    Generic.Verify your current page location contains     organization
-#    DashboardPage.Select the employee ID checkbox   yes
-#    DashboardPage.Select the location ID checkbox   yes
-#    DashboardPage.Select the asset ID checkbox      no
-#    Generic.Fetch alert message text and compare it with       Settings Updated
+    SubscriptionPage.Select plan of subscription
+    SubscriptionPage.Select and move next with subscription
+    Generic.Verify your current page location contains     subscription-payment
+#-------------------------------------------BILLING-----------------------------------------------------
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Switch to card iframe
+    SubscriptionPage.Enter cardnumber    42424242424242420429242
+    Unselect Frame
+    SubscriptionPage.Enter card user name    Paramdeep Singh
+    SubscriptionPage.Check the authorization checkbox
+    SubscriptionPage.Check the acknowledgement checkbox
+    SubscriptionPage.Click on complete process button
+    Generic.Verify your current page location contains     welcome
+    Generic.Fetch alert message text and compare it with       Payment Successful
+    DashboardPage.Click on complete setup button      Complete Setup
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the location ID checkbox   yes
+    DashboardPage.Select the asset ID checkbox      no
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    DashboardPage.Select an option from company details side list   Security
+    Generic.Verify your current page location contains  security
+    DashboardPage.click on the authentication tab under security
+    Generic.Verify your current page location contains     security
+    DashboardPage.Click on the checkboxes under auhtentication tab
+    Generic.Fetch alert message text and compare it with       Two factor updated successfully
 
 
 Adding the data in the account
     [Tags]    NT
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       BusinessEmail6632505237@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       BusinessEmail4533396503@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
 #    Generic.Click on the profile name

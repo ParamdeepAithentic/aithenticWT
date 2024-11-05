@@ -3169,7 +3169,7 @@ Verify_Notification_Update_Asset
 Click on the technology group filters and verify it
     [Tags]     time     smoke     sanity
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form     mailto:debut@cool.fr.nf   Test@123
+    LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
