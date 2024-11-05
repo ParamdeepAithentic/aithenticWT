@@ -501,3 +501,6 @@ Verify the visibilty of same user exist validation while adding
     wait until element is visible       //div[contains(text(), 'Same user name already exists, Employee Id is missing. ')]    ${wait_time}
     wait until element is enabled       //div[contains(text(), 'Same user name already exists, Employee Id is missing. ')]    ${wait_time}
 
+Verify the visibilty of same user business email
+    wait until element is visible       //div[contains(text(), 'Business Email is missing.')]    ${wait_time}
+    wait until element is enabled       //div[contains(text(), 'Business Email is missing.')]
