@@ -51,7 +51,7 @@ ${self_searchId} =   AssetID_1803536655
 *** Test Cases ***
 
 Free the asset limit
-    [Tags]      Smoke     Sanity      Time
+    [Tags]      Smoke     Sanity      Time      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
