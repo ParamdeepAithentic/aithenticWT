@@ -158,7 +158,7 @@ Click on three dots of Department list
 
 Choose option from three_dots of Department
     [Arguments]     ${option}
-    Generic.Select other option from profile list       ${option}
+    Generic.Select simple option from profile list       ${option}
 
 Click on i-icon inside technology
     wait until element is visible       css:#technology-products-Iicon      ${wait_time}

@@ -49,7 +49,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Export Partner list
-#    [Tags]      Stable
+    [Tags]    NT
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -84,8 +84,7 @@ Export Partner list
     Generic.click on the button     Okay, Thanks!
 
 Export partner list under technology details
-    [Tags]      rerun
-#    [Tags]      Stable
+    [Tags]    NT        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -137,7 +136,7 @@ Export partner list under technology details
 
 
 Export Location List
-#    [Tags]      Stable
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -176,7 +175,7 @@ Export Location List
 
 
 Export location list of location under technology details page
-#    [Tags]      Stable
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -232,7 +231,7 @@ Export location list of location under technology details page
     Generic.click on the button     Okay, Thanks!
 
 Export partner list while adding new partner
-#    [Tags]      Stable
+    [Tags]    NT
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -279,7 +278,7 @@ Export partner list while adding new partner
     Generic.click on the button     Okay, Thanks!
 
 Export list of parent tab under technology details
-#    [Tags]      Stable
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -396,7 +395,7 @@ Export Team member list
 
 
 Export Assigned User list
-    [Tags]     time
+    [Tags]     time    smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -444,7 +443,7 @@ Export Assigned User list
 
 
 Export technology details page list
-    [Tags]     time
+    [Tags]     time    smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -521,7 +520,7 @@ Export technology details page list
     Generic.click on the button     Okay, Thanks!
 
 Export component tab list
-    [Tags]     time
+    [Tags]     time    smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -605,7 +604,7 @@ Export component tab list
     Generic.click on the button     Okay, Thanks!
 
 Export account overview tab data
-    [Tags]     time
+    [Tags]     time    smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard

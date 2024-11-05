@@ -90,7 +90,8 @@ Select type of contract
 
 Enter contract type
     [Arguments]    ${option}
-    Wait Until Element Is Not Visible       ${dd_loader}    ${wait_time}
+#    Wait Until Element Is Not Visible       ${dd_loader}    ${wait_time}
+    Wait Until Element Is Not Visible       ${loaderIcon}    120
     Wait Until Element Is Enabled      ${contactType}   ${wait_time}
     click element       ${contactType}
     ${StartTime1} =     Get Current Time in Milliseconds
@@ -110,6 +111,8 @@ Enter contract with
     ${StartTime1} =     Get Current Time in Milliseconds
     input text      ${companyId}      ${option}
     sleep       ${search_sleep}
+    Wait Until Element Is Visible       //label[normalize-space()='Smart Share With:']//parent::div//span[normalize-space()='${option}']    ${wait_time}
+    Wait Until Element Is Enabled      //label[normalize-space()='Smart Share With:']//parent::div//span[normalize-space()='${option}']     ${wait_time}
     Press Keys     ${companyId}       ENTER
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}

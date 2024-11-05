@@ -49,7 +49,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Change plan- Assign commercial plan and change it to slotted
-    [Tags]      Smoke     Sanity      Time      rerun       Stable
+    [Tags]      Smoke     Sanity      Time           Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     mehak@mynes.com     Test@123
     Generic.Verify your current page location contains      dashboard
@@ -118,12 +118,16 @@ Free the asset limit
 
 
 Set Plan range in pre requites
+<<<<<<< HEAD
     [Tags]      rerun
+=======
+    [Tags]    NT
+>>>>>>> 99bcb191e0d4ced4df643abc2c9f2456d3ffb14b
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form     ${email}    ${valid_password}
         Generic.Click on the profile name
-        Generic.Select other option from profile list     Subscription
+        Generic.Select subscription option from profile list
         Generic.Verify your current page location contains      subscription
         SubscriptionPage.Select if you want to change plan or asset    Change Plan
         TechnologyPage.Select plan for subscription     Premium

@@ -139,6 +139,8 @@ Set Pre-Prod Variables
     Set Suite Variable    ${discovered_IP}   192.168.18.86
     Set Suite Variable    ${discovery_asset_list_brand}       Apple, Inc.
     Set Suite Variable    ${Team_member_location}       United States - Building23 - 4 - 8
+    Set Suite Variable    ${Technology_group}      Applications
+    Set Suite Variable    ${Technology_group1}      Applications
 
 Set Research Variables
     Set Suite Variable    ${url}    https://research-app.aithentic.com/
@@ -334,13 +336,21 @@ Click on the profile name
     click element       ${profileName}
 
 ###############################################################################################
-Select other option from profile list
-    [Arguments]     ${option}
+Select subscription option from profile list
+#    [Arguments]     ${option}
     wait until element is not visible      ${loaderIcon}          ${wait_time}
-    wait until element is visible    //a[normalize-space()='${option}']//span          ${wait_time}
-    wait until element is enabled    //a[normalize-space()='${option}']//span          ${wait_time}
+    wait until element is visible    //a[contains(@class,'subscription-dropdown')]          ${wait_time}
+    wait until element is enabled    //a[contains(@class,'subscription-dropdown')]          ${wait_time}
     wait until element is not visible      ${loaderIcon}          ${wait_time}                  # Remove later
-    click element    //a[normalize-space()='${option}']//span
+    click element    //a[contains(@class,'subscription-dropdown')]
+
+Select logout option from profile list
+#    [Arguments]     ${option}
+    wait until element is not visible      ${loaderIcon}          ${wait_time}
+    wait until element is visible    //li[contains(@class,'qa-logout-dropdown')]//a         ${wait_time}
+    wait until element is enabled    //li[contains(@class,'qa-logout-dropdown')]//a          ${wait_time}
+    wait until element is not visible      ${loaderIcon}          ${wait_time}                  # Remove later
+    click element    //li[contains(@class,'qa-logout-dropdown')]//a
 
 Select option from profile list
      [Arguments]     ${option}
@@ -349,6 +359,15 @@ Select option from profile list
      wait until element is enabled    css:.qa-${option} li      ${wait_time}
      wait until element is not visible      ${loaderIcon}          ${wait_time}                 # Remove later
      click element    css:.qa-${option} li
+
+
+Select simple option from profile list
+    [Arguments]     ${option}
+    wait until element is not visible      ${loaderIcon}          ${wait_time}
+    wait until element is visible    //a[normalize-space()='${option}']         ${wait_time}
+    wait until element is enabled    //a[normalize-space()='${option}']         ${wait_time}
+    wait until element is not visible      ${loaderIcon}          ${wait_time}                  # Remove later
+    click element    //a[normalize-space()='${option}']
 
 ###############################################################################################
 
@@ -410,6 +429,7 @@ Enter phone number
     input text  ${contact_Country_search}   ${country}
     Generic.Select parameter      ${code}
     input text     ${phone}     ${phoneNo}
+    Press Keys    ${phone}      ENTER
 #    click element   ${click_countryTag}
 #    Click element   css:#phone
 #    wait until element is not visible       //span[normalize-space()='Please enter a valid Mobile Number']     ${wait_time}
@@ -422,7 +442,7 @@ Scroll the page till
     wait until element is not visible       ${loaderIcon}       ${wait_time}
 
 Verify pop-up is visible after clicking on i-icon
-    wait until element is visible       css:.popover-content       ${wait_time} 
+    wait until element is visible       css:.popover-body div.iIcon-centent-section       ${wait_time}
     log to console      Yes, pop-up is visible for i-icon
 
 Scroll Window To End

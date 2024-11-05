@@ -47,7 +47,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Product Bulk import
-    [Tags]    Sanity        Stable
+    [Tags]    Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -77,7 +77,7 @@ Product Bulk import
     Bulk_Import_ExportPage.Verify product added using bulk_import_export   ${generated_addProductName}
 
 Product Bulk Edit
-    [Tags]    Sanity        Stable
+    [Tags]    Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -127,6 +127,7 @@ Product Bulk Edit
     Bulk_Import_ExportPage.Verify product added using bulk_import_export   ${generated_EditProductName}
 
 Department Bulk Import
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -152,6 +153,7 @@ Department Bulk Import
     Bulk_Import_ExportPage.Verify department added using bulk_import_export   ${generated_addDepartmentName}
 
 Department Bulk Edit
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -193,6 +195,7 @@ Department Bulk Edit
     Bulk_Import_ExportPage.Verify department added using bulk_import_export     ${generated_EditDepartmentName}
 
 Add Product Bulk Edit
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -235,6 +238,7 @@ Add Product Bulk Edit
     Bulk_Import_ExportPage.Verify product added using bulk_import_export    ${generated_EditProductName}
 
 Add Department Bulk Edit
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -549,6 +553,7 @@ Team member Bulk Import
     Generic.Fetch alert message text and compare it with       Settings Updated
 
 Assigned User Bulk Import
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -576,6 +581,7 @@ Assigned User Bulk Import
     Generic.Wait until table get load
 
 Location Bulk Import
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -688,6 +694,10 @@ Technology Bulk import
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_9
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_3      1654
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_3
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      DYNA_46      Tax123
+    Bulk_Import_ExportPage.Perform the keyboard action      DYNA_46
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      DYNA_47      Track123
+    Bulk_Import_ExportPage.Perform the keyboard action      DYNA_47
 
 #    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_4      CPU
 #    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_4
@@ -723,7 +733,7 @@ Technology Bulk import
 
 
 Verify Bulk Import on the Technology Page by adding all parameters
-    [Tags]    Sanity     time       rerun
+    [Tags]    Sanity     time   smoke       rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -999,7 +1009,10 @@ Verify Bulk Import on the Technology Page by adding all parameters
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_9
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_3      1654
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_3
-    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_4
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      DYNA_46      Tax123
+    Bulk_Import_ExportPage.Perform the keyboard action      DYNA_46
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      DYNA_47      Track123
+    Bulk_Import_ExportPage.Perform the keyboard action      DYNA_47
 #    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_5      Paramdeep
 #    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_5
 #    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_6      Test@123
@@ -1047,7 +1060,7 @@ Verify Bulk Import on the Technology Page by adding all parameters
 
 
 Technology bulk import while entering invalid data in payment period field
-    [Tags]      rerun
+    [Tags]    NT        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1220,7 +1233,7 @@ Check the payment period alert when entering valid data
     TechnologyPage.Search by AssetId       ${generated_assetidbulkedit}
 
 Check the payment period alert when entering inavalid data
-    [Tags]      rerun
+    [Tags]    NT        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard

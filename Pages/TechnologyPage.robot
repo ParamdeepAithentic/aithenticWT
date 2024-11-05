@@ -2054,9 +2054,9 @@ Get the text of selected filter under technology
     wait until element is visible      //div[contains(@class,'technology position-relative')]//label[normalize-space()='${option}']    ${wait_time}
     ${fetch_Name_of_selected_filter} =    get text    //div[contains(@class,'technology position-relative')]//label[normalize-space()='${option}']
     ${original_string}=    Set Variable    ${fetch_Name_of_selected_filter}
-    ${New_Namee}=    Evaluate    '${original_string}'.strip()
-    log to console    ${New_Namee}
-    set global variable    ${New_Namee}
+    ${New_Name}=    Evaluate    '${original_string}'.strip()
+    log to console    ${New_Name}
+    set global variable    ${New_Name}
 
 Click on the value under the tech typen filters of technology page
     [Arguments]     ${option}
@@ -2084,9 +2084,9 @@ Get the text of the value you selected under filter
     wait until element is visible      (//div[contains(@class,'technology position-relative')]//following-sibling::div//label)[${option}]    ${wait_time}
     ${fetch_Name_of_selected_random_filter} =    get text    (//div[contains(@class,'technology position-relative')]//following-sibling::div//label)[${option}]
     ${original_string}=    Set Variable    ${fetch_Name_of_selected_random_filter}
-    ${random_Namee}=    Evaluate    '${original_string}'.strip()
-    log to console    ${random_Namee}
-    set global variable    ${random_Namee}
+    ${random_Name}=    Evaluate    '${original_string}'.strip()
+    log to console    ${random_Name}
+    set global variable    ${random_Name}
 
 Click on the product field under add technology
     [Arguments]        ${product}

@@ -104,7 +104,7 @@ Verify asset history of assigned users
     Generic.Verify your current page contains this text     Technology
 
 Search asset history with Asset ID of Assigned User
-#    [Tags]      Stable
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -232,7 +232,7 @@ Export Assigned User Asset History list
 
 
 Update and delete assignee from side option
-#    [Tags]      Stable
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -264,6 +264,7 @@ Update and delete assignee from side option
     Generic.Fetch alert message text and compare it with       Assigned Users deleted successfully
 
 Add_edit_delete_assignee_via_profile_list
+    [Tags]    NT
     Generic.open the browser with the url
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}    ${valid_password}
@@ -296,6 +297,7 @@ Add_edit_delete_assignee_via_profile_list
     Generic.Fetch alert message text and compare it with       Assigned Users deleted successfully
 
 Update and delete assignee from side option but edit via details
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -328,6 +330,7 @@ Update and delete assignee from side option but edit via details
     Generic.Fetch alert message text and compare it with       Assigned Users deleted successfully
 
 Add_edit_delete_assignee_via_profile_list_via_details
+    [Tags]    NT
     Generic.open the browser with the url
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}    ${valid_password}
@@ -361,6 +364,7 @@ Add_edit_delete_assignee_via_profile_list_via_details
     Generic.Fetch alert message text and compare it with       Assigned Users deleted successfully
 
 Verify all the validations of Add Assigned Users via technology
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -414,6 +418,7 @@ Verify all the validations of Add Assigned Users via technology
     Generic.Fetch alert message text and compare it with       Assigned Users cannot removed as have assigned items
 
 Verify the validations while edit the assigned user
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -440,6 +445,7 @@ Verify the validations while edit the assigned user
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page          Please enter Assignee Name
 
 Verify all the validate validations of the assigned user while adding assigned user
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -493,6 +499,7 @@ Verify all the validate validations of the assigned user while adding assigned u
     Generic.Verify your current page location contains      memberslist
 
 Verify all the validate validations of the assigned user while edit assigned user
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard

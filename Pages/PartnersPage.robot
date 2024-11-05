@@ -302,6 +302,7 @@ Enter contact location
 
 
 Save the new contact
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible   ${save_addNewContact}       ${wait_time}
     wait until element is enabled   ${save_addNewContact}       ${wait_time}
     click element   ${save_addNewContact}
@@ -481,7 +482,7 @@ Click on three dots of partners listing
 
 Select option from three dots of partner
     [Arguments]     ${option}
-    Generic.Select other option from profile list       ${option}
+    Generic.Select simple option from profile list       ${option}
 
 #option: Edit, Deactivate, Activate, Remove
 
@@ -721,8 +722,10 @@ Fetch the selected filter and verify from Table
     Run Keyword IF      ${total_count} > 500       Filter and verify with pagination    ${option}       ${option1}      ${option2}    ELSE     Filter and verify without pagination  ${option}       ${option1}      ${option2}
 
 Click Next Button And Wait For Page To Load
-    Wait Until Element Is enabled    //a[@aria-label='Next page']       ${wait_time}
-    click element       //a[@aria-label='Next page']
+    Generic.Scroll Window To End
+    Wait Until Element Is visible    //li[contains(@class,'pagination-next')]//a       ${wait_time}
+    Wait Until Element Is enabled    //li[contains(@class,'pagination-next')]//a       ${wait_time}
+    click element       //li[contains(@class,'pagination-next')]//a
 
 Page fetch method
     wait until element is visible   css:.pagination ul a        ${wait_time}
@@ -740,6 +743,7 @@ Filter and verify with pagination
                 Wait Until Element Is Visible   (//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]      ${wait_time}
                 Wait Until Element Is Enabled   (//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]       ${wait_time}
                 ${element1}=    Get Text    (//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]
+#                Scroll Element Into View    (//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]
                 ${original_string}=    Set Variable    ${element1}
                 ${New_filter}=    Evaluate    '${original_string}'.strip()
                 Log    Element ${index}: ${New_filter}
@@ -799,6 +803,7 @@ Create the support partner
     Sleep     5
     Generic.Fetch alert message text and compare it with    Partner created successfully
 
+<<<<<<< HEAD
 
 Create many partners
     FOR    ${index}    IN RANGE    100
@@ -817,3 +822,103 @@ Create many partners
        Generic.Fetch alert message text and compare it with    Partner created successfully
 #        PartnersPage.Search by business name    ${generate_BusinessName}
     END
+=======
+Clear the data of the fields while adding partner
+    [Arguments]     ${option}
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible   //ng-select[@placeholder='${option}']//span[@title='Clear all']        ${wait_time}
+    wait until element is enabled   //ng-select[@placeholder='${option}']//span[@title='Clear all']        ${wait_time}
+    click element       //ng-select[@placeholder='${option}']//span[@title='Clear all']
+
+Clear the data of Partner Business URL
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible        ${businessURL}  ${wait_time}
+    Clear Element text     ${businessURL}
+    input text          ${businessURL}      url
+    Clear Element text     ${businessURL}
+
+Verify the validations of these fields
+    [Arguments]     ${option}
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       //label[normalize-space()='${option}']//parent::div//p//span    ${wait_time}
+    wait until element is enabled       //label[normalize-space()='${option}']//parent::div//p//span      ${wait_time}
+    ${Partner_validation1}=     get text        //label[normalize-space()='${option}']//parent::div//p//span
+    log     ${Partner_validation1}
+    set global variable     ${Partner_validation1}
+
+Verify the validation of Partner business URL
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       (//label[normalize-space()='Business URL']//parent::div//p//span)[2]    ${wait_time}
+    wait until element is enabled      (//label[normalize-space()='Business URL']//parent::div//p//span)[2]      ${wait_time}
+    ${Partner_validation2}=     get text       (//label[normalize-space()='Business URL']//parent::div//p//span)[2]
+    log     ${Partner_validation2}
+    set global variable     ${Partner_validation2}
+
+Compare the Validations on Partner Page
+    [Arguments]         ${option1}      ${option2}
+    Should be equal       ${option1}      ${option2}
+
+Cancel the pop-ups
+    [Arguments]         ${option1}
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       //div[@id='${option1}']//button[@data-dismiss='modal'][normalize-space()='Cancel']    ${wait_time}
+    wait until element is enabled      //div[@id='${option1}']//button[@data-dismiss='modal'][normalize-space()='Cancel']      ${wait_time}
+    click element       //div[@id='${option1}']//button[@data-dismiss='modal'][normalize-space()='Cancel']
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    sleep       2
+
+Clear the field of country in add adddress of partner
+    [Arguments]     ${option}
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       (//ng-select[contains(@class,'country')]//span[contains(@class,'ng-clear-wrapper')])[2]        ${wait_time}
+    wait until element is enabled       (//ng-select[contains(@class,'country')]//span[contains(@class,'ng-clear-wrapper')])[2]        ${wait_time}
+    click element   (//ng-select[contains(@class,'country')]//span[contains(@class,'ng-clear-wrapper')])[2]
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+
+Clear the field for edit business URL
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible        //label[normalize-space()='Business URL']//parent::div//span[contains(@class,'ng-value-icon')]  ${wait_time}
+    wait until element is enabled        //label[normalize-space()='Business URL']//parent::div//span[contains(@class,'ng-value-icon')]  ${wait_time}
+    Click element     //label[normalize-space()='Business URL']//parent::div//span[contains(@class,'ng-value-icon')]
+
+Verify the validation of Partner business URL while edit partner
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       //label[normalize-space()='Business URL']//parent::div//p//span    ${wait_time}
+    wait until element is enabled      //label[normalize-space()='Business URL']//parent::div//p//span      ${wait_time}
+    ${Partner_validation_URL}=     get text       //label[normalize-space()='Business URL']//parent::div//p//span
+    log     ${Partner_validation_URL}
+    set global variable     ${Partner_validation_URL}
+
+Clear the field of country on edit partner
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible        css:.qa-Country .ng-clear-wrapper   ${wait_time}
+    wait until element is enabled        css:.qa-Country .ng-clear-wrapper   ${wait_time}
+    Click element     css:.qa-Country .ng-clear-wrapper
+
+Cancel the Edit partner
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible        //div[contains(@class,'welcome-main')]//button[contains(@class,'button-red')][normalize-space()='Cancel']   ${wait_time}
+    wait until element is enabled        //div[contains(@class,'welcome-main')]//button[contains(@class,'button-red')][normalize-space()='Cancel']   ${wait_time}
+    Click element     //div[contains(@class,'welcome-main')]//button[contains(@class,'button-red')][normalize-space()='Cancel']
+
+Edit the country of add new address
+    Wait Until Element Is Not Visible    ${alert_Msg}          ${wait_time}
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible        //ng-select[@placeholder='Select Country']//span[@title='Clear all']   ${wait_time}
+    wait until element is enabled        //ng-select[@placeholder='Select Country']//span[@title='Clear all']   ${wait_time}
+    Click element     //ng-select[@placeholder='Select Country']//span[@title='Clear all']
+
+Select the contact name when add new contact on edit partner
+    wait until element is not visible       ${loaderIcon}      ${wait_time}
+    wait until element is visible      ${contact_name}       ${wait_time}
+    wait until element is enabled     ${contact_name}       ${wait_time}
+    click element   ${contact_name}
+    wait until element is not visible       //div[contains(@id,'0')]        ${wait_time}
+    click element       //div[contains(@id,'0')]
+
+Add the contact of Edit partner
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       //h5[normalize-space()='Contact']//parent::div//following-sibling::div//button[normalize-space()='Add']   ${wait_time}
+    wait until element is enabled        //h5[normalize-space()='Contact']//parent::div//following-sibling::div//button[normalize-space()='Add']   ${wait_time}
+    Click element     //h5[normalize-space()='Contact']//parent::div//following-sibling::div//button[normalize-space()='Add']
+>>>>>>> 99bcb191e0d4ced4df643abc2c9f2456d3ffb14b

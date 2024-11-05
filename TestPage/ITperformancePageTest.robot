@@ -49,7 +49,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Download sheet for Forecasts
-#    [Tags]      Stable
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -61,7 +61,7 @@ Download sheet for Forecasts
     ITperformancePage.Verify sheet is downloaded        SpendForecastsReports
 
 Download sheet for aging
-#    [Tags]      Stable
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -85,7 +85,7 @@ Download sheet for investments
     ITperformancePage.Verify sheet is downloaded        sspslReport
 
 Download all sheets with download all button
-#    [Tags]      Stable
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -116,7 +116,7 @@ It performnace drill down agging analytics
     ITperformancePage.Get and verify the count of aging analytics table     Upcoming End Of Life        Upcoming End Of Life
 
 IT perfomance drill down data quality
-#    [Tags]      Stable
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -177,7 +177,7 @@ It performnace drill down investment by partner
     ITperformancePage.Get and verify the count of table of brand spend by supplier and supplier spend my location of investment by partner     QACompany96590301 Budget by Supplier and Location        QACompany96590301 Budget by Supplier and Location
 
 Verify the text of download icon under IT performance
-#    [Tags]        Unstable
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}     ${valid_password}
     Generic.Verify your current page location contains      dashboard

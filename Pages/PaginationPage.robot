@@ -308,7 +308,8 @@ Run the remove asset journey
 
 Remove the old assets to free the space
     Generic.Click on the profile name
-    Generic.Select option from profile list     subscription-dropdown
+    Generic.Select subscription option from profile list
+#    Admin_PanelPage.click on confirm button to change plan     Confirm
     Generic.Verify your current page location contains      subscription
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     TechnologyPage.Click on plan of subscription        Premium
@@ -337,7 +338,7 @@ Remove the old assets to free the space
     Generic.Fetch alert message text and compare it with      Payment Successful
 
     Generic.Click on the profile name
-    Generic.Select option from profile list     subscription-dropdown
+    Generic.Select subscription option from profile list
     Generic.Verify your current page location contains      subscription
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     TechnologyPage.Click on plan of subscription        Premium
