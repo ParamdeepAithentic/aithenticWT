@@ -511,7 +511,6 @@ Verify all the validate validations of the assigned user while edit assigned use
     MemberPage.Search assigned user by first name   ${generated_AssigneduserFirstName}
     MemberPage.Click on three dots of Team Member listing
     MemberPage.Click on the edit option under three dots of member
-    sleep   10s
     LoginPage.Clear the element text of field under login page      AssignedEmail
     LoginPage.Clear the element text of field under login page      AssignedEmployeeId
     LoginPage.Clear the element text of field under login page      AssignedFirstName
@@ -539,13 +538,7 @@ Verify all the validate validations of the assigned user while edit assigned use
     MemberPage.Enter last name of static assigned users       Doe
     MemberPage.Create static assign to employee_ID      EmployeeID_9001
     MemberPage.Click on save button of assigned user
-    MemberPage.Verify the visibilty of same user exist validation for cancel button
-    MemberPage.Click on the save button of add assignee pop up if user is same      save
-    Generic.Fetch alert message text and compare it with        Assigned Users updated successfully
-    Generic.Verify your current page location contains      memberslist
-    MemberPage.Search assigned user by first name   Johnny
-    MemberPage.Click on three dots of Team Member listing
-    MemberPage.Click on the edit option under three dots of member
+    Generic.Fetch alert message text and compare it with        Same user name already exists
     LoginPage.Clear the element text of field under login page      AssignedEmployeeId
     LoginPage.Clear the element text of field under login page      AssignedFirstName
     LoginPage.Clear the element text of field under login page      AssignedLastName
@@ -554,8 +547,9 @@ Verify all the validate validations of the assigned user while edit assigned use
     MemberPage.Create static assign to employee_ID      EmployeeID_9001
     MemberPage.Create random assignee email not link with fist name
     MemberPage.Click on save button of assigned user
-    MemberPage.Verify the visibilty of same user exist validation for cancel button
-    MemberPage.Click on the save button of add assignee pop up if user is same      cancel
+    MemberPage.Verify the visibilty of same user exist validation
+    MemberPage.Click on the save button of add assignee pop up if user is same      save
+    Generic.Fetch alert message text and compare it with        Assigned Users updated successfully
     Generic.Verify your current page location contains      memberslist
     MemberPage.Search assigned user by first name   Johnny
     MemberPage.Click on three dots of Team Member listing
@@ -564,7 +558,7 @@ Verify all the validate validations of the assigned user while edit assigned use
     MemberPage.Enter invalid business email of assigned users       Johnny@yopmail.net
     TechnologyPage.Create unique assign to employee_ID random
     MemberPage.Click on save button of assigned user
-    MemberPage.Verify the visibilty of same user exist validation for cancel button
+    MemberPage.Verify the visibilty of same user exist validation
     MemberPage.Click on the save button of add assignee pop up if user is same      save
     Generic.Fetch alert message text and compare it with        Assigned Users updated successfully
     MemberPage.Search assigned user by first name   Johnny

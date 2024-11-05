@@ -84,6 +84,7 @@ Export Partner list
     Generic.click on the button     Okay, Thanks!
 
 Export partner list under technology details
+    [Tags]      rerun
 #    [Tags]      Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}

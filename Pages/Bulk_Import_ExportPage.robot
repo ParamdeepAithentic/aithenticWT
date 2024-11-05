@@ -555,8 +555,8 @@ Click on the fields and select value from dropdown of technology bulk edit
     wait until element is visible   css:.ag-center-cols-container div[col-id='${option}']      ${wait_time}
     wait until element is enabled   css:.ag-center-cols-container div[col-id='${option}']      ${wait_time}
     double click element    css:.ag-center-cols-container div[col-id='${option}']
-    wait until element is visible   css:div[class='ag-theme-alpine ag-popup'] div:nth-child(2) div      ${wait_time}
-    click element   css:div[class='ag-theme-alpine ag-popup'] div:nth-child(2) div
+    wait until element is visible   css:div[class='ag-theme-alpine ag-popup'] div:nth-child(3) div      ${wait_time}
+    click element   css:div[class='ag-theme-alpine ag-popup'] div:nth-child(3) div
     sleep   ${search_sleep}
 
 Enter random employee id of bulk import

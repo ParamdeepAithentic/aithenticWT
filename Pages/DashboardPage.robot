@@ -1638,6 +1638,7 @@ Add invalid brand manufacturer country
     click element   ${brand_country}
     Clear Element Text      ${brand_country}
     input text   ${brand_country}   ${country}
+    sleep  ${search_sleep}
     wait until element is visible       //div[contains(@class,"ng-option-disabled")][normalize-space()='No items found']        ${wait_time}
 
 Cancel Brand details

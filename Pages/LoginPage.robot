@@ -86,16 +86,6 @@ Get and Verify the validation after login with email only
     should be equal    ${get_login_validation}     ${text}
 
 Clear the element text of field under login page
-#    [Arguments]         ${option}
-#    click element          ${option}
-#    clear element text         ${option}
-#    Press Keys    ${option}     BACKSPACE
-#    Wait Until Element Is visible      css:#AssignedFirstName        ${wait_time}
-#    Wait Until Element Is enabled      css:#AssignedFirstName        ${wait_time}
-#    Execute Javascript    document.querySelector('#AssignedFirstName').value = ''
-#    Wait Until Element Is visible      css:#AssignedLastName        ${wait_time}
-#    Wait Until Element Is enabled      css:#AssignedLastName        ${wait_time}
-#    Execute Javascript    document.querySelector('#AssignedLastName').value = ''
     [Arguments]    ${locator}
     Click Element    css:#${locator}
     ${text}=    Execute JavaScript    return document.querySelector("#${locator}").value

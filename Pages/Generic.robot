@@ -62,7 +62,7 @@ ${yop_sleep}       10
 ${search_sleep}       1
 
 
-${CASE}        qa    #qa , uat , pre-prod
+${CASE}        uat   #qa , uat , pre-prod
 
 
 
@@ -118,7 +118,7 @@ Set UAT Variables
     Set Suite Variable    ${discovered_existing_product}            Macmini9,1
     Set Suite Variable    ${discovered_existing_department}        Quality Assurance
     Set Suite Variable    ${discovered_IP}    192.168.29.176
-    Set Suite Variable    ${discovery_asset_list_brand}     AKKA Germany GmbH
+    Set Suite Variable    ${discovery_asset_list_brand}     Samsung Electronics Co.,Ltd
     Set Suite Variable    ${existing_mac}                       DC:21:5C:9C:3E:57
     Set Suite Variable    ${Team_member_location}        Colombia - Twinhead123 - 56 - 21
     Set Suite Variable    ${Technology_group}      Accessories

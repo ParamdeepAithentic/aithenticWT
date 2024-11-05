@@ -364,7 +364,7 @@ Assigned Users Bulk Edit
     Bulk_Import_ExportPage.Search by empID  ${generated_assigneeEmpID}
 
 Team Member Bulk Edit
-    [Tags]    Sanity
+    [Tags]    Sanity        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -427,7 +427,7 @@ Team Member Bulk Edit
     Generic.Fetch alert message text and compare it with       Settings Updated
 
 Technology Bulk edit
-    [Tags]       sanity
+    [Tags]       sanity     rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -723,7 +723,7 @@ Technology Bulk import
 
 
 Verify Bulk Import on the Technology Page by adding all parameters
-    [Tags]    Sanity     time
+    [Tags]    Sanity     time       rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1047,6 +1047,7 @@ Verify Bulk Import on the Technology Page by adding all parameters
 
 
 Technology bulk import while entering invalid data in payment period field
+    [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1120,6 +1121,10 @@ Technology bulk import while entering invalid data in payment period field
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_3      1654
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_3
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_4
+    Bulk_Import_Exportpage.Enter the new value of serial number of technology bulk import      DYNA_46
+    Bulk_Import_ExportPage.Perform the keyboard action      DYNA_46
+    Bulk_Import_Exportpage.Enter the new value of serial number of technology bulk import      DYNA_47
+    Bulk_Import_ExportPage.Perform the keyboard action      DYNA_47
 #    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_5      Paramdeep
 #    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_5
 #    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_6      Test@123
@@ -1140,8 +1145,8 @@ Technology bulk import while entering invalid data in payment period field
     Bulk_Import_ExportPage.Click on the confirm button under pop up in technology bulk import
     Bulk_Import_ExportPage.Verify the upload message text   UploadMessage       Upload failed
 
-Check the payment period period alert when entering valid data
-    [Tags]       sanity
+Check the payment period alert when entering valid data
+    [Tags]       sanity     rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1215,6 +1220,7 @@ Check the payment period period alert when entering valid data
     TechnologyPage.Search by AssetId       ${generated_assetidbulkedit}
 
 Check the payment period alert when entering inavalid data
+    [Tags]      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1287,6 +1293,10 @@ Check the payment period alert when entering inavalid data
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_9
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_3      1654
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_3
+    Bulk_Import_Exportpage.Enter the new value of serial number of technology bulk import      DYNA_46
+    Bulk_Import_ExportPage.Perform the keyboard action      DYNA_46
+    Bulk_Import_Exportpage.Enter the new value of serial number of technology bulk import      DYNA_47
+    Bulk_Import_ExportPage.Perform the keyboard action      DYNA_47
 #    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_4      CPU
 #    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_4
 #    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_5      Paramdeep
