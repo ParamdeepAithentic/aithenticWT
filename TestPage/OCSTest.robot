@@ -64,7 +64,7 @@ Free the asset limit
 
 
 Search Discovered Assets
-    [Tags]    NT
+    [Tags]    NT        rerun
     TRY
        Generic.click on the tab	Login
        LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -217,7 +217,7 @@ Match Discovery Asset with Static Existing Asset
     END
 
 Apply filters and clear filter on Discovered Asset
-    [Tags]    NT
+    [Tags]    NT        rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form     johns@mai.25u.com         Test@123

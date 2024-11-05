@@ -286,7 +286,7 @@ Click on the select status filter and verify it
     LocationPage.Fetch the country from location filter and click       Status      7     Inactive         ${New_status}
 
 Click on the select location filter and verify it
-    [Tags]    time     smoke
+    [Tags]    time     smoke        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -313,6 +313,7 @@ Click on the select location filter and verify it
     LocationPage.Click on the location filter under location
     LocationPage.Select the option from location filter under location         Canada
     LocationPage.Get the text of selected filter under location     Canada
+    sleep   ${search_sleep}
     Generic.Wait until table get load
     sleep   ${search_sleep}
     PaginationPage.Fetch the total count

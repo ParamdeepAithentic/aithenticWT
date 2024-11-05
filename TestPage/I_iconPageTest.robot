@@ -197,7 +197,7 @@ Verify all i-icon of partners page
 
 
 Verify all i-icon of Discovery assets
-    [Tags]    NT
+    [Tags]    NT        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -218,7 +218,7 @@ Verify all i-icon of Discovery assets
 
 
 Verify all i-icon of advanced search
-    [Tags]     Smoke
+    [Tags]     Smoke        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.Verify your current page location contains      dashboard
@@ -460,7 +460,7 @@ Upload I-icon under clone add technology
 
 
 Upload I-icon while adding discovery and component asset
-    [Tags]    NT
+    [Tags]    NT        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.Verify your current page location contains      dashboard

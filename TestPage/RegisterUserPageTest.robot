@@ -226,7 +226,7 @@ Signup with ACH payment method
 
 
 Change plan and Change asset limit with ACH Payment method
-    [Tags]      Smoke
+    [Tags]      Smoke       rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -351,7 +351,7 @@ Change plan and Change asset limit with ACH Payment method
     BillingPage.Close the billing payment options module
 
 Update profile and company details of user
-    [Tags]      NT
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -627,8 +627,8 @@ Verify company domain and submit financial details
     Generic.click on the button      Yes
     Generic.Fetch alert message text and compare it with        Domain deleted successfully
 
-Upadte Email of user from personal profile
-    [Tags]      NT
+Update Email of user from personal profile
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -761,7 +761,7 @@ Upadte Email of user from personal profile
     RegisterUserPage.Select asset center notifications inside alerts section         60 Days
 
 Enter password more than the limit while changing password
-    [Tags]      NT
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -978,7 +978,7 @@ Enter password less than the limit while changing password
     DashboardPage.Verify the visibility of validation message under change password
 
 Enter password of 32 characters while changing password
-    [Tags]      NT
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1098,7 +1098,7 @@ Enter password of 32 characters while changing password
     LandingPage.Verify you are on dashboard page
 
 Enter password of more than the limit while forgot password
-    [Tags]      NT
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1213,7 +1213,7 @@ Enter password of more than the limit while forgot password
     RegisterUserPage.Verify the visibility of validation when entering password more than the limit
 
 Enter password of less than the limit while forgot password
-    [Tags]      NT
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1328,7 +1328,7 @@ Enter password of less than the limit while forgot password
     RegisterUserPage.Verify the visibility of validation when entering password less than the limit
 
 Enter password of 8 characters while forgot password
-    [Tags]      NT
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1443,7 +1443,7 @@ Enter password of 8 characters while forgot password
     Generic.Verify your current page location contains      dashboard
 
 Update billing address via profile list
-    [Tags]      NT
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1572,7 +1572,7 @@ Verfying the validation of the Address 1 field from the company details
 
 
 Add new ACH card and delete that card
-    [Tags]      NT
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1672,7 +1672,7 @@ Add new ACH card and delete that card
     Generic.Fetch alert message text and compare it with       Bank removed successfully
 
 Add new credit card and delete that card
-    [Tags]      NT
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
