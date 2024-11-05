@@ -50,7 +50,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Compose Message invite user test
-    [Tags]      Sanity      Smoke       Time
+    [Tags]      Sanity      Smoke       Time        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1025,7 +1025,7 @@ Activate Manufacturer via partner
     Generic.Fetch alert message text and compare it with      Status updated successfully
 
 Remove Manufacturer from partner
-    [Tags]    Sanity   Smoke
+    [Tags]    Sanity   Smoke        rerun
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1581,6 +1581,22 @@ Verify all the validations of Edit Partners
     PartnersPage.Click on Add new Contact of partner        Add new Contact
     PartnersPage.Add the contact of Edit partner
     Generic.Fetch alert message text and compare it with        Please enter values to save contact.
+
+Create partner 100 times
+    Generic.click on the tab	    Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Partners
+    Generic.Verify your current page location contains      partner
+
+    Generic.Verify your current page contains this text     Partners
+
+#-------------------------- PARTNER--------------------------------------------------------------
+#    LoginPage.Fetch the refresh token from the login api
+    ReplaceDomainAPI.Replace Domain
+    PartnersPage.Create many partners
+
 
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

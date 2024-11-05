@@ -154,6 +154,16 @@ Create partner random business name
     input text   ${businessName}   ${generate_BusinessName}
     set global variable    ${generate_BusinessName}
 
+Create partner random business name for testing
+    wait until element is visible       ${click_businessName}        ${wait_time}
+    wait until element is enabled       ${click_businessName}        ${wait_time}
+    click element   ${click_businessName}
+    Clear element text      ${click_businessName}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generate_BusinessName}=    Catenate    JASBusinessName${random_string}
+    input text   ${businessName}   ${generate_BusinessName}
+    set global variable    ${generate_BusinessName}
+
 
 Create partner self business name
     [Arguments]    ${option}
@@ -793,6 +803,26 @@ Create the support partner
     Sleep     5
     Generic.Fetch alert message text and compare it with    Partner created successfully
 
+<<<<<<< HEAD
+
+Create many partners
+    FOR    ${index}    IN RANGE    100
+        PartnersPage.Click new partner button
+        Generic.Verify your current page location contains    addpartner
+        PartnersPage.Select partner type of new partner    Manufacturer
+        ${random_business_name}    Evaluate    "BusinessName${index}"
+        PartnersPage.Create partner random business name for testing
+        PartnersPage.Enter partner business URL    ${generate_BusinessName}
+        PartnersPage.Select partner country    United States
+        Sleep    ${search_sleep}
+
+        #-------------------------- CONTACT --------------------------------------------------------------
+        PartnersPage.Click contact main save button
+#        Sleep    5
+       Generic.Fetch alert message text and compare it with    Partner created successfully
+#        PartnersPage.Search by business name    ${generate_BusinessName}
+    END
+=======
 Clear the data of the fields while adding partner
     [Arguments]     ${option}
     wait until element is not visible    ${loaderIcon}      ${wait_time}
@@ -891,3 +921,4 @@ Add the contact of Edit partner
     wait until element is visible       //h5[normalize-space()='Contact']//parent::div//following-sibling::div//button[normalize-space()='Add']   ${wait_time}
     wait until element is enabled        //h5[normalize-space()='Contact']//parent::div//following-sibling::div//button[normalize-space()='Add']   ${wait_time}
     Click element     //h5[normalize-space()='Contact']//parent::div//following-sibling::div//button[normalize-space()='Add']
+>>>>>>> 99bcb191e0d4ced4df643abc2c9f2456d3ffb14b

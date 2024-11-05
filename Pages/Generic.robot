@@ -118,7 +118,7 @@ Set UAT Variables
     Set Suite Variable    ${discovered_existing_product}            Macmini9,1
     Set Suite Variable    ${discovered_existing_department}        Quality Assurance
     Set Suite Variable    ${discovered_IP}    192.168.29.176
-    Set Suite Variable    ${discovery_asset_list_brand}     AKKA Germany GmbH
+    Set Suite Variable    ${discovery_asset_list_brand}     Samsung Electronics Co.,Ltd
     Set Suite Variable    ${existing_mac}                       DC:21:5C:9C:3E:57
     Set Suite Variable    ${Team_member_location}        Colombia - Twinhead123 - 56 - 21
     Set Suite Variable    ${Technology_group}      Accessories
@@ -339,10 +339,10 @@ Click on the profile name
 Select subscription option from profile list
 #    [Arguments]     ${option}
     wait until element is not visible      ${loaderIcon}          ${wait_time}
-    wait until element is visible    //a[contains(@class,'subscription-dropdown')]          ${wait_time}
-    wait until element is enabled    //a[contains(@class,'subscription-dropdown')]          ${wait_time}
+    wait until element is visible    css:.qa-subscription-dropdown          ${wait_time}
+    wait until element is enabled    css:.qa-subscription-dropdown           ${wait_time}
     wait until element is not visible      ${loaderIcon}          ${wait_time}                  # Remove later
-    click element    //a[contains(@class,'subscription-dropdown')]
+    click element    css:.qa-subscription-dropdown
 
 Select logout option from profile list
 #    [Arguments]     ${option}

@@ -174,7 +174,7 @@ Verify pagination of Assigned User Table
     PaginationPage.Log WebElements      assignee-list
 
 Verify Pagination of Product Dropdown when Add and Edit Technology
-    [Tags]      NT
+    [Tags]      NT      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -492,7 +492,7 @@ Verify Pagination of Product Dropdown when Add and Edit Technology
 
 
 Verify Pagination of Product Dropdown when Add IP discovered asset
-    [Tags]      NT
+    [Tags]      NT      rerun
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
         Generic.Verify your current page location contains      dashboard

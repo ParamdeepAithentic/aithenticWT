@@ -198,7 +198,7 @@ Add Brand via personal detail under technology
 
 
 Invite user into Aithentic
-    [Tags]      Smoke       Sanity
+    [Tags]      Smoke       Sanity    rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -932,7 +932,7 @@ Click and verify the count of the tabs under renewal overview by choosing the va
     DashboardPage.Get And Verify The Count Of tabs under renewal overview by management console
 
 Verify Account_overview Recent Activities Filters
-    [Tags]      Smoke       Sanity
+    [Tags]      Smoke       Sanity   rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}       ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1051,7 +1051,7 @@ View Predefined product
     DashboardPage.Click on pre defined product list       [W306MI0U247
 
 Verifying the Renewals Overview section of Management console - End of Life
-    [Tags]       Smoke       Sanity
+    [Tags]       Smoke       Sanity     rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 
@@ -1149,7 +1149,7 @@ Verifying the Renewals Overview section of Management console - End of Life
     Generic.Verify your current page location contains    management-console
 
 Verifying the Renewals Overview section of Management console - Overdue Renewals
-    [Tags]       Sanity      Smoke
+    [Tags]       Sanity      Smoke      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1235,7 +1235,7 @@ Verifying the Renewals Overview section of Management console - Overdue Renewals
     Generic.Verify your current page location contains    management-console
 
 Verifying the Renewals Overview section of Management console - Overdue contracts
-    [Tags]    NT
+    [Tags]    NT        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1311,7 +1311,7 @@ Verifying the Renewals Overview section of Management console - Overdue contract
     Generic.Verify your current page location contains    management-console
 
 Verifying the Renewals Overview section of Management console - Expired warranties
-    [Tags]    NT        Smoke
+    [Tags]    NT        Smoke       rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1384,7 +1384,7 @@ Verifying the Renewals Overview section of Management console - Expired warranti
     Generic.Verify your current page location contains    management-console
 
 Verifying the Renewals Overview section of Management console - Overdue certificates
-    [Tags]      Smoke
+    [Tags]      Smoke       rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1457,7 +1457,7 @@ Verifying the Renewals Overview section of Management console - Overdue certific
     Generic.Verify your current page location contains    management-console
 
 Verifying the Subscription Overview section of Management console
-    [Tags]    NT
+    [Tags]    NT        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -1568,7 +1568,7 @@ Verifying the Subscription Overview section of Management console
     DashboardPage.Click on done button of subscription overview    Done
 
 Management Console - Quarters filter dropdown
-    [Tags]    NT
+    [Tags]    NT        rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -2012,7 +2012,7 @@ Click and verify on manage subscription under billing
     TechnologyPage.verify Text from Assignment Information       ${subscription_plan}       ${plan_name}
 
 Compose Message reply and delete that message
-    [Tags]    NT
+    [Tags]    NT        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
@@ -2254,7 +2254,7 @@ No data in the charts of the management console page
     DashboardPage.Verify all the checkmark boxes of finance filter are auto-check       Budget
 
 Renewals overview drilldown - Add column Host name
-    [Tags]    NT
+    [Tags]    NT        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -2320,7 +2320,7 @@ Message Side bar filters
     MessagePage.Comapre the total count after selecting filter
 
 Click on the status filter under brand via profile list
-    [Tags]    NT
+    [Tags]    NT        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
@@ -2434,7 +2434,7 @@ Verify Team member in permissions according to user roles
     DashboardPage.Select the permission of member according to user role        permission-write
 
 Click on the product filters via profile list
-    [Tags]      time      smoke
+    [Tags]      time      smoke     rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
@@ -2548,7 +2548,7 @@ Click on the usage analytics tab under management console
     Generic.Verify your current page location contains     usage-analytics
 
 Verify Notification Mark all as read
-    [Tags]    NT
+    [Tags]    NT        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -2683,7 +2683,7 @@ Verify Notification Mark all as read
     DashboardPage.Verify text is normal after clicking Mark all as read         Contract ${fetch_contract_ID} with      ${generate_BusinessName} is pending
 
 Verfying all field validations of Add Brand page
-    [Tags]    NT
+    [Tags]    NT        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard

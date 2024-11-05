@@ -51,7 +51,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Test the sorting of assigned user asset history page table
-    [Tags]      NT
+    [Tags]      NT      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
@@ -381,7 +381,7 @@ Test the sorting of sent table page under message page
 
 
 Test the sorting of bulk edit grid under team members
-    [Tags]    Smoke
+    [Tags]    Smoke     rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
@@ -407,7 +407,7 @@ Test the sorting of bulk edit grid under team members
     SortingPage.Verify the sorting of the table method five    2       First Name
 
 Test the sorting of bulk edit grid under assigned users
-    [Tags]      NT
+    [Tags]      NT      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
