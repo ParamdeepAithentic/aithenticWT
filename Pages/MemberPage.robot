@@ -374,12 +374,16 @@ Click on confirm button under remove pop up of assigned user
 
 Search assigned user by static first name
     [Arguments]    ${name}
+    wait until element is not visible      ${loaderIcon}     ${wait_time}
     wait until element is visible       css:thead tr       ${wait_time}
+    wait until element is not visible       css:.spinner-border      ${wait_time}
     wait until element is visible      css:input[placeholder='Search by Assignee Name or Employee Id']     ${wait_time}
     wait until element is enabled      css:input[placeholder='Search by Assignee Name or Employee Id']     ${wait_time}
     click element      css:input[placeholder='Search by Assignee Name or Employee Id']
     input text   css:input[placeholder='Search by Assignee Name or Employee Id']   ${name}
     sleep      ${search_sleep}
+    wait until element is not visible       css:.spinner-border     ${wait_time}
+
 
 Verify the search static member
     [Arguments]    ${option}
@@ -389,7 +393,7 @@ Verify the search static member
 
 
 Get new assignee
-    [Arguments]         ${option}
+    [Arguments]         ${option}       ${option1}      ${option2}      ${option3}
     Run Keyword If    ${status} == True
         ...    MemberPage.Skip case
         ...    ELSE  Run Keywords     MemberPage.Create the Assignee     ${option}       ${option1}      ${option2}      ${option3}

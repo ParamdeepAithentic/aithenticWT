@@ -2097,6 +2097,7 @@ Click on the product field under add technology
     click element    //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input
     input text       //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input       ${product}
 
+
 Method 1
     [Arguments]    ${option}
     ${status}=    Run Keyword And Return Status    Element Should Be Visible    //td[normalize-space()='${option}']   ${wait_time}
@@ -2114,6 +2115,8 @@ Get new product
 
 Skip case
      log   Element is already there
+     Generic.select the option from the side menu    Technology
+     Generic.Verify your current page location contains      technology
 
 Create the product
     [Arguments]         ${option}     ${option1}   ${option2}
