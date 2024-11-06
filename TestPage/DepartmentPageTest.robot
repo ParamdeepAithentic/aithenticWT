@@ -50,7 +50,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Department bulk edit
-    [Tags]      Stable
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -62,7 +62,7 @@ Department bulk edit
     DepartmentPage.Choose the option from the action menu   Add Department
 
 Add_edit_delete_department_via_profile_list
-    [Tags]      Stable
+    [Tags]    Sanity        Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -92,7 +92,7 @@ Add_edit_delete_department_via_profile_list
     Generic.Fetch alert message text and compare it with        Department deleted successfully
 
 Add department and verify via organisation
-    [Tags]      Stable
+    [Tags]    NT
     Generic.open the browser with the url
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}    ${valid_password}
@@ -114,6 +114,7 @@ Add department and verify via organisation
     DepartmentPage.Search by department name      ${generated_Department}
 
 Verify the validations of all fields of Add department
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -131,6 +132,7 @@ Verify the validations of all fields of Add department
     DepartmentPage.Enter the wrong status of department and verify      wrongstatus
 
 Verify the validations of all fields of Edit department
+    [Tags]    Smoke
    Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard

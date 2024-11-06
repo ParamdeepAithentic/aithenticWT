@@ -46,7 +46,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Verify all i-icon of Dashboard page
-    [Tags]      Stable
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -65,7 +65,7 @@ Verify all i-icon of Dashboard page
     I_iconPage.Click on i-icon of account_overview tab
 
 Verify all i-icon of profile-listing
-    [Tags]     Sanity       Stable
+    [Tags]     Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -117,7 +117,7 @@ Verify all i-icon of profile-listing
     I_iconPage.Click on i-icon inside technology
 
 Verify all i-icon of team member page
-    [Tags]      Stable
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -129,7 +129,7 @@ Verify all i-icon of team member page
     I_iconPage.Click on i-icon of team-members tab
 
 Verify all i-icon of Technology page
-    [Tags]   Sanity     Stable
+    [Tags]   Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -145,6 +145,7 @@ Verify all i-icon of Technology page
     Generic.Verify your current page contains this text     Technology Overview
     sleep   ${yop_sleep}
     switch window       aithentic | Technology - List
+    I_iconPage.Click on i-icon of technology tab
     I_iconPage.Click on i-icon of technology tab
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
@@ -168,14 +169,22 @@ Verify all i-icon of Technology page
     I_iconPage.Click on i-icon of cost_center in edit technology
     Generic.Verify pop-up is visible after clicking on i-icon
     I_iconPage.Click on i-icon of cost_center in edit technology
-    I_iconPage.Click on Back tab          Back to Technology Details
+#    I_iconPage.Click on Back tab          Back to Technology Details
+     sleep   ${yop_sleep}
+    switch window       aithentic | Edit - Technology
+    TechnologyPage.Click on update button of edit_technology page       Update
+#    TechnologyPage.Accept updated edited technology pop up     Update
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+    Generic.Verify your current page location contains      technology-details
     I_iconPage.Click on clone button on product details page        Clone
     I_iconPage.Click on i-icon of cost_center in clone technology
     Generic.Verify pop-up is visible after clicking on i-icon
-    I_iconPage.Click on Back tab          Back to Manage Technology
+#    I_iconPage.Click on Back tab          Back to Manage Technology
+    sleep   ${yop_sleep}
+    switch window       aithentic | Clone - Technology
 
 Verify all i-icon of partners page
-    [Tags]      Stable
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -188,7 +197,7 @@ Verify all i-icon of partners page
 
 
 Verify all i-icon of Discovery assets
-    [Tags]      Stable
+    [Tags]    NT        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -209,7 +218,7 @@ Verify all i-icon of Discovery assets
 
 
 Verify all i-icon of advanced search
-    [Tags]     Smoke    Unstable    rerun
+    [Tags]     Smoke        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.Verify your current page location contains      dashboard
@@ -363,7 +372,7 @@ Verify all i-icon of advanced search
 
 
 Upload File I-icon while add and edit technology
-    [Tags]      Stable
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -395,7 +404,7 @@ Upload File I-icon while add and edit technology
     Generic.Fetch alert message text and compare it with        Technology updated successfully
 
 Upload I-icon under attachment tab
-    [Tags]      Stable
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -421,7 +430,7 @@ Upload I-icon under attachment tab
     I_iconPage.Fetch the text of I-icon of upload file while adding technology     You can upload 1 file of 8MB or 8 files of 1MB each.
 
 Upload I-icon under clone add technology
-    [Tags]      Stable
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -451,7 +460,7 @@ Upload I-icon under clone add technology
 
 
 Upload I-icon while adding discovery and component asset
-    [Tags]    rerun     Unstable
+    [Tags]    NT        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.Verify your current page location contains      dashboard
@@ -526,6 +535,7 @@ Upload I-icon while adding discovery and component asset
     UnselectAssetAPI.Hit API Endpoint
 
 Verify I-icon of management console page
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard

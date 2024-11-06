@@ -74,6 +74,7 @@ ${payment_zipcode}     css:#ZipCode
 
 
 ${cardNumber}     css:input[placeholder='Card number']
+${CardNumber_locator}       css:input[name='cardnumber']
 ${cardUserName}     //label[normalize-space()='Name on card']/following-sibling::input
 ${accountNumber}     css:#accountNumber
 ${routingNumber}     css:#routingNumber
@@ -852,3 +853,14 @@ Get the value of fields under view details of subscription connector under asset
     ${value} =    get value    (//div[@id='CrowdStrikeDetails']//input)[${option1}]
     log to console     ${value}
     should be equal    ${value}         ${option2}
+
+Fetch the all validation message on subscription payment page
+   wait until element is visible   //span[contains(@class,'invalidInput')]       ${wait_time}
+   @{expectedList} =    Create List       Please Select Country        Please enter Address Line 1            Please Choose State          Please Select City          Please enter Zip Code         Please check authorized Transaction box          Please check aithentic Contract box
+   ${elements} =  Get WebElements     //span[contains(@class,'invalidInput')]
+   @{actualList} =   Create List
+   FOR  ${element}  IN      @{elements}
+      log to console    ${element.text}
+      Append To List    ${actualList}     ${element.text}
+   END
+   lists should be equal    ${expectedList}    ${actualList}

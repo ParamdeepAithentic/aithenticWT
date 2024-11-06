@@ -53,6 +53,7 @@ ${save_assigneeForm}     css:.w-100.modal-footer .button-green
 ${teamMember_FirstName}     css:#FirstName
 ${teamMember_LastName}     css:#LastName
 ${teamMember_Email}     css:#Email
+${search_bar_assigned_user}     //input[@id='searchbar-assigneelist']
 
 #mobile number - partner code       Choose contact country
 #css:.qa-DepartmentId input
@@ -316,7 +317,7 @@ Click on three dots of Team Member listing
 
 Select option from three dots of Team Member
     [Arguments]     ${option}
-    Generic.Select other option from profile list       ${option}
+    Generic.Select simple option from profile list       ${option}
 
 Enter assign to field
     [Arguments]     ${option}
@@ -369,8 +370,7 @@ Click on confirm button under remove pop up of assigned user
     wait until element is visible      //div[contains(@id,'remove-assignee')]//div[contains(@class,'modal-body')]//following-sibling::button[normalize-space()='Confirm']        ${wait_time}
     wait until element is enabled     //div[contains(@id,'remove-assignee')]//div[contains(@class,'modal-body')]//following-sibling::button[normalize-space()='Confirm']        ${wait_time}
     click element       //div[contains(@id,'remove-assignee')]//div[contains(@class,'modal-body')]//following-sibling::button[normalize-space()='Confirm']
-#    sleep   ${search_sleep}
-    wait until element is not visible       ${shadow}          ${wait_time}
+    sleep   ${search_sleep}
 
 Search assigned user by static first name
     [Arguments]    ${name}
@@ -440,3 +440,64 @@ Create static assign to employee_ID
     click element      ${technology_employeeid}
     input text      ${technology_employeeid}      ${option3}
 #    set global variable    ${generate_employeeid}
+
+Enter invalid business email of assigned users
+    [Arguments]     ${option}
+    wait until element is visible       css:.qa-AssignedEmail    ${wait_time}
+    wait until element is visible       css:.qa-AssignedEmail    ${wait_time}
+    click element   css:.qa-AssignedEmail
+    input text   css:.qa-AssignedEmail   ${option}
+
+Clear the data of the field under member page
+    [Arguments]     ${option}
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       css:#${option}       ${wait_time}
+    click element     css:#${option}
+    Press Keys    css:#${option}     CONTROL+A
+    FOR    ${i}    IN RANGE    20
+        Press Keys    css:#${option}     BACKSPACE
+    END
+
+
+
+Create random assignee email not link with fist name
+    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${generated_assigneeemail}=    Catenate    Businessemail${random_string}@yopmail.net
+    wait until element is visible       ${assigneeEmail}    ${wait_time}
+    wait until element is enabled       ${assigneeEmail}    ${wait_time}
+    input text   ${assigneeEmail}   ${generated_assigneeemail}
+    set global variable    ${generated_assigneeemail}
+
+Verify the visibilty of same user exist validation
+    wait until element is visible       //div[contains(text(), 'Same user name already exists ')]    ${wait_time}
+    wait until element is enabled       //div[contains(text(), 'Same user name already exists ')]    ${wait_time}
+
+Click on the save button of add assignee pop up if user is same
+    [Arguments]     ${option}
+    Wait Until Element Is visible    //button[@id='${option}-assignee-modal']    ${wait_time}
+    Wait Until Element Is Enabled   //button[@id='${option}-assignee-modal']    ${wait_time}
+    click element      //button[@id='${option}-assignee-modal']
+    sleep       2
+    wait until element is not visible      ${loaderIcon}     ${wait_time}
+#    wait until element is not visible       ${shadow}          ${wait_time}
+
+
+Verify the visibilty of same user exist validation for cancel button
+    wait until element is visible       //div[contains(text(),' Employee Id is missing.')]    ${wait_time}
+    wait until element is enabled       //div[contains(text(),' Employee Id is missing.')]
+
+Click on the edit option under three dots of member
+    Wait Until Element Is visible   css:.assignee-edit-qa    ${wait_time}
+    Wait Until Element Is Enabled   css:.assignee-edit-qa    ${wait_time}
+    click element     css:.assignee-edit-qa
+
+
+Clear the element text in search bar of assigned user
+    Wait Until Element Is visible   css:input[placeholder='Search by Assignee Name or Employee Id']    ${wait_time}
+    Wait Until Element Is Enabled   css:input[placeholder='Search by Assignee Name or Employee Id']    ${wait_time}
+    clear element text      css:input[placeholder='Search by Assignee Name or Employee Id']
+
+Verify the visibilty of same user exist validation while adding
+    wait until element is visible       //div[contains(text(), 'Same user name already exists, Employee Id is missing. ')]    ${wait_time}
+    wait until element is enabled       //div[contains(text(), 'Same user name already exists, Employee Id is missing. ')]    ${wait_time}
+

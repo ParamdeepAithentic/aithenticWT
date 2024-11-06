@@ -7,6 +7,7 @@ Library           Collections
 Library           BuiltIn
 Library           random
 Library           DateTime
+Library           DateTime
 Library           OperatingSystem
 Resource        ../Pages/Generic.robot
 Resource        ../Pages/DashboardPage.robot
@@ -200,7 +201,7 @@ Click on three dots of Team Member listing
 
 Select option from three dots of Team Member
     [Arguments]     ${option}
-    Generic.Select other option from profile list       ${option}
+    Generic.Select simple option from profile list       ${option}
     sleep       ${search_sleep}
 
 Click on the tab

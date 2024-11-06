@@ -1411,7 +1411,11 @@ Click on pop up of available Inactive Asset
     [Arguments]     ${option}
     wait until element is visible   css:.qa-available-inactive-assests-${option}   ${wait_time}
     wait until element is enabled   css:.qa-available-inactive-assests-${option}   ${wait_time}
+    ${status}=    Run Keyword And Return Status    Element Should Be Visible    css:.qa-available-inactive-assests-${option}   ${wait_time}
+    wait until element is not visible   ${loaderIcon}     ${wait_time}
+    sleep       2
     click element   css:.qa-available-inactive-assests-${option}
+    RETURN    ${status}
 #    wait until element is not visible       ${shadow}          ${wait_time}
 
 Select option from exceed asset limit pop
@@ -2050,9 +2054,9 @@ Get the text of selected filter under technology
     wait until element is visible      //div[contains(@class,'technology position-relative')]//label[normalize-space()='${option}']    ${wait_time}
     ${fetch_Name_of_selected_filter} =    get text    //div[contains(@class,'technology position-relative')]//label[normalize-space()='${option}']
     ${original_string}=    Set Variable    ${fetch_Name_of_selected_filter}
-    ${New_Namee}=    Evaluate    '${original_string}'.strip()
-    log to console    ${New_Namee}
-    set global variable    ${New_Namee}
+    ${New_Name}=    Evaluate    '${original_string}'.strip()
+    log to console    ${New_Name}
+    set global variable    ${New_Name}
 
 Click on the value under the tech typen filters of technology page
     [Arguments]     ${option}
@@ -2080,9 +2084,9 @@ Get the text of the value you selected under filter
     wait until element is visible      (//div[contains(@class,'technology position-relative')]//following-sibling::div//label)[${option}]    ${wait_time}
     ${fetch_Name_of_selected_random_filter} =    get text    (//div[contains(@class,'technology position-relative')]//following-sibling::div//label)[${option}]
     ${original_string}=    Set Variable    ${fetch_Name_of_selected_random_filter}
-    ${random_Namee}=    Evaluate    '${original_string}'.strip()
-    log to console    ${random_Namee}
-    set global variable    ${random_Namee}
+    ${random_Name}=    Evaluate    '${original_string}'.strip()
+    log to console    ${random_Name}
+    set global variable    ${random_Name}
 
 Click on the product field under add technology
     [Arguments]        ${product}
@@ -2130,3 +2134,19 @@ Create the product
     Generic.Verify your current page location contains      technology-list
     Generic.Wait until table get load
     TechnologyPage.Search by AssetId       ${generated_AssetID}
+
+
+
+
+
+#Run Code Based On Element Visibility
+#    ${is_visible}=    Run Keyword And Return Status    TechnologyPage.Click on pop up of available Inactive Asset   cancel
+#
+#    Run Keyword If    ${is_visible}    TechnologyPage.Section 1 Code
+#    ...    ELSE    TechnologyPage.Section 2 Code
+#
+#Section 1 Code
+#    Log To Console    section one run successfully
+#
+#Section 2 Code
+#    Log To Console    section two run successfully
