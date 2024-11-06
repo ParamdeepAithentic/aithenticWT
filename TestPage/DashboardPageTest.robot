@@ -2653,6 +2653,7 @@ Verify Notification Mark all as read
     Generic.select the option from the side menu    Smart Share
     Generic.Verify your current page location contains      contract
     ContractsPage.Click on create new contract button
+    sleep   ${search_sleep}
     ContractsPage.Select type of contract     Dynamic Smart Share
     Generic.Verify your current page location contains      generate-contract
     ContractsPage.Enter contract type      SmartShare_Manufacturer

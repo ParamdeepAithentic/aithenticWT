@@ -569,3 +569,15 @@ Click on the cross icon of member type
     wait until element is visible       //span[@title='Clear all']   ${wait_time}
     wait until element is enabled       //span[@title='Clear all']    ${wait_time}
     click element   //span[@title='Clear all']
+
+
+Fetch the all validation message on profile page
+   wait until element is visible   //span[contains(@class,'invalidInput')]       ${wait_time}
+   @{expectedList} =    Create List       Please choose Country       Please select State          Please select City        Please enter Address Line 1         Please enter Zip Code       Please select Department        Please enter Position/Title
+   ${elements} =  Get WebElements     //span[contains(@class,'invalidInput')]
+   @{actualList} =   Create List
+   FOR  ${element}  IN      @{elements}
+      log to console    ${element.text}
+      Append To List    ${actualList}     ${element.text}
+   END
+   lists should be equal    ${expectedList}    ${actualList}

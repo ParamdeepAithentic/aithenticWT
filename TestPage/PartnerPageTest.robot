@@ -195,6 +195,7 @@ Compose Message invite user test
 #    ContractsPage.Click on create new contract button
     Generic.click on the tab        Create New Smart Share
     ${StartTime1} =     Get Current Time in Milliseconds
+    sleep       ${search_sleep}
     ContractsPage.Select type of contract     Dynamic Smart Share
     Generic.Verify your current page location contains      generate-contract
     Generic.Verify your current page contains this text     Generate New Smart Share
@@ -1176,6 +1177,7 @@ View Details and check the details of Contract
     ContractsPage.Click on back to contract link
 #    ContractsPage.Click on create new contract button
     Generic.click on the tab        Create New Smart Share
+    sleep   ${search_sleep}
     ContractsPage.Select type of contract     Dynamic Smart Share
     Generic.Verify your current page location contains      generate-contract
     ContractsPage.Enter contract type      SmartShare_Manufacturer
