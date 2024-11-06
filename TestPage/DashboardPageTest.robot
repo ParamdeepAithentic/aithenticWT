@@ -2683,6 +2683,46 @@ Verify Notification Mark all as read
     DashboardPage.Click on Mark all as read option
     DashboardPage.Verify text is normal after clicking Mark all as read         Contract ${fetch_contract_ID} with      ${generate_BusinessName} is pending
 
+Verify all the validations of Add and Edit product page
+    Generic.click on the tab    	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     product-dropdown
+    Generic.Verify your current page location contains      product
+    DashboardPage.Click on action button
+    DashboardPage.Click add product button
+    DashboardPage.Save added product details
+    DashboardPage.Fetch the all validation message of add product page
+    DashboardPage.Create random productName
+    sleep   ${search_sleep}
+    DashboardPage.Add product brand name      QABrand555
+    DashboardPage.Add product description
+    DashboardPage.Add product feature
+    DashboardPage.Select product technology type     Hardware
+    DashboardPage.Select product technology group     Applications
+    DashboardPage.Select product status   Active
+    DashboardPage.Save added product details
+    Generic.Fetch alert message text and compare it with        Product created successfully
+    DashboardPage.Verify product added    ${generated_product}
+    DashboardPage.Click on three dots of Department list
+    DashboardPage.Click on the edit option under three dots of product      Edit
+    DashboardPage.Verify the visibility of the product name under edit product pop up
+    DashboardPage.Click on the brand cross icon under edit product
+    LoginPage.Clear the element text of field under login page      productName
+    DashboardPage.Verify the visibility of enter product placeholder
+    DashboardPage.Click on the save and cancel button under edit product       Save
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page      Please enter Product Name
+    DashboardPage.Create random productName while edit
+    DashboardPage.Select brand from list while edit      QABrand555
+    DashboardPage.Add product description via link
+    DashboardPage.Add product feature while edit
+    DashboardPage.Click on the cross icon of tech type under product          TechTypes
+    DashboardPage.Click on the save and cancel button under edit product       Save
+    sleep  ${search_sleep}
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page       Please Select Technology Type
+
 Verfying all field validations of Add Brand page
     [Tags]    NT        rerun
     Generic.click on the tab	Login
