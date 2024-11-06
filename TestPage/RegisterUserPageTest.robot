@@ -49,7 +49,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Register new user
-    [Tags]      Smoke       Time        Stable    rerun
+    [Tags]      Smoke       Time
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
@@ -140,7 +140,7 @@ Register new user
 
 
 Signup with ACH payment method
-    [Tags]       Stable    Sanity
+    [Tags]    Sanity
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -226,7 +226,7 @@ Signup with ACH payment method
 
 
 Change plan and Change asset limit with ACH Payment method
-    [Tags]      Smoke        Stable
+    [Tags]      Smoke       rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -309,7 +309,7 @@ Change plan and Change asset limit with ACH Payment method
     DashboardPage.Select the asset ID checkbox      no
     Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.Click on the profile name
-    DashboardPage.Click on the subscription under profile list     subscription-dropdown
+    Generic.Select subscription option from profile list
     Generic.Verify your current page location contains      subscription
     SubscriptionPage.Select if you want to change plan or asset    Change Asset Limit
     sleep       ${search_sleep}
@@ -351,6 +351,7 @@ Change plan and Change asset limit with ACH Payment method
     BillingPage.Close the billing payment options module
 
 Update profile and company details of user
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -515,6 +516,7 @@ Update profile and company details of user
     RegisterUserPage.Fetch the Address and zip code from personal_details and compare     zip-code         83301
 
 Verify company domain and submit financial details
+    [Tags]      NT
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -625,7 +627,8 @@ Verify company domain and submit financial details
     Generic.click on the button      Yes
     Generic.Fetch alert message text and compare it with        Domain deleted successfully
 
-Upadte Email of user from personal profile
+Update Email of user from personal profile
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -758,6 +761,7 @@ Upadte Email of user from personal profile
     RegisterUserPage.Select asset center notifications inside alerts section         60 Days
 
 Enter password more than the limit while changing password
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -862,6 +866,7 @@ Enter password more than the limit while changing password
     DashboardPage.Verify the visibility of validation message under change password
 
 Enter password less than the limit while changing password
+    [Tags]      NT
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -973,6 +978,7 @@ Enter password less than the limit while changing password
     DashboardPage.Verify the visibility of validation message under change password
 
 Enter password of 32 characters while changing password
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1084,7 +1090,7 @@ Enter password of 32 characters while changing password
     DashboardPage.Click on the checkboxes under auhtentication tab
     Generic.Fetch alert message text and compare it with       Two factor updated successfully
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select subscription option from profile list
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     ${generate_register_Email}   Test@1234Test@1234Test@1234Test@
@@ -1092,6 +1098,7 @@ Enter password of 32 characters while changing password
     LandingPage.Verify you are on dashboard page
 
 Enter password of more than the limit while forgot password
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1180,7 +1187,7 @@ Enter password of more than the limit while forgot password
     DashboardPage.Click on the checkboxes under auhtentication tab
     Generic.Fetch alert message text and compare it with       Two factor updated successfully
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select subscription option from profile list
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     Generic.click on the tab        Forgot Password?
@@ -1206,6 +1213,7 @@ Enter password of more than the limit while forgot password
     RegisterUserPage.Verify the visibility of validation when entering password more than the limit
 
 Enter password of less than the limit while forgot password
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1294,7 +1302,7 @@ Enter password of less than the limit while forgot password
     DashboardPage.Click on the checkboxes under auhtentication tab
     Generic.Fetch alert message text and compare it with       Two factor updated successfully
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select subscription option from profile list
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     Generic.click on the tab        Forgot Password?
@@ -1320,6 +1328,7 @@ Enter password of less than the limit while forgot password
     RegisterUserPage.Verify the visibility of validation when entering password less than the limit
 
 Enter password of 8 characters while forgot password
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1408,7 +1417,7 @@ Enter password of 8 characters while forgot password
     DashboardPage.Click on the checkboxes under auhtentication tab
     Generic.Fetch alert message text and compare it with       Two factor updated successfully
     Generic.Click on the profile name
-    Generic.Select other option from profile list     Logout
+    Generic.Select subscription option from profile list
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     Generic.click on the tab        Forgot Password?
@@ -1434,6 +1443,7 @@ Enter password of 8 characters while forgot password
     Generic.Verify your current page location contains      dashboard
 
 Update billing address via profile list
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1530,6 +1540,7 @@ Update billing address via profile list
     Generic.Fetch alert message text and compare it with       Billing address updated successfully
 
 Verfying the validation of the Address 1 field from the company details
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}       ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1561,6 +1572,7 @@ Verfying the validation of the Address 1 field from the company details
 
 
 Add new ACH card and delete that card
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1660,6 +1672,7 @@ Add new ACH card and delete that card
     Generic.Fetch alert message text and compare it with       Bank removed successfully
 
 Add new credit card and delete that card
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1768,6 +1781,7 @@ Add new credit card and delete that card
     Generic.Fetch alert message text and compare it with       Card removed successfully
 
 Update the subscription Plan and verify the notification
+    [Tags]      NT
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1854,7 +1868,7 @@ Update the subscription Plan and verify the notification
     Generic.Verify your current page location contains     billing
     BillingPage.Get the value of manage subscription under billing
     Generic.Click on the profile name
-    DashboardPage.Click on the subscription under profile list     subscription-dropdown
+    Generic.Select subscription option from profile list
     Generic.Verify your current page location contains      subscription
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     sleep       ${wait_time}
@@ -1881,6 +1895,7 @@ Update the subscription Plan and verify the notification
     BillingPage.Get the text of the recent notification of added assets in system tab       Your Monthly plan has been changed.
 
 Profile Profile: Select location and department and add by cliking on link
+    [Tags]      NT
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -2012,6 +2027,7 @@ Profile Profile: Select location and department and add by cliking on link
     RegisterUserPage.Fetch the profile personal_details and compare with registration details       ${profile_position}       ${generate_position}     #
 
 Check all the validations on register page
+    [Tags]      NT
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     RegisterUserPage.Save the register form

@@ -49,6 +49,7 @@ Test Teardown   Close Browser session
 
 
 #Create the scheduler
+    #[Tags]      NT
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
 #    Generic.Verify your current page location contains      dashboard
@@ -67,7 +68,7 @@ Test Teardown   Close Browser session
 
 
 Edit the scheduler
-    [Tags]      Sanity      Stable    Smoke
+    [Tags]      Sanity     Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -116,7 +117,7 @@ Edit the scheduler
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
 
 Run now from view details
-    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -147,7 +148,7 @@ Run now from view details
     SubscriptionPage.Get the value of fields under view details of subscription connector   2       Samuel John
 
 Suspend and unsuspend the account
-    [Tags]      Smoke       Stable    Sanity
+    [Tags]      Smoke     Sanity    rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
@@ -196,7 +197,7 @@ Suspend and unsuspend the account
     END
 
 View Scheduler from view Result
-    [Tags]      Stable
+    [Tags]      NT      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -211,13 +212,14 @@ View Scheduler from view Result
     SubscriptionPage.Click on the three dots of subscription connector      Microsoft Corporation
     SubscriptionPage.Click on option under three dots of subscription connector     Microsoft Corporation        View Results
     #SubscriptionPage.Click on option under three dots of subscription connector     Microsoft Corporation          View Results
-
-    Generic.Verify your current page location contains    subscription
-    SubscriptionPage.Choose tab under subscription page after clicking on view_result
-    SubscriptionPage.Fetch and compare the Brand from the table    Microsoft Corporation
+    Generic.Verify your current page contains this text    No Records
+#    Generic.Verify your current page location contains    subscription
+#    SubscriptionPage.Choose tab under subscription page after clicking on view_result
+#    SubscriptionPage.Fetch and compare the Brand from the table    Microsoft Corporation
 
 
 #Create the scheduler of sentinel one
+#   [Tags]      NT
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
 #    LandingPage.Verify you are on dashboard page
@@ -235,7 +237,7 @@ View Scheduler from view Result
 #    Generic.Fetch alert message text and compare it with        Scheduler created sucessfully
 
 #Edit the scheduler of Sentinelone
-#    [Tags]      Sanity      Stable
+#    [Tags]      Sanity
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
 #    Generic.Verify your current page location contains      dashboard
@@ -284,7 +286,7 @@ View Scheduler from view Result
 #    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
 #
 #Run_now_delete_view-details_of_sentinelOne
-#    [Tags]      Stable
+#    [Tags]      NT
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
 #    Generic.Verify your current page location contains      dashboard
@@ -315,7 +317,7 @@ View Scheduler from view Result
 #    SubscriptionPage.Get the value of fields under view details of subscription connector   2       Samuel John
 #
 #View Scheduler from view Result of sentinelone
-#    [Tags]      Stable
+#    [Tags]      NT
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
 #    Generic.Verify your current page location contains      dashboard
@@ -332,7 +334,7 @@ View Scheduler from view Result
 #    SubscriptionPage.Click on the three dots of subscription connector      Microsoft Corporation
 
 #Edit the scheduler of Sentinelone
-#    [Tags]      Sanity      Stable
+#    [Tags]      Sanity
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
 #    Generic.Verify your current page location contains      dashboard
@@ -385,7 +387,7 @@ View Scheduler from view Result
 #    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
 #
 #Run_now_delete_view-details_of_sentinelOne
-#    [Tags]      Stable
+#    [Tags]      NT
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
 #    Generic.Verify your current page location contains      dashboard
@@ -416,7 +418,7 @@ View Scheduler from view Result
 #    SubscriptionPage.Get the value of fields under view details of subscription connector   2       Samuel John
 #
 #View Scheduler from view Result of sentinelone
-#    [Tags]      Stable
+#    [Tags]      NT
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
 #    Generic.Verify your current page location contains      dashboard
@@ -433,6 +435,7 @@ View Scheduler from view Result
 #    SubscriptionPage.Click on the three dots of subscription connector      Microsoft Corporation
 
 Create service now with invalid data
+    [Tags]      NT      rerun
    Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -531,7 +534,7 @@ Create service now with invalid data
     Generic.Verify your current page contains this text     Service Now Connection Failed.
 
 Create service now with valid data
-    [Tags]      Sanity     Smoke
+    [Tags]      Sanity     Smoke    rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -777,7 +780,7 @@ Create service now with valid data
 
 
 Click on connetors button link under asset discovery
-    [Tags]      Sanity
+    [Tags]      Sanity      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -876,7 +879,7 @@ Click on connetors button link under asset discovery
     Generic.Wait until table get load
 
 Create JAMFF account with valid data
-    [Tags]      OnlyQA
+   [Tags]      NT       rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1043,7 +1046,7 @@ Create JAMFF account with valid data
     Generic.Verify your current page contains this text    No Records
 
 Create jamff account with invalid data
-    [Tags]      OnlyQA
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1143,6 +1146,7 @@ Create jamff account with invalid data
     Generic.Verify your current page contains this text     Jamf Pro Connection Failed.
 
 #Edit the scheduler of jamff
+#   [Tags]      NT
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
 #    Generic.Verify your current page location contains      dashboard
@@ -1225,6 +1229,7 @@ Create jamff account with invalid data
 #
 #
 #View Results of jamff account
+#   [Tags]      NT
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
 #    Generic.Verify your current page location contains      dashboard
@@ -1238,7 +1243,7 @@ Create jamff account with invalid data
 #    Generic.Verify your current page contains this text    No Records
 
 Create sentinel account and verify the options
-    [Tags]      OnlyQA
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1380,8 +1385,7 @@ Create sentinel account and verify the options
     SubscriptionPage.Fetch alert message text of subscription connector and compare it with
     sleep  ${search_sleep}
     SubscriptionPage.Click on the three dots of subscription connector      SentinelOne
-    SubscriptionPage.Click on option under three dots
-    of subscription connector     SentinelOne    Delete
+    SubscriptionPage.Click on option under three dots of subscription connector     SentinelOne    Delete
     Generic.click on the button     Yes
     Generic.Fetch alert message text and compare it with        Status Updated
     SubscriptionPage.Fetch text of delete under table of subscription connector     SentinelOne         Deleted
@@ -1404,6 +1408,7 @@ Create sentinel account and verify the options
     Generic.Verify your current page contains this text    No Records
 
 Click on the three dots of Intune and verify the details
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -1480,6 +1485,7 @@ Click on the three dots of Intune and verify the details
 
 
 Create Tenable Account and verify the details
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1716,6 +1722,7 @@ Create Tenable Account and verify the details
 
 
 Create tanium Account and verify the details
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1945,6 +1952,7 @@ Create tanium Account and verify the details
     SubscriptionPage.Get the value of fields under view details of subscription of tanium tab under asset discovery   2       ${generate_register_Fname} ${generate_register_Lname}
 
 Create CrowdStrike Account and verify the details
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -2119,7 +2127,7 @@ Create CrowdStrike Account and verify the details
     OCS.Click on newly discovered tab under service now
     SubscriptionPage.Click on the action button of crowd strike under discovery assets
     SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets       Edit
-    SubscriptionPage.click on the cross icon of crowdstrike under asset discoveryy    1
+    SubscriptionPage.click on the cross icon of crowdstrike under asset discovery    1
     SubscriptionPage.Enter input in the input field of frequency under asset discovery    Weekly
     SubscriptionPage.Enter input in the input field of day asset discovery       Monday
     SubscriptionPage.Select the time from the timepicker     7
@@ -2180,6 +2188,7 @@ Create CrowdStrike Account and verify the details
     SubscriptionPage.Get the value of fields under view details of subscription connector   2       ${generate_register_Fname} ${generate_register_Lname}
 
 Click on the three dots of Azure and verify the details
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      samuel@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard

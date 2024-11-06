@@ -41,7 +41,7 @@ Resource        ../Pages/DisconnectConnectorAPI.robot
 Resource        ../Pages/UnselectAssetAPI.robot
 *** Variables ***
 
-${Create_new_contact_button}     css:a[data-toggle='modal']
+${Create_new_contact_button}     //a[normalize-space()='Create New Smart Share']
 ${contactType}     css:#contractType   #click
 ${companyId}     css:#CompanyId       #enter contract with
 ${dd_loader}    css:.ng-spinner-loader.ng-star-inserted   #wait till hide
@@ -90,7 +90,8 @@ Select type of contract
 
 Enter contract type
     [Arguments]    ${option}
-    Wait Until Element Is Not Visible       ${dd_loader}    ${wait_time}
+#    Wait Until Element Is Not Visible       ${dd_loader}    ${wait_time}
+    Wait Until Element Is Not Visible       ${loaderIcon}    120
     Wait Until Element Is Enabled      ${contactType}   ${wait_time}
     click element       ${contactType}
     ${StartTime1} =     Get Current Time in Milliseconds
@@ -110,9 +111,9 @@ Enter contract with
     ${StartTime1} =     Get Current Time in Milliseconds
     input text      ${companyId}      ${option}
     sleep       ${search_sleep}
-    Wait Until Element Is Visible       //div[contains(@class,'dropdown-panel')]//span[normalize-space()='${option}']    ${wait_time}
-    Wait Until Element Is Enabled      //div[contains(@class,'dropdown-panel')]//span[normalize-space()='${option}']     ${wait_time}
-    Click Element     //div[contains(@class,'dropdown-panel')]//span[normalize-space()='${option}']
+    Wait Until Element Is Visible       //label[normalize-space()='Smart Share With:']//parent::div//span[normalize-space()='${option}']    ${wait_time}
+    Wait Until Element Is Enabled      //label[normalize-space()='Smart Share With:']//parent::div//span[normalize-space()='${option}']     ${wait_time}
+    Press Keys     ${companyId}       ENTER
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  4  ${pageHeading}   ContractPage - Select the business name option from contract with dropdown via add new contract       4    ${pageTime}     ${ActualTime}    ContractPage_Time

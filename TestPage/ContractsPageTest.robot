@@ -83,7 +83,7 @@ Test Teardown   Close Browser session
 
 
 Technology Auto removed from dynamic contract When edit Brand and product
-    [Tags]      Sanity      Smoke       Time        Unstable      rerun
+    [Tags]      Sanity      Smoke       Time        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -184,7 +184,6 @@ Technology Auto removed from dynamic contract When edit Brand and product
     sleep       ${search_sleep}
     ContractsPage.Select type of contract     Dynamic Smart Share
     Generic.Verify your current page location contains      generate-contract
-
     ContractsPage.Enter contract type      SmartShare_Manufacturer
     ContractsPage.Enter contract with     ${generate_BusinessName}
     ContractsPage.Enter contract brand    ${generate_BusinessName}
@@ -244,7 +243,7 @@ Technology Auto removed from dynamic contract When edit Brand and product
 
 
 Technology Auto removed from static contract When edit Brand and product
-    [Tags]      Sanity      Unstable
+    [Tags]      Sanity      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -347,7 +346,6 @@ Technology Auto removed from static contract When edit Brand and product
     sleep       ${search_sleep}
     ContractsPage.Select type of contract     Static Smart Share
     Generic.Verify your current page location contains      generate-contract
-
     ContractsPage.Enter contract type      SmartShare_Manufacturer
     ContractsPage.Enter contract with     ${generate_BusinessName}
     ContractsPage.Enter contract brand    ${generate_BusinessName}
