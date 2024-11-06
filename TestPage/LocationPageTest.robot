@@ -447,7 +447,7 @@ Add multiple IP subnets while adding location
     Generic.Verify your current page location contains      locationlist
     LocationPage.Click on Location action button
     LocationPage.Click on add location button    Add New Location
-    Generic.Verify your current page location contains      addlocation
+    Generic.Verify your current page location contains      add-location
     LocationPage.Select location country     United States
     LocationPage.Select location building name   Trump tower
     LocationPage.Select location floor   second
@@ -462,7 +462,7 @@ Add multiple IP subnets while adding location
     LocationPage.Create more than one random IP subnet      1
     LocationPage.Click on the plus icon of the subnet
     LocationPage.Create more than one random IP subnet      2
-    LocationPage.Save location form     add
+    Generic.click on the button     Save
     Generic.Fetch alert message text and compare it with    Location created successfully
     LocationPage.Search by location name     ${generated_location}
     LocationPage.Fetch the location Name from the row       ${generated_location}
@@ -484,8 +484,5 @@ Add multiple IP subnets while adding location
     LocationPage.Create more than one random IP subnet      3
     Generic.click on the button    Update
     Generic.Fetch alert message text and compare it with    Location updated successfully
-#    LocationPage.Search by location name     ${generated_location}
-#    LocationPage.Fetch the location Name from the row       ${generated_location}
-
-
-
+    LocationPage.Search by location name     ${generated_location}
+    LocationPage.Fetch the location Name from the row       ${generated_location}
