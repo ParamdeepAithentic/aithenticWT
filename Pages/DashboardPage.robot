@@ -1790,12 +1790,4 @@ Select brand from list while edit
 Add product feature while edit
     wait until element is visible  css:#features          ${wait_time}
     wait until element is enabled   css:#features         ${wait_time}
-    input text   css:#features   This is the features of new product added.
-
-
-
-
-
-
-
-
+    input text   css:#features   This is the features of new product add
