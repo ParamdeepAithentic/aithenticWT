@@ -1762,10 +1762,35 @@ Clear the product from the edit product
     END
 
 Click on the cross icon of tech type under product
-    wait until element is visible       //div[@id='editProductPopup']//ng-select[contains(@class,'qa-TechTypes')]//span[@title='Clear all']      ${wait_time}
-     wait until element is enabled       //div[@id='editProductPopup']//ng-select[contains(@class,'qa-TechTypes')]//span[@title='Clear all']       ${wait_time}
-     click element      //div[@id='editProductPopup']//ng-select[contains(@class,'qa-TechTypes')]//span[@title='Clear all']
+    [Arguments]     ${option}
+    wait until element is visible       //div[@id='editProductPopup']//ng-select[contains(@class,'qa-${option}')]//span[@title='Clear all']      ${wait_time}
+     wait until element is enabled       //div[@id='editProductPopup']//ng-select[contains(@class,'qa-${option}')]//span[@title='Clear all']       ${wait_time}
+     click element      //div[@id='editProductPopup']//ng-select[contains(@class,'qa-${option}')]//span[@title='Clear all']
+     sleep      2
      wait until element is not visible    ${loaderIcon}      ${wait_time}
+
+Create random productName while edit
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_editproduct}=    Catenate    Product_${random_string}
+    input text   ${Edit_ProductName}   ${generated_editproduct}
+    log to console      ${generated_editproduct}
+    set global variable   ${generated_editproduct}
+
+Select brand from list while edit
+    [Arguments]    ${BrandName}
+    wait until element is visible       css:#brandName     ${wait_time}
+    wait until element is enabled       css:#brandName     ${wait_time}
+    click element   css:#brandName
+    Clear Element Text      css:#brandName
+    ${StartTime1} =     Get Current Time in Milliseconds
+    input text   css:#brandName     ${BrandName}
+    Generic.Select parameter     ${BrandName}
+
+
+Add product feature while edit
+    wait until element is visible  css:#features          ${wait_time}
+    wait until element is enabled   css:#features         ${wait_time}
+    input text   css:#features   This is the features of new product added.
 
 
 

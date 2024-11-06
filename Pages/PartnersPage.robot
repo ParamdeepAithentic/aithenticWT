@@ -794,11 +794,12 @@ Skip case
 
 Create the support partner
     [Arguments]         ${option1}       ${option}
+    PartnersPage.Select partner country       United States
     PartnersPage.Select partner type of new partner     ${option1}
     PartnersPage.Create partner self business name      ${option}
 #   PartnersPage.Enter partner business URL      ${generate_BusinessName}
     PartnersPage.Select partner business URL
-    PartnersPage.Select partner country       United States
+
     PartnersPage.Click on the save button   Save
     Sleep     5
     Generic.Fetch alert message text and compare it with    Partner created successfully
