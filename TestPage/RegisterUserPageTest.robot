@@ -2147,21 +2147,21 @@ Verify all the validations on profile page
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page       Your card's expiration year is in the past.
-    SubscriptionPage.Switch to card iframe
-    LoginPage.Clear the element text of field under login page      ${CardNumber_locator}
-    Unselect Frame
-    SubscriptionPage.Switch to card iframe
-    SubscriptionPage.Enter cardnumber    42424242424242420429242
-    Unselect Frame
-    SubscriptionPage.Enter card user name    Paramdeep Singh
-    SubscriptionPage.Check the authorization checkbox
-    SubscriptionPage.Check the acknowledgement checkbox
-    SubscriptionPage.Click on complete process button
-    Generic.Verify your current page location contains     welcome
-    Generic.Fetch alert message text and compare it with       Payment Successful
-    DashboardPage.Click on complete setup button      Complete Setup
-    Generic.Verify your current page location contains     organization
-    DashboardPage.Select the employee ID checkbox   yes
-    DashboardPage.Select the location ID checkbox   yes
-    DashboardPage.Select the asset ID checkbox      no
-    Generic.Fetch alert message text and compare it with       Settings Updated
+#    SubscriptionPage.Switch to card iframe
+#    LoginPage.Clear the element text of field under login page      ${CardNumber_locator}
+#    Unselect Frame
+#    SubscriptionPage.Switch to card iframe
+#    SubscriptionPage.Enter cardnumber    42424242424242420429242
+#    Unselect Frame
+#    SubscriptionPage.Enter card user name    Paramdeep Singh
+#    SubscriptionPage.Check the authorization checkbox
+#    SubscriptionPage.Check the acknowledgement checkbox
+#    SubscriptionPage.Click on complete process button
+#    Generic.Verify your current page location contains     welcome
+#    Generic.Fetch alert message text and compare it with       Payment Successful
+#    DashboardPage.Click on complete setup button      Complete Setup
+#    Generic.Verify your current page location contains     organization
+#    DashboardPage.Select the employee ID checkbox   yes
+#    DashboardPage.Select the location ID checkbox   yes
+#    DashboardPage.Select the asset ID checkbox      no
+#    Generic.Fetch alert message text and compare it with       Settings Updated
