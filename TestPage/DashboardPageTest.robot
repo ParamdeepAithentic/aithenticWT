@@ -2696,6 +2696,11 @@ Verify all the validations of Add and Edit product page
     DashboardPage.Verify the visibility of enter product placeholder
     DashboardPage.Click on the save and cancel button under edit product       Save
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page      Please enter Product Name
+    DashboardPage.Click on the cross icon of tech type under product
+    DashboardPage.Click on the save and cancel button under edit product       Save
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page       Please Select Technology Type
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Please Select Status
+
 
 
 Verfying all field validations of Add Brand page

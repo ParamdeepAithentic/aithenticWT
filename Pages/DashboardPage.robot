@@ -1758,6 +1758,13 @@ Clear the product from the edit product
         Press Keys    css:#${option}     BACKSPACE
     END
 
+Click on the cross icon of tech type under product
+    wait until element is visible       //div[@id='editProductPopup']//ng-select[contains(@class,'qa-TechTypes')]//span[@title='Clear all']      ${wait_time}
+     wait until element is enabled       //div[@id='editProductPopup']//ng-select[contains(@class,'qa-TechTypes')]//span[@title='Clear all']       ${wait_time}
+     click element      //div[@id='editProductPopup']//ng-select[contains(@class,'qa-TechTypes')]//span[@title='Clear all']
+     wait until element is not visible    ${loaderIcon}      ${wait_time}
+
+
 
 
 
