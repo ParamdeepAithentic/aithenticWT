@@ -316,6 +316,8 @@ Click on the select location filter and verify it
     sleep   ${search_sleep}
     Generic.Wait until table get load
     sleep   ${search_sleep}
+    Generic.Scroll Window To End
+    sleep   ${search_sleep}
     PaginationPage.Fetch the total count
     LocationPage.Fetch the country from location filter and click       Country     3        Canada          ${New_Name}
     Generic.Click on the reset filters link

@@ -217,6 +217,7 @@ Click on current and previous year tab under spend forecast
     wait until element is visible   css:#totalitassetsspendfyq-tab      ${wait_time}
     wait until element is enabled   css:#totalitassetsspendfyq-tab      ${wait_time}
     click element   css:#totalitassetsspendfyq-tab
+    wait until element is not visible   ${loaderIcon}       ${wait_time}
 
 Click on five year forecast tab under spend forecast
     wait until element is not visible   ${loaderIcon}       ${wait_time}
