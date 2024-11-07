@@ -860,9 +860,11 @@ Hover over row of under M365 tab
 
 Fetch the Asset_Id from subcription overview table
     wait until element is not visible   ${loaderIcon}          ${wait_time}
+    wait until element is not visible   (//tbody//tr[2]//div[contains(@class,'skeleton')])[1]    ${wait_time}
     wait until element is visible     //p[normalize-space()='Subscription Overview']//parent::div//tbody//tr[1]//td[3]           ${wait_time}
     wait until element is enabled     //p[normalize-space()='Subscription Overview']//parent::div//tbody//tr[1]//td[3]          ${wait_time}
-    ${subscriptionOverview_AssetID}=        Execute JavaScript    return document.querySelector('table:nth-of-type(2) tbody tr:nth-child(1) td:nth-child(3)').textContent;
+#    ${subscriptionOverview_AssetID}=        Execute JavaScript    return document.querySelector('table:nth-of-type(2) tbody tr:nth-child(1) td:nth-child(3)').textContent;
+    ${subscriptionOverview_AssetID}=  get text      //p[normalize-space()='Subscription Overview']//parent::div//tbody//tr[1]//td[3]
     log         ${subscriptionOverview_AssetID}
     set global variable     ${subscriptionOverview_AssetID}
     click element   //p[normalize-space()='Subscription Overview']//parent::div//tbody//tr[1]//td[3]
@@ -870,9 +872,10 @@ Fetch the Asset_Id from subcription overview table
 
 Fetch the Product_name from subcription overview table
     wait until element is not visible   ${loaderIcon}          ${wait_time}
+    wait until element is not visible   (//tbody//tr[2]//div[contains(@class,'skeleton')])[1]    ${wait_time}
     wait until element is visible     //p[normalize-space()='Subscription Overview']//parent::div//tbody//tr[1]//td[2]           ${wait_time}
     wait until element is enabled     //p[normalize-space()='Subscription Overview']//parent::div//tbody//tr[1]//td[2]          ${wait_time}
-    ${subscriptionOverview_ProductName}=        get value    //p[normalize-space()='Subscription Overview']//parent::div//tbody//tr[1]//td[2]
+    ${subscriptionOverview_ProductName}=        get text    //p[normalize-space()='Subscription Overview']//parent::div//tbody//tr[1]//td[2]
     log         ${subscriptionOverview_ProductName}
     set global variable     ${subscriptionOverview_ProductName}
 

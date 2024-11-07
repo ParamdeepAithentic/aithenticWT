@@ -2284,7 +2284,7 @@ SUBSCRIPTION CONNECTOR : M365 Subscription Report Drilldown
     LandingPage.Verify you are on dashboard page
     Generic.Select parameter         Usage Analytics
     Generic.Verify your current page location contains     usage-analytics
-    SubscriptionPage.Click on the tab under Uasge Analytics         M365
+    SubscriptionPage.Click on the tab under Uasge Analytics         m365
     SubscriptionPage.Wait for the subscrition overview table to load
     SubscriptionPage.Fetch the Product_name from subcription overview table
     Generic.select the option from the side menu    Technology
@@ -2292,7 +2292,7 @@ SUBSCRIPTION CONNECTOR : M365 Subscription Report Drilldown
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
-    TechnologyPage.Click technology brand input field
+#    TechnologyPage.Click technology brand input field
 #    TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Select parameter from technology dropdown list      ${subscriptionOverview_ProductName}
     TechnologyPage.Add assetID for technology lifecycle information random
@@ -2304,7 +2304,7 @@ SUBSCRIPTION CONNECTOR : M365 Subscription Report Drilldown
     LandingPage.Verify you are on dashboard page
     Generic.Select parameter         Usage Analytics
     Generic.Verify your current page location contains     usage-analytics
-    SubscriptionPage.Click on the tab under Uasge Analytics         M365
+    SubscriptionPage.Click on the tab under Uasge Analytics         m365
     SubscriptionPage.Wait for the subscrition overview table to load
     SubscriptionPage.Fetch the Asset_Id from subcription overview table
     Generic.Verify your current page location contains     subscription-technology-details
