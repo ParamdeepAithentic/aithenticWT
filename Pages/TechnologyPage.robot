@@ -2107,10 +2107,16 @@ Method 1
 
 Get new product
     [Arguments]         ${option}   ${option1}   ${option2}
-    Run Keyword If    ${status} == True
+    TRY
+         wait until element is visible   //td[normalize-space()='${option}']   ${wait_time}
+         Set Global Variable    ${status} == False
+    EXCEPT
+        Run Keyword If    ${status} == True
         ...    TechnologyPage.Skip case
         ...    ELSE  Run Keywords     TechnologyPage.Create the product     ${option}   ${option1}   ${option2}
         ...    AND    Return From Keyword
+    END
+
 
 
 Skip case

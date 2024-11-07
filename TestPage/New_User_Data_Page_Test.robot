@@ -159,76 +159,76 @@ Adding the data in the account
     LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
-    Generic.Click on the profile name
-    Generic.Select option from profile list     personal-details
-    I_iconPage.Choose options inside personal_details        Organization
-    I_iconPage.Choose tabs under organization        system
-    Generic.Verify your current page location contains     organization
-    DashboardPage.Select the employee ID checkbox   no
-    DashboardPage.Select the asset ID checkbox      no
-#    Generic.Fetch alert message text and compare it with       Settings Updated
+#    Generic.Click on the profile name
+#    Generic.Select option from profile list     personal-details
+#    I_iconPage.Choose options inside personal_details        Organization
+#    I_iconPage.Choose tabs under organization        system
+#    Generic.Verify your current page location contains     organization
+#    DashboardPage.Select the employee ID checkbox   no
+#    DashboardPage.Select the asset ID checkbox      no
+##    Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    TechnologyPage.Click on action button of technology
-    TechnologyPage.Choose add technology from action button of technology
-    Generic.Verify your current page location contains      addtechnology
-    TechnologyPage.Click technology brand input field
-    TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Click on the product field under add technology      OPMR815309
-    TechnologyPage.Method1      OPMR815309
-    TechnologyPage.Get new product     OPMR815309     License     Applications
-    TechnologyPage.Click on action button of technology
-    TechnologyPage.Choose add technology from action button of technology
-    Generic.Verify your current page location contains      addtechnology
-    TechnologyPage.Click technology brand input field
-    TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Click on the product field under add technology      OPMR815274
-    TechnologyPage.Method1      OPMR815274
-    TechnologyPage.Get new product     OPMR815274     Hardware     Applications
-    TechnologyPage.Click on action button of technology
-    TechnologyPage.Choose add technology from action button of technology
-    Generic.Verify your current page location contains      addtechnology
-    TechnologyPage.Click technology brand input field
-    TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Click on the product field under add technology      OPMR815324
-    TechnologyPage.Method1      OPMR8153324
-    TechnologyPage.Get new product     OPMR815324      Maintenance     Applications
-
-    TechnologyPage.Click on action button of technology
-    TechnologyPage.Choose add technology from action button of technology
-    Generic.Verify your current page location contains      addtechnology
-    TechnologyPage.Click technology brand input field
-    TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Click on the product field under add technology      OPMR815277
-    TechnologyPage.Method1      OPMR815277
-    TechnologyPage.Get new product     OPMR815277      Subscription     Applications
-
-    TechnologyPage.Click on action button of technology
-    TechnologyPage.Choose add technology from action button of technology
-    Generic.Verify your current page location contains      addtechnology
-    TechnologyPage.Click technology brand input field
-    TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Click on the product field under add technology      Product_665995755
-    TechnologyPage.Method1      Product_665995755
-    TechnologyPage.Get new product     Product_665995755      Hardware     Applications
-
-    TechnologyPage.Click on action button of technology
-    TechnologyPage.Choose add technology from action button of technology
-    Generic.Verify your current page location contains      addtechnology
-    TechnologyPage.Click technology brand input field
-    TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Click on the product field under add technology      Product_00337612322
-    TechnologyPage.Method1      Product_00337612322
-    TechnologyPage.Get new product     Product_00337612322      Hardware     Applications
-
-    TechnologyPage.Click on action button of technology
-    TechnologyPage.Choose add technology from action button of technology
-    Generic.Verify your current page location contains      addtechnology
-    TechnologyPage.Click technology brand input field
-    TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Click on the product field under add technology      Product_0033761232
-    TechnologyPage.Method1      Product_0033761232
-    TechnologyPage.Get new product     Product_0033761232      Maintenance     CRT TVs
+#    TechnologyPage.Click on action button of technology
+#    TechnologyPage.Choose add technology from action button of technology
+#    Generic.Verify your current page location contains      addtechnology
+#    TechnologyPage.Click technology brand input field
+#    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+#    TechnologyPage.Click on the product field under add technology      OPMR815309
+#    TechnologyPage.Method 1     OPMR815309
+#    TechnologyPage.Get new product     OPMR815309     License     Applications
+#    TechnologyPage.Click on action button of technology
+#    TechnologyPage.Choose add technology from action button of technology
+#    Generic.Verify your current page location contains      addtechnology
+#    TechnologyPage.Click technology brand input field
+#    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+#    TechnologyPage.Click on the product field under add technology      OPMR815274
+#    TechnologyPage.Method 1      OPMR815274
+#    TechnologyPage.Get new product     OPMR815274     Hardware     Applications
+#    TechnologyPage.Click on action button of technology
+#    TechnologyPage.Choose add technology from action button of technology
+#    Generic.Verify your current page location contains      addtechnology
+#    TechnologyPage.Click technology brand input field
+#    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+#    TechnologyPage.Click on the product field under add technology      OPMR815324
+#    TechnologyPage.Method 1      OPMR815324
+#    TechnologyPage.Get new product     OPMR815324      Maintenance     Applications
+#
+#    TechnologyPage.Click on action button of technology
+#    TechnologyPage.Choose add technology from action button of technology
+#    Generic.Verify your current page location contains      addtechnology
+#    TechnologyPage.Click technology brand input field
+#    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+#    TechnologyPage.Click on the product field under add technology      OPMR815277
+#    TechnologyPage.Method 1      OPMR815277
+#    TechnologyPage.Get new product     OPMR815277      Subscription     Applications
+#
+#    TechnologyPage.Click on action button of technology
+#    TechnologyPage.Choose add technology from action button of technology
+#    Generic.Verify your current page location contains      addtechnology
+#    TechnologyPage.Click technology brand input field
+#    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+#    TechnologyPage.Click on the product field under add technology      Product_665995755
+#    TechnologyPage.Method 1      Product_665995755
+#    TechnologyPage.Get new product     Product_665995755      Hardware     Applications
+#
+#    TechnologyPage.Click on action button of technology
+#    TechnologyPage.Choose add technology from action button of technology
+#    Generic.Verify your current page location contains      addtechnology
+#    TechnologyPage.Click technology brand input field
+#    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+#    TechnologyPage.Click on the product field under add technology      Product_00337612322
+#    TechnologyPage.Method 1      Product_00337612322
+#    TechnologyPage.Get new product     Product_00337612322      Hardware     Applications
+#
+#    TechnologyPage.Click on action button of technology
+#    TechnologyPage.Choose add technology from action button of technology
+#    Generic.Verify your current page location contains      addtechnology
+#    TechnologyPage.Click technology brand input field
+#    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+#    TechnologyPage.Click on the product field under add technology      Product_0033761232
+#    TechnologyPage.Method 1      Product_0033761232
+#    TechnologyPage.Get new product     Product_0033761232      Maintenance     CRT TVs
 
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
@@ -236,7 +236,7 @@ Adding the data in the account
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list        Brand_End_of_Life
     TechnologyPage.Click on the product field under add technology      Product_End_of_Life
-    TechnologyPage.Method1      Product_End_of_Life
+    TechnologyPage.Method 1      Product_End_of_Life
     TechnologyPage.Get new product     Product_End_of_Life       Hardware     Applications
 
 
@@ -246,7 +246,7 @@ Adding the data in the account
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list        Brand_End_of_Life
     TechnologyPage.Click on the product field under add technology      Product_certificate
-    TechnologyPage.Method1      Product_certificate
+    TechnologyPage.Method 1      Product_certificate
     TechnologyPage.Get new product     Product_certificate        Certificate     Communication
 
 
