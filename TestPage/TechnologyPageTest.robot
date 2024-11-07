@@ -3523,7 +3523,7 @@ Click on the technology group filters and verify it
     PaginationPage.Get count of total rows from Product Dropdown
     TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
 
-Fetch and verify the description from the technology details page
+Fetch and verify the description from the technology details pages
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -3547,7 +3547,7 @@ Fetch and verify the description from the technology details page
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
     OCS.Visible the print qr button to for data loading
-    
+    TechnologyPage.Fetch the description from the technology details page
 
 #Zz kill browser
 #    [Tags]      Smoke     Sanity      Time        Stable    yy
