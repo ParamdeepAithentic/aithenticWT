@@ -286,6 +286,7 @@ Remove asset from technology table
 #     wait until element is enabled       ${removePopUp}        ${wait_time}
      sleep      ${search_sleep}
      Wait Until Element Is Enabled      ${select_remove_popUp_Yes}      ${wait_time}
+     sleep      ${search_sleep}
      click element      ${select_remove_popUp_Yes}
      sleep      ${search_sleep}
 
@@ -352,6 +353,7 @@ Select parameter from technology dropdown list
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  6  ${pageHeading}   Technology Page - Select the option from product dropdown list under add technology      6    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+    Wait Until Element Is not Visible    (//input[@id='brandselect']//parent::div//following::div[contains(@class,'spinner-loader')])[1]       ${wait_time}
 
 Click on add product link
     wait until element is visible   css:.qa-product-add-assets      ${wait_time}
@@ -1992,6 +1994,7 @@ Click on Print QR button
     Wait Until Element Is Not Visible    ${loaderIcon}        ${wait_time}
     Wait until element is visible     css:#PrintQrButton      ${wait_time}
     wait until element is enabled     css:#PrintQrButton      ${wait_time}
+    sleep       ${search_sleep}
     click element       css:#PrintQrButton
 
 Select option by clicking on Print QR button
@@ -2006,6 +2009,7 @@ Confirm to download QR file
     wait until element is enabled     //div[@id='downloadQrCode']//button[normalize-space()='${option}']      ${wait_time}
     sleep    ${search_sleep}
     click element       //div[@id='downloadQrCode']//button[normalize-space()='${option}']
+    Wait Until Element Is Not Visible    ${shadow}        ${wait_time}
 
 click on the three dots inside table of parent tab from tehnology details page
     Wait Until Element Is Not Visible    ${loaderIcon}        ${wait_time}
