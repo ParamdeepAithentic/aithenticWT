@@ -551,31 +551,45 @@ Verify all the validate validations of the assigned user while edit assigned use
     MemberPage.Enter first name of static assigned users       Johnny
     MemberPage.Enter last name of static assigned users       Doe
     MemberPage.Create static assign to employee_ID      EmployeeID_9001
+    MemberPage.Create random assignee email not link with fist name
+    LoginPage.Clear the element text of field under login page      AssignedEmail
+    MemberPage.Create random assignee email not link with fist name
+    sleep   ${search_sleep}
     MemberPage.Click on save button of assigned user
-    MemberPage.Verify the visibilty of same user business email
+    MemberPage.Verify the visibilty of same user exist email validation
     MemberPage.Click on the save button of add assignee pop up if user is same      save
     Generic.Fetch alert message text and compare it with        Assigned Users updated successfully
+#    MemberPage.Verify the visibilty of same user business email
+#    MemberPage.Click on the save button of add assignee pop up if user is same      save
+#    Generic.Fetch alert message text and compare it with        Assigned Users updated successfully
     Generic.Verify your current page location contains      memberslist
     MemberPage.Search assigned user by first name   Johnny
     MemberPage.Click on three dots of Team Member listing
     MemberPage.Click on the edit option under three dots of member
+    LoginPage.Clear the element text of field under login page      AssignedEmail
     LoginPage.Clear the element text of field under login page      AssignedEmployeeId
     LoginPage.Clear the element text of field under login page      AssignedFirstName
     LoginPage.Clear the element text of field under login page      AssignedLastName
     MemberPage.Enter first name of static assigned users       Johnny
     MemberPage.Enter last name of static assigned users       Doe
     MemberPage.Create static assign to employee_ID      EmployeeID_9001
-    MemberPage.Create random assignee email not link with fist name
+#    MemberPage.Create random assignee email not link with fist name
     MemberPage.Click on save button of assigned user
+    MemberPage.Verify the visibilty of same user business email
+    MemberPage.Click on the save button of add assignee pop up if user is same      save
+    Generic.Fetch alert message text and compare it with        Assigned Users updated successfull
 #    MemberPage.Verify the visibilty of same user exist validation
 #    MemberPage.Click on the save button of add assignee pop up if user is same      save
-    Generic.Fetch alert message text and compare it with        Assigned Users updated successfully
+#    Generic.Fetch alert message text and compare it with        Assigned Users updated successfully
     Generic.Verify your current page location contains      memberslist
+
     MemberPage.Search assigned user by first name   Johnny
     MemberPage.Click on three dots of Team Member listing
     MemberPage.Click on the edit option under three dots of member
     LoginPage.Clear the element text of field under login page      AssignedEmail
     MemberPage.Enter invalid business email of assigned users       Johnny@yopmail.net
+    TechnologyPage.Create unique assign to employee_ID random
+    LoginPage.Clear the element text of field under login page      AssignedEmployeeId
     TechnologyPage.Create unique assign to employee_ID random
     MemberPage.Click on save button of assigned user
 #    MemberPage.Verify the visibilty of same user exist validation

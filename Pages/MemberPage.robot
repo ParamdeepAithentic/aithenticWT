@@ -417,6 +417,7 @@ Enter first name of static assigned users
     wait until element is enabled       css:.qa-AssignedFirstName     ${wait_time}
     click element       css:.qa-AssignedFirstName
     input text   css:.qa-AssignedFirstName    ${option}
+    sleep   ${search_sleep}
 
 Enter last name of static assigned users
     [Arguments]     ${option1}
@@ -424,6 +425,7 @@ Enter last name of static assigned users
     wait until element is enabled       css:.qa-AssignedLastName    ${wait_time}
     click element   css:.qa-AssignedLastName
     input text   css:.qa-AssignedLastName   ${option1}
+    sleep   ${search_sleep}
 
 Enter business email of static assigned users
     [Arguments]     ${option2}
@@ -439,6 +441,7 @@ Create static assign to employee_ID
     wait until element is enabled     ${technology_employeeid}         ${wait_time}
     click element      ${technology_employeeid}
     input text      ${technology_employeeid}      ${option3}
+    sleep   ${search_sleep}
 #    set global variable    ${generate_employeeid}
 
 Enter invalid business email of assigned users
@@ -466,6 +469,7 @@ Create random assignee email not link with fist name
     wait until element is visible       ${assigneeEmail}    ${wait_time}
     wait until element is enabled       ${assigneeEmail}    ${wait_time}
     input text   ${assigneeEmail}   ${generated_assigneeemail}
+    sleep   ${search_sleep}
     set global variable    ${generated_assigneeemail}
 
 Verify the visibilty of same user exist validation
@@ -504,3 +508,7 @@ Verify the visibilty of same user exist validation while adding
 Verify the visibilty of same user business email
     wait until element is visible       //div[contains(text(), 'Business Email is missing.')]    ${wait_time}
     wait until element is enabled       //div[contains(text(), 'Business Email is missing.')]
+
+Verify the visibilty of same user exist email validation
+    wait until element is visible       //div[contains(text(), 'Same email already exists ')]    ${wait_time}
+    wait until element is enabled       //div[contains(text(), 'Same email already exists ')]    ${wait_time}
