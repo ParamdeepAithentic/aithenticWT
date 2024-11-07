@@ -2096,6 +2096,9 @@ Click on the product field under add technology
     Clear Element Text    //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input
     click element    //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input
     input text       //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input       ${product}
+    Wait Until Element Is Visible       (//tbody//tr[2]//div[contains(@class,'skeleton')])[1]       ${wait_time}
+    Wait Until Element Is not Visible       (//tbody//tr[2]//div[contains(@class,'skeleton')])[1]       ${wait_time}
+
 
 
 Method 1
@@ -2109,7 +2112,8 @@ Get new product
     [Arguments]         ${option}   ${option1}   ${option2}
     TRY
          wait until element is visible   //td[normalize-space()='${option}']   ${wait_time}
-         Set Global Variable    ${status} == False
+         Set Global Variable    ${status}   False
+         TechnologyPage.Redirect to technology page
     EXCEPT
         Run Keyword If    ${status} == True
         ...    TechnologyPage.Skip case
@@ -2144,6 +2148,10 @@ Create the product
     Generic.Wait until table get load
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
+Redirect to technology page
+    wait until element is visible     //span[contains(text(),'Back to Manage Technology')]     ${wait_time}
+    wait until element is enabled      //span[contains(text(),'Back to Manage Technology')]     ${wait_time}
+    click element    //span[contains(text(),'Back to Manage Technology')]
 
 
 
