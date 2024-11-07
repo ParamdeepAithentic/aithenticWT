@@ -154,6 +154,16 @@ Create partner random business name
     input text   ${businessName}   ${generate_BusinessName}
     set global variable    ${generate_BusinessName}
 
+Create partner random business name for testing
+    wait until element is visible       ${click_businessName}        ${wait_time}
+    wait until element is enabled       ${click_businessName}        ${wait_time}
+    click element   ${click_businessName}
+    Clear element text      ${click_businessName}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generate_BusinessName}=    Catenate    JASBusinessName${random_string}
+    input text   ${businessName}   ${generate_BusinessName}
+    set global variable    ${generate_BusinessName}
+
 
 Create partner self business name
     [Arguments]    ${option}
@@ -179,22 +189,38 @@ Select partner business_name
     click element   ${click_businessName}
     Clear element text      ${click_businessName}
     input text   ${businessName}   ${option}
+    ${selected_option}=    Convert To Lowercase    ${option}
 #    sleep   ${search_sleep}
-    wait until element is visible     //div[contains (@id, '-0')]//span[normalize-space()='${option}']        ${wait_time}
-    wait until element is enabled     //div[contains (@id, '-0')]//span[normalize-space()='${option}']       ${wait_time}
-    click element   //div[contains (@id, '-0')]//span[normalize-space()='${option}']
+    wait until element is visible     //div[contains (@id, '-0')]        ${wait_time}
+    wait until element is enabled     //div[contains (@id, '-0')]       ${wait_time}
+    click element   //div[contains (@id, '-0')]
 #    Press Keys     ${businessName}       ENTER
-#    sleep   ${search_sleep}
+    sleep   ${search_sleep}
 
 
 Select partner business URL
+    sleep      2
+    wait until element is visible       css:#businessUrl         ${wait_time}
+    wait until element is enabled       css:#businessUrl        ${wait_time}
+    click element   css:#businessUrl
+#    click element   ${click_businessName}
+#    wait until element is not visible      //div[contains(text(),'Select Business URL')]         ${wait_time}
+#    wait until element is enabled      //div[contains(text(),'Select Business URL')]         ${wait_time}
+#    sleep      2
+#    click element   ${click_businessName}
+#    click element   ${select_businessURL}
+    wait until element is visible     //div[contains (@id, '-0')]       ${wait_time}
+    wait until element is enabled     //div[contains (@id, '-0')]       ${wait_time}
+    click element   //div[contains (@id, '-0')]
+
+Select partner business URL for static business
     wait until element is visible       ${select_businessURL}         ${wait_time}
     wait until element is enabled       ${select_businessURL}        ${wait_time}
     sleep      2
     click element   ${select_businessURL}
-    wait until element is visible     //div[contains (@id, '-0')]       ${wait_time}
-    wait until element is enabled     //div[contains (@id, '-0')]       ${wait_time}
-    click element   //div[contains (@id, '-0')]
+    wait until element is visible     //div[contains (@id, '-0')]//span[contains(text(),'qabusiness04191432')]       ${wait_time}
+    wait until element is enabled     //div[contains (@id, '-0')]//span[contains(text(),'qabusiness04191432')]       ${wait_time}
+    click element   //div[contains (@id, '-0')]//span[contains(text(),'qabusiness04191432')]
 
 Select partner country
     [Arguments]    ${country}
@@ -759,10 +785,14 @@ Filter and verify without pagination
 
 Search by static business name
     [Arguments]    ${BusinessName}
+    wait until element is not visible      ${loaderIcon}     ${wait_time}
     wait until element is visible       css:thead tr       ${wait_time}
+    wait until element is not visible       (//tbody//tr[2]//div[contains(@class,'skeleton')])[1]      ${wait_time}
     wait until element is visible       ${partner_searchBar}       ${wait_time}
     input text      ${partner_searchBar}     ${BusinessName}
     sleep       ${search_sleep}
+    wait until element is not visible       (//tbody//tr[2]//div[contains(@class,'skeleton')])[1]      ${wait_time}
+
 
 Verify the search static support partner
     [Arguments]    ${option}
@@ -772,10 +802,10 @@ Verify the search static support partner
 
 
 Get new support Partner
-    [Arguments]         ${option}
+    [Arguments]         ${option}       ${option1}
     Run Keyword If    ${status} == True
         ...    PartnersPage.Skip case
-        ...    ELSE  Run Keywords     PartnersPage.Create the support partner     ${option1}       ${option}
+        ...    ELSE  Run Keywords     PartnersPage.Create the support partner     ${option}       ${option1}
         ...    AND    Return From Keyword
 
 
@@ -783,16 +813,37 @@ Skip case
      log   Element is already there
 
 Create the support partner
-    [Arguments]         ${option1}       ${option}
-    PartnersPage.Select partner type of new partner     ${option1}
-    PartnersPage.Create partner self business name      ${option}
-#   PartnersPage.Enter partner business URL      ${generate_BusinessName}
+    [Arguments]         ${option}       ${option1}
+    PartnersPage.Click new partner button
+    PartnersPage.Select partner type of new partner     ${option}
+    PartnersPage.Select partner business_name     ${option1}
+    Sleep    ${search_sleep}
     PartnersPage.Select partner business URL
     PartnersPage.Select partner country       United States
+#   PartnersPage.Enter partner business URL      ${generate_BusinessName}
+
     PartnersPage.Click on the save button   Save
     Sleep     5
     Generic.Fetch alert message text and compare it with    Partner created successfully
 
+
+Create many partners
+    FOR    ${index}    IN RANGE    100
+        PartnersPage.Click new partner button
+        Generic.Verify your current page location contains    addpartner
+        PartnersPage.Select partner type of new partner    Manufacturer
+        ${random_business_name}    Evaluate    "BusinessName${index}"
+        PartnersPage.Create partner random business name for testing
+        PartnersPage.Enter partner business URL    ${generate_BusinessName}
+        PartnersPage.Select partner country    United States
+        Sleep    ${search_sleep}
+
+        #-------------------------- CONTACT --------------------------------------------------------------
+        PartnersPage.Click contact main save button
+#        Sleep    5
+       Generic.Fetch alert message text and compare it with    Partner created successfully
+#        PartnersPage.Search by business name    ${generate_BusinessName}
+    END
 Clear the data of the fields while adding partner
     [Arguments]     ${option}
     wait until element is not visible    ${loaderIcon}      ${wait_time}

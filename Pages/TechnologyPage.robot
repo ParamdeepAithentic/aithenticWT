@@ -2054,9 +2054,9 @@ Get the text of selected filter under technology
     wait until element is visible      //div[contains(@class,'technology position-relative')]//label[normalize-space()='${option}']    ${wait_time}
     ${fetch_Name_of_selected_filter} =    get text    //div[contains(@class,'technology position-relative')]//label[normalize-space()='${option}']
     ${original_string}=    Set Variable    ${fetch_Name_of_selected_filter}
-    ${New_Namee}=    Evaluate    '${original_string}'.strip()
-    log to console    ${New_Namee}
-    set global variable    ${New_Namee}
+    ${New_Name}=    Evaluate    '${original_string}'.strip()
+    log to console    ${New_Name}
+    set global variable    ${New_Name}
 
 Click on the value under the tech typen filters of technology page
     [Arguments]     ${option}
@@ -2096,6 +2096,10 @@ Click on the product field under add technology
     Clear Element Text    //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input
     click element    //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input
     input text       //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input       ${product}
+    Wait Until Element Is Visible       (//tbody//tr[2]//div[contains(@class,'skeleton')])[1]       ${wait_time}
+    Wait Until Element Is not Visible       (//tbody//tr[2]//div[contains(@class,'skeleton')])[1]       ${wait_time}
+
+
 
 Method 1
     [Arguments]    ${option}
@@ -2106,14 +2110,23 @@ Method 1
 
 Get new product
     [Arguments]         ${option}   ${option1}   ${option2}
-    Run Keyword If    ${status} == True
+    TRY
+         wait until element is visible   //td[normalize-space()='${option}']   ${wait_time}
+         Set Global Variable    ${status}   False
+         TechnologyPage.Redirect to technology page
+    EXCEPT
+        Run Keyword If    ${status} == True
         ...    TechnologyPage.Skip case
         ...    ELSE  Run Keywords     TechnologyPage.Create the product     ${option}   ${option1}   ${option2}
         ...    AND    Return From Keyword
+    END
+
 
 
 Skip case
      log   Element is already there
+     Generic.select the option from the side menu    Technology
+     Generic.Verify your current page location contains      technology
 
 Create the product
     [Arguments]         ${option}     ${option1}   ${option2}
@@ -2135,6 +2148,10 @@ Create the product
     Generic.Wait until table get load
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
+Redirect to technology page
+    wait until element is visible     //span[contains(text(),'Back to Manage Technology')]     ${wait_time}
+    wait until element is enabled      //span[contains(text(),'Back to Manage Technology')]     ${wait_time}
+    click element    //span[contains(text(),'Back to Manage Technology')]
 
 
 

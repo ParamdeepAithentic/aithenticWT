@@ -41,7 +41,7 @@ Resource        ../Pages/DisconnectConnectorAPI.robot
 Resource        ../Pages/UnselectAssetAPI.robot
 *** Variables ***
 
-${Create_new_contact_button}     css:a[data-toggle='modal']
+${Create_new_contact_button}     //a[normalize-space()='Create New Smart Share']
 ${contactType}     css:#contractType   #click
 ${companyId}     css:#CompanyId       #enter contract with
 ${dd_loader}    css:.ng-spinner-loader.ng-star-inserted   #wait till hide
@@ -90,7 +90,8 @@ Select type of contract
 
 Enter contract type
     [Arguments]    ${option}
-    Wait Until Element Is Not Visible       ${dd_loader}    ${wait_time}
+#    Wait Until Element Is Not Visible       ${dd_loader}    ${wait_time}
+    Wait Until Element Is Not Visible       ${loaderIcon}    120
     Wait Until Element Is Enabled      ${contactType}   ${wait_time}
     click element       ${contactType}
     ${StartTime1} =     Get Current Time in Milliseconds

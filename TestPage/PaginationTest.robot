@@ -65,7 +65,7 @@ Verify pagination of technology Table
     PaginationPage.Log WebElements      technology
 
 Verify pagination of partner table
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -79,7 +79,7 @@ Verify pagination of partner table
 
 
 Verify pagination of contract table
-#    [Tags]      Unstable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -92,7 +92,7 @@ Verify pagination of contract table
     PaginationPage.Log WebElements      contracts
 
 Verify pagination of Department table
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -106,7 +106,7 @@ Verify pagination of Department table
     PaginationPage.Log WebElements      department
 
 Verify pagination of Brand table
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -120,7 +120,7 @@ Verify pagination of Brand table
     PaginationPage.Log WebElements      brand
 
 Verify pagination of Product table
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -134,7 +134,7 @@ Verify pagination of Product table
     PaginationPage.Log WebElements      products
 
 Verify pagination of location Table
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -147,7 +147,7 @@ Verify pagination of location Table
     PaginationPage.Log WebElements      location-list
 
 #Verify pagination of Team Member Table
-#    [Tags]      Stable
+#    [Tags]      NT
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    Generic.Verify your current page location contains      dashboard
@@ -174,7 +174,7 @@ Verify pagination of Assigned User Table
     PaginationPage.Log WebElements      assignee-list
 
 Verify Pagination of Product Dropdown when Add and Edit Technology
-#    [Tags]      Stable
+    [Tags]      NT      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -223,7 +223,7 @@ Verify Pagination of Product Dropdown when Add and Edit Technology
 
 
 Verify Pagination of Product Dropdown when Add discovered asset and component
-#        [Tags]      Unstable
+        [Tags]      NT
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
         Generic.Verify your current page location contains      dashboard
@@ -345,7 +345,7 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
 
 
 Verify pagination of contract table
-#    [Tags]      Unstable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -359,7 +359,7 @@ Verify pagination of contract table
 
 
 Verify pagination of Department table
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -373,7 +373,7 @@ Verify pagination of Department table
     PaginationPage.Log WebElements      department
 
 Verify pagination of Brand table
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -387,7 +387,7 @@ Verify pagination of Brand table
     PaginationPage.Log WebElements      brand
 
 Verify pagination of Product table
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -401,7 +401,7 @@ Verify pagination of Product table
     PaginationPage.Log WebElements      products
 
 Verify pagination of location Table
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -414,7 +414,7 @@ Verify pagination of location Table
     PaginationPage.Log WebElements      location-list
 
 Verify pagination of Team Member Table
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -441,7 +441,7 @@ Verify pagination of Assigned User Table
     PaginationPage.Log WebElements      assignee-list
 
 Verify Pagination of Product Dropdown when Add and Edit Technology
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    LandingPage.Verify you are on dashboard page
@@ -492,7 +492,7 @@ Verify Pagination of Product Dropdown when Add and Edit Technology
 
 
 Verify Pagination of Product Dropdown when Add IP discovered asset
-#        [Tags]      Unstable
+    [Tags]      NT      rerun
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
         Generic.Verify your current page location contains      dashboard
@@ -566,7 +566,7 @@ Verify Pagination of Product Dropdown when Add IP discovered asset
 
 
 Verify Pagination of Recent Activities Table
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -581,6 +581,7 @@ Verify Pagination of Recent Activities Table
     PaginationPage.Log WebElements for Recent Activites table     autoCreatedAsset
 
 Verify pagination of invoice table under billing
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -599,6 +600,7 @@ Verify pagination of invoice table under billing
     PaginationPage.Log WebElements of invoice
 
 Click and verify the pagination under existing assets
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
