@@ -100,6 +100,7 @@ Activate and deactivate the location
     LocationPage.Fetch and verify the location status from the row   Active
 
 Edit the Location
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -285,7 +286,7 @@ Click on the select status filter and verify it
     LocationPage.Fetch the country from location filter and click       Status      7     Inactive         ${New_status}
 
 Click on the select location filter and verify it
-    [Tags]    time     smoke
+    [Tags]    time     smoke        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -312,7 +313,10 @@ Click on the select location filter and verify it
     LocationPage.Click on the location filter under location
     LocationPage.Select the option from location filter under location         Canada
     LocationPage.Get the text of selected filter under location     Canada
+    sleep   ${search_sleep}
     Generic.Wait until table get load
+    sleep   ${search_sleep}
+    Generic.Scroll Window To End
     sleep   ${search_sleep}
     PaginationPage.Fetch the total count
     LocationPage.Fetch the country from location filter and click       Country     3        Canada          ${New_Name}
@@ -336,6 +340,7 @@ Click on the select location filter and verify it
     LocationPage.Fetch the country from location filter and click       Country     3     Turkey        ${New_Name}
 
 Click on the select Active status filter and verify it
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      johns@mai.25u.com         Test@123
     Generic.Verify your current page location contains      dashboard
@@ -354,6 +359,7 @@ Click on the select Active status filter and verify it
     LocationPage.Fetch the country from location filter and click       Status      7     Active         ${New_status}
 
 Verifying the validations of all fields of Add location
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -403,6 +409,7 @@ Verifying the validations of all fields of Add location
     LocationPage.Click on cancel Location
 
 Verifying the validations of all fields of Edit location
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard

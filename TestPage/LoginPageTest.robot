@@ -52,11 +52,12 @@ ${Shop_page_load}           css:.nav-link
 
 *** Test Cases ***
 Testone
+    [Tags]    NT
     Generic.Fix the column number
     Generic.Fix the row number
 
 Login as End_user with different roles
-    [Tags]      Sanity     Smoke
+    [Tags]      Sanity     Smoke        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      enduser@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -239,7 +240,7 @@ Login as End_user with different roles
     Generic.Fetch log_out alert message
 
 #Login as Manufacturer with different roles
-#    [Tags]      Unstable
+#    [Tags]    NT
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      manufacturer@yopmail.net    Test@123
 #    Generic.Verify your current page location contains      dashboard
@@ -368,7 +369,7 @@ Login as End_user with different roles
 
 
 #Login as Supplier with different roles
-#    [Tags]      Unstable
+#    [Tags]    NT
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      supplier@yopmail.net    Test@123
 #    Generic.Verify your current page location contains      dashboard
@@ -439,7 +440,7 @@ Login as End_user with different roles
 #    Generic.Fetch log_out alert message
 #
 #Login as Support_Partner with different roles
-#    [Tags]      Unstable    yy
+#    [Tags]    NT
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      supportpartner@yopmail.net    Test@123
 #    Generic.Verify your current page location contains      dashboard
@@ -569,6 +570,7 @@ Login as End_user with different roles
 #    Generic.Fetch log_out alert message
 
 Check all the validations of login page
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form with email only      ${email}
     LoginPage.Get and Verify the validation after login with email only         Invalid user id or password.
@@ -603,6 +605,7 @@ Check all the validations of login page
 
 
 Check all the validations of forgot password page
+    [Tags]    NT
     Generic.click on the tab	Login
     Generic.click on the tab    Forgot Password?
     Generic.Verify your current page location contains      auth

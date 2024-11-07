@@ -47,7 +47,7 @@ ${AgentReady_text}     //p[contains(text(),'File is ready, please download')]
 ${Add_technology_product}       //div[contains(text(),'Select or Search Product')]//following-sibling::div//input
 ${Add_technology_brand}         css:#BrandName
 ${plus_icon}    (//i[@title='Add as an Asset'])[1]
-${Discovery_Assets}     css:.left-text
+${Discovery_Assets}     css:.left-text span
 ${Existing_Assets}      css:.right-text
 
 *** Keywords ***
@@ -370,8 +370,8 @@ Select brand_macaddres_agent from dropdown of discovered asset filter
 Get text by hovering over assets
     [Arguments]     ${option}
     wait until element is not visible    ${loaderIcon}      ${wait_time}
-    Wait Until Element Is Visible   css:.left-text      ${wait_time}
-    Wait Until Element Is enabled   css:.left-text      ${wait_time}
+    Wait Until Element Is Visible   css:.left-text span      ${wait_time}
+    Wait Until Element Is enabled   css:.left-text span      ${wait_time}
     ${text}=        Get Text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${option}')]//ancestor::li
     ${parts}    Split String    ${text}    ${option}
     ${substring}    Get Substring    ${parts[1]}    1
@@ -381,10 +381,10 @@ Get text by hovering over assets
 Hover over searched Discovered Asset
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     sleep   ${search_sleep}
-    Wait Until Element Is Visible    css:.left-text     ${wait_time}
-    Wait Until Element Is Enabled    css:.left-text     ${wait_time}
-    Mouse Over    css:.left-text
-    Execute JavaScript    var element = document.querySelector('.left-text'); var event = new MouseEvent('mouseover', { bubbles: true }); element.dispatchEvent(event);
+    Wait Until Element Is Visible    css:.left-text span     ${wait_time}
+    Wait Until Element Is Enabled    css:.left-text span     ${wait_time}
+    Mouse Over    css:.left-text span
+    Execute JavaScript    var element = document.querySelector('.left-text span'); var event = new MouseEvent('mouseover', { bubbles: true }); element.dispatchEvent(event);
 
 Get text of selected brand, mac address and agent of discovered assets
     [Arguments]     ${number}
@@ -729,9 +729,9 @@ Enter input in the brand field of existing asset
     
 Mouse Hover over searched IP Assets
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    Wait Until Element Is Visible   css:.box .left-text     ${wait_time}
-    Wait Until Element Is Enabled    css:.box .left-text     ${wait_time}
-    Mouse Over    css:.box .left-text
+    Wait Until Element Is Visible   css:.box .left-text span     ${wait_time}
+    Wait Until Element Is Enabled    css:.box .left-text span     ${wait_time}
+    Mouse Over    css:.box .left-text span
 
 Get MAC_Address by hovering over IP discovered assets
     [Arguments]     ${text}
