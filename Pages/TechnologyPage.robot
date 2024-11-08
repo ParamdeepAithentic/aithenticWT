@@ -1715,10 +1715,10 @@ Get And Verify The Count Of existing asset of parent
     ${element_count}=    Get Element Count    //tbody/tr/td/label/span
     Log to console      ${element_count}
 
-    FOR    ${index}    IN RANGE    1    ${element_count}
+    FOR    ${index}    IN RANGE    1    ${element_count + 1}
         Wait Until Element Is Visible   //tbody/tr[${index}]/td/label/span      ${wait_time}
         Wait Until Element Is enabled   //tbody/tr[${index}]/td/label/span      ${wait_time}
-        click element   //tbody/tr[${index}]/td/label/span
+       click element   //tbody/tr[${index}]/td/label/span
     END
 
 Click on the export button of parent tab under technology details page

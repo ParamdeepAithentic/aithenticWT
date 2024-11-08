@@ -91,6 +91,7 @@ ${contactP_country}     css:#country
 ${contact_name}     css:#contactName
 
 ${Page_Fetch}       css:.pagination ul a
+${fetch_brandName}    css:td:nth-child(2)
 
 *** Keywords ***
 
@@ -113,6 +114,7 @@ Search by brand name
     input text      //input[@placeholder='Search by Brand Name']     ${BrandName}
     sleep       ${search_sleep}
     wait until element is visible       //td[normalize-space()='${BrandName}']     ${wait_time}
+    ${get_brandName} =    get text   //td[normalize-space()='${BrandName}']
     log to console     ${get_brandName}
     should be equal    ${BrandName}     ${get_brandName}
     ${EndTime1} =     Get Current Time in Milliseconds
