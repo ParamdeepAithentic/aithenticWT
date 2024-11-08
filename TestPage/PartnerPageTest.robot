@@ -1494,7 +1494,7 @@ Partner Side bar Filters
     MessagePage.Comapre the total count after selecting filter
 
 Verify all the validations of Add Partners
-    [Tags]      NT
+    [Tags]      Negative
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1531,7 +1531,7 @@ Verify all the validations of Add Partners
     PartnersPage.Compare the Validations on Partner Page        ${Partner_validation1}       Please select Country
 
 Verify all the validations of Edit Partners
-    [Tags]      NT
+    [Tags]     Negative
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard

@@ -62,7 +62,7 @@ ${yop_sleep}       10
 ${search_sleep}       1
 
 
-${CASE}        uat  #qa , uat , pre-prod
+${CASE}        pre-prod  #qa , uat , pre-prod
 
 
 

@@ -1792,3 +1792,39 @@ Add product feature while edit
     wait until element is visible  css:#features          ${wait_time}
     wait until element is enabled   css:#features         ${wait_time}
     input text   css:#features   This is the features of new product add
+
+Click on three dots of product list
+    sleep       ${search_sleep}
+    wait until element is visible   ${three_dots_dept}   ${wait_time}
+    click element   ${three_dots_dept}
+
+Choose option from product list three-dots
+    [Arguments]     ${option}
+    wait until element is not visible      ${loaderIcon}    ${wait_time}
+    wait until element is visible       css:.${option}-product-qa       ${wait_time}
+    click element       css:.${option}-product-qa
+
+
+Verify the warning is visible when edit product
+    [Arguments]     ${option}
+    wait until element is not visible      ${loaderIcon}    ${wait_time}
+    wait until element is visible      //h4[normalize-space()='${option}']//parent::div    ${wait_time}
+    wait until element is visible      //div[@id='editProductPopup']//h4[contains(@class,'modal-title')][normalize-space()='${option}']//parent::div//following-sibling::div[contains(@class,'text-center')]//p    ${wait_time}
+    wait until element is enabled       //div[@id='editProductPopup']//h4[contains(@class,'modal-title')][normalize-space()='${option}']//parent::div//following-sibling::div[contains(@class,'text-center')]//p       ${wait_time}
+    ${product_warning_text}=       get text        //div[@id='editProductPopup']//h4[contains(@class,'modal-title')][normalize-space()='${option}']//parent::div//following-sibling::div[contains(@class,'text-center')]//p
+    log     ${product_warning_text}
+    set global variable         ${product_warning_text}
+
+Compare the warning of product when Edited or removed
+    [Arguments]         ${option1}      ${option2}
+    should be equal     ${option1}      ${option2}
+
+Verify the warning is visible when deactivate or remove product
+    [Arguments]     ${option}
+    wait until element is not visible      ${loaderIcon}    ${wait_time}
+    wait until element is visible      //h4[normalize-space()='${option}']//parent::div    ${wait_time}
+    wait until element is visible      //h4[normalize-space()='${option}']//parent::div//following-sibling::div//p    ${wait_time}
+    wait until element is enabled       //h4[normalize-space()='${option}']//parent::div//following-sibling::div//p       ${wait_time}
+    ${product_warning_text}=       get text        //h4[normalize-space()='${option}']//parent::div//following-sibling::div//p
+    log     ${product_warning_text}
+    set global variable         ${product_warning_text}
