@@ -429,6 +429,52 @@ Check Pagination
         PaginationPage.Skip the pagination code
     END
 
+Check Pagination of location
+    [Arguments]     ${option}
+    TRY
+        PaginationPage.Pagination box visible
+        PaginationPage.Click on the pagination dropdown of OCS     ${option}
+    EXCEPT
+        PaginationPage.Skip the pagination code
+    END
+
+Check Pagination of OCS advance search
+    [Arguments]     ${option}
+    TRY
+        PaginationPage.Pagination box visible
+        PaginationPage.Log WebElements of Product Dropdown of OCS    ${option}
+    EXCEPT
+        PaginationPage.Skip the pagination code
+    END
+
+Check Pagination of tecdhnology advance search
+    [Arguments]     ${option}
+    TRY
+        PaginationPage.Pagination box visible
+        PaginationPage.Log WebElements of Product Dropdown    ${option}
+    EXCEPT
+        PaginationPage.Skip the pagination code
+    END
+
+ Check Pagination of Recent Activites
+    [Arguments]     ${option}
+    TRY
+        PaginationPage.Pagination box visible
+        PaginationPage.Log WebElements for Recent Activites table   ${option}
+    EXCEPT
+        PaginationPage.Skip the pagination code
+    END
+
+
+
+
+
+
+
+
+
+
+
 Pagination box visible
      wait until element is visible    //*[contains(@class,'per-page')]//div[@role='combobox']   ${wait_time}
      wait until element is enabled    //*[contains(@class,'per-page')]//div[@role='combobox']   ${wait_time}
