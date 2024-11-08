@@ -1955,7 +1955,7 @@ Inactive asset - Restore asset from Technology Details page
 Click on the attachment tab under technology
     [Tags]      NT      rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -2009,7 +2009,7 @@ Click on the attachment tab under technology
 Upload file: Image and Document files while adding Technology
     [Tags]    Smoke     rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -2047,7 +2047,7 @@ Upload file: Image and Document files while adding Technology
 Upload file: Image and Document files while Edit Technology
     [Tags]      NT      rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -2102,7 +2102,7 @@ Upload file: Image and Document files while Edit Technology
 Upload file: Image and document files while Clone the Technology
     [Tags]      time   smoke    rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -2158,7 +2158,7 @@ Upload file: Image and document files while Clone the Technology
 Search with brand_product_technologytype_technologygroup on advanced search
     [Tags]     Sanity       rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -2969,7 +2969,7 @@ Compose reply and remove the message via technology details
 Download QR for an asset as PNG and SVG
     [Tags]      Smoke       Sanity      rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology

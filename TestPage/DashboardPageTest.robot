@@ -339,7 +339,7 @@ Verify Help Center
     DashboardPage.Verify no result found with wrong FAQ
 
 Edit Brand and address via brand under profile list
-    [Tags]      Sanity      Smoke
+    [Tags]      Sanity      Smoke     rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -412,7 +412,7 @@ Edit Brand and address via brand under profile list
 
 
 Deactivate Brand and address via brand under profile list
-    [Tags]    NT
+    [Tags]    NT      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -570,7 +570,7 @@ Activate Brand and address via brand under profile list
     Generic.Fetch alert message text and compare it with      Brand activated successfully
 
 Remove Brand and address via brand under profile list
-    [Tags]    Smoke
+    [Tags]    Smoke     rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -2290,7 +2290,7 @@ Renewals overview drilldown - Add column Host name
     Generic.Verify your current page contains this text   ${result}
 
 Message Side bar filters
-    [Tags]     time    smoke
+    [Tags]     time    smoke        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Messages
