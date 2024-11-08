@@ -2800,6 +2800,60 @@ Verfying all field validations of Edit Brand page
     DashboardPage.Verify the validation message of Brand manufacturer country field
     DashboardPage.Compare and verify the validation messages        ${brandCountry_validation}      Please Select Country
 
+Verify user should not able to Edit Product having Technology created
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     brand-dropdown
+    Generic.Verify your current page location contains      brand
+    DashboardPage.Click add brand button
+    DashboardPage.Create random brandName
+    DashboardPage.Add business manufacturer URL       ${generated_BrandName}
+    DashboardPage.Add brand manufacturer country      Australia
+    DashboardPage.Save added brand details
+    DashboardPage.Click added brand main save button
+    Generic.Fetch alert message text and compare it with        Brand created successfully.
+    DashboardPage.Verify Brand added      ${generated_BrandName}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     product-dropdown
+    Generic.Verify your current page location contains      product
+    DashboardPage.Click on action button
+    DashboardPage.Click add product button
+    DashboardPage.Create random productName
+    DashboardPage.Add product brand name      ${generated_BrandName}
+    DashboardPage.Add product description
+    DashboardPage.Add product feature
+    DashboardPage.Select product technology type     Hardware
+    DashboardPage.Select product technology group     Applications
+    DashboardPage.Select product status   Active
+    DashboardPage.Save added product details
+    Generic.Fetch alert message text and compare it with        Product created successfully
+    DashboardPage.Verify product added    ${generated_product}
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       ${generated_BrandName}
+    TechnologyPage.Select parameter from technology dropdown list      ${generated_product}
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    Generic.Wait until table get load
+    Generic.Click on the profile name
+    Generic.Select option from profile list     product-dropdown
+    Generic.Verify your current page location contains      product
+    DashboardPage.Verify product added    ${generated_product}
+    DashboardPage.Click on three dots of product list
+    DashboardPage.Click on the edit option under three dots of product      Edit
+    DashboardPage.Verify the warning is visible when edit product    Edit Product
+    DashboardPage.Compare the warning of product when Edited or removed    ${product_warning_text}     ${generated_product} is now shareable with other companies and cannot be edited or removed.
 
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
