@@ -392,6 +392,7 @@ Click added brand main save button
 Verify Brand added
    [Arguments]    ${BrandName}
      wait until element is visible       css:thead tr       ${wait_time}
+
      wait until element is visible      ${search_brandName}     ${wait_time}
      click element      ${search_brandName}
      Clear Element Text      ${search_brandName}

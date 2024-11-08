@@ -51,7 +51,7 @@ Test Teardown   Close Browser session
 Activate and deactivate the location
     [Tags]      Time      Sanity        Smoke
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     ${StartTime1} =     Get Current Time in Milliseconds
@@ -102,7 +102,7 @@ Activate and deactivate the location
 Edit the Location
     [Tags]    NT
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Location
@@ -147,7 +147,7 @@ Edit the Location
 Remove Location from listing
     [Tags]      Smoke
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Location
@@ -178,7 +178,7 @@ Remove Location from listing
 Add Location from profile Listing
     [Tags]     Sanity     Smoke
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
@@ -262,7 +262,7 @@ Verify Location_name Hide and show after changes it from settings
 Click on the select status filter and verify it
     [Tags]     time     smoke
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Location
@@ -288,7 +288,7 @@ Click on the select status filter and verify it
 Click on the select location filter and verify it
     [Tags]    time     smoke        rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Location
@@ -315,6 +315,8 @@ Click on the select location filter and verify it
     LocationPage.Get the text of selected filter under location     Canada
     sleep   ${search_sleep}
     Generic.Wait until table get load
+    sleep   ${search_sleep}
+    Generic.Scroll Window To End
     sleep   ${search_sleep}
     PaginationPage.Fetch the total count
     LocationPage.Fetch the country from location filter and click       Country     3        Canada          ${New_Name}
@@ -409,7 +411,7 @@ Verifying the validations of all fields of Add location
 Verifying the validations of all fields of Edit location
     [Tags]    NT
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Location
