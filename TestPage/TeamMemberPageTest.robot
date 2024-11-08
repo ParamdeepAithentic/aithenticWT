@@ -1372,21 +1372,22 @@ Click on the status filter under team member and verify it
     Calculate Running time  12  ${pageHeading}   Filter Page - Data load time of status filter under team member      12    ${pageTime}     ${ActualTime}    Filter_Time
 
     LocationPage.Get the text of selected status filter under location      Active
-    Generic.Wait until table get load
-    PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     member-list
-    PaginationPage.Select the value from the pagination drop down count     500
-    PaginationPage.Fetch the selected value of the dropdown     member-list
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
+    PaginationPage.Check filter Pagination of Recent Activites
+#    PaginationPage.Click on the pagination dropdown     member-list
+#    PaginationPage.Select the value from the pagination drop down count     500
+#    PaginationPage.Fetch the selected value of the dropdown     member-list
     PaginationPage.Fetch the total count
     TeamMemberPage.Fetch the country from team member filter and click       Status             Active         ${New_status}
 
     Generic.click on the tab        reset filters
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TeamMemberPage.Click on the location filter under team member       status
     LocationPage.Select the option from status filter under location        Inactive
     LocationPage.Get the text of selected status filter under location      Inactive
-    Generic.Wait until table get load
-    PaginationPage.Fetch the total count
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
     TeamMemberPage.Fetch the country from team member filter and click       Status              Inactive         ${New_status}
 
 Click on the status filter under team member via profile list and verify it

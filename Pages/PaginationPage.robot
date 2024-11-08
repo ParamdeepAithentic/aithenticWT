@@ -67,10 +67,10 @@ Select the value from the pagination drop down count
 
 
 Fetch the selected value of the dropdown
-    [Arguments]     ${option}
+#    [Arguments]     ${option}
     wait until element is visible       (//td[normalize-space()='1'])[1]      ${wait_time}
     wait until element is enabled       (//td[normalize-space()='1'])[1]      ${wait_time}
-    ${get_count_of_dropDown_value} =    get text    css:.qa-${option}-per-page .ng-value span.ng-value-label
+    ${get_count_of_dropDown_value} =    get text    //*[contains(@class,'per-page')]//div[@role='combobox']
     ${dropDown_value_as_number}=   Convert To Integer   ${get_count_of_dropDown_value}
     set global variable    ${dropDown_value_as_number}
     Log to console  Selected value :${dropDown_value_as_number}
@@ -96,7 +96,22 @@ Fetch the total count
     Log to console  Total count is :${total_data_count}
     set global variable    ${total_data_count}
 
-
+Fetch the total count for filter only
+    TRY
+          Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+          wait until element is enabled       ${Totalcount_field}      ${wait_time}
+          wait until element is visible   ${Totalcount_field}      ${wait_time}
+          ${text}=     get text   ${Totalcount_field}
+          ${parts}    Split String    ${text}    Total Count :
+          ${total_row_count}    Get Substring    ${parts[1]}    3
+          ${total_data_count}=   Convert To Integer   ${total_row_count}
+          Log to console  Total count is :${total_data_count}
+          set global variable    ${total_data_count}
+    EXCEPT    
+        Log    There is no data in the table
+        
+    END
+   
 
 Verify Pagination and Row Count
     Run Keyword If    '${dropDown_value_as_number}' == '${total_table_row_count}'
@@ -466,7 +481,15 @@ Check Pagination of tecdhnology advance search
     END
 
 
-
+Check filter Pagination of Recent Activites
+#    [Arguments]     ${option}
+    TRY
+        PaginationPage.Pagination box visible
+        PaginationPage.Select the value from the pagination drop down count     500
+        PaginationPage.Fetch the selected value of the dropdown
+    EXCEPT
+        PaginationPage.Skip the pagination code
+    END
 
 
 

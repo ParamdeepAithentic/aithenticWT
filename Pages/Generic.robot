@@ -101,7 +101,7 @@ Set QA Variables
 
 Set UAT Variables
     Set Suite Variable    ${url}        https://uat-app.aithentic.com/
-    Set Suite Variable    ${valid_password}         Test@123     #UAT user   #Paramdeep@112
+    Set Suite Variable    ${valid_password}            Paramdeep@112           #UAT user        Test@123
     Set Suite Variable    ${apiURL}    https://uat-api.aithentic.com/api/v1
     Set Suite Variable    ${agentDiscovery_TagName}    Tag Name - johnsoftwaresolutions-1428-4        #uat
     Set Suite Variable    ${IP_Discovered_devices}    Tag Name - johnsoftwaresolutions-1428-10        #uat
@@ -110,7 +110,7 @@ Set UAT Variables
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
     Set Suite Variable    ${browser_name}         firefox
-    Set Suite Variable    ${email}                 testqa29j@mailinator.com     #deepparam112@yopmail.net
+    Set Suite Variable    ${email}          deepparam112@yopmail.net  # testqa29j@mailinator.com
     Set Suite Variable    ${discovered_asset_brand}                 Apple Inc
     Set Suite Variable    ${existing_mac}                       98:5a:eb:cb:c8:ed
     Set Suite Variable    ${discovered_existing_brand}              Apple Inc.
@@ -452,6 +452,17 @@ Scroll Window To End
 Wait until table get load
     wait until element is visible       //tbody//tr//td[normalize-space()='1']          ${wait_time}
     wait until element is enabled      //tbody//tr//td[normalize-space()='1']          ${wait_time}
+
+Wait until table get load for filters
+    TRY
+         wait until element is visible       //tbody//tr//td[normalize-space()='1']          ${wait_time}
+         wait until element is enabled      //tbody//tr//td[normalize-space()='1']          ${wait_time}
+    EXCEPT
+        wait until element is visible       //span[normalize-space()='No Records']          ${yop_sleep}
+        wait until element is enabled      //span[normalize-space()='No Records']           ${yop_sleep}
+    FINALLY
+        Log    Table got the issue while loading or there is no data
+    END
 
 Fetch log_out alert message
     sleep      2

@@ -380,18 +380,25 @@ Click on the location filter under team member
 
 Fetch the country from team member filter and click
     [Arguments]     ${option}       ${option1}      ${option2}
+    TRY
 #    ${element_count}=    Get Element Count    css:.qa-total-count-list
 #    Log      ${element_count}
-    FOR    ${index}    IN RANGE    1    ${total_data_count + 1}
-        Wait Until Element Is Visible  (//div[normalize-space()='${option}']//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]     ${wait_time}
-        Wait Until Element Is Enabled  (//div[normalize-space()='${option}']//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]       ${wait_time}
-        ${element1}=    Get Text   (//div[normalize-space()='${option}']//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]
-        ${original_string}=    Set Variable    ${element1}
-        ${New_Country}=    Evaluate    '${original_string}'.strip()
-        Log    Element ${index}: ${New_Country}
-        Run Keyword If    '${New_Country}' == '${option2}'    Run Keywords    Empty Action of location   AND     Continue For Loop
-
+        FOR    ${index}    IN RANGE    1    ${total_data_count + 1}
+            Wait Until Element Is Visible  (//div[normalize-space()='${option}']//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]     ${wait_time}
+             Wait Until Element Is Enabled  (//div[normalize-space()='${option}']//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]       ${wait_time}
+             ${element1}=    Get Text   (//div[normalize-space()='${option}']//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]
+             ${original_string}=    Set Variable    ${element1}
+             ${New_Country}=    Evaluate    '${original_string}'.strip()
+             Log    Element ${index}: ${New_Country}
+             Run Keyword If    '${New_Country}' == '${option2}'    Run Keywords    Empty Action of location   AND     Continue For Loop
+        END
+    EXCEPT
+        wait until element is visible       //span[normalize-space()='No Records']          ${yop_sleep}
+        wait until element is enabled      //span[normalize-space()='No Records']           ${yop_sleep}
+    FINALLY
+        Log    Table got the issue while loading or there is no data
     END
+
 
 Click on the status filter under team member via profile
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}

@@ -68,7 +68,7 @@ Verify pagination of technology Table
 Verify pagination of partner table
     [Tags]      NT
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    LandingPage.Fill the login Form       jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Partners
@@ -83,7 +83,7 @@ Verify pagination of partner table
 Verify pagination of contract table
     [Tags]      NT
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    LandingPage.Fill the login Form       jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Smart Share
@@ -97,7 +97,7 @@ Verify pagination of contract table
 Verify pagination of Department table
     [Tags]      NT
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    LandingPage.Fill the login Form       jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
@@ -112,7 +112,7 @@ Verify pagination of Department table
 Verify pagination of Brand table
     [Tags]      NT
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    LandingPage.Fill the login Form       jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
@@ -127,7 +127,7 @@ Verify pagination of Brand table
 Verify pagination of Product table
     [Tags]      NT
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    LandingPage.Fill the login Form       jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
@@ -142,7 +142,7 @@ Verify pagination of Product table
 Verify pagination of location Table
     [Tags]      NT
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    LandingPage.Fill the login Form       jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Location
@@ -156,7 +156,7 @@ Verify pagination of location Table
 #Verify pagination of Team Member Table
 #    [Tags]      NT
 #    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form       ${email}    ${valid_password}
+#    LandingPage.Fill the login Form       jasdeep@15963.fr.nf     Paramdeep@112
 #    Generic.Verify your current page location contains      dashboard
 #    LandingPage.Verify you are on dashboard page
 #    Generic.select the option from the side menu    Team Members
@@ -169,7 +169,7 @@ Verify pagination of location Table
 Verify pagination of Assigned User Table
     [Tags]    Smoke
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    LandingPage.Fill the login Form      jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Team Members
@@ -184,7 +184,7 @@ Verify pagination of Assigned User Table
 Verify Pagination of Product Dropdown when Add and Edit Technology
     [Tags]      NT      rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    LandingPage.Fill the login Form       jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology

@@ -2348,9 +2348,10 @@ Click on the status filter under brand via profile list
     DashboardPage.Click on the added brands heading
     DashboardPage.Get the text of selected status filter under brand via profile       Inactive
     Generic.Wait until table get load
-    PaginationPage.Click on the pagination dropdown    brand
-    PaginationPage.Select the value from the pagination drop down count     500
-    PaginationPage.Fetch the selected value of the dropdown     brand
+    PaginationPage.Check filter Pagination of Recent Activites
+#   -- PaginationPage.Click on the pagination dropdown    brand
+#   -- PaginationPage.Select the value from the pagination drop down count     500
+#   -- PaginationPage.Fetch the selected value of the dropdown     brand
     PaginationPage.Fetch the total count
     TeamMemberPage.Fetch the country from team member filter and click       Status     ${New_status_Brand}        ${New_status_Brand}
 
@@ -2468,9 +2469,10 @@ Click on the product filters via profile list
     DashboardPage.Click on the added products heading
     DashboardPage.Get the text of selected status filter under product via profile
     Generic.Wait until table get load
-    PaginationPage.Click on the pagination dropdown    products
-    PaginationPage.Select the value from the pagination drop down count     500
-    PaginationPage.Fetch the selected value of the dropdown      products
+    PaginationPage.Check filter Pagination of Recent Activites
+#    PaginationPage.Click on the pagination dropdown    products
+#    PaginationPage.Select the value from the pagination drop down count     500
+#    PaginationPage.Fetch the selected value of the dropdown      products
     PaginationPage.Fetch the total count
     TeamMemberPage.Fetch the country from team member filter and click       Status     ${New_product_Status}        ${New_product_Status}
     DashboardPage.Click on the reset button under product
@@ -2511,9 +2513,10 @@ Click on the product filters via profile list
     DashboardPage.Click on the added products heading
     DashboardPage.Get the text of selected technology group filter under product via profile
     Generic.Wait until table get load
-     PaginationPage.Click on the pagination dropdown    products
-    PaginationPage.Select the value from the pagination drop down count     500
-    PaginationPage.Fetch the selected value of the dropdown      products
+    PaginationPage.Check filter Pagination of Recent Activites
+#     PaginationPage.Click on the pagination dropdown    products
+#    PaginationPage.Select the value from the pagination drop down count     500
+#    PaginationPage.Fetch the selected value of the dropdown      products
     PaginationPage.Fetch the total count
     TeamMemberPage.Fetch the country from team member filter and click         Technology Group        ${New_product_tech_group}        ${New_product_tech_group}
     DashboardPage.Click on the reset button under product
