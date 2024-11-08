@@ -54,15 +54,16 @@ Test Teardown   Close Browser session
 Verify pagination of technology Table
     [Tags]    Smoke
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    LandingPage.Fill the login Form       jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
     PaginationPage.Check the table get load
     PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     technology
-    PaginationPage.Log WebElements      technology
+#    PaginationPage.Click on the pagination dropdown     technology
+#    PaginationPage.Log WebElements      technology
+    PaginationPage.Check Pagination     technology
 
 Verify pagination of partner table
     [Tags]      NT
@@ -74,8 +75,9 @@ Verify pagination of partner table
     Generic.Verify your current page location contains      partner-listing
     PaginationPage.Check the table get load
     PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     partner-list
-    PaginationPage.Log WebElements      partner-list
+#    PaginationPage.Click on the pagination dropdown     partner-list
+#    PaginationPage.Log WebElements      partner-list
+    PaginationPage.Check Pagination     partner-list
 
 
 Verify pagination of contract table
@@ -88,8 +90,9 @@ Verify pagination of contract table
     Generic.Verify your current page location contains      contracts-list
     PaginationPage.Check the table get load
     PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     contracts
-    PaginationPage.Log WebElements      contracts
+#    PaginationPage.Click on the pagination dropdown     contracts
+#    PaginationPage.Log WebElements      contracts
+    PaginationPage.Check Pagination     contracts
 
 Verify pagination of Department table
     [Tags]      NT
@@ -102,8 +105,9 @@ Verify pagination of Department table
     Generic.Verify your current page location contains      department
     PaginationPage.Check the table get load
     PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     department
-    PaginationPage.Log WebElements      department
+#    PaginationPage.Click on the pagination dropdown     department
+#    PaginationPage.Log WebElements      department
+    PaginationPage.Check Pagination     department
 
 Verify pagination of Brand table
     [Tags]      NT
@@ -116,8 +120,9 @@ Verify pagination of Brand table
     Generic.Verify your current page location contains      brand-list
     PaginationPage.Check the table get load
     PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     brand
-    PaginationPage.Log WebElements      brand
+#    PaginationPage.Click on the pagination dropdown     brand
+#    PaginationPage.Log WebElements      brand
+    PaginationPage.Check Pagination     brand
 
 Verify pagination of Product table
     [Tags]      NT
@@ -130,8 +135,9 @@ Verify pagination of Product table
     Generic.Verify your current page location contains      product-list
     PaginationPage.Check the table get load
     PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     products
-    PaginationPage.Log WebElements      products
+#    PaginationPage.Click on the pagination dropdown     products
+#    PaginationPage.Log WebElements      products
+    PaginationPage.Check Pagination     products
 
 Verify pagination of location Table
     [Tags]      NT
@@ -143,8 +149,9 @@ Verify pagination of location Table
     Generic.Verify your current page location contains      locationlist
     PaginationPage.Check the table get load
     PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     location-list
-    PaginationPage.Log WebElements      location-list
+#    PaginationPage.Click on the pagination dropdown     location-list
+#    PaginationPage.Log WebElements      location-list
+    PaginationPage.Check Pagination     location-list
 
 #Verify pagination of Team Member Table
 #    [Tags]      NT
@@ -158,6 +165,7 @@ Verify pagination of location Table
 #    PaginationPage.Fetch the total count
 #    PaginationPage.Click on the pagination dropdown     member-list
 #    PaginationPage.Log WebElements      member-list
+#    PaginationPage.Check Pagination     member-list
 
 Verify pagination of Assigned User Table
     [Tags]    Smoke
@@ -170,8 +178,9 @@ Verify pagination of Assigned User Table
     MemberPage.Click on assigned user tab   Assigned Users
     PaginationPage.Check the table get load
     PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     assignee-list
-    PaginationPage.Log WebElements      assignee-list
+#    PaginationPage.Click on the pagination dropdown     assignee-list
+#    PaginationPage.Log WebElements      assignee-list
+    PaginationPage.Check Pagination     assignee-list
 
 Verify Pagination of Product Dropdown when Add and Edit Technology
     [Tags]      NT      rerun
@@ -354,8 +363,9 @@ Verify pagination of contract table
     Generic.Verify your current page location contains      contracts-list
     PaginationPage.Check the table get load
     PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     contracts
-    PaginationPage.Log WebElements      contracts
+#    PaginationPage.Click on the pagination dropdown     contracts
+#    PaginationPage.Log WebElements      contracts
+    PaginationPage.Check Pagination     contracts
 
 
 Verify pagination of Department table
@@ -369,8 +379,9 @@ Verify pagination of Department table
     Generic.Verify your current page location contains      department
     PaginationPage.Check the table get load
     PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     department
-    PaginationPage.Log WebElements      department
+#    PaginationPage.Click on the pagination dropdown     department
+#    PaginationPage.Log WebElements      department
+    PaginationPage.Check Pagination     department
 
 Verify pagination of Brand table
     [Tags]      NT
@@ -383,8 +394,9 @@ Verify pagination of Brand table
     Generic.Verify your current page location contains      brand-list
     PaginationPage.Check the table get load
     PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     brand
-    PaginationPage.Log WebElements      brand
+#    PaginationPage.Click on the pagination dropdown     brand
+#    PaginationPage.Log WebElements      brand
+    PaginationPage.Check Pagination     brand
 
 Verify pagination of Product table
     [Tags]      NT
@@ -397,8 +409,9 @@ Verify pagination of Product table
     Generic.Verify your current page location contains      product-list
     PaginationPage.Check the table get load
     PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     products
-    PaginationPage.Log WebElements      products
+#    PaginationPage.Click on the pagination dropdown     products
+#    PaginationPage.Log WebElements      products
+    PaginationPage.Check Pagination     products
 
 Verify pagination of location Table
     [Tags]      NT
@@ -410,8 +423,9 @@ Verify pagination of location Table
     Generic.Verify your current page location contains      locationlist
     PaginationPage.Check the table get load
     PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     location-list
-    PaginationPage.Log WebElements      location-list
+#    PaginationPage.Click on the pagination dropdown     location-list
+#    PaginationPage.Log WebElements      location-list
+    PaginationPage.Check Pagination     location-list
 
 Verify pagination of Team Member Table
     [Tags]      NT
@@ -423,8 +437,9 @@ Verify pagination of Team Member Table
     Generic.Verify your current page location contains      memberslist
     PaginationPage.Check the table get load
     PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     member-list
-    PaginationPage.Log WebElements      member-list
+#    PaginationPage.Click on the pagination dropdown     member-list
+#    PaginationPage.Log WebElements      member-list
+    PaginationPage.Check Pagination     member-list
 
 Verify pagination of Assigned User Table
     [Tags]    Smoke
@@ -437,8 +452,9 @@ Verify pagination of Assigned User Table
     MemberPage.Click on assigned user tab   Assigned Users
     PaginationPage.Check the table get load
     PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     assignee-list
-    PaginationPage.Log WebElements      assignee-list
+#    PaginationPage.Click on the pagination dropdown     assignee-list
+#    PaginationPage.Log WebElements      assignee-list
+    PaginationPage.Check Pagination     assignee-list
 
 Verify Pagination of Product Dropdown when Add and Edit Technology
     [Tags]      NT
