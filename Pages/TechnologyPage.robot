@@ -2152,7 +2152,6 @@ Create the product
     Generic.Wait until table get load
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
-<<<<<<< HEAD
 Fetch the description from the technology details page
     wait until element is visible       //span[contains(@class,'description-container')]//b     ${wait_time}
     wait until element is enabled        //span[contains(@class,'description-container')]//b    ${wait_time}
@@ -2160,15 +2159,10 @@ Fetch the description from the technology details page
     set global variable    ${get_description}
     log to console     ${get_description}
 
-=======
 Redirect to technology page
     wait until element is visible     //span[contains(text(),'Back to Manage Technology')]     ${wait_time}
     wait until element is enabled      //span[contains(text(),'Back to Manage Technology')]     ${wait_time}
     click element    //span[contains(text(),'Back to Manage Technology')]
->>>>>>> 1403283643e04348cee35f69dcf5a7e7c115c9ff
-
-
-
 
 #Run Code Based On Element Visibility
 #    ${is_visible}=    Run Keyword And Return Status    TechnologyPage.Click on pop up of available Inactive Asset   cancel

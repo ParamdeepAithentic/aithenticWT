@@ -39,6 +39,8 @@ Resource        ../Pages/Admin_PanelPage.robot
 Resource        ../Pages/PaginationPage.robot
 Resource        ../Pages/DisconnectConnectorAPI.robot
 Resource        ../Pages/UnselectAssetAPI.robot
+
+
 *** Variables ***
 ${add_Partner}     css:a[title='Add New Partner']
 ${partner_export_btn}     //a[@id='dropdownMenuButton']

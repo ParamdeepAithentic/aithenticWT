@@ -3552,6 +3552,7 @@ Fetch and verify the description from the technology details pages
     Generic.Verify your current page location contains     technology-details
     OCS.Visible the print qr button to for data loading
     TechnologyPage.Fetch the description from the technology details page
+    TechnologyPage.verify Text from Assignment Information      ${get_description}      Description : This is product description
 
 #Zz kill browser
 #    [Tags]      Smoke     Sanity      Time        Stable    yy
