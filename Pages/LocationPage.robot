@@ -457,11 +457,14 @@ Search by location name using statc location
     [Arguments]    ${LocationName}
      wait until element is not visible      ${loaderIcon}     ${wait_time}
      wait until element is visible       css:thead tr       ${wait_time}
+     wait until element is not visible       (//tbody//tr[2]//div[contains(@class,'skeleton')])[1]      ${wait_time}
      click element      ${search_LocationName}
      Clear Element Text      ${search_LocationName}
      ${StartTime1} =     Get Current Time in Milliseconds
      input text   ${search_LocationName}   ${LocationName}
      sleep   ${search_sleep}
+     wait until element is not visible       (//tbody//tr[2]//div[contains(@class,'skeleton')])[1]      ${wait_time}
+
 
 Verify the validation of country name field
     wait until element is not visible    ${loaderIcon}      ${wait_time}

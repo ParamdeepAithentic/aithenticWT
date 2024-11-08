@@ -1430,6 +1430,9 @@ Partner Side bar Filters
     Generic.select the option from the side menu    Partners
     PartnersPage.Click on the filters from partner module       Select Partner
     PartnersPage.Checkmark after clicking on the filters        Manufacturer
+    Generic.Wait until table get load
+    sleep       ${search_sleep}
+    Generic.Scroll Window To End
     ReportsPage.Fetch the total count
     PaginationPage.Click on the pagination dropdown     partner-list
     PaginationPage.Select the value from the pagination drop down count    500

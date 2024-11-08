@@ -63,7 +63,7 @@ Free the asset limit
 Create team member form
     [Tags]    Sanity    Smoke
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
@@ -95,7 +95,7 @@ Create team member form
 Add Team member page - Add New Department and assign that department to Team member
     [Tags]      NT
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Team Members
@@ -124,7 +124,7 @@ Add Team member page - Add New Department and assign that department to Team mem
 Edit Team member page - Edit New Department and assign that department to Team member
     [Tags]      Sanity      rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
@@ -617,7 +617,7 @@ Verify user is able to export team member asset history list
 Convert Assignee to Team Member
     [Tags]      Sanity      rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Team Members
@@ -731,7 +731,7 @@ Convert Assignee to Team Member
 Check the validation of business email id
     [Tags]      NT      rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Team Members
@@ -772,7 +772,7 @@ Check the validation of business email id
 Convert Assignee to team member in case of employee id is not system generated
     [Tags]      NT
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
@@ -931,7 +931,7 @@ Verify Invitation and signup as team member
 Add Back Deleted Team member - Invited
     [Tags]      Sanity
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
@@ -1332,7 +1332,7 @@ Click on the location filter under team member and verify it
     LocationPage.Get the text of selected filter under location    *Main Office
     Generic.Wait until table get load
     PaginationPage.Fetch the total count
-    TeamMemberPage.Fetch the country from team member filter and click       Location             *Main Office         ${New_Name}
+    TeamMemberPage.Fetch the country from team member filter and click       Location                *Main Office         ${New_Name}
     Generic.click on the tab        reset filters
     Generic.Wait until table get load
     TeamMemberPage.Click on the location filter under team member       location
@@ -1340,7 +1340,7 @@ Click on the location filter under team member and verify it
     LocationPage.Get the text of selected filter under location     ${Team_member_location}
     Generic.Wait until table get load
     PaginationPage.Fetch the total count
-    TeamMemberPage.Fetch the country from team member filter and click       Location          ${Team_member_location}         ${New_Name}
+    TeamMemberPage.Fetch the country from team member filter and click       Location               ${Team_member_location}         ${New_Name}
     Generic.Click on the profile name
     Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
@@ -1353,12 +1353,12 @@ Click on the location filter under team member and verify it
     LocationPage.Get the text of selected filter under location    Afgahniastan
     Generic.Wait until table get load
     PaginationPage.Fetch the total count
-    TeamMemberPage.Fetch the country from team member filter and click       Location             Afgahniastan         ${New_Name}
+    TeamMemberPage.Fetch the country from team member filter and click       Location               Afgahniastan         ${New_Name}
 
 Click on the status filter under team member and verify it
     [Tags]     time     smoke       rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu     Team Members
@@ -1378,7 +1378,8 @@ Click on the status filter under team member and verify it
     PaginationPage.Select the value from the pagination drop down count     500
     PaginationPage.Fetch the selected value of the dropdown     member-list
     PaginationPage.Fetch the total count
-    TeamMemberPage.Fetch the country from team member filter and click       Status           Active         ${New_status}
+    TeamMemberPage.Fetch the country from team member filter and click       Status             Active         ${New_status}
+
     Generic.click on the tab        reset filters
     Generic.Wait until table get load
     TeamMemberPage.Click on the location filter under team member       status
@@ -1386,12 +1387,12 @@ Click on the status filter under team member and verify it
     LocationPage.Get the text of selected status filter under location      Inactive
     Generic.Wait until table get load
     PaginationPage.Fetch the total count
-    TeamMemberPage.Fetch the country from team member filter and click       Status               Inactive         ${New_status}
+    TeamMemberPage.Fetch the country from team member filter and click       Status              Inactive         ${New_status}
 
 Click on the status filter under team member via profile list and verify it
     [Tags]     time     smoke
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
@@ -1428,7 +1429,7 @@ Click on the status filter under team member via profile list and verify it
     TeamMemberPage.click on the members tab under team member via profile
     Generic.Wait until table get load
     PaginationPage.Fetch the total count
-    TeamMemberPage.Fetch the country from team member filter and click       Status         Inactive         ${New_status1}
+    TeamMemberPage.Fetch the country from team member filter and click       Status          Inactive         ${New_status1}
     Generic.Click on the profile name
     Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
@@ -1453,7 +1454,7 @@ Click on the status filter under team member via profile list and verify it
     PaginationPage.Select the value from the pagination drop down count     500
     PaginationPage.Fetch the selected value of the dropdown     profile-team-member
     PaginationPage.Fetch the total count
-    TeamMemberPage.Fetch the country from team member filter and click       Status         Invited         ${New_status1}
+    TeamMemberPage.Fetch the country from team member filter and click       Status          Invited         ${New_status1}
 
 #Zz kill browser
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
