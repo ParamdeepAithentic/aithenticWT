@@ -5,11 +5,8 @@
       <excludeFolder url="file://$MODULE_DIR$/.venv" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
-<<<<<<< HEAD
     <orderEntry type="jdk" jdkName="Python 3.12 (aithentic-rfw)" jdkType="Python SDK" />
-=======
-    <orderEntry type="jdk" jdkName="Python 3.12 (pythonProject)" jdkType="Python SDK" />
->>>>>>> 1403283643e04348cee35f69dcf5a7e7c115c9ff
+
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

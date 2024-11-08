@@ -1177,6 +1177,7 @@ Verifying the Renewals Overview section of Management console - Overdue Renewals
     Generic.select the option from the side menu    Dashboard
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
+    Generic.Refresh the existing page
     DashboardPage.Fetch the count renewals overview subtabs        Overdue renewals
     DashboardPage.Compare the counts of renewal overview after adding the asset
     DashboardPage.Click on the subtabs          Overdue renewals
