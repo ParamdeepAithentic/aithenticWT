@@ -2266,8 +2266,6 @@ SUBSCRIPTION CONNECTOR : M365 Subscription Report Drilldown
     Generic.Verify your current page location contains     usage-analytics
     SubscriptionPage.Click on the tab under Uasge Analytics         m365
     SubscriptionPage.Wait for the subscrition overview table to load
-#    SubscriptionPage.Hover over row of under M365 tab
-#    Generic.scroll the page till     200
     SubscriptionPage.Fetch the Asset_Id from subcription overview table
     Generic.Verify your current page location contains     subscription-technology-details
     TechnologyPage.Click on edit button on product details page        Edit
@@ -2292,14 +2290,13 @@ SUBSCRIPTION CONNECTOR : M365 Subscription Report Drilldown
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
-#    TechnologyPage.Click technology brand input field
-#    TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Select parameter from technology dropdown list      ${subscriptionOverview_ProductName}
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology
+    Generic.Wait until table get load
     Generic.select the option from the side menu    Dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Select parameter         Usage Analytics
@@ -2311,4 +2308,3 @@ SUBSCRIPTION CONNECTOR : M365 Subscription Report Drilldown
     SubscriptionPage.Wait for the subscrition overview table to load
     SubscriptionPage.Wait for the visiblity of product
     SubscriptionPage.Compare the Product name       ${product_name}              ${subscriptionOverview_ProductName}
-

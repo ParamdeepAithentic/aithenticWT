@@ -894,6 +894,7 @@ Wait for the subscrition overview table to load
 
 Wait for the visiblity of product
     wait until element is not visible   ${loaderIcon}          ${wait_time}
+    wait until element is not visible   (//tbody//tr[2]//div[contains(@class,'skeleton')])[1]    ${wait_time}
     wait until element is visible     //p[normalize-space()='Subscription Overview']//parent::div//tbody//tr[1]//td[1]         ${wait_time}
     wait until element is enabled     //p[normalize-space()='Subscription Overview']//parent::div//tbody//tr[1]//td[1]      ${wait_time}
     ${product_name}=    get text    //p[normalize-space()='Subscription Overview']//parent::div//tbody//tr[1]//td[1]
