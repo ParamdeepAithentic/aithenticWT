@@ -3,7 +3,11 @@
   <component name="Black">
     <option name="sdkName" value="Python 3.11 (venv)" />
   </component>
+<<<<<<< HEAD
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.12 (aithentic-rfw)" project-jdk-type="Python SDK" />
+=======
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.12 (pythonProject)" project-jdk-type="Python SDK" />
+>>>>>>> 1403283643e04348cee35f69dcf5a7e7c115c9ff
   <component name="PyPackaging">
     <option name="earlyReleasesAsUpgrades" value="true" />
   </component>
