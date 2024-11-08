@@ -1828,3 +1828,27 @@ Verify the warning is visible when deactivate or remove product
     ${product_warning_text}=       get text        //h4[normalize-space()='${option}']//parent::div//following-sibling::div//p
     log     ${product_warning_text}
     set global variable         ${product_warning_text}
+
+Verify the warning is visible when deactivate or remove brand
+    [Arguments]     ${option}
+    wait until element is not visible      ${loaderIcon}    ${wait_time}
+    wait until element is visible      //h5[normalize-space()='${option}']//parent::div    ${wait_time}
+    wait until element is visible      //h5[normalize-space()='${option}']//parent::div//following-sibling::div//p    ${wait_time}
+    wait until element is enabled       //h5[normalize-space()='${option}']//parent::div//following-sibling::div//p       ${wait_time}
+    sleep       2
+    ${Brand_warning_text}=       get text        //h5[normalize-space()='${option}']//parent::div//following-sibling::div//p
+    log     ${Brand_warning_text}
+    set global variable         ${Brand_warning_text}
+
+Verify update button is not visible on edit brand page
+    wait until element is not visible
+
+Wait for the brand warning text of deactivate
+    [Arguments]     ${option}           ${option1}
+    wait until element is not visible      ${loaderIcon}    ${wait_time}
+    wait until element contains      //p[contains(text(),'Cannot ${option} ${option1} as it is in use')]    ${wait_time}
+
+Wait for the brand warning text of remove
+    [Arguments]     ${option}           ${option1}
+    wait until element is not visible      ${loaderIcon}        ${wait_time}
+    wait until element contains      //p[contains(text(),'Cannot ${option} ${option1} as it is in use')]        ${wait_time}
