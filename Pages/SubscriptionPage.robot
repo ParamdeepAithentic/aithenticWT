@@ -915,3 +915,12 @@ Fetch the all validation message on subscription payment page
       Append To List    ${actualList}     ${element.text}
    END
    lists should be equal    ${expectedList}    ${actualList}
+
+Verify that Subscription Info tab is visible
+    wait until element is not visible   ${loaderIcon}          ${wait_time}
+    wait until element is visible   css:#cve-tab        ${wait_time}
+    wait until element is enabled   css:#cve-tab    ${wait_time}
+
+Verify subscription info tab is not visible
+    wait until element is not visible   ${loaderIcon}          ${wait_time}
+    Page Should Not Contain Element   css:#cve-tab        ${wait_time}

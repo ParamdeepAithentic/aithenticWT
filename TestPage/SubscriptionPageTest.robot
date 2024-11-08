@@ -2308,3 +2308,34 @@ SUBSCRIPTION CONNECTOR : M365 Subscription Report Drilldown
     SubscriptionPage.Wait for the subscrition overview table to load
     SubscriptionPage.Wait for the visiblity of product
     SubscriptionPage.Compare the Product name       ${product_name}              ${subscriptionOverview_ProductName}
+
+Technologies: View details on subscription tab
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      samuel@yopmail.net    Test@123
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Select parameter         Usage Analytics
+    Generic.Verify your current page location contains     usage-analytics
+    SubscriptionPage.Click on the tab under Uasge Analytics         m365
+    SubscriptionPage.Wait for the subscrition overview table to load
+    SubscriptionPage.Fetch the Asset_Id from subcription overview table
+    Generic.Verify your current page location contains     subscription-technology-details
+    subscriptionPage.Verify that Subscription Info tab is visible
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    Generic.Wait until table get load
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+    SubscriptionPage.Verify subscription info tab is not visible
