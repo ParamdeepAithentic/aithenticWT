@@ -1718,7 +1718,8 @@ Get And Verify The Count Of existing asset of parent
     FOR    ${index}    IN RANGE    1    ${element_count + 1}
         Wait Until Element Is Visible   //tbody/tr[${index}]/td/label/span      ${wait_time}
         Wait Until Element Is enabled   //tbody/tr[${index}]/td/label/span      ${wait_time}
-       click element   //tbody/tr[${index}]/td/label/span
+#       click element   //tbody/tr[${index}]/td/label/span
+       Execute JavaScript    document.querySelector('tbody > tr:nth-child(${index}) > td > label > span').click();
     END
 
 Click on the export button of parent tab under technology details page

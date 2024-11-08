@@ -118,11 +118,7 @@ Free the asset limit
 
 
 Set Plan range in pre requites
-<<<<<<< HEAD
-    [Tags]      rerun
-=======
     [Tags]    NT
->>>>>>> 99bcb191e0d4ced4df643abc2c9f2456d3ffb14b
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form     ${email}    ${valid_password}
