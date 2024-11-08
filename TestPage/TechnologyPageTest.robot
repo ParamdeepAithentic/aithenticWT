@@ -3406,7 +3406,7 @@ Click on the technology group filters and verify it
     TechnologyPage.Get the text of the value you selected under filter    2
     Generic.Wait until table get load
     PaginationPage.Fetch the total count
-    LocationPage.Fetch the country from location filter and click    Location      ${random_Name}       ${random_Name}
+    LocationPage.Fetch the country from location filter and click    Location       10      ${random_Name}       ${random_Name}
     Generic.click on the tab        reset filters
     Generic.Wait until table get load
     TechnologyPage.Click on the tech type filter under technology       Select Location
