@@ -1835,7 +1835,7 @@ Verify the warning is visible when deactivate or remove brand
     wait until element is visible      //h5[normalize-space()='${option}']//parent::div    ${wait_time}
     wait until element is visible      //h5[normalize-space()='${option}']//parent::div//following-sibling::div//p    ${wait_time}
     wait until element is enabled       //h5[normalize-space()='${option}']//parent::div//following-sibling::div//p       ${wait_time}
-    sleep       2
+    sleep       ${search_sleep}
     ${Brand_warning_text}=       get text        //h5[normalize-space()='${option}']//parent::div//following-sibling::div//p
     log     ${Brand_warning_text}
     set global variable         ${Brand_warning_text}
