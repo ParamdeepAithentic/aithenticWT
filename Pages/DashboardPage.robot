@@ -1841,14 +1841,5 @@ Verify the warning is visible when deactivate or remove brand
     set global variable         ${Brand_warning_text}
 
 Verify update button is not visible on edit brand page
-    wait until element is not visible
+    wait until element is not visible       //button[normalize-space()='Update']
 
-Wait for the brand warning text of deactivate
-    [Arguments]     ${option}           ${option1}
-    wait until element is not visible      ${loaderIcon}    ${wait_time}
-    wait until element contains      //p[contains(text(),'Cannot ${option} ${option1} as it is in use')]    ${wait_time}
-
-Wait for the brand warning text of remove
-    [Arguments]     ${option}           ${option1}
-    wait until element is not visible      ${loaderIcon}        ${wait_time}
-    wait until element contains      //p[contains(text(),'Cannot ${option} ${option1} as it is in use')]        ${wait_time}
