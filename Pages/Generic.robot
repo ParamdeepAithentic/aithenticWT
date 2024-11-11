@@ -62,7 +62,7 @@ ${yop_sleep}       10
 ${search_sleep}       1
 
 
-${CASE}        pre-prod  #qa , uat , pre-prod
+${CASE}        uat  #qa , uat , pre-prod
 
 
 
@@ -369,6 +369,7 @@ Select simple option from profile list
     wait until element is enabled    //a[normalize-space()='${option}']         ${wait_time}
     wait until element is not visible      ${loaderIcon}          ${wait_time}                  # Remove later
     click element    //a[normalize-space()='${option}']
+    sleep   ${search_sleep}
 
 ###############################################################################################
 
