@@ -48,12 +48,14 @@ ${TMDepartmentName}     css:.qa-DepartmentId input
 ${TMLocation}     css:.qa-LocationTypeId input
 
 ${TMRole}     css:.qa-member-role input
-
+${Edit_Email}       css:#businessEmail
 
 ${teamMember_Action_btn}     css:#Team-Member-Actions
 ${name_SearchBar}       css:#searchbar-memberlist
 ${Dept_SearchBar}       css:#searchbar-departmentlist
 ${three_dots}       css:.three-dots
+${Edit_first_name}      css:#firstName
+${Edit_last_name}      css:#lastName
 
 
 *** Keywords ***
@@ -212,6 +214,7 @@ Click on the tab
 Click on the button
     [Arguments]    ${option}
     Generic.Click on the button     ${option}
+    sleep       ${search_sleep}
 
 Search the department name
     [Arguments]    ${name}
@@ -418,9 +421,9 @@ Get the text of selected status filter under team meber via profile
     log to console    ${New_status1}
     set global variable   ${New_status1}
 
-Fetch the all validation message after entering invalid data in add team member
+Fetch the all validation message after entering invalid data in add team member while edit
    wait until element is visible   //span[contains(@class,'invalidInput')]       ${wait_time}
-   @{expectedList} =    Create List      Please enter First Name       Please enter Last Name          Please enter Mobile Number        Please enter Business Email        Please enter Department          Please Select Member Location       Please Select Role
+   @{expectedList} =    Create List      Please enter First name       Please enter Last name           Please enter Department         Please enter Business Email         Select Member Location       Select Role
    ${elements} =  Get WebElements     //span[contains(@class,'invalidInput')]
    @{actualList} =   Create List
    FOR  ${element}  IN      @{elements}
@@ -475,4 +478,40 @@ Clear the text of business email when editing team member
         Press Keys    css:#businessEmail     BACKSPACE
     END
 
+Enter team member business email self while edit
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}  ${wait_time}
+    wait until element is visible       css:#businessEmail    ${wait_time}
+    input text   css:#businessEmail   ${option}
 
+Select team member role while edit
+    [Arguments]    ${option}
+    Generic.Enter value into field  //input[@id='userRole']     ${option}
+    Generic.Select parameter        ${option}
+
+Enter team member first name with 101 letters while edit
+    ${random_string} =    Generate Random String       101      [LETTERS]
+     ${generated_Edit_Fname1}=    Catenate    TMFname_${random_string}
+    wait until element is visible       css:#firstName      ${wait_time}
+    input text   css:#firstName     ${generated_Edit_Fname1}
+    log to console       ${generated_Edit_Fname1}
+    set global variable       ${generated_Edit_Fname1}
+
+Enter team member last name with 101 letters while edit
+    ${random_string} =    Generate Random String       101      [LETTERS]
+     ${generated_Edit_lname1}=    Catenate    TLname_${random_string}
+    wait until element is visible       css:#lastName      ${wait_time}
+    input text   css:#lastName      ${generated_Edit_lname1}
+    log to console       ${generated_Edit_lname1}
+    set global variable       ${generated_Edit_lname1}
+
+Fetch the all validation message after entering invalid data in add team member
+   wait until element is visible   //span[contains(@class,'invalidInput')]       ${wait_time}
+   @{expectedList} =    Create List      Please enter First Name       Please enter Last Name       Please enter Mobile Number          Please enter Business Email                  Please enter Department                Please Select Member Location         Please Select Role
+   ${elements} =  Get WebElements     //span[contains(@class,'invalidInput')]
+   @{actualList} =   Create List
+   FOR  ${element}  IN      @{elements}
+      log to console    ${element.text}
+      Append To List    ${actualList}     ${element.text}
+   END
+   lists should be equal    ${expectedList}    ${actualList}

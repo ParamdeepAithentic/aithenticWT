@@ -86,9 +86,17 @@ Get and Verify the validation after login with email only
     should be equal    ${get_login_validation}     ${text}
 
 Clear the element text of field under login page
-    [Arguments]         ${option}
-    click element          ${option}
-    clear element text         ${option}
+    [Arguments]    ${locator}
+    Click Element    css:#${locator}
+    ${text}=    Execute JavaScript    return document.querySelector("#${locator}").value
+    Log    Initial text: ${text}
+
+    WHILE    '${text}' != ''
+        Press Keys    css:#${locator}    BACKSPACE
+        ${text}=    Execute JavaScript    return document.querySelector("#${locator}").value
+        Log    Updated text: ${text}
+    END
+    Log    Field is now cleared
 
 Get and Verify the validation after entering invalid email under forgot password
     [Arguments]         ${text}

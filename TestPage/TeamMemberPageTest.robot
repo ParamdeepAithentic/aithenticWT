@@ -1391,12 +1391,14 @@ Verify all the validation of add team member
     TeamMemberPage.Fetch the all validation message after entering invalid data in add team member
     TeamMemberPage.Enter team member first name with 101 letters
     TeamMemberPage.Save the team member form   save
+
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page      Please enter First Name with atmost 50 Characters
+    LoginPage.Clear the element text of field under login page       FirstName
+    TeamMemberPage.Enter team member first name self        Milan
     TeamMemberPage.Enter team member last name with 101 letters
     TeamMemberPage.Save the team member form   save
-    LoginPage.Clear the element text of field under login page      ${TMFname}
-    LoginPage.Clear the element text of field under login page       ${TMLname}
-    TeamMemberPage.Enter team member first name self        Milan
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page       Please enter Last Name with atmost 50 Characters
+    LoginPage.Clear the element text of field under login page       LastName
     TeamMemberPage.Enter team member last name self     Johar
     Generic.Enter phone number      India   +91     96462898
     TeamMemberPage.Enter team member business email_mailinator
@@ -1407,27 +1409,27 @@ Verify all the validation of add team member
     TeamMemberPage.Click on team member location
     TeamMemberPage.Select team member location
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page       Please enter a valid Mobile Number
-    LoginPage.Clear the element text of field under login page       ${phone}
+    LoginPage.Clear the element text of field under login page       phone
     Generic.Enter phone number      India   +91     964628982342
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page       Please enter a valid Mobile Number
-    LoginPage.Clear the element text of field under login page       ${phone}
+    LoginPage.Clear the element text of field under login page       phone
     Generic.Enter phone number      India   +91     9646289823
-    LoginPage.Clear the element text of field under login page       ${TMBusinessEmail}
+    LoginPage.Clear the element text of field under login page       Email
     TeamMemberPage.Enter team member business email self        Milan
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Please enter valid Email
-    LoginPage.Clear the element text of field under login page       ${TMBusinessEmail}
+    LoginPage.Clear the element text of field under login page       Email
     TeamMemberPage.Enter team member business email self        Milan@
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Please enter valid Email
-    LoginPage.Clear the element text of field under login page       ${TMBusinessEmail}
+    LoginPage.Clear the element text of field under login page       Email
     TeamMemberPage.Enter team member business email self        Milan@dmts
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Please enter valid Email
-    LoginPage.Clear the element text of field under login page       ${TMBusinessEmail}
+    LoginPage.Clear the element text of field under login page       Email
     TeamMemberPage.Enter team member business email self        Milan@dmts.
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Please enter valid Email
-    LoginPage.Clear the element text of field under login page       ${TMBusinessEmail}
+    LoginPage.Clear the element text of field under login page       Email
     TeamMemberPage.Enter team member business email self        Milan@mailinator.
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Please enter valid Email
-    LoginPage.Clear the element text of field under login page       ${TMBusinessEmail}
+    LoginPage.Clear the element text of field under login page       Email
     TeamMemberPage.Enter team member business email self        milan@dmts.fr.nf
     TeamMemberPage.Save the team member form   save
     TeamMemberPage.Wait for the visibility of the alert text
@@ -1458,21 +1460,42 @@ Verify all the validations of edit team member page
     TeamMemberPage.Click on the tab         details
     TeamMemberPage.Click on the button      Edit
     Generic.Verify your current page location contains      updatemembers
-
     TeamMemberPage.Click on the cross icon of the dropdown under edit team member       LocationTypeId
     TeamMemberPage.Click on the cross icon of the dropdown under edit team member       UserRoleId
     TeamMemberPage.Click on the cross icon of the dropdown under edit team member      DepartmentId
-    TeamMemberPage.Clear the text of business email when editing team member
+    LoginPage.Clear the element text of field under login page     businessEmail
     DashboardPage.Clear the data of the field       firstName
     DashboardPage.Clear the data of the field       lastName
-#    TeamMemberPage.Clear the text of business email when editing team member   css:#phone       milan@dmts.fr.nf
     Generic.click on the button   Update
     sleep       ${search_sleep}
-    TeamMemberPage.Fetch the all validation message after entering invalid data in add team member
-
-
-
-
+    TeamMemberPage.Fetch the all validation message after entering invalid data in add team member while edit
+    TeamMemberPage.Enter team member business email self while edit       milan@dmts.fr.nf
+    TeamMemberPage.Enter team member first name while editing
+    TeamMemberPage.Enter team member last name while editing
+    TeamMemberPage.Click on add here in department field        Click here to add
+    TechnologyPage.Create unique department name random
+    TechnologyPage.Select department cost center     1300
+    TechnologyPage.Save the department       add
+    Generic.Fetch alert message text and compare it with        Department added successfully
+    TeamMemberPage.Select team member role while edit     CSPM
+    TeamMemberPage.Click on team member location
+    TeamMemberPage.Select team member location
+    TeamMemberPage.Click on the button      Update
+    sleep       ${search_sleep}
+    TeamMemberPage.Wait for the visibility of the alert text
+    Generic.Enter phone number      India   +91     964628982342
+    TeamMemberPage.Click on the button      Update
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Please enter a valid Mobile Number
+    LoginPage.Clear the element text of field under login page      firstName
+    LoginPage.Clear the element text of field under login page       lastName
+    TeamMemberPage.Enter team member first name with 101 letters while edit
+    TeamMemberPage.Click on the button      Update
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page      Please enter First Name with atmost 50 Characters
+    LoginPage.Clear the element text of field under login page      firstName
+    TeamMemberPage.Enter team member first name while editing
+    TeamMemberPage.Enter team member last name with 101 letters while edit
+    TeamMemberPage.Click on the button      Update
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page       Please enter Last Name with atmost 50 Characters
 
 
 
