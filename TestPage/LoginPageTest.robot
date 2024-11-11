@@ -52,11 +52,12 @@ ${Shop_page_load}           css:.nav-link
 
 *** Test Cases ***
 Testone
+    [Tags]    NT
     Generic.Fix the column number
     Generic.Fix the row number
 
 Login as End_user with different roles
-    [Tags]      Sanity     Smoke
+    [Tags]      Sanity     Smoke        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      enduser@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -67,7 +68,7 @@ Login as End_user with different roles
     LoginPage.Get text of role field from profile personal details
     LoginPage.Verify the logged_in user should be    Subscriber
     Generic.Click on the profile name
-    Generic.Select logout option from profile list       Logout
+    Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
 
 ######################################## ACCOUNT MANAGER #############################################################
@@ -96,7 +97,7 @@ Login as End_user with different roles
     LoginPage.Get text of role field from profile personal details
     LoginPage.Verify the logged_in user should be    Account Manager
     Generic.Click on the profile name
-    Generic.Select logout option from profile list       Logout
+    Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
 
 ################################################# ASSET READER ############################################################
@@ -125,7 +126,7 @@ Login as End_user with different roles
     LoginPage.Get text of role field from profile personal details
     LoginPage.Verify the logged_in user should be    Asset Reader
     Generic.Click on the profile name
-    Generic.Select logout option from profile list       Logout
+    Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
 ###################################################### ASSET USER ######################################################
     Generic.click on the tab	Login
@@ -154,7 +155,7 @@ Login as End_user with different roles
     LoginPage.Get text of role field from profile personal details
     LoginPage.Verify the logged_in user should be    Asset User
     Generic.Click on the profile name
-    Generic.Select logout option from profile list       Logout
+    Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
 ####################################### ASSET MANAGER ####################################################################
     Generic.click on the tab	Login
@@ -181,7 +182,7 @@ Login as End_user with different roles
     LoginPage.Get text of role field from profile personal details
     LoginPage.Verify the logged_in user should be    Asset Manager
     Generic.Click on the profile name
-    Generic.Select logout option from profile list       Logout
+    Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
 ####################################### ADMIN ###########################################################################
     Generic.click on the tab	Login
@@ -208,7 +209,7 @@ Login as End_user with different roles
     LoginPage.Get text of role field from profile personal details
     LoginPage.Verify the logged_in user should be    Admin
     Generic.Click on the profile name
-    Generic.Select logout option from profile list       Logout
+    Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
 ################################### CSPM ###############################################################################
     Generic.click on the tab	Login
@@ -235,11 +236,11 @@ Login as End_user with different roles
     LoginPage.Get text of role field from profile personal details
     LoginPage.Verify the logged_in user should be    CSPM
     Generic.Click on the profile name
-    Generic.Select logout option from profile list       Logout
+    Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
 
 #Login as Manufacturer with different roles
-#    [Tags]      Unstable
+#    [Tags]    NT
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      manufacturer@yopmail.net    Test@123
 #    Generic.Verify your current page location contains      dashboard
@@ -249,7 +250,7 @@ Login as End_user with different roles
 #    LoginPage.Get text of role field from profile personal details
 #    LoginPage.Verify the logged_in user should be    Manufacturer Subscriber
 #    Generic.Click on the profile name
-#    Generic.Select logout option from profile list       Logout
+#    Generic.Select logout option from profile list
 #    Generic.Fetch log_out alert message
 #
 ######################################### MANUFACTURER ACCOUNT MANAGER #############################################################
@@ -278,7 +279,7 @@ Login as End_user with different roles
 #    LoginPage.Get text of role field from profile personal details
 #    LoginPage.Verify the logged_in user should be    Account Manager
 #    Generic.Click on the profile name
-#    Generic.Select logout option from profile list       Logout
+#    Generic.Select logout option from profile list
 #    Generic.Fetch log_out alert message
 ######################################### MANUFACTURER COMMUNICATION MANAGER #############################################################
 #    Generic.click on the tab	Login
@@ -306,7 +307,7 @@ Login as End_user with different roles
 #    LoginPage.Get text of role field from profile personal details
 #    LoginPage.Verify the logged_in user should be    Communication Manager
 #    Generic.Click on the profile name
-#    Generic.Select logout option from profile list       Logout
+#    Generic.Select logout option from profile list
 #    Generic.Fetch log_out alert message
 ######################################### MANUFACTURER ADMIN #############################################################
 #    Generic.click on the tab	Login
@@ -334,7 +335,7 @@ Login as End_user with different roles
 #    LoginPage.Get text of role field from profile personal details
 #    LoginPage.Verify the logged_in user should be    Manufacturer Admin
 #    Generic.Click on the profile name
-#    Generic.Select logout option from profile list       Logout
+#    Generic.Select logout option from profile list
 #    Generic.Fetch log_out alert message
 #
 ######################################### MANUFACTURER PRODUCT MANAGER #############################################################
@@ -363,12 +364,12 @@ Login as End_user with different roles
 #    LoginPage.Get text of role field from profile personal details
 #    LoginPage.Verify the logged_in user should be    Product Manager
 #    Generic.Click on the profile name
-#    Generic.Select logout option from profile list       Logout
+#    Generic.Select logout option from profile list
 #    Generic.Fetch log_out alert message
 
 
 #Login as Supplier with different roles
-#    [Tags]      Unstable
+#    [Tags]    NT
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      supplier@yopmail.net    Test@123
 #    Generic.Verify your current page location contains      dashboard
@@ -378,7 +379,7 @@ Login as End_user with different roles
 #    LoginPage.Get text of role field from profile personal details
 #    LoginPage.Verify the logged_in user should be    Supplier Subscriber
 #    Generic.Click on the profile name
-#    Generic.Select logout option from profile list       Logout
+#    Generic.Select logout option from profile list
 #    Generic.Fetch log_out alert message
 #
 ######################################### SUPPLIER ACCOUNT MANAGER #############################################################
@@ -407,7 +408,7 @@ Login as End_user with different roles
 #    LoginPage.Get text of role field from profile personal details
 #    LoginPage.Verify the logged_in user should be    Account Manager
 #    Generic.Click on the profile name
-#    Generic.Select logout option from profile list       Logout
+#    Generic.Select logout option from profile list
 #    Generic.Fetch log_out alert message
 ######################################### SUPPLIER ADMIN #############################################################
 #    Generic.click on the tab	Login
@@ -435,11 +436,11 @@ Login as End_user with different roles
 #    LoginPage.Get text of role field from profile personal details
 #    LoginPage.Verify the logged_in user should be     Supplier Admin
 #    Generic.Click on the profile name
-#    Generic.Select logout option from profile list       Logout
+#    Generic.Select logout option from profile list
 #    Generic.Fetch log_out alert message
 #
 #Login as Support_Partner with different roles
-#    [Tags]      Unstable    yy
+#    [Tags]    NT
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      supportpartner@yopmail.net    Test@123
 #    Generic.Verify your current page location contains      dashboard
@@ -449,7 +450,7 @@ Login as End_user with different roles
 #    LoginPage.Get text of role field from profile personal details
 #    LoginPage.Verify the logged_in user should be    Support Subscriber
 #    Generic.Click on the profile name
-#    Generic.Select logout option from profile list       Logout
+#    Generic.Select logout option from profile list
 #    Generic.Fetch log_out alert message
 #
 ######################################### Support ACCOUNT MANAGER #############################################################
@@ -478,7 +479,7 @@ Login as End_user with different roles
 #    LoginPage.Get text of role field from profile personal details
 #    LoginPage.Verify the logged_in user should be    Account Manager
 #    Generic.Click on the profile name
-#    Generic.Select logout option from profile list       Logout
+#    Generic.Select logout option from profile list
 #    Generic.Fetch log_out alert message
 #
 ######################################### Support Asset support #############################################################
@@ -507,7 +508,7 @@ Login as End_user with different roles
 #    LoginPage.Get text of role field from profile personal details
 #    LoginPage.Verify the logged_in user should be    Asset Support
 #    Generic.Click on the profile name
-#    Generic.Select logout option from profile list       Logout
+#    Generic.Select logout option from profile list
 #    Generic.Fetch log_out alert message
 #
 ######################################### Support ADMIN #############################################################
@@ -536,7 +537,7 @@ Login as End_user with different roles
 #    LoginPage.Get text of role field from profile personal details
 #    LoginPage.Verify the logged_in user should be    Support Admin
 #    Generic.Click on the profile name
-#    Generic.Select logout option from profile list       Logout
+#    Generic.Select logout option from profile list
 #    Generic.Fetch log_out alert message
 #
 ######################################### Support MANAGAER #############################################################
@@ -565,10 +566,11 @@ Login as End_user with different roles
 #    LoginPage.Get text of role field from profile personal details
 #    LoginPage.Verify the logged_in user should be    Support Manager
 #    Generic.Click on the profile name
-#    Generic.Select logout option from profile list       Logout
+#    Generic.Select logout option from profile list
 #    Generic.Fetch log_out alert message
 
 Check all the validations of login page
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form with email only      ${email}
     LoginPage.Get and Verify the validation after login with email only         Invalid user id or password.
@@ -603,6 +605,7 @@ Check all the validations of login page
 
 
 Check all the validations of forgot password page
+    [Tags]    NT
     Generic.click on the tab	Login
     Generic.click on the tab    Forgot Password?
     Generic.Verify your current page location contains      auth

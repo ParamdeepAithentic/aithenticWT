@@ -286,6 +286,7 @@ Remove asset from technology table
 #     wait until element is enabled       ${removePopUp}        ${wait_time}
      sleep      ${search_sleep}
      Wait Until Element Is Enabled      ${select_remove_popUp_Yes}      ${wait_time}
+     sleep      ${search_sleep}
      click element      ${select_remove_popUp_Yes}
      sleep      ${search_sleep}
 
@@ -352,6 +353,7 @@ Select parameter from technology dropdown list
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  6  ${pageHeading}   Technology Page - Select the option from product dropdown list under add technology      6    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+    Wait Until Element Is not Visible    (//input[@id='brandselect']//parent::div//following::div[contains(@class,'spinner-loader')])[1]       ${wait_time}
 
 Click on add product link
     wait until element is visible   css:.qa-product-add-assets      ${wait_time}
@@ -1713,10 +1715,10 @@ Get And Verify The Count Of existing asset of parent
     ${element_count}=    Get Element Count    //tbody/tr/td/label/span
     Log to console      ${element_count}
 
-    FOR    ${index}    IN RANGE    1    ${element_count}
+    FOR    ${index}    IN RANGE    1    ${element_count + 1}
         Wait Until Element Is Visible   //tbody/tr[${index}]/td/label/span      ${wait_time}
         Wait Until Element Is enabled   //tbody/tr[${index}]/td/label/span      ${wait_time}
-        click element   //tbody/tr[${index}]/td/label/span
+       click element   //tbody/tr[${index}]/td/label/span
     END
 
 Click on the export button of parent tab under technology details page
@@ -1992,6 +1994,7 @@ Click on Print QR button
     Wait Until Element Is Not Visible    ${loaderIcon}        ${wait_time}
     Wait until element is visible     css:#PrintQrButton      ${wait_time}
     wait until element is enabled     css:#PrintQrButton      ${wait_time}
+    sleep       ${search_sleep}
     click element       css:#PrintQrButton
 
 Select option by clicking on Print QR button
@@ -2006,6 +2009,7 @@ Confirm to download QR file
     wait until element is enabled     //div[@id='downloadQrCode']//button[normalize-space()='${option}']      ${wait_time}
     sleep    ${search_sleep}
     click element       //div[@id='downloadQrCode']//button[normalize-space()='${option}']
+    Wait Until Element Is Not Visible    ${shadow}        ${wait_time}
 
 click on the three dots inside table of parent tab from tehnology details page
     Wait Until Element Is Not Visible    ${loaderIcon}        ${wait_time}
@@ -2054,9 +2058,9 @@ Get the text of selected filter under technology
     wait until element is visible      //div[contains(@class,'technology position-relative')]//label[normalize-space()='${option}']    ${wait_time}
     ${fetch_Name_of_selected_filter} =    get text    //div[contains(@class,'technology position-relative')]//label[normalize-space()='${option}']
     ${original_string}=    Set Variable    ${fetch_Name_of_selected_filter}
-    ${New_Namee}=    Evaluate    '${original_string}'.strip()
-    log to console    ${New_Namee}
-    set global variable    ${New_Namee}
+    ${New_Name}=    Evaluate    '${original_string}'.strip()
+    log to console    ${New_Name}
+    set global variable    ${New_Name}
 
 Click on the value under the tech typen filters of technology page
     [Arguments]     ${option}
@@ -2084,9 +2088,9 @@ Get the text of the value you selected under filter
     wait until element is visible      (//div[contains(@class,'technology position-relative')]//following-sibling::div//label)[${option}]    ${wait_time}
     ${fetch_Name_of_selected_random_filter} =    get text    (//div[contains(@class,'technology position-relative')]//following-sibling::div//label)[${option}]
     ${original_string}=    Set Variable    ${fetch_Name_of_selected_random_filter}
-    ${random_Namee}=    Evaluate    '${original_string}'.strip()
-    log to console    ${random_Namee}
-    set global variable    ${random_Namee}
+    ${random_Name}=    Evaluate    '${original_string}'.strip()
+    log to console    ${random_Name}
+    set global variable    ${random_Name}
 
 Click on the product field under add technology
     [Arguments]        ${product}
@@ -2096,6 +2100,10 @@ Click on the product field under add technology
     Clear Element Text    //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input
     click element    //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input
     input text       //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input       ${product}
+    Wait Until Element Is Visible       (//tbody//tr[2]//div[contains(@class,'skeleton')])[1]       ${wait_time}
+    Wait Until Element Is not Visible       (//tbody//tr[2]//div[contains(@class,'skeleton')])[1]       ${wait_time}
+
+
 
 Method 1
     [Arguments]    ${option}
@@ -2106,14 +2114,23 @@ Method 1
 
 Get new product
     [Arguments]         ${option}   ${option1}   ${option2}
-    Run Keyword If    ${status} == True
+    TRY
+         wait until element is visible   //td[normalize-space()='${option}']   ${wait_time}
+         Set Global Variable    ${status}   False
+         TechnologyPage.Redirect to technology page
+    EXCEPT
+        Run Keyword If    ${status} == True
         ...    TechnologyPage.Skip case
         ...    ELSE  Run Keywords     TechnologyPage.Create the product     ${option}   ${option1}   ${option2}
         ...    AND    Return From Keyword
+    END
+
 
 
 Skip case
      log   Element is already there
+     Generic.select the option from the side menu    Technology
+     Generic.Verify your current page location contains      technology
 
 Create the product
     [Arguments]         ${option}     ${option1}   ${option2}
@@ -2135,9 +2152,17 @@ Create the product
     Generic.Wait until table get load
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
+Fetch the description from the technology details page
+    wait until element is visible       //span[contains(@class,'description-container')]//b     ${wait_time}
+    wait until element is enabled        //span[contains(@class,'description-container')]//b    ${wait_time}
+    ${get_description} =    get text    //span[contains(@class,'description-container')]//b
+    set global variable    ${get_description}
+    log to console     ${get_description}
 
-
-
+Redirect to technology page
+    wait until element is visible     //span[contains(text(),'Back to Manage Technology')]     ${wait_time}
+    wait until element is enabled      //span[contains(text(),'Back to Manage Technology')]     ${wait_time}
+    click element    //span[contains(text(),'Back to Manage Technology')]
 
 #Run Code Based On Element Visibility
 #    ${is_visible}=    Run Keyword And Return Status    TechnologyPage.Click on pop up of available Inactive Asset   cancel

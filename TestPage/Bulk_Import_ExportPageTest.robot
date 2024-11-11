@@ -127,6 +127,7 @@ Product Bulk Edit
     Bulk_Import_ExportPage.Verify product added using bulk_import_export   ${generated_EditProductName}
 
 Department Bulk Import
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -152,6 +153,7 @@ Department Bulk Import
     Bulk_Import_ExportPage.Verify department added using bulk_import_export   ${generated_addDepartmentName}
 
 Department Bulk Edit
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -193,6 +195,7 @@ Department Bulk Edit
     Bulk_Import_ExportPage.Verify department added using bulk_import_export     ${generated_EditDepartmentName}
 
 Add Product Bulk Edit
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -235,6 +238,7 @@ Add Product Bulk Edit
     Bulk_Import_ExportPage.Verify product added using bulk_import_export    ${generated_EditProductName}
 
 Add Department Bulk Edit
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -364,7 +368,7 @@ Assigned Users Bulk Edit
     Bulk_Import_ExportPage.Search by empID  ${generated_assigneeEmpID}
 
 Team Member Bulk Edit
-    [Tags]    Sanity
+    [Tags]    Sanity        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -411,6 +415,7 @@ Team Member Bulk Edit
     Bulk_Import_ExportPage.Perform the keyboard action      LocationName
     Bulk_Import_ExportPage.Enter the new value of team member in the role column     UserRoleName
     Bulk_Import_ExportPage.Perform the keyboard action      UserRoleName
+    Generic.Click on the button     Check data      #Update,Edit
     Generic.Click on the button     Update
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
     Generic.Click on the button     Finish
@@ -427,7 +432,7 @@ Team Member Bulk Edit
     Generic.Fetch alert message text and compare it with       Settings Updated
 
 Technology Bulk edit
-    [Tags]       sanity
+    [Tags]       sanity     rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -549,6 +554,7 @@ Team member Bulk Import
     Generic.Fetch alert message text and compare it with       Settings Updated
 
 Assigned User Bulk Import
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -576,6 +582,7 @@ Assigned User Bulk Import
     Generic.Wait until table get load
 
 Location Bulk Import
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -688,6 +695,10 @@ Technology Bulk import
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_9
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_3      1654
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_3
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      DYNA_46      Tax123
+    Bulk_Import_ExportPage.Perform the keyboard action      DYNA_46
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      DYNA_47      Track123
+    Bulk_Import_ExportPage.Perform the keyboard action      DYNA_47
 
 #    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_4      CPU
 #    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_4
@@ -723,7 +734,7 @@ Technology Bulk import
 
 
 Verify Bulk Import on the Technology Page by adding all parameters
-    [Tags]    Sanity     time   smoke
+    [Tags]    Sanity     time   smoke       rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -999,7 +1010,10 @@ Verify Bulk Import on the Technology Page by adding all parameters
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_9
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_3      1654
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_3
-    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_4
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      DYNA_46      Tax123
+    Bulk_Import_ExportPage.Perform the keyboard action      DYNA_46
+    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      DYNA_47      Track123
+    Bulk_Import_ExportPage.Perform the keyboard action      DYNA_47
 #    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_5      Paramdeep
 #    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_5
 #    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_6      Test@123
@@ -1047,6 +1061,7 @@ Verify Bulk Import on the Technology Page by adding all parameters
 
 
 Technology bulk import while entering invalid data in payment period field
+    [Tags]    NT        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1120,6 +1135,10 @@ Technology bulk import while entering invalid data in payment period field
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_3      1654
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_3
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_4
+    Bulk_Import_Exportpage.Enter the new value of serial number of technology bulk import      DYNA_46
+    Bulk_Import_ExportPage.Perform the keyboard action      DYNA_46
+    Bulk_Import_Exportpage.Enter the new value of serial number of technology bulk import      DYNA_47
+    Bulk_Import_ExportPage.Perform the keyboard action      DYNA_47
 #    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_5      Paramdeep
 #    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_5
 #    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_6      Test@123
@@ -1140,8 +1159,8 @@ Technology bulk import while entering invalid data in payment period field
     Bulk_Import_ExportPage.Click on the confirm button under pop up in technology bulk import
     Bulk_Import_ExportPage.Verify the upload message text   UploadMessage       Upload failed
 
-Check the payment period period alert when entering valid data
-    [Tags]       sanity
+Check the payment period alert when entering valid data
+    [Tags]       sanity     rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1215,6 +1234,7 @@ Check the payment period period alert when entering valid data
     TechnologyPage.Search by AssetId       ${generated_assetidbulkedit}
 
 Check the payment period alert when entering inavalid data
+    [Tags]    NT        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1287,6 +1307,10 @@ Check the payment period alert when entering inavalid data
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_9
     Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_3      1654
     Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_3
+    Bulk_Import_Exportpage.Enter the new value of serial number of technology bulk import      DYNA_46
+    Bulk_Import_ExportPage.Perform the keyboard action      DYNA_46
+    Bulk_Import_Exportpage.Enter the new value of serial number of technology bulk import      DYNA_47
+    Bulk_Import_ExportPage.Perform the keyboard action      DYNA_47
 #    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_4      CPU
 #    Bulk_Import_ExportPage.Perform the keyboard action      TECHDYNA_4
 #    Bulk_Import_Exportpage.Enter the new value in the fields of technology bulk import      TECHDYNA_5      Paramdeep

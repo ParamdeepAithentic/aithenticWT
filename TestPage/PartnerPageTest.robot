@@ -50,7 +50,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Compose Message invite user test
-    [Tags]      Sanity      Smoke       Time
+    [Tags]      Sanity      Smoke       Time        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -195,6 +195,7 @@ Compose Message invite user test
 #    ContractsPage.Click on create new contract button
     Generic.click on the tab        Create New Smart Share
     ${StartTime1} =     Get Current Time in Milliseconds
+    sleep       ${search_sleep}
     ContractsPage.Select type of contract     Dynamic Smart Share
     Generic.Verify your current page location contains      generate-contract
     Generic.Verify your current page contains this text     Generate New Smart Share
@@ -225,7 +226,7 @@ Compose Message invite user test
     ContractsPage.Fetch the contract Brand Name from the row      ${generate_BusinessName}
 
     Generic.Click on the profile name
-    Generic.Select logout option from profile list       Logout
+    Generic.Select logout option from profile list
     Generic.Verify your current page location contains      logout
     Generic.Fetch log_out alert message
 
@@ -403,7 +404,7 @@ Compose Message invite user test
 #---------------------------------------------LOGOUT-------------------------------------------
     Generic.Click on the profile name
     ${StartTime1} =     Get Current Time in Milliseconds
-    Generic.Select logout option from profile list       Logout
+    Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
     Generic.Verify your current page contains this text      Login
     ${EndTime1} =     Get Current Time in Milliseconds
@@ -525,7 +526,7 @@ Compose Message invite user test
 
 
 Export Specificartner into Excel Doc CSV and TSV for manufacturer
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -716,7 +717,7 @@ Export Specificartner into Excel Doc CSV and TSV for Support Partner
     Generic.Fetch alert message text and compare it with        Partner updated successfully
 
 Add Manufacturer via personal detail under technology and partner
-#    [Tags]       Stable
+    [Tags]      NT
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -935,7 +936,7 @@ Deactivate Manufacturer via partner
 
 
 Activate Manufacturer via partner
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1025,7 +1026,7 @@ Activate Manufacturer via partner
     Generic.Fetch alert message text and compare it with      Status updated successfully
 
 Remove Manufacturer from partner
-    [Tags]    Sanity   Smoke
+    [Tags]    Sanity   Smoke        rerun
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1121,7 +1122,7 @@ Remove Manufacturer from partner
 
 
 View Details and check the details of Contract
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1176,6 +1177,7 @@ View Details and check the details of Contract
     ContractsPage.Click on back to contract link
 #    ContractsPage.Click on create new contract button
     Generic.click on the tab        Create New Smart Share
+    sleep   ${search_sleep}
     ContractsPage.Select type of contract     Dynamic Smart Share
     Generic.Verify your current page location contains      generate-contract
     ContractsPage.Enter contract type      SmartShare_Manufacturer
@@ -1229,7 +1231,7 @@ View Details and check the details of Contract
 
 
 Add_edit_deactivate_removeSupplier while adding brand
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1324,7 +1326,7 @@ Add_edit_deactivate_removeSupplier while adding brand
     Generic.Fetch alert message text and compare it with      Partner deleted successfully
 
 Add_edit_deactivate_removeSupport_partner_while_adding_brand
-#    [Tags]      Stable    yy
+    [Tags]      NT
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1428,6 +1430,9 @@ Partner Side bar Filters
     Generic.select the option from the side menu    Partners
     PartnersPage.Click on the filters from partner module       Select Partner
     PartnersPage.Checkmark after clicking on the filters        Manufacturer
+    Generic.Wait until table get load
+    sleep       ${search_sleep}
+    Generic.Scroll Window To End
     ReportsPage.Fetch the total count
     PaginationPage.Click on the pagination dropdown     partner-list
     PaginationPage.Select the value from the pagination drop down count    500
@@ -1489,6 +1494,7 @@ Partner Side bar Filters
     MessagePage.Comapre the total count after selecting filter
 
 Verify all the validations of Add Partners
+    [Tags]      Negative
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1525,6 +1531,7 @@ Verify all the validations of Add Partners
     PartnersPage.Compare the Validations on Partner Page        ${Partner_validation1}       Please select Country
 
 Verify all the validations of Edit Partners
+    [Tags]     Negative
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1579,6 +1586,22 @@ Verify all the validations of Edit Partners
     PartnersPage.Click on Add new Contact of partner        Add new Contact
     PartnersPage.Add the contact of Edit partner
     Generic.Fetch alert message text and compare it with        Please enter values to save contact.
+
+Create partner 100 times
+    Generic.click on the tab	    Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Partners
+    Generic.Verify your current page location contains      partner
+
+    Generic.Verify your current page contains this text     Partners
+
+#-------------------------- PARTNER--------------------------------------------------------------
+#    LoginPage.Fetch the refresh token from the login api
+    ReplaceDomainAPI.Replace Domain
+    PartnersPage.Create many partners
+
 
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

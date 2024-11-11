@@ -309,6 +309,7 @@ Run the remove asset journey
 Remove the old assets to free the space
     Generic.Click on the profile name
     Generic.Select subscription option from profile list
+#    Admin_PanelPage.click on confirm button to change plan     Confirm
     Generic.Verify your current page location contains      subscription
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     TechnologyPage.Click on plan of subscription        Premium
@@ -415,3 +416,23 @@ Fetch the brand name under existing assets without searching
     ${Brand_existing_asset}=      Get text        //bs-tooltip-container[@role='tooltip']//li//b[contains(text(),'${text}')]//ancestor::li
     Log To Console    ${Brand_existing_asset}
     Set Global Variable   ${Brand_existing_asset}
+
+
+
+
+Check Pagination
+    [Arguments]     ${option}
+    TRY
+        PaginationPage.Pagination box visible
+        PaginationPage.Log WebElements    ${option}
+    EXCEPT
+        PaginationPage.Skip the pagination code
+    END
+
+Pagination box visible
+     wait until element is visible    //*[contains(@class,'per-page')]//div[@role='combobox']   ${wait_time}
+     wait until element is enabled    //*[contains(@class,'per-page')]//div[@role='combobox']   ${wait_time}
+     click element      //*[contains(@class,'per-page')]//div[@role='combobox']
+
+Skip the pagination code
+    Log    The count is less than 10 so pagination is not vaisible

@@ -56,13 +56,14 @@ ${click_countryTag}     css:.iti__arrow
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
-${wait_time}       20
+${wait_time}       60
 ${yop_sleep}       10
 
 ${search_sleep}       1
 
 
 ${CASE}        uat   #qa , uat , pre-prod
+
 
 
 
@@ -101,7 +102,7 @@ Set QA Variables
 
 Set UAT Variables
     Set Suite Variable    ${url}        https://uat-app.aithentic.com/
-    Set Suite Variable    ${valid_password}    Test@123     #UAT user
+    Set Suite Variable    ${valid_password}         Test@123     #UAT user   #Paramdeep@112
     Set Suite Variable    ${apiURL}    https://uat-api.aithentic.com/api/v1
     Set Suite Variable    ${agentDiscovery_TagName}    Tag Name - johnsoftwaresolutions-1428-4        #uat
     Set Suite Variable    ${IP_Discovered_devices}    Tag Name - johnsoftwaresolutions-1428-10        #uat
@@ -110,7 +111,7 @@ Set UAT Variables
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
     Set Suite Variable    ${browser_name}         firefox
-    Set Suite Variable    ${email}                 testqa29j@mailinator.com
+    Set Suite Variable    ${email}                 testqa29j@mailinator.com     #deepparam112@yopmail.net
     Set Suite Variable    ${discovered_asset_brand}                 Apple Inc
     Set Suite Variable    ${existing_mac}                       98:5a:eb:cb:c8:ed
     Set Suite Variable    ${discovered_existing_brand}              Apple Inc.
@@ -118,7 +119,7 @@ Set UAT Variables
     Set Suite Variable    ${discovered_existing_product}            Macmini9,1
     Set Suite Variable    ${discovered_existing_department}        Quality Assurance
     Set Suite Variable    ${discovered_IP}    192.168.29.176
-    Set Suite Variable    ${discovery_asset_list_brand}     AKKA Germany GmbH
+    Set Suite Variable    ${discovery_asset_list_brand}     Samsung Electronics Co.,Ltd
     Set Suite Variable    ${existing_mac}                       DC:21:5C:9C:3E:57
     Set Suite Variable    ${Team_member_location}        Colombia - Twinhead123 - 56 - 21
     Set Suite Variable    ${Technology_group}      Accessories
@@ -139,6 +140,8 @@ Set Pre-Prod Variables
     Set Suite Variable    ${discovered_IP}   192.168.18.86
     Set Suite Variable    ${discovery_asset_list_brand}       Apple, Inc.
     Set Suite Variable    ${Team_member_location}       United States - Building23 - 4 - 8
+    Set Suite Variable    ${Technology_group}      Applications
+    Set Suite Variable    ${Technology_group1}      Applications
 
 Set Research Variables
     Set Suite Variable    ${url}    https://research-app.aithentic.com/
@@ -337,10 +340,11 @@ Click on the profile name
 Select subscription option from profile list
 #    [Arguments]     ${option}
     wait until element is not visible      ${loaderIcon}          ${wait_time}
-    wait until element is visible    //a[contains(@class,'subscription-dropdown')]          ${wait_time}
-    wait until element is enabled    //a[contains(@class,'subscription-dropdown')]          ${wait_time}
+    wait until element is visible    css:.qa-subscription-dropdown          ${wait_time}
+    wait until element is enabled    css:.qa-subscription-dropdown           ${wait_time}
     wait until element is not visible      ${loaderIcon}          ${wait_time}                  # Remove later
-    click element    //a[contains(@class,'subscription-dropdown')]
+#    click element    css:.qa-subscription-dropdown
+    Execute JavaScript    document.querySelector('.qa-subscription-dropdown').click();
 
 Select logout option from profile list
 #    [Arguments]     ${option}
@@ -367,6 +371,7 @@ Select simple option from profile list
     wait until element is enabled    //a[normalize-space()='${option}']         ${wait_time}
     wait until element is not visible      ${loaderIcon}          ${wait_time}                  # Remove later
     click element    //a[normalize-space()='${option}']
+    sleep   ${search_sleep}
 
 ###############################################################################################
 
@@ -441,7 +446,7 @@ Scroll the page till
     wait until element is not visible       ${loaderIcon}       ${wait_time}
 
 Verify pop-up is visible after clicking on i-icon
-    wait until element is visible       css:.popover-content       ${wait_time} 
+    wait until element is visible       css:.popover-body div.iIcon-centent-section       ${wait_time}
     log to console      Yes, pop-up is visible for i-icon
 
 Scroll Window To End

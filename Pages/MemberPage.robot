@@ -374,12 +374,16 @@ Click on confirm button under remove pop up of assigned user
 
 Search assigned user by static first name
     [Arguments]    ${name}
+    wait until element is not visible      ${loaderIcon}     ${wait_time}
     wait until element is visible       css:thead tr       ${wait_time}
+    wait until element is not visible       css:.spinner-border      ${wait_time}
     wait until element is visible      css:input[placeholder='Search by Assignee Name or Employee Id']     ${wait_time}
     wait until element is enabled      css:input[placeholder='Search by Assignee Name or Employee Id']     ${wait_time}
     click element      css:input[placeholder='Search by Assignee Name or Employee Id']
     input text   css:input[placeholder='Search by Assignee Name or Employee Id']   ${name}
     sleep      ${search_sleep}
+    wait until element is not visible       css:.spinner-border     ${wait_time}
+
 
 Verify the search static member
     [Arguments]    ${option}
@@ -389,7 +393,7 @@ Verify the search static member
 
 
 Get new assignee
-    [Arguments]         ${option}
+    [Arguments]         ${option}       ${option1}      ${option2}      ${option3}
     Run Keyword If    ${status} == True
         ...    MemberPage.Skip case
         ...    ELSE  Run Keywords     MemberPage.Create the Assignee     ${option}       ${option1}      ${option2}      ${option3}
@@ -469,23 +473,35 @@ Create random assignee email not link with fist name
     set global variable    ${generated_assigneeemail}
 
 Verify the visibilty of same user exist validation
-    wait until element is visible       //div[contains(text(), 'Same user name already exists, Employee Id is missing.')]    ${wait_time}
-    wait until element is enabled       //div[contains(text(), 'Same user name already exists, Employee Id is missing.')]    ${wait_time}
+    wait until element is visible       //div[contains(text(), 'Same user name already exists ')]    ${wait_time}
+    wait until element is enabled       //div[contains(text(), 'Same user name already exists ')]    ${wait_time}
 
 Click on the save button of add assignee pop up if user is same
     [Arguments]     ${option}
     Wait Until Element Is visible    //button[@id='${option}-assignee-modal']    ${wait_time}
     Wait Until Element Is Enabled   //button[@id='${option}-assignee-modal']    ${wait_time}
     click element      //button[@id='${option}-assignee-modal']
+    sleep       2
     wait until element is not visible      ${loaderIcon}     ${wait_time}
 #    wait until element is not visible       ${shadow}          ${wait_time}
 
 
 Verify the visibilty of same user exist validation for cancel button
-    wait until element is visible       //div[contains(text(), 'Same user name already exists')]    ${wait_time}
-    wait until element is enabled       //div[contains(text(), 'Same user name already exists')]
+    wait until element is visible       //div[contains(text(),' Employee Id is missing.')]    ${wait_time}
+    wait until element is enabled       //div[contains(text(),' Employee Id is missing.')]
 
 Click on the edit option under three dots of member
     Wait Until Element Is visible   css:.assignee-edit-qa    ${wait_time}
     Wait Until Element Is Enabled   css:.assignee-edit-qa    ${wait_time}
     click element     css:.assignee-edit-qa
+
+
+Clear the element text in search bar of assigned user
+    Wait Until Element Is visible   css:input[placeholder='Search by Assignee Name or Employee Id']    ${wait_time}
+    Wait Until Element Is Enabled   css:input[placeholder='Search by Assignee Name or Employee Id']    ${wait_time}
+    clear element text      css:input[placeholder='Search by Assignee Name or Employee Id']
+
+Verify the visibilty of same user exist validation while adding
+    wait until element is visible       //div[contains(text(), 'Same user name already exists, Employee Id is missing. ')]    ${wait_time}
+    wait until element is enabled       //div[contains(text(), 'Same user name already exists, Employee Id is missing. ')]    ${wait_time}
+

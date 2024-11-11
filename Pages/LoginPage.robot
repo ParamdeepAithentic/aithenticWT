@@ -98,6 +98,7 @@ Clear the element text of field under login page
     END
     Log    Field is now cleared
 
+
 Get and Verify the validation after entering invalid email under forgot password
     [Arguments]         ${text}
     wait until element is visible       //span[contains(@id,'error-username')]     ${wait_time}
@@ -106,4 +107,14 @@ Get and Verify the validation after entering invalid email under forgot password
     set global variable    ${get_forgotpassword_validation}
     log to console    ${get_forgotpassword_validation}
     should be equal   ${get_forgotpassword_validation}     ${text}
+
+Click on the fields
+    Wait Until Element Is visible      css:#AssignedEmail        ${wait_time}
+    Wait Until Element Is enabled      css:#AssignedEmail        ${wait_time}
+    click element       css:#AssignedEmail
+    Wait Until Element Is visible         css:#AssignedEmployeeId        ${wait_time}
+    Wait Until Element Is enabled        css:#AssignedEmployeeId     ${wait_time}
+    click element       css:#AssignedEmployeeId
+
+
 

@@ -51,7 +51,7 @@ Test Teardown   Close Browser session
 Activate and deactivate the location
     [Tags]      Time      Sanity        Smoke
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     ${StartTime1} =     Get Current Time in Milliseconds
@@ -100,8 +100,9 @@ Activate and deactivate the location
     LocationPage.Fetch and verify the location status from the row   Active
 
 Edit the Location
+    [Tags]    NT
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Location
@@ -146,7 +147,7 @@ Edit the Location
 Remove Location from listing
     [Tags]      Smoke
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Location
@@ -177,7 +178,7 @@ Remove Location from listing
 Add Location from profile Listing
     [Tags]     Sanity     Smoke
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
@@ -261,7 +262,7 @@ Verify Location_name Hide and show after changes it from settings
 Click on the select status filter and verify it
     [Tags]     time     smoke
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Location
@@ -282,12 +283,12 @@ Click on the select status filter and verify it
     PaginationPage.Select the value from the pagination drop down count     500
     PaginationPage.Fetch the selected value of the dropdown     location-list
     PaginationPage.Fetch the total count
-    LocationPage.Fetch the country from location filter and click       Status     Inactive         ${New_status}
+    LocationPage.Fetch the country from location filter and click       Status      7     Inactive         ${New_status}
 
 Click on the select location filter and verify it
-    [Tags]    time     smoke
+    [Tags]    time     smoke        rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Location
@@ -303,7 +304,7 @@ Click on the select location filter and verify it
     PaginationPage.Fetch the total count
 
     ${StartTime1} =     Get Current Time in Milliseconds
-    LocationPage.Fetch the country from location filter and click       Country     Afghanistan         ${New_Name}
+    LocationPage.Fetch the country from location filter and click       Country     3     Afghanistan         ${New_Name}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  10  ${pageHeading}   Filter Page - Data load time of filter Country under location group      10    ${pageTime}     ${ActualTime}    Filter_Time
@@ -312,17 +313,20 @@ Click on the select location filter and verify it
     LocationPage.Click on the location filter under location
     LocationPage.Select the option from location filter under location         Canada
     LocationPage.Get the text of selected filter under location     Canada
+    sleep   ${search_sleep}
     Generic.Wait until table get load
     sleep   ${search_sleep}
+    Generic.Scroll Window To End
+    sleep   ${search_sleep}
     PaginationPage.Fetch the total count
-    LocationPage.Fetch the country from location filter and click       Country     Canada          ${New_Name}
+    LocationPage.Fetch the country from location filter and click       Country     3        Canada          ${New_Name}
     Generic.Click on the reset filters link
     LocationPage.Click on the location filter under location
     LocationPage.Select the option from location filter under location          India
     LocationPage.Get the text of selected filter under location      India
     Generic.Wait until table get load
     PaginationPage.Fetch the total count
-    LocationPage.Fetch the country from location filter and click       Country      India          ${New_Name}
+    LocationPage.Fetch the country from location filter and click       Country     3        India          ${New_Name}
     Generic.Click on the reset filters link
     LocationPage.Click on the location filter under location
     LocationPage.Select the option from location filter under location         Turkey
@@ -333,9 +337,10 @@ Click on the select location filter and verify it
     PaginationPage.Select the value from the pagination drop down count     500
     PaginationPage.Fetch the selected value of the dropdown     location-list
     PaginationPage.Fetch the total count
-    LocationPage.Fetch the country from location filter and click       Country     Turkey        ${New_Name}
+    LocationPage.Fetch the country from location filter and click       Country     3     Turkey        ${New_Name}
 
 Click on the select Active status filter and verify it
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      johns@mai.25u.com         Test@123
     Generic.Verify your current page location contains      dashboard
@@ -351,9 +356,10 @@ Click on the select Active status filter and verify it
     PaginationPage.Select the value from the pagination drop down count     500
     PaginationPage.Fetch the selected value of the dropdown     location-list
     PaginationPage.Fetch the total count
-    LocationPage.Fetch the country from location filter and click       Status     Active         ${New_status}
+    LocationPage.Fetch the country from location filter and click       Status      7     Active         ${New_status}
 
 Verifying the validations of all fields of Add location
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -403,8 +409,9 @@ Verifying the validations of all fields of Add location
     LocationPage.Click on cancel Location
 
 Verifying the validations of all fields of Edit location
+    [Tags]    NT
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Location
@@ -437,3 +444,52 @@ Verifying the validations of all fields of Edit location
     LocationPage.Compare and verify the validation messages of Location     ${Locationcountry_validation}       Please Select Country
     LocationPage.Verify the validation of Location name field when organization settings is yes
     LocationPage.Compare and verify the validation messages of Location     ${Locationnameyes_validation}      Please Enter Location Name
+
+Add multiple IP subnets while adding location
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Click on Location action button
+    LocationPage.Click on add location button    Add New Location
+    Generic.Verify your current page location contains      add-location
+    LocationPage.Select location country     United States
+    LocationPage.Select location building name   Trump tower
+    LocationPage.Select location floor   second
+    LocationPage.Select location room    203
+    LocationPage.Select location address one     this address one of the location
+    LocationPage.Select location address two     this address two of the location
+    LocationPage.Select location state       Texas
+    LocationPage.Select location city        Austin
+    LocationPage.Select location zip     147001
+    LocationPage.Enter random cost center value
+    LocationPage.Create random location name
+    LocationPage.Create more than one random IP subnet      1
+    LocationPage.Click on the plus icon of the subnet
+    LocationPage.Create more than one random IP subnet      2
+    Generic.click on the button     Save
+    Generic.Fetch alert message text and compare it with    Location created successfully
+    LocationPage.Search by location name     ${generated_location}
+    LocationPage.Fetch the location Name from the row       ${generated_location}
+    LocationPage.Click on three dots on row
+    LocationPage.Select the option from row menu     Edit
+    Generic.Verify your current page location contains    edit
+    LocationPage.Edit location country   United States
+    LocationPage.Select location building name   Trump tower
+    LocationPage.Select location floor   second
+    LocationPage.Select location room    203
+    LocationPage.Select location address one     this address one of the location
+    LocationPage.Select location address two     this address two of the location
+    LocationPage.Edit location state       Arizona
+    LocationPage.Edit location city        Anthem
+    LocationPage.Select location zip     5781
+    LocationPage.Enter random cost center value
+    LocationPage.Create random location name
+    LocationPage.Click on the plus icon of the subnet
+    LocationPage.Create more than one random IP subnet      3
+    Generic.click on the button    Update
+    Generic.Fetch alert message text and compare it with    Location updated successfully
+    LocationPage.Search by location name     ${generated_location}
+    LocationPage.Fetch the location Name from the row       ${generated_location}

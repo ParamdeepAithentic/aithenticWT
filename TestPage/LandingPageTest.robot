@@ -52,7 +52,7 @@ ${Shop_page_load}           css:.nav-link
 
 *** Test Cases ***
 Validate Succesful Login
-#    [Tags]      Stable
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}    ${valid_password}
     Generic.Verify your current page location contains    dashboard

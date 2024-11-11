@@ -74,6 +74,7 @@ ${payment_zipcode}     css:#ZipCode
 
 
 ${cardNumber}     css:input[placeholder='Card number']
+${CardNumber_locator}       css:input[name='cardnumber']
 ${cardUserName}     //label[normalize-space()='Name on card']/following-sibling::input
 ${accountNumber}     css:#accountNumber
 ${routingNumber}     css:#routingNumber
@@ -852,3 +853,74 @@ Get the value of fields under view details of subscription connector under asset
     ${value} =    get value    (//div[@id='CrowdStrikeDetails']//input)[${option1}]
     log to console     ${value}
     should be equal    ${value}         ${option2}
+
+Hover over row of under M365 tab
+    wait until element is not visible   ${loaderIcon}    ${wait_time}
+    wait until element is visible       (//div[contains(@class,'qa-subscription-list-one-container')]//tr)[2]       ${wait_time}
+    Mouse Over          (//div[contains(@class,'qa-subscription-list-one-container')]//tr)[2]
+
+Fetch the Asset_Id from subcription overview table
+    wait until element is not visible   ${loaderIcon}          ${wait_time}
+    wait until element is not visible   (//tbody//tr[2]//div[contains(@class,'skeleton')])[1]    ${wait_time}
+    wait until element is visible     //p[normalize-space()='Subscription Overview']//parent::div//tbody//tr[1]//td[3]           ${wait_time}
+    wait until element is enabled     //p[normalize-space()='Subscription Overview']//parent::div//tbody//tr[1]//td[3]          ${wait_time}
+#    ${subscriptionOverview_AssetID}=        Execute JavaScript    return document.querySelector('table:nth-of-type(2) tbody tr:nth-child(1) td:nth-child(3)').textContent;
+    ${subscriptionOverview_AssetID}=  get text      //p[normalize-space()='Subscription Overview']//parent::div//tbody//tr[1]//td[3]
+    log         ${subscriptionOverview_AssetID}
+    set global variable     ${subscriptionOverview_AssetID}
+    click element   //p[normalize-space()='Subscription Overview']//parent::div//tbody//tr[1]//td[3]
+
+
+Fetch the Product_name from subcription overview table
+    wait until element is not visible   ${loaderIcon}          ${wait_time}
+    wait until element is not visible   (//tbody//tr[2]//div[contains(@class,'skeleton')])[1]    ${wait_time}
+    wait until element is visible     //p[normalize-space()='Subscription Overview']//parent::div//tbody//tr[1]//td[2]           ${wait_time}
+    wait until element is enabled     //p[normalize-space()='Subscription Overview']//parent::div//tbody//tr[1]//td[2]          ${wait_time}
+    ${subscriptionOverview_ProductName}=        get text    //p[normalize-space()='Subscription Overview']//parent::div//tbody//tr[1]//td[2]
+    log         ${subscriptionOverview_ProductName}
+    set global variable     ${subscriptionOverview_ProductName}
+
+Click on the tab under Uasge Analytics
+    [Arguments]   ${option}
+    wait until element is not visible   ${loaderIcon}          ${wait_time}
+    wait until element is visible     //a[@id='default-tab']//img[contains(@src,'${option}')]          60
+    wait until element is enabled    //a[@id='default-tab']//img[contains(@src,'${option}')]          60
+    Click element       //a[@id='default-tab']//img[contains(@src,'${option}')]
+
+Wait for the subscrition overview table to load
+    wait until element is not visible   ${loaderIcon}          ${wait_time}
+    wait until element is visible      //p[normalize-space()='Subscription Overview']//parent::div//tbody        ${wait_time}
+    wait until element is enabled      //p[normalize-space()='Subscription Overview']//parent::div//tbody          ${wait_time}
+
+Wait for the visiblity of product
+    wait until element is not visible   ${loaderIcon}          ${wait_time}
+    wait until element is not visible   (//tbody//tr[2]//div[contains(@class,'skeleton')])[1]    ${wait_time}
+    wait until element is visible     //p[normalize-space()='Subscription Overview']//parent::div//tbody//tr[1]//td[1]         ${wait_time}
+    wait until element is enabled     //p[normalize-space()='Subscription Overview']//parent::div//tbody//tr[1]//td[1]      ${wait_time}
+    ${product_name}=    get text    //p[normalize-space()='Subscription Overview']//parent::div//tbody//tr[1]//td[1]
+    log     ${product_name}
+    set global variable    ${product_name}
+
+Compare the Product name
+    [Arguments]     ${option1}     ${option2}
+    Should be equal     ${option1}     ${option2}
+
+Fetch the all validation message on subscription payment page
+   wait until element is visible   //span[contains(@class,'invalidInput')]       ${wait_time}
+   @{expectedList} =    Create List       Please Select Country        Please enter Address Line 1            Please Choose State          Please Select City          Please enter Zip Code         Please check authorized Transaction box          Please check aithentic Contract box
+   ${elements} =  Get WebElements     //span[contains(@class,'invalidInput')]
+   @{actualList} =   Create List
+   FOR  ${element}  IN      @{elements}
+      log to console    ${element.text}
+      Append To List    ${actualList}     ${element.text}
+   END
+   lists should be equal    ${expectedList}    ${actualList}
+
+Verify that Subscription Info tab is visible
+    wait until element is not visible   ${loaderIcon}          ${wait_time}
+    wait until element is visible   css:#cve-tab        ${wait_time}
+    wait until element is enabled   css:#cve-tab    ${wait_time}
+
+Verify subscription info tab is not visible
+    wait until element is not visible   ${loaderIcon}          ${wait_time}
+    Page Should Not Contain Element   css:#cve-tab        ${wait_time}

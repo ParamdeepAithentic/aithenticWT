@@ -226,7 +226,7 @@ Signup with ACH payment method
 
 
 Change plan and Change asset limit with ACH Payment method
-    [Tags]      Smoke
+    [Tags]      Smoke       rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -351,6 +351,7 @@ Change plan and Change asset limit with ACH Payment method
     BillingPage.Close the billing payment options module
 
 Update profile and company details of user
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -515,6 +516,7 @@ Update profile and company details of user
     RegisterUserPage.Fetch the Address and zip code from personal_details and compare     zip-code         83301
 
 Verify company domain and submit financial details
+    [Tags]      NT
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -625,7 +627,8 @@ Verify company domain and submit financial details
     Generic.click on the button      Yes
     Generic.Fetch alert message text and compare it with        Domain deleted successfully
 
-Upadte Email of user from personal profile
+Update Email of user from personal profile
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -758,6 +761,7 @@ Upadte Email of user from personal profile
     RegisterUserPage.Select asset center notifications inside alerts section         60 Days
 
 Enter password more than the limit while changing password
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -862,6 +866,7 @@ Enter password more than the limit while changing password
     DashboardPage.Verify the visibility of validation message under change password
 
 Enter password less than the limit while changing password
+    [Tags]      NT
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -973,6 +978,7 @@ Enter password less than the limit while changing password
     DashboardPage.Verify the visibility of validation message under change password
 
 Enter password of 32 characters while changing password
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1092,6 +1098,7 @@ Enter password of 32 characters while changing password
     LandingPage.Verify you are on dashboard page
 
 Enter password of more than the limit while forgot password
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1206,6 +1213,7 @@ Enter password of more than the limit while forgot password
     RegisterUserPage.Verify the visibility of validation when entering password more than the limit
 
 Enter password of less than the limit while forgot password
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1320,6 +1328,7 @@ Enter password of less than the limit while forgot password
     RegisterUserPage.Verify the visibility of validation when entering password less than the limit
 
 Enter password of 8 characters while forgot password
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1434,6 +1443,7 @@ Enter password of 8 characters while forgot password
     Generic.Verify your current page location contains      dashboard
 
 Update billing address via profile list
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1530,6 +1540,7 @@ Update billing address via profile list
     Generic.Fetch alert message text and compare it with       Billing address updated successfully
 
 Verfying the validation of the Address 1 field from the company details
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}       ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1561,6 +1572,7 @@ Verfying the validation of the Address 1 field from the company details
 
 
 Add new ACH card and delete that card
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1660,6 +1672,7 @@ Add new ACH card and delete that card
     Generic.Fetch alert message text and compare it with       Bank removed successfully
 
 Add new credit card and delete that card
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1768,6 +1781,7 @@ Add new credit card and delete that card
     Generic.Fetch alert message text and compare it with       Card removed successfully
 
 Update the subscription Plan and verify the notification
+    [Tags]      NT
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1881,6 +1895,7 @@ Update the subscription Plan and verify the notification
     BillingPage.Get the text of the recent notification of added assets in system tab       Your Monthly plan has been changed.
 
 Profile Profile: Select location and department and add by cliking on link
+    [Tags]      NT
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -2012,6 +2027,7 @@ Profile Profile: Select location and department and add by cliking on link
     RegisterUserPage.Fetch the profile personal_details and compare with registration details       ${profile_position}       ${generate_position}     #
 
 Check all the validations on register page
+    [Tags]      NT
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     RegisterUserPage.Save the register form
@@ -2057,3 +2073,111 @@ Check all the validations on register page
     RegisterUserPage.Select the checkbox
     RegisterUserPage.Save the register form
     Generic.Fetch alert message text and compare it with        Email already exists
+
+Verify all the validations on profile page
+    Generic.click on the tab	Register
+    Generic.Verify your current page location contains      register
+    ReplaceDomainAPI.Replace Domain
+    RegisterUserPage.Create random register first name
+    RegisterUserPage.Create random register last name
+    RegisterUserPage.Create random register company name
+    RegisterUserPage.Click on member type
+    RegisterUserPage.Select the member type      End User
+    RegisterUserPage.Create partner random business email
+    RegisterUserPage.Choose register user country      India   +91     9646289871
+    RegisterUserPage.Select the checkbox
+    RegisterUserPage.Save the register form
+    Generic.Verify your current page location contains      update-email
+    Generic.Open new window     yopmail
+    Generic.Refresh the existing page
+    Generic.Search yopmail emails for       ${generate_register_Email}
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   Email Register Verification Required.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Click on sign In button in yopmail email
+    Unselect Frame
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Create - Account
+    Generic.Verify your current page location contains     create-account
+
+#----------------------------------------USER ACCOUNT---------------------------------------------------
+    UserAccount.Enter the password      Paramdeep@112
+    UserAccount.Confirm the entered password    Paramdeep@112
+    UserAccount.Click on term and condition checkbox
+    UserAccount.Click create account button
+    Generic.Fetch alert message text and compare it with       Account created successfully.
+    Generic.Verify your current page location contains     auth
+    LandingPage.Fill the login Form      ${generate_register_Email}    Paramdeep@112
+    Switch Window    Inbox
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   OTP Verification.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Get verification OTP from email    Your passcode is
+    sleep       ${yop_sleep}
+    Switch Window   aithentic | OTP
+    TwoFactorAuth.Enter the otp     ${passcode}
+    TwoFactorAuth.Click verification button
+#--------------------------------------SUBSCRIPTION------------------------------------------------------------
+    Generic.Verify your current page location contains     subscription
+    SubscriptionPage.Save the manufacturer profile
+    RegisterUserPage.Fetch the all validation message on profile page
+    SubscriptionPage.Select country of manufacturer profile     United States
+    SubscriptionPage.Select state of manufacturer profile   Texas
+    SubscriptionPage.Select city of manufacturer profile    Abram
+    SubscriptionPage.Input text into manufacturer address one       This is address 1
+    SubscriptionPage.Input text into manufacturer address two       This is address 2
+    SubscriptionPage.Input text into manufacturer zip code      73301
+    SubscriptionPage.Select department of manufacturer profile      Customer Support
+    SubscriptionPage.Input text into manufacturer position/title    Agent
+    SubscriptionPage.Save the manufacturer profile
+    Generic.Verify your current page location contains     subscription-menu
+    Generic.Fetch alert message text and compare it with       Profile saved successfully
+    Generic.click on the button     Next
+    Generic.Fetch alert message text and compare it with       Please Select Your Plan
+    SubscriptionPage.Select plan of subscription
+    SubscriptionPage.Select and move next with subscription
+    Generic.Verify your current page location contains     subscription-payment
+##-------------------------------------------BILLING-----------------------------------------------------
+    SubscriptionPage.Click on complete process button
+    SubscriptionPage.Fetch the all validation message on subscription payment page
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Switch to card iframe
+    SubscriptionPage.Enter cardnumber    42424242424242
+    Unselect Frame
+    SubscriptionPage.Check the authorization checkbox
+    SubscriptionPage.Check the acknowledgement checkbox
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page      Your card number is incomplete.
+    SubscriptionPage.Switch to card iframe
+    LoginPage.Clear the element text of field under login page     ${CardNumber_locator}
+    Unselect Frame
+    SubscriptionPage.Switch to card iframe
+    SubscriptionPage.Enter cardnumber    42424242424242420423242
+    Unselect Frame
+    SubscriptionPage.Check the authorization checkbox
+    SubscriptionPage.Check the acknowledgement checkbox
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page       Your card's expiration year is in the past.
+#    SubscriptionPage.Switch to card iframe
+#    LoginPage.Clear the element text of field under login page      ${CardNumber_locator}
+#    Unselect Frame
+#    SubscriptionPage.Switch to card iframe
+#    SubscriptionPage.Enter cardnumber    42424242424242420429242
+#    Unselect Frame
+#    SubscriptionPage.Enter card user name    Paramdeep Singh
+#    SubscriptionPage.Check the authorization checkbox
+#    SubscriptionPage.Check the acknowledgement checkbox
+#    SubscriptionPage.Click on complete process button
+#    Generic.Verify your current page location contains     welcome
+#    Generic.Fetch alert message text and compare it with       Payment Successful
+#    DashboardPage.Click on complete setup button      Complete Setup
+#    Generic.Verify your current page location contains     organization
+#    DashboardPage.Select the employee ID checkbox   yes
+#    DashboardPage.Select the location ID checkbox   yes
+#    DashboardPage.Select the asset ID checkbox      no
+#    Generic.Fetch alert message text and compare it with       Settings Updated

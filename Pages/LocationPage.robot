@@ -53,6 +53,8 @@ ${location_City}     css:.qa-City input
 ${location_Zip}     css:#zip
 ${location_Name}     css:#locationName
 
+${MAX_LIMIT}            500
+
 ${search_LocationName}     css:.search-location-qa
 
 ${rowMenu}     css:.three-dots
@@ -154,8 +156,8 @@ Select location zip
 Create random location name
     ${random_string} =    Generate Random String       5      [NUMBERS]
     ${generated_location}=    Catenate    LocationName${random_string}
-    wait until element is visible       ${location_Name}    ${wait_time}
-    input text   ${location_Name}   ${generated_location}
+    wait until element is visible       css:#locationName    ${wait_time}
+    input text   css:#locationName  ${generated_location}
     set global variable    ${generated_location}
 
 Create self location name
@@ -386,19 +388,22 @@ Select the option from location filter under location
     click element    //div[contains(@class,'sidenav-content ')]//following-sibling::div[contains(@class,'row')]//label[contains(text(),'${option}')]
 
 Fetch the country from location filter and click
-    [Arguments]     ${option}       ${option1}      ${option2}
+    [Arguments]     ${option}       ${option1}      ${option2}     ${option3}
 #    ${element_count}=    Get Element Count    css:.qa-total-count-list
 #    Log      ${element_count}
     FOR    ${index}    IN RANGE    1    ${total_data_count + 1}
-        Wait Until Element Is Visible   (//div[normalize-space()='${option}']//following-sibling::div//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]      ${wait_time}
-        Wait Until Element Is Enabled   (//div[normalize-space()='${option}']//following-sibling::div//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]       ${wait_time}
-        ${element1}=    Get Text    (//div[normalize-space()='${option}']//following-sibling::div//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]
+        Wait Until Element Is Visible   (//th//div[contains(@class,'columnName')][normalize-space()='${option}']//ancestor::table//following::tr//td[${option1}][contains(text(),'${option2}')])[${index}]      ${wait_time}
+        Wait Until Element Is Enabled   (//th//div[contains(@class,'columnName')][normalize-space()='${option}']//ancestor::table//following::tr//td[${option1}][contains(text(),'${option2}')])[${index}]       ${wait_time}
+        ${element1}=    Get Text    (//th//div[contains(@class,'columnName')][normalize-space()='${option}']//ancestor::table//following::tr//td[${option1}][contains(text(),'${option2}')])[${index}]
         ${original_string}=    Set Variable    ${element1}
         ${New_Country}=    Evaluate    '${original_string}'.strip()
         Log    Element ${index}: ${New_Country}
-        Run Keyword If    '${New_Country}' == '${option2}'    Run Keywords    Empty Action of location   AND     Continue For Loop
+        Run Keyword If    '${New_Country}' == '${option3}'    Run Keywords    Empty Action of location   AND     Continue For Loop
 
     END
+
+
+
 
 Empty Action of location
     Log    Elements value are equal
@@ -452,11 +457,14 @@ Search by location name using statc location
     [Arguments]    ${LocationName}
      wait until element is not visible      ${loaderIcon}     ${wait_time}
      wait until element is visible       css:thead tr       ${wait_time}
+     wait until element is not visible       (//tbody//tr[2]//div[contains(@class,'skeleton')])[1]      ${wait_time}
      click element      ${search_LocationName}
      Clear Element Text      ${search_LocationName}
      ${StartTime1} =     Get Current Time in Milliseconds
      input text   ${search_LocationName}   ${LocationName}
      sleep   ${search_sleep}
+     wait until element is not visible       (//tbody//tr[2]//div[contains(@class,'skeleton')])[1]      ${wait_time}
+
 
 Verify the validation of country name field
     wait until element is not visible    ${loaderIcon}      ${wait_time}
@@ -528,3 +536,51 @@ clear the data of location name
     Wait Until Element Is Enabled      ${location_Name}     ${wait_time}
     click element       ${location_Name}
     Clear Element Text      ${location_Name}
+
+Create more than one random IP subnet
+    [Arguments]     ${option}
+    ${random_string1} =     Evaluate    random.randint(1, 255)
+    ${random_string2} =     Evaluate    random.randint(1, 255)
+    ${random_string3} =     Evaluate    random.randint(1, 255)
+    ${random_string4} =     Evaluate    random.randint(1, 255)
+    ${generated_SubnetIP} =    Catenate    ${random_string1}.${random_string2}.${random_string3}.${random_string4}
+    Wait Until Element Is Visible    (//input[contains(@class,'ipsubnet')])[${option}]    ${wait_time}
+    Wait Until Element Is Enabled    (//input[contains(@class,'ipsubnet')])[${option}]   ${wait_time}
+    Input Text    (//input[contains(@class,'ipsubnet')])[${option}]    ${generated_SubnetIP}
+    set global variable    ${generated_SubnetIP}
+
+
+Click on the plus icon of the subnet
+    Wait Until Element Is Visible       //i[@title='Click here to add IP Subnet']    ${wait_time}
+    Wait Until Element Is Enabled      //i[@title='Click here to add IP Subnet']     ${wait_time}
+    click element       //i[@title='Click here to add IP Subnet']
+
+#Fetch the country from location filter and click
+#    [Arguments]     ${option}       ${option1}      ${option2}       ${option3}
+##    ${element_count}=    Get Element Count    css:.qa-total-count-list
+##    Log      ${element_count}
+#    ${total_data_count} =    Get Element Count    xpath=//th//div[contains(@class,'columnName')][normalize-space()='${option}']//ancestor::table//following::tr//td[${option1}][contains(text(),'${option2}')]
+#    ${a} =    Set Count Variable    ${total_data_count}
+#    Log    Total data count (limited to 500 if applicable): ${a}
+#
+#    FOR    ${index}    IN RANGE    1    ${a + 1}
+#        ${xpath}=    Set Variable    (//th//div[contains(@class,'columnName')][normalize-space()='${option}']//ancestor::table//following::tr//td[${option1}][contains(text(),'${option2}')])[${index}]
+#
+#        Wait Until Element Is Visible    (//th//div[contains(@class,'columnName')][normalize-space()='${option}']//ancestor::table//following::tr//td[${option1}][contains(text(),'${option2}')])[${index}]    ${wait_time}
+#        Wait Until Element Is Enabled    (//th//div[contains(@class,'columnName')][normalize-space()='${option}']//ancestor::table//following::tr//td[${option1}][contains(text(),'${option2}')])[${index}]    ${wait_time}
+#
+#        ${element1}=    Get Text    (//th//div[contains(@class,'columnName')][normalize-space()='${option}']//ancestor::table//following::tr//td[${option1}][contains(text(),'${option2}')])[${index}]
+#        ${original_string}=    Set Variable    ${element1}
+#        ${New_Country}=    Evaluate    '${original_string}'.strip()
+#
+#        Log    Element ${index}: ${New_Country}
+#
+#        Run Keyword If    '${New_Country}' == '${option3}'    Run Keywords    Empty Action of Location    AND    Continue For Loop
+#    END
+#
+#
+#
+#Set Count Variable
+#    [Arguments]    ${total_count}
+#    ${a} =    Run Keyword If    ${total_count} <= ${MAX_LIMIT}    Set Variable    ${total_count}    ELSE    Set Variable    ${MAX_LIMIT}
+#    [Return]    ${a}

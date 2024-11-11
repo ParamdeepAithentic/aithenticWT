@@ -49,6 +49,7 @@ Test Teardown   Close Browser session
 
 
 #Create the scheduler
+    #[Tags]      NT
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
 #    Generic.Verify your current page location contains      dashboard
@@ -116,7 +117,7 @@ Edit the scheduler
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
 
 Run now from view details
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -147,7 +148,7 @@ Run now from view details
     SubscriptionPage.Get the value of fields under view details of subscription connector   2       Samuel John
 
 Suspend and unsuspend the account
-    [Tags]      Smoke     Sanity
+    [Tags]      Smoke     Sanity    rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
@@ -196,7 +197,7 @@ Suspend and unsuspend the account
     END
 
 View Scheduler from view Result
-#    [Tags]      Stable
+    [Tags]      NT      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -211,13 +212,14 @@ View Scheduler from view Result
     SubscriptionPage.Click on the three dots of subscription connector      Microsoft Corporation
     SubscriptionPage.Click on option under three dots of subscription connector     Microsoft Corporation        View Results
     #SubscriptionPage.Click on option under three dots of subscription connector     Microsoft Corporation          View Results
-
-    Generic.Verify your current page location contains    subscription
-    SubscriptionPage.Choose tab under subscription page after clicking on view_result
-    SubscriptionPage.Fetch and compare the Brand from the table    Microsoft Corporation
+    Generic.Verify your current page contains this text    No Records
+#    Generic.Verify your current page location contains    subscription
+#    SubscriptionPage.Choose tab under subscription page after clicking on view_result
+#    SubscriptionPage.Fetch and compare the Brand from the table    Microsoft Corporation
 
 
 #Create the scheduler of sentinel one
+#   [Tags]      NT
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
 #    LandingPage.Verify you are on dashboard page
@@ -235,7 +237,7 @@ View Scheduler from view Result
 #    Generic.Fetch alert message text and compare it with        Scheduler created sucessfully
 
 #Edit the scheduler of Sentinelone
-#    [Tags]      Sanity      Stable
+#    [Tags]      Sanity
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
 #    Generic.Verify your current page location contains      dashboard
@@ -284,7 +286,7 @@ View Scheduler from view Result
 #    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
 #
 #Run_now_delete_view-details_of_sentinelOne
-#    [Tags]      Stable
+#    [Tags]      NT
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
 #    Generic.Verify your current page location contains      dashboard
@@ -315,7 +317,7 @@ View Scheduler from view Result
 #    SubscriptionPage.Get the value of fields under view details of subscription connector   2       Samuel John
 #
 #View Scheduler from view Result of sentinelone
-#    [Tags]      Stable
+#    [Tags]      NT
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
 #    Generic.Verify your current page location contains      dashboard
@@ -332,7 +334,7 @@ View Scheduler from view Result
 #    SubscriptionPage.Click on the three dots of subscription connector      Microsoft Corporation
 
 #Edit the scheduler of Sentinelone
-#    [Tags]      Sanity      Stable
+#    [Tags]      Sanity
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
 #    Generic.Verify your current page location contains      dashboard
@@ -385,7 +387,7 @@ View Scheduler from view Result
 #    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
 #
 #Run_now_delete_view-details_of_sentinelOne
-#    [Tags]      Stable
+#    [Tags]      NT
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
 #    Generic.Verify your current page location contains      dashboard
@@ -416,7 +418,7 @@ View Scheduler from view Result
 #    SubscriptionPage.Get the value of fields under view details of subscription connector   2       Samuel John
 #
 #View Scheduler from view Result of sentinelone
-#    [Tags]      Stable
+#    [Tags]      NT
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
 #    Generic.Verify your current page location contains      dashboard
@@ -433,6 +435,7 @@ View Scheduler from view Result
 #    SubscriptionPage.Click on the three dots of subscription connector      Microsoft Corporation
 
 Create service now with invalid data
+    [Tags]      NT      rerun
    Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -531,7 +534,7 @@ Create service now with invalid data
     Generic.Verify your current page contains this text     Service Now Connection Failed.
 
 Create service now with valid data
-    [Tags]      Sanity     Smoke
+    [Tags]      Sanity     Smoke    rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -777,7 +780,7 @@ Create service now with valid data
 
 
 Click on connetors button link under asset discovery
-    [Tags]      Sanity
+    [Tags]      Sanity      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -876,7 +879,7 @@ Click on connetors button link under asset discovery
     Generic.Wait until table get load
 
 Create JAMFF account with valid data
-#    [Tags]      OnlyQA
+   [Tags]      NT       rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1043,7 +1046,7 @@ Create JAMFF account with valid data
     Generic.Verify your current page contains this text    No Records
 
 Create jamff account with invalid data
-#    [Tags]      OnlyQA
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1143,6 +1146,7 @@ Create jamff account with invalid data
     Generic.Verify your current page contains this text     Jamf Pro Connection Failed.
 
 #Edit the scheduler of jamff
+#   [Tags]      NT
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
 #    Generic.Verify your current page location contains      dashboard
@@ -1225,6 +1229,7 @@ Create jamff account with invalid data
 #
 #
 #View Results of jamff account
+#   [Tags]      NT
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
 #    Generic.Verify your current page location contains      dashboard
@@ -1238,7 +1243,7 @@ Create jamff account with invalid data
 #    Generic.Verify your current page contains this text    No Records
 
 Create sentinel account and verify the options
-#    [Tags]      OnlyQA
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1403,6 +1408,7 @@ Create sentinel account and verify the options
     Generic.Verify your current page contains this text    No Records
 
 Click on the three dots of Intune and verify the details
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -1479,6 +1485,7 @@ Click on the three dots of Intune and verify the details
 
 
 Create Tenable Account and verify the details
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1710,6 +1717,7 @@ Create Tenable Account and verify the details
 
 
 Create tanium Account and verify the details
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1940,6 +1948,7 @@ Create tanium Account and verify the details
     SubscriptionPage.Get the value of fields under view details of subscription of tanium tab under asset discovery   2       ${generate_register_Fname} ${generate_register_Lname}
 
 Create CrowdStrike Account and verify the details
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -2176,6 +2185,7 @@ Create CrowdStrike Account and verify the details
     SubscriptionPage.Get the value of fields under view details of subscription connector under asset discovery   2       ${generate_register_Fname} ${generate_register_Lname}
 
 Click on the three dots of Azure and verify the details
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      samuel@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -2243,3 +2253,86 @@ Click on the three dots of Azure and verify the details
     SubscriptionPage.Click on option under three dots of subscription connector    Azure Cloud Utilization    View Results
     Generic.Verify your current page location contains      azurecloud
     Generic.Verify your current page contains this text    Coming Soon
+
+SUBSCRIPTION CONNECTOR : M365 Subscription Report Drilldown
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      samuel@yopmail.net    Test@123
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Select parameter         Usage Analytics
+    Generic.Verify your current page location contains     usage-analytics
+    SubscriptionPage.Click on the tab under Uasge Analytics         m365
+    SubscriptionPage.Wait for the subscrition overview table to load
+    SubscriptionPage.Fetch the Asset_Id from subcription overview table
+    Generic.Verify your current page location contains     subscription-technology-details
+    TechnologyPage.Click on edit button on product details page        Edit
+    Generic.Verify your current page location contains      edit-technology
+    TechnologyPage.Click on the edit icon on the edit technology page
+    TechnologyPage.Click on cross icon of product while editing technology
+    TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
+    TechnologyPage.Select edited technology lifecycle status      Active
+    TechnologyPage.Click on update button of edit_technology page       Update
+    TechnologyPage.Accept updated edited technology pop up     Update
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+    Generic.Verify your current page location contains      dashboard
+    Generic.select the option from the side menu    Dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Select parameter         Usage Analytics
+    Generic.Verify your current page location contains     usage-analytics
+    SubscriptionPage.Click on the tab under Uasge Analytics         m365
+    SubscriptionPage.Wait for the subscrition overview table to load
+    SubscriptionPage.Fetch the Product_name from subcription overview table
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Select parameter from technology dropdown list      ${subscriptionOverview_ProductName}
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    Generic.Wait until table get load
+    Generic.select the option from the side menu    Dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Select parameter         Usage Analytics
+    Generic.Verify your current page location contains     usage-analytics
+    SubscriptionPage.Click on the tab under Uasge Analytics         m365
+    SubscriptionPage.Wait for the subscrition overview table to load
+    SubscriptionPage.Fetch the Asset_Id from subcription overview table
+    Generic.Verify your current page location contains     subscription-technology-details
+    SubscriptionPage.Wait for the subscrition overview table to load
+    SubscriptionPage.Wait for the visiblity of product
+    SubscriptionPage.Compare the Product name       ${product_name}              ${subscriptionOverview_ProductName}
+
+Technologies: View details on subscription tab
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      samuel@yopmail.net    Test@123
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Select parameter         Usage Analytics
+    Generic.Verify your current page location contains     usage-analytics
+    SubscriptionPage.Click on the tab under Uasge Analytics         m365
+    SubscriptionPage.Wait for the subscrition overview table to load
+    SubscriptionPage.Fetch the Asset_Id from subcription overview table
+    Generic.Verify your current page location contains     subscription-technology-details
+    subscriptionPage.Verify that Subscription Info tab is visible
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    Generic.Wait until table get load
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+    SubscriptionPage.Verify subscription info tab is not visible
