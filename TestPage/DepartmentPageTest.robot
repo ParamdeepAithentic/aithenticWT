@@ -183,9 +183,7 @@ Verify department should not be removed having technology created
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Select parameter from technology dropdown list      OPMR815309
-
     TechnologyPage.Add assetID for technology lifecycle information random
-
     TechnologyPage.Select technology lifecycle status      Active
     TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
     TechnologyPage.Add assignment information department name      ${generated_departmentnumber}
