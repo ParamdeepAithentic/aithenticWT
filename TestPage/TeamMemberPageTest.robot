@@ -1573,17 +1573,7 @@ Verify all the validations of edit team member page
     TeamMemberPage.Enter team member first name while editing
     TeamMemberPage.Enter team member last name with 101 letters while edit
     TeamMemberPage.Click on the button      Update
-    RegisterUserPage.Fetch the validation message after entering invalid data in register user page       Please enter Last Name with atmost 50 Characters
-
-
-
-
-
-
-
-
-
-
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page       Please enter Last Name with atmost 50 Character
 
 
 #Zz kill browser
