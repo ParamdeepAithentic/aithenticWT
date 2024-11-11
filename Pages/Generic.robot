@@ -62,7 +62,8 @@ ${yop_sleep}       10
 ${search_sleep}       1
 
 
-${CASE}        uat  #qa , uat , pre-prod
+${CASE}        uat   #qa , uat , pre-prod
+
 
 
 
@@ -352,6 +353,7 @@ Select logout option from profile list
     wait until element is enabled    //li[contains(@class,'qa-logout-dropdown')]//a          ${wait_time}
     wait until element is not visible      ${loaderIcon}          ${wait_time}                  # Remove later
     click element    //li[contains(@class,'qa-logout-dropdown')]//a
+
 
 Select option from profile list
      [Arguments]     ${option}

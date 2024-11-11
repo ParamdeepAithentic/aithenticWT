@@ -49,12 +49,14 @@ ${TMDepartmentName}     css:.qa-DepartmentId input
 ${TMLocation}     css:.qa-LocationTypeId input
 
 ${TMRole}     css:.qa-member-role input
-
+${Edit_Email}       css:#businessEmail
 
 ${teamMember_Action_btn}     css:#Team-Member-Actions
 ${name_SearchBar}       css:#searchbar-memberlist
 ${Dept_SearchBar}       css:#searchbar-departmentlist
 ${three_dots}       css:.three-dots
+${Edit_first_name}      css:#firstName
+${Edit_last_name}      css:#lastName
 
 
 *** Keywords ***
@@ -178,6 +180,7 @@ Save the team member form
     wait until element is visible     css:.${option}-member-qa       ${wait_time}
     wait until element is enabled     css:.${option}-member-qa       ${wait_time}
     click element   css:.${option}-member-qa
+    sleep       ${search_sleep}
 
 Enter the Position in member form
     [Arguments]    ${option}
@@ -212,6 +215,7 @@ Click on the tab
 Click on the button
     [Arguments]    ${option}
     Generic.Click on the button     ${option}
+    sleep       ${search_sleep}
 
 Search the department name
     [Arguments]    ${name}
@@ -417,4 +421,98 @@ Get the text of selected status filter under team meber via profile
     ${New_status1}=    Evaluate    '${original_string}'.strip()
     log to console    ${New_status1}
     set global variable   ${New_status1}
-    
+
+Fetch the all validation message after entering invalid data in add team member while edit
+   wait until element is visible   //span[contains(@class,'invalidInput')]       ${wait_time}
+   @{expectedList} =    Create List      Please enter First name       Please enter Last name           Please enter Department         Please enter Business Email         Select Member Location       Select Role
+   ${elements} =  Get WebElements     //span[contains(@class,'invalidInput')]
+   @{actualList} =   Create List
+   FOR  ${element}  IN      @{elements}
+      log to console    ${element.text}
+      Append To List    ${actualList}     ${element.text}
+   END
+   lists should be equal    ${expectedList}    ${actualList}
+
+
+Enter team member first name with 101 letters
+    ${random_string} =    Generate Random String       101      [LETTERS]
+    ${generated_TMFname1}=    Catenate    TMFname_${random_string}
+    wait until element is visible       ${TMFname}     ${wait_time}
+    input text   ${TMFname}    ${generated_TMFname1}
+    log to console      ${generated_TMFname1}
+    set global variable       ${generated_TMFname1}
+
+Enter team member last name with 101 letters
+    ${random_string} =    Generate Random String       101      [LETTERS]
+    ${generated_Lname1}=    Catenate    TLname_${random_string}
+    wait until element is visible       ${TMLname}     ${wait_time}
+    input text   ${TMLname}    ${generated_Lname1}
+    log to console      ${generated_Lname1}
+    set global variable       ${generated_Lname1}
+
+Wait for the visibility of the alert text
+     Wait Until Element Contains        ${alert_Msg}           The Email Address must end with one of the following:   ${wait_time}
+
+Click on the cross icon of the dropdown under edit team member
+    [Arguments]     ${Id}
+    wait until element is visible      //ng-select[contains(@class,'${Id}')]//span[@title='Clear all']      ${wait_time}
+    wait until element is enabled      //ng-select[contains(@class,'${Id}')]//span[@title='Clear all']        ${wait_time}
+    click element   //ng-select[contains(@class,'${Id}')]//span[@title='Clear all']
+
+Fetch the all validation message after entering invalid data in edit team member
+   wait until element is visible   //span[contains(@class,'invalidInput')]       ${wait_time}
+   @{expectedList} =    Create List      Please enter First Name       Please enter Last Name           Please enter Business Email        Please enter Department           Select Member Location        Select Role
+   ${elements} =  Get WebElements     //span[contains(@class,'invalidInput')]
+   @{actualList} =   Create List
+   FOR  ${element}  IN      @{elements}
+      log to console    ${element.text}
+      Append To List    ${actualList}     ${element.text}
+   END
+   lists should be equal    ${expectedList}    ${actualList}
+
+Clear the text of business email when editing team member
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       css:#businessEmail       ${wait_time}
+    click element     css:#businessEmail
+    Press Keys    css:#businessEmail     CONTROL+A
+    FOR    ${i}    IN RANGE    50
+        Press Keys    css:#businessEmail     BACKSPACE
+    END
+
+Enter team member business email self while edit
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}  ${wait_time}
+    wait until element is visible       css:#businessEmail    ${wait_time}
+    input text   css:#businessEmail   ${option}
+
+Select team member role while edit
+    [Arguments]    ${option}
+    Generic.Enter value into field  //input[@id='userRole']     ${option}
+    Generic.Select parameter        ${option}
+
+Enter team member first name with 101 letters while edit
+    ${random_string} =    Generate Random String       101      [LETTERS]
+     ${generated_Edit_Fname1}=    Catenate    TMFname_${random_string}
+    wait until element is visible       css:#firstName      ${wait_time}
+    input text   css:#firstName     ${generated_Edit_Fname1}
+    log to console       ${generated_Edit_Fname1}
+    set global variable       ${generated_Edit_Fname1}
+
+Enter team member last name with 101 letters while edit
+    ${random_string} =    Generate Random String       101      [LETTERS]
+     ${generated_Edit_lname1}=    Catenate    TLname_${random_string}
+    wait until element is visible       css:#lastName      ${wait_time}
+    input text   css:#lastName      ${generated_Edit_lname1}
+    log to console       ${generated_Edit_lname1}
+    set global variable       ${generated_Edit_lname1}
+
+Fetch the all validation message after entering invalid data in add team member
+   wait until element is visible   //span[contains(@class,'invalidInput')]       ${wait_time}
+   @{expectedList} =    Create List      Please enter First Name       Please enter Last Name       Please enter Mobile Number          Please enter Business Email                  Please enter Department                Please Select Member Location         Please Select Role
+   ${elements} =  Get WebElements     //span[contains(@class,'invalidInput')]
+   @{actualList} =   Create List
+   FOR  ${element}  IN      @{elements}
+      log to console    ${element.text}
+      Append To List    ${actualList}     ${element.text}
+   END
+   lists should be equal    ${expectedList}    ${actualList}
