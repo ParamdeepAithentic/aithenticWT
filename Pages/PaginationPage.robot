@@ -510,3 +510,14 @@ Pagination box visible
 
 Skip the pagination code
     Log    The count is less than/equals to 10 so pagination is not vaisible
+
+
+
+Set pagination to max
+    TRY
+        PaginationPage.Pagination box visible
+        PaginationPage.Select the value from the pagination drop down count     500
+        Generic.Wait until table get load
+    EXCEPT
+        PaginationPage.Skip the pagination code
+    END
