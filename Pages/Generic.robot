@@ -66,6 +66,7 @@ ${CASE}        uat   #qa , uat , pre-prod
 
 
 
+
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
 
 *** Keywords ***
@@ -368,6 +369,7 @@ Select logout option from profile list
     wait until element is not visible      ${loaderIcon}          ${wait_time}                  # Remove later
     click element    //li[contains(@class,'qa-logout-dropdown')]//a
 
+
 Select option from profile list
      [Arguments]     ${option}
      wait until element is not visible      ${loaderIcon}          ${wait_time}
@@ -384,6 +386,7 @@ Select simple option from profile list
     wait until element is enabled    //a[normalize-space()='${option}']         ${wait_time}
     wait until element is not visible      ${loaderIcon}          ${wait_time}                  # Remove later
     click element    //a[normalize-space()='${option}']
+    sleep   ${search_sleep}
 
 ###############################################################################################
 

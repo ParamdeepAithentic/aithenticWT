@@ -444,3 +444,52 @@ Verifying the validations of all fields of Edit location
     LocationPage.Compare and verify the validation messages of Location     ${Locationcountry_validation}       Please Select Country
     LocationPage.Verify the validation of Location name field when organization settings is yes
     LocationPage.Compare and verify the validation messages of Location     ${Locationnameyes_validation}      Please Enter Location Name
+
+Add multiple IP subnets while adding location
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Click on Location action button
+    LocationPage.Click on add location button    Add New Location
+    Generic.Verify your current page location contains      add-location
+    LocationPage.Select location country     United States
+    LocationPage.Select location building name   Trump tower
+    LocationPage.Select location floor   second
+    LocationPage.Select location room    203
+    LocationPage.Select location address one     this address one of the location
+    LocationPage.Select location address two     this address two of the location
+    LocationPage.Select location state       Texas
+    LocationPage.Select location city        Austin
+    LocationPage.Select location zip     147001
+    LocationPage.Enter random cost center value
+    LocationPage.Create random location name
+    LocationPage.Create more than one random IP subnet      1
+    LocationPage.Click on the plus icon of the subnet
+    LocationPage.Create more than one random IP subnet      2
+    Generic.click on the button     Save
+    Generic.Fetch alert message text and compare it with    Location created successfully
+    LocationPage.Search by location name     ${generated_location}
+    LocationPage.Fetch the location Name from the row       ${generated_location}
+    LocationPage.Click on three dots on row
+    LocationPage.Select the option from row menu     Edit
+    Generic.Verify your current page location contains    edit
+    LocationPage.Edit location country   United States
+    LocationPage.Select location building name   Trump tower
+    LocationPage.Select location floor   second
+    LocationPage.Select location room    203
+    LocationPage.Select location address one     this address one of the location
+    LocationPage.Select location address two     this address two of the location
+    LocationPage.Edit location state       Arizona
+    LocationPage.Edit location city        Anthem
+    LocationPage.Select location zip     5781
+    LocationPage.Enter random cost center value
+    LocationPage.Create random location name
+    LocationPage.Click on the plus icon of the subnet
+    LocationPage.Create more than one random IP subnet      3
+    Generic.click on the button    Update
+    Generic.Fetch alert message text and compare it with    Location updated successfully
+    LocationPage.Search by location name     ${generated_location}
+    LocationPage.Fetch the location Name from the row       ${generated_location}

@@ -71,6 +71,7 @@ ${add_Product}     css:a[title='Click here to Add Product']
 ${actionBTN}       css:#Team-Member-Actions
 ${add_Product_modal}     css:div[id='addProductPopup'] div[role='document'] div[role='document'] div[class='modal-content']
 ${ProductName}     css:#ProductName
+${Edit_ProductName}     css:#productName
 ${enterAndSelect_Brand}     css:.qa-BrandName input
 #${ProductDescription}     //div[@class='card-container themeScrollBar mt-1 p-2']//textarea[@id='ProductDescription']
 ${ProductDescription}       css:.qa-add-product-description
@@ -1597,7 +1598,41 @@ Create static product via link
     click element      ${ProductName}
     input text      ${ProductName}      ${option}
     click element      ${ProductName}       TAB
-    
+
+Fetch the all validation message of add product page
+   wait until element is visible   //span[contains(@class,'invalidInput')]       ${wait_time}
+   @{expectedList} =    Create List       Please enter Product Name        Please enter Brand Name      Brand name is not present in the list. Click here to add         Please Select Status        Please Select Technology Group        Please Select Technology Type
+   ${elements} =  Get WebElements     //span[contains(@class,'invalidInput')]
+   @{actualList} =   Create List
+   FOR  ${element}  IN      @{elements}
+      log to console    ${element.text}
+      Append To List    ${actualList}     ${element.text}
+   END
+   lists should be equal    ${expectedList}    ${actualList}
+
+Click on the edit option under three dots of product
+    [Arguments]      ${option}
+    wait until element is visible       //a[contains(@class,'edit-product-qa')][normalize-space()='${option}']      ${wait_time}
+    wait until element is enabled       //a[contains(@class,'edit-product-qa')][normalize-space()='${option}']      ${wait_time}
+    click element      //a[contains(@class,'edit-product-qa')][normalize-space()='${option}']
+
+Click on the save and cancel button under edit product
+    [Arguments]      ${option}
+    wait until element is visible       //button[@type='button'][normalize-space()='${option}']      ${wait_time}
+    wait until element is enabled       //button[@type='button'][normalize-space()='${option}']      ${wait_time}
+    click element      //button[@type='button'][normalize-space()='${option}']
+    sleep       ${search_sleep}
+
+Verify the visibility of the product name under edit product pop up
+    wait until element is visible       //div[contains(@id,'editProductPopup')]//label[normalize-space()='Product Name']      ${wait_time}
+    wait until element is enabled       //div[contains(@id,'editProductPopup')]//label[normalize-space()='Product Name']      ${wait_time}
+
+Click on the brand cross icon under edit product
+    wait until element is visible            //ng-select[@id='BrandName']//span[@title='Clear all']      ${wait_time}
+    wait until element is enabled       //ng-select[@id='BrandName']//span[@title='Clear all']      ${wait_time}
+    click element      //ng-select[@id='BrandName']//span[@title='Clear all']
+    sleep       ${search_sleep}
+
 
 Verify the validation message of Brand name field
     wait until element is not visible    ${loaderIcon}      ${wait_time}
@@ -1712,3 +1747,99 @@ Clear the data of brand manufacturer country
     wait until element is not visible    ${loaderIcon}      ${wait_time}
     wait until element is visible   //ng-select[@placeholder='Select Country']//span[@title='Clear all']        ${wait_time}
     click element       //ng-select[@placeholder='Select Country']//span[@title='Clear all']
+
+Verify the visibility of enter product placeholder
+    wait until element is visible       //div[contains(@id,'editProductPopup')]//input[@id='productName']      ${wait_time}
+     wait until element is enabled       //div[contains(@id,'editProductPopup')]//input[@id='productName']        ${wait_time}
+
+Clear the product from the edit product
+    [Arguments]     ${option}
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       css:#${option}       ${wait_time}
+    click element     css:#${option}
+    Press Keys    css:#${option}     CONTROL+A
+    FOR    ${i}    IN RANGE    20
+        Press Keys    css:#${option}     BACKSPACE
+    END
+
+Click on the cross icon of tech type under product
+    [Arguments]     ${option}
+    wait until element is visible       //div[@id='editProductPopup']//ng-select[contains(@class,'qa-${option}')]//span[@title='Clear all']      ${wait_time}
+     wait until element is enabled       //div[@id='editProductPopup']//ng-select[contains(@class,'qa-${option}')]//span[@title='Clear all']       ${wait_time}
+     click element      //div[@id='editProductPopup']//ng-select[contains(@class,'qa-${option}')]//span[@title='Clear all']
+     sleep      2
+     wait until element is not visible    ${loaderIcon}      ${wait_time}
+
+Create random productName while edit
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_editproduct}=    Catenate    Product_${random_string}
+    input text   ${Edit_ProductName}   ${generated_editproduct}
+    log to console      ${generated_editproduct}
+    set global variable   ${generated_editproduct}
+
+Select brand from list while edit
+    [Arguments]    ${BrandName}
+    wait until element is visible       css:#brandName     ${wait_time}
+    wait until element is enabled       css:#brandName     ${wait_time}
+    click element   css:#brandName
+    Clear Element Text      css:#brandName
+    ${StartTime1} =     Get Current Time in Milliseconds
+    input text   css:#brandName     ${BrandName}
+    Generic.Select parameter     ${BrandName}
+
+
+Add product feature while edit
+    wait until element is visible  css:#features          ${wait_time}
+    wait until element is enabled   css:#features         ${wait_time}
+    input text   css:#features   This is the features of new product add
+
+Click on three dots of product list
+    sleep       ${search_sleep}
+    wait until element is visible   ${three_dots_dept}   ${wait_time}
+    click element   ${three_dots_dept}
+
+Choose option from product list three-dots
+    [Arguments]     ${option}
+    wait until element is not visible      ${loaderIcon}    ${wait_time}
+    wait until element is visible       css:.${option}-product-qa       ${wait_time}
+    click element       css:.${option}-product-qa
+
+
+Verify the warning is visible when edit product
+    [Arguments]     ${option}
+    wait until element is not visible      ${loaderIcon}    ${wait_time}
+    wait until element is visible      //h4[normalize-space()='${option}']//parent::div    ${wait_time}
+    wait until element is visible      //div[@id='editProductPopup']//h4[contains(@class,'modal-title')][normalize-space()='${option}']//parent::div//following-sibling::div[contains(@class,'text-center')]//p    ${wait_time}
+    wait until element is enabled       //div[@id='editProductPopup']//h4[contains(@class,'modal-title')][normalize-space()='${option}']//parent::div//following-sibling::div[contains(@class,'text-center')]//p       ${wait_time}
+    ${product_warning_text}=       get text        //div[@id='editProductPopup']//h4[contains(@class,'modal-title')][normalize-space()='${option}']//parent::div//following-sibling::div[contains(@class,'text-center')]//p
+    log     ${product_warning_text}
+    set global variable         ${product_warning_text}
+
+Compare the warning of product when Edited or removed
+    [Arguments]         ${option1}      ${option2}
+    should be equal     ${option1}      ${option2}
+
+Verify the warning is visible when deactivate or remove product
+    [Arguments]     ${option}
+    wait until element is not visible      ${loaderIcon}    ${wait_time}
+    wait until element is visible      //h4[normalize-space()='${option}']//parent::div    ${wait_time}
+    wait until element is visible      //h4[normalize-space()='${option}']//parent::div//following-sibling::div//p    ${wait_time}
+    wait until element is enabled       //h4[normalize-space()='${option}']//parent::div//following-sibling::div//p       ${wait_time}
+    ${product_warning_text}=       get text        //h4[normalize-space()='${option}']//parent::div//following-sibling::div//p
+    log     ${product_warning_text}
+    set global variable         ${product_warning_text}
+
+Verify the warning is visible when deactivate or remove brand
+    [Arguments]     ${option}
+    wait until element is not visible      ${loaderIcon}    ${wait_time}
+    wait until element is visible      //h5[normalize-space()='${option}']//parent::div    ${wait_time}
+    wait until element is visible      //h5[normalize-space()='${option}']//parent::div//following-sibling::div//p    ${wait_time}
+    wait until element is enabled       //h5[normalize-space()='${option}']//parent::div//following-sibling::div//p       ${wait_time}
+    sleep       ${search_sleep}
+    ${Brand_warning_text}=       get text        //h5[normalize-space()='${option}']//parent::div//following-sibling::div//p
+    log     ${Brand_warning_text}
+    set global variable         ${Brand_warning_text}
+
+Verify update button is not visible on edit brand page
+    wait until element is not visible       //button[normalize-space()='Update']
+

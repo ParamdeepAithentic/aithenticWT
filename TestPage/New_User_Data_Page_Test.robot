@@ -231,6 +231,8 @@ Adding the data in the account
     TechnologyPage.Method 1      Product_0033761232
     TechnologyPage.Get new product     Product_0033761232      Maintenance     CRT TVs
 
+
+
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
@@ -277,6 +279,7 @@ Adding the data in the account
     MemberPage.Search assigned user by static first name        Testqaup94590327 QA
     MemberPage.Verify the search static member      Testqaup94590327 QA
     MemberPage.Get new assignee     Testqaup94590327      QA     Testqaup94590327@yopmail.com       55954
+
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner-listing
     PartnersPage.Search by static business name   QABusiness04191432
@@ -288,9 +291,6 @@ Adding the data in the account
     PartnersPage.Search by static business name   testqa 20Feb
     PartnersPage.Verify the search static support partner       testqa 20Feb
     PartnersPage.Get new support Partner        Manufacturer       testqa 20Feb
-
-
-
 
 
 #    Generic.select the option from the side menu    Team Members

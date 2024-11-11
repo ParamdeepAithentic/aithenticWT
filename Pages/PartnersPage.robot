@@ -39,6 +39,8 @@ Resource        ../Pages/Admin_PanelPage.robot
 Resource        ../Pages/PaginationPage.robot
 Resource        ../Pages/DisconnectConnectorAPI.robot
 Resource        ../Pages/UnselectAssetAPI.robot
+
+
 *** Variables ***
 ${add_Partner}     css:a[title='Add New Partner']
 ${partner_export_btn}     //a[@id='dropdownMenuButton']
@@ -827,7 +829,6 @@ Create the support partner
     PartnersPage.Click on the save button   Save
     Sleep     5
     Generic.Fetch alert message text and compare it with    Partner created successfully
-
 
 Create many partners
     FOR    ${index}    IN RANGE    100

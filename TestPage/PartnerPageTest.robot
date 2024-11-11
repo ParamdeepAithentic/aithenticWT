@@ -195,6 +195,7 @@ Compose Message invite user test
 #    ContractsPage.Click on create new contract button
     Generic.click on the tab        Create New Smart Share
     ${StartTime1} =     Get Current Time in Milliseconds
+    sleep       ${search_sleep}
     ContractsPage.Select type of contract     Dynamic Smart Share
     Generic.Verify your current page location contains      generate-contract
     Generic.Verify your current page contains this text     Generate New Smart Share
@@ -1176,6 +1177,7 @@ View Details and check the details of Contract
     ContractsPage.Click on back to contract link
 #    ContractsPage.Click on create new contract button
     Generic.click on the tab        Create New Smart Share
+    sleep   ${search_sleep}
     ContractsPage.Select type of contract     Dynamic Smart Share
     Generic.Verify your current page location contains      generate-contract
     ContractsPage.Enter contract type      SmartShare_Manufacturer
@@ -1428,6 +1430,9 @@ Partner Side bar Filters
     Generic.select the option from the side menu    Partners
     PartnersPage.Click on the filters from partner module       Select Partner
     PartnersPage.Checkmark after clicking on the filters        Manufacturer
+    Generic.Wait until table get load
+    sleep       ${search_sleep}
+    Generic.Scroll Window To End
     ReportsPage.Fetch the total count
     PaginationPage.Click on the pagination dropdown     partner-list
     PaginationPage.Select the value from the pagination drop down count    500
@@ -1489,7 +1494,7 @@ Partner Side bar Filters
     MessagePage.Comapre the total count after selecting filter
 
 Verify all the validations of Add Partners
-    [Tags]      NT
+    [Tags]      Negative
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1526,7 +1531,7 @@ Verify all the validations of Add Partners
     PartnersPage.Compare the Validations on Partner Page        ${Partner_validation1}       Please select Country
 
 Verify all the validations of Edit Partners
-    [Tags]      NT
+    [Tags]     Negative
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
