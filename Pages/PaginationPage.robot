@@ -315,7 +315,7 @@ Click on the checkbox of technology listing
 
 
 Run the remove asset journey
-    Run Keyword If    ${total_data_count} >= 800
+    Run Keyword If    ${total_data_count} >= 100
         ...    PaginationPage.Remove the old assets to free the space
         ...    ELSE  Run Keywords     Generic.Close Browser session
         ...    AND    Return From Keyword
@@ -329,7 +329,7 @@ Remove the old assets to free the space
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     TechnologyPage.Click on plan of subscription        Premium
     Generic.Scroll the page till    200
-    SubscriptionPage.Set asset range to     500
+    SubscriptionPage.Set asset range to     200
     sleep       5
     SubscriptionPage.Update the payment of changed plan     proceed
 
@@ -439,6 +439,7 @@ Check Pagination
     [Arguments]     ${option}
     TRY
         PaginationPage.Pagination box visible
+        PaginationPage.Select the value from the pagination drop down count     500
         PaginationPage.Log WebElements    ${option}
     EXCEPT
         PaginationPage.Skip the pagination code
@@ -448,6 +449,7 @@ Check Pagination of location
     [Arguments]     ${option}
     TRY
         PaginationPage.Pagination box visible
+        PaginationPage.Select the value from the pagination drop down count     500
         PaginationPage.Click on the pagination dropdown of OCS     ${option}
     EXCEPT
         PaginationPage.Skip the pagination code
@@ -457,6 +459,7 @@ Check Pagination of OCS advance search
     [Arguments]     ${option}
     TRY
         PaginationPage.Pagination box visible
+        PaginationPage.Select the value from the pagination drop down count     500
         PaginationPage.Log WebElements of Product Dropdown of OCS    ${option}
     EXCEPT
         PaginationPage.Skip the pagination code
@@ -466,6 +469,7 @@ Check Pagination of tecdhnology advance search
     [Arguments]     ${option}
     TRY
         PaginationPage.Pagination box visible
+        PaginationPage.Select the value from the pagination drop down count     500
         PaginationPage.Log WebElements of Product Dropdown    ${option}
     EXCEPT
         PaginationPage.Skip the pagination code
@@ -475,6 +479,7 @@ Check Pagination of tecdhnology advance search
     [Arguments]     ${option}
     TRY
         PaginationPage.Pagination box visible
+        PaginationPage.Select the value from the pagination drop down count     500
         PaginationPage.Log WebElements for Recent Activites table   ${option}
     EXCEPT
         PaginationPage.Skip the pagination code
@@ -504,4 +509,4 @@ Pagination box visible
      click element      //*[contains(@class,'per-page')]//div[@role='combobox']
 
 Skip the pagination code
-    Log    The count is less than 10 so pagination is not vaisible
+    Log    The count is less than/equals to 10 so pagination is not vaisible

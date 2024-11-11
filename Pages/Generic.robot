@@ -56,7 +56,7 @@ ${click_countryTag}     css:.iti__arrow
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
-${wait_time}       10
+${wait_time}       20
 ${yop_sleep}       10
 
 ${search_sleep}       1
@@ -191,6 +191,10 @@ Fix the row number
     set global variable    ${pageTime}
 #    log to console  my column no is:${pageTime}
 
+Fix the column number for new user in sorting
+    ${newUserpageTime}=   Catenate    4
+    set global variable    ${newUserpageTime}
+#    log to console  my column no is:${pageTime}
 
 Fetch Current Date
     ${current_date}=    Get Current Date    result_format=%m/%d/%Y
@@ -205,6 +209,15 @@ Fetch Current Time
     RETURN    ${current_time}
 
 Calculate Running time
+    [Arguments]   ${RowNum_forText}   ${ColumnNum_forText}   ${module_name}     ${RowNum}   ${ColumnNum}      ${TimeTakenToLoginPage}   ${SheetTabName}
+    Close All Excel Documents
+    Open Excel Document  ${SheetLocationAndName}   doc_id=1
+    Write Excel Cell     ${RowNum_forText}   ${ColumnNum_forText}   ${module_name}     ${SheetTabName}
+    Write Excel Cell     ${RowNum}   ${ColumnNum}   ${TimeTakenToLoginPage}     ${SheetTabName}
+    Save Excel Document     ${SheetLocationAndName}
+    Close All Excel Documents
+
+Calculate Running time for sorting
     [Arguments]   ${RowNum_forText}   ${ColumnNum_forText}   ${module_name}     ${RowNum}   ${ColumnNum}      ${TimeTakenToLoginPage}   ${SheetTabName}
     Close All Excel Documents
     Open Excel Document  ${SheetLocationAndName}   doc_id=1
@@ -240,6 +253,7 @@ click on the button link
 open the browser with the url
     Generic.Fix the column number
     Generic.Fix the row number
+    Generic.Fix the column number for new user in sorting
     Simulate Switch Case
     ${StartTime1} =     Get Current Time in Milliseconds
     open browser    ${url}      ${browser_name}     #executable_path=E:/Aithentic/TestPage/resources
@@ -254,6 +268,7 @@ open the browser with the url
 Get Current Date and Time
     Generic.Fix the column number
     Generic.Fix the row number
+    Generic.Fix the column number for new user in sorting
 
     ${current_date}=    Evaluate    datetime.datetime.now().strftime("%Y-%m-%d")
     ${current_time}=    Evaluate    datetime.datetime.now().strftime("%H:%M:%S")

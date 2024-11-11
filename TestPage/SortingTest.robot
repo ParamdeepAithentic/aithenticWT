@@ -71,7 +71,7 @@ Test the sorting of assigned user asset history page table
     SortingPage.Verify the sorting of the table     7       Assigned Date
 
 
-Test the sorting of technology page table
+Test the sorting of technology page table with old user
     [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
@@ -79,16 +79,117 @@ Test the sorting of technology page table
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
+    ${StartTime1} =     Get Current Time in Milliseconds
     SortingPage.Verify the sorting of the table     2       Group
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  4  ${pageHeading}   Sorting Page - Sort the group column under technology      4    ${pageTime}     ${ActualTime}    SortingPage_Time
+    ${StartTime1} =     Get Current Time in Milliseconds
     SortingPage.Verify the sorting of the table     3       Brand
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  5  ${pageHeading}   Sorting Page - Sort the brand column under technology      5    ${pageTime}     ${ActualTime}    SortingPage_Time
+    ${StartTime1} =     Get Current Time in Milliseconds
     SortingPage.Verify the sorting of the table     4       Product
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  6  ${pageHeading}   Sorting Page - Sort the product column under technology      6    ${pageTime}     ${ActualTime}    SortingPage_Time
+    ${StartTime1} =     Get Current Time in Milliseconds
     SortingPage.Verify the sorting of the table     5       Product Description
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  7  ${pageHeading}   Sorting Page - Sort the product description column under technology      7    ${pageTime}     ${ActualTime}    SortingPage_Time
+    ${StartTime1} =     Get Current Time in Milliseconds
     SortingPage.Verify the sorting of the table     6       Created Date
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  8  ${pageHeading}   Sorting Page - Sort the product description column under technology      8    ${pageTime}     ${ActualTime}    SortingPage_Time
+    ${StartTime1} =     Get Current Time in Milliseconds
     SortingPage.Verify the sorting of the table     7       Agent
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  9  ${pageHeading}   Sorting Page - Sort the product description column under technology      9    ${pageTime}     ${ActualTime}    SortingPage_Time
+    ${StartTime1} =     Get Current Time in Milliseconds
     SortingPage.Verify the sorting of the table     8       Status
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  10  ${pageHeading}   Sorting Page - Sort the product description column under technology      10    ${pageTime}     ${ActualTime}    SortingPage_Time
+    ${StartTime1} =     Get Current Time in Milliseconds
     SortingPage.Verify the sorting of the table     9       Asset ID
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  11  ${pageHeading}   Sorting Page - Sort the product description column under technology      11    ${pageTime}     ${ActualTime}    SortingPage_Time
+    ${StartTime1} =     Get Current Time in Milliseconds
     SortingPage.Verify the sorting of the table     10       Location
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  12  ${pageHeading}   Sorting Page - Sort the product description column under technology      12    ${pageTime}     ${ActualTime}    SortingPage_Time
+    ${StartTime1} =     Get Current Time in Milliseconds
     SortingPage.Verify the sorting of the table     11      Assignee
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  13  ${pageHeading}   Sorting Page - Sort the product description column under technology      13    ${pageTime}     ${ActualTime}    SortingPage_Time
+
+Test the sorting of technology page table with new user
+    [Tags]      NT
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form          deepparam112@yopmail.net    Paramdeep@112
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+
+    ${StartTime1} =     Get Current Time in Milliseconds
+    SortingPage.Verify the sorting of the table     2       Group
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time for sorting  4  ${pageHeading}   Sorting Page - Sort the group column under technology      4    ${newUserpageTime}    ${ActualTime}    SortingPage_Time
+    ${StartTime1} =     Get Current Time in Milliseconds
+    SortingPage.Verify the sorting of the table     3       Brand
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time for sorting  5  ${pageHeading}  Sorting Page - Sort the group column under technology      5    ${newUserpageTime}    ${ActualTime}    SortingPage_Time
+    ${StartTime1} =     Get Current Time in Milliseconds
+    SortingPage.Verify the sorting of the table     4       Product
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time for sorting  6  ${pageHeading}   Sorting Page - Sort the group column under technology      6    ${newUserpageTime}    ${ActualTime}    SortingPage_Time
+    ${StartTime1} =     Get Current Time in Milliseconds
+    SortingPage.Verify the sorting of the table     5       Product Description
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time for sorting  7  ${pageHeading}   Sorting Page - Sort the group column under technology      7    ${newUserpageTime}    ${ActualTime}    SortingPage_Time
+    ${StartTime1} =     Get Current Time in Milliseconds
+    SortingPage.Verify the sorting of the table     6       Created Date
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time for sorting  8  ${pageHeading}   Sorting Page - Sort the group column under technology      8    ${newUserpageTime}    ${ActualTime}    SortingPage_Time
+    ${StartTime1} =     Get Current Time in Milliseconds
+    SortingPage.Verify the sorting of the table     7       Agent
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time for sorting  9  ${pageHeading}   Sorting Page - Sort the group column under technology      9    ${newUserpageTime}    ${ActualTime}    SortingPage_Time
+    ${StartTime1} =     Get Current Time in Milliseconds
+    SortingPage.Verify the sorting of the table     8       Status
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time for sorting  10  ${pageHeading}  Sorting Page - Sort the group column under technology      10    ${newUserpageTime}    ${ActualTime}    SortingPage_Time
+    ${StartTime1} =     Get Current Time in Milliseconds
+    SortingPage.Verify the sorting of the table     9       Asset ID
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time for sorting  11  ${pageHeading}   Sorting Page - Sort the group column under technology      11    ${newUserpageTime}    ${ActualTime}    SortingPage_Time
+    ${StartTime1} =     Get Current Time in Milliseconds
+    SortingPage.Verify the sorting of the table     10       Location
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time for sorting  12  ${pageHeading}   Sorting Page - Sort the group column under technology      12    ${newUserpageTime}    ${ActualTime}    SortingPage_Time
+    ${StartTime1} =     Get Current Time in Milliseconds
+    SortingPage.Verify the sorting of the table     11      Assignee
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time for sorting  13  ${pageHeading}   Sorting Page - Sort the group column under technology      13    ${newUserpageTime}    ${ActualTime}    SortingPage_Time
+
 
 Test the sorting of brand page table
     [Tags]      NT
