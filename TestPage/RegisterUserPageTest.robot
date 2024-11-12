@@ -2228,9 +2228,3 @@ Verify all the charcter validations of register page
     RegisterUserPage.Enter single character in the fields of register page      C
     RegisterUserPage.Save the register form
 
-
-
-
-
-
-
