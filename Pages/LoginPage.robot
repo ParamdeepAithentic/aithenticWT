@@ -98,6 +98,13 @@ Clear the element text of field under login page
     END
     Log    Field is now cleared
 
+Clear the text of some fields
+    [Arguments]    ${locator}
+    wait until element is visible       ${locator}     ${wait_time}
+    wait until element is enabled        ${locator}     ${wait_time}
+    click element   ${locator}
+    clear element text      ${locator}
+
 
 Get and Verify the validation after entering invalid email under forgot password
     [Arguments]         ${text}
