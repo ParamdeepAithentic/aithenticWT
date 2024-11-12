@@ -2027,7 +2027,7 @@ Profile Profile: Select location and department and add by cliking on link
     RegisterUserPage.Fetch the profile personal_details and compare with registration details       ${profile_position}       ${generate_position}     #
 
 Check all the validations on register page
-    [Tags]      NT
+    [Tags]      NT      Negative
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     RegisterUserPage.Save the register form
@@ -2075,6 +2075,7 @@ Check all the validations on register page
     Generic.Fetch alert message text and compare it with        Email already exists
 
 Verify all the validations on profile page
+    [Tags]      Negative
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -2181,3 +2182,54 @@ Verify all the validations on profile page
 #    DashboardPage.Select the location ID checkbox   yes
 #    DashboardPage.Select the asset ID checkbox      no
 #    Generic.Fetch alert message text and compare it with       Settings Updated
+
+Verify all the charcter validations of register page
+    [Tags]      Negative
+    Generic.click on the tab	Register
+    Generic.Verify your current page location contains      register
+    ReplaceDomainAPI.Replace Domain
+    TeamMemberPage.Enter team member first name with 101 letters
+    RegisterUserPage.Create random register last name
+    RegisterUserPage.Create random register company name
+    RegisterUserPage.Click on member type
+    RegisterUserPage.Select the member type      End User
+    RegisterUserPage.Create partner random business email
+    RegisterUserPage.Choose register user country      India   +91     9646289871
+    RegisterUserPage.Select the checkbox
+    RegisterUserPage.Save the register form
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page       Please enter valid First Name
+    LoginPage.Clear the element text of field under login page      FirstName
+    RegisterUserPage.Create random register first name
+    LoginPage.Clear the element text of field under login page      LastName
+    TeamMemberPage.Enter team member last name with 101 letters
+    RegisterUserPage.Save the register form
+    RegisterUserPage.Fetch the validation message of last name field under register       Please enter valid Last Name
+    LoginPage.Clear the element text of field under login page      LastName
+    RegisterUserPage.Create random register last name
+    LoginPage.Clear the element text of field under login page      companyName
+    RegisterUserPage.Enter 101 charcters in the company name under register page
+    RegisterUserPage.Save the register form
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page      Please enter Company Name between 2 to 50 characters only
+    LoginPage.Clear the element text of field under login page      companyName
+    RegisterUserPage.Create random register company name
+    LoginPage.Clear the element text of field under login page      FirstName
+    TeamMemberPage.Enter team member first name self    F
+    RegisterUserPage.Save the register form
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page       Please enter valid First Name
+    LoginPage.Clear the element text of field under login page      FirstName
+    RegisterUserPage.Create random register first name
+    LoginPage.Clear the element text of field under login page      LastName
+    TeamMemberPage.Enter team member last name self     L
+    RegisterUserPage.Save the register form
+    RegisterUserPage.Fetch the validation message of last name field under register       Please enter valid Last Name
+    LoginPage.Clear the element text of field under login page      LastName
+    RegisterUserPage.Create random register last name
+    LoginPage.Clear the element text of field under login page      companyName
+    RegisterUserPage.Enter single character in the fields of register page      C
+    RegisterUserPage.Save the register form
+
+
+
+
+
+
