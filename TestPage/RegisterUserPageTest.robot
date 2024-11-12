@@ -2228,3 +2228,83 @@ Verify all the charcter validations of register page
     RegisterUserPage.Enter single character in the fields of register page      C
     RegisterUserPage.Save the register form
 
+Verify all the charcter validation of profile page under register
+    [Tags]      Negative
+    Generic.click on the tab	Register
+    Generic.Verify your current page location contains      register
+    ReplaceDomainAPI.Replace Domain
+    RegisterUserPage.Create random register first name
+    RegisterUserPage.Create random register last name
+    RegisterUserPage.Create random register company name
+    RegisterUserPage.Click on member type
+    RegisterUserPage.Select the member type      End User
+    RegisterUserPage.Create partner random business email
+    RegisterUserPage.Choose register user country      India   +91     9646289871
+    RegisterUserPage.Select the checkbox
+    RegisterUserPage.Save the register form
+    Generic.Verify your current page location contains      update-email
+    Generic.Open new window     yopmail
+    Generic.Refresh the existing page
+    Generic.Search yopmail emails for       ${generate_register_Email}
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   Email Register Verification Required.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Click on sign In button in yopmail email
+    Unselect Frame
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Create - Account
+    Generic.Verify your current page location contains     create-account
+
+#----------------------------------------USER ACCOUNT---------------------------------------------------
+    UserAccount.Enter the password      Paramdeep@112
+    UserAccount.Confirm the entered password    Paramdeep@112
+    UserAccount.Click on term and condition checkbox
+    UserAccount.Click create account button
+    Generic.Fetch alert message text and compare it with       Account created successfully.
+    Generic.Verify your current page location contains     auth
+    LandingPage.Fill the login Form      ${generate_register_Email}    Paramdeep@112
+    Switch Window    Inbox
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   OTP Verification.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Get verification OTP from email    Your passcode is
+    sleep       ${yop_sleep}
+    Switch Window   aithentic | OTP
+    TwoFactorAuth.Enter the otp     ${passcode}
+    TwoFactorAuth.Click verification button
+#--------------------------------------SUBSCRIPTION------------------------------------------------------------
+    Generic.Verify your current page location contains     subscription
+    SubscriptionPage.Save the manufacturer profile
+    RegisterUserPage.Fetch the all validation message on profile page
+    SubscriptionPage.Select country of manufacturer profile     United States
+    SubscriptionPage.Select state of manufacturer profile   Texas
+    SubscriptionPage.Select city of manufacturer profile    Abram
+    SubscriptionPage.Input text into manufacturer address one       This is address 1
+    LoginPage.Clear the text of some fields     ${address1}
+    RegisterUserPage.Create address one with 101 numbers under create profile page
+    SubscriptionPage.Input text into manufacturer address two       This is address 2
+    SubscriptionPage.Input text into manufacturer zip code      73301
+    SubscriptionPage.Select department of manufacturer profile      Customer Support
+    SubscriptionPage.Input text into manufacturer position/title    Agent
+    SubscriptionPage.Save the manufacturer profile
+    Generic.Verify your current page location contains     subscription-menu
+    Generic.Fetch alert message text and compare it with       Profile saved successfully
+    Generic.click on the button     Next
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Please enter Address Line 1 less than 100 characters
+    LoginPage.Clear the text of some fields     ${address1}
+    SubscriptionPage.Input text into manufacturer address one       This is address 1
+    LoginPage.Clear the text of some fields     ${zip}
+    RegisterUserPage.Create zip code with 101 numbers under create profile page
+    Generic.click on the button     Next
+
+
+
+
+
+
+

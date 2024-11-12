@@ -586,7 +586,7 @@ Enter 101 charcters in the company name under register page
     wait until element is enabled       ${register_CompanyName}        ${wait_time}
     click element   ${register_CompanyName}
     Clear element text      ${register_CompanyName}
-    ${random_string} =    Generate Random String       101      [NUMBERS]
+    ${random_string} =    Generate Random String       101      [LETTERS]
     ${generate_register_CompanyName}=    Catenate    CompanyName${random_string}
     input text   ${register_CompanyName}   ${generate_register_CompanyName}
     set global variable    ${generate_register_CompanyName}
@@ -607,3 +607,23 @@ Enter single character in the fields of register page
     wait until element is enabled       ${register_CompanyName}        ${wait_time}
     click element   ${register_CompanyName}
     input text      ${register_CompanyName}     ${option}
+
+Create address one with 101 numbers under create profile page
+    wait until element is enabled       css:input[formcontrolname='StreetAddress1']       ${wait_time}
+    click element   css:input[formcontrolname='StreetAddress1']
+    Clear element text      css:input[formcontrolname='StreetAddress1']
+    ${random_string} =    Generate Random String       101      [LETTERS]
+    ${generate_register_New_Address}=    Catenate    BusinessEmail${random_string}@yopmail.net
+    input text   css:input[formcontrolname='StreetAddress1']   ${generate_register_New_Address}
+    log to console      registerEmail:${generate_register_New_Address}
+    set global variable   ${generate_register_New_Address}
+
+Create zip code with 101 numbers under create profile page
+    wait until element is enabled       css:input[formcontrolname='Zip']       ${wait_time}
+    click element   css:input[formcontrolname='Zip']
+    Clear element text      css:input[formcontrolname='Zip']
+    ${random_string} =    Generate Random String       101      [NUMBERS]
+    ${generate_register_New_Code}=    Catenate    Zip_Code_${random_string}
+    input text   css:input[formcontrolname='Zip']   ${generate_register_New_Code}
+    log to console      registerCode:${generate_register_New_Code}
+    set global variable   ${generate_register_New_Code}
