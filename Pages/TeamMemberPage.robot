@@ -516,3 +516,12 @@ Fetch the all validation message after entering invalid data in add team member
       Append To List    ${actualList}     ${element.text}
    END
    lists should be equal    ${expectedList}    ${actualList}
+
+Input new location in add team member
+    [Arguments]     ${option}
+    wait until element is not visible       ${loaderIcon}  ${wait_time}
+    wait until element is visible     ${TMLocation}     ${wait_time}
+    wait until element is enabled     ${TMLocation}      ${wait_time}
+    input text    ${TMLocation}     ${option}
+    wait until element is visible   //div//span[normalize-space()='${option}']       ${wait_time}
+    click element   //div//span[normalize-space()='${option}']
