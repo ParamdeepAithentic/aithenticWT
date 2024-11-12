@@ -2044,23 +2044,23 @@ Check all the validations on register page
     RegisterUserPage.Select the checkbox
     RegisterUserPage.Save the register form
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page          Please enter valid Email
-    LoginPage.Clear the element text of field under login page     ${register_Email}
+    LoginPage.Clear the element text of field under login page     Email
     RegisterUserPage.Create partner random business email
-    LoginPage.Clear the element text of field under login page     ${phone}
+    LoginPage.Clear the element text of field under login page     phone
     RegisterUserPage.Choose register user country      India   +91     9646289871125
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page           Please enter a valid mobile Number
-    LoginPage.Clear the element text of field under login page     ${phone}
+    LoginPage.Clear the element text of field under login page     phone
     RegisterUserPage.Choose register user country      India   +91     96462898
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page           Please enter a valid mobile Number
-    LoginPage.Clear the element text of field under login page     ${register_Email}
+    LoginPage.Clear the element text of field under login page     Email
     RegisterUserPage.Create self register invalid business name     ${generate_register_Fname}@yopmailcom
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page          Please enter valid Email
-    LoginPage.Clear the element text of field under login page     ${register_Fname}
-    LoginPage.Clear the element text of field under login page      ${register_Lname}
-    LoginPage.Clear the element text of field under login page      ${register_CompanyName}
+    LoginPage.Clear the element text of field under login page     FirstName
+    LoginPage.Clear the element text of field under login page      LastName
+    LoginPage.Clear the element text of field under login page      companyName
     RegisterUserPage.Click on the cross icon of member type
-    LoginPage.Clear the element text of field under login page      ${register_Email}
-    LoginPage.Clear the element text of field under login page      ${phone}
+    LoginPage.Clear the element text of field under login page     Email
+    LoginPage.Clear the element text of field under login page      phone
     ReplaceDomainAPI.Replace Domain
     RegisterUserPage.Create random register first name
     RegisterUserPage.Create random register last name
@@ -2156,7 +2156,7 @@ Verify all the validations on profile page
     SubscriptionPage.Check the acknowledgement checkbox
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page      Your card number is incomplete.
     SubscriptionPage.Switch to card iframe
-    LoginPage.Clear the element text of field under login page     ${CardNumber_locator}
+    LoginPage.Clear the text of some fields     ${CardNumber_locator}
     Unselect Frame
     SubscriptionPage.Switch to card iframe
     SubscriptionPage.Enter cardnumber    42424242424242420423242
@@ -2227,6 +2227,7 @@ Verify all the charcter validations of register page
     LoginPage.Clear the element text of field under login page      companyName
     RegisterUserPage.Enter single character in the fields of register page      C
     RegisterUserPage.Save the register form
+
 
 
 
