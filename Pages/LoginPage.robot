@@ -85,21 +85,7 @@ Get and Verify the validation after login with email only
     log to console    ${get_login_validation}
     should be equal    ${get_login_validation}     ${text}
 
-Clear the element text of address1 field under login page
-    [Arguments]    ${locator}
-    Click Element    css:${locator}
-    ${text}=    Execute JavaScript    return document.querySelector("#${locator}").value
-    Log    Initial text: ${text}
-
-    WHILE    '${text}' != ''
-        Press Keys    css:${locator}    BACKSPACE
-        ${text}=    Execute JavaScript    return document.querySelector("${locator}").value
-        Log    Updated text: ${text}
-    END
-    Log    Field is now cleared
-
-Clear the text of some fields
-    Clear the element text of field under login page
+Clear the element text of field under login page
     [Arguments]    ${locator}
     Click Element    css:#${locator}
     ${text}=    Execute JavaScript    return document.querySelector("#${locator}").value
@@ -111,6 +97,13 @@ Clear the text of some fields
         Log    Updated text: ${text}
     END
     Log    Field is now cleared
+
+Clear the text of some fields
+    [Arguments]    ${locator}
+    wait until element is visible       ${locator}     ${wait_time}
+    wait until element is enabled        ${locator}     ${wait_time}
+    click element   ${locator}
+    clear element text      ${locator}
 
 
 Get and Verify the validation after entering invalid email under forgot password
@@ -130,5 +123,5 @@ Click on the fields
     Wait Until Element Is enabled        css:#AssignedEmployeeId     ${wait_time}
     click element       css:#AssignedEmployeeId
 
-
-
+Wait for the visibility of the validation message of position
+    wait until element is visible       //span[contains(text(),'Please enter Position/Title less than 100 characte')]       ${wait_time}

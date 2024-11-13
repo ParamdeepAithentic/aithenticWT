@@ -2289,16 +2289,7 @@ Verify all the charcter validation of profile page under register
     SubscriptionPage.Input text into manufacturer position/title    Agent
     Generic.click on the button     Next
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Please enter Address Line 1 less than 100 characters
-    LoginPage.Clear the element text of address1 field under login page      input[formcontrolname='StreetAddress1']
-    SubscriptionPage.Input text into manufacturer address one       This is address 1
     LoginPage.Clear the element text of field under login page    position
     RegisterUserPage.Create position with 101 numbers under create profile page
     Generic.click on the button     Next
-    RegisterUserPage.Fetch the validation message after entering invalid data in register user page          Please enter Position/Title less than 100 characters
-
-
-
-
-
-
-
+    LoginPage.Wait for the visibility of the validation message of position
