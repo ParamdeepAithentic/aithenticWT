@@ -581,3 +581,51 @@ Fetch the all validation message on profile page
       Append To List    ${actualList}     ${element.text}
    END
    lists should be equal    ${expectedList}    ${actualList}
+
+Enter 101 charcters in the company name under register page
+    wait until element is enabled       ${register_CompanyName}        ${wait_time}
+    click element   ${register_CompanyName}
+    Clear element text      ${register_CompanyName}
+    ${random_string} =    Generate Random String       101      [LETTERS]
+    ${generate_register_CompanyName}=    Catenate    CompanyName${random_string}
+    input text   ${register_CompanyName}   ${generate_register_CompanyName}
+    set global variable    ${generate_register_CompanyName}
+
+Create partner random business email with 101 numbers
+    wait until element is enabled       ${register_Email}        ${wait_time}
+    click element   ${register_Email}
+    Clear element text      ${register_Email}
+    ${random_string} =    Generate Random String       101      [NUMBERS]
+    ${generate_register_New_Email}=    Catenate    BusinessEmail${random_string}@yopmail.net
+    input text   ${register_Email}   ${generate_register_New_Email}
+    log to console      registerEmail:${generate_register_New_Email}
+    set global variable    ${generate_register_New_Email}
+
+Enter single character in the fields of register page
+    [Arguments]     ${option}
+    wait until element is visible       ${register_CompanyName}        ${wait_time}
+    wait until element is enabled       ${register_CompanyName}        ${wait_time}
+    click element   ${register_CompanyName}
+    input text      ${register_CompanyName}     ${option}
+
+Create address one with 101 numbers under create profile page
+    Execute JavaScript    document.querySelector("input[formcontrolname='StreetAddress1']").click()
+    Clear Element Text     css:input[formcontrolname='StreetAddress1']
+    ${random_string} =     Generate Random String    101    [LETTERS]
+    ${generate_register_New_Address}=    Catenate    Address_${random_string}
+    Input Text   css:input[formcontrolname='StreetAddress1']   ${generate_register_New_Address}
+    Log To Console    Address:${generate_register_New_Address}
+    Set Global Variable    ${generate_register_New_Address}
+
+
+
+Create position with 101 numbers under create profile page
+    wait until element is enabled       //input[@id='position']       ${wait_time}
+    click element   //input[@id='position']
+    Clear element text      //input[@id='position']
+    ${random_string} =    Generate Random String       101      [LETTERS]
+    ${generate_register_New_Position}=    Catenate    Position_${random_string}
+    input text   //input[@id='position']   ${generate_register_New_Position}
+    sleep       ${search_sleep}
+    log to console      registerPosition:${generate_register_New_Position}
+    set global variable   ${generate_register_New_Position}

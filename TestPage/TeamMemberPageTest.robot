@@ -1456,6 +1456,126 @@ Click on the status filter under team member via profile list and verify it
     PaginationPage.Fetch the total count
     TeamMemberPage.Fetch the country from team member filter and click       Status          Invited         ${New_status1}
 
+Verify all the validation of add team member
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Click on add team member action button
+    TeamMemberPage.Choose option after clicking on Action button        Add New Member
+    TeamMemberPage.Save the team member form   save
+    TeamMemberPage.Fetch the all validation message after entering invalid data in add team member
+    TeamMemberPage.Enter team member first name with 101 letters
+    TeamMemberPage.Save the team member form   save
+
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page      Please enter First Name with atmost 50 Characters
+    LoginPage.Clear the element text of field under login page       FirstName
+    TeamMemberPage.Enter team member first name self        Milan
+    TeamMemberPage.Enter team member last name with 101 letters
+    TeamMemberPage.Save the team member form   save
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page       Please enter Last Name with atmost 50 Characters
+    LoginPage.Clear the element text of field under login page       LastName
+    TeamMemberPage.Enter team member last name self     Johar
+    Generic.Enter phone number      India   +91     96462898
+    TeamMemberPage.Enter team member business email_mailinator
+    TeamMemberPage.Enter the Position in member form        QA
+    TeamMemberPage.Click on team member department
+    TeamMemberPage.Select team member department        DepartmentName09041
+    TeamMemberPage.Select team member role     Admin
+    TeamMemberPage.Click on team member location
+    TeamMemberPage.Select team member location
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page       Please enter a valid Mobile Number
+    LoginPage.Clear the element text of field under login page       phone
+    Generic.Enter phone number      India   +91     964628982342
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page       Please enter a valid Mobile Number
+    LoginPage.Clear the element text of field under login page       phone
+    Generic.Enter phone number      India   +91     9646289823
+    LoginPage.Clear the element text of field under login page       Email
+    TeamMemberPage.Enter team member business email self        Milan
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Please enter valid Email
+    LoginPage.Clear the element text of field under login page       Email
+    TeamMemberPage.Enter team member business email self        Milan@
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Please enter valid Email
+    LoginPage.Clear the element text of field under login page       Email
+    TeamMemberPage.Enter team member business email self        Milan@dmts
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Please enter valid Email
+    LoginPage.Clear the element text of field under login page       Email
+    TeamMemberPage.Enter team member business email self        Milan@dmts.
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Please enter valid Email
+    LoginPage.Clear the element text of field under login page       Email
+    TeamMemberPage.Enter team member business email self        Milan@mailinator.
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Please enter valid Email
+    LoginPage.Clear the element text of field under login page       Email
+    TeamMemberPage.Enter team member business email self        milan@dmts.fr.nf
+    TeamMemberPage.Save the team member form   save
+    TeamMemberPage.Wait for the visibility of the alert text
+
+Verify all the validations of edit team member page
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Click on add team member action button
+    TeamMemberPage.Select option from team member action menu
+    TeamMemberPage.Enter team member first name
+    TeamMemberPage.Enter team member last name
+    Generic.Enter phone number      India   +91     9646289871
+    TeamMemberPage.Enter team member business email_mailinator
+    TeamMemberPage.Click on team member department
+    TeamMemberPage.Select team member department        DepartmentName09041
+    TeamMemberPage.Select team member role     CSPM
+    TeamMemberPage.Click on team member location
+    TeamMemberPage.Select team member location
+    TeamMemberPage.Save the team member form   save
+    Generic.Fetch alert message text and compare it with        Team Member created successfully
+    TeamMemberPage.Search Team Member by name       ${generated_TMFname}
+    TeamMemberPage.Click on three dots of Team Member listing
+    TeamMemberPage.Select option from three dots of Team Member     Details
+    TeamMemberPage.Click on the tab         details
+    TeamMemberPage.Click on the button      Edit
+    Generic.Verify your current page location contains      updatemembers
+    TeamMemberPage.Click on the cross icon of the dropdown under edit team member       LocationTypeId
+    TeamMemberPage.Click on the cross icon of the dropdown under edit team member       UserRoleId
+    TeamMemberPage.Click on the cross icon of the dropdown under edit team member      DepartmentId
+    LoginPage.Clear the element text of field under login page     businessEmail
+    DashboardPage.Clear the data of the field       firstName
+    DashboardPage.Clear the data of the field       lastName
+    Generic.click on the button   Update
+    sleep       ${search_sleep}
+    TeamMemberPage.Fetch the all validation message after entering invalid data in add team member while edit
+    TeamMemberPage.Enter team member business email self while edit       milan@dmts.fr.nf
+    TeamMemberPage.Enter team member first name while editing
+    TeamMemberPage.Enter team member last name while editing
+    TeamMemberPage.Click on add here in department field        Click here to add
+    TechnologyPage.Create unique department name random
+    TechnologyPage.Select department cost center     1300
+    TechnologyPage.Save the department       add
+    Generic.Fetch alert message text and compare it with        Department added successfully
+    TeamMemberPage.Select team member role while edit     CSPM
+    TeamMemberPage.Click on team member location
+    TeamMemberPage.Select team member location
+    TeamMemberPage.Click on the button      Update
+    sleep       ${search_sleep}
+    TeamMemberPage.Wait for the visibility of the alert text
+    Generic.Enter phone number      India   +91     964628982342
+    TeamMemberPage.Click on the button      Update
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Please enter a valid Mobile Number
+    LoginPage.Clear the element text of field under login page      firstName
+    LoginPage.Clear the element text of field under login page       lastName
+    TeamMemberPage.Enter team member first name with 101 letters while edit
+    TeamMemberPage.Click on the button      Update
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page      Please enter First Name with atmost 50 Characters
+    LoginPage.Clear the element text of field under login page      firstName
+    TeamMemberPage.Enter team member first name while editing
+    TeamMemberPage.Enter team member last name with 101 letters while edit
+    TeamMemberPage.Click on the button      Update
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page       Please enter Last Name with atmost 50 Character
+
+
 #Zz kill browser
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
 

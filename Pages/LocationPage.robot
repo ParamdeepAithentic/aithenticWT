@@ -555,6 +555,11 @@ Click on the plus icon of the subnet
     Wait Until Element Is Enabled      //i[@title='Click here to add IP Subnet']     ${wait_time}
     click element       //i[@title='Click here to add IP Subnet']
 
+Verify that remove Location button is not visible having asset, member, partner or contract created.
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is not visible    //button[normalize-space()='Remove']       ${wait_time}
+
+
 #Fetch the country from location filter and click
 #    [Arguments]     ${option}       ${option1}      ${option2}       ${option3}
 ##    ${element_count}=    Get Element Count    css:.qa-total-count-list
