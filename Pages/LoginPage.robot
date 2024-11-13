@@ -123,5 +123,6 @@ Click on the fields
     Wait Until Element Is enabled        css:#AssignedEmployeeId     ${wait_time}
     click element       css:#AssignedEmployeeId
 
+
 Wait for the visibility of the validation message of position
     wait until element is visible       //span[contains(text(),'Please enter Position/Title less than 100 characte')]       ${wait_time}
