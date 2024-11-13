@@ -570,7 +570,7 @@ Edit brand and product via details
     TechnologyPage.Click on the edit icon on the edit technology page
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  26  ${pageHeading}   Page Load - Total Page Load Time of clicking edit technology to edit technology form      26    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  26  ${pageHeading}  Technology Listing - Total Page Load Time of clicking edit technology to edit technology form      26    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 
     TechnologyPage.Click on cross icon of product while editing technology
@@ -868,7 +868,7 @@ Add New Support Partner and Assign that Partner
     Generic.Verify your current page location contains     technology-details
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  27  ${pageHeading}   Page Load - Total Page Load Time of clicking first row of technology list to its details apge       27    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  27  ${pageHeading}   Technology Listing - Total Page Load Time of clicking first row of technology list to its details page       27    ${pageTime}     ${ActualTime}    PageLoad_Time
 
     TechnologyPage.Select tab under technology details      partners
     TechnologyPage.Click on assign partner button under technology details page        Assign Partner
@@ -2129,7 +2129,7 @@ Upload file: Image and document files while Clone the Technology
     Generic.Verify your current page location contains      clone-addtechnology
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  28  ${pageHeading}   Page Load - Total Page Load Time of clicking clone button of technology deatils to its clone form       28    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  28  ${pageHeading}   Technlogy Details Page Load - Total Page Load Time of clicking clone button of technology deatils to its clone form       28    ${pageTime}     ${ActualTime}    PageLoad_Time
 
     TechnologyPage.Add assetID for technology lifecycle information random
     Generic.Scroll Window To End
@@ -3179,20 +3179,21 @@ Click on the technology group filters and verify it
     Generic.Verify your current page location contains      technology
     Generic.Wait until table get load
     TechnologyPage.Click on the filters under technology page       Technology Group
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
 
     ${StartTime1} =     Get Current Time in Milliseconds
     TechnologyPage.Click on the value under the filters of technology page      Applications
     TechnologyPage.Get the text of selected filter under technology     Applications
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  6  ${pageHeading}   Filter Page - Data load time of filter Applications under technology group      6    ${pageTime}     ${ActualTime}    Filter_Time
 
     PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     technology
-    PaginationPage.Select the value from the pagination drop down count     500
-    PaginationPage.Fetch the selected value of the dropdown     technology
+#    PaginationPage.Click on the pagination dropdown     technology
+#    PaginationPage.Select the value from the pagination drop down count     500
+#    PaginationPage.Fetch the selected value of the dropdown
+    PaginationPage.Check Pagination        technology
     PaginationPage.Fetch the total count
     LocationPage.Fetch the country from location filter and click    Group      2     Applications        ${New_Name}
     Generic.click on the tab        reset filters
@@ -3210,8 +3211,8 @@ Click on the technology group filters and verify it
 
     PaginationPage.Fetch the total count
     PaginationPage.Click on the pagination dropdown     technology
-    PaginationPage.Select the value from the pagination drop down count     500
-    PaginationPage.Fetch the selected value of the dropdown     technology
+#    PaginationPage.Select the value from the pagination drop down count     500
+#    PaginationPage.Fetch the selected value of the dropdown     technology
     PaginationPage.Fetch the total count
     LocationPage.Fetch the country from location filter and click    Group      2     ${Technology_group}      ${New_Name}
     Generic.click on the tab        reset filters

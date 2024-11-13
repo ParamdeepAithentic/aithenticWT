@@ -896,7 +896,7 @@ Verify Filters of Existing asets by adding assets of different tech type - MAINT
 
 ################################################# FREEWARE ASSET ##########################################################
 Verify Filters of Existing asets by adding assets of different tech type - FREEWARE
-    [Tags]    NT        Smoke       Sanity
+    [Tags]      Smoke       Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.Verify your current page location contains      dashboard

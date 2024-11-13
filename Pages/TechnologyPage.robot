@@ -802,12 +802,13 @@ Search by AssetId
     sleep       ${search_sleep}
     wait until element is visible       css:thead tr       ${wait_time}
     Wait Until Element Contains    ${fetch_assetID}     ${AssetID}    ${wait_time}
-    ${get_assetID} =    get text    ${fetch_assetID}
-    log to console     ${get_assetID}
-    should be equal    ${get_assetID}     ${AssetID}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  17  ${pageHeading}   Technology Page - Search the technology by AssetId on technology list page     17    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+    ${get_assetID} =    get text    ${fetch_assetID}
+    log to console     ${get_assetID}
+    should be equal    ${get_assetID}     ${AssetID}
+
 #    TechnologyPage.Click on manage technology sub option       Technology List
 
 Search by BrandName

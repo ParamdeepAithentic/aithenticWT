@@ -1401,7 +1401,7 @@ Click on the status filter under team member via profile list and verify it
     Generic.Verify your current page location contains      personal-profile
     Generic.Select parameter      Team Members
     Generic.Verify your current page location contains      dashboard
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     PaginationPage.Fetch the total count
     TeamMemberPage.Click on the status filter under team member via profile
 
@@ -1415,11 +1415,12 @@ Click on the status filter under team member via profile list and verify it
     TeamMemberPage.Get the text of selected status filter under team meber via profile
     DashboardPage.click on the authentication tab under security
     TeamMemberPage.click on the members tab under team member via profile
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     profile-team-member
-    PaginationPage.Select the value from the pagination drop down count     500
-    PaginationPage.Fetch the selected value of the dropdown     profile-team-member
+#    PaginationPage.Click on the pagination dropdown     profile-team-member
+#    PaginationPage.Select the value from the pagination drop down count     500
+#    PaginationPage.Fetch the selected value of the dropdown     profile-team-member
+    PaginationPage.Check Pagination   profile-team-member
     PaginationPage.Fetch the total count
     TeamMemberPage.Fetch the country from team member filter and click       Status          Active         ${New_status1}
     TeamMemberPage.Click on the status filter under team member via profile
@@ -1428,7 +1429,7 @@ Click on the status filter under team member via profile list and verify it
     TeamMemberPage.Get the text of selected status filter under team meber via profile
     DashboardPage.click on the authentication tab under security
     TeamMemberPage.click on the members tab under team member via profile
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     PaginationPage.Fetch the total count
     TeamMemberPage.Fetch the country from team member filter and click       Status          Inactive         ${New_status1}
     Generic.Click on the profile name
@@ -1442,18 +1443,19 @@ Click on the status filter under team member via profile list and verify it
     Generic.Verify your current page location contains      personal-profile
     Generic.Select parameter      Team Members
     Generic.Verify your current page location contains      dashboard
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     PaginationPage.Fetch the total count
     TeamMemberPage.Click on the status filter under team member via profile
     TeamMemberPage.Select the option from the filters under team member via profile     2
     TeamMemberPage.Get the text of selected status filter under team meber via profile
     DashboardPage.click on the authentication tab under security
     TeamMemberPage.click on the members tab under team member via profile
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     profile-team-member
-    PaginationPage.Select the value from the pagination drop down count     500
-    PaginationPage.Fetch the selected value of the dropdown     profile-team-member
+#    PaginationPage.Click on the pagination dropdown     profile-team-member
+#    PaginationPage.Select the value from the pagination drop down count     500
+#    PaginationPage.Fetch the selected value of the dropdown     profile-team-member
+    PaginationPage.Check Pagination   profile-team-member
     PaginationPage.Fetch the total count
     TeamMemberPage.Fetch the country from team member filter and click       Status          Invited         ${New_status1}
 
