@@ -115,6 +115,3 @@ Click on the fields
     Wait Until Element Is visible         css:#AssignedEmployeeId        ${wait_time}
     Wait Until Element Is enabled        css:#AssignedEmployeeId     ${wait_time}
     click element       css:#AssignedEmployeeId
-
-
-
