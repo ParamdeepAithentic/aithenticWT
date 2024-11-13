@@ -62,7 +62,7 @@ ${yop_sleep}       10
 ${search_sleep}       1
 
 
-${CASE}        uat   #qa , uat , pre-prod
+${CASE}        uat  #qa , uat , pre-prod
 
 
 
@@ -249,6 +249,7 @@ click on the button link
     wait until element is visible        //a[normalize-space()='${option}']        ${wait_time}
     wait until element is enabled      //a[normalize-space()='${option}']          ${wait_time}
     click element       //a[normalize-space()='${option}']
+    sleep       ${search_sleep}
 
 
 open the browser with the url
