@@ -609,21 +609,23 @@ Enter single character in the fields of register page
     input text      ${register_CompanyName}     ${option}
 
 Create address one with 101 numbers under create profile page
-    wait until element is enabled       css:input[formcontrolname='StreetAddress1']       ${wait_time}
-    click element   css:input[formcontrolname='StreetAddress1']
-    Clear element text      css:input[formcontrolname='StreetAddress1']
-    ${random_string} =    Generate Random String       101      [LETTERS]
-    ${generate_register_New_Address}=    Catenate    BusinessEmail${random_string}@yopmail.net
-    input text   css:input[formcontrolname='StreetAddress1']   ${generate_register_New_Address}
-    log to console      registerEmail:${generate_register_New_Address}
-    set global variable   ${generate_register_New_Address}
+    Execute JavaScript    document.querySelector("input[formcontrolname='StreetAddress1']").click()
+    Clear Element Text     css:input[formcontrolname='StreetAddress1']
+    ${random_string} =     Generate Random String    101    [LETTERS]
+    ${generate_register_New_Address}=    Catenate    Address_${random_string}
+    Input Text   css:input[formcontrolname='StreetAddress1']   ${generate_register_New_Address}
+    Log To Console    Address:${generate_register_New_Address}
+    Set Global Variable    ${generate_register_New_Address}
 
-Create zip code with 101 numbers under create profile page
-    wait until element is enabled       css:input[formcontrolname='Zip']       ${wait_time}
-    click element   css:input[formcontrolname='Zip']
-    Clear element text      css:input[formcontrolname='Zip']
-    ${random_string} =    Generate Random String       101      [NUMBERS]
-    ${generate_register_New_Code}=    Catenate    Zip_Code_${random_string}
-    input text   css:input[formcontrolname='Zip']   ${generate_register_New_Code}
-    log to console      registerCode:${generate_register_New_Code}
-    set global variable   ${generate_register_New_Code}
+
+
+Create position with 101 numbers under create profile page
+    wait until element is enabled       //input[@id='position']       ${wait_time}
+    click element   //input[@id='position']
+    Clear element text      //input[@id='position']
+    ${random_string} =    Generate Random String       101      [LETTERS]
+    ${generate_register_New_Position}=    Catenate    Position_${random_string}
+    input text   //input[@id='position']   ${generate_register_New_Position}
+    sleep       ${search_sleep}
+    log to console      registerPosition:${generate_register_New_Position}
+    set global variable   ${generate_register_New_Position}

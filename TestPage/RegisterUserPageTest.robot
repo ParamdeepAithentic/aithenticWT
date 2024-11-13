@@ -2279,28 +2279,22 @@ Verify all the charcter validation of profile page under register
     TwoFactorAuth.Click verification button
 #--------------------------------------SUBSCRIPTION------------------------------------------------------------
     Generic.Verify your current page location contains     subscription
-    SubscriptionPage.Save the manufacturer profile
-    RegisterUserPage.Fetch the all validation message on profile page
     SubscriptionPage.Select country of manufacturer profile     United States
     SubscriptionPage.Select state of manufacturer profile   Texas
     SubscriptionPage.Select city of manufacturer profile    Abram
-    SubscriptionPage.Input text into manufacturer address one       This is address 1
-    LoginPage.Clear the text of some fields     ${address1}
     RegisterUserPage.Create address one with 101 numbers under create profile page
     SubscriptionPage.Input text into manufacturer address two       This is address 2
     SubscriptionPage.Input text into manufacturer zip code      73301
     SubscriptionPage.Select department of manufacturer profile      Customer Support
     SubscriptionPage.Input text into manufacturer position/title    Agent
-    SubscriptionPage.Save the manufacturer profile
-    Generic.Verify your current page location contains     subscription-menu
-    Generic.Fetch alert message text and compare it with       Profile saved successfully
     Generic.click on the button     Next
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Please enter Address Line 1 less than 100 characters
-    LoginPage.Clear the text of some fields     ${address1}
+    LoginPage.Clear the element text of address1 field under login page      input[formcontrolname='StreetAddress1']
     SubscriptionPage.Input text into manufacturer address one       This is address 1
-    LoginPage.Clear the text of some fields     ${zip}
-    RegisterUserPage.Create zip code with 101 numbers under create profile page
+    LoginPage.Clear the element text of field under login page    position
+    RegisterUserPage.Create position with 101 numbers under create profile page
     Generic.click on the button     Next
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page          Please enter Position/Title less than 100 characters
 
 
 
