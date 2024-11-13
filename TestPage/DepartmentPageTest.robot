@@ -160,6 +160,7 @@ Verify the validations of all fields of Edit department
     TechnologyPage.Save the department       close
 
 Verify department should not be removed having technology created
+    [Tags]      Negative
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
