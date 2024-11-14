@@ -87,6 +87,7 @@ Get count of total rows
 
 Fetch the total count
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Generic.Wait for table skelton to get disable
     wait until element is enabled       ${Totalcount_field}      ${wait_time}
     wait until element is visible   ${Totalcount_field}      ${wait_time}
     ${text}=     get text   ${Totalcount_field}
@@ -99,18 +100,25 @@ Fetch the total count
 Fetch the total count for filter only
     TRY
           Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+#          Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+          Generic.Wait for table skelton to get disable
           wait until element is enabled       ${Totalcount_field}      ${wait_time}
           wait until element is visible   ${Totalcount_field}      ${wait_time}
           ${text}=     get text   ${Totalcount_field}
           ${parts}    Split String    ${text}    Total Count :
           ${total_row_count}    Get Substring    ${parts[1]}    3
           ${total_data_count}=   Convert To Integer   ${total_row_count}
-          Log to console  Total count is :${total_data_count}
+          Log   Total count is :${total_data_count}
           set global variable    ${total_data_count}
-    EXCEPT    
+    EXCEPT
+        Wait Until Element Is Visible       //span[normalize-space()='No Records']      ${wait_time}
         Log    There is no data in the table
+
         
     END
+
+
+
    
 
 Verify Pagination and Row Count
@@ -315,7 +323,7 @@ Click on the checkbox of technology listing
 
 
 Run the remove asset journey
-    Run Keyword If    ${total_data_count} >= 100
+    Run Keyword If    ${total_data_count} >= 800
         ...    PaginationPage.Remove the old assets to free the space
         ...    ELSE  Run Keywords     Generic.Close Browser session
         ...    AND    Return From Keyword
@@ -329,11 +337,10 @@ Remove the old assets to free the space
     SubscriptionPage.Select if you want to change plan or asset    Change Plan
     TechnologyPage.Click on plan of subscription        Premium
     Generic.Scroll the page till    200
-    SubscriptionPage.Set asset range to     200
-    sleep       5
+    SubscriptionPage.Set asset range to     500
+    sleep       3
     SubscriptionPage.Update the payment of changed plan     proceed
-
-    sleep       5
+    sleep       3
     TechnologyPage.Select option from exceed asset limit pop    technology
     Generic.Verify your current page location contains      manage-technology-list
     Generic.Wait until table get load
@@ -360,9 +367,8 @@ Remove the old assets to free the space
     Generic.Scroll the page till    1000
 #    SubscriptionPage.Set asset range to     900
     Admin_PanelPage.Select the higest plan
-    sleep    5
+    sleep    3
     SubscriptionPage.Update the payment of changed plan     proceed
-
     Sleep   ${yop_sleep}
     TechnologyPage.Click on pop up of available Inactive Asset      cancel
     SubscriptionPage.Select the payment method    ach

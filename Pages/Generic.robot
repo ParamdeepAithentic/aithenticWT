@@ -56,7 +56,7 @@ ${click_countryTag}     css:.iti__arrow
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
-${wait_time}       60
+${wait_time}       20
 ${yop_sleep}       10
 
 ${search_sleep}       1
@@ -78,7 +78,7 @@ Simulate Switch Case
 
 Set QA Variables
     Set Suite Variable    ${url}    https://qa-app.aithentic.com/
-    Set Suite Variable    ${valid_password}    Test@123       #QA User
+    Set Suite Variable    ${valid_password}            Paramdeep@112           #UAT user        Test@123
     Set Suite Variable    ${apiURL}    https://qa-api.aithentic.com/api/v1
     Set Suite Variable    ${agentDiscovery_TagName}    Tag Name - johnsoftwaresolutions-1192-4         #qa
     Set Suite Variable    ${IP_Discovered_devices}    Tag Name - johnsoftwaresolutions-1192-4
@@ -87,7 +87,7 @@ Set QA Variables
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
     Set Suite Variable    ${browser_name}         firefox
-    Set Suite Variable    ${email}                 testqa29j@mailinator.com
+    Set Suite Variable    ${email}          deepparam112@yopmail.net  # testqa29j@mailinator.com
     Set Suite Variable    ${discovered_asset_brand}                 MSI
     Set Suite Variable    ${existing_mac}                       D8:CB:8A:CA:6A:39
     Set Suite Variable    ${discovered_existing_brand}          QABrand555
@@ -259,8 +259,8 @@ open the browser with the url
     Simulate Switch Case
     ${StartTime1} =     Get Current Time in Milliseconds
     open browser    ${url}      ${browser_name}     #executable_path=E:/Aithentic/TestPage/resources
-    wait until element is visible    //a[normalize-space()='Login']          ${wait_time}
-    wait until element is enabled    //a[normalize-space()='Login']          ${wait_time}
+    wait until element is visible    //a[normalize-space()='Login']          60
+    wait until element is enabled    //a[normalize-space()='Login']          60
     Maximize Browser Window
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
@@ -339,11 +339,16 @@ Cross the text message alert
 Select parameter
     [Arguments]    ${address}
     Wait Until Element Is Not Visible    ${loaderIcon}   ${wait_time}
+    wait until element is visible     //div[contains(@class,'dropdown-panel')]//span[normalize-space()='${address}']        ${wait_time}
+    wait until element is enabled       //div[contains(@class,'dropdown-panel')]//span[normalize-space()='${address}']          ${wait_time}
+    click element      //div[contains(@class,'dropdown-panel')]//span[normalize-space()='${address}']
+
+Select span parameter
+    [Arguments]    ${address}
+    Wait Until Element Is Not Visible    ${loaderIcon}   ${wait_time}
     wait until element is visible     //span[normalize-space()='${address}']        ${wait_time}
     wait until element is enabled       //span[normalize-space()='${address}']          ${wait_time}
-    sleep       ${search_sleep}
     click element      //span[normalize-space()='${address}']
-
 
 Click on the profile name
     wait until element is not visible      ${loaderIcon}          ${wait_time}
@@ -447,7 +452,7 @@ Enter phone number
     wait until element is enabled   ${contact_Country_search}          ${wait_time}
     click element   ${contact_Country_search}
     input text  ${contact_Country_search}   ${country}
-    Generic.Select parameter      ${code}
+    Generic.Select span parameter      ${code}
     input text     ${phone}     ${phoneNo}
     Press Keys    ${phone}      ENTER
 #    click element   ${click_countryTag}
@@ -533,3 +538,7 @@ Update settings for Asset_ID, employee_id and location
 
 Click on the reset filters link
     Generic.click on the button link        reset filters
+
+
+Wait for table skelton to get disable
+     wait until element is not visible       (//tbody//tr[2]//div[contains(@class,'skeleton')])[1]          ${wait_time}

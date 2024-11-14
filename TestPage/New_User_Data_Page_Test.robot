@@ -269,6 +269,25 @@ Adding the data in the account
     LocationPage.Method 1        United States - Main Office - 21 - 2
     LocationPage.Get new location       United States - Main Office - 21 - 2
 
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Search by location name using statc location     Canada
+    LocationPage.Method 1       Canada
+    LocationPage.Get new location       Canada
+
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Search by location name using statc location     India
+    LocationPage.Method 1       India
+    LocationPage.Get new location       India
+
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Search by location name using statc location     Turkey
+    LocationPage.Method 1       Turkey
+    LocationPage.Get new location       Turkey
+
+
     Generic.Click on the profile name
     Generic.Select option from profile list     department-dropdown
     Generic.Verify your current page location contains      department

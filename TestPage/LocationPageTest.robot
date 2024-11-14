@@ -51,7 +51,7 @@ Test Teardown   Close Browser session
 Activate and deactivate the location
     [Tags]      Time      Sanity        Smoke
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     ${StartTime1} =     Get Current Time in Milliseconds
@@ -102,7 +102,7 @@ Activate and deactivate the location
 Edit the Location
     [Tags]    NT
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Location
@@ -147,7 +147,7 @@ Edit the Location
 Remove Location from listing
     [Tags]      Smoke
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Location
@@ -178,7 +178,7 @@ Remove Location from listing
 Add Location from profile Listing
     [Tags]     Sanity     Smoke
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
@@ -262,7 +262,7 @@ Verify Location_name Hide and show after changes it from settings
 Click on the select status filter and verify it
     [Tags]     time     smoke
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Location
@@ -272,23 +272,24 @@ Click on the select status filter and verify it
     LocationPage.Click on the status filter under location
     LocationPage.Select the option from status filter under location        Inactive
     LocationPage.Get the text of selected status filter under location      Inactive
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  9  ${pageHeading}   Filter Page - Data load time of filter inactive under location status      9    ${pageTime}     ${ActualTime}    Filter_Time
 
 
-    PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     location-list
-    PaginationPage.Select the value from the pagination drop down count     500
-    PaginationPage.Fetch the selected value of the dropdown     location-list
-    PaginationPage.Fetch the total count
+    PaginationPage.Fetch the total count for filter only
+    PaginationPage.Check Pagination     location-list
+#    PaginationPage.Click on the pagination dropdown     location-list
+#    PaginationPage.Select the value from the pagination drop down count     500
+#    PaginationPage.Fetch the selected value of the dropdown     location-list
+    PaginationPage.Fetch the total count for filter only
     LocationPage.Fetch the country from location filter and click       Status      7     Inactive         ${New_status}
 
 Click on the select location filter and verify it
     [Tags]    time     smoke        rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Location
@@ -296,12 +297,13 @@ Click on the select location filter and verify it
     LocationPage.Click on the location filter under location
     LocationPage.Select the option from location filter under location         Afghanistan
     LocationPage.Get the text of selected filter under location     Afghanistan
-    Generic.Wait until table get load
-    PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     location-list
-    PaginationPage.Select the value from the pagination drop down count     500
-    PaginationPage.Fetch the selected value of the dropdown     location-list
-    PaginationPage.Fetch the total count
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
+    PaginationPage.Check Pagination     location-list
+#    PaginationPage.Click on the pagination dropdown     location-list
+#    PaginationPage.Select the value from the pagination drop down count     500
+#    PaginationPage.Fetch the selected value of the dropdown     location-list
+    PaginationPage.Fetch the total count for filter only
 
     ${StartTime1} =     Get Current Time in Milliseconds
     LocationPage.Fetch the country from location filter and click       Country     3     Afghanistan         ${New_Name}
@@ -314,29 +316,30 @@ Click on the select location filter and verify it
     LocationPage.Select the option from location filter under location         Canada
     LocationPage.Get the text of selected filter under location     Canada
     sleep   ${search_sleep}
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     sleep   ${search_sleep}
     Generic.Scroll Window To End
     sleep   ${search_sleep}
-    PaginationPage.Fetch the total count
+    PaginationPage.Fetch the total count for filter only
     LocationPage.Fetch the country from location filter and click       Country     3        Canada          ${New_Name}
     Generic.Click on the reset filters link
     LocationPage.Click on the location filter under location
     LocationPage.Select the option from location filter under location          India
     LocationPage.Get the text of selected filter under location      India
-    Generic.Wait until table get load
-    PaginationPage.Fetch the total count
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
     LocationPage.Fetch the country from location filter and click       Country     3        India          ${New_Name}
     Generic.Click on the reset filters link
     LocationPage.Click on the location filter under location
     LocationPage.Select the option from location filter under location         Turkey
     LocationPage.Get the text of selected filter under location    Turkey
-    Generic.Wait until table get load
-    PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     location-list
-    PaginationPage.Select the value from the pagination drop down count     500
-    PaginationPage.Fetch the selected value of the dropdown     location-list
-    PaginationPage.Fetch the total count
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
+    PaginationPage.Check Pagination     location-list
+#    PaginationPage.Click on the pagination dropdown     location-list
+#    PaginationPage.Select the value from the pagination drop down count     500
+#    PaginationPage.Fetch the selected value of the dropdown     location-list
+    PaginationPage.Fetch the total count for filter only
     LocationPage.Fetch the country from location filter and click       Country     3     Turkey        ${New_Name}
 
 Click on the select Active status filter and verify it
@@ -350,16 +353,17 @@ Click on the select Active status filter and verify it
     LocationPage.Click on the status filter under location
     LocationPage.Select the option from status filter under location        Active
     LocationPage.Get the text of selected status filter under location      Active
-    Generic.Wait until table get load
-    PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     location-list
-    PaginationPage.Select the value from the pagination drop down count     500
-    PaginationPage.Fetch the selected value of the dropdown     location-list
-    PaginationPage.Fetch the total count
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
+    PaginationPage.Check Pagination     location-list
+#    PaginationPage.Click on the pagination dropdown     location-list
+#    PaginationPage.Select the value from the pagination drop down count     500
+#    PaginationPage.Fetch the selected value of the dropdown     location-list
+    PaginationPage.Fetch the total count for filter only
     LocationPage.Fetch the country from location filter and click       Status      7     Active         ${New_status}
 
 Verifying the validations of all fields of Add location
-    [Tags]    NT
+    [Tags]    Negative
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -409,9 +413,9 @@ Verifying the validations of all fields of Add location
     LocationPage.Click on cancel Location
 
 Verifying the validations of all fields of Edit location
-    [Tags]    NT
+    [Tags]    Negative
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Location
@@ -446,6 +450,7 @@ Verifying the validations of all fields of Edit location
     LocationPage.Compare and verify the validation messages of Location     ${Locationnameyes_validation}      Please Enter Location Name
 
 Add multiple IP subnets while adding location
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -634,7 +639,7 @@ Verify user should not able to Deactivate Location having Technology
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology
-    Generic.wait until table get load
+    Generic.Wait until table get load for filters
     Generic.select the option from the side menu    Location
     Generic.Verify your current page location contains      locationlist
     LocationPage.Search by location name     ${generated_location}
@@ -683,7 +688,7 @@ Verify user should not able to Remove Location having Technology
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology
-    Generic.wait until table get load
+    Generic.Wait until table get load for filters
     Generic.select the option from the side menu    Location
     Generic.Verify your current page location contains      locationlist
     LocationPage.Search by location name     ${generated_location}
