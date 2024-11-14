@@ -3093,5 +3093,22 @@ Verify user should not able to Edit Brand having Product created
     Generic.Verify your current page location contains      brand
     DashboardPage.Verify update button is not visible on edit brand page
 
+Verify all the character validations of add brand page
+     [Tags]   Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     brand-dropdown
+    Generic.Verify your current page location contains      brand
+    DashboardPage.Click add brand button
+    DashboardPage.Create random brandName with 101 characters
+    DashboardPage.Add business manufacturer URL       ${generated_BrandName_new}
+    DashboardPage.Add brand manufacturer country      Australia
+    DashboardPage.Save added brand details
+    Generic.Fetch alert message text and compare it with     Something went wrong.Please try again
+
+
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

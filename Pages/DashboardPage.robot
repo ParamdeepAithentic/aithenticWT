@@ -1843,3 +1843,10 @@ Verify the warning is visible when deactivate or remove brand
 Verify update button is not visible on edit brand page
     wait until element is not visible       //button[normalize-space()='Update']
 
+Create random brandName with 101 characters
+    ${random_string} =    Generate Random String       101      [NUMBERS]
+    ${generated_BrandName_new}=    Catenate    BrandName${random_string}
+    input text   ${add_brandName}   ${generated_BrandName_new}
+    log to console      ${generated_BrandName_new}
+    set global variable    ${generated_BrandName_new}
+
