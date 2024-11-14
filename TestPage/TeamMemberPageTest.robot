@@ -1620,8 +1620,6 @@ Verify department should not be removed having team member created
     Generic.Select parameter        Yes
     Generic.Fetch alert message text and compare it with        Department already in use.
 
-
-
 #Zz kill browser
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
 
