@@ -238,6 +238,7 @@ click on the button link
     wait until element is visible        //a[normalize-space()='${option}']        ${wait_time}
     wait until element is enabled      //a[normalize-space()='${option}']          ${wait_time}
     click element       //a[normalize-space()='${option}']
+    sleep       ${search_sleep}
 
 
 open the browser with the url
