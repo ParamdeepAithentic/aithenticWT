@@ -128,13 +128,16 @@ Select department random cost center
 
 Search by static department name
     [Arguments]    ${department}
+     wait until element is not visible      ${loaderIcon}     ${wait_time}
      wait until element is visible       css:thead tr       ${wait_time}
+     wait until element is not visible       css:.spinner-border     ${wait_time}
      wait until element is visible      css:#searchbar-departmentlist     ${wait_time}
      click element      css:#searchbar-departmentlist
      Clear Element Text      css:#searchbar-departmentlist
      ${StartTime1} =     Get Current Time in Milliseconds
      input text   css:#searchbar-departmentlist   ${department}
      sleep      ${search_sleep}
+     wait until element is not visible       css:.spinner-border     ${wait_time}
 
 Verify the search static department
     [Arguments]    ${option}
@@ -169,10 +172,10 @@ Create static department name random
     wait until element is enabled       ${add_tech_dept_name}        ${wait_time}
     input text   ${add_tech_dept_name}   ${option}
     sleep       ${search_sleep}
-    wait until element is visible     //span[normalize-space()='${option}']        ${wait_time}
-    wait until element is enabled       //span[normalize-space()='${option}']          ${wait_time}
+    wait until element is visible     //span[contains(text(),'${option}')]//span        ${wait_time}
+    wait until element is enabled       //span[contains(text(),'${option}')]//span         ${wait_time}
     sleep       ${search_sleep}
-    click element      //span[normalize-space()='${option}']
+    click element      //span[contains(text(),'${option}')]//span
 
 Verify the validation department name field
     wait until element is not visible    ${loaderIcon}      ${wait_time}

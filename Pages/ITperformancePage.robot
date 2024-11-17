@@ -176,9 +176,11 @@ Click on tabs under it perfomance
 
 Click on data quality button link under it perfomance
     [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible   css:.qa-data-quality-${option} h4   ${wait_time}
     wait until element is enabled   css:.qa-data-quality-${option} h4     ${wait_time}
     sleep   ${search_sleep}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     click element   css:.qa-data-quality-${option} h4
     wait until element is not visible       ${shadow}          ${wait_time}
 
@@ -215,6 +217,7 @@ Click on current and previous year tab under spend forecast
     wait until element is visible   css:#totalitassetsspendfyq-tab      ${wait_time}
     wait until element is enabled   css:#totalitassetsspendfyq-tab      ${wait_time}
     click element   css:#totalitassetsspendfyq-tab
+    wait until element is not visible   ${loaderIcon}       ${wait_time}
 
 Click on five year forecast tab under spend forecast
     wait until element is not visible   ${loaderIcon}       ${wait_time}

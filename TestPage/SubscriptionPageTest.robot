@@ -49,6 +49,7 @@ Test Teardown   Close Browser session
 
 
 #Create the scheduler
+    #[Tags]      NT
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
 #    Generic.Verify your current page location contains      dashboard
@@ -116,7 +117,7 @@ Edit the scheduler
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
 
 Run now from view details
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -196,7 +197,7 @@ Suspend and unsuspend the account
     END
 
 View Scheduler from view Result
-#    [Tags]      Stable
+    [Tags]      NT      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -211,13 +212,14 @@ View Scheduler from view Result
     SubscriptionPage.Click on the three dots of subscription connector      Microsoft Corporation
     SubscriptionPage.Click on option under three dots of subscription connector     Microsoft Corporation        View Results
     #SubscriptionPage.Click on option under three dots of subscription connector     Microsoft Corporation          View Results
-
-    Generic.Verify your current page location contains    subscription
-    SubscriptionPage.Choose tab under subscription page after clicking on view_result
-    SubscriptionPage.Fetch and compare the Brand from the table    Microsoft Corporation
+    Generic.Verify your current page contains this text    No Records
+#    Generic.Verify your current page location contains    subscription
+#    SubscriptionPage.Choose tab under subscription page after clicking on view_result
+#    SubscriptionPage.Fetch and compare the Brand from the table    Microsoft Corporation
 
 
 #Create the scheduler of sentinel one
+#   [Tags]      NT
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
 #    LandingPage.Verify you are on dashboard page
@@ -235,7 +237,7 @@ View Scheduler from view Result
 #    Generic.Fetch alert message text and compare it with        Scheduler created sucessfully
 
 #Edit the scheduler of Sentinelone
-#    [Tags]      Sanity      Stable
+#    [Tags]      Sanity
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
 #    Generic.Verify your current page location contains      dashboard
@@ -284,7 +286,7 @@ View Scheduler from view Result
 #    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
 #
 #Run_now_delete_view-details_of_sentinelOne
-#    [Tags]      Stable
+#    [Tags]      NT
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
 #    Generic.Verify your current page location contains      dashboard
@@ -315,7 +317,7 @@ View Scheduler from view Result
 #    SubscriptionPage.Get the value of fields under view details of subscription connector   2       Samuel John
 #
 #View Scheduler from view Result of sentinelone
-#    [Tags]      Stable
+#    [Tags]      NT
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
 #    Generic.Verify your current page location contains      dashboard
@@ -332,7 +334,7 @@ View Scheduler from view Result
 #    SubscriptionPage.Click on the three dots of subscription connector      Microsoft Corporation
 
 #Edit the scheduler of Sentinelone
-#    [Tags]      Sanity      Stable
+#    [Tags]      Sanity
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
 #    Generic.Verify your current page location contains      dashboard
@@ -385,7 +387,7 @@ View Scheduler from view Result
 #    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
 #
 #Run_now_delete_view-details_of_sentinelOne
-#    [Tags]      Stable
+#    [Tags]      NT
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
 #    Generic.Verify your current page location contains      dashboard
@@ -416,7 +418,7 @@ View Scheduler from view Result
 #    SubscriptionPage.Get the value of fields under view details of subscription connector   2       Samuel John
 #
 #View Scheduler from view Result of sentinelone
-#    [Tags]      Stable
+#    [Tags]      NT
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
 #    Generic.Verify your current page location contains      dashboard
@@ -433,6 +435,7 @@ View Scheduler from view Result
 #    SubscriptionPage.Click on the three dots of subscription connector      Microsoft Corporation
 
 Create service now with invalid data
+    [Tags]      NT      rerun
    Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -777,7 +780,7 @@ Create service now with valid data
 
 
 Click on connetors button link under asset discovery
-    [Tags]      Sanity
+    [Tags]      Sanity      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -876,7 +879,7 @@ Click on connetors button link under asset discovery
     Generic.Wait until table get load
 
 Create JAMFF account with valid data
-#    [Tags]      OnlyQA
+   [Tags]      NT       rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1043,7 +1046,7 @@ Create JAMFF account with valid data
     Generic.Verify your current page contains this text    No Records
 
 Create jamff account with invalid data
-#    [Tags]      OnlyQA
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1143,6 +1146,7 @@ Create jamff account with invalid data
     Generic.Verify your current page contains this text     Jamf Pro Connection Failed.
 
 #Edit the scheduler of jamff
+#   [Tags]      NT
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
 #    Generic.Verify your current page location contains      dashboard
@@ -1225,6 +1229,7 @@ Create jamff account with invalid data
 #
 #
 #View Results of jamff account
+#   [Tags]      NT
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
 #    Generic.Verify your current page location contains      dashboard
@@ -1238,7 +1243,7 @@ Create jamff account with invalid data
 #    Generic.Verify your current page contains this text    No Records
 
 Create sentinel account and verify the options
-#    [Tags]      OnlyQA
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1403,6 +1408,7 @@ Create sentinel account and verify the options
     Generic.Verify your current page contains this text    No Records
 
 Click on the three dots of Intune and verify the details
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -1479,6 +1485,7 @@ Click on the three dots of Intune and verify the details
 
 
 Create Tenable Account and verify the details
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1572,8 +1579,8 @@ Create Tenable Account and verify the details
     sleep       ${yop_sleep}
     Switch Window       aithentic | Create Connection
     Generic.Verify your current page location contains      create-connection
-    SubscriptionPage.Enter input in the access key of tenable account     a632865206c0e117cd04af6b233f5ffc6908f651d0c250f415333adb1aaf9e61
-    SubscriptionPage.Enter input in the secret key field of service now     1002caed92c9ad78c3a95c994ba2c4ed834f1891438e1356fac2e1f167cd7907
+    SubscriptionPage.Enter input in the access key of tenable account     3be40a9bc512268aa41c23ea1022fbbd7ff9530ba1f73a346d010650890ecc72
+    SubscriptionPage.Enter input in the secret key field of service now     aed031611b3eea2bf2b39359395716b05b29eadf8fea837c7962d3a93ef6db7c
     Generic.click on the button     Create Connection
     Generic.Verify your current page location contains      technology-settings
     Generic.Fetch alert message text and compare it with       Technology created successfully
@@ -1683,9 +1690,9 @@ Create Tenable Account and verify the details
     SubscriptionPage.click on the cross icon of tenable under asset discovery    1
     SubscriptionPage.Enter input in the input field of frequency under asset discovery under tenable     Yearly
     SubscriptionPage.Enter input in the start date field of service now under asset discovery under tenable
-
     SubscriptionPage.Select the time from the timepicker of tenable under asset discovery       2
-     Generic.click on the button     Update
+    SubscriptionPage.Click on the ok button after selecting the time
+    Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the action button of tenable under discovery assets
     SubscriptionPage.Click on the options under action button of tenable under discovery assets      Details
@@ -1709,12 +1716,8 @@ Create Tenable Account and verify the details
     SubscriptionPage.Get the value of fields under view details of subscription of tenable tab under asset discovery   2       ${generate_register_Fname} ${generate_register_Lname}
 
 
-
-
-
-
-
 Create tanium Account and verify the details
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1872,6 +1875,7 @@ Create tanium Account and verify the details
     SubscriptionPage.Click on option under three dots of subscription connector     Tanium    Details
     SubscriptionPage.Get the value of fields under view details of subscription connector   1      Tanium
     SubscriptionPage.Get the value of fields under view details of subscription connector   2       ${generate_register_Fname} ${generate_register_Lname}
+    SubscriptionPage.Click on cross icon of details under service now
     SubscriptionPage.Click on the three dots of subscription connector      Tanium
     SubscriptionPage.Click on option under three dots of subscription connector    Tanium    View Results
     Generic.Verify your current page location contains      discovery-assets
@@ -1944,6 +1948,7 @@ Create tanium Account and verify the details
     SubscriptionPage.Get the value of fields under view details of subscription of tanium tab under asset discovery   2       ${generate_register_Fname} ${generate_register_Lname}
 
 Create CrowdStrike Account and verify the details
+    [Tags]      NT      rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -2081,7 +2086,7 @@ Create CrowdStrike Account and verify the details
     SubscriptionPage.Click on the ok button after selecting the time
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
-    SubscriptionPage.Click on cross icon of details under service now
+#    SubscriptionPage.Click on cross icon of details under service now
     SubscriptionPage.Click on the three dots of subscription connector      CrowdStrike
     SubscriptionPage.Click on option under three dots of subscription connector   CrowdStrike       Details
     Generic.click on the button     Run Now
@@ -2115,32 +2120,32 @@ Create CrowdStrike Account and verify the details
     Generic.Verify your current page location contains      technology-settings
     Generic.select the option from the side menu    Asset Discovery
     SubscriptionPage.Click on the crowd strike tab under asset discovery
-    OCS.Click on newly discovered tab under service now
+    SubscriptionPage.Click on the newly discovered tab under crowd strike
     SubscriptionPage.Click on the action button of crowd strike under discovery assets
     SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets       Edit
     SubscriptionPage.click on the cross icon of crowdstrike under asset discovery    1
-    SubscriptionPage.Enter input in the input field of frequency under asset discovery    Weekly
-    SubscriptionPage.Enter input in the input field of day asset discovery       Monday
-    SubscriptionPage.Select the time from the timepicker     7
+    SubscriptionPage.Enter input in the input field of frequency of crowd strike under asset discovery    Weekly
+    SubscriptionPage.Enter input in the input field of day of crowd strike asset discovery       Monday
+    SubscriptionPage.Select the time from the timepicker under asset dicovery       openEditSchedulerCrowdstrike     7
     SubscriptionPage.Click on the ok button after selecting the time
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the action button of crowd strike under discovery assets
     SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets     Edit
     SubscriptionPage.click on the cross icon of crowdstrike under asset discovery    1
-    SubscriptionPage.Enter input in the input field of frequency under asset discovery    Monthly
-    SubscriptionPage.Enter input in the start date field of service now under asset discovery
+    SubscriptionPage.Enter input in the input field of frequency of crowd strike under asset discovery    Monthly
+    SubscriptionPage.Enter input in the start date field of crowd strike under asset discovery
 
-    SubscriptionPage.Select the time from the timepicker      8
+    SubscriptionPage.Select the time from the timepicker under asset dicovery       openEditSchedulerCrowdstrike     8
     SubscriptionPage.Click on the ok button after selecting the time
     Generic.click on the button     Update
     Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
     SubscriptionPage.Click on the action button of crowd strike under discovery assets
     SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets      Edit
     SubscriptionPage.click on the cross icon of crowdstrike under asset discovery    1
-    SubscriptionPage.Enter input in the input field of frequency under asset discovery    Daily
+    SubscriptionPage.Enter input in the input field of frequency of crowd strike under asset discovery    Daily
 
-    SubscriptionPage.Select the time from the timepicker      9
+    SubscriptionPage.Select the time from the timepicker under asset dicovery       openEditSchedulerCrowdstrike     9
     SubscriptionPage.Click on the ok button after selecting the time
 
     Generic.click on the button     Update
@@ -2148,10 +2153,10 @@ Create CrowdStrike Account and verify the details
     SubscriptionPage.Click on the action button of crowd strike under discovery assets
     SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets     Edit
     SubscriptionPage.click on the cross icon of crowdstrike under asset discovery    1
-    SubscriptionPage.Enter input in the input field of frequency under asset discovery    Yearly
-    SubscriptionPage.Enter input in the start date field of service now under asset discovery
+    SubscriptionPage.Enter input in the input field of frequency of crowd strike under asset discovery   Yearly
+    SubscriptionPage.Enter input in the start date field of crowd strike under asset discovery
 
-    SubscriptionPage.Select the time from the timepicker      2
+    SubscriptionPage.Select the time from the timepicker under asset dicovery       openEditSchedulerCrowdstrike      2
     SubscriptionPage.Click on the ok button after selecting the time
 
     Generic.click on the button     Update
@@ -2159,26 +2164,28 @@ Create CrowdStrike Account and verify the details
 
     SubscriptionPage.Click on the action button of crowd strike under discovery assets
     SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets     Details
-    SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets    Run Now
+    Generic.click on the button    Run Now
 #    SubscriptionPage.Click on cross icon of details under service now          #  delete this line after bug got fixed #
     SubscriptionPage.Fetch alert message text of subscription connector and compare it with
     SubscriptionPage.Click on the action button of crowd strike under discovery assets
     SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets      Delete
-    Generic.click on the button     Yes
+    SubscriptionPage.click on the yes button of delete pop up under asset discovery
 #    SubscriptionPage.click on the cross icon of delete pop up under asset discovery
     Generic.Fetch alert message text and compare it with        Status Updated
    SubscriptionPage.Click on the action button of crowd strike under discovery assets
     SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets   Activate
     Generic.Fetch alert message text and compare it with        Status Updated
-    SubscriptionPage.Click on the action button of service now under discovery assets
-    Generic.click on the tab       Run Now
+    SubscriptionPage.Click on the action button of crowd strike under discovery assets
+    SubscriptionPage.Click on the action button of crowd strike under discovery assets
+    SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets       Run Now
     SubscriptionPage.Fetch alert message text of subscription connector and compare it with
     SubscriptionPage.Click on the action button of crowd strike under discovery assets
     SubscriptionPage.Click on the options under action button of crowdstrike under discovery assets    Details
-    SubscriptionPage.Get the value of fields under view details of subscription connector   1       CrowdStrike
-    SubscriptionPage.Get the value of fields under view details of subscription connector   2       ${generate_register_Fname} ${generate_register_Lname}
+    SubscriptionPage.Get the value of fields under view details of subscription connector under asset discovery   1       CrowdStrike
+    SubscriptionPage.Get the value of fields under view details of subscription connector under asset discovery   2       ${generate_register_Fname} ${generate_register_Lname}
 
 Click on the three dots of Azure and verify the details
+    [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      samuel@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -2246,3 +2253,86 @@ Click on the three dots of Azure and verify the details
     SubscriptionPage.Click on option under three dots of subscription connector    Azure Cloud Utilization    View Results
     Generic.Verify your current page location contains      azurecloud
     Generic.Verify your current page contains this text    Coming Soon
+
+SUBSCRIPTION CONNECTOR : M365 Subscription Report Drilldown
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      samuel@yopmail.net    Test@123
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Select parameter         Usage Analytics
+    Generic.Verify your current page location contains     usage-analytics
+    SubscriptionPage.Click on the tab under Uasge Analytics         m365
+    SubscriptionPage.Wait for the subscrition overview table to load
+    SubscriptionPage.Fetch the Asset_Id from subcription overview table
+    Generic.Verify your current page location contains     subscription-technology-details
+    TechnologyPage.Click on edit button on product details page        Edit
+    Generic.Verify your current page location contains      edit-technology
+    TechnologyPage.Click on the edit icon on the edit technology page
+    TechnologyPage.Click on cross icon of product while editing technology
+    TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
+    TechnologyPage.Select edited technology lifecycle status      Active
+    TechnologyPage.Click on update button of edit_technology page       Update
+    TechnologyPage.Accept updated edited technology pop up     Update
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+    Generic.Verify your current page location contains      dashboard
+    Generic.select the option from the side menu    Dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Select parameter         Usage Analytics
+    Generic.Verify your current page location contains     usage-analytics
+    SubscriptionPage.Click on the tab under Uasge Analytics         m365
+    SubscriptionPage.Wait for the subscrition overview table to load
+    SubscriptionPage.Fetch the Product_name from subcription overview table
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Select parameter from technology dropdown list      ${subscriptionOverview_ProductName}
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    Generic.Wait until table get load
+    Generic.select the option from the side menu    Dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Select parameter         Usage Analytics
+    Generic.Verify your current page location contains     usage-analytics
+    SubscriptionPage.Click on the tab under Uasge Analytics         m365
+    SubscriptionPage.Wait for the subscrition overview table to load
+    SubscriptionPage.Fetch the Asset_Id from subcription overview table
+    Generic.Verify your current page location contains     subscription-technology-details
+    SubscriptionPage.Wait for the subscrition overview table to load
+    SubscriptionPage.Wait for the visiblity of product
+    SubscriptionPage.Compare the Product name       ${product_name}              ${subscriptionOverview_ProductName}
+
+Technologies: View details on subscription tab
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      samuel@yopmail.net    Test@123
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Select parameter         Usage Analytics
+    Generic.Verify your current page location contains     usage-analytics
+    SubscriptionPage.Click on the tab under Uasge Analytics         m365
+    SubscriptionPage.Wait for the subscrition overview table to load
+    SubscriptionPage.Fetch the Asset_Id from subcription overview table
+    Generic.Verify your current page location contains     subscription-technology-details
+    subscriptionPage.Verify that Subscription Info tab is visible
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    Generic.Wait until table get load
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+    SubscriptionPage.Verify subscription info tab is not visible

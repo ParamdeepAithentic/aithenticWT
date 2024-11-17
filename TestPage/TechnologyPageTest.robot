@@ -64,9 +64,9 @@ Free the asset limit
 
 
 Fill the technology form for license product
-    [Tags]      Time       Smoke
+    [Tags]      Time       Smoke        rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -127,7 +127,7 @@ Fill the technology form for license product
 Fill the technology form for hardware product
     [Tags]      Sanity         Smoke
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -165,9 +165,9 @@ Fill the technology form for hardware product
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
 Fill the technology form for maintenance product
-#    [Tags]      Stable
+    [Tags]      NT      rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -207,9 +207,9 @@ Fill the technology form for maintenance product
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
 Fill the technology form for subscription product
-#    [Tags]      Stable
+    [Tags]      NT      rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -251,7 +251,7 @@ Fill the technology form for subscription product
 Create new asset with new brand and product
     [Tags]      Sanity       Smoke       Time
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
@@ -324,9 +324,9 @@ Create new asset with new brand and product
 #    TechnologyPage.Search by SerialNo   ${generated_serialNo}       #yet to cover
 
 Restore asset type one
-    [Tags]      Sanity
+    [Tags]      Sanity      rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -382,9 +382,9 @@ Restore asset type one
 
 
 Restore asset from removed asset details page
-#    [Tags]      Stable
+    [Tags]      NT      rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -441,9 +441,9 @@ Restore asset from removed asset details page
 
 ################# Still have to work on this testcase ###############
 Restore asset by selecting checkbox
-    [Tags]    Smoke
+    [Tags]    Smoke     rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -501,9 +501,9 @@ Restore asset by selecting checkbox
 
 ######## UN comment when to use ##############
 #Remove asset by self search
-#
+#   [Tags]      NT
 #    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form      ${email}    ${valid_password}
+#    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
 #    Generic.Verify your current page location contains      dashboard
 #    LandingPage.Verify you are on dashboard page
 #    Generic.select the option from the side menu    Technology
@@ -520,9 +520,9 @@ Restore asset by selecting checkbox
 
 
 Edit brand and product via details
-    [Tags]     Smoke      time
+    [Tags]     Smoke      time      rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -582,9 +582,9 @@ Edit brand and product via details
     Generic.Fetch alert message text and compare it with        Technology updated successfully
 
 Sent Message should show in the Sent Tab
-    [Tags]      Sanity
+    [Tags]      Sanity      rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -639,9 +639,9 @@ Sent Message should show in the Sent Tab
 
 
 Add Products with 10 combinations of Tech Type and Tech group
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
@@ -781,7 +781,7 @@ Add Products with 10 combinations of Tech Type and Tech group
 Add Technology Page - Add New location and assign that location
     [Tags]      Sanity
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -821,9 +821,9 @@ Add Technology Page - Add New location and assign that location
     Generic.Fetch alert message text and compare it with       Assigned Users created successfully
 
 Add New Support Partner and Assign that Partner
-    [Tags]      Sanity      time    Smoke
+    [Tags]      Sanity      time    Smoke       rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -906,9 +906,9 @@ Add New Support Partner and Assign that Partner
 
 
 Add New Support Partner and Assign that Partner via technology form only
-    [Tags]      Sanity
+    [Tags]      Sanity      rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -978,9 +978,9 @@ Add New Support Partner and Assign that Partner via technology form only
     TechnologyPage.Verify that supplier partner is added in partner association     Supplier
 
 Verify the history of added technology
-    [Tags]      Sanity
+    [Tags]      Sanity      rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -1102,8 +1102,9 @@ Verify the history of added technology
     TechnologyPage.Verify area changed under history tab        New Component
 
 #Upload the new attachment file
+#   [Tags]      NT
 #    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form      ${email}    ${valid_password}
+#    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
 #    Generic.Verify your current page location contains      dashboard
 #    LandingPage.Verify you are on dashboard page
 #    Generic.select the option from the side menu    Technology
@@ -1129,9 +1130,9 @@ Verify the history of added technology
 
 
 Add Technology Page - Add New Supplier and support partner and assign them
-    [Tags]     Sanity
+    [Tags]     Sanity       rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -1175,9 +1176,9 @@ Add Technology Page - Add New Supplier and support partner and assign them
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
 Add new Technology- Add New Location and assign that location
-#    [Tags]      Stable
+    [Tags]      NT      rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -1218,9 +1219,9 @@ Add new Technology- Add New Location and assign that location
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
 Add new Technology- Add New Department and assign that department
-#    [Tags]      Stable
+    [Tags]      NT      rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -1248,9 +1249,9 @@ Add new Technology- Add New Department and assign that department
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
 Add new Technology- Add New Assignee and assign that Assignee
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
@@ -1293,9 +1294,9 @@ Add new Technology- Add New Assignee and assign that Assignee
     Generic.Fetch alert message text and compare it with       Settings Updated
 
 Add new Technology- Add New support-partner and assign that support partner
-    [Tags]     Sanity
+    [Tags]     Sanity       rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -1330,9 +1331,9 @@ Add new Technology- Add New support-partner and assign that support partner
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
 Add new Technology- Add New Supplier and assign that supplier
-#    [Tags]      Stable
+    [Tags]      NT      rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -1367,9 +1368,9 @@ Add new Technology- Add New Supplier and assign that supplier
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
 Edit Technology Page - Add New location and assign that location
-#    [Tags]      Stable
+    [Tags]      NT      rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -1419,9 +1420,9 @@ Edit Technology Page - Add New location and assign that location
 
 
 Edit Technology Page - Add New Department and assign that Department
-    [Tags]     Smoke
+    [Tags]     Smoke        rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -1457,9 +1458,9 @@ Edit Technology Page - Add New Department and assign that Department
     Generic.Fetch alert message text and compare it with        Technology updated successfully
 
 Edit Technology Page - Add New Assignee and assign that Assignee
-#    [Tags]      Stable
+    [Tags]      NT      rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
@@ -1510,9 +1511,9 @@ Edit Technology Page - Add New Assignee and assign that Assignee
     Generic.Fetch alert message text and compare it with       Settings Updated
 
 Edit Technology Page - Add New Supplier and assign that Supplier
-#    [Tags]      Stable
+    [Tags]      NT      rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -1554,9 +1555,9 @@ Edit Technology Page - Add New Supplier and assign that Supplier
     Generic.Fetch alert message text and compare it with        Technology updated successfully
 
 Edit Technology Page - Add New Support Partner and assign that Support Partner
-    [Tags]      Sanity
+    [Tags]      Sanity      rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -1600,7 +1601,7 @@ Edit Technology Page - Add New Support Partner and assign that Support Partner
 Technology Details- Verify the Location Details
     [Tags]      Sanity
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -1680,7 +1681,7 @@ Technology Details- Verify the Location Details
     TechnologyPage.Verify parameter from past location table    ${generated_buildingname}
 
 Technology-Inactive asset and Restore asset
-    [Tags]      smoke
+    [Tags]      smoke       rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     chirag@dmts.fr.nf    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -1777,7 +1778,7 @@ Technology-Inactive asset and Restore asset
     Generic.Fetch alert message text and compare it with      Payment Successful
 
 Inactive asset - Restore asset from Technology Details page
-    [Tags]      smoke
+    [Tags]      smoke       rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     chirag@dmts.fr.nf    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -1884,7 +1885,7 @@ Inactive asset - Restore asset from Technology Details page
 
 
 #Verify the technology data while applying agent Filters
-#    [Tags]      Unstable
+#    [Tags]      NT
 #    Generic.click on the tab	Login
 #    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
 #    Generic.Verify your current page location contains      dashboard
@@ -1952,9 +1953,9 @@ Inactive asset - Restore asset from Technology Details page
 
 
 Click on the attachment tab under technology
-#    [Tags]      Stable
+    [Tags]      NT      rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -2006,9 +2007,9 @@ Click on the attachment tab under technology
 
 
 Upload file: Image and Document files while adding Technology
-    [Tags]    Smoke
+    [Tags]    Smoke     rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -2044,9 +2045,9 @@ Upload file: Image and Document files while adding Technology
     TechnologyPage.Click on save technology form pop button
 
 Upload file: Image and Document files while Edit Technology
-#    [Tags]      Stable
+    [Tags]      NT      rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -2099,9 +2100,9 @@ Upload file: Image and Document files while Edit Technology
     Generic.Fetch alert message text and compare it with        Technology updated successfully
 
 Upload file: Image and document files while Clone the Technology
-    [Tags]      time   smoke
+    [Tags]      time   smoke    rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -2155,9 +2156,9 @@ Upload file: Image and document files while Clone the Technology
     TechnologyPage.Click on save technology form pop button
 
 Search with brand_product_technologytype_technologygroup on advanced search
-    [Tags]     Sanity
+    [Tags]     Sanity       rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -2263,9 +2264,9 @@ Search with brand_product_technologytype_technologygroup on advanced search
     Generic.Verify your current page location contains      addtechnology
 
 Search Technnology with Product Version
-#    [Tags]      Stable
+    [Tags]      NT
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -2291,9 +2292,9 @@ Search Technnology with Product Version
 
 
 Verify cross icon and reset icon while adding product
-#    [Tags]      Stable
+    [Tags]      NT      rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -2311,9 +2312,9 @@ Verify cross icon and reset icon while adding product
     TechnologyPage.Verify the invisibility of technology type after clicking on reset icon
 
 Creating technology while creating cancellation notice period and contract end date
-#    [Tags]      Stable
+    [Tags]      NT      rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -2383,9 +2384,9 @@ Creating technology while creating cancellation notice period and contract end d
     Generic.Fetch alert message text and compare it with        Technology updated successfully
 
 Dispose the technology while adding new brand and product
-    [Tags]       Sanity
+    [Tags]       Sanity     rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
@@ -2454,9 +2455,9 @@ Dispose the technology while adding new brand and product
     Generic.Fetch alert message text and compare it with      Technology Removed Successfully
 
 Add the technology from profile listing
-#    [Tags]      Stable
+    [Tags]      NT      rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
@@ -2487,10 +2488,10 @@ Add the technology from profile listing
     Generic.Fetch alert message text and compare it with      Technology Removed Successfully
 
 Verify_Asset_ID_Changing_settings_from_Profile_list
-    [Tags]     Sanity
+    [Tags]     Sanity       rerun
     TRY
         Generic.click on the tab	Login
-        LandingPage.Fill the login Form      ${email}    ${valid_password}
+        LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
         Generic.Verify your current page location contains      dashboard
         LandingPage.Verify you are on dashboard page
         Generic.Click on the profile name
@@ -2582,8 +2583,9 @@ Verify_Asset_ID_Changing_settings_from_Profile_list
     END
 
 Add Technology: Verify Renewal Date get auto-populate when enter contract end date
+    [Tags]      NT      rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
@@ -2642,8 +2644,9 @@ Add Technology: Verify Renewal Date get auto-populate when enter contract end da
     TechnologyPage.Compare Renewal date and contract end date on Technology details page
 
 Edit Technology: Verify Renewal Date and contract end date
+    [Tags]      NT      rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -2707,8 +2710,9 @@ Edit Technology: Verify Renewal Date and contract end date
     TechnologyPage.Compare Renewal date and contract end date on Technology details page
 
 Clone Technology: Verify Renewal Date and contract end date
+    [Tags]      NT      rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -2766,9 +2770,9 @@ Clone Technology: Verify Renewal Date and contract end date
 
 
 Search with hostname on the technology search bar
-    [Tags]      Sanity
+    [Tags]      Sanity      rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -2800,6 +2804,7 @@ Search with hostname on the technology search bar
     OCS.Get Value of Host-Name and compare it with    ${result}
 
 Compose reply and remove the message via technology details
+    [Tags]      NT      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
@@ -2962,9 +2967,9 @@ Compose reply and remove the message via technology details
     Generic.Fetch alert message text and compare it with       Message removed successfully
 
 Download QR for an asset as PNG and SVG
-    [Tags]      Smoke       Sanity
+    [Tags]      Smoke       Sanity      rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -2975,6 +2980,7 @@ Download QR for an asset as PNG and SVG
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Select parameter from technology dropdown list       Product_0033761232
+#    sleep       5
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Click on save technology form button
     Generic.Fetch alert message text and compare it with        Technology created successfully
@@ -2998,6 +3004,7 @@ Download QR for an asset as PNG and SVG
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Select parameter from technology dropdown list       Product_00337612322
+#     sleep       5
     TechnologyPage.Add New_Component assetID for technology lifecycle information random
     Generic.Scroll Window To End
     TechnologyPage.Click on save technology form button
@@ -3013,6 +3020,7 @@ Download QR for an asset as PNG and SVG
     TechnologyPage.Select option from three-dots from technology details page       Print QR
     TechnologyPage.Select the format to download QR        PNG File
     TechnologyPage.Confirm to download QR file      Confirm
+    Generic.Scroll Window To End
 #    TechnologyPage.Select tab under technology details      parent-components
     TechnologyPage.click on the three dots inside table of parent tab from tehnology details page
     Generic.Scroll Window To End
@@ -3026,6 +3034,7 @@ Download QR for an asset as PNG and SVG
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Select parameter from technology dropdown list       Product_00337612322
+#     sleep       5
     TechnologyPage.Add New_Parent assetID for technology lifecycle information random
     Generic.Scroll Window To End
     TechnologyPage.Click on save technology form button
@@ -3048,8 +3057,9 @@ Download QR for an asset as PNG and SVG
     TechnologyPage.Confirm to download QR file      Confirm
 
 Verify notification update location in asset
+    [Tags]      NT      rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -3114,9 +3124,9 @@ Verify notification update location in asset
     TechnologyPage.Get the text of the recent notification of added assets      You changed location of Asset ID ${generated_AssetID}.
 
 Verify_Notification_Update_Asset
-    [Tags]      Smoke       Sanity
+    [Tags]      Smoke       Sanity      rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -3161,7 +3171,7 @@ Verify_Notification_Update_Asset
     TechnologyPage.Get the text of the recent notification of added assets      You updated Asset ID ${generated_AssetID}.
 
 Click on the technology group filters and verify it
-    [Tags]     time     smoke     sanity
+    [Tags]     time     smoke     sanity        rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
@@ -3228,7 +3238,7 @@ Click on the technology group filters and verify it
     Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
@@ -3396,7 +3406,7 @@ Click on the technology group filters and verify it
     TechnologyPage.Get the text of the value you selected under filter    2
     Generic.Wait until table get load
     PaginationPage.Fetch the total count
-    LocationPage.Fetch the country from location filter and click    Location      ${random_Name}       ${random_Name}
+    LocationPage.Fetch the country from location filter and click    Location       10      ${random_Name}       ${random_Name}
     Generic.click on the tab        reset filters
     Generic.Wait until table get load
     TechnologyPage.Click on the tech type filter under technology       Select Location
@@ -3516,7 +3526,33 @@ Click on the technology group filters and verify it
     PaginationPage.Fetch the total count
     PaginationPage.Get count of total rows from Product Dropdown
     TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
-    
+
+Fetch and verify the description from the technology details pages
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list       Product_00337612322
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on manage technology sub option       Technology List
+    TechnologyPage.Click on the first row of the technology table
+    Generic.Verify your current page location contains     technology-details
+    OCS.Visible the print qr button to for data loading
+    TechnologyPage.Fetch the description from the technology details page
+    TechnologyPage.verify Text from Assignment Information      ${get_description}      Description : This is product description
 
 #Zz kill browser
 #    [Tags]      Smoke     Sanity      Time        Stable    yy
@@ -3547,6 +3583,8 @@ Click on the technology group filters and verify it
 #    SubscriptionPage.Select the account for payment
 #    SubscriptionPage.Proceed the payment     proceed
 #    Generic.Fetch alert message text and compare it with      Payment Successful
+
+
 
 
 

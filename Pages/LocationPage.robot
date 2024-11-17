@@ -156,8 +156,8 @@ Select location zip
 Create random location name
     ${random_string} =    Generate Random String       5      [NUMBERS]
     ${generated_location}=    Catenate    LocationName${random_string}
-    wait until element is visible       ${location_Name}    ${wait_time}
-    input text   ${location_Name}   ${generated_location}
+    wait until element is visible       css:#locationName    ${wait_time}
+    input text   css:#locationName  ${generated_location}
     set global variable    ${generated_location}
 
 Create self location name
@@ -457,11 +457,14 @@ Search by location name using statc location
     [Arguments]    ${LocationName}
      wait until element is not visible      ${loaderIcon}     ${wait_time}
      wait until element is visible       css:thead tr       ${wait_time}
+     wait until element is not visible       (//tbody//tr[2]//div[contains(@class,'skeleton')])[1]      ${wait_time}
      click element      ${search_LocationName}
      Clear Element Text      ${search_LocationName}
      ${StartTime1} =     Get Current Time in Milliseconds
      input text   ${search_LocationName}   ${LocationName}
      sleep   ${search_sleep}
+     wait until element is not visible       (//tbody//tr[2]//div[contains(@class,'skeleton')])[1]      ${wait_time}
+
 
 Verify the validation of country name field
     wait until element is not visible    ${loaderIcon}      ${wait_time}
@@ -534,6 +537,27 @@ clear the data of location name
     click element       ${location_Name}
     Clear Element Text      ${location_Name}
 
+Create more than one random IP subnet
+    [Arguments]     ${option}
+    ${random_string1} =     Evaluate    random.randint(1, 255)
+    ${random_string2} =     Evaluate    random.randint(1, 255)
+    ${random_string3} =     Evaluate    random.randint(1, 255)
+    ${random_string4} =     Evaluate    random.randint(1, 255)
+    ${generated_SubnetIP} =    Catenate    ${random_string1}.${random_string2}.${random_string3}.${random_string4}
+    Wait Until Element Is Visible    (//input[contains(@class,'ipsubnet')])[${option}]    ${wait_time}
+    Wait Until Element Is Enabled    (//input[contains(@class,'ipsubnet')])[${option}]   ${wait_time}
+    Input Text    (//input[contains(@class,'ipsubnet')])[${option}]    ${generated_SubnetIP}
+    set global variable    ${generated_SubnetIP}
+
+
+Click on the plus icon of the subnet
+    Wait Until Element Is Visible       //i[@title='Click here to add IP Subnet']    ${wait_time}
+    Wait Until Element Is Enabled      //i[@title='Click here to add IP Subnet']     ${wait_time}
+    click element       //i[@title='Click here to add IP Subnet']
+
+Verify that remove Location button is not visible having asset, member, partner or contract created.
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is not visible    //button[normalize-space()='Remove']       ${wait_time}
 
 
 #Fetch the country from location filter and click

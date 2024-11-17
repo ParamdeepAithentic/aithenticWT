@@ -123,53 +123,60 @@ Register new user
     SubscriptionPage.Save the manufacturer profile
     Generic.Verify your current page location contains     subscription-menu
     Generic.Fetch alert message text and compare it with       Profile saved successfully
-#    SubscriptionPage.Select plan of subscription
-#    SubscriptionPage.Select and move next with subscription
-#    Generic.Verify your current page location contains     subscription-payment
-##-------------------------------------------BILLING-----------------------------------------------------
-#    SubscriptionPage.Click on same billing address checkbox
-#    SubscriptionPage.Click on same billing address checkbox
-#    SubscriptionPage.Click on same billing address checkbox
-#    SubscriptionPage.Switch to card iframe
-#    SubscriptionPage.Enter cardnumber    42424242424242420429242
-#    Unselect Frame
-#    SubscriptionPage.Enter card user name    Paramdeep Singh
-#    SubscriptionPage.Check the authorization checkbox
-#    SubscriptionPage.Check the acknowledgement checkbox
-#    SubscriptionPage.Click on complete process button
-#    Generic.Verify your current page location contains     welcome
-#    Generic.Fetch alert message text and compare it with       Payment Successful
-#    DashboardPage.Click on complete setup button      Complete Setup
-#    Generic.Verify your current page location contains     organization
-#    DashboardPage.Select the employee ID checkbox   yes
-#    DashboardPage.Select the location ID checkbox   yes
-#    DashboardPage.Select the asset ID checkbox      no
-#    Generic.Fetch alert message text and compare it with       Settings Updated
+    SubscriptionPage.Select plan of subscription
+    SubscriptionPage.Select and move next with subscription
+    Generic.Verify your current page location contains     subscription-payment
+#-------------------------------------------BILLING-----------------------------------------------------
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Switch to card iframe
+    SubscriptionPage.Enter cardnumber    42424242424242420429242
+    Unselect Frame
+    SubscriptionPage.Enter card user name    Paramdeep Singh
+    SubscriptionPage.Check the authorization checkbox
+    SubscriptionPage.Check the acknowledgement checkbox
+    SubscriptionPage.Click on complete process button
+    Generic.Verify your current page location contains     welcome
+    Generic.Fetch alert message text and compare it with       Payment Successful
+    DashboardPage.Click on complete setup button      Complete Setup
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the location ID checkbox   yes
+    DashboardPage.Select the asset ID checkbox      no
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    DashboardPage.Select an option from company details side list   Security
+    Generic.Verify your current page location contains  security
+    DashboardPage.click on the authentication tab under security
+    Generic.Verify your current page location contains     security
+    DashboardPage.Click on the checkboxes under auhtentication tab
+    Generic.Fetch alert message text and compare it with       Two factor updated successfully
 
 
+########################### DONT ADD IN PRE PROD #############################
 Adding the data in the account
+    [Tags]    NT
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       BusinessEmail6632505237@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
-#    Generic.Click on the profile name
-#    Generic.Select option from profile list     personal-details
-#    I_iconPage.Choose options inside personal_details        Organization
-#    I_iconPage.Choose tabs under organization        system
-#    Generic.Verify your current page location contains     organization
-#    DashboardPage.Select the employee ID checkbox   no
-#    DashboardPage.Select the employee ID checkbox   yes
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   no
+    DashboardPage.Select the asset ID checkbox      no
 #    Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-#    TechnologyPage.click on add technology button
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Click on the product field under add technology      OPMR815309
-    TechnologyPage.Method1      OPMR815309
+    TechnologyPage.Method 1     OPMR815309
     TechnologyPage.Get new product     OPMR815309     License     Applications
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
@@ -177,7 +184,7 @@ Adding the data in the account
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Click on the product field under add technology      OPMR815274
-    TechnologyPage.Method1      OPMR815274
+    TechnologyPage.Method 1      OPMR815274
     TechnologyPage.Get new product     OPMR815274     Hardware     Applications
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
@@ -185,44 +192,81 @@ Adding the data in the account
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Click on the product field under add technology      OPMR815324
-    TechnologyPage.Method1      OPMR8153324
+    TechnologyPage.Method 1      OPMR815324
     TechnologyPage.Get new product     OPMR815324      Maintenance     Applications
+
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Click on the product field under add technology      OPMR815277
-    TechnologyPage.Method1      OPMR815277
+    TechnologyPage.Method 1      OPMR815277
     TechnologyPage.Get new product     OPMR815277      Subscription     Applications
+
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Click on the product field under add technology      Product_665995755
-    TechnologyPage.Method1      Product_665995755
+    TechnologyPage.Method 1      Product_665995755
     TechnologyPage.Get new product     Product_665995755      Hardware     Applications
+
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
     TechnologyPage.Click on the product field under add technology      Product_00337612322
-    TechnologyPage.Method1      Product_00337612322
+    TechnologyPage.Method 1      Product_00337612322
     TechnologyPage.Get new product     Product_00337612322      Hardware     Applications
 
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Click on the product field under add technology      Product_0033761232
+    TechnologyPage.Method 1      Product_0033761232
+    TechnologyPage.Get new product     Product_0033761232      Maintenance     CRT TVs
 
-#    Generic.select the option from the side menu    Location
-#    Generic.Verify your current page location contains      locationlist
-#    LocationPage.Search by location name using statc location     Afgahinsatan
-#    LocationPage.Method 1       Afgahinsatan
-#    LocationPage.Get new location       Afgahinsatan
-#    Generic.select the option from the side menu    Location
-#    Generic.Verify your current page location contains      locationlist
-#    LocationPage.Search by location name using statc location      United States - Test qa Up50260220 - 21 - 2
-#    LocationPage.Method 1        United States - Test qa Up50260220 - 21 - 2
-#    LocationPage.Get new location       United States - Test qa Up50260220 - 21 - 2
+
+
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list        QABrand555        #Brand_End_of_Life
+    TechnologyPage.Click on the product field under add technology      Product_End_of_Life
+    TechnologyPage.Method 1      Product_End_of_Life
+    TechnologyPage.Get new product     Product_End_of_Life       Hardware     Applications
+
+
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list        QABrand555
+    TechnologyPage.Click on the product field under add technology      Product_certificate
+    TechnologyPage.Method 1      Product_certificate
+    TechnologyPage.Get new product     Product_certificate        Certificate     Communication
+
+
+
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Search by location name using statc location     Afgahinsatan
+#    Sleep    2
+#    Generic.Wait until table get load
+    LocationPage.Method 1       Afgahinsatan
+    LocationPage.Get new location       Afgahinsatan
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Search by location name using statc location      United States - Test qa Up50260220 - 21 - 2
+
+    LocationPage.Method 1        United States - Test qa Up50260220 - 21 - 2
+    LocationPage.Get new location       United States - Test qa Up50260220 - 21 - 2
     Generic.Click on the profile name
     Generic.Select option from profile list     department-dropdown
     Generic.Verify your current page location contains      department
@@ -232,9 +276,10 @@ Adding the data in the account
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     MemberPage.Click on assigned user tab under team member      Assigned Users
-    MemberPage.Search assigned user by static first name        Testqaup94590327      QA
-    MemberPage.Verify the search static member      Testqaup94590327      QA
+    MemberPage.Search assigned user by static first name        Testqaup94590327 QA
+    MemberPage.Verify the search static member      Testqaup94590327 QA
     MemberPage.Get new assignee     Testqaup94590327      QA     Testqaup94590327@yopmail.com       55954
+
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner-listing
     PartnersPage.Search by static business name   QABusiness04191432
@@ -246,9 +291,6 @@ Adding the data in the account
     PartnersPage.Search by static business name   testqa 20Feb
     PartnersPage.Verify the search static support partner       testqa 20Feb
     PartnersPage.Get new support Partner        Manufacturer       testqa 20Feb
-
-
-
 
 
 #    Generic.select the option from the side menu    Team Members

@@ -51,7 +51,7 @@ Test Teardown   Close Browser session
 Activate and deactivate the location
     [Tags]      Time      Sanity        Smoke
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     ${StartTime1} =     Get Current Time in Milliseconds
@@ -100,8 +100,9 @@ Activate and deactivate the location
     LocationPage.Fetch and verify the location status from the row   Active
 
 Edit the Location
+    [Tags]    NT
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Location
@@ -146,7 +147,7 @@ Edit the Location
 Remove Location from listing
     [Tags]      Smoke
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Location
@@ -177,7 +178,7 @@ Remove Location from listing
 Add Location from profile Listing
     [Tags]     Sanity     Smoke
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
@@ -261,7 +262,7 @@ Verify Location_name Hide and show after changes it from settings
 Click on the select status filter and verify it
     [Tags]     time     smoke
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Location
@@ -285,9 +286,9 @@ Click on the select status filter and verify it
     LocationPage.Fetch the country from location filter and click       Status      7     Inactive         ${New_status}
 
 Click on the select location filter and verify it
-    [Tags]    time     smoke
+    [Tags]    time     smoke        rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Location
@@ -312,7 +313,10 @@ Click on the select location filter and verify it
     LocationPage.Click on the location filter under location
     LocationPage.Select the option from location filter under location         Canada
     LocationPage.Get the text of selected filter under location     Canada
+    sleep   ${search_sleep}
     Generic.Wait until table get load
+    sleep   ${search_sleep}
+    Generic.Scroll Window To End
     sleep   ${search_sleep}
     PaginationPage.Fetch the total count
     LocationPage.Fetch the country from location filter and click       Country     3        Canada          ${New_Name}
@@ -336,6 +340,7 @@ Click on the select location filter and verify it
     LocationPage.Fetch the country from location filter and click       Country     3     Turkey        ${New_Name}
 
 Click on the select Active status filter and verify it
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      johns@mai.25u.com         Test@123
     Generic.Verify your current page location contains      dashboard
@@ -354,6 +359,7 @@ Click on the select Active status filter and verify it
     LocationPage.Fetch the country from location filter and click       Status      7     Active         ${New_status}
 
 Verifying the validations of all fields of Add location
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -403,8 +409,9 @@ Verifying the validations of all fields of Add location
     LocationPage.Click on cancel Location
 
 Verifying the validations of all fields of Edit location
+    [Tags]    NT
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Location
@@ -437,3 +444,151 @@ Verifying the validations of all fields of Edit location
     LocationPage.Compare and verify the validation messages of Location     ${Locationcountry_validation}       Please Select Country
     LocationPage.Verify the validation of Location name field when organization settings is yes
     LocationPage.Compare and verify the validation messages of Location     ${Locationnameyes_validation}      Please Enter Location Name
+
+Add multiple IP subnets while adding location
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Click on Location action button
+    LocationPage.Click on add location button    Add New Location
+    Generic.Verify your current page location contains      add-location
+    LocationPage.Select location country     United States
+    LocationPage.Select location building name   Trump tower
+    LocationPage.Select location floor   second
+    LocationPage.Select location room    203
+    LocationPage.Select location address one     this address one of the location
+    LocationPage.Select location address two     this address two of the location
+    LocationPage.Select location state       Texas
+    LocationPage.Select location city        Austin
+    LocationPage.Select location zip     147001
+    LocationPage.Enter random cost center value
+    LocationPage.Create random location name
+    LocationPage.Create more than one random IP subnet      1
+    LocationPage.Click on the plus icon of the subnet
+    LocationPage.Create more than one random IP subnet      2
+    Generic.click on the button     Save
+    Generic.Fetch alert message text and compare it with    Location created successfully
+    LocationPage.Search by location name     ${generated_location}
+    LocationPage.Fetch the location Name from the row       ${generated_location}
+    LocationPage.Click on three dots on row
+    LocationPage.Select the option from row menu     Edit
+    Generic.Verify your current page location contains    edit
+    LocationPage.Edit location country   United States
+    LocationPage.Select location building name   Trump tower
+    LocationPage.Select location floor   second
+    LocationPage.Select location room    203
+    LocationPage.Select location address one     this address one of the location
+    LocationPage.Select location address two     this address two of the location
+    LocationPage.Edit location state       Arizona
+    LocationPage.Edit location city        Anthem
+    LocationPage.Select location zip     5781
+    LocationPage.Enter random cost center value
+    LocationPage.Create random location name
+    LocationPage.Click on the plus icon of the subnet
+    LocationPage.Create more than one random IP subnet      3
+    Generic.click on the button    Update
+    Generic.Fetch alert message text and compare it with    Location updated successfully
+    LocationPage.Search by location name     ${generated_location}
+    LocationPage.Fetch the location Name from the row       ${generated_location}
+
+Verify user should not able to Deactivate Location having Team Member created
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Click on Location action button
+    LocationPage.Click on add location button    Add New Location
+    Generic.Verify your current page location contains      add-location
+    LocationPage.Select location country     United States
+    LocationPage.Select location building name   Trump tower
+    LocationPage.Select location floor   second
+    LocationPage.Select location room    203
+    LocationPage.Select location address one     this address one of the location
+    LocationPage.Select location address two     this address two of the location
+    LocationPage.Select location state       Texas
+    LocationPage.Select location city        Austin
+    LocationPage.Select location zip     147001
+    LocationPage.Enter random cost center value
+    LocationPage.Create random location name
+    Generic.click on the button     Save
+    Generic.Fetch alert message text and compare it with    Location created successfully
+    LocationPage.Search by location name     ${generated_location}
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Click on add team member action button
+    TeamMemberPage.Choose option after clicking on Action button        Add New Member
+    TeamMemberPage.Enter team member first name
+    TeamMemberPage.Enter team member last name
+    Generic.Enter phone number      India   +91     9646289871
+    TeamMemberPage.Enter team member business email_mailinator
+    TeamMemberPage.Enter the Position in member form        QA
+    TeamMemberPage.Click on team member department
+    TeamMemberPage.Select team member department        DepartmentName0451927202
+    TeamMemberPage.Select team member role     Admin
+    TeamMemberPage.Click on team member location
+    TeamMemberPage.Input new location in add team member    ${generated_location}
+#    TeamMemberPage.Select team member location with new domain
+    TeamMemberPage.Save the team member form   save
+    Generic.Fetch alert message text and compare it with        Team Member created successfully
+    TeamMemberPage.Search Team Member by name       ${generated_TMFname}
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Search by location name     ${generated_location}
+    LocationPage.Fetch the location Name from the row       ${generated_location}
+    LocationPage.Click on three dots on row
+    LocationPage.Select the option from row menu     Deactivate
+    LocationPage.Select option from change location status pop up     yes
+    Generic.Fetch alert message text and compare it with    Location having more than 0 technologies member, partner or contract cannot be deactivated.
+
+Verify user should not able to Remove Location having Team Member created
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Click on Location action button
+    LocationPage.Click on add location button    Add New Location
+    Generic.Verify your current page location contains      add-location
+    LocationPage.Select location country     United States
+    LocationPage.Select location building name   Trump tower
+    LocationPage.Select location floor   second
+    LocationPage.Select location room    203
+    LocationPage.Select location address one     this address one of the location
+    LocationPage.Select location address two     this address two of the location
+    LocationPage.Select location state       Texas
+    LocationPage.Select location city        Austin
+    LocationPage.Select location zip     147001
+    LocationPage.Enter random cost center value
+    LocationPage.Create random location name
+    Generic.click on the button     Save
+    Generic.Fetch alert message text and compare it with    Location created successfully
+    LocationPage.Search by location name     ${generated_location}
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Click on add team member action button
+    TeamMemberPage.Choose option after clicking on Action button        Add New Member
+    TeamMemberPage.Enter team member first name
+    TeamMemberPage.Enter team member last name
+    Generic.Enter phone number      India   +91     9646289871
+    TeamMemberPage.Enter team member business email_mailinator
+    TeamMemberPage.Enter the Position in member form        QA
+    TeamMemberPage.Click on team member department
+    TeamMemberPage.Select team member department        DepartmentName0451927202
+    TeamMemberPage.Select team member role     Admin
+    TeamMemberPage.Click on team member location
+    TeamMemberPage.Input new location in add team member    ${generated_location}
+    TeamMemberPage.Save the team member form   save
+    Generic.Fetch alert message text and compare it with        Team Member created successfully
+    TeamMemberPage.Search Team Member by name       ${generated_TMFname}
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Search by location name     ${generated_location}
+    LocationPage.Fetch the location Name from the row       ${generated_location}
+    LocationPage.Click on three dots on row
+    LocationPage.Verify that remove Location button is not visible having asset, member, partner or contract created.
