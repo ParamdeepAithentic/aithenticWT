@@ -63,6 +63,7 @@ Test the sorting of assigned user asset history page table
     MemberPage.Click on three dots of Team Member listing
     MemberPage.Select option from three dots of Team Member     Asset History
     Generic.Verify your current page contains this text     Export
+    PaginationPage.Set pagination to max
     SortingPage.Verify the sorting of the table     2       Asset ID
     SortingPage.Verify the sorting of the table     3       Group
     SortingPage.Verify the sorting of the table     4       Brand
@@ -71,7 +72,7 @@ Test the sorting of assigned user asset history page table
     SortingPage.Verify the sorting of the table     7       Assigned Date
 
 
-Test the sorting of technology page table
+Test the sorting of technology page table with old user
     [Tags]      NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form          jasdeep@15963.fr.nf     Paramdeep@112
@@ -79,16 +80,118 @@ Test the sorting of technology page table
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
+    PaginationPage.Set pagination to max
+    ${StartTime1} =     Get Current Time in Milliseconds
     SortingPage.Verify the sorting of the table     2       Group
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  4  ${pageHeading}   Sorting Page - Sort the group column under technology      4    ${pageTime}     ${ActualTime}    SortingPage_Time
+    ${StartTime1} =     Get Current Time in Milliseconds
     SortingPage.Verify the sorting of the table     3       Brand
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  5  ${pageHeading}   Sorting Page - Sort the brand column under technology      5    ${pageTime}     ${ActualTime}    SortingPage_Time
+    ${StartTime1} =     Get Current Time in Milliseconds
     SortingPage.Verify the sorting of the table     4       Product
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  6  ${pageHeading}   Sorting Page - Sort the product column under technology      6    ${pageTime}     ${ActualTime}    SortingPage_Time
+    ${StartTime1} =     Get Current Time in Milliseconds
     SortingPage.Verify the sorting of the table     5       Product Description
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  7  ${pageHeading}   Sorting Page - Sort the product description column under technology      7    ${pageTime}     ${ActualTime}    SortingPage_Time
+    ${StartTime1} =     Get Current Time in Milliseconds
     SortingPage.Verify the sorting of the table     6       Created Date
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  8  ${pageHeading}   Sorting Page - Sort the product description column under technology      8    ${pageTime}     ${ActualTime}    SortingPage_Time
+    ${StartTime1} =     Get Current Time in Milliseconds
     SortingPage.Verify the sorting of the table     7       Agent
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  9  ${pageHeading}   Sorting Page - Sort the product description column under technology      9    ${pageTime}     ${ActualTime}    SortingPage_Time
+    ${StartTime1} =     Get Current Time in Milliseconds
     SortingPage.Verify the sorting of the table     8       Status
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  10  ${pageHeading}   Sorting Page - Sort the product description column under technology      10    ${pageTime}     ${ActualTime}    SortingPage_Time
+    ${StartTime1} =     Get Current Time in Milliseconds
     SortingPage.Verify the sorting of the table     9       Asset ID
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  11  ${pageHeading}   Sorting Page - Sort the product description column under technology      11    ${pageTime}     ${ActualTime}    SortingPage_Time
+    ${StartTime1} =     Get Current Time in Milliseconds
     SortingPage.Verify the sorting of the table     10       Location
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  12  ${pageHeading}   Sorting Page - Sort the product description column under technology      12    ${pageTime}     ${ActualTime}    SortingPage_Time
+    ${StartTime1} =     Get Current Time in Milliseconds
     SortingPage.Verify the sorting of the table     11      Assignee
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time  13  ${pageHeading}   Sorting Page - Sort the product description column under technology      13    ${pageTime}     ${ActualTime}    SortingPage_Time
+
+Test the sorting of technology page table with new user
+    [Tags]      NT
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form          deepparam112@yopmail.net    Paramdeep@112
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    PaginationPage.Set pagination to max
+    ${StartTime1} =     Get Current Time in Milliseconds
+    SortingPage.Verify the sorting of the table     2       Group
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time for sorting  4  ${pageHeading}   Sorting Page - Sort the group column under technology      4    ${newUserpageTime}    ${ActualTime}    SortingPage_Time
+    ${StartTime1} =     Get Current Time in Milliseconds
+    SortingPage.Verify the sorting of the table     3       Brand
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time for sorting  5  ${pageHeading}  Sorting Page - Sort the group column under technology      5    ${newUserpageTime}    ${ActualTime}    SortingPage_Time
+    ${StartTime1} =     Get Current Time in Milliseconds
+    SortingPage.Verify the sorting of the table     4       Product
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time for sorting  6  ${pageHeading}   Sorting Page - Sort the group column under technology      6    ${newUserpageTime}    ${ActualTime}    SortingPage_Time
+    ${StartTime1} =     Get Current Time in Milliseconds
+    SortingPage.Verify the sorting of the table     5       Product Description
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time for sorting  7  ${pageHeading}   Sorting Page - Sort the group column under technology      7    ${newUserpageTime}    ${ActualTime}    SortingPage_Time
+    ${StartTime1} =     Get Current Time in Milliseconds
+    SortingPage.Verify the sorting of the table     6       Created Date
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time for sorting  8  ${pageHeading}   Sorting Page - Sort the group column under technology      8    ${newUserpageTime}    ${ActualTime}    SortingPage_Time
+    ${StartTime1} =     Get Current Time in Milliseconds
+    SortingPage.Verify the sorting of the table     7       Agent
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time for sorting  9  ${pageHeading}   Sorting Page - Sort the group column under technology      9    ${newUserpageTime}    ${ActualTime}    SortingPage_Time
+    ${StartTime1} =     Get Current Time in Milliseconds
+    SortingPage.Verify the sorting of the table     8       Status
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time for sorting  10  ${pageHeading}  Sorting Page - Sort the group column under technology      10    ${newUserpageTime}    ${ActualTime}    SortingPage_Time
+    ${StartTime1} =     Get Current Time in Milliseconds
+    SortingPage.Verify the sorting of the table     9       Asset ID
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time for sorting  11  ${pageHeading}   Sorting Page - Sort the group column under technology      11    ${newUserpageTime}    ${ActualTime}    SortingPage_Time
+    ${StartTime1} =     Get Current Time in Milliseconds
+    SortingPage.Verify the sorting of the table     10       Location
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time for sorting  12  ${pageHeading}   Sorting Page - Sort the group column under technology      12    ${newUserpageTime}    ${ActualTime}    SortingPage_Time
+    ${StartTime1} =     Get Current Time in Milliseconds
+    SortingPage.Verify the sorting of the table     11      Assignee
+    ${EndTime1} =     Get Current Time in Milliseconds
+    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+    Calculate Running time for sorting  13  ${pageHeading}   Sorting Page - Sort the group column under technology      13    ${newUserpageTime}    ${ActualTime}    SortingPage_Time
+
 
 Test the sorting of brand page table
     [Tags]      NT
@@ -99,6 +202,7 @@ Test the sorting of brand page table
     Generic.Click on the profile name
     Generic.Select option from profile list     brand-dropdown
     Generic.Verify your current page location contains      brand
+    PaginationPage.Set pagination to max
     SortingPage.Verify the sorting of the table method two     3       Status
     SortingPage.Verify the sorting of the table method two     2       Brand Name
 
@@ -112,6 +216,7 @@ Test the sorting of product page table
     Generic.Click on the profile name
     Generic.Select option from profile list     product-dropdown
     Generic.Verify your current page location contains      product
+    PaginationPage.Set pagination to max
     SortingPage.Verify the sorting of the table method two     3       Brand Name
     SortingPage.Verify the sorting of the table method two     2       Product Name
     SortingPage.Verify the sorting of the table method two     4       Description
@@ -127,7 +232,8 @@ Test the sorting of location page table
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Location
     Generic.Verify your current page location contains      locationlist
-    Generic.Wait until table get load
+#    Generic.Wait until table get load
+    PaginationPage.Set pagination to max
     SortingPage.Verify the sorting of the table method three     3       Country
     SortingPage.Verify the sorting of the table method three     2       Location Name
     SortingPage.Verify the sorting of the table method three     4       State
@@ -144,7 +250,8 @@ Test the sorting of team member page table
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
-    Generic.Wait until table get load
+#    Generic.Wait until table get load
+    PaginationPage.Set pagination to max
     SortingPage.Verify the sorting of the table method two     3       Location
     SortingPage.Verify the sorting of the table method two     2       Name
     SortingPage.Verify the sorting of the table method two     4       Role
@@ -160,7 +267,8 @@ Test the sorting of partners page table
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner-listing
-    Generic.Wait until table get load
+#    Generic.Wait until table get load
+    PaginationPage.Set pagination to max
     SortingPage.Verify the sorting of the table method two     3       Partner Type
     SortingPage.Verify the sorting of the table method two     2       Business Name
     SortingPage.Verify the sorting of the table method two     4       Technology
@@ -177,8 +285,9 @@ Test the sorting of department page table
     Generic.Click on the profile name
     Generic.Select option from profile list     department-dropdown
     Generic.Verify your current page location contains      department
-    Generic.Wait until table get load
+#    Generic.Wait until table get load
 #    SortingPage.Verify the sorting of the table method three     3       Cost Center       #filter not working right
+    PaginationPage.Set pagination to max
     SortingPage.Verify the sorting of the table method three     2       Department Name
     SortingPage.Verify the sorting of the table method three     4       Status
 
@@ -195,8 +304,9 @@ Test the sorting of Assigned user page table inside department page
     Generic.Wait until table get load
     DepartmentPage.Select option from side menu in department list       Assigned Users
     Generic.Verify your current page location contains      assignee-list
-    Generic.Wait until table get load
-    sleep   5
+#    Generic.Wait until table get load
+#    sleep   5
+    PaginationPage.Set pagination to max
     SortingPage.Verify the sorting of the table method two     3       Email Id
     SortingPage.Verify the sorting of the table method two     2       Assignee Name
     SortingPage.Verify the sorting of the table method two     4       Employee Id
@@ -215,7 +325,8 @@ Test the sorting of team members page table inside department page
     Generic.Wait until table get load
     DepartmentPage.Select option from side menu in department list        Team Members
     Generic.Verify your current page location contains      member
-    Generic.Wait until table get load
+#    Generic.Wait until table get load
+    PaginationPage.Set pagination to max
     SortingPage.Verify the sorting of the table method two     4       User Type
 #    SortingPage.Verify the sorting of the table method two     3       Email       Not working - one emial starts with small rest all are with big
     SortingPage.Verify the sorting of the table method two     2       Name
@@ -236,6 +347,7 @@ Test the sorting of team member asset history page table
     sleep       ${search_sleep}
     MemberPage.Select option from three dots of Team Member     Asset History
     Generic.Verify your current page contains this text     Export
+    PaginationPage.Set pagination to max
     SortingPage.Verify the sorting of the table     2       Asset ID
     SortingPage.Verify the sorting of the table     3       Group
     SortingPage.Verify the sorting of the table     4       Brand
@@ -252,7 +364,8 @@ Test the sorting of contract page table
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Smart Share
     Generic.Verify your current page location contains      contracts-list
-    Generic.Wait until table get load
+#    Generic.Wait until table get load
+    PaginationPage.Set pagination to max
     SortingPage.Verify the sorting of the table method two     2       Business Name
     SortingPage.Verify the sorting of the table method two     3       Partner Type
     SortingPage.Verify the sorting of the table method two     4       Function
@@ -289,6 +402,7 @@ Test the sorting of department page list via bulk import of technology table
 #    SortingPage.Verify the sorting of the table method two     2       Department Name
 #    SortingPage.Verify the sorting of the table method two     4       Status          #Departments table contains 4th code
     Generic.click on the button      Next
+    PaginationPage.Set pagination to max
     SortingPage.Verify the sorting of the table method three     4       State
     SortingPage.Verify the sorting of the table method three     3       Country
     SortingPage.Verify the sorting of the table method three     2       Location Name
@@ -297,6 +411,7 @@ Test the sorting of department page list via bulk import of technology table
     SortingPage.Verify the sorting of the table method three     7       Status
 
     Generic.click on the button      Next
+    PaginationPage.Set pagination to max
     SortingPage.Verify the sorting of the table method two     3       Location
     SortingPage.Verify the sorting of the table method two     2       Name
     SortingPage.Verify the sorting of the table method two     4       Role
@@ -308,7 +423,7 @@ Test the sorting of department page list via bulk import of technology table
 #    SortingPage.Verify the sorting of the table method two     2       Brand Name       #Data is more than 10
 
     Generic.click on the button      Next
-    sleep       60
+    PaginationPage.Set pagination to max
     SortingPage.Verify the sorting of the table method two     3       Brand Name
     SortingPage.Verify the sorting of the table method two     2       Product Name
     SortingPage.Verify the sorting of the table method two     4       Description
@@ -316,6 +431,7 @@ Test the sorting of department page list via bulk import of technology table
     SortingPage.Verify the sorting of the table method two     6       Status
 
     Generic.click on the button      Next
+    PaginationPage.Set pagination to max
     SortingPage.Verify the sorting of the table method two     3       Partner Type
     SortingPage.Verify the sorting of the table method two     2       Business Name
     SortingPage.Verify the sorting of the table method two     4       Technology
@@ -334,6 +450,7 @@ Test the sorting of removed technology page
     Generic.Verify your current page location contains      technology-list
     TechnologyPage.Click on removed assets option of technology filters
     Sleep    ${yop_sleep}
+    PaginationPage.Set pagination to max
     SortingPage.Verify the sorting of the table     3       Group
     SortingPage.Verify the sorting of the table     4       Brand
     SortingPage.Verify the sorting of the table     5       Product
@@ -355,6 +472,7 @@ Test the sorting of inbox table page under message page
     Generic.Verify your current page location contains      message
     MessagePage.Save compose message     inbox
     Generic.Verify your current page location contains      inbox
+    PaginationPage.Set pagination to max
     SortingPage.Verify the sorting of the table method four    2       From
     SortingPage.Verify the sorting of the table method four    3       Company
     SortingPage.Verify the sorting of the table method four    4       Partner Type
@@ -374,6 +492,7 @@ Test the sorting of sent table page under message page
     Generic.Verify your current page location contains      message
     MessagePage.Save compose message     sent
     Generic.Verify your current page location contains      sent
+    PaginationPage.Set pagination to max
     SortingPage.Verify the sorting of the table method four    2       To
     SortingPage.Verify the sorting of the table method four    3       Subject
     SortingPage.Verify the sorting of the table method four    4       Status
@@ -394,6 +513,7 @@ Test the sorting of bulk edit grid under team members
     switch window     aithentic | Edit - Members
     Generic.Verify your current page location contains      member-bulk-edit
     sleep   ${search_sleep}
+    PaginationPage.Set pagination to max
     SortingPage.Verify the sorting of the table method five    10      Position/Title
     SortingPage.Verify the sorting of the table method five    11      Employee ID
 #    SortingPage.Expand all sorting field
@@ -421,6 +541,7 @@ Test the sorting of bulk edit grid under assigned users
     sleep     ${yop_sleep}
     switch window     aithentic | Data-Wizard
     Generic.Verify your current page location contains      assignee-bulk-edit
+    PaginationPage.Set pagination to max
 #    SortingPage.Expand all sorting field
     SortingPage.Verify the sorting of the table method five    5      Employee Id
     SortingPage.Verify the sorting of the table method five    4      Business Email

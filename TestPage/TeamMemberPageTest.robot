@@ -81,7 +81,7 @@ Create team member form
     TeamMemberPage.Enter team member first name
     TeamMemberPage.Enter team member last name
     Generic.Enter phone number      India   +91     9646289871
-    TeamMemberPage.Enter team member business email_mailinator
+    TeamMemberPage.Enter team member business email_yopmail
     TeamMemberPage.Click on team member department
 #    TeamMemberPage.Select team member department
     TeamMemberPage.Select team member department        DepartmentName09041
@@ -105,7 +105,7 @@ Add Team member page - Add New Department and assign that department to Team mem
     TeamMemberPage.Enter team member first name
     TeamMemberPage.Enter team member last name
     Generic.Enter phone number      India   +91     9646289871
-    TeamMemberPage.Enter team member business email_mailinator
+    TeamMemberPage.Enter team member business email_yopmail
     TeamMemberPage.Enter the Position in member form        QA
     sleep       ${yop_sleep}
     TeamMemberPage.Click on add here in department field        Click here to add
@@ -144,7 +144,7 @@ Edit Team member page - Edit New Department and assign that department to Team m
     TeamMemberPage.Enter team member first name
     TeamMemberPage.Enter team member last name
     Generic.Enter phone number      India   +91     9646289871
-    TeamMemberPage.Enter team member business email_mailinator
+    TeamMemberPage.Enter team member business email_yopmail
     TeamMemberPage.Enter the Position in member form        QA
     TeamMemberPage.Create random employee id
     sleep       ${yop_sleep}
@@ -673,7 +673,7 @@ Convert Assignee to Team Member
     switch window   aithentic | Update - Member
     Generic.Verify your current page location contains      convertmember
     TeamMemberPage.Select team member department        DepartmentName09041
-    TeamMemberPage.Enter team member business email_mailinator while converting assignee to team member
+    TeamMemberPage.Enter team member business email_yopmail while converting assignee to team member
     TeamMemberPage.Enter the Position in member form while converting assignee to team member        QA
     Select team member status while converting assignee to team member  Active
     Generic.Enter phone number      India   +91     9646289871
@@ -800,7 +800,7 @@ Convert Assignee to team member in case of employee id is not system generated
     switch window   aithentic | Update - Member
     Generic.Verify your current page location contains      convertmember
     TeamMemberPage.Select team member department        DepartmentName09041
-    TeamMemberPage.Enter team member business email_mailinator while converting assignee to team member
+    TeamMemberPage.Enter team member business email_yopmail while converting assignee to team member
     TeamMemberPage.Enter the Position in member form while converting assignee to team member        QA
     Select team member status while converting assignee to team member  Active
     Generic.Enter phone number      India   +91     9646289871
@@ -918,7 +918,7 @@ Verify Invitation and signup as team member
     TeamMemberPage.Search Team Member by name   ${generated_Tmfname}
     TeamMemberPage.Click on three dots of Team Member listing
     TeamMemberPage.Click on remove option under three dots
-    Generic.Select parameter        Yes
+    Generic.Select span parameter        Yes
     Generic.Fetch alert message text and compare it with        Team member deleted successfully
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
@@ -948,7 +948,7 @@ Add Back Deleted Team member - Invited
     TeamMemberPage.Enter team member first name
     TeamMemberPage.Enter team member last name
     Generic.Enter phone number      India   +91     9646289871
-    TeamMemberPage.Enter team member business email_mailinator
+    TeamMemberPage.Enter team member business email_yopmail
     TeamMemberPage.Click on team member department
     TeamMemberPage.Select team member department        DepartmentName09041
     TeamMemberPage.Select team member role     CSPM
@@ -1081,7 +1081,7 @@ Verify Invitation and signup as team member via company details
     TeamMemberPage.Search Team Member by name   ${generated_Tmfname}
     TeamMemberPage.Click on three dots of Team Member listing
     TeamMemberPage.Click on remove option under three dots
-    Generic.Select parameter        Yes
+    Generic.Select span parameter        Yes
     Generic.Fetch alert message text and compare it with        Team member deleted successfully
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
@@ -1151,7 +1151,7 @@ Verify_Employee_ID_Changing_settings_from_Profile_list_while_add_edit_team_membe
     TeamMemberPage.Search Team Member by name   ${generated_Tmfname}
     TeamMemberPage.Click on three dots of Team Member listing
     TeamMemberPage.Click on remove option under three dots
-    Generic.Select parameter        Yes
+    Generic.Select span parameter        Yes
     Generic.Fetch alert message text and compare it with        Team member deleted successfully
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
@@ -1372,21 +1372,22 @@ Click on the status filter under team member and verify it
     Calculate Running time  12  ${pageHeading}   Filter Page - Data load time of status filter under team member      12    ${pageTime}     ${ActualTime}    Filter_Time
 
     LocationPage.Get the text of selected status filter under location      Active
-    Generic.Wait until table get load
-    PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     member-list
-    PaginationPage.Select the value from the pagination drop down count     500
-    PaginationPage.Fetch the selected value of the dropdown     member-list
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
+    PaginationPage.Check filter Pagination of Recent Activites
+#    PaginationPage.Click on the pagination dropdown     member-list
+#    PaginationPage.Select the value from the pagination drop down count     500
+#    PaginationPage.Fetch the selected value of the dropdown     member-list
     PaginationPage.Fetch the total count
     TeamMemberPage.Fetch the country from team member filter and click       Status             Active         ${New_status}
 
     Generic.click on the tab        reset filters
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TeamMemberPage.Click on the location filter under team member       status
     LocationPage.Select the option from status filter under location        Inactive
     LocationPage.Get the text of selected status filter under location      Inactive
-    Generic.Wait until table get load
-    PaginationPage.Fetch the total count
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
     TeamMemberPage.Fetch the country from team member filter and click       Status              Inactive         ${New_status}
 
 Click on the status filter under team member via profile list and verify it
@@ -1398,9 +1399,9 @@ Click on the status filter under team member via profile list and verify it
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
-    Generic.Select parameter      Team Members
+    Generic.Select span parameter      Team Members
     Generic.Verify your current page location contains      dashboard
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     PaginationPage.Fetch the total count
     TeamMemberPage.Click on the status filter under team member via profile
 
@@ -1414,11 +1415,12 @@ Click on the status filter under team member via profile list and verify it
     TeamMemberPage.Get the text of selected status filter under team meber via profile
     DashboardPage.click on the authentication tab under security
     TeamMemberPage.click on the members tab under team member via profile
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     profile-team-member
-    PaginationPage.Select the value from the pagination drop down count     500
-    PaginationPage.Fetch the selected value of the dropdown     profile-team-member
+#    PaginationPage.Click on the pagination dropdown     profile-team-member
+#    PaginationPage.Select the value from the pagination drop down count     500
+#    PaginationPage.Fetch the selected value of the dropdown     profile-team-member
+    PaginationPage.Check Pagination   profile-team-member
     PaginationPage.Fetch the total count
     TeamMemberPage.Fetch the country from team member filter and click       Status          Active         ${New_status1}
     TeamMemberPage.Click on the status filter under team member via profile
@@ -1427,7 +1429,7 @@ Click on the status filter under team member via profile list and verify it
     TeamMemberPage.Get the text of selected status filter under team meber via profile
     DashboardPage.click on the authentication tab under security
     TeamMemberPage.click on the members tab under team member via profile
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     PaginationPage.Fetch the total count
     TeamMemberPage.Fetch the country from team member filter and click       Status          Inactive         ${New_status1}
     Generic.Click on the profile name
@@ -1439,20 +1441,21 @@ Click on the status filter under team member via profile list and verify it
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
-    Generic.Select parameter      Team Members
+    Generic.Select span parameter      Team Members
     Generic.Verify your current page location contains      dashboard
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     PaginationPage.Fetch the total count
     TeamMemberPage.Click on the status filter under team member via profile
     TeamMemberPage.Select the option from the filters under team member via profile     2
     TeamMemberPage.Get the text of selected status filter under team meber via profile
     DashboardPage.click on the authentication tab under security
     TeamMemberPage.click on the members tab under team member via profile
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     profile-team-member
-    PaginationPage.Select the value from the pagination drop down count     500
-    PaginationPage.Fetch the selected value of the dropdown     profile-team-member
+#    PaginationPage.Click on the pagination dropdown     profile-team-member
+#    PaginationPage.Select the value from the pagination drop down count     500
+#    PaginationPage.Fetch the selected value of the dropdown     profile-team-member
+    PaginationPage.Check Pagination   profile-team-member
     PaginationPage.Fetch the total count
     TeamMemberPage.Fetch the country from team member filter and click       Status          Invited         ${New_status1}
 
@@ -1479,7 +1482,7 @@ Verify all the validation of add team member
     LoginPage.Clear the element text of field under login page       LastName
     TeamMemberPage.Enter team member last name self     Johar
     Generic.Enter phone number      India   +91     96462898
-    TeamMemberPage.Enter team member business email_mailinator
+    TeamMemberPage.Enter team member business email_yopmail
     TeamMemberPage.Enter the Position in member form        QA
     TeamMemberPage.Click on team member department
     TeamMemberPage.Select team member department        DepartmentName09041
@@ -1524,7 +1527,7 @@ Verify all the validations of edit team member page
     TeamMemberPage.Enter team member first name
     TeamMemberPage.Enter team member last name
     Generic.Enter phone number      India   +91     9646289871
-    TeamMemberPage.Enter team member business email_mailinator
+    TeamMemberPage.Enter team member business email_yopmail
     TeamMemberPage.Click on team member department
     TeamMemberPage.Select team member department        DepartmentName09041
     TeamMemberPage.Select team member role     CSPM

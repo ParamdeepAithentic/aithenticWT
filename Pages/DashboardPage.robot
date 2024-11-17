@@ -189,7 +189,7 @@ Select product from list
 
 Select an option from company details side list
     [Arguments]    ${option}
-    Generic.Select parameter    ${option}
+    Generic.Select span parameter    ${option}
 
 Click on download agent button to download
     [Arguments]    ${option}

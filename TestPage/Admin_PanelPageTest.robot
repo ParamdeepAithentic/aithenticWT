@@ -108,7 +108,7 @@ Change plan- Assign commercial plan and change it to slotted
 Free the asset limit
     [Tags]      Smoke     Sanity      Time      Rerun       Stable
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form     ${email}    ${valid_password}
+    LandingPage.Fill the login Form       chirag@dmts.fr.nf      Test@123           #${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
@@ -118,7 +118,6 @@ Free the asset limit
 
 
 Set Plan range in pre requites
-
     [Tags]    NT
     TRY
         Generic.click on the tab	Login

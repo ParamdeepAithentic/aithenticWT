@@ -67,10 +67,10 @@ Select the value from the pagination drop down count
 
 
 Fetch the selected value of the dropdown
-    [Arguments]     ${option}
+#    [Arguments]     ${option}
     wait until element is visible       (//td[normalize-space()='1'])[1]      ${wait_time}
     wait until element is enabled       (//td[normalize-space()='1'])[1]      ${wait_time}
-    ${get_count_of_dropDown_value} =    get text    css:.qa-${option}-per-page .ng-value span.ng-value-label
+    ${get_count_of_dropDown_value} =    get text    //*[contains(@class,'per-page')]//div[@role='combobox']
     ${dropDown_value_as_number}=   Convert To Integer   ${get_count_of_dropDown_value}
     set global variable    ${dropDown_value_as_number}
     Log to console  Selected value :${dropDown_value_as_number}
@@ -87,6 +87,7 @@ Get count of total rows
 
 Fetch the total count
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Generic.Wait for table skelton to get disable
     wait until element is enabled       ${Totalcount_field}      ${wait_time}
     wait until element is visible   ${Totalcount_field}      ${wait_time}
     ${text}=     get text   ${Totalcount_field}
@@ -96,7 +97,29 @@ Fetch the total count
     Log to console  Total count is :${total_data_count}
     set global variable    ${total_data_count}
 
+Fetch the total count for filter only
+    TRY
+          Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+#          Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+          Generic.Wait for table skelton to get disable
+          wait until element is enabled       ${Totalcount_field}      ${wait_time}
+          wait until element is visible   ${Totalcount_field}      ${wait_time}
+          ${text}=     get text   ${Totalcount_field}
+          ${parts}    Split String    ${text}    Total Count :
+          ${total_row_count}    Get Substring    ${parts[1]}    3
+          ${total_data_count}=   Convert To Integer   ${total_row_count}
+          Log   Total count is :${total_data_count}
+          set global variable    ${total_data_count}
+    EXCEPT
+        Wait Until Element Is Visible       //span[normalize-space()='No Records']      ${wait_time}
+        Log    There is no data in the table
 
+        
+    END
+
+
+
+   
 
 Verify Pagination and Row Count
     Run Keyword If    '${dropDown_value_as_number}' == '${total_table_row_count}'
@@ -122,7 +145,7 @@ Log WebElements
         wait until element is visible     //div[contains (@id, '-${index}')]       ${wait_time}
         wait until element is enabled     //div[contains (@id, '-${index}')]       ${wait_time}
         click element   //div[contains (@id, '-${index}')]
-        Run Keywords    Fetch the selected value of the dropdown  ${option}   AND      Check the table get load       AND      Get count of total rows     AND     Verify Pagination and Row Count     AND     PaginationPage.Fetch the total count   AND     Click on the pagination dropdown  ${option}
+        Run Keywords    Fetch the selected value of the dropdown   AND      Check the table get load       AND      Get count of total rows     AND     Verify Pagination and Row Count     AND     PaginationPage.Fetch the total count   AND     Click on the pagination dropdown  ${option}
     END
 
 
@@ -293,7 +316,7 @@ Click on the checkbox of technology listing
     FOR    ${index}    IN RANGE    1    ${element_count + 1}
         wait until element is visible     (//tbody//tr//span)[${index}]       ${wait_time}
         wait until element is enabled     (//tbody//tr//span)[${index}]      ${wait_time}
-        click element   (//tbody//tr//span)[${index}]
+        Execute JavaScript    document.querySelector('tbody tr span:nth-of-type(${index})').click();
         PaginationPage.Scroll within the element      ${index}
     END
 
@@ -315,10 +338,9 @@ Remove the old assets to free the space
     TechnologyPage.Click on plan of subscription        Premium
     Generic.Scroll the page till    200
     SubscriptionPage.Set asset range to     500
-    sleep       5
+    sleep       3
     SubscriptionPage.Update the payment of changed plan     proceed
-
-    sleep       5
+    sleep       3
     TechnologyPage.Select option from exceed asset limit pop    technology
     Generic.Verify your current page location contains      manage-technology-list
     Generic.Wait until table get load
@@ -345,9 +367,8 @@ Remove the old assets to free the space
     Generic.Scroll the page till    1000
 #    SubscriptionPage.Set asset range to     900
     Admin_PanelPage.Select the higest plan
-    sleep    5
+    sleep    3
     SubscriptionPage.Update the payment of changed plan     proceed
-
     Sleep   ${yop_sleep}
     TechnologyPage.Click on pop up of available Inactive Asset      cancel
     SubscriptionPage.Select the payment method    ach
@@ -424,10 +445,69 @@ Check Pagination
     [Arguments]     ${option}
     TRY
         PaginationPage.Pagination box visible
+        PaginationPage.Select the value from the pagination drop down count     500
         PaginationPage.Log WebElements    ${option}
     EXCEPT
         PaginationPage.Skip the pagination code
     END
+
+Check Pagination of location
+    [Arguments]     ${option}
+    TRY
+        PaginationPage.Pagination box visible
+        PaginationPage.Select the value from the pagination drop down count     500
+        PaginationPage.Click on the pagination dropdown of OCS     ${option}
+    EXCEPT
+        PaginationPage.Skip the pagination code
+    END
+
+Check Pagination of OCS advance search
+    [Arguments]     ${option}
+    TRY
+        PaginationPage.Pagination box visible
+        PaginationPage.Select the value from the pagination drop down count     500
+        PaginationPage.Log WebElements of Product Dropdown of OCS    ${option}
+    EXCEPT
+        PaginationPage.Skip the pagination code
+    END
+
+Check Pagination of tecdhnology advance search
+    [Arguments]     ${option}
+    TRY
+        PaginationPage.Pagination box visible
+        PaginationPage.Select the value from the pagination drop down count     500
+        PaginationPage.Log WebElements of Product Dropdown    ${option}
+    EXCEPT
+        PaginationPage.Skip the pagination code
+    END
+
+ Check Pagination of Recent Activites
+    [Arguments]     ${option}
+    TRY
+        PaginationPage.Pagination box visible
+        PaginationPage.Select the value from the pagination drop down count     500
+        PaginationPage.Log WebElements for Recent Activites table   ${option}
+    EXCEPT
+        PaginationPage.Skip the pagination code
+    END
+
+
+Check filter Pagination of Recent Activites
+#    [Arguments]     ${option}
+    TRY
+        PaginationPage.Pagination box visible
+        PaginationPage.Select the value from the pagination drop down count     500
+        PaginationPage.Fetch the selected value of the dropdown
+    EXCEPT
+        PaginationPage.Skip the pagination code
+    END
+
+
+
+
+
+
+
 
 Pagination box visible
      wait until element is visible    //*[contains(@class,'per-page')]//div[@role='combobox']   ${wait_time}
@@ -435,4 +515,15 @@ Pagination box visible
      click element      //*[contains(@class,'per-page')]//div[@role='combobox']
 
 Skip the pagination code
-    Log    The count is less than 10 so pagination is not vaisible
+    Log    The count is less than/equals to 10 so pagination is not vaisible
+
+
+
+Set pagination to max
+    TRY
+        PaginationPage.Pagination box visible
+        PaginationPage.Select the value from the pagination drop down count     500
+        Generic.Wait until table get load
+    EXCEPT
+        PaginationPage.Skip the pagination code
+    END

@@ -56,7 +56,7 @@ ${click_countryTag}     css:.iti__arrow
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
-${wait_time}       60
+${wait_time}       20
 ${yop_sleep}       10
 
 ${search_sleep}       1
@@ -80,7 +80,7 @@ Simulate Switch Case
 
 Set QA Variables
     Set Suite Variable    ${url}    https://qa-app.aithentic.com/
-    Set Suite Variable    ${valid_password}    Test@123       #QA User
+    Set Suite Variable    ${valid_password}            Paramdeep@112           #UAT user        Test@123
     Set Suite Variable    ${apiURL}    https://qa-api.aithentic.com/api/v1
     Set Suite Variable    ${agentDiscovery_TagName}    Tag Name - johnsoftwaresolutions-1192-4         #qa
     Set Suite Variable    ${IP_Discovered_devices}    Tag Name - johnsoftwaresolutions-1192-4
@@ -89,7 +89,7 @@ Set QA Variables
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
     Set Suite Variable    ${browser_name}         firefox
-    Set Suite Variable    ${email}                 testqa29j@mailinator.com
+    Set Suite Variable    ${email}          deepparam112@yopmail.net  # testqa29j@mailinator.com
     Set Suite Variable    ${discovered_asset_brand}                 MSI
     Set Suite Variable    ${existing_mac}                       D8:CB:8A:CA:6A:39
     Set Suite Variable    ${discovered_existing_brand}          QABrand555
@@ -104,7 +104,7 @@ Set QA Variables
 
 Set UAT Variables
     Set Suite Variable    ${url}        https://uat-app.aithentic.com/
-    Set Suite Variable    ${valid_password}         Test@123     #UAT user   #Paramdeep@112
+    Set Suite Variable    ${valid_password}            Paramdeep@112           #UAT user        Test@123
     Set Suite Variable    ${apiURL}    https://uat-api.aithentic.com/api/v1
     Set Suite Variable    ${agentDiscovery_TagName}    Tag Name - johnsoftwaresolutions-1428-4        #uat
     Set Suite Variable    ${IP_Discovered_devices}    Tag Name - johnsoftwaresolutions-1428-10        #uat
@@ -113,7 +113,7 @@ Set UAT Variables
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
     Set Suite Variable    ${browser_name}         firefox
-    Set Suite Variable    ${email}                 testqa29j@mailinator.com     #deepparam112@yopmail.net
+    Set Suite Variable    ${email}          deepparam112@yopmail.net  # testqa29j@mailinator.com
     Set Suite Variable    ${discovered_asset_brand}                 Apple Inc
     Set Suite Variable    ${existing_mac}                       98:5a:eb:cb:c8:ed
     Set Suite Variable    ${discovered_existing_brand}              Apple Inc.
@@ -194,6 +194,10 @@ Fix the row number
     set global variable    ${pageTime}
 #    log to console  my column no is:${pageTime}
 
+Fix the column number for new user in sorting
+    ${newUserpageTime}=   Catenate    4
+    set global variable    ${newUserpageTime}
+#    log to console  my column no is:${pageTime}
 
 Fetch Current Date
     ${current_date}=    Get Current Date    result_format=%m/%d/%Y
@@ -208,6 +212,15 @@ Fetch Current Time
     RETURN    ${current_time}
 
 Calculate Running time
+    [Arguments]   ${RowNum_forText}   ${ColumnNum_forText}   ${module_name}     ${RowNum}   ${ColumnNum}      ${TimeTakenToLoginPage}   ${SheetTabName}
+    Close All Excel Documents
+    Open Excel Document  ${SheetLocationAndName}   doc_id=1
+    Write Excel Cell     ${RowNum_forText}   ${ColumnNum_forText}   ${module_name}     ${SheetTabName}
+    Write Excel Cell     ${RowNum}   ${ColumnNum}   ${TimeTakenToLoginPage}     ${SheetTabName}
+    Save Excel Document     ${SheetLocationAndName}
+    Close All Excel Documents
+
+Calculate Running time for sorting
     [Arguments]   ${RowNum_forText}   ${ColumnNum_forText}   ${module_name}     ${RowNum}   ${ColumnNum}      ${TimeTakenToLoginPage}   ${SheetTabName}
     Close All Excel Documents
     Open Excel Document  ${SheetLocationAndName}   doc_id=1
@@ -244,11 +257,12 @@ click on the button link
 open the browser with the url
     Generic.Fix the column number
     Generic.Fix the row number
+    Generic.Fix the column number for new user in sorting
     Simulate Switch Case
     ${StartTime1} =     Get Current Time in Milliseconds
     open browser    ${url}      ${browser_name}     #executable_path=E:/Aithentic/TestPage/resources
-    wait until element is visible    //a[normalize-space()='Login']          ${wait_time}
-    wait until element is enabled    //a[normalize-space()='Login']          ${wait_time}
+    wait until element is visible    //a[normalize-space()='Login']          60
+    wait until element is enabled    //a[normalize-space()='Login']          60
     Maximize Browser Window
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
@@ -258,6 +272,7 @@ open the browser with the url
 Get Current Date and Time
     Generic.Fix the column number
     Generic.Fix the row number
+    Generic.Fix the column number for new user in sorting
 
     ${current_date}=    Evaluate    datetime.datetime.now().strftime("%Y-%m-%d")
     ${current_time}=    Evaluate    datetime.datetime.now().strftime("%H:%M:%S")
@@ -326,11 +341,16 @@ Cross the text message alert
 Select parameter
     [Arguments]    ${address}
     Wait Until Element Is Not Visible    ${loaderIcon}   ${wait_time}
+    wait until element is visible     //div[contains(@class,'dropdown-panel')]//span[normalize-space()='${address}']        ${wait_time}
+    wait until element is enabled       //div[contains(@class,'dropdown-panel')]//span[normalize-space()='${address}']          ${wait_time}
+    click element      //div[contains(@class,'dropdown-panel')]//span[normalize-space()='${address}']
+
+Select span parameter
+    [Arguments]    ${address}
+    Wait Until Element Is Not Visible    ${loaderIcon}   ${wait_time}
     wait until element is visible     //span[normalize-space()='${address}']        ${wait_time}
     wait until element is enabled       //span[normalize-space()='${address}']          ${wait_time}
-    sleep       ${search_sleep}
     click element      //span[normalize-space()='${address}']
-
 
 Click on the profile name
     wait until element is not visible      ${loaderIcon}          ${wait_time}
@@ -434,7 +454,7 @@ Enter phone number
     wait until element is enabled   ${contact_Country_search}          ${wait_time}
     click element   ${contact_Country_search}
     input text  ${contact_Country_search}   ${country}
-    Generic.Select parameter      ${code}
+    Generic.Select span parameter      ${code}
     input text     ${phone}     ${phoneNo}
     Press Keys    ${phone}      ENTER
 #    click element   ${click_countryTag}
@@ -458,6 +478,17 @@ Scroll Window To End
 Wait until table get load
     wait until element is visible       //tbody//tr//td[normalize-space()='1']          ${wait_time}
     wait until element is enabled      //tbody//tr//td[normalize-space()='1']          ${wait_time}
+
+Wait until table get load for filters
+    TRY
+         wait until element is visible       //tbody//tr//td[normalize-space()='1']          ${wait_time}
+         wait until element is enabled      //tbody//tr//td[normalize-space()='1']          ${wait_time}
+    EXCEPT
+        wait until element is visible       //span[normalize-space()='No Records']          ${yop_sleep}
+        wait until element is enabled      //span[normalize-space()='No Records']           ${yop_sleep}
+    FINALLY
+        Log    Table got the issue while loading or there is no data
+    END
 
 Fetch log_out alert message
     sleep      2
@@ -509,3 +540,7 @@ Update settings for Asset_ID, employee_id and location
 
 Click on the reset filters link
     Generic.click on the button link        reset filters
+
+
+Wait for table skelton to get disable
+     wait until element is not visible       (//tbody//tr[2]//div[contains(@class,'skeleton')])[1]          ${wait_time}
