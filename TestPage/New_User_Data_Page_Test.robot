@@ -151,7 +151,7 @@ Register new user
 Adding the data in the account
     [Tags]    Smoke     Sanity
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       deepparam112@mail-mario.fr.nf    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
@@ -294,6 +294,14 @@ Adding the data in the account
     DepartmentPage.Search by static department name      TestQA Department Up31840619
     DepartmentPage.Verify the search static department      TestQA Department Up31840619
     DepartmentPage.Get new department          TestQA Department Up31840619
+
+    Generic.Click on the profile name
+    Generic.Select option from profile list     department-dropdown
+    Generic.Verify your current page location contains      department
+    DepartmentPage.Search by static department name      Do not Delete this Department
+    DepartmentPage.Verify the search static department      Do not Delete this Department
+    DepartmentPage.Get new department          Do not Delete this Department
+
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     MemberPage.Click on assigned user tab under team member      Assigned Users
