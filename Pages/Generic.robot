@@ -338,14 +338,14 @@ Cross the text message alert
     wait until element is enabled    ${cross_alertMsg}          ${wait_time}
     click element       ${cross_alertMsg}
 
-Select parameter
+Select span parameter
     [Arguments]    ${address}
     Wait Until Element Is Not Visible    ${loaderIcon}   ${wait_time}
     wait until element is visible     //div[contains(@class,'dropdown-panel')]//span[normalize-space()='${address}']        ${wait_time}
     wait until element is enabled       //div[contains(@class,'dropdown-panel')]//span[normalize-space()='${address}']          ${wait_time}
     click element      //div[contains(@class,'dropdown-panel')]//span[normalize-space()='${address}']
 
-Select span parameter
+Select parameter
     [Arguments]    ${address}
     Wait Until Element Is Not Visible    ${loaderIcon}   ${wait_time}
     wait until element is visible     //span[normalize-space()='${address}']        ${wait_time}
