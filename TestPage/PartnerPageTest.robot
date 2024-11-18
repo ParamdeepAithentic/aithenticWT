@@ -61,7 +61,7 @@ Compose Message invite user test
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Generic.Verify your current page contains this text     Partners
-    Calculate Running time  3  ${pageHeading}   Page Load - Total load time from clicking partner option from side listing to partner listing page      3    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  3  ${pageHeading}   Partner Page Load - Total load time from clicking partner option from side listing to partner listing page      3    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 #-------------------------- PARTNER--------------------------------------------------------------
 #    LoginPage.Fetch the refresh token from the login api
@@ -73,7 +73,7 @@ Compose Message invite user test
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Generic.Verify your current page contains this text     Add New Partner
-    Calculate Running time  4  ${pageHeading}   Page Load - Total load time from clicking add partner button from partner listing to add partner page      4    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  4  ${pageHeading}   Partner Page Load - Total load time from clicking add partner button from partner listing to add partner page      4    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 
     PartnersPage.Select partner type of new partner     Manufacturer
@@ -91,7 +91,7 @@ Compose Message invite user test
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Generic.Verify your current page contains this text     Contact Person
-    Calculate Running time  5  ${pageHeading}   Page Load - Total load time from clicking add new contact and enter contact person name under add partner      5    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  5  ${pageHeading}   Partner Page Load - Total load time from clicking add new contact and enter contact person name under add partner      5    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 #    PartnersPage.Enter contact business email    ${generate_PersonName}      ${generate_BusinessName}
     PartnersPage.Enter contact business email    ${generate_PersonName}     yopmail
@@ -111,7 +111,7 @@ Compose Message invite user test
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Generic.Verify your current page contains this text     Added Products
-    Calculate Running time  6  ${pageHeading}   Page Load - Total load time from clicking product option from profile listing to product listing page      6    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  6  ${pageHeading}  Product Page Load - Total load time from clicking product option from profile listing to product listing page      6    ${pageTime}     ${ActualTime}    PageLoad_Time
 
     DashboardPage.Click on action button
     DashboardPage.Click add product button
@@ -128,7 +128,7 @@ Compose Message invite user test
     Generic.Verify your current page contains this text     Added Products
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  7  ${pageHeading}   Page Load - Total load time of filling the add product details form under add product     7    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  7  ${pageHeading}   Product Page Load - Total load time of filling the add product details form under add product     7    ${pageTime}     ${ActualTime}    PageLoad_Time
 
     Generic.Fetch alert message text and compare it with        Product created successfully
     DashboardPage.Verify product added    ${generated_product}
@@ -140,7 +140,7 @@ Compose Message invite user test
     Generic.Verify your current page contains this text     Technology
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  8  ${pageHeading}   Page Load - Total load time from clicking technology option from side listing to technology page listing      8    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  8  ${pageHeading}   Technology Page Load - Total load time from clicking technology option from side listing to technology page listing      8    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 
     ${StartTime1} =     Get Current Time in Milliseconds
@@ -151,7 +151,7 @@ Compose Message invite user test
     Generic.Verify your current page contains this text     Add New Technology
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  9  ${pageHeading}   Page Load - Total load time from clicking add new technology option from from action dropdown to add technology      9    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  9  ${pageHeading}  Technology Page Load - Total load time from clicking add new technology form from action dropdown to add technology      9    ${pageTime}     ${ActualTime}    PageLoad_Time
 
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       ${generate_BusinessName}
@@ -189,7 +189,7 @@ Compose Message invite user test
     Generic.Verify your current page contains this text     Smart Share
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  10  ${pageHeading}   Page Load - Total load time from clicking contract option from side listing to contract page listing      10    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  10  ${pageHeading}   Contract Page Load - Total load time from clicking contract option from side listing to contract page listing      10    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 
 #    ContractsPage.Click on create new contract button
@@ -201,7 +201,7 @@ Compose Message invite user test
     Generic.Verify your current page contains this text     Generate New Smart Share
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  11  ${pageHeading}   Page Load - Total load time from clicking Dynamic Contract option from pop up to generate new contract page      11    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  11  ${pageHeading}   Contract Page Load - Total load time from clicking Dynamic Contract option from pop up to generate new contract page      11    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 
     ContractsPage.Enter contract type      SmartShare_Manufacturer
@@ -251,7 +251,7 @@ Compose Message invite user test
     Generic.Verify your current page contains this text     Become a Registered Member
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  12  ${pageHeading}   Page Load - Total load time of become a registered member page from yopmail page      12    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  12  ${pageHeading}   Register to Yop Page Load - Total load time of become a registered member page from yopmail page      12    ${pageTime}     ${ActualTime}    PageLoad_Time
 #----------------------------------REGISTER MEMBER--------------------------------------------------------------
 
     RegisterMember.Fill first name for partner register member      balwinder
@@ -279,7 +279,7 @@ Compose Message invite user test
     Generic.Verify your current page contains this text     Create your user account
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  13  ${pageHeading}   Page Load - Total load time of Create your user account Page from Yopmail Page      13    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  13  ${pageHeading}   Yop to Create User Page Load - Total load time of Create your user account Page from Yopmail Page      13    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 #----------------------------------------USER ACCOUNT---------------------------------------------------
     UserAccount.Enter the password      Paramdeep@112
@@ -311,7 +311,7 @@ Compose Message invite user test
     Generic.Verify your current page contains this text     6-digit code
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  14  ${pageHeading}   Page Load - Total load time of Two-Factor Authentication Page from Yopmail Page      14    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  14  ${pageHeading}   Auth to Yop Page Load - Total load time of Two-Factor Authentication Page from Yopmail Page      14    ${pageTime}     ${ActualTime}    PageLoad_Time
 #
 #    Switch Window   aithentic | Login
 #    sleep       2
@@ -327,7 +327,7 @@ Compose Message invite user test
     Generic.Verify your current page contains this text     Company Name
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  15  ${pageHeading}   Page Load - Total Page Load Time of Subscription page from OTP page     15    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  15  ${pageHeading}   Yop to OTP Page Load - Total Page Load Time of Subscription page from OTP page     15    ${pageTime}     ${ActualTime}    PageLoad_Time
 
     SubscriptionPage.Select country of manufacturer profile     United States
     SubscriptionPage.Select state of manufacturer profile   Texas
@@ -349,7 +349,7 @@ Compose Message invite user test
     Generic.Verify your current page location contains     subscription-payment
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  16  ${pageHeading}   Page Load - Total Page Load Time of Subscription form page from payment page     16    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  16  ${pageHeading}   Billing Page Load - Total Page Load Time of Subscription form page from payment page     16    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 
 #-------------------------------------------BILLING-----------------------------------------------------
@@ -370,7 +370,7 @@ Compose Message invite user test
 
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  17  ${pageHeading}   Page Load - Total Page Load Time of Billing Payment to Welcome Page      17    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  17  ${pageHeading}   Billing Page to Welcome Page Load - Total Page Load Time of Billing Payment to Welcome Page      17    ${pageTime}     ${ActualTime}    PageLoad_Time
 
     Generic.Fetch alert message text and compare it with       Payment Successful
 
@@ -381,7 +381,7 @@ Compose Message invite user test
     Generic.Verify your current page location contains     organization
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  18  ${pageHeading}   Page Load - Total Page Load Time of Complete Setup to Organization Page      18    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  18  ${pageHeading}   Organization Page Load - Total Page Load Time of Complete Setup to Organization Page      18    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 
     DashboardPage.Select the employee ID checkbox   yes
@@ -409,7 +409,7 @@ Compose Message invite user test
     Generic.Verify your current page contains this text      Login
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  19  ${pageHeading}   Page Load - Total Page Load Time of Login Page from Logout Page      19    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  19  ${pageHeading}   Logout Page Load - Total Page Load Time of Login Page from Logout Page      19    ${pageTime}     ${ActualTime}    PageLoad_Time
 
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
@@ -441,7 +441,7 @@ Compose Message invite user test
     Generic.Verify your current page contains this text      Message Box
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time    20  ${pageHeading}   Page Load - Total Page Load Time after clicking message option from side menu to Message Page      20    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time    20  ${pageHeading}  Message Page Load - Total Page Load Time after clicking message option from side menu to Message Page      20    ${pageTime}     ${ActualTime}    PageLoad_Time
 #-------------------------- ADD TEAM MEMBER------------------------------------------------------
 
     MessagePage.Select side option from message list    Compose
@@ -1437,11 +1437,8 @@ Partner Side bar Filters
     PaginationPage.Click on the pagination dropdown     partner-list
     PaginationPage.Select the value from the pagination drop down count    500
 
-    ${StartTime1} =     Get Current Time in Milliseconds
+
     PartnersPage.Fetch the selected filter and verify from Table    Partner Type        Manufacturer        Manufacturer
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  14  ${pageHeading}   Filter Page - Data load time of filter select partner under partner page      14    ${pageTime}     ${ActualTime}    Filter_Time
 
     Generic.Click on the reset filters link
     Generic.Refresh the existing page
@@ -1469,11 +1466,7 @@ Partner Side bar Filters
     Generic.Click on the reset filters link
     PartnersPage.Click on the filters from partner module       Select Status
 
-    ${StartTime1} =     Get Current Time in Milliseconds
     PartnersPage.Checkmark after clicking on the filters        Active
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  15  ${pageHeading}   Filter Page - Data load time of filter status under partner page      15    ${pageTime}     ${ActualTime}    Filter_Time
 
     PaginationPage.Click on the pagination dropdown     partner-list
     PaginationPage.Select the value from the pagination drop down count    500

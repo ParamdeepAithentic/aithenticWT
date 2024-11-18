@@ -45,12 +45,6 @@ Test Teardown   Close Browser session
 
 
 
-
-
-
-
-
-
 *** Variables ***
 
 
@@ -155,7 +149,7 @@ Register new user
 
 ########################### DONT ADD IN PRE PROD #############################
 Adding the data in the account
-    [Tags]    NT
+    [Tags]    Smoke     Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
@@ -267,6 +261,33 @@ Adding the data in the account
 
     LocationPage.Method 1        United States - Test qa Up50260220 - 21 - 2
     LocationPage.Get new location       United States - Test qa Up50260220 - 21 - 2
+
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Search by location name using statc location      United States - Main Office - 21 - 2
+
+    LocationPage.Method 1        United States - Main Office - 21 - 2
+    LocationPage.Get new location       United States - Main Office - 21 - 2
+
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Search by location name using statc location     Canada
+    LocationPage.Method 1       Canada
+    LocationPage.Get new location       Canada
+
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Search by location name using statc location     India
+    LocationPage.Method 1       India
+    LocationPage.Get new location       India
+
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Search by location name using statc location     Turkey
+    LocationPage.Method 1       Turkey
+    LocationPage.Get new location       Turkey
+
+
     Generic.Click on the profile name
     Generic.Select option from profile list     department-dropdown
     Generic.Verify your current page location contains      department

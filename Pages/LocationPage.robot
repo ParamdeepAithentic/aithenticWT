@@ -389,9 +389,8 @@ Select the option from location filter under location
 
 Fetch the country from location filter and click
     [Arguments]     ${option}       ${option1}      ${option2}     ${option3}
-#    ${element_count}=    Get Element Count    css:.qa-total-count-list
-#    Log      ${element_count}
-    FOR    ${index}    IN RANGE    1    ${total_data_count + 1}
+    TRY
+        FOR    ${index}    IN RANGE    1    ${total_data_count + 1}
         Wait Until Element Is Visible   (//th//div[contains(@class,'columnName')][normalize-space()='${option}']//ancestor::table//following::tr//td[${option1}][contains(text(),'${option2}')])[${index}]      ${wait_time}
         Wait Until Element Is Enabled   (//th//div[contains(@class,'columnName')][normalize-space()='${option}']//ancestor::table//following::tr//td[${option1}][contains(text(),'${option2}')])[${index}]       ${wait_time}
         ${element1}=    Get Text    (//th//div[contains(@class,'columnName')][normalize-space()='${option}']//ancestor::table//following::tr//td[${option1}][contains(text(),'${option2}')])[${index}]
@@ -399,8 +398,12 @@ Fetch the country from location filter and click
         ${New_Country}=    Evaluate    '${original_string}'.strip()
         Log    Element ${index}: ${New_Country}
         Run Keyword If    '${New_Country}' == '${option3}'    Run Keywords    Empty Action of location   AND     Continue For Loop
-
+        END
+    EXCEPT
+        Wait Until Element Is Visible       //span[normalize-space()='No Records']      ${wait_time}
+        Log    There is no data in the table
     END
+
 
 
 
@@ -554,6 +557,11 @@ Click on the plus icon of the subnet
     Wait Until Element Is Visible       //i[@title='Click here to add IP Subnet']    ${wait_time}
     Wait Until Element Is Enabled      //i[@title='Click here to add IP Subnet']     ${wait_time}
     click element       //i[@title='Click here to add IP Subnet']
+
+Verify that remove Location button is not visible having asset, member, partner or contract created.
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is not visible    //button[normalize-space()='Remove']       ${wait_time}
+
 
 #Fetch the country from location filter and click
 #    [Arguments]     ${option}       ${option1}      ${option2}       ${option3}

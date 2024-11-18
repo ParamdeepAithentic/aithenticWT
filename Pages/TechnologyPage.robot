@@ -802,12 +802,13 @@ Search by AssetId
     sleep       ${search_sleep}
     wait until element is visible       css:thead tr       ${wait_time}
     Wait Until Element Contains    ${fetch_assetID}     ${AssetID}    ${wait_time}
-    ${get_assetID} =    get text    ${fetch_assetID}
-    log to console     ${get_assetID}
-    should be equal    ${get_assetID}     ${AssetID}
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  17  ${pageHeading}   Technology Page - Search the technology by AssetId on technology list page     17    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+    ${get_assetID} =    get text    ${fetch_assetID}
+    log to console     ${get_assetID}
+    should be equal    ${get_assetID}     ${AssetID}
+
 #    TechnologyPage.Click on manage technology sub option       Technology List
 
 Search by BrandName
@@ -1718,7 +1719,8 @@ Get And Verify The Count Of existing asset of parent
     FOR    ${index}    IN RANGE    1    ${element_count + 1}
         Wait Until Element Is Visible   //tbody/tr[${index}]/td/label/span      ${wait_time}
         Wait Until Element Is enabled   //tbody/tr[${index}]/td/label/span      ${wait_time}
-       click element   //tbody/tr[${index}]/td/label/span
+#       click element   //tbody/tr[${index}]/td/label/span
+       Execute JavaScript    document.querySelector('tbody > tr:nth-child(${index}) > td > label > span').click();
     END
 
 Click on the export button of parent tab under technology details page
