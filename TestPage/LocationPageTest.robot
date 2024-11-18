@@ -690,3 +690,201 @@ Verify user should not able to Remove Location having Technology
     LocationPage.Fetch the location Name from the row       ${generated_location}
     LocationPage.Click on three dots on row
     LocationPage.Verify that remove Location button is not visible having asset, member, partner or contract created.
+
+Verify user should not able to Deactivate Location having Manufacturer
+    [Tags]      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Click on Location action button
+    LocationPage.Click on add location button    Add New Location
+    Generic.Verify your current page location contains      add-location
+    LocationPage.Select location country     United States
+    LocationPage.Select location building name   Trump tower
+    LocationPage.Select location floor   second
+    LocationPage.Select location room    203
+    LocationPage.Select location address one     this address one of the location
+    LocationPage.Select location address two     this address two of the location
+    LocationPage.Select location state       Texas
+    LocationPage.Select location city        Austin
+    LocationPage.Select location zip     147001
+    LocationPage.Enter random cost center value
+    LocationPage.Create random location name
+    Generic.click on the button     Save
+    Generic.Fetch alert message text and compare it with    Location created successfully
+    LocationPage.Search by location name     ${generated_location}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    DashboardPage.Select an option from company details side list    Technology
+    Generic.Verify your current page location contains       technology-settings
+    ReplaceDomainAPI.Replace Domain
+    DashboardPage.Click on View Your Added Brand List
+    Generic.Verify your current page location contains      brand-list
+    DashboardPage.Click add brand button
+    DashboardPage.Create random brandName
+    DashboardPage.Add static Business Manufacturer URL      yopmail.net
+    DashboardPage.Add brand manufacturer country      United States
+    DashboardPage.Save added brand details
+    Generic.Fetch alert message text and compare it with        Brand created successfully.
+    DashboardPage.Click on main Save Button
+    Generic.select the option from the side menu    Partners
+    Generic.Verify your current page location contains      partner
+    PartnersPage.Click new partner button
+    Generic.Verify your current page location contains      addpartner
+    PartnersPage.Select partner type of new partner     Manufacturer
+    PartnersPage.Select partner business_name     ${generated_BrandName}
+    PartnersPage.Select partner business URL
+    PartnersPage.Select partner country       United States
+    PartnersPage.Click on Add new Contact of partner        Add new Contact
+    PartnersPage.Enter random contact person
+    PartnersPage.Enter contact business email    ${generate_PersonName}     yopmail
+    Generic.Enter phone number      India   +91     9646289871
+    PartnersPage.Enter contact location      ${generated_location}
+    PartnersPage.Save the new contact
+    PartnersPage.Click contact main save button
+    Generic.Fetch alert message text and compare it with    Partner created successfully
+    PartnersPage.Search by business name    ${generated_BrandName}
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Search by location name     ${generated_location}
+    LocationPage.Fetch the location Name from the row       ${generated_location}
+    LocationPage.Click on three dots on row
+    LocationPage.Select the option from row menu     Deactivate
+    LocationPage.Select option from change location status pop up     yes
+    Generic.Fetch alert message text and compare it with    Location having more than 0 technologies member, partner or contract cannot be deactivated.
+
+Verify user should not able to Deactivate Location having Supplier
+    [Tags]      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Click on Location action button
+    LocationPage.Click on add location button    Add New Location
+    Generic.Verify your current page location contains      add-location
+    LocationPage.Select location country     United States
+    LocationPage.Select location building name   Trump tower
+    LocationPage.Select location floor   second
+    LocationPage.Select location room    203
+    LocationPage.Select location address one     this address one of the location
+    LocationPage.Select location address two     this address two of the location
+    LocationPage.Select location state       Texas
+    LocationPage.Select location city        Austin
+    LocationPage.Select location zip     147001
+    LocationPage.Enter random cost center value
+    LocationPage.Create random location name
+    Generic.click on the button     Save
+    Generic.Fetch alert message text and compare it with    Location created successfully
+    LocationPage.Search by location name     ${generated_location}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    DashboardPage.Select an option from company details side list    Technology
+    Generic.Verify your current page location contains       technology-settings
+    ReplaceDomainAPI.Replace Domain
+    DashboardPage.Click on View Your Added Brand List
+    Generic.Verify your current page location contains      brand-list
+    DashboardPage.Click add brand button
+    DashboardPage.Create random brandName
+    DashboardPage.Add static Business Manufacturer URL      yopmail.net
+    DashboardPage.Add brand manufacturer country      United States
+    DashboardPage.Save added brand details
+    Generic.Fetch alert message text and compare it with        Brand created successfully.
+    DashboardPage.Click on main Save Button
+    Generic.select the option from the side menu    Partners
+    Generic.Verify your current page location contains      partner
+    PartnersPage.Click new partner button
+    Generic.Verify your current page location contains      addpartner
+    PartnersPage.Select partner type of new partner     Supplier
+    PartnersPage.Select partner business_name     ${generated_BrandName}
+    PartnersPage.Select partner business URL
+    PartnersPage.Select partner country       United States
+    PartnersPage.Click on Add new Contact of partner        Add new Contact
+    PartnersPage.Enter random contact person
+    PartnersPage.Enter contact business email    ${generate_PersonName}     yopmail
+    Generic.Enter phone number      India   +91     9646289871
+    PartnersPage.Enter contact location      ${generated_location}
+    PartnersPage.Save the new contact
+    PartnersPage.Click contact main save button
+    Generic.Fetch alert message text and compare it with    Partner created successfully
+    PartnersPage.Search by business name    ${generated_BrandName}
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Search by location name     ${generated_location}
+    LocationPage.Fetch the location Name from the row       ${generated_location}
+    LocationPage.Click on three dots on row
+    LocationPage.Select the option from row menu     Deactivate
+    LocationPage.Select option from change location status pop up     yes
+    Generic.Fetch alert message text and compare it with    Location having more than 0 technologies member, partner or contract cannot be deactivated.
+
+Verify user should not able to Deactivate Location having Support Partner
+    [Tags]      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Click on Location action button
+    LocationPage.Click on add location button    Add New Location
+    Generic.Verify your current page location contains      add-location
+    LocationPage.Select location country     United States
+    LocationPage.Select location building name   Trump tower
+    LocationPage.Select location floor   second
+    LocationPage.Select location room    203
+    LocationPage.Select location address one     this address one of the location
+    LocationPage.Select location address two     this address two of the location
+    LocationPage.Select location state       Texas
+    LocationPage.Select location city        Austin
+    LocationPage.Select location zip     147001
+    LocationPage.Enter random cost center value
+    LocationPage.Create random location name
+    Generic.click on the button     Save
+    Generic.Fetch alert message text and compare it with    Location created successfully
+    LocationPage.Search by location name     ${generated_location}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    DashboardPage.Select an option from company details side list    Technology
+    Generic.Verify your current page location contains       technology-settings
+    ReplaceDomainAPI.Replace Domain
+    DashboardPage.Click on View Your Added Brand List
+    Generic.Verify your current page location contains      brand-list
+    DashboardPage.Click add brand button
+    DashboardPage.Create random brandName
+    DashboardPage.Add static Business Manufacturer URL      yopmail.net
+    DashboardPage.Add brand manufacturer country      United States
+    DashboardPage.Save added brand details
+    Generic.Fetch alert message text and compare it with        Brand created successfully.
+    DashboardPage.Click on main Save Button
+    Generic.select the option from the side menu    Partners
+    Generic.Verify your current page location contains      partner
+    PartnersPage.Click new partner button
+    Generic.Verify your current page location contains      addpartner
+    PartnersPage.Select partner type of new partner     Support Partner
+    PartnersPage.Select partner business_name     ${generated_BrandName}
+    PartnersPage.Select partner business URL
+    PartnersPage.Select partner country       United States
+    PartnersPage.Click on Add new Contact of partner        Add new Contact
+    PartnersPage.Enter random contact person
+    PartnersPage.Enter contact business email    ${generate_PersonName}     yopmail
+    Generic.Enter phone number      India   +91     9646289871
+    PartnersPage.Enter contact location      ${generated_location}
+    PartnersPage.Save the new contact
+    PartnersPage.Click contact main save button
+    Generic.Fetch alert message text and compare it with    Partner created successfully
+    PartnersPage.Search by business name    ${generated_BrandName}
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Search by location name     ${generated_location}
+    LocationPage.Fetch the location Name from the row       ${generated_location}
+    LocationPage.Click on three dots on row
+    LocationPage.Select the option from row menu     Deactivate
+    LocationPage.Select option from change location status pop up     yes
+    Generic.Fetch alert message text and compare it with    Location having more than 0 technologies member, partner or contract cannot be deactivated.
