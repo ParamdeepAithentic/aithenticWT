@@ -452,7 +452,7 @@ Enter phone number
     wait until element is enabled   ${contact_Country_search}          ${wait_time}
     click element   ${contact_Country_search}
     input text  ${contact_Country_search}   ${country}
-    Generic.Select span parameter      ${code}
+    Generic.Select parameter      ${code}
     input text     ${phone}     ${phoneNo}
     Press Keys    ${phone}      ENTER
 #    click element   ${click_countryTag}
