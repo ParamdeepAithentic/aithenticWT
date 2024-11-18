@@ -131,7 +131,7 @@ Enter team member business email_mailinator
 
 Enter team member business email_yopmail
     ${random_string} =    Generate Random String       10      [NUMBERS]
-    ${generated_TMbusinessEmail}=    Catenate    TMBusinessEmail_${random_string}@yopmail.net
+    ${generated_TMbusinessEmail}=    Catenate    TMBusinessEmail_${random_string}@mail-mario.fr.nf
     wait until element is visible       ${TMBusinessEmail}    ${wait_time}
     input text   ${TMBusinessEmail}   ${generated_TMbusinessEmail}
     log to console      ${generated_TMbusinessEmail}
@@ -290,7 +290,7 @@ Enter team member business email_mailinator while converting assignee to team me
 
 Enter team member business email_yopmail while converting assignee to team member
     ${random_string} =    Generate Random String       10      [NUMBERS]
-    ${generated_TMbusinessemail}=    Catenate    TMBusinessEmail_${random_string}@yopmail.net
+    ${generated_TMbusinessemail}=    Catenate    TMBusinessEmail_${random_string}@mail-mario.fr.nf
     wait until element is visible       css:#businessEmail    ${wait_time}
     input text   css:#businessEmail   ${generated_TMbusinessemail}
     log to console      ${generated_TMbusinessemail}

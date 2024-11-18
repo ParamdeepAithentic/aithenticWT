@@ -151,7 +151,7 @@ Register new user
 Adding the data in the account
     [Tags]    Smoke     Sanity
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       deepparam112@mail-mario.fr.nf    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name

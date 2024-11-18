@@ -88,7 +88,7 @@ Set QA Variables
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
     Set Suite Variable    ${browser_name}         firefox
-    Set Suite Variable    ${email}          deepparam112@yopmail.net  # testqa29j@mailinator.com
+    Set Suite Variable    ${email}          deepparam112@mail-mario.fr.nf  # testqa29j@mailinator.com
     Set Suite Variable    ${discovered_asset_brand}                 MSI
     Set Suite Variable    ${existing_mac}                       D8:CB:8A:CA:6A:39
     Set Suite Variable    ${discovered_existing_brand}          QABrand555
@@ -112,7 +112,7 @@ Set UAT Variables
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
     Set Suite Variable    ${browser_name}         firefox
-    Set Suite Variable    ${email}          deepparam112@yopmail.net  # testqa29j@mailinator.com
+    Set Suite Variable    ${email}          deepparam112@mail-mario.fr.nf  # testqa29j@mailinator.com
     Set Suite Variable    ${discovered_asset_brand}                 Apple Inc
     Set Suite Variable    ${existing_mac}                       98:5a:eb:cb:c8:ed
     Set Suite Variable    ${discovered_existing_brand}              Apple Inc.
