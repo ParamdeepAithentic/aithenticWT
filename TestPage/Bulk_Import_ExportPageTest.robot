@@ -83,6 +83,8 @@ Product Bulk import
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    Sleep    2
+    Fail
     END
 
 
@@ -143,6 +145,8 @@ Product Bulk Edit
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    Sleep    2
+    Fail
     END
 
 
@@ -179,6 +183,8 @@ Department Bulk Import
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    Sleep    2
+    Fail
     END
 
 
@@ -231,6 +237,8 @@ Department Bulk Edit
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    Sleep    2
+    Fail
     END
 
 
@@ -284,6 +292,8 @@ Add Product Bulk Edit
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    Sleep    2
+    Fail
     END
 
 
@@ -327,6 +337,8 @@ Add Department Bulk Edit
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    Sleep    2
+    Fail
     END
 
 
@@ -393,6 +405,8 @@ Location Bulk Edit
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    Sleep    2
+    Fail
     END
 
 
@@ -444,6 +458,8 @@ Assigned Users Bulk Edit
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    Sleep    2
+    Fail
     END
 
 
@@ -518,6 +534,8 @@ Team Member Bulk Edit
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    Sleep    2
+    Fail
     END
 
 
@@ -602,6 +620,8 @@ Technology Bulk edit
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    Sleep    2
+    Fail
     END
 
 
@@ -660,6 +680,8 @@ Team member Bulk Import
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    Sleep    2
+    Fail
     END
 
 
@@ -698,6 +720,8 @@ Assigned User Bulk Import
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    Sleep    2
+    Fail
     END
 
 
@@ -745,6 +769,8 @@ Location Bulk Import
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    Sleep    2
+    Fail
     END
 
 
@@ -868,6 +894,8 @@ Technology Bulk import
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    Sleep    2
+    Fail
     END
 
 
@@ -1205,6 +1233,8 @@ Verify Bulk Import on the Technology Page by adding all parameters
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    Sleep    2
+    Fail
     END
 
 
@@ -1316,6 +1346,8 @@ Technology bulk import while entering invalid data in payment period field
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    Sleep    2
+    Fail
     END
 
 
@@ -1400,6 +1432,8 @@ Check the payment period alert when entering valid data
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    Sleep    2
+    Fail
     END
 
 
@@ -1508,6 +1542,8 @@ Check the payment period alert when entering inavalid data
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    Sleep    2
+    Fail
     END
 
 
