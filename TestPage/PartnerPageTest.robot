@@ -1602,6 +1602,197 @@ Create partner 100 times
     ReplaceDomainAPI.Replace Domain
     PartnersPage.Create many partners
 
+Verify that user is not able to Deactivate and remove Manufacturer having technology
+    [Tags]      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    DashboardPage.Select an option from company details side list    Technology
+    Generic.Verify your current page location contains       technology-settings
+    ReplaceDomainAPI.Replace Domain
+    DashboardPage.Click on View Your Added Brand List
+    Generic.Verify your current page location contains      brand-list
+    DashboardPage.Click add brand button
+    DashboardPage.Create random brandName
+    DashboardPage.Add static Business Manufacturer URL      yopmail.net
+    DashboardPage.Add brand manufacturer country      Australia
+    DashboardPage.Save added brand details
+    Generic.Fetch alert message text and compare it with        Brand created successfully.
+    DashboardPage.Click on main Save Button
+    Generic.select the option from the side menu    Partners
+    Generic.Verify your current page location contains      partner
+    PartnersPage.Click new partner button
+    Generic.Verify your current page location contains      addpartner
+    PartnersPage.Select partner type of new partner     Manufacturer
+    PartnersPage.Select partner business_name     ${generated_BrandName}
+    PartnersPage.Select partner business URL
+    PartnersPage.Select partner country       United States
+    PartnersPage.Click contact main save button
+    Generic.Fetch alert message text and compare it with    Partner created successfully
+    PartnersPage.Search by business name    ${generated_BrandName}
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    PartnersPage.Click here to add link of contract details
+    DashboardPage.Create random productName
+    DashboardPage.Add product brand name      ${generated_BrandName}
+    TechnologyPage.Add product description via technology
+    TechnologyPage.Add product feature via technology
+    TechnologyPage.Select product technology type via technology     Hardware
+    TechnologyPage.Select product technology group via technology   Applications
+    TechnologyPage.Click on save product pop inside technology page
+    Generic.Fetch alert message text and compare it with    Product created successfully
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    Generic.wait until table get load
+    Generic.select the option from the side menu    Partners
+    Generic.Verify your current page location contains      partner
+    PartnersPage.Search by business name    ${generated_BrandName}
+    PartnersPage.Click on three dots of partners listing
+    PartnersPage.Select option from three dots of partner     Deactivate
+    PartnersPage.Select option from the pop up  Yes
+    Generic.Fetch alert message text and compare it with   You cannot delete or inactivate this partner as you have active contract or technology assigned
+    PartnersPage.Select option from the pop up  No
+    PartnersPage.Click on three dots of partners listing
+    PartnersPage.Select option from three dots of partner    Remove
+    PartnersPage.Select option from the pop up  Yes
+    Generic.Fetch alert message text and compare it with   You cannot delete or inactivate this partner as you have active contract or technology assigned
+
+Verify that user is not able to Deactivate and remove Supplier having technology
+    [Tags]      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    DashboardPage.Select an option from company details side list    Technology
+    Generic.Verify your current page location contains       technology-settings
+    ReplaceDomainAPI.Replace Domain
+    DashboardPage.Click on View Your Added Brand List
+    Generic.Verify your current page location contains      brand-list
+    DashboardPage.Click add brand button
+    DashboardPage.Create random brandName
+    DashboardPage.Add static Business Manufacturer URL      yopmail.net
+    DashboardPage.Add brand manufacturer country      Australia
+    DashboardPage.Save added brand details
+    Generic.Fetch alert message text and compare it with        Brand created successfully.
+    DashboardPage.Click on main Save Button
+    Generic.select the option from the side menu    Partners
+    Generic.Verify your current page location contains      partner
+    PartnersPage.Click new partner button
+    Generic.Verify your current page location contains      addpartner
+    PartnersPage.Select partner type of new partner     Supplier
+    PartnersPage.Select partner business_name     ${generated_BrandName}
+    PartnersPage.Select partner business URL
+    PartnersPage.Select partner country       United States
+    PartnersPage.Click contact main save button
+    Generic.Fetch alert message text and compare it with    Partner created successfully
+    PartnersPage.Search by business name    ${generated_BrandName}
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list       Product_00337612322
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
+    TechnologyPage.Add supplier of partners information     ${generated_BrandName}
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_BrandName}
+    Generic.wait until table get load
+    Generic.select the option from the side menu    Partners
+    Generic.Verify your current page location contains      partner
+    PartnersPage.Search by business name    ${generated_BrandName}
+    PartnersPage.Click on three dots of partners listing
+    PartnersPage.Select option from three dots of partner     Deactivate
+    PartnersPage.Select option from the pop up  Yes
+    Generic.Fetch alert message text and compare it with   You cannot delete or inactivate this partner as you have active contract or technology assigned
+    PartnersPage.Select option from the pop up  No
+    PartnersPage.Click on three dots of partners listing
+    PartnersPage.Select option from three dots of partner    Remove
+    PartnersPage.Select option from the pop up  Yes
+    Generic.Fetch alert message text and compare it with   You cannot delete or inactivate this partner as you have active contract or technology assigned
+
+Verify that user is not able to Deactivate and remove Support Partner having technology
+    [Tags]      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    DashboardPage.Select an option from company details side list    Technology
+    Generic.Verify your current page location contains       technology-settings
+    ReplaceDomainAPI.Replace Domain
+    DashboardPage.Click on View Your Added Brand List
+    Generic.Verify your current page location contains      brand-list
+    DashboardPage.Click add brand button
+    DashboardPage.Create random brandName
+    DashboardPage.Add static Business Manufacturer URL      yopmail.net
+    DashboardPage.Add brand manufacturer country      Australia
+    DashboardPage.Save added brand details
+    Generic.Fetch alert message text and compare it with        Brand created successfully.
+    DashboardPage.Click on main Save Button
+    Generic.select the option from the side menu    Partners
+    Generic.Verify your current page location contains      partner
+    PartnersPage.Click new partner button
+    Generic.Verify your current page location contains      addpartner
+    PartnersPage.Select partner type of new partner     Support Partner
+    PartnersPage.Select partner business_name     ${generated_BrandName}
+    PartnersPage.Select partner business URL
+    PartnersPage.Select partner country       United States
+    PartnersPage.Click contact main save button
+    Generic.Fetch alert message text and compare it with    Partner created successfully
+    PartnersPage.Search by business name    ${generated_BrandName}
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list       Product_00337612322
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
+    TechnologyPage.Add support partner of partners information     ${generated_BrandName}
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_BrandName}
+    Generic.wait until table get load
+    Generic.select the option from the side menu    Partners
+    Generic.Verify your current page location contains      partner
+    PartnersPage.Search by business name    ${generated_BrandName}
+    PartnersPage.Click on three dots of partners listing
+    PartnersPage.Select option from three dots of partner     Deactivate
+    PartnersPage.Select option from the pop up  Yes
+    Generic.Fetch alert message text and compare it with   You cannot delete or inactivate this partner as you have active contract or technology assigned
+    PartnersPage.Select option from the pop up  No
+    PartnersPage.Click on three dots of partners listing
+    PartnersPage.Select option from three dots of partner    Remove
+    PartnersPage.Select option from the pop up  Yes
+    Generic.Fetch alert message text and compare it with   You cannot delete or inactivate this partner as you have active contract or technology assigned
+
 
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
