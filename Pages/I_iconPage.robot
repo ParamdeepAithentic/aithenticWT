@@ -95,7 +95,7 @@ Click on i-icon of account_overview tab
 
 Choose options inside personal_details
     [Arguments]     ${option}
-    Generic.Select parameter    ${option}
+    Generic.click on the tab   ${option}
 
 Choose tabs under organization
     [Arguments]     ${option}

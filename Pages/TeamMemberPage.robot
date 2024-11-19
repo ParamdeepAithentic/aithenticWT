@@ -53,6 +53,7 @@ ${Edit_Email}       css:#businessEmail
 
 ${teamMember_Action_btn}     css:#Team-Member-Actions
 ${name_SearchBar}       css:#searchbar-memberlist
+${name_SearchBar_via_profile}       css:#searchbar-member-profile
 ${Dept_SearchBar}       css:#searchbar-departmentlist
 ${three_dots}       css:.three-dots
 ${Edit_first_name}      css:#firstName
@@ -129,6 +130,14 @@ Enter team member business email_mailinator
     log to console      ${generated_TMbusinessEmail}
     Set Global Variable    ${generated_TMbusinessEmail}
 
+Enter team member business email_yopmail
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_TMbusinessEmail}=    Catenate    TMBusinessEmail_${random_string}@mail-mario.fr.nf
+    wait until element is visible       ${TMBusinessEmail}    ${wait_time}
+    input text   ${TMBusinessEmail}   ${generated_TMbusinessEmail}
+    log to console      ${generated_TMbusinessEmail}
+    Set Global Variable    ${generated_TMbusinessEmail}
+
 Enter team member business email with cool fr nf email
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_TMbusinessEmail}=    Catenate    TMBusinessEmail_${random_string}@cool.fr.nf
@@ -195,6 +204,17 @@ Search Team Member by name
     Clear Element Text      ${name_SearchBar}
     ${StartTime1} =     Get Current Time in Milliseconds
     input text   ${name_SearchBar}   ${name}
+    sleep      ${search_sleep}
+    wait until element is visible       css:thead tr       ${wait_time}
+
+Search Team Member by name via profile
+    [Arguments]    ${name}
+    wait until element is visible       css:thead tr       ${wait_time}
+    wait until element is visible      ${name_SearchBar_via_profile}     ${wait_time}
+    click element      ${name_SearchBar_via_profile}
+    Clear Element Text      ${name_SearchBar_via_profile}
+    ${StartTime1} =     Get Current Time in Milliseconds
+    input text   ${name_SearchBar_via_profile}   ${name}
     sleep      ${search_sleep}
     wait until element is visible       css:thead tr       ${wait_time}
 
@@ -276,6 +296,13 @@ Click on asset history tab under team member
 Enter team member business email_mailinator while converting assignee to team member
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_TMbusinessemail}=    Catenate    TMBusinessEmail_${random_string}@mailinator.com
+    wait until element is visible       css:#businessEmail    ${wait_time}
+    input text   css:#businessEmail   ${generated_TMbusinessemail}
+    log to console      ${generated_TMbusinessemail}
+
+Enter team member business email_yopmail while converting assignee to team member
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_TMbusinessemail}=    Catenate    TMBusinessEmail_${random_string}@mail-mario.fr.nf
     wait until element is visible       css:#businessEmail    ${wait_time}
     input text   css:#businessEmail   ${generated_TMbusinessemail}
     log to console      ${generated_TMbusinessemail}
@@ -384,18 +411,25 @@ Click on the location filter under team member
 
 Fetch the country from team member filter and click
     [Arguments]     ${option}       ${option1}      ${option2}
+    TRY
 #    ${element_count}=    Get Element Count    css:.qa-total-count-list
 #    Log      ${element_count}
-    FOR    ${index}    IN RANGE    1    ${total_data_count + 1}
-        Wait Until Element Is Visible  (//div[normalize-space()='${option}']//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]     ${wait_time}
-        Wait Until Element Is Enabled  (//div[normalize-space()='${option}']//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]       ${wait_time}
-        ${element1}=    Get Text   (//div[normalize-space()='${option}']//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]
-        ${original_string}=    Set Variable    ${element1}
-        ${New_Country}=    Evaluate    '${original_string}'.strip()
-        Log    Element ${index}: ${New_Country}
-        Run Keyword If    '${New_Country}' == '${option2}'    Run Keywords    Empty Action of location   AND     Continue For Loop
-
+        FOR    ${index}    IN RANGE    1    ${total_data_count + 1}
+            Wait Until Element Is Visible  (//div[normalize-space()='${option}']//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]     ${wait_time}
+             Wait Until Element Is Enabled  (//div[normalize-space()='${option}']//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]       ${wait_time}
+             ${element1}=    Get Text   (//div[normalize-space()='${option}']//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]
+             ${original_string}=    Set Variable    ${element1}
+             ${New_Country}=    Evaluate    '${original_string}'.strip()
+             Log    Element ${index}: ${New_Country}
+             Run Keyword If    '${New_Country}' == '${option2}'    Run Keywords    Empty Action of location   AND     Continue For Loop
+        END
+    EXCEPT
+        wait until element is visible       //span[normalize-space()='No Records']          ${yop_sleep}
+        wait until element is enabled      //span[normalize-space()='No Records']           ${yop_sleep}
+    FINALLY
+        Log    Table got the issue while loading or there is no data
     END
+
 
 Click on the status filter under team member via profile
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
