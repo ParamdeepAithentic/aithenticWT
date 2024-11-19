@@ -1331,6 +1331,62 @@ Check the payment period alert when entering inavalid data
     Bulk_Import_ExportPage.Click on the confirm button under pop up in technology bulk import
     Bulk_Import_ExportPage.Verify the upload message text   UploadMessage       Upload failed
 
+Verify all the validations of department bulk import
+    [Tags]      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     department-dropdown
+    Generic.Verify your current page location contains      department-list
+    DashboardPage.Click on action button
+    DashboardPage.Select the option from department action menu      Bulk Import
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Data-Wizard
+    Generic.Verify your current page location contains     add-department-grid
+    Bulk_Import_ExportPage.Verify that element is not enabled       Check Data
+    Bulk_Import_ExportPage.Verify that element is not enabled       Upload
+    Bulk_Import_ExportPage.Select option from department status column in bulk_import      status
+    Bulk_Import_ExportPage.Enter the new value in the cost center column in bulk_import     costCenter
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationErrors      Department Name is missing
+    Generic.Refresh the existing page
+    Generic.Verify your current page location contains     add-department-grid
+    Bulk_Import_ExportPage.Enter the new value in the cost center column in bulk_import     costCenter
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationErrors      Department Name is missing, Status is missing
+    Bulk_Import_ExportPage.Clear the text of the field      costCenter
+    Bulk_Import_ExportPage.Enter the new value in the department name column in bulk_import     department_name
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationErrors      Status is missing
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings      Cost Center is missing
+    DashboardPage.Double click     department_name
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import       department_name         Department_milan
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationErrors      Department already exists, Status is missing
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings      Cost Center is missing
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #Zz kill browser
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
 
