@@ -56,8 +56,8 @@ ${click_countryTag}     css:.iti__arrow
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
-${wait_time}       60
-${yop_sleep}       10
+${wait_time}       20
+${yop_sleep}       8
 
 ${search_sleep}       1
 
@@ -128,10 +128,10 @@ Set UAT Variables
 
 Set Pre-Prod Variables
     Set Suite Variable    ${url}    https://pre-prod-app.aithentic.com/
-    Set Suite Variable    ${valid_password}    Test@123     #pre prod
+    Set Suite Variable    ${valid_password}     Paramdeep@112         # Test@123     #pre prod
     Set Suite Variable    ${apiURL}    https://pre-prod-api.aithentic.com/api/v1
     Set Suite Variable    ${browser_name}         firefox
-    Set Suite Variable    ${email}                 testqa29j@mailinator.com
+    Set Suite Variable    ${email}                deepparam112@mail-mario.fr.nf  # testqa29j@mailinator.com
     Set Suite Variable    ${discovered_asset_brand}                ECS
     Set Suite Variable    ${existing_mac}                       b8:ae:ed:bc:1c:35
     Set Suite Variable    ${discovered_existing_brand}          QABrand555
