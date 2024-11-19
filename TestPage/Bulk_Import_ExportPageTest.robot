@@ -48,6 +48,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 Product Bulk import
     [Tags]    Sanity
+    TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -75,10 +76,22 @@ Product Bulk import
     Sleep       ${yop_sleep}
     Switch Window       aithentic | Product - List
     Bulk_Import_ExportPage.Verify product added using bulk_import_export   ${generated_addProductName}
+    EXCEPT
+    Switch Window       aithentic | Technology - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    Sleep    2
+    Fail
+    END
+
 
 Product Bulk Edit
     [Tags]    Sanity
-    Generic.click on the tab	Login
+    TRY
+     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
@@ -125,9 +138,21 @@ Product Bulk Edit
     Switch Window       aithentic | Product - List
     Bulk_Import_ExportPage.Click on Refresh icon of product-list page
     Bulk_Import_ExportPage.Verify product added using bulk_import_export   ${generated_EditProductName}
+    EXCEPT    message
+    Switch Window       aithentic | Technology - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    Sleep    2
+    Fail
+    END
+
 
 Department Bulk Import
     [Tags]    NT
+    TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -151,9 +176,21 @@ Department Bulk Import
     Sleep       ${yop_sleep}
     Switch Window       aithentic | Department - List
     Bulk_Import_ExportPage.Verify department added using bulk_import_export   ${generated_addDepartmentName}
+    EXCEPT
+    Switch Window       aithentic | Technology - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    Sleep    2
+    Fail
+    END
+
 
 Department Bulk Edit
     [Tags]    NT
+    TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -193,9 +230,21 @@ Department Bulk Edit
     sleep       ${yop_sleep}
     Switch Window       aithentic | Department - List
     Bulk_Import_ExportPage.Verify department added using bulk_import_export     ${generated_EditDepartmentName}
+    EXCEPT
+    Switch Window       aithentic | Technology - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    Sleep    2
+    Fail
+    END
+
 
 Add Product Bulk Edit
     [Tags]    NT
+    TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -236,9 +285,21 @@ Add Product Bulk Edit
     sleep       ${yop_sleep}
     Switch Window       aithentic | Product - List
     Bulk_Import_ExportPage.Verify product added using bulk_import_export    ${generated_EditProductName}
+    EXCEPT
+    Switch Window       aithentic | Technology - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    Sleep    2
+    Fail
+    END
+
 
 Add Department Bulk Edit
     [Tags]    NT
+    TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -269,9 +330,21 @@ Add Department Bulk Edit
     sleep       ${search_sleep}
     Switch Window       aithentic | Department - List
     Bulk_Import_ExportPage.Verify department added using bulk_import_export     ${generated_EditDepartmentName}
+    EXCEPT
+    Switch Window       aithentic | Technology - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    Sleep    2
+    Fail
+    END
+
 
 Location Bulk Edit
     [Tags]    Sanity
+    TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -325,9 +398,21 @@ Location Bulk Edit
     sleep      ${search_sleep}
     Switch Window       aithentic | Location - List
     Bulk_Import_ExportPage.Search by location name     ${generated_NewLocationName}
+    EXCEPT
+    Switch Window       aithentic | Technology - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    Sleep    2
+    Fail
+    END
+
 
 Assigned Users Bulk Edit
     [Tags]    Sanity     Time    smoke
+    TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -366,9 +451,21 @@ Assigned Users Bulk Edit
     Switch Window       aithentic | Member - List
     Bulk_Import_ExportPage.Search assigned user by first and last name    ${generated_assigneeFname} ${generated_assigneeLname}
     Bulk_Import_ExportPage.Search by empID  ${generated_assigneeEmpID}
+    EXCEPT
+    Switch Window       aithentic | Technology - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    Sleep    2
+    Fail
+    END
+
 
 Team Member Bulk Edit
     [Tags]    Sanity        rerun
+    TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -430,9 +527,21 @@ Team Member Bulk Edit
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the employee ID checkbox   yes
     Generic.Fetch alert message text and compare it with       Settings Updated
+    EXCEPT
+    Switch Window       aithentic | Technology - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    Sleep    2
+    Fail
+    END
+
 
 Technology Bulk edit
     [Tags]       sanity     rerun
+    TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -503,10 +612,22 @@ Technology Bulk edit
     Bulk_Import_ExportPage.Click on the confirm button of finish pop up
     sleep       ${search_sleep}
     Switch Window       aithentic | Technology - List
-    TechnologyPage.Search by AssetId       ${generated_assetidbulkedit}
+    TechnologyPage.Search by AssetId       ${generated_assetidbulkedit}4
+    EXCEPT
+    Switch Window       aithentic | Technology - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    Sleep    2
+    Fail
+    END
+
 
 Team member Bulk Import
     [Tags]    Sanity
+    TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -552,9 +673,21 @@ Team member Bulk Import
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the employee ID checkbox   yes
     Generic.Fetch alert message text and compare it with       Settings Updated
+    EXCEPT
+    Switch Window       aithentic | Technology - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    Sleep    2
+    Fail
+    END
+
 
 Assigned User Bulk Import
     [Tags]    NT
+    TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -580,9 +713,21 @@ Assigned User Bulk Import
     MemberPage.Click on assigned user tab      Assigned Users
     MemberPage.Search assigned user by first name   ${generated_assigneeFname}
     Generic.Wait until table get load
+    EXCEPT
+    Switch Window       aithentic | Technology - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    Sleep    2
+    Fail
+    END
+
 
 Location Bulk Import
     [Tags]    NT
+    TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -617,9 +762,21 @@ Location Bulk Import
     Generic.Verify your current page location contains      locationlist
     Bulk_Import_ExportPage.Search by location name   ${generated_NewLocationName}
     Generic.Wait until table get load
+    EXCEPT
+    Switch Window       aithentic | Technology - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    Sleep    2
+    Fail
+    END
+
 
 Technology Bulk import
     [Tags]    Sanity
+    TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -730,11 +887,23 @@ Technology Bulk import
     Generic.Verify your current page location contains     technology-list
     TechnologyPage.Search by AssetId       ${generated_bulk_import_assetid}
     Generic.Wait until table get load
+    EXCEPT
+    Switch Window       aithentic | Technology - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    Sleep    2
+    Fail
+    END
+
 
 
 
 Verify Bulk Import on the Technology Page by adding all parameters
-    [Tags]    Sanity     time   smoke       rerun
+    [Tags]    Sanity     time   smoke
+    TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1057,11 +1226,23 @@ Verify Bulk Import on the Technology Page by adding all parameters
     DashboardPage.Select the employee ID checkbox   no
     DashboardPage.Select the employee ID checkbox   yes
     Generic.Fetch alert message text and compare it with       Settings Updated
+    EXCEPT
+    Switch Window       aithentic | Technology - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    Sleep    2
+    Fail
+    END
+
 
 
 
 Technology bulk import while entering invalid data in payment period field
-    [Tags]    NT        rerun
+    [Tags]    NT
+    TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1158,9 +1339,21 @@ Technology bulk import while entering invalid data in payment period field
     Generic.Click on the button     Upload
     Bulk_Import_ExportPage.Click on the confirm button under pop up in technology bulk import
     Bulk_Import_ExportPage.Verify the upload message text   UploadMessage       Upload failed
+    EXCEPT
+    Switch Window       aithentic | Technology - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    Sleep    2
+    Fail
+    END
+
 
 Check the payment period alert when entering valid data
-    [Tags]       sanity     rerun
+    [Tags]       sanity
+    TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1232,9 +1425,21 @@ Check the payment period alert when entering valid data
     sleep       ${search_sleep}
     Switch Window       aithentic | Technology - List
     TechnologyPage.Search by AssetId       ${generated_assetidbulkedit}
+    EXCEPT
+    Switch Window       aithentic | Technology - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    Sleep    2
+    Fail
+    END
+
 
 Check the payment period alert when entering inavalid data
-    [Tags]    NT        rerun
+    [Tags]    NT
+    TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1330,6 +1535,17 @@ Check the payment period alert when entering inavalid data
     Generic.Click on the button     Upload
     Bulk_Import_ExportPage.Click on the confirm button under pop up in technology bulk import
     Bulk_Import_ExportPage.Verify the upload message text   UploadMessage       Upload failed
+    EXCEPT
+    Switch Window       aithentic | Technology - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    Sleep    2
+    Fail
+    END
+
 
 Verify all the validations of department bulk import
     [Tags]      Negative
