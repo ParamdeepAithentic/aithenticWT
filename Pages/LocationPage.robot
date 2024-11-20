@@ -74,7 +74,7 @@ Click on add location button
     Wait Until Element Is Visible       //a[@title='${option}']    ${wait_time}
     Wait Until Element Is Enabled      //a[@title='${option}']     ${wait_time}
     click element       //a[@title='${option}']
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 #----------------------- only bulk edit location is not having title-----------------------
 Select the option from action menu
@@ -82,7 +82,7 @@ Select the option from action menu
     wait until element is visible       css:.qa-location-bulk-${option}     ${wait_time}
     wait until element is enabled       css:.qa-location-bulk-${option}     ${wait_time}
     click element   css:.qa-location-bulk-${option}
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 
 
@@ -170,7 +170,7 @@ Save location form
     Wait Until Element Is Enabled       css:.qa-${option}-location    ${wait_time}
     click element       css:.qa-${option}-location
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 Fetch the location Name from the row
     [Arguments]    ${option}
@@ -205,7 +205,7 @@ Select option from change location status pop up
     Wait Until Element Is enabled      css:.qa-update-location-status-${option}-action    ${wait_time}
     Mouse over      css:.qa-update-location-status-${option}-action
     click element      css:.qa-update-location-status-${option}-action
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 #    sleep       1
 
 #------------------------------------------------------------------------------------------------

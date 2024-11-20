@@ -503,17 +503,17 @@ Click on confirm pop up of update button
     wait until element is visible  css:.qa-confirm-technology-bulk-edit-warning  ${wait_time}
     click element   css:.qa-confirm-technology-bulk-edit-warning
 #    sleep   ${search_sleep}
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 Click on confirm button under pop up of finish button of bulk edit
     wait until element is visible  css:.qa-confirm-technology-bulk-edit-finish      ${wait_time}
     click element   css:.qa-confirm-technology-bulk-edit-finish
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 Click on confirm button under pop up of exit button of bulk edit
     wait until element is visible  css:.qa-confirm-technology-bulk-edit-exit    ${wait_time}
     click element   css:.qa-confirm-technology-bulk-edit-exit
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 
 Enter the new value of first name in bulk import of team member
@@ -665,7 +665,7 @@ Click on confirm warning button after update
     wait until element is visible   css:.qa-confirm-technology-bulk-edit-warning      ${wait_time}
     wait until element is enabled   css:.qa-confirm-technology-bulk-edit-warning       ${wait_time}
     click element   css:.qa-confirm-technology-bulk-edit-warning
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 click on all checkbox under technology bulk import
     [Arguments]     ${option}

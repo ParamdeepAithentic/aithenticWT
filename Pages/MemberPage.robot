@@ -138,7 +138,7 @@ Save the add assignee
     Wait Until Element Is Enabled    css:div[class='w-100 modal-footer'] button[type='submit']    ${wait_time}
     click element      css:div[class='w-100 modal-footer'] button[type='submit']
     wait until element is not visible      ${loaderIcon}     ${wait_time}
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 #Click on the button
 #    [Arguments]    ${option}
@@ -242,7 +242,7 @@ Save new team member form
     Wait Until Element Is Visible       css:.${option}-member-qa    ${wait_time}
     Wait Until Element Is Enabled      css:.${option}-member-qa     ${wait_time}
     click element      css:.${option}-member-qa
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 
 #MobileNo,Email,DepartmentName,LocationName,UserRoleName
@@ -483,7 +483,7 @@ Click on the save button of add assignee pop up if user is same
     click element      //button[@id='${option}-assignee-modal']
     sleep       2
     wait until element is not visible      ${loaderIcon}     ${wait_time}
-#    wait until element is not visible       ${shadow}          ${wait_time}
+#    wait until element is not visible       ${shadow}          60
 
 
 Verify the visibilty of same user exist validation for cancel button
