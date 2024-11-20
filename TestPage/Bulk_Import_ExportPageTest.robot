@@ -77,7 +77,7 @@ Product Bulk import
     Switch Window       aithentic | Product - List
     Bulk_Import_ExportPage.Verify product added using bulk_import_export   ${generated_addProductName}
     EXCEPT
-    Switch Window       aithentic | Technology - List
+    Switch Window       aithentic | Product - List
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     I_iconPage.Choose options inside personal_details        Organization
@@ -139,7 +139,7 @@ Product Bulk Edit
     Bulk_Import_ExportPage.Click on Refresh icon of product-list page
     Bulk_Import_ExportPage.Verify product added using bulk_import_export   ${generated_EditProductName}
     EXCEPT    message
-    Switch Window       aithentic | Technology - List
+    Switch Window       aithentic | Product - List
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     I_iconPage.Choose options inside personal_details        Organization
@@ -177,7 +177,7 @@ Department Bulk Import
     Switch Window       aithentic | Department - List
     Bulk_Import_ExportPage.Verify department added using bulk_import_export   ${generated_addDepartmentName}
     EXCEPT
-    Switch Window       aithentic | Technology - List
+    Switch Window       aithentic | Department - List
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     I_iconPage.Choose options inside personal_details        Organization
@@ -231,7 +231,7 @@ Department Bulk Edit
     Switch Window       aithentic | Department - List
     Bulk_Import_ExportPage.Verify department added using bulk_import_export     ${generated_EditDepartmentName}
     EXCEPT
-    Switch Window       aithentic | Technology - List
+    Switch Window       aithentic | Department - List
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     I_iconPage.Choose options inside personal_details        Organization
@@ -286,7 +286,7 @@ Add Product Bulk Edit
     Switch Window       aithentic | Product - List
     Bulk_Import_ExportPage.Verify product added using bulk_import_export    ${generated_EditProductName}
     EXCEPT
-    Switch Window       aithentic | Technology - List
+    Switch Window       aithentic | Product - List
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     I_iconPage.Choose options inside personal_details        Organization
@@ -331,7 +331,7 @@ Add Department Bulk Edit
     Switch Window       aithentic | Department - List
     Bulk_Import_ExportPage.Verify department added using bulk_import_export     ${generated_EditDepartmentName}
     EXCEPT
-    Switch Window       aithentic | Technology - List
+    Switch Window       aithentic | Department - List
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     I_iconPage.Choose options inside personal_details        Organization
@@ -399,7 +399,7 @@ Location Bulk Edit
     Switch Window       aithentic | Location - List
     Bulk_Import_ExportPage.Search by location name     ${generated_NewLocationName}
     EXCEPT
-    Switch Window       aithentic | Technology - List
+    Switch Window       aithentic | Location - List
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     I_iconPage.Choose options inside personal_details        Organization
@@ -452,7 +452,7 @@ Assigned Users Bulk Edit
     Bulk_Import_ExportPage.Search assigned user by first and last name    ${generated_assigneeFname} ${generated_assigneeLname}
     Bulk_Import_ExportPage.Search by empID  ${generated_assigneeEmpID}
     EXCEPT
-    Switch Window       aithentic | Technology - List
+    Switch Window       aithentic | Member - List
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     I_iconPage.Choose options inside personal_details        Organization
@@ -528,7 +528,7 @@ Team Member Bulk Edit
     DashboardPage.Select the employee ID checkbox   yes
     Generic.Fetch alert message text and compare it with       Settings Updated
     EXCEPT
-    Switch Window       aithentic | Technology - List
+    Switch Window       aithentic | Member - List
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     I_iconPage.Choose options inside personal_details        Organization
@@ -674,7 +674,7 @@ Team member Bulk Import
     DashboardPage.Select the employee ID checkbox   yes
     Generic.Fetch alert message text and compare it with       Settings Updated
     EXCEPT
-    Switch Window       aithentic | Technology - List
+    Switch Window       aithentic | Member - List
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     I_iconPage.Choose options inside personal_details        Organization
@@ -714,7 +714,7 @@ Assigned User Bulk Import
     MemberPage.Search assigned user by first name   ${generated_assigneeFname}
     Generic.Wait until table get load
     EXCEPT
-    Switch Window       aithentic | Technology - List
+    Switch Window       aithentic | Member - List
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     I_iconPage.Choose options inside personal_details        Organization
@@ -763,7 +763,7 @@ Location Bulk Import
     Bulk_Import_ExportPage.Search by location name   ${generated_NewLocationName}
     Generic.Wait until table get load
     EXCEPT
-    Switch Window       aithentic | Technology - List
+    Switch Window       aithentic | Location - List
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     I_iconPage.Choose options inside personal_details        Organization
@@ -1549,6 +1549,7 @@ Check the payment period alert when entering inavalid data
 
 Verify all the validations of department bulk import
     [Tags]      Negative
+    TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1582,6 +1583,16 @@ Verify all the validations of department bulk import
     Generic.Click on the button     Check Data      #Update,Edit
     Bulk_Import_ExportPage.Verify the upload message text    validationErrors      Department already exists, Status is missing
     Bulk_Import_ExportPage.Verify the upload message text    validationWarnings      Cost Center is missing
+    EXCEPT
+    Switch Window       aithentic | Department - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    Sleep    2
+    Fail
+    END
 
 
 
