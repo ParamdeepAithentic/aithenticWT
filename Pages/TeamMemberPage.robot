@@ -49,12 +49,15 @@ ${TMDepartmentName}     css:.qa-DepartmentId input
 ${TMLocation}     css:.qa-LocationTypeId input
 
 ${TMRole}     css:.qa-member-role input
-
+${Edit_Email}       css:#businessEmail
 
 ${teamMember_Action_btn}     css:#Team-Member-Actions
 ${name_SearchBar}       css:#searchbar-memberlist
+${name_SearchBar_via_profile}       css:#searchbar-member-profile
 ${Dept_SearchBar}       css:#searchbar-departmentlist
 ${three_dots}       css:.three-dots
+${Edit_first_name}      css:#firstName
+${Edit_last_name}      css:#lastName
 
 
 *** Keywords ***
@@ -127,6 +130,14 @@ Enter team member business email_mailinator
     log to console      ${generated_TMbusinessEmail}
     Set Global Variable    ${generated_TMbusinessEmail}
 
+Enter team member business email_yopmail
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_TMbusinessEmail}=    Catenate    TMBusinessEmail_${random_string}@mail-mario.fr.nf
+    wait until element is visible       ${TMBusinessEmail}    ${wait_time}
+    input text   ${TMBusinessEmail}   ${generated_TMbusinessEmail}
+    log to console      ${generated_TMbusinessEmail}
+    Set Global Variable    ${generated_TMbusinessEmail}
+
 Enter team member business email with cool fr nf email
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_TMbusinessEmail}=    Catenate    TMBusinessEmail_${random_string}@cool.fr.nf
@@ -178,6 +189,7 @@ Save the team member form
     wait until element is visible     css:.${option}-member-qa       ${wait_time}
     wait until element is enabled     css:.${option}-member-qa       ${wait_time}
     click element   css:.${option}-member-qa
+    sleep       ${search_sleep}
 
 Enter the Position in member form
     [Arguments]    ${option}
@@ -192,6 +204,17 @@ Search Team Member by name
     Clear Element Text      ${name_SearchBar}
     ${StartTime1} =     Get Current Time in Milliseconds
     input text   ${name_SearchBar}   ${name}
+    sleep      ${search_sleep}
+    wait until element is visible       css:thead tr       ${wait_time}
+
+Search Team Member by name via profile
+    [Arguments]    ${name}
+    wait until element is visible       css:thead tr       ${wait_time}
+    wait until element is visible      ${name_SearchBar_via_profile}     ${wait_time}
+    click element      ${name_SearchBar_via_profile}
+    Clear Element Text      ${name_SearchBar_via_profile}
+    ${StartTime1} =     Get Current Time in Milliseconds
+    input text   ${name_SearchBar_via_profile}   ${name}
     sleep      ${search_sleep}
     wait until element is visible       css:thead tr       ${wait_time}
 
@@ -212,6 +235,7 @@ Click on the tab
 Click on the button
     [Arguments]    ${option}
     Generic.Click on the button     ${option}
+    sleep       ${search_sleep}
 
 Search the department name
     [Arguments]    ${name}
@@ -272,6 +296,13 @@ Click on asset history tab under team member
 Enter team member business email_mailinator while converting assignee to team member
     ${random_string} =    Generate Random String       10      [NUMBERS]
     ${generated_TMbusinessemail}=    Catenate    TMBusinessEmail_${random_string}@mailinator.com
+    wait until element is visible       css:#businessEmail    ${wait_time}
+    input text   css:#businessEmail   ${generated_TMbusinessemail}
+    log to console      ${generated_TMbusinessemail}
+
+Enter team member business email_yopmail while converting assignee to team member
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_TMbusinessemail}=    Catenate    TMBusinessEmail_${random_string}@mail-mario.fr.nf
     wait until element is visible       css:#businessEmail    ${wait_time}
     input text   css:#businessEmail   ${generated_TMbusinessemail}
     log to console      ${generated_TMbusinessemail}
@@ -380,18 +411,25 @@ Click on the location filter under team member
 
 Fetch the country from team member filter and click
     [Arguments]     ${option}       ${option1}      ${option2}
+    TRY
 #    ${element_count}=    Get Element Count    css:.qa-total-count-list
 #    Log      ${element_count}
-    FOR    ${index}    IN RANGE    1    ${total_data_count + 1}
-        Wait Until Element Is Visible  (//div[normalize-space()='${option}']//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]     ${wait_time}
-        Wait Until Element Is Enabled  (//div[normalize-space()='${option}']//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]       ${wait_time}
-        ${element1}=    Get Text   (//div[normalize-space()='${option}']//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]
-        ${original_string}=    Set Variable    ${element1}
-        ${New_Country}=    Evaluate    '${original_string}'.strip()
-        Log    Element ${index}: ${New_Country}
-        Run Keyword If    '${New_Country}' == '${option2}'    Run Keywords    Empty Action of location   AND     Continue For Loop
-
+        FOR    ${index}    IN RANGE    1    ${total_data_count + 1}
+            Wait Until Element Is Visible  (//div[normalize-space()='${option}']//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]     ${wait_time}
+             Wait Until Element Is Enabled  (//div[normalize-space()='${option}']//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]       ${wait_time}
+             ${element1}=    Get Text   (//div[normalize-space()='${option}']//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]
+             ${original_string}=    Set Variable    ${element1}
+             ${New_Country}=    Evaluate    '${original_string}'.strip()
+             Log    Element ${index}: ${New_Country}
+             Run Keyword If    '${New_Country}' == '${option2}'    Run Keywords    Empty Action of location   AND     Continue For Loop
+        END
+    EXCEPT
+        wait until element is visible       //span[normalize-space()='No Records']          ${yop_sleep}
+        wait until element is enabled      //span[normalize-space()='No Records']           ${yop_sleep}
+    FINALLY
+        Log    Table got the issue while loading or there is no data
     END
+
 
 Click on the status filter under team member via profile
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
@@ -417,4 +455,107 @@ Get the text of selected status filter under team meber via profile
     ${New_status1}=    Evaluate    '${original_string}'.strip()
     log to console    ${New_status1}
     set global variable   ${New_status1}
-    
+
+Fetch the all validation message after entering invalid data in add team member while edit
+   wait until element is visible   //span[contains(@class,'invalidInput')]       ${wait_time}
+   @{expectedList} =    Create List      Please enter First name       Please enter Last name           Please enter Department         Please enter Business Email         Select Member Location       Select Role
+   ${elements} =  Get WebElements     //span[contains(@class,'invalidInput')]
+   @{actualList} =   Create List
+   FOR  ${element}  IN      @{elements}
+      log to console    ${element.text}
+      Append To List    ${actualList}     ${element.text}
+   END
+   lists should be equal    ${expectedList}    ${actualList}
+
+
+Enter team member first name with 101 letters
+    ${random_string} =    Generate Random String       101      [LETTERS]
+    ${generated_TMFname1}=    Catenate    TMFname_${random_string}
+    wait until element is visible       ${TMFname}     ${wait_time}
+    input text   ${TMFname}    ${generated_TMFname1}
+    log to console      ${generated_TMFname1}
+    set global variable       ${generated_TMFname1}
+
+Enter team member last name with 101 letters
+    ${random_string} =    Generate Random String       101      [LETTERS]
+    ${generated_Lname1}=    Catenate    TLname_${random_string}
+    wait until element is visible       ${TMLname}     ${wait_time}
+    input text   ${TMLname}    ${generated_Lname1}
+    log to console      ${generated_Lname1}
+    set global variable       ${generated_Lname1}
+
+Wait for the visibility of the alert text
+     Wait Until Element Contains        ${alert_Msg}           The Email Address must end with one of the following:   ${wait_time}
+
+Click on the cross icon of the dropdown under edit team member
+    [Arguments]     ${Id}
+    wait until element is visible      //ng-select[contains(@class,'${Id}')]//span[@title='Clear all']      ${wait_time}
+    wait until element is enabled      //ng-select[contains(@class,'${Id}')]//span[@title='Clear all']        ${wait_time}
+    click element   //ng-select[contains(@class,'${Id}')]//span[@title='Clear all']
+
+Fetch the all validation message after entering invalid data in edit team member
+   wait until element is visible   //span[contains(@class,'invalidInput')]       ${wait_time}
+   @{expectedList} =    Create List      Please enter First Name       Please enter Last Name           Please enter Business Email        Please enter Department           Select Member Location        Select Role
+   ${elements} =  Get WebElements     //span[contains(@class,'invalidInput')]
+   @{actualList} =   Create List
+   FOR  ${element}  IN      @{elements}
+      log to console    ${element.text}
+      Append To List    ${actualList}     ${element.text}
+   END
+   lists should be equal    ${expectedList}    ${actualList}
+
+Clear the text of business email when editing team member
+    wait until element is not visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible       css:#businessEmail       ${wait_time}
+    click element     css:#businessEmail
+    Press Keys    css:#businessEmail     CONTROL+A
+    FOR    ${i}    IN RANGE    50
+        Press Keys    css:#businessEmail     BACKSPACE
+    END
+
+Enter team member business email self while edit
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}  ${wait_time}
+    wait until element is visible       css:#businessEmail    ${wait_time}
+    input text   css:#businessEmail   ${option}
+
+Select team member role while edit
+    [Arguments]    ${option}
+    Generic.Enter value into field  //input[@id='userRole']     ${option}
+    Generic.Select parameter        ${option}
+
+Enter team member first name with 101 letters while edit
+    ${random_string} =    Generate Random String       101      [LETTERS]
+     ${generated_Edit_Fname1}=    Catenate    TMFname_${random_string}
+    wait until element is visible       css:#firstName      ${wait_time}
+    input text   css:#firstName     ${generated_Edit_Fname1}
+    log to console       ${generated_Edit_Fname1}
+    set global variable       ${generated_Edit_Fname1}
+
+Enter team member last name with 101 letters while edit
+    ${random_string} =    Generate Random String       101      [LETTERS]
+     ${generated_Edit_lname1}=    Catenate    TLname_${random_string}
+    wait until element is visible       css:#lastName      ${wait_time}
+    input text   css:#lastName      ${generated_Edit_lname1}
+    log to console       ${generated_Edit_lname1}
+    set global variable       ${generated_Edit_lname1}
+
+Fetch the all validation message after entering invalid data in add team member
+   wait until element is visible   //span[contains(@class,'invalidInput')]       ${wait_time}
+   @{expectedList} =    Create List      Please enter First Name       Please enter Last Name       Please enter Mobile Number          Please enter Business Email                  Please enter Department                Please Select Member Location         Please Select Role
+   ${elements} =  Get WebElements     //span[contains(@class,'invalidInput')]
+   @{actualList} =   Create List
+   FOR  ${element}  IN      @{elements}
+      log to console    ${element.text}
+      Append To List    ${actualList}     ${element.text}
+   END
+   lists should be equal    ${expectedList}    ${actualList}
+
+Input new location in add team member
+    [Arguments]     ${option}
+    wait until element is not visible       ${loaderIcon}  ${wait_time}
+    wait until element is visible     ${TMLocation}     ${wait_time}
+    wait until element is enabled     ${TMLocation}      ${wait_time}
+    input text    ${TMLocation}     ${option}
+    wait until element is visible   //div//span[normalize-space()='${option}']       ${wait_time}
+    click element   //div//span[normalize-space()='${option}']

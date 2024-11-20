@@ -833,3 +833,20 @@ Verify department added using bulk_import_export under asset wizard
      ${get_departmentName1} =    get text    //td[normalize-space()='${departmentName}']
      log to console     ${get_departmentName1}
      should be equal    ${departmentName}     ${get_departmentName1}
+
+Verify that element is not enabled
+    [Arguments]         ${option}
+    wait until element is visible    //button[contains(@class,'disabled-button')][normalize-space()='${option}']        ${wait_time}
+
+Enter static value in the fields of department bulk import
+    [Arguments]    ${option}        ${option1}
+    DashboardPage.Double click    ${option}
+    wait until element is visible       xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]     ${wait_time}
+    input text   xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]//input      ${option1}
+
+Clear the text of the field
+    [Arguments]     ${option}
+    Wait Until Element Is Visible      css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
+    Wait Until Element Is Enabled      css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
+    Double Click Element               css:.ag-center-cols-container div[col-id='${option}']
+    Press Keys    css:.ag-center-cols-container div[col-id='${option}']     CTRL+a    BACKSPACE
