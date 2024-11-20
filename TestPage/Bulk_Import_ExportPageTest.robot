@@ -1351,6 +1351,7 @@ Technology bulk import while entering invalid data in payment period field
     END
 
 
+
 Check the payment period alert when entering valid data
     [Tags]       sanity
     TRY

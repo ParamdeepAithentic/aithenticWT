@@ -122,7 +122,7 @@ Add Team member page - Add New Department and assign that department to Team mem
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
 
 Edit Team member page - Edit New Department and assign that department to Team member
-    [Tags]      Sanity      rerun
+    [Tags]      Sanity      Rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       deepparam112@mail-mario.fr.nf    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
@@ -175,7 +175,7 @@ Edit Team member page - Edit New Department and assign that department to Team m
     Generic.Verify your current page location contains          memberslist
 
 Verify team member Asset history
-    [Tags]      Sanity      rerun
+    [Tags]      Sanity      Rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
@@ -615,7 +615,7 @@ Verify user is able to export team member asset history list
     DashboardPage.Select the employee ID checkbox   no
 
 Convert Assignee to Team Member
-    [Tags]      Sanity      rerun
+    [Tags]      Sanity      Rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       deepparam112@mail-mario.fr.nf    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
@@ -1164,7 +1164,7 @@ Verify_Employee_ID_Changing_settings_from_Profile_list_while_add_edit_team_membe
 
 
 Add Back Deleted Team member - Active
-    [Tags]      Sanity      rerun
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
