@@ -148,7 +148,7 @@ Run now from view details
     SubscriptionPage.Get the value of fields under view details of subscription connector   2       Samuel John
 
 Suspend and unsuspend the account
-    [Tags]      Smoke     Sanity    rerun
+    [Tags]      Smoke     Sanity        Rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
@@ -534,7 +534,7 @@ Create service now with invalid data
     Generic.Verify your current page contains this text     Service Now Connection Failed.
 
 Create service now with valid data
-    [Tags]      Sanity     Smoke    rerun
+    [Tags]      Sanity     Smoke        Rerun
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain

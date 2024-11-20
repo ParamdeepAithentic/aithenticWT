@@ -51,7 +51,7 @@ ${self_searchId} =   AssetID_1803536655
 *** Test Cases ***
 
 Free the asset limit
-    [Tags]      Smoke     Sanity      Time      rerun
+    [Tags]      Smoke     Sanity      Time      Rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -125,7 +125,7 @@ Fill the technology form for license product
 
 
 Fill the technology form for hardware product
-    [Tags]      Sanity      Smoke       rerun
+    [Tags]      Sanity         Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -249,7 +249,7 @@ Fill the technology form for subscription product
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
 Create new asset with new brand and product
-    [Tags]      Sanity      Smoke       Time        rerun
+    [Tags]      Sanity       Smoke       Time
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1599,7 +1599,7 @@ Edit Technology Page - Add New Support Partner and assign that Support Partner
     Generic.Fetch alert message text and compare it with        Technology updated successfully
 
 Technology Details- Verify the Location Details
-    [Tags]      sanity      rerun
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
