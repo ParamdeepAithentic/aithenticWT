@@ -1520,7 +1520,7 @@ Search with containing fields under advance search of component of discovered as
     END
 
 Search with containing fields under advance search of IP Address of discovered asset
-    [Tags]      Sanity
+    [Tags]      Sanity      Rerun
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -1765,7 +1765,7 @@ Upload Image and Document file during Add Asset with IP address from Agent Disco
     END
 
 Verify cross icon an reset icon while adding IP discovered asset
-        [Tags]    Sanity
+        [Tags]    Sanity        Rerun
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
         Generic.Verify your current page location contains      dashboard
