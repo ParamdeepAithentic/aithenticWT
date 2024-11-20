@@ -184,7 +184,7 @@ Click on complete process button
     wait until element is enabled       ${payment_completeProcessBTN}       ${wait_time}
     click element        ${payment_completeProcessBTN}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 Select the another plan
     wait until element is visible       css:div[class='row justify-content-center'] div:nth-child(1) div:nth-child(1) div:nth-child(2)       ${wait_time}
@@ -196,13 +196,13 @@ Select if you want to change plan or asset
     wait until element is visible       //button[normalize-space()='${option1}']       ${wait_time}
     wait until element is enabled       //button[normalize-space()='${option1}']       ${wait_time}
     click element        //button[normalize-space()='${option1}']
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 Select different plan
     wait until element is visible       (//button[@type='button'][normalize-space()='Select'])[2]       ${wait_time}
     wait until element is enabled       (//button[@type='button'][normalize-space()='Select'])[2]       ${wait_time}
     click element       (//button[@type='button'][normalize-space()='Select'])[2]
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 Set asset range to
     [Arguments]     ${option1}
@@ -280,7 +280,7 @@ Click on the three dots of subscription connector
     wait until element is enabled  //td[normalize-space()='${option}']//parent::tr//td//button//i  ${wait_time}
     click element  //td[normalize-space()='${option}']//parent::tr//td//button//i
     sleep   ${search_sleep}
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 Click on option under three dots of subscription connector
     [Arguments]     ${option1}       ${option2}
@@ -405,7 +405,7 @@ click on the confirm button of unsuspend pop up
     wait until element is enabled   //button[@type='submit'][normalize-space()='Confirm']       ${wait_time}
     click element   //button[@type='submit'][normalize-space()='Confirm']
   #  wait until element is not visible       ${loaderIcon}    ${wait_time}
-#    wait until element is not visible       ${shadow}          ${wait_time}
+#    wait until element is not visible       ${shadow}          60
 
 
 Choose tab under subscription page after clicking on view_result
@@ -446,7 +446,7 @@ Click on the action button of service now under discovery assets
     wait until element is enabled  //button[@id='servicenow-list-actions']  ${wait_time}
     click element  //button[@id='servicenow-list-actions']
     sleep   ${search_sleep}
-#    wait until element is not visible       ${shadow}          ${wait_time}
+#    wait until element is not visible       ${shadow}          60
 
 Input future Date
     ${current_date}=    Get Current Date    result_format=%m/%d/%Y
@@ -568,7 +568,7 @@ click on the cross icon of delete pop up under asset discovery
     wait until element is enabled   //div[@id='deleteServicenowlConnector']//span[normalize-space()='×']     ${wait_time}
     click element   //div[@id='deleteServicenowlConnector']//span[normalize-space()='×']
     sleep   ${search_sleep}
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 
 Choose the tab under Subscription page

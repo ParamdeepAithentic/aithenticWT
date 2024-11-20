@@ -471,9 +471,9 @@ Add multiple IP subnets while adding location
     LocationPage.Select location zip     147001
     LocationPage.Enter random cost center value
     LocationPage.Create random location name
-    LocationPage.Create more than one random IP subnet      1
+    LocationPage.Enter input in the IP subnet field     1           192.168.0.0/23
     LocationPage.Click on the plus icon of the subnet
-    LocationPage.Create more than one random IP subnet      2
+    LocationPage.Enter input in the IP subnet field     2            10.255.255.255/25
     Generic.click on the button     Save
     Generic.Fetch alert message text and compare it with    Location created successfully
     LocationPage.Search by location name     ${generated_location}
@@ -493,7 +493,7 @@ Add multiple IP subnets while adding location
     LocationPage.Enter random cost center value
     LocationPage.Create random location name
     LocationPage.Click on the plus icon of the subnet
-    LocationPage.Create more than one random IP subnet      3
+    LocationPage.Enter input in the IP subnet field     3             172.20.0.0/26
     Generic.click on the button    Update
     Generic.Fetch alert message text and compare it with    Location updated successfully
     LocationPage.Search by location name     ${generated_location}

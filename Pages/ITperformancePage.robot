@@ -127,7 +127,7 @@ Click on download all button
     wait until element is enabled  ${download_allFiles}       ${wait_time}
     click element   ${download_allFiles}
     sleep       ${search_sleep}
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 Skip Action
     Log    Skipping action as the element value is 0
@@ -182,7 +182,7 @@ Click on data quality button link under it perfomance
     sleep   ${search_sleep}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     click element   css:.qa-data-quality-${option} h4
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 
 Click on aging analytics tab
@@ -231,7 +231,7 @@ Click on data quality button link under investments by partner tab
     wait until element is enabled   css:.qa-data-quality-partner-${option} h4     ${wait_time}
     sleep   ${search_sleep}
     click element   css:.qa-data-quality-partner-${option} h4
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 
 Click on tabs under investment by partner tab

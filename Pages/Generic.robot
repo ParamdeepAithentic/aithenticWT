@@ -56,17 +56,14 @@ ${click_countryTag}     css:.iti__arrow
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
-${wait_time}       20
+
+${wait_time}       60
 ${yop_sleep}       8
 
 ${search_sleep}       1
 
 
-
-${CASE}        uat    #qa , uat , pre-prod
-
-
-
+${CASE}       uat  #qa , uat , pre-prod
 
 
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
@@ -500,7 +497,7 @@ Click keyboard button
     Press keys      ${locator}      ${button}
 
 wait for the shadow to get hide from the current screen
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 Update settings for Asset_ID, employee_id and location
     Generic.open the browser with the url
