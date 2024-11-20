@@ -562,6 +562,13 @@ Verify that remove Location button is not visible having asset, member, partner 
     wait until element is not visible    ${loaderIcon}      ${wait_time}
     wait until element is not visible    //button[normalize-space()='Remove']       ${wait_time}
 
+Enter input in the IP subnet field
+    [Arguments]     ${option}       ${option1}
+    Wait Until Element Is Visible   (//input[@formcontrolname='IPSubnets'])[${option}]      ${wait_time}
+    Wait Until Element Is Enabled    (//input[@formcontrolname='IPSubnets'])[${option}]       ${wait_time}
+    click element       (//input[@formcontrolname='IPSubnets'])[${option}]
+    input text      (//input[@formcontrolname='IPSubnets'])[${option}]      ${option1}
+
 
 #Fetch the country from location filter and click
 #    [Arguments]     ${option}       ${option1}      ${option2}       ${option3}

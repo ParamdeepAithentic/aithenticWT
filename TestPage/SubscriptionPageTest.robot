@@ -700,7 +700,6 @@ Create service now with valid data
     SubscriptionPage.Click on option under three dots of subscription connector     ServiceNow     View Results
     Generic.Verify your current page location contains      discovery-assets
     Generic.Verify your current page contains this text    Asset Discovery
-    Generic.click on the button     No, thanks
     Generic.Verify your current page contains this text    No Records
 #    SubscriptionPage.Fetch and compare the product from the table
 #    Generic.Wait until table get load
