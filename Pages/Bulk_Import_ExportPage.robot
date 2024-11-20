@@ -418,7 +418,7 @@ Enter the new value of team member in the email column
     [Arguments]    ${option}
     MemberPage.Double click    ${option}
     ${random_string} =    Generate Random String       10      [NUMBERS]
-    ${generated_assigneeLname}=    Catenate    BusinessEmail${random_string}@mailinator.com
+    ${generated_assigneeLname}=    Catenate    BusinessEmail${random_string}@mail-mario.fr.nf
     wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    ${wait_time}
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assigneeLname}
     set global variable    ${generated_assigneeLname}
@@ -654,6 +654,14 @@ Create random IP subnet in location bulk import
     wait until element is visible       css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_SubnetIp}
     set global variable    ${generated_SubnetIp}
+
+Enter static IP subnet
+    [Arguments]    ${option}        ${option1}
+    MemberPage.Double click    ${option}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
+    wait until element is enabled       css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${option1}
+
 
 Click on the confirm button of finish pop up
     wait until element is visible   css:.qa-confirm-finish-bulk-edit       ${wait_time}

@@ -365,7 +365,7 @@ Location Bulk Edit
     LocationPage.Select location zip     147001
     LocationPage.Enter random cost center value
     LocationPage.Create random location name
-    LocationPage.Create random IP subnet
+    LocationPage.Enter input in the IP subnet field     1              192.168.0.0/23
     LocationPage.Save location form     save
     Generic.Fetch alert message text and compare it with    Location created successfully
     Bulk_Import_ExportPage.Search by location name     ${generated_location}
@@ -388,7 +388,7 @@ Location Bulk Edit
     Bulk_Import_ExportPage.Perform the keyboard action      CostCenter
     Bulk_Import_ExportPage.Enter the new value in the location name column     LocationTypeName
     Bulk_Import_ExportPage.Perform the keyboard action       LocationTypeName
-    Bulk_Import_ExportPage.Create random IP subnet in location bulk import      IPSubnets
+    Bulk_Import_ExportPage.Enter static IP subnet      IPSubnets         192.168.0.1/25
     Bulk_Import_ExportPage.Perform the keyboard action        IPSubnets
     Generic.Click on the button     Check Data
     Generic.Click on the button     Update      #Check Data,Edit
@@ -487,7 +487,7 @@ Team Member Bulk Edit
     Generic.Verify your current page location contains      addmembers
     MemberPage.Enter team member first name
     MemberPage.Enter team member last name
-    TeamMemberPage.Enter team member business email_mailinator
+    TeamMemberPage.Enter team member business email with cool fr nf email
     TeamMemberPage.Enter the Position in member form        QA
     MemberPage.Enter team member department     Do not Delete this Department
     MemberPage.Enter team member location    United States - Main Office - 21 - 2
@@ -751,7 +751,7 @@ Location Bulk Import
     Bulk_Import_ExportPage.Enter the new value of cost center in location bulk edit     CostCenter
     Bulk_Import_ExportPage.Enter the new value in the location name column     LocationTypeName
     Bulk_Import_ExportPage.Perform the keyboard action      LocationTypeName
-    Bulk_Import_ExportPage.Create random IP subnet in location bulk import      IPSubnets
+    Bulk_Import_ExportPage.Enter static IP subnet      IPSubnets         192.168.0.1/25
     Generic.Click on the button     Check Data      #Update,Edit
     Generic.Click on the button     Upload
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
@@ -981,7 +981,7 @@ Verify Bulk Import on the Technology Page by adding all parameters
     LocationPage.Select location zip     147001
     LocationPage.Enter random cost center value
     LocationPage.Create random location name
-    LocationPage.Create random IP subnet
+    LocationPage.Enter input in the IP subnet field     1           192.168.0.0/23
     LocationPage.Save location form     save
     Generic.Fetch alert message text and compare it with    Location created successfully
     Bulk_Import_ExportPage.Search by location name under technology bulk import    ${generated_location}
