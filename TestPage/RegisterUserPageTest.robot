@@ -1894,7 +1894,7 @@ Update the subscription Plan and verify the notification
     sleep  ${search_sleep}
     BillingPage.Get the text of the recent notification of added assets in system tab       Your Monthly plan has been changed.
 
-Profile Profile: Select location and department and add by cliking on link
+Profile: Select location and department and add by clicking on link
     [Tags]      NT
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
@@ -2228,7 +2228,7 @@ Verify all the charcter validations of register page
     RegisterUserPage.Enter single character in the fields of register page      C
     RegisterUserPage.Save the register form
 
-Verify all the charcter validation of profile page under register
+Verify all the character validation of profile page under register
     [Tags]      Negative
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
