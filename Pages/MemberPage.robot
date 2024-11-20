@@ -467,7 +467,7 @@ Clear the data of the field under member page
 
 
 
-Create random assignee email not link with fist name
+Create random assignee email not link with first name
     ${random_string} =    Generate Random String       5      [NUMBERS]
     ${generated_assigneeemail}=    Catenate    Businessemail${random_string}@yopmail.net
     wait until element is visible       ${assigneeEmail}    ${wait_time}
