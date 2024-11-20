@@ -83,6 +83,7 @@ Product Bulk import
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
     Sleep    2
     Fail
     END
@@ -145,6 +146,7 @@ Product Bulk Edit
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
     Sleep    2
     Fail
     END
@@ -183,6 +185,7 @@ Department Bulk Import
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
     Sleep    2
     Fail
     END
@@ -237,6 +240,7 @@ Department Bulk Edit
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
     Sleep    2
     Fail
     END
@@ -292,6 +296,7 @@ Add Product Bulk Edit
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
     Sleep    2
     Fail
     END
@@ -337,6 +342,7 @@ Add Department Bulk Edit
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
     Sleep    2
     Fail
     END
@@ -399,12 +405,12 @@ Location Bulk Edit
     Switch Window       aithentic | Location - List
     Bulk_Import_ExportPage.Search by location name     ${generated_NewLocationName}
     EXCEPT
-    Switch Window       aithentic | Location - List
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
     Sleep    2
     Fail
     END
@@ -458,6 +464,7 @@ Assigned Users Bulk Edit
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
     Sleep    2
     Fail
     END
@@ -528,12 +535,12 @@ Team Member Bulk Edit
     DashboardPage.Select the employee ID checkbox   yes
     Generic.Fetch alert message text and compare it with       Settings Updated
     EXCEPT
-    Switch Window       aithentic | Member - List
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
     Sleep    2
     Fail
     END
@@ -620,6 +627,7 @@ Technology Bulk edit
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
     Sleep    2
     Fail
     END
@@ -680,6 +688,7 @@ Team member Bulk Import
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
     Sleep    2
     Fail
     END
@@ -720,6 +729,7 @@ Assigned User Bulk Import
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
     Sleep    2
     Fail
     END
@@ -769,6 +779,7 @@ Location Bulk Import
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
     Sleep    2
     Fail
     END
@@ -894,6 +905,7 @@ Technology Bulk import
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
     Sleep    2
     Fail
     END
@@ -1233,6 +1245,7 @@ Verify Bulk Import on the Technology Page by adding all parameters
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
     Sleep    2
     Fail
     END
@@ -1346,6 +1359,7 @@ Technology bulk import while entering invalid data in payment period field
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
     Sleep    2
     Fail
     END
@@ -1433,6 +1447,7 @@ Check the payment period alert when entering valid data
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
     Sleep    2
     Fail
     END
@@ -1543,6 +1558,7 @@ Check the payment period alert when entering inavalid data
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
     Sleep    2
     Fail
     END
@@ -1591,6 +1607,7 @@ Verify all the validations of department bulk import
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
     Sleep    2
     Fail
     END
