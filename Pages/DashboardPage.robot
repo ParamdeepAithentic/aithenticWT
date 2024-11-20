@@ -189,7 +189,7 @@ Select product from list
 
 Select an option from company details side list
     [Arguments]    ${option}
-    Generic.Select span parameter    ${option}
+    Generic.Select parameter    ${option}
 
 Click on download agent button to download
     [Arguments]    ${option}
@@ -1366,6 +1366,7 @@ Click on No key Data under chart
 
 Verify and click on the finance filter under technology
     wait until element is not visible       ${loaderIcon}      ${wait_time}
+    wait until element is not visible       ${shadow}      ${wait_time}
     wait until element is visible      //span[normalize-space()='3']     ${wait_time}
     wait until element is enabled      //span[normalize-space()='3']      ${wait_time}
     click element       //span[normalize-space()='3']
@@ -1380,6 +1381,7 @@ Remove the Download Agent pop-up
     wait until element is not visible       ${loaderIcon}      ${wait_time}
     wait until element is visible      //h4[normalize-space()='Download Agent for Single Install']//parent::div//button[contains(@class,'close')]     ${wait_time}
     wait until element is enabled      //h4[normalize-space()='Download Agent for Single Install']//parent::div//button[contains(@class,'close')]      ${wait_time}
+    sleep       ${search_sleep}
     click element   //h4[normalize-space()='Download Agent for Single Install']//parent::div//button[contains(@class,'close')]
     sleep       ${search_sleep}
 

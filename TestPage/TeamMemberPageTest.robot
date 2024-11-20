@@ -63,7 +63,7 @@ Free the asset limit
 Create team member form
     [Tags]    Sanity    Smoke
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       deepparam112@mail-mario.fr.nf    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
@@ -95,7 +95,7 @@ Create team member form
 Add Team member page - Add New Department and assign that department to Team member
     [Tags]      NT
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       deepparam112@mail-mario.fr.nf    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Team Members
@@ -124,7 +124,7 @@ Add Team member page - Add New Department and assign that department to Team mem
 Edit Team member page - Edit New Department and assign that department to Team member
     [Tags]      Sanity      Rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       deepparam112@mail-mario.fr.nf    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
@@ -617,7 +617,7 @@ Verify user is able to export team member asset history list
 Convert Assignee to Team Member
     [Tags]      Sanity      Rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       deepparam112@mail-mario.fr.nf    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Team Members
@@ -731,7 +731,7 @@ Convert Assignee to Team Member
 Check the validation of business email id
     [Tags]      NT      rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       deepparam112@mail-mario.fr.nf    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Team Members
@@ -772,7 +772,7 @@ Check the validation of business email id
 Convert Assignee to team member in case of employee id is not system generated
     [Tags]      NT
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       deepparam112@mail-mario.fr.nf    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
@@ -931,7 +931,7 @@ Verify Invitation and signup as team member
 Add Back Deleted Team member - Invited
     [Tags]      Sanity
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       deepparam112@mail-mario.fr.nf    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
@@ -1041,6 +1041,7 @@ Verify Invitation and signup as team member via company details
     Switch Window    Inbox
     Generic.Refresh the existing page
     Generic.Refresh the existing page
+    Generic.Refresh the existing page
     Generic.Switch to iframe by ID      ifmail
     Yopmail.Click on email of yopmail   OTP Verification.
     Unselect Frame
@@ -1062,7 +1063,7 @@ Verify Invitation and signup as team member via company details
     Generic.Verify your current page location contains      personal-profile
     DashboardPage.Select an option from company details side list    Team Members
     Generic.Verify your current page location contains    member
-    TeamMemberPage.Search Team Member by name   ${generated_TMFname}
+    TeamMemberPage.Search Team Member by name via profile  ${generated_TMFname}
     TeamMemberPage.verify status of first name in member list   Active
     TeamMemberPage.Click on three dots of Team Member listing
     TeamMemberPage.Select option from three dots of Team Member     Details
@@ -1078,10 +1079,10 @@ Verify Invitation and signup as team member via company details
     TeamMemberPage.Click on the button      Update
     Generic.Fetch alert message text and compare it with        Team Member updated successfully
     Generic.Verify your current page location contains          member
-    TeamMemberPage.Search Team Member by name   ${generated_Tmfname}
+    TeamMemberPage.Search Team Member by name via profile   ${generated_Tmfname}
     TeamMemberPage.Click on three dots of Team Member listing
     TeamMemberPage.Click on remove option under three dots
-    Generic.Select span parameter        Yes
+    Generic.Select parameter        Yes
     Generic.Fetch alert message text and compare it with        Team member deleted successfully
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
@@ -1219,6 +1220,7 @@ Add Back Deleted Team member - Active
     Switch Window    Inbox
     Generic.Refresh the existing page
     Generic.Refresh the existing page
+    Generic.Refresh the existing page
     Generic.Switch to iframe by ID      ifmail
     Yopmail.Click on email of yopmail   OTP Verification.
     Unselect Frame
@@ -1303,7 +1305,7 @@ Add Back Deleted Team member - Active
     Generic.Verify your current page location contains      personal-profile
     DashboardPage.Select an option from company details side list    Team Members
     Generic.Verify your current page location contains    member
-    TeamMemberPage.Search Team Member by name   ${generated_Tmfname}
+    TeamMemberPage.Search Team Member by name via profile   ${generated_Tmfname}
     TeamMemberPage.Verify Team member added after delete        ${generated_TMFname} ${generated_TMLname}
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
@@ -1358,7 +1360,7 @@ Click on the location filter under team member and verify it
 Click on the status filter under team member and verify it
     [Tags]     time     smoke       rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       deepparam112@mail-mario.fr.nf    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu     Team Members
@@ -1393,7 +1395,7 @@ Click on the status filter under team member and verify it
 Click on the status filter under team member via profile list and verify it
     [Tags]     time     smoke
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       deepparam112@mail-mario.fr.nf    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name

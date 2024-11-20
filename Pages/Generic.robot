@@ -57,7 +57,7 @@ ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
 ${wait_time}       20
-${yop_sleep}       10
+${yop_sleep}       8
 
 ${search_sleep}       1
 
@@ -89,7 +89,7 @@ Set QA Variables
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
     Set Suite Variable    ${browser_name}         firefox
-    Set Suite Variable    ${email}          deepparam112@yopmail.net  # testqa29j@mailinator.com
+    Set Suite Variable    ${email}          deepparam112@mail-mario.fr.nf  # testqa29j@mailinator.com
     Set Suite Variable    ${discovered_asset_brand}                 MSI
     Set Suite Variable    ${existing_mac}                       D8:CB:8A:CA:6A:39
     Set Suite Variable    ${discovered_existing_brand}          QABrand555
@@ -113,7 +113,7 @@ Set UAT Variables
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
     Set Suite Variable    ${browser_name}         firefox
-    Set Suite Variable    ${email}          deepparam112@yopmail.net  # testqa29j@mailinator.com
+    Set Suite Variable    ${email}          deepparam112@mail-mario.fr.nf  # testqa29j@mailinator.com
     Set Suite Variable    ${discovered_asset_brand}                 Apple Inc
     Set Suite Variable    ${existing_mac}                       98:5a:eb:cb:c8:ed
     Set Suite Variable    ${discovered_existing_brand}              Apple Inc.
@@ -130,10 +130,10 @@ Set UAT Variables
 
 Set Pre-Prod Variables
     Set Suite Variable    ${url}    https://pre-prod-app.aithentic.com/
-    Set Suite Variable    ${valid_password}    Test@123     #pre prod
+    Set Suite Variable    ${valid_password}     Paramdeep@112         # Test@123     #pre prod
     Set Suite Variable    ${apiURL}    https://pre-prod-api.aithentic.com/api/v1
     Set Suite Variable    ${browser_name}         firefox
-    Set Suite Variable    ${email}                 testqa29j@mailinator.com
+    Set Suite Variable    ${email}                deepparam112@mail-mario.fr.nf  # testqa29j@mailinator.com
     Set Suite Variable    ${discovered_asset_brand}                ECS
     Set Suite Variable    ${existing_mac}                       b8:ae:ed:bc:1c:35
     Set Suite Variable    ${discovered_existing_brand}          QABrand555
@@ -454,7 +454,7 @@ Enter phone number
     wait until element is enabled   ${contact_Country_search}          ${wait_time}
     click element   ${contact_Country_search}
     input text  ${contact_Country_search}   ${country}
-    Generic.Select span parameter      ${code}
+    Generic.Select parameter      ${code}
     input text     ${phone}     ${phoneNo}
     Press Keys    ${phone}      ENTER
 #    click element   ${click_countryTag}

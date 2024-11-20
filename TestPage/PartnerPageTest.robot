@@ -753,6 +753,7 @@ Add Manufacturer via personal detail under technology and partner
     PartnersPage.Zip code Input     24015
     PartnersPage.Save new Address
     Generic.Scroll the page till        700
+    Sleep    ${search_sleep}
     PartnersPage.Click on Add new Contact of partner        Add new Contact
     PartnersPage.Enter random contact person
     PartnersPage.Enter contact business email    ${generate_PersonName}     yopmail
@@ -802,6 +803,7 @@ Edit Manufacturer via partner
     PartnersPage.Zip code Input     24015
     PartnersPage.Save new Address
     Generic.Scroll the page till        700
+    Sleep    ${search_sleep}
     PartnersPage.Click on Add new Contact of partner        Add new Contact
     PartnersPage.Enter random contact person
     PartnersPage.Enter contact business email    ${generate_PersonName}     yopmail
@@ -827,6 +829,7 @@ Edit Manufacturer via partner
     PartnersPage.Add new zip code of partner     56709
     Generic.click on the button     Add
     Generic.Scroll the page till        500
+    Sleep    ${search_sleep}
     PartnersPage.click on edit icon
     PartnersPage.Add Unique address_one of partner
     PartnersPage.Add new address_two of partner
@@ -836,6 +839,7 @@ Edit Manufacturer via partner
     PartnersPage.Add new zip code of partner     56709
     PartnersPage.Update the partner information
     Generic.Scroll the page till        700
+    Sleep    ${search_sleep}
     PartnersPage.Click on Add new Contact of partner        Add new Contact
     PartnersPage.Enter random contact name
     PartnersPage.Enter new_business_email of contact    ${generate_PersonName}     yopmail
@@ -885,6 +889,7 @@ Deactivate Manufacturer via partner
     PartnersPage.Zip code Input     24015           #css:#Zip
     PartnersPage.Save new Address
     Generic.Scroll the page till        700
+    Sleep    ${search_sleep}
     PartnersPage.Click on Add new Contact of partner        Add new Contact
     PartnersPage.Enter random contact person
     PartnersPage.Enter contact business email    ${generate_PersonName}     yopmail
@@ -910,6 +915,7 @@ Deactivate Manufacturer via partner
     PartnersPage.Add new zip code of partner     56709
     Generic.click on the button     Add
     Generic.Scroll the page till        500
+    Sleep    ${search_sleep}
     PartnersPage.click on edit icon
     PartnersPage.Add Unique address_one of partner
     PartnersPage.Add new address_two of partner
@@ -919,6 +925,7 @@ Deactivate Manufacturer via partner
     PartnersPage.Add new zip code of partner     56709
     PartnersPage.Update the partner information
     Generic.Scroll the page till        700
+    sleep   ${search_sleep}
     PartnersPage.Click on Add new Contact of partner        Add new Contact
     PartnersPage.Enter random contact name
     PartnersPage.Enter new_business_email of contact    ${generate_PersonName}     yopmail
@@ -972,6 +979,7 @@ Activate Manufacturer via partner
     PartnersPage.Zip code Input     24015
     PartnersPage.Save new Address
     Generic.Scroll the page till        700
+    Sleep    ${search_sleep}
     PartnersPage.Click on Add new Contact of partner        Add new Contact
     PartnersPage.Enter random contact person
     PartnersPage.Enter contact business email    ${generate_PersonName}     yopmail
@@ -997,6 +1005,7 @@ Activate Manufacturer via partner
     PartnersPage.Add new zip code of partner     56709
     Generic.click on the button     Add
     Generic.Scroll the page till        500
+    Sleep    ${search_sleep}
     PartnersPage.click on edit icon
     PartnersPage.Add Unique address_one of partner
     PartnersPage.Add new address_two of partner
@@ -1006,6 +1015,7 @@ Activate Manufacturer via partner
     PartnersPage.Add new zip code of partner     56709
     PartnersPage.Update the partner information
     Generic.Scroll the page till        700
+    Sleep    ${search_sleep}
     PartnersPage.Click on Add new Contact of partner        Add new Contact
     PartnersPage.Enter random contact name
     PartnersPage.Enter new_business_email of contact    ${generate_PersonName}     yopmail
@@ -1062,6 +1072,7 @@ Remove Manufacturer from partner
     PartnersPage.Zip code Input     24015
     PartnersPage.Save new Address
     Generic.Scroll the page till        700
+    Sleep    ${search_sleep}
     PartnersPage.Click on Add new Contact of partner        Add new Contact
     PartnersPage.Enter random contact person
     PartnersPage.Enter contact business email    ${generate_PersonName}     yopmail
@@ -1087,6 +1098,7 @@ Remove Manufacturer from partner
     PartnersPage.Add new zip code of partner     56709
     Generic.click on the button     Add
     Generic.Scroll the page till        500
+    Sleep    ${search_sleep}
     PartnersPage.click on edit icon
     PartnersPage.Add Unique address_one of partner
     PartnersPage.Add new address_two of partner
@@ -1097,6 +1109,7 @@ Remove Manufacturer from partner
     PartnersPage.Update the partner information
     PartnersPage.Wait for add address pop up hide
     Generic.Scroll the page till    700
+    Sleep    ${search_sleep}
     PartnersPage.Click on Add new Contact of partner        Add new Contact
     PartnersPage.Enter random contact name
     PartnersPage.Enter new_business_email of contact    ${generate_PersonName}     yopmail
@@ -1267,6 +1280,7 @@ Add_edit_deactivate_removeSupplier while adding brand
     PartnersPage.Zip code Input     24015
     PartnersPage.Save new Address
     Generic.Scroll the page till        700
+    Sleep    ${search_sleep}
     PartnersPage.Click on Add new Contact of partner        Add new Contact
     PartnersPage.Enter random contact person
     PartnersPage.Enter contact business email    ${generate_PersonName}     yopmail
@@ -1284,6 +1298,7 @@ Add_edit_deactivate_removeSupplier while adding brand
     PartnersPage.click on plus icon to add another business_url
     PartnersPage.Add second business_url        ${generated_BrandName}
     Generic.Scroll the page till        700
+    Sleep    ${search_sleep}
     PartnersPage.click on edit icon
     PartnersPage.Add Unique address_one of partner
     PartnersPage.Add new address_two of partner
@@ -1362,6 +1377,7 @@ Add_edit_deactivate_removeSupport_partner_while_adding_brand
     PartnersPage.Zip code Input     2659998
     PartnersPage.Save new Address
     Generic.Scroll the page till        700
+    Sleep    ${search_sleep}
     PartnersPage.Click on Add new Contact of partner        Add new Contact
     PartnersPage.Enter random contact person
     PartnersPage.Enter contact business email    ${generate_PersonName}     yopmail
@@ -1379,6 +1395,7 @@ Add_edit_deactivate_removeSupport_partner_while_adding_brand
     PartnersPage.click on plus icon to add another business_url
     PartnersPage.Add second business_url        ${generated_BrandName}
     Generic.Scroll the page till        700
+    Sleep    ${search_sleep}
     PartnersPage.click on edit icon
     PartnersPage.Add Unique address_one of partner
     PartnersPage.Add new address_two of partner

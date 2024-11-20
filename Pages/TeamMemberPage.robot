@@ -53,6 +53,7 @@ ${Edit_Email}       css:#businessEmail
 
 ${teamMember_Action_btn}     css:#Team-Member-Actions
 ${name_SearchBar}       css:#searchbar-memberlist
+${name_SearchBar_via_profile}       css:#searchbar-member-profile
 ${Dept_SearchBar}       css:#searchbar-departmentlist
 ${three_dots}       css:.three-dots
 ${Edit_first_name}      css:#firstName
@@ -131,7 +132,7 @@ Enter team member business email_mailinator
 
 Enter team member business email_yopmail
     ${random_string} =    Generate Random String       10      [NUMBERS]
-    ${generated_TMbusinessEmail}=    Catenate    TMBusinessEmail_${random_string}@yopmail.net
+    ${generated_TMbusinessEmail}=    Catenate    TMBusinessEmail_${random_string}@mail-mario.fr.nf
     wait until element is visible       ${TMBusinessEmail}    ${wait_time}
     input text   ${TMBusinessEmail}   ${generated_TMbusinessEmail}
     log to console      ${generated_TMbusinessEmail}
@@ -203,6 +204,17 @@ Search Team Member by name
     Clear Element Text      ${name_SearchBar}
     ${StartTime1} =     Get Current Time in Milliseconds
     input text   ${name_SearchBar}   ${name}
+    sleep      ${search_sleep}
+    wait until element is visible       css:thead tr       ${wait_time}
+
+Search Team Member by name via profile
+    [Arguments]    ${name}
+    wait until element is visible       css:thead tr       ${wait_time}
+    wait until element is visible      ${name_SearchBar_via_profile}     ${wait_time}
+    click element      ${name_SearchBar_via_profile}
+    Clear Element Text      ${name_SearchBar_via_profile}
+    ${StartTime1} =     Get Current Time in Milliseconds
+    input text   ${name_SearchBar_via_profile}   ${name}
     sleep      ${search_sleep}
     wait until element is visible       css:thead tr       ${wait_time}
 
@@ -290,7 +302,7 @@ Enter team member business email_mailinator while converting assignee to team me
 
 Enter team member business email_yopmail while converting assignee to team member
     ${random_string} =    Generate Random String       10      [NUMBERS]
-    ${generated_TMbusinessemail}=    Catenate    TMBusinessEmail_${random_string}@yopmail.net
+    ${generated_TMbusinessemail}=    Catenate    TMBusinessEmail_${random_string}@mail-mario.fr.nf
     wait until element is visible       css:#businessEmail    ${wait_time}
     input text   css:#businessEmail   ${generated_TMbusinessemail}
     log to console      ${generated_TMbusinessemail}

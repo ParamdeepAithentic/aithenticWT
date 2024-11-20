@@ -629,3 +629,12 @@ Create position with 101 numbers under create profile page
     sleep       ${search_sleep}
     log to console      registerPosition:${generate_register_New_Position}
     set global variable   ${generate_register_New_Position}
+
+Create address one with 101 numbers under subscription payment
+    wait until element is enabled       css:#AddressLine1       ${wait_time}
+    click element   css:#AddressLine1
+    ${random_string} =     Generate Random String    101    [LETTERS]
+    ${generate_register_New_Address_payment}=    Catenate    Address_${random_string}
+    Input Text   css:#AddressLine1   ${generate_register_New_Address_payment}
+    Log To Console    Address:${generate_register_New_Address_payment}
+    Set Global Variable    ${generate_register_New_Address_payment}
