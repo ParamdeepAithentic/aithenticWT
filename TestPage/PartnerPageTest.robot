@@ -1726,7 +1726,7 @@ Verify that user is not able to Deactivate and remove Supplier having technology
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology
-    TechnologyPage.Search by AssetId       ${generated_BrandName}
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
     Generic.wait until table get load
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
@@ -1788,7 +1788,7 @@ Verify that user is not able to Deactivate and remove Support Partner having tec
     Generic.Fetch alert message text and compare it with        Technology created successfully
     TechnologyPage.Click on save technology form pop button
     Generic.Verify your current page location contains      technology
-    TechnologyPage.Search by AssetId       ${generated_BrandName}
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
     Generic.wait until table get load
     Generic.select the option from the side menu    Partners
     Generic.Verify your current page location contains      partner
