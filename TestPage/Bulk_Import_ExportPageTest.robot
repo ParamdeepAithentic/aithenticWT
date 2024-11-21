@@ -1672,9 +1672,6 @@ Verify all the validations of department bulk edit
 
 
 
-
-
-
 #Zz kill browser
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
 
