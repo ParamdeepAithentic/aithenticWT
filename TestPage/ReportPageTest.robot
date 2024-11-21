@@ -89,11 +89,11 @@ Verify Reports Key Data records count
     ReportsPage.Verify that key_data is equals to total number of counts      Partners
 #    Go back
 #    Generic.Verify your current page location contains          account-overview
-#    ReportsPage.Click on tab under key data       Contracts
+#    ReportsPage.Click on tab under key data       Smart Share
 #    Generic.Verify your current page location contains          contracts-list
 #    Generic.Scroll Window To End
 #    ReportsPage.Fetch the total count
-#    ReportsPage.Verify that key_data is equals to total number of counts      Contracts
+#    ReportsPage.Verify that key_data is equals to total number of counts     Smart Share
 
 Verify Reports Technology Types records count
     [Tags]      Sanity
