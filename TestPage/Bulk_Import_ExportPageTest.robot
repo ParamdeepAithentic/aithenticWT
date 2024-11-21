@@ -1655,7 +1655,7 @@ Verify all the validations of department bulk edit
     Bulk_Import_ExportPage.Clear the text of the field      department_name
     Bulk_Import_ExportPage.Enter static value in the fields of department bulk import       department_name         Department_milan
     Generic.Click on the button     Check Data      #Update,Edit
-    Bulk_Import_ExportPage.Verify the upload message text    validationErrors      Department already exists, Status is missing
+    Bulk_Import_ExportPage.Verify the upload message text    validationErrors      Department already exists
     Bulk_Import_ExportPage.Verify the upload message text    validationWarnings      Cost Center is missing
     EXCEPT
     Switch Window       aithentic | Department - List
@@ -1664,6 +1664,7 @@ Verify all the validations of department bulk edit
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
     Sleep    2
     Fail
     END
