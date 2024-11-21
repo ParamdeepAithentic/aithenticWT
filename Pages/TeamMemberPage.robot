@@ -221,6 +221,7 @@ Search Team Member by name via profile
 Click on three dots of Team Member listing
     wait until element is visible   ${three_dots}   ${wait_time}
     click element   ${three_dots}
+    sleep   ${search_sleep}
 
 Select option from three dots of Team Member
     [Arguments]     ${option}
@@ -375,6 +376,7 @@ Click on remove option under three dots
     wait until element is visible       css:.member-remove-qa    ${wait_time}
     wait until element is enabled       css:.member-remove-qa   ${wait_time}
     click element       css:.member-remove-qa
+    sleep       ${search_sleep}
 
 Select option from remove TM warning pop-up
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
