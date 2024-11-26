@@ -3173,7 +3173,7 @@ Verify_Notification_Update_Asset
 Click on the technology group filters and verify it
     [Tags]     time     smoke     sanity     rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
+    LandingPage.Fill the login Form     ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
@@ -3193,7 +3193,8 @@ Click on the technology group filters and verify it
 #    PaginationPage.Click on the pagination dropdown     technology
 #    PaginationPage.Select the value from the pagination drop down count     500
 #    PaginationPage.Fetch the selected value of the dropdown
-    PaginationPage.Check Pagination        technology
+#    PaginationPage.Check Pagination        technology
+    PaginationPage.Set pagination to max
     PaginationPage.Fetch the total count
     LocationPage.Fetch the country from location filter and click    Group      2     Applications        ${New_Name}
     Generic.click on the tab        reset filters

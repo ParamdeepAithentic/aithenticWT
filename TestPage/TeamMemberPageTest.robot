@@ -1422,7 +1422,8 @@ Click on the status filter under team member via profile list and verify it
 #    PaginationPage.Click on the pagination dropdown     profile-team-member
 #    PaginationPage.Select the value from the pagination drop down count     500
 #    PaginationPage.Fetch the selected value of the dropdown     profile-team-member
-    PaginationPage.Check Pagination   profile-team-member
+#    PaginationPage.Check Pagination   profile-team-member
+    PaginationPage.Set pagination to max
     PaginationPage.Fetch the total count
     TeamMemberPage.Fetch the country from team member filter and click       Status          Active         ${New_status1}
     TeamMemberPage.Click on the status filter under team member via profile
@@ -1432,7 +1433,7 @@ Click on the status filter under team member via profile list and verify it
     DashboardPage.click on the authentication tab under security
     TeamMemberPage.click on the members tab under team member via profile
     Generic.Wait until table get load for filters
-    PaginationPage.Fetch the total count
+    PaginationPage.Fetch the total count for filter only
     TeamMemberPage.Fetch the country from team member filter and click       Status          Inactive         ${New_status1}
     Generic.Click on the profile name
     Generic.Select logout option from profile list
@@ -1443,22 +1444,23 @@ Click on the status filter under team member via profile list and verify it
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
-    Generic.Select span parameter      Team Members
+    Generic.Select parameter      Team Members
     Generic.Verify your current page location contains      dashboard
     Generic.Wait until table get load for filters
-    PaginationPage.Fetch the total count
+    PaginationPage.Fetch the total count for filter only
     TeamMemberPage.Click on the status filter under team member via profile
     TeamMemberPage.Select the option from the filters under team member via profile     2
     TeamMemberPage.Get the text of selected status filter under team meber via profile
     DashboardPage.click on the authentication tab under security
     TeamMemberPage.click on the members tab under team member via profile
     Generic.Wait until table get load for filters
-    PaginationPage.Fetch the total count
+    PaginationPage.Fetch the total count for filter only
 #    PaginationPage.Click on the pagination dropdown     profile-team-member
 #    PaginationPage.Select the value from the pagination drop down count     500
 #    PaginationPage.Fetch the selected value of the dropdown     profile-team-member
-    PaginationPage.Check Pagination   profile-team-member
-    PaginationPage.Fetch the total count
+#    PaginationPage.Check Pagination   profile-team-member
+    PaginationPage.Set pagination to max
+    PaginationPage.Fetch the total count for filter only
     TeamMemberPage.Fetch the country from team member filter and click       Status          Invited         ${New_status1}
 
 Verify all the validation of add team member

@@ -57,7 +57,7 @@ ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
 
-${wait_time}       60
+${wait_time}       30
 ${yop_sleep}       8
 
 ${search_sleep}       1
@@ -541,3 +541,20 @@ Click on the reset filters link
 
 Wait for table skelton to get disable
      wait until element is not visible       (//tbody//tr[2]//div[contains(@class,'skeleton')])[1]          ${wait_time}
+
+Set asset ID settings
+    TRY
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the asset ID checkbox      yes
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the location ID checkbox   yes
+    sleep   ${search_sleep}
+    DashboardPage.Select the asset ID checkbox      no
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    EXCEPT
+        Log    Alert is not visible check settings update
+    END

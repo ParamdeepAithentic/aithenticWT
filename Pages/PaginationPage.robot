@@ -70,7 +70,7 @@ Fetch the selected value of the dropdown
 #    [Arguments]     ${option}
     wait until element is visible       (//td[normalize-space()='1'])[1]      ${wait_time}
     wait until element is enabled       (//td[normalize-space()='1'])[1]      ${wait_time}
-    ${get_count_of_dropDown_value} =    get text    //*[contains(@class,'per-page')]//div[@role='combobox']
+    ${get_count_of_dropDown_value} =    get text    //*[contains(@class,'per-page')]//span[contains(@class,'value-label')]
     ${dropDown_value_as_number}=   Convert To Integer   ${get_count_of_dropDown_value}
     set global variable    ${dropDown_value_as_number}
     Log to console  Selected value :${dropDown_value_as_number}
@@ -271,6 +271,7 @@ Select parameter from brand dropdown list of OCS
 Click on save technology form button of OCS
     wait until element is visible       ${saveBTN1}       ${wait_time}
     wait until element is enabled       ${saveBTN1}       ${wait_time}
+    Sleep    2
     click element       ${saveBTN1}
     wait until element is not visible       ${shadow}          60
 
@@ -445,7 +446,7 @@ Check Pagination
     [Arguments]     ${option}
     TRY
         PaginationPage.Pagination box visible
-        PaginationPage.Select the value from the pagination drop down count     500
+        #PaginationPage.Select the value from the pagination drop down count     500
         PaginationPage.Log WebElements    ${option}
     EXCEPT
         PaginationPage.Skip the pagination code
@@ -455,7 +456,7 @@ Check Pagination of location
     [Arguments]     ${option}
     TRY
         PaginationPage.Pagination box visible
-        PaginationPage.Select the value from the pagination drop down count     500
+        #PaginationPage.Select the value from the pagination drop down count     500
         PaginationPage.Click on the pagination dropdown of OCS     ${option}
     EXCEPT
         PaginationPage.Skip the pagination code
@@ -465,7 +466,7 @@ Check Pagination of OCS advance search
     [Arguments]     ${option}
     TRY
         PaginationPage.Pagination box visible
-        PaginationPage.Select the value from the pagination drop down count     500
+        #PaginationPage.Select the value from the pagination drop down count     500
         PaginationPage.Log WebElements of Product Dropdown of OCS    ${option}
     EXCEPT
         PaginationPage.Skip the pagination code
@@ -475,7 +476,7 @@ Check Pagination of tecdhnology advance search
     [Arguments]     ${option}
     TRY
         PaginationPage.Pagination box visible
-        PaginationPage.Select the value from the pagination drop down count     500
+        #PaginationPage.Select the value from the pagination drop down count     500
         PaginationPage.Log WebElements of Product Dropdown    ${option}
     EXCEPT
         PaginationPage.Skip the pagination code
@@ -485,7 +486,7 @@ Check Pagination of Recent Activites
     [Arguments]     ${option}
     TRY
         PaginationPage.Pagination box visible
-        PaginationPage.Select the value from the pagination drop down count     500
+        #PaginationPage.Select the value from the pagination drop down count     500
         PaginationPage.Log WebElements for Recent Activites table   ${option}
     EXCEPT
         PaginationPage.Skip the pagination code
@@ -496,7 +497,7 @@ Check filter Pagination of Recent Activites
 #    [Arguments]     ${option}
     TRY
         PaginationPage.Pagination box visible
-        PaginationPage.Select the value from the pagination drop down count     500
+        #PaginationPage.Select the value from the pagination drop down count     500
         PaginationPage.Fetch the selected value of the dropdown
     EXCEPT
         PaginationPage.Skip the pagination code
