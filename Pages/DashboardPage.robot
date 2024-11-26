@@ -1845,3 +1845,19 @@ Verify the warning is visible when deactivate or remove brand
 Verify update button is not visible on edit brand page
     wait until element is not visible       //button[normalize-space()='Update']
 
+Enter to Static Email into popup of share aithentic
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}    ${wait_time}
+    wait until element is visible      ${share_toEmail}         ${wait_time}
+    wait until element is enabled      ${share_toEmail}         ${wait_time}
+    click element       ${share_toEmail}
+    input text      ${share_toEmail}        ${option}
+
+Fetch the validation of to field under share aithentic
+    [Arguments]         ${text}
+    wait until element is visible       //div[contains(@class,'invalid-feedback')]//small    ${wait_time}
+    wait until element is enabled        //div[contains(@class,'invalid-feedback')]//small    ${wait_time}
+    ${get_checkbox_validation} =    get text    //div[contains(@class,'invalid-feedback')]//small
+    set global variable    ${get_checkbox_validation}
+    log to console    ${get_checkbox_validation}
+    should be equal   ${get_checkbox_validation}     ${text}
