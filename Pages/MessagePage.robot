@@ -181,7 +181,8 @@ Fetch the country from location filter and click
     [Arguments]     ${option}       ${option1}      ${option2}
 #    ${element_count}=    Get Element Count    css:.qa-total-count-list
 #    Log      ${element_count}
-    FOR    ${index}    IN RANGE    1    ${total_count} + 1
+    TRY
+    FOR    ${index}    IN RANGE    1    ${total_count + 1}
         Wait Until Element Is Visible   (//div[normalize-space()='${option}']//following-sibling::div//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]      ${wait_time}
         Wait Until Element Is Enabled   (//div[normalize-space()='${option}']//following-sibling::div//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]       ${wait_time}
         ${element1}=    Get Text    (//div[normalize-space()='${option}']//following-sibling::div//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]
@@ -189,7 +190,10 @@ Fetch the country from location filter and click
         ${New_Country}=    Evaluate    '${original_string}'.strip()
         Log    Element ${index}: ${New_Country}
         Run Keyword If    '${New_Country}' == '${option2}'    Run Keyword       Continue For Loop
-
+    END
+    EXCEPT
+        Wait Until Element Is Visible       //span[normalize-space()='No Records']      ${wait_time}
+        Log    There is no data in the table
     END
 
 Comapre the total count after selecting filter

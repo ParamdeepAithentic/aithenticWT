@@ -481,7 +481,7 @@ Check Pagination of tecdhnology advance search
         PaginationPage.Skip the pagination code
     END
 
- Check Pagination of Recent Activites
+Check Pagination of Recent Activites
     [Arguments]     ${option}
     TRY
         PaginationPage.Pagination box visible

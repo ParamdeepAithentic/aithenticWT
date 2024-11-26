@@ -473,15 +473,8 @@ Scroll Window To End
     Execute JavaScript    window.scrollTo(0, document.body.scrollHeight);
 
 Wait until table get load
-    TRY
-         wait until element is visible       //tbody//tr//td[normalize-space()='1']          ${wait_time}
-         wait until element is enabled      //tbody//tr//td[normalize-space()='1']          ${wait_time}
-    EXCEPT
-        wait until element is visible       //span[normalize-space()='No Records']          ${yop_sleep}
-        wait until element is enabled      //span[normalize-space()='No Records']           ${yop_sleep}
-    FINALLY
-        Log    Table got the issue while loading or there is no data
-    END
+    wait until element is visible       //tbody//tr//td[normalize-space()='1']          ${wait_time}
+    wait until element is enabled      //tbody//tr//td[normalize-space()='1']          ${wait_time}
 
 Wait until table get load for filters
     TRY

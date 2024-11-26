@@ -1358,7 +1358,7 @@ Click on the location filter under team member and verify it
     TeamMemberPage.Fetch the country from team member filter and click       Location               Afgahniastan         ${New_Name}
 
 Click on the status filter under team member and verify it
-    [Tags]     time     smoke         rerun
+    [Tags]     time     smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       deepparam112@mail-mario.fr.nf    Paramdeep@112
     Generic.Verify your current page location contains      dashboard

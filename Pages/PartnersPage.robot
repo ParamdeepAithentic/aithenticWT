@@ -779,6 +779,7 @@ Filter and verify without pagination
     FOR    ${index}    IN RANGE    1    ${total_count}
             Wait Until Element Is Visible   (//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]      ${wait_time}
             Wait Until Element Is Enabled   (//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]       ${wait_time}
+            Mouse over    (//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]
             ${element1}=    Get Text    (//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]
             ${original_string}=    Set Variable    ${element1}
             ${New_filter}=    Evaluate    '${original_string}'.strip()

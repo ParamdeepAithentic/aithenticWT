@@ -1007,7 +1007,8 @@ Verify Bulk Import on the Technology Page by adding all parameters
     TeamMemberPage.Enter team member first name
     TeamMemberPage.Enter team member last name
     Generic.Enter phone number      India   +91     9646289871
-    TeamMemberPage.Enter team member business email_mailinator
+#    TeamMemberPage.Enter team member business email_mailinator
+    TeamMemberPage.Enter team member business email_yopmail
     TeamMemberPage.Enter the Position in member form        QA
     TeamMemberPage.Create random employee id
     TeamMemberPage.Click on team member department

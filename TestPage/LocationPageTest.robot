@@ -287,7 +287,7 @@ Click on the select status filter and verify it
     LocationPage.Fetch the country from location filter and click       Status      7     Inactive         ${New_status}
 
 Click on the select location filter and verify it
-    [Tags]    time     smoke      rerun
+    [Tags]    time     smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -312,6 +312,7 @@ Click on the select location filter and verify it
     Calculate Running time  10  ${pageHeading}   Filter Page - Data load time of filter Country under location group      10    ${pageTime}     ${ActualTime}    Filter_Time
 
     Generic.Click on the reset filters link
+    Generic.Wait for table skelton to get disable
     LocationPage.Click on the location filter under location
     LocationPage.Select the option from location filter under location         Canada
     LocationPage.Get the text of selected filter under location     Canada
@@ -321,15 +322,25 @@ Click on the select location filter and verify it
     Generic.Scroll Window To End
     sleep   ${search_sleep}
     PaginationPage.Fetch the total count for filter only
+
+    PaginationPage.Check Pagination     location-list
+    PaginationPage.Fetch the total count for filter only
+
     LocationPage.Fetch the country from location filter and click       Country     3        Canada          ${New_Name}
     Generic.Click on the reset filters link
+    Generic.Wait for table skelton to get disable
     LocationPage.Click on the location filter under location
     LocationPage.Select the option from location filter under location          India
     LocationPage.Get the text of selected filter under location      India
     Generic.Wait until table get load for filters
     PaginationPage.Fetch the total count for filter only
+
+    PaginationPage.Check Pagination     location-list
+    PaginationPage.Fetch the total count for filter only
+
     LocationPage.Fetch the country from location filter and click       Country     3        India          ${New_Name}
     Generic.Click on the reset filters link
+    Generic.Wait for table skelton to get disable
     LocationPage.Click on the location filter under location
     LocationPage.Select the option from location filter under location         Turkey
     LocationPage.Get the text of selected filter under location    Turkey
