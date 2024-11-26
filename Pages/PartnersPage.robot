@@ -776,7 +776,7 @@ Filter and verify with pagination
 
 Filter and verify without pagination
     [Arguments]     ${option}       ${option1}      ${option2}
-    FOR    ${index}    IN RANGE    1    ${total_count} + 1
+    FOR    ${index}    IN RANGE    1    ${total_count}
             Wait Until Element Is Visible   (//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]      ${wait_time}
             Wait Until Element Is Enabled   (//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]       ${wait_time}
             ${element1}=    Get Text    (//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]
@@ -784,8 +784,7 @@ Filter and verify without pagination
             ${New_filter}=    Evaluate    '${original_string}'.strip()
             Log    Element ${index}: ${New_filter}
             Run Keyword If    '${New_filter}' == '${option2}'    Run Keyword       Continue For Loop
-
-         END
+    END
 
 Search by static business name
     [Arguments]    ${BusinessName}

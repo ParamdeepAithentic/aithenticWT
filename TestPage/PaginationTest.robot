@@ -182,7 +182,7 @@ Verify pagination of Assigned User Table
     PaginationPage.Check Pagination     assignee-list
 
 Verify Pagination of Product Dropdown when Add and Edit Technology
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
@@ -353,7 +353,7 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
 
 
 Verify Pagination of Product Dropdown when Add IP discovered asset
-    [Tags]      NT      rerun
+    [Tags]      NT        
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
         Generic.Verify your current page location contains      dashboard

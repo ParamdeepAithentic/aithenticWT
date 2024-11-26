@@ -445,7 +445,7 @@ Verify the validations while edit the assigned user
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page          Please enter Assignee Name
 
 Verify all the validate validations of the assigned user while adding assigned user
-    [Tags]    NT        rerun
+    [Tags]    NT          
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard

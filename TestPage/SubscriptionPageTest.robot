@@ -148,7 +148,7 @@ Run now from view details
     SubscriptionPage.Get the value of fields under view details of subscription connector   2       Samuel John
 
 Suspend and unsuspend the account
-    [Tags]      Smoke     Sanity        Rerun
+    [Tags]      Smoke     Sanity          
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
@@ -197,7 +197,7 @@ Suspend and unsuspend the account
     END
 
 View Scheduler from view Result
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -435,7 +435,7 @@ View Scheduler from view Result
 #    SubscriptionPage.Click on the three dots of subscription connector      Microsoft Corporation
 
 Create service now with invalid data
-    [Tags]      NT      rerun
+    [Tags]      NT        
    Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -534,7 +534,7 @@ Create service now with invalid data
     Generic.Verify your current page contains this text     Service Now Connection Failed.
 
 Create service now with valid data
-    [Tags]      Sanity     Smoke        Rerun
+    [Tags]      Sanity     Smoke          
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -777,7 +777,7 @@ Create service now with valid data
 
 
 Click on connetors button link under asset discovery
-    [Tags]      Sanity      rerun
+    [Tags]      Sanity        
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -876,7 +876,7 @@ Click on connetors button link under asset discovery
     Generic.Wait until table get load
 
 Create JAMFF account with valid data
-   [Tags]      NT       rerun
+   [Tags]      NT         
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1043,7 +1043,7 @@ Create JAMFF account with valid data
     Generic.Verify your current page contains this text    No Records
 
 Create jamff account with invalid data
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1240,7 +1240,7 @@ Create jamff account with invalid data
 #    Generic.Verify your current page contains this text    No Records
 
 Create sentinel account and verify the options
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1482,7 +1482,7 @@ Click on the three dots of Intune and verify the details
 
 
 Create Tenable Account and verify the details
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1714,7 +1714,7 @@ Create Tenable Account and verify the details
 
 
 Create tanium Account and verify the details
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1945,7 +1945,7 @@ Create tanium Account and verify the details
     SubscriptionPage.Get the value of fields under view details of subscription of tanium tab under asset discovery   2       ${generate_register_Fname} ${generate_register_Lname}
 
 Create CrowdStrike Account and verify the details
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain

@@ -52,7 +52,7 @@ Test Setup      open the browser with the url
 
 *** Test Cases ***
 Free the asset limit
-    [Tags]      Smoke     Sanity      Time    rerun
+    [Tags]      Smoke     Sanity      Time      
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     johns@mai.25u.com        Test@123
     Generic.Verify your current page location contains      dashboard
@@ -64,7 +64,7 @@ Free the asset limit
 
 
 Search Discovered Assets
-    [Tags]    NT        rerun
+    [Tags]    NT          
     TRY
        Generic.click on the tab	Login
        LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -217,7 +217,7 @@ Match Discovery Asset with Static Existing Asset
     END
 
 Apply filters and clear filter on Discovered Asset
-    [Tags]    NT        rerun
+    [Tags]    NT          
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form     johns@mai.25u.com         Test@123
@@ -1520,7 +1520,7 @@ Search with containing fields under advance search of component of discovered as
     END
 
 Search with containing fields under advance search of IP Address of discovered asset
-    [Tags]      Sanity      Rerun
+    [Tags]      Sanity        
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
@@ -1765,7 +1765,7 @@ Upload Image and Document file during Add Asset with IP address from Agent Disco
     END
 
 Verify cross icon an reset icon while adding IP discovered asset
-        [Tags]    Sanity        Rerun
+        [Tags]    Sanity          
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
         Generic.Verify your current page location contains      dashboard

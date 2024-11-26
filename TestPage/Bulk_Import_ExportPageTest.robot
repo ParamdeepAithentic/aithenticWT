@@ -84,7 +84,7 @@ Product Bulk import
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
     DashboardPage.Select the employee ID checkbox   yes
-    Sleep    2
+    Sleep    ${yop_Sleep}
     Fail
     END
 
@@ -147,7 +147,7 @@ Product Bulk Edit
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
     DashboardPage.Select the employee ID checkbox   yes
-    Sleep    2
+    Sleep    ${yop_Sleep}
     Fail
     END
 
@@ -186,7 +186,7 @@ Department Bulk Import
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
     DashboardPage.Select the employee ID checkbox   yes
-    Sleep    2
+    Sleep    ${yop_Sleep}
     Fail
     END
 
@@ -241,7 +241,7 @@ Department Bulk Edit
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
     DashboardPage.Select the employee ID checkbox   yes
-    Sleep    2
+    Sleep    ${yop_Sleep}
     Fail
     END
 
@@ -297,7 +297,7 @@ Add Product Bulk Edit
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
     DashboardPage.Select the employee ID checkbox   yes
-    Sleep    2
+    Sleep    ${yop_Sleep}
     Fail
     END
 
@@ -343,7 +343,7 @@ Add Department Bulk Edit
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
     DashboardPage.Select the employee ID checkbox   yes
-    Sleep    2
+    Sleep    ${yop_Sleep}
     Fail
     END
 
@@ -411,7 +411,7 @@ Location Bulk Edit
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
     DashboardPage.Select the employee ID checkbox   yes
-    Sleep    2
+    Sleep    ${yop_Sleep}
     Fail
     END
 
@@ -465,13 +465,13 @@ Assigned Users Bulk Edit
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
     DashboardPage.Select the employee ID checkbox   yes
-    Sleep    2
+    Sleep    ${yop_Sleep}
     Fail
     END
 
 
 Team Member Bulk Edit
-    [Tags]    Sanity        rerun
+    [Tags]    Sanity
     TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
@@ -541,13 +541,13 @@ Team Member Bulk Edit
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
     DashboardPage.Select the employee ID checkbox   yes
-    Sleep    2
+    Sleep    ${yop_Sleep}
     Fail
     END
 
 
 Technology Bulk edit
-    [Tags]       sanity     rerun
+    [Tags]       sanity
     TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
@@ -628,7 +628,7 @@ Technology Bulk edit
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
     DashboardPage.Select the employee ID checkbox   yes
-    Sleep    2
+    Sleep    ${yop_Sleep}
     Fail
     END
 
@@ -689,7 +689,7 @@ Team member Bulk Import
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
     DashboardPage.Select the employee ID checkbox   yes
-    Sleep    2
+    Sleep    ${yop_Sleep}
     Fail
     END
 
@@ -730,7 +730,7 @@ Assigned User Bulk Import
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
     DashboardPage.Select the employee ID checkbox   yes
-    Sleep    2
+    Sleep    ${yop_Sleep}
     Fail
     END
 
@@ -780,7 +780,7 @@ Location Bulk Import
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
     DashboardPage.Select the employee ID checkbox   yes
-    Sleep    2
+    Sleep    ${yop_Sleep}
     Fail
     END
 
@@ -906,7 +906,7 @@ Technology Bulk import
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
     DashboardPage.Select the employee ID checkbox   yes
-    Sleep    2
+    Sleep    ${yop_Sleep}
     Fail
     END
 
@@ -914,7 +914,7 @@ Technology Bulk import
 
 
 Verify Bulk Import on the Technology Page by adding all parameters
-    [Tags]    Sanity     time   smoke
+    [Tags]    Sanity     time   smoke    rerun
     TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
@@ -1246,7 +1246,7 @@ Verify Bulk Import on the Technology Page by adding all parameters
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
     DashboardPage.Select the employee ID checkbox   yes
-    Sleep    2
+    Sleep    ${yop_Sleep}
     Fail
     END
 
@@ -1360,7 +1360,7 @@ Technology bulk import while entering invalid data in payment period field
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
     DashboardPage.Select the employee ID checkbox   yes
-    Sleep    2
+    Sleep    ${yop_Sleep}
     Fail
     END
 
@@ -1448,7 +1448,7 @@ Check the payment period alert when entering valid data
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
     DashboardPage.Select the employee ID checkbox   yes
-    Sleep    2
+    Sleep    ${yop_Sleep}
     Fail
     END
 
@@ -1559,7 +1559,7 @@ Check the payment period alert when entering inavalid data
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
     DashboardPage.Select the employee ID checkbox   yes
-    Sleep    2
+    Sleep    ${yop_Sleep}
     Fail
     END
 
@@ -1608,7 +1608,7 @@ Verify all the validations of department bulk import
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
     DashboardPage.Select the employee ID checkbox   yes
-    Sleep    2
+    Sleep    ${yop_Sleep}
     Fail
     END
 
@@ -1665,7 +1665,7 @@ Verify all the validations of department bulk edit
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the asset ID checkbox      no
     DashboardPage.Select the employee ID checkbox   yes
-    Sleep    2
+    Sleep    ${yop_Sleep}
     Fail
     END
 

@@ -122,7 +122,7 @@ Add Team member page - Add New Department and assign that department to Team mem
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
 
 Edit Team member page - Edit New Department and assign that department to Team member
-    [Tags]      Sanity      Rerun
+    [Tags]      Sanity        
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       deepparam112@mail-mario.fr.nf    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
@@ -175,7 +175,7 @@ Edit Team member page - Edit New Department and assign that department to Team m
     Generic.Verify your current page location contains          memberslist
 
 Verify team member Asset history
-    [Tags]      Sanity      Rerun
+    [Tags]      Sanity        
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
@@ -267,7 +267,7 @@ Verify team member Asset history
     Generic.Verify your current page contains this text     Asset History
 
 Search asset history with Asset ID
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
@@ -385,7 +385,7 @@ Search asset history with Asset ID
     DashboardPage.Select the employee ID checkbox   no
 
 Verify user is able to export team member asset history list
-    [Tags]     Smoke        rerun
+    [Tags]     Smoke          
     Generic.click on the tab	Login
     LandingPage.Fill the login Form   debut@cool.fr.nf    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -615,7 +615,7 @@ Verify user is able to export team member asset history list
     DashboardPage.Select the employee ID checkbox   no
 
 Convert Assignee to Team Member
-    [Tags]      Sanity      Rerun
+    [Tags]      Sanity        
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       deepparam112@mail-mario.fr.nf    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
@@ -729,7 +729,7 @@ Convert Assignee to Team Member
     DashboardPage.Select the employee ID checkbox   no
 
 Check the validation of business email id
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       deepparam112@mail-mario.fr.nf    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
@@ -828,7 +828,7 @@ Convert Assignee to team member in case of employee id is not system generated
     DashboardPage.Select the employee ID checkbox   no
 
 Verify Invitation and signup as team member
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
@@ -986,7 +986,7 @@ Add Back Deleted Team member - Invited
     DashboardPage.Select the employee ID checkbox   no
 
 Verify Invitation and signup as team member via company details
-    [Tags]     Sanity       rerun
+    [Tags]     Sanity         
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
@@ -1316,7 +1316,7 @@ Add Back Deleted Team member - Active
     DashboardPage.Select the employee ID checkbox   no
 
 Click on the location filter under team member and verify it
-    [Tags]    time     smoke        rerun
+    [Tags]    time     smoke          
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
@@ -1358,7 +1358,7 @@ Click on the location filter under team member and verify it
     TeamMemberPage.Fetch the country from team member filter and click       Location               Afgahniastan         ${New_Name}
 
 Click on the status filter under team member and verify it
-    [Tags]     time     smoke       rerun
+    [Tags]     time     smoke         rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       deepparam112@mail-mario.fr.nf    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
@@ -1401,7 +1401,7 @@ Click on the status filter under team member via profile list and verify it
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     Generic.Verify your current page location contains      personal-profile
-    Generic.Select span parameter      Team Members
+    Generic.Select parameter      Team Members
     Generic.Verify your current page location contains      dashboard
     Generic.Wait until table get load for filters
     PaginationPage.Fetch the total count

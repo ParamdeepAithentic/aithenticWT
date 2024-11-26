@@ -87,6 +87,7 @@ Click on tab under Technology Types
     click element       //p[normalize-space()='${tab_name}']//following-sibling::p
 
 Fetch the total count
+    TRY
     wait until element is enabled       ${Totalcount_field}      ${wait_time}
     wait until element is visible   ${Totalcount_field}      ${wait_time}
     ${text}=     get text   ${Totalcount_field}
@@ -94,6 +95,13 @@ Fetch the total count
     ${total_count}    Get Substring    ${parts[1]}    3
     Log to console  Total count is :${total_count}
     set global variable    ${total_count}
+    EXCEPT
+        wait until element is visible       //span[normalize-space()='No Records']          ${yop_sleep}
+        wait until element is enabled      //span[normalize-space()='No Records']           ${yop_sleep}
+    FINALLY
+        Log    Table got the issue while loading or there is no data
+    END
+
 
 Verify that key_data is equals to total number of counts
     [Arguments]    ${option}

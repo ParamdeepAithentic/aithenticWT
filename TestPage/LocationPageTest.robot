@@ -287,7 +287,7 @@ Click on the select status filter and verify it
     LocationPage.Fetch the country from location filter and click       Status      7     Inactive         ${New_status}
 
 Click on the select location filter and verify it
-    [Tags]    time     smoke        rerun
+    [Tags]    time     smoke      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard

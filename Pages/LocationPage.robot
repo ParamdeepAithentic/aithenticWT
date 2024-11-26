@@ -390,7 +390,7 @@ Select the option from location filter under location
 Fetch the country from location filter and click
     [Arguments]     ${option}       ${option1}      ${option2}     ${option3}
     TRY
-        FOR    ${index}    IN RANGE    1    ${total_data_count + 1}
+        FOR    ${index}    IN RANGE    1    ${total_data_count}
         Wait Until Element Is Visible   (//th//div[contains(@class,'columnName')][normalize-space()='${option}']//ancestor::table//following::tr//td[${option1}][contains(text(),'${option2}')])[${index}]      ${wait_time}
         Wait Until Element Is Enabled   (//th//div[contains(@class,'columnName')][normalize-space()='${option}']//ancestor::table//following::tr//td[${option1}][contains(text(),'${option2}')])[${index}]       ${wait_time}
         ${element1}=    Get Text    (//th//div[contains(@class,'columnName')][normalize-space()='${option}']//ancestor::table//following::tr//td[${option1}][contains(text(),'${option2}')])[${index}]
