@@ -393,7 +393,7 @@ Fetch the country from location filter and click
         FOR    ${index}    IN RANGE    1    ${total_data_count + 1}
         Wait Until Element Is Visible   (//th//div[contains(@class,'columnName')][normalize-space()='${option}']//ancestor::table//following::tr//td[${option1}][contains(text(),'${option2}')])[${index}]      ${wait_time}
         Wait Until Element Is Enabled   (//th//div[contains(@class,'columnName')][normalize-space()='${option}']//ancestor::table//following::tr//td[${option1}][contains(text(),'${option2}')])[${index}]       ${wait_time}
-        Scroll element into view    (//th//div[contains(@class,'columnName')][normalize-space()='${option}']//ancestor::table//following::tr//td[${option1}][contains(text(),'${option2}')])[${index}]
+#        Scroll element into view    (//th//div[contains(@class,'columnName')][normalize-space()='${option}']//ancestor::table//following::tr//td[${option1}][contains(text(),'${option2}')])[${index}]
         ${element1}=    Get Text    (//th//div[contains(@class,'columnName')][normalize-space()='${option}']//ancestor::table//following::tr//td[${option1}][contains(text(),'${option2}')])[${index}]
         ${original_string}=    Set Variable    ${element1}
         ${New_Country}=    Evaluate    '${original_string}'.strip()

@@ -340,7 +340,7 @@ Select the first value of To dropdown of product
 Select parameter from technology dropdown list
     [Arguments]      ${option}
     ${StartTime1} =     Get Current Time in Milliseconds
-    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
     wait until element is visible   //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input      ${wait_time}
     wait until element is enabled   //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input     ${wait_time}
     Clear Element Text    //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input

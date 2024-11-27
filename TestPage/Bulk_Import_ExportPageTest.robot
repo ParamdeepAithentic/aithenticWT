@@ -428,7 +428,7 @@ Assigned Users Bulk Edit
     Generic.Verify your current page location contains      memberslist
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  23  ${pageHeading}   Page Load - Total Page Load Time of Team Members     23    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  23  ${pageHeading}   Page Load - Total Page Load Time of Team Members Listing     23    ${pageTime}     ${ActualTime}    PageLoad_Time
 
     MemberPage.Click on assigned user tab   Assigned Users
     MemberPage.Click on assigned user action button
@@ -494,7 +494,7 @@ Team Member Bulk Edit
     Generic.Verify your current page location contains      addmembers
     MemberPage.Enter team member first name
     MemberPage.Enter team member last name
-    TeamMemberPage.Enter team member business email with cool fr nf email
+    TeamMemberPage.Enter team member business email_yopmail
     TeamMemberPage.Enter the Position in member form        QA
     MemberPage.Enter team member department     Do not Delete this Department
     MemberPage.Enter team member location    United States - Main Office - 21 - 2
@@ -519,7 +519,7 @@ Team Member Bulk Edit
     Bulk_Import_ExportPage.Perform the keyboard action      LocationName
     Bulk_Import_ExportPage.Enter the new value of team member in the role column     UserRoleName
     Bulk_Import_ExportPage.Perform the keyboard action      UserRoleName
-    Generic.Click on the button     Check data      #Update,Edit
+    Generic.Click on the button     Check Data      #Update,Edit
     Generic.Click on the button     Update
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
     Generic.Click on the button     Finish
@@ -535,6 +535,7 @@ Team Member Bulk Edit
     DashboardPage.Select the employee ID checkbox   yes
     Generic.Fetch alert message text and compare it with       Settings Updated
     EXCEPT
+    Switch window    aithentic | Member - List
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     I_iconPage.Choose options inside personal_details        Organization
