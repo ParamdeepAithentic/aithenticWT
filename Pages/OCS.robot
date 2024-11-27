@@ -538,15 +538,15 @@ Fetch text from Agent Discovery tab and compare it with
 
 click on the value of IP discovered devices of inside table
     wait until element is not visible    ${loaderIcon}    ${wait_time}
-    wait until element is visible   //h5[normalize-space()='${IP_Discovered_devices}']//parent::div//div//table//child::td[contains(@class,'text-right')]   ${wait_time}
-    wait until element is enabled   //h5[normalize-space()='${IP_Discovered_devices}']//parent::div//div//table//child::td[contains(@class,'text-right')]   ${wait_time}
-    click element   //h5[normalize-space()='${IP_Discovered_devices}']//parent::div//div//table//child::td[contains(@class,'text-right')]
+    wait until element is visible   (//h5[normalize-space()='${IP_Discovered_devices}']//parent::div//div[normalize-space()='Discovered Devices']//following::a)[1]   ${wait_time}
+    wait until element is enabled   (//h5[normalize-space()='${IP_Discovered_devices}']//parent::div//div[normalize-space()='Discovered Devices']//following::a)[1]   ${wait_time}
+    click element   (//h5[normalize-space()='${IP_Discovered_devices}']//parent::div//div[normalize-space()='Discovered Devices']//following::a)[1]
 
 Get the text of IP discovered devices inside table
     wait until element is not visible    ${loaderIcon}    ${wait_time}
-    wait until element is visible   //h5[normalize-space()='${IP_Discovered_devices}']//parent::div//div//table//child::td[contains(@class,'text-right')]   ${wait_time}
-    wait until element is enabled   //h5[normalize-space()='${IP_Discovered_devices}']//parent::div//div//table//child::td[contains(@class,'text-right')]   ${wait_time}
-    ${IP_discovered_count_text}=    get text   //h5[normalize-space()='${IP_Discovered_devices}']//parent::div//div//table//child::td[contains(@class,'text-right')]
+    wait until element is visible   (//h5[normalize-space()='${IP_Discovered_devices}']//parent::div//div[normalize-space()='Discovered Devices']//following::a)[1]   ${wait_time}
+    wait until element is enabled   (//h5[normalize-space()='${IP_Discovered_devices}']//parent::div//div[normalize-space()='Discovered Devices']//following::a)[1]   ${wait_time}
+    ${IP_discovered_count_text}=    get text   (//h5[normalize-space()='${IP_Discovered_devices}']//parent::div//div[normalize-space()='Discovered Devices']//following::a)[1]
     log    ${IP_discovered_count_text}
     set global variable     ${IP_discovered_count_text}
 
