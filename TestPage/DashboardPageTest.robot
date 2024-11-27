@@ -3097,5 +3097,20 @@ Verify user should not able to Edit Brand having Product created
     Generic.Verify your current page location contains      brand
     DashboardPage.Verify update button is not visible on edit brand page
 
+Share invite to the registered user
+    [Tags]    Negative
+     Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Dashboard
+    Generic.Verify your current page location contains      dashboard
+    DashboardPage.click on share icon of dashboard page
+    DashboardPage.Click on Send Invite button
+    DashboardPage.Fetch the validation of to field under share aithentic        Please enter their business email
+    DashboardPage.Enter to Static Email into popup of share aithentic       jasdeep@15963.fr.nf
+    DashboardPage.Click on Send Invite button
+    Generic.Fetch alert message text and compare it with containing text        Email Address already exists.
+
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
