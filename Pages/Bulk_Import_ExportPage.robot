@@ -858,3 +858,20 @@ Clear the text of the field
     Wait Until Element Is Enabled      css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
     Double Click Element               css:.ag-center-cols-container div[col-id='${option}']
     Press Keys    css:.ag-center-cols-container div[col-id='${option}']     CTRL+a    BACKSPACE
+
+Enter the random value in the brand field under product bulk import
+    [Arguments]    ${option}
+    Bulk_Import_ExportPage.Double click    ${option}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_addBrandName}=    Catenate    BrandName${random_string}
+    wait until element is visible       xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]     ${wait_time}
+    wait until element is enabled       xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]     ${wait_time}
+    input text      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]//input      ${generated_addBrandName}
+    set global variable    ${generated_addBrandName}
+
+Enter the static value in the product name column in bulk_import
+    [Arguments]    ${option}    ${ProductName}
+    Bulk_Import_ExportPage.Double click    ${option}
+    wait until element is visible       xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]    ${wait_time}
+    wait until element is enabled       xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]    ${wait_time}
+    input text   xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]//input   ${ProductName}

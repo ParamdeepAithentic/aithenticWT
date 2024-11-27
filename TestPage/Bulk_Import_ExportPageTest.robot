@@ -1671,6 +1671,64 @@ Verify all the validations of department bulk edit
     Fail
     END
 
+Verify all the validations of product bulk import
+    [Tags]      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     product-dropdown
+    Generic.Verify your current page location contains      product
+    DashboardPage.Click on action button
+    DashboardPage.Select the option from action menu      import
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Add - Products
+    Generic.Verify your current page location contains      add-product-grid
+    Bulk_Import_ExportPage.Verify that element is not enabled       Check Data
+    Bulk_Import_ExportPage.Verify that element is not enabled       Upload
+    Bulk_Import_ExportPage.Enter the value in the product name column in bulk_import      ProductName
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_import     TechType
+    Select option from technology group column in bulk_import       TechGroup
+    Enter the value in the product_description column in bulk_import        ProductDescription
+    Enter the value in the product_feature column in bulk_import        ProductFeatures
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors      Status, Brand is missing. Please fill in required data.
+    Bulk_Import_ExportPage.Clear the text of the field     ProductName
+    Bulk_Import_ExportPage.Enter the random value in the brand field under product bulk import       Brand
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_import     TechType
+    Select option from technology group column in bulk_import       TechGroup
+    Enter the value in the product_description column in bulk_import        ProductDescription
+    Enter the value in the product_feature column in bulk_import        ProductFeatures
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors      Product Name, Status is missing. Please fill in required data., Brand is invalid
+    Bulk_Import_ExportPage.Clear the text of the field      Brand
+    Bulk_Import_ExportPage.Select option from status column in bulk_import       ProductStatus
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_import     TechType
+    Select option from technology group column in bulk_import       TechGroup
+    Enter the value in the product_description column in bulk_import        ProductDescription
+    Enter the value in the product_feature column in bulk_import        ProductFeatures
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           Product Name, Brand is missing. Please fill in required data.
+    Generic.Refresh the existing page
+    Generic.Verify your current page location contains     add-product-grid
+    Bulk_Import_ExportPage.Enter the value in the product name column in bulk_import      ProductName
+    Bulk_Import_ExportPage.Enter the random value in the brand field under product bulk import       Brand
+    Bulk_Import_ExportPage.Select option from status column in bulk_import       ProductStatus
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_import     TechType
+    Select option from technology group column in bulk_import       TechGroup
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings           Description, Features is missing.
+    Generic.Refresh the existing page
+    Generic.Verify your current page location contains     add-product-grid
+    Bulk_Import_ExportPage.Enter the value in the product name column in bulk_import      ProductName
+    Bulk_Import_ExportPage.Enter the random value in the brand field under product bulk import       Brand
+    Bulk_Import_ExportPage.Select option from status column in bulk_import       ProductStatus
+    Enter the value in the product_description column in bulk_import        ProductDescription
+    Enter the value in the product_feature column in bulk_import        ProductFeatures
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           Technology Type, Technology Group is missing. Please fill in required data., Brand is invalid
+
 
 
 
