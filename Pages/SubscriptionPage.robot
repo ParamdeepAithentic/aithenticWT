@@ -945,3 +945,10 @@ click on the yes option of delete pop up under asset discovery service now
     wait until element is visible  //div[contains(@id,'deleteServicenowlConnector')]//button[normalize-space()='Yes']    ${wait_time}
     wait until element is enabled   //div[contains(@id,'deleteServicenowlConnector')]//button[normalize-space()='Yes']    ${wait_time}
     click element   //div[contains(@id,'deleteServicenowlConnector')]//button[normalize-space()='Yes']
+
+Click on the activate option under AWS
+    [Arguments]         ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible   (//td[normalize-space()='${option}']//parent::tr//td[normalize-space()='Activate'])[2]      ${wait_time}
+    wait until element is enabled   (//td[normalize-space()='${option}']//parent::tr//td[normalize-space()='Activate'])[2]      ${wait_time}
+    click element   (//td[normalize-space()='${option}']//parent::tr//td[normalize-space()='Activate'])[2]

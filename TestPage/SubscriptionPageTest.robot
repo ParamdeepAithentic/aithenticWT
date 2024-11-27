@@ -2333,3 +2333,72 @@ Technologies: View details on subscription tab
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
     SubscriptionPage.Verify subscription info tab is not visible
+
+Click on the three dots of AWS and verify the details
+    [Tags]      NT
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     subscription-connector
+    Generic.Verify your current page location contains      technology-settings
+    SubscriptionPage.Click on the three dots of subscription connector     AWS
+    SubscriptionPage.Click on option under three dots of subscription connector     AWS      Scheduler
+    SubscriptionPage.click on the cross icon of create scheduler    1
+    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Weekly
+    SubscriptionPage.Enter input in the input field of day under create scheduler       Monday
+    SubscriptionPage.Select the time from the timepicker      3
+    SubscriptionPage.Click on the ok button after selecting the time
+#    sleep   ${search_sleep}
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+    SubscriptionPage.Click on the three dots of subscription connector      AWS
+    SubscriptionPage.Click on option under three dots of subscription connector     AWS     Scheduler
+    SubscriptionPage.click on the cross icon of create scheduler    1
+    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Monthly
+    SubscriptionPage.Enter input in the start date field of billing details
+    SubscriptionPage.Select the time from the timepicker      4
+    SubscriptionPage.Click on the ok button after selecting the time
+#    sleep   ${search_sleep}
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+    SubscriptionPage.Click on the three dots of subscription connector      AWS
+    SubscriptionPage.Click on option under three dots of subscription connector    AWS     Scheduler
+    SubscriptionPage.click on the cross icon of create scheduler    1
+    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Daily
+    SubscriptionPage.Select the time from the timepicker      5
+    SubscriptionPage.Click on the ok button after selecting the time
+#    sleep   ${search_sleep}
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+    SubscriptionPage.Click on the three dots of subscription connector      AWS
+    SubscriptionPage.Click on option under three dots of subscription connector     AWS     Scheduler
+    SubscriptionPage.click on the cross icon of create scheduler    1
+    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Yearly
+    SubscriptionPage.Enter input in the start date field of billing details
+    SubscriptionPage.Select the time from the timepicker      2
+    SubscriptionPage.Click on the ok button after selecting the time
+#    sleep   ${search_sleep}
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+    SubscriptionPage.Click on the three dots of subscription connector      AWS
+    SubscriptionPage.Click on option under three dots of subscription connector   AWS       Details
+    Generic.click on the button     Run Now
+    SubscriptionPage.Fetch alert message text of subscription connector and compare it with
+#    sleep  ${search_sleep}
+    SubscriptionPage.Click on the three dots of subscription connector      AWS
+    SubscriptionPage.Click on option under three dots of subscription connector     AWS    Delete
+    Generic.click on the button     Yes
+    Generic.Fetch alert message text and compare it with        Status Updated
+    SubscriptionPage.Fetch text of delete under table of subscription connector     AWS        Deleted
+    sleep  ${search_sleep}
+    SubscriptionPage.Click on the activate option under AWS        AWS
+    Generic.Fetch alert message text and compare it with        Status Updated
+#    SubscriptionPage.Fetch text of delete under table of subscription connector    AWS      Active
+    SubscriptionPage.Click on the three dots of subscription connector      AWS
+    SubscriptionPage.Click on option under three dots of subscription connector    AWS    Run Now
+    SubscriptionPage.Fetch alert message text of subscription connector and compare it with
+    SubscriptionPage.Click on the three dots of subscription connector      AWS
+    SubscriptionPage.Click on option under three dots of subscription connector     AWS    Details
+    SubscriptionPage.Get the value of fields under view details of subscription connector   1      AWS
