@@ -542,6 +542,14 @@ click on the value of IP discovered devices of inside table
     wait until element is enabled   //h5[normalize-space()='${IP_Discovered_devices}']//parent::div//div//table//td[8]   ${wait_time}
     click element   //h5[normalize-space()='${IP_Discovered_devices}']//parent::div//div//table//td[8]
 
+Get the text of IP discovered devices inside table
+    wait until element is not visible    ${loaderIcon}    ${wait_time}
+    wait until element is visible   //h5[normalize-space()='${IP_Discovered_devices}']//parent::div//div//table//td[8]   ${wait_time}
+    wait until element is enabled   //h5[normalize-space()='${IP_Discovered_devices}']//parent::div//div//table//td[8]   ${wait_time}
+    ${IP_discovered_count_text}=    get text   //h5[normalize-space()='${IP_Discovered_devices}']//parent::div//div//table//td[8]
+    log    ${IP_discovered_count_text}
+    set global variable     ${IP_discovered_count_text}
+
 Fetch the Tagname from agent discovery page
     wait until element is not visible    ${loaderIcon}    ${wait_time}
     wait until element is visible   //h5[normalize-space()='${agentDiscovery_TagName}']     ${wait_time}
@@ -1047,3 +1055,18 @@ Mouse hover over first discovered asset
     sleep   ${search_sleep}
     Mouse Over   (//div[contains(@class,'column-boxes-left')]//div[contains(@class,'child-container')]//div[contains(@class,'left-text')])[1]
     sleep   ${search_sleep}
+
+Get the total count of discovered devices
+    [Arguments]   ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //input[@id='searchbar-discoveredassetList']//parent::div//ancestor::div[contains(@class,'search-input')]//h3     ${wait_time}
+    Wait Until Element Is Enabled    //input[@id='searchbar-discoveredassetList']//parent::div//ancestor::div[contains(@class,'search-input')]//h3     ${wait_time}
+    ${discovered_device_text}=     Get text   //input[@id='searchbar-discoveredassetList']//parent::div//ancestor::div[contains(@class,'search-input')]//h3
+    ${parts}    split string    ${discovered_device_text}    ${option}
+    ${discovered_device_count}    Get Substring    ${parts[1]}    1
+    log        ${discovered_device_count}
+    set global variable     ${discovered_device_count}
+
+Compare the count of Discovered assets count inside and outside list
+    [Arguments]     ${option1}      ${option2}
+    should be equal     ${option1}      ${option2}
