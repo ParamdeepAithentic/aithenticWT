@@ -2337,7 +2337,7 @@ Technologies: View details on subscription tab
 Click on the three dots of AWS and verify the details
     [Tags]      NT
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
+    LandingPage.Fill the login Form      debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
@@ -2393,12 +2393,13 @@ Click on the three dots of AWS and verify the details
     Generic.Fetch alert message text and compare it with        Status Updated
     SubscriptionPage.Fetch text of delete under table of subscription connector     AWS        Deleted
     sleep  ${search_sleep}
-    SubscriptionPage.Click on the activate option under AWS        AWS
+    SubscriptionPage.Click on the activate option under subscription connector table        AWS
     Generic.Fetch alert message text and compare it with        Status Updated
-#    SubscriptionPage.Fetch text of delete under table of subscription connector    AWS      Active
+    SubscriptionPage.Fetch text of delete under table of subscription connector    AWS      Active
     SubscriptionPage.Click on the three dots of subscription connector      AWS
     SubscriptionPage.Click on option under three dots of subscription connector    AWS    Run Now
     SubscriptionPage.Fetch alert message text of subscription connector and compare it with
     SubscriptionPage.Click on the three dots of subscription connector      AWS
     SubscriptionPage.Click on option under three dots of subscription connector     AWS    Details
     SubscriptionPage.Get the value of fields under view details of subscription connector   1      AWS
+    SubscriptionPage.Get the value of fields under view details of subscription connector   2       Milan Johar
