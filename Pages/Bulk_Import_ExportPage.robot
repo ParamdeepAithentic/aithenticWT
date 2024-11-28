@@ -875,3 +875,13 @@ Enter the static value in the product name column in bulk_import
     wait until element is visible       xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]    ${wait_time}
     wait until element is enabled       xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]    ${wait_time}
     input text   xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]//input   ${ProductName}
+
+#Enter the 101 characters in the bulk import
+#    [Arguments]    ${option}
+#    Bulk_Import_ExportPage.Double click    ${option}
+#    ${random_string} =    Generate Random String       100      [NUMBERS]
+#    ${generated_addProductName_more}=    Catenate    ProductName${random_string}
+#    wait until element is visible       xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]     ${wait_time}
+#    wait until element is enabled       xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]     ${wait_time}
+#    input text      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]//input      ${generated_addProductName_more}
+#    set global variable    ${generated_addProductName_more}
