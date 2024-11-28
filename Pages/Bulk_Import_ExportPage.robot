@@ -858,3 +858,7 @@ Clear the text of the field
     Wait Until Element Is Enabled      css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
     Double Click Element               css:.ag-center-cols-container div[col-id='${option}']
     Press Keys    css:.ag-center-cols-container div[col-id='${option}']     CTRL+a    BACKSPACE
+
+Verify that element is enabled
+    [Arguments]         ${option}
+    wait until element is visible    //button[normalize-space()='${option}']       ${wait_time}

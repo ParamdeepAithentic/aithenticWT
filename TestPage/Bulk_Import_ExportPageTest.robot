@@ -1672,6 +1672,35 @@ Verify all the validations of department bulk edit
     END
 
 
+Verify all the validations on team member bulk import
+    [Tags]    Sanity
+    TRY
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the employee ID checkbox   no
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    MemberPage.Click on team member action button
+    MemberPage.Choose the option from the action menu   Bulk Import
+    sleep     ${yop_sleep}
+    switch window     aithentic | Member - Import
+    Generic.Verify your current page location contains      add-member-grid
+    Bulk_Import_ExportPage.Verify that element is not enabled       Check Data
+    Bulk_Import_ExportPage.Verify that element is not enabled       Upload
+    Bulk_Import_ExportPage.Enter the new value of first name in bulk import of team member      FirstName
+    Bulk_Import_ExportPage.Verify that element is enabled       Check Data
+    Bulk_Import_ExportPage.Verify that element is enabled       Upload
+
+
+
 
 
 #Zz kill browser
