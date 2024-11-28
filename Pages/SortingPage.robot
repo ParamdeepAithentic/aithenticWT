@@ -136,7 +136,7 @@ Verify the sorting of the table method two
 #sort in ascending order
     ${sorted_text_list}=    Copy List    ${text_list}
     Sort List    ${sorted_text_list}
-    Log to console  Sorted Text List (Ascending): ${sorted_text_list}
+    Log   Sorted Text List (Ascending): ${sorted_text_list}
 
     Wait Until Element Is Visible    //div[normalize-space()='${headingName}']//app-sort-button    ${wait_time}
     click element   //div[normalize-space()='${headingName}']//app-sort-button
@@ -147,14 +147,14 @@ Verify the sorting of the table method two
 
     Wait Until Element Is Visible    //tbody//tr//td[${columnNumber}]    ${wait_time}
     ${element_list}=    Get WebElements    //tbody//tr//td[${columnNumber}]
-
+    Log     ${element_list}
 
     @{text_list_after_sort_asec}=    Create List
     FOR    ${element}    IN    @{element_list}
         ${text}=    Get Text    ${element}
         Append To List    ${text_list_after_sort_asec}    ${text}
-        Log To Console    Ascending List: ${text}
-        Log To Console    ---------------------
+        Log    Ascending List: ${text}
+        Log     ---------------------
     END
 
     Lists Should Be Equal    ${text_list_after_sort_asec}    ${sorted_text_list}
@@ -162,7 +162,7 @@ Verify the sorting of the table method two
 #sort in decending order
     ${sorted_descending_list}=    Copy List    ${text_list}
     ${sorted_list}=    Evaluate    sorted($sorted_descending_list, reverse=True)
-    Log to console  Sorted Text List (Decending): ${sorted_list}
+    Log   Sorted Text List (Decending): ${sorted_list}
 
 
     Wait Until Element Is Visible    //div[normalize-space()='${headingName}']//app-sort-button     ${wait_time}
@@ -179,8 +179,8 @@ Verify the sorting of the table method two
     FOR    ${element}    IN    @{element_list}
         ${text}=    Get Text    ${element}
         Append To List    ${text_list_after_sort_desc}    ${text}
-        Log To Console    Decending List: ${text}
-        Log To Console    ---------------------
+        Log     Decending List: ${text}
+        Log     ---------------------
     END
 
     Lists Should Be Equal    ${text_list_after_sort_desc}    ${sorted_list}

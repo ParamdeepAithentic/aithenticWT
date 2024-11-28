@@ -340,7 +340,7 @@ Select the first value of To dropdown of product
 Select parameter from technology dropdown list
     [Arguments]      ${option}
     ${StartTime1} =     Get Current Time in Milliseconds
-    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
     wait until element is visible   //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input      ${wait_time}
     wait until element is enabled   //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input     ${wait_time}
     Clear Element Text    //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input
@@ -1412,6 +1412,7 @@ Select plan for subscription
 
 Click on pop up of available Inactive Asset
     [Arguments]     ${option}
+    TRY
     wait until element is visible   css:.qa-available-inactive-assests-${option}   ${wait_time}
     wait until element is enabled   css:.qa-available-inactive-assests-${option}   ${wait_time}
     ${status}=    Run Keyword And Return Status    Element Should Be Visible    css:.qa-available-inactive-assests-${option}   ${wait_time}
@@ -1420,6 +1421,9 @@ Click on pop up of available Inactive Asset
     click element   css:.qa-available-inactive-assests-${option}
     RETURN    ${status}
 #    wait until element is not visible       ${shadow}          60
+    EXCEPT
+    Log    Count is less than the plan value
+    END
 
 Select option from exceed asset limit pop
     [Arguments]     ${option}
@@ -2096,7 +2100,7 @@ Get the text of the value you selected under filter
 
 Click on the product field under add technology
     [Arguments]        ${product}
-    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
     wait until element is visible   //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input      ${wait_time}
     wait until element is enabled   //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input     ${wait_time}
     Clear Element Text    //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input

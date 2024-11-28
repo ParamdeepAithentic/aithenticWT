@@ -516,3 +516,12 @@ Verify the visibilty of same user business email
 Verify the visibilty of same user exist email validation
     wait until element is visible       //div[contains(text(), 'Same email already exists ')]    ${wait_time}
     wait until element is enabled       //div[contains(text(), 'Same email already exists ')]    ${wait_time}
+
+Wait till message listing appear
+    TRY
+        wait until element is visible       (//td[contains(@class,'flag-message-qa')])[1]   ${wait_time}
+        wait until element is enabled       (//td[contains(@class,'flag-message-qa')])[1]    ${wait_time}
+    EXCEPT
+        wait until element is visible       //span[normalize-space()='No Records']          ${yop_sleep}
+        wait until element is enabled      //span[normalize-space()='No Records']           ${yop_sleep}
+    END
