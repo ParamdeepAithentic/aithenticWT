@@ -137,16 +137,7 @@ Scroll within the element
     Execute JavaScript    document.querySelector('tbody tr:nth-child(${option}) td:nth-child(1)').scrollIntoView(true);
     wait until element is visible       //td[normalize-space()='${option}']      ${wait_time}
 
-Log WebElements
-    [Arguments]     ${option}
-    ${elements} =    Get WebElements    //div[contains(@class, 'scroll-host')]//span
-    ${element_count} =    Get Length    ${elements}
-    FOR    ${index}    IN RANGE    0    ${element_count}
-        wait until element is visible     //div[contains (@id, '-${index}')]       ${wait_time}
-        wait until element is enabled     //div[contains (@id, '-${index}')]       ${wait_time}
-        click element   //div[contains (@id, '-${index}')]
-        Run Keywords    Fetch the selected value of the dropdown   AND      Check the table get load       AND      Get count of total rows     AND     Verify Pagination and Row Count     AND     PaginationPage.Fetch the total count   AND     Click on the pagination dropdown  ${option}
-    END
+
 
 
 #############################################################################################################################################
@@ -440,7 +431,21 @@ Fetch the brand name under existing assets without searching
     Set Global Variable   ${Brand_existing_asset}
 
 
+Log WebElements
+    [Arguments]     ${option}
+    ${elements} =    Get WebElements    //div[contains(@class, 'scroll-host')]//span
+    ${element_count} =    Get Length    ${elements}
+    FOR    ${index}    IN RANGE    0    ${element_count}
+        wait until element is visible     //div[contains (@id, '-${index}')]       ${wait_time}
+        wait until element is enabled     //div[contains (@id, '-${index}')]       ${wait_time}
+        click element   //div[contains (@id, '-${index}')]
+        Run Keywords    Fetch the selected value of the dropdown   AND      Check the table get load       AND      Get count of total rows     AND     Verify Pagination and Row Count     AND     PaginationPage.Fetch the total count   AND     Click on the pagination dropdown  ${option}
+    END
 
+Pagination box visible
+     wait until element is visible    //*[contains(@class,'per-page')]//div[@role='combobox']   ${wait_time}
+     wait until element is enabled    //*[contains(@class,'per-page')]//div[@role='combobox']   ${wait_time}
+     click element      //*[contains(@class,'per-page')]//div[@role='combobox']
 
 Check Pagination
     [Arguments]     ${option}
@@ -505,10 +510,6 @@ Check filter Pagination of Recent Activites
 
 
 
-Pagination box visible
-     wait until element is visible    //*[contains(@class,'per-page')]//div[@role='combobox']   ${wait_time}
-     wait until element is enabled    //*[contains(@class,'per-page')]//div[@role='combobox']   ${wait_time}
-     click element      //*[contains(@class,'per-page')]//div[@role='combobox']
 
 Skip the pagination code
     Log    The count is less than/equals to 10 so pagination is not vaisible

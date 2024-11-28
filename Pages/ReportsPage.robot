@@ -126,5 +126,6 @@ Fetch the total count After selecting filter
     ${text}=     get text   ${Totalcount_field}
     ${parts}    Split String    ${text}    Total Count :
     ${total_count_again}    Get Substring    ${parts[1]}    3
+    ${total_count_again}=   Convert To Integer   ${total_count_again}
     Log to console  Total count is :${total_count_again}
     set global variable    ${total_count_again}
