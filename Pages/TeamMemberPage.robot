@@ -425,10 +425,10 @@ Fetch the country from team member filter and click
              Log    Element ${index}: ${New_Country}
              Run Keyword If    '${New_Country}' == '${option2}'    Run Keywords    Empty Action of location   AND     Continue For Loop
         END
-    EXCEPT
+    EXCEPT      ElementNotVisibleException
         wait until element is visible       //span[normalize-space()='No Records']          ${yop_sleep}
         wait until element is enabled      //span[normalize-space()='No Records']           ${yop_sleep}
-    FINALLY
+    EXCEPT    TimeoutException
         Log    Table got the issue while loading or there is no data
     END
 

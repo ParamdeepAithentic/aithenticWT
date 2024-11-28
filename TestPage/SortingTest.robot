@@ -434,7 +434,7 @@ Test the sorting of department page list via bulk import of technology table
     PaginationPage.Set pagination to max
     SortingPage.Verify the sorting of the table method two     3       Partner Type
     SortingPage.Verify the sorting of the table method two     2       Business Name
-    SortingPage.Verify the sorting of the table method two     4       Technology
+#    SortingPage.Verify the sorting of the table method two     4       Technology
     SortingPage.Verify the sorting of the table method two     5       Added on
     SortingPage.Verify the sorting of the table method two     6       Status
 

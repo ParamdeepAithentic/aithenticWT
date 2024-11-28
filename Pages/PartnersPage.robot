@@ -735,11 +735,11 @@ Checkmark after clicking on the filters
     click element       //label[normalize-space()=' ${filter}']
     sleep       ${search_sleep}
     wait until element is not visible       ${loaderIcon}       ${wait_time}
-    Generic.Wait until table get load
+
 
 Fetch the selected filter and verify from Table
     [Arguments]     ${option}       ${option1}      ${option2}
-    Run Keyword IF      ${total_count} > 500       Filter and verify with pagination    ${option}       ${option1}      ${option2}    ELSE     Filter and verify without pagination  ${option}       ${option1}      ${option2}
+    Run Keyword IF      ${total_count_int} > 500       Filter and verify with pagination    ${option}       ${option1}      ${option2}    ELSE     Filter and verify without pagination  ${option}       ${option1}      ${option2}
 
 Click Next Button And Wait For Page To Load
     Generic.Scroll Window To End
@@ -776,10 +776,10 @@ Filter and verify with pagination
 
 Filter and verify without pagination
     [Arguments]     ${option}       ${option1}      ${option2}
-    FOR    ${index}    IN RANGE    1    ${total_count}
+    FOR    ${index}    IN RANGE    1    ${total_count_int + 1}
             Wait Until Element Is Visible   (//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]      ${wait_time}
             Wait Until Element Is Enabled   (//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]       ${wait_time}
-            Mouse over    (//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]
+#            Mouse over    (//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]
             ${element1}=    Get Text    (//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]
             ${original_string}=    Set Variable    ${element1}
             ${New_filter}=    Evaluate    '${original_string}'.strip()
@@ -945,3 +945,6 @@ Add the contact of Edit partner
     wait until element is visible       //h5[normalize-space()='Contact']//parent::div//following-sibling::div//button[normalize-space()='Add']   ${wait_time}
     wait until element is enabled        //h5[normalize-space()='Contact']//parent::div//following-sibling::div//button[normalize-space()='Add']   ${wait_time}
     Click element     //h5[normalize-space()='Contact']//parent::div//following-sibling::div//button[normalize-space()='Add']
+
+Compare the total count after selecting filter
+    Should be equal     ${total_count_again}        ${total_count_int}

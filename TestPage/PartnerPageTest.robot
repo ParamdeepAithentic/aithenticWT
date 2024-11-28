@@ -1451,8 +1451,9 @@ Partner Side bar Filters
     sleep       ${search_sleep}
     Generic.Scroll Window To End
     ReportsPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     partner-list
-    PaginationPage.Select the value from the pagination drop down count    500
+    PaginationPage.Set pagination to max
+#    PaginationPage.Click on the pagination dropdown     partner-list
+#    PaginationPage.Select the value from the pagination drop down count    500
 
 
     PartnersPage.Fetch the selected filter and verify from Table    Partner Type        Manufacturer        Manufacturer
@@ -1462,46 +1463,52 @@ Partner Side bar Filters
     PartnersPage.Click on the filters from partner module       Select Partner
     PartnersPage.Checkmark after clicking on the filters        Supplier
     ReportsPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     partner-list
-    PaginationPage.Select the value from the pagination drop down count    500
+    PaginationPage.Set pagination to max
+#    PaginationPage.Click on the pagination dropdown     partner-list
+#    PaginationPage.Select the value from the pagination drop down count    500
     PartnersPage.Fetch the selected filter and verify from Table    Partner Type        Supplier        Supplier
     Generic.Click on the reset filters link
     Generic.Refresh the existing page
     PartnersPage.Click on the filters from partner module       Select Partner
     PartnersPage.Checkmark after clicking on the filters        Support Partner
     ReportsPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     partner-list
-    PaginationPage.Select the value from the pagination drop down count    500
+    PaginationPage.Set pagination to max
+#    PaginationPage.Click on the pagination dropdown     partner-list
+#    PaginationPage.Select the value from the pagination drop down count    500
     PartnersPage.Fetch the selected filter and verify from Table    Partner Type        Support Partner        Support Partner
     Generic.Click on the reset filters link
     ReportsPage.Fetch the total count
     PartnersPage.Click on the filters from partner module       Select Partner
     PartnersPage.Checkmark after clicking on the filters        All Partners
+    Generic.Wait until table get load for filters
     ReportsPage.Fetch the total count After selecting filter
-    MessagePage.Comapre the total count after selecting filter
+    PartnersPage.Compare the total count after selecting filter
 ######################################### STATUS ###############################################################################
     Generic.Click on the reset filters link
     PartnersPage.Click on the filters from partner module       Select Status
 
     PartnersPage.Checkmark after clicking on the filters        Active
 
-    PaginationPage.Click on the pagination dropdown     partner-list
-    PaginationPage.Select the value from the pagination drop down count    500
+    PaginationPage.Set pagination to max
+#    PaginationPage.Click on the pagination dropdown     partner-list
+#    PaginationPage.Select the value from the pagination drop down count    500
     PartnersPage.Fetch the selected filter and verify from Table    Status       Active        Active
     Generic.Click on the reset filters link
     Generic.Refresh the existing page
     PartnersPage.Click on the filters from partner module       Select Status
     PartnersPage.Checkmark after clicking on the filters        Inactive
-    PaginationPage.Click on the pagination dropdown     partner-list
-    PaginationPage.Select the value from the pagination drop down count    500
+    PaginationPage.Set pagination to max
+#    PaginationPage.Click on the pagination dropdown     partner-list
+#    PaginationPage.Select the value from the pagination drop down count    500
     ReportsPage.Fetch the total count
     PartnersPage.Fetch the selected filter and verify from Table    Status       Inactive        Inactive
     Generic.Click on the reset filters link
     ReportsPage.Fetch the total count
     PartnersPage.Click on the filters from partner module       Select Status
     PartnersPage.Checkmark after clicking on the filters        All
+    Generic.Wait until table get load for filters
     ReportsPage.Fetch the total count After selecting filter
-    MessagePage.Comapre the total count after selecting filter
+    PartnersPage.Compare the total count after selecting filter
 
 Verify all the validations of Add Partners
     [Tags]      Negative

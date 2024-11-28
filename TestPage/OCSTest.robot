@@ -380,6 +380,7 @@ Add Discovery Asset
         OCS.Click on plus icon under table of agent discovery
         Sleep    ${Yop_Sleep}
         Switch Window       aithentic | Add Discovery Asset
+        Sleep       ${search_sleep}
         Generic.Verify your current page location contains    add-discovered-asset
         Generic.Verify your current page contains this text    Add Technology
         TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
@@ -447,6 +448,7 @@ Create Asset from Add Assets Page
         OCS.Click on Button inside Network Discovery Page       Add Assets
         Sleep    ${yop_sleep}
         Switch Window       aithentic | Add Discovery Asset
+        Sleep       ${search_sleep}
         Generic.Verify your current page contains this text    Add Technology
         TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
         OCS.Enter The Asset_id in Add Technology Page
@@ -505,6 +507,7 @@ Add component as an asset from Agent Discovery page
         OCS.Click on plus icon under table of agent discovery
         Sleep    ${Yop_Sleep}
         Switch Window       aithentic | Add Discovery Asset
+        Sleep       ${search_sleep}
         Generic.Verify your current page location contains    add-discovered-asset
         Generic.Verify your current page contains this text    Add Technology
         TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
@@ -536,6 +539,7 @@ Add component as an asset from Agent Discovery page
         OCS.Click on plus icon of any component
         Sleep    ${yop_sleep}
         Switch Window       aithentic | Add Discovery Asset
+        Sleep       ${search_sleep}
         Generic.Verify your current page contains this text    Add Technology
         TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
         OCS.Create Asset_id for software component
@@ -586,6 +590,7 @@ Upload Image and Document File while Add Discovery Asset
         OCS.Click on plus icon under table of agent discovery
         Sleep    ${Yop_Sleep}
         Switch Window       aithentic | Add Discovery Asset
+        Sleep       ${search_sleep}
         Generic.Verify your current page location contains    add-discovered-asset
         Generic.Verify your current page contains this text    Add Technology
         TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
@@ -611,10 +616,12 @@ Upload Image and Document File while Add Discovery Asset
         Generic.Verify your current page contains this text    Dummy PDF file
         Sleep    ${yop_sleep}
         Switch Window       aithentic | Add Discovery Asset
+        Sleep       ${search_sleep}
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
        Switch Window     aithentic | Agent Discovery
+       Sleep       ${search_sleep}
         Generic.Refresh the existing page
          OCS.Choose Tab under Asset Discovery    agent-discovery
         Generic.Verify your current page contains this text    ${generated_AssetID}
@@ -706,6 +713,7 @@ Upload Image and Document File while Add component as an asset from Agent Discov
         OCS.Click on plus icon under table of agent discovery
         Sleep    ${Yop_Sleep}
         Switch Window       aithentic | Add Discovery Asset
+        Sleep       ${search_sleep}
         Generic.Verify your current page location contains    add-discovered-asset
         Generic.Verify your current page contains this text    Add Technology
         TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
@@ -730,6 +738,7 @@ Upload Image and Document File while Add component as an asset from Agent Discov
         Generic.Verify your current page contains this text    Dummy PDF file
         Sleep    ${yop_sleep}
         Switch Window       aithentic | Add Discovery Asset
+        Sleep       ${search_sleep}
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
@@ -755,6 +764,7 @@ Upload Image and Document File while Add component as an asset from Agent Discov
         OCS.Click on plus icon of any component
         Sleep    ${yop_sleep}
         Switch Window       aithentic | Add Discovery Asset
+        Sleep       ${search_sleep}
         Generic.Verify your current page contains this text    Add Technology
         TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
         OCS.Create Asset_id for software component
@@ -772,6 +782,7 @@ Upload Image and Document File while Add component as an asset from Agent Discov
         Generic.Verify your current page location contains    amazonaws
         Generic.Verify your current page location contains    .pdf
         Switch Window       aithentic | Add Discovery Asset
+        Sleep       ${search_sleep}
         TechnologyPage.View the file by clicking on view icon over file     .png
         TechnologyPage.Get and Verify the size of the image after zoom      zoom-in
         TechnologyPage.Get and Verify the size of the image after zoom      zoom-out
@@ -1053,6 +1064,7 @@ Add asset with IP Address under discovered asset list
         OCS.Click on Button inside Network Discovery Page       Add Assets
         Sleep    ${yop_sleep}
         Switch Window       aithentic | Add Discovery Asset
+        Sleep       ${search_sleep}
         Generic.Verify your current page contains this text    Add Technology
         TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
         TechnologyPage.Add host name for technology group information for hardware random
@@ -1119,6 +1131,7 @@ Add Asset with IP address from Network Discovery Page
         OCS.Click on Button inside Network Discovery Page       Add Assets
         Sleep    ${yop_sleep}
         Switch Window       aithentic | Add Discovery Asset
+        Sleep       ${search_sleep}
         Generic.Verify your current page contains this text    Add Technology
         TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
         TechnologyPage.Add host name for technology group information for hardware random
@@ -1171,6 +1184,7 @@ Network discovery: search on discovered asset list with Tag Name, IP_address and
         OCS.Click on Plus icon under table
         Sleep    ${yop_Sleep}
         Switch Window       aithentic | Add Discovery Asset
+        Sleep       ${search_sleep}
         Generic.Verify your current page location contains    add-discovered-asset
         Generic.Verify your current page contains this text    Add Technology
         TechnologyPage.Select parameter from technology dropdown list      Product_aithentic
@@ -1229,6 +1243,7 @@ Search with containing fields under advance search of discovered asset
         OCS.Click on Button inside Network Discovery Page       Add Assets
         Sleep    ${yop_sleep}
         Switch Window       aithentic | Add Discovery Asset
+        Sleep       ${search_sleep}
         Generic.Verify your current page contains this text    Add Technology
         I_iconPage.Click on advanced search link under create asset network discovery
         sleep   ${search_sleep}
@@ -1359,6 +1374,7 @@ Search with containing fields under advance search of component of discovered as
         OCS.Click on Button inside Network Discovery Page       Add Assets
         Sleep    ${yop_sleep}
         Switch Window       aithentic | Add Discovery Asset
+        Sleep       ${search_sleep}
         Generic.Verify your current page contains this text    Add Technology
         TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
         TechnologyPage.Create unique serial number random
@@ -1390,6 +1406,7 @@ Search with containing fields under advance search of component of discovered as
         OCS.Click on plus icon of any component
         Sleep    ${yop_sleep}
         Switch Window       aithentic | Add Discovery Asset
+        Sleep       ${search_sleep}
         Generic.Verify your current page contains this text    Add Technology
         I_iconPage.Click on advanced search link under create asset network discovery
         sleep   ${search_sleep}
@@ -1548,6 +1565,7 @@ Search with containing fields under advance search of IP Address of discovered a
         OCS.Click on Plus icon under table
         Sleep    ${Yop_Sleep}
         Switch Window       aithentic | Add Discovery Asset
+        Sleep       ${search_sleep}
         Generic.Verify your current page location contains    add-discovered-asset
         Generic.Verify your current page contains this text    Add Technology
         I_iconPage.Click on advanced search link under create asset network discovery
@@ -1687,6 +1705,7 @@ Upload Image and Document file during Add Asset with IP address from Agent Disco
         OCS.Click on Button inside Network Discovery Page       Add Assets
         Sleep    ${yop_sleep}
         Switch Window       aithentic | Add Discovery Asset
+        Sleep       ${search_sleep}
         Generic.Verify your current page contains this text    Add Technology
         TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
 #        TechnologyPage.Add mac address for technology group information for hardware
@@ -1712,6 +1731,7 @@ Upload Image and Document file during Add Asset with IP address from Agent Disco
         Generic.Verify your current page contains this text    Dummy PDF file
         Sleep    ${yop_sleep}
         Switch Window       aithentic | Add Discovery Asset
+        Sleep       ${search_sleep}
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}
@@ -1792,6 +1812,7 @@ Verify cross icon an reset icon while adding IP discovered asset
         OCS.Click on Plus icon under table
         Sleep    ${Yop_Sleep}
         Switch Window       aithentic | Add Discovery Asset
+        Sleep       ${search_sleep}
         Generic.Verify your current page location contains    add-discovered-asset
         Generic.Verify your current page contains this text    Add Technology
         TechnologyPage.Select parameter from technology dropdown list      ZZ123
@@ -1821,6 +1842,7 @@ Verify reset icon while adding discovery asset
         OCS.Click on Button inside Network Discovery Page       Add Assets
         Sleep    ${Yop_Sleep}
         Switch Window       aithentic | Add Discovery Asset
+        Sleep       ${search_sleep}
         Generic.Verify your current page location contains    add-discovered-asset
         Generic.Verify your current page contains this text    Add Technology
         TechnologyPage.Select parameter from technology dropdown list      ZZ123
@@ -1849,6 +1871,7 @@ Verify reset icon while adding component
         OCS.Click on Button inside Network Discovery Page       Add Assets
         Sleep    ${yop_sleep}
         Switch Window       aithentic | Add Discovery Asset
+        Sleep       ${search_sleep}
         Generic.Verify your current page contains this text    Add Technology
         TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
         TechnologyPage.Create unique serial number random
@@ -1880,6 +1903,7 @@ Verify reset icon while adding component
         OCS.Click on plus icon of any component
         Sleep    ${yop_sleep}
         Switch Window       aithentic | Add Discovery Asset
+        Sleep       ${search_sleep}
         Generic.Verify your current page contains this text    Add Technology
         TechnologyPage.Select parameter from technology dropdown list      ZZ123
         TechnologyPage.Click on reset icon while adding technology
