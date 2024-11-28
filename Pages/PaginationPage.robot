@@ -505,11 +505,6 @@ Check filter Pagination of Recent Activites
 
 
 
-
-
-
-
-
 Pagination box visible
      wait until element is visible    //*[contains(@class,'per-page')]//div[@role='combobox']   ${wait_time}
      wait until element is enabled    //*[contains(@class,'per-page')]//div[@role='combobox']   ${wait_time}
