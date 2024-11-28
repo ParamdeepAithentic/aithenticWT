@@ -1932,7 +1932,7 @@ Create the asset and capture the MAC address under technology details page
         TechnologyPage.Select parameter from technology dropdown list      Product_00337612322
         OCS.Enter The Asset_id in Add Technology Page
         TechnologyPage.Create random unique serial number
-        TechnologyPage.Verify the visibility of assign to field
+        TechnologyPage.Select technology lifecycle status      Active
         OCS.Click on save button of Add Technology Page
         OCS.Wait for the invisiblity of alert msg        Technology created successfully
         Sleep    ${yop_sleep}

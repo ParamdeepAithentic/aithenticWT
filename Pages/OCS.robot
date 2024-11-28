@@ -1067,4 +1067,5 @@ Get the text of the first mac address under show more pop up
 Click on the cross icon of the show more pop up
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible      //div[contains(@id,'view-macAddresses')]//button           ${wait_time}
+    sleep       ${search_sleep}
     click element       //div[contains(@id,'view-macAddresses')]//button
