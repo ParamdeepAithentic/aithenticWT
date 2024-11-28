@@ -1795,7 +1795,6 @@ Verify all the validations of product bulk edit
 #    Generic.Click on the button     Check Data      #Update,Edit
 #    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors      Product Name is missing
 
-
 #Zz kill browser
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
 
