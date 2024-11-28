@@ -57,7 +57,7 @@ ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
 
-${wait_time}       30
+${wait_time}       60
 ${yop_sleep}       8
 
 ${search_sleep}       1
@@ -77,8 +77,8 @@ Simulate Switch Case
 
 Set QA Variables
     Set Suite Variable    ${url}    https://qa-app.aithentic.com/
-    Set Suite Variable    ${valid_password}            Paramdeep@112           #UAT user        Test@123
-#    Set Suite Variable    ${valid_password}           Test@123
+#    Set Suite Variable    ${valid_password}            Paramdeep@112           #UAT user        Test@123
+    Set Suite Variable    ${valid_password}           Test@123
     Set Suite Variable    ${apiURL}    https://qa-api.aithentic.com/api/v1
     Set Suite Variable    ${agentDiscovery_TagName}    Tag Name - johnsoftwaresolutions-1192-4         #qa
     Set Suite Variable    ${IP_Discovered_devices}    Tag Name - johnsoftwaresolutions-1192-4
@@ -87,8 +87,8 @@ Set QA Variables
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
     Set Suite Variable    ${browser_name}         firefox
-    Set Suite Variable    ${email}          deepparam112@mail-mario.fr.nf
-#    Set Suite Variable    ${email}           testqa29j@mailinator.com
+#    Set Suite Variable    ${email}          deepparam112@mail-mario.fr.nf
+    Set Suite Variable    ${email}           testqa29j@mailinator.com
     Set Suite Variable    ${discovered_asset_brand}                 MSI
     Set Suite Variable    ${existing_mac}                       D8:CB:8A:CA:6A:39
     Set Suite Variable    ${discovered_existing_brand}          QABrand555
