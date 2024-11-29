@@ -57,7 +57,7 @@ ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
 
-${wait_time}       31
+${wait_time}       30
 ${yop_sleep}       8
 
 ${search_sleep}       1
@@ -348,6 +348,12 @@ Select parameter
     wait until element is visible     //span[normalize-space()='${address}']        ${wait_time}
     wait until element is enabled       //span[normalize-space()='${address}']          ${wait_time}
     click element      //span[normalize-space()='${address}']
+
+Click first index of dropdown
+    [Arguments]    ${option}
+    wait until element is visible     //div[contains (@id, '-0')]//span[normalize-space()='${option}']       ${wait_time}
+    wait until element is enabled     //div[contains (@id, '-0')]//span[normalize-space()='${option}']       ${wait_time}
+    click element        //div[contains (@id, '-0')]//span[normalize-space()='${option}']
 
 Click on the profile name
     wait until element is not visible      ${loaderIcon}          ${wait_time}

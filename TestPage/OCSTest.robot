@@ -43,7 +43,7 @@ Resource        ../Pages/PaginationPage.robot
 
 
 Test Setup      open the browser with the url
-#Test Teardown   Close Browser Session
+Test Teardown   Close Browser Session
 
 
 
