@@ -349,6 +349,12 @@ Select parameter
     wait until element is enabled       //span[normalize-space()='${address}']          ${wait_time}
     click element      //span[normalize-space()='${address}']
 
+Click first index of dropdown
+    [Arguments]    ${option}
+    wait until element is visible     //div[contains (@id, '-0')]//span[normalize-space()='${option}']       ${wait_time}
+    wait until element is enabled     //div[contains (@id, '-0')]//span[normalize-space()='${option}']       ${wait_time}
+    click element        //div[contains (@id, '-0')]//span[normalize-space()='${option}']
+
 Click on the profile name
     wait until element is not visible      ${loaderIcon}          ${wait_time}
     wait until element is visible       ${profileName}          ${wait_time}
