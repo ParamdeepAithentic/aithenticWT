@@ -1056,6 +1056,28 @@ Mouse hover over first discovered asset
     Mouse Over   (//div[contains(@class,'column-boxes-left')]//div[contains(@class,'child-container')]//div[contains(@class,'left-text')])[1]
     sleep   ${search_sleep}
 
+Click on the show more mac adress option undder technology details page
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible   //span[contains(@class,'macAddress-view')]     ${wait_time}
+    Wait Until Element Is Enabled    //span[contains(@class,'macAddress-view')]     ${wait_time}
+    sleep   ${search_sleep}
+    click element   //span[contains(@class,'macAddress-view')]
+
+Get the text of the first mac address under show more pop up
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible      (//div[contains(@id,'view-macAddresses')]//input)[1]           ${wait_time}
+    ${fetch_text_newly_discovered_show_more} =    Get Value  (//div[contains(@id,'view-macAddresses')]//input)[1]
+    log to console     ${fetch_text_newly_discovered_show_more}
+    set global variable   ${fetch_text_newly_discovered_show_more}
+     should be equal    ${option}    ${fetch_text_newly_discovered_show_more}
+
+Click on the cross icon of the show more pop up
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible      //div[contains(@id,'view-macAddresses')]//button           ${wait_time}
+    sleep       ${search_sleep}
+    click element       //div[contains(@id,'view-macAddresses')]//button
+
 Get the total count of discovered devices
     [Arguments]   ${option}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
