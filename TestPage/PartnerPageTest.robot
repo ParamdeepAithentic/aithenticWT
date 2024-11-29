@@ -100,8 +100,7 @@ Compose Message invite user test
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Sleep     5
-    #Generic.Fetch alert message text and compare it with    Partner created successfully
+    Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generate_BusinessName}
 #-------------------------- PRODUCT-----newely added---------------------------------------------------------
     Generic.Click on the profile name
@@ -544,8 +543,7 @@ Export Specificartner into Excel Doc CSV and TSV for manufacturer
     PartnersPage.Create partner random secondary business URL
     PartnersPage.Click contact main save button
     Generic.Verify your current page location contains      partner-listing
-    sleep       5
-#    Generic.Fetch alert message text and compare it with        Partner created successfully
+    Generic.Fetch alert message text and compare it with        Partner created successfully
     PartnersPage.Search by business name    ${generate_BusinessName}
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .xlsx
@@ -601,14 +599,13 @@ Export Specificartner into Excel Doc CSV and TSV for Supplier
     Generic.Verify your current page location contains      addpartner
     PartnersPage.Select partner type of new partner     Supplier
     PartnersPage.Create partner random business name
-    PartnersPage.Enter partner business URL      ${generate_BusinessName}
     PartnersPage.Select partner country       United States
+    PartnersPage.Enter partner business URL      ${generate_BusinessName}
     PartnersPage.Click on add custome business URL icon
     PartnersPage.Create partner random secondary business URL
     PartnersPage.Click contact main save button
     Generic.Verify your current page location contains      partner-listing
-    sleep       5
-#    Generic.Fetch alert message text and compare it with        Partner created successfully
+    Generic.Fetch alert message text and compare it with        Partner created successfully
     PartnersPage.Search by business name    ${generate_BusinessName}
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .xlsx
@@ -672,8 +669,7 @@ Export Specificartner into Excel Doc CSV and TSV for Support Partner
     PartnersPage.Create partner random secondary business URL
     PartnersPage.Click contact main save button
     Generic.Verify your current page location contains      partner-listing
-    sleep       5
-#    Generic.Fetch alert message text and compare it with        Partner created successfully
+    Generic.Fetch alert message text and compare it with        Partner created successfully
     Generic.Wait until table get load
     PartnersPage.Search by business name    ${generate_BusinessName}
     PartnersPage.Click on the export Button
@@ -761,8 +757,7 @@ Add Manufacturer via personal detail under technology and partner
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Sleep     5
-    #Generic.Fetch alert message text and compare it with    Partner created successfully
+    Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generated_BrandName}
 
 
@@ -811,8 +806,7 @@ Edit Manufacturer via partner
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Sleep     5
-    #Generic.Fetch alert message text and compare it with    Partner created successfully
+    Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generated_BrandName}
     PartnersPage.Click on three dots of partners listing
     PartnersPage.Select option from three dots of partner     Details
@@ -897,8 +891,7 @@ Deactivate Manufacturer via partner
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Sleep     5
-    #Generic.Fetch alert message text and compare it with    Partner created successfully
+    Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generated_BrandName}
     PartnersPage.Click on three dots of partners listing
     PartnersPage.Select option from three dots of partner     Details
@@ -987,8 +980,7 @@ Activate Manufacturer via partner
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Sleep     5
-    #Generic.Fetch alert message text and compare it with    Partner created successfully
+    Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generated_BrandName}
     PartnersPage.Click on three dots of partners listing
     PartnersPage.Select option from three dots of partner     Details
@@ -1080,8 +1072,7 @@ Remove Manufacturer from partner
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Sleep     5
-    #Generic.Fetch alert message text and compare it with    Partner created successfully
+    Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generated_BrandName}
     PartnersPage.Click on three dots of partners listing
     PartnersPage.Select option from three dots of partner     Details
@@ -1149,8 +1140,7 @@ View Details and check the details of Contract
     PartnersPage.Enter partner business URL     yopmail
     PartnersPage.Select partner country       United States
     PartnersPage.Click on the save button   Save
-    Sleep     5
-    #Generic.Fetch alert message text and compare it with    Partner created successfully
+    Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name   ${generate_BusinessName}
     Generic.select the option from the side menu    Technology
     TechnologyPage.Click on action button of technology
@@ -1288,8 +1278,7 @@ Add_edit_deactivate_removeSupplier while adding brand
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Sleep     5
-    #Generic.Fetch alert message text and compare it with    Partner created successfully
+    Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generated_BrandName}
     PartnersPage.Click on three dots of partners listing
     PartnersPage.Select option from three dots of partner     Details
@@ -1385,8 +1374,7 @@ Add_edit_deactivate_removeSupport_partner_while_adding_brand
     PartnersPage.Enter contact location       Aland Islands
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Sleep     5
-    #Generic.Fetch alert message text and compare it with    Partner created successfully
+    Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generated_BrandName}
     PartnersPage.Click on three dots of partners listing
     PartnersPage.Select option from three dots of partner     Details

@@ -62,7 +62,6 @@ ${parent_location}      //input[@id='ParentLocation']
 ${sub_location}     //input[@id='ChildLocations']
 
 
-
 *** Keywords ***
 
 Click on Location action button

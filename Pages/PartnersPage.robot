@@ -157,6 +157,8 @@ Create partner random business name
     ${generate_BusinessName}=    Catenate    BusinessName${random_string}
     input text   ${businessName}   ${generate_BusinessName}
     set global variable    ${generate_BusinessName}
+    wait until element is not visible       //div[contains(@class,'dropdown-panel-items')]//div[contains(@class,'option')][normalize-space()='Loading...']    ${wait_time}
+
 
 Create partner random business name for testing
     wait until element is visible       ${click_businessName}        ${wait_time}
@@ -247,6 +249,7 @@ Click on contact person button
     sleep       ${search_sleep}
     click element   ${addContact}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is not visible       //label[@for='businessName']//parent::div//div[contains(@class,'spinner-loader')]       ${wait_time}
 
 
 Enter random contact person
@@ -371,6 +374,7 @@ Create partner random secondary business URL
     ${generate_SecondaryBusinessName}=    Catenate    BusinessName${random_string}.net
     input text   ${add_secondaryURL}   ${generate_SecondaryBusinessName}
     set global variable    ${generate_SecondaryBusinessName}
+
 
 Click on update button
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
