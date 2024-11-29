@@ -1069,3 +1069,6 @@ Click on the cross icon of the show more pop up
     wait until element is visible      //div[contains(@id,'view-macAddresses')]//button           ${wait_time}
     sleep       ${search_sleep}
     click element       //div[contains(@id,'view-macAddresses')]//button
+
+Visibility of field name
+    Wait Until Element Is Visible   //label[normalize-space()='Assign To']     ${wait_time}

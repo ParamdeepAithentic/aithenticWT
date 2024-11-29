@@ -57,13 +57,13 @@ ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
 
-${wait_time}       30
+${wait_time}       60
 ${yop_sleep}       8
 
 ${search_sleep}       1
 
 
-${CASE}       uat  #qa , uat , pre-prod
+${CASE}       qa  #qa , uat , pre-prod
 
 
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
