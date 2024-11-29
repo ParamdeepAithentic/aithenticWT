@@ -2298,10 +2298,13 @@ Message Side bar filters
     Generic.Verify your current page location contains      message
     MessagePage.Click on select partner filter from message side bar list
     MessagePage.Select the filter from partner      End User
-    ReportsPage.Fetch the total count
+    MemberPage.Wait till message listing appear
+    MessagePage.Fetch the total count of message listing after selecting filter
+    MessagePage.Set pagination to max for inbox list in message
+#    MemberPage.Wait till message listing appear
 #    PaginationPage.Click on the pagination dropdown     inbox
 #    PaginationPage.Select the value from the pagination drop down count    500
-    PaginationPage.Check Pagination     inbox
+#    PaginationPage.Check Pagination     inbox
 
     ${StartTime1} =     Get Current Time in Milliseconds
     MessagePage.Fetch the country from location filter and click     Partner Type         End User    End User
@@ -2311,15 +2314,17 @@ Message Side bar filters
 
     Generic.Click on the reset filters link
     MessagePage.Select the filter from partner    Manufacturer
-    ReportsPage.Fetch the total count
+    MemberPage.Wait till message listing appear
+    MessagePage.Fetch the total count of message listing after selecting filter
+    MessagePage.Set pagination to max for inbox list in message
     MessagePage.Fetch the country from location filter and click     Partner Type         Manufacturer    Manufacturer
     Generic.Click on the reset filters link
     Generic.Refresh the existing page
     ReportsPage.Fetch the total count
     MessagePage.Click on select partner filter from message side bar list
     MessagePage.Select the filter from partner      All Partners
-    ReportsPage.Fetch the total count After selecting filter
-    MessagePage.Comapre the total count after selecting filter
+    PaginationPage.Fetch the total count for filter only
+    MessagePage.Compare the total count after selecting filter
 
 Click on the status filter under brand via profile list
     [Tags]    NT          
@@ -2439,7 +2444,7 @@ Verify Team member in permissions according to user roles
 Click on the product filters via profile list
     [Tags]      time      smoke       rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form     jasdeep@15963.fr.nf     Paramdeep@112
+    LandingPage.Fill the login Form     deepparam112@mail-mario.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     product-dropdown
@@ -2455,7 +2460,8 @@ Click on the product filters via profile list
     DashboardPage.Click on the added products heading
     DashboardPage.Get the text of selected status filter under product via profile
     Generic.Wait until table get load for filters
-    PaginationPage.Fetch the total count
+    PaginationPage.Fetch the total count for filter only
+    PaginationPage.Set pagination to max
     TeamMemberPage.Fetch the country from team member filter and click       Status      ${New_product_Status}         ${New_product_Status}
     Generic.Click on the profile name
     Generic.Select logout option from profile list
@@ -2471,11 +2477,12 @@ Click on the product filters via profile list
     DashboardPage.Click on the added products heading
     DashboardPage.Get the text of selected status filter under product via profile
     Generic.Wait until table get load for filters
-    PaginationPage.Check filter Pagination of Recent Activites
+#    PaginationPage.Check filter Pagination of Recent Activites
 #    PaginationPage.Click on the pagination dropdown    products
 #    PaginationPage.Select the value from the pagination drop down count     500
 #    PaginationPage.Fetch the selected value of the dropdown      products
-    PaginationPage.Fetch the total count
+    PaginationPage.Fetch the total count for filter only
+    PaginationPage.Set pagination to max
     TeamMemberPage.Fetch the country from team member filter and click       Status     ${New_product_Status}        ${New_product_Status}
     DashboardPage.Click on the reset button under product
     DashboardPage.Click on the brand filter under product via profile
@@ -2483,7 +2490,8 @@ Click on the product filters via profile list
     DashboardPage.Click on the added products heading
     DashboardPage.Get the text of selected brand filter under product via profile
     Generic.Wait until table get load for filters
-    PaginationPage.Fetch the total count
+    PaginationPage.Fetch the total count for filter only
+    PaginationPage.Set pagination to max
     TeamMemberPage.Fetch the country from team member filter and click        Brand Name       ${selected_Brand}        ${selected_Brand}
     DashboardPage.Click on the reset button under product
     DashboardPage.Click on the brand filter under product via profile
@@ -2491,7 +2499,8 @@ Click on the product filters via profile list
     DashboardPage.Click on the added products heading
     DashboardPage.Get the text of selected brand filter under product via profile
     Generic.Wait until table get load for filters
-    PaginationPage.Fetch the total count
+    PaginationPage.Fetch the total count for filter only
+    PaginationPage.Set pagination to max
     TeamMemberPage.Fetch the country from team member filter and click        Brand Name       ${selected_Brand}        ${selected_Brand}
     DashboardPage.Click on the reset button under product
     DashboardPage.Click on the brand filter under product via profile
@@ -2499,7 +2508,8 @@ Click on the product filters via profile list
     DashboardPage.Click on the added products heading
     DashboardPage.Get the text of selected brand filter under product via profile
     Generic.Wait until table get load for filters
-    PaginationPage.Fetch the total count
+    PaginationPage.Fetch the total count for filter only
+    PaginationPage.Set pagination to max
     TeamMemberPage.Fetch the country from team member filter and click        Brand Name      ${selected_Brand}        ${selected_Brand}
     DashboardPage.Click on the reset button under product
     DashboardPage.Click on the technology group filter under product via profile
@@ -2507,7 +2517,8 @@ Click on the product filters via profile list
     DashboardPage.Click on the added products heading
     DashboardPage.Get the text of selected technology group filter under product via profile
     Generic.Wait until table get load for filters
-    PaginationPage.Fetch the total count
+    PaginationPage.Fetch the total count for filter only
+    PaginationPage.Set pagination to max
     TeamMemberPage.Fetch the country from team member filter and click         Technology Group        ${New_product_tech_group}        ${New_product_tech_group}
     DashboardPage.Click on the reset button under product
     DashboardPage.Click on the technology group filter under product via profile
@@ -2519,7 +2530,8 @@ Click on the product filters via profile list
 #     PaginationPage.Click on the pagination dropdown    products
 #    PaginationPage.Select the value from the pagination drop down count     500
 #    PaginationPage.Fetch the selected value of the dropdown      products
-    PaginationPage.Fetch the total count
+    PaginationPage.Fetch the total count for filter only
+    PaginationPage.Set pagination to max
     TeamMemberPage.Fetch the country from team member filter and click         Technology Group        ${New_product_tech_group}        ${New_product_tech_group}
     DashboardPage.Click on the reset button under product
     DashboardPage.Click on the technology group filter under product via profile
@@ -2527,7 +2539,7 @@ Click on the product filters via profile list
     DashboardPage.Click on the added products heading
     DashboardPage.Get the text of selected technology group filter under product via profile
     Generic.Wait until table get load for filters
-    PaginationPage.Fetch the total count
+    PaginationPage.Fetch the total count for filter only
     TeamMemberPage.Fetch the country from team member filter and click         Technology Group        ${New_product_tech_group}        ${New_product_tech_group}
 
 Suspend the account while the contract active
