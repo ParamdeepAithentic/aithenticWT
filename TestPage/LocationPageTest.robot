@@ -286,73 +286,6 @@ Click on the select status filter and verify it
     PaginationPage.Fetch the total count for filter only
     LocationPage.Fetch the country from location filter and click       Status      7     Inactive         ${New_status}
 
-Click on the select location filter and verify it
-    [Tags]    time     smoke
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.Verify your current page location contains      dashboard
-    LandingPage.Verify you are on dashboard page
-    Generic.select the option from the side menu    Location
-    Generic.Verify your current page location contains      locationlist
-    LocationPage.Click on the location filter under location
-    LocationPage.Select the option from location filter under location         Afghanistan
-    LocationPage.Get the text of selected filter under location     Afghanistan
-    Generic.Wait until table get load for filters
-    PaginationPage.Fetch the total count for filter only
-    PaginationPage.Check Pagination     location-list
-#    PaginationPage.Click on the pagination dropdown     location-list
-#    PaginationPage.Select the value from the pagination drop down count     500
-#    PaginationPage.Fetch the selected value of the dropdown     location-list
-    PaginationPage.Fetch the total count for filter only
-
-    ${StartTime1} =     Get Current Time in Milliseconds
-    LocationPage.Fetch the country from location filter and click       Country     3     Afghanistan         ${New_Name}
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  10  ${pageHeading}   Filter Page - Data load time of filter Country under location group      10    ${pageTime}     ${ActualTime}    Filter_Time
-
-    Generic.Click on the reset filters link
-    Generic.Wait for table skelton to get disable
-    LocationPage.Click on the location filter under location
-    LocationPage.Select the option from location filter under location         Canada
-    LocationPage.Get the text of selected filter under location     Canada
-    sleep   ${search_sleep}
-    Generic.Wait until table get load for filters
-    sleep   ${search_sleep}
-    Generic.Scroll Window To End
-    sleep   ${search_sleep}
-    PaginationPage.Fetch the total count for filter only
-
-    PaginationPage.Check Pagination     location-list
-    PaginationPage.Fetch the total count for filter only
-
-    LocationPage.Fetch the country from location filter and click       Country     3        Canada          ${New_Name}
-    Generic.Click on the reset filters link
-    Generic.Wait for table skelton to get disable
-    LocationPage.Click on the location filter under location
-    LocationPage.Select the option from location filter under location          India
-    LocationPage.Get the text of selected filter under location      India
-    Generic.Wait until table get load for filters
-    PaginationPage.Fetch the total count for filter only
-
-    PaginationPage.Check Pagination     location-list
-    PaginationPage.Fetch the total count for filter only
-
-    LocationPage.Fetch the country from location filter and click       Country     3        India          ${New_Name}
-    Generic.Click on the reset filters link
-    Generic.Wait for table skelton to get disable
-    LocationPage.Click on the location filter under location
-    LocationPage.Select the option from location filter under location         Turkey
-    LocationPage.Get the text of selected filter under location    Turkey
-    Generic.Wait until table get load for filters
-    PaginationPage.Fetch the total count for filter only
-    PaginationPage.Check Pagination     location-list
-#    PaginationPage.Click on the pagination dropdown     location-list
-#    PaginationPage.Select the value from the pagination drop down count     500
-#    PaginationPage.Fetch the selected value of the dropdown     location-list
-    PaginationPage.Fetch the total count for filter only
-    LocationPage.Fetch the country from location filter and click       Country     3     Turkey        ${New_Name}
-
 Click on the select Active status filter and verify it
     [Tags]    NT
     Generic.click on the tab	Login
@@ -904,3 +837,170 @@ Verify user should not able to Deactivate Location having Support Partner
     LocationPage.Select the option from row menu     Deactivate
     LocationPage.Select option from change location status pop up     yes
     Generic.Fetch alert message text and compare it with    Location having more than 0 technologies member, partner or contract cannot be deactivated.
+
+Add new Location Heirarchy and verify select location filter with Parent Location and Sub Location
+    Generic.click on the tab	Register
+    Generic.Verify your current page location contains      register
+    ReplaceDomainAPI.Replace Domain
+    RegisterUserPage.Create random register first name
+    RegisterUserPage.Create random register last name
+    RegisterUserPage.Create random register company name
+    RegisterUserPage.Click on member type
+    RegisterUserPage.Select the member type      End User
+    RegisterUserPage.Create partner random business email
+    RegisterUserPage.Choose register user country      India   +91     9646289871
+    RegisterUserPage.Select the checkbox
+    RegisterUserPage.Save the register form
+    Generic.Verify your current page location contains      update-email
+    Generic.Open new window     yopmail
+    Generic.Refresh the existing page
+    Generic.Search yopmail emails for       ${generate_register_Email}
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   Email Register Verification Required.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Click on sign In button in yopmail email
+    Unselect Frame
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Create - Account
+    Generic.Verify your current page location contains     create-account
+    UserAccount.Enter the password      Paramdeep@112
+    UserAccount.Confirm the entered password    Paramdeep@112
+    UserAccount.Click on term and condition checkbox
+    UserAccount.Click create account button
+    Generic.Fetch alert message text and compare it with       Account created successfully.
+    Generic.Verify your current page location contains     auth
+    LandingPage.Fill the login Form      ${generate_register_Email}    Paramdeep@112
+    Switch Window    Inbox
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifinbox
+    Yopmail.Click on email of yopmail   OTP Verification.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Get verification OTP from email    Your passcode is
+    sleep       ${yop_sleep}
+    Switch Window   aithentic | OTP
+    TwoFactorAuth.Enter the otp     ${passcode}
+    TwoFactorAuth.Click verification button
+    Generic.Verify your current page location contains     subscription
+    SubscriptionPage.Select country of manufacturer profile     United States
+    SubscriptionPage.Select state of manufacturer profile   Texas
+    SubscriptionPage.Select city of manufacturer profile    Abram
+    SubscriptionPage.Input text into manufacturer address one       This is address 1
+    SubscriptionPage.Input text into manufacturer address two       This is address 2
+    SubscriptionPage.Input text into manufacturer zip code      73301
+    SubscriptionPage.Select department of manufacturer profile      Customer Support
+    SubscriptionPage.Input text into manufacturer position/title    Agent
+    SubscriptionPage.Save the manufacturer profile
+    Generic.Verify your current page location contains     subscription-menu
+    Generic.Fetch alert message text and compare it with       Profile saved successfully
+    SubscriptionPage.Select plan of subscription
+    SubscriptionPage.Select and move next with subscription
+    Generic.Verify your current page location contains     subscription-payment
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Click on same billing address checkbox
+    SubscriptionPage.Switch to card iframe
+    SubscriptionPage.Enter cardnumber    42424242424242420429242
+    Unselect Frame
+    SubscriptionPage.Enter card user name    Paramdeep Singh
+    SubscriptionPage.Check the authorization checkbox
+    SubscriptionPage.Check the acknowledgement checkbox
+    SubscriptionPage.Click on complete process button
+    Generic.Verify your current page location contains     welcome
+    Generic.Fetch alert message text and compare it with       Payment Successful
+    DashboardPage.Click on complete setup button      Complete Setup
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the location ID checkbox   yes
+    DashboardPage.Select the asset ID checkbox      no
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Click on Location action button
+    LocationPage.Click on add location button    Add New Location
+    Generic.Verify your current page location contains      add-location
+    LocationPage.Select location country     United States
+    LocationPage.Select location building name   Trump tower
+    LocationPage.Select location floor   second
+    LocationPage.Select location room    203
+    LocationPage.Select location address one     this address one of the location
+    LocationPage.Select location address two     this address two of the location
+    LocationPage.Select location state       Texas
+    LocationPage.Select location city        Austin
+    LocationPage.Select location zip     147001
+    LocationPage.Enter random cost center value
+    LocationPage.Create random sub location
+    LocationPage.Save location form     save
+    Generic.Fetch alert message text and compare it with    Location created successfully
+    LocationPage.Search by location name     ${sub_generated_location}
+    LocationPage.Click on Location action button
+    LocationPage.Click on add location button    Add New Location
+    Generic.Verify your current page location contains      add-location
+    LocationPage.Select location country     United States
+    LocationPage.Select location building name   Trump tower
+    LocationPage.Select location floor   second
+    LocationPage.Select location room    203
+    LocationPage.Select location address one     this address one of the location
+    LocationPage.Select location address two     this address two of the location
+    LocationPage.Select location state       Texas
+    LocationPage.Select location city        Austin
+    LocationPage.Select location zip     147001
+    LocationPage.Enter random cost center value
+    LocationPage.Create random parent location
+    LocationPage.Save location form     save
+    Generic.Fetch alert message text and compare it with    Location created successfully
+    LocationPage.Search by location name    ${parent_generated_location}
+    LocationPage.Clear the text from search field
+    LocationPage.Clear the text from search field
+    LocationPage.Click on Location action button
+    LocationPage.Click on add location button    Add New Location
+    Generic.Verify your current page location contains      add-location
+    LocationPage.Select location country     United States
+    LocationPage.Select location building name   Trump tower
+    LocationPage.Select location floor   second
+    LocationPage.Select location room    203
+    LocationPage.Select location address one     this address one of the location
+    LocationPage.Select location address two     this address two of the location
+    LocationPage.Select location state       Texas
+    LocationPage.Select location city        Austin
+    LocationPage.Select location zip     147001
+    LocationPage.Enter random cost center value
+    LocationPage.Create random location name
+    LocationPage.Enter the Parent Location      ${parent_generated_location}
+    LocationPage.Enter the Sub Location     ${sub_generated_location}
+    LocationPage.Save location form     save
+    Generic.Fetch alert message text and compare it with    Location created successfully
+    LocationPage.Search by location name    ${generated_location}
+    LocationPage.Fetch the location Name from the row       ${generated_location}
+    LocationPage.Clear the text from search field
+    Generic.Wait for table skelton to get disable
+    Generic.Wait until table get load for filters
+    LocationPage.Click on the location filter under location
+    Generic.Wait until table get load for filters
+    LocationPage.Select the option from location filter under location    ${parent_generated_location}
+    Generic.Wait until table get load for filters
+    Generic.Wait for table skelton to get disable
+    LocationPage.Verify that table contains the location Name under Location column     Location Name               ${parent_generated_location}
+    LocationPage.Verify that table contains the location Name under Location column     Location Name                  ${generated_location}
+    LocationPage.Verify that table contains the location Name under Location column     Location Name                   ${sub_generated_location}
+    LocationPage.Select the option from location filter under location      ${generated_location}
+    Generic.Wait until table get load for filters
+    Generic.Wait for table skelton to get disable
+    LocationPage.Select the option from location filter under location         ${sub_generated_location}
+    Generic.Wait until table get load for filters
+    Generic.Wait for table skelton to get disable
+    LocationPage.Verify that table contains the location Name under Location column     Location Name             ${sub_generated_location}
+    LocationPage.Select the option from location filter under location   ${generated_location}
+    Generic.Wait until table get load for filters
+    Generic.Wait for table skelton to get disable
+    LocationPage.Verify that table contains the location Name under Location column     Location Name               ${generated_location}
+    LocationPage.Verify that table contains the location Name under Location column     Location Name                ${sub_generated_location}
+    LocationPage.Select the option from location filter under location   ${parent_generated_location}
+    Generic.Wait until table get load for filters
+    Generic.Wait for table skelton to get disable
+    LocationPage.Verify that table contains the location Name under Location column     Location Name             ${parent_generated_location}
+    LocationPage.Verify that table contains the location Name under Location column     Location Name              ${generated_location}
+    LocationPage.Verify that table contains the location Name under Location column     Location Name                   ${sub_generated_location}
