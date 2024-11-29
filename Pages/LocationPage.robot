@@ -59,7 +59,7 @@ ${search_LocationName}     css:.search-location-qa
 
 ${rowMenu}     css:.three-dots
 ${parent_location}      //input[@id='ParentLocation']
-${sub_location}         //input[@id='ChildLocations']
+${sub_location}     //input[@id='ChildLocations']
 
 
 *** Keywords ***
@@ -386,7 +386,7 @@ Click on the location filter under location
 Select the option from location filter under location
     [Arguments]     ${option}
     Wait Until Element Is Visible   //label[normalize-space()='${option}']     ${wait_time}
-    Wait Until Element Is Visible    //label[normalize-space()='${option}']      ${wait_time}
+    Wait Until Element Is Visible   //label[normalize-space()='${option}']      ${wait_time}
     click element    //label[normalize-space()='${option}']
 
 Fetch the country from location filter and click

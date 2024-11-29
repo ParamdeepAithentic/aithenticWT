@@ -935,7 +935,7 @@ Add new Location Heirarchy and verify select location filter with Parent Locatio
     LocationPage.Create random sub location
     LocationPage.Save location form     save
     Generic.Fetch alert message text and compare it with    Location created successfully
-    LocationPage.Search by location name     ${sub_generated_location}
+    Generic.Wait until table get load for filters
     LocationPage.Click on Location action button
     LocationPage.Click on add location button    Add New Location
     Generic.Verify your current page location contains      add-location
@@ -952,9 +952,7 @@ Add new Location Heirarchy and verify select location filter with Parent Locatio
     LocationPage.Create random parent location
     LocationPage.Save location form     save
     Generic.Fetch alert message text and compare it with    Location created successfully
-    LocationPage.Search by location name    ${parent_generated_location}
-    LocationPage.Clear the text from search field
-    LocationPage.Clear the text from search field
+    Generic.Wait until table get load for filters
     LocationPage.Click on Location action button
     LocationPage.Click on add location button    Add New Location
     Generic.Verify your current page location contains      add-location
@@ -973,34 +971,27 @@ Add new Location Heirarchy and verify select location filter with Parent Locatio
     LocationPage.Enter the Sub Location     ${sub_generated_location}
     LocationPage.Save location form     save
     Generic.Fetch alert message text and compare it with    Location created successfully
-    LocationPage.Search by location name    ${generated_location}
-    LocationPage.Fetch the location Name from the row       ${generated_location}
-    LocationPage.Clear the text from search field
     Generic.Wait for table skelton to get disable
     Generic.Wait until table get load for filters
     LocationPage.Click on the location filter under location
-    Generic.Wait until table get load for filters
     LocationPage.Select the option from location filter under location    ${parent_generated_location}
-    Generic.Wait until table get load for filters
     Generic.Wait for table skelton to get disable
-    LocationPage.Verify that table contains the location Name under Location column     Location Name               ${parent_generated_location}
-    LocationPage.Verify that table contains the location Name under Location column     Location Name                  ${generated_location}
-    LocationPage.Verify that table contains the location Name under Location column     Location Name                   ${sub_generated_location}
+    Generic.Wait until table get load for filters
     LocationPage.Select the option from location filter under location      ${generated_location}
-    Generic.Wait until table get load for filters
     Generic.Wait for table skelton to get disable
+    Generic.Wait until table get load for filters
     LocationPage.Select the option from location filter under location         ${sub_generated_location}
-    Generic.Wait until table get load for filters
     Generic.Wait for table skelton to get disable
+    Generic.Wait until table get load for filters
     LocationPage.Verify that table contains the location Name under Location column     Location Name             ${sub_generated_location}
     LocationPage.Select the option from location filter under location   ${generated_location}
-    Generic.Wait until table get load for filters
     Generic.Wait for table skelton to get disable
+    Generic.Wait until table get load for filters
     LocationPage.Verify that table contains the location Name under Location column     Location Name               ${generated_location}
     LocationPage.Verify that table contains the location Name under Location column     Location Name                ${sub_generated_location}
     LocationPage.Select the option from location filter under location   ${parent_generated_location}
-    Generic.Wait until table get load for filters
     Generic.Wait for table skelton to get disable
+    Generic.Wait until table get load for filters
     LocationPage.Verify that table contains the location Name under Location column     Location Name             ${parent_generated_location}
-    LocationPage.Verify that table contains the location Name under Location column     Location Name              ${generated_location}
-    LocationPage.Verify that table contains the location Name under Location column     Location Name                   ${sub_generated_location}
+    LocationPage.Verify that table contains the location Name under Location column     Location Name             ${generated_location}
+    LocationPage.Verify that table contains the location Name under Location column     Location Name              ${sub_generated_location}
