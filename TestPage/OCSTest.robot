@@ -43,7 +43,7 @@ Resource        ../Pages/PaginationPage.robot
 
 
 Test Setup      open the browser with the url
-#Test Teardown   Close Browser Session
+Test Teardown   Close Browser Session
 
 
 
@@ -1997,3 +1997,22 @@ Create the asset and capture the MAC address under technology details page
 #Zz kill browser
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
 
+
+
+Discovered Devices - Match the device count with total discovered devices in the list
+        Generic.click on the tab	Login
+        LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+        Generic.Verify your current page location contains      dashboard
+        LandingPage.Verify you are on dashboard page
+        Generic.select the option from the side menu    Asset Discovery
+        Generic.Verify your current page location contains     discovery-assets
+        OCS.Get the text of IP discovered devices inside table
+        OCS.click on the value of IP discovered devices of inside table
+        Sleep    ${yop_sleep}
+        Switch Window       aithentic | Discovered Assets
+        Generic.Verify your current page location contains     discovery-assets-list
+        OCS.Get the total count of discovered devices       Discovered Devices -
+        OCS.Compare the count of Discovered assets count inside and outside list         ${IP_discovered_count_text}     ${discovered_device_count}
+
+#Zz kill browser
+#    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

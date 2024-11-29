@@ -51,7 +51,7 @@ Test Teardown   Close Browser session
 
 
 *** Test Cases ***
-Register new user
+Create a fresh user
     [Tags]      Smoke       Time
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.click on the tab	Register
@@ -139,6 +139,21 @@ Register new user
     DashboardPage.Select the location ID checkbox   yes
     DashboardPage.Select the asset ID checkbox      no
     Generic.Fetch alert message text and compare it with       Settings Updated
+    Generic.Click on the profile name
+    Generic.Select option from profile list     billing-dropdown
+    Generic.Verify your current page location contains      billing-details
+    BillingPage.Click on the arrow of billing details
+    BillingPage.Click on add new card/bank
+    BillingPage.Select the billing payment type     university
+    SubscriptionPage.Enter card account number    000123456789
+    SubscriptionPage.Enter card routing number      110000000
+    SubscriptionPage.Enter account holder name    Paramdeep Singh
+    BillingPage.Save the billing payment form   save
+    Generic.Fetch alert message text and compare it with      Card added successfully
+    BillingPage.Close the add card pop-up
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
     DashboardPage.Select an option from company details side list   Security
     Generic.Verify your current page location contains  security
     DashboardPage.click on the authentication tab under security
@@ -245,6 +260,15 @@ Adding the data in the account
     TechnologyPage.Click on the product field under add technology      Product_certificate
     TechnologyPage.Method 1      Product_certificate
     TechnologyPage.Get new product     Product_certificate        Certificate     Communication
+
+     TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Click on the product field under add technology      Product_00123
+    TechnologyPage.Method 1      Product_00123
+    TechnologyPage.Get new product     Product_00123     Hardware     Applications
 
 
 
