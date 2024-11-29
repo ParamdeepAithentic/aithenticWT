@@ -50,7 +50,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Compose Message invite user test
-    [Tags]      Sanity      Smoke       Time      rerun
+    [Tags]      Sanity      Smoke       Time
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -590,7 +590,7 @@ Export Specificartner into Excel Doc CSV and TSV for manufacturer
 
 
 Export Specificartner into Excel Doc CSV and TSV for Supplier
-    [Tags]      Sanity
+    [Tags]      Sanity      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -601,8 +601,8 @@ Export Specificartner into Excel Doc CSV and TSV for Supplier
     Generic.Verify your current page location contains      addpartner
     PartnersPage.Select partner type of new partner     Supplier
     PartnersPage.Create partner random business name
-    PartnersPage.Enter partner business URL      ${generate_BusinessName}
     PartnersPage.Select partner country       United States
+    PartnersPage.Enter partner business URL      ${generate_BusinessName}
     PartnersPage.Click on add custome business URL icon
     PartnersPage.Create partner random secondary business URL
     PartnersPage.Click contact main save button
@@ -1439,7 +1439,7 @@ Add_edit_deactivate_removeSupport_partner_while_adding_brand
     Generic.Fetch alert message text and compare it with      Partner deleted successfully
 
 Partner Side bar Filters
-    [Tags]     time     smoke     rerun
+    [Tags]     time     smoke
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard

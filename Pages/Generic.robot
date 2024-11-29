@@ -57,7 +57,7 @@ ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
 
-${wait_time}       30
+${wait_time}      60
 ${yop_sleep}       8
 
 ${search_sleep}       1
@@ -101,7 +101,7 @@ Set QA Variables
 
 Set UAT Variables
     Set Suite Variable    ${url}        https://uat-app.aithentic.com/
-    Set Suite Variable    ${valid_password}           Test@123        #Paramdeep@112           #UAT user
+    Set Suite Variable    ${valid_password}         Paramdeep@112      #  Test@123                   #UAT user
     Set Suite Variable    ${apiURL}    https://uat-api.aithentic.com/api/v1
     Set Suite Variable    ${agentDiscovery_TagName}    Tag Name - johnsoftwaresolutions-1428-4        #uat
     Set Suite Variable    ${IP_Discovered_devices}    Tag Name - johnsoftwaresolutions-1428-10        #uat
@@ -110,7 +110,7 @@ Set UAT Variables
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
     Set Suite Variable    ${browser_name}         firefox
-    Set Suite Variable    ${email}           testqa29j@mailinator.com     #deepparam112@mail-mario.fr.nf
+    Set Suite Variable    ${email}                deepparam112@mail-mario.fr.nf        #testqa29j@mailinator.com
     Set Suite Variable    ${discovered_asset_brand}                 Apple Inc
     Set Suite Variable    ${existing_mac}                       98:5a:eb:cb:c8:ed
     Set Suite Variable    ${discovered_existing_brand}              Apple Inc.
@@ -541,6 +541,9 @@ Click on the reset filters link
 
 Wait for table skelton to get disable
      wait until element is not visible       (//tbody//tr[2]//div[contains(@class,'skeleton')])[1]          ${wait_time}
+
+Wait for the spinner to get disable
+    wait until element is not visible    cs:.qa-assign-support-partner .ng-spinner-loader      ${wait_time}
 
 Set asset ID settings
     TRY
