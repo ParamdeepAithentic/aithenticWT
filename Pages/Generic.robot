@@ -103,6 +103,7 @@ Set QA Variables
 
 Set UAT Variables
     Set Suite Variable    ${url}        https://uat-app.aithentic.com/
+
     Set Suite Variable    ${valid_password}            Paramdeep@112           #UAT user        Test@123
 #    Set Suite Variable    ${valid_password}            Test@123
     Set Suite Variable    ${apiURL}    https://uat-api.aithentic.com/api/v1

@@ -261,6 +261,15 @@ Adding the data in the account
     TechnologyPage.Method 1      Product_certificate
     TechnologyPage.Get new product     Product_certificate        Certificate     Communication
 
+     TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Click on the product field under add technology      Product_00123
+    TechnologyPage.Method 1      Product_00123
+    TechnologyPage.Get new product     Product_00123     Hardware     Applications
+
 
 
     Generic.select the option from the side menu    Location
