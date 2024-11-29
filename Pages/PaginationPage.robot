@@ -308,7 +308,8 @@ Click on the checkbox of technology listing
     FOR    ${index}    IN RANGE    1    ${element_count + 1}
         wait until element is visible     (//tbody//tr//span)[${index}]       ${wait_time}
         wait until element is enabled     (//tbody//tr//span)[${index}]      ${wait_time}
-        Execute JavaScript    document.querySelector('tbody tr span:nth-of-type(${index})').click();
+#        click element       (//tbody//tr//span)[${index}]
+        Execute JavaScript    document.querySelector('tbody tr:nth-child(${index}) span:first-of-type').click();
         PaginationPage.Scroll within the element      ${index}
     END
 
