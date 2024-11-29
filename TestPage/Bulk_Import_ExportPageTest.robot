@@ -1791,6 +1791,12 @@ Verify all the validations of product bulk edit
     Generic.Click on the button     Check Data      #Update,Edit
     Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors      Product Name is missing. Please fill in required data.
     Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings      Description, Features is missing.
+    Bulk_Import_ExportPage.Clear the text of the field      BrandName
+    Bulk_Import_ExportPage.Enter the static value in the product name column in bulk_import     ProductId       Product_bulk_import
+    Bulk_Import_ExportPage.Enter the new value in the brand name column in bulk_edit       BrandName    QABrand555
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           Product Product_bulk_import already exists
+
 #    Bulk_Import_ExportPage.Enter the 101 characters in the bulk import   ProductId
 #    Generic.Click on the button     Check Data      #Update,Edit
 #    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors      Product Name is missing
