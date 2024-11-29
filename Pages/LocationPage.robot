@@ -58,6 +58,8 @@ ${MAX_LIMIT}            500
 ${search_LocationName}     css:.search-location-qa
 
 ${rowMenu}     css:.three-dots
+${parent_location}      //input[@id='ParentLocation']
+${sub_location}     //input[@id='ChildLocations']
 
 
 *** Keywords ***
@@ -383,9 +385,9 @@ Click on the location filter under location
 
 Select the option from location filter under location
     [Arguments]     ${option}
-    Wait Until Element Is Visible   //div[contains(@class,'sidenav-content ')]//following-sibling::div[contains(@class,'row')]//label[contains(text(),'${option}')]     ${wait_time}
-    Wait Until Element Is Visible    //div[contains(@class,'sidenav-content ')]//following-sibling::div[contains(@class,'row')]//label[contains(text(),'${option}')]      ${wait_time}
-    click element    //div[contains(@class,'sidenav-content ')]//following-sibling::div[contains(@class,'row')]//label[contains(text(),'${option}')]
+    Wait Until Element Is Visible   //label[normalize-space()='${option}']     ${wait_time}
+    Wait Until Element Is Visible   //label[normalize-space()='${option}']      ${wait_time}
+    click element    //label[normalize-space()='${option}']
 
 Fetch the country from location filter and click
     [Arguments]     ${option}       ${option1}      ${option2}     ${option3}
@@ -598,3 +600,48 @@ Enter input in the IP subnet field
 #    [Arguments]    ${total_count}
 #    ${a} =    Run Keyword If    ${total_count} <= ${MAX_LIMIT}    Set Variable    ${total_count}    ELSE    Set Variable    ${MAX_LIMIT}
 #    [Return]    ${a}
+
+Create random sub location
+    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${sub_generated_location}=    Catenate    Sub_Location${random_string}
+    wait until element is visible       css:#locationName    ${wait_time}
+    input text   css:#locationName  ${sub_generated_location}
+    Log     Sub_Location:${sub_generated_location}
+    set global variable    ${sub_generated_location}
+
+Create random parent location
+    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${parent_generated_location}=    Catenate    Parent_Location${random_string}
+    wait until element is visible       css:#locationName    ${wait_time}
+    input text   css:#locationName  ${parent_generated_location}
+    log     Parent_Location:${parent_generated_location}
+    set global variable     ${parent_generated_location}
+
+Enter the Parent Location
+    [Arguments]         ${option}
+    wait until element is not visible       ${loaderIcon}       ${wait_time}
+    Wait Until Element Is Visible    ${parent_location}   ${wait_time}
+    Wait Until Element Is Enabled    ${parent_location}   ${wait_time}
+    input text      ${parent_location}      ${option}
+    Generic.Select parameter        ${option}
+
+Enter the Sub Location
+    [Arguments]         ${option}
+    wait until element is not visible       ${loaderIcon}       ${wait_time}
+    Wait Until Element Is Visible    ${sub_location}   ${wait_time}
+    Wait Until Element Is Enabled    ${sub_location}   ${wait_time}
+    input text      ${sub_location}      ${option}
+    Generic.Select parameter        ${option}
+
+Clear the text from search field
+     wait until element is not visible      ${loaderIcon}     ${wait_time}
+     wait until element is visible       css:thead tr       ${wait_time}
+     wait until element is not visible       (//tbody//tr[2]//div[contains(@class,'skeleton')])[1]      ${wait_time}
+     click element      ${search_LocationName}
+     Clear Element Text      ${search_LocationName}
+
+Verify that table contains the location Name under Location column
+    [Arguments]         ${option1}      ${option2}
+    wait until element is not visible       ${loaderIcon}       ${wait_time}
+    wait until element is visible       //th//div[contains(@class,'columnName')][normalize-space()='${option1}']//ancestor::table//following::tr//td[contains(text(),'${option2}')]        ${wait_time}
+    wait until element is enabled       //th//div[contains(@class,'columnName')][normalize-space()='${option1}']//ancestor::table//following::tr//td[contains(text(),'${option2}')]       ${wait_time}
