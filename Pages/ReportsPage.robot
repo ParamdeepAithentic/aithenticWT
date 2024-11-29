@@ -93,8 +93,9 @@ Fetch the total count
     ${text}=     get text   ${Totalcount_field}
     ${parts}    Split String    ${text}    Total Count :
     ${total_count}    Get Substring    ${parts[1]}    3
-    Log to console  Total count is :${total_count}
-    set global variable    ${total_count}
+    ${total_count_int}=   Convert To Integer   ${total_count}
+    Log to console  Total count is :${total_count_int}
+    set global variable    ${total_count_int}
     EXCEPT
         wait until element is visible       //span[normalize-space()='No Records']          ${yop_sleep}
         wait until element is enabled      //span[normalize-space()='No Records']           ${yop_sleep}
@@ -125,5 +126,6 @@ Fetch the total count After selecting filter
     ${text}=     get text   ${Totalcount_field}
     ${parts}    Split String    ${text}    Total Count :
     ${total_count_again}    Get Substring    ${parts[1]}    3
+    ${total_count_again}=   Convert To Integer   ${total_count_again}
     Log to console  Total count is :${total_count_again}
     set global variable    ${total_count_again}
