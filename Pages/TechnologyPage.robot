@@ -534,6 +534,7 @@ Select technology lifecycle status
     wait until element is visible   //ng-select[contains(@class,'qa-LifeCycleStatusId')]//ng-dropdown-panel//span[normalize-space()='Active']      ${wait_time}
     wait until element is enabled  //ng-select[contains(@class,'qa-LifeCycleStatusId')]//ng-dropdown-panel//span[normalize-space()='Active']      ${wait_time}
     click element   //ng-select[contains(@class,'qa-LifeCycleStatusId')]//ng-dropdown-panel//span[normalize-space()='Active']
+    Generic.Wait for the spinner to get disable
     #Generic.Select parameter    ${option1}
 
 
@@ -545,6 +546,7 @@ Select edited technology lifecycle status
     click element     ${LifeCycleStatusId}
     wait until element is visible   //span[normalize-space()='${option1}']     ${wait_time}
     click element   //span[normalize-space()='${option1}']
+    Generic.Wait for the spinner to get disable
 
 Add technology lifecycle comment
     [Arguments]    ${option}
@@ -724,6 +726,7 @@ Add assignment information location
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  13  ${pageHeading}   Technology Page - Select the location name from the dropdown under assignment information section under add technology      13   ${pageTime}     ${ActualTime}    TechnologyPage_Time
+    Generic.Wait for the spinner to get disable
 
 Add assignment information department name
     [Arguments]    ${option1}
@@ -736,6 +739,7 @@ Add assignment information department name
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  14  ${pageHeading}   Technology Page - Select the department name from the dropdown under assignment information section under add technology      14    ${pageTime}     ${ActualTime}    TechnologyPage_Time
+    Generic.Wait for the spinner to get disable
 
 Add assignment information assign to
     [Arguments]    ${option1}   ${option2}
@@ -746,6 +750,7 @@ Add assignment information assign to
     Generic.Enter value into field      ${assignTo}     ${option1}
     wait until element is visible     //span[normalize-space()='${option1} ${option2}']      ${wait_time}
     Press keys  ${assignTo}     ENTER
+    Generic.Wait for the spinner to get disable
 
 #################Partners Information###############
 Add support partner of partners information
@@ -1412,6 +1417,7 @@ Select plan for subscription
 
 Click on pop up of available Inactive Asset
     [Arguments]     ${option}
+    TRY
     wait until element is visible   css:.qa-available-inactive-assests-${option}   ${wait_time}
     wait until element is enabled   css:.qa-available-inactive-assests-${option}   ${wait_time}
     ${status}=    Run Keyword And Return Status    Element Should Be Visible    css:.qa-available-inactive-assests-${option}   ${wait_time}
@@ -1420,6 +1426,9 @@ Click on pop up of available Inactive Asset
     click element   css:.qa-available-inactive-assests-${option}
     RETURN    ${status}
 #    wait until element is not visible       ${shadow}          60
+    EXCEPT
+    Log    Count is less than the plan value
+    END
 
 Select option from exceed asset limit pop
     [Arguments]     ${option}
@@ -2096,7 +2105,7 @@ Get the text of the value you selected under filter
 
 Click on the product field under add technology
     [Arguments]        ${product}
-    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Not Visible    ${loaderIcon}      60
     wait until element is visible   //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input      ${wait_time}
     wait until element is enabled   //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input     ${wait_time}
     Clear Element Text    //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input

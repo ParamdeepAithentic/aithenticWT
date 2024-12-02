@@ -82,6 +82,7 @@ Download sheet for investments
     Generic.Verify your current page location contains      it-performance
     ITperformancePage.Verify all tabs of asset report and download sheet
     Generic.Fetch alert message text and compare it with        Investment by Partners sheets will get download soon
+    sleep    10
     ITperformancePage.Verify sheet is downloaded        sspslReport
 
 Download all sheets with download all button

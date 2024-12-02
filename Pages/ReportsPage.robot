@@ -57,13 +57,14 @@ Click on tab under Modules
     ${count}=       get text        //p[normalize-space()='${tab_name}']//following-sibling::p
     ${parts}        split string        ${count}    /
     ${first_part}=    set variable    ${parts[0]}
-    log to console      Modules: ${first_part}
-    set global variable     ${first_part}
+    ${first_part_int}  convert to integer       ${first_part}
+    log to console      Modules: ${first_part_int}
+    set global variable     ${first_part_int}
     click element       //p[normalize-space()='${tab_name}']//following-sibling::p
 
 Verify number of modules are equals to total counts
     [Arguments]    ${option}
-    should be equal      ${first_part}    ${total_count}
+    should be equal      ${first_part_int}    ${total_count_int}
     log to console      The Modules of ${option} is equal to total counts in ${option}
 
 Fetch total installed Agents
@@ -73,15 +74,17 @@ Fetch total installed Agents
     ${Agent}=       get text          //p[contains(text(),'Installed Agents -')]
     ${parts}    Split String    ${Agent}    ${data}
     ${total_count}    Get Substring    ${parts[1]}      1
-    log to console      ${total_count}
-    set global variable     ${total_count}
+    ${total_count_int}      convert to integer    ${total_count}
+    log to console      ${total_count_int}
+    set global variable     ${total_count_int}
 
 Click on tab under Technology Types
     [Arguments]     ${tab_name}
     wait until element is not visible       ${loaderIcon}       ${wait_time}
     Execute JavaScript    window.scrollTo(0, document.body.scrollHeight);
     wait until element is visible     //p[normalize-space()='${tab_name}']//following-sibling::p     ${wait_time}
-    ${count}=       get text        //p[normalize-space()='${tab_name}']//following-sibling::p
+    ${count_text}=       get text        //p[normalize-space()='${tab_name}']//following-sibling::p
+    ${count}=   Convert To Integer   ${count_text}
     log to console      Technology: ${count}
     set global variable     ${count}
     click element       //p[normalize-space()='${tab_name}']//following-sibling::p
@@ -93,8 +96,9 @@ Fetch the total count
     ${text}=     get text   ${Totalcount_field}
     ${parts}    Split String    ${text}    Total Count :
     ${total_count}    Get Substring    ${parts[1]}    3
-    Log to console  Total count is :${total_count}
-    set global variable    ${total_count}
+    ${total_count_int}=   Convert To Integer   ${total_count}
+    Log to console  Total count is :${total_count_int}
+    set global variable    ${total_count_int}
     EXCEPT
         wait until element is visible       //span[normalize-space()='No Records']          ${yop_sleep}
         wait until element is enabled      //span[normalize-space()='No Records']           ${yop_sleep}
@@ -105,7 +109,7 @@ Fetch the total count
 
 Verify that key_data is equals to total number of counts
     [Arguments]    ${option}
-    should be equal      ${count}    ${total_count}
+    should be equal      ${count}    ${total_count_int}
     log to console      The Key data of ${option} is equal to total counts in ${option}
 
 Click on tab under key data
@@ -113,7 +117,8 @@ Click on tab under key data
     wait until element is not visible       ${loaderIcon}       ${wait_time}
     Generic.Scroll the page till        7000
     wait until element is visible     //p[normalize-space()='${tab_name}']//following-sibling::p     ${wait_time}
-    ${count}=       get text        //p[normalize-space()='${tab_name}']//following-sibling::p
+    ${count_text}=       get text        //p[normalize-space()='${tab_name}']//following-sibling::p
+    ${count} =  Convert To Integer   ${count_text}
     log to console      key data: ${count}
     set global variable     ${count}
     click element       //p[normalize-space()='${tab_name}']//following-sibling::p
@@ -125,5 +130,6 @@ Fetch the total count After selecting filter
     ${text}=     get text   ${Totalcount_field}
     ${parts}    Split String    ${text}    Total Count :
     ${total_count_again}    Get Substring    ${parts[1]}    3
+    ${total_count_again}=   Convert To Integer   ${total_count_again}
     Log to console  Total count is :${total_count_again}
     set global variable    ${total_count_again}

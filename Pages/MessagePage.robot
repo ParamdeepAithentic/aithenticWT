@@ -182,7 +182,7 @@ Fetch the country from location filter and click
 #    ${element_count}=    Get Element Count    css:.qa-total-count-list
 #    Log      ${element_count}
     TRY
-    FOR    ${index}    IN RANGE    1    ${total_count + 1}
+    FOR    ${index}    IN RANGE    1    ${total_data_count + 1}
         Wait Until Element Is Visible   (//div[normalize-space()='${option}']//following-sibling::div//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]      ${wait_time}
         Wait Until Element Is Enabled   (//div[normalize-space()='${option}']//following-sibling::div//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]       ${wait_time}
         ${element1}=    Get Text    (//div[normalize-space()='${option}']//following-sibling::div//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]
@@ -196,5 +196,27 @@ Fetch the country from location filter and click
         Log    There is no data in the table
     END
 
-Comapre the total count after selecting filter
-    Should be equal     ${total_count_again}        ${total_count}
+Compare the total count after selecting filter
+    Should be equal     ${total_data_count}        ${total_count_int}
+
+
+Set pagination to max for inbox list in message
+      TRY
+        PaginationPage.Pagination box visible
+        PaginationPage.Select the value from the pagination drop down count     500
+        MemberPage.Wait till message listing appear
+      EXCEPT
+        PaginationPage.Skip the pagination code
+      END
+
+
+Fetch the total count of message listing after selecting filter
+    wait until element is not visible       ${loaderIcon}       ${wait_time}
+    wait until element is visible       ${Totalcount_field}      ${wait_time}
+    wait until element is enabled   ${Totalcount_field}      ${wait_time}
+    ${text}=     get text   ${Totalcount_field}
+    ${parts}    Split String    ${text}    Total Count :
+    ${total_count_again}    Get Substring    ${parts[1]}    3
+    ${total_data_count}=   Convert To Integer   ${total_count_again}
+    Log to console  Total count is :${total_data_count}
+    set global variable    ${total_data_count}
