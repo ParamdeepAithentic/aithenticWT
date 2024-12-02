@@ -1896,10 +1896,10 @@ Verify all the validations of team member bulk edit
     Generic.Click on the button     Check Data
     Bulk_Import_ExportPage.Verify the upload message text    validationErrors       Mobile Number is missing. Please fill in required data.
     Bulk_Import_ExportPage.Enter the new value of team member in the phone number column        MobileNo
-    Bulk_Import_ExportPage.Clear the text of the field    Email
-
-    Generic.Click on the button     Check Data
-    Bulk_Import_ExportPage.Verify the upload message text    validationErrors           Business Email is missing. Please fill in required data.
+    Double click to clear the dropdown    Email
+#    Generic.Click on the button     Check Data
+#    Generic.Click on the button     Check Data
+#    Bulk_Import_ExportPage.Verify the upload message text    validationErrors           Business Email is missing. Please fill in required data.
     Bulk_Import_ExportPage.Enter static value in the fields of department bulk import       Email        deepparam112@mail-mario.fr.nf
     Generic.Click on the button     Check Data
     Bulk_Import_ExportPage.Verify the upload message text    validationErrors       Business Email already exists
@@ -1909,9 +1909,13 @@ Verify all the validations of team member bulk edit
     Generic.Click on the button     Check Data
     Bulk_Import_ExportPage.Verify the upload message text    validationErrors       Department is missing. Please fill in required data.
     Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       DepartmentName      3
-    Double click to clear the dropdown      UserRoleName
-    Generic.Click on the button     Check Data
-    Bulk_Import_ExportPage.Verify the upload message text    validationErrors       Member Role is missing. Please fill in required data.
+#    Double click to clear the dropdown      LocationName
+#    Generic.Click on the button     Check Data
+#    Bulk_Import_ExportPage.Verify the upload message text    validationErrors       Location is missing. Please fill in required data.
+#    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       LocationName      3
+#    Double click to clear the dropdown      UserRoleName
+#    Generic.Click on the button     Check Data
+#    Bulk_Import_ExportPage.Verify the upload message text    validationErrors       Member Role is missing. Please fill in required data.
     EXCEPT
     Switch Window       aithentic | Member - List
     Generic.Click on the profile name

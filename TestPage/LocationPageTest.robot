@@ -839,6 +839,7 @@ Verify user should not able to Deactivate Location having Support Partner
     Generic.Fetch alert message text and compare it with    Location having more than 0 technologies member, partner or contract cannot be deactivated.
 
 Add new Location Heirarchy and verify select location filter with Parent Location and Sub Location
+    [Tags]    NT
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain

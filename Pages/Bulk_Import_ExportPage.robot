@@ -867,9 +867,8 @@ Double click to clear the dropdown
     [Arguments]    ${option}
     wait until element is visible      css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
     wait until element is enabled      css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
-#    Double click element      css:.ag-center-cols-container div[col-id='${option}']
-#    Press Keys    css:.ag-center-cols-container div[col-id='${option}']     CONTROL+A
     Press Keys    css:.ag-center-cols-container div[col-id='${option}']     DELETE
+    sleep       ${search_sleep}
 
 Clear the text of the field under team member
     [Arguments]     ${option}
@@ -877,6 +876,7 @@ Clear the text of the field under team member
     Wait Until Element Is Enabled      css:.ag-pinned-left-cols-container div[col-id='${option}']    ${wait_time}
     Double Click Element               css:.ag-pinned-left-cols-container div[col-id='${option}']
     Press Keys    css:.ag-pinned-left-cols-container div[col-id='${option}']     CTRL+a    BACKSPACE
+    sleep       ${search_sleep}
 
 Enter the random value in the brand field under product bulk import
     [Arguments]    ${option}
