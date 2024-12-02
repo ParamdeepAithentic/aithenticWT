@@ -862,3 +862,18 @@ Clear the text of the field
 Verify that element is enabled
     [Arguments]         ${option}
     wait until element is visible    //button[normalize-space()='${option}']       ${wait_time}
+
+Double click to clear the dropdown
+    [Arguments]    ${option}
+    wait until element is visible      css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
+    wait until element is enabled      css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
+#    Double click element      css:.ag-center-cols-container div[col-id='${option}']
+#    Press Keys    css:.ag-center-cols-container div[col-id='${option}']     CONTROL+A
+    Press Keys    css:.ag-center-cols-container div[col-id='${option}']     DELETE
+
+Clear the text of the field under team member
+    [Arguments]     ${option}
+    Wait Until Element Is Visible      css:.ag-pinned-left-cols-container div[col-id='${option}']    ${wait_time}
+    Wait Until Element Is Enabled      css:.ag-pinned-left-cols-container div[col-id='${option}']    ${wait_time}
+    Double Click Element               css:.ag-pinned-left-cols-container div[col-id='${option}']
+    Press Keys    css:.ag-pinned-left-cols-container div[col-id='${option}']     CTRL+a    BACKSPACE
