@@ -503,10 +503,12 @@ Click on Add new Contact of partner
 Click on three dots of partners listing
     wait until element is visible   ${three_dots}   ${wait_time}
     click element   ${three_dots}
+    sleep   ${search_sleep}
 
 Select option from three dots of partner
     [Arguments]     ${option}
     Generic.Select simple option from profile list       ${option}
+    sleep   ${search_sleep}
 
 #option: Edit, Deactivate, Activate, Remove
 
@@ -589,6 +591,7 @@ Enter new_business_email of contact
 Select option from the pop up
     [Arguments]    ${option}
     Generic.click on the button         ${option}
+    sleep   ${search_sleep}
 
 Click on the save button
     [Arguments]     ${option}
