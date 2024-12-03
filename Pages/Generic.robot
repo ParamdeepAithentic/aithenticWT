@@ -56,13 +56,13 @@ ${click_countryTag}     css:.iti__arrow
 ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
-${wait_time}       20
+${wait_time}       60
 ${yop_sleep}       10
 
 ${search_sleep}       1
 
 
-${CASE}       uat   #qa , uat , pre-prod
+${CASE}       qa   #qa , uat , pre-prod
 
 
 
