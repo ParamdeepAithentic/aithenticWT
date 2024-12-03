@@ -53,6 +53,7 @@ ${Edit_Email}       css:#businessEmail
 
 ${teamMember_Action_btn}     css:#Team-Member-Actions
 ${name_SearchBar}       css:#searchbar-memberlist
+${name_SearchBar_via_profile}       css:#searchbar-member-profile
 ${Dept_SearchBar}       css:#searchbar-departmentlist
 ${three_dots}       css:.three-dots
 ${Edit_first_name}      css:#firstName
@@ -206,9 +207,21 @@ Search Team Member by name
     sleep      ${search_sleep}
     wait until element is visible       css:thead tr       ${wait_time}
 
+Search Team Member by name via profile
+    [Arguments]    ${name}
+    wait until element is visible       css:thead tr       ${wait_time}
+    wait until element is visible      ${name_SearchBar_via_profile}     ${wait_time}
+    click element      ${name_SearchBar_via_profile}
+    Clear Element Text      ${name_SearchBar_via_profile}
+    ${StartTime1} =     Get Current Time in Milliseconds
+    input text   ${name_SearchBar_via_profile}   ${name}
+    sleep      ${search_sleep}
+    wait until element is visible       css:thead tr       ${wait_time}
+
 Click on three dots of Team Member listing
     wait until element is visible   ${three_dots}   ${wait_time}
     click element   ${three_dots}
+    sleep   ${search_sleep}
 
 Select option from three dots of Team Member
     [Arguments]     ${option}
@@ -274,7 +287,7 @@ Click on convert to team member confirm pop up
     wait until element is enabled   css:.qa-convert-assignee-tm-confirm     ${wait_time}
     sleep   ${search_sleep}
     click element   css:.qa-convert-assignee-tm-confirm
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 Click on asset history tab under team member
     wait until element is visible    css:.asset-history-qa   ${wait_time}
@@ -363,6 +376,7 @@ Click on remove option under three dots
     wait until element is visible       css:.member-remove-qa    ${wait_time}
     wait until element is enabled       css:.member-remove-qa   ${wait_time}
     click element       css:.member-remove-qa
+    sleep       ${search_sleep}
 
 Select option from remove TM warning pop-up
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
@@ -411,10 +425,10 @@ Fetch the country from team member filter and click
              Log    Element ${index}: ${New_Country}
              Run Keyword If    '${New_Country}' == '${option2}'    Run Keywords    Empty Action of location   AND     Continue For Loop
         END
-    EXCEPT
+    EXCEPT      ElementNotVisibleException
         wait until element is visible       //span[normalize-space()='No Records']          ${yop_sleep}
         wait until element is enabled      //span[normalize-space()='No Records']           ${yop_sleep}
-    FINALLY
+    EXCEPT    TimeoutException
         Log    Table got the issue while loading or there is no data
     END
 

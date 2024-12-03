@@ -54,7 +54,7 @@ Test Teardown   Close Browser session
 Verify pagination of technology Table
     [Tags]    Smoke
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       jasdeep@15963.fr.nf     Paramdeep@112
+    LandingPage.Fill the login Form       testqa29j@mailinator.com      Test@123
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -182,11 +182,12 @@ Verify pagination of Assigned User Table
     PaginationPage.Check Pagination     assignee-list
 
 Verify Pagination of Product Dropdown when Add and Edit Technology
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
+    Generic.Set asset ID settings
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology-list
     TechnologyPage.Click on action button of technology
@@ -236,6 +237,7 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
         Generic.Verify your current page location contains      dashboard
         LandingPage.Verify you are on dashboard page
+        Generic.Set asset ID settings
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    aad
@@ -353,11 +355,12 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
 
 
 Verify Pagination of Product Dropdown when Add IP discovered asset
-    [Tags]      NT      rerun
+    [Tags]      NT        
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
         Generic.Verify your current page location contains      dashboard
         LandingPage.Verify you are on dashboard page
+        Generic.Set asset ID settings
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    aad
@@ -496,3 +499,9 @@ Click and verify the pagination under existing assets
     Generic.Scroll Window To End
     PaginationPage.Get the value of page number under existing asset
     TechnologyPage.verify Text from Assignment Information      1          ${page_number_count}
+
+
+
+
+
+

@@ -57,7 +57,7 @@ Testone
     Generic.Fix the row number
 
 Login as End_user with different roles
-    [Tags]      Sanity     Smoke        rerun
+    [Tags]      Sanity     Smoke          
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      enduser@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard

@@ -198,7 +198,7 @@ Click preview selection button on contact
      sleep       ${search_sleep}
      click element      ${previewSelectionButton}
      Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-#     wait until element is not visible       ${shadow}          ${wait_time}
+#     wait until element is not visible       ${shadow}          60
 
 Enter contract description comment
      [Arguments]    ${option}
@@ -330,4 +330,4 @@ Click on back to contract link
     wait until element is enabled   //span[@class='back']   ${wait_time}
     click element   //span[@class='back']
     wait until element is not visible    ${loaderIcon}  ${wait_time}
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60

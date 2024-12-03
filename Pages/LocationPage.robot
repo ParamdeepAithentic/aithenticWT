@@ -58,6 +58,8 @@ ${MAX_LIMIT}            500
 ${search_LocationName}     css:.search-location-qa
 
 ${rowMenu}     css:.three-dots
+${parent_location}      //input[@id='ParentLocation']
+${sub_location}     //input[@id='ChildLocations']
 
 
 *** Keywords ***
@@ -74,7 +76,7 @@ Click on add location button
     Wait Until Element Is Visible       //a[@title='${option}']    ${wait_time}
     Wait Until Element Is Enabled      //a[@title='${option}']     ${wait_time}
     click element       //a[@title='${option}']
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 #----------------------- only bulk edit location is not having title-----------------------
 Select the option from action menu
@@ -82,7 +84,7 @@ Select the option from action menu
     wait until element is visible       css:.qa-location-bulk-${option}     ${wait_time}
     wait until element is enabled       css:.qa-location-bulk-${option}     ${wait_time}
     click element   css:.qa-location-bulk-${option}
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 
 
@@ -170,7 +172,7 @@ Save location form
     Wait Until Element Is Enabled       css:.qa-${option}-location    ${wait_time}
     click element       css:.qa-${option}-location
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 Fetch the location Name from the row
     [Arguments]    ${option}
@@ -205,7 +207,7 @@ Select option from change location status pop up
     Wait Until Element Is enabled      css:.qa-update-location-status-${option}-action    ${wait_time}
     Mouse over      css:.qa-update-location-status-${option}-action
     click element      css:.qa-update-location-status-${option}-action
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 #    sleep       1
 
 #------------------------------------------------------------------------------------------------
@@ -383,9 +385,9 @@ Click on the location filter under location
 
 Select the option from location filter under location
     [Arguments]     ${option}
-    Wait Until Element Is Visible   //div[contains(@class,'sidenav-content ')]//following-sibling::div[contains(@class,'row')]//label[contains(text(),'${option}')]     ${wait_time}
-    Wait Until Element Is Visible    //div[contains(@class,'sidenav-content ')]//following-sibling::div[contains(@class,'row')]//label[contains(text(),'${option}')]      ${wait_time}
-    click element    //div[contains(@class,'sidenav-content ')]//following-sibling::div[contains(@class,'row')]//label[contains(text(),'${option}')]
+    Wait Until Element Is Visible   //label[normalize-space()='${option}']     ${wait_time}
+    Wait Until Element Is Visible   //label[normalize-space()='${option}']      ${wait_time}
+    click element    //label[normalize-space()='${option}']
 
 Fetch the country from location filter and click
     [Arguments]     ${option}       ${option1}      ${option2}     ${option3}
@@ -393,6 +395,7 @@ Fetch the country from location filter and click
         FOR    ${index}    IN RANGE    1    ${total_data_count + 1}
         Wait Until Element Is Visible   (//th//div[contains(@class,'columnName')][normalize-space()='${option}']//ancestor::table//following::tr//td[${option1}][contains(text(),'${option2}')])[${index}]      ${wait_time}
         Wait Until Element Is Enabled   (//th//div[contains(@class,'columnName')][normalize-space()='${option}']//ancestor::table//following::tr//td[${option1}][contains(text(),'${option2}')])[${index}]       ${wait_time}
+#        Scroll element into view    (//th//div[contains(@class,'columnName')][normalize-space()='${option}']//ancestor::table//following::tr//td[${option1}][contains(text(),'${option2}')])[${index}]
         ${element1}=    Get Text    (//th//div[contains(@class,'columnName')][normalize-space()='${option}']//ancestor::table//following::tr//td[${option1}][contains(text(),'${option2}')])[${index}]
         ${original_string}=    Set Variable    ${element1}
         ${New_Country}=    Evaluate    '${original_string}'.strip()
@@ -403,8 +406,6 @@ Fetch the country from location filter and click
         Wait Until Element Is Visible       //span[normalize-space()='No Records']      ${wait_time}
         Log    There is no data in the table
     END
-
-
 
 
 
@@ -562,6 +563,13 @@ Verify that remove Location button is not visible having asset, member, partner 
     wait until element is not visible    ${loaderIcon}      ${wait_time}
     wait until element is not visible    //button[normalize-space()='Remove']       ${wait_time}
 
+Enter input in the IP subnet field
+    [Arguments]     ${option}       ${option1}
+    Wait Until Element Is Visible   (//input[@formcontrolname='IPSubnets'])[${option}]      ${wait_time}
+    Wait Until Element Is Enabled    (//input[@formcontrolname='IPSubnets'])[${option}]       ${wait_time}
+    click element       (//input[@formcontrolname='IPSubnets'])[${option}]
+    input text      (//input[@formcontrolname='IPSubnets'])[${option}]      ${option1}
+
 
 #Fetch the country from location filter and click
 #    [Arguments]     ${option}       ${option1}      ${option2}       ${option3}
@@ -592,3 +600,48 @@ Verify that remove Location button is not visible having asset, member, partner 
 #    [Arguments]    ${total_count}
 #    ${a} =    Run Keyword If    ${total_count} <= ${MAX_LIMIT}    Set Variable    ${total_count}    ELSE    Set Variable    ${MAX_LIMIT}
 #    [Return]    ${a}
+
+Create random sub location
+    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${sub_generated_location}=    Catenate    Sub_Location${random_string}
+    wait until element is visible       css:#locationName    ${wait_time}
+    input text   css:#locationName  ${sub_generated_location}
+    Log     Sub_Location:${sub_generated_location}
+    set global variable    ${sub_generated_location}
+
+Create random parent location
+    ${random_string} =    Generate Random String       5      [NUMBERS]
+    ${parent_generated_location}=    Catenate    Parent_Location${random_string}
+    wait until element is visible       css:#locationName    ${wait_time}
+    input text   css:#locationName  ${parent_generated_location}
+    log     Parent_Location:${parent_generated_location}
+    set global variable     ${parent_generated_location}
+
+Enter the Parent Location
+    [Arguments]         ${option}
+    wait until element is not visible       ${loaderIcon}       ${wait_time}
+    Wait Until Element Is Visible    ${parent_location}   ${wait_time}
+    Wait Until Element Is Enabled    ${parent_location}   ${wait_time}
+    input text      ${parent_location}      ${option}
+    Generic.Select parameter        ${option}
+
+Enter the Sub Location
+    [Arguments]         ${option}
+    wait until element is not visible       ${loaderIcon}       ${wait_time}
+    Wait Until Element Is Visible    ${sub_location}   ${wait_time}
+    Wait Until Element Is Enabled    ${sub_location}   ${wait_time}
+    input text      ${sub_location}      ${option}
+    Generic.Select parameter        ${option}
+
+Clear the text from search field
+     wait until element is not visible      ${loaderIcon}     ${wait_time}
+     wait until element is visible       css:thead tr       ${wait_time}
+     wait until element is not visible       (//tbody//tr[2]//div[contains(@class,'skeleton')])[1]      ${wait_time}
+     click element      ${search_LocationName}
+     Clear Element Text      ${search_LocationName}
+
+Verify that table contains the location Name under Location column
+    [Arguments]         ${option1}      ${option2}
+    wait until element is not visible       ${loaderIcon}       ${wait_time}
+    wait until element is visible       //th//div[contains(@class,'columnName')][normalize-space()='${option1}']//ancestor::table//following::tr//td[contains(text(),'${option2}')]        ${wait_time}
+    wait until element is enabled       //th//div[contains(@class,'columnName')][normalize-space()='${option1}']//ancestor::table//following::tr//td[contains(text(),'${option2}')]       ${wait_time}

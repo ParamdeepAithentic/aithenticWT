@@ -50,7 +50,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Compose Message invite user test
-    [Tags]      Sanity      Smoke       Time        rerun
+    [Tags]      Sanity      Smoke       Time
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -100,8 +100,7 @@ Compose Message invite user test
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Sleep     5
-    #Generic.Fetch alert message text and compare it with    Partner created successfully
+    Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generate_BusinessName}
 #-------------------------- PRODUCT-----newely added---------------------------------------------------------
     Generic.Click on the profile name
@@ -544,8 +543,7 @@ Export Specificartner into Excel Doc CSV and TSV for manufacturer
     PartnersPage.Create partner random secondary business URL
     PartnersPage.Click contact main save button
     Generic.Verify your current page location contains      partner-listing
-    sleep       5
-#    Generic.Fetch alert message text and compare it with        Partner created successfully
+    Generic.Fetch alert message text and compare it with        Partner created successfully
     PartnersPage.Search by business name    ${generate_BusinessName}
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .xlsx
@@ -590,7 +588,7 @@ Export Specificartner into Excel Doc CSV and TSV for manufacturer
 
 
 Export Specificartner into Excel Doc CSV and TSV for Supplier
-    [Tags]      Sanity
+    [Tags]      Sanity      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -601,14 +599,13 @@ Export Specificartner into Excel Doc CSV and TSV for Supplier
     Generic.Verify your current page location contains      addpartner
     PartnersPage.Select partner type of new partner     Supplier
     PartnersPage.Create partner random business name
-    PartnersPage.Enter partner business URL      ${generate_BusinessName}
     PartnersPage.Select partner country       United States
+    PartnersPage.Enter partner business URL      ${generate_BusinessName}
     PartnersPage.Click on add custome business URL icon
     PartnersPage.Create partner random secondary business URL
     PartnersPage.Click contact main save button
     Generic.Verify your current page location contains      partner-listing
-    sleep       5
-#    Generic.Fetch alert message text and compare it with        Partner created successfully
+    Generic.Fetch alert message text and compare it with        Partner created successfully
     PartnersPage.Search by business name    ${generate_BusinessName}
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .xlsx
@@ -672,8 +669,7 @@ Export Specificartner into Excel Doc CSV and TSV for Support Partner
     PartnersPage.Create partner random secondary business URL
     PartnersPage.Click contact main save button
     Generic.Verify your current page location contains      partner-listing
-    sleep       5
-#    Generic.Fetch alert message text and compare it with        Partner created successfully
+    Generic.Fetch alert message text and compare it with        Partner created successfully
     Generic.Wait until table get load
     PartnersPage.Search by business name    ${generate_BusinessName}
     PartnersPage.Click on the export Button
@@ -753,6 +749,7 @@ Add Manufacturer via personal detail under technology and partner
     PartnersPage.Zip code Input     24015
     PartnersPage.Save new Address
     Generic.Scroll the page till        700
+    Sleep    ${search_sleep}
     PartnersPage.Click on Add new Contact of partner        Add new Contact
     PartnersPage.Enter random contact person
     PartnersPage.Enter contact business email    ${generate_PersonName}     yopmail
@@ -760,8 +757,7 @@ Add Manufacturer via personal detail under technology and partner
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Sleep     5
-    #Generic.Fetch alert message text and compare it with    Partner created successfully
+    Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generated_BrandName}
 
 
@@ -802,6 +798,7 @@ Edit Manufacturer via partner
     PartnersPage.Zip code Input     24015
     PartnersPage.Save new Address
     Generic.Scroll the page till        700
+    Sleep    ${search_sleep}
     PartnersPage.Click on Add new Contact of partner        Add new Contact
     PartnersPage.Enter random contact person
     PartnersPage.Enter contact business email    ${generate_PersonName}     yopmail
@@ -809,8 +806,7 @@ Edit Manufacturer via partner
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Sleep     5
-    #Generic.Fetch alert message text and compare it with    Partner created successfully
+    Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generated_BrandName}
     PartnersPage.Click on three dots of partners listing
     PartnersPage.Select option from three dots of partner     Details
@@ -827,6 +823,7 @@ Edit Manufacturer via partner
     PartnersPage.Add new zip code of partner     56709
     Generic.click on the button     Add
     Generic.Scroll the page till        500
+    Sleep    ${search_sleep}
     PartnersPage.click on edit icon
     PartnersPage.Add Unique address_one of partner
     PartnersPage.Add new address_two of partner
@@ -836,6 +833,7 @@ Edit Manufacturer via partner
     PartnersPage.Add new zip code of partner     56709
     PartnersPage.Update the partner information
     Generic.Scroll the page till        700
+    Sleep    ${search_sleep}
     PartnersPage.Click on Add new Contact of partner        Add new Contact
     PartnersPage.Enter random contact name
     PartnersPage.Enter new_business_email of contact    ${generate_PersonName}     yopmail
@@ -885,6 +883,7 @@ Deactivate Manufacturer via partner
     PartnersPage.Zip code Input     24015           #css:#Zip
     PartnersPage.Save new Address
     Generic.Scroll the page till        700
+    Sleep    ${search_sleep}
     PartnersPage.Click on Add new Contact of partner        Add new Contact
     PartnersPage.Enter random contact person
     PartnersPage.Enter contact business email    ${generate_PersonName}     yopmail
@@ -892,8 +891,7 @@ Deactivate Manufacturer via partner
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Sleep     5
-    #Generic.Fetch alert message text and compare it with    Partner created successfully
+    Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generated_BrandName}
     PartnersPage.Click on three dots of partners listing
     PartnersPage.Select option from three dots of partner     Details
@@ -910,6 +908,7 @@ Deactivate Manufacturer via partner
     PartnersPage.Add new zip code of partner     56709
     Generic.click on the button     Add
     Generic.Scroll the page till        500
+    Sleep    ${search_sleep}
     PartnersPage.click on edit icon
     PartnersPage.Add Unique address_one of partner
     PartnersPage.Add new address_two of partner
@@ -919,6 +918,7 @@ Deactivate Manufacturer via partner
     PartnersPage.Add new zip code of partner     56709
     PartnersPage.Update the partner information
     Generic.Scroll the page till        700
+    sleep   ${search_sleep}
     PartnersPage.Click on Add new Contact of partner        Add new Contact
     PartnersPage.Enter random contact name
     PartnersPage.Enter new_business_email of contact    ${generate_PersonName}     yopmail
@@ -972,6 +972,7 @@ Activate Manufacturer via partner
     PartnersPage.Zip code Input     24015
     PartnersPage.Save new Address
     Generic.Scroll the page till        700
+    Sleep    ${search_sleep}
     PartnersPage.Click on Add new Contact of partner        Add new Contact
     PartnersPage.Enter random contact person
     PartnersPage.Enter contact business email    ${generate_PersonName}     yopmail
@@ -979,8 +980,7 @@ Activate Manufacturer via partner
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Sleep     5
-    #Generic.Fetch alert message text and compare it with    Partner created successfully
+    Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generated_BrandName}
     PartnersPage.Click on three dots of partners listing
     PartnersPage.Select option from three dots of partner     Details
@@ -997,6 +997,7 @@ Activate Manufacturer via partner
     PartnersPage.Add new zip code of partner     56709
     Generic.click on the button     Add
     Generic.Scroll the page till        500
+    Sleep    ${search_sleep}
     PartnersPage.click on edit icon
     PartnersPage.Add Unique address_one of partner
     PartnersPage.Add new address_two of partner
@@ -1006,6 +1007,7 @@ Activate Manufacturer via partner
     PartnersPage.Add new zip code of partner     56709
     PartnersPage.Update the partner information
     Generic.Scroll the page till        700
+    Sleep    ${search_sleep}
     PartnersPage.Click on Add new Contact of partner        Add new Contact
     PartnersPage.Enter random contact name
     PartnersPage.Enter new_business_email of contact    ${generate_PersonName}     yopmail
@@ -1026,7 +1028,7 @@ Activate Manufacturer via partner
     Generic.Fetch alert message text and compare it with      Status updated successfully
 
 Remove Manufacturer from partner
-    [Tags]    Sanity   Smoke        rerun
+    [Tags]    Sanity   Smoke          
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1062,6 +1064,7 @@ Remove Manufacturer from partner
     PartnersPage.Zip code Input     24015
     PartnersPage.Save new Address
     Generic.Scroll the page till        700
+    Sleep    ${search_sleep}
     PartnersPage.Click on Add new Contact of partner        Add new Contact
     PartnersPage.Enter random contact person
     PartnersPage.Enter contact business email    ${generate_PersonName}     yopmail
@@ -1069,8 +1072,7 @@ Remove Manufacturer from partner
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Sleep     5
-    #Generic.Fetch alert message text and compare it with    Partner created successfully
+    Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generated_BrandName}
     PartnersPage.Click on three dots of partners listing
     PartnersPage.Select option from three dots of partner     Details
@@ -1087,6 +1089,7 @@ Remove Manufacturer from partner
     PartnersPage.Add new zip code of partner     56709
     Generic.click on the button     Add
     Generic.Scroll the page till        500
+    Sleep    ${search_sleep}
     PartnersPage.click on edit icon
     PartnersPage.Add Unique address_one of partner
     PartnersPage.Add new address_two of partner
@@ -1097,6 +1100,7 @@ Remove Manufacturer from partner
     PartnersPage.Update the partner information
     PartnersPage.Wait for add address pop up hide
     Generic.Scroll the page till    700
+    Sleep    ${search_sleep}
     PartnersPage.Click on Add new Contact of partner        Add new Contact
     PartnersPage.Enter random contact name
     PartnersPage.Enter new_business_email of contact    ${generate_PersonName}     yopmail
@@ -1136,8 +1140,7 @@ View Details and check the details of Contract
     PartnersPage.Enter partner business URL     yopmail
     PartnersPage.Select partner country       United States
     PartnersPage.Click on the save button   Save
-    Sleep     5
-    #Generic.Fetch alert message text and compare it with    Partner created successfully
+    Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name   ${generate_BusinessName}
     Generic.select the option from the side menu    Technology
     TechnologyPage.Click on action button of technology
@@ -1267,6 +1270,7 @@ Add_edit_deactivate_removeSupplier while adding brand
     PartnersPage.Zip code Input     24015
     PartnersPage.Save new Address
     Generic.Scroll the page till        700
+    Sleep    ${search_sleep}
     PartnersPage.Click on Add new Contact of partner        Add new Contact
     PartnersPage.Enter random contact person
     PartnersPage.Enter contact business email    ${generate_PersonName}     yopmail
@@ -1274,8 +1278,7 @@ Add_edit_deactivate_removeSupplier while adding brand
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Sleep     5
-    #Generic.Fetch alert message text and compare it with    Partner created successfully
+    Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generated_BrandName}
     PartnersPage.Click on three dots of partners listing
     PartnersPage.Select option from three dots of partner     Details
@@ -1284,6 +1287,7 @@ Add_edit_deactivate_removeSupplier while adding brand
     PartnersPage.click on plus icon to add another business_url
     PartnersPage.Add second business_url        ${generated_BrandName}
     Generic.Scroll the page till        700
+    Sleep    ${search_sleep}
     PartnersPage.click on edit icon
     PartnersPage.Add Unique address_one of partner
     PartnersPage.Add new address_two of partner
@@ -1362,6 +1366,7 @@ Add_edit_deactivate_removeSupport_partner_while_adding_brand
     PartnersPage.Zip code Input     2659998
     PartnersPage.Save new Address
     Generic.Scroll the page till        700
+    Sleep    ${search_sleep}
     PartnersPage.Click on Add new Contact of partner        Add new Contact
     PartnersPage.Enter random contact person
     PartnersPage.Enter contact business email    ${generate_PersonName}     yopmail
@@ -1369,8 +1374,7 @@ Add_edit_deactivate_removeSupport_partner_while_adding_brand
     PartnersPage.Enter contact location       Aland Islands
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Sleep     5
-    #Generic.Fetch alert message text and compare it with    Partner created successfully
+    Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generated_BrandName}
     PartnersPage.Click on three dots of partners listing
     PartnersPage.Select option from three dots of partner     Details
@@ -1379,6 +1383,7 @@ Add_edit_deactivate_removeSupport_partner_while_adding_brand
     PartnersPage.click on plus icon to add another business_url
     PartnersPage.Add second business_url        ${generated_BrandName}
     Generic.Scroll the page till        700
+    Sleep    ${search_sleep}
     PartnersPage.click on edit icon
     PartnersPage.Add Unique address_one of partner
     PartnersPage.Add new address_two of partner
@@ -1434,8 +1439,9 @@ Partner Side bar Filters
     sleep       ${search_sleep}
     Generic.Scroll Window To End
     ReportsPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     partner-list
-    PaginationPage.Select the value from the pagination drop down count    500
+    PaginationPage.Set pagination to max
+#    PaginationPage.Click on the pagination dropdown     partner-list
+#    PaginationPage.Select the value from the pagination drop down count    500
 
 
     PartnersPage.Fetch the selected filter and verify from Table    Partner Type        Manufacturer        Manufacturer
@@ -1445,46 +1451,52 @@ Partner Side bar Filters
     PartnersPage.Click on the filters from partner module       Select Partner
     PartnersPage.Checkmark after clicking on the filters        Supplier
     ReportsPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     partner-list
-    PaginationPage.Select the value from the pagination drop down count    500
+    PaginationPage.Set pagination to max
+#    PaginationPage.Click on the pagination dropdown     partner-list
+#    PaginationPage.Select the value from the pagination drop down count    500
     PartnersPage.Fetch the selected filter and verify from Table    Partner Type        Supplier        Supplier
     Generic.Click on the reset filters link
     Generic.Refresh the existing page
     PartnersPage.Click on the filters from partner module       Select Partner
     PartnersPage.Checkmark after clicking on the filters        Support Partner
     ReportsPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     partner-list
-    PaginationPage.Select the value from the pagination drop down count    500
+    PaginationPage.Set pagination to max
+#    PaginationPage.Click on the pagination dropdown     partner-list
+#    PaginationPage.Select the value from the pagination drop down count    500
     PartnersPage.Fetch the selected filter and verify from Table    Partner Type        Support Partner        Support Partner
     Generic.Click on the reset filters link
     ReportsPage.Fetch the total count
     PartnersPage.Click on the filters from partner module       Select Partner
     PartnersPage.Checkmark after clicking on the filters        All Partners
+    Generic.Wait until table get load for filters
     ReportsPage.Fetch the total count After selecting filter
-    MessagePage.Comapre the total count after selecting filter
+    PartnersPage.Compare the total count after selecting filter
 ######################################### STATUS ###############################################################################
     Generic.Click on the reset filters link
     PartnersPage.Click on the filters from partner module       Select Status
 
     PartnersPage.Checkmark after clicking on the filters        Active
 
-    PaginationPage.Click on the pagination dropdown     partner-list
-    PaginationPage.Select the value from the pagination drop down count    500
+    PaginationPage.Set pagination to max
+#    PaginationPage.Click on the pagination dropdown     partner-list
+#    PaginationPage.Select the value from the pagination drop down count    500
     PartnersPage.Fetch the selected filter and verify from Table    Status       Active        Active
     Generic.Click on the reset filters link
     Generic.Refresh the existing page
     PartnersPage.Click on the filters from partner module       Select Status
     PartnersPage.Checkmark after clicking on the filters        Inactive
-    PaginationPage.Click on the pagination dropdown     partner-list
-    PaginationPage.Select the value from the pagination drop down count    500
+    PaginationPage.Set pagination to max
+#    PaginationPage.Click on the pagination dropdown     partner-list
+#    PaginationPage.Select the value from the pagination drop down count    500
     ReportsPage.Fetch the total count
     PartnersPage.Fetch the selected filter and verify from Table    Status       Inactive        Inactive
     Generic.Click on the reset filters link
     ReportsPage.Fetch the total count
     PartnersPage.Click on the filters from partner module       Select Status
     PartnersPage.Checkmark after clicking on the filters        All
+    Generic.Wait until table get load for filters
     ReportsPage.Fetch the total count After selecting filter
-    MessagePage.Comapre the total count after selecting filter
+    PartnersPage.Compare the total count after selecting filter
 
 Verify all the validations of Add Partners
     [Tags]      Negative
@@ -1594,6 +1606,197 @@ Create partner 100 times
 #    LoginPage.Fetch the refresh token from the login api
     ReplaceDomainAPI.Replace Domain
     PartnersPage.Create many partners
+
+Verify that user is not able to Deactivate and remove Manufacturer having technology
+    [Tags]      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    DashboardPage.Select an option from company details side list    Technology
+    Generic.Verify your current page location contains       technology-settings
+    ReplaceDomainAPI.Replace Domain
+    DashboardPage.Click on View Your Added Brand List
+    Generic.Verify your current page location contains      brand-list
+    DashboardPage.Click add brand button
+    DashboardPage.Create random brandName
+    DashboardPage.Add static Business Manufacturer URL      yopmail.net
+    DashboardPage.Add brand manufacturer country      Australia
+    DashboardPage.Save added brand details
+    Generic.Fetch alert message text and compare it with        Brand created successfully.
+    DashboardPage.Click on main Save Button
+    Generic.select the option from the side menu    Partners
+    Generic.Verify your current page location contains      partner
+    PartnersPage.Click new partner button
+    Generic.Verify your current page location contains      addpartner
+    PartnersPage.Select partner type of new partner     Manufacturer
+    PartnersPage.Select partner business_name     ${generated_BrandName}
+    PartnersPage.Select partner business URL
+    PartnersPage.Select partner country       United States
+    PartnersPage.Click contact main save button
+    Generic.Fetch alert message text and compare it with    Partner created successfully
+    PartnersPage.Search by business name    ${generated_BrandName}
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    PartnersPage.Click here to add link of contract details
+    DashboardPage.Create random productName
+    DashboardPage.Add product brand name      ${generated_BrandName}
+    TechnologyPage.Add product description via technology
+    TechnologyPage.Add product feature via technology
+    TechnologyPage.Select product technology type via technology     Hardware
+    TechnologyPage.Select product technology group via technology   Applications
+    TechnologyPage.Click on save product pop inside technology page
+    Generic.Fetch alert message text and compare it with    Product created successfully
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    Generic.wait until table get load
+    Generic.select the option from the side menu    Partners
+    Generic.Verify your current page location contains      partner
+    PartnersPage.Search by business name    ${generated_BrandName}
+    PartnersPage.Click on three dots of partners listing
+    PartnersPage.Select option from three dots of partner     Deactivate
+    PartnersPage.Select option from the pop up  Yes
+    Generic.Fetch alert message text and compare it with   You cannot delete or inactivate this partner as you have active contract or technology assigned
+    PartnersPage.Select option from the pop up  No
+    PartnersPage.Click on three dots of partners listing
+    PartnersPage.Select option from three dots of partner    Remove
+    PartnersPage.Select option from the pop up  Yes
+    Generic.Fetch alert message text and compare it with   You cannot delete or inactivate this partner as you have active contract or technology assigned
+
+Verify that user is not able to Deactivate and remove Supplier having technology
+    [Tags]      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    DashboardPage.Select an option from company details side list    Technology
+    Generic.Verify your current page location contains       technology-settings
+    ReplaceDomainAPI.Replace Domain
+    DashboardPage.Click on View Your Added Brand List
+    Generic.Verify your current page location contains      brand-list
+    DashboardPage.Click add brand button
+    DashboardPage.Create random brandName
+    DashboardPage.Add static Business Manufacturer URL      yopmail.net
+    DashboardPage.Add brand manufacturer country      Australia
+    DashboardPage.Save added brand details
+    Generic.Fetch alert message text and compare it with        Brand created successfully.
+    DashboardPage.Click on main Save Button
+    Generic.select the option from the side menu    Partners
+    Generic.Verify your current page location contains      partner
+    PartnersPage.Click new partner button
+    Generic.Verify your current page location contains      addpartner
+    PartnersPage.Select partner type of new partner     Supplier
+    PartnersPage.Select partner business_name     ${generated_BrandName}
+    PartnersPage.Select partner business URL
+    PartnersPage.Select partner country       United States
+    PartnersPage.Click contact main save button
+    Generic.Fetch alert message text and compare it with    Partner created successfully
+    PartnersPage.Search by business name    ${generated_BrandName}
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list       Product_00337612322
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
+    TechnologyPage.Add supplier of partners information     ${generated_BrandName}
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    Generic.wait until table get load
+    Generic.select the option from the side menu    Partners
+    Generic.Verify your current page location contains      partner
+    PartnersPage.Search by business name    ${generated_BrandName}
+    PartnersPage.Click on three dots of partners listing
+    PartnersPage.Select option from three dots of partner     Deactivate
+    PartnersPage.Select option from the pop up  Yes
+    Generic.Fetch alert message text and compare it with   You cannot delete or inactivate this partner as you have active contract or technology assigned
+    PartnersPage.Select option from the pop up  No
+    PartnersPage.Click on three dots of partners listing
+    PartnersPage.Select option from three dots of partner    Remove
+    PartnersPage.Select option from the pop up  Yes
+    Generic.Fetch alert message text and compare it with   You cannot delete or inactivate this partner as you have active contract or technology assigned
+
+Verify that user is not able to Deactivate and remove Support Partner having technology
+    [Tags]      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    DashboardPage.Select an option from company details side list    Technology
+    Generic.Verify your current page location contains       technology-settings
+    ReplaceDomainAPI.Replace Domain
+    DashboardPage.Click on View Your Added Brand List
+    Generic.Verify your current page location contains      brand-list
+    DashboardPage.Click add brand button
+    DashboardPage.Create random brandName
+    DashboardPage.Add static Business Manufacturer URL      yopmail.net
+    DashboardPage.Add brand manufacturer country      Australia
+    DashboardPage.Save added brand details
+    Generic.Fetch alert message text and compare it with        Brand created successfully.
+    DashboardPage.Click on main Save Button
+    Generic.select the option from the side menu    Partners
+    Generic.Verify your current page location contains      partner
+    PartnersPage.Click new partner button
+    Generic.Verify your current page location contains      addpartner
+    PartnersPage.Select partner type of new partner     Support Partner
+    PartnersPage.Select partner business_name     ${generated_BrandName}
+    PartnersPage.Select partner business URL
+    PartnersPage.Select partner country       United States
+    PartnersPage.Click contact main save button
+    Generic.Fetch alert message text and compare it with    Partner created successfully
+    PartnersPage.Search by business name    ${generated_BrandName}
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list       Product_00337612322
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Add assignment information location     United States - Test qa Up50260220 - 21 - 2
+    TechnologyPage.Add support partner of partners information     ${generated_BrandName}
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    Generic.wait until table get load
+    Generic.select the option from the side menu    Partners
+    Generic.Verify your current page location contains      partner
+    PartnersPage.Search by business name    ${generated_BrandName}
+    PartnersPage.Click on three dots of partners listing
+    PartnersPage.Select option from three dots of partner     Deactivate
+    PartnersPage.Select option from the pop up  Yes
+    Generic.Fetch alert message text and compare it with   You cannot delete or inactivate this partner as you have active contract or technology assigned
+    PartnersPage.Select option from the pop up  No
+    PartnersPage.Click on three dots of partners listing
+    PartnersPage.Select option from three dots of partner    Remove
+    PartnersPage.Select option from the pop up  Yes
+    Generic.Fetch alert message text and compare it with   You cannot delete or inactivate this partner as you have active contract or technology assigned
 
 
 #Zz kill browser

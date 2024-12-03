@@ -198,7 +198,7 @@ Add Brand via personal detail under technology
 
 
 Invite user into Aithentic
-    [Tags]      Smoke       Sanity    rerun
+    [Tags]      Smoke       Sanity      
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -339,7 +339,7 @@ Verify Help Center
     DashboardPage.Verify no result found with wrong FAQ
 
 Edit Brand and address via brand under profile list
-    [Tags]      Sanity      Smoke     rerun
+    [Tags]      Sanity      Smoke       
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -412,7 +412,7 @@ Edit Brand and address via brand under profile list
 
 
 Deactivate Brand and address via brand under profile list
-    [Tags]    NT      rerun
+    [Tags]    NT        
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -570,7 +570,7 @@ Activate Brand and address via brand under profile list
     Generic.Fetch alert message text and compare it with      Brand activated successfully
 
 Remove Brand and address via brand under profile list
-    [Tags]    Smoke     rerun
+    [Tags]    Smoke       
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -932,7 +932,7 @@ Click and verify the count of the tabs under renewal overview by choosing the va
     DashboardPage.Get And Verify The Count Of tabs under renewal overview by management console
 
 Verify Account_overview Recent Activities Filters
-    [Tags]      Smoke       Sanity   rerun
+    [Tags]      Smoke       Sanity     
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}       ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1051,7 +1051,7 @@ View Predefined product
     DashboardPage.Click on pre defined product list       [W306MI0U247
 
 Verifying the Renewals Overview section of Management console - End of Life
-    [Tags]       Smoke       Sanity     rerun
+    [Tags]       Smoke       Sanity       
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 
@@ -1149,7 +1149,7 @@ Verifying the Renewals Overview section of Management console - End of Life
     Generic.Verify your current page location contains    management-console
 
 Verifying the Renewals Overview section of Management console - Overdue Renewals
-    [Tags]       Sanity      Smoke      rerun
+    [Tags]       Sanity      Smoke        
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1236,7 +1236,7 @@ Verifying the Renewals Overview section of Management console - Overdue Renewals
     Generic.Verify your current page location contains    management-console
 
 Verifying the Renewals Overview section of Management console - Overdue contracts
-    [Tags]    NT        rerun
+    [Tags]    NT          
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1312,7 +1312,7 @@ Verifying the Renewals Overview section of Management console - Overdue contract
     Generic.Verify your current page location contains    management-console
 
 Verifying the Renewals Overview section of Management console - Expired warranties
-    [Tags]    NT        Smoke       rerun
+    [Tags]    NT        Smoke         
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1385,7 +1385,7 @@ Verifying the Renewals Overview section of Management console - Expired warranti
     Generic.Verify your current page location contains    management-console
 
 Verifying the Renewals Overview section of Management console - Overdue certificates
-    [Tags]      Smoke       rerun
+    [Tags]      Smoke         
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1458,7 +1458,7 @@ Verifying the Renewals Overview section of Management console - Overdue certific
     Generic.Verify your current page location contains    management-console
 
 Verifying the Subscription Overview section of Management console
-    [Tags]    NT        rerun
+    [Tags]    NT          
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -1569,7 +1569,7 @@ Verifying the Subscription Overview section of Management console
     DashboardPage.Click on done button of subscription overview    Done
 
 Management Console - Quarters filter dropdown
-    [Tags]    NT        rerun
+    [Tags]    NT          
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1667,7 +1667,7 @@ Management Console - Quarters filter dropdown
     DashboardPage.Verify your current page not contains this element
 
 Change password and login with new password
-    [Tags]      Sanity      smoke       rerun
+    [Tags]      Sanity      smoke         
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -2013,7 +2013,7 @@ Click and verify on manage subscription under billing
     TechnologyPage.verify Text from Assignment Information       ${subscription_plan}       ${plan_name}
 
 Compose Message reply and delete that message
-    [Tags]    NT        rerun
+    [Tags]    NT          
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
@@ -2255,7 +2255,7 @@ No data in the charts of the management console page
     DashboardPage.Verify all the checkmark boxes of finance filter are auto-check       Budget
 
 Renewals overview drilldown - Add column Host name
-    [Tags]    NT        rerun
+    [Tags]    NT        
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -2291,16 +2291,20 @@ Renewals overview drilldown - Add column Host name
     Generic.Verify your current page contains this text   ${result}
 
 Message Side bar filters
-    [Tags]     time    smoke        rerun
+    [Tags]     time    smoke      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Messages
     Generic.Verify your current page location contains      message
     MessagePage.Click on select partner filter from message side bar list
     MessagePage.Select the filter from partner      End User
-    ReportsPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     inbox
-    PaginationPage.Select the value from the pagination drop down count    500
+    MemberPage.Wait till message listing appear
+    MessagePage.Fetch the total count of message listing after selecting filter
+    MessagePage.Set pagination to max for inbox list in message
+#    MemberPage.Wait till message listing appear
+#    PaginationPage.Click on the pagination dropdown     inbox
+#    PaginationPage.Select the value from the pagination drop down count    500
+#    PaginationPage.Check Pagination     inbox
 
     ${StartTime1} =     Get Current Time in Milliseconds
     MessagePage.Fetch the country from location filter and click     Partner Type         End User    End User
@@ -2310,18 +2314,20 @@ Message Side bar filters
 
     Generic.Click on the reset filters link
     MessagePage.Select the filter from partner    Manufacturer
-    ReportsPage.Fetch the total count
+    MemberPage.Wait till message listing appear
+    MessagePage.Fetch the total count of message listing after selecting filter
+    MessagePage.Set pagination to max for inbox list in message
     MessagePage.Fetch the country from location filter and click     Partner Type         Manufacturer    Manufacturer
     Generic.Click on the reset filters link
     Generic.Refresh the existing page
     ReportsPage.Fetch the total count
     MessagePage.Click on select partner filter from message side bar list
     MessagePage.Select the filter from partner      All Partners
-    ReportsPage.Fetch the total count After selecting filter
-    MessagePage.Comapre the total count after selecting filter
+    PaginationPage.Fetch the total count for filter only
+    MessagePage.Compare the total count after selecting filter
 
 Click on the status filter under brand via profile list
-    [Tags]    NT        rerun
+    [Tags]    NT          
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
@@ -2436,9 +2442,9 @@ Verify Team member in permissions according to user roles
     DashboardPage.Select the permission of member according to user role        permission-write
 
 Click on the product filters via profile list
-    [Tags]      time      smoke     rerun
+    [Tags]      time      smoke       rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form     jasdeep@15963.fr.nf     Paramdeep@112
+    LandingPage.Fill the login Form     deepparam112@mail-mario.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     product-dropdown
@@ -2453,8 +2459,9 @@ Click on the product filters via profile list
 
     DashboardPage.Click on the added products heading
     DashboardPage.Get the text of selected status filter under product via profile
-    Generic.Wait until table get load
-    PaginationPage.Fetch the total count
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
+    PaginationPage.Set pagination to max
     TeamMemberPage.Fetch the country from team member filter and click       Status      ${New_product_Status}         ${New_product_Status}
     Generic.Click on the profile name
     Generic.Select logout option from profile list
@@ -2469,64 +2476,70 @@ Click on the product filters via profile list
     DashboardPage.Select the option from the filters under product via profile      1
     DashboardPage.Click on the added products heading
     DashboardPage.Get the text of selected status filter under product via profile
-    Generic.Wait until table get load
-    PaginationPage.Check filter Pagination of Recent Activites
+    Generic.Wait until table get load for filters
+#    PaginationPage.Check filter Pagination of Recent Activites
 #    PaginationPage.Click on the pagination dropdown    products
 #    PaginationPage.Select the value from the pagination drop down count     500
 #    PaginationPage.Fetch the selected value of the dropdown      products
-    PaginationPage.Fetch the total count
+    PaginationPage.Fetch the total count for filter only
+    PaginationPage.Set pagination to max
     TeamMemberPage.Fetch the country from team member filter and click       Status     ${New_product_Status}        ${New_product_Status}
     DashboardPage.Click on the reset button under product
     DashboardPage.Click on the brand filter under product via profile
     DashboardPage.Select the option from the brand filter under product via profile     2
     DashboardPage.Click on the added products heading
     DashboardPage.Get the text of selected brand filter under product via profile
-    Generic.Wait until table get load
-    PaginationPage.Fetch the total count
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
+    PaginationPage.Set pagination to max
     TeamMemberPage.Fetch the country from team member filter and click        Brand Name       ${selected_Brand}        ${selected_Brand}
     DashboardPage.Click on the reset button under product
     DashboardPage.Click on the brand filter under product via profile
     DashboardPage.Select the option from the brand filter under product via profile     3
     DashboardPage.Click on the added products heading
     DashboardPage.Get the text of selected brand filter under product via profile
-    Generic.Wait until table get load
-    PaginationPage.Fetch the total count
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
+    PaginationPage.Set pagination to max
     TeamMemberPage.Fetch the country from team member filter and click        Brand Name       ${selected_Brand}        ${selected_Brand}
     DashboardPage.Click on the reset button under product
     DashboardPage.Click on the brand filter under product via profile
     DashboardPage.Select the option from the brand filter under product via profile    5
     DashboardPage.Click on the added products heading
     DashboardPage.Get the text of selected brand filter under product via profile
-    Generic.Wait until table get load
-    PaginationPage.Fetch the total count
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
+    PaginationPage.Set pagination to max
     TeamMemberPage.Fetch the country from team member filter and click        Brand Name      ${selected_Brand}        ${selected_Brand}
     DashboardPage.Click on the reset button under product
     DashboardPage.Click on the technology group filter under product via profile
     DashboardPage.Select the option from the technology group filter under product via profile      1
     DashboardPage.Click on the added products heading
     DashboardPage.Get the text of selected technology group filter under product via profile
-    Generic.Wait until table get load
-    PaginationPage.Fetch the total count
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
+    PaginationPage.Set pagination to max
     TeamMemberPage.Fetch the country from team member filter and click         Technology Group        ${New_product_tech_group}        ${New_product_tech_group}
     DashboardPage.Click on the reset button under product
     DashboardPage.Click on the technology group filter under product via profile
     DashboardPage.Select the option from the technology group filter under product via profile      3
     DashboardPage.Click on the added products heading
     DashboardPage.Get the text of selected technology group filter under product via profile
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     PaginationPage.Check filter Pagination of Recent Activites
 #     PaginationPage.Click on the pagination dropdown    products
 #    PaginationPage.Select the value from the pagination drop down count     500
 #    PaginationPage.Fetch the selected value of the dropdown      products
-    PaginationPage.Fetch the total count
+    PaginationPage.Fetch the total count for filter only
+    PaginationPage.Set pagination to max
     TeamMemberPage.Fetch the country from team member filter and click         Technology Group        ${New_product_tech_group}        ${New_product_tech_group}
     DashboardPage.Click on the reset button under product
     DashboardPage.Click on the technology group filter under product via profile
     DashboardPage.Select the option from the technology group filter under product via profile      4
     DashboardPage.Click on the added products heading
     DashboardPage.Get the text of selected technology group filter under product via profile
-    Generic.Wait until table get load
-    PaginationPage.Fetch the total count
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
     TeamMemberPage.Fetch the country from team member filter and click         Technology Group        ${New_product_tech_group}        ${New_product_tech_group}
 
 Suspend the account while the contract active
@@ -2552,7 +2565,7 @@ Click on the usage analytics tab under management console
     Generic.Verify your current page location contains     usage-analytics
 
 Verify Notification Mark all as read
-    [Tags]    NT        rerun
+    [Tags]    NT          
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -2729,7 +2742,7 @@ Verify all the validations of Add and Edit product page
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page       Please Select Technology Type
 
 Verfying all field validations of Add Brand page
-    [Tags]    Negative       rerun
+    [Tags]    Negative         
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -3095,6 +3108,21 @@ Verify user should not able to Edit Brand having Product created
     Generic.Select simple option from profile list   Edit
     Generic.Verify your current page location contains      brand
     DashboardPage.Verify update button is not visible on edit brand page
+
+Share invite to the registered user
+    [Tags]    Negative
+     Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Dashboard
+    Generic.Verify your current page location contains      dashboard
+    DashboardPage.click on share icon of dashboard page
+    DashboardPage.Click on Send Invite button
+    DashboardPage.Fetch the validation of to field under share aithentic        Please enter their business email
+    DashboardPage.Enter to Static Email into popup of share aithentic       jasdeep@15963.fr.nf
+    DashboardPage.Click on Send Invite button
+    Generic.Fetch alert message text and compare it with containing text        Email Address already exists.
 
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

@@ -184,7 +184,7 @@ Click on complete process button
     wait until element is enabled       ${payment_completeProcessBTN}       ${wait_time}
     click element        ${payment_completeProcessBTN}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 Select the another plan
     wait until element is visible       css:div[class='row justify-content-center'] div:nth-child(1) div:nth-child(1) div:nth-child(2)       ${wait_time}
@@ -196,13 +196,13 @@ Select if you want to change plan or asset
     wait until element is visible       //button[normalize-space()='${option1}']       ${wait_time}
     wait until element is enabled       //button[normalize-space()='${option1}']       ${wait_time}
     click element        //button[normalize-space()='${option1}']
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 Select different plan
     wait until element is visible       (//button[@type='button'][normalize-space()='Select'])[2]       ${wait_time}
     wait until element is enabled       (//button[@type='button'][normalize-space()='Select'])[2]       ${wait_time}
     click element       (//button[@type='button'][normalize-space()='Select'])[2]
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 Set asset range to
     [Arguments]     ${option1}
@@ -280,7 +280,7 @@ Click on the three dots of subscription connector
     wait until element is enabled  //td[normalize-space()='${option}']//parent::tr//td//button//i  ${wait_time}
     click element  //td[normalize-space()='${option}']//parent::tr//td//button//i
     sleep   ${search_sleep}
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 Click on option under three dots of subscription connector
     [Arguments]     ${option1}       ${option2}
@@ -404,8 +404,8 @@ click on the confirm button of unsuspend pop up
     wait until element is visible   //button[@type='submit'][normalize-space()='Confirm']       ${wait_time}
     wait until element is enabled   //button[@type='submit'][normalize-space()='Confirm']       ${wait_time}
     click element   //button[@type='submit'][normalize-space()='Confirm']
-    wait until element is not visible       ${loaderIcon}    ${wait_time}
-#    wait until element is not visible       ${shadow}          ${wait_time}
+  #  wait until element is not visible       ${loaderIcon}    ${wait_time}
+#    wait until element is not visible       ${shadow}          60
 
 
 Choose tab under subscription page after clicking on view_result
@@ -446,7 +446,7 @@ Click on the action button of service now under discovery assets
     wait until element is enabled  //button[@id='servicenow-list-actions']  ${wait_time}
     click element  //button[@id='servicenow-list-actions']
     sleep   ${search_sleep}
-#    wait until element is not visible       ${shadow}          ${wait_time}
+#    wait until element is not visible       ${shadow}          60
 
 Input future Date
     ${current_date}=    Get Current Date    result_format=%m/%d/%Y
@@ -542,33 +542,33 @@ Fetch and compare the product from the table
 
 Enter input in the input field of frequency under asset discovery
     [Arguments]     ${option}
-    wait until element is visible  //div[@id='openEditScheduler']//ng-select[@formcontrolname='schedulerFrequency']    ${wait_time}
-    wait until element is enabled   //div[@id='openEditScheduler']//ng-select[@formcontrolname='schedulerFrequency']    ${wait_time}
-    click element   //div[@id='openEditScheduler']//ng-select[@formcontrolname='schedulerFrequency']
+    wait until element is visible  //div[@id='openEditSchedulerServicenow']//ng-select[@formcontrolname='schedulerFrequency']    ${wait_time}
+    wait until element is enabled   //div[@id='openEditSchedulerServicenow']//ng-select[@formcontrolname='schedulerFrequency']    ${wait_time}
+    click element   //div[@id='openEditSchedulerServicenow']//ng-select[@formcontrolname='schedulerFrequency']
     Generic.Select parameter    ${option}
 
 Enter input in the input field of day asset discovery
     [Arguments]     ${option}
-    wait until element is visible  //div[@id='openEditScheduler']//ng-select[@formcontrolname='schedulerDay']    ${wait_time}
-    wait until element is enabled  //div[@id='openEditScheduler']//ng-select[@formcontrolname='schedulerDay']    ${wait_time}
-    click element   //div[@id='openEditScheduler']//ng-select[@formcontrolname='schedulerDay']
+    wait until element is visible  //div[@id='openEditSchedulerServicenow']//ng-select[@formcontrolname='schedulerDay']    ${wait_time}
+    wait until element is enabled  //div[@id='openEditSchedulerServicenow']//ng-select[@formcontrolname='schedulerDay']    ${wait_time}
+    click element   //div[@id='openEditSchedulerServicenow']//ng-select[@formcontrolname='schedulerDay']
     Generic.Select parameter    ${option}
 
 Enter input in the start date field of service now under asset discovery
-    Generic.Enter current date       //div[@id='openEditScheduler']//input[@formcontrolname='schedulerDate']
+    Generic.Enter current date       //div[@id='openEditSchedulerServicenow']//input[@formcontrolname='schedulerDate']
 
 click on the cross icon of service now under asset discovery
     [Arguments]     ${option}
-    wait until element is visible   (//div[@id='openEditScheduler']//span[@title='Clear all'])[${option}]    ${wait_time}
-    wait until element is enabled   (//div[@id='openEditScheduler']//span[@title='Clear all'])[${option}]     ${wait_time}
-    click element   (//div[@id='openEditScheduler']//span[@title='Clear all'])[${option}]
+    wait until element is visible   (//div[@id='openEditSchedulerServicenow']//span[@title='Clear all'])[${option}]    ${wait_time}
+    wait until element is enabled   (//div[@id='openEditSchedulerServicenow']//span[@title='Clear all'])[${option}]     ${wait_time}
+    click element   (//div[@id='openEditSchedulerServicenow']//span[@title='Clear all'])[${option}]
 
 click on the cross icon of delete pop up under asset discovery
     wait until element is visible   //div[@id='deleteServicenowlConnector']//span[normalize-space()='×']    ${wait_time}
     wait until element is enabled   //div[@id='deleteServicenowlConnector']//span[normalize-space()='×']     ${wait_time}
     click element   //div[@id='deleteServicenowlConnector']//span[normalize-space()='×']
     sleep   ${search_sleep}
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 
 Choose the tab under Subscription page
@@ -924,3 +924,24 @@ Verify that Subscription Info tab is visible
 Verify subscription info tab is not visible
     wait until element is not visible   ${loaderIcon}          ${wait_time}
     Page Should Not Contain Element   css:#cve-tab        ${wait_time}
+
+Select the time from the timepicker of service now under asset discovery
+    [Arguments]     ${option}
+    wait until element is visible  //div[@id='openEditSchedulerServicenow']//input[@formcontrolname='schedulerTime']    ${wait_time}
+    wait until element is enabled   //div[@id='openEditSchedulerServicenow']//input[@formcontrolname='schedulerTime']    ${wait_time}
+    clear element text  //div[@id='openEditSchedulerServicenow']//input[@formcontrolname='schedulerTime']
+    sleep    ${search_sleep}
+    click element       //div[@id='openEditSchedulerServicenow']//input[@formcontrolname='schedulerTime']
+
+Get the value of fields under view details of subscription connector service now under asset discovery
+    [Arguments]     ${option1}      ${option2}
+    wait until element is not visible   ${loaderIcon}    ${wait_time}
+    wait until element is visible   (//div[@id='SNowDetails']//input)[${option1}]   ${wait_time}
+    ${value} =    get value    (//div[@id='SNowDetails']//input)[${option1}]
+    log to console     ${value}
+    should be equal    ${value}         ${option2}
+
+click on the yes option of delete pop up under asset discovery service now
+    wait until element is visible  //div[contains(@id,'deleteServicenowlConnector')]//button[normalize-space()='Yes']    ${wait_time}
+    wait until element is enabled   //div[contains(@id,'deleteServicenowlConnector')]//button[normalize-space()='Yes']    ${wait_time}
+    click element   //div[contains(@id,'deleteServicenowlConnector')]//button[normalize-space()='Yes']

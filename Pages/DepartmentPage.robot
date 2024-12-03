@@ -47,7 +47,7 @@ Click on added department action button
     Wait Until Element Is Visible       ${department_ActionBTN}    ${wait_time}
     Wait Until Element Is Enabled      ${department_ActionBTN}     ${wait_time}
     click element       ${department_ActionBTN}
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 Choose the option from the action menu
     [Arguments]    ${option}

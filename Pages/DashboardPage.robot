@@ -189,7 +189,7 @@ Select product from list
 
 Select an option from company details side list
     [Arguments]    ${option}
-    Generic.Select span parameter    ${option}
+    Generic.Select parameter    ${option}
 
 Click on download agent button to download
     [Arguments]    ${option}
@@ -971,7 +971,7 @@ Select the first value of To dropdown of quarter
     wait until element is enabled     //div[contains (@id, '-${option}')]       ${wait_time}
     click element   //div[contains (@id, '-${option}')]
     wait until element is not visible       ${loaderIcon}       ${wait_time}
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 Click on the first dropdown under management console
     Wait Until Element Is Visible    (//div[contains(@class,'qa-upcoming-days')])[1]      ${wait_time}
@@ -1014,7 +1014,7 @@ Click on Back to account overview button
     Wait Until Element Is Visible    //span[@class='back']        ${wait_time}
     Wait Until Element Is Enabled    //span[@class='back']        ${wait_time}
     Click Element       //span[@class='back']
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 Reset the filters for recent activities
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
@@ -1026,7 +1026,7 @@ Select option from the pop up of product
     [Arguments]    ${option}
     wait until element is visible   css:.removeProduct${option}Button-qa   ${wait_time}
     click element   css:.removeProduct${option}Button-qa
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 Click on the export button under account overview tab
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
@@ -1034,7 +1034,7 @@ Click on the export button under account overview tab
     wait until element is enabled      //i[@title='Exports Alerts']        ${wait_time}
     sleep   ${search_sleep}
     click element  //i[@title='Exports Alerts']
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 Click on pre defined brand list
     [Arguments]     ${option}
@@ -1366,6 +1366,7 @@ Click on No key Data under chart
 
 Verify and click on the finance filter under technology
     wait until element is not visible       ${loaderIcon}      ${wait_time}
+    wait until element is not visible       ${shadow}      ${wait_time}
     wait until element is visible      //span[normalize-space()='3']     ${wait_time}
     wait until element is enabled      //span[normalize-space()='3']      ${wait_time}
     click element       //span[normalize-space()='3']
@@ -1380,6 +1381,7 @@ Remove the Download Agent pop-up
     wait until element is not visible       ${loaderIcon}      ${wait_time}
     wait until element is visible      //h4[normalize-space()='Download Agent for Single Install']//parent::div//button[contains(@class,'close')]     ${wait_time}
     wait until element is enabled      //h4[normalize-space()='Download Agent for Single Install']//parent::div//button[contains(@class,'close')]      ${wait_time}
+    sleep       ${search_sleep}
     click element   //h4[normalize-space()='Download Agent for Single Install']//parent::div//button[contains(@class,'close')]
     sleep       ${search_sleep}
 
@@ -1843,3 +1845,19 @@ Verify the warning is visible when deactivate or remove brand
 Verify update button is not visible on edit brand page
     wait until element is not visible       //button[normalize-space()='Update']
 
+Enter to Static Email into popup of share aithentic
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}    ${wait_time}
+    wait until element is visible      ${share_toEmail}         ${wait_time}
+    wait until element is enabled      ${share_toEmail}         ${wait_time}
+    click element       ${share_toEmail}
+    input text      ${share_toEmail}        ${option}
+
+Fetch the validation of to field under share aithentic
+    [Arguments]         ${text}
+    wait until element is visible       //div[contains(@class,'invalid-feedback')]//small    ${wait_time}
+    wait until element is enabled        //div[contains(@class,'invalid-feedback')]//small    ${wait_time}
+    ${get_checkbox_validation} =    get text    //div[contains(@class,'invalid-feedback')]//small
+    set global variable    ${get_checkbox_validation}
+    log to console    ${get_checkbox_validation}
+    should be equal   ${get_checkbox_validation}     ${text}

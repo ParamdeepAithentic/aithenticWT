@@ -157,6 +157,8 @@ Create partner random business name
     ${generate_BusinessName}=    Catenate    BusinessName${random_string}
     input text   ${businessName}   ${generate_BusinessName}
     set global variable    ${generate_BusinessName}
+    wait until element is not visible       //div[contains(@class,'dropdown-panel-items')]//div[contains(@class,'option')][normalize-space()='Loading...']    ${wait_time}
+
 
 Create partner random business name for testing
     wait until element is visible       ${click_businessName}        ${wait_time}
@@ -247,6 +249,7 @@ Click on contact person button
     sleep       ${search_sleep}
     click element   ${addContact}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is not visible       //label[@for='businessName']//parent::div//div[contains(@class,'spinner-loader')]       ${wait_time}
 
 
 Enter random contact person
@@ -343,7 +346,7 @@ Click contact main save button
     wait until element is not visible       //span[normalize-space()='Please enter a valid Mobile Number']     ${wait_time}
     click element   ${main_Save}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 Click first row of table
     wait until element is visible      css:td:nth-child(1)        ${wait_time}
@@ -355,7 +358,7 @@ Click on edit button
     wait until element is visible      //button[normalize-space()='Edit']        ${wait_time}
     wait until element is enabled      //button[normalize-space()='Edit']        ${wait_time}
     click element   //button[normalize-space()='Edit']
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 Click on add custome business URL icon
     wait until element is visible      ${add_custom_businessURL}        ${wait_time}
@@ -372,12 +375,13 @@ Create partner random secondary business URL
     input text   ${add_secondaryURL}   ${generate_SecondaryBusinessName}
     set global variable    ${generate_SecondaryBusinessName}
 
+
 Click on update button
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     wait until element is visible      ${main_update_btn}        ${wait_time}
     wait until element is enabled      ${main_update_btn}        ${wait_time}
     click element   ${main_update_btn}
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 Save the new added contact
     wait until element is visible   //form[@class='ng-untouched ng-dirty ng-valid']//button[@type='button'][normalize-space()='Add']        ${wait_time}
@@ -392,7 +396,7 @@ Click on the export Button
     wait until element is enabled      ${partner_export_btn}        ${wait_time}
     sleep   ${search_sleep}
     click element   ${partner_export_btn}
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 Confirm to export file
     [Arguments]    ${option}
@@ -569,7 +573,7 @@ Update the partner information
     click element       ${update_button}
     sleep   ${search_sleep}
     wait until element is not visible       //div[@id='addressModal']//div[contains(@class,'modal-content')]        ${wait_time}
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 Enter new_business_email of contact
     [Arguments]    ${Pname}    ${Bname}
@@ -631,7 +635,7 @@ Click on save button of contact via link
     wait until element is visible   //div[@id='contactModalContract']//button[normalize-space()='${button}']      ${wait_time}
     click element   //div[@id='contactModalContract']//button[normalize-space()='${button}']
     wait until element is not visible   //div[@id='contactModal']//div[contains(@class,'modal-content')]     ${wait_time}
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 Enter and select contact name via link
     wait until element is not visible   ${loaderIcon}   ${wait_time}
@@ -699,7 +703,7 @@ Update the partner information of edit contact
     wait until element is enabled     //div[@id='contactModal']//div[@class='modal-content']//following-sibling::button[normalize-space()='Update']        ${wait_time}
     click element       //div[@id='contactModal']//div[@class='modal-content']//following-sibling::button[normalize-space()='Update']
     wait until element is not visible   ${loaderIcon}       ${wait_time}
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
     sleep   ${search_sleep}
 
 Select the partner address country
@@ -713,11 +717,11 @@ Select the partner address country
 
 Wait for add address pop up hide
     wait until element is not visible       //div[@id='addAddressModal']//div[contains(@class,'modal-content')]     ${wait_time}
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 Wait for add contact pop up hide
     wait until element is not visible      //div[@id='contactModal']//div[contains(@class,'modal-content')]     ${wait_time}
-#    wait until element is not visible       ${shadow}          ${wait_time}
+#    wait until element is not visible       ${shadow}          60
 
 Click on the filters from partner module
     [Arguments]     ${option}
@@ -735,11 +739,11 @@ Checkmark after clicking on the filters
     click element       //label[normalize-space()=' ${filter}']
     sleep       ${search_sleep}
     wait until element is not visible       ${loaderIcon}       ${wait_time}
-    Generic.Wait until table get load
+
 
 Fetch the selected filter and verify from Table
     [Arguments]     ${option}       ${option1}      ${option2}
-    Run Keyword IF      ${total_count} > 500       Filter and verify with pagination    ${option}       ${option1}      ${option2}    ELSE     Filter and verify without pagination  ${option}       ${option1}      ${option2}
+    Run Keyword IF      ${total_count_int} > 500       Filter and verify with pagination    ${option}       ${option1}      ${option2}    ELSE     Filter and verify without pagination  ${option}       ${option1}      ${option2}
 
 Click Next Button And Wait For Page To Load
     Generic.Scroll Window To End
@@ -776,16 +780,16 @@ Filter and verify with pagination
 
 Filter and verify without pagination
     [Arguments]     ${option}       ${option1}      ${option2}
-    FOR    ${index}    IN RANGE    1    ${total_count} + 1
+    FOR    ${index}    IN RANGE    1    ${total_count_int + 1}
             Wait Until Element Is Visible   (//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]      ${wait_time}
             Wait Until Element Is Enabled   (//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]       ${wait_time}
+#            Mouse over    (//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]
             ${element1}=    Get Text    (//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]
             ${original_string}=    Set Variable    ${element1}
             ${New_filter}=    Evaluate    '${original_string}'.strip()
             Log    Element ${index}: ${New_filter}
             Run Keyword If    '${New_filter}' == '${option2}'    Run Keyword       Continue For Loop
-
-         END
+    END
 
 Search by static business name
     [Arguments]    ${BusinessName}
@@ -945,3 +949,6 @@ Add the contact of Edit partner
     wait until element is visible       //h5[normalize-space()='Contact']//parent::div//following-sibling::div//button[normalize-space()='Add']   ${wait_time}
     wait until element is enabled        //h5[normalize-space()='Contact']//parent::div//following-sibling::div//button[normalize-space()='Add']   ${wait_time}
     Click element     //h5[normalize-space()='Contact']//parent::div//following-sibling::div//button[normalize-space()='Add']
+
+Compare the total count after selecting filter
+    Should be equal     ${total_count_again}        ${total_count_int}

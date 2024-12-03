@@ -70,7 +70,7 @@ Fetch the selected value of the dropdown
 #    [Arguments]     ${option}
     wait until element is visible       (//td[normalize-space()='1'])[1]      ${wait_time}
     wait until element is enabled       (//td[normalize-space()='1'])[1]      ${wait_time}
-    ${get_count_of_dropDown_value} =    get text    //*[contains(@class,'per-page')]//div[@role='combobox']
+    ${get_count_of_dropDown_value} =    get text    //*[contains(@class,'per-page')]//span[contains(@class,'value-label')]
     ${dropDown_value_as_number}=   Convert To Integer   ${get_count_of_dropDown_value}
     set global variable    ${dropDown_value_as_number}
     Log to console  Selected value :${dropDown_value_as_number}
@@ -137,16 +137,7 @@ Scroll within the element
     Execute JavaScript    document.querySelector('tbody tr:nth-child(${option}) td:nth-child(1)').scrollIntoView(true);
     wait until element is visible       //td[normalize-space()='${option}']      ${wait_time}
 
-Log WebElements
-    [Arguments]     ${option}
-    ${elements} =    Get WebElements    //div[contains(@class, 'scroll-host')]//span
-    ${element_count} =    Get Length    ${elements}
-    FOR    ${index}    IN RANGE    0    ${element_count}
-        wait until element is visible     //div[contains (@id, '-${index}')]       ${wait_time}
-        wait until element is enabled     //div[contains (@id, '-${index}')]       ${wait_time}
-        click element   //div[contains (@id, '-${index}')]
-        Run Keywords    Fetch the selected value of the dropdown   AND      Check the table get load       AND      Get count of total rows     AND     Verify Pagination and Row Count     AND     PaginationPage.Fetch the total count   AND     Click on the pagination dropdown  ${option}
-    END
+
 
 
 #############################################################################################################################################
@@ -207,7 +198,7 @@ Close the advance Search pop-up
     Wait Until Element Is Visible    //div[@id='advanceSearchPopup']//button//span[normalize-space()='×']    ${wait_time}
     Wait Until Element Is Enabled    //div[@id='advanceSearchPopup']//button//span[normalize-space()='×']     ${wait_time}
     Click Element    //div[@id='advanceSearchPopup']//button//span[normalize-space()='×']
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 Clear the brand from brand input field
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
@@ -271,8 +262,9 @@ Select parameter from brand dropdown list of OCS
 Click on save technology form button of OCS
     wait until element is visible       ${saveBTN1}       ${wait_time}
     wait until element is enabled       ${saveBTN1}       ${wait_time}
+    Sleep    2
     click element       ${saveBTN1}
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 #######################################################################################################################################################################################################################################################################################################
 
@@ -316,7 +308,8 @@ Click on the checkbox of technology listing
     FOR    ${index}    IN RANGE    1    ${element_count + 1}
         wait until element is visible     (//tbody//tr//span)[${index}]       ${wait_time}
         wait until element is enabled     (//tbody//tr//span)[${index}]      ${wait_time}
-        Execute JavaScript    document.querySelector('tbody tr span:nth-of-type(${index})').click();
+#        click element       (//tbody//tr//span)[${index}]
+        Execute JavaScript    document.querySelector('tbody tr:nth-child(${index}) span:first-of-type').click();
         PaginationPage.Scroll within the element      ${index}
     END
 
@@ -439,13 +432,27 @@ Fetch the brand name under existing assets without searching
     Set Global Variable   ${Brand_existing_asset}
 
 
+Log WebElements
+    [Arguments]     ${option}
+    ${elements} =    Get WebElements    //div[contains(@class, 'scroll-host')]//span
+    ${element_count} =    Get Length    ${elements}
+    FOR    ${index}    IN RANGE    0    ${element_count}
+        wait until element is visible     //div[contains (@id, '-${index}')]       ${wait_time}
+        wait until element is enabled     //div[contains (@id, '-${index}')]       ${wait_time}
+        click element   //div[contains (@id, '-${index}')]
+        Run Keywords    Fetch the selected value of the dropdown   AND      Check the table get load       AND      Get count of total rows     AND     Verify Pagination and Row Count     AND     PaginationPage.Fetch the total count   AND     Click on the pagination dropdown  ${option}
+    END
 
+Pagination box visible
+     wait until element is visible    //*[contains(@class,'per-page')]//div[@role='combobox']   ${wait_time}
+     wait until element is enabled    //*[contains(@class,'per-page')]//div[@role='combobox']   ${wait_time}
+     click element      //*[contains(@class,'per-page')]//div[@role='combobox']
 
 Check Pagination
     [Arguments]     ${option}
     TRY
         PaginationPage.Pagination box visible
-        PaginationPage.Select the value from the pagination drop down count     500
+        #PaginationPage.Select the value from the pagination drop down count     500
         PaginationPage.Log WebElements    ${option}
     EXCEPT
         PaginationPage.Skip the pagination code
@@ -455,7 +462,7 @@ Check Pagination of location
     [Arguments]     ${option}
     TRY
         PaginationPage.Pagination box visible
-        PaginationPage.Select the value from the pagination drop down count     500
+        #PaginationPage.Select the value from the pagination drop down count     500
         PaginationPage.Click on the pagination dropdown of OCS     ${option}
     EXCEPT
         PaginationPage.Skip the pagination code
@@ -465,7 +472,7 @@ Check Pagination of OCS advance search
     [Arguments]     ${option}
     TRY
         PaginationPage.Pagination box visible
-        PaginationPage.Select the value from the pagination drop down count     500
+        #PaginationPage.Select the value from the pagination drop down count     500
         PaginationPage.Log WebElements of Product Dropdown of OCS    ${option}
     EXCEPT
         PaginationPage.Skip the pagination code
@@ -475,17 +482,17 @@ Check Pagination of tecdhnology advance search
     [Arguments]     ${option}
     TRY
         PaginationPage.Pagination box visible
-        PaginationPage.Select the value from the pagination drop down count     500
+        #PaginationPage.Select the value from the pagination drop down count     500
         PaginationPage.Log WebElements of Product Dropdown    ${option}
     EXCEPT
         PaginationPage.Skip the pagination code
     END
 
- Check Pagination of Recent Activites
+Check Pagination of Recent Activites
     [Arguments]     ${option}
     TRY
         PaginationPage.Pagination box visible
-        PaginationPage.Select the value from the pagination drop down count     500
+        #PaginationPage.Select the value from the pagination drop down count     500
         PaginationPage.Log WebElements for Recent Activites table   ${option}
     EXCEPT
         PaginationPage.Skip the pagination code
@@ -496,7 +503,7 @@ Check filter Pagination of Recent Activites
 #    [Arguments]     ${option}
     TRY
         PaginationPage.Pagination box visible
-        PaginationPage.Select the value from the pagination drop down count     500
+        #PaginationPage.Select the value from the pagination drop down count     500
         PaginationPage.Fetch the selected value of the dropdown
     EXCEPT
         PaginationPage.Skip the pagination code
@@ -504,15 +511,6 @@ Check filter Pagination of Recent Activites
 
 
 
-
-
-
-
-
-Pagination box visible
-     wait until element is visible    //*[contains(@class,'per-page')]//div[@role='combobox']   ${wait_time}
-     wait until element is enabled    //*[contains(@class,'per-page')]//div[@role='combobox']   ${wait_time}
-     click element      //*[contains(@class,'per-page')]//div[@role='combobox']
 
 Skip the pagination code
     Log    The count is less than/equals to 10 so pagination is not vaisible

@@ -61,7 +61,7 @@ Download Agent popup
     wait until element is visible      //button[normalize-space()='${option}']     ${wait_time}
     wait until element is enabled      //button[normalize-space()='${option}']     ${wait_time}
     click element       //button[normalize-space()='${option}']
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 
 #Verify that agent is ready to get download
@@ -160,7 +160,7 @@ Save the register form
     wait until element is enabled      ${register_FormSubmitBTN}    ${wait_time}
     click element       ${register_FormSubmitBTN}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 Choose register user country
     [Arguments]    ${country}   ${code}     ${phoneNo}
@@ -629,3 +629,12 @@ Create position with 101 numbers under create profile page
     sleep       ${search_sleep}
     log to console      registerPosition:${generate_register_New_Position}
     set global variable   ${generate_register_New_Position}
+
+Create address one with 101 numbers under subscription payment
+    wait until element is enabled       css:#AddressLine1       ${wait_time}
+    click element   css:#AddressLine1
+    ${random_string} =     Generate Random String    101    [LETTERS]
+    ${generate_register_New_Address_payment}=    Catenate    Address_${random_string}
+    Input Text   css:#AddressLine1   ${generate_register_New_Address_payment}
+    Log To Console    Address:${generate_register_New_Address_payment}
+    Set Global Variable    ${generate_register_New_Address_payment}

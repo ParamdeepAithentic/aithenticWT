@@ -48,6 +48,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 Product Bulk import
     [Tags]    Sanity
+    TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -75,10 +76,23 @@ Product Bulk import
     Sleep       ${yop_sleep}
     Switch Window       aithentic | Product - List
     Bulk_Import_ExportPage.Verify product added using bulk_import_export   ${generated_addProductName}
+    EXCEPT
+    Switch Window       aithentic | Product - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    Sleep    ${yop_Sleep}
+    Fail
+    END
+
 
 Product Bulk Edit
     [Tags]    Sanity
-    Generic.click on the tab	Login
+    TRY
+     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
@@ -125,9 +139,22 @@ Product Bulk Edit
     Switch Window       aithentic | Product - List
     Bulk_Import_ExportPage.Click on Refresh icon of product-list page
     Bulk_Import_ExportPage.Verify product added using bulk_import_export   ${generated_EditProductName}
+    EXCEPT    message
+    Switch Window       aithentic | Product - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    Sleep    ${yop_Sleep}
+    Fail
+    END
+
 
 Department Bulk Import
     [Tags]    NT
+    TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -151,9 +178,22 @@ Department Bulk Import
     Sleep       ${yop_sleep}
     Switch Window       aithentic | Department - List
     Bulk_Import_ExportPage.Verify department added using bulk_import_export   ${generated_addDepartmentName}
+    EXCEPT
+    Switch Window       aithentic | Department - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    Sleep    ${yop_Sleep}
+    Fail
+    END
+
 
 Department Bulk Edit
     [Tags]    NT
+    TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -193,9 +233,22 @@ Department Bulk Edit
     sleep       ${yop_sleep}
     Switch Window       aithentic | Department - List
     Bulk_Import_ExportPage.Verify department added using bulk_import_export     ${generated_EditDepartmentName}
+    EXCEPT
+    Switch Window       aithentic | Department - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    Sleep    ${yop_Sleep}
+    Fail
+    END
+
 
 Add Product Bulk Edit
     [Tags]    NT
+    TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -236,9 +289,22 @@ Add Product Bulk Edit
     sleep       ${yop_sleep}
     Switch Window       aithentic | Product - List
     Bulk_Import_ExportPage.Verify product added using bulk_import_export    ${generated_EditProductName}
+    EXCEPT
+    Switch Window       aithentic | Product - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    Sleep    ${yop_Sleep}
+    Fail
+    END
+
 
 Add Department Bulk Edit
     [Tags]    NT
+    TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -269,9 +335,22 @@ Add Department Bulk Edit
     sleep       ${search_sleep}
     Switch Window       aithentic | Department - List
     Bulk_Import_ExportPage.Verify department added using bulk_import_export     ${generated_EditDepartmentName}
+    EXCEPT
+    Switch Window       aithentic | Department - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    Sleep    ${yop_Sleep}
+    Fail
+    END
+
 
 Location Bulk Edit
     [Tags]    Sanity
+    TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -292,7 +371,7 @@ Location Bulk Edit
     LocationPage.Select location zip     147001
     LocationPage.Enter random cost center value
     LocationPage.Create random location name
-    LocationPage.Create random IP subnet
+    LocationPage.Enter input in the IP subnet field     1              192.168.0.0/23
     LocationPage.Save location form     save
     Generic.Fetch alert message text and compare it with    Location created successfully
     Bulk_Import_ExportPage.Search by location name     ${generated_location}
@@ -315,7 +394,7 @@ Location Bulk Edit
     Bulk_Import_ExportPage.Perform the keyboard action      CostCenter
     Bulk_Import_ExportPage.Enter the new value in the location name column     LocationTypeName
     Bulk_Import_ExportPage.Perform the keyboard action       LocationTypeName
-    Bulk_Import_ExportPage.Create random IP subnet in location bulk import      IPSubnets
+    Bulk_Import_ExportPage.Enter static IP subnet      IPSubnets         192.168.0.1/25
     Bulk_Import_ExportPage.Perform the keyboard action        IPSubnets
     Generic.Click on the button     Check Data
     Generic.Click on the button     Update      #Check Data,Edit
@@ -325,9 +404,21 @@ Location Bulk Edit
     sleep      ${search_sleep}
     Switch Window       aithentic | Location - List
     Bulk_Import_ExportPage.Search by location name     ${generated_NewLocationName}
+    EXCEPT
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    Sleep    ${yop_Sleep}
+    Fail
+    END
+
 
 Assigned Users Bulk Edit
     [Tags]    Sanity     Time    smoke
+    TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -337,7 +428,7 @@ Assigned Users Bulk Edit
     Generic.Verify your current page location contains      memberslist
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  23  ${pageHeading}   Page Load - Total Page Load Time of Team Members     23    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  23  ${pageHeading}   Page Load - Total Page Load Time of Team Members Listing     23    ${pageTime}     ${ActualTime}    PageLoad_Time
 
     MemberPage.Click on assigned user tab   Assigned Users
     MemberPage.Click on assigned user action button
@@ -366,9 +457,22 @@ Assigned Users Bulk Edit
     Switch Window       aithentic | Member - List
     Bulk_Import_ExportPage.Search assigned user by first and last name    ${generated_assigneeFname} ${generated_assigneeLname}
     Bulk_Import_ExportPage.Search by empID  ${generated_assigneeEmpID}
+    EXCEPT
+    Switch Window       aithentic | Member - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    Sleep    ${yop_Sleep}
+    Fail
+    END
+
 
 Team Member Bulk Edit
-    [Tags]    Sanity        rerun
+    [Tags]    Sanity
+    TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -390,7 +494,7 @@ Team Member Bulk Edit
     Generic.Verify your current page location contains      addmembers
     MemberPage.Enter team member first name
     MemberPage.Enter team member last name
-    TeamMemberPage.Enter team member business email_mailinator
+    TeamMemberPage.Enter team member business email_yopmail
     TeamMemberPage.Enter the Position in member form        QA
     MemberPage.Enter team member department     Do not Delete this Department
     MemberPage.Enter team member location    United States - Main Office - 21 - 2
@@ -415,7 +519,7 @@ Team Member Bulk Edit
     Bulk_Import_ExportPage.Perform the keyboard action      LocationName
     Bulk_Import_ExportPage.Enter the new value of team member in the role column     UserRoleName
     Bulk_Import_ExportPage.Perform the keyboard action      UserRoleName
-    Generic.Click on the button     Check data      #Update,Edit
+    Generic.Click on the button     Check Data      #Update,Edit
     Generic.Click on the button     Update
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
     Generic.Click on the button     Finish
@@ -430,9 +534,22 @@ Team Member Bulk Edit
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the employee ID checkbox   yes
     Generic.Fetch alert message text and compare it with       Settings Updated
+    EXCEPT
+    Switch window    aithentic | Member - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    Sleep    ${yop_Sleep}
+    Fail
+    END
+
 
 Technology Bulk edit
-    [Tags]       sanity     rerun
+    [Tags]       sanity
+    TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -503,10 +620,23 @@ Technology Bulk edit
     Bulk_Import_ExportPage.Click on the confirm button of finish pop up
     sleep       ${search_sleep}
     Switch Window       aithentic | Technology - List
-    TechnologyPage.Search by AssetId       ${generated_assetidbulkedit}
+    TechnologyPage.Search by AssetId       ${generated_assetidbulkedit}4
+    EXCEPT
+    Switch Window       aithentic | Technology - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    Sleep    ${yop_Sleep}
+    Fail
+    END
+
 
 Team member Bulk Import
     [Tags]    Sanity
+    TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -552,9 +682,22 @@ Team member Bulk Import
     I_iconPage.Choose tabs under organization        system
     DashboardPage.Select the employee ID checkbox   yes
     Generic.Fetch alert message text and compare it with       Settings Updated
+    EXCEPT
+    Switch Window       aithentic | Member - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    Sleep    ${yop_Sleep}
+    Fail
+    END
+
 
 Assigned User Bulk Import
     [Tags]    NT
+    TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -580,9 +723,22 @@ Assigned User Bulk Import
     MemberPage.Click on assigned user tab      Assigned Users
     MemberPage.Search assigned user by first name   ${generated_assigneeFname}
     Generic.Wait until table get load
+    EXCEPT
+    Switch Window       aithentic | Member - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    Sleep    ${yop_Sleep}
+    Fail
+    END
+
 
 Location Bulk Import
     [Tags]    NT
+    TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -606,7 +762,7 @@ Location Bulk Import
     Bulk_Import_ExportPage.Enter the new value of cost center in location bulk edit     CostCenter
     Bulk_Import_ExportPage.Enter the new value in the location name column     LocationTypeName
     Bulk_Import_ExportPage.Perform the keyboard action      LocationTypeName
-    Bulk_Import_ExportPage.Create random IP subnet in location bulk import      IPSubnets
+    Bulk_Import_ExportPage.Enter static IP subnet      IPSubnets         192.168.0.1/25
     Generic.Click on the button     Check Data      #Update,Edit
     Generic.Click on the button     Upload
     Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
@@ -617,9 +773,22 @@ Location Bulk Import
     Generic.Verify your current page location contains      locationlist
     Bulk_Import_ExportPage.Search by location name   ${generated_NewLocationName}
     Generic.Wait until table get load
+    EXCEPT
+    Switch Window       aithentic | Location - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    Sleep    ${yop_Sleep}
+    Fail
+    END
+
 
 Technology Bulk import
     [Tags]    Sanity
+    TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -730,11 +899,24 @@ Technology Bulk import
     Generic.Verify your current page location contains     technology-list
     TechnologyPage.Search by AssetId       ${generated_bulk_import_assetid}
     Generic.Wait until table get load
+    EXCEPT
+    Switch Window       aithentic | Technology - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    Sleep    ${yop_Sleep}
+    Fail
+    END
+
 
 
 
 Verify Bulk Import on the Technology Page by adding all parameters
-    [Tags]    Sanity     time   smoke       rerun
+    [Tags]    Sanity     time   smoke    rerun
+    TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -812,7 +994,7 @@ Verify Bulk Import on the Technology Page by adding all parameters
     LocationPage.Select location zip     147001
     LocationPage.Enter random cost center value
     LocationPage.Create random location name
-    LocationPage.Create random IP subnet
+    LocationPage.Enter input in the IP subnet field     1           192.168.0.0/23
     LocationPage.Save location form     save
     Generic.Fetch alert message text and compare it with    Location created successfully
     Bulk_Import_ExportPage.Search by location name under technology bulk import    ${generated_location}
@@ -826,7 +1008,8 @@ Verify Bulk Import on the Technology Page by adding all parameters
     TeamMemberPage.Enter team member first name
     TeamMemberPage.Enter team member last name
     Generic.Enter phone number      India   +91     9646289871
-    TeamMemberPage.Enter team member business email_mailinator
+#    TeamMemberPage.Enter team member business email_mailinator
+    TeamMemberPage.Enter team member business email_yopmail
     TeamMemberPage.Enter the Position in member form        QA
     TeamMemberPage.Create random employee id
     TeamMemberPage.Click on team member department
@@ -1057,11 +1240,24 @@ Verify Bulk Import on the Technology Page by adding all parameters
     DashboardPage.Select the employee ID checkbox   no
     DashboardPage.Select the employee ID checkbox   yes
     Generic.Fetch alert message text and compare it with       Settings Updated
+    EXCEPT
+    Switch Window       aithentic | Technology - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    Sleep    ${yop_Sleep}
+    Fail
+    END
+
 
 
 
 Technology bulk import while entering invalid data in payment period field
-    [Tags]    NT        rerun
+    [Tags]    NT
+    TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1158,9 +1354,23 @@ Technology bulk import while entering invalid data in payment period field
     Generic.Click on the button     Upload
     Bulk_Import_ExportPage.Click on the confirm button under pop up in technology bulk import
     Bulk_Import_ExportPage.Verify the upload message text   UploadMessage       Upload failed
+    EXCEPT
+    Switch Window       aithentic | Technology - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    Sleep    ${yop_Sleep}
+    Fail
+    END
+
+
 
 Check the payment period alert when entering valid data
-    [Tags]       sanity     rerun
+    [Tags]       sanity
+    TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1232,9 +1442,22 @@ Check the payment period alert when entering valid data
     sleep       ${search_sleep}
     Switch Window       aithentic | Technology - List
     TechnologyPage.Search by AssetId       ${generated_assetidbulkedit}
+    EXCEPT
+    Switch Window       aithentic | Technology - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    Sleep    ${yop_Sleep}
+    Fail
+    END
+
 
 Check the payment period alert when entering inavalid data
-    [Tags]    NT        rerun
+    [Tags]    NT
+    TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1330,6 +1553,253 @@ Check the payment period alert when entering inavalid data
     Generic.Click on the button     Upload
     Bulk_Import_ExportPage.Click on the confirm button under pop up in technology bulk import
     Bulk_Import_ExportPage.Verify the upload message text   UploadMessage       Upload failed
+    EXCEPT
+    Switch Window       aithentic | Technology - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    Sleep    ${yop_Sleep}
+    Fail
+    END
+
+
+Verify all the validations of department bulk import
+    [Tags]      Negative
+    TRY
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     department-dropdown
+    Generic.Verify your current page location contains      department-list
+    DashboardPage.Click on action button
+    DashboardPage.Select the option from department action menu      Bulk Import
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Data-Wizard
+    Generic.Verify your current page location contains     add-department-grid
+    Bulk_Import_ExportPage.Verify that element is not enabled       Check Data
+    Bulk_Import_ExportPage.Verify that element is not enabled       Upload
+    Bulk_Import_ExportPage.Select option from department status column in bulk_import      status
+    Bulk_Import_ExportPage.Enter the new value in the cost center column in bulk_import     costCenter
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationErrors      Department Name is missing
+    Generic.Refresh the existing page
+    Generic.Verify your current page location contains     add-department-grid
+    Bulk_Import_ExportPage.Enter the new value in the cost center column in bulk_import     costCenter
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationErrors      Department Name is missing, Status is missing
+    Bulk_Import_ExportPage.Clear the text of the field      costCenter
+    Bulk_Import_ExportPage.Enter the new value in the department name column in bulk_import     department_name
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationErrors      Status is missing
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings      Cost Center is missing
+    DashboardPage.Double click     department_name
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import       department_name         Department_milan
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationErrors      Department already exists, Status is missing
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings      Cost Center is missing
+    EXCEPT
+    Switch Window       aithentic | Department - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    Sleep    ${yop_Sleep}
+    Fail
+    END
+
+Verify all the validations of department bulk edit
+    TRY
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     department-dropdown
+    Generic.Verify your current page location contains      department-list
+    DashboardPage.Click on action button
+    DashboardPage.Select the option from department action menu      Bulk Import
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Data-Wizard
+    Generic.Verify your current page location contains     add-department-grid
+    Bulk_Import_ExportPage.Enter the new value in the department name column in bulk_import     department_name
+    Bulk_Import_ExportPage.Select option from department status column in bulk_import      status
+    Bulk_Import_ExportPage.Enter the new value in the cost center column in bulk_import     costCenter
+    Generic.Click on the button     Check Data      #Update,Edit
+    Generic.Click on the button     Upload
+    Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload successful
+    Generic.Click on the button     Finish
+    Bulk_Import_ExportPage.Click on I_m_done button when popup appears     no-im-done
+    Sleep       ${yop_sleep}
+    Switch Window       aithentic | Department - List
+    Bulk_Import_ExportPage.Verify department added using bulk_import_export   ${generated_addDepartmentName}
+    DashboardPage.Click on action button
+    DashboardPage.Select the option from department action menu      Bulk Edit
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Data-Wizard
+    Generic.Verify your current page location contains     department-bulk-edit
+    Bulk_Import_ExportPage.Clear the text of the field      department_name
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationErrors      Department Name is missing
+    Generic.Refresh the existing page
+    Bulk_Import_ExportPage.Clear the text of the field      department_name
+    Bulk_Import_ExportPage.Clear the text of the field      costCenter
+
+    Bulk_Import_ExportPage.Enter the new value in the department name column in bulk_import     department_name
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings      Cost Center is missing
+    Bulk_Import_ExportPage.Clear the text of the field      department_name
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import       department_name         Department_milan
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationErrors      Department already exists
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings      Cost Center is missing
+    EXCEPT
+    Switch Window       aithentic | Department - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    Sleep    ${yop_Sleep}
+    Fail
+    END
+
+Verify all the validations of product bulk import
+    [Tags]      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form     ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     product-dropdown
+    Generic.Verify your current page location contains      product
+    DashboardPage.Click on action button
+    DashboardPage.Select the option from action menu      import
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Add - Products
+    Generic.Verify your current page location contains      add-product-grid
+    Bulk_Import_ExportPage.Verify that element is not enabled       Check Data
+    Bulk_Import_ExportPage.Verify that element is not enabled       Upload
+    Bulk_Import_ExportPage.Enter the value in the product name column in bulk_import      ProductName
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_import     TechType
+    Select option from technology group column in bulk_import       TechGroup
+    Enter the value in the product_description column in bulk_import        ProductDescription
+    Enter the value in the product_feature column in bulk_import        ProductFeatures
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors      Status, Brand is missing. Please fill in required data.
+    Bulk_Import_ExportPage.Clear the text of the field     ProductName
+    Bulk_Import_ExportPage.Enter the random value in the brand field under product bulk import       Brand
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_import     TechType
+    Select option from technology group column in bulk_import       TechGroup
+    Enter the value in the product_description column in bulk_import        ProductDescription
+    Enter the value in the product_feature column in bulk_import        ProductFeatures
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors      Product Name, Status is missing. Please fill in required data., Brand is invalid
+    Bulk_Import_ExportPage.Clear the text of the field      Brand
+    Bulk_Import_ExportPage.Select option from status column in bulk_import       ProductStatus
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_import     TechType
+    Select option from technology group column in bulk_import       TechGroup
+    Enter the value in the product_description column in bulk_import        ProductDescription
+    Enter the value in the product_feature column in bulk_import        ProductFeatures
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           Product Name, Brand is missing. Please fill in required data.
+    Generic.Refresh the existing page
+    Generic.Verify your current page location contains     add-product-grid
+    Bulk_Import_ExportPage.Enter the value in the product name column in bulk_import      ProductName
+    Bulk_Import_ExportPage.Enter the random value in the brand field under product bulk import       Brand
+    Bulk_Import_ExportPage.Select option from status column in bulk_import       ProductStatus
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_import     TechType
+    Select option from technology group column in bulk_import       TechGroup
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings           Description, Features is missing.
+    Generic.Refresh the existing page
+    Generic.Verify your current page location contains     add-product-grid
+    Bulk_Import_ExportPage.Enter the value in the product name column in bulk_import      ProductName
+    Bulk_Import_ExportPage.Enter the random value in the brand field under product bulk import       Brand
+    Bulk_Import_ExportPage.Select option from status column in bulk_import       ProductStatus
+    Enter the value in the product_description column in bulk_import        ProductDescription
+    Enter the value in the product_feature column in bulk_import        ProductFeatures
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           Technology Type, Technology Group is missing. Please fill in required data., Brand is invalid
+    Generic.Refresh the existing page
+    Generic.Verify your current page location contains     add-product-grid
+    Bulk_Import_ExportPage.Enter the static value in the product name column in bulk_import     ProductName         Product_bulk_import
+    Bulk_Import_ExportPage.Enter the new value in the brand name column in bulk_import       Brand    QABrand555
+    Bulk_Import_ExportPage.Select option from status column in bulk_import       ProductStatus
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_import     TechType
+    Select option from technology group column in bulk_import       TechGroup
+    Enter the value in the product_description column in bulk_import        ProductDescription
+    Enter the value in the product_feature column in bulk_import        ProductFeatures
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           Product Product_bulk_import already exists
+
+Verify all the validations of product bulk edit
+    [Tags]      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form     testqa29j@mailinator.com   Test@123
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     product-dropdown
+    Generic.Verify your current page location contains      product
+    DashboardPage.Click on action button
+    DashboardPage.Select the option from action menu      import
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Add - Products
+    Generic.Verify your current page location contains      add-product-grid
+    Bulk_Import_ExportPage.Enter the value in the product name column in bulk_import      ProductName
+    Bulk_Import_ExportPage.Enter the new value in the brand name column in bulk_import       Brand    QABrand555
+    Bulk_Import_ExportPage.Select option from status column in bulk_import       ProductStatus
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_import     TechType
+    Select option from technology group column in bulk_import       TechGroup
+    Enter the value in the product_description column in bulk_import        ProductDescription
+    Enter the value in the product_feature column in bulk_import        ProductFeatures
+    Generic.Click on the button     Check Data      #Update,Edit
+    Generic.Click on the button     Upload
+    Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
+    Generic.Click on the button     Finish
+    Bulk_Import_ExportPage.Click on I_m_done button when popup appears     no-im-done
+    Switch Window       aithentic | Product - List
+    Bulk_Import_ExportPage.Verify product added using bulk_import_export   ${generated_addProductName}
+    DashboardPage.Click on action button
+    DashboardPage.Select the option from action menu      edit
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Edit - Products
+    Generic.Verify your current page location contains      product-bulk-edit
+    Bulk_Import_ExportPage.Clear the text of the field      ProductId
+    Bulk_Import_ExportPage.Clear the text of the field      BrandName
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           Product Name, Brand is missing. Please fill in required data.
+    Bulk_Import_ExportPage.Enter the static value in the product name column in bulk_import     ProductId         Product_bulk_import
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors          Brand is missing. Please fill in required data.
+    Bulk_Import_ExportPage.Clear the text of the field      ProductDescription
+    Bulk_Import_ExportPage.Clear the text of the field      ProductFeatures
+    Bulk_Import_ExportPage.Clear the text of the field      ProductId
+    Bulk_Import_ExportPage.Enter the new value in the product name column in bulk_edit     ProductId
+    Bulk_Import_ExportPage.Enter the new value in the brand name column in bulk_edit       BrandName    QABrand555
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings      Description, Features is missing.
+    Bulk_Import_ExportPage.Clear the text of the field      ProductId
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors      Product Name is missing. Please fill in required data.
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings      Description, Features is missing.
+    Bulk_Import_ExportPage.Clear the text of the field      BrandName
+    Bulk_Import_ExportPage.Enter the static value in the product name column in bulk_import     ProductId       Product_bulk_import
+    Bulk_Import_ExportPage.Enter the new value in the brand name column in bulk_edit       BrandName    QABrand555
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           Product Product_bulk_import already exists
+
+#    Bulk_Import_ExportPage.Enter the 101 characters in the bulk import   ProductId
+#    Generic.Click on the button     Check Data      #Update,Edit
+#    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors      Product Name is missing
 
 #Zz kill browser
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
