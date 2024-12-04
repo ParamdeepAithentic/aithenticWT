@@ -195,6 +195,7 @@ Click on team member action button
     Wait Until Element Is Enabled      ${teamMember_ActionBtn}     ${wait_time}
     click element       ${teamMember_ActionBtn}
 
+
 Enter team member first name
     wait until element is visible      ${teamMember_FirstName}       ${wait_time}
     wait until element is enabled      ${teamMember_FirstName}       ${wait_time}
