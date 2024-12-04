@@ -1824,7 +1824,7 @@ Verify all the validations on assigned user bulk import
     Bulk_Import_ExportPage.Verify that element is not enabled       Check Data
     Bulk_Import_ExportPage.Verify that element is not enabled       Upload
     Bulk_Import_ExportPage.Enter the new value of assigned in the last name column      LastName
-    Bulk_Import_ExportPage.Enter the new value of assigned in the email column      AssignedEmail
+    Bulk_Import_ExportPage.Enter the new value of assigned in the email column for bulk import and edit      AssignedEmail
     Bulk_Import_ExportPage.Enter the new value of assigned in the ID column     AssignedEmployeeId
     Generic.Click on the button     Check Data      #Update,Edit
     Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           First Name is missing. Please fill in required data.
@@ -1840,7 +1840,7 @@ Verify all the validations on assigned user bulk import
     Generic.Click on the button     Check Data      #Update,Edit
     Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           Email format is incorrect
     Bulk_Import_ExportPage.Clear the text of the field      AssignedEmail
-    Bulk_Import_ExportPage.Enter the new value of assigned in the email column      AssignedEmail
+    Bulk_Import_ExportPage.Enter the new value of assigned in the email column for bulk import and edit      AssignedEmail
     Bulk_Import_ExportPage.Clear the text of the field      AssignedEmployeeId
     Generic.Click on the button     Check Data      #Update,Edit
     Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings          Employee Id is missing.
@@ -1901,7 +1901,7 @@ Verify all the validations on assigned user bulk edit
     Generic.Click on the button     Check Data      #Update,Edit
     Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           Email format is incorrect
     Bulk_Import_ExportPage.Clear the text of the field      AssignedEmail
-    Bulk_Import_ExportPage.Enter the new value of assigned in the email column      AssignedEmail
+    Bulk_Import_ExportPage.Enter the new value of assigned in the email column for bulk import and edit      AssignedEmail
     Bulk_Import_ExportPage.Clear the text of the field      AssignedEmployeeId
     Generic.Click on the button     Check Data      #Update,Edit
     Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings          Employee Id is missing.

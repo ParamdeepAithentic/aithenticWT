@@ -368,7 +368,7 @@ Enter the new value of assigned in the email column
     [Arguments]    ${option}
     MemberPage.Double click    ${option}
     ${random_string} =    Generate Random String       10      [NUMBERS]
-    ${generated_assigneeEmail}=    Catenate    BusinessEmail${random_string}@yopmail.net
+    ${generated_assigneeEmail}=    Catenate    ${generated_assigneeFname}@yopmail.net
     wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    ${wait_time}
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assigneeEmail}
     set global variable    ${generated_assigneeEmail}
@@ -891,3 +891,12 @@ Clear the text of the field with delete
     Wait Until Element Is Visible      css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
     Wait Until Element Is Enabled      css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
     Press Keys    css:.ag-center-cols-container div[col-id='${option}']     DELETE
+
+Enter the new value of assigned in the email column for bulk import and edit
+    [Arguments]    ${option}
+    MemberPage.Double click    ${option}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_assigneeEmail}=    Catenate    BusinessEmail${random_string}@yopmail.net
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    ${wait_time}
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assigneeEmail}
+    set global variable    ${generated_assigneeEmail}
