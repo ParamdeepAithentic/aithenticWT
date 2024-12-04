@@ -1887,6 +1887,7 @@ Verify all the validations of assigned user bulk import with existing data
     Bulk_Import_ExportPage.Enter static value in the fields of department bulk import      AssignedEmail       dc@yopmail.net
     Generic.Click on the button     Check Data      #Update,Edit
     Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings         Same email already exists, Employee Id is missing.
+    EXCEPT
     Switch Window       aithentic | Member - List
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
@@ -1897,6 +1898,62 @@ Verify all the validations of assigned user bulk import with existing data
     Sleep    ${yop_Sleep}
     Fail
     END
+
+Verify all the validations on assigned user bulk import
+    [Tags]    NT        Negative
+    TRY
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the employee ID checkbox   no
+    DashboardPage.Select the employee ID checkbox   yes
+    Generic.select the option from the side menu    Team Members
+    MemberPage.Click on assigned user tab      Assigned Users
+    MemberPage.Click on action button of assigned users
+    MemberPage.Choose the option from the action menu   Bulk Import
+    sleep     ${yop_sleep}
+    switch window     aithentic | Data-Wizard
+    Bulk_Import_ExportPage.Verify that element is not enabled       Check Data
+    Bulk_Import_ExportPage.Verify that element is not enabled       Upload
+    Bulk_Import_ExportPage.Enter the new value of assigned in the last name column      LastName
+    Bulk_Import_ExportPage.Enter the new value of assigned in the email column for bulk import and edit      AssignedEmail
+    Bulk_Import_ExportPage.Enter the new value of assigned in the ID column     AssignedEmployeeId
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           First Name is missing. Please fill in required data.
+    Bulk_Import_ExportPage.Clear the text of the field      LastName
+    Bulk_Import_ExportPage.Enter the new value of assigned in the first name column    FirstName
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           Last Name is missing. Please fill in required data.
+    Bulk_Import_ExportPage.Clear the text of the field with delete      AssignedEmail
+    Bulk_Import_ExportPage.Enter the new value of assigned in the last name column      LastName
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings           Business Email is missing.
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import       AssignedEmail       A.a
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           Email format is incorrect
+    Bulk_Import_ExportPage.Clear the text of the field      AssignedEmail
+    Bulk_Import_ExportPage.Enter the new value of assigned in the email column for bulk import and edit      AssignedEmail
+    Bulk_Import_ExportPage.Clear the text of the field      AssignedEmployeeId
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings          Employee Id is missing.
+    EXCEPT
+    Switch Window       aithentic | Member - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    Sleep    ${yop_Sleep}
+    Fail
+    END
+
 
 Verify all the validations of assigned user bulk edit with existing data
     [Tags]      Negative
@@ -1997,6 +2054,68 @@ Verify all the validations of assigned user bulk edit with existing data
     Bulk_Import_ExportPage.Enter static value in the fields of department bulk import      AssignedEmail       dc@yopmail.net
     Generic.Click on the button     Check Data      #Update,Edit
     Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings         Same email already exists, Employee Id is missing.
+    EXCEPT
+    Switch Window       aithentic | Member - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    Sleep    ${yop_Sleep}
+    Fail
+    END
+
+
+Verify all the validations on assigned user bulk edit
+    [Tags]    NT        Negative
+    TRY
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the employee ID checkbox   no
+    DashboardPage.Select the employee ID checkbox   yes
+    Generic.select the option from the side menu    Team Members
+    MemberPage.Click on assigned user tab      Assigned Users
+    MemberPage.Click on action button of assigned users
+    MemberPage.Choose the option from the action menu   Add Assignee
+    MemberPage.Create random assignee first name
+    MemberPage.Create random assignee last name
+    MemberPage.Create random assignee email
+    MemberPage.Create random assignee ID
+    MemberPage.Save the add assignee    save
+    Generic.Fetch alert message text and compare it with        Assigned Users created successfully
+    Bulk_Import_ExportPage.Search assigned user by first and last name    ${generated_assigneeFname} ${generated_assigneeLname}
+    MemberPage.Click on assigned user action button
+    MemberPage.Choose the option from the action menu   Bulk Edit
+    sleep      ${yop_sleep}
+    Switch Window       aithentic | Data-Wizard
+    Generic.Verify your current page location contains      assignee-bulk-edit
+    Bulk_Import_ExportPage.Clear the text of the field      FirstName
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           First Name is missing. Please fill in required data.
+    Bulk_Import_ExportPage.Clear the text of the field      LastName
+    Bulk_Import_ExportPage.Enter the new value of assigned in the first name column    FirstName
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           Last Name is missing. Please fill in required data.
+    Bulk_Import_ExportPage.Clear the text of the field with delete           AssignedEmail
+    Bulk_Import_ExportPage.Enter the new value of assigned in the last name column      LastName
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings           Business Email is missing.
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import       AssignedEmail       A.a
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           Email format is incorrect
+    Bulk_Import_ExportPage.Clear the text of the field      AssignedEmail
+    Bulk_Import_ExportPage.Enter the new value of assigned in the email column for bulk import and edit      AssignedEmail
+    Bulk_Import_ExportPage.Clear the text of the field      AssignedEmployeeId
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings          Employee Id is missing.
     EXCEPT
     Switch Window       aithentic | Member - List
     Generic.Click on the profile name
