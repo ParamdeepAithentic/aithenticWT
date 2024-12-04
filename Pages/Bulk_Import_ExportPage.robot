@@ -885,3 +885,18 @@ Enter the static value in the product name column in bulk_import
 #    wait until element is enabled       xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]     ${wait_time}
 #    input text      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]//input      ${generated_addProductName_more}
 #    set global variable    ${generated_addProductName_more}
+
+Clear the text of the field with delete
+    [Arguments]     ${option}
+    Wait Until Element Is Visible      css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
+    Wait Until Element Is Enabled      css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
+    Press Keys    css:.ag-center-cols-container div[col-id='${option}']     DELETE
+
+Enter the new value of assigned in the email column for bulk import and edit
+    [Arguments]    ${option}
+    MemberPage.Double click    ${option}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_assigneeEmail}=    Catenate    BusinessEmail${random_string}@yopmail.net
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    ${wait_time}
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assigneeEmail}
+    set global variable    ${generated_assigneeEmail}
