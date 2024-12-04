@@ -1803,6 +1803,7 @@ Verify all the validations of product bulk edit
 
 Verify all the validations of assigned user bulk import with existing data
     [Tags]      Negative
+    TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1886,9 +1887,20 @@ Verify all the validations of assigned user bulk import with existing data
     Bulk_Import_ExportPage.Enter static value in the fields of department bulk import      AssignedEmail       dc@yopmail.net
     Generic.Click on the button     Check Data      #Update,Edit
     Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings         Same email already exists, Employee Id is missing.
+    Switch Window       aithentic | Member - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    Sleep    ${yop_Sleep}
+    Fail
+    END
 
 Verify all the validations of assigned user bulk edit with existing data
     [Tags]      Negative
+   TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1985,6 +1997,17 @@ Verify all the validations of assigned user bulk edit with existing data
     Bulk_Import_ExportPage.Enter static value in the fields of department bulk import      AssignedEmail       dc@yopmail.net
     Generic.Click on the button     Check Data      #Update,Edit
     Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings         Same email already exists, Employee Id is missing.
+    EXCEPT
+    Switch Window       aithentic | Member - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    Sleep    ${yop_Sleep}
+    Fail
+    END
 
 #Zz kill browser
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
