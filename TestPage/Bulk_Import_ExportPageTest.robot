@@ -2128,6 +2128,124 @@ Verify all the validations on assigned user bulk edit
     Fail
     END
 
+Verify all the validations of Loaction Bulk import Page
+    [Tags]    NT
+    TRY
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the location ID checkbox         yes
+   DashboardPage.Select the location ID checkbox   no
+   DashboardPage.Select the location ID checkbox   yes
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Click on Location action button
+    LocationPage.Select the option from action menu      import
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Add - Locations
+    Generic.Verify your current page location contains      add-location-grid
+    Bulk_Import_ExportPage.Verify that element is not enabled       Check Data
+    Bulk_Import_ExportPage.Verify that element is not enabled       Upload
+    Bulk_Import_ExportPage.Enter the new value in the building name column     BuildingName        Phelps Tower
+    Bulk_Import_ExportPage.Enter the new value in the floor number column      Floor      1
+    Bulk_Import_ExportPage.Enter the new value in the room number column       Room        204
+    Bulk_Import_ExportPage.Enter the new value in the first address column      StreetAddress1      This is address1
+    Bulk_Import_ExportPage.Enter the new value in the first address column      StreetAddress2      This is address2
+    Bulk_Import_ExportPage.Enter the new value in the state column    State       Berat District
+    Bulk_Import_ExportPage.Enter the new value in the city column     City        Banaj
+    Bulk_Import_ExportPage.Enter random zip code of bulk import of loaction     Zip
+    Bulk_Import_ExportPage.Enter the new value of cost center in location bulk edit     CostCenter
+    Bulk_Import_ExportPage.Enter the new value in the location name column     LocationTypeName
+    Bulk_Import_ExportPage.Perform the keyboard action      LocationTypeName
+    Bulk_Import_ExportPage.Enter static IP subnet      IPSubnets         192.168.0.1/25
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationErrors           Country is missing, State cannot insert without Country, City cannot insert without Country, State does not exist, City does not exist
+    Bulk_Import_ExportPage.Clear the text of the field      BuildingName
+    LocationPage.Select option from country column       Country
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings         Building name is missing
+    Bulk_Import_ExportPage.Enter the new value in the building name column     BuildingName        Phelps Tower
+    Bulk_Import_ExportPage.Clear the text of the field      Floor
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings     Floor is missing
+    Bulk_Import_ExportPage.Enter the new value in the floor number column      Floor      1
+    Bulk_Import_ExportPage.Clear the text of the field      Room
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings       Room is missing
+    Bulk_Import_ExportPage.Enter the new value in the room number column       Room        204
+    Bulk_Import_ExportPage.Clear the text of the field      StreetAddress1
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings       Address line 1 is missing
+    Bulk_Import_ExportPage.Enter the new value in the first address column      StreetAddress1      This is address1
+    Bulk_Import_ExportPage.Clear the text of the field      StreetAddress2
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings       Address line 2 is missing
+    Bulk_Import_ExportPage.Enter the new value in the first address column      StreetAddress2      This is address1
+    Bulk_Import_ExportPage.Clear the text of the field      City
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings     City is missing
+    Bulk_Import_ExportPage.Enter the new value in the city column     City        Banaj
+    Bulk_Import_ExportPage.Clear the text of the field      State
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings     State is missing
+    Bulk_Import_ExportPage.Enter the new value in the state column    State       Berat District
+    Bulk_Import_ExportPage.Clear the text of the field      Zip
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings     Zip code is missing
+    Bulk_Import_ExportPage.Enter random zip code of bulk import of loaction     Zip
+    Bulk_Import_ExportPage.Clear the text of the field      CostCenter
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings     Cost Center is missing
+    Bulk_Import_ExportPage.Enter the new value of cost center in location bulk edit     CostCenter
+    Bulk_Import_ExportPage.Clear the text of the field      LocationTypeName
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationerrors     Location is missing
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import       LocationTypeName        *Main Office
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationerrors     Location already exists
+    Bulk_Import_ExportPage.Clear the text of the field      LocationTypeName
+    Bulk_Import_ExportPage.Enter the new value in the location name column     LocationTypeName
+    Bulk_Import_ExportPage.Clear the text of the field      IPSubnets
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings     IP Subnets is missing
+    EXCEPT
+    Switch Window       aithentic | Location - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the location ID checkbox   yes
+    Sleep    ${yop_Sleep}
+    Fail
+    END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #Zz kill browser
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
 
