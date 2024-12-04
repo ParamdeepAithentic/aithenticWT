@@ -57,11 +57,7 @@ ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
 
-<<<<<<< HEAD
 ${wait_time}      60
-=======
-${wait_time}       60
->>>>>>> 8edbab42a902be60ec852af831f8cd06c0d01f28
 ${yop_sleep}       8
 
 ${search_sleep}       1
@@ -116,12 +112,8 @@ Set UAT Variables
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
     Set Suite Variable    ${browser_name}         firefox
-<<<<<<< HEAD
-    Set Suite Variable    ${email}                deepparam112@mail-mario.fr.nf        #testqa29j@mailinator.com
-=======
     Set Suite Variable    ${email}          deepparam112@mail-mario.fr.nf
 #    Set Suite Variable    ${email}           testqa29j@mailinator.com
->>>>>>> 8edbab42a902be60ec852af831f8cd06c0d01f28
     Set Suite Variable    ${discovered_asset_brand}                 Apple Inc
     Set Suite Variable    ${existing_mac}                       98:5a:eb:cb:c8:ed
     Set Suite Variable    ${discovered_existing_brand}              Apple Inc.
