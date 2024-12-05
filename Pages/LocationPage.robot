@@ -215,6 +215,7 @@ Select option from change location status pop up
 Select option from country column
     [Arguments]    ${option}
     wait until element is visible      css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
+    wait until element is enabled    css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
     Double click element      css:.ag-center-cols-container div[col-id='${option}']
     wait until element is visible      css:div[aria-label='Rich Select Field'] div:nth-child(3) div    ${wait_time}
     click element      css:div[aria-label='Rich Select Field'] div:nth-child(3) div
