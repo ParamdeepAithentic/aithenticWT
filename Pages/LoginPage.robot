@@ -133,21 +133,16 @@ Wait for the visibility of the validation message of position
 
 Clear The Element Text for phone number
     [Arguments]    ${xpath_locator}
-    # Step 1: Wait until the element is visible and enabled
     Wait Until Element Is Visible       xpath=${xpath_locator}     ${wait_time}
     Wait Until Element Is Enabled       xpath=${xpath_locator}     ${wait_time}
-
-    # Step 2: Click on the element
     Click Element    xpath=${xpath_locator}
-
-    # Step 3: Retrieve the initial text of the element
     ${text}=    Execute JavaScript    return document.evaluate("${xpath_locator}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.value
     Log    Initial text: ${text}
 
-    # Step 4: Clear the text by repeatedly sending BACKSPACE until empty
     WHILE    '${text}' != ''
         Press Keys    xpath=${xpath_locator}    BACKSPACE
         ${text}=    Execute JavaScript    return document.evaluate("${xpath_locator}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.value
         Log    Updated text: ${text}
+        
     END
     Log    Field is now cleared
