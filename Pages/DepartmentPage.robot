@@ -41,6 +41,9 @@ Resource        ../Pages/DisconnectConnectorAPI.robot
 Resource        ../Pages/UnselectAssetAPI.robot
 *** Variables ***
 ${department_ActionBTN}      css:#Team-Member-Actions
+${parent_department}                     //form[contains(@class,'ng-touched')]//ng-select[contains(@class,'qa-DepartmentParents')]//input
+${sub_department}                       //form[contains(@class,'ng-touched')]//ng-select[contains(@class,'qa-DepartmentChilds')]//input
+
 
 *** Keywords ***
 Click on added department action button
@@ -211,3 +214,60 @@ Clear the data of the field while adding department
     wait until element is visible       //ng-select[contains(@class,'qa-${option}')]//span[@title='Clear all']      ${wait_time}
     wait until element is enabled       //ng-select[contains(@class,'qa-${option}')]//span[@title='Clear all']     ${wait_time}
     click element       //ng-select[contains(@class,'qa-${option}')]//span[@title='Clear all']
+
+Create random Parent Department
+    wait until element is visible       ${add_tech_dept_name}        ${wait_time}
+    wait until element is enabled       ${add_tech_dept_name}        ${wait_time}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_Parent_DepartmentNumber}=    Catenate    DeptNo_${random_string}
+    input text   ${add_tech_dept_name}   ${generated_Parent_DepartmentNumber}
+    sleep       ${search_sleep}
+    click element     css:div[role='option']
+    log to console      ${generated_Parent_DepartmentNumber}
+    set global variable    ${generated_Parent_DepartmentNumber}
+
+Create random Sub Department
+    wait until element is visible       ${add_tech_dept_name}        ${wait_time}
+    wait until element is enabled       ${add_tech_dept_name}        ${wait_time}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_Sub_DepartmentNumber}=    Catenate    DeptNo_${random_string}
+    input text   ${add_tech_dept_name}   ${generated_Sub_DepartmentNumber}
+    sleep       ${search_sleep}
+    click element     css:div[role='option']
+    log to console      ${generated_Sub_DepartmentNumber}
+    set global variable    ${generated_Sub_DepartmentNumber}
+
+Input into parent Department
+    [Arguments]     ${option}
+    wait until element is not visible       ${loaderIcon}       ${wait_time}
+    wait until element is visible       ${parent_department}        ${wait_time}
+    wait until element is enabled       ${parent_department}        ${wait_time}
+    Input text      ${parent_department}        ${option}
+    Generic.Select parameter        ${option}
+
+Input into sub Department
+    [Arguments]     ${option}
+    wait until element is not visible       ${loaderIcon}       ${wait_time}
+    wait until element is visible       ${sub_department}        ${wait_time}
+    wait until element is enabled       ${sub_department}        ${wait_time}
+    Input text     ${sub_department}        ${option}
+    Generic.Select parameter        ${option}
+
+Select the option from Department filter
+    wait until element is not visible       ${loaderIcon}       ${wait_time}
+    Wait Until Element Is Visible  //b[normalize-space()='Departments']    ${wait_time}
+    Wait Until Element Is Visible   //b[normalize-space()='Departments']      ${wait_time}
+    click element    //b[normalize-space()='Departments']
+
+Select filter with heirarchy
+    [Arguments]     ${option}
+    wait until element is not visible       ${loaderIcon}       ${wait_time}
+    Wait Until Element Is Visible  //span[normalize-space()='${option}']    ${wait_time}
+    Wait Until Element Is Visible   //span[normalize-space()='${option}']     ${wait_time}
+    click element    //span[normalize-space()='${option}']
+
+Verify that table contains the Department Name under Department column
+    [Arguments]         ${option1}      ${option2}
+    wait until element is not visible       ${loaderIcon}       ${wait_time}
+    wait until element is visible       //th//div[contains(@class,'columnName')][normalize-space()='${option1}']//ancestor::table//following::tr//td[contains(text(),'${option2}')]        ${wait_time}
+    wait until element is enabled       //th//div[contains(@class,'columnName')][normalize-space()='${option1}']//ancestor::table//following::tr//td[contains(text(),'${option2}')]       ${wait_time}
