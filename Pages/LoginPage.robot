@@ -87,6 +87,8 @@ Get and Verify the validation after login with email only
 
 Clear the element text of field under login page
     [Arguments]    ${locator}
+    wait until element is visible       css:#${locator}     ${wait_time}
+    wait until element is enabled      css:#${locator}      ${wait_time}
     Click Element    css:#${locator}
     ${text}=    Execute JavaScript    return document.querySelector("#${locator}").value
     Log    Initial text: ${text}
@@ -103,7 +105,9 @@ Clear the text of some fields
     wait until element is visible       ${locator}     ${wait_time}
     wait until element is enabled        ${locator}     ${wait_time}
     click element   ${locator}
+    sleep       ${search_sleep}
     clear element text      ${locator}
+    sleep       ${search_sleep}
 
 
 Get and Verify the validation after entering invalid email under forgot password
@@ -126,3 +130,24 @@ Click on the fields
 
 Wait for the visibility of the validation message of position
     wait until element is visible       //span[contains(text(),'Please enter Position/Title less than 100 characte')]       ${wait_time}
+
+Clear The Element Text for phone number
+    [Arguments]    ${xpath_locator}
+    # Step 1: Wait until the element is visible and enabled
+    Wait Until Element Is Visible       xpath=${xpath_locator}     ${wait_time}
+    Wait Until Element Is Enabled       xpath=${xpath_locator}     ${wait_time}
+
+    # Step 2: Click on the element
+    Click Element    xpath=${xpath_locator}
+
+    # Step 3: Retrieve the initial text of the element
+    ${text}=    Execute JavaScript    return document.evaluate("${xpath_locator}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.value
+    Log    Initial text: ${text}
+
+    # Step 4: Clear the text by repeatedly sending BACKSPACE until empty
+    WHILE    '${text}' != ''
+        Press Keys    xpath=${xpath_locator}    BACKSPACE
+        ${text}=    Execute JavaScript    return document.evaluate("${xpath_locator}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.value
+        Log    Updated text: ${text}
+    END
+    Log    Field is now cleared

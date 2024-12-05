@@ -65,6 +65,7 @@ ${search_brandName}     css:#searchbar-brand
 ${fetch_brandName}    css:td:nth-child(2)
 
 
+
 ########## Add product #####
 
 ${add_Product}     css:a[title='Click here to Add Product']
@@ -1861,3 +1862,37 @@ Fetch the validation of to field under share aithentic
     set global variable    ${get_checkbox_validation}
     log to console    ${get_checkbox_validation}
     should be equal   ${get_checkbox_validation}     ${text}
+
+Fetch the all validation message on Personal Details page
+   wait until element is visible   //span[contains(@class,'invalidInput')]       ${wait_time}
+   @{expectedList} =    Create List        Please enter First Name          Please enter Last Name              Please enter Business Email         Please enter Mobile Number
+   ${elements} =  Get WebElements     //span[contains(@class,'invalidInput')]
+   @{actualList} =   Create List
+   FOR  ${element}  IN      @{elements}
+      log to console    ${element.text}
+      Append To List    ${actualList}     ${element.text}
+   END
+   lists should be equal    ${expectedList}    ${actualList}
+
+Click on the cross icon of Department and Location under Personal Details
+    [Arguments]         ${text}
+    wait until element is visible       //ng-select[contains(@class,'qa-${text}Id')]//span[@title='Clear all']    ${wait_time}
+    wait until element is enabled        //ng-select[contains(@class,'qa-${text}Id')]//span[@title='Clear all']    ${wait_time}
+    click element   //ng-select[contains(@class,'qa-${text}Id')]//span[@title='Clear all']
+
+Get the text of the pop up after changing email in the personal detail
+    Wait Until Element Is Visible    //div[contains(@class,'emailChangeWarning')]//p       ${wait_time}
+    Wait Until Element Is Enabled    //div[contains(@class,'emailChangeWarning')]//p      ${wait_time}
+    ${alert_text}=   get text        //div[contains(@class,'emailChangeWarning')]//p
+    Log To Console    ${alert_text}
+    Set Global Variable    ${alert_text}
+
+Select the department and Location from dropdown
+    [Arguments]         ${text}     ${option}
+    wait until element is visible       //ng-select[contains(@class,'qa-${text}Id')]//input    ${wait_time}
+    wait until element is enabled        //ng-select[contains(@class,'qa-${text}Id')]//input    ${wait_time}
+    click element   //ng-select[contains(@class,'qa-${text}Id')]//input
+    input text     //ng-select[contains(@class,'qa-${text}Id')]//input       ${option}
+    wait until element is visible       //span[contains(text(),'${option}')]    ${wait_time}
+    wait until element is enabled        //span[contains(text(),'${option}')]    ${wait_time}
+    click element              //span[contains(text(),'${option}')]

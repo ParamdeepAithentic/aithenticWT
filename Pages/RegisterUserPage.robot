@@ -337,8 +337,9 @@ Verify the email change warning pop-up and choose option
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     Wait Until Element Is Visible    //div[@id='emailChangeWarning']        ${wait_time}
     Wait Until Element Is Enabled    //div[@id='emailChangeWarning']        ${wait_time}
+    sleep       ${search_sleep}
     click button       //div[@id='emailChangeWarning']//button[contains(@class,'button-${option}')]
-    Wait Until Element Is Not Visible    //div[@id='emailChangeWarning']        ${wait_time}
+#    Wait Until Element Is Not Visible    //div[@id='emailChangeWarning']        ${wait_time}
 
 select number of days inside alerts section
     [Arguments]         ${option1}        ${option2}
@@ -638,3 +639,17 @@ Create address one with 101 numbers under subscription payment
     Input Text   css:#AddressLine1   ${generate_register_New_Address_payment}
     Log To Console    Address:${generate_register_New_Address_payment}
     Set Global Variable    ${generate_register_New_Address_payment}
+
+Create self register invalid business name under Personal Details
+    [Arguments]    ${option}
+    wait until element is enabled       ${register_Email}        ${wait_time}
+    click element   ${register_Email}
+    Clear element text      ${register_Email}
+    input text   ${register_Email}   ${option}
+
+Create self register invalid phone number under Personal Details
+    [Arguments]    ${option}
+    wait until element is enabled       ${profile_phone}        ${wait_time}
+    click element   ${profile_phone}
+    Clear element text      ${profile_phone}
+    input text   ${profile_phone}   ${option}
