@@ -3124,5 +3124,59 @@ Share invite to the registered user
     DashboardPage.Click on Send Invite button
     Generic.Fetch alert message text and compare it with containing text        Email Address already exists.
 
+Verify all the validations of Personal Details page
+    [Tags]    NT    Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}       ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    RegisterUserPage.Select the option from the personal details sidebar        personal-profile
+    Generic.Verify your current page location contains    personal-profile
+    RegisterUserPage.Click on edit button to edit the profile details    Edit
+    LoginPage.Clear the element text of field under login page    FirstName
+    LoginPage.Clear the element text of field under login page     LastName
+    LoginPage.Clear the element text of field under login page     Email
+    LoginPage.Clear The Element Text for phone number     ${profile_phone}
+    sleep       ${search_sleep}
+    RegisterUserPage.Save the Profile details       Save
+    DashboardPage.Fetch the all validation message on Personal Details page
+    RegisterUserPage.Create random register first name
+    RegisterUserPage.Create random register last name
+    RegisterUserPage.Create self register invalid business name under Personal Details     deepparam112@mail-mario.fr.nf
+    RegisterUserPage.Create self register invalid phone number under Personal Details          98745612
+    RegisterUserPage.Save the Profile details       Save
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Please enter a valid mobile Number
+    LoginPage.Clear The Element Text for phone number     ${profile_phone}
+    RegisterUserPage.Create self register invalid phone number under Personal Details         987456123214
+    RegisterUserPage.Save the Profile details       Save
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Please enter a valid mobile Number
+    LoginPage.Clear The Element Text for phone number     ${profile_phone}
+    RegisterUserPage.Create self register invalid phone number under Personal Details      9874561232
+    LoginPage.Clear the element text of field under login page     Email
+    RegisterUserPage.Create self register invalid business name under Personal Details     samuel@yopmail.net
+    RegisterUserPage.Save the Profile details       Save
+    DashboardPage.Get the text of the pop up after changing email in the personal detail
+    sleep       ${search_sleep}
+    RegisterUserPage.Verify the email change warning pop-up and choose option       red
+    Generic.Verify your current page location contains    personal-profile
+    LoginPage.Clear the element text of field under login page     Email
+    RegisterUserPage.Create self register invalid business name under Personal Details     samuel@yopmail
+    RegisterUserPage.Save the Profile details       Save
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page       Please enter valid Email
+    LoginPage.Clear the element text of field under login page     Email
+    RegisterUserPage.Create self register invalid business name under Personal Details     samuelyopmail.net
+    RegisterUserPage.Save the Profile details       Save
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page       Please enter valid Email
+    LoginPage.Clear the element text of field under login page     Email
+    RegisterUserPage.Create self register invalid business name under Personal Details     deepparam112@mail-mario.fr.nf
+    DashboardPage.Click on the cross icon of Department and Location under Personal Details     Department
+    RegisterUserPage.Save the Profile details       Save
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page      Please enter Department
+    DashboardPage.Select the department and Location from dropdown      Department       Customer Support
+    DashboardPage.Click on the cross icon of Department and Location under Personal Details     LocationType
+    RegisterUserPage.Save the Profile details       Save
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page      Please select Location
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
