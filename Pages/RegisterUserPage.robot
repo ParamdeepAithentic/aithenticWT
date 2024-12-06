@@ -679,16 +679,6 @@ Fetch the all validation message of Country state city and zip code under compan
    END
    lists should be equal    ${expectedList}    ${actualList}
 
-Select the country city state and zip code from dropdown under comapny details
-    [Arguments]         ${text}     ${option}
-    wait until element is visible       //ng-select[contains(@class,'qa-${text}')]//input    ${wait_time}
-    wait until element is enabled        //ng-select[contains(@class,'qa-${text}')]//input    ${wait_time}
-    click element   //ng-select[contains(@class,'qa-${text}')]//input
-    input text     //ng-select[contains(@class,'qa-${text}')]//input       ${option}
-    wait until element is visible       //span[contains(text(),'${option}')]    ${wait_time}
-    wait until element is enabled        //span[contains(text(),'${option}')]    ${wait_time}
-    click element              //span[contains(text(),'${option}')]
-
 Add the new static domain
     [Arguments]    ${domain}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
