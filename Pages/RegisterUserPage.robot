@@ -653,3 +653,48 @@ Create self register invalid phone number under Personal Details
     click element   ${profile_phone}
     Clear element text      ${profile_phone}
     input text   ${profile_phone}   ${option}
+
+Create self register company name under profile of company details
+    [Arguments]    ${option}
+    wait until element is visible       ${profile_company}        ${wait_time}
+    wait until element is enabled       ${profile_company}        ${wait_time}
+    click element   ${profile_company}
+    Clear element text      ${profile_company}
+    input text   ${profile_company}   ${option}
+
+Click on the cross icon of country state and city under company details
+    [Arguments]         ${text}
+    wait until element is visible       //ng-select[contains(@class,'qa-${text}')]//span[@title='Clear all']    ${wait_time}
+    wait until element is enabled        //ng-select[contains(@class,'qa-${text}')]//span[@title='Clear all']    ${wait_time}
+    click element   //ng-select[contains(@class,'qa-${text}')]//span[@title='Clear all']
+
+Fetch the all validation message of Country state city and zip code under company details
+   wait until element is visible   //span[contains(@class,'invalidInput')]       ${wait_time}
+   @{expectedList} =    Create List         Please select Country            Please select State                Please select City           Please enter Zip Code
+   ${elements} =  Get WebElements     //span[contains(@class,'invalidInput')]
+   @{actualList} =   Create List
+   FOR  ${element}  IN      @{elements}
+      log to console    ${element.text}
+      Append To List    ${actualList}     ${element.text}
+   END
+   lists should be equal    ${expectedList}    ${actualList}
+
+Add the new static domain
+    [Arguments]    ${domain}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    (//input[contains(@class,'company-domain-qa')])[2]       ${wait_time}
+    Wait Until Element Is Enabled    (//input[contains(@class,'company-domain-qa')])[2]        ${wait_time}
+    click element    (//input[contains(@class,'company-domain-qa')])[2]
+    input text      (//input[contains(@class,'company-domain-qa')])[2]      ${domain}
+
+Click on minus icon to add new company domain
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    css:.remove-companyDomain-qa       ${wait_time}
+    Wait Until Element Is Enabled    css:.remove-companyDomain-qa        ${wait_time}
+    click element    css:.remove-companyDomain-qa
+
+Get the text of the domain that in use under company details
+    Wait Until Element Is Visible    css:.company-domain-qa      ${wait_time}
+    ${domain_text}=   get value       css:.company-domain-qa
+    Log To Console    ${domain_text}
+    Set Global Variable    ${domain_text}

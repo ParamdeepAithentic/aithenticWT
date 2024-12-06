@@ -2373,3 +2373,41 @@ Verify all the character validations of payment page
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Please enter Address Line 1 less than 100 characters
+
+
+Verify all the validations of Company Profile
+    [Tags]      NT      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}       ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     company-details
+    Generic.Verify your current page location contains    company-profile
+    RegisterUserPage.wait for the invisiblity of the city field loader
+    Generic.Scroll Window To End
+    RegisterUserPage.Click on edit button to edit the profile details    Edit
+    LoginPage.Clear the element text of field under login page      CompanyName
+    RegisterUserPage.Save the Profile details       Save
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page      Please enter Company Name
+    RegisterUserPage.Create self register company name under profile of company details     ComapnyName_003201
+    RegisterUserPage.Clear the data from Address1 field
+    RegisterUserPage.Save the Profile details       Save
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page       Please enter Address Line1
+    RegisterUserPage.Input text into manufacturer address one inside comapny details       Address1        1
+    RegisterUserPage.Click on the cross icon of country state and city under company details        Country
+    RegisterUserPage.wait for the invisiblity of the city field loader
+    RegisterUserPage.Save the Profile details       Save
+    RegisterUserPage.Fetch the all validation message of Country state city and zip code under company details
+    RegisterUserPage.Save the Profile details       Cancel
+    Generic.Verify your current page contains this text         Company Details
+    RegisterUserPage.wait for the invisiblity of the city field loader
+    Generic.Scroll Window To End
+    RegisterUserPage.Click on edit button to edit the profile details    Edit
+    RegisterUserPage.Click on plus icon to add new company domain
+    RegisterUserPage.Add the new static domain      mailinator.com
+    Generic.Scroll Window To End
+    RegisterUserPage.Save the company domain
+    Generic.Fetch alert message text and compare it with       mailinator.com already exists
+    RegisterUserPage.Click on minus icon to add new company domain
+    RegisterUserPage.Get the text of the domain that in use under company details
