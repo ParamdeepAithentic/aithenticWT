@@ -2411,12 +2411,3 @@ Verify all the validations of Company Profile
     Generic.Fetch alert message text and compare it with       mailinator.com already exists
     RegisterUserPage.Click on minus icon to add new company domain
     RegisterUserPage.Get the text of the domain that in use under company details
-
-
-
-
-
-
-
-
-
