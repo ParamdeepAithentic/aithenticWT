@@ -2414,7 +2414,7 @@ Verify all the validations of Company Profile
 
 
 Verify that user is not able to delete the domain that is in use
-    [Tags]      NT      Negative
+    [Tags]      Negative
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}       ${valid_password}
     Generic.Verify your current page location contains      dashboard
