@@ -2411,3 +2411,46 @@ Verify all the validations of Company Profile
     Generic.Fetch alert message text and compare it with       mailinator.com already exists
     RegisterUserPage.Click on minus icon to add new company domain
     RegisterUserPage.Get the text of the domain that in use under company details
+
+
+Verify that user is not able to delete the domain that is in use
+    [Tags]      NT      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}       ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Click on add team member action button
+    TeamMemberPage.Select option from team member action menu
+    TeamMemberPage.Enter team member first name
+    TeamMemberPage.Enter team member last name
+    Generic.Enter phone number      India   +91     9646289871
+    TeamMemberPage.Enter team member business email with used domain to check validation
+    TeamMemberPage.Click on team member department
+    TeamMemberPage.Select team member department        DepartmentName09041
+    TeamMemberPage.Select team member role     CSPM
+    TeamMemberPage.Click on team member location
+    TeamMemberPage.Select team member location
+    TeamMemberPage.Save the team member form   save
+    Generic.Fetch alert message text and compare it with        Team Member created successfully
+    TeamMemberPage.Search Team Member by name       ${generated_TMFname}
+    Generic.Click on the profile name
+    Generic.Select option from profile list     company-details
+    Generic.Verify your current page location contains    company-profile
+    RegisterUserPage.wait for the invisiblity of the city field loader
+    Generic.Scroll the page till            500
+    Generic.Verify your current page contains this text         View Added Domains
+    RegisterUserPage.Click on the view added domain text
+    RegisterUserPage.Click on the delete icon of the domain
+    RegisterUserPage.Visibility of the text domain cannot be deleted
+    RegisterUserPage.Click on the cancel button of same domain pop up
+    RegisterUserPage.Click on the cross icon of view added domain pop up
+    Generic.Verify your current page location contains      company-profile
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Search Team Member by name       ${generated_TMFname}
+    TeamMemberPage.Click on three dots of Team Member listing
+    TeamMemberPage.Click on remove option under three dots
+    TeamMemberPage.Click on the yes option under remove team member pop up
+    Generic.Fetch alert message text and compare it with        Team member deleted successfully

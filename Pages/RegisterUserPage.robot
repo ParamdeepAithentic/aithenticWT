@@ -698,3 +698,33 @@ Get the text of the domain that in use under company details
     ${domain_text}=   get value       css:.company-domain-qa
     Log To Console    ${domain_text}
     Set Global Variable    ${domain_text}
+
+Click on the view added domain text
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //p[contains(@class,'view-added-domains')]       ${wait_time}
+    Wait Until Element Is Enabled    //p[contains(@class,'view-added-domains')]        ${wait_time}
+    click element    //p[contains(@class,'view-added-domains')]
+
+Click on the delete icon of the domain
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //i[contains(@class,'delete-company-domain')]       ${wait_time}
+    Wait Until Element Is Enabled    //i[contains(@class,'delete-company-domain')]        ${wait_time}
+    click element    //i[contains(@class,'delete-company-domain')]
+
+Visibility of the text domain cannot be deleted
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //div[contains(text(),'Domain is in use cannot be edited or deleted')]       ${wait_time}
+
+Click on the cancel button of same domain pop up
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //div[contains(@id,'domains')]//button[normalize-space()='Cancel']       ${wait_time}
+    Wait Until Element Is Enabled    //div[contains(@id,'domains')]//button[normalize-space()='Cancel']        ${wait_time}
+    click element    //div[contains(@id,'domains')]//button[normalize-space()='Cancel']
+    sleep   ${search_sleep}
+
+Click on the cross icon of view added domain pop up
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //div[contains(@id,'domains')]//span[normalize-space()='×']       ${wait_time}
+    Wait Until Element Is Enabled    //div[contains(@id,'domains')]//span[normalize-space()='×']        ${wait_time}
+    click element    //div[contains(@id,'domains')]//span[normalize-space()='×']
+    sleep   ${search_sleep}
