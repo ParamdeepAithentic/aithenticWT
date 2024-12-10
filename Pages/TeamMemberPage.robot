@@ -561,3 +561,10 @@ Input new location in add team member
     input text    ${TMLocation}     ${option}
     wait until element is visible   //div//span[normalize-space()='${option}']       ${wait_time}
     click element   //div//span[normalize-space()='${option}']
+
+Enter team member business email with used domain to check validation
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_TMbusinessemail}=    Catenate    TMBusinessEmail_${random_string}@dmts.com
+    wait until element is visible      ${TMBusinessEmail}     ${wait_time}
+    input text   ${TMBusinessEmail}    ${generated_TMbusinessemail}
+    log to console      ${generated_TMbusinessemail}
