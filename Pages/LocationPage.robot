@@ -646,3 +646,10 @@ Verify that table contains the location Name under Location column
     wait until element is not visible       ${loaderIcon}       ${wait_time}
     wait until element is visible       //th//div[contains(@class,'columnName')][normalize-space()='${option1}']//ancestor::table//following::tr//td[contains(text(),'${option2}')]        ${wait_time}
     wait until element is enabled       //th//div[contains(@class,'columnName')][normalize-space()='${option1}']//ancestor::table//following::tr//td[contains(text(),'${option2}')]       ${wait_time}
+
+Clear the text of the IP subnet
+    [Arguments]         ${option}
+    wait until element is visible       (//input[@formcontrolname='IPSubnets'])[${option}]
+    wait until element is enabled       (//input[@formcontrolname='IPSubnets'])[${option}]
+    click element   (//input[@formcontrolname='IPSubnets'])[${option}]
+    clear element text      (//input[@formcontrolname='IPSubnets'])[${option}]
