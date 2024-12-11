@@ -342,3 +342,31 @@ Add Department Heirarchy and verify select department filter with Parent departm
     DepartmentPage.Verify that table contains the Department Name under Department column       Department Name    ${generated_Sub_DepartmentNumber}
     DepartmentPage.Verify that table contains the Department Name under Department column       Department Name    ${generated_DepartmentNumber}
     DepartmentPage.Verify that table contains the Department Name under Department column       Department Name    ${generated_Parent_DepartmentNumber}
+
+Verify all the validations of Department page under asset wizard
+    [Tags]      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains     technology-list
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.click on bulk import under action button of technology
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Data-Wizard
+    Bulk_Import_ExportPage.click on checkbox under technology bulk import
+    Bulk_Import_ExportPage.click on all checkbox under technology bulk import        Any new department names
+    Generic.click on the button     Next
+    Generic.click on the tab        Add Department
+    TechnologyPage.Save the department       add
+    DepartmentPage.Verify the validation department name field
+    DepartmentPage.Compare and verify the validation messages of department     ${Departmentname_validation}      Please enter Department Name
+    DepartmentPage.Verify the validation department status
+    DepartmentPage.Compare and verify the validation messages of department     ${Departmentstatus_validation}      Please Select Status
+    Bulk_Import_ExportPage.Select the status under add department technology bulk import
+    Bulk_Import_ExportPage.Enter cost center under add department technology bulk import   316546
+    TechnologyPage.Save the department       add
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page     Please enter Department Name
+    Bulk_Import_ExportPage.Select the department from dropdown under technology bulk import     Department_milan
+    TechnologyPage.Save the department       add
+    Generic.Fetch alert message text and compare it with       Department already exists
