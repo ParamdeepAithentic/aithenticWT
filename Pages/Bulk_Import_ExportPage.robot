@@ -900,3 +900,31 @@ Enter the new value of assigned in the email column for bulk import and edit
     wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    ${wait_time}
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assigneeEmail}
     set global variable    ${generated_assigneeEmail}
+
+Select the department from dropdown under technology bulk import
+    [Arguments]     ${option}
+    wait until element is visible       //div[contains(@class,'full-page-block')]//ng-select[contains(@id,'department-name')]//input        ${wait_time}
+    wait until element is enabled       //div[contains(@class,'full-page-block')]//ng-select[contains(@id,'department-name')]//input        ${wait_time}
+    click element   //div[contains(@class,'full-page-block')]//ng-select[contains(@id,'department-name')]//input
+    input text   //div[contains(@class,'full-page-block')]//ng-select[contains(@id,'department-name')]//input  ${option}
+    sleep      ${search_sleep}
+    wait until element is visible      //span[contains(text(),'${option}')]       ${wait_time}
+    wait until element is enabled       //span[contains(text(),'${option}')]        ${wait_time}
+    click element   //span[contains(text(),'${option}')]
+
+
+Select the status under add department technology bulk import
+    wait until element is visible       (//ng-select[contains(@class,'qa-add-department-status')]//input)[1]        ${wait_time}
+    wait until element is enabled      (//ng-select[contains(@class,'qa-add-department-status')]//input)[1]       ${wait_time}
+    click element   (//ng-select[contains(@class,'qa-add-department-status')]//input)[1]
+    sleep      ${search_sleep}
+    wait until element is visible     //div[contains(@id,'1')]       ${wait_time}
+    wait until element is enabled       //div[contains(@id,'1')]       ${wait_time}
+    click element   //div[contains(@id,'1')]
+
+Enter cost center under add department technology bulk import
+    [Arguments]     ${option}
+    wait until element is visible       (//input[@id='costCenter'])[1]        ${wait_time}
+    wait until element is enabled      (//input[@id='costCenter'])[1]       ${wait_time}
+    click element   (//input[@id='costCenter'])[1]
+    input text  (//input[@id='costCenter'])[1]  ${option}
