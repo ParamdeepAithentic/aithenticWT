@@ -1896,3 +1896,32 @@ Select the department and Location from dropdown
     wait until element is visible       //span[contains(text(),'${option}')]    ${wait_time}
     wait until element is enabled        //span[contains(text(),'${option}')]    ${wait_time}
     click element              //span[contains(text(),'${option}')]
+
+Enter text in the finacial year 1 date field
+    [Arguments]     ${option}       ${option1}
+    Wait Until Element Is Not Visible    ${loaderIcon}    ${wait_time}
+    wait until element is visible      css:#financialYear${option}         ${wait_time}
+    wait until element is enabled      css:#financialYear${option}         ${wait_time}
+    click element       css:#financialYear${option}
+     sleep       ${search_sleep}
+    input text      css:#financialYear${option}        ${option1}
+    sleep       ${search_sleep}
+
+
+Clear the text of the field under company information
+    [Arguments]     ${option}
+    Wait Until Element Is Visible      css:#financialYear${option}    ${wait_time}
+    Wait Until Element Is Enabled      css:#financialYear${option}    ${wait_time}
+    Click Element               css:#financialYear${option}
+    Press Keys    css:#financialYear${option}     CTRL+A    DELETE
+    sleep   ${search_sleep}
+
+Click on the No of employees field
+    Wait Until Element Is Not Visible    ${loaderIcon}    ${wait_time}
+    wait until element is visible      css:#employees         ${wait_time}
+    wait until element is enabled      css:#employees         ${wait_time}
+    click element       css:#employees
+    sleep       ${search_sleep}
+
+visibility of the I-icon under company information
+     wait until element is visible      css:.qa-company-information-financial-industry        ${wait_time}
