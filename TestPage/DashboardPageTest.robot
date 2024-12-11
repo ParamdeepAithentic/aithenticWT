@@ -3178,5 +3178,41 @@ Verify all the validations of Personal Details page
     DashboardPage.Click on the cross icon of Department and Location under Personal Details     LocationType
     RegisterUserPage.Save the Profile details       Save
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page      Please select Location
+
+Verify all the validations of Company fiancial information under organisation
+    [Tags]      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    I_iconPage.Choose tabs under organization        company
+    Generic.Verify your current page location contains     organization
+    DashboardPage.visibility of the I-icon under company information
+    DashboardPage.Clear the text of the field under company information     q1
+    DashboardPage.Click on the No of employees field
+    Generic.Fetch alert message text and compare it with       Q1End Date Required
+    DashboardPage.Enter text in the finacial year 1 date field      q1      Test
+    DashboardPage.Click on the No of employees field
+    Generic.Fetch And Verify error toast messages    Please use valid date format.
+    DashboardPage.Clear the text of the field under company information     q2
+    DashboardPage.Click on the No of employees field
+    Generic.Fetch And Verify error toast messages    Please use valid date format.
+    Generic.Fetch And Verify error toast messages       Q2End Date Required
+    DashboardPage.Enter text in the finacial year 1 date field      q2      Test
+    DashboardPage.Click on the No of employees field
+    Generic.Fetch And Verify error toast messages    Please use valid date format.
+    DashboardPage.Clear the text of the field under company information     q3
+    DashboardPage.Click on the No of employees field
+    Generic.Fetch And Verify error toast messages   Please use valid date format.
+    Generic.Fetch And Verify error toast messages       Q3End Date Required
+    DashboardPage.Enter text in the finacial year 1 date field      q3      Test
+    DashboardPage.Click on the No of employees field
+    Generic.Fetch And Verify error toast messages    Please use valid date format.
+
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

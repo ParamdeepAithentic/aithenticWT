@@ -45,6 +45,7 @@ ${SheetLocationAndName}   LoadTimeSheet.xlsx
 ${SheetTabName}     Load_Time_tracking
 
 ${alert_Msg}     css:.msg.d-inline-flex
+
 ${cross_alertMsg}   css:.close.position-absolute.text-white
 ${loaderIcon}     //div[@role='status']
 ${shadow}       //div[@aria-modal='true']
@@ -569,3 +570,11 @@ Set asset ID settings
     EXCEPT
         Log    Alert is not visible check settings update
     END
+
+Fetch And Verify error toast messages
+    [Arguments]         ${option}
+    Wait Until Element Is Visible   css:.toast-error .d-inline-flex    ${wait_time}
+    ${alert_text}=    Get Text   css:.toast-error .d-inline-flex
+    log to console     ${alert_text}
+    Should Contain    ${alert_text}    ${option}
+    Wait Until Element Is Not Visible    (//span[contains(@class,'msg d-inline')])[2]    ${wait_time}
