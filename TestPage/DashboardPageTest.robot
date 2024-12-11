@@ -3198,21 +3198,21 @@ Verify all the validations of Company fiancial information under organisation
     Generic.Fetch alert message text and compare it with       Q1End Date Required
     DashboardPage.Enter text in the finacial year 1 date field      q1      Test
     DashboardPage.Click on the No of employees field
-    Generic.Fetch And Verify Alert Text with index    Please use valid date format.
+    Generic.Fetch And Verify error toast messages    Please use valid date format.
     DashboardPage.Clear the text of the field under company information     q2
     DashboardPage.Click on the No of employees field
-    Generic.Fetch And Verify Alert Text with index    Please use valid date format.
-    Generic.Fetch And Verify Alert Text with index       Q2End Date Required
+    Generic.Fetch And Verify error toast messages    Please use valid date format.
+    Generic.Fetch And Verify error toast messages       Q2End Date Required
     DashboardPage.Enter text in the finacial year 1 date field      q2      Test
     DashboardPage.Click on the No of employees field
-    Generic.Fetch And Verify Alert Text with index    Please use valid date format.
+    Generic.Fetch And Verify error toast messages    Please use valid date format.
     DashboardPage.Clear the text of the field under company information     q3
     DashboardPage.Click on the No of employees field
-    Generic.Fetch And Verify Alert Text with index    Please use valid date format.
-    Generic.Fetch And Verify Alert Text with index       Q3End Date Required
+    Generic.Fetch And Verify error toast messages   Please use valid date format.
+    Generic.Fetch And Verify error toast messages       Q3End Date Required
     DashboardPage.Enter text in the finacial year 1 date field      q3      Test
     DashboardPage.Click on the No of employees field
-    Generic.Fetch And Verify Alert Text with index    Please use valid date format.
+    Generic.Fetch And Verify error toast messages    Please use valid date format.
 
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

@@ -571,7 +571,7 @@ Set asset ID settings
         Log    Alert is not visible check settings update
     END
 
-Fetch And Verify Alert Text with index
+Fetch And Verify error toast messages
     [Arguments]         ${option}
     Wait Until Element Is Visible   css:.toast-error .d-inline-flex    ${wait_time}
     ${alert_text}=    Get Text   css:.toast-error .d-inline-flex
