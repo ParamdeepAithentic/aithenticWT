@@ -1104,3 +1104,45 @@ Verify that user is not able to edit the location with invalid data in the IP su
     LocationPage.Enter input in the IP subnet field     1           192.168.0.0/23
     Generic.click on the button    Update
     Generic.Fetch alert message text and compare it with    Location updated successfully
+
+
+Check the validations of Add Location under asset wizard
+    [Tags]          Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form    ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the location ID checkbox   yes
+    DashboardPage.Select the location ID checkbox   no
+    DashboardPage.Select the location ID checkbox   yes
+    Generic.Fetch alert message text and compare it with    Settings Updated
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains     technology-list
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.click on bulk import under action button of technology
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Data-Wizard
+    Bulk_Import_ExportPage.click on checkbox under technology bulk import
+    Bulk_Import_ExportPage.click on all checkbox under technology bulk import       - Location Names
+    Generic.click on the button     Next
+    Generic.click on the tab        Add Location
+    Generic.Verify your current page location contains      addLocation
+    LocationPage.Save location form     save
+    LocationPage.Verify the validation of country name field
+    LocationPage.Compare and verify the validation messages of Location     ${Locationcountry_validation}       Please Select Country
+    LocationPage.Verify the validation of Location name field when organization settings is yes
+    LocationPage.Compare and verify the validation messages of Location     ${Locationnameyes_validation}      Please Enter Location Name
+    LocationPage.Add invalid Location Name      locationName     A*
+    LocationPage.Verify the validation of Location name field when organization settings is yes
+    LocationPage.Compare and verify the validation messages of Location      ${Locationnameyes_validation}      Please Enter Valid Location Name.
+    LoginPage.Clear the element text of field under login page     locationName
+    LocationPage.Select location country     United States
+    LocationPage.Add invalid Location Name      locationName      *Main Office
+    LocationPage.Save location form     save
+    Generic.Fetch alert message text and compare it with    Location Name already exists
+    LocationPage.Add invalid Location country       567country
