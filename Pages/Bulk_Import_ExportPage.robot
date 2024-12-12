@@ -737,12 +737,6 @@ Save added product details technology bulk import
     click element   //div[@class='modal-footer']//button[normalize-space()='Save']
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
 
-Cancel added product details technology bulk import
-    wait until element is visible      //div[@class='modal-footer']//button[normalize-space()='Cancel']       ${wait_time}
-    wait until element is enabled      //div[@class='modal-footer']//button[normalize-space()='Cancel']       ${wait_time}
-    click element   //div[@class='modal-footer']//button[normalize-space()='Cancel']
-    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-
 Select partner business URL technology bulk import
     wait until element is visible       //input[@id='businessUrl']        ${wait_time}
     wait until element is enabled       //input[@id='businessUrl']        ${wait_time}

@@ -1951,6 +1951,3 @@ Add invalid brand under product asset wizard
     input text   ${enterAndSelect_Brand}   ${brand}
     sleep  ${search_sleep}
     wait until element is visible       //div[contains(@class,"ng-option-disabled")][normalize-space()='No items found']        ${wait_time}
-
-
-
