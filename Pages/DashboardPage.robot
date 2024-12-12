@@ -360,7 +360,7 @@ Add self created brand name
     [Arguments]    ${option}
     wait until element is visible       ${add_brandName}        ${wait_time}
     input text   ${add_brandName}   ${option}
-    log to console      ${generated_BrandName}
+#    log to console      ${generated_BrandName}
 
 Add business manufacturer URL
     [Arguments]    ${option}
@@ -368,6 +368,12 @@ Add business manufacturer URL
     input text   ${add_brand_mfc_URL}   ${generated_BrandURL}
     log to console      ${generated_BrandURL}
     set global variable    ${generated_BrandURL}
+
+Add self business manufacturer URL
+    [Arguments]    ${option}
+    wait until element is visible       ${add_brand_mfc_URL}        ${wait_time}
+    input text   ${add_brand_mfc_URL}   ${option}
+
 
 Add brand manufacturer country
     [Arguments]    ${country}

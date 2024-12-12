@@ -3214,5 +3214,57 @@ Verify all the validations of Company fiancial information under organisation
     DashboardPage.Click on the No of employees field
     Generic.Fetch And Verify error toast messages    Please use valid date format.
 
+Verify all the validations of Add Brand asset wizard
+    [Tags]      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains     technology-list
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.click on bulk import under action button of technology
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Data-Wizard
+    Bulk_Import_ExportPage.click on all checkbox under technology bulk import       - Create Brands
+    Generic.click on the button     Next
+    Generic.click on the button    Add Brand
+    DashboardPage.Save added brand details
+    DashboardPage.Verify the validation message of Brand name field
+    DashboardPage.Compare and verify the validation messages      ${Brandname_validation}     Please Enter Brand Name
+    DashboardPage.Verify the validation message of Brand manufacturer URL field
+    DashboardPage.Compare and verify the validation messages        ${brandURL_validation}      Please enter Business URL
+    DashboardPage.Verify the validation message of Brand manufacturer country field
+    DashboardPage.Compare and verify the validation messages        ${brandCountry_validation}       Please Select Country
+################################################# INPUT INVALID DATA ####################################################################################
+    DashboardPage.Add Invalid business manufacturer URL         invalidBrandURL
+    DashboardPage.Verify the validation message of Brand manufacturer URL field
+    DashboardPage.Compare and verify the validation messages        ${brandURL_validation}       Please enter valid Business URL
+    DashboardPage.Add invalid brand manufacturer country            475638InvalidCountry
+    DashboardPage.Cancel Brand details
+    Generic.Verify your current page location contains     brand-list
+    Generic.click on the button    Add Brand
+    DashboardPage.Add self created brand name           Brandmilan
+    DashboardPage.Add self business manufacturer URL        Brandmilan.com
+    DashboardPage.Add brand manufacturer country      United States
+    DashboardPage.Save added brand details
+    Generic.Fetch alert message text and compare it with        Name already exists.
+    LoginPage.Clear The Element Text for phone number      ${add_brand_mfc_URL}
+    LoginPage.Clear the element text of field under login page      Name
+    DashboardPage.Create random brandName
+    DashboardPage.Add business manufacturer URL       ${generated_BrandName}
+    DashboardPage.Save added brand details
+    Generic.Fetch alert message text and compare it with        Brand created successfully.
+    DashboardPage.Click on Edit address
+    DashboardPage.Clear the field of country in add adddress of brand       qa-country-name
+    DashboardPage.Verify the validation message of Brand_country field when add new address
+    DashboardPage.Compare and verify the validation messages        ${Country_validation1}           Please Select Country
+    DashboardPage.Cancel the added new address
+    DashboardPage.Click on Add New Address
+    DashboardPage.Enter the country in the new address when add brand   addressCountry    United States Minor Outlying Islands
+    DashboardPage.Clear the field of country in add adddress of brand       qa-country-name
+    DashboardPage.Verify the validation message of Brand_country field when add new address
+    DashboardPage.Compare and verify the validation messages        ${Country_validation1}           Please Select Country
+
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
