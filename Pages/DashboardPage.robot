@@ -204,6 +204,12 @@ Create random productName
     log to console      ${generated_product}
     set global variable    ${generated_product}
 
+Create self productName
+    [Arguments]     ${option}
+    wait until element is visible   ${ProductName}      ${wait_time}
+    click element   ${ProductName}
+    input text   ${ProductName}   ${option}
+
 Click on action button
     wait until element is visible       ${actionBTN}   ${wait_time}
     wait until element is enabled       ${actionBTN}   ${wait_time}
@@ -1003,7 +1009,7 @@ Click on the filter under recent Activities table
     Wait Until Element Is Enabled    //div[contains(text(),'Asset Id')]//following-sibling::div//input      ${wait_time}
     Input Text    //div[contains(text(),'${option1}')]//following-sibling::div//input    ${option2}
     Generic.Select parameter    ${option2}
-    
+
 Click on row of recent activities table
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     Wait Until Element Is Visible    //table//tbody[contains (@class, 'ng-star-inserted')]//tr//td[1]       ${wait_time}
@@ -1613,6 +1619,18 @@ Fetch the all validation message of add product page
    END
    lists should be equal    ${expectedList}    ${actualList}
 
+Fetch the all validation message of add product page under asset wizard
+   wait until element is visible   //span[contains(@class,'invalidInput')]       ${wait_time}
+   @{expectedList} =    Create List       Please enter Product Name        Please enter Brand Name            Please Select Status        Please Select Technology Group        Please Select Technology Type
+   ${elements} =  Get WebElements     //span[contains(@class,'invalidInput')]
+   @{actualList} =   Create List
+   FOR  ${element}  IN      @{elements}
+      log to console    ${element.text}
+      Append To List    ${actualList}     ${element.text}
+   END
+   lists should be equal    ${expectedList}    ${actualList}
+
+
 Click on the edit option under three dots of product
     [Arguments]      ${option}
     wait until element is visible       //a[contains(@class,'edit-product-qa')][normalize-space()='${option}']      ${wait_time}
@@ -1925,3 +1943,14 @@ Click on the No of employees field
 
 visibility of the I-icon under company information
      wait until element is visible      css:.qa-company-information-financial-industry        ${wait_time}
+
+Add invalid brand under product asset wizard
+    [Arguments]    ${brand}
+    click element   ${enterAndSelect_Brand}
+    Clear Element Text      ${enterAndSelect_Brand}
+    input text   ${enterAndSelect_Brand}   ${brand}
+    sleep  ${search_sleep}
+    wait until element is visible       //div[contains(@class,"ng-option-disabled")][normalize-space()='No items found']        ${wait_time}
+
+
+
