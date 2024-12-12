@@ -3214,12 +3214,12 @@ Verify all the validations of Company fiancial information under organisation
     DashboardPage.Click on the No of employees field
     Generic.Fetch And Verify error toast messages    Please use valid date format.
 
+
 Verify all the validations of Add Brand asset wizard
     [Tags]      Negative
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
-    LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains     technology-list
     TechnologyPage.Click on action button of technology
@@ -3265,6 +3265,33 @@ Verify all the validations of Add Brand asset wizard
     DashboardPage.Clear the field of country in add adddress of brand       qa-country-name
     DashboardPage.Verify the validation message of Brand_country field when add new address
     DashboardPage.Compare and verify the validation messages        ${Country_validation1}           Please Select Country
+
+
+Verify all the validations of Add Product under asset wizard
+    [Tags]      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains     technology-list
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.click on bulk import under action button of technology
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Data-Wizard
+    Bulk_Import_ExportPage.click on all checkbox under technology bulk import       - Create Products
+    Generic.click on the button     Next
+    Generic.click on the tab        Add Product
+    Bulk_Import_ExportPage.Save added product details technology bulk import
+    DashboardPage.Fetch the all validation message of add product page under asset wizard
+    DashboardPage.Create self productName       Product_bulk_import
+    DashboardPage.Add product brand name       QABrand555
+    DashboardPage.Select product technology type     Hardware
+    DashboardPage.Select product technology group     Applications
+    Bulk_Import_ExportPage.Select product status technology bulk import   Active
+    Bulk_Import_ExportPage.Save added product details technology bulk import
+    Generic.Fetch alert message text and compare it with        Product name already exists.
+    DashboardPage.Add invalid brand under product asset wizard      475638InvalidBrand
 
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
