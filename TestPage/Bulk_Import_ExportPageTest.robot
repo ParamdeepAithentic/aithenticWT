@@ -2327,6 +2327,57 @@ Verify all the validations om Location bulk edit
     Sleep    ${yop_Sleep}
     Fail
     END
+
+Verify all the validations of department bulk import under asset wizard
+    [Tags]      Negative
+    TRY
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains     technology-list
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.click on bulk import under action button of technology
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Data-Wizard
+    Bulk_Import_ExportPage.click on all checkbox under technology bulk import        Any new department names
+    Generic.click on the button     Next
+    Bulk_Import_ExportPage.Click on the bulk import option under asset wizard via technology
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Data-Wizard
+    Generic.Verify your current page location contains      add-department-grid
+    Bulk_Import_ExportPage.Verify that element is not enabled       Check Data
+    Bulk_Import_ExportPage.Verify that element is not enabled       Upload
+    Bulk_Import_ExportPage.Select option from department status column in bulk_import      status
+    Bulk_Import_ExportPage.Enter the new value in the cost center column in bulk_import     costCenter
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationErrors      Department Name is missing
+    Generic.Refresh the existing page
+    Generic.Verify your current page location contains     add-department-grid
+    Bulk_Import_ExportPage.Enter the new value in the cost center column in bulk_import     costCenter
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationErrors      Department Name is missing, Status is missing
+    Bulk_Import_ExportPage.Clear the text of the field      costCenter
+    Bulk_Import_ExportPage.Enter the new value in the department name column in bulk_import     department_name
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationErrors      Status is missing
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings      Cost Center is missing
+    DashboardPage.Double click     department_name
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import       department_name         Department_milan
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationErrors      Department already exists, Status is missing
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings      Cost Center is missing
+    EXCEPT
+    Switch Window       aithentic | Department - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    Sleep    ${yop_Sleep}
+    Fail
+    END
 #Zz kill browser
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
 
