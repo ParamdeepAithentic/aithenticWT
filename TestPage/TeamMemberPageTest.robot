@@ -1715,10 +1715,7 @@ Verify all the validations of Add Team Member under asset wizard
     TeamMemberPage.Enter team member last name self    L_johar2
     TeamMemberPage.Enter team member business email self       F_milan1@mail-mario.fr.nf
     TeamMemberPage.Save the team member form   save
-
-
-
-
+    Generic.Fetch alert message text and compare it with      This Email is already registered.
 
 
 
