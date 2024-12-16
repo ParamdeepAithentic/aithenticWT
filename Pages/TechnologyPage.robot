@@ -1071,7 +1071,7 @@ Create unique assign to employee_ID random
     set global variable    ${generate_employeeid}
     input text      ${technology_employeeid}     ${generate_employeeid}
     log to console      ${generate_employeeid}
-#    set global variable    ${generate_employeeid}
+    set global variable    ${generate_employeeid}
 
 Click on refresh location icon
     wait until element is visible       //b[normalize-space()='click here to refresh the location list']       ${wait_time}
