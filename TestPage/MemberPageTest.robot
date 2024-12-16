@@ -570,6 +570,7 @@ Verify all the validate validations of the assigned user while edit assigned use
     Generic.Verify your current page location contains      memberslist
 
 Asset Wizard : Verify the validations of add assigned User
+    [Tags]      Neagtive
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
