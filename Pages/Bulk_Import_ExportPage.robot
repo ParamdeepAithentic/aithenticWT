@@ -928,3 +928,13 @@ Enter cost center under add department technology bulk import
     wait until element is enabled      (//input[@id='costCenter'])[1]       ${wait_time}
     click element   (//input[@id='costCenter'])[1]
     input text  (//input[@id='costCenter'])[1]  ${option}
+
+Click on the bulk import option under asset wizard via technology
+    wait until element is visible       css:.qa-department-bulk-import        ${wait_time}
+    wait until element is enabled      css:.qa-department-bulk-import       ${wait_time}
+    click element   css:.qa-department-bulk-import
+
+Click on the location bulk import option under asset wizard via technology
+    wait until element is visible       css:.qa-addLocation-bulk        ${wait_time}
+    wait until element is enabled      css:.qa-addLocation-bulk       ${wait_time}
+    click element   css:.qa-addLocation-bulk
