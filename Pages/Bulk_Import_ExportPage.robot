@@ -939,6 +939,11 @@ Click on the location bulk import option under asset wizard via technology
     wait until element is enabled      css:.qa-addLocation-bulk       ${wait_time}
     click element   css:.qa-addLocation-bulk
 
+Click on the product bulk import option under asset wizard via technology
+    wait until element is visible       css:.qa-add-bulk-product        ${wait_time}
+    wait until element is enabled      css:.qa-add-bulk-product       ${wait_time}
+    click element   css:.qa-add-bulk-product
+
 Click on the team member bulk import under asset wizard
     wait until element is visible       css:.qa-add-bulk-member       ${wait_time}
     wait until element is enabled      css:.qa-add-bulk-member       ${wait_time}

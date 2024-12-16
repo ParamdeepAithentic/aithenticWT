@@ -1615,6 +1615,7 @@ Verify all the validations of department bulk import
     END
 
 Verify all the validations of department bulk edit
+    [Tags]      Negative
     TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
@@ -2478,7 +2479,7 @@ Verify all the validations of location bulk import under asset wizard
     Fail
     END
 
-Verify all the validations of Team member under asset wizard
+Verify all the validations of Team member bulk import under asset wizard
     [Tags]          Negative
     TRY
     Generic.click on the tab	Login

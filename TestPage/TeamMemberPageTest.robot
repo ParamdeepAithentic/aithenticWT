@@ -1472,7 +1472,8 @@ Click on the status filter under team member via profile list and verify it
     PaginationPage.Fetch the total count for filter only
     TeamMemberPage.Fetch the country from team member filter and click       Status          Invited         ${New_status1}
 
-Verify all the validation of add team member
+Verify all the validation of add team membe
+    [Tags]      Negative
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1529,6 +1530,7 @@ Verify all the validation of add team member
     TeamMemberPage.Wait for the visibility of the alert text
 
 Verify all the validations of edit team member page
+    [Tags]      Negative
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
