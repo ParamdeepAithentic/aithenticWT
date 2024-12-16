@@ -1799,6 +1799,7 @@ Verify that user is not able to Deactivate and remove Support Partner having tec
     Generic.Fetch alert message text and compare it with   You cannot delete or inactivate this partner as you have active contract or technology assigned
 
 Asset Wizard : Verify the validations of add partner
+    [Tags]      Negative
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard

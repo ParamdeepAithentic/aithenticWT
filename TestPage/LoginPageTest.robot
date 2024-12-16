@@ -570,7 +570,7 @@ Login as End_user with different roles
 #    Generic.Fetch log_out alert message
 
 Check all the validations of login page
-    [Tags]    NT
+    [Tags]    Negative
     Generic.click on the tab	Login
     LandingPage.Fill the login Form with email only      ${email}
     LoginPage.Get and Verify the validation after login with email only         Invalid user id or password.
@@ -605,7 +605,7 @@ Check all the validations of login page
 
 
 Check all the validations of forgot password page
-    [Tags]    NT
+    [Tags]    Negative
     Generic.click on the tab	Login
     Generic.click on the tab    Forgot Password?
     Generic.Verify your current page location contains      auth

@@ -364,7 +364,7 @@ Add_edit_delete_assignee_via_profile_list_via_details
     Generic.Fetch alert message text and compare it with       Assigned Users deleted successfully
 
 Verify all the validations of Add Assigned Users via technology
-    [Tags]    NT
+    [Tags]    Negative
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -418,7 +418,7 @@ Verify all the validations of Add Assigned Users via technology
     Generic.Fetch alert message text and compare it with       Assigned Users cannot removed as have assigned items
 
 Verify the validations while edit the assigned user
-    [Tags]    NT
+    [Tags]    Negative
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -445,7 +445,7 @@ Verify the validations while edit the assigned user
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page          Please enter Assignee Name
 
 Verify all the validate validations of the assigned user while adding assigned user
-    [Tags]    NT          
+    [Tags]    Negative
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -501,7 +501,7 @@ Verify all the validate validations of the assigned user while adding assigned u
     Generic.Verify your current page location contains      memberslist
 
 Verify all the validate validations of the assigned user while edit assigned user
-    [Tags]    NT
+    [Tags]    Negative
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -570,7 +570,7 @@ Verify all the validate validations of the assigned user while edit assigned use
     Generic.Verify your current page location contains      memberslist
 
 Asset Wizard : Verify the validations of add assigned User
-    [Tags]      Neagtive
+    [Tags]      Negative
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
