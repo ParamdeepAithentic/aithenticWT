@@ -2478,6 +2478,96 @@ Verify all the validations of location bulk import under asset wizard
     Fail
     END
 
+Verify all the validations of Team member under asset wizard
+    [Tags]          Negative
+    TRY
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the employee ID checkbox   no
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains     technology-list
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.click on bulk import under action button of technology
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Data-Wizard
+    Bulk_Import_ExportPage.click on checkbox under technology bulk import
+    Bulk_Import_ExportPage.click on all checkbox under technology bulk import       Admin, Asset managers and Asset users.
+    Generic.click on the button     Next
+    Bulk_Import_ExportPage.Click on the team member bulk import under asset wizard
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Member - Import
+    Bulk_Import_ExportPage.Verify that element is not enabled       Check Data
+    Bulk_Import_ExportPage.Verify that element is not enabled       Upload
+    Bulk_Import_ExportPage.Enter the new value of first name in bulk import of team member      FirstName
+    Bulk_Import_ExportPage.Enter the new value of last name in bulk import of team member       LastName
+    Bulk_Import_ExportPage.Enter random employee id of bulk import      EmployeeId
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       CountryCode     1
+    Bulk_Import_ExportPage.Enter the new value of team member in the phone number column        MobileNo
+    Bulk_Import_ExportPage.Enter the new value of team member in the email column       BusinessEmail
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text   validationErrors      Department, Location, Member Role is missing. Please fill in required data.
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings      Position/Title is missing.
+    Bulk_Import_ExportPage.Clear the text of the field with delete under asset wizard      FirstName
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       DepartmentName      3
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       MemberLocation      3
+    Bulk_Import_ExportPage.Perform the keyboard action      MemberLocation
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       MemberRole     2
+    Bulk_Import_ExportPage.Perform the keyboard action      MemberRole
+    Bulk_Import_ExportPage.Enter position and title of team member bulk import      QA
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text   validationErrors      First Name is missing. Please fill in required data.
+    Bulk_Import_ExportPage.Enter the new value of first name in bulk import of team member      FirstName
+    Bulk_Import_ExportPage.Clear the text of the field with delete under asset wizard      LastName
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text   validationErrors      Last Name is missing. Please fill in required data.
+    Bulk_Import_ExportPage.Enter the new value of last name in bulk import of team member       LastName
+    Bulk_Import_ExportPage.Clear the text of the field with delete under asset wizard      EmployeeId
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text   validationErrors      Employee ID is missing. Please fill in required data.
+    Bulk_Import_ExportPage.Enter random employee id of bulk import      EmployeeId
+    Bulk_Import_ExportPage.Clear the text of the field      MobileNo
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text   validationErrors      Mobile Number is missing. Please fill in required data.
+    Bulk_Import_ExportPage.Enter the new value of team member in the phone number column        MobileNo
+    Bulk_Import_ExportPage.Clear the text of the field with delete      BusinessEmail
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text   validationErrors      Business Email is missing. Please fill in required data.
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import       BusinessEmail        F_milan1@mail-mario.fr.nf
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text   validationErrors      Business Email already exists
+    Bulk_Import_ExportPage.Clear the text of the field with delete      BusinessEmail
+    Bulk_Import_ExportPage.Clear the text of the field with delete under asset wizard      EmployeeId
+    Bulk_Import_ExportPage.Clear the text of the field with delete under asset wizard      FirstName
+    Bulk_Import_ExportPage.Enter static value in the fields of team membder bulk import under asset wizard       FirstName        F_milan1@mail-mario.fr.nf
+    Bulk_Import_ExportPage.Enter static value in the fields of team membder bulk import under asset wizard       EmployeeId        267818408
+    Bulk_Import_ExportPage.Enter the new value of team member in the email column       BusinessEmail
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text   validationErrors      Employee ID already exists
+    Bulk_Import_ExportPage.Clear the text of the field      MobileNo
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import       MobileNo        963214563
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text   validationErrors      Mobile Number is invalid, Employee ID already exists
+    Bulk_Import_ExportPage.Clear the text of the field      MobileNo
+    EXCEPT
+    Switch Window       aithentic | Member - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    Sleep    ${yop_Sleep}
+    Fail
+    END
+
 #Zz kill browser
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
 

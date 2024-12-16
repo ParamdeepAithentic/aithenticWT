@@ -938,3 +938,20 @@ Click on the location bulk import option under asset wizard via technology
     wait until element is visible       css:.qa-addLocation-bulk        ${wait_time}
     wait until element is enabled      css:.qa-addLocation-bulk       ${wait_time}
     click element   css:.qa-addLocation-bulk
+
+Click on the team member bulk import under asset wizard
+    wait until element is visible       css:.qa-add-bulk-member       ${wait_time}
+    wait until element is enabled      css:.qa-add-bulk-member       ${wait_time}
+    click element   css:.qa-add-bulk-member
+
+Clear the text of the field with delete under asset wizard
+    [Arguments]     ${option}
+    Wait Until Element Is Visible      css:.ag-pinned-left-cols-container div[col-id='${option}']    ${wait_time}
+    Wait Until Element Is Enabled      css:.ag-pinned-left-cols-container div[col-id='${option}']    ${wait_time}
+    Press Keys    css:.ag-pinned-left-cols-container div[col-id='${option}']     DELETE
+
+Enter static value in the fields of team membder bulk import under asset wizard
+    [Arguments]    ${option}        ${option1}
+    MemberPage.Double click team member bulk import    ${option}
+    wait until element is visible       css:.ag-pinned-left-cols-container div[col-id='${option}']    ${wait_time}
+    input text  css:.ag-pinned-left-cols-container div[col-id='${option}'] input   ${option1}
