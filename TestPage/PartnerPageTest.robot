@@ -50,7 +50,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Compose Message invite user test
-    [Tags]      Sanity      Smoke       Time      rerun
+    [Tags]      Sanity      Smoke       Time
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -100,8 +100,7 @@ Compose Message invite user test
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Sleep     5
-    #Generic.Fetch alert message text and compare it with    Partner created successfully
+    Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generate_BusinessName}
 #-------------------------- PRODUCT-----newely added---------------------------------------------------------
     Generic.Click on the profile name
@@ -544,8 +543,7 @@ Export Specificartner into Excel Doc CSV and TSV for manufacturer
     PartnersPage.Create partner random secondary business URL
     PartnersPage.Click contact main save button
     Generic.Verify your current page location contains      partner-listing
-    sleep       5
-#    Generic.Fetch alert message text and compare it with        Partner created successfully
+    Generic.Fetch alert message text and compare it with        Partner created successfully
     PartnersPage.Search by business name    ${generate_BusinessName}
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .xlsx
@@ -590,7 +588,7 @@ Export Specificartner into Excel Doc CSV and TSV for manufacturer
 
 
 Export Specificartner into Excel Doc CSV and TSV for Supplier
-    [Tags]      Sanity
+    [Tags]      Sanity      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -601,14 +599,13 @@ Export Specificartner into Excel Doc CSV and TSV for Supplier
     Generic.Verify your current page location contains      addpartner
     PartnersPage.Select partner type of new partner     Supplier
     PartnersPage.Create partner random business name
-    PartnersPage.Enter partner business URL      ${generate_BusinessName}
     PartnersPage.Select partner country       United States
+    PartnersPage.Enter partner business URL      ${generate_BusinessName}
     PartnersPage.Click on add custome business URL icon
     PartnersPage.Create partner random secondary business URL
     PartnersPage.Click contact main save button
     Generic.Verify your current page location contains      partner-listing
-    sleep       5
-#    Generic.Fetch alert message text and compare it with        Partner created successfully
+    Generic.Fetch alert message text and compare it with        Partner created successfully
     PartnersPage.Search by business name    ${generate_BusinessName}
     PartnersPage.Click on the export Button
     PartnersPage.Download the selected extension file      .xlsx
@@ -672,8 +669,7 @@ Export Specificartner into Excel Doc CSV and TSV for Support Partner
     PartnersPage.Create partner random secondary business URL
     PartnersPage.Click contact main save button
     Generic.Verify your current page location contains      partner-listing
-    sleep       5
-#    Generic.Fetch alert message text and compare it with        Partner created successfully
+    Generic.Fetch alert message text and compare it with        Partner created successfully
     Generic.Wait until table get load
     PartnersPage.Search by business name    ${generate_BusinessName}
     PartnersPage.Click on the export Button
@@ -761,8 +757,7 @@ Add Manufacturer via personal detail under technology and partner
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Sleep     5
-    #Generic.Fetch alert message text and compare it with    Partner created successfully
+    Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generated_BrandName}
 
 
@@ -811,8 +806,7 @@ Edit Manufacturer via partner
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Sleep     5
-    #Generic.Fetch alert message text and compare it with    Partner created successfully
+    Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generated_BrandName}
     PartnersPage.Click on three dots of partners listing
     PartnersPage.Select option from three dots of partner     Details
@@ -897,8 +891,7 @@ Deactivate Manufacturer via partner
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Sleep     5
-    #Generic.Fetch alert message text and compare it with    Partner created successfully
+    Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generated_BrandName}
     PartnersPage.Click on three dots of partners listing
     PartnersPage.Select option from three dots of partner     Details
@@ -987,8 +980,7 @@ Activate Manufacturer via partner
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Sleep     5
-    #Generic.Fetch alert message text and compare it with    Partner created successfully
+    Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generated_BrandName}
     PartnersPage.Click on three dots of partners listing
     PartnersPage.Select option from three dots of partner     Details
@@ -1080,8 +1072,7 @@ Remove Manufacturer from partner
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Sleep     5
-    #Generic.Fetch alert message text and compare it with    Partner created successfully
+    Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generated_BrandName}
     PartnersPage.Click on three dots of partners listing
     PartnersPage.Select option from three dots of partner     Details
@@ -1149,8 +1140,7 @@ View Details and check the details of Contract
     PartnersPage.Enter partner business URL     yopmail
     PartnersPage.Select partner country       United States
     PartnersPage.Click on the save button   Save
-    Sleep     5
-    #Generic.Fetch alert message text and compare it with    Partner created successfully
+    Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name   ${generate_BusinessName}
     Generic.select the option from the side menu    Technology
     TechnologyPage.Click on action button of technology
@@ -1288,8 +1278,7 @@ Add_edit_deactivate_removeSupplier while adding brand
     PartnersPage.Enter contact location      United States - Main Office - 21 - 2
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Sleep     5
-    #Generic.Fetch alert message text and compare it with    Partner created successfully
+    Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generated_BrandName}
     PartnersPage.Click on three dots of partners listing
     PartnersPage.Select option from three dots of partner     Details
@@ -1385,8 +1374,7 @@ Add_edit_deactivate_removeSupport_partner_while_adding_brand
     PartnersPage.Enter contact location       Aland Islands
     PartnersPage.Save the new contact
     PartnersPage.Click contact main save button
-    Sleep     5
-    #Generic.Fetch alert message text and compare it with    Partner created successfully
+    Generic.Fetch alert message text and compare it with    Partner created successfully
     PartnersPage.Search by business name    ${generated_BrandName}
     PartnersPage.Click on three dots of partners listing
     PartnersPage.Select option from three dots of partner     Details
@@ -1439,7 +1427,7 @@ Add_edit_deactivate_removeSupport_partner_while_adding_brand
     Generic.Fetch alert message text and compare it with      Partner deleted successfully
 
 Partner Side bar Filters
-    [Tags]     time     smoke     rerun
+    [Tags]     time     smoke
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1810,6 +1798,58 @@ Verify that user is not able to Deactivate and remove Support Partner having tec
     PartnersPage.Select option from the pop up  Yes
     Generic.Fetch alert message text and compare it with   You cannot delete or inactivate this partner as you have active contract or technology assigned
 
+Asset Wizard : Verify the validations of add partner
+    [Tags]      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains     technology-list
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.click on bulk import under action button of technology
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Data-Wizard
+    Bulk_Import_ExportPage.click on all checkbox under technology bulk import       -All partners (manufacturer, supplier & support partners)
+
+    Generic.click on the button     Next
+    Generic.click on the tab        Add Partner
+    Generic.Verify your current page location contains      addpartner
+    PartnersPage.Select partner type of new partner     Manufacturer
+    PartnersPage.Create partner random business name
+    PartnersPage.Enter partner business URL      ${generate_BusinessName}
+    PartnersPage.Select partner country       United States
+    PartnersPage.Click contact main save button
+    Generic.Fetch alert message text and compare it with    Partner created successfully
+    Bulk_Import_ExportPage.Search by business name under asset wizard    ${generate_BusinessName}
+    Generic.click on the tab        Add Partner
+    Generic.Verify your current page location contains      addpartner
+    PartnersPage.Select partner type of new partner     Manufacturer
+    PartnersPage.Select partner business_name     ${generate_BusinessName}
+    PartnersPage.Select partner business URL
+    PartnersPage.Select partner country       United States
+    PartnersPage.Click contact main save button
+    Generic.Fetch alert message text and compare it with     Partner with same company name and partner type already exists
+    PartnersPage.Click on Add new Address of partner        Add new Address
+    PartnersPage.Clear the field of country in add adddress of partner       country
+    DashboardPage.Enter the country in the new address when add brand    countryPartner    Albania
+    PartnersPage.Clear the field of country in add adddress of partner    country
+    DashboardPage.Verify the validation message of Brand_country field when add new address
+    PartnersPage.Compare the Validations on Partner Page        ${Country_validation1}           Please Select Country
+    PartnersPage.Cancel the pop-ups         addAddressModal
+    PartnersPage.Click on Add new Contact of partner        Add new Contact
+    PartnersPage.Save the new contact
+    Generic.Fetch alert message text and compare it with        Please enter values to save contact
+    PartnersPage.Cancel the pop-ups         addContactModal
+    PartnersPage.Clear the data of the fields while adding partner      Select Partner Type
+    PartnersPage.Verify the validations of these fields         Partner Type
+    PartnersPage.Compare the Validations on Partner Page        ${Partner_validation1}      Please select Partner Type
+    PartnersPage.Clear the data of the fields while adding partner      Select or Search a Business Name
+    PartnersPage.Verify the validations of these fields         Business Name
+    PartnersPage.Compare the Validations on Partner Page        ${Partner_validation1}       Please select or enter Business Name
+    PartnersPage.Clear the data of the fields while adding partner      Select Country
+    PartnersPage.Verify the validations of these fields     Country
+    PartnersPage.Compare the Validations on Partner Page        ${Partner_validation1}       Please select Country
 
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

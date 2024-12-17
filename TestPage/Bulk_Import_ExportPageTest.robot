@@ -1615,6 +1615,7 @@ Verify all the validations of department bulk import
     END
 
 Verify all the validations of department bulk edit
+    [Tags]      Negative
     TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
@@ -1671,8 +1672,902 @@ Verify all the validations of department bulk edit
     Fail
     END
 
+Verify all the validations of product bulk import
+    [Tags]      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form     ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     product-dropdown
+    Generic.Verify your current page location contains      product
+    DashboardPage.Click on action button
+    DashboardPage.Select the option from action menu      import
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Add - Products
+    Generic.Verify your current page location contains      add-product-grid
+    Bulk_Import_ExportPage.Verify that element is not enabled       Check Data
+    Bulk_Import_ExportPage.Verify that element is not enabled       Upload
+    Bulk_Import_ExportPage.Enter the value in the product name column in bulk_import      ProductName
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_import     TechType
+    Select option from technology group column in bulk_import       TechGroup
+    Enter the value in the product_description column in bulk_import        ProductDescription
+    Enter the value in the product_feature column in bulk_import        ProductFeatures
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors      Status, Brand is missing. Please fill in required data.
+    Bulk_Import_ExportPage.Clear the text of the field     ProductName
+    Bulk_Import_ExportPage.Enter the random value in the brand field under product bulk import       Brand
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_import     TechType
+    Select option from technology group column in bulk_import       TechGroup
+    Enter the value in the product_description column in bulk_import        ProductDescription
+    Enter the value in the product_feature column in bulk_import        ProductFeatures
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors      Product Name, Status is missing. Please fill in required data., Brand is invalid
+    Bulk_Import_ExportPage.Clear the text of the field      Brand
+    Bulk_Import_ExportPage.Select option from status column in bulk_import       ProductStatus
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_import     TechType
+    Select option from technology group column in bulk_import       TechGroup
+    Enter the value in the product_description column in bulk_import        ProductDescription
+    Enter the value in the product_feature column in bulk_import        ProductFeatures
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           Product Name, Brand is missing. Please fill in required data.
+    Generic.Refresh the existing page
+    Generic.Verify your current page location contains     add-product-grid
+    Bulk_Import_ExportPage.Enter the value in the product name column in bulk_import      ProductName
+    Bulk_Import_ExportPage.Enter the random value in the brand field under product bulk import       Brand
+    Bulk_Import_ExportPage.Select option from status column in bulk_import       ProductStatus
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_import     TechType
+    Select option from technology group column in bulk_import       TechGroup
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings           Description, Features is missing.
+    Generic.Refresh the existing page
+    Generic.Verify your current page location contains     add-product-grid
+    Bulk_Import_ExportPage.Enter the value in the product name column in bulk_import      ProductName
+    Bulk_Import_ExportPage.Enter the random value in the brand field under product bulk import       Brand
+    Bulk_Import_ExportPage.Select option from status column in bulk_import       ProductStatus
+    Enter the value in the product_description column in bulk_import        ProductDescription
+    Enter the value in the product_feature column in bulk_import        ProductFeatures
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           Technology Type, Technology Group is missing. Please fill in required data., Brand is invalid
+    Generic.Refresh the existing page
+    Generic.Verify your current page location contains     add-product-grid
+    Bulk_Import_ExportPage.Enter the static value in the product name column in bulk_import     ProductName         Product_bulk_import
+    Bulk_Import_ExportPage.Enter the new value in the brand name column in bulk_import       Brand    QABrand555
+    Bulk_Import_ExportPage.Select option from status column in bulk_import       ProductStatus
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_import     TechType
+    Select option from technology group column in bulk_import       TechGroup
+    Enter the value in the product_description column in bulk_import        ProductDescription
+    Enter the value in the product_feature column in bulk_import        ProductFeatures
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           Product Product_bulk_import already exists
+
+Verify all the validations of product bulk edit
+    [Tags]      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form     testqa29j@mailinator.com   Test@123
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     product-dropdown
+    Generic.Verify your current page location contains      product
+    DashboardPage.Click on action button
+    DashboardPage.Select the option from action menu      import
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Add - Products
+    Generic.Verify your current page location contains      add-product-grid
+    Bulk_Import_ExportPage.Enter the value in the product name column in bulk_import      ProductName
+    Bulk_Import_ExportPage.Enter the new value in the brand name column in bulk_import       Brand    QABrand555
+    Bulk_Import_ExportPage.Select option from status column in bulk_import       ProductStatus
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_import     TechType
+    Select option from technology group column in bulk_import       TechGroup
+    Enter the value in the product_description column in bulk_import        ProductDescription
+    Enter the value in the product_feature column in bulk_import        ProductFeatures
+    Generic.Click on the button     Check Data      #Update,Edit
+    Generic.Click on the button     Upload
+    Bulk_Import_ExportPage.Verify the upload message text    Upload       Upload Successful
+    Generic.Click on the button     Finish
+    Bulk_Import_ExportPage.Click on I_m_done button when popup appears     no-im-done
+    Switch Window       aithentic | Product - List
+    Bulk_Import_ExportPage.Verify product added using bulk_import_export   ${generated_addProductName}
+    DashboardPage.Click on action button
+    DashboardPage.Select the option from action menu      edit
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Edit - Products
+    Generic.Verify your current page location contains      product-bulk-edit
+    Bulk_Import_ExportPage.Clear the text of the field      ProductId
+    Bulk_Import_ExportPage.Clear the text of the field      BrandName
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           Product Name, Brand is missing. Please fill in required data.
+    Bulk_Import_ExportPage.Enter the static value in the product name column in bulk_import     ProductId         Product_bulk_import
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors          Brand is missing. Please fill in required data.
+    Bulk_Import_ExportPage.Clear the text of the field      ProductDescription
+    Bulk_Import_ExportPage.Clear the text of the field      ProductFeatures
+    Bulk_Import_ExportPage.Clear the text of the field      ProductId
+    Bulk_Import_ExportPage.Enter the new value in the product name column in bulk_edit     ProductId
+    Bulk_Import_ExportPage.Enter the new value in the brand name column in bulk_edit       BrandName    QABrand555
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings      Description, Features is missing.
+    Bulk_Import_ExportPage.Clear the text of the field      ProductId
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors      Product Name is missing. Please fill in required data.
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings      Description, Features is missing.
+    Bulk_Import_ExportPage.Clear the text of the field      BrandName
+    Bulk_Import_ExportPage.Enter the static value in the product name column in bulk_import     ProductId       Product_bulk_import
+    Bulk_Import_ExportPage.Enter the new value in the brand name column in bulk_edit       BrandName    QABrand555
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           Product Product_bulk_import already exists
+
+#    Bulk_Import_ExportPage.Enter the 101 characters in the bulk import   ProductId
+#    Generic.Click on the button     Check Data      #Update,Edit
+#    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors      Product Name is missing
+
+Verify all the validations of assigned user bulk import with existing data
+    [Tags]      Negative
+    TRY
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the employee ID checkbox   no
+    DashboardPage.Select the employee ID checkbox   yes
+    Generic.select the option from the side menu    Team Members
+    MemberPage.Click on assigned user tab      Assigned Users
+    MemberPage.Click on action button of assigned users
+    MemberPage.Choose the option from the action menu   Bulk Import
+    sleep     ${yop_sleep}
+    switch window     aithentic | Data-Wizard
+    Generic.Verify your current page location contains      add-assignee-grid
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import       FirstName       Dc
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import       LastName        Dc
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           Same user name already exists
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings           Business Email, Employee Id is missing.
+    Bulk_Import_ExportPage.Enter the new value of assigned in the email column for bulk import and edit      AssignedEmail
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import      AssignedEmployeeId       1111
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           Same user name & employee Id already exists
+    Bulk_Import_ExportPage.Clear the text of the field with delete      AssignedEmail
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import      AssignedEmail       dc@yopmail.net
+    Bulk_Import_ExportPage.Clear the text of the field      AssignedEmployeeId
+    Bulk_Import_ExportPage.Enter the new value of assigned in the ID column     AssignedEmployeeId
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors          Same user name & email already exists
+    Bulk_Import_ExportPage.Clear the text of the field      AssignedEmployeeId
+    Bulk_Import_ExportPage.Clear the text of the field with delete      AssignedEmail
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import      AssignedEmployeeId       1111
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           Same user name & employee Id already exists
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings           Business Email is missing.
+    Bulk_Import_ExportPage.Clear the text of the field      AssignedEmployeeId
+    Bulk_Import_ExportPage.Clear the text of the field with delete      AssignedEmail
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import      AssignedEmail       dc@yopmail.net
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           Same user name & email already exists
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings          Employee Id is missing.
+    Bulk_Import_ExportPage.Clear the text of the field      AssignedEmployeeId
+    Bulk_Import_ExportPage.Clear the text of the field with delete      AssignedEmail
+    Bulk_Import_ExportPage.Enter the new value of assigned in the email column for bulk import and edit      AssignedEmail
+    Bulk_Import_ExportPage.Enter the new value of assigned in the ID column     AssignedEmployeeId
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings           Same user name already exists
+    Bulk_Import_ExportPage.Clear the text of the field      AssignedEmployeeId
+    Bulk_Import_ExportPage.Clear the text of the field with delete      AssignedEmail
+    Bulk_Import_ExportPage.Clear the text of the field      FirstName
+    Bulk_Import_ExportPage.Clear the text of the field      LastName
+    Bulk_Import_ExportPage.Enter the new value of assigned in the first name column    FirstName
+    Bulk_Import_ExportPage.Enter the new value of assigned in the last name column      LastName
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import      AssignedEmail       dc@yopmail.net
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import      AssignedEmployeeId       1111
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings      Same email & employee Id already exists
+    Bulk_Import_ExportPage.Clear the text of the field      LastName
+    Bulk_Import_ExportPage.Enter the new value of assigned in the last name column      LastName
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings     Same email & employee Id already exists
+    Bulk_Import_ExportPage.Clear the text of the field      AssignedEmployeeId
+    Bulk_Import_ExportPage.Clear the text of the field      FirstName
+    Bulk_Import_ExportPage.Clear the text of the field      LastName
+    Bulk_Import_ExportPage.Enter the new value of assigned in the first name column    FirstName
+    Bulk_Import_ExportPage.Enter the new value of assigned in the last name column      LastName
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings     Same email already exists, Employee Id is missing.
+    Bulk_Import_ExportPage.Clear the text of the field      AssignedEmployeeId
+    Bulk_Import_ExportPage.Clear the text of the field with delete      AssignedEmail
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import      AssignedEmployeeId       1111
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings     Same employee Id already exists, Business Email is missing.
+    Bulk_Import_ExportPage.Clear the text of the field      AssignedEmployeeId
+    Bulk_Import_ExportPage.Clear the text of the field      FirstName
+    Bulk_Import_ExportPage.Enter the new value of assigned in the first name column    FirstName
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import      AssignedEmail       dc@yopmail.net
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings         Same email already exists, Employee Id is missing.
+    EXCEPT
+    Switch Window       aithentic | Member - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    Sleep    ${yop_Sleep}
+    Fail
+    END
+
+Verify all the validations on assigned user bulk import
+    [Tags]    NT        Negative
+    TRY
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the employee ID checkbox   no
+    DashboardPage.Select the employee ID checkbox   yes
+    Generic.select the option from the side menu    Team Members
+    MemberPage.Click on assigned user tab      Assigned Users
+    MemberPage.Click on action button of assigned users
+    MemberPage.Choose the option from the action menu   Bulk Import
+    sleep     ${yop_sleep}
+    switch window     aithentic | Data-Wizard
+    Bulk_Import_ExportPage.Verify that element is not enabled       Check Data
+    Bulk_Import_ExportPage.Verify that element is not enabled       Upload
+    Bulk_Import_ExportPage.Enter the new value of assigned in the last name column      LastName
+    Bulk_Import_ExportPage.Enter the new value of assigned in the email column for bulk import and edit      AssignedEmail
+    Bulk_Import_ExportPage.Enter the new value of assigned in the ID column     AssignedEmployeeId
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           First Name is missing. Please fill in required data.
+    Bulk_Import_ExportPage.Clear the text of the field      LastName
+    Bulk_Import_ExportPage.Enter the new value of assigned in the first name column    FirstName
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           Last Name is missing. Please fill in required data.
+    Bulk_Import_ExportPage.Clear the text of the field with delete      AssignedEmail
+    Bulk_Import_ExportPage.Enter the new value of assigned in the last name column      LastName
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings           Business Email is missing.
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import       AssignedEmail       A.a
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           Email format is incorrect
+    Bulk_Import_ExportPage.Clear the text of the field      AssignedEmail
+    Bulk_Import_ExportPage.Enter the new value of assigned in the email column for bulk import and edit      AssignedEmail
+    Bulk_Import_ExportPage.Clear the text of the field      AssignedEmployeeId
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings          Employee Id is missing.
+    EXCEPT
+    Switch Window       aithentic | Member - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    Sleep    ${yop_Sleep}
+    Fail
+    END
 
 
+Verify all the validations of assigned user bulk edit with existing data
+    [Tags]      Negative
+   TRY
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the employee ID checkbox   no
+    DashboardPage.Select the employee ID checkbox   yes
+    Generic.select the option from the side menu    Team Members
+    MemberPage.Click on assigned user tab      Assigned Users
+    MemberPage.Click on action button of assigned users
+    MemberPage.Choose the option from the action menu   Add Assignee
+    MemberPage.Create random assignee first name
+    MemberPage.Create random assignee last name
+    MemberPage.Create random assignee email
+    MemberPage.Create random assignee ID
+    MemberPage.Save the add assignee    save
+    Generic.Fetch alert message text and compare it with        Assigned Users created successfully
+    Bulk_Import_ExportPage.Search assigned user by first and last name    ${generated_assigneeFname} ${generated_assigneeLname}
+    MemberPage.Click on assigned user action button
+    MemberPage.Choose the option from the action menu   Bulk Edit
+    sleep      ${yop_sleep}
+    Switch Window       aithentic | Data-Wizard
+    Generic.Verify your current page location contains      assignee-bulk-edit
+    Bulk_Import_ExportPage.Clear the text of the field      FirstName
+    Bulk_Import_ExportPage.Clear the text of the field      LastName
+    Bulk_Import_ExportPage.Clear the text of the field      AssignedEmployeeId
+    Bulk_Import_ExportPage.Clear the text of the field with delete      AssignedEmail
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import       FirstName       Dc
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import       LastName        Dc
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           Same user name already exists
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings           Business Email, Employee Id is missing.
+    Bulk_Import_ExportPage.Enter the new value of assigned in the email column for bulk import and edit      AssignedEmail
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import      AssignedEmployeeId       1111
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           Same user name & employee Id already exists
+    Bulk_Import_ExportPage.Clear the text of the field with delete      AssignedEmail
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import      AssignedEmail       dc@yopmail.net
+    Bulk_Import_ExportPage.Clear the text of the field      AssignedEmployeeId
+    Bulk_Import_ExportPage.Enter the new value of assigned in the ID column     AssignedEmployeeId
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors          Same user name & email already exists
+    Bulk_Import_ExportPage.Clear the text of the field      AssignedEmployeeId
+    Bulk_Import_ExportPage.Clear the text of the field with delete      AssignedEmail
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import      AssignedEmployeeId       1111
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           Same user name & employee Id already exists
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings           Business Email is missing.
+    Bulk_Import_ExportPage.Clear the text of the field      AssignedEmployeeId
+    Bulk_Import_ExportPage.Clear the text of the field with delete      AssignedEmail
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import      AssignedEmail       dc@yopmail.net
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           Same user name & email already exists
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings          Employee Id is missing.
+    Bulk_Import_ExportPage.Clear the text of the field      AssignedEmployeeId
+    Bulk_Import_ExportPage.Clear the text of the field with delete      AssignedEmail
+    Bulk_Import_ExportPage.Enter the new value of assigned in the email column for bulk import and edit      AssignedEmail
+    Bulk_Import_ExportPage.Enter the new value of assigned in the ID column     AssignedEmployeeId
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings           Same user name already exists
+    Bulk_Import_ExportPage.Clear the text of the field      AssignedEmployeeId
+    Bulk_Import_ExportPage.Clear the text of the field with delete      AssignedEmail
+    Bulk_Import_ExportPage.Clear the text of the field      FirstName
+    Bulk_Import_ExportPage.Clear the text of the field      LastName
+    Bulk_Import_ExportPage.Enter the new value of assigned in the first name column    FirstName
+    Bulk_Import_ExportPage.Enter the new value of assigned in the last name column      LastName
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import      AssignedEmail       dc@yopmail.net
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import      AssignedEmployeeId       1111
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings      Same email & employee Id already exists
+    Bulk_Import_ExportPage.Clear the text of the field      LastName
+    Bulk_Import_ExportPage.Enter the new value of assigned in the last name column      LastName
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings     Same email & employee Id already exists
+    Bulk_Import_ExportPage.Clear the text of the field      AssignedEmployeeId
+    Bulk_Import_ExportPage.Clear the text of the field      FirstName
+    Bulk_Import_ExportPage.Clear the text of the field      LastName
+    Bulk_Import_ExportPage.Enter the new value of assigned in the first name column    FirstName
+    Bulk_Import_ExportPage.Enter the new value of assigned in the last name column      LastName
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings     Same email already exists, Employee Id is missing.
+    Bulk_Import_ExportPage.Clear the text of the field      AssignedEmployeeId
+    Bulk_Import_ExportPage.Clear the text of the field with delete      AssignedEmail
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import      AssignedEmployeeId       1111
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings     Same employee Id already exists, Business Email is missing.
+    Bulk_Import_ExportPage.Clear the text of the field      AssignedEmployeeId
+    Bulk_Import_ExportPage.Clear the text of the field      FirstName
+    Bulk_Import_ExportPage.Enter the new value of assigned in the first name column    FirstName
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import      AssignedEmail       dc@yopmail.net
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings         Same email already exists, Employee Id is missing.
+    EXCEPT
+    Switch Window       aithentic | Member - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    Sleep    ${yop_Sleep}
+    Fail
+    END
+
+
+Verify all the validations on assigned user bulk edit
+    [Tags]    NT        Negative
+    TRY
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the employee ID checkbox   no
+    DashboardPage.Select the employee ID checkbox   yes
+    Generic.select the option from the side menu    Team Members
+    MemberPage.Click on assigned user tab      Assigned Users
+    MemberPage.Click on action button of assigned users
+    MemberPage.Choose the option from the action menu   Add Assignee
+    MemberPage.Create random assignee first name
+    MemberPage.Create random assignee last name
+    MemberPage.Create random assignee email
+    MemberPage.Create random assignee ID
+    MemberPage.Save the add assignee    save
+    Generic.Fetch alert message text and compare it with        Assigned Users created successfully
+    Bulk_Import_ExportPage.Search assigned user by first and last name    ${generated_assigneeFname} ${generated_assigneeLname}
+    MemberPage.Click on assigned user action button
+    MemberPage.Choose the option from the action menu   Bulk Edit
+    sleep      ${yop_sleep}
+    Switch Window       aithentic | Data-Wizard
+    Generic.Verify your current page location contains      assignee-bulk-edit
+    Bulk_Import_ExportPage.Clear the text of the field      FirstName
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           First Name is missing. Please fill in required data.
+    Bulk_Import_ExportPage.Clear the text of the field      LastName
+    Bulk_Import_ExportPage.Enter the new value of assigned in the first name column    FirstName
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           Last Name is missing. Please fill in required data.
+    Bulk_Import_ExportPage.Clear the text of the field with delete           AssignedEmail
+    Bulk_Import_ExportPage.Enter the new value of assigned in the last name column      LastName
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings           Business Email is missing.
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import       AssignedEmail       A.a
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           Email format is incorrect
+    Bulk_Import_ExportPage.Clear the text of the field      AssignedEmail
+    Bulk_Import_ExportPage.Enter the new value of assigned in the email column for bulk import and edit      AssignedEmail
+    Bulk_Import_ExportPage.Clear the text of the field      AssignedEmployeeId
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings          Employee Id is missing.
+    EXCEPT
+    Switch Window       aithentic | Member - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    Sleep    ${yop_Sleep}
+    Fail
+    END
+
+Verify all the validations of Loaction Bulk import Page
+    [Tags]    NT        Negative
+    TRY
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the location ID checkbox         yes
+    DashboardPage.Select the location ID checkbox   no
+    DashboardPage.Select the location ID checkbox   yes
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Click on Location action button
+    LocationPage.Select the option from action menu      import
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Add - Locations
+    Generic.Verify your current page location contains      add-location-grid
+    Bulk_Import_ExportPage.Verify that element is not enabled       Check Data
+    Bulk_Import_ExportPage.Verify that element is not enabled       Upload
+    LocationPage.Select option from country column       Country
+    Bulk_Import_ExportPage.Enter the new value in the floor number column      Floor      1
+    Bulk_Import_ExportPage.Enter the new value in the room number column       Room        204
+    Bulk_Import_ExportPage.Enter the new value in the first address column      StreetAddress1      This is address1
+    Bulk_Import_ExportPage.Enter the new value in the first address column      StreetAddress2      This is address2
+    Bulk_Import_ExportPage.Enter the new value in the state column    State       Berat District
+    Bulk_Import_ExportPage.Enter the new value in the city column     City        Banaj
+    Bulk_Import_ExportPage.Enter random zip code of bulk import of loaction     Zip
+    Bulk_Import_ExportPage.Enter the new value of cost center in location bulk edit     CostCenter
+    Bulk_Import_ExportPage.Enter the new value in the location name column     LocationTypeName
+    Bulk_Import_ExportPage.Perform the keyboard action      LocationTypeName
+    Bulk_Import_ExportPage.Enter static IP subnet      IPSubnets         192.168.0.1/25
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings         Building name is missing
+    Bulk_Import_ExportPage.Enter the new value in the building name column     BuildingName        Phelps Tower
+    Bulk_Import_ExportPage.Clear the text of the field      Floor
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings     Floor is missing
+    Bulk_Import_ExportPage.Enter the new value in the floor number column      Floor      1
+    Bulk_Import_ExportPage.Clear the text of the field      Room
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings       Room is missing
+    Bulk_Import_ExportPage.Enter the new value in the room number column       Room        204
+    Bulk_Import_ExportPage.Clear the text of the field      StreetAddress1
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings       Address line 1 is missing
+    Bulk_Import_ExportPage.Enter the new value in the first address column      StreetAddress1      This is address1
+    Bulk_Import_ExportPage.Clear the text of the field      StreetAddress2
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings       Address line 2 is missing
+    Bulk_Import_ExportPage.Enter the new value in the first address column      StreetAddress2      This is address1
+    Bulk_Import_ExportPage.Clear the text of the field      City
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings     City is missing
+    Bulk_Import_ExportPage.Enter the new value in the city column     City        Banaj
+    Bulk_Import_ExportPage.Clear the text of the field      State
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings     State is missing
+    Bulk_Import_ExportPage.Enter the new value in the state column    State       Berat District
+    Bulk_Import_ExportPage.Clear the text of the field      Zip
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings     Zip code is missing
+    Bulk_Import_ExportPage.Enter random zip code of bulk import of loaction     Zip
+    Bulk_Import_ExportPage.Clear the text of the field      CostCenter
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings     Cost Center is missing
+    Bulk_Import_ExportPage.Enter the new value of cost center in location bulk edit     CostCenter
+    Bulk_Import_ExportPage.Clear the text of the field      LocationTypeName
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationErrors     Location is missing
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import       LocationTypeName        *Main Office
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationErrors     Location already exists
+    Bulk_Import_ExportPage.Clear the text of the field      LocationTypeName
+    Bulk_Import_ExportPage.Enter the new value in the location name column     LocationTypeName
+    Bulk_Import_ExportPage.Clear the text of the field      IPSubnets
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings     IP Subnets is missing
+    Bulk_Import_ExportPage.Enter static IP subnet      IPSubnets         192.168.0.1/25
+    EXCEPT
+    Switch Window       aithentic | Location - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the location ID checkbox   yes
+    Sleep    ${yop_Sleep}
+    Fail
+    END
+
+Verify all the validations om Location bulk edit
+    [Tags]    NT        Negative
+    TRY
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the location ID checkbox         yes
+    DashboardPage.Select the location ID checkbox   no
+    DashboardPage.Select the location ID checkbox   yes
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Click on Location action button
+    LocationPage.Click on add location button    Add New Location
+    Generic.Verify your current page location contains      add-location
+    LocationPage.Select location country     United States
+    LocationPage.Select location building name   Trump tower
+    LocationPage.Select location floor   second
+    LocationPage.Select location room    203
+    LocationPage.Select location address one     this address one of the location
+    LocationPage.Select location address two     this address two of the location
+    LocationPage.Select location state       Texas
+    LocationPage.Select location city        Austin
+    LocationPage.Select location zip     147001
+    LocationPage.Enter random cost center value
+    LocationPage.Create random location name
+    LocationPage.Enter input in the IP subnet field     1              192.168.0.0/23
+    LocationPage.Save location form     save
+    Generic.Fetch alert message text and compare it with    Location created successfully
+    Bulk_Import_ExportPage.Search by location name     ${generated_location}
+    LocationPage.Fetch the location Name from the row       ${generated_location}
+    LocationPage.Click on Location action button
+    LocationPage.Select the option from action menu      edit
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Edit - Locations
+    Generic.Verify your current page location contains      location-bulk-edit
+    Bulk_Import_ExportPage.Clear the text of the field      BuildingName
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings         Building name is missing
+    Bulk_Import_ExportPage.Enter the new value in the building name column     BuildingName        Phelps Tower
+    Bulk_Import_ExportPage.Clear the text of the field      Floor
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings     Floor is missing
+    Bulk_Import_ExportPage.Enter the new value in the floor number column      Floor      1
+    Bulk_Import_ExportPage.Clear the text of the field      Room
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings       Room is missing
+    Bulk_Import_ExportPage.Enter the new value in the room number column       Room        204
+    Bulk_Import_ExportPage.Clear the text of the field      StreetAddress1
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings       Address line 1 is missing
+    Bulk_Import_ExportPage.Enter the new value in the first address column      StreetAddress1      This is address1
+    Bulk_Import_ExportPage.Clear the text of the field      StreetAddress2
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings       Address line 2 is missing
+    Bulk_Import_ExportPage.Enter the new value in the first address column      StreetAddress2      This is address1
+    Bulk_Import_ExportPage.Clear the text of the field      City
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings     City is missing
+    Bulk_Import_ExportPage.Enter the new value in the city column     City        Tabursuq
+    Bulk_Import_ExportPage.Clear the text of the field      State
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings     State is missing
+    Bulk_Import_ExportPage.Enter the new value in the state column    State       Kassrine
+    Bulk_Import_ExportPage.Clear the text of the field      Zip
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings     Zip code is missing
+    Bulk_Import_ExportPage.Enter random zip code of bulk import of loaction     Zip
+    Bulk_Import_ExportPage.Clear the text of the field      CostCenter
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings     Cost Center is missing
+    Bulk_Import_ExportPage.Enter the new value of cost center in location bulk edit     CostCenter
+    Bulk_Import_ExportPage.Clear the text of the field      LocationTypeName
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationErrors     Location is missing, State does not exist, City does not exist
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import       LocationTypeName        *Main Office
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationErrors     Location already exists, State does not exist, City does not exist
+    Bulk_Import_ExportPage.Clear the text of the field      LocationTypeName
+    Bulk_Import_ExportPage.Enter the new value in the location name column     LocationTypeName
+    Bulk_Import_ExportPage.Clear the text of the field      IPSubnets
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings     IP Subnets is missing
+    Bulk_Import_ExportPage.Clear the text of the field with delete      Country
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationErrors     Country is missing, State cannot insert without Country, City cannot insert without Country, State does not exist, City does not exist
+    EXCEPT
+    Switch Window       aithentic | Location - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the location ID checkbox   yes
+    Sleep    ${yop_Sleep}
+    Fail
+    END
+
+Verify all the validations of department bulk import under asset wizard
+    [Tags]      Negative
+    TRY
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains     technology-list
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.click on bulk import under action button of technology
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Data-Wizard
+    Bulk_Import_ExportPage.click on all checkbox under technology bulk import        Any new department names
+    Generic.click on the button     Next
+    Bulk_Import_ExportPage.Click on the bulk import option under asset wizard via technology
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Data-Wizard
+    Generic.Verify your current page location contains      add-department-grid
+    Bulk_Import_ExportPage.Verify that element is not enabled       Check Data
+    Bulk_Import_ExportPage.Verify that element is not enabled       Upload
+    Bulk_Import_ExportPage.Select option from department status column in bulk_import      status
+    Bulk_Import_ExportPage.Enter the new value in the cost center column in bulk_import     costCenter
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationErrors      Department Name is missing
+    Generic.Refresh the existing page
+    Generic.Verify your current page location contains     add-department-grid
+    Bulk_Import_ExportPage.Enter the new value in the cost center column in bulk_import     costCenter
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationErrors      Department Name is missing, Status is missing
+    Bulk_Import_ExportPage.Clear the text of the field      costCenter
+    Bulk_Import_ExportPage.Enter the new value in the department name column in bulk_import     department_name
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationErrors      Status is missing
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings      Cost Center is missing
+    DashboardPage.Double click     department_name
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import       department_name         Department_milan
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationErrors      Department already exists, Status is missing
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings      Cost Center is missing
+    EXCEPT
+    Switch Window       aithentic | Department - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    Sleep    ${yop_Sleep}
+    Fail
+    END
+
+Verify all the validations of location bulk import under asset wizard
+    [Tags]      Negative
+    TRY
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the location ID checkbox         yes
+    DashboardPage.Select the location ID checkbox   no
+    DashboardPage.Select the location ID checkbox   yes
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains     technology-list
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.click on bulk import under action button of technology
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Data-Wizard
+    Bulk_Import_ExportPage.click on all checkbox under technology bulk import       - Location Names
+    Generic.click on the button     Next
+    Bulk_Import_ExportPage.Click on the location bulk import option under asset wizard via technology
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Add - Locations
+    Generic.Verify your current page location contains     add-location-grid
+    LocationPage.Select option from country column       Country
+    Bulk_Import_ExportPage.Enter the new value in the floor number column      Floor      1
+    Bulk_Import_ExportPage.Enter the new value in the room number column       Room        204
+    Bulk_Import_ExportPage.Enter the new value in the first address column      StreetAddress1      This is address1
+    Bulk_Import_ExportPage.Enter the new value in the first address column      StreetAddress2      This is address2
+    Bulk_Import_ExportPage.Enter the new value in the state column    State       Berat District
+    Bulk_Import_ExportPage.Enter the new value in the city column     City        Banaj
+    Bulk_Import_ExportPage.Enter random zip code of bulk import of loaction     Zip
+    Bulk_Import_ExportPage.Enter the new value of cost center in location bulk edit     CostCenter
+    Bulk_Import_ExportPage.Enter the new value in the location name column     LocationTypeName
+    Bulk_Import_ExportPage.Perform the keyboard action      LocationTypeName
+    Bulk_Import_ExportPage.Enter static IP subnet      IPSubnets         192.168.0.1/25
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings         Building name is missing
+    Bulk_Import_ExportPage.Enter the new value in the building name column     BuildingName        Phelps Tower
+    Bulk_Import_ExportPage.Clear the text of the field      Floor
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings     Floor is missing
+    Bulk_Import_ExportPage.Enter the new value in the floor number column      Floor      1
+    Bulk_Import_ExportPage.Clear the text of the field      Room
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings       Room is missing
+    Bulk_Import_ExportPage.Enter the new value in the room number column       Room        204
+    Bulk_Import_ExportPage.Clear the text of the field      StreetAddress1
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings       Address line 1 is missing
+    Bulk_Import_ExportPage.Enter the new value in the first address column      StreetAddress1      This is address1
+    Bulk_Import_ExportPage.Clear the text of the field      StreetAddress2
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings       Address line 2 is missing
+    Bulk_Import_ExportPage.Enter the new value in the first address column      StreetAddress2      This is address1
+    Bulk_Import_ExportPage.Clear the text of the field      City
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings     City is missing
+    Bulk_Import_ExportPage.Enter the new value in the city column     City        Banaj
+    Bulk_Import_ExportPage.Clear the text of the field      State
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings     State is missing
+    Bulk_Import_ExportPage.Enter the new value in the state column    State       Berat District
+    Bulk_Import_ExportPage.Clear the text of the field      Zip
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings     Zip code is missing
+    Bulk_Import_ExportPage.Enter random zip code of bulk import of loaction     Zip
+    Bulk_Import_ExportPage.Clear the text of the field      CostCenter
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings     Cost Center is missing
+    Bulk_Import_ExportPage.Enter the new value of cost center in location bulk edit     CostCenter
+    Bulk_Import_ExportPage.Clear the text of the field      LocationTypeName
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationErrors     Location is missing
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import       LocationTypeName        *Main Office
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationErrors     Location already exists
+    Bulk_Import_ExportPage.Clear the text of the field      LocationTypeName
+    Bulk_Import_ExportPage.Enter the new value in the location name column     LocationTypeName
+    Bulk_Import_ExportPage.Clear the text of the field      IPSubnets
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings     IP Subnets is missing
+    Bulk_Import_ExportPage.Enter static IP subnet      IPSubnets         192.168.0.1/25
+    EXCEPT
+    Switch Window       aithentic | Location - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the location ID checkbox   yes
+    Sleep    ${yop_Sleep}
+    Fail
+    END
+
+Verify all the validations of Team member bulk import under asset wizard
+    [Tags]          Negative
+    TRY
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the employee ID checkbox   no
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains     technology-list
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.click on bulk import under action button of technology
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Data-Wizard
+    Bulk_Import_ExportPage.click on checkbox under technology bulk import
+    Bulk_Import_ExportPage.click on all checkbox under technology bulk import       Admin, Asset managers and Asset users.
+    Generic.click on the button     Next
+    Bulk_Import_ExportPage.Click on the team member bulk import under asset wizard
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Member - Import
+    Bulk_Import_ExportPage.Verify that element is not enabled       Check Data
+    Bulk_Import_ExportPage.Verify that element is not enabled       Upload
+    Bulk_Import_ExportPage.Enter the new value of first name in bulk import of team member      FirstName
+    Bulk_Import_ExportPage.Enter the new value of last name in bulk import of team member       LastName
+    Bulk_Import_ExportPage.Enter random employee id of bulk import      EmployeeId
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       CountryCode     1
+    Bulk_Import_ExportPage.Enter the new value of team member in the phone number column        MobileNo
+    Bulk_Import_ExportPage.Enter the new value of team member in the email column       BusinessEmail
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text   validationErrors      Department, Location, Member Role is missing. Please fill in required data.
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings      Position/Title is missing.
+    Bulk_Import_ExportPage.Clear the text of the field with delete under asset wizard      FirstName
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       DepartmentName      3
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       MemberLocation      3
+    Bulk_Import_ExportPage.Perform the keyboard action      MemberLocation
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       MemberRole     2
+    Bulk_Import_ExportPage.Perform the keyboard action      MemberRole
+    Bulk_Import_ExportPage.Enter position and title of team member bulk import      QA
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text   validationErrors      First Name is missing. Please fill in required data.
+    Bulk_Import_ExportPage.Enter the new value of first name in bulk import of team member      FirstName
+    Bulk_Import_ExportPage.Clear the text of the field with delete under asset wizard      LastName
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text   validationErrors      Last Name is missing. Please fill in required data.
+    Bulk_Import_ExportPage.Enter the new value of last name in bulk import of team member       LastName
+    Bulk_Import_ExportPage.Clear the text of the field with delete under asset wizard      EmployeeId
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text   validationErrors      Employee ID is missing. Please fill in required data.
+    Bulk_Import_ExportPage.Enter random employee id of bulk import      EmployeeId
+    Bulk_Import_ExportPage.Clear the text of the field      MobileNo
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text   validationErrors      Mobile Number is missing. Please fill in required data.
+    Bulk_Import_ExportPage.Enter the new value of team member in the phone number column        MobileNo
+    Bulk_Import_ExportPage.Clear the text of the field with delete      BusinessEmail
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text   validationErrors      Business Email is missing. Please fill in required data.
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import       BusinessEmail        F_milan1@mail-mario.fr.nf
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text   validationErrors      Business Email already exists
+    Bulk_Import_ExportPage.Clear the text of the field with delete      BusinessEmail
+    Bulk_Import_ExportPage.Clear the text of the field with delete under asset wizard      EmployeeId
+    Bulk_Import_ExportPage.Clear the text of the field with delete under asset wizard      FirstName
+    Bulk_Import_ExportPage.Enter static value in the fields of team membder bulk import under asset wizard       FirstName        F_milan1@mail-mario.fr.nf
+    Bulk_Import_ExportPage.Enter static value in the fields of team membder bulk import under asset wizard       EmployeeId        267818408
+    Bulk_Import_ExportPage.Enter the new value of team member in the email column       BusinessEmail
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text   validationErrors      Employee ID already exists
+    Bulk_Import_ExportPage.Clear the text of the field      MobileNo
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import       MobileNo        963214563
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text   validationErrors      Mobile Number is invalid, Employee ID already exists
+    Bulk_Import_ExportPage.Clear the text of the field      MobileNo
+    EXCEPT
+    Switch Window       aithentic | Member - List
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    Sleep    ${yop_Sleep}
+    Fail
+    END
 
 #Zz kill browser
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

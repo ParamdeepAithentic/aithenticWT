@@ -71,6 +71,11 @@ Select the billing payment type
     click element       css:.fa-${option}
 #options: credit-card, university
 
+Close the add card pop-up
+    Wait Until Element Is Visible       //div[@id='updateCard']//button[@class='close']    ${wait_time}
+    Wait Until Element Is Enabled       //div[@id='updateCard']//button[@class='close']     ${wait_time}
+    click element       //div[@id='updateCard']//button[@class='close']
+
 Enter billing account number
     [Arguments]    ${option}
     Generic.Enter value into field  ${ach_account_number}       ${option}
