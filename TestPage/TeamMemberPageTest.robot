@@ -1719,6 +1719,79 @@ Verify all the validations of Add Team Member under asset wizard
     TeamMemberPage.Save the team member form   save
     Generic.Fetch alert message text and compare it with      This Email is already registered.
 
+Check if user click on convert to tm button and confirm popup then come back without adding team member then able to see the assigne user in listing
+    [Tags]      Sanity      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       deepparam112@mail-mario.fr.nf    Paramdeep@112
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    MemberPage.Click on assigned user tab     Assigned Users
+    MemberPage.Click on action button of assigned users
+    MemberPage.Select option from action button of assigned user    Add Assignee
+    MemberPage.Enter first name of assigned users
+    MemberPage.Enter last name of assigned users
+    MemberPage.Enter business email of assigned users
+    TechnologyPage.Create unique assign to employee_ID random
+    MemberPage.Click on save button of assigned user
+    Generic.Fetch alert message text and compare it with        Assigned Users created successfully
+    MemberPage.Search assigned user by first name   ${generated_AssigneduserFirstName}
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list    QABrand555
+    TechnologyPage.Select parameter from technology dropdown list       OPMR815324
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Add assignment information assign to   ${generated_AssigneduserFirstName}       ${generated_TMLname}
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.click on the button link    Edit
+    TechnologyPage.Select technology lifecycle status      Active
+    MemberPage.Enter assign to field   Dc Dc
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+    Generic.Verify your current page contains this text             Technology
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    MemberPage.Click on assigned user tab   Assigned Users
+    MemberPage.Search assigned user by first name   ${generated_AssigneduserFirstName}
+    MemberPage.Click on three dots of Team Member listing
+    MemberPage.Select option from three dots of Team Member     Asset History
+    Generic.Verify your current page location contains      asset-history
+    MemberPage.Search assigned user by asset id     ${generated_AssetID}
+    TeamMemberPage.Click on back to member list of member list
+    MemberPage.Click on assigned user tab   Assigned Users
+    MemberPage.Search assigned user by first name   ${generated_AssigneduserFirstName}
+    MemberPage.Click on three dots of Team Member listing
+    MemberPage.Select option from three dots of Team Member     Convert to TM
+    TeamMemberPage.Click on convert to team member confirm pop up
+    Sleep   ${yop_sleep}
+    switch window   aithentic | Update - Member
+    Generic.Verify your current page location contains      convertmember
+    TeamMemberPage.Click on the cancel button after click on convert to team member button
+    Sleep   ${yop_sleep}
+    switch window   aithentic | Member - List
+    Generic.Verify your current page location contains      memberslist
+    MemberPage.Click on assigned user tab   Assigned Users
+    MemberPage.Search assigned user by first name   ${generated_AssigneduserFirstName}
+
 #Zz kill browser
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
 
