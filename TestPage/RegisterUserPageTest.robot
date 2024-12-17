@@ -2163,7 +2163,7 @@ Verify all the validations on profile page
     Unselect Frame
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
-    RegisterUserPage.Fetch the validation message after entering invalid data in register user page       Your card's expiration year is in the past.
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Your card's expiration year is in the past.
 #    SubscriptionPage.Switch to card iframe
 #    LoginPage.Clear the element text of field under login page      ${CardNumber_locator}
 #    Unselect Frame

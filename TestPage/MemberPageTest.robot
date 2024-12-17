@@ -381,10 +381,10 @@ Verify all the validations of Add Assigned Users via technology
     MemberPage.Enter last name of assigned users
     MemberPage.Enter invalid business email of assigned users       samuel@yopmail
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page           Please enter valid Business Email
-    LoginPage.Clear the element text of field under login page      ${assigneeEmail}
+    LoginPage.Clear the element text of field under login page      AssignedEmail
     MemberPage.Enter invalid business email of assigned users       samuelyopmail
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page           Please enter valid Business Email
-    LoginPage.Clear the element text of field under login page      ${assigneeEmail}
+    LoginPage.Clear the element text of field under login page      AssignedEmail
     MemberPage.Enter business email of assigned users
     TechnologyPage.Create unique assign to employee_ID random
     MemberPage.Click on save button of assigned user
