@@ -1957,3 +1957,26 @@ Add invalid brand under product asset wizard
     input text   ${enterAndSelect_Brand}   ${brand}
     sleep  ${search_sleep}
     wait until element is visible       //div[contains(@class,"ng-option-disabled")][normalize-space()='No items found']        ${wait_time}
+
+Hover over reset filter icon of management console
+    Wait Until Element Is Not Visible    ${loaderIcon}    ${wait_time}
+    wait until element is visible      //div[contains(@class,'icon-container')]//i        ${wait_time}
+    wait until element is enabled      //div[contains(@class,'icon-container')]//i         ${wait_time}
+    Mouse Over      //div[contains(@class,'icon-container')]//i
+    ${title_locator}=       Get Element Attribute   //div[contains(@class,'icon-container')]//i     title
+    log to console      ${title_locator}
+    set global variable     ${title_locator}
+
+Hover over other icons of mangement console
+    [Arguments]     ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}    ${wait_time}
+    wait until element is visible      //div[contains(@class,'icon-container')]//img[contains(@src,'${option}')]      ${wait_time}
+    wait until element is enabled      //div[contains(@class,'icon-container')]//img[contains(@src,'${option}')]        ${wait_time}
+    Mouse Over      //div[contains(@class,'icon-container')]//img[contains(@src,'${option}')]
+    ${title_locator}=       Get Element Attribute  //div[contains(@class,'icon-container')]//img[contains(@src,'${option}')]      title
+    log to console      ${title_locator}
+    set global variable     ${title_locator}
+
+Compare the text of Icon
+    [Arguments]     ${option1}       ${option2}
+    should be equal         ${option1}       ${option2}
