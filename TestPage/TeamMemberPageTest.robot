@@ -1720,12 +1720,11 @@ Verify all the validations of Add Team Member under asset wizard
     Generic.Fetch alert message text and compare it with      This Email is already registered.
 
 Check if user click on convert to tm button and confirm popup then come back without adding team member then able to see the assigne user in listing
-    [Tags]      Sanity      Negative
+    [Tags]         Negative
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       deepparam112@mail-mario.fr.nf    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
-
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
     I_iconPage.Choose options inside personal_details        Organization
