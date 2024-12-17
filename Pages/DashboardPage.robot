@@ -1700,6 +1700,7 @@ Add invalid brand manufacturer country
     [Arguments]    ${country}
     click element   ${brand_country}
     Clear Element Text      ${brand_country}
+    sleep  ${search_sleep}
     input text   ${brand_country}   ${country}
     sleep  ${search_sleep}
     wait until element is visible       //div[contains(@class,"ng-option-disabled")][normalize-space()='No items found']        ${wait_time}
@@ -1869,6 +1870,13 @@ Verify the warning is visible when deactivate or remove brand
 
 Verify update button is not visible on edit brand page
     wait until element is not visible       //button[normalize-space()='Update']
+
+Create random brandName with 101 characters
+    ${random_string} =    Generate Random String       101      [NUMBERS]
+    ${generated_BrandName_new}=    Catenate    BrandName${random_string}
+    input text   ${add_brandName}   ${generated_BrandName_new}
+    log to console      ${generated_BrandName_new}
+    set global variable    ${generated_BrandName_new}
 
 Enter to Static Email into popup of share aithentic
     [Arguments]     ${option}
