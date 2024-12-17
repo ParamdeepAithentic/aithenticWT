@@ -3102,6 +3102,7 @@ Verify all the character validations of add brand page
     Generic.Click on the profile name
     Generic.Select option from profile list     brand-dropdown
     Generic.Verify your current page location contains      brand
+    DashboardPage.Save added brand details
     DashboardPage.Click add brand button
     DashboardPage.Create random brandName with 101 characters
     DashboardPage.Add business manufacturer URL       ${generated_BrandName_new}
