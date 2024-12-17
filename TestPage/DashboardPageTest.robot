@@ -3125,7 +3125,7 @@ Share invite to the registered user
     Generic.Fetch alert message text and compare it with containing text        Email Address already exists.
 
 Verify all the validations of Personal Details page
-    [Tags]    NT    Negative
+    [Tags]       Negative
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}       ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -3365,6 +3365,28 @@ Verify all the validations of Product Bulk import under asset wizard
     Enter the value in the product_feature column in bulk_import        ProductFeatures
     Generic.Click on the button     Check Data      #Update,Edit
     Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           Product Product_bulk_import already exists
+
+Verify all the validations of Compose Message
+    [Tags]      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Messages
+    Generic.Verify your current page location contains      message
+    Generic.Select parameter     Compose
+    Generic.Verify your current page location contains      message
+    Generic.click on the button     Send
+    DashboardPage.Fetch the all validation message after click on the send button of compose message
+    DashboardPage.Add invalid text in the recipient field under compose message     Invalid45
+    DashboardPage.Enter invalid input in the status field under compose message     Text
+    DashboardPage.Enter 101 text in the subject field under compose message
+    DashboardPage.Wait for the invisibility of the 0 character remaining text
+    LoginPage.Clear the element text of field under login page      ClientMessageSubject
+    DashboardPage.Enter text in the subject field under compose message
+    DashboardPage.Enter 101 characters in the client message field under compose message
+    DashboardPage.Wait for the invisibility of the 0 character remaining text
+
 
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
