@@ -636,23 +636,23 @@ Check all the validations of forgot password page
     RegisterUserPage.Enter new password under reset password page   Test@12
     RegisterUserPage.Click on the submit button under forgot password page
     RegisterUserPage.Get and verify the validation in reset password page      Passwords don't match.
-    LoginPage.Clear The Element Text for phone number      //input[@id='password-new']
+    LoginPage.Clear The Element Text of the particular field      //input[@id='password-new']
     RegisterUserPage.Enter confirm password under reset password page   Test@12
     RegisterUserPage.Click on the submit button under forgot password page
     RegisterUserPage.Get and verify the validation in reset password page      Please specify password.
-    LoginPage.Clear The Element Text for phone number      //input[@id='password-confirm']
+    LoginPage.Clear The Element Text of the particular field      //input[@id='password-confirm']
     RegisterUserPage.Enter new password under reset password page   12345678
     RegisterUserPage.Enter confirm password under reset password page   12345678
     RegisterUserPage.Click on the submit button under forgot password page
     RegisterUserPage.Get and verify the top validation under reset password     Invalid password: must contain at least 1 special characters.
-    LoginPage.Clear The Element Text for phone number      //input[@id='password-new']
-    LoginPage.Clear The Element Text for phone number      //input[@id='password-confirm']
+    LoginPage.Clear The Element Text of the particular field      //input[@id='password-new']
+    LoginPage.Clear The Element Text of the particular field      //input[@id='password-confirm']
     RegisterUserPage.Enter new password under reset password page   @1234567
     RegisterUserPage.Enter confirm password under reset password page   @1234567
     RegisterUserPage.Click on the submit button under forgot password page
     RegisterUserPage.Get and verify the top validation under reset password     Invalid password: must contain at least 1 upper case characters.
-    LoginPage.Clear The Element Text for phone number      //input[@id='password-new']
-    LoginPage.Clear The Element Text for phone number      //input[@id='password-confirm']
+    LoginPage.Clear The Element Text of the particular field      //input[@id='password-new']
+    LoginPage.Clear The Element Text of the particular field      //input[@id='password-confirm']
     RegisterUserPage.Enter new password under reset password page   T@123456
     RegisterUserPage.Enter confirm password under reset password page   T@123456
     RegisterUserPage.Click on the submit button under forgot password page
