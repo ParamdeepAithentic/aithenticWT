@@ -1957,3 +1957,56 @@ Add invalid brand under product asset wizard
     input text   ${enterAndSelect_Brand}   ${brand}
     sleep  ${search_sleep}
     wait until element is visible       //div[contains(@class,"ng-option-disabled")][normalize-space()='No items found']        ${wait_time}
+
+Fetch the all validation message after click on the send button of compose message
+   wait until element is visible   //span[contains(@class,'invalidInput')]       ${wait_time}
+   @{expectedList} =    Create List       Please Select Recipient Name        Please Select Status          Please Enter Subject        Please Enter Message
+   ${elements} =  Get WebElements     //span[contains(@class,'invalidInput')]
+   @{actualList} =   Create List
+   FOR  ${element}  IN      @{elements}
+      log to console    ${element.text}
+      Append To List    ${actualList}     ${element.text}
+   END
+   lists should be equal    ${expectedList}    ${actualList}
+
+Add invalid text in the recipient field under compose message
+    [Arguments]     ${message}
+    wait until element is visible      //input[@id='Recipient_list']     ${wait_time}
+    wait until element is visible      //input[@id='Recipient_list']      ${wait_time}
+    click element   //input[@id='Recipient_list']
+    input text      //input[@id='Recipient_list']       ${message}
+    sleep  ${search_sleep}
+    wait until element is visible       //div[contains(@class,"ng-option-disabled")][normalize-space()='No items found']        ${wait_time}
+
+Enter invalid input in the status field under compose message
+    [Arguments]     ${message_status}
+    wait until element is visible      //input[@id='message-Status']     ${wait_time}
+    wait until element is visible      //input[@id='message-Status']      ${wait_time}
+    click element   //input[@id='message-Status']
+    input text     //input[@id='message-Status']       ${message_status}
+    sleep  ${search_sleep}
+    wait until element is visible       //div[contains(@class,"ng-option-disabled")][normalize-space()='No items found']        ${wait_time}
+
+Enter 101 text in the subject field under compose message
+    wait until element is visible      css:#ClientMessageSubject     ${wait_time}
+    wait until element is visible     css:#ClientMessageSubject      ${wait_time}
+    click element   css:#ClientMessageSubject
+    ${random_string} =    Generate Random String       101      [LETTERS]
+    ${generated_subject_max}=    Catenate    Subject:${random_string}
+    input text     css:#ClientMessageSubject       ${generated_subject_max}
+    sleep       ${search_sleep}
+    log to console      ${generated_subject_max}
+    set global variable     ${generated_subject_max}
+
+Wait for the invisibility of the 0 character remaining text
+    wait until element is visible      //span[normalize-space()='0 Characters remaining']     ${wait_time}
+
+Enter 101 characters in the client message field under compose message
+    wait until element is visible      css:#ClientMessageDetail     ${wait_time}
+    wait until element is visible     css:#ClientMessageDetail      ${wait_time}
+    click element   css:#ClientMessageDetail
+    ${random_string} =    Generate Random String       301      [LETTERS]
+    ${generated_client_max}=    Catenate    Client_Message:${random_string}
+    input text     css:#ClientMessageDetail       ${generated_client_max}
+    log to console     ${generated_client_max}
+    set global variable   ${generated_client_max}
