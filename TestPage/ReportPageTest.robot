@@ -89,11 +89,11 @@ Verify Reports Key Data records count
     ReportsPage.Verify that key_data is equals to total number of counts      Partners
 #    Go back
 #    Generic.Verify your current page location contains          account-overview
-#    ReportsPage.Click on tab under key data       Contracts
+#    ReportsPage.Click on tab under key data       Smart Share
 #    Generic.Verify your current page location contains          contracts-list
 #    Generic.Scroll Window To End
 #    ReportsPage.Fetch the total count
-#    ReportsPage.Verify that key_data is equals to total number of counts      Contracts
+#    ReportsPage.Verify that key_data is equals to total number of counts     Smart Share
 
 Verify Reports Technology Types records count
     [Tags]      Sanity
@@ -153,6 +153,16 @@ Verify reports modules data
     ReportsPage.Fetch the total count
     ReportsPage.Verify number of modules are equals to total counts     Manage Technology
     Go back
+    Generic.Click on the profile name
+    Generic.Select logout option from profile list
+    Generic.Fetch log_out alert message
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form     johns@mai.25u.com        Test@123
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Dashboard
+    DashboardPage.select the option from the dashboard drawer       Account Overview
+    Generic.Verify your current page location contains          account-overview
     ReportsPage.Click on tab under Modules       Network Discovery Agents
     Generic.Verify your current page location contains          discovery-assets
     ReportsPage.Fetch total installed Agents      Installed Agents -

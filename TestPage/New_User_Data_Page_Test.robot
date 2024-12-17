@@ -45,19 +45,13 @@ Test Teardown   Close Browser session
 
 
 
-
-
-
-
-
-
 *** Variables ***
 
 
 
 
 *** Test Cases ***
-Register new user
+Create a fresh user
     [Tags]      Smoke       Time
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.click on the tab	Register
@@ -145,6 +139,21 @@ Register new user
     DashboardPage.Select the location ID checkbox   yes
     DashboardPage.Select the asset ID checkbox      no
     Generic.Fetch alert message text and compare it with       Settings Updated
+    Generic.Click on the profile name
+    Generic.Select option from profile list     billing-dropdown
+    Generic.Verify your current page location contains      billing-details
+    BillingPage.Click on the arrow of billing details
+    BillingPage.Click on add new card/bank
+    BillingPage.Select the billing payment type     university
+    SubscriptionPage.Enter card account number    000123456789
+    SubscriptionPage.Enter card routing number      110000000
+    SubscriptionPage.Enter account holder name    Paramdeep Singh
+    BillingPage.Save the billing payment form   save
+    Generic.Fetch alert message text and compare it with      Card added successfully
+    BillingPage.Close the add card pop-up
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
     DashboardPage.Select an option from company details side list   Security
     Generic.Verify your current page location contains  security
     DashboardPage.click on the authentication tab under security
@@ -155,9 +164,9 @@ Register new user
 
 ########################### DONT ADD IN PRE PROD #############################
 Adding the data in the account
-    [Tags]    NT
+    [Tags]    Smoke     Sanity
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       deepparam112@mail-mario.fr.nf    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
@@ -252,6 +261,15 @@ Adding the data in the account
     TechnologyPage.Method 1      Product_certificate
     TechnologyPage.Get new product     Product_certificate        Certificate     Communication
 
+     TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Click on the product field under add technology      Product_00123
+    TechnologyPage.Method 1      Product_00123
+    TechnologyPage.Get new product     Product_00123     Hardware     Applications
+
 
 
     Generic.select the option from the side menu    Location
@@ -267,12 +285,47 @@ Adding the data in the account
 
     LocationPage.Method 1        United States - Test qa Up50260220 - 21 - 2
     LocationPage.Get new location       United States - Test qa Up50260220 - 21 - 2
+
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Search by location name using statc location      United States - Main Office - 21 - 2
+
+    LocationPage.Method 1        United States - Main Office - 21 - 2
+    LocationPage.Get new location       United States - Main Office - 21 - 2
+
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Search by location name using statc location     Canada
+    LocationPage.Method 1       Canada
+    LocationPage.Get new location       Canada
+
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Search by location name using statc location     India
+    LocationPage.Method 1       India
+    LocationPage.Get new location       India
+
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Search by location name using statc location     Turkey
+    LocationPage.Method 1       Turkey
+    LocationPage.Get new location       Turkey
+
+
     Generic.Click on the profile name
     Generic.Select option from profile list     department-dropdown
     Generic.Verify your current page location contains      department
     DepartmentPage.Search by static department name      TestQA Department Up31840619
     DepartmentPage.Verify the search static department      TestQA Department Up31840619
     DepartmentPage.Get new department          TestQA Department Up31840619
+
+    Generic.Click on the profile name
+    Generic.Select option from profile list     department-dropdown
+    Generic.Verify your current page location contains      department
+    DepartmentPage.Search by static department name      Do not Delete this Department
+    DepartmentPage.Verify the search static department      Do not Delete this Department
+    DepartmentPage.Get new department          Do not Delete this Department
+
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     MemberPage.Click on assigned user tab under team member      Assigned Users

@@ -63,7 +63,7 @@ Free the asset limit
 Create team member form
     [Tags]    Sanity    Smoke
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       deepparam112@mail-mario.fr.nf    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
@@ -81,7 +81,7 @@ Create team member form
     TeamMemberPage.Enter team member first name
     TeamMemberPage.Enter team member last name
     Generic.Enter phone number      India   +91     9646289871
-    TeamMemberPage.Enter team member business email_mailinator
+    TeamMemberPage.Enter team member business email_yopmail
     TeamMemberPage.Click on team member department
 #    TeamMemberPage.Select team member department
     TeamMemberPage.Select team member department        DepartmentName09041
@@ -95,7 +95,7 @@ Create team member form
 Add Team member page - Add New Department and assign that department to Team member
     [Tags]      NT
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       deepparam112@mail-mario.fr.nf    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Team Members
@@ -105,7 +105,7 @@ Add Team member page - Add New Department and assign that department to Team mem
     TeamMemberPage.Enter team member first name
     TeamMemberPage.Enter team member last name
     Generic.Enter phone number      India   +91     9646289871
-    TeamMemberPage.Enter team member business email_mailinator
+    TeamMemberPage.Enter team member business email_yopmail
     TeamMemberPage.Enter the Position in member form        QA
     sleep       ${yop_sleep}
     TeamMemberPage.Click on add here in department field        Click here to add
@@ -122,9 +122,9 @@ Add Team member page - Add New Department and assign that department to Team mem
     TeamMemberPage.Search Team Member by name       ${generated_TMFname}
 
 Edit Team member page - Edit New Department and assign that department to Team member
-    [Tags]      Sanity      rerun
+    [Tags]      Sanity        
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       deepparam112@mail-mario.fr.nf    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
@@ -144,7 +144,7 @@ Edit Team member page - Edit New Department and assign that department to Team m
     TeamMemberPage.Enter team member first name
     TeamMemberPage.Enter team member last name
     Generic.Enter phone number      India   +91     9646289871
-    TeamMemberPage.Enter team member business email_mailinator
+    TeamMemberPage.Enter team member business email_yopmail
     TeamMemberPage.Enter the Position in member form        QA
     TeamMemberPage.Create random employee id
     sleep       ${yop_sleep}
@@ -175,7 +175,7 @@ Edit Team member page - Edit New Department and assign that department to Team m
     Generic.Verify your current page location contains          memberslist
 
 Verify team member Asset history
-    [Tags]      Sanity      rerun
+    [Tags]      Sanity        
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
@@ -267,7 +267,7 @@ Verify team member Asset history
     Generic.Verify your current page contains this text     Asset History
 
 Search asset history with Asset ID
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
@@ -385,7 +385,7 @@ Search asset history with Asset ID
     DashboardPage.Select the employee ID checkbox   no
 
 Verify user is able to export team member asset history list
-    [Tags]     Smoke        rerun
+    [Tags]     Smoke          
     Generic.click on the tab	Login
     LandingPage.Fill the login Form   debut@cool.fr.nf    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -615,11 +615,20 @@ Verify user is able to export team member asset history list
     DashboardPage.Select the employee ID checkbox   no
 
 Convert Assignee to Team Member
-    [Tags]      Sanity      rerun
+    [Tags]      Sanity        
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       deepparam112@mail-mario.fr.nf    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
+
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the asset ID checkbox      no
+    DashboardPage.Select the employee ID checkbox   yes
+    Sleep    ${yop_Sleep}
+
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     MemberPage.Click on assigned user tab     Assigned Users
@@ -673,7 +682,7 @@ Convert Assignee to Team Member
     switch window   aithentic | Update - Member
     Generic.Verify your current page location contains      convertmember
     TeamMemberPage.Select team member department        DepartmentName09041
-    TeamMemberPage.Enter team member business email_mailinator while converting assignee to team member
+    TeamMemberPage.Enter team member business email_yopmail while converting assignee to team member
     TeamMemberPage.Enter the Position in member form while converting assignee to team member        QA
     Select team member status while converting assignee to team member  Active
     Generic.Enter phone number      India   +91     9646289871
@@ -729,9 +738,9 @@ Convert Assignee to Team Member
     DashboardPage.Select the employee ID checkbox   no
 
 Check the validation of business email id
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       deepparam112@mail-mario.fr.nf    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Team Members
@@ -772,7 +781,7 @@ Check the validation of business email id
 Convert Assignee to team member in case of employee id is not system generated
     [Tags]      NT
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       deepparam112@mail-mario.fr.nf    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
@@ -800,7 +809,7 @@ Convert Assignee to team member in case of employee id is not system generated
     switch window   aithentic | Update - Member
     Generic.Verify your current page location contains      convertmember
     TeamMemberPage.Select team member department        DepartmentName09041
-    TeamMemberPage.Enter team member business email_mailinator while converting assignee to team member
+    TeamMemberPage.Enter team member business email_yopmail while converting assignee to team member
     TeamMemberPage.Enter the Position in member form while converting assignee to team member        QA
     Select team member status while converting assignee to team member  Active
     Generic.Enter phone number      India   +91     9646289871
@@ -828,7 +837,7 @@ Convert Assignee to team member in case of employee id is not system generated
     DashboardPage.Select the employee ID checkbox   no
 
 Verify Invitation and signup as team member
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
@@ -931,7 +940,7 @@ Verify Invitation and signup as team member
 Add Back Deleted Team member - Invited
     [Tags]      Sanity
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       deepparam112@mail-mario.fr.nf    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
@@ -948,7 +957,7 @@ Add Back Deleted Team member - Invited
     TeamMemberPage.Enter team member first name
     TeamMemberPage.Enter team member last name
     Generic.Enter phone number      India   +91     9646289871
-    TeamMemberPage.Enter team member business email_mailinator
+    TeamMemberPage.Enter team member business email_yopmail
     TeamMemberPage.Click on team member department
     TeamMemberPage.Select team member department        DepartmentName09041
     TeamMemberPage.Select team member role     CSPM
@@ -986,7 +995,7 @@ Add Back Deleted Team member - Invited
     DashboardPage.Select the employee ID checkbox   no
 
 Verify Invitation and signup as team member via company details
-    [Tags]     Sanity       rerun
+    [Tags]     Sanity         
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
@@ -1041,6 +1050,7 @@ Verify Invitation and signup as team member via company details
     Switch Window    Inbox
     Generic.Refresh the existing page
     Generic.Refresh the existing page
+    Generic.Refresh the existing page
     Generic.Switch to iframe by ID      ifmail
     Yopmail.Click on email of yopmail   OTP Verification.
     Unselect Frame
@@ -1062,7 +1072,7 @@ Verify Invitation and signup as team member via company details
     Generic.Verify your current page location contains      personal-profile
     DashboardPage.Select an option from company details side list    Team Members
     Generic.Verify your current page location contains    member
-    TeamMemberPage.Search Team Member by name   ${generated_TMFname}
+    TeamMemberPage.Search Team Member by name via profile  ${generated_TMFname}
     TeamMemberPage.verify status of first name in member list   Active
     TeamMemberPage.Click on three dots of Team Member listing
     TeamMemberPage.Select option from three dots of Team Member     Details
@@ -1078,7 +1088,7 @@ Verify Invitation and signup as team member via company details
     TeamMemberPage.Click on the button      Update
     Generic.Fetch alert message text and compare it with        Team Member updated successfully
     Generic.Verify your current page location contains          member
-    TeamMemberPage.Search Team Member by name   ${generated_Tmfname}
+    TeamMemberPage.Search Team Member by name via profile   ${generated_Tmfname}
     TeamMemberPage.Click on three dots of Team Member listing
     TeamMemberPage.Click on remove option under three dots
     Generic.Select parameter        Yes
@@ -1163,7 +1173,7 @@ Verify_Employee_ID_Changing_settings_from_Profile_list_while_add_edit_team_membe
 
 
 Add Back Deleted Team member - Active
-    [Tags]      Sanity      rerun
+    [Tags]      Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
@@ -1217,6 +1227,7 @@ Add Back Deleted Team member - Active
     Generic.Verify your current page location contains     auth
     LandingPage.Fill the login Form      ${generated_TMbusinessEmail}    Test@456
     Switch Window    Inbox
+    Generic.Refresh the existing page
     Generic.Refresh the existing page
     Generic.Refresh the existing page
     Generic.Switch to iframe by ID      ifmail
@@ -1303,7 +1314,7 @@ Add Back Deleted Team member - Active
     Generic.Verify your current page location contains      personal-profile
     DashboardPage.Select an option from company details side list    Team Members
     Generic.Verify your current page location contains    member
-    TeamMemberPage.Search Team Member by name   ${generated_Tmfname}
+    TeamMemberPage.Search Team Member by name via profile   ${generated_Tmfname}
     TeamMemberPage.Verify Team member added after delete        ${generated_TMFname} ${generated_TMLname}
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
@@ -1314,7 +1325,7 @@ Add Back Deleted Team member - Active
     DashboardPage.Select the employee ID checkbox   no
 
 Click on the location filter under team member and verify it
-    [Tags]    time     smoke        rerun
+    [Tags]    time     smoke          
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
@@ -1356,9 +1367,9 @@ Click on the location filter under team member and verify it
     TeamMemberPage.Fetch the country from team member filter and click       Location               Afgahniastan         ${New_Name}
 
 Click on the status filter under team member and verify it
-    [Tags]     time     smoke       rerun
+    [Tags]     time     smoke
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       deepparam112@mail-mario.fr.nf    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu     Team Members
@@ -1372,27 +1383,28 @@ Click on the status filter under team member and verify it
     Calculate Running time  12  ${pageHeading}   Filter Page - Data load time of status filter under team member      12    ${pageTime}     ${ActualTime}    Filter_Time
 
     LocationPage.Get the text of selected status filter under location      Active
-    Generic.Wait until table get load
-    PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     member-list
-    PaginationPage.Select the value from the pagination drop down count     500
-    PaginationPage.Fetch the selected value of the dropdown     member-list
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
+    PaginationPage.Check filter Pagination of Recent Activites
+#    PaginationPage.Click on the pagination dropdown     member-list
+#    PaginationPage.Select the value from the pagination drop down count     500
+#    PaginationPage.Fetch the selected value of the dropdown     member-list
     PaginationPage.Fetch the total count
     TeamMemberPage.Fetch the country from team member filter and click       Status             Active         ${New_status}
 
     Generic.click on the tab        reset filters
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TeamMemberPage.Click on the location filter under team member       status
     LocationPage.Select the option from status filter under location        Inactive
     LocationPage.Get the text of selected status filter under location      Inactive
-    Generic.Wait until table get load
-    PaginationPage.Fetch the total count
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
     TeamMemberPage.Fetch the country from team member filter and click       Status              Inactive         ${New_status}
 
 Click on the status filter under team member via profile list and verify it
     [Tags]     time     smoke
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       deepparam112@mail-mario.fr.nf    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
@@ -1400,7 +1412,7 @@ Click on the status filter under team member via profile list and verify it
     Generic.Verify your current page location contains      personal-profile
     Generic.Select parameter      Team Members
     Generic.Verify your current page location contains      dashboard
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     PaginationPage.Fetch the total count
     TeamMemberPage.Click on the status filter under team member via profile
 
@@ -1414,11 +1426,13 @@ Click on the status filter under team member via profile list and verify it
     TeamMemberPage.Get the text of selected status filter under team meber via profile
     DashboardPage.click on the authentication tab under security
     TeamMemberPage.click on the members tab under team member via profile
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     profile-team-member
-    PaginationPage.Select the value from the pagination drop down count     500
-    PaginationPage.Fetch the selected value of the dropdown     profile-team-member
+#    PaginationPage.Click on the pagination dropdown     profile-team-member
+#    PaginationPage.Select the value from the pagination drop down count     500
+#    PaginationPage.Fetch the selected value of the dropdown     profile-team-member
+#    PaginationPage.Check Pagination   profile-team-member
+    PaginationPage.Set pagination to max
     PaginationPage.Fetch the total count
     TeamMemberPage.Fetch the country from team member filter and click       Status          Active         ${New_status1}
     TeamMemberPage.Click on the status filter under team member via profile
@@ -1427,8 +1441,8 @@ Click on the status filter under team member via profile list and verify it
     TeamMemberPage.Get the text of selected status filter under team meber via profile
     DashboardPage.click on the authentication tab under security
     TeamMemberPage.click on the members tab under team member via profile
-    Generic.Wait until table get load
-    PaginationPage.Fetch the total count
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
     TeamMemberPage.Fetch the country from team member filter and click       Status          Inactive         ${New_status1}
     Generic.Click on the profile name
     Generic.Select logout option from profile list
@@ -1441,22 +1455,25 @@ Click on the status filter under team member via profile list and verify it
     Generic.Verify your current page location contains      personal-profile
     Generic.Select parameter      Team Members
     Generic.Verify your current page location contains      dashboard
-    Generic.Wait until table get load
-    PaginationPage.Fetch the total count
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
     TeamMemberPage.Click on the status filter under team member via profile
     TeamMemberPage.Select the option from the filters under team member via profile     2
     TeamMemberPage.Get the text of selected status filter under team meber via profile
     DashboardPage.click on the authentication tab under security
     TeamMemberPage.click on the members tab under team member via profile
-    Generic.Wait until table get load
-    PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     profile-team-member
-    PaginationPage.Select the value from the pagination drop down count     500
-    PaginationPage.Fetch the selected value of the dropdown     profile-team-member
-    PaginationPage.Fetch the total count
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
+#    PaginationPage.Click on the pagination dropdown     profile-team-member
+#    PaginationPage.Select the value from the pagination drop down count     500
+#    PaginationPage.Fetch the selected value of the dropdown     profile-team-member
+#    PaginationPage.Check Pagination   profile-team-member
+    PaginationPage.Set pagination to max
+    PaginationPage.Fetch the total count for filter only
     TeamMemberPage.Fetch the country from team member filter and click       Status          Invited         ${New_status1}
 
-Verify all the validation of add team member
+Verify all the validation of add team membe
+    [Tags]      Negative
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1479,7 +1496,7 @@ Verify all the validation of add team member
     LoginPage.Clear the element text of field under login page       LastName
     TeamMemberPage.Enter team member last name self     Johar
     Generic.Enter phone number      India   +91     96462898
-    TeamMemberPage.Enter team member business email_mailinator
+    TeamMemberPage.Enter team member business email_yopmail
     TeamMemberPage.Enter the Position in member form        QA
     TeamMemberPage.Click on team member department
     TeamMemberPage.Select team member department        DepartmentName09041
@@ -1513,10 +1530,19 @@ Verify all the validation of add team member
     TeamMemberPage.Wait for the visibility of the alert text
 
 Verify all the validations of edit team member page
+    [Tags]      Negative
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   no
+    DashboardPage.Select the employee ID checkbox   yes
+    Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Click on add team member action button
@@ -1524,7 +1550,7 @@ Verify all the validations of edit team member page
     TeamMemberPage.Enter team member first name
     TeamMemberPage.Enter team member last name
     Generic.Enter phone number      India   +91     9646289871
-    TeamMemberPage.Enter team member business email_mailinator
+    TeamMemberPage.Enter team member business email_yopmail
     TeamMemberPage.Click on team member department
     TeamMemberPage.Select team member department        DepartmentName09041
     TeamMemberPage.Select team member role     CSPM
@@ -1596,7 +1622,7 @@ Verify department should not be removed having team member created
     TeamMemberPage.Enter team member first name
     TeamMemberPage.Enter team member last name
     Generic.Enter phone number      India   +91     9646289871
-    TeamMemberPage.Enter team member business email_mailinator
+    TeamMemberPage.Enter team member business email_yopmail
     TeamMemberPage.Enter the Position in member form        QA
     sleep       ${yop_sleep}
     TeamMemberPage.Click on add here in department field        Click here to add
@@ -1619,6 +1645,152 @@ Verify department should not be removed having team member created
     TeamMemberPage.Select option from three dots of Team Member     Remove
     Generic.Select parameter        Yes
     Generic.Fetch alert message text and compare it with        Department already in use.
+
+Verify all the validations of Add Team Member under asset wizard
+    [Tags]      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   no
+    DashboardPage.Select the employee ID checkbox   yes
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains     technology-list
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.click on bulk import under action button of technology
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Data-Wizard
+    Bulk_Import_ExportPage.click on all checkbox under technology bulk import       Admin, Asset managers and Asset users.
+    Generic.click on the button     Next
+    Generic.click on the button     Add Member
+    TeamMemberPage.Save the team member form   save
+    TeamMemberPage.Fetch the all validation message after entering invalid data in add team member
+    TeamMemberPage.Enter team member first name self        Milan
+    TeamMemberPage.Enter team member last name with 101 letters
+    TeamMemberPage.Save the team member form   save
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page       Please enter Last Name with atmost 50 Characters
+    LoginPage.Clear the element text of field under login page       LastName
+    TeamMemberPage.Enter team member last name self     Johar
+    Generic.Enter phone number      India   +91     96462898
+    TeamMemberPage.Enter team member business email_yopmail
+    TeamMemberPage.Enter the Position in member form        QA
+    TeamMemberPage.Click on team member department
+    TeamMemberPage.Select team member department        DepartmentName09041
+    TeamMemberPage.Select team member role     Admin
+    TeamMemberPage.Click on team member location
+    TeamMemberPage.Select team member location
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page       Please enter a valid Mobile Number
+    LoginPage.Clear the element text of field under login page       phone
+    Generic.Enter phone number      India   +91     964628982342
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page       Please enter a valid Mobile Number
+    LoginPage.Clear the element text of field under login page       phone
+    Generic.Enter phone number      India   +91     9646289823
+    LoginPage.Clear the element text of field under login page       Email
+    TeamMemberPage.Enter team member business email self        Milan
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Please enter valid Email
+    LoginPage.Clear the element text of field under login page       Email
+    TeamMemberPage.Enter team member business email self        Milan@
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Please enter valid Email
+    LoginPage.Clear the element text of field under login page       Email
+    TeamMemberPage.Enter team member business email self        Milan@dmts
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Please enter valid Email
+    LoginPage.Clear the element text of field under login page       Email
+    TeamMemberPage.Enter team member business email self        Milan@dmts.
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Please enter valid Email
+    LoginPage.Clear the element text of field under login page       Email
+    TeamMemberPage.Enter team member business email self        Milan@mailinator.
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Please enter valid Email
+    LoginPage.Clear the element text of field under login page       Email
+    TeamMemberPage.Enter team member business email self        milan@dmts.fr.nf
+    TeamMemberPage.Save the team member form   save
+    TeamMemberPage.Wait for the visibility of the alert text
+    LoginPage.Clear the element text of field under login page       Email
+    LoginPage.Clear the element text of field under login page        LastName
+    LoginPage.Clear the element text of field under login page       FirstName
+    TeamMemberPage.Enter team member first name self        F_milan1
+    TeamMemberPage.Enter team member last name self    L_johar2
+    TeamMemberPage.Enter team member business email self       F_milan1@mail-mario.fr.nf
+    TeamMemberPage.Save the team member form   save
+    Generic.Fetch alert message text and compare it with      This Email is already registered.
+
+Check if user click on convert to tm button and confirm popup then come back without adding team member then able to see the assigne user in listing
+    [Tags]         Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       deepparam112@mail-mario.fr.nf    Paramdeep@112
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the employee ID checkbox   no
+    DashboardPage.Select the employee ID checkbox   yes
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    MemberPage.Click on assigned user tab     Assigned Users
+    MemberPage.Click on action button of assigned users
+    MemberPage.Select option from action button of assigned user    Add Assignee
+    MemberPage.Enter first name of assigned users
+    MemberPage.Enter last name of assigned users
+    MemberPage.Enter business email of assigned users
+    TechnologyPage.Create unique assign to employee_ID random
+    MemberPage.Click on save button of assigned user
+    Generic.Fetch alert message text and compare it with        Assigned Users created successfully
+    MemberPage.Search assigned user by first name   ${generated_AssigneduserFirstName}
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list    QABrand555
+    TechnologyPage.Select parameter from technology dropdown list       OPMR815324
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Add assignment information assign to   ${generated_AssigneduserFirstName}       ${generated_TMLname}
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.click on the button link    Edit
+    TechnologyPage.Select technology lifecycle status      Active
+    MemberPage.Enter assign to field   Dc Dc
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+    Generic.Verify your current page contains this text             Technology
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    MemberPage.Click on assigned user tab   Assigned Users
+    MemberPage.Search assigned user by first name   ${generated_AssigneduserFirstName}
+    MemberPage.Click on three dots of Team Member listing
+    MemberPage.Select option from three dots of Team Member     Asset History
+    Generic.Verify your current page location contains      asset-history
+    MemberPage.Search assigned user by asset id     ${generated_AssetID}
+    TeamMemberPage.Click on back to member list of member list
+    MemberPage.Click on assigned user tab   Assigned Users
+    MemberPage.Search assigned user by first name   ${generated_AssigneduserFirstName}
+    MemberPage.Click on three dots of Team Member listing
+    MemberPage.Select option from three dots of Team Member     Convert to TM
+    TeamMemberPage.Click on convert to team member confirm pop up
+    Sleep   ${yop_sleep}
+    switch window   aithentic | Update - Member
+    Generic.Verify your current page location contains      convertmember
+    TeamMemberPage.Click on the cancel button after click on convert to team member button
+    Sleep   ${yop_sleep}
+    switch window   aithentic | Member - List
+    Generic.Verify your current page location contains      memberslist
+    MemberPage.Click on assigned user tab   Assigned Users
+    MemberPage.Search assigned user by first name   ${generated_AssigneduserFirstName}
 
 #Zz kill browser
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

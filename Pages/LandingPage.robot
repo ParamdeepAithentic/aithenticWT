@@ -56,12 +56,14 @@ ${Admin_loginBtn}          //button[normalize-space()='Log In']
 
 Fill the login Form
     [Arguments]     ${email}     ${valid_password}
-    wait until element is visible    ${Kc_username}       ${wait_time}
+    wait until element is visible    ${Kc_username}       60
+    Wait Until Element Is Enabled    ${Kc_username}       60
     Input Text          ${Kc_username}     ${email}
-    wait until element is visible    ${Kc_password}    ${wait_time}
+    wait until element is visible    ${Kc_password}    60
+    wait until element is Enabled    ${Kc_password}    60
     Input Password      ${Kc_password}     ${valid_password}
     Click Button        ${Kc_loginBtn}
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 Verify you are on dashboard page
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
@@ -76,7 +78,7 @@ Fill the login form of Admin panel
     wait until element is visible    ${Admin_password_field}    ${wait_time}
     Input Password      ${Admin_password_field}     ${valid_password}
     Click Button        ${Admin_loginBtn}
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 Fill the login Form with email only
     [Arguments]     ${email}

@@ -51,7 +51,7 @@ ${self_searchId} =   AssetID_1803536655
 *** Test Cases ***
 
 Free the asset limit
-    [Tags]      Smoke     Sanity      Time      rerun
+    [Tags]      Smoke     Sanity      Time        
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -64,9 +64,9 @@ Free the asset limit
 
 
 Fill the technology form for license product
-    [Tags]      Time       Smoke        rerun
+    [Tags]      Time       Smoke          
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -125,9 +125,9 @@ Fill the technology form for license product
 
 
 Fill the technology form for hardware product
-    [Tags]      Sanity      Smoke       rerun
+    [Tags]      Sanity         Smoke
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -165,9 +165,9 @@ Fill the technology form for hardware product
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
 Fill the technology form for maintenance product
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -207,9 +207,9 @@ Fill the technology form for maintenance product
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
 Fill the technology form for subscription product
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -249,9 +249,9 @@ Fill the technology form for subscription product
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
 Create new asset with new brand and product
-    [Tags]      Sanity      Smoke       Time        rerun
+    [Tags]      Sanity       Smoke       Time
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
@@ -324,9 +324,9 @@ Create new asset with new brand and product
 #    TechnologyPage.Search by SerialNo   ${generated_serialNo}       #yet to cover
 
 Restore asset type one
-    [Tags]      Sanity      rerun
+    [Tags]      Sanity        
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -382,9 +382,9 @@ Restore asset type one
 
 
 Restore asset from removed asset details page
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -441,9 +441,9 @@ Restore asset from removed asset details page
 
 ################# Still have to work on this testcase ###############
 Restore asset by selecting checkbox
-    [Tags]    Smoke     rerun
+    [Tags]    Smoke       
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -503,7 +503,7 @@ Restore asset by selecting checkbox
 #Remove asset by self search
 #   [Tags]      NT
 #    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+#    LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    Generic.Verify your current page location contains      dashboard
 #    LandingPage.Verify you are on dashboard page
 #    Generic.select the option from the side menu    Technology
@@ -520,9 +520,9 @@ Restore asset by selecting checkbox
 
 
 Edit brand and product via details
-    [Tags]     Smoke      time      rerun
+    [Tags]     Smoke      time        
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -570,7 +570,7 @@ Edit brand and product via details
     TechnologyPage.Click on the edit icon on the edit technology page
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  26  ${pageHeading}   Page Load - Total Page Load Time of clicking edit technology to edit technology form      26    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  26  ${pageHeading}  Technology Listing - Total Page Load Time of clicking edit technology to edit technology form      26    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 
     TechnologyPage.Click on cross icon of product while editing technology
@@ -582,9 +582,9 @@ Edit brand and product via details
     Generic.Fetch alert message text and compare it with        Technology updated successfully
 
 Sent Message should show in the Sent Tab
-    [Tags]      Sanity      rerun
+    [Tags]      Sanity        
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -641,7 +641,7 @@ Sent Message should show in the Sent Tab
 Add Products with 10 combinations of Tech Type and Tech group
     [Tags]      NT
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
@@ -781,7 +781,7 @@ Add Products with 10 combinations of Tech Type and Tech group
 Add Technology Page - Add New location and assign that location
     [Tags]      Sanity
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -821,9 +821,9 @@ Add Technology Page - Add New location and assign that location
     Generic.Fetch alert message text and compare it with       Assigned Users created successfully
 
 Add New Support Partner and Assign that Partner
-    [Tags]      Sanity      time    Smoke       rerun
+    [Tags]      Sanity      time    Smoke         
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -868,7 +868,7 @@ Add New Support Partner and Assign that Partner
     Generic.Verify your current page location contains     technology-details
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  27  ${pageHeading}   Page Load - Total Page Load Time of clicking first row of technology list to its details apge       27    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  27  ${pageHeading}   Technology Listing - Total Page Load Time of clicking first row of technology list to its details page       27    ${pageTime}     ${ActualTime}    PageLoad_Time
 
     TechnologyPage.Select tab under technology details      partners
     TechnologyPage.Click on assign partner button under technology details page        Assign Partner
@@ -906,9 +906,9 @@ Add New Support Partner and Assign that Partner
 
 
 Add New Support Partner and Assign that Partner via technology form only
-    [Tags]      Sanity      rerun
+    [Tags]      Sanity        
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -978,9 +978,9 @@ Add New Support Partner and Assign that Partner via technology form only
     TechnologyPage.Verify that supplier partner is added in partner association     Supplier
 
 Verify the history of added technology
-    [Tags]      Sanity      rerun
+    [Tags]      Sanity        
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -1104,7 +1104,7 @@ Verify the history of added technology
 #Upload the new attachment file
 #   [Tags]      NT
 #    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+#    LandingPage.Fill the login Form       ${email}    ${valid_password}
 #    Generic.Verify your current page location contains      dashboard
 #    LandingPage.Verify you are on dashboard page
 #    Generic.select the option from the side menu    Technology
@@ -1130,9 +1130,9 @@ Verify the history of added technology
 
 
 Add Technology Page - Add New Supplier and support partner and assign them
-    [Tags]     Sanity       rerun
+    [Tags]     Sanity         
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -1176,9 +1176,9 @@ Add Technology Page - Add New Supplier and support partner and assign them
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
 Add new Technology- Add New Location and assign that location
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -1219,9 +1219,9 @@ Add new Technology- Add New Location and assign that location
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
 Add new Technology- Add New Department and assign that department
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -1251,7 +1251,7 @@ Add new Technology- Add New Department and assign that department
 Add new Technology- Add New Assignee and assign that Assignee
     [Tags]      NT
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
@@ -1294,9 +1294,9 @@ Add new Technology- Add New Assignee and assign that Assignee
     Generic.Fetch alert message text and compare it with       Settings Updated
 
 Add new Technology- Add New support-partner and assign that support partner
-    [Tags]     Sanity       rerun
+    [Tags]     Sanity         
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -1331,9 +1331,9 @@ Add new Technology- Add New support-partner and assign that support partner
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
 Add new Technology- Add New Supplier and assign that supplier
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -1368,9 +1368,9 @@ Add new Technology- Add New Supplier and assign that supplier
     TechnologyPage.Search by AssetId       ${generated_AssetID}
 
 Edit Technology Page - Add New location and assign that location
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -1420,9 +1420,9 @@ Edit Technology Page - Add New location and assign that location
 
 
 Edit Technology Page - Add New Department and assign that Department
-    [Tags]     Smoke        rerun
+    [Tags]     Smoke          
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -1458,9 +1458,9 @@ Edit Technology Page - Add New Department and assign that Department
     Generic.Fetch alert message text and compare it with        Technology updated successfully
 
 Edit Technology Page - Add New Assignee and assign that Assignee
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
@@ -1511,9 +1511,9 @@ Edit Technology Page - Add New Assignee and assign that Assignee
     Generic.Fetch alert message text and compare it with       Settings Updated
 
 Edit Technology Page - Add New Supplier and assign that Supplier
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -1555,9 +1555,9 @@ Edit Technology Page - Add New Supplier and assign that Supplier
     Generic.Fetch alert message text and compare it with        Technology updated successfully
 
 Edit Technology Page - Add New Support Partner and assign that Support Partner
-    [Tags]      Sanity      rerun
+    [Tags]      Sanity        
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -1599,9 +1599,9 @@ Edit Technology Page - Add New Support Partner and assign that Support Partner
     Generic.Fetch alert message text and compare it with        Technology updated successfully
 
 Technology Details- Verify the Location Details
-    [Tags]      sanity      rerun
+    [Tags]      Sanity
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -1681,7 +1681,7 @@ Technology Details- Verify the Location Details
     TechnologyPage.Verify parameter from past location table    ${generated_buildingname}
 
 Technology-Inactive asset and Restore asset
-    [Tags]      smoke       rerun
+    [Tags]      smoke         
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     chirag@dmts.fr.nf    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -1778,7 +1778,7 @@ Technology-Inactive asset and Restore asset
     Generic.Fetch alert message text and compare it with      Payment Successful
 
 Inactive asset - Restore asset from Technology Details page
-    [Tags]      smoke       rerun
+    [Tags]      smoke         
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     chirag@dmts.fr.nf    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -1953,9 +1953,9 @@ Inactive asset - Restore asset from Technology Details page
 
 
 Click on the attachment tab under technology
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -2007,9 +2007,9 @@ Click on the attachment tab under technology
 
 
 Upload file: Image and Document files while adding Technology
-    [Tags]    Smoke     rerun
+    [Tags]    Smoke       
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -2045,9 +2045,9 @@ Upload file: Image and Document files while adding Technology
     TechnologyPage.Click on save technology form pop button
 
 Upload file: Image and Document files while Edit Technology
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -2100,9 +2100,9 @@ Upload file: Image and Document files while Edit Technology
     Generic.Fetch alert message text and compare it with        Technology updated successfully
 
 Upload file: Image and document files while Clone the Technology
-    [Tags]      time   smoke    rerun
+    [Tags]      time   smoke      
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -2129,7 +2129,7 @@ Upload file: Image and document files while Clone the Technology
     Generic.Verify your current page location contains      clone-addtechnology
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  28  ${pageHeading}   Page Load - Total Page Load Time of clicking clone button of technology deatils to its clone form       28    ${pageTime}     ${ActualTime}    PageLoad_Time
+    Calculate Running time  28  ${pageHeading}   Technlogy Details Page Load - Total Page Load Time of clicking clone button of technology deatils to its clone form       28    ${pageTime}     ${ActualTime}    PageLoad_Time
 
     TechnologyPage.Add assetID for technology lifecycle information random
     Generic.Scroll Window To End
@@ -2156,9 +2156,9 @@ Upload file: Image and document files while Clone the Technology
     TechnologyPage.Click on save technology form pop button
 
 Search with brand_product_technologytype_technologygroup on advanced search
-    [Tags]     Sanity       rerun
+    [Tags]     Sanity         
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -2266,7 +2266,7 @@ Search with brand_product_technologytype_technologygroup on advanced search
 Search Technnology with Product Version
     [Tags]      NT
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -2292,9 +2292,9 @@ Search Technnology with Product Version
 
 
 Verify cross icon and reset icon while adding product
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -2312,9 +2312,9 @@ Verify cross icon and reset icon while adding product
     TechnologyPage.Verify the invisibility of technology type after clicking on reset icon
 
 Creating technology while creating cancellation notice period and contract end date
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -2384,9 +2384,9 @@ Creating technology while creating cancellation notice period and contract end d
     Generic.Fetch alert message text and compare it with        Technology updated successfully
 
 Dispose the technology while adding new brand and product
-    [Tags]       Sanity     rerun
+    [Tags]       Sanity       
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
@@ -2455,9 +2455,9 @@ Dispose the technology while adding new brand and product
     Generic.Fetch alert message text and compare it with      Technology Removed Successfully
 
 Add the technology from profile listing
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
@@ -2488,10 +2488,10 @@ Add the technology from profile listing
     Generic.Fetch alert message text and compare it with      Technology Removed Successfully
 
 Verify_Asset_ID_Changing_settings_from_Profile_list
-    [Tags]     Sanity       rerun
+    [Tags]     Sanity         
     TRY
         Generic.click on the tab	Login
-        LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+        LandingPage.Fill the login Form       ${email}    ${valid_password}
         Generic.Verify your current page location contains      dashboard
         LandingPage.Verify you are on dashboard page
         Generic.Click on the profile name
@@ -2583,9 +2583,9 @@ Verify_Asset_ID_Changing_settings_from_Profile_list
     END
 
 Add Technology: Verify Renewal Date get auto-populate when enter contract end date
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
@@ -2644,9 +2644,9 @@ Add Technology: Verify Renewal Date get auto-populate when enter contract end da
     TechnologyPage.Compare Renewal date and contract end date on Technology details page
 
 Edit Technology: Verify Renewal Date and contract end date
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -2710,9 +2710,9 @@ Edit Technology: Verify Renewal Date and contract end date
     TechnologyPage.Compare Renewal date and contract end date on Technology details page
 
 Clone Technology: Verify Renewal Date and contract end date
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -2770,9 +2770,9 @@ Clone Technology: Verify Renewal Date and contract end date
 
 
 Search with hostname on the technology search bar
-    [Tags]      Sanity      rerun
+    [Tags]      Sanity        
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -2804,7 +2804,7 @@ Search with hostname on the technology search bar
     OCS.Get Value of Host-Name and compare it with    ${result}
 
 Compose reply and remove the message via technology details
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
@@ -2967,9 +2967,9 @@ Compose reply and remove the message via technology details
     Generic.Fetch alert message text and compare it with       Message removed successfully
 
 Download QR for an asset as PNG and SVG
-    [Tags]      Smoke       Sanity      rerun
+    [Tags]      Smoke       Sanity        
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -3057,9 +3057,9 @@ Download QR for an asset as PNG and SVG
     TechnologyPage.Confirm to download QR file      Confirm
 
 Verify notification update location in asset
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -3124,9 +3124,9 @@ Verify notification update location in asset
     TechnologyPage.Get the text of the recent notification of added assets      You changed location of Asset ID ${generated_AssetID}.
 
 Verify_Notification_Update_Asset
-    [Tags]      Smoke       Sanity      rerun
+    [Tags]      Smoke       Sanity        
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -3171,58 +3171,60 @@ Verify_Notification_Update_Asset
     TechnologyPage.Get the text of the recent notification of added assets      You updated Asset ID ${generated_AssetID}.
 
 Click on the technology group filters and verify it
-    [Tags]     time     smoke     sanity        rerun
+    [Tags]     time     smoke     sanity     rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
+    LandingPage.Fill the login Form     ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the filters under technology page       Technology Group
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
 
     ${StartTime1} =     Get Current Time in Milliseconds
     TechnologyPage.Click on the value under the filters of technology page      Applications
     TechnologyPage.Get the text of selected filter under technology     Applications
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  6  ${pageHeading}   Filter Page - Data load time of filter Applications under technology group      6    ${pageTime}     ${ActualTime}    Filter_Time
 
     PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     technology
-    PaginationPage.Select the value from the pagination drop down count     500
-    PaginationPage.Fetch the selected value of the dropdown     technology
+#    PaginationPage.Click on the pagination dropdown     technology
+#    PaginationPage.Select the value from the pagination drop down count     500
+#    PaginationPage.Fetch the selected value of the dropdown
+#    PaginationPage.Check Pagination        technology
+    PaginationPage.Set pagination to max
     PaginationPage.Fetch the total count
     LocationPage.Fetch the country from location filter and click    Group      2     Applications        ${New_Name}
     Generic.click on the tab        reset filters
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the filters under technology page       Technology Group
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
 
     ${StartTime1} =     Get Current Time in Milliseconds
     TechnologyPage.Click on the value under the filters of technology page      ${Technology_group}
     TechnologyPage.Get the text of selected filter under technology    ${Technology_group}
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  7  ${pageHeading}   Filter Page - Data load time of filter Accessories under technology group      7    ${pageTime}     ${ActualTime}    Filter_Time
 
     PaginationPage.Fetch the total count
     PaginationPage.Click on the pagination dropdown     technology
-    PaginationPage.Select the value from the pagination drop down count     500
-    PaginationPage.Fetch the selected value of the dropdown     technology
+#    PaginationPage.Select the value from the pagination drop down count     500
+#    PaginationPage.Fetch the selected value of the dropdown     technology
     PaginationPage.Fetch the total count
     LocationPage.Fetch the country from location filter and click    Group      2     ${Technology_group}      ${New_Name}
     Generic.click on the tab        reset filters
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the filters under technology page       Technology Group
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
 
     ${StartTime1} =     Get Current Time in Milliseconds
     TechnologyPage.Click on the value under the filters of technology page       ${Technology_group1}
     TechnologyPage.Get the text of selected filter under technology    ${Technology_group1}
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     ${EndTime1} =     Get Current Time in Milliseconds
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  8  ${pageHeading}   Filter Page - Data load time of filter CRT under technology group      8    ${pageTime}     ${ActualTime}    Filter_Time
@@ -3232,34 +3234,35 @@ Click on the technology group filters and verify it
     PaginationPage.Select the value from the pagination drop down count    500
     LocationPage.Fetch the country from location filter and click    Group      2       ${Technology_group1}       ${New_Name}
     Generic.click on the tab        reset filters
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
 #    Generic.Fetch alert message text and compare it with       No additional sub-groups found!
     Generic.Click on the profile name
     Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the tech type filter under technology       Tech Type
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the value under the tech typen filters of technology page       Hardware
 
-    Generic.Wait until table get load
-    PaginationPage.Click on the pagination dropdown     technology
-    PaginationPage.Select the value from the pagination drop down count     500
-    PaginationPage.Fetch the selected value of the dropdown     technology
+    Generic.Wait until table get load for filters
+#    PaginationPage.Click on the pagination dropdown     technology
+#    PaginationPage.Select the value from the pagination drop down count     500
+#    PaginationPage.Fetch the selected value of the dropdown     technology
+    PaginationPage.Check Pagination     technology
     PaginationPage.Fetch the total count
     PaginationPage.Get count of total rows from Product Dropdown
     TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
     Generic.click on the tab        reset filters
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the tech type filter under technology       Tech Type
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the value under the tech typen filters of technology page       Subscription
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     PaginationPage.Click on the pagination dropdown     technology
     PaginationPage.Select the value from the pagination drop down count     500
     PaginationPage.Fetch the selected value of the dropdown     technology
@@ -3267,11 +3270,11 @@ Click on the technology group filters and verify it
     PaginationPage.Get count of total rows from Product Dropdown
     TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
     Generic.click on the tab        reset filters
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the tech type filter under technology       Tech Type
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the value under the tech typen filters of technology page       Freeware
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     PaginationPage.Click on the pagination dropdown     technology
     PaginationPage.Select the value from the pagination drop down count     500
     PaginationPage.Fetch the selected value of the dropdown     technology
@@ -3279,11 +3282,11 @@ Click on the technology group filters and verify it
     PaginationPage.Get count of total rows from Product Dropdown
     TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
     Generic.click on the tab        reset filters
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the tech type filter under technology       Tech Type
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the value under the tech typen filters of technology page      Virtual Machines
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     PaginationPage.Click on the pagination dropdown     technology
     PaginationPage.Select the value from the pagination drop down count     500
     PaginationPage.Fetch the selected value of the dropdown     technology
@@ -3291,174 +3294,175 @@ Click on the technology group filters and verify it
     PaginationPage.Get count of total rows from Product Dropdown
     TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
     Generic.click on the tab        reset filters
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the tech type filter under technology       Select Partner
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the tech type filter under technology       Manufacturers
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the value under filters for selecting random value      1
     TechnologyPage.Get the text of the value you selected under filter      1
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     PaginationPage.Fetch the total count
     LocationPage.Fetch the country from location filter and click    Brand      3       ${random_Name}        ${random_Name}
     Generic.click on the tab        reset filters
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the tech type filter under technology       Select Partner
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the tech type filter under technology       Manufacturers
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the value under filters for selecting random value      2
     TechnologyPage.Get the text of the value you selected under filter      2
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     PaginationPage.Fetch the total count
     LocationPage.Fetch the country from location filter and click    Brand      3       ${random_Name}       ${random_Name}
     Generic.click on the tab        reset filters
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the tech type filter under technology       Select Partner
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the tech type filter under technology       Manufacturers
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the value under filters for selecting random value      8
     TechnologyPage.Get the text of the value you selected under filter      8
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     PaginationPage.Click on the pagination dropdown     technology
     PaginationPage.Select the value from the pagination drop down count     500
-    PaginationPage.Fetch the selected value of the dropdown     technology
+#    PaginationPage.Fetch the selected value of the dropdown     technology
+    PaginationPage.Fetch the selected value of the dropdown
     PaginationPage.Fetch the total count
     LocationPage.Fetch the country from location filter and click    Brand      3       ${random_Name}       ${random_Name}
     Generic.click on the tab        reset filters
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the tech type filter under technology       Select Partner
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the tech type filter under technology       Suppliers
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the value under filters for selecting random value      2
     TechnologyPage.Get the text of the value you selected under filter     2
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     PaginationPage.Fetch the total count
     PaginationPage.Get count of total rows from Product Dropdown
     TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
     Generic.click on the tab        reset filters
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the tech type filter under technology       Select Partner
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the tech type filter under technology       Suppliers
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the value under filters for selecting random value      5
     TechnologyPage.Get the text of the value you selected under filter      5
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     PaginationPage.Fetch the total count
     PaginationPage.Get count of total rows from Product Dropdown
     TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
     Generic.click on the tab        reset filters
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the tech type filter under technology       Select Partner
-    Generic.Wait until table get load
+   Generic.Wait until table get load for filters
     TechnologyPage.Click on the tech type filter under technology       Suppliers
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the value under filters for selecting random value     6
     TechnologyPage.Get the text of the value you selected under filter     6
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     PaginationPage.Fetch the total count
     PaginationPage.Get count of total rows from Product Dropdown
     TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
     Generic.click on the tab        reset filters
-    Generic.Wait until table get load
+   Generic.Wait until table get load for filters
     TechnologyPage.Click on the tech type filter under technology       Select Partner
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the tech type filter under technology       SupportPartners
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the value under filters for selecting random value    3
     TechnologyPage.Get the text of the value you selected under filter     3
-    Generic.Wait until table get load
+   Generic.Wait until table get load for filters
     PaginationPage.Fetch the total count
     PaginationPage.Get count of total rows from Product Dropdown
     TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
     Generic.click on the tab        reset filters
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the tech type filter under technology       Select Partner
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the tech type filter under technology       SupportPartners
-    Generic.Wait until table get load
+   Generic.Wait until table get load for filters
     TechnologyPage.Click on the value under filters for selecting random value    4
     TechnologyPage.Get the text of the value you selected under filter     4
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     PaginationPage.Fetch the total count
     PaginationPage.Get count of total rows from Product Dropdown
     TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
     Generic.click on the tab        reset filters
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the tech type filter under technology       Select Partner
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the tech type filter under technology       SupportPartners
-    Generic.Wait until table get load
+   Generic.Wait until table get load for filters
     TechnologyPage.Click on the value under filters for selecting random value    5
     TechnologyPage.Get the text of the value you selected under filter     5
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     PaginationPage.Fetch the total count
     PaginationPage.Get count of total rows from Product Dropdown
     TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
     Generic.click on the tab        reset filters
-    Generic.Wait until table get load
+   Generic.Wait until table get load for filters
     TechnologyPage.Click on the tech type filter under technology       Select Location
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the value under filters for selecting random value    2
     TechnologyPage.Get the text of the value you selected under filter    2
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     PaginationPage.Fetch the total count
     LocationPage.Fetch the country from location filter and click    Location       10      ${random_Name}       ${random_Name}
     Generic.click on the tab        reset filters
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the tech type filter under technology       Select Location
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the value under filters for selecting random value    3
     TechnologyPage.Get the text of the value you selected under filter    3
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     PaginationPage.Fetch the total count
     LocationPage.Fetch the country from location filter and click    Location       10     ${random_Name}       ${random_Name}
     Generic.click on the tab        reset filters
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the tech type filter under technology       Select Location
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the value under filters for selecting random value   6
     TechnologyPage.Get the text of the value you selected under filter    6
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     PaginationPage.Fetch the total count
     LocationPage.Fetch the country from location filter and click    Location       10      ${random_Name}       ${random_Name}
     Generic.click on the tab        reset filters
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the tech type filter under technology       Select Brand
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the value under filters for selecting random value   2
     TechnologyPage.Get the text of the value you selected under filter    2
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     PaginationPage.Fetch the total count
     LocationPage.Fetch the country from location filter and click    Brand      3      ${random_Name}       ${random_Name}
     Generic.click on the tab        reset filters
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the tech type filter under technology       Select Brand
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the value under filters for selecting random value   6
     TechnologyPage.Get the text of the value you selected under filter    6
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     PaginationPage.Fetch the total count
     LocationPage.Fetch the country from location filter and click    Brand      3         ${random_Name}       ${random_Name}
     Generic.click on the tab        reset filters
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the tech type filter under technology       Select Brand
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the value under filters for selecting random value   7
     TechnologyPage.Get the text of the value you selected under filter    7
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     PaginationPage.Fetch the total count
     LocationPage.Fetch the country from location filter and click    Brand      3      ${random_Name}       ${random_Name}
     Generic.click on the tab        reset filters
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the tech type filter under technology       Select Department
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the value under filters for selecting random value   1
     TechnologyPage.Get the text of the value you selected under filter   1
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     PaginationPage.Click on the pagination dropdown     technology
     PaginationPage.Select the value from the pagination drop down count     500
     PaginationPage.Fetch the selected value of the dropdown     technology
@@ -3466,12 +3470,12 @@ Click on the technology group filters and verify it
     PaginationPage.Get count of total rows from Product Dropdown
     TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
     Generic.click on the tab        reset filters
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the tech type filter under technology       Select Department
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the value under filters for selecting random value   2
     TechnologyPage.Get the text of the value you selected under filter   2
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     PaginationPage.Click on the pagination dropdown     technology
     PaginationPage.Select the value from the pagination drop down count     500
     PaginationPage.Fetch the selected value of the dropdown     technology
@@ -3479,30 +3483,30 @@ Click on the technology group filters and verify it
     PaginationPage.Get count of total rows from Product Dropdown
     TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
     Generic.click on the tab        reset filters
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the tech type filter under technology       Select Status
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the value under filters for selecting random value   2
     TechnologyPage.Get the text of the value you selected under filter   2
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     PaginationPage.Fetch the total count
     LocationPage.Fetch the country from location filter and click    Status     8      ${random_Name}       ${random_Name}
     Generic.click on the tab        reset filters
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the tech type filter under technology       Select Status
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the value under filters for selecting random value   5
     TechnologyPage.Get the text of the value you selected under filter   5
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     PaginationPage.Fetch the total count
     LocationPage.Fetch the country from location filter and click    Status     8     ${select_date}      ${random_Name}       ${random_Name}
     Generic.click on the tab        reset filters
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the tech type filter under technology       Agent
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the value under filters for selecting random value  1
     TechnologyPage.Get the text of the value you selected under filter   1
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     PaginationPage.Click on the pagination dropdown     technology
     PaginationPage.Select the value from the pagination drop down count     500
     PaginationPage.Fetch the selected value of the dropdown     technology
@@ -3517,12 +3521,12 @@ Click on the technology group filters and verify it
     Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the tech type filter under technology       Agent
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the value under filters for selecting random value  2
     TechnologyPage.Get the text of the value you selected under filter   2
-    Generic.Wait until table get load
+    Generic.Wait until table get load for filters
     PaginationPage.Fetch the total count
     PaginationPage.Get count of total rows from Product Dropdown
     TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}

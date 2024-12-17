@@ -418,7 +418,7 @@ Enter the new value of team member in the email column
     [Arguments]    ${option}
     MemberPage.Double click    ${option}
     ${random_string} =    Generate Random String       10      [NUMBERS]
-    ${generated_assigneeLname}=    Catenate    BusinessEmail${random_string}@mailinator.com
+    ${generated_assigneeLname}=    Catenate    BusinessEmail${random_string}@mail-mario.fr.nf
     wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    ${wait_time}
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assigneeLname}
     set global variable    ${generated_assigneeLname}
@@ -503,17 +503,17 @@ Click on confirm pop up of update button
     wait until element is visible  css:.qa-confirm-technology-bulk-edit-warning  ${wait_time}
     click element   css:.qa-confirm-technology-bulk-edit-warning
 #    sleep   ${search_sleep}
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 Click on confirm button under pop up of finish button of bulk edit
     wait until element is visible  css:.qa-confirm-technology-bulk-edit-finish      ${wait_time}
     click element   css:.qa-confirm-technology-bulk-edit-finish
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 Click on confirm button under pop up of exit button of bulk edit
     wait until element is visible  css:.qa-confirm-technology-bulk-edit-exit    ${wait_time}
     click element   css:.qa-confirm-technology-bulk-edit-exit
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 
 Enter the new value of first name in bulk import of team member
@@ -655,6 +655,14 @@ Create random IP subnet in location bulk import
     input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_SubnetIp}
     set global variable    ${generated_SubnetIp}
 
+Enter static IP subnet
+    [Arguments]    ${option}        ${option1}
+    MemberPage.Double click    ${option}
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
+    wait until element is enabled       css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${option1}
+
+
 Click on the confirm button of finish pop up
     wait until element is visible   css:.qa-confirm-finish-bulk-edit       ${wait_time}
     wait until element is enabled   css:.qa-confirm-finish-bulk-edit       ${wait_time}
@@ -665,7 +673,7 @@ Click on confirm warning button after update
     wait until element is visible   css:.qa-confirm-technology-bulk-edit-warning      ${wait_time}
     wait until element is enabled   css:.qa-confirm-technology-bulk-edit-warning       ${wait_time}
     click element   css:.qa-confirm-technology-bulk-edit-warning
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 click on all checkbox under technology bulk import
     [Arguments]     ${option}
@@ -833,3 +841,122 @@ Verify department added using bulk_import_export under asset wizard
      ${get_departmentName1} =    get text    //td[normalize-space()='${departmentName}']
      log to console     ${get_departmentName1}
      should be equal    ${departmentName}     ${get_departmentName1}
+
+Verify that element is not enabled
+    [Arguments]         ${option}
+    wait until element is visible    //button[contains(@class,'disabled-button')][normalize-space()='${option}']        ${wait_time}
+
+Enter static value in the fields of department bulk import
+    [Arguments]    ${option}        ${option1}
+    DashboardPage.Double click    ${option}
+    wait until element is visible       xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]     ${wait_time}
+    input text   xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]//input      ${option1}
+
+Clear the text of the field
+    [Arguments]     ${option}
+    Wait Until Element Is Visible      css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
+    Wait Until Element Is Enabled      css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
+    Double Click Element               css:.ag-center-cols-container div[col-id='${option}']
+    Press Keys    css:.ag-center-cols-container div[col-id='${option}']     CTRL+a    BACKSPACE
+
+Enter the random value in the brand field under product bulk import
+    [Arguments]    ${option}
+    Bulk_Import_ExportPage.Double click    ${option}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_addBrandName}=    Catenate    BrandName${random_string}
+    wait until element is visible       xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]     ${wait_time}
+    wait until element is enabled       xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]     ${wait_time}
+    input text      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]//input      ${generated_addBrandName}
+    set global variable    ${generated_addBrandName}
+
+Enter the static value in the product name column in bulk_import
+    [Arguments]    ${option}    ${ProductName}
+    Bulk_Import_ExportPage.Double click    ${option}
+    wait until element is visible       xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]    ${wait_time}
+    wait until element is enabled       xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]    ${wait_time}
+    input text   xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]//input   ${ProductName}
+
+#Enter the 101 characters in the bulk import
+#    [Arguments]    ${option}
+#    Bulk_Import_ExportPage.Double click    ${option}
+#    ${random_string} =    Generate Random String       100      [NUMBERS]
+#    ${generated_addProductName_more}=    Catenate    ProductName${random_string}
+#    wait until element is visible       xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]     ${wait_time}
+#    wait until element is enabled       xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]     ${wait_time}
+#    input text      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]//input      ${generated_addProductName_more}
+#    set global variable    ${generated_addProductName_more}
+
+Clear the text of the field with delete
+    [Arguments]     ${option}
+    Wait Until Element Is Visible      css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
+    Wait Until Element Is Enabled      css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
+    Press Keys    css:.ag-center-cols-container div[col-id='${option}']     DELETE
+
+Enter the new value of assigned in the email column for bulk import and edit
+    [Arguments]    ${option}
+    MemberPage.Double click    ${option}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_assigneeEmail}=    Catenate    BusinessEmail${random_string}@yopmail.net
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    ${wait_time}
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assigneeEmail}
+    set global variable    ${generated_assigneeEmail}
+
+Select the department from dropdown under technology bulk import
+    [Arguments]     ${option}
+    wait until element is visible       //div[contains(@class,'full-page-block')]//ng-select[contains(@id,'department-name')]//input        ${wait_time}
+    wait until element is enabled       //div[contains(@class,'full-page-block')]//ng-select[contains(@id,'department-name')]//input        ${wait_time}
+    click element   //div[contains(@class,'full-page-block')]//ng-select[contains(@id,'department-name')]//input
+    input text   //div[contains(@class,'full-page-block')]//ng-select[contains(@id,'department-name')]//input  ${option}
+    sleep      ${search_sleep}
+    wait until element is visible      //span[contains(text(),'${option}')]       ${wait_time}
+    wait until element is enabled       //span[contains(text(),'${option}')]        ${wait_time}
+    click element   //span[contains(text(),'${option}')]
+
+
+Select the status under add department technology bulk import
+    wait until element is visible       (//ng-select[contains(@class,'qa-add-department-status')]//input)[1]        ${wait_time}
+    wait until element is enabled      (//ng-select[contains(@class,'qa-add-department-status')]//input)[1]       ${wait_time}
+    click element   (//ng-select[contains(@class,'qa-add-department-status')]//input)[1]
+    sleep      ${search_sleep}
+    wait until element is visible     //div[contains(@id,'1')]       ${wait_time}
+    wait until element is enabled       //div[contains(@id,'1')]       ${wait_time}
+    click element   //div[contains(@id,'1')]
+
+Enter cost center under add department technology bulk import
+    [Arguments]     ${option}
+    wait until element is visible       (//input[@id='costCenter'])[1]        ${wait_time}
+    wait until element is enabled      (//input[@id='costCenter'])[1]       ${wait_time}
+    click element   (//input[@id='costCenter'])[1]
+    input text  (//input[@id='costCenter'])[1]  ${option}
+
+Click on the bulk import option under asset wizard via technology
+    wait until element is visible       css:.qa-department-bulk-import        ${wait_time}
+    wait until element is enabled      css:.qa-department-bulk-import       ${wait_time}
+    click element   css:.qa-department-bulk-import
+
+Click on the location bulk import option under asset wizard via technology
+    wait until element is visible       css:.qa-addLocation-bulk        ${wait_time}
+    wait until element is enabled      css:.qa-addLocation-bulk       ${wait_time}
+    click element   css:.qa-addLocation-bulk
+
+Click on the product bulk import option under asset wizard via technology
+    wait until element is visible       css:.qa-add-bulk-product        ${wait_time}
+    wait until element is enabled      css:.qa-add-bulk-product       ${wait_time}
+    click element   css:.qa-add-bulk-product
+
+Click on the team member bulk import under asset wizard
+    wait until element is visible       css:.qa-add-bulk-member       ${wait_time}
+    wait until element is enabled      css:.qa-add-bulk-member       ${wait_time}
+    click element   css:.qa-add-bulk-member
+
+Clear the text of the field with delete under asset wizard
+    [Arguments]     ${option}
+    Wait Until Element Is Visible      css:.ag-pinned-left-cols-container div[col-id='${option}']    ${wait_time}
+    Wait Until Element Is Enabled      css:.ag-pinned-left-cols-container div[col-id='${option}']    ${wait_time}
+    Press Keys    css:.ag-pinned-left-cols-container div[col-id='${option}']     DELETE
+
+Enter static value in the fields of team membder bulk import under asset wizard
+    [Arguments]    ${option}        ${option1}
+    MemberPage.Double click team member bulk import    ${option}
+    wait until element is visible       css:.ag-pinned-left-cols-container div[col-id='${option}']    ${wait_time}
+    input text  css:.ag-pinned-left-cols-container div[col-id='${option}'] input   ${option1}

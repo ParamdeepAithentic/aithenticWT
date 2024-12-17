@@ -148,7 +148,7 @@ Run now from view details
     SubscriptionPage.Get the value of fields under view details of subscription connector   2       Samuel John
 
 Suspend and unsuspend the account
-    [Tags]      Smoke     Sanity    rerun
+    [Tags]      Smoke     Sanity          
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
@@ -197,7 +197,7 @@ Suspend and unsuspend the account
     END
 
 View Scheduler from view Result
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -435,7 +435,7 @@ View Scheduler from view Result
 #    SubscriptionPage.Click on the three dots of subscription connector      Microsoft Corporation
 
 Create service now with invalid data
-    [Tags]      NT      rerun
+    [Tags]      NT        
    Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -534,7 +534,7 @@ Create service now with invalid data
     Generic.Verify your current page contains this text     Service Now Connection Failed.
 
 Create service now with valid data
-    [Tags]      Sanity     Smoke    rerun
+    [Tags]      Sanity     Smoke          
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -632,12 +632,11 @@ Create service now with valid data
     SubscriptionPage.Enter input in the client id field of service now     b736c1fecf3b021092418c18e0464b57
     SubscriptionPage.Enter input in the secret key field of service now     }6@ENaGIQy
     Generic.click on the button     Create Connection
-#    Generic.click on the button     By System
     Generic.Verify your current page location contains      technology-settings
     Generic.Fetch alert message text and compare it with       Technology created successfully
-#    Generic.Fetch alert message text and compare it with       Scheduler created successfully
+
     Generic.Wait until table get load
-#    sleep   300s
+
     SubscriptionPage.Fetch text of status under the table of subscription connector     ServiceNow
     SubscriptionPage.Click on the three dots of subscription connector      ServiceNow
     SubscriptionPage.Click on option under three dots of subscription connector     ServiceNow       Scheduler
@@ -700,87 +699,85 @@ Create service now with valid data
     SubscriptionPage.Click on option under three dots of subscription connector     ServiceNow     View Results
     Generic.Verify your current page location contains      discovery-assets
     Generic.Verify your current page contains this text    Asset Discovery
+
+    SubscriptionPage.Fetch and compare the product from the table
+    Generic.Wait until table get load
+    Go Back
+    Generic.Verify your current page location contains      technology-settings
+    Generic.select the option from the side menu    Asset Discovery
+
     Generic.click on the button     No, thanks
-    Generic.Verify your current page contains this text    No Records
-#    SubscriptionPage.Fetch and compare the product from the table
-#    Generic.Wait until table get load
-#    Go Back
-#    Generic.Verify your current page location contains      technology-settings
-#    Generic.select the option from the side menu    Asset Discovery
-##    Generic.click on the button     No, thanks
+    SubscriptionPage.Click on the service now tab under discovery assets
+    OCS.Click on newly discovered tab under service now
+    SubscriptionPage.Click on the action button of service now under discovery assets
+    SubscriptionPage.Click on the options under action button of service now under discovery assets       Edit
+    SubscriptionPage.click on the cross icon of service now under asset discovery    1
+    SubscriptionPage.Enter input in the input field of frequency under asset discovery    Weekly
+    SubscriptionPage.Enter input in the input field of day asset discovery       Monday
 
-#    SubscriptionPage.Click on the service now tab under discovery assets
-#    OCS.Click on newly discovered tab under service now
-#    SubscriptionPage.Click on the action button of service now under discovery assets
-#    SubscriptionPage.Click on the options under action button of service now under discovery assets       Edit
-#    SubscriptionPage.click on the cross icon of service now under asset discovery    1
-#    SubscriptionPage.Enter input in the input field of frequency under asset discovery    Weekly
-#    SubscriptionPage.Enter input in the input field of day asset discovery       Monday
+   SubscriptionPage.Select the time from the timepicker of service now under asset discovery     7
+    SubscriptionPage.Click on the ok button after selecting the time
+    sleep   ${search_sleep}
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+    SubscriptionPage.Click on the action button of service now under discovery assets
+    SubscriptionPage.Click on the options under action button of service now under discovery assets    Edit
+    SubscriptionPage.click on the cross icon of service now under asset discovery    1
+    SubscriptionPage.Enter input in the input field of frequency under asset discovery    Monthly
+    SubscriptionPage.Enter input in the start date field of service now under asset discovery
 
-#   SubscriptionPage.Select the time from the timepicker     7
-#    SubscriptionPage.Click on the ok button after selecting the time
-#    sleep   ${search_sleep}
-#    Generic.click on the button     Update
-#    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
-#    SubscriptionPage.Click on the action button of service now under discovery assets
-#    SubscriptionPage.Click on the options under action button of service now under discovery assets    Edit
-#    SubscriptionPage.click on the cross icon of service now under asset discovery    1
-#    SubscriptionPage.Enter input in the input field of frequency under asset discovery    Monthly
-#    SubscriptionPage.Enter input in the start date field of service now under asset discovery
+    SubscriptionPage.Select the time from the timepicker of service now under asset discovery      8
+    SubscriptionPage.Click on the ok button after selecting the time
+    sleep   ${search_sleep}
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+    SubscriptionPage.Click on the action button of service now under discovery assets
+    SubscriptionPage.Click on the options under action button of service now under discovery assets      Edit
+    SubscriptionPage.click on the cross icon of service now under asset discovery    1
+    SubscriptionPage.Enter input in the input field of frequency under asset discovery    Daily
 
-#    SubscriptionPage.Select the time from the timepicker      8
-#    SubscriptionPage.Click on the ok button after selecting the time
-#    sleep   ${search_sleep}
-#    Generic.click on the button     Update
-#    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
-#    SubscriptionPage.Click on the action button of service now under discovery assets
-#    SubscriptionPage.Click on the options under action button of service now under discovery assets      Edit
-#    SubscriptionPage.click on the cross icon of service now under asset discovery    1
-#    SubscriptionPage.Enter input in the input field of frequency under asset discovery    Daily
+    SubscriptionPage.Select the time from the timepicker of service now under asset discovery      9
+    SubscriptionPage.Click on the ok button after selecting the time
 
-#    SubscriptionPage.Select the time from the timepicker      9
-#    SubscriptionPage.Click on the ok button after selecting the time
+    sleep   ${search_sleep}
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+    SubscriptionPage.Click on the action button of service now under discovery assets
+    SubscriptionPage.Click on the options under action button of service now under discovery assets     Edit
+    SubscriptionPage.click on the cross icon of service now under asset discovery    1
+    SubscriptionPage.Enter input in the input field of frequency under asset discovery    Yearly
+    SubscriptionPage.Enter input in the start date field of service now under asset discovery
 
-#    sleep   ${search_sleep}
-#    Generic.click on the button     Update
-#    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
-#    SubscriptionPage.Click on the action button of service now under discovery assets
-#    SubscriptionPage.Click on the options under action button of service now under discovery assets     Edit
-#    SubscriptionPage.click on the cross icon of service now under asset discovery    1
-#    SubscriptionPage.Enter input in the input field of frequency under asset discovery    Yearly
-#    SubscriptionPage.Enter input in the start date field of service now under asset discovery
+    SubscriptionPage.Select the time from the timepicker of service now under asset discovery      2
+    SubscriptionPage.Click on the ok button after selecting the time
 
-#    SubscriptionPage.Select the time from the timepicker      2
-#    SubscriptionPage.Click on the ok button after selecting the time
-
-#    sleep   ${search_sleep}
-#    Generic.click on the button     Update
-#    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
-#    SubscriptionPage.Click on the action button of service now under discovery assets
-#    SubscriptionPage.Click on the options under action button of service now under discovery assets     Details
-#    SubscriptionPage.Click on the options under action button of service now under discovery assets     Run Now
-##    SubscriptionPage.Click on cross icon of details under service now          #  delete this line after bug got fixed #
-#    SubscriptionPage.Fetch alert message text of subscription connector and compare it with
-#    sleep   ${search_sleep}
-#    SubscriptionPage.Click on the action button of service now under discovery assets
-#    SubscriptionPage.Click on the options under action button of service now under discovery assets      Delete
-#    Generic.click on the button     Yes
-#    SubscriptionPage.click on the cross icon of delete pop up under asset discovery
-#    Generic.Fetch alert message text and compare it with        Status Updated
-#    SubscriptionPage.Click on the action button of service now under discovery assets
-#    SubscriptionPage.Click on the options under action button of service now under discovery assets      Activate
-#    Generic.Fetch alert message text and compare it with        Status Updated
-#    SubscriptionPage.Click on the action button of service now under discovery assets
-#    Generic.click on the tab       Run Now
-#    SubscriptionPage.Fetch alert message text of subscription connector and compare it with
-#    SubscriptionPage.Click on the action button of service now under discovery assets
-#    SubscriptionPage.Click on the options under action button of service now under discovery assets      Details
-#    SubscriptionPage.Get the value of fields under view details of subscription connector   1       ServiceNow
-#    SubscriptionPage.Get the value of fields under view details of subscription connector   2       ${generate_register_Fname} ${generate_register_Lname}
+    sleep   ${search_sleep}
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+    SubscriptionPage.Click on the action button of service now under discovery assets
+    SubscriptionPage.Click on the options under action button of service now under discovery assets     Details
+    Generic.click on the button        Run Now
+    SubscriptionPage.Fetch alert message text of subscription connector and compare it with
+    sleep   ${search_sleep}
+    SubscriptionPage.Click on the action button of service now under discovery assets
+    SubscriptionPage.Click on the options under action button of service now under discovery assets      Delete
+    SubscriptionPage.click on the yes option of delete pop up under asset discovery service now
+    Generic.Fetch alert message text and compare it with        Status Updated
+    SubscriptionPage.Click on the action button of service now under discovery assets
+    SubscriptionPage.Click on the options under action button of service now under discovery assets      Activate
+    Generic.Fetch alert message text and compare it with        Status Updated
+    SubscriptionPage.Click on the action button of service now under discovery assets
+    SubscriptionPage.Click on the action button of service now under discovery assets
+    SubscriptionPage.Click on the options under action button of service now under discovery assets      Run Now
+    SubscriptionPage.Fetch alert message text of subscription connector and compare it with
+    SubscriptionPage.Click on the action button of service now under discovery assets
+    SubscriptionPage.Click on the options under action button of service now under discovery assets      Details
+    SubscriptionPage.Get the value of fields under view details of subscription connector service now under asset discovery   1       ServiceNow
+    SubscriptionPage.Get the value of fields under view details of subscription connector service now under asset discovery   2       ${generate_register_Fname} ${generate_register_Lname}
 
 
 Click on connetors button link under asset discovery
-    [Tags]      Sanity      rerun
+    [Tags]      Sanity        
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -879,7 +876,7 @@ Click on connetors button link under asset discovery
     Generic.Wait until table get load
 
 Create JAMFF account with valid data
-   [Tags]      NT       rerun
+   [Tags]      NT         
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1046,7 +1043,7 @@ Create JAMFF account with valid data
     Generic.Verify your current page contains this text    No Records
 
 Create jamff account with invalid data
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1243,7 +1240,7 @@ Create jamff account with invalid data
 #    Generic.Verify your current page contains this text    No Records
 
 Create sentinel account and verify the options
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1485,7 +1482,7 @@ Click on the three dots of Intune and verify the details
 
 
 Create Tenable Account and verify the details
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1717,7 +1714,7 @@ Create Tenable Account and verify the details
 
 
 Create tanium Account and verify the details
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1948,7 +1945,7 @@ Create tanium Account and verify the details
     SubscriptionPage.Get the value of fields under view details of subscription of tanium tab under asset discovery   2       ${generate_register_Fname} ${generate_register_Lname}
 
 Create CrowdStrike Account and verify the details
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -2336,3 +2333,73 @@ Technologies: View details on subscription tab
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
     SubscriptionPage.Verify subscription info tab is not visible
+
+Click on the three dots of AWS and verify the details
+    [Tags]      NT
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      debut@cool.fr.nf   Test@123
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     subscription-connector
+    Generic.Verify your current page location contains      technology-settings
+    SubscriptionPage.Click on the three dots of subscription connector     AWS
+    SubscriptionPage.Click on option under three dots of subscription connector     AWS      Scheduler
+    SubscriptionPage.click on the cross icon of create scheduler    1
+    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Weekly
+    SubscriptionPage.Enter input in the input field of day under create scheduler       Monday
+    SubscriptionPage.Select the time from the timepicker      3
+    SubscriptionPage.Click on the ok button after selecting the time
+#    sleep   ${search_sleep}
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+    SubscriptionPage.Click on the three dots of subscription connector      AWS
+    SubscriptionPage.Click on option under three dots of subscription connector     AWS     Scheduler
+    SubscriptionPage.click on the cross icon of create scheduler    1
+    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Monthly
+    SubscriptionPage.Enter input in the start date field of billing details
+    SubscriptionPage.Select the time from the timepicker      4
+    SubscriptionPage.Click on the ok button after selecting the time
+#    sleep   ${search_sleep}
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+    SubscriptionPage.Click on the three dots of subscription connector      AWS
+    SubscriptionPage.Click on option under three dots of subscription connector    AWS     Scheduler
+    SubscriptionPage.click on the cross icon of create scheduler    1
+    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Daily
+    SubscriptionPage.Select the time from the timepicker      5
+    SubscriptionPage.Click on the ok button after selecting the time
+#    sleep   ${search_sleep}
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+    SubscriptionPage.Click on the three dots of subscription connector      AWS
+    SubscriptionPage.Click on option under three dots of subscription connector     AWS     Scheduler
+    SubscriptionPage.click on the cross icon of create scheduler    1
+    SubscriptionPage.Enter input in the input field of frequency under create scheduler    Yearly
+    SubscriptionPage.Enter input in the start date field of billing details
+    SubscriptionPage.Select the time from the timepicker      2
+    SubscriptionPage.Click on the ok button after selecting the time
+#    sleep   ${search_sleep}
+    Generic.click on the button     Update
+    Generic.Fetch alert message text and compare it with        Scheduler updated sucessfully
+    SubscriptionPage.Click on the three dots of subscription connector      AWS
+    SubscriptionPage.Click on option under three dots of subscription connector   AWS       Details
+    Generic.click on the button     Run Now
+    SubscriptionPage.Fetch alert message text of subscription connector and compare it with
+#    sleep  ${search_sleep}
+    SubscriptionPage.Click on the three dots of subscription connector      AWS
+    SubscriptionPage.Click on option under three dots of subscription connector     AWS    Delete
+    Generic.click on the button     Yes
+    Generic.Fetch alert message text and compare it with        Status Updated
+    SubscriptionPage.Fetch text of delete under table of subscription connector     AWS        Deleted
+    sleep  ${search_sleep}
+    SubscriptionPage.Click on the activate option under subscription connector table        AWS
+    Generic.Fetch alert message text and compare it with        Status Updated
+    SubscriptionPage.Fetch text of delete under table of subscription connector    AWS      Active
+    SubscriptionPage.Click on the three dots of subscription connector      AWS
+    SubscriptionPage.Click on option under three dots of subscription connector    AWS    Run Now
+    SubscriptionPage.Fetch alert message text of subscription connector and compare it with
+    SubscriptionPage.Click on the three dots of subscription connector      AWS
+    SubscriptionPage.Click on option under three dots of subscription connector     AWS    Details
+    SubscriptionPage.Get the value of fields under view details of subscription connector   1      AWS
+    SubscriptionPage.Get the value of fields under view details of subscription connector   2       Milan Johar

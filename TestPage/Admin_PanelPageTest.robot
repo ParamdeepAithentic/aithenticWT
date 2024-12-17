@@ -49,7 +49,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Change plan- Assign commercial plan and change it to slotted
-    [Tags]      Smoke     Sanity      Time           Stable
+    [Tags]      Smoke     Sanity      Time       Stable
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     mehak@mynes.com     Test@123
     Generic.Verify your current page location contains      dashboard
@@ -106,9 +106,9 @@ Change plan- Assign commercial plan and change it to slotted
 
 
 Free the asset limit
-    [Tags]      Smoke     Sanity      Time      rerun       Stable
+    [Tags]      Smoke     Sanity      Time        Stable
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form     ${email}    ${valid_password}
+    LandingPage.Fill the login Form       chirag@dmts.fr.nf      Test@123           #${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology
@@ -118,11 +118,7 @@ Free the asset limit
 
 
 Set Plan range in pre requites
-<<<<<<< HEAD
-    [Tags]      rerun
-=======
     [Tags]    NT
->>>>>>> 99bcb191e0d4ced4df643abc2c9f2456d3ffb14b
     TRY
         Generic.click on the tab	Login
         LandingPage.Fill the login Form     ${email}    ${valid_password}

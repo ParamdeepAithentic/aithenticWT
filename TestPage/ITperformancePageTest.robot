@@ -82,6 +82,7 @@ Download sheet for investments
     Generic.Verify your current page location contains      it-performance
     ITperformancePage.Verify all tabs of asset report and download sheet
     Generic.Fetch alert message text and compare it with        Investment by Partners sheets will get download soon
+    sleep    10
     ITperformancePage.Verify sheet is downloaded        sspslReport
 
 Download all sheets with download all button
@@ -116,7 +117,7 @@ It performnace drill down agging analytics
     ITperformancePage.Get and verify the count of aging analytics table     Upcoming End Of Life        Upcoming End Of Life
 
 IT perfomance drill down data quality
-    [Tags]    NT        rerun
+    [Tags]    NT          
     Generic.click on the tab	Login
     LandingPage.Fill the login Form    ${email}     ${valid_password}
     Generic.Verify your current page location contains      dashboard

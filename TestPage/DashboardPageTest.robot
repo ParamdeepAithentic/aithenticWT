@@ -198,7 +198,7 @@ Add Brand via personal detail under technology
 
 
 Invite user into Aithentic
-    [Tags]      Smoke       Sanity    rerun
+    [Tags]      Smoke       Sanity      
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -339,7 +339,7 @@ Verify Help Center
     DashboardPage.Verify no result found with wrong FAQ
 
 Edit Brand and address via brand under profile list
-    [Tags]      Sanity      Smoke     rerun
+    [Tags]      Sanity      Smoke       
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -412,7 +412,7 @@ Edit Brand and address via brand under profile list
 
 
 Deactivate Brand and address via brand under profile list
-    [Tags]    NT      rerun
+    [Tags]    NT        
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -570,7 +570,7 @@ Activate Brand and address via brand under profile list
     Generic.Fetch alert message text and compare it with      Brand activated successfully
 
 Remove Brand and address via brand under profile list
-    [Tags]    Smoke     rerun
+    [Tags]    Smoke       
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -932,7 +932,7 @@ Click and verify the count of the tabs under renewal overview by choosing the va
     DashboardPage.Get And Verify The Count Of tabs under renewal overview by management console
 
 Verify Account_overview Recent Activities Filters
-    [Tags]      Smoke       Sanity   rerun
+    [Tags]      Smoke       Sanity     
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}       ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1051,7 +1051,7 @@ View Predefined product
     DashboardPage.Click on pre defined product list       [W306MI0U247
 
 Verifying the Renewals Overview section of Management console - End of Life
-    [Tags]       Smoke       Sanity     rerun
+    [Tags]       Smoke       Sanity       
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
 
@@ -1149,7 +1149,7 @@ Verifying the Renewals Overview section of Management console - End of Life
     Generic.Verify your current page location contains    management-console
 
 Verifying the Renewals Overview section of Management console - Overdue Renewals
-    [Tags]       Sanity      Smoke      rerun
+    [Tags]       Sanity      Smoke        
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1236,7 +1236,7 @@ Verifying the Renewals Overview section of Management console - Overdue Renewals
     Generic.Verify your current page location contains    management-console
 
 Verifying the Renewals Overview section of Management console - Overdue contracts
-    [Tags]    NT        rerun
+    [Tags]    NT          
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1312,7 +1312,7 @@ Verifying the Renewals Overview section of Management console - Overdue contract
     Generic.Verify your current page location contains    management-console
 
 Verifying the Renewals Overview section of Management console - Expired warranties
-    [Tags]    NT        Smoke       rerun
+    [Tags]    NT        Smoke         
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1385,7 +1385,7 @@ Verifying the Renewals Overview section of Management console - Expired warranti
     Generic.Verify your current page location contains    management-console
 
 Verifying the Renewals Overview section of Management console - Overdue certificates
-    [Tags]      Smoke       rerun
+    [Tags]      Smoke         
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1458,7 +1458,7 @@ Verifying the Renewals Overview section of Management console - Overdue certific
     Generic.Verify your current page location contains    management-console
 
 Verifying the Subscription Overview section of Management console
-    [Tags]    NT        rerun
+    [Tags]    NT          
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      Samuel@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -1569,7 +1569,7 @@ Verifying the Subscription Overview section of Management console
     DashboardPage.Click on done button of subscription overview    Done
 
 Management Console - Quarters filter dropdown
-    [Tags]    NT        rerun
+    [Tags]    NT          
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1667,7 +1667,7 @@ Management Console - Quarters filter dropdown
     DashboardPage.Verify your current page not contains this element
 
 Change password and login with new password
-    [Tags]      Sanity      smoke       rerun
+    [Tags]      Sanity      smoke         
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -2013,7 +2013,7 @@ Click and verify on manage subscription under billing
     TechnologyPage.verify Text from Assignment Information       ${subscription_plan}       ${plan_name}
 
 Compose Message reply and delete that message
-    [Tags]    NT        rerun
+    [Tags]    NT          
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
@@ -2255,7 +2255,7 @@ No data in the charts of the management console page
     DashboardPage.Verify all the checkmark boxes of finance filter are auto-check       Budget
 
 Renewals overview drilldown - Add column Host name
-    [Tags]    NT        rerun
+    [Tags]    NT        
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -2291,16 +2291,20 @@ Renewals overview drilldown - Add column Host name
     Generic.Verify your current page contains this text   ${result}
 
 Message Side bar filters
-    [Tags]     time    smoke        rerun
+    [Tags]     time    smoke      rerun
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.select the option from the side menu    Messages
     Generic.Verify your current page location contains      message
     MessagePage.Click on select partner filter from message side bar list
     MessagePage.Select the filter from partner      End User
-    ReportsPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     inbox
-    PaginationPage.Select the value from the pagination drop down count    500
+    MemberPage.Wait till message listing appear
+    MessagePage.Fetch the total count of message listing after selecting filter
+    MessagePage.Set pagination to max for inbox list in message
+#    MemberPage.Wait till message listing appear
+#    PaginationPage.Click on the pagination dropdown     inbox
+#    PaginationPage.Select the value from the pagination drop down count    500
+#    PaginationPage.Check Pagination     inbox
 
     ${StartTime1} =     Get Current Time in Milliseconds
     MessagePage.Fetch the country from location filter and click     Partner Type         End User    End User
@@ -2310,18 +2314,20 @@ Message Side bar filters
 
     Generic.Click on the reset filters link
     MessagePage.Select the filter from partner    Manufacturer
-    ReportsPage.Fetch the total count
+    MemberPage.Wait till message listing appear
+    MessagePage.Fetch the total count of message listing after selecting filter
+    MessagePage.Set pagination to max for inbox list in message
     MessagePage.Fetch the country from location filter and click     Partner Type         Manufacturer    Manufacturer
     Generic.Click on the reset filters link
     Generic.Refresh the existing page
     ReportsPage.Fetch the total count
     MessagePage.Click on select partner filter from message side bar list
     MessagePage.Select the filter from partner      All Partners
-    ReportsPage.Fetch the total count After selecting filter
-    MessagePage.Comapre the total count after selecting filter
+    PaginationPage.Fetch the total count for filter only
+    MessagePage.Compare the total count after selecting filter
 
 Click on the status filter under brand via profile list
-    [Tags]    NT        rerun
+    [Tags]    NT          
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
@@ -2349,9 +2355,10 @@ Click on the status filter under brand via profile list
     DashboardPage.Click on the added brands heading
     DashboardPage.Get the text of selected status filter under brand via profile       Inactive
     Generic.Wait until table get load
-    PaginationPage.Click on the pagination dropdown    brand
-    PaginationPage.Select the value from the pagination drop down count     500
-    PaginationPage.Fetch the selected value of the dropdown     brand
+    PaginationPage.Check filter Pagination of Recent Activites
+#   -- PaginationPage.Click on the pagination dropdown    brand
+#   -- PaginationPage.Select the value from the pagination drop down count     500
+#   -- PaginationPage.Fetch the selected value of the dropdown     brand
     PaginationPage.Fetch the total count
     TeamMemberPage.Fetch the country from team member filter and click       Status     ${New_status_Brand}        ${New_status_Brand}
 
@@ -2435,9 +2442,9 @@ Verify Team member in permissions according to user roles
     DashboardPage.Select the permission of member according to user role        permission-write
 
 Click on the product filters via profile list
-    [Tags]      time      smoke     rerun
+    [Tags]      time      smoke       rerun
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form     jasdeep@15963.fr.nf     Paramdeep@112
+    LandingPage.Fill the login Form     deepparam112@mail-mario.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     Generic.Click on the profile name
     Generic.Select option from profile list     product-dropdown
@@ -2452,8 +2459,9 @@ Click on the product filters via profile list
 
     DashboardPage.Click on the added products heading
     DashboardPage.Get the text of selected status filter under product via profile
-    Generic.Wait until table get load
-    PaginationPage.Fetch the total count
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
+    PaginationPage.Set pagination to max
     TeamMemberPage.Fetch the country from team member filter and click       Status      ${New_product_Status}         ${New_product_Status}
     Generic.Click on the profile name
     Generic.Select logout option from profile list
@@ -2468,62 +2476,70 @@ Click on the product filters via profile list
     DashboardPage.Select the option from the filters under product via profile      1
     DashboardPage.Click on the added products heading
     DashboardPage.Get the text of selected status filter under product via profile
-    Generic.Wait until table get load
-    PaginationPage.Click on the pagination dropdown    products
-    PaginationPage.Select the value from the pagination drop down count     500
-    PaginationPage.Fetch the selected value of the dropdown      products
-    PaginationPage.Fetch the total count
+    Generic.Wait until table get load for filters
+#    PaginationPage.Check filter Pagination of Recent Activites
+#    PaginationPage.Click on the pagination dropdown    products
+#    PaginationPage.Select the value from the pagination drop down count     500
+#    PaginationPage.Fetch the selected value of the dropdown      products
+    PaginationPage.Fetch the total count for filter only
+    PaginationPage.Set pagination to max
     TeamMemberPage.Fetch the country from team member filter and click       Status     ${New_product_Status}        ${New_product_Status}
     DashboardPage.Click on the reset button under product
     DashboardPage.Click on the brand filter under product via profile
     DashboardPage.Select the option from the brand filter under product via profile     2
     DashboardPage.Click on the added products heading
     DashboardPage.Get the text of selected brand filter under product via profile
-    Generic.Wait until table get load
-    PaginationPage.Fetch the total count
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
+    PaginationPage.Set pagination to max
     TeamMemberPage.Fetch the country from team member filter and click        Brand Name       ${selected_Brand}        ${selected_Brand}
     DashboardPage.Click on the reset button under product
     DashboardPage.Click on the brand filter under product via profile
     DashboardPage.Select the option from the brand filter under product via profile     3
     DashboardPage.Click on the added products heading
     DashboardPage.Get the text of selected brand filter under product via profile
-    Generic.Wait until table get load
-    PaginationPage.Fetch the total count
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
+    PaginationPage.Set pagination to max
     TeamMemberPage.Fetch the country from team member filter and click        Brand Name       ${selected_Brand}        ${selected_Brand}
     DashboardPage.Click on the reset button under product
     DashboardPage.Click on the brand filter under product via profile
     DashboardPage.Select the option from the brand filter under product via profile    5
     DashboardPage.Click on the added products heading
     DashboardPage.Get the text of selected brand filter under product via profile
-    Generic.Wait until table get load
-    PaginationPage.Fetch the total count
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
+    PaginationPage.Set pagination to max
     TeamMemberPage.Fetch the country from team member filter and click        Brand Name      ${selected_Brand}        ${selected_Brand}
     DashboardPage.Click on the reset button under product
     DashboardPage.Click on the technology group filter under product via profile
     DashboardPage.Select the option from the technology group filter under product via profile      1
     DashboardPage.Click on the added products heading
     DashboardPage.Get the text of selected technology group filter under product via profile
-    Generic.Wait until table get load
-    PaginationPage.Fetch the total count
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
+    PaginationPage.Set pagination to max
     TeamMemberPage.Fetch the country from team member filter and click         Technology Group        ${New_product_tech_group}        ${New_product_tech_group}
     DashboardPage.Click on the reset button under product
     DashboardPage.Click on the technology group filter under product via profile
     DashboardPage.Select the option from the technology group filter under product via profile      3
     DashboardPage.Click on the added products heading
     DashboardPage.Get the text of selected technology group filter under product via profile
-    Generic.Wait until table get load
-     PaginationPage.Click on the pagination dropdown    products
-    PaginationPage.Select the value from the pagination drop down count     500
-    PaginationPage.Fetch the selected value of the dropdown      products
-    PaginationPage.Fetch the total count
+    Generic.Wait until table get load for filters
+    PaginationPage.Check filter Pagination of Recent Activites
+#     PaginationPage.Click on the pagination dropdown    products
+#    PaginationPage.Select the value from the pagination drop down count     500
+#    PaginationPage.Fetch the selected value of the dropdown      products
+    PaginationPage.Fetch the total count for filter only
+    PaginationPage.Set pagination to max
     TeamMemberPage.Fetch the country from team member filter and click         Technology Group        ${New_product_tech_group}        ${New_product_tech_group}
     DashboardPage.Click on the reset button under product
     DashboardPage.Click on the technology group filter under product via profile
     DashboardPage.Select the option from the technology group filter under product via profile      4
     DashboardPage.Click on the added products heading
     DashboardPage.Get the text of selected technology group filter under product via profile
-    Generic.Wait until table get load
-    PaginationPage.Fetch the total count
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
     TeamMemberPage.Fetch the country from team member filter and click         Technology Group        ${New_product_tech_group}        ${New_product_tech_group}
 
 Suspend the account while the contract active
@@ -2549,7 +2565,7 @@ Click on the usage analytics tab under management console
     Generic.Verify your current page location contains     usage-analytics
 
 Verify Notification Mark all as read
-    [Tags]    NT        rerun
+    [Tags]    NT          
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -2726,7 +2742,7 @@ Verify all the validations of Add and Edit product page
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page       Please Select Technology Type
 
 Verfying all field validations of Add Brand page
-    [Tags]    Negative       rerun
+    [Tags]    Negative         
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -3095,12 +3111,7 @@ Verify user should not able to Edit Brand having Product created
 
 Verify all the character validations of add brand page
      [Tags]   Negative
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.Verify your current page location contains      dashboard
-    LandingPage.Verify you are on dashboard page
-    Generic.Click on the profile name
-    Generic.Select option from profile list     brand-dropdown
+     Generic.Select option from profile list     brand-dropdown
     Generic.Verify your current page location contains      brand
     DashboardPage.Save added brand details
     DashboardPage.Click add brand button
@@ -3109,6 +3120,284 @@ Verify all the character validations of add brand page
     DashboardPage.Add brand manufacturer country      Australia
     DashboardPage.Save added brand details
     Generic.Fetch alert message text and compare it with     Something went wrong.Please try again
+
+Share invite to the registered user
+    [Tags]    Negative
+     Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Dashboard
+    Generic.Verify your current page location contains      dashboard
+    DashboardPage.click on share icon of dashboard page
+    DashboardPage.Click on Send Invite button
+    DashboardPage.Fetch the validation of to field under share aithentic        Please enter their business email
+    DashboardPage.Enter to Static Email into popup of share aithentic       jasdeep@15963.fr.nf
+    DashboardPage.Click on Send Invite button
+    Generic.Fetch alert message text and compare it with containing text        Email Address already exists.
+
+Verify all the validations of Personal Details page
+    [Tags]       Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}       ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    RegisterUserPage.Select the option from the personal details sidebar        personal-profile
+    Generic.Verify your current page location contains    personal-profile
+    RegisterUserPage.Click on edit button to edit the profile details    Edit
+    LoginPage.Clear the element text of field under login page    FirstName
+    LoginPage.Clear the element text of field under login page     LastName
+    LoginPage.Clear the element text of field under login page     Email
+    LoginPage.Clear The Element Text for phone number     ${profile_phone}
+    sleep       ${search_sleep}
+    RegisterUserPage.Save the Profile details       Save
+    DashboardPage.Fetch the all validation message on Personal Details page
+    RegisterUserPage.Create random register first name
+    RegisterUserPage.Create random register last name
+    RegisterUserPage.Create self register invalid business name under Personal Details     deepparam112@mail-mario.fr.nf
+    RegisterUserPage.Create self register invalid phone number under Personal Details          98745612
+    RegisterUserPage.Save the Profile details       Save
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Please enter a valid mobile Number
+    LoginPage.Clear The Element Text for phone number     ${profile_phone}
+    RegisterUserPage.Create self register invalid phone number under Personal Details         987456123214
+    RegisterUserPage.Save the Profile details       Save
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Please enter a valid mobile Number
+    LoginPage.Clear The Element Text for phone number     ${profile_phone}
+    RegisterUserPage.Create self register invalid phone number under Personal Details      9874561232
+    LoginPage.Clear the element text of field under login page     Email
+    RegisterUserPage.Create self register invalid business name under Personal Details     samuel@yopmail.net
+    RegisterUserPage.Save the Profile details       Save
+    DashboardPage.Get the text of the pop up after changing email in the personal detail
+    sleep       ${search_sleep}
+    RegisterUserPage.Verify the email change warning pop-up and choose option       red
+    Generic.Verify your current page location contains    personal-profile
+    LoginPage.Clear the element text of field under login page     Email
+    RegisterUserPage.Create self register invalid business name under Personal Details     samuel@yopmail
+    RegisterUserPage.Save the Profile details       Save
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page       Please enter valid Email
+    LoginPage.Clear the element text of field under login page     Email
+    RegisterUserPage.Create self register invalid business name under Personal Details     samuelyopmail.net
+    RegisterUserPage.Save the Profile details       Save
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page       Please enter valid Email
+    LoginPage.Clear the element text of field under login page     Email
+    RegisterUserPage.Create self register invalid business name under Personal Details     deepparam112@mail-mario.fr.nf
+    DashboardPage.Click on the cross icon of Department and Location under Personal Details     Department
+    RegisterUserPage.Save the Profile details       Save
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page      Please enter Department
+    DashboardPage.Select the department and Location from dropdown      Department       Customer Support
+    DashboardPage.Click on the cross icon of Department and Location under Personal Details     LocationType
+    RegisterUserPage.Save the Profile details       Save
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page      Please select Location
+
+Verify all the validations of Company fiancial information under organisation
+    [Tags]      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    I_iconPage.Choose tabs under organization        company
+    Generic.Verify your current page location contains     organization
+    DashboardPage.visibility of the I-icon under company information
+    DashboardPage.Clear the text of the field under company information     q1
+    DashboardPage.Click on the No of employees field
+    Generic.Fetch alert message text and compare it with       Q1End Date Required
+    DashboardPage.Enter text in the finacial year 1 date field      q1      Test
+    DashboardPage.Click on the No of employees field
+    Generic.Fetch And Verify error toast messages    Please use valid date format.
+    DashboardPage.Clear the text of the field under company information     q2
+    DashboardPage.Click on the No of employees field
+    Generic.Fetch And Verify error toast messages    Please use valid date format.
+    Generic.Fetch And Verify error toast messages       Q2End Date Required
+    DashboardPage.Enter text in the finacial year 1 date field      q2      Test
+    DashboardPage.Click on the No of employees field
+    Generic.Fetch And Verify error toast messages    Please use valid date format.
+    DashboardPage.Clear the text of the field under company information     q3
+    DashboardPage.Click on the No of employees field
+    Generic.Fetch And Verify error toast messages   Please use valid date format.
+    Generic.Fetch And Verify error toast messages       Q3End Date Required
+    DashboardPage.Enter text in the finacial year 1 date field      q3      Test
+    DashboardPage.Click on the No of employees field
+    Generic.Fetch And Verify error toast messages    Please use valid date format.
+
+
+Verify all the validations of Add Brand asset wizard
+    [Tags]      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains     technology-list
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.click on bulk import under action button of technology
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Data-Wizard
+    Bulk_Import_ExportPage.click on all checkbox under technology bulk import       - Create Brands
+    Generic.click on the button     Next
+    Generic.click on the button    Add Brand
+    DashboardPage.Save added brand details
+    DashboardPage.Verify the validation message of Brand name field
+    DashboardPage.Compare and verify the validation messages      ${Brandname_validation}     Please Enter Brand Name
+    DashboardPage.Verify the validation message of Brand manufacturer URL field
+    DashboardPage.Compare and verify the validation messages        ${brandURL_validation}      Please enter Business URL
+    DashboardPage.Verify the validation message of Brand manufacturer country field
+    DashboardPage.Compare and verify the validation messages        ${brandCountry_validation}       Please Select Country
+################################################# INPUT INVALID DATA ####################################################################################
+    DashboardPage.Add Invalid business manufacturer URL         invalidBrandURL
+    DashboardPage.Verify the validation message of Brand manufacturer URL field
+    DashboardPage.Compare and verify the validation messages        ${brandURL_validation}       Please enter valid Business URL
+    DashboardPage.Add invalid brand manufacturer country            475638InvalidCountry
+    DashboardPage.Cancel Brand details
+    Generic.Verify your current page location contains     brand-list
+    Generic.click on the button    Add Brand
+    DashboardPage.Add self created brand name           Brandmilan
+    DashboardPage.Add self business manufacturer URL        Brandmilan.com
+    DashboardPage.Add brand manufacturer country      United States
+    DashboardPage.Save added brand details
+    Generic.Fetch alert message text and compare it with        Name already exists.
+    LoginPage.Clear The Element Text for phone number      ${add_brand_mfc_URL}
+    LoginPage.Clear the element text of field under login page      Name
+    DashboardPage.Create random brandName
+    DashboardPage.Add business manufacturer URL       ${generated_BrandName}
+    DashboardPage.Save added brand details
+    Generic.Fetch alert message text and compare it with        Brand created successfully.
+    DashboardPage.Click on Edit address
+    DashboardPage.Clear the field of country in add adddress of brand       qa-country-name
+    DashboardPage.Verify the validation message of Brand_country field when add new address
+    DashboardPage.Compare and verify the validation messages        ${Country_validation1}           Please Select Country
+    DashboardPage.Cancel the added new address
+    DashboardPage.Click on Add New Address
+    DashboardPage.Enter the country in the new address when add brand   addressCountry    United States Minor Outlying Islands
+    DashboardPage.Clear the field of country in add adddress of brand       qa-country-name
+    DashboardPage.Verify the validation message of Brand_country field when add new address
+    DashboardPage.Compare and verify the validation messages        ${Country_validation1}           Please Select Country
+
+
+Verify all the validations of Add Product under asset wizard
+    [Tags]      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains     technology-list
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.click on bulk import under action button of technology
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Data-Wizard
+    Bulk_Import_ExportPage.click on all checkbox under technology bulk import       - Create Products
+    Generic.click on the button     Next
+    Generic.click on the tab        Add Product
+    Bulk_Import_ExportPage.Save added product details technology bulk import
+    DashboardPage.Fetch the all validation message of add product page under asset wizard
+    DashboardPage.Create self productName       Product_bulk_import
+    DashboardPage.Add product brand name       QABrand555
+    DashboardPage.Select product technology type     Hardware
+    DashboardPage.Select product technology group     Applications
+    Bulk_Import_ExportPage.Select product status technology bulk import   Active
+    Bulk_Import_ExportPage.Save added product details technology bulk import
+    Generic.Fetch alert message text and compare it with        Product name already exists.
+    DashboardPage.Add invalid brand under product asset wizard      475638InvalidBrand
+
+Verify all the validations of Product Bulk import under asset wizard
+    [Tags]      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains     technology-list
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.click on bulk import under action button of technology
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Data-Wizard
+    Bulk_Import_ExportPage.click on all checkbox under technology bulk import       - Create Products
+    Generic.click on the button     Next
+    Bulk_Import_ExportPage.Click on the product bulk import option under asset wizard via technology
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Add - Products
+    Generic.Verify your current page location contains      add-product-grid
+    Bulk_Import_ExportPage.Verify that element is not enabled       Check Data
+    Bulk_Import_ExportPage.Verify that element is not enabled       Upload
+    Bulk_Import_ExportPage.Enter the value in the product name column in bulk_import      ProductName
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_import     TechType
+    Select option from technology group column in bulk_import       TechGroup
+    Enter the value in the product_description column in bulk_import        ProductDescription
+    Enter the value in the product_feature column in bulk_import        ProductFeatures
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors      Status, Brand is missing. Please fill in required data.
+    Bulk_Import_ExportPage.Clear the text of the field     ProductName
+    Bulk_Import_ExportPage.Enter the random value in the brand field under product bulk import       Brand
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_import     TechType
+    Select option from technology group column in bulk_import       TechGroup
+    Enter the value in the product_description column in bulk_import        ProductDescription
+    Enter the value in the product_feature column in bulk_import        ProductFeatures
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors      Product Name, Status is missing. Please fill in required data., Brand is invalid
+    Bulk_Import_ExportPage.Clear the text of the field      Brand
+    Bulk_Import_ExportPage.Select option from status column in bulk_import       ProductStatus
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_import     TechType
+    Select option from technology group column in bulk_import       TechGroup
+    Enter the value in the product_description column in bulk_import        ProductDescription
+    Enter the value in the product_feature column in bulk_import        ProductFeatures
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           Product Name, Brand is missing. Please fill in required data.
+    Generic.Refresh the existing page
+    Generic.Verify your current page location contains     add-product-grid
+    Bulk_Import_ExportPage.Enter the value in the product name column in bulk_import      ProductName
+    Bulk_Import_ExportPage.Enter the random value in the brand field under product bulk import       Brand
+    Bulk_Import_ExportPage.Select option from status column in bulk_import       ProductStatus
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_import     TechType
+    Select option from technology group column in bulk_import       TechGroup
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationWarnings           Description, Features is missing.
+    Generic.Refresh the existing page
+    Generic.Verify your current page location contains     add-product-grid
+    Bulk_Import_ExportPage.Enter the value in the product name column in bulk_import      ProductName
+    Bulk_Import_ExportPage.Enter the random value in the brand field under product bulk import       Brand
+    Bulk_Import_ExportPage.Select option from status column in bulk_import       ProductStatus
+    Enter the value in the product_description column in bulk_import        ProductDescription
+    Enter the value in the product_feature column in bulk_import        ProductFeatures
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           Technology Type, Technology Group is missing. Please fill in required data., Brand is invalid
+    Generic.Refresh the existing page
+    Generic.Verify your current page location contains     add-product-grid
+    Bulk_Import_ExportPage.Enter the static value in the product name column in bulk_import     ProductName         Product_bulk_import
+    Bulk_Import_ExportPage.Enter the new value in the brand name column in bulk_import       Brand    QABrand555
+    Bulk_Import_ExportPage.Select option from status column in bulk_import       ProductStatus
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_import     TechType
+    Select option from technology group column in bulk_import       TechGroup
+    Enter the value in the product_description column in bulk_import        ProductDescription
+    Enter the value in the product_feature column in bulk_import        ProductFeatures
+    Generic.Click on the button     Check Data      #Update,Edit
+    Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           Product Product_bulk_import already exists
+
+Verify all the validations of Compose Message
+    [Tags]      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Messages
+    Generic.Verify your current page location contains      message
+    Generic.Select parameter     Compose
+    Generic.Verify your current page location contains      message
+    Generic.click on the button     Send
+    DashboardPage.Fetch the all validation message after click on the send button of compose message
+    DashboardPage.Add invalid text in the recipient field under compose message     Invalid45
+    DashboardPage.Enter invalid input in the status field under compose message     Text
+    DashboardPage.Enter 101 text in the subject field under compose message
+    DashboardPage.Wait for the invisibility of the 0 character remaining text
+    LoginPage.Clear the element text of field under login page      ClientMessageSubject
+    DashboardPage.Enter text in the subject field under compose message
+    DashboardPage.Enter 101 characters in the client message field under compose message
+    DashboardPage.Wait for the invisibility of the 0 character remaining text
 
 
 #Zz kill browser

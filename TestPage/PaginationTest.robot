@@ -54,7 +54,7 @@ Test Teardown   Close Browser session
 Verify pagination of technology Table
     [Tags]    Smoke
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       jasdeep@15963.fr.nf     Paramdeep@112
+    LandingPage.Fill the login Form       testqa29j@mailinator.com      Test@123
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology
@@ -68,7 +68,7 @@ Verify pagination of technology Table
 Verify pagination of partner table
     [Tags]      NT
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    LandingPage.Fill the login Form       jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Partners
@@ -83,7 +83,7 @@ Verify pagination of partner table
 Verify pagination of contract table
     [Tags]      NT
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    LandingPage.Fill the login Form       jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Smart Share
@@ -97,7 +97,7 @@ Verify pagination of contract table
 Verify pagination of Department table
     [Tags]      NT
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    LandingPage.Fill the login Form       jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
@@ -112,7 +112,7 @@ Verify pagination of Department table
 Verify pagination of Brand table
     [Tags]      NT
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    LandingPage.Fill the login Form       jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
@@ -127,7 +127,7 @@ Verify pagination of Brand table
 Verify pagination of Product table
     [Tags]      NT
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    LandingPage.Fill the login Form       jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.Click on the profile name
@@ -142,7 +142,7 @@ Verify pagination of Product table
 Verify pagination of location Table
     [Tags]      NT
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    LandingPage.Fill the login Form       jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Location
@@ -156,7 +156,7 @@ Verify pagination of location Table
 #Verify pagination of Team Member Table
 #    [Tags]      NT
 #    Generic.click on the tab	Login
-#    LandingPage.Fill the login Form       ${email}    ${valid_password}
+#    LandingPage.Fill the login Form       jasdeep@15963.fr.nf     Paramdeep@112
 #    Generic.Verify your current page location contains      dashboard
 #    LandingPage.Verify you are on dashboard page
 #    Generic.select the option from the side menu    Team Members
@@ -164,13 +164,12 @@ Verify pagination of location Table
 #    PaginationPage.Check the table get load
 #    PaginationPage.Fetch the total count
 #    PaginationPage.Click on the pagination dropdown     member-list
-#    PaginationPage.Log WebElements      member-list
-#    PaginationPage.Check Pagination     member-list
+
 
 Verify pagination of Assigned User Table
     [Tags]    Smoke
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    LandingPage.Fill the login Form      jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Team Members
@@ -183,11 +182,12 @@ Verify pagination of Assigned User Table
     PaginationPage.Check Pagination     assignee-list
 
 Verify Pagination of Product Dropdown when Add and Edit Technology
-    [Tags]      NT      rerun
+    [Tags]      NT        
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    LandingPage.Fill the login Form       jasdeep@15963.fr.nf     Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
+    Generic.Set asset ID settings
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains      technology-list
     TechnologyPage.Click on action button of technology
@@ -200,8 +200,8 @@ Verify Pagination of Product Dropdown when Add and Edit Technology
     sleep      ${search_sleep}
     TechnologyPage.Wait until advanced search table get load
     PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     location-list
-    PaginationPage.Log WebElements of Product Dropdown      location-list
+    PaginationPage.Check Pagination of tecdhnology advance search      location-list
+#    PaginationPage.Log WebElements of Product Dropdown      location-list
     PaginationPage.Close the advance Search pop-up
     sleep   ${search_sleep}
     Generic.Verify your current page location contains      addtechnology
@@ -209,8 +209,8 @@ Verify Pagination of Product Dropdown when Add and Edit Technology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       Wacom
     PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     location-list
-    PaginationPage.Log WebElements of Product Dropdown      location-list
+    PaginationPage.Check Pagination of tecdhnology advance search      location-list
+#    PaginationPage.Log WebElements of Product Dropdown      location-list
     TechnologyPage.Select parameter from technology dropdown list       ACK42014
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select technology lifecycle status      Active
@@ -227,8 +227,8 @@ Verify Pagination of Product Dropdown when Add and Edit Technology
     TechnologyPage.Click on cross icon of product while editing technology
     TechnologyPage.Select parameter from brand dropdown list        HP Inc.
     PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     location-list
-    PaginationPage.Log WebElements of Product Dropdown      location-list
+    PaginationPage.Check Pagination of tecdhnology advance search      location-list
+#    PaginationPage.Log WebElements of Product Dropdown      location-list
 
 
 Verify Pagination of Product Dropdown when Add discovered asset and component
@@ -237,6 +237,7 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
         Generic.Verify your current page location contains      dashboard
         LandingPage.Verify you are on dashboard page
+        Generic.Set asset ID settings
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    aad
@@ -263,16 +264,16 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
         sleep      ${search_sleep}
         TechnologyPage.Wait until advanced search table get load
         PaginationPage.Fetch the total count of OCS
-        PaginationPage.Click on the pagination dropdown of OCS      location-list
-        PaginationPage.Log WebElements of Product Dropdown of OCS   location-list
+        PaginationPage.Check Pagination of OCS advance search      location-list
+#        PaginationPage.Log WebElements of Product Dropdown of OCS   location-list              #Check Pagination of location       location-list
         PaginationPage.Close the advance Search pop-up
         sleep   ${search_sleep}
         Generic.Verify your current page location contains      add-discovered-asset
         PaginationPage.Enter the input in the brand field of discovered asset
         PaginationPage.Select parameter from brand dropdown list of OCS       Wacom
         PaginationPage.Fetch the total count
-        PaginationPage.Click on the pagination dropdown     location-list
-        PaginationPage.Log WebElements of Product Dropdown      location-list
+        PaginationPage.Check Pagination of OCS advance search      location-list
+#        PaginationPage.Log WebElements of Product Dropdown of OCS   location-list              #Check Pagination of location       location-list
         TechnologyPage.Select parameter from technology dropdown list       ACK42014
         OCS.Enter The Asset_id in Add Technology Page
         TechnologyPage.Create random unique serial number
@@ -312,8 +313,8 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
         sleep      ${search_sleep}
         TechnologyPage.Wait until advanced search table get load
         PaginationPage.Fetch the total count of OCS
-        PaginationPage.Click on the pagination dropdown of OCS    location-list
-        PaginationPage.Log WebElements of Product Dropdown of OCS      location-list
+        PaginationPage.Check Pagination of OCS advance search      location-list
+#        PaginationPage.Log WebElements of Product Dropdown of OCS   location-list              #Check Pagination of location       location-list
         PaginationPage.Close the advance Search pop-up
         sleep   ${search_sleep}
         Generic.Verify your current page location contains      add-discovered-asset
@@ -341,8 +342,8 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
         PaginationPage.Enter the input in the brand field of discovered asset
         TechnologyPage.Select parameter from brand dropdown list        HP Inc.
         PaginationPage.Fetch the total count
-        PaginationPage.Click on the pagination dropdown     location-list
-        PaginationPage.Log WebElements of Product Dropdown      location-list
+        PaginationPage.Check Pagination of OCS advance search      location-list
+#        PaginationPage.Log WebElements of Product Dropdown of OCS   location-list              #Check Pagination of location       location-list
         Generic.Refresh the existing page
         OCS.Edit the MAC_Address of Asset
         OCS.Edit the Serial_No. of Asset
@@ -353,166 +354,13 @@ Verify Pagination of Product Dropdown when Add discovered asset and component
 
 
 
-Verify pagination of contract table
-    [Tags]      NT
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      dashboard
-    Generic.select the option from the side menu    Smart Share
-    Generic.Verify your current page location contains      contracts-list
-    PaginationPage.Check the table get load
-    PaginationPage.Fetch the total count
-#    PaginationPage.Click on the pagination dropdown     contracts
-#    PaginationPage.Log WebElements      contracts
-    PaginationPage.Check Pagination     contracts
-
-
-Verify pagination of Department table
-    [Tags]      NT
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      dashboard
-    Generic.Click on the profile name
-    Generic.Select option from profile list     department-dropdown
-    Generic.Verify your current page location contains      department
-    PaginationPage.Check the table get load
-    PaginationPage.Fetch the total count
-#    PaginationPage.Click on the pagination dropdown     department
-#    PaginationPage.Log WebElements      department
-    PaginationPage.Check Pagination     department
-
-Verify pagination of Brand table
-    [Tags]      NT
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      dashboard
-    Generic.Click on the profile name
-    Generic.Select option from profile list     brand-dropdown
-    Generic.Verify your current page location contains      brand-list
-    PaginationPage.Check the table get load
-    PaginationPage.Fetch the total count
-#    PaginationPage.Click on the pagination dropdown     brand
-#    PaginationPage.Log WebElements      brand
-    PaginationPage.Check Pagination     brand
-
-Verify pagination of Product table
-    [Tags]      NT
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      dashboard
-    Generic.Click on the profile name
-    Generic.Select option from profile list     product-dropdown
-    Generic.Verify your current page location contains      product-list
-    PaginationPage.Check the table get load
-    PaginationPage.Fetch the total count
-#    PaginationPage.Click on the pagination dropdown     products
-#    PaginationPage.Log WebElements      products
-    PaginationPage.Check Pagination     products
-
-Verify pagination of location Table
-    [Tags]      NT
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      dashboard
-    Generic.select the option from the side menu    Location
-    Generic.Verify your current page location contains      locationlist
-    PaginationPage.Check the table get load
-    PaginationPage.Fetch the total count
-#    PaginationPage.Click on the pagination dropdown     location-list
-#    PaginationPage.Log WebElements      location-list
-    PaginationPage.Check Pagination     location-list
-
-Verify pagination of Team Member Table
-    [Tags]      NT
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      dashboard
-    Generic.select the option from the side menu    Team Members
-    Generic.Verify your current page location contains      memberslist
-    PaginationPage.Check the table get load
-    PaginationPage.Fetch the total count
-#    PaginationPage.Click on the pagination dropdown     member-list
-#    PaginationPage.Log WebElements      member-list
-    PaginationPage.Check Pagination     member-list
-
-Verify pagination of Assigned User Table
-    [Tags]    Smoke
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      dashboard
-    Generic.select the option from the side menu    Team Members
-    Generic.Verify your current page location contains      memberslist
-    MemberPage.Click on assigned user tab   Assigned Users
-    PaginationPage.Check the table get load
-    PaginationPage.Fetch the total count
-#    PaginationPage.Click on the pagination dropdown     assignee-list
-#    PaginationPage.Log WebElements      assignee-list
-    PaginationPage.Check Pagination     assignee-list
-
-Verify Pagination of Product Dropdown when Add and Edit Technology
-    [Tags]      NT
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form       ${email}    ${valid_password}
-#    LandingPage.Verify you are on dashboard page
-    Generic.Verify your current page location contains      dashboard
-    Generic.select the option from the side menu    Technology
-    Generic.Verify your current page location contains      technology-list
-    TechnologyPage.Click on action button of technology
-    TechnologyPage.Choose add technology from action button of technology
-    Generic.Verify your current page location contains      addtechnology
-    TechnologyPage.Click on advanced search button link under add technology
-    TechnologyPage.Click technology advanced brand input field
-    TechnologyPage.Select parameter from advanced brand dropdown list        Wacom
-    Generic.click on the button     Search
-    sleep      ${search_sleep}
-    TechnologyPage.Wait until advanced search table get load
-    PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     location-list
-    PaginationPage.Log WebElements of Product Dropdown      location-list
-    PaginationPage.Close the advance Search pop-up
-    sleep   ${search_sleep}
-    Generic.Verify your current page location contains      addtechnology
-
-    TechnologyPage.Click technology brand input field
-    TechnologyPage.Select parameter from brand dropdown list       Wacom
-    PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     location-list
-    PaginationPage.Log WebElements of Product Dropdown      location-list
-    TechnologyPage.Select parameter from technology dropdown list       ACK42014
-    TechnologyPage.Add assetID for technology lifecycle information random
-    TechnologyPage.Click on save technology form button
-    Generic.Fetch alert message text and compare it with        Technology created successfully
-    TechnologyPage.Click on save technology form pop button
-    Generic.Verify your current page location contains      technology
-    TechnologyPage.Search by AssetId       ${generated_AssetID}
-    TechnologyPage.Click on the first row of the technology table
-    Generic.Verify your current page location contains     technology-details
-    TechnologyPage.Click on edit button on product details page        Edit
-    Generic.Verify your current page location contains      edit-technology
-    TechnologyPage.Click on the edit icon on the edit technology page
-    TechnologyPage.Click on cross icon of product while editing technology
-    TechnologyPage.Select parameter from brand dropdown list        HP Inc.
-    PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     location-list
-    PaginationPage.Log WebElements of Product Dropdown      location-list
-
-
-
-
-
 Verify Pagination of Product Dropdown when Add IP discovered asset
-    [Tags]      NT      rerun
+    [Tags]      NT        
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
         Generic.Verify your current page location contains      dashboard
         LandingPage.Verify you are on dashboard page
+        Generic.Set asset ID settings
         Generic.Click on the profile name
         Generic.Select option from profile list     view-discovery
         Generic.Verify your current page location contains    aad
@@ -536,16 +384,16 @@ Verify Pagination of Product Dropdown when Add IP discovered asset
         sleep      ${search_sleep}
         TechnologyPage.Wait until advanced search table get load
         PaginationPage.Fetch the total count of OCS
-        PaginationPage.Click on the pagination dropdown of OCS      location-list
-        PaginationPage.Log WebElements of Product Dropdown of OCS   location-list
+        PaginationPage.Check Pagination of OCS advance search      location-list
+#        PaginationPage.Log WebElements of Product Dropdown of OCS   location-list              #Check Pagination of location       location-list
         PaginationPage.Close the advance Search pop-up
         sleep   ${search_sleep}
         Generic.Verify your current page location contains      add-discovered-asset
         PaginationPage.Enter the input in the brand field of discovered asset
         PaginationPage.Select parameter from brand dropdown list of OCS       Wacom
         PaginationPage.Fetch the total count
-        PaginationPage.Click on the pagination dropdown     location-list
-        PaginationPage.Log WebElements of Product Dropdown      location-list
+        PaginationPage.Check Pagination of OCS advance search      location-list
+#        PaginationPage.Log WebElements of Product Dropdown of OCS   location-list              #Check Pagination of location       location-list
         TechnologyPage.Select parameter from technology dropdown list       ACK42014
         OCS.Enter The Asset_id in Add Technology Page
         TechnologyPage.Create random unique serial number
@@ -570,8 +418,8 @@ Verify Pagination of Product Dropdown when Add IP discovered asset
         PaginationPage.Enter the input in the brand field of discovered asset
         TechnologyPage.Select parameter from brand dropdown list        HP Inc.
         PaginationPage.Fetch the total count
-        PaginationPage.Click on the pagination dropdown     location-list
-        PaginationPage.Log WebElements of Product Dropdown      location-list
+        PaginationPage.Check Pagination of OCS advance search      location-list
+#        PaginationPage.Log WebElements of Product Dropdown of OCS   location-list              #Check Pagination of location       location-list
         Generic.Refresh the existing page
         OCS.Edit the MAC_Address of Asset
         OCS.Edit the Serial_No. of Asset
@@ -593,8 +441,8 @@ Verify Pagination of Recent Activities Table
     DashboardPage.Click on the filter Past under recent Activities table        Hours       Days
     DashboardPage.Choose number of days inside under past filters       20
     PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     autoCreatedAsset
-    PaginationPage.Log WebElements for Recent Activites table     autoCreatedAsset
+    PaginationPage.Check Pagination of Recent Activites     autoCreatedAsset
+#    PaginationPage.Log WebElements for Recent Activites table     autoCreatedAsset                     #Check Pagination of location        autoCreatedAsset
 
 Verify pagination of invoice table under billing
     [Tags]      NT
@@ -651,3 +499,9 @@ Click and verify the pagination under existing assets
     Generic.Scroll Window To End
     PaginationPage.Get the value of page number under existing asset
     TechnologyPage.verify Text from Assignment Information      1          ${page_number_count}
+
+
+
+
+
+

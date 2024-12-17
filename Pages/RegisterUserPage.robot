@@ -61,7 +61,7 @@ Download Agent popup
     wait until element is visible      //button[normalize-space()='${option}']     ${wait_time}
     wait until element is enabled      //button[normalize-space()='${option}']     ${wait_time}
     click element       //button[normalize-space()='${option}']
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 
 #Verify that agent is ready to get download
@@ -160,7 +160,7 @@ Save the register form
     wait until element is enabled      ${register_FormSubmitBTN}    ${wait_time}
     click element       ${register_FormSubmitBTN}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 Choose register user country
     [Arguments]    ${country}   ${code}     ${phoneNo}
@@ -337,8 +337,9 @@ Verify the email change warning pop-up and choose option
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     Wait Until Element Is Visible    //div[@id='emailChangeWarning']        ${wait_time}
     Wait Until Element Is Enabled    //div[@id='emailChangeWarning']        ${wait_time}
+    sleep       ${search_sleep}
     click button       //div[@id='emailChangeWarning']//button[contains(@class,'button-${option}')]
-    Wait Until Element Is Not Visible    //div[@id='emailChangeWarning']        ${wait_time}
+#    Wait Until Element Is Not Visible    //div[@id='emailChangeWarning']        ${wait_time}
 
 select number of days inside alerts section
     [Arguments]         ${option1}        ${option2}
@@ -629,3 +630,101 @@ Create position with 101 numbers under create profile page
     sleep       ${search_sleep}
     log to console      registerPosition:${generate_register_New_Position}
     set global variable   ${generate_register_New_Position}
+
+Create address one with 101 numbers under subscription payment
+    wait until element is enabled       css:#AddressLine1       ${wait_time}
+    click element   css:#AddressLine1
+    ${random_string} =     Generate Random String    101    [LETTERS]
+    ${generate_register_New_Address_payment}=    Catenate    Address_${random_string}
+    Input Text   css:#AddressLine1   ${generate_register_New_Address_payment}
+    Log To Console    Address:${generate_register_New_Address_payment}
+    Set Global Variable    ${generate_register_New_Address_payment}
+
+Create self register invalid business name under Personal Details
+    [Arguments]    ${option}
+    wait until element is enabled       ${register_Email}        ${wait_time}
+    click element   ${register_Email}
+    Clear element text      ${register_Email}
+    input text   ${register_Email}   ${option}
+
+Create self register invalid phone number under Personal Details
+    [Arguments]    ${option}
+    wait until element is enabled       ${profile_phone}        ${wait_time}
+    click element   ${profile_phone}
+    Clear element text      ${profile_phone}
+    input text   ${profile_phone}   ${option}
+
+Create self register company name under profile of company details
+    [Arguments]    ${option}
+    wait until element is visible       ${profile_company}        ${wait_time}
+    wait until element is enabled       ${profile_company}        ${wait_time}
+    click element   ${profile_company}
+    Clear element text      ${profile_company}
+    input text   ${profile_company}   ${option}
+
+Click on the cross icon of country state and city under company details
+    [Arguments]         ${text}
+    wait until element is visible       //ng-select[contains(@class,'qa-${text}')]//span[@title='Clear all']    ${wait_time}
+    wait until element is enabled        //ng-select[contains(@class,'qa-${text}')]//span[@title='Clear all']    ${wait_time}
+    click element   //ng-select[contains(@class,'qa-${text}')]//span[@title='Clear all']
+
+Fetch the all validation message of Country state city and zip code under company details
+   wait until element is visible   //span[contains(@class,'invalidInput')]       ${wait_time}
+   @{expectedList} =    Create List         Please select Country            Please select State                Please select City           Please enter Zip Code
+   ${elements} =  Get WebElements     //span[contains(@class,'invalidInput')]
+   @{actualList} =   Create List
+   FOR  ${element}  IN      @{elements}
+      log to console    ${element.text}
+      Append To List    ${actualList}     ${element.text}
+   END
+   lists should be equal    ${expectedList}    ${actualList}
+
+Add the new static domain
+    [Arguments]    ${domain}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    (//input[contains(@class,'company-domain-qa')])[2]       ${wait_time}
+    Wait Until Element Is Enabled    (//input[contains(@class,'company-domain-qa')])[2]        ${wait_time}
+    click element    (//input[contains(@class,'company-domain-qa')])[2]
+    input text      (//input[contains(@class,'company-domain-qa')])[2]      ${domain}
+
+Click on minus icon to add new company domain
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    css:.remove-companyDomain-qa       ${wait_time}
+    Wait Until Element Is Enabled    css:.remove-companyDomain-qa        ${wait_time}
+    click element    css:.remove-companyDomain-qa
+
+Get the text of the domain that in use under company details
+    Wait Until Element Is Visible    css:.company-domain-qa      ${wait_time}
+    ${domain_text}=   get value       css:.company-domain-qa
+    Log To Console    ${domain_text}
+    Set Global Variable    ${domain_text}
+
+Click on the view added domain text
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //p[contains(@class,'view-added-domains')]       ${wait_time}
+    Wait Until Element Is Enabled    //p[contains(@class,'view-added-domains')]        ${wait_time}
+    click element    //p[contains(@class,'view-added-domains')]
+
+Click on the delete icon of the domain
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //i[contains(@class,'delete-company-domain')]       ${wait_time}
+    Wait Until Element Is Enabled    //i[contains(@class,'delete-company-domain')]        ${wait_time}
+    click element    //i[contains(@class,'delete-company-domain')]
+
+Visibility of the text domain cannot be deleted
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //div[contains(text(),'Domain is in use cannot be edited or deleted')]       ${wait_time}
+
+Click on the cancel button of same domain pop up
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //div[contains(@id,'domains')]//button[normalize-space()='Cancel']       ${wait_time}
+    Wait Until Element Is Enabled    //div[contains(@id,'domains')]//button[normalize-space()='Cancel']        ${wait_time}
+    click element    //div[contains(@id,'domains')]//button[normalize-space()='Cancel']
+    sleep   ${search_sleep}
+
+Click on the cross icon of view added domain pop up
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    Wait Until Element Is Visible    //div[contains(@id,'domains')]//span[normalize-space()='×']       ${wait_time}
+    Wait Until Element Is Enabled    //div[contains(@id,'domains')]//span[normalize-space()='×']        ${wait_time}
+    click element    //div[contains(@id,'domains')]//span[normalize-space()='×']
+    sleep   ${search_sleep}

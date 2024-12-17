@@ -57,7 +57,7 @@ Testone
     Generic.Fix the row number
 
 Login as End_user with different roles
-    [Tags]      Sanity     Smoke        rerun
+    [Tags]      Sanity     Smoke          
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      enduser@yopmail.net    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -570,49 +570,49 @@ Login as End_user with different roles
 #    Generic.Fetch log_out alert message
 
 Check all the validations of login page
-    [Tags]    NT
+    [Tags]    Negative
     Generic.click on the tab	Login
     LandingPage.Fill the login Form with email only      ${email}
     LoginPage.Get and Verify the validation after login with email only         Invalid user id or password.
-    LoginPage.Clear the element text of field under login page      ${Kc_username}
+    LoginPage.Clear the element text of field under login page      username
     LandingPage.Fill the login Form       testqa29jmailinator.com       Test@123
     LoginPage.Get and Verify the validation after login with email only         Invalid user id or password.
-    LoginPage.Clear the element text of field under login page      ${Kc_username}
-    LoginPage.Clear the element text of field under login page      ${Kc_password}
+    LoginPage.Clear the element text of field under login page      username
+    LoginPage.Clear the element text of field under login page      password
     LandingPage.Fill the login Form with password only      ${valid_password}
     LoginPage.Get and Verify the validation after login with email only         Invalid user id or password.
-    LoginPage.Clear the element text of field under login page      ${Kc_password}
+    LoginPage.Clear the element text of field under login page      password
     LandingPage.Fill the login Form       testqa29j@mailinator.com       Test@12
     LoginPage.Get and Verify the validation after login with email only         Invalid user id or password.
-    LoginPage.Clear the element text of field under login page      ${Kc_username}
-    LoginPage.Clear the element text of field under login page      ${Kc_password}
+    LoginPage.Clear the element text of field under login page      username
+    LoginPage.Clear the element text of field under login page     password
     LandingPage.Click on the login button without input data in both the fields     ${Kc_loginBtn}
     LoginPage.Get and Verify the validation after login with email only         Invalid user id or password.
-    LoginPage.Clear the element text of field under login page      ${Kc_username}
-    LoginPage.Clear the element text of field under login page      ${Kc_password}
+    LoginPage.Clear the element text of field under login page     username
+    LoginPage.Clear the element text of field under login page     password
     LandingPage.Fill the login Form with email only      testqa29jmailinator.com
     LoginPage.Get and Verify the validation after login with email only         Invalid user id or password.
-    LoginPage.Clear the element text of field under login page      ${Kc_username}
+    LoginPage.Clear the element text of field under login page     username
     LandingPage.Fill the login Form with password only      Test@12
     LoginPage.Get and Verify the validation after login with email only         Invalid user id or password.
-    LoginPage.Clear the element text of field under login page      ${Kc_password}
+    LoginPage.Clear the element text of field under login page     password
     LandingPage.Fill the login Form       testqa29jmailinator.com       Test@12
     LoginPage.Get and Verify the validation after login with email only         Invalid user id or password.
-    LoginPage.Clear the element text of field under login page      ${Kc_username}
-    LoginPage.Clear the element text of field under login page      ${Kc_password}
+    LoginPage.Clear the element text of field under login page      username
+    LoginPage.Clear the element text of field under login page      password
     LandingPage.Fill the login Form       testqa29jmailinator.com       Test@123
     LoginPage.Get and Verify the validation after login with email only         Invalid user id or password.
 
 
 Check all the validations of forgot password page
-    [Tags]    NT
+    [Tags]    Negative
     Generic.click on the tab	Login
     Generic.click on the tab    Forgot Password?
     Generic.Verify your current page location contains      auth
 #    LandingPage.Fill the login Form with email only    testqa29jmailinator.com
     RegisterUserPage.Click on the submit button under forgot password page
     LoginPage.Get and Verify the validation after entering invalid email under forgot password        Please specify user id.
-    LoginPage.Clear the element text of field under login page      ${Kc_username}
+    LoginPage.Clear the element text of field under login page      username
     LandingPage.Fill the email under forgot password    chirag@dmts.fr.nf
     RegisterUserPage.Click on the submit button under forgot password page
    Generic.Open new window     yopmail
@@ -636,23 +636,23 @@ Check all the validations of forgot password page
     RegisterUserPage.Enter new password under reset password page   Test@12
     RegisterUserPage.Click on the submit button under forgot password page
     RegisterUserPage.Get and verify the validation in reset password page      Passwords don't match.
-    LoginPage.Clear the element text of field under login page      //input[@id='password-new']
+    LoginPage.Clear The Element Text of the particular field      //input[@id='password-new']
     RegisterUserPage.Enter confirm password under reset password page   Test@12
     RegisterUserPage.Click on the submit button under forgot password page
     RegisterUserPage.Get and verify the validation in reset password page      Please specify password.
-    LoginPage.Clear the element text of field under login page      //input[@id='password-confirm']
+    LoginPage.Clear The Element Text of the particular field      //input[@id='password-confirm']
     RegisterUserPage.Enter new password under reset password page   12345678
     RegisterUserPage.Enter confirm password under reset password page   12345678
     RegisterUserPage.Click on the submit button under forgot password page
     RegisterUserPage.Get and verify the top validation under reset password     Invalid password: must contain at least 1 special characters.
-    LoginPage.Clear the element text of field under login page      //input[@id='password-new']
-    LoginPage.Clear the element text of field under login page      //input[@id='password-confirm']
+    LoginPage.Clear The Element Text of the particular field      //input[@id='password-new']
+    LoginPage.Clear The Element Text of the particular field      //input[@id='password-confirm']
     RegisterUserPage.Enter new password under reset password page   @1234567
     RegisterUserPage.Enter confirm password under reset password page   @1234567
     RegisterUserPage.Click on the submit button under forgot password page
     RegisterUserPage.Get and verify the top validation under reset password     Invalid password: must contain at least 1 upper case characters.
-    LoginPage.Clear the element text of field under login page      //input[@id='password-new']
-    LoginPage.Clear the element text of field under login page      //input[@id='password-confirm']
+    LoginPage.Clear The Element Text of the particular field      //input[@id='password-new']
+    LoginPage.Clear The Element Text of the particular field      //input[@id='password-confirm']
     RegisterUserPage.Enter new password under reset password page   T@123456
     RegisterUserPage.Enter confirm password under reset password page   T@123456
     RegisterUserPage.Click on the submit button under forgot password page

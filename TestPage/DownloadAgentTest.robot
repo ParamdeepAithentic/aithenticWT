@@ -260,7 +260,7 @@ Download agent for OCS from signup - Windows
     Generic.click on the button link    Download
 
 Download agent for OCS from signup - macOS
-    [Tags]      Sanity      rerun
+    [Tags]      Sanity        
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
 #    LoginPage.Fetch the refresh token from the login api
@@ -493,7 +493,7 @@ Visit discovered asset list when click on No. IP discovered devices
 
 
 Refresh search text on discovered asset list page
-    [Tags]    NT        rerun
+    [Tags]    NT          
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.select the option from the side menu    Asset Discovery
@@ -510,7 +510,7 @@ Refresh search text on discovered asset list page
     Generic.Wait until table get load
 
 Verify Filters of Existing asets by adding assets of different tech type - HARDWARE
-    [Tags]    NT        rerun
+    [Tags]    NT          
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.Verify your current page location contains      dashboard
@@ -896,7 +896,7 @@ Verify Filters of Existing asets by adding assets of different tech type - MAINT
 
 ################################################# FREEWARE ASSET ##########################################################
 Verify Filters of Existing asets by adding assets of different tech type - FREEWARE
-    [Tags]    NT        Smoke       Sanity
+    [Tags]      Smoke       Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
     Generic.Verify your current page location contains      dashboard

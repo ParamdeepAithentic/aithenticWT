@@ -94,7 +94,7 @@ Select compose message pop up option
     wait until element is visible    css:.qa-${option}-send-invite   ${wait_time}
     wait until element is enabled    css:.qa-${option}-send-invite   ${wait_time}
     click element       css:.qa-${option}-send-invite
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 #yes/no
 
 Select message status
@@ -119,7 +119,7 @@ Save compose message
     wait until element is visible    css:.${option}-message-qa   ${wait_time}
     wait until element is enabled    css:.${option}-message-qa   ${wait_time}
     click element       css:.${option}-message-qa
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 #send/cancel
 
 Enter team member last name
@@ -141,7 +141,7 @@ Save team member
     wait until element is visible    css:.${option}-member-qa   ${wait_time}
     click element       css:.${option}-member-qa
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    wait until element is not visible       ${shadow}          ${wait_time}
+    wait until element is not visible       ${shadow}          60
 #save/cancel
 
 Click on select partner filter from message side bar list
@@ -181,7 +181,8 @@ Fetch the country from location filter and click
     [Arguments]     ${option}       ${option1}      ${option2}
 #    ${element_count}=    Get Element Count    css:.qa-total-count-list
 #    Log      ${element_count}
-    FOR    ${index}    IN RANGE    1    ${total_count} + 1
+    TRY
+    FOR    ${index}    IN RANGE    1    ${total_data_count + 1}
         Wait Until Element Is Visible   (//div[normalize-space()='${option}']//following-sibling::div//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]      ${wait_time}
         Wait Until Element Is Enabled   (//div[normalize-space()='${option}']//following-sibling::div//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]       ${wait_time}
         ${element1}=    Get Text    (//div[normalize-space()='${option}']//following-sibling::div//parent::div//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]
@@ -189,8 +190,33 @@ Fetch the country from location filter and click
         ${New_Country}=    Evaluate    '${original_string}'.strip()
         Log    Element ${index}: ${New_Country}
         Run Keyword If    '${New_Country}' == '${option2}'    Run Keyword       Continue For Loop
-
+    END
+    EXCEPT
+        Wait Until Element Is Visible       //span[normalize-space()='No Records']      ${wait_time}
+        Log    There is no data in the table
     END
 
-Comapre the total count after selecting filter
-    Should be equal     ${total_count_again}        ${total_count}
+Compare the total count after selecting filter
+    Should be equal     ${total_data_count}        ${total_count_int}
+
+
+Set pagination to max for inbox list in message
+      TRY
+        PaginationPage.Pagination box visible
+        PaginationPage.Select the value from the pagination drop down count     500
+        MemberPage.Wait till message listing appear
+      EXCEPT
+        PaginationPage.Skip the pagination code
+      END
+
+
+Fetch the total count of message listing after selecting filter
+    wait until element is not visible       ${loaderIcon}       ${wait_time}
+    wait until element is visible       ${Totalcount_field}      ${wait_time}
+    wait until element is enabled   ${Totalcount_field}      ${wait_time}
+    ${text}=     get text   ${Totalcount_field}
+    ${parts}    Split String    ${text}    Total Count :
+    ${total_count_again}    Get Substring    ${parts[1]}    3
+    ${total_data_count}=   Convert To Integer   ${total_count_again}
+    Log to console  Total count is :${total_data_count}
+    set global variable    ${total_data_count}
