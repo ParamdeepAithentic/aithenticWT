@@ -45,6 +45,7 @@ ${SheetLocationAndName}   LoadTimeSheet.xlsx
 ${SheetTabName}     Load_Time_tracking
 
 ${alert_Msg}     css:.msg.d-inline-flex
+
 ${cross_alertMsg}   css:.close.position-absolute.text-white
 ${loaderIcon}     //div[@role='status']
 ${shadow}       //div[@aria-modal='true']
@@ -59,12 +60,14 @@ ${phone}     css:#phone
 
 ${wait_time}       60
 
-${yop_sleep}       8
+${yop_sleep}       10
+
 
 ${search_sleep}       1
 
 
 ${CASE}       uat  #qa , uat , pre-prod
+
 
 
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
@@ -78,8 +81,8 @@ Simulate Switch Case
 
 Set QA Variables
     Set Suite Variable    ${url}    https://qa-app.aithentic.com/
-#    Set Suite Variable    ${valid_password}            Paramdeep@112           #UAT user        Test@123
-    Set Suite Variable    ${valid_password}           Test@123
+    Set Suite Variable    ${valid_password}            Paramdeep@112           #UAT user        Test@123
+#    Set Suite Variable    ${valid_password}           Test@123
     Set Suite Variable    ${apiURL}    https://qa-api.aithentic.com/api/v1
     Set Suite Variable    ${agentDiscovery_TagName}    Tag Name - johnsoftwaresolutions-1192-4         #qa
     Set Suite Variable    ${IP_Discovered_devices}    Tag Name - johnsoftwaresolutions-1192-4
@@ -88,8 +91,8 @@ Set QA Variables
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
     Set Suite Variable    ${browser_name}         firefox
-#    Set Suite Variable    ${email}          deepparam112@mail-mario.fr.nf
-    Set Suite Variable    ${email}           testqa29j@mailinator.com
+    Set Suite Variable    ${email}          deepparam112@mail-mario.fr.nf
+#    Set Suite Variable    ${email}           testqa29j@mailinator.com
     Set Suite Variable    ${discovered_asset_brand}                 MSI
     Set Suite Variable    ${existing_mac}                       D8:CB:8A:CA:6A:39
     Set Suite Variable    ${discovered_existing_brand}          QABrand555
@@ -116,6 +119,11 @@ Set UAT Variables
 
     Set Suite Variable    ${email}          deepparam112@mail-mario.fr.nf
 #    Set Suite Variable    ${email}           testqa29j@mailinator.com
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 5b8587009815aa48b0301704b96186b2fb88ffa3
     Set Suite Variable    ${discovered_asset_brand}                 Apple Inc
     Set Suite Variable    ${existing_mac}                       98:5a:eb:cb:c8:ed
     Set Suite Variable    ${discovered_existing_brand}              Apple Inc.
@@ -572,3 +580,11 @@ Set asset ID settings
     EXCEPT
         Log    Alert is not visible check settings update
     END
+
+Fetch And Verify error toast messages
+    [Arguments]         ${option}
+    Wait Until Element Is Visible   css:.toast-error .d-inline-flex    ${wait_time}
+    ${alert_text}=    Get Text   css:.toast-error .d-inline-flex
+    log to console     ${alert_text}
+    Should Contain    ${alert_text}    ${option}
+    Wait Until Element Is Not Visible    (//span[contains(@class,'msg d-inline')])[2]    ${wait_time}

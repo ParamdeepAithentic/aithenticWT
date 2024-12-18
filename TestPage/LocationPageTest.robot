@@ -996,3 +996,154 @@ Add new Location Heirarchy and verify select location filter with Parent Locatio
     LocationPage.Verify that table contains the location Name under Location column     Location Name             ${parent_generated_location}
     LocationPage.Verify that table contains the location Name under Location column     Location Name             ${generated_location}
     LocationPage.Verify that table contains the location Name under Location column     Location Name              ${sub_generated_location}
+
+Verify that user is not able to add the location with invalid data in the IP subnet
+    [Tags]      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the location ID checkbox   yes
+    DashboardPage.Select the location ID checkbox   no
+    DashboardPage.Select the location ID checkbox   yes
+    Generic.Fetch alert message text and compare it with    Settings Updated
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Click on Location action button
+    LocationPage.Click on add location button    Add New Location
+    Generic.Verify your current page location contains      add-location
+    LocationPage.Select location country     United States
+    LocationPage.Select location building name   Trump tower
+    LocationPage.Select location floor   second
+    LocationPage.Select location room    203
+    LocationPage.Select location address one     this address one of the location
+    LocationPage.Select location address two     this address two of the location
+    LocationPage.Select location state       Texas
+    LocationPage.Select location city        Austin
+    LocationPage.Select location zip     147001
+    LocationPage.Enter random cost center value
+    LocationPage.Create random location name
+    LocationPage.Enter input in the IP subnet field     1           10.256.255.255/25
+    LocationPage.Click on the plus icon of the subnet
+    LocationPage.Enter input in the IP subnet field     2            10.-1.-2.-3/24
+    Generic.click on the button     Save
+    Generic.Fetch alert message text and compare it with    Invalid input. Please enter a valid IP subnet in the format 'X.X.X.X/Y' where X is a number between 0 and 255 and Y is the subnet prefix (0-32)
+    LocationPage.Clear the text of the IP subnet        2
+    LocationPage.Enter input in the IP subnet field     2            10.255.255.255/25
+    Generic.click on the button     Save
+    Generic.Fetch alert message text and compare it with    Invalid input. Please enter a valid IP subnet in the format 'X.X.X.X/Y' where X is a number between 0 and 255 and Y is the subnet prefix (0-32)
+    LocationPage.Clear the text of the IP subnet        1
+    LocationPage.Enter input in the IP subnet field     1           192.168.0.0/23
+    Generic.click on the button     Save
+    Generic.Fetch alert message text and compare it with    Location created successfully
+
+Verify that user is not able to edit the location with invalid data in the IP subnet
+    [Tags]      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the location ID checkbox   yes
+    DashboardPage.Select the location ID checkbox   no
+    DashboardPage.Select the location ID checkbox   yes
+    Generic.Fetch alert message text and compare it with    Settings Updated
+    Generic.select the option from the side menu    Location
+    Generic.Verify your current page location contains      locationlist
+    LocationPage.Click on Location action button
+    LocationPage.Click on add location button    Add New Location
+    Generic.Verify your current page location contains      add-location
+    LocationPage.Select location country     United States
+    LocationPage.Select location building name   Trump tower
+    LocationPage.Select location floor   second
+    LocationPage.Select location room    203
+    LocationPage.Select location address one     this address one of the location
+    LocationPage.Select location address two     this address two of the location
+    LocationPage.Select location state       Texas
+    LocationPage.Select location city        Austin
+    LocationPage.Select location zip     147001
+    LocationPage.Enter random cost center value
+    LocationPage.Create random location name
+    LocationPage.Enter input in the IP subnet field     1           192.168.0.0/23
+    Generic.click on the button     Save
+    Generic.Fetch alert message text and compare it with    Location created successfully
+    LocationPage.Search by location name     ${generated_location}
+    LocationPage.Fetch the location Name from the row       ${generated_location}
+    LocationPage.Click on three dots on row
+    LocationPage.Select the option from row menu     Edit
+    Generic.Verify your current page location contains    edit
+    LocationPage.Edit location country   United States
+    LocationPage.Select location building name   Trump tower
+    LocationPage.Select location floor   second
+    LocationPage.Select location room    203
+    LocationPage.Select location address one     this address one of the location
+    LocationPage.Select location address two     this address two of the location
+    LocationPage.Edit location state       Arizona
+    LocationPage.Edit location city        Anthem
+    LocationPage.Select location zip     5781
+    LocationPage.Enter random cost center value
+    LocationPage.Create random location name
+    LocationPage.Create Random IP Subnet
+    LocationPage.Click on the plus icon of the subnet
+    LocationPage.Enter input in the IP subnet field     2            10.-1.-2.-3/24
+    Generic.click on the button    Update
+    Generic.Fetch alert message text and compare it with    Invalid input. Please enter a valid IP subnet in the format 'X.X.X.X/Y' where X is a number between 0 and 255 and Y is the subnet prefix (0-32)
+    LocationPage.Clear the text of the IP subnet        2
+    LocationPage.Enter input in the IP subnet field     2            10.255.255.255/25
+    Generic.click on the button    Update
+    Generic.Fetch alert message text and compare it with    Invalid input. Please enter a valid IP subnet in the format 'X.X.X.X/Y' where X is a number between 0 and 255 and Y is the subnet prefix (0-32)
+    LocationPage.Clear the text of the IP subnet        1
+    LocationPage.Enter input in the IP subnet field     1           192.168.0.0/23
+    Generic.click on the button    Update
+    Generic.Fetch alert message text and compare it with    Location updated successfully
+
+
+Check the validations of Add Location under asset wizard
+    [Tags]          Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form    ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the location ID checkbox   yes
+    DashboardPage.Select the location ID checkbox   no
+    DashboardPage.Select the location ID checkbox   yes
+    Generic.Fetch alert message text and compare it with    Settings Updated
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains     technology-list
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.click on bulk import under action button of technology
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Data-Wizard
+    Bulk_Import_ExportPage.click on checkbox under technology bulk import
+    Bulk_Import_ExportPage.click on all checkbox under technology bulk import       - Location Names
+    Generic.click on the button     Next
+    Generic.click on the tab        Add Location
+    Generic.Verify your current page location contains      addLocation
+    LocationPage.Save location form     save
+    LocationPage.Verify the validation of country name field
+    LocationPage.Compare and verify the validation messages of Location     ${Locationcountry_validation}       Please Select Country
+    LocationPage.Verify the validation of Location name field when organization settings is yes
+    LocationPage.Compare and verify the validation messages of Location     ${Locationnameyes_validation}      Please Enter Location Name
+    LocationPage.Add invalid Location Name      locationName     A*
+    LocationPage.Verify the validation of Location name field when organization settings is yes
+    LocationPage.Compare and verify the validation messages of Location      ${Locationnameyes_validation}      Please Enter Valid Location Name.
+    LoginPage.Clear the element text of field under login page     locationName
+    LocationPage.Select location country     United States
+    LocationPage.Add invalid Location Name      locationName      *Main Office
+    LocationPage.Save location form     save
+    Generic.Fetch alert message text and compare it with    Location Name already exists
+    LocationPage.Add invalid Location country       567country

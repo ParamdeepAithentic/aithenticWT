@@ -927,7 +927,7 @@ Verify Invitation and signup as team member
     TeamMemberPage.Search Team Member by name   ${generated_Tmfname}
     TeamMemberPage.Click on three dots of Team Member listing
     TeamMemberPage.Click on remove option under three dots
-    Generic.click on the button        Yes
+    Generic.Select parameter        Yes
     Generic.Fetch alert message text and compare it with        Team member deleted successfully
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
@@ -1161,7 +1161,7 @@ Verify_Employee_ID_Changing_settings_from_Profile_list_while_add_edit_team_membe
     TeamMemberPage.Search Team Member by name   ${generated_Tmfname}
     TeamMemberPage.Click on three dots of Team Member listing
     TeamMemberPage.Click on remove option under three dots
-    Generic.click on the button        Yes
+    Generic.Select parameter        Yes
     Generic.Fetch alert message text and compare it with        Team member deleted successfully
     Generic.Click on the profile name
     Generic.Select option from profile list     personal-details
@@ -1473,6 +1473,7 @@ Click on the status filter under team member via profile list and verify it
     TeamMemberPage.Fetch the country from team member filter and click       Status          Invited         ${New_status1}
 
 Verify all the validation of add team member
+    [Tags]      Negative
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1529,6 +1530,7 @@ Verify all the validation of add team member
     TeamMemberPage.Wait for the visibility of the alert text
 
 Verify all the validations of edit team member page
+    [Tags]      Negative
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1541,6 +1543,7 @@ Verify all the validations of edit team member page
     DashboardPage.Select the employee ID checkbox   yes
     DashboardPage.Select the employee ID checkbox   no
     DashboardPage.Select the employee ID checkbox   yes
+    Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Click on add team member action button
@@ -1599,8 +1602,171 @@ Verify all the validations of edit team member page
     TeamMemberPage.Click on the button      Update
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page       Please enter Last Name with atmost 50 Character
 
+Verify that user is not able to remove invited team member having technology created
+    [Tags]      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the employee ID checkbox   no
+    DashboardPage.Select the employee ID checkbox   yes
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Click on add team member action button
+    TeamMemberPage.Select option from team member action menu
+    TeamMemberPage.Enter team member first name
+    TeamMemberPage.Enter team member last name
+    Generic.Enter phone number      India   +91     9646289871
+    TeamMemberPage.Enter team member business email_yopmail
+    TeamMemberPage.Click on team member department
+    TeamMemberPage.Select team member department        DepartmentName09041
+    TeamMemberPage.Select team member role     CSPM
+    TeamMemberPage.Click on team member location
+    TeamMemberPage.Select team member location
+    TeamMemberPage.Save the team member form   save
+    Generic.Fetch alert message text and compare it with        Team Member created successfully
+    TeamMemberPage.Search Team Member by name       ${generated_TMFname}
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list       OPMR815274
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Add assignment information assign to   ${generated_TMFname}     ${generated_TMLname}
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Search Team Member by name   ${generated_TMFname}
+    TeamMemberPage.Click on three dots of Team Member listing
+    TeamMemberPage.Select option from three dots of Team Member     Remove
+    Generic.Select parameter        Yes
+    Generic.Fetch alert message text and compare it with        You cannot delete or inactivate this member as you have active technology assigned
+
+Verify user is not able to remove active team member having technology created
+     [Tags]            Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the employee ID checkbox   no
+    DashboardPage.Select the employee ID checkbox   yes
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Click on add team member action button
+    TeamMemberPage.Select option from team member action menu
+    TeamMemberPage.Enter team member first name
+    TeamMemberPage.Enter team member last name
+    Generic.Enter phone number      India   +91     9646289871
+    TeamMemberPage.Enter team member business email_yopmail
+    TeamMemberPage.Click on team member department
+    TeamMemberPage.Select team member department        DepartmentName09041
+    TeamMemberPage.Select team member role     CSPM
+    TeamMemberPage.Click on team member location
+    TeamMemberPage.Select team member location
+    TeamMemberPage.Save the team member form   save
+    Generic.Fetch alert message text and compare it with        Team Member created successfully
+    TeamMemberPage.Search Team Member by name       ${generated_TMFname}
+    Generic.Click on the profile name
+    Generic.Select logout option from profile list
+    Generic.Fetch log_out alert message
+    Generic.Open new window     yopmail
+    Generic.Refresh the existing page
+    Generic.Search yopmail emails for   ${generated_TMbusinessEmail}
+    sleep       ${search_sleep}
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifmail
+    Generic.click on the button     Verify
+    Unselect Frame
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Create - Account
+    Generic.Verify your current page location contains     create-account
+    UserAccount.Enter the password      Test@456
+    UserAccount.Confirm the entered password    Test@456
+    UserAccount.Click on term and condition checkbox
+    UserAccount.Click create account button
+    Generic.Fetch alert message text and compare it with       Account created successfully.
+    Generic.Verify your current page location contains     auth
+    LandingPage.Fill the login Form      ${generated_TMbusinessEmail}    Test@456
+    Switch Window    Inbox
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Click on email of yopmail   OTP Verification.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Get verification OTP from email    Your passcode is
+    sleep       ${yop_sleep}
+    Switch Window   aithentic | OTP
+    TwoFactorAuth.Enter the otp     ${passcode}
+    TwoFactorAuth.Click verification button
+    Generic.Verify your current page location contains     dashboard
+    Generic.Click on the profile name
+    Generic.Select logout option from profile list
+    Generic.Fetch log_out alert message
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
+    Generic.Verify your current page location contains      dashboard
+#    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select logout option from profile list
+    Generic.Fetch log_out alert message
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form  ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Search Team Member by name   ${generated_TMFname}
+    TeamMemberPage.verify status of first name in member list   Active
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+#   TechnologyPage.click on add technology button
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list       OPMR815274
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Add assignment information assign to   ${generated_TMFname}       ${generated_TMLname}
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Search Team Member by name   ${generated_TMFname}
+    TeamMemberPage.Click on three dots of Team Member listing
+    TeamMemberPage.Select option from three dots of Team Member     Remove
+    Generic.Select parameter        Yes
+    Generic.Fetch alert message text and compare it with        You cannot delete or inactivate this member as you have active technology assigned
+
 Verify department should not be removed having team member created
-    [Tags]      NT      Negative
+    [Tags]     Negative
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1643,6 +1809,258 @@ Verify department should not be removed having team member created
     TeamMemberPage.Select option from three dots of Team Member     Remove
     Generic.Select parameter        Yes
     Generic.Fetch alert message text and compare it with        Department already in use.
+
+Verify user is not able to deactivate active team member having technology created
+    [Tags]         Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       deepparam112@mail-mario.fr.nf    Paramdeep@112
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the employee ID checkbox   no
+    DashboardPage.Select the employee ID checkbox   yes
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Click on add team member action button
+    TeamMemberPage.Select option from team member action menu
+    TeamMemberPage.Enter team member first name
+    TeamMemberPage.Enter team member last name
+    Generic.Enter phone number      India   +91     9646289871
+    TeamMemberPage.Enter team member business email_yopmail
+    TeamMemberPage.Click on team member department
+    TeamMemberPage.Select team member department        DepartmentName09041
+    TeamMemberPage.Select team member role     CSPM
+    TeamMemberPage.Click on team member location
+    TeamMemberPage.Select team member location
+    TeamMemberPage.Save the team member form   save
+    Generic.Fetch alert message text and compare it with        Team Member created successfully
+    TeamMemberPage.Search Team Member by name       ${generated_TMFname}
+    Generic.Click on the profile name
+    Generic.Select logout option from profile list
+    Generic.Fetch log_out alert message
+    Generic.Open new window     yopmail
+    Generic.Refresh the existing page
+    Generic.Search yopmail emails for   ${generated_TMbusinessEmail}
+    sleep       ${search_sleep}
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifmail
+    Generic.click on the button     Verify
+    Unselect Frame
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Create - Account
+    Generic.Verify your current page location contains     create-account
+    UserAccount.Enter the password      Test@456
+    UserAccount.Confirm the entered password    Test@456
+    UserAccount.Click on term and condition checkbox
+    UserAccount.Click create account button
+    Generic.Fetch alert message text and compare it with       Account created successfully.
+    Generic.Verify your current page location contains     auth
+    LandingPage.Fill the login Form      ${generated_TMbusinessEmail}    Test@456
+    Switch Window    Inbox
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Click on email of yopmail   OTP Verification.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Get verification OTP from email    Your passcode is
+    sleep       ${yop_sleep}
+    Switch Window   aithentic | OTP
+    TwoFactorAuth.Enter the otp     ${passcode}
+    TwoFactorAuth.Click verification button
+    Generic.Verify your current page location contains     dashboard
+    Generic.Click on the profile name
+    Generic.Select logout option from profile list
+    Generic.Fetch log_out alert message
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
+    Generic.Verify your current page location contains      dashboard
+#    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select logout option from profile list
+    Generic.Fetch log_out alert message
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form  ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Search Team Member by name   ${generated_TMFname}
+    TeamMemberPage.verify status of first name in member list   Active
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list       QABrand555
+    TechnologyPage.Select parameter from technology dropdown list       OPMR815274
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Add assignment information assign to   ${generated_TMFname}       ${generated_TMLname}
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Search Team Member by name   ${generated_TMFname}
+    TeamMemberPage.Click on three dots of Team Member listing
+    TeamMemberPage.Select option from three dots of Team Member     Deactivate
+    Generic.Select parameter        Yes
+    Generic.Fetch alert message text and compare it with        You cannot delete or inactivate this member as you have active technology assigned
+
+Verify all the validations of Add Team Member under asset wizard
+    [Tags]      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   no
+    DashboardPage.Select the employee ID checkbox   yes
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains     technology-list
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.click on bulk import under action button of technology
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Data-Wizard
+    Bulk_Import_ExportPage.click on all checkbox under technology bulk import       Admin, Asset managers and Asset users.
+    Generic.click on the button     Next
+    Generic.click on the button     Add Member
+    TeamMemberPage.Save the team member form   save
+    TeamMemberPage.Fetch the all validation message after entering invalid data in add team member
+    TeamMemberPage.Enter team member first name self        Milan
+    TeamMemberPage.Enter team member last name with 101 letters
+    TeamMemberPage.Save the team member form   save
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page       Please enter Last Name with atmost 50 Characters
+    LoginPage.Clear the element text of field under login page       LastName
+    TeamMemberPage.Enter team member last name self     Johar
+    Generic.Enter phone number      India   +91     96462898
+    TeamMemberPage.Enter team member business email_yopmail
+    TeamMemberPage.Enter the Position in member form        QA
+    TeamMemberPage.Click on team member department
+    TeamMemberPage.Select team member department        DepartmentName09041
+    TeamMemberPage.Select team member role     Admin
+    TeamMemberPage.Click on team member location
+    TeamMemberPage.Select team member location
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page       Please enter a valid Mobile Number
+    LoginPage.Clear the element text of field under login page       phone
+    Generic.Enter phone number      India   +91     964628982342
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page       Please enter a valid Mobile Number
+    LoginPage.Clear the element text of field under login page       phone
+    Generic.Enter phone number      India   +91     9646289823
+    LoginPage.Clear the element text of field under login page       Email
+    TeamMemberPage.Enter team member business email self        Milan
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Please enter valid Email
+    LoginPage.Clear the element text of field under login page       Email
+    TeamMemberPage.Enter team member business email self        Milan@
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Please enter valid Email
+    LoginPage.Clear the element text of field under login page       Email
+    TeamMemberPage.Enter team member business email self        Milan@dmts
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Please enter valid Email
+    LoginPage.Clear the element text of field under login page       Email
+    TeamMemberPage.Enter team member business email self        Milan@dmts.
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Please enter valid Email
+    LoginPage.Clear the element text of field under login page       Email
+    TeamMemberPage.Enter team member business email self        Milan@mailinator.
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Please enter valid Email
+    LoginPage.Clear the element text of field under login page       Email
+    TeamMemberPage.Enter team member business email self        milan@dmts.fr.nf
+    TeamMemberPage.Save the team member form   save
+    TeamMemberPage.Wait for the visibility of the alert text
+    LoginPage.Clear the element text of field under login page       Email
+    LoginPage.Clear the element text of field under login page        LastName
+    LoginPage.Clear the element text of field under login page       FirstName
+    TeamMemberPage.Enter team member first name self        F_milan1
+    TeamMemberPage.Enter team member last name self    L_johar2
+    TeamMemberPage.Enter team member business email self       F_milan1@mail-mario.fr.nf
+    TeamMemberPage.Save the team member form   save
+    Generic.Fetch alert message text and compare it with      This Email is already registered.
+
+Check if user click on convert to tm button and confirm popup then come back without adding team member then able to see the assigne user in listing
+    [Tags]         Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       deepparam112@mail-mario.fr.nf    Paramdeep@112
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the employee ID checkbox   no
+    DashboardPage.Select the employee ID checkbox   yes
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    MemberPage.Click on assigned user tab     Assigned Users
+    MemberPage.Click on action button of assigned users
+    MemberPage.Select option from action button of assigned user    Add Assignee
+    MemberPage.Enter first name of assigned users
+    MemberPage.Enter last name of assigned users
+    MemberPage.Enter business email of assigned users
+    TechnologyPage.Create unique assign to employee_ID random
+    MemberPage.Click on save button of assigned user
+    Generic.Fetch alert message text and compare it with        Assigned Users created successfully
+    MemberPage.Search assigned user by first name   ${generated_AssigneduserFirstName}
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains      technology
+
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list    QABrand555
+    TechnologyPage.Select parameter from technology dropdown list       OPMR815324
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Select technology lifecycle status      Active
+    TechnologyPage.Add assignment information assign to   ${generated_AssigneduserFirstName}       ${generated_TMLname}
+
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on the first row of the technology table
+    Generic.click on the button link    Edit
+    TechnologyPage.Select technology lifecycle status      Active
+    MemberPage.Enter assign to field   Dc Dc
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology updated successfully
+    Generic.Verify your current page contains this text             Technology
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    MemberPage.Click on assigned user tab   Assigned Users
+    MemberPage.Search assigned user by first name   ${generated_AssigneduserFirstName}
+    MemberPage.Click on three dots of Team Member listing
+    MemberPage.Select option from three dots of Team Member     Asset History
+    Generic.Verify your current page location contains      asset-history
+    MemberPage.Search assigned user by asset id     ${generated_AssetID}
+    TeamMemberPage.Click on back to member list of member list
+    MemberPage.Click on assigned user tab   Assigned Users
+    MemberPage.Search assigned user by first name   ${generated_AssigneduserFirstName}
+    MemberPage.Click on three dots of Team Member listing
+    MemberPage.Select option from three dots of Team Member     Convert to TM
+    TeamMemberPage.Click on convert to team member confirm pop up
+    Sleep   ${yop_sleep}
+    switch window   aithentic | Update - Member
+    Generic.Verify your current page location contains      convertmember
+    TeamMemberPage.Click on the cancel button after click on convert to team member button
+    Sleep   ${yop_sleep}
+    switch window   aithentic | Member - List
+    Generic.Verify your current page location contains      memberslist
+    MemberPage.Click on assigned user tab   Assigned Users
+    MemberPage.Search assigned user by first name   ${generated_AssigneduserFirstName}
 
 #Zz kill browser
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

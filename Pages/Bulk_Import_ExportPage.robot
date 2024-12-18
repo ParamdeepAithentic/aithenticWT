@@ -905,3 +905,78 @@ Enter the static value in the product name column in bulk_import
 #    input text      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]//input      ${generated_addProductName_more}
 #    set global variable    ${generated_addProductName_more}
 
+
+Clear the text of the field with delete
+    [Arguments]     ${option}
+    Wait Until Element Is Visible      css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
+    Wait Until Element Is Enabled      css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
+    Press Keys    css:.ag-center-cols-container div[col-id='${option}']     DELETE
+
+Enter the new value of assigned in the email column for bulk import and edit
+    [Arguments]    ${option}
+    MemberPage.Double click    ${option}
+    ${random_string} =    Generate Random String       10      [NUMBERS]
+    ${generated_assigneeEmail}=    Catenate    BusinessEmail${random_string}@yopmail.net
+    wait until element is visible       css:.ag-center-cols-container div[col-id='${option}'] input    ${wait_time}
+    input text   css:.ag-center-cols-container div[col-id='${option}'] input   ${generated_assigneeEmail}
+    set global variable    ${generated_assigneeEmail}
+
+Select the department from dropdown under technology bulk import
+    [Arguments]     ${option}
+    wait until element is visible       //div[contains(@class,'full-page-block')]//ng-select[contains(@id,'department-name')]//input        ${wait_time}
+    wait until element is enabled       //div[contains(@class,'full-page-block')]//ng-select[contains(@id,'department-name')]//input        ${wait_time}
+    click element   //div[contains(@class,'full-page-block')]//ng-select[contains(@id,'department-name')]//input
+    input text   //div[contains(@class,'full-page-block')]//ng-select[contains(@id,'department-name')]//input  ${option}
+    sleep      ${search_sleep}
+    wait until element is visible      //span[contains(text(),'${option}')]       ${wait_time}
+    wait until element is enabled       //span[contains(text(),'${option}')]        ${wait_time}
+    click element   //span[contains(text(),'${option}')]
+
+
+Select the status under add department technology bulk import
+    wait until element is visible       (//ng-select[contains(@class,'qa-add-department-status')]//input)[1]        ${wait_time}
+    wait until element is enabled      (//ng-select[contains(@class,'qa-add-department-status')]//input)[1]       ${wait_time}
+    click element   (//ng-select[contains(@class,'qa-add-department-status')]//input)[1]
+    sleep      ${search_sleep}
+    wait until element is visible     //div[contains(@id,'1')]       ${wait_time}
+    wait until element is enabled       //div[contains(@id,'1')]       ${wait_time}
+    click element   //div[contains(@id,'1')]
+
+Enter cost center under add department technology bulk import
+    [Arguments]     ${option}
+    wait until element is visible       (//input[@id='costCenter'])[1]        ${wait_time}
+    wait until element is enabled      (//input[@id='costCenter'])[1]       ${wait_time}
+    click element   (//input[@id='costCenter'])[1]
+    input text  (//input[@id='costCenter'])[1]  ${option}
+
+Click on the bulk import option under asset wizard via technology
+    wait until element is visible       css:.qa-department-bulk-import        ${wait_time}
+    wait until element is enabled      css:.qa-department-bulk-import       ${wait_time}
+    click element   css:.qa-department-bulk-import
+
+Click on the location bulk import option under asset wizard via technology
+    wait until element is visible       css:.qa-addLocation-bulk        ${wait_time}
+    wait until element is enabled      css:.qa-addLocation-bulk       ${wait_time}
+    click element   css:.qa-addLocation-bulk
+
+Click on the product bulk import option under asset wizard via technology
+    wait until element is visible       css:.qa-add-bulk-product        ${wait_time}
+    wait until element is enabled      css:.qa-add-bulk-product       ${wait_time}
+    click element   css:.qa-add-bulk-product
+
+Click on the team member bulk import under asset wizard
+    wait until element is visible       css:.qa-add-bulk-member       ${wait_time}
+    wait until element is enabled      css:.qa-add-bulk-member       ${wait_time}
+    click element   css:.qa-add-bulk-member
+
+Clear the text of the field with delete under asset wizard
+    [Arguments]     ${option}
+    Wait Until Element Is Visible      css:.ag-pinned-left-cols-container div[col-id='${option}']    ${wait_time}
+    Wait Until Element Is Enabled      css:.ag-pinned-left-cols-container div[col-id='${option}']    ${wait_time}
+    Press Keys    css:.ag-pinned-left-cols-container div[col-id='${option}']     DELETE
+
+Enter static value in the fields of team membder bulk import under asset wizard
+    [Arguments]    ${option}        ${option1}
+    MemberPage.Double click team member bulk import    ${option}
+    wait until element is visible       css:.ag-pinned-left-cols-container div[col-id='${option}']    ${wait_time}
+    input text  css:.ag-pinned-left-cols-container div[col-id='${option}'] input   ${option1}
