@@ -146,3 +146,19 @@ Clear The Element Text for phone number
         
     END
     Log    Field is now cleared
+
+Clear The Element Text of the particular field
+    [Arguments]    ${xpath_locator}
+    Wait Until Element Is Visible       xpath=${xpath_locator}     ${wait_time}
+    Wait Until Element Is Enabled       xpath=${xpath_locator}     ${wait_time}
+    Click Element    xpath=${xpath_locator}
+    ${text}=    Execute JavaScript    return document.evaluate("${xpath_locator}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.value
+    Log    Initial text: ${text}
+
+    WHILE    '${text}' != ''
+        Press Keys    xpath=${xpath_locator}    BACKSPACE
+        ${text}=    Execute JavaScript    return document.evaluate("${xpath_locator}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.value
+        Log    Updated text: ${text}
+
+    END
+    Log    Field is now cleared

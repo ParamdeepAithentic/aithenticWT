@@ -3109,6 +3109,53 @@ Verify user should not able to Edit Brand having Product created
     Generic.Verify your current page location contains      brand
     DashboardPage.Verify update button is not visible on edit brand page
 
+Verify all the character validations of add brand page
+    [Tags]   Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     brand-dropdown
+    Generic.Verify your current page location contains      brand
+    DashboardPage.Click add brand button
+    DashboardPage.Save added brand details
+    DashboardPage.Verify the validation message of Brand name field
+    DashboardPage.Compare and verify the validation messages      ${Brandname_validation}     Please Enter Brand Name
+    DashboardPage.Verify the validation message of Brand manufacturer URL field
+    DashboardPage.Compare and verify the validation messages        ${brandURL_validation}      Please enter Business URL
+    DashboardPage.Verify the validation message of Brand manufacturer country field
+    DashboardPage.Compare and verify the validation messages        ${brandCountry_validation}       Please Select Country
+################################################# INPUT INVALID DATA ####################################################################################
+    DashboardPage.Add Invalid business manufacturer URL         invalidBrandURL
+    DashboardPage.Verify the validation message of Brand manufacturer URL field
+    DashboardPage.Compare and verify the validation messages        ${brandURL_validation}       Please enter valid Business URL
+    DashboardPage.Add invalid brand manufacturer country            475638InvalidCountry
+    DashboardPage.Cancel Brand details
+    Generic.Verify your current page location contains     brand-list
+    DashboardPage.Click add brand button
+    DashboardPage.Add self created brand name           Brandmilan
+    DashboardPage.Add self business manufacturer URL        Brandmilan.com
+    DashboardPage.Add brand manufacturer country      United States
+    DashboardPage.Save added brand details
+    Generic.Fetch alert message text and compare it with        Name already exists.
+    LoginPage.Clear The Element Text for phone number      ${add_brand_mfc_URL}
+    LoginPage.Clear the element text of field under login page      Name
+    DashboardPage.Create random brandName
+    DashboardPage.Add business manufacturer URL       ${generated_BrandName}
+    DashboardPage.Save added brand details
+    Generic.Fetch alert message text and compare it with        Brand created successfully.
+    DashboardPage.Click on Edit address
+    DashboardPage.Clear the field of country in add adddress of brand       qa-country-name
+    DashboardPage.Verify the validation message of Brand_country field when add new address
+    DashboardPage.Compare and verify the validation messages        ${Country_validation1}           Please Select Country
+    DashboardPage.Cancel the added new address
+    DashboardPage.Click on Add New Address
+    DashboardPage.Enter the country in the new address when add brand   addressCountry    United States Minor Outlying Islands
+    DashboardPage.Clear the field of country in add adddress of brand       qa-country-name
+    DashboardPage.Verify the validation message of Brand_country field when add new address
+    DashboardPage.Compare and verify the validation messages        ${Country_validation1}           Please Select Country
+
 Share invite to the registered user
     [Tags]    Negative
      Generic.click on the tab	Login
@@ -3125,7 +3172,7 @@ Share invite to the registered user
     Generic.Fetch alert message text and compare it with containing text        Email Address already exists.
 
 Verify all the validations of Personal Details page
-    [Tags]    NT    Negative
+    [Tags]       Negative
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}       ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -3378,6 +3425,28 @@ Verify all the validations of Product Bulk import under asset wizard
     Enter the value in the product_feature column in bulk_import        ProductFeatures
     Generic.Click on the button     Check Data      #Update,Edit
     Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           Product Product_bulk_import already exists
+
+Verify all the validations of Compose Message
+    [Tags]      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Messages
+    Generic.Verify your current page location contains      message
+    Generic.Select parameter     Compose
+    Generic.Verify your current page location contains      message
+    Generic.click on the button     Send
+    DashboardPage.Fetch the all validation message after click on the send button of compose message
+    DashboardPage.Add invalid text in the recipient field under compose message     Invalid45
+    DashboardPage.Enter invalid input in the status field under compose message     Text
+    DashboardPage.Enter 101 text in the subject field under compose message
+    DashboardPage.Wait for the invisibility of the 0 character remaining text
+    LoginPage.Clear the element text of field under login page      ClientMessageSubject
+    DashboardPage.Enter text in the subject field under compose message
+    DashboardPage.Enter 101 characters in the client message field under compose message
+    DashboardPage.Wait for the invisibility of the 0 character remaining text
+
 
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

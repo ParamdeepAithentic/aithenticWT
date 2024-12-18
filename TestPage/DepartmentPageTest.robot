@@ -114,7 +114,7 @@ Add department and verify via organisation
     DepartmentPage.Search by department name      ${generated_Department}
 
 Verify the validations of all fields of Add department
-    [Tags]    NT
+    [Tags]    Negative
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -132,7 +132,7 @@ Verify the validations of all fields of Add department
     DepartmentPage.Enter the wrong status of department and verify      wrongstatus
 
 Verify the validations of all fields of Edit department
-    [Tags]    Smoke
+    [Tags]        Negative
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
