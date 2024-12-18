@@ -410,6 +410,3 @@ Adding the data in the account
 #    Generic.select the option from the side menu    Messages
 #    Generic.Verify your current page location contains      message
 #    DashboardPage.Sending message 10 times to the same user
-
-
-

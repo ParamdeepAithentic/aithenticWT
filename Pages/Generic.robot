@@ -60,12 +60,16 @@ ${phone}     css:#phone
 
 ${wait_time}       60
 
-${yop_sleep}       8
+${yop_sleep}       10
+
+
 
 ${search_sleep}       1
 
 
-${CASE}      uat  #qa , uat , pre-prod
+${CASE}       qa   #qa , uat , pre-prod
+
+
 
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
 
@@ -113,8 +117,11 @@ Set UAT Variables
     Set Suite Variable    ${admin_name}        aithentic@yopmail.com
     Set Suite Variable    ${admin_password}       Admin@123
     Set Suite Variable    ${browser_name}         firefox
+
     Set Suite Variable    ${email}          deepparam112@mail-mario.fr.nf
 #    Set Suite Variable    ${email}           testqa29j@mailinator.com
+
+
     Set Suite Variable    ${discovered_asset_brand}                 Apple Inc
     Set Suite Variable    ${existing_mac}                       98:5a:eb:cb:c8:ed
     Set Suite Variable    ${discovered_existing_brand}              Apple Inc.
