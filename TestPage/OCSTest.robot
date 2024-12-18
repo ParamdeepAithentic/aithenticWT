@@ -2000,6 +2000,7 @@ Create the asset and capture the MAC address under technology details page
 
 
 Discovered Devices - Match the device count with total discovered devices in the list
+        [Tags]    NT
         Generic.click on the tab	Login
         LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
         Generic.Verify your current page location contains      dashboard

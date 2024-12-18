@@ -859,6 +859,25 @@ Clear the text of the field
     Double Click Element               css:.ag-center-cols-container div[col-id='${option}']
     Press Keys    css:.ag-center-cols-container div[col-id='${option}']     CTRL+a    BACKSPACE
 
+Verify that element is enabled
+    [Arguments]         ${option}
+    wait until element is visible    //button[normalize-space()='${option}']       ${wait_time}
+
+Double click to clear the dropdown
+    [Arguments]    ${option}
+    wait until element is visible      css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
+    wait until element is enabled      css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
+    Press Keys    css:.ag-center-cols-container div[col-id='${option}']     DELETE
+    sleep       ${search_sleep}
+
+Clear the text of the field under team member
+    [Arguments]     ${option}
+    Wait Until Element Is Visible      css:.ag-pinned-left-cols-container div[col-id='${option}']    ${wait_time}
+    Wait Until Element Is Enabled      css:.ag-pinned-left-cols-container div[col-id='${option}']    ${wait_time}
+    Double Click Element               css:.ag-pinned-left-cols-container div[col-id='${option}']
+    Press Keys    css:.ag-pinned-left-cols-container div[col-id='${option}']     CTRL+a    BACKSPACE
+    sleep       ${search_sleep}
+
 Enter the random value in the brand field under product bulk import
     [Arguments]    ${option}
     Bulk_Import_ExportPage.Double click    ${option}
@@ -885,6 +904,7 @@ Enter the static value in the product name column in bulk_import
 #    wait until element is enabled       xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]     ${wait_time}
 #    input text      xpath:(//div[@class='ag-center-cols-container']//div[@col-id='${option}'])[1]//input      ${generated_addProductName_more}
 #    set global variable    ${generated_addProductName_more}
+
 
 Clear the text of the field with delete
     [Arguments]     ${option}

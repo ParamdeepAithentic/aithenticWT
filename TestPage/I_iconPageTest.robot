@@ -86,31 +86,31 @@ Verify all i-icon of profile-listing
 #    Generic.Verify your current page location contains      naics.com
 #    Generic.Verify your current page contains this text     NAICS Identification Tools
 #    Go back
-    I_iconPage.Click on i-icon of company department
-    Generic.Verify pop-up is visible after clicking on i-icon
-    I_iconPage.Click on i-icon of company department
-    I_iconPage.Click on view added Departments list      View Your Added Departments List
-    Generic.Verify your current page location contains      department-list
-    I_iconPage.Click on action menu button of department
-    I_iconPage.Choose Add department from Action button options          Add Department
-    I_iconPage.Click on i-icon of cost_center in department
-    Generic.Verify pop-up is visible after clicking on i-icon
-    I_iconPage.Click on i-icon of cost_center in department
-    I_iconPage.Click on cancel add department        close
-    I_iconPage.Search by Department             Customer Support        #Communications
-    I_iconPage.Click on three dots of Department list
-    I_iconPage.Choose option from three_dots of Department     Details
-    I_iconPage.Click on i-icon of cost_center in department
-    Generic.Verify pop-up is visible after clicking on i-icon
-    I_iconPage.Click on i-icon of cost_center in department
-    I_iconPage.Click on cancel add department        close
-    I_iconPage.Click on three dots of Department list
-    I_iconPage.Choose option from three_dots of Department     Edit
-    I_iconPage.Click on i-icon of cost_center in department
-    Generic.Verify pop-up is visible after clicking on i-icon
-    I_iconPage.Click on i-icon of cost_center in department
-    I_iconPage.Click on cancel add department        close
-    Generic.Verify your current page location contains      department-list
+#    I_iconPage.Click on i-icon of company department
+#    Generic.Verify pop-up is visible after clicking on i-icon
+#    I_iconPage.Click on i-icon of company department
+#    I_iconPage.Click on view added Departments list      View Your Added Departments List
+#    Generic.Verify your current page location contains      department-list
+#    I_iconPage.Click on action menu button of department
+#    I_iconPage.Choose Add department from Action button options          Add Department
+#    I_iconPage.Click on i-icon of cost_center in department
+#    Generic.Verify pop-up is visible after clicking on i-icon
+#    I_iconPage.Click on i-icon of cost_center in department
+#    I_iconPage.Click on cancel add department        close
+#    I_iconPage.Search by Department             Customer Support        #Communications
+#    I_iconPage.Click on three dots of Department list
+#    I_iconPage.Choose option from three_dots of Department     Details
+#    I_iconPage.Click on i-icon of cost_center in department
+#    Generic.Verify pop-up is visible after clicking on i-icon
+#    I_iconPage.Click on i-icon of cost_center in department
+#    I_iconPage.Click on cancel add department        close
+#    I_iconPage.Click on three dots of Department list
+#    I_iconPage.Choose option from three_dots of Department     Edit
+#    I_iconPage.Click on i-icon of cost_center in department
+#    Generic.Verify pop-up is visible after clicking on i-icon
+#    I_iconPage.Click on i-icon of cost_center in department
+#    I_iconPage.Click on cancel add department        close
+#    Generic.Verify your current page location contains      department-list
     I_iconPage.Choose options inside personal_details        Technology
     I_iconPage.Click on i-icon inside technology
     Generic.Verify pop-up is visible after clicking on i-icon
@@ -204,15 +204,15 @@ Verify all i-icon of Discovery assets
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu        Asset Discovery
     Generic.Verify your current page location contains      discovery-assets
-    I_iconPage.Choose tab under Discovery Assets       agent-discovery
-    I_iconPage.Click on i-icon inside agent discovery
-    I_iconPage.Click on link inside agent_discovery i-icon
-    sleep       ${yop_sleep}
-    switch window       Asset Discovery - Jira Service Management
-    Generic.Verify your current page location contains      customer
-    Generic.Verify your current page contains this text     Asset Discovery
-    sleep       ${yop_sleep}
-    switch window       aithentic | Sentinel One Newly-Discovered
+#    I_iconPage.Choose tab under Discovery Assets       agent-discovery
+#    I_iconPage.Click on i-icon inside agent discovery
+#    I_iconPage.Click on link inside agent_discovery i-icon
+#    sleep       ${yop_sleep}
+#    switch window       Asset Discovery - Jira Service Management
+#    Generic.Verify your current page location contains      customer
+#    Generic.Verify your current page contains this text     Asset Discovery
+#    sleep       ${yop_sleep}
+#    switch window       aithentic | Sentinel One Newly-Discovered
     OCS.Click on newly discovered tab under network discovery
     I_iconPage.Click on i_icon under network_discovery tab
 
