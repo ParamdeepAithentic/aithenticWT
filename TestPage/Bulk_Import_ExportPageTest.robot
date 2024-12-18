@@ -1741,7 +1741,7 @@ Verify all the validations of product bulk import
     Bulk_Import_ExportPage.Verify the upload message text    ValidationErrors           Product Product_bulk_import already exists
 
 Verify all the validations on team member bulk import
-    [Tags]    Sanity        Negative
+    [Tags]      Negative
     TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
@@ -1793,16 +1793,19 @@ Verify all the validations on team member bulk import
     Generic.Click on the button     Check Data
     Bulk_Import_ExportPage.Verify the upload message text    validationErrors           Mobile Number is invalid
     Bulk_Import_ExportPage.Clear the text of the field     MobileNo
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import       MobileNo        987456321
+    Generic.Click on the button     Check Data
+    Bulk_Import_ExportPage.Verify the upload message text    validationErrors           Mobile Number is invalid
+    Bulk_Import_ExportPage.Clear the text of the field     MobileNo
     Generic.Click on the button     Check Data
     Bulk_Import_ExportPage.Verify the upload message text    validationErrors       Mobile Number is missing. Please fill in required data.
     Bulk_Import_ExportPage.Enter the new value of team member in the phone number column        MobileNo
     Double click to clear the dropdown    BusinessEmail
-
     Generic.Click on the button     Check Data
     Bulk_Import_ExportPage.Verify the upload message text    validationErrors           Business Email is missing. Please fill in required data.
     Bulk_Import_ExportPage.Enter static value in the fields of department bulk import       BusinessEmail        a@yopmail.com
     Generic.Click on the button     Check Data
-    Bulk_Import_ExportPage.Verify the upload message text    validationErrors           The Business Domain must end with one of the following: mail-mario.fr.nf.
+    Bulk_Import_ExportPage.Verify the upload message text    validationErrors           The Business Domain must end with one of the following: mail-mario.fr.nf,dmts.com.
     Bulk_Import_ExportPage.Clear the text of the field    BusinessEmail
     Bulk_Import_ExportPage.Enter static value in the fields of department bulk import       BusinessEmail        deepparam112@mail-mario.fr.nf
     Generic.Click on the button     Check Data
@@ -1820,6 +1823,10 @@ Verify all the validations on team member bulk import
     Double click to clear the dropdown     MemberRole
     Generic.Click on the button     Check Data
     Bulk_Import_ExportPage.Verify the upload message text    validationErrors       Member Role is missing. Please fill in required data.
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       MemberRole     2
+    Bulk_Import_ExportPage.Double click to clear the dropdown        Position
+    Generic.Click on the button     Check Data
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings       Position/Title is missing.
     EXCEPT
     Switch Window       aithentic | Member - List
     Generic.Click on the profile name
@@ -1833,7 +1840,7 @@ Verify all the validations on team member bulk import
     END
 
 Verify all the validations of team member bulk edit
-    [Tags]    Sanity        Negative
+    [Tags]        Negative
     TRY
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
@@ -1845,6 +1852,7 @@ Verify all the validations of team member bulk edit
     Generic.Select option from profile list     personal-details
     I_iconPage.Choose options inside personal_details        Organization
     I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the employee ID checkbox   no
     DashboardPage.Select the employee ID checkbox   yes
     DashboardPage.Select the employee ID checkbox   no
     Generic.Fetch alert message text and compare it with       Settings Updated
@@ -1893,13 +1901,16 @@ Verify all the validations of team member bulk edit
     Generic.Click on the button     Check Data
     Bulk_Import_ExportPage.Verify the upload message text    validationErrors           Mobile Number is invalid
     Bulk_Import_ExportPage.Clear the text of the field     MobileNo
+    Bulk_Import_ExportPage.Enter static value in the fields of department bulk import       MobileNo        963214563
+    Generic.Click on the button     Check Data
+    Bulk_Import_ExportPage.Verify the upload message text    validationErrors           Mobile Number is invalid
+    Bulk_Import_ExportPage.Clear the text of the field     MobileNo
     Generic.Click on the button     Check Data
     Bulk_Import_ExportPage.Verify the upload message text    validationErrors       Mobile Number is missing. Please fill in required data.
     Bulk_Import_ExportPage.Enter the new value of team member in the phone number column        MobileNo
     Double click to clear the dropdown    Email
-#    Generic.Click on the button     Check Data
-#    Generic.Click on the button     Check Data
-#    Bulk_Import_ExportPage.Verify the upload message text    validationErrors           Business Email is missing. Please fill in required data.
+    Generic.Click on the button     Check Data
+    Bulk_Import_ExportPage.Verify the upload message text    validationErrors           Business Email is missing. Please fill in required data.
     Bulk_Import_ExportPage.Enter static value in the fields of department bulk import       Email        deepparam112@mail-mario.fr.nf
     Generic.Click on the button     Check Data
     Bulk_Import_ExportPage.Verify the upload message text    validationErrors       Business Email already exists
@@ -1909,13 +1920,17 @@ Verify all the validations of team member bulk edit
     Generic.Click on the button     Check Data
     Bulk_Import_ExportPage.Verify the upload message text    validationErrors       Department is missing. Please fill in required data.
     Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       DepartmentName      3
-#    Double click to clear the dropdown      LocationName
-#    Generic.Click on the button     Check Data
-#    Bulk_Import_ExportPage.Verify the upload message text    validationErrors       Location is missing. Please fill in required data.
-#    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       LocationName      3
-#    Double click to clear the dropdown      UserRoleName
-#    Generic.Click on the button     Check Data
-#    Bulk_Import_ExportPage.Verify the upload message text    validationErrors       Member Role is missing. Please fill in required data.
+    Double click to clear the dropdown      LocationName
+    Generic.Click on the button     Check Data
+    Bulk_Import_ExportPage.Verify the upload message text    validationErrors       Location is missing. Please fill in required data.
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       LocationName      3
+    Double click to clear the dropdown      UserRoleName
+    Generic.Click on the button     Check Data
+    Bulk_Import_ExportPage.Verify the upload message text    validationErrors       Member Role is missing. Please fill in required data.
+    Bulk_Import_ExportPage.Select option from technology type column in bulk_edit       UserRoleName     2
+    Bulk_Import_ExportPage.Double click to clear the dropdown        Position
+    Generic.Click on the button     Check Data
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings       Position/Title is missing.
     EXCEPT
     Switch Window       aithentic | Member - List
     Generic.Click on the profile name
