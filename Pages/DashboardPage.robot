@@ -65,6 +65,7 @@ ${search_brandName}     css:#searchbar-brand
 ${fetch_brandName}    css:td:nth-child(2)
 
 
+
 ########## Add product #####
 
 ${add_Product}     css:a[title='Click here to Add Product']
@@ -202,6 +203,12 @@ Create random productName
     input text   ${ProductName}   ${generated_product}
     log to console      ${generated_product}
     set global variable    ${generated_product}
+
+Create self productName
+    [Arguments]     ${option}
+    wait until element is visible   ${ProductName}      ${wait_time}
+    click element   ${ProductName}
+    input text   ${ProductName}   ${option}
 
 Click on action button
     wait until element is visible       ${actionBTN}   ${wait_time}
@@ -359,7 +366,7 @@ Add self created brand name
     [Arguments]    ${option}
     wait until element is visible       ${add_brandName}        ${wait_time}
     input text   ${add_brandName}   ${option}
-    log to console      ${generated_BrandName}
+#    log to console      ${generated_BrandName}
 
 Add business manufacturer URL
     [Arguments]    ${option}
@@ -367,6 +374,12 @@ Add business manufacturer URL
     input text   ${add_brand_mfc_URL}   ${generated_BrandURL}
     log to console      ${generated_BrandURL}
     set global variable    ${generated_BrandURL}
+
+Add self business manufacturer URL
+    [Arguments]    ${option}
+    wait until element is visible       ${add_brand_mfc_URL}        ${wait_time}
+    input text   ${add_brand_mfc_URL}   ${option}
+
 
 Add brand manufacturer country
     [Arguments]    ${country}
@@ -1002,7 +1015,7 @@ Click on the filter under recent Activities table
     Wait Until Element Is Enabled    //div[contains(text(),'Asset Id')]//following-sibling::div//input      ${wait_time}
     Input Text    //div[contains(text(),'${option1}')]//following-sibling::div//input    ${option2}
     Generic.Select parameter    ${option2}
-    
+
 Click on row of recent activities table
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
     Wait Until Element Is Visible    //table//tbody[contains (@class, 'ng-star-inserted')]//tr//td[1]       ${wait_time}
@@ -1612,6 +1625,18 @@ Fetch the all validation message of add product page
    END
    lists should be equal    ${expectedList}    ${actualList}
 
+Fetch the all validation message of add product page under asset wizard
+   wait until element is visible   //span[contains(@class,'invalidInput')]       ${wait_time}
+   @{expectedList} =    Create List       Please enter Product Name        Please enter Brand Name            Please Select Status        Please Select Technology Group        Please Select Technology Type
+   ${elements} =  Get WebElements     //span[contains(@class,'invalidInput')]
+   @{actualList} =   Create List
+   FOR  ${element}  IN      @{elements}
+      log to console    ${element.text}
+      Append To List    ${actualList}     ${element.text}
+   END
+   lists should be equal    ${expectedList}    ${actualList}
+
+
 Click on the edit option under three dots of product
     [Arguments]      ${option}
     wait until element is visible       //a[contains(@class,'edit-product-qa')][normalize-space()='${option}']      ${wait_time}
@@ -1675,6 +1700,7 @@ Add invalid brand manufacturer country
     [Arguments]    ${country}
     click element   ${brand_country}
     Clear Element Text      ${brand_country}
+    sleep  ${search_sleep}
     input text   ${brand_country}   ${country}
     sleep  ${search_sleep}
     wait until element is visible       //div[contains(@class,"ng-option-disabled")][normalize-space()='No items found']        ${wait_time}
@@ -1845,6 +1871,13 @@ Verify the warning is visible when deactivate or remove brand
 Verify update button is not visible on edit brand page
     wait until element is not visible       //button[normalize-space()='Update']
 
+Create random brandName with 101 characters
+    ${random_string} =    Generate Random String       101      [NUMBERS]
+    ${generated_BrandName_new}=    Catenate    BrandName${random_string}
+    input text   ${add_brandName}   ${generated_BrandName_new}
+    log to console      ${generated_BrandName_new}
+    set global variable    ${generated_BrandName_new}
+
 Enter to Static Email into popup of share aithentic
     [Arguments]     ${option}
     Wait Until Element Is Not Visible    ${loaderIcon}    ${wait_time}
@@ -1861,3 +1894,127 @@ Fetch the validation of to field under share aithentic
     set global variable    ${get_checkbox_validation}
     log to console    ${get_checkbox_validation}
     should be equal   ${get_checkbox_validation}     ${text}
+
+Fetch the all validation message on Personal Details page
+   wait until element is visible   //span[contains(@class,'invalidInput')]       ${wait_time}
+   @{expectedList} =    Create List        Please enter First Name          Please enter Last Name              Please enter Business Email         Please enter Mobile Number
+   ${elements} =  Get WebElements     //span[contains(@class,'invalidInput')]
+   @{actualList} =   Create List
+   FOR  ${element}  IN      @{elements}
+      log to console    ${element.text}
+      Append To List    ${actualList}     ${element.text}
+   END
+   lists should be equal    ${expectedList}    ${actualList}
+
+Click on the cross icon of Department and Location under Personal Details
+    [Arguments]         ${text}
+    wait until element is visible       //ng-select[contains(@class,'qa-${text}Id')]//span[@title='Clear all']    ${wait_time}
+    wait until element is enabled        //ng-select[contains(@class,'qa-${text}Id')]//span[@title='Clear all']    ${wait_time}
+    click element   //ng-select[contains(@class,'qa-${text}Id')]//span[@title='Clear all']
+
+Get the text of the pop up after changing email in the personal detail
+    Wait Until Element Is Visible    //div[contains(@class,'emailChangeWarning')]//p       ${wait_time}
+    Wait Until Element Is Enabled    //div[contains(@class,'emailChangeWarning')]//p      ${wait_time}
+    ${alert_text}=   get text        //div[contains(@class,'emailChangeWarning')]//p
+    Log To Console    ${alert_text}
+    Set Global Variable    ${alert_text}
+
+Select the department and Location from dropdown
+    [Arguments]         ${text}     ${option}
+    wait until element is visible       //ng-select[contains(@class,'qa-${text}Id')]//input    ${wait_time}
+    wait until element is enabled        //ng-select[contains(@class,'qa-${text}Id')]//input    ${wait_time}
+    click element   //ng-select[contains(@class,'qa-${text}Id')]//input
+    input text     //ng-select[contains(@class,'qa-${text}Id')]//input       ${option}
+    wait until element is visible       //span[contains(text(),'${option}')]    ${wait_time}
+    wait until element is enabled        //span[contains(text(),'${option}')]    ${wait_time}
+    click element              //span[contains(text(),'${option}')]
+
+Enter text in the finacial year 1 date field
+    [Arguments]     ${option}       ${option1}
+    Wait Until Element Is Not Visible    ${loaderIcon}    ${wait_time}
+    wait until element is visible      css:#financialYear${option}         ${wait_time}
+    wait until element is enabled      css:#financialYear${option}         ${wait_time}
+    click element       css:#financialYear${option}
+     sleep       ${search_sleep}
+    input text      css:#financialYear${option}        ${option1}
+    sleep       ${search_sleep}
+
+
+Clear the text of the field under company information
+    [Arguments]     ${option}
+    Wait Until Element Is Visible      css:#financialYear${option}    ${wait_time}
+    Wait Until Element Is Enabled      css:#financialYear${option}    ${wait_time}
+    Click Element               css:#financialYear${option}
+    Press Keys    css:#financialYear${option}     CTRL+A    DELETE
+    sleep   ${search_sleep}
+
+Click on the No of employees field
+    Wait Until Element Is Not Visible    ${loaderIcon}    ${wait_time}
+    wait until element is visible      css:#employees         ${wait_time}
+    wait until element is enabled      css:#employees         ${wait_time}
+    click element       css:#employees
+    sleep       ${search_sleep}
+
+visibility of the I-icon under company information
+     wait until element is visible      css:.qa-company-information-financial-industry        ${wait_time}
+
+Add invalid brand under product asset wizard
+    [Arguments]    ${brand}
+    click element   ${enterAndSelect_Brand}
+    Clear Element Text      ${enterAndSelect_Brand}
+    input text   ${enterAndSelect_Brand}   ${brand}
+    sleep  ${search_sleep}
+    wait until element is visible       //div[contains(@class,"ng-option-disabled")][normalize-space()='No items found']        ${wait_time}
+
+Fetch the all validation message after click on the send button of compose message
+   wait until element is visible   //span[contains(@class,'invalidInput')]       ${wait_time}
+   @{expectedList} =    Create List       Please Select Recipient Name        Please Select Status          Please Enter Subject        Please Enter Message
+   ${elements} =  Get WebElements     //span[contains(@class,'invalidInput')]
+   @{actualList} =   Create List
+   FOR  ${element}  IN      @{elements}
+      log to console    ${element.text}
+      Append To List    ${actualList}     ${element.text}
+   END
+   lists should be equal    ${expectedList}    ${actualList}
+
+Add invalid text in the recipient field under compose message
+    [Arguments]     ${message}
+    wait until element is visible      //input[@id='Recipient_list']     ${wait_time}
+    wait until element is visible      //input[@id='Recipient_list']      ${wait_time}
+    click element   //input[@id='Recipient_list']
+    input text      //input[@id='Recipient_list']       ${message}
+    sleep  ${search_sleep}
+    wait until element is visible       //div[contains(@class,"ng-option-disabled")][normalize-space()='No items found']        ${wait_time}
+
+Enter invalid input in the status field under compose message
+    [Arguments]     ${message_status}
+    wait until element is visible      //input[@id='message-Status']     ${wait_time}
+    wait until element is visible      //input[@id='message-Status']      ${wait_time}
+    click element   //input[@id='message-Status']
+    input text     //input[@id='message-Status']       ${message_status}
+    sleep  ${search_sleep}
+    wait until element is visible       //div[contains(@class,"ng-option-disabled")][normalize-space()='No items found']        ${wait_time}
+
+Enter 101 text in the subject field under compose message
+    wait until element is visible      css:#ClientMessageSubject     ${wait_time}
+    wait until element is visible     css:#ClientMessageSubject      ${wait_time}
+    click element   css:#ClientMessageSubject
+    ${random_string} =    Generate Random String       101      [LETTERS]
+    ${generated_subject_max}=    Catenate    Subject:${random_string}
+    input text     css:#ClientMessageSubject       ${generated_subject_max}
+    sleep       ${search_sleep}
+    log to console      ${generated_subject_max}
+    set global variable     ${generated_subject_max}
+
+Wait for the invisibility of the 0 character remaining text
+    wait until element is visible      //span[normalize-space()='0 Characters remaining']     ${wait_time}
+
+Enter 101 characters in the client message field under compose message
+    wait until element is visible      css:#ClientMessageDetail     ${wait_time}
+    wait until element is visible     css:#ClientMessageDetail      ${wait_time}
+    click element   css:#ClientMessageDetail
+    ${random_string} =    Generate Random String       301      [LETTERS]
+    ${generated_client_max}=    Catenate    Client_Message:${random_string}
+    input text     css:#ClientMessageDetail       ${generated_client_max}
+    log to console     ${generated_client_max}
+    set global variable   ${generated_client_max}

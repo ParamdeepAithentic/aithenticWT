@@ -215,6 +215,7 @@ Select option from change location status pop up
 Select option from country column
     [Arguments]    ${option}
     wait until element is visible      css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
+    wait until element is enabled    css:.ag-center-cols-container div[col-id='${option}']    ${wait_time}
     Double click element      css:.ag-center-cols-container div[col-id='${option}']
     wait until element is visible      css:div[aria-label='Rich Select Field'] div:nth-child(3) div    ${wait_time}
     click element      css:div[aria-label='Rich Select Field'] div:nth-child(3) div
@@ -645,3 +646,10 @@ Verify that table contains the location Name under Location column
     wait until element is not visible       ${loaderIcon}       ${wait_time}
     wait until element is visible       //th//div[contains(@class,'columnName')][normalize-space()='${option1}']//ancestor::table//following::tr//td[contains(text(),'${option2}')]        ${wait_time}
     wait until element is enabled       //th//div[contains(@class,'columnName')][normalize-space()='${option1}']//ancestor::table//following::tr//td[contains(text(),'${option2}')]       ${wait_time}
+
+Clear the text of the IP subnet
+    [Arguments]         ${option}
+    wait until element is visible       (//input[@formcontrolname='IPSubnets'])[${option}]
+    wait until element is enabled       (//input[@formcontrolname='IPSubnets'])[${option}]
+    click element   (//input[@formcontrolname='IPSubnets'])[${option}]
+    clear element text      (//input[@formcontrolname='IPSubnets'])[${option}]

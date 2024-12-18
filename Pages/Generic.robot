@@ -45,6 +45,7 @@ ${SheetLocationAndName}   LoadTimeSheet.xlsx
 ${SheetTabName}     Load_Time_tracking
 
 ${alert_Msg}     css:.msg.d-inline-flex
+
 ${cross_alertMsg}   css:.close.position-absolute.text-white
 ${loaderIcon}     //div[@role='status']
 ${shadow}       //div[@aria-modal='true']
@@ -58,6 +59,7 @@ ${phone}     css:#phone
 
 
 ${wait_time}       60
+
 ${yop_sleep}       10
 
 
@@ -65,9 +67,7 @@ ${yop_sleep}       10
 ${search_sleep}       1
 
 
-
 ${CASE}       qa   #qa , uat , pre-prod
-
 
 
 
@@ -120,6 +120,7 @@ Set UAT Variables
 
     Set Suite Variable    ${email}          deepparam112@mail-mario.fr.nf
 #    Set Suite Variable    ${email}           testqa29j@mailinator.com
+
 
     Set Suite Variable    ${discovered_asset_brand}                 Apple Inc
     Set Suite Variable    ${existing_mac}                       98:5a:eb:cb:c8:ed
@@ -577,3 +578,11 @@ Set asset ID settings
     EXCEPT
         Log    Alert is not visible check settings update
     END
+
+Fetch And Verify error toast messages
+    [Arguments]         ${option}
+    Wait Until Element Is Visible   css:.toast-error .d-inline-flex    ${wait_time}
+    ${alert_text}=    Get Text   css:.toast-error .d-inline-flex
+    log to console     ${alert_text}
+    Should Contain    ${alert_text}    ${option}
+    Wait Until Element Is Not Visible    (//span[contains(@class,'msg d-inline')])[2]    ${wait_time}

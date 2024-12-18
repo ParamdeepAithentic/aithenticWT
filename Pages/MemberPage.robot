@@ -124,6 +124,13 @@ Create random assignee email
     input text   ${assigneeEmail}   ${generated_assigneeEmail}
     set global variable    ${generated_assigneeEmail}
 
+Enter the static employee id
+    [Arguments]     ${option}
+    wait until element is visible      ${assigneeEmpID}    ${wait_time}
+    wait until element is enabled       ${assigneeEmpID}    ${wait_time}
+    input text   ${assigneeEmpID}   ${option}
+
+
 Create random assignee ID
     ${random_string} =    Generate Random String       5      [NUMBERS]
     ${generated_assigneeEmpID}=    Catenate    ${random_string}
@@ -194,6 +201,7 @@ Click on team member action button
     Wait Until Element Is Visible       ${teamMember_ActionBtn}    ${wait_time}
     Wait Until Element Is Enabled      ${teamMember_ActionBtn}     ${wait_time}
     click element       ${teamMember_ActionBtn}
+
 
 Enter team member first name
     wait until element is visible      ${teamMember_FirstName}       ${wait_time}
@@ -290,6 +298,7 @@ Enter business email of assigned users
     wait until element is visible       css:.qa-AssignedEmail    ${wait_time}
     input text   css:.qa-AssignedEmail   ${generated_TMbusinessEmail}
     log to console      ${generated_TMbusinessEmail}
+    set global variable     ${generated_TMbusinessEmail}
 
 Click on save button of assigned user
     wait until element is visible   css:.qa-save-assignee-modal     ${wait_time}
@@ -517,6 +526,12 @@ Verify the visibilty of same user exist email validation
     wait until element is visible       //div[contains(text(), 'Same email already exists ')]    ${wait_time}
     wait until element is enabled       //div[contains(text(), 'Same email already exists ')]    ${wait_time}
 
+Verify the visiblity of validation pop-up in asset wizard
+    [Arguments]    ${option}
+    wait until element is not visible      ${loaderIcon}     ${wait_time}
+    wait until element is visible       //div[contains(text(), '${option}')]    ${wait_time}
+    wait until element is enabled       //div[contains(text(), '${option}')]
+
 Wait till message listing appear
     TRY
         wait until element is visible       (//td[contains(@class,'flag-message-qa')])[1]   ${wait_time}
@@ -525,3 +540,16 @@ Wait till message listing appear
         wait until element is visible       //span[normalize-space()='No Records']          ${yop_sleep}
         wait until element is enabled      //span[normalize-space()='No Records']           ${yop_sleep}
     END
+
+Click on assigned user under asset wizard
+    wait until element is not visible      ${loaderIcon}     ${wait_time}
+    wait until element is visible       css:.fa-user-secret          ${yop_sleep}
+    wait until element is enabled       css:.fa-user-secret          ${yop_sleep}
+    Generic.Wait until table get load
+    click element       css:.fa-user-secret
+
+Click on Add assignee button
+    wait until element is not visible      ${loaderIcon}     ${wait_time}
+    wait until element is visible       ${add_assigneeBTN}          ${yop_sleep}
+    wait until element is enabled      ${add_assigneeBTN}           ${yop_sleep}
+    click element      ${add_assigneeBTN}
