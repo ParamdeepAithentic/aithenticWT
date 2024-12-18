@@ -684,3 +684,17 @@ Verify that assigned user cannot be removed having technologies created via prof
     MemberPage.Select option from three dots of Team Member     Remove
     MemberPage.Click on confirm button under remove pop up of assigned user
     Generic.Fetch alert message text and compare it with       Assigned Users cannot removed as have assigned items
+
+
+Verify that when serach with invalid data under assigned user search bar via profile
+    [Tags]      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form    ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Assigned Users
+    Generic.Verify your current page location contains     assignee-list
+    MemberPage.Search assigned user with invalid data   Testing@
+    MemberPage.Verify the visibility of No records after searching invalid data in the search bar
