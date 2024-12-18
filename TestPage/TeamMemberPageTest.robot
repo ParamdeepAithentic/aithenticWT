@@ -1602,6 +1602,7 @@ Verify all the validations of edit team member page
     RegisterUserPage.Fetch the validation message after entering invalid data in register user page       Please enter Last Name with atmost 50 Character
 
 Verify that user is not able to remove invited team member having technology created
+    [Tags]      Negative
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1656,7 +1657,7 @@ Verify that user is not able to remove invited team member having technology cre
     Generic.Fetch alert message text and compare it with        You cannot delete or inactivate this member as you have active technology assigned
 
 Verify user is not able to remove active team member having technology created
-     [Tags]      NT      Negative
+     [Tags]            Negative
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1763,8 +1764,8 @@ Verify user is not able to remove active team member having technology created
     Generic.Select parameter        Yes
     Generic.Fetch alert message text and compare it with        You cannot delete or inactivate this member as you have active technology assigned
 
-
-[Tags]      NT      Negative
+Verify department should not be removed having team member created
+    [Tags]     Negative
     Generic.click on the tab	Login
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
