@@ -119,11 +119,7 @@ Set UAT Variables
 
     Set Suite Variable    ${email}          deepparam112@mail-mario.fr.nf
 #    Set Suite Variable    ${email}           testqa29j@mailinator.com
-<<<<<<< HEAD
-=======
 
-
->>>>>>> 5b8587009815aa48b0301704b96186b2fb88ffa3
     Set Suite Variable    ${discovered_asset_brand}                 Apple Inc
     Set Suite Variable    ${existing_mac}                       98:5a:eb:cb:c8:ed
     Set Suite Variable    ${discovered_existing_brand}              Apple Inc.
