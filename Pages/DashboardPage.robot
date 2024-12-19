@@ -2019,3 +2019,53 @@ Enter 101 characters in the client message field under compose message
     log to console     ${generated_client_max}
     set global variable   ${generated_client_max}
 
+click on the cross icon of To field and asset id under reply message
+    [Arguments]    ${option}
+    wait until element is visible     //ng-select[@placeholder='${option}']//span[contains(@class,'value-icon')][normalize-space()='×']     ${wait_time}
+    wait until element is visible      //ng-select[@placeholder='${option}']//span[contains(@class,'value-icon')][normalize-space()='×']      ${wait_time}
+    click element   //ng-select[@placeholder='${option}']//span[contains(@class,'value-icon')][normalize-space()='×']
+
+click on the cross icon of status field under reply message
+    wait until element is visible     //ng-select[@placeholder='Select Status']//span[@title='Clear all']     ${wait_time}
+    wait until element is visible      //ng-select[@placeholder='Select Status']//span[@title='Clear all']      ${wait_time}
+    click element  //ng-select[@placeholder='Select Status']//span[@title='Clear all']
+
+
+Enter 301 charcters under message body of reply message
+    wait until element is visible      //div[@class='form-fields-login']//textarea[contains(@class,'message-body')]      ${wait_time}
+    wait until element is visible      //div[@class='form-fields-login']//textarea[contains(@class,'message-body')]   ${wait_time}
+    Click element     //div[@class='form-fields-login']//textarea[contains(@class,'message-body')]
+    ${random_string} =    Generate Random String       301      [LETTERS]
+    ${generated_reply_max}=    Catenate    Reply:${random_string}
+    input text      //div[@class='form-fields-login']//textarea[contains(@class,'message-body')]         ${generated_reply_max}
+    log to console     ${generated_reply_max}
+    set global variable  ${generated_reply_max}
+
+Fetch the all validation message after click on the send button of reply message
+   wait until element is visible   //span[contains(@class,'invalidInput')]       ${wait_time}
+   @{expectedList} =    Create List        Please Select Recipient         Please Select Status          Please Enter Message
+   ${elements} =  Get WebElements     //span[contains(@class,'invalidInput')]
+   @{actualList} =   Create List
+   FOR  ${element}  IN      @{elements}
+      log to console    ${element.text}
+      Append To List    ${actualList}     ${element.text}
+   END
+   lists should be equal    ${expectedList}    ${actualList}
+
+Add invalid text in the to field under reply compose
+    [Arguments]     ${message}
+    wait until element is visible      //input[@id='recipients']     ${wait_time}
+    wait until element is visible      //input[@id='recipients']      ${wait_time}
+    click element  //input[@id='recipients']
+    input text      //input[@id='recipients']       ${message}
+    sleep  ${search_sleep}
+    wait until element is visible       //div[contains(@class,"ng-option-disabled")][normalize-space()='No items found']        ${wait_time}
+
+Enter invalid input in the status field under reply message
+    [Arguments]     ${message_status}
+    wait until element is visible      //input[@id='message-status']     ${wait_time}
+    wait until element is visible      //input[@id='message-status']      ${wait_time}
+    click element   //input[@id='message-status']
+    input text     //input[@id='message-status']       ${message_status}
+    sleep  ${search_sleep}
+    wait until element is visible       //div[contains(@class,"ng-option-disabled")][normalize-space()='No items found']        ${wait_time}
