@@ -3442,5 +3442,127 @@ Verify all the validations of Compose Message
     DashboardPage.Enter text in the subject field under compose message
     DashboardPage.Enter 101 characters in the client message field under compose message
     DashboardPage.Wait for the invisibility of the 0 character remaining text
+
+Verify all the validations of Reply message
+    [Tags]          Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    Generic.Verify your current page location contains     organization
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the employee ID checkbox   no
+    DashboardPage.Select the employee ID checkbox   yes
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
+    TeamMemberPage.Click on add team member action button
+    TeamMemberPage.Choose option after clicking on Action button        Add New Member
+    TeamMemberPage.Enter team member first name
+    TeamMemberPage.Enter team member last name
+    Generic.Enter phone number      India   +91     9646289871
+    TeamMemberPage.Enter team member business email with cool fr nf email
+    TeamMemberPage.Enter the Position in member form        QA
+    TeamMemberPage.Click on team member department
+    TeamMemberPage.Select team member department        DepartmentName0451927202
+    TeamMemberPage.Select team member role     Admin
+    TeamMemberPage.Click on team member location
+    TeamMemberPage.Select team member location with new domain
+    TeamMemberPage.Save the team member form   save
+    Generic.Fetch alert message text and compare it with        Team Member created successfully
+    TeamMemberPage.Search Team Member by name       ${generated_TMFname}
+    Generic.Click on the profile name
+    Generic.Select logout option from profile list
+    Generic.Fetch log_out alert message
+    Generic.Open new window     yopmail
+    Generic.Refresh the existing page
+    Generic.Search yopmail emails for   ${generated_TMbusinessEmail}
+    sleep       ${search_sleep}
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifmail
+    Generic.click on the button     Verify
+    Unselect Frame
+    sleep       ${yop_sleep}
+    Switch Window       aithentic | Create - Account
+    Generic.Verify your current page location contains     create-account
+    UserAccount.Enter the password      Test@456
+    UserAccount.Confirm the entered password    Test@456
+    UserAccount.Click on term and condition checkbox
+    UserAccount.Click create account button
+    Generic.Fetch alert message text and compare it with       Account created successfully.
+    Generic.Verify your current page location contains     auth
+    LandingPage.Fill the login Form      ${generated_TMbusinessEmail}    Test@456
+    Switch Window    Inbox
+    Generic.Refresh the existing page
+    Generic.Refresh the existing page
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Click on email of yopmail   OTP Verification.
+    Unselect Frame
+    Generic.Switch to iframe by ID      ifmail
+    Yopmail.Get verification OTP from email    Your passcode is
+    sleep       ${yop_sleep}
+    Switch Window   aithentic | OTP
+    TwoFactorAuth.Enter the otp     ${passcode}
+    TwoFactorAuth.Click verification button
+    Generic.Verify your current page location contains     dashboard
+    Generic.Click on the profile name
+     Generic.Select option from profile list     personal-details
+    Generic.Verify your current page location contains      personal-profile
+    DashboardPage.Select an option from company details side list   Security
+    Generic.Verify your current page location contains  security
+    DashboardPage.click on the authentication tab under security
+    Generic.Verify your current page location contains     security
+    DashboardPage.Click on the checkboxes under auhtentication tab
+    Generic.Fetch alert message text and compare it with       Two factor updated successfully
+    Generic.Click on the profile name
+    Generic.Select logout option from profile list
+    Generic.Fetch log_out alert message
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
+    Generic.Verify your current page location contains      dashboard
+#    LandingPage.Verify you are on dashboard page
+    Generic.select the option from the side menu    Messages
+    Generic.Verify your current page location contains      message
+    Generic.Select parameter     Compose
+    Generic.Verify your current page location contains      message
+    DashboardPage.Enter input in the recipient list field under compose message    ${generated_TMFname}
+    DashboardPage.Enter input in the message status field under compose message     Public
+    DashboardPage.Enter text in the subject field under compose message
+    DashboardPage.Enter text in the client message field under compose message
+    Generic.click on the button     Send
+    Generic.Fetch alert message text and compare it with       Message sent successfully
+    Generic.Verify your current page location contains      message
+    Generic.Select parameter      Sent
+    Generic.Verify your current page location contains      message
+    DashboardPage.Search by subject under sent serach bar      ${generated_subject}
+    Generic.Click on the profile name
+    Generic.Select logout option from profile list
+    Generic.Fetch log_out alert message
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form  ${generated_TMbusinessEmail}    Test@456
+    Generic.Verify your current page location contains      dashboard
+#    LandingPage.Verify you are on dashboard page
+    DashboardPage.Click on the notifications icon under dashbaord page
+    sleep   ${search_sleep}
+    Generic.select the option from the side menu    Messages
+    Generic.Verify your current page location contains      message
+    Generic.Select parameter      Inbox
+    Generic.Verify your current page location contains      message
+    DashboardPage.Search by subject under inbox serach bar       ${generated_subject}
+    Dashboardpage.Click on three dots
+    DashboardPage.Click on the reply option to reply the message
+    Generic.Verify your current page location contains      reply
+    DashboardPage.click on the cross icon of To field and asset id under reply message       Select Recipients
+    DashboardPage.click on the cross icon of status field under reply message
+    Generic.click on the button     Send
+    DashboardPage.Fetch the all validation message after click on the send button of reply message
+    DashboardPage.Add invalid text in the to field under reply compose      Invalid45
+    DashboardPage.Enter invalid input in the status field under reply message     Text
+    DashboardPage.Enter 301 charcters under message body of reply message
+    DashboardPage.Wait for the invisibility of the 0 character remaining text
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
