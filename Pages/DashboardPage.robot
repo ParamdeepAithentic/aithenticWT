@@ -2018,3 +2018,4 @@ Enter 101 characters in the client message field under compose message
     input text     css:#ClientMessageDetail       ${generated_client_max}
     log to console     ${generated_client_max}
     set global variable   ${generated_client_max}
+

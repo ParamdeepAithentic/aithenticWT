@@ -3442,7 +3442,5 @@ Verify all the validations of Compose Message
     DashboardPage.Enter text in the subject field under compose message
     DashboardPage.Enter 101 characters in the client message field under compose message
     DashboardPage.Wait for the invisibility of the 0 character remaining text
-
-
 #Zz kill browser
  #   Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F
