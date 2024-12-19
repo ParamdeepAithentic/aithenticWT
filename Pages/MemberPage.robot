@@ -553,3 +553,15 @@ Click on Add assignee button
     wait until element is visible       ${add_assigneeBTN}          ${yop_sleep}
     wait until element is enabled      ${add_assigneeBTN}           ${yop_sleep}
     click element      ${add_assigneeBTN}
+
+Verify the visibility of No records after searching invalid data in the search bar
+     wait until element is visible       //td[normalize-space()='No Records']   ${wait_time}
+
+Search assigned user with invalid data
+    [Arguments]    ${name}
+    wait until element is visible       css:thead tr       ${wait_time}
+    wait until element is visible      css:input[placeholder='Search by Assignee Name or Employee Id']     ${wait_time}
+    wait until element is enabled      css:input[placeholder='Search by Assignee Name or Employee Id']     ${wait_time}
+    click element      css:input[placeholder='Search by Assignee Name or Employee Id']
+    input text   css:input[placeholder='Search by Assignee Name or Employee Id']   ${name}
+    sleep      ${search_sleep}

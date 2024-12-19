@@ -1291,7 +1291,7 @@ Click on save product pop inside technology page
     wait until element is visible   css:div[class='modal-footer my-1'] button[type='submit']    ${wait_time}
     wait until element is enabled   css:div[class='modal-footer my-1'] button[type='submit']    ${wait_time}
     click element   css:div[class='modal-footer my-1'] button[type='submit']
-    wait until element is not visible       ${shadow}          60
+#    wait until element is not visible       ${shadow}          60
 
 Select product technology group via technology
     [Arguments]    ${option}

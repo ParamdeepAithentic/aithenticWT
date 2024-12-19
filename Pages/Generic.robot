@@ -63,7 +63,6 @@ ${wait_time}       60
 ${yop_sleep}       10
 
 
-
 ${search_sleep}       1
 
 
@@ -120,7 +119,6 @@ Set UAT Variables
 
     Set Suite Variable    ${email}          deepparam112@mail-mario.fr.nf
 #    Set Suite Variable    ${email}           testqa29j@mailinator.com
-
 
     Set Suite Variable    ${discovered_asset_brand}                 Apple Inc
     Set Suite Variable    ${existing_mac}                       98:5a:eb:cb:c8:ed

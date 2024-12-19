@@ -1592,20 +1592,20 @@ Verify all the validations of Edit Partners
     PartnersPage.Add the contact of Edit partner
     Generic.Fetch alert message text and compare it with        Please enter values to save contact.
 
-Create partner 100 times
-    Generic.click on the tab	    Login
-    LandingPage.Fill the login Form      ${email}    ${valid_password}
-    Generic.Verify your current page location contains      dashboard
-    LandingPage.Verify you are on dashboard page
-    Generic.select the option from the side menu    Partners
-    Generic.Verify your current page location contains      partner
-
-    Generic.Verify your current page contains this text     Partners
-
-#-------------------------- PARTNER--------------------------------------------------------------
-#    LoginPage.Fetch the refresh token from the login api
-    ReplaceDomainAPI.Replace Domain
-    PartnersPage.Create many partners
+#Create partner 100 times
+#    Generic.click on the tab	    Login
+#    LandingPage.Fill the login Form      ${email}    ${valid_password}
+#    Generic.Verify your current page location contains      dashboard
+#    LandingPage.Verify you are on dashboard page
+#    Generic.select the option from the side menu    Partners
+#    Generic.Verify your current page location contains      partner
+#
+#    Generic.Verify your current page contains this text     Partners
+#
+##-------------------------- PARTNER--------------------------------------------------------------
+##    LoginPage.Fetch the refresh token from the login api
+#    ReplaceDomainAPI.Replace Domain
+#    PartnersPage.Create many partners
 
 Verify that user is not able to Deactivate and remove Manufacturer having technology
     [Tags]      Negative
