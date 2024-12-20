@@ -58,7 +58,7 @@ ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
 
-${wait_time}       60
+${wait_time}       30
 
 ${yop_sleep}       10
 

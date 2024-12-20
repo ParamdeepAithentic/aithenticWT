@@ -2471,39 +2471,39 @@ Verify all the validations om Location bulk edit
     Generic.Verify your current page location contains      location-bulk-edit
     Bulk_Import_ExportPage.Clear the text of the field      BuildingName
     Generic.Click on the button     Check Data      #Update,Edit
-    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings         Building name is missing
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings         Parent Location is missing, Building name is missing
     Bulk_Import_ExportPage.Enter the new value in the building name column     BuildingName        Phelps Tower
     Bulk_Import_ExportPage.Clear the text of the field      Floor
     Generic.Click on the button     Check Data      #Update,Edit
-    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings     Floor is missing
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings     Parent Location is missing, Floor is missing
     Bulk_Import_ExportPage.Enter the new value in the floor number column      Floor      1
     Bulk_Import_ExportPage.Clear the text of the field      Room
     Generic.Click on the button     Check Data      #Update,Edit
-    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings       Room is missing
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings       Parent Location is missing, Room is missing
     Bulk_Import_ExportPage.Enter the new value in the room number column       Room        204
     Bulk_Import_ExportPage.Clear the text of the field      StreetAddress1
     Generic.Click on the button     Check Data      #Update,Edit
-    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings       Address line 1 is missing
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings        Parent Location is missing, Address line 1 is missing
     Bulk_Import_ExportPage.Enter the new value in the first address column      StreetAddress1      This is address1
     Bulk_Import_ExportPage.Clear the text of the field      StreetAddress2
     Generic.Click on the button     Check Data      #Update,Edit
-    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings       Address line 2 is missing
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings        Parent Location is missing, Address line 2 is missing
     Bulk_Import_ExportPage.Enter the new value in the first address column      StreetAddress2      This is address1
     Bulk_Import_ExportPage.Clear the text of the field      City
     Generic.Click on the button     Check Data      #Update,Edit
-    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings     City is missing
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings     Parent Location is missing, City is missing
     Bulk_Import_ExportPage.Enter the new value in the city column     City        Tabursuq
     Bulk_Import_ExportPage.Clear the text of the field      State
     Generic.Click on the button     Check Data      #Update,Edit
-    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings     State is missing
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings     State is missing, Parent Location is missing
     Bulk_Import_ExportPage.Enter the new value in the state column    State       Kassrine
     Bulk_Import_ExportPage.Clear the text of the field      Zip
     Generic.Click on the button     Check Data      #Update,Edit
-    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings     Zip code is missing
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings     Parent Location is missing, Zip code is missing
     Bulk_Import_ExportPage.Enter random zip code of bulk import of loaction     Zip
     Bulk_Import_ExportPage.Clear the text of the field      CostCenter
     Generic.Click on the button     Check Data      #Update,Edit
-    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings     Cost Center is missing
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings     Parent Location is missing, Cost Center is missing
     Bulk_Import_ExportPage.Enter the new value of cost center in location bulk edit     CostCenter
     Bulk_Import_ExportPage.Clear the text of the field      LocationTypeName
     Generic.Click on the button     Check Data      #Update,Edit
@@ -2515,7 +2515,7 @@ Verify all the validations om Location bulk edit
     Bulk_Import_ExportPage.Enter the new value in the location name column     LocationTypeName
     Bulk_Import_ExportPage.Clear the text of the field      IPSubnets
     Generic.Click on the button     Check Data      #Update,Edit
-    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings     IP Subnets is missing
+    Bulk_Import_ExportPage.Verify the upload message text    validationWarnings     Parent Location is missing, IP Subnets is missing
     Bulk_Import_ExportPage.Clear the text of the field with delete      Country
     Generic.Click on the button     Check Data      #Update,Edit
     Bulk_Import_ExportPage.Verify the upload message text    validationErrors     Country is missing, State cannot insert without Country, City cannot insert without Country, State does not exist, City does not exist
@@ -2771,6 +2771,73 @@ Verify all the validations of Team member bulk import under asset wizard
     Sleep    ${yop_Sleep}
     Fail
     END
+
+Search with invalid data of search bar of different tables under asset wizard
+    [Tags]      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains      dashboard
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the employee ID checkbox   yes
+    DashboardPage.Select the employee ID checkbox   no
+    Generic.Fetch alert message text and compare it with       Settings Updated
+    Generic.select the option from the side menu    Technology
+    Generic.Verify your current page location contains     technology-list
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.Choose add technology from action button of technology
+    Generic.Verify your current page location contains      addtechnology
+    PartnersPage.Click here to add link of contract details
+    DashboardPage.Create random productName
+    DashboardPage.Add product brand name      QABrand555
+    TechnologyPage.Add product description via technology
+    TechnologyPage.Add product feature via technology
+    TechnologyPage.Select product technology type via technology     Hardware
+    TechnologyPage.Select product technology group via technology   Applications
+    TechnologyPage.Click on save product pop inside technology page
+    Generic.Fetch alert message text and compare it with    Product created successfully
+    TechnologyPage.Wait until brand loder is invisible
+    TechnologyPage.Add assetID for technology lifecycle information random
+    TechnologyPage.Click on save technology form button
+    Generic.Fetch alert message text and compare it with        Technology created successfully
+    TechnologyPage.Click on save technology form pop button
+    Generic.Verify your current page location contains      technology-list
+    Generic.Wait until table get load
+    TechnologyPage.Search by AssetId       ${generated_AssetID}
+    TechnologyPage.Click on action button of technology
+    TechnologyPage.click on bulk import under action button of technology
+    sleep   ${yop_sleep}
+    Switch Window       aithentic | Data-Wizard
+    Bulk_Import_ExportPage.click on checkbox under technology bulk import
+    Bulk_Import_ExportPage.click on all checkbox under technology bulk import        Any new department names
+    Bulk_Import_ExportPage.click on all checkbox under technology bulk import       - Location Names
+    Bulk_Import_ExportPage.click on all checkbox under technology bulk import       Admin, Asset managers and Asset users.
+    Bulk_Import_ExportPage.click on all checkbox under technology bulk import       - Create Brands
+    Bulk_Import_ExportPage.click on all checkbox under technology bulk import       - Create Products
+    Bulk_Import_ExportPage.click on all checkbox under technology bulk import       -All partners (manufacturer, supplier & support partners)
+    Generic.click on the button     Next
+    Bulk_Import_ExportPage.Search with invalid data on search bar under asset wizard        department      457Invaliddep
+    MemberPage.Verify the visibility of No records after searching invalid data in the search bar
+    Generic.click on the button     Next
+    Bulk_Import_ExportPage.Search with invalid data on search bar under asset wizard        location      457Invalidloc
+    MemberPage.Verify the visibility of No records after searching invalid data in the search bar
+    Generic.click on the button     Next
+    Bulk_Import_ExportPage.Search with invalid data on search bar under asset wizard        member      457Invalidmem
+    MemberPage.Verify the visibility of No records after searching invalid data in the search bar
+    MemberPage.Click on assigned user under asset wizard
+    Generic.Wait until table get load
+    Bulk_Import_ExportPage.Search with invalid data on search bar under asset wizard        assignee      457Invalidmem
+    Generic.click on the button     Next
+    Bulk_Import_ExportPage.Search with invalid data on search bar under asset wizard        brand     457Invalidbrand
+    MemberPage.Verify the visibility of No records after searching invalid data in the search bar
+    Generic.click on the button     Next
+    Bulk_Import_ExportPage.Search with invalid data on search bar under asset wizard        product      457Invalidproduct
+    MemberPage.Verify the visibility of No records after searching invalid data in the search bar
+    Generic.click on the button     Next
+    Bulk_Import_ExportPage.Search with invalid data on search bar under asset wizard        partner      457InvalidPartner
+    MemberPage.Verify the visibility of No records after searching invalid data in the search bar
 
 #Zz kill browser
 #    Run Process    cmd.exe    /C    taskkill /IM firefox.exe /F

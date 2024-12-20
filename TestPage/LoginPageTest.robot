@@ -608,7 +608,7 @@ Check all the validations of forgot password page
     [Tags]    Negative
     Generic.click on the tab	Login
     Generic.click on the tab    Forgot Password?
-    Generic.Verify your current page location contains      auth
+    Generic.Verify your current page location contains      login-actions
 #    LandingPage.Fill the login Form with email only    testqa29jmailinator.com
     RegisterUserPage.Click on the submit button under forgot password page
     LoginPage.Get and Verify the validation after entering invalid email under forgot password        Please specify user id.
