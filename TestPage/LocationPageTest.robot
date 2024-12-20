@@ -478,7 +478,7 @@ Verify user should not able to Deactivate Location having Team Member created
     TeamMemberPage.Enter team member business email_mailinator
     TeamMemberPage.Enter the Position in member form        QA
     TeamMemberPage.Click on team member department
-    TeamMemberPage.Select team member department        DepartmentName0451927202
+    TeamMemberPage.Select team member department        DepartmentName0451927202'
     TeamMemberPage.Select team member role     Admin
     TeamMemberPage.Click on team member location
     TeamMemberPage.Input new location in add team member    ${generated_location}
@@ -530,7 +530,7 @@ Verify user should not able to Remove Location having Team Member created
     TeamMemberPage.Enter team member business email_mailinator
     TeamMemberPage.Enter the Position in member form        QA
     TeamMemberPage.Click on team member department
-    TeamMemberPage.Select team member department        DepartmentName0451927202
+    TeamMemberPage.Select team member department        DepartmentName0451927202'
     TeamMemberPage.Select team member role     Admin
     TeamMemberPage.Click on team member location
     TeamMemberPage.Input new location in add team member    ${generated_location}

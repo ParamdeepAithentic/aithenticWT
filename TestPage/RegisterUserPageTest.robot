@@ -2419,6 +2419,13 @@ Verify that user is not able to delete the domain that is in use
     LandingPage.Fill the login Form      ${email}       ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     personal-details
+    I_iconPage.Choose options inside personal_details        Organization
+    I_iconPage.Choose tabs under organization        system
+    DashboardPage.Select the employee ID checkbox   no
+    DashboardPage.Select the employee ID checkbox   yes
+    Generic.Fetch alert message text and compare it with       Settings Updated
     Generic.select the option from the side menu    Team Members
     Generic.Verify your current page location contains      memberslist
     TeamMemberPage.Click on add team member action button

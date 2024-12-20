@@ -1600,7 +1600,7 @@ Verify all the validations of edit team member page
     TeamMemberPage.Enter team member first name while editing
     TeamMemberPage.Enter team member last name with 101 letters while edit
     TeamMemberPage.Click on the button      Update
-    RegisterUserPage.Fetch the validation message after entering invalid data in register user page       Please enter Last Name with atmost 50 Character
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page       Please enter Last Name with atmost 50 Characters
 
 Verify that user is not able to remove invited team member having technology created
     [Tags]      Negative
@@ -2003,6 +2003,8 @@ Check if user click on convert to tm button and confirm popup then come back wit
     DashboardPage.Select the employee ID checkbox   no
     DashboardPage.Select the employee ID checkbox   yes
     Generic.Fetch alert message text and compare it with       Settings Updated
+    Generic.select the option from the side menu    Team Members
+    Generic.Verify your current page location contains      memberslist
     MemberPage.Click on assigned user tab     Assigned Users
     MemberPage.Click on action button of assigned users
     MemberPage.Select option from action button of assigned user    Add Assignee
