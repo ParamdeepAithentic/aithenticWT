@@ -50,7 +50,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Download agent for OCS from signup - Linux
-    [Tags]      Sanity      Smoke
+    [Tags]      Sanity      Smoke       Replace
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
 #    LoginPage.Fetch the refresh token from the login api
@@ -155,7 +155,7 @@ Download agent for OCS from signup - Linux
     Generic.click on the button link    Download
 
 Download agent for OCS from signup - Windows
-    [Tags]      Sanity
+    [Tags]      Sanity      Replace
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
 #    LoginPage.Fetch the refresh token from the login api
@@ -260,7 +260,7 @@ Download agent for OCS from signup - Windows
     Generic.click on the button link    Download
 
 Download agent for OCS from signup - macOS
-    [Tags]      Sanity        
+    [Tags]      Sanity        Replace
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
 #    LoginPage.Fetch the refresh token from the login api

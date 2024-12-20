@@ -52,7 +52,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Create a fresh user
-    [Tags]      Smoke       Time
+    [Tags]      Smoke       Time        Replace
     ${StartTime1} =     Get Current Time in Milliseconds
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
