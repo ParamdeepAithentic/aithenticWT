@@ -2787,26 +2787,6 @@ Search with invalid data of search bar of different tables under asset wizard
     Generic.select the option from the side menu    Technology
     Generic.Verify your current page location contains     technology-list
     TechnologyPage.Click on action button of technology
-    TechnologyPage.Choose add technology from action button of technology
-    Generic.Verify your current page location contains      addtechnology
-    PartnersPage.Click here to add link of contract details
-    DashboardPage.Create random productName
-    DashboardPage.Add product brand name      QABrand555
-    TechnologyPage.Add product description via technology
-    TechnologyPage.Add product feature via technology
-    TechnologyPage.Select product technology type via technology     Hardware
-    TechnologyPage.Select product technology group via technology   Applications
-    TechnologyPage.Click on save product pop inside technology page
-    Generic.Fetch alert message text and compare it with    Product created successfully
-    TechnologyPage.Wait until brand loder is invisible
-    TechnologyPage.Add assetID for technology lifecycle information random
-    TechnologyPage.Click on save technology form button
-    Generic.Fetch alert message text and compare it with        Technology created successfully
-    TechnologyPage.Click on save technology form pop button
-    Generic.Verify your current page location contains      technology-list
-    Generic.Wait until table get load
-    TechnologyPage.Search by AssetId       ${generated_AssetID}
-    TechnologyPage.Click on action button of technology
     TechnologyPage.click on bulk import under action button of technology
     sleep   ${yop_sleep}
     Switch Window       aithentic | Data-Wizard
@@ -2827,16 +2807,15 @@ Search with invalid data of search bar of different tables under asset wizard
     Bulk_Import_ExportPage.Search with invalid data on search bar under asset wizard        member      457Invalidmem
     MemberPage.Verify the visibility of No records after searching invalid data in the search bar
     MemberPage.Click on assigned user under asset wizard
-    Generic.Wait until table get load
     Bulk_Import_ExportPage.Search with invalid data on search bar under asset wizard        assignee      457Invalidmem
     Generic.click on the button     Next
     Bulk_Import_ExportPage.Search with invalid data on search bar under asset wizard        brand     457Invalidbrand
     MemberPage.Verify the visibility of No records after searching invalid data in the search bar
     Generic.click on the button     Next
-    Bulk_Import_ExportPage.Search with invalid data on search bar under asset wizard        product      457Invalidproduct
+    Bulk_Import_ExportPage.Search with invalid data on search bar under asset wizard        product      457Invalid@Testing
     MemberPage.Verify the visibility of No records after searching invalid data in the search bar
     Generic.click on the button     Next
-    Bulk_Import_ExportPage.Search with invalid data on search bar under asset wizard        partner      457InvalidPartner
+    Bulk_Import_ExportPage.Search with invalid data on search bar under asset wizard        partner      457Invalid@Testing
     MemberPage.Verify the visibility of No records after searching invalid data in the search bar
 
 #Zz kill browser

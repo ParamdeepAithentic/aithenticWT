@@ -982,10 +982,10 @@ Enter static value in the fields of team membder bulk import under asset wizard
     input text  css:.ag-pinned-left-cols-container div[col-id='${option}'] input   ${option1}
 
 Search with invalid data on search bar under asset wizard
-    [Arguments]    ${option}        $[option1}
-     wait until element is visible       css:thead tr       ${wait_time}
-     wait until element is visible      css:#seacrhbar-${option}-wizard    ${wait_time}
-     wait until element is enabled      css:#seacrhbar-${option}-wizard     ${wait_time}
-     click element     css:#seacrhbar-${option}-wizard
-     input text   css:#seacrhbar-${option}-wizard     $[option1}
-     sleep       ${search_sleep}
+   [Arguments]    ${option}    ${option1}
+   wait until element is visible       css:thead tr       ${wait_time}
+   wait until element is visible      css:#seacrhbar-${option}-wizard    ${wait_time}
+   wait until element is enabled      css:#seacrhbar-${option}-wizard     ${wait_time}
+   click element     css:#seacrhbar-${option}-wizard
+   input text   css:#seacrhbar-${option}-wizard     ${option1}
+   sleep       ${search_sleep}

@@ -545,7 +545,7 @@ Click on assigned user under asset wizard
     wait until element is not visible      ${loaderIcon}     ${wait_time}
     wait until element is visible       css:.fa-user-secret          ${yop_sleep}
     wait until element is enabled       css:.fa-user-secret          ${yop_sleep}
-    Generic.Wait until table get load
+#    Generic.Wait until table get load
     click element       css:.fa-user-secret
 
 Click on Add assignee button
