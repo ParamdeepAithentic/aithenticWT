@@ -2027,7 +2027,7 @@ Profile: Select location and department and add by clicking on link
     RegisterUserPage.Fetch the profile personal_details and compare with registration details       ${profile_position}       ${generate_position}     #
 
 Check all the validations on register page
-    [Tags]      NT      Negative        Replace
+    [Tags]      NT      Negative        Replace1
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     RegisterUserPage.Save the register form
@@ -2075,7 +2075,7 @@ Check all the validations on register page
     Generic.Fetch alert message text and compare it with        Email already exists
 
 Verify all the validations on profile page
-    [Tags]      Negative        Replace
+    [Tags]      Negative        Replace1
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -2184,7 +2184,7 @@ Verify all the validations on profile page
 #    Generic.Fetch alert message text and compare it with       Settings Updated
 
 Verify all the charcter validations of register page
-    [Tags]      Negative        Replace
+    [Tags]      Negative        Replace1
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -2229,7 +2229,7 @@ Verify all the charcter validations of register page
     RegisterUserPage.Save the register form
 
 Verify all the character validation of profile page under register
-    [Tags]      Negative        Replace
+    [Tags]      Negative        Replace1
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -2295,7 +2295,7 @@ Verify all the character validation of profile page under register
     LoginPage.Wait for the visibility of the validation message of position
 
 Verify all the character validations of payment page
-    [Tags]      Negative        Replace
+    [Tags]      Negative        Replace1
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain

@@ -641,7 +641,7 @@ Verify user should not able to Remove Location having Technology
     LocationPage.Verify that remove Location button is not visible having asset, member, partner or contract created.
 
 Verify user should not able to Deactivate Location having Manufacturer
-    [Tags]      Negative        Replace
+    [Tags]      Negative        Replace1
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -707,7 +707,7 @@ Verify user should not able to Deactivate Location having Manufacturer
     Generic.Fetch alert message text and compare it with    Location having more than 0 technologies member, partner or contract cannot be deactivated.
 
 Verify user should not able to Deactivate Location having Supplier
-    [Tags]      Negative        Replace
+    [Tags]      Negative        Replace1
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -773,7 +773,7 @@ Verify user should not able to Deactivate Location having Supplier
     Generic.Fetch alert message text and compare it with    Location having more than 0 technologies member, partner or contract cannot be deactivated.
 
 Verify user should not able to Deactivate Location having Support Partner
-    [Tags]      Negative        Replace
+    [Tags]      Negative        Replace1
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard

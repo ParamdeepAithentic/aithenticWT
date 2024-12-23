@@ -1734,6 +1734,7 @@ Change password and login with new password
     SubscriptionPage.Enter card routing number      110000000
     SubscriptionPage.Enter account holder name    Paramdeep Singh
     SubscriptionPage.Check the authorization checkbox
+    sleep       ${search_sleep}
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
     Generic.Verify your current page location contains     welcome

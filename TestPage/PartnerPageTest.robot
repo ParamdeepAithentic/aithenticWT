@@ -1499,7 +1499,7 @@ Partner Side bar Filters
     PartnersPage.Compare the total count after selecting filter
 
 Verify all the validations of Add Partners
-    [Tags]      Negative        Replace
+    [Tags]      Negative        Replace1
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1608,7 +1608,7 @@ Verify all the validations of Edit Partners
 #    PartnersPage.Create many partners
 
 Verify that user is not able to Deactivate and remove Manufacturer having technology
-    [Tags]      Negative        Replace
+    [Tags]      Negative        Replace1
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1675,7 +1675,7 @@ Verify that user is not able to Deactivate and remove Manufacturer having techno
     Generic.Fetch alert message text and compare it with   You cannot delete or inactivate this partner as you have active contract or technology assigned
 
 Verify that user is not able to Deactivate and remove Supplier having technology
-    [Tags]      Negative        Replace
+    [Tags]      Negative        Replace1
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1737,7 +1737,7 @@ Verify that user is not able to Deactivate and remove Supplier having technology
     Generic.Fetch alert message text and compare it with   You cannot delete or inactivate this partner as you have active contract or technology assigned
 
 Verify that user is not able to Deactivate and remove Support Partner having technology
-    [Tags]      Negative        Replace
+    [Tags]      Negative        Replace1
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
