@@ -3350,6 +3350,19 @@ Verify all the validations of Add Product under asset wizard
     Generic.Fetch alert message text and compare it with        Product name already exists.
     DashboardPage.Add invalid brand under product asset wizard      475638InvalidBrand
 
+Hover over Filter Icon features
+    [Tags]        Sanity
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form      ${email}    ${valid_password}
+    Generic.Verify your current page location contains       dashboard
+    LandingPage.Verify you are on dashboard page
+    DashboardPage.Hover over reset filter icon of management console
+    DashboardPage.Compare the text of Icon      ${title_locator}        Reset Filter
+    DashboardPage.Hover over other icons of mangement console       QtrActive
+    DashboardPage.Compare the text of Icon      ${title_locator}      Quarter Filter
+    DashboardPage.Hover over other icons of mangement console       DateRInactive
+    DashboardPage.Compare the text of Icon      ${title_locator}        Date Filter
+
 Verify all the validations of Product Bulk import under asset wizard
     [Tags]      Negative
     Generic.click on the tab	Login
