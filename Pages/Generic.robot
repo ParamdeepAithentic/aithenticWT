@@ -58,7 +58,7 @@ ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
 
-${wait_time}       60
+${wait_time}       20
 
 ${yop_sleep}       10
 
@@ -584,3 +584,6 @@ Fetch And Verify error toast messages
     log to console     ${alert_text}
     Should Contain    ${alert_text}    ${option}
     Wait Until Element Is Not Visible    (//span[contains(@class,'msg d-inline')])[2]    ${wait_time}
+
+Wait the billing image loader to get hide
+   Wait Until Element Is Not Visible     //*[contains(text(),'do not refresh the page or leave the browser')]       120

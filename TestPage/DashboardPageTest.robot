@@ -287,6 +287,7 @@ Invite user into Aithentic
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -2308,9 +2309,10 @@ Message Side bar filters
     Generic.Verify your current page location contains      message
     MessagePage.Click on select partner filter from message side bar list
     MessagePage.Select the filter from partner      End User
-    MemberPage.Wait till message listing appear
-    MessagePage.Fetch the total count of message listing after selecting filter
-    MessagePage.Set pagination to max for inbox list in message
+#    MemberPage.Wait till message listing appear
+    MemberPage.Verify the pagination listing and execute the count verification code
+#    MessagePage.Fetch the total count of message listing after selecting filter
+#    MessagePage.Set pagination to max for inbox list in message
 #    MemberPage.Wait till message listing appear
 #    PaginationPage.Click on the pagination dropdown     inbox
 #    PaginationPage.Select the value from the pagination drop down count    500
@@ -2324,9 +2326,10 @@ Message Side bar filters
 
     Generic.Click on the reset filters link
     MessagePage.Select the filter from partner    Manufacturer
-    MemberPage.Wait till message listing appear
-    MessagePage.Fetch the total count of message listing after selecting filter
-    MessagePage.Set pagination to max for inbox list in message
+#    MemberPage.Wait till message listing appear
+    MemberPage.Verify the pagination listing and execute the count verification code
+#    MessagePage.Fetch the total count of message listing after selecting filter
+#    MessagePage.Set pagination to max for inbox list in message
     MessagePage.Fetch the country from location filter and click     Partner Type         Manufacturer    Manufacturer
     Generic.Click on the reset filters link
     Generic.Refresh the existing page

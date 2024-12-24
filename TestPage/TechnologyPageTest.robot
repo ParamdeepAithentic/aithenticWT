@@ -3189,13 +3189,14 @@ Click on the technology group filters and verify it
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  6  ${pageHeading}   Filter Page - Data load time of filter Applications under technology group      6    ${pageTime}     ${ActualTime}    Filter_Time
 
-    PaginationPage.Fetch the total count
+    PaginationPage.Fetch the total count for filter only
 #    PaginationPage.Click on the pagination dropdown     technology
 #    PaginationPage.Select the value from the pagination drop down count     500
 #    PaginationPage.Fetch the selected value of the dropdown
 #    PaginationPage.Check Pagination        technology
     PaginationPage.Set pagination to max
-    PaginationPage.Fetch the total count
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
     LocationPage.Fetch the country from location filter and click    Group      2     Applications        ${New_Name}
     Generic.click on the tab        reset filters
     Generic.Wait until table get load for filters
@@ -3210,11 +3211,11 @@ Click on the technology group filters and verify it
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  7  ${pageHeading}   Filter Page - Data load time of filter Accessories under technology group      7    ${pageTime}     ${ActualTime}    Filter_Time
 
-    PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     technology
+    PaginationPage.Fetch the total count for filter only
+    PaginationPage.PaginationPage.Set pagination to max
 #    PaginationPage.Select the value from the pagination drop down count     500
 #    PaginationPage.Fetch the selected value of the dropdown     technology
-    PaginationPage.Fetch the total count
+    PaginationPage.Fetch the total count for filter only
     LocationPage.Fetch the country from location filter and click    Group      2     ${Technology_group}      ${New_Name}
     Generic.click on the tab        reset filters
     Generic.Wait until table get load for filters
@@ -3229,9 +3230,12 @@ Click on the technology group filters and verify it
     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
     Calculate Running time  8  ${pageHeading}   Filter Page - Data load time of filter CRT under technology group      8    ${pageTime}     ${ActualTime}    Filter_Time
 
-    PaginationPage.Fetch the total count
-    PaginationPage.Click on the pagination dropdown     technology
-    PaginationPage.Select the value from the pagination drop down count    500
+    PaginationPage.Fetch the total count for filter only
+#    PaginationPage.Click on the pagination dropdown     technology
+    PaginationPage.Set pagination to max
+    Generic.Wait until table get load for filters
+
+
     LocationPage.Fetch the country from location filter and click    Group      2       ${Technology_group1}       ${New_Name}
     Generic.click on the tab        reset filters
     Generic.Wait until table get load for filters
@@ -3250,11 +3254,9 @@ Click on the technology group filters and verify it
     TechnologyPage.Click on the value under the tech typen filters of technology page       Hardware
 
     Generic.Wait until table get load for filters
-#    PaginationPage.Click on the pagination dropdown     technology
-#    PaginationPage.Select the value from the pagination drop down count     500
-#    PaginationPage.Fetch the selected value of the dropdown     technology
-    PaginationPage.Check Pagination     technology
-    PaginationPage.Fetch the total count
+    PaginationPage.Set pagination to max
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
     PaginationPage.Get count of total rows from Product Dropdown
     TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
     Generic.click on the tab        reset filters
@@ -3263,10 +3265,12 @@ Click on the technology group filters and verify it
     Generic.Wait until table get load for filters
     TechnologyPage.Click on the value under the tech typen filters of technology page       Subscription
     Generic.Wait until table get load for filters
-    PaginationPage.Click on the pagination dropdown     technology
-    PaginationPage.Select the value from the pagination drop down count     500
-    PaginationPage.Fetch the selected value of the dropdown     technology
-    PaginationPage.Fetch the total count
+    PaginationPage.Set pagination to max
+    Generic.Wait until table get load for filters
+#    PaginationPage.Click on the pagination dropdown     technology
+#    PaginationPage.Select the value from the pagination drop down count     500
+#    PaginationPage.Fetch the selected value of the dropdown     technology
+    PaginationPage.Fetch the total count for filter only
     PaginationPage.Get count of total rows from Product Dropdown
     TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
     Generic.click on the tab        reset filters
@@ -3275,10 +3279,13 @@ Click on the technology group filters and verify it
     Generic.Wait until table get load for filters
     TechnologyPage.Click on the value under the tech typen filters of technology page       Freeware
     Generic.Wait until table get load for filters
-    PaginationPage.Click on the pagination dropdown     technology
-    PaginationPage.Select the value from the pagination drop down count     500
-    PaginationPage.Fetch the selected value of the dropdown     technology
-    PaginationPage.Fetch the total count
+    PaginationPage.Set pagination to max
+    Generic.Wait until table get load for filters
+#    PaginationPage.Click on the pagination dropdown     technology
+#    PaginationPage.Select the value from the pagination drop down count     500
+#    PaginationPage.Fetch the selected value of the dropdown     technology
+#    PaginationPage.Fetch the total count
+    PaginationPage.Fetch the total count for filter only
     PaginationPage.Get count of total rows from Product Dropdown
     TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
     Generic.click on the tab        reset filters
@@ -3287,10 +3294,13 @@ Click on the technology group filters and verify it
     Generic.Wait until table get load for filters
     TechnologyPage.Click on the value under the tech typen filters of technology page      Virtual Machines
     Generic.Wait until table get load for filters
-    PaginationPage.Click on the pagination dropdown     technology
-    PaginationPage.Select the value from the pagination drop down count     500
-    PaginationPage.Fetch the selected value of the dropdown     technology
-    PaginationPage.Fetch the total count
+    PaginationPage.Set pagination to max
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
+#    PaginationPage.Click on the pagination dropdown     technology
+#    PaginationPage.Select the value from the pagination drop down count     500
+#    PaginationPage.Fetch the selected value of the dropdown     technology
+#    PaginationPage.Fetch the total count
     PaginationPage.Get count of total rows from Product Dropdown
     TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
     Generic.click on the tab        reset filters
@@ -3302,7 +3312,10 @@ Click on the technology group filters and verify it
     TechnologyPage.Click on the value under filters for selecting random value      1
     TechnologyPage.Get the text of the value you selected under filter      1
     Generic.Wait until table get load for filters
-    PaginationPage.Fetch the total count
+    Generic.Wait until table get load for filters
+    PaginationPage.Set pagination to max
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
     LocationPage.Fetch the country from location filter and click    Brand      3       ${random_Name}        ${random_Name}
     Generic.click on the tab        reset filters
     Generic.Wait until table get load for filters
@@ -3313,7 +3326,9 @@ Click on the technology group filters and verify it
     TechnologyPage.Click on the value under filters for selecting random value      2
     TechnologyPage.Get the text of the value you selected under filter      2
     Generic.Wait until table get load for filters
-    PaginationPage.Fetch the total count
+    PaginationPage.Set pagination to max
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
     LocationPage.Fetch the country from location filter and click    Brand      3       ${random_Name}       ${random_Name}
     Generic.click on the tab        reset filters
     Generic.Wait until table get load for filters
@@ -3324,11 +3339,15 @@ Click on the technology group filters and verify it
     TechnologyPage.Click on the value under filters for selecting random value      8
     TechnologyPage.Get the text of the value you selected under filter      8
     Generic.Wait until table get load for filters
-    PaginationPage.Click on the pagination dropdown     technology
-    PaginationPage.Select the value from the pagination drop down count     500
-#    PaginationPage.Fetch the selected value of the dropdown     technology
-    PaginationPage.Fetch the selected value of the dropdown
-    PaginationPage.Fetch the total count
+    Generic.Wait until table get load for filters
+    PaginationPage.Set pagination to max
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
+#    PaginationPage.Click on the pagination dropdown     technology
+#    PaginationPage.Select the value from the pagination drop down count     500
+##    PaginationPage.Fetch the selected value of the dropdown     technology
+#    PaginationPage.Fetch the selected value of the dropdown
+#    PaginationPage.Fetch the total count
     LocationPage.Fetch the country from location filter and click    Brand      3       ${random_Name}       ${random_Name}
     Generic.click on the tab        reset filters
     Generic.Wait until table get load for filters
@@ -3339,7 +3358,9 @@ Click on the technology group filters and verify it
     TechnologyPage.Click on the value under filters for selecting random value      2
     TechnologyPage.Get the text of the value you selected under filter     2
     Generic.Wait until table get load for filters
-    PaginationPage.Fetch the total count
+    PaginationPage.Set pagination to max
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
     PaginationPage.Get count of total rows from Product Dropdown
     TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
     Generic.click on the tab        reset filters
@@ -3351,7 +3372,9 @@ Click on the technology group filters and verify it
     TechnologyPage.Click on the value under filters for selecting random value      5
     TechnologyPage.Get the text of the value you selected under filter      5
     Generic.Wait until table get load for filters
-    PaginationPage.Fetch the total count
+    PaginationPage.Set pagination to max
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
     PaginationPage.Get count of total rows from Product Dropdown
     TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
     Generic.click on the tab        reset filters
@@ -3363,7 +3386,9 @@ Click on the technology group filters and verify it
     TechnologyPage.Click on the value under filters for selecting random value     6
     TechnologyPage.Get the text of the value you selected under filter     6
     Generic.Wait until table get load for filters
-    PaginationPage.Fetch the total count
+    PaginationPage.Set pagination to max
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
     PaginationPage.Get count of total rows from Product Dropdown
     TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
     Generic.click on the tab        reset filters
@@ -3374,8 +3399,10 @@ Click on the technology group filters and verify it
     Generic.Wait until table get load for filters
     TechnologyPage.Click on the value under filters for selecting random value    3
     TechnologyPage.Get the text of the value you selected under filter     3
-   Generic.Wait until table get load for filters
-    PaginationPage.Fetch the total count
+    Generic.Wait until table get load for filters
+    PaginationPage.Set pagination to max
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
     PaginationPage.Get count of total rows from Product Dropdown
     TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
     Generic.click on the tab        reset filters
@@ -3383,11 +3410,13 @@ Click on the technology group filters and verify it
     TechnologyPage.Click on the tech type filter under technology       Select Partner
     Generic.Wait until table get load for filters
     TechnologyPage.Click on the tech type filter under technology       SupportPartners
-   Generic.Wait until table get load for filters
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the value under filters for selecting random value    4
     TechnologyPage.Get the text of the value you selected under filter     4
     Generic.Wait until table get load for filters
-    PaginationPage.Fetch the total count
+    PaginationPage.Set pagination to max
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
     PaginationPage.Get count of total rows from Product Dropdown
     TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
     Generic.click on the tab        reset filters
@@ -3395,21 +3424,25 @@ Click on the technology group filters and verify it
     TechnologyPage.Click on the tech type filter under technology       Select Partner
     Generic.Wait until table get load for filters
     TechnologyPage.Click on the tech type filter under technology       SupportPartners
-   Generic.Wait until table get load for filters
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the value under filters for selecting random value    5
     TechnologyPage.Get the text of the value you selected under filter     5
     Generic.Wait until table get load for filters
-    PaginationPage.Fetch the total count
+    PaginationPage.Set pagination to max
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
     PaginationPage.Get count of total rows from Product Dropdown
     TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
     Generic.click on the tab        reset filters
-   Generic.Wait until table get load for filters
+    Generic.Wait until table get load for filters
     TechnologyPage.Click on the tech type filter under technology       Select Location
     Generic.Wait until table get load for filters
     TechnologyPage.Click on the value under filters for selecting random value    2
     TechnologyPage.Get the text of the value you selected under filter    2
     Generic.Wait until table get load for filters
-    PaginationPage.Fetch the total count
+    PaginationPage.Set pagination to max
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
     LocationPage.Fetch the country from location filter and click    Location       10      ${random_Name}       ${random_Name}
     Generic.click on the tab        reset filters
     Generic.Wait until table get load for filters
@@ -3418,7 +3451,9 @@ Click on the technology group filters and verify it
     TechnologyPage.Click on the value under filters for selecting random value    3
     TechnologyPage.Get the text of the value you selected under filter    3
     Generic.Wait until table get load for filters
-    PaginationPage.Fetch the total count
+    PaginationPage.Set pagination to max
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
     LocationPage.Fetch the country from location filter and click    Location       10     ${random_Name}       ${random_Name}
     Generic.click on the tab        reset filters
     Generic.Wait until table get load for filters
@@ -3427,7 +3462,9 @@ Click on the technology group filters and verify it
     TechnologyPage.Click on the value under filters for selecting random value   6
     TechnologyPage.Get the text of the value you selected under filter    6
     Generic.Wait until table get load for filters
-    PaginationPage.Fetch the total count
+    PaginationPage.Set pagination to max
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
     LocationPage.Fetch the country from location filter and click    Location       10      ${random_Name}       ${random_Name}
     Generic.click on the tab        reset filters
     Generic.Wait until table get load for filters
@@ -3436,7 +3473,9 @@ Click on the technology group filters and verify it
     TechnologyPage.Click on the value under filters for selecting random value   2
     TechnologyPage.Get the text of the value you selected under filter    2
     Generic.Wait until table get load for filters
-    PaginationPage.Fetch the total count
+    PaginationPage.Set pagination to max
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
     LocationPage.Fetch the country from location filter and click    Brand      3      ${random_Name}       ${random_Name}
     Generic.click on the tab        reset filters
     Generic.Wait until table get load for filters
@@ -3445,7 +3484,9 @@ Click on the technology group filters and verify it
     TechnologyPage.Click on the value under filters for selecting random value   6
     TechnologyPage.Get the text of the value you selected under filter    6
     Generic.Wait until table get load for filters
-    PaginationPage.Fetch the total count
+    PaginationPage.Set pagination to max
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
     LocationPage.Fetch the country from location filter and click    Brand      3         ${random_Name}       ${random_Name}
     Generic.click on the tab        reset filters
     Generic.Wait until table get load for filters
@@ -3454,7 +3495,9 @@ Click on the technology group filters and verify it
     TechnologyPage.Click on the value under filters for selecting random value   7
     TechnologyPage.Get the text of the value you selected under filter    7
     Generic.Wait until table get load for filters
-    PaginationPage.Fetch the total count
+    PaginationPage.Set pagination to max
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
     LocationPage.Fetch the country from location filter and click    Brand      3      ${random_Name}       ${random_Name}
     Generic.click on the tab        reset filters
     Generic.Wait until table get load for filters
@@ -3463,10 +3506,9 @@ Click on the technology group filters and verify it
     TechnologyPage.Click on the value under filters for selecting random value   1
     TechnologyPage.Get the text of the value you selected under filter   1
     Generic.Wait until table get load for filters
-    PaginationPage.Click on the pagination dropdown     technology
-    PaginationPage.Select the value from the pagination drop down count     500
-    PaginationPage.Fetch the selected value of the dropdown     technology
-    PaginationPage.Fetch the total count
+    PaginationPage.Set pagination to max
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
     PaginationPage.Get count of total rows from Product Dropdown
     TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
     Generic.click on the tab        reset filters
@@ -3476,10 +3518,9 @@ Click on the technology group filters and verify it
     TechnologyPage.Click on the value under filters for selecting random value   2
     TechnologyPage.Get the text of the value you selected under filter   2
     Generic.Wait until table get load for filters
-    PaginationPage.Click on the pagination dropdown     technology
-    PaginationPage.Select the value from the pagination drop down count     500
-    PaginationPage.Fetch the selected value of the dropdown     technology
-    PaginationPage.Fetch the total count
+    PaginationPage.Set pagination to max
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
     PaginationPage.Get count of total rows from Product Dropdown
     TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
     Generic.click on the tab        reset filters
@@ -3489,7 +3530,9 @@ Click on the technology group filters and verify it
     TechnologyPage.Click on the value under filters for selecting random value   2
     TechnologyPage.Get the text of the value you selected under filter   2
     Generic.Wait until table get load for filters
-    PaginationPage.Fetch the total count
+    PaginationPage.Set pagination to max
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
     LocationPage.Fetch the country from location filter and click    Status     8      ${random_Name}       ${random_Name}
     Generic.click on the tab        reset filters
     Generic.Wait until table get load for filters
@@ -3498,7 +3541,9 @@ Click on the technology group filters and verify it
     TechnologyPage.Click on the value under filters for selecting random value   5
     TechnologyPage.Get the text of the value you selected under filter   5
     Generic.Wait until table get load for filters
-    PaginationPage.Fetch the total count
+    PaginationPage.Set pagination to max
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
     LocationPage.Fetch the country from location filter and click    Status     8     ${select_date}      ${random_Name}       ${random_Name}
     Generic.click on the tab        reset filters
     Generic.Wait until table get load for filters
@@ -3507,10 +3552,9 @@ Click on the technology group filters and verify it
     TechnologyPage.Click on the value under filters for selecting random value  1
     TechnologyPage.Get the text of the value you selected under filter   1
     Generic.Wait until table get load for filters
-    PaginationPage.Click on the pagination dropdown     technology
-    PaginationPage.Select the value from the pagination drop down count     500
-    PaginationPage.Fetch the selected value of the dropdown     technology
-    PaginationPage.Fetch the total count
+    PaginationPage.Set pagination to max
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
     PaginationPage.Get count of total rows from Product Dropdown
     TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
     Generic.Click on the profile name
@@ -3527,7 +3571,9 @@ Click on the technology group filters and verify it
     TechnologyPage.Click on the value under filters for selecting random value  2
     TechnologyPage.Get the text of the value you selected under filter   2
     Generic.Wait until table get load for filters
-    PaginationPage.Fetch the total count
+    PaginationPage.Set pagination to max
+    Generic.Wait until table get load for filters
+    PaginationPage.Fetch the total count for filter only
     PaginationPage.Get count of total rows from Product Dropdown
     TechnologyPage.verify Text from Assignment Information     ${total_table_row_count}         ${total_data_count}
 

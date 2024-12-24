@@ -128,6 +128,7 @@ Register new user
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -213,6 +214,7 @@ Signup with ACH payment method
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -300,6 +302,7 @@ Change plan and Change asset limit with ACH Payment method
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -422,6 +425,7 @@ Update profile and company details of user
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -587,6 +591,7 @@ Verify company domain and submit financial details
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -699,6 +704,7 @@ Update Email of user from personal profile
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -832,6 +838,7 @@ Enter password more than the limit while changing password
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -944,6 +951,7 @@ Enter password less than the limit while changing password
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -1053,6 +1061,7 @@ Enter password of 32 characters while changing password
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -1173,6 +1182,7 @@ Enter password of more than the limit while forgot password
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -1288,6 +1298,7 @@ Enter password of less than the limit while forgot password
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -1403,6 +1414,7 @@ Enter password of 8 characters while forgot password
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -1518,6 +1530,7 @@ Update billing address via profile list
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -1647,6 +1660,7 @@ Add new ACH card and delete that card
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -1747,6 +1761,7 @@ Add new credit card and delete that card
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -1855,6 +1870,7 @@ Update the subscription Plan and verify the notification
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -1966,6 +1982,7 @@ Profile: Select location and department and add by clicking on link
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -2174,6 +2191,7 @@ Verify all the validations on profile page
 #    SubscriptionPage.Check the authorization checkbox
 #    SubscriptionPage.Check the acknowledgement checkbox
 #    SubscriptionPage.Click on complete process button
+#    Generic.Wait the billing image loader to get hide
 #    Generic.Verify your current page location contains     welcome
 #    Generic.Fetch alert message text and compare it with       Payment Successful
 #    DashboardPage.Click on complete setup button      Complete Setup
