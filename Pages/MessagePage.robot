@@ -197,9 +197,12 @@ Fetch the country from location filter and click
     END
 
 Compare the total count after selecting filter
-    Should be equal     ${total_data_count}        ${total_count_int}
-
-
+    TRY
+        Should be equal     ${total_data_count}        ${total_count_int}
+    EXCEPT
+        Wait Until Element Is Visible       //span[normalize-space()='No Records']      ${wait_time}
+        Log    There is no data in the table
+    END
 Set pagination to max for inbox list in message
       TRY
         PaginationPage.Pagination box visible

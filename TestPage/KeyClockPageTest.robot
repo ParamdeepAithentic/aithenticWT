@@ -147,6 +147,7 @@ Register new user for key clock functionality
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup

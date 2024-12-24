@@ -510,6 +510,7 @@ Create service now with invalid data
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -609,6 +610,7 @@ Create service now with valid data
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -851,6 +853,7 @@ Click on connetors button link under asset discovery
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -950,6 +953,7 @@ Create JAMFF account with valid data
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -1117,6 +1121,7 @@ Create jamff account with invalid data
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -1314,6 +1319,7 @@ Create sentinel account and verify the options
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -1556,6 +1562,7 @@ Create Tenable Account and verify the details
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -1788,6 +1795,7 @@ Create tanium Account and verify the details
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -2019,6 +2027,7 @@ Create CrowdStrike Account and verify the details
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
