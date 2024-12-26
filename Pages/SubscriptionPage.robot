@@ -88,6 +88,7 @@ ${payment_chk2}     css:div[class='terms-plan'] div:nth-child(2) label:nth-child
 #${payment_chk2}     //label[contains(text(),'I acknowledge I am entering into a')]
 
 ${payment_completeProcessBTN}     css:button[type='submit']
+#${payment_completeProcessBTN}     //div[contains(@class,'float-left')]//button[normalize-space()='Complete Process testt']
 
 #  Load_Time_tracking  Dropdown_LoadTime    Table_Load_Time    Search_Load_Time    UAT 15March
 
@@ -171,10 +172,12 @@ Enter card user name
 
 Check the authorization checkbox
     Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    sleep       ${search_sleep}
     click element        ${payment_chk1}
 
 Check the acknowledgement checkbox
     click element        ${payment_chk2}
+    sleep       ${search_sleep}
 
 Switch to card iframe
     Select Frame   css:iframe[title='Secure card payment input frame']

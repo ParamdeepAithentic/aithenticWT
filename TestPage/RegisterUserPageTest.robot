@@ -128,6 +128,7 @@ Register new user
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -213,6 +214,7 @@ Signup with ACH payment method
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -226,7 +228,7 @@ Signup with ACH payment method
 
 
 Change plan and Change asset limit with ACH Payment method
-    [Tags]      Smoke         
+    [Tags]      Smoke
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -300,6 +302,7 @@ Change plan and Change asset limit with ACH Payment method
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -351,7 +354,7 @@ Change plan and Change asset limit with ACH Payment method
     BillingPage.Close the billing payment options module
 
 Update profile and company details of user
-    [Tags]      NT        
+    [Tags]      NT
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -422,6 +425,7 @@ Update profile and company details of user
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -587,6 +591,7 @@ Verify company domain and submit financial details
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -628,7 +633,7 @@ Verify company domain and submit financial details
     Generic.Fetch alert message text and compare it with        Domain deleted successfully
 
 Update Email of user from personal profile
-    [Tags]      NT        
+    [Tags]      NT
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -699,6 +704,7 @@ Update Email of user from personal profile
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -761,7 +767,7 @@ Update Email of user from personal profile
     RegisterUserPage.Select asset center notifications inside alerts section         60 Days
 
 Enter password more than the limit while changing password
-    [Tags]      NT        
+    [Tags]      NT
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -832,6 +838,7 @@ Enter password more than the limit while changing password
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -944,6 +951,7 @@ Enter password less than the limit while changing password
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -978,7 +986,7 @@ Enter password less than the limit while changing password
     DashboardPage.Verify the visibility of validation message under change password
 
 Enter password of 32 characters while changing password
-    [Tags]      NT        
+    [Tags]      NT
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1053,6 +1061,7 @@ Enter password of 32 characters while changing password
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -1098,7 +1107,7 @@ Enter password of 32 characters while changing password
     LandingPage.Verify you are on dashboard page
 
 Enter password of more than the limit while forgot password
-    [Tags]      NT        
+    [Tags]      NT
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1173,6 +1182,7 @@ Enter password of more than the limit while forgot password
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -1213,7 +1223,7 @@ Enter password of more than the limit while forgot password
     RegisterUserPage.Verify the visibility of validation when entering password more than the limit
 
 Enter password of less than the limit while forgot password
-    [Tags]      NT        
+    [Tags]      NT
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1288,6 +1298,7 @@ Enter password of less than the limit while forgot password
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -1328,7 +1339,7 @@ Enter password of less than the limit while forgot password
     RegisterUserPage.Verify the visibility of validation when entering password less than the limit
 
 Enter password of 8 characters while forgot password
-    [Tags]      NT        
+    [Tags]      NT
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1403,6 +1414,7 @@ Enter password of 8 characters while forgot password
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -1443,7 +1455,7 @@ Enter password of 8 characters while forgot password
     Generic.Verify your current page location contains      dashboard
 
 Update billing address via profile list
-    [Tags]      NT        
+    [Tags]      NT
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1518,6 +1530,7 @@ Update billing address via profile list
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -1572,7 +1585,7 @@ Verfying the validation of the Address 1 field from the company details
 
 
 Add new ACH card and delete that card
-    [Tags]      NT        
+    [Tags]      NT
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1647,6 +1660,7 @@ Add new ACH card and delete that card
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -1672,7 +1686,7 @@ Add new ACH card and delete that card
     Generic.Fetch alert message text and compare it with       Bank removed successfully
 
 Add new credit card and delete that card
-    [Tags]      NT        
+    [Tags]      NT
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1747,6 +1761,7 @@ Add new credit card and delete that card
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -1855,6 +1870,7 @@ Update the subscription Plan and verify the notification
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -1966,6 +1982,7 @@ Profile: Select location and department and add by clicking on link
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -2174,6 +2191,7 @@ Verify all the validations on profile page
 #    SubscriptionPage.Check the authorization checkbox
 #    SubscriptionPage.Check the acknowledgement checkbox
 #    SubscriptionPage.Click on complete process button
+#    Generic.Wait the billing image loader to get hide
 #    Generic.Verify your current page location contains     welcome
 #    Generic.Fetch alert message text and compare it with       Payment Successful
 #    DashboardPage.Click on complete setup button      Complete Setup

@@ -198,7 +198,7 @@ Add Brand via personal detail under technology
 
 
 Invite user into Aithentic
-    [Tags]      Smoke       Sanity      
+    [Tags]      Smoke       Sanity
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -287,6 +287,7 @@ Invite user into Aithentic
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -339,7 +340,7 @@ Verify Help Center
     DashboardPage.Verify no result found with wrong FAQ
 
 Edit Brand and address via brand under profile list
-    [Tags]      Sanity      Smoke       
+    [Tags]      Sanity      Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -412,7 +413,7 @@ Edit Brand and address via brand under profile list
 
 
 Deactivate Brand and address via brand under profile list
-    [Tags]    NT        
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -570,7 +571,7 @@ Activate Brand and address via brand under profile list
     Generic.Fetch alert message text and compare it with      Brand activated successfully
 
 Remove Brand and address via brand under profile list
-    [Tags]    Smoke       
+    [Tags]    Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1065,6 +1066,8 @@ Verifying the Renewals Overview section of Management console - End of Life
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list        Brand_End_of_Life
     TechnologyPage.Select parameter from technology dropdown list       Product_End_of_Life
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date self    05/13/2024
@@ -1111,6 +1114,8 @@ Verifying the Renewals Overview section of Management console - End of Life
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list        Brand_End_of_Life
     TechnologyPage.Select parameter from technology dropdown list         Product_future_end_of_life
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date self    05/13/2024
@@ -1161,6 +1166,8 @@ Verifying the Renewals Overview section of Management console - Overdue Renewals
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list        Hewlett Packard Enterprise
     TechnologyPage.Select parameter from technology dropdown list       K2P85B
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Input current Date
@@ -1196,6 +1203,8 @@ Verifying the Renewals Overview section of Management console - Overdue Renewals
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list        Hewlett Packard Enterprise
     TechnologyPage.Select parameter from technology dropdown list       K2P85B
     TechnologyPage.Add assetID for technology lifecycle information random
 #    TechnologyPage.Input current Date
@@ -1248,6 +1257,8 @@ Verifying the Renewals Overview section of Management console - Overdue contract
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list        QABrand555
     TechnologyPage.Select parameter from technology dropdown list       Product_3107799167
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date self    05/13/2024
@@ -1284,6 +1295,8 @@ Verifying the Renewals Overview section of Management console - Overdue contract
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list        QABrand555
     TechnologyPage.Select parameter from technology dropdown list       Product_3107799167
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date self    05/13/2024
@@ -1324,6 +1337,8 @@ Verifying the Renewals Overview section of Management console - Expired warranti
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list         Hewlett Packard Enterprise
     TechnologyPage.Select parameter from technology dropdown list       K2P85B
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date self    05/13/2024
@@ -1360,6 +1375,8 @@ Verifying the Renewals Overview section of Management console - Expired warranti
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list         Hewlett Packard Enterprise
     TechnologyPage.Select parameter from technology dropdown list       K2P85B
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date self    05/13/2024
@@ -1397,6 +1414,8 @@ Verifying the Renewals Overview section of Management console - Overdue certific
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list        QABrand555
     TechnologyPage.Select parameter from technology dropdown list      Product_certificate
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date self    05/13/2024
@@ -1433,6 +1452,8 @@ Verifying the Renewals Overview section of Management console - Overdue certific
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list        QABrand555
     TechnologyPage.Select parameter from technology dropdown list       Product_certificate
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date self    05/13/2024
@@ -1569,7 +1590,7 @@ Verifying the Subscription Overview section of Management console
     DashboardPage.Click on done button of subscription overview    Done
 
 Management Console - Quarters filter dropdown
-    [Tags]    NT          
+    [Tags]    NT
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1667,7 +1688,7 @@ Management Console - Quarters filter dropdown
     DashboardPage.Verify your current page not contains this element
 
 Change password and login with new password
-    [Tags]      Sanity      smoke         
+    [Tags]      Sanity      smoke
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1734,6 +1755,7 @@ Change password and login with new password
     SubscriptionPage.Enter card routing number      110000000
     SubscriptionPage.Enter account holder name    Paramdeep Singh
     SubscriptionPage.Check the authorization checkbox
+    sleep       ${search_sleep}
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
     Generic.Verify your current page location contains     welcome
@@ -2307,9 +2329,10 @@ Message Side bar filters
     Generic.Verify your current page location contains      message
     MessagePage.Click on select partner filter from message side bar list
     MessagePage.Select the filter from partner      End User
-    MemberPage.Wait till message listing appear
-    MessagePage.Fetch the total count of message listing after selecting filter
-    MessagePage.Set pagination to max for inbox list in message
+#    MemberPage.Wait till message listing appear
+    MemberPage.Verify the pagination listing and execute the count verification code
+#    MessagePage.Fetch the total count of message listing after selecting filter
+#    MessagePage.Set pagination to max for inbox list in message
 #    MemberPage.Wait till message listing appear
 #    PaginationPage.Click on the pagination dropdown     inbox
 #    PaginationPage.Select the value from the pagination drop down count    500
@@ -2323,9 +2346,10 @@ Message Side bar filters
 
     Generic.Click on the reset filters link
     MessagePage.Select the filter from partner    Manufacturer
-    MemberPage.Wait till message listing appear
-    MessagePage.Fetch the total count of message listing after selecting filter
-    MessagePage.Set pagination to max for inbox list in message
+#    MemberPage.Wait till message listing appear
+    MemberPage.Verify the pagination listing and execute the count verification code
+#    MessagePage.Fetch the total count of message listing after selecting filter
+#    MessagePage.Set pagination to max for inbox list in message
     MessagePage.Fetch the country from location filter and click     Partner Type         Manufacturer    Manufacturer
     Generic.Click on the reset filters link
     Generic.Refresh the existing page
@@ -2574,7 +2598,7 @@ Click on the usage analytics tab under management console
     Generic.Verify your current page location contains     usage-analytics
 
 Verify Notification Mark all as read
-    [Tags]    NT          
+    [Tags]    NT
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard

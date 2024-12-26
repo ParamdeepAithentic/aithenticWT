@@ -565,3 +565,19 @@ Search assigned user with invalid data
     click element      css:input[placeholder='Search by Assignee Name or Employee Id']
     input text   css:input[placeholder='Search by Assignee Name or Employee Id']   ${name}
     sleep      ${search_sleep}
+
+Verify the pagination listing and execute the count verification code
+    TRY
+        wait until element is visible       (//td[contains(@class,'flag-message-qa')])[1]   ${wait_time}
+        wait until element is enabled       (//td[contains(@class,'flag-message-qa')])[1]    ${wait_time}
+        MessagePage.Fetch the total count of message listing after selecting filter
+        MessagePage.Set pagination to max for inbox list in message
+#        ${StartTime1} =     Get Current Time in Milliseconds
+#        MessagePage.Fetch the country from location filter and click     Partner Type         End User    End User
+#        ${EndTime1} =     Get Current Time in Milliseconds
+#        ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
+#        Calculate Running time  16  ${pageHeading}   Filter Page - Data load time of filter select partner under message page      16    ${pageTime}     ${ActualTime}    Filter_Time
+    EXCEPT
+        wait until element is visible       //span[normalize-space()='No Records']          ${yop_sleep}
+        wait until element is enabled      //span[normalize-space()='No Records']           ${yop_sleep}
+    END
