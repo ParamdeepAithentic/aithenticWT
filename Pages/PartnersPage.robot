@@ -419,8 +419,8 @@ Download the selected extension file
 Verify that the selected extension file is downloaded
     [Arguments]    ${option}
 #    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    wait until element is visible      //span[contains(text(),'${option}')]       ${wait_time}
-    wait until element is enabled      //span[contains(text(),'${option}')]       ${wait_time}
+    wait until element is visible      //span[contains(text(),'${option}')]       120
+    wait until element is enabled      //span[contains(text(),'${option}')]       120
     click element   css:.fa-file-download
     sleep   ${search_sleep}
 
@@ -746,7 +746,7 @@ Checkmark after clicking on the filters
 
 Fetch the selected filter and verify from Table
     [Arguments]     ${option}       ${option1}      ${option2}
-    Run Keyword IF      ${total_count_int} > 500       Filter and verify with pagination    ${option}       ${option1}      ${option2}    ELSE     Filter and verify without pagination  ${option}       ${option1}      ${option2}
+    Run Keyword IF      ${total_count_again} > 500       Filter and verify with pagination    ${option}       ${option1}      ${option2}    ELSE     Filter and verify without pagination  ${option}       ${option1}      ${option2}
 
 Click Next Button And Wait For Page To Load
     Generic.Scroll Window To End
@@ -763,6 +763,7 @@ Page fetch method
 
 Filter and verify with pagination
     [Arguments]     ${option}       ${option1}      ${option2}
+
     sleep   ${yop_sleep}
     PartnersPage.Page fetch method
     FOR    ${page}    IN RANGE    1   ${Page_Fetch}
@@ -783,7 +784,7 @@ Filter and verify with pagination
 
 Filter and verify without pagination
     [Arguments]     ${option}       ${option1}      ${option2}
-    FOR    ${index}    IN RANGE    1    ${total_count_int + 1}
+    FOR    ${index}    IN RANGE    1    ${total_count_again + 1}
             Wait Until Element Is Visible   (//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]      ${wait_time}
             Wait Until Element Is Enabled   (//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]       ${wait_time}
 #            Mouse over    (//div[normalize-space()='${option}']//ancestor::thead//following-sibling::tbody//tr//td[normalize-space()='${option1}'])[${index}]

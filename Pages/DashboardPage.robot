@@ -515,7 +515,7 @@ Verify the side option list parameters
 
 Verify the drawer list parameters
    wait until element is visible   ${drawerList}        ${wait_time}
-   @{expectedList} =    Create List     Management Console    Account Overview      Asset Overview     IT Performances     Usage Analytics
+   @{expectedList} =    Create List     Management Console    Account Overview      Asset Overview     IT Performances     Usage Analytics       Cloud FinOps
    ${elements} =  Get WebElements     ${drawerList}
    @{actualList} =   Create List
    FOR  ${element}  IN      @{elements}

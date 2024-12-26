@@ -514,7 +514,7 @@ Test the sorting of bulk edit grid under team members
     Generic.Verify your current page location contains      member-bulk-edit
     sleep   ${search_sleep}
     PaginationPage.Set pagination to max
-    SortingPage.Verify the sorting of the table method five    10      Position/Title
+
     SortingPage.Verify the sorting of the table method five    11      Employee ID
 #    SortingPage.Expand all sorting field
     SortingPage.Verify the sorting of the table method five    9       Role
@@ -525,6 +525,7 @@ Test the sorting of bulk edit grid under team members
     SortingPage.Verify the sorting of the table method five    4       Country Code
     SortingPage.Verify the sorting of the table method five    3       Last Name
     SortingPage.Verify the sorting of the table method five    2       First Name
+    SortingPage.Verify the sorting of the table method five    10      Position/Title
 
 Test the sorting of bulk edit grid under assigned users
     [Tags]      NT        

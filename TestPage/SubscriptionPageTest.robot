@@ -435,7 +435,7 @@ View Scheduler from view Result
 #    SubscriptionPage.Click on the three dots of subscription connector      Microsoft Corporation
 
 Create service now with invalid data
-    [Tags]      NT        
+    [Tags]      NT
    Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -510,6 +510,7 @@ Create service now with invalid data
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -534,7 +535,7 @@ Create service now with invalid data
     Generic.Verify your current page contains this text     Service Now Connection Failed.
 
 Create service now with valid data
-    [Tags]      Sanity     Smoke          
+    [Tags]      Sanity     Smoke
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -609,6 +610,7 @@ Create service now with valid data
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -776,7 +778,7 @@ Create service now with valid data
     SubscriptionPage.Get the value of fields under view details of subscription connector service now under asset discovery   2       ${generate_register_Fname} ${generate_register_Lname}
 
 Click on connetors button link under asset discovery
-    [Tags]      Sanity        
+    [Tags]      Sanity
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -851,6 +853,7 @@ Click on connetors button link under asset discovery
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -875,7 +878,7 @@ Click on connetors button link under asset discovery
     Generic.Wait until table get load
 
 Create JAMFF account with valid data
-   [Tags]      NT         
+   [Tags]      NT
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -950,6 +953,7 @@ Create JAMFF account with valid data
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -1042,7 +1046,7 @@ Create JAMFF account with valid data
     Generic.Verify your current page contains this text    No Records
 
 Create jamff account with invalid data
-    [Tags]      NT        
+    [Tags]      NT
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1117,6 +1121,7 @@ Create jamff account with invalid data
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -1239,7 +1244,7 @@ Create jamff account with invalid data
 #    Generic.Verify your current page contains this text    No Records
 
 Create sentinel account and verify the options
-    [Tags]      NT        
+    [Tags]      NT
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1314,6 +1319,7 @@ Create sentinel account and verify the options
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -1481,7 +1487,7 @@ Click on the three dots of Intune and verify the details
 
 
 Create Tenable Account and verify the details
-    [Tags]      NT        
+    [Tags]      NT
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1556,6 +1562,7 @@ Create Tenable Account and verify the details
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -1713,7 +1720,7 @@ Create Tenable Account and verify the details
 
 
 Create tanium Account and verify the details
-    [Tags]      NT        
+    [Tags]      NT
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1788,6 +1795,7 @@ Create tanium Account and verify the details
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup
@@ -1944,7 +1952,7 @@ Create tanium Account and verify the details
     SubscriptionPage.Get the value of fields under view details of subscription of tanium tab under asset discovery   2       ${generate_register_Fname} ${generate_register_Lname}
 
 Create CrowdStrike Account and verify the details
-    [Tags]      NT        
+    [Tags]      NT
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -2019,6 +2027,7 @@ Create CrowdStrike Account and verify the details
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
     SubscriptionPage.Click on complete process button
+    Generic.Wait the billing image loader to get hide
     Generic.Verify your current page location contains     welcome
     Generic.Fetch alert message text and compare it with       Payment Successful
     DashboardPage.Click on complete setup button      Complete Setup

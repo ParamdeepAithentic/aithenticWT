@@ -1028,7 +1028,7 @@ Activate Manufacturer via partner
     Generic.Fetch alert message text and compare it with      Status updated successfully
 
 Remove Manufacturer from partner
-    [Tags]    Sanity   Smoke          
+    [Tags]    Sanity   Smoke
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1438,8 +1438,9 @@ Partner Side bar Filters
     Generic.Wait until table get load
     sleep       ${search_sleep}
     Generic.Scroll Window To End
-    ReportsPage.Fetch the total count
+    ReportsPage.Fetch the total count After selecting filter
     PaginationPage.Set pagination to max
+    Generic.Wait until table get load for filters
 #    PaginationPage.Click on the pagination dropdown     partner-list
 #    PaginationPage.Select the value from the pagination drop down count    500
 
@@ -1447,20 +1448,24 @@ Partner Side bar Filters
     PartnersPage.Fetch the selected filter and verify from Table    Partner Type        Manufacturer        Manufacturer
 
     Generic.Click on the reset filters link
-    Generic.Refresh the existing page
+#    Generic.Refresh the existing page
     PartnersPage.Click on the filters from partner module       Select Partner
     PartnersPage.Checkmark after clicking on the filters        Supplier
-    ReportsPage.Fetch the total count
+    Generic.Wait until table get load for filters
+    ReportsPage.Fetch the total count After selecting filter
     PaginationPage.Set pagination to max
+    Generic.Wait until table get load for filters
 #    PaginationPage.Click on the pagination dropdown     partner-list
 #    PaginationPage.Select the value from the pagination drop down count    500
     PartnersPage.Fetch the selected filter and verify from Table    Partner Type        Supplier        Supplier
     Generic.Click on the reset filters link
-    Generic.Refresh the existing page
+#    Generic.Refresh the existing page
     PartnersPage.Click on the filters from partner module       Select Partner
     PartnersPage.Checkmark after clicking on the filters        Support Partner
-    ReportsPage.Fetch the total count
+    Generic.Wait until table get load for filters
+    ReportsPage.Fetch the total count After selecting filter
     PaginationPage.Set pagination to max
+    Generic.Wait until table get load for filters
 #    PaginationPage.Click on the pagination dropdown     partner-list
 #    PaginationPage.Select the value from the pagination drop down count    500
     PartnersPage.Fetch the selected filter and verify from Table    Partner Type        Support Partner        Support Partner
@@ -1473,19 +1478,29 @@ Partner Side bar Filters
     PartnersPage.Compare the total count after selecting filter
 ######################################### STATUS ###############################################################################
     Generic.Click on the reset filters link
+    Generic.Wait until table get load for filters
     PartnersPage.Click on the filters from partner module       Select Status
 
     PartnersPage.Checkmark after clicking on the filters        Active
+#    sleep       2
+
+    Generic.Wait until table get load for filters
+    ReportsPage.Fetch the total count After selecting filter
 
     PaginationPage.Set pagination to max
+    Generic.Wait until table get load for filters
 #    PaginationPage.Click on the pagination dropdown     partner-list
 #    PaginationPage.Select the value from the pagination drop down count    500
     PartnersPage.Fetch the selected filter and verify from Table    Status       Active        Active
     Generic.Click on the reset filters link
-    Generic.Refresh the existing page
+#    Generic.Refresh the existing page
     PartnersPage.Click on the filters from partner module       Select Status
     PartnersPage.Checkmark after clicking on the filters        Inactive
+#    sleep       2
+    Generic.Wait until table get load for filters
+     ReportsPage.Fetch the total count After selecting filter
     PaginationPage.Set pagination to max
+    Generic.Wait until table get load for filters
 #    PaginationPage.Click on the pagination dropdown     partner-list
 #    PaginationPage.Select the value from the pagination drop down count    500
     ReportsPage.Fetch the total count
@@ -1494,7 +1509,9 @@ Partner Side bar Filters
     ReportsPage.Fetch the total count
     PartnersPage.Click on the filters from partner module       Select Status
     PartnersPage.Checkmark after clicking on the filters        All
+#    sleep       2
     Generic.Wait until table get load for filters
+    ReportsPage.Fetch the total count After selecting filter
     ReportsPage.Fetch the total count After selecting filter
     PartnersPage.Compare the total count after selecting filter
 

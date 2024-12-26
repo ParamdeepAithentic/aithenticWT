@@ -69,15 +69,15 @@ Replace Domain
     # Generate new domain name
     ${date}=    Get Current Date    result_format=%Y%m%d
     ${time}=    Get Current Date    result_format=%H%M%S
-    ${NewDomain}=    Catenate    automationqa${date}${time}
+    ${NewGeneratedDomain}=    Catenate    automationqa${date}${time}
 #    set global variable    ${NewDomain}
 
 #     Define the JSON object
     ${json_object} =    Create Dictionary
-    ...    old=www.mail-mario.fr.nf
+    ...    old=www.yopmail.net
 #     ...    old=www.cool.fr.nf
-    ...    new=www.yopmail1.com
-
+    ...    new=www.${NewGeneratedDomain}.com
+################################ Use when you have to use static domain ########################################
 #     ${json_object} =    Create Dictionary
 #        ...    old=yopmail.net
 #        ...    new=yohyrer3h.com
