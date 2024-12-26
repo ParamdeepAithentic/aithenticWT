@@ -1167,7 +1167,7 @@ Verifying the Renewals Overview section of Management console - Overdue Renewals
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
-    TechnologyPage.Select parameter from brand dropdown list        QABrand555
+    TechnologyPage.Select parameter from brand dropdown list        Hewlett Packard Enterprise
     TechnologyPage.Select parameter from technology dropdown list       K2P85B
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Input current Date
@@ -1204,7 +1204,7 @@ Verifying the Renewals Overview section of Management console - Overdue Renewals
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
-    TechnologyPage.Select parameter from brand dropdown list        QABrand555
+    TechnologyPage.Select parameter from brand dropdown list        Hewlett Packard Enterprise
     TechnologyPage.Select parameter from technology dropdown list       K2P85B
     TechnologyPage.Add assetID for technology lifecycle information random
 #    TechnologyPage.Input current Date
@@ -1338,7 +1338,7 @@ Verifying the Renewals Overview section of Management console - Expired warranti
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
-    TechnologyPage.Select parameter from brand dropdown list        QABrand555
+    TechnologyPage.Select parameter from brand dropdown list         Hewlett Packard Enterprise
     TechnologyPage.Select parameter from technology dropdown list       K2P85B
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date self    05/13/2024
@@ -1376,7 +1376,7 @@ Verifying the Renewals Overview section of Management console - Expired warranti
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
-    TechnologyPage.Select parameter from brand dropdown list        QABrand555
+    TechnologyPage.Select parameter from brand dropdown list         Hewlett Packard Enterprise
     TechnologyPage.Select parameter from technology dropdown list       K2P85B
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date self    05/13/2024
