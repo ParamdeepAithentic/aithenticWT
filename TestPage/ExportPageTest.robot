@@ -49,7 +49,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Export Partner list
-    [Tags]    NT        Replace
+    [Tags]    NT
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -231,7 +231,7 @@ Export location list of location under technology details page
     Generic.click on the button     Okay, Thanks!
 
 Export partner list while adding new partner
-    [Tags]    NT        Replace
+    [Tags]    NT
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard

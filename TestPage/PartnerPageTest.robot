@@ -50,7 +50,7 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 
 Compose Message invite user test
-    [Tags]      Sanity      Smoke       Time        Replace
+    [Tags]      Sanity      Smoke       Time
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -713,7 +713,7 @@ Export Specificartner into Excel Doc CSV and TSV for Support Partner
     Generic.Fetch alert message text and compare it with        Partner updated successfully
 
 Add Manufacturer via personal detail under technology and partner
-    [Tags]      NT      Replace
+    [Tags]      NT
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -762,7 +762,7 @@ Add Manufacturer via personal detail under technology and partner
 
 
 Edit Manufacturer via partner
-    [Tags]      Sanity      Replace
+    [Tags]      Sanity
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -847,7 +847,7 @@ Edit Manufacturer via partner
 
 
 Deactivate Manufacturer via partner
-    [Tags]      Sanity      Replace
+    [Tags]      Sanity
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -936,7 +936,7 @@ Deactivate Manufacturer via partner
 
 
 Activate Manufacturer via partner
-    [Tags]      NT      Replace
+    [Tags]      NT
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1028,7 +1028,7 @@ Activate Manufacturer via partner
     Generic.Fetch alert message text and compare it with      Status updated successfully
 
 Remove Manufacturer from partner
-    [Tags]    Sanity   Smoke        Replace
+    [Tags]    Sanity   Smoke
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1126,7 +1126,7 @@ Remove Manufacturer from partner
 
 
 View Details and check the details of Contract
-    [Tags]      NT      Replace
+    [Tags]      NT
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1234,7 +1234,7 @@ View Details and check the details of Contract
 
 
 Add_edit_deactivate_removeSupplier while adding brand
-    [Tags]      NT      Replace
+    [Tags]      NT
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1330,7 +1330,7 @@ Add_edit_deactivate_removeSupplier while adding brand
     Generic.Fetch alert message text and compare it with      Partner deleted successfully
 
 Add_edit_deactivate_removeSupport_partner_while_adding_brand
-    [Tags]      NT      Replace
+    [Tags]      NT
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1516,7 +1516,7 @@ Partner Side bar Filters
     PartnersPage.Compare the total count after selecting filter
 
 Verify all the validations of Add Partners
-    [Tags]      Negative        Replace1
+    [Tags]      Negative
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1553,7 +1553,7 @@ Verify all the validations of Add Partners
     PartnersPage.Compare the Validations on Partner Page        ${Partner_validation1}       Please select Country
 
 Verify all the validations of Edit Partners
-    [Tags]     Negative     Replace
+    [Tags]     Negative
     Generic.click on the tab	    Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1625,7 +1625,7 @@ Verify all the validations of Edit Partners
 #    PartnersPage.Create many partners
 
 Verify that user is not able to Deactivate and remove Manufacturer having technology
-    [Tags]      Negative        Replace1
+    [Tags]      Negative
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1692,7 +1692,7 @@ Verify that user is not able to Deactivate and remove Manufacturer having techno
     Generic.Fetch alert message text and compare it with   You cannot delete or inactivate this partner as you have active contract or technology assigned
 
 Verify that user is not able to Deactivate and remove Supplier having technology
-    [Tags]      Negative        Replace1
+    [Tags]      Negative
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -1754,7 +1754,7 @@ Verify that user is not able to Deactivate and remove Supplier having technology
     Generic.Fetch alert message text and compare it with   You cannot delete or inactivate this partner as you have active contract or technology assigned
 
 Verify that user is not able to Deactivate and remove Support Partner having technology
-    [Tags]      Negative        Replace1
+    [Tags]      Negative
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard

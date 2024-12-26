@@ -50,7 +50,7 @@ Test Teardown   Close Browser session
 
 *** Test Cases ***
 Register new user for key clock functionality
-    [Tags]      Sanity      Smoke       Replace
+    [Tags]      Sanity      Smoke
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
 

@@ -204,7 +204,6 @@ Verify department should not be removed having technology created
     Generic.Fetch alert message text and compare it with        Department already in use.
 
 Add Department Heirarchy and verify select department filter with Parent department and Sub department
-    [Tags]      Replace
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
