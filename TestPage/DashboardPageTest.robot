@@ -1066,6 +1066,8 @@ Verifying the Renewals Overview section of Management console - End of Life
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list        Brand_End_of_Life
     TechnologyPage.Select parameter from technology dropdown list       Product_End_of_Life
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date self    05/13/2024
@@ -1112,6 +1114,8 @@ Verifying the Renewals Overview section of Management console - End of Life
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list        Brand_End_of_Life
     TechnologyPage.Select parameter from technology dropdown list         Product_future_end_of_life
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date self    05/13/2024
@@ -1162,6 +1166,8 @@ Verifying the Renewals Overview section of Management console - Overdue Renewals
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list        QABrand555
     TechnologyPage.Select parameter from technology dropdown list       K2P85B
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Input current Date
@@ -1197,6 +1203,8 @@ Verifying the Renewals Overview section of Management console - Overdue Renewals
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list        QABrand555
     TechnologyPage.Select parameter from technology dropdown list       K2P85B
     TechnologyPage.Add assetID for technology lifecycle information random
 #    TechnologyPage.Input current Date
@@ -1249,6 +1257,8 @@ Verifying the Renewals Overview section of Management console - Overdue contract
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list        QABrand555
     TechnologyPage.Select parameter from technology dropdown list       Product_3107799167
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date self    05/13/2024
@@ -1285,6 +1295,8 @@ Verifying the Renewals Overview section of Management console - Overdue contract
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list        QABrand555
     TechnologyPage.Select parameter from technology dropdown list       Product_3107799167
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date self    05/13/2024
@@ -1325,6 +1337,8 @@ Verifying the Renewals Overview section of Management console - Expired warranti
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list        QABrand555
     TechnologyPage.Select parameter from technology dropdown list       K2P85B
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date self    05/13/2024
@@ -1361,6 +1375,8 @@ Verifying the Renewals Overview section of Management console - Expired warranti
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list        QABrand555
     TechnologyPage.Select parameter from technology dropdown list       K2P85B
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date self    05/13/2024
@@ -1398,6 +1414,8 @@ Verifying the Renewals Overview section of Management console - Overdue certific
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list        QABrand555
     TechnologyPage.Select parameter from technology dropdown list      Product_certificate
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date self    05/13/2024
@@ -1434,6 +1452,8 @@ Verifying the Renewals Overview section of Management console - Overdue certific
     TechnologyPage.Click on action button of technology
     TechnologyPage.Choose add technology from action button of technology
     Generic.Verify your current page location contains      addtechnology
+    TechnologyPage.Click technology brand input field
+    TechnologyPage.Select parameter from brand dropdown list        QABrand555
     TechnologyPage.Select parameter from technology dropdown list       Product_certificate
     TechnologyPage.Add assetID for technology lifecycle information random
     TechnologyPage.Select purchase date self    05/13/2024
