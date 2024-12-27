@@ -1190,3 +1190,19 @@ Search with invalid data on the search bar of Discovered And Existing Assets
     OCS.Enter text to search existing asset    457InvalidExisting
     OCS.Get the text of no records after searching with invalid data under exixting assets      No records
 
+Search with invalid data on search bar of Smart created asset and verify it
+    [Tags]      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     view-discovery
+    Generic.Verify your current page location contains    aad
+    OCS.Click on the Smart Created Asset under asset discovery
+    Generic.Verify your current page location contains    aad
+    OCS.Enter text to search invalid data on search bar of smart created asset    457InvalidSmart
+    OCS.Get the text of no records after searching with invalid data under smart created asset     No Records
+
+
+

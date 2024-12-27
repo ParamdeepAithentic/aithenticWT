@@ -1102,3 +1102,31 @@ Get the text of no records after searching with invalid data under exixting asse
     log to console     ${fetch_text_Existing_asset}
     set global variable   ${fetch_text_Existing_asset}
     should be equal    ${option}    ${fetch_text_Existing_asset}
+
+
+Click on the Smart Created Asset under asset discovery
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible      css:.qa-auto-created-tab           ${wait_time}
+    wait until element is visible      css:.qa-auto-created-tab          ${wait_time}
+    sleep       ${search_sleep}
+    click element       css:.qa-auto-created-tab
+
+Enter text to search invalid data on search bar of smart created asset
+    [Arguments]     ${option}
+    wait until element is not visible   ${loaderIcon}        ${wait_time}
+    Wait Until Element Is Visible    css:#searchbar-autoCreated       ${wait_time}
+    Wait Until Element Is enabled    css:#searchbar-autoCreated      ${wait_time}
+    Input Text     css:#searchbar-autoCreated    ${option}
+    Sleep    ${yop_sleep}
+    Wait Until Element Is Not Visible    ${loaderIcon}  ${wait_time}
+
+Get the text of no records after searching with invalid data under smart created asset
+    [Arguments]         ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible     //div[contains(@id,'auto-created')]//span       ${wait_time}
+    wait until element is enabled      //div[contains(@id,'auto-created')]//span    ${wait_time}
+    ${fetch_text_Smart_created_asset} =    get text  //div[contains(@id,'auto-created')]//span
+    log to console     ${fetch_text_Smart_created_asset}
+    set global variable   ${fetch_text_Smart_created_asset}
+    should be equal    ${option}    ${fetch_text_Smart_created_asset}
+
