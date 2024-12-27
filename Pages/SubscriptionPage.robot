@@ -957,6 +957,6 @@ Click on the pop up of would you like to download the agent
        sleep   ${search_sleep}
        click element       //button[normalize-space()='No, thanks']
        sleep   ${search_sleep}
-   EXCEPT      #ElementNotVisibleException#
+   EXCEPT
         Log    No pop up is coming
     END
