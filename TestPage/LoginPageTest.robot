@@ -605,7 +605,7 @@ Check all the validations of login page
 
 
 Check all the validations of forgot password page
-    [Tags]    Negative
+    [Tags]    Negative      Email
     Generic.click on the tab	Login
     Generic.click on the tab    Forgot Password?
     Generic.Verify your current page location contains      login-actions

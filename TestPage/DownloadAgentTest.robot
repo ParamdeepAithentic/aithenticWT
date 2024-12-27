@@ -1170,3 +1170,23 @@ Verify Filters of Existing asets by adding assets of different tech type - VIRTU
     OCS.Choose filters for Existing asset with different tech type       Select Location     ${generated_buildingname}
     OCS.Verify that No items found with the selected filter
     OCS.Click on clear filter button link of discovered assets      Clear Filters
+
+
+Search with invalid data on the search bar of Discovered And Existing Assets
+    [Tags]    Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     view-discovery
+    Generic.Verify your current page location contains    aad
+    OCS.Get value of Tag_name from Agent discovery
+    OCS.Click on newly discovered tab under network discovery
+    OCS.Click on search icon of discovery assets
+    OCS.Enter text to search discovery asset    457InvalidDiscovered
+    OCS.Get the text of no records after searching with invalid mac address under newly discovery tab      No records
+    OCS.Click on search icon of Existing assets
+    OCS.Enter text to search existing asset    457InvalidExisting
+    OCS.Get the text of no records after searching with invalid data under exixting assets      No records
+

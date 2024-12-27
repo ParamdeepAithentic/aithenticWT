@@ -1092,3 +1092,13 @@ Get the total count of discovered devices
 Compare the count of Discovered assets count inside and outside list
     [Arguments]     ${option1}      ${option2}
     should be equal     ${option1}      ${option2}
+
+Get the text of no records after searching with invalid data under exixting assets
+    [Arguments]         ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible     //div[contains(@class,'boxes-right')]//p       ${wait_time}
+    wait until element is enabled      //div[contains(@class,'boxes-right')]//p    ${wait_time}
+    ${fetch_text_Existing_asset} =    get text  //div[contains(@class,'boxes-right')]//p
+    log to console     ${fetch_text_Existing_asset}
+    set global variable   ${fetch_text_Existing_asset}
+    should be equal    ${option}    ${fetch_text_Existing_asset}
