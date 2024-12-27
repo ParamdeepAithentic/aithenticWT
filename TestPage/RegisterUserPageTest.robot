@@ -767,7 +767,7 @@ Update Email of user from personal profile
     RegisterUserPage.Select asset center notifications inside alerts section         60 Days
 
 Enter password more than the limit while changing password
-    [Tags]      NT
+    [Tags]      NT      Email
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -986,7 +986,7 @@ Enter password less than the limit while changing password
     DashboardPage.Verify the visibility of validation message under change password
 
 Enter password of 32 characters while changing password
-    [Tags]      NT
+    [Tags]      NT      Email
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1099,7 +1099,7 @@ Enter password of 32 characters while changing password
     DashboardPage.Click on the checkboxes under auhtentication tab
     Generic.Fetch alert message text and compare it with       Two factor updated successfully
     Generic.Click on the profile name
-    Generic.Select subscription option from profile list
+    Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     ${generate_register_Email}   Test@1234Test@1234Test@1234Test@
@@ -1107,7 +1107,7 @@ Enter password of 32 characters while changing password
     LandingPage.Verify you are on dashboard page
 
 Enter password of more than the limit while forgot password
-    [Tags]      NT
+    [Tags]      NT      Email
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1197,7 +1197,7 @@ Enter password of more than the limit while forgot password
     DashboardPage.Click on the checkboxes under auhtentication tab
     Generic.Fetch alert message text and compare it with       Two factor updated successfully
     Generic.Click on the profile name
-    Generic.Select subscription option from profile list
+    Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     Generic.click on the tab        Forgot Password?
@@ -1223,7 +1223,7 @@ Enter password of more than the limit while forgot password
     RegisterUserPage.Verify the visibility of validation when entering password more than the limit
 
 Enter password of less than the limit while forgot password
-    [Tags]      NT
+    [Tags]      NT      Email
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1313,7 +1313,7 @@ Enter password of less than the limit while forgot password
     DashboardPage.Click on the checkboxes under auhtentication tab
     Generic.Fetch alert message text and compare it with       Two factor updated successfully
     Generic.Click on the profile name
-    Generic.Select subscription option from profile list
+    Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     Generic.click on the tab        Forgot Password?
@@ -1339,7 +1339,7 @@ Enter password of less than the limit while forgot password
     RegisterUserPage.Verify the visibility of validation when entering password less than the limit
 
 Enter password of 8 characters while forgot password
-    [Tags]      NT
+    [Tags]      NT      Email
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1429,7 +1429,7 @@ Enter password of 8 characters while forgot password
     DashboardPage.Click on the checkboxes under auhtentication tab
     Generic.Fetch alert message text and compare it with       Two factor updated successfully
     Generic.Click on the profile name
-    Generic.Select subscription option from profile list
+    Generic.Select logout option from profile list
     Generic.Fetch log_out alert message
     Generic.click on the tab	Login
     Generic.click on the tab        Forgot Password?
@@ -1455,7 +1455,7 @@ Enter password of 8 characters while forgot password
     Generic.Verify your current page location contains      dashboard
 
 Update billing address via profile list
-    [Tags]      NT
+    [Tags]      NT      Email
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1585,7 +1585,7 @@ Verfying the validation of the Address 1 field from the company details
 
 
 Add new ACH card and delete that card
-    [Tags]      NT
+    [Tags]      NT      Email
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1686,7 +1686,7 @@ Add new ACH card and delete that card
     Generic.Fetch alert message text and compare it with       Bank removed successfully
 
 Add new credit card and delete that card
-    [Tags]      NT
+    [Tags]      NT      Email
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1796,7 +1796,7 @@ Add new credit card and delete that card
     Generic.Fetch alert message text and compare it with       Card removed successfully
 
 Update the subscription Plan and verify the notification
-    [Tags]      NT
+    [Tags]      NT      Email
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -1911,7 +1911,7 @@ Update the subscription Plan and verify the notification
     BillingPage.Get the text of the recent notification of added assets in system tab       Your Monthly plan has been changed.
 
 Profile: Select location and department and add by clicking on link
-    [Tags]      NT
+    [Tags]      NT      Email
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -2092,7 +2092,7 @@ Check all the validations on register page
     Generic.Fetch alert message text and compare it with        Email already exists
 
 Verify all the validations on profile page
-    [Tags]      Negative
+    [Tags]      Negative        Email
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -2180,7 +2180,7 @@ Verify all the validations on profile page
     Unselect Frame
     SubscriptionPage.Check the authorization checkbox
     SubscriptionPage.Check the acknowledgement checkbox
-    RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Your card's expiration year is in the past.
+    RegisterUserPage.Fetch the validation message after entering invalid data in register user page        Your card’s expiration year is in the past.
 #    SubscriptionPage.Switch to card iframe
 #    LoginPage.Clear the element text of field under login page      ${CardNumber_locator}
 #    Unselect Frame
@@ -2247,7 +2247,7 @@ Verify all the charcter validations of register page
     RegisterUserPage.Save the register form
 
 Verify all the character validation of profile page under register
-    [Tags]      Negative
+    [Tags]      Negative        Email
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain
@@ -2313,7 +2313,7 @@ Verify all the character validation of profile page under register
     LoginPage.Wait for the visibility of the validation message of position
 
 Verify all the character validations of payment page
-    [Tags]      Negative
+    [Tags]      Negative        Email
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
     ReplaceDomainAPI.Replace Domain

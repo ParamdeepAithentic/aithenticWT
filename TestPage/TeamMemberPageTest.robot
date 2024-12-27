@@ -175,7 +175,7 @@ Edit Team member page - Edit New Department and assign that department to Team m
     Generic.Verify your current page location contains          memberslist
 
 Verify team member Asset history
-    [Tags]      Sanity        
+    [Tags]      Sanity        Email
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
@@ -267,7 +267,7 @@ Verify team member Asset history
     Generic.Verify your current page contains this text     Asset History
 
 Search asset history with Asset ID
-    [Tags]      NT        
+    [Tags]      NT        Email
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
@@ -385,7 +385,7 @@ Search asset history with Asset ID
     DashboardPage.Select the employee ID checkbox   no
 
 Verify user is able to export team member asset history list
-    [Tags]     Smoke          
+    [Tags]     Smoke        Email
     Generic.click on the tab	Login
     LandingPage.Fill the login Form   debut@cool.fr.nf    Test@123
     Generic.Verify your current page location contains      dashboard
@@ -837,7 +837,7 @@ Convert Assignee to team member in case of employee id is not system generated
     DashboardPage.Select the employee ID checkbox   no
 
 Verify Invitation and signup as team member
-    [Tags]      NT        
+    [Tags]      NT        Email
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
@@ -995,7 +995,7 @@ Add Back Deleted Team member - Invited
     DashboardPage.Select the employee ID checkbox   no
 
 Verify Invitation and signup as team member via company details
-    [Tags]     Sanity         
+    [Tags]     Sanity         Email
     Generic.click on the tab	Login
     LandingPage.Fill the login Form     debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
@@ -1173,7 +1173,7 @@ Verify_Employee_ID_Changing_settings_from_Profile_list_while_add_edit_team_membe
 
 
 Add Back Deleted Team member - Active
-    [Tags]      Sanity
+    [Tags]      Sanity      Email
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
@@ -1658,7 +1658,7 @@ Verify that user is not able to remove invited team member having technology cre
     Generic.Fetch alert message text and compare it with        You cannot delete or inactivate this member as you have active technology assigned
 
 Verify user is not able to remove active team member having technology created
-     [Tags]            Negative
+     [Tags]            Negative     Email
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -2201,7 +2201,7 @@ Verify that user is not able to remove invited team member having technology cre
     Generic.Fetch alert message text and compare it with        You cannot delete or inactivate this member as you have active technology assigned
 
 Verify user is not able to remove active team member having technology created via profile
-     [Tags]            Negative
+     [Tags]            Negative         Email
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
@@ -2310,7 +2310,7 @@ Verify user is not able to remove active team member having technology created v
     Generic.Fetch alert message text and compare it with        You cannot delete or inactivate this member as you have active technology assigned
 
 Verify user is not able to deactivate active team member having technology created via profile
-    [Tags]         Negative
+    [Tags]         Negative     Email
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard

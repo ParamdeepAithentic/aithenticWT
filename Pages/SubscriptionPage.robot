@@ -948,3 +948,15 @@ click on the yes option of delete pop up under asset discovery service now
     wait until element is visible  //div[contains(@id,'deleteServicenowlConnector')]//button[normalize-space()='Yes']    ${wait_time}
     wait until element is enabled   //div[contains(@id,'deleteServicenowlConnector')]//button[normalize-space()='Yes']    ${wait_time}
     click element   //div[contains(@id,'deleteServicenowlConnector')]//button[normalize-space()='Yes']
+
+Click on the pop up of would you like to download the agent
+   TRY
+       wait until element is not visible   ${loaderIcon}          ${wait_time}
+       wait until element is visible      //button[normalize-space()='No, thanks']          ${wait_time}
+       wait until element is enabled      //button[normalize-space()='No, thanks']          ${wait_time}
+       sleep   ${search_sleep}
+       click element       //button[normalize-space()='No, thanks']
+       sleep   ${search_sleep}
+   EXCEPT      #ElementNotVisibleException#
+        Log    No pop up is coming
+    END

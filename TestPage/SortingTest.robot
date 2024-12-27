@@ -135,7 +135,7 @@ Test the sorting of technology page table with old user
 Test the sorting of technology page table with new user
     [Tags]      NT
     Generic.click on the tab	Login
-    LandingPage.Fill the login Form          deepparam112@yopmail.net    Paramdeep@112
+    LandingPage.Fill the login Form          deepparam112@mail-mario.fr.nf    Paramdeep@112
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
     Generic.select the option from the side menu    Technology

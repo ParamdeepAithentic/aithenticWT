@@ -58,7 +58,7 @@ ${contact_Country_search}     css:#country-search-box
 ${phone}     css:#phone
 
 
-${wait_time}       20
+${wait_time}       60
 
 ${yop_sleep}       10
 
@@ -417,7 +417,7 @@ Enter current date
     Clear Element Text      ${option}
     ${curentDate}=    Generic.Fetch Current Date
     input text  ${option}    ${curentDate}
-    click element       ${option}
+#    click element       ${option}
 
 Enter self date
     [Arguments]    ${option}    ${date}

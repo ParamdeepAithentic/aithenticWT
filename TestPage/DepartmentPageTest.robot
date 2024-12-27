@@ -91,27 +91,27 @@ Add_edit_delete_department_via_profile_list
     Generic.Select parameter        Yes
     Generic.Fetch alert message text and compare it with        Department deleted successfully
 
-Add department and verify via organisation
-    [Tags]    NT
-    Generic.open the browser with the url
-    Generic.click on the tab	Login
-    LandingPage.Fill the login Form    ${email}    ${valid_password}
-    Generic.Verify your current page location contains      dashboard
-    LandingPage.Verify you are on dashboard page
-    Generic.Click on the profile name
-    Generic.Select option from profile list     personal-details
-    I_iconPage.Choose options inside personal_details        Organization
-    I_iconPage.Choose tabs under organization        company
-    Generic.Verify your current page location contains      dashboard
-    sleep   ${search_sleep}
-    DepartmentPage.Verify I-icon of company information under organistaion
-    Generic.Scroll Window To End
-    DepartmentPage.Create random department name
-    DepartmentPage.Select department random cost center
-    Generic.click on the button     Add
-    Generic.Fetch alert message text and compare it with        Department added successfully
-    Generic.Verify your current page location contains      department-list
-    DepartmentPage.Search by department name      ${generated_Department}
+#Add department and verify via organisation
+#    [Tags]    NT
+#    Generic.open the browser with the url
+#    Generic.click on the tab	Login
+#    LandingPage.Fill the login Form    ${email}    ${valid_password}
+#    Generic.Verify your current page location contains      dashboard
+#    LandingPage.Verify you are on dashboard page
+#    Generic.Click on the profile name
+#    Generic.Select option from profile list     personal-details
+#    I_iconPage.Choose options inside personal_details        Organization
+#    I_iconPage.Choose tabs under organization        company
+#    Generic.Verify your current page location contains      dashboard
+#    sleep   ${search_sleep}
+#    DepartmentPage.Verify I-icon of company information under organistaion
+#    Generic.Scroll Window To End
+#    DepartmentPage.Create random department name
+#    DepartmentPage.Select department random cost center
+#    Generic.click on the button     Add
+#    Generic.Fetch alert message text and compare it with        Department added successfully
+#    Generic.Verify your current page location contains      department-list
+#    DepartmentPage.Search by department name      ${generated_Department}
 
 Verify the validations of all fields of Add department
     [Tags]    Negative

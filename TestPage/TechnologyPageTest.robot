@@ -394,7 +394,7 @@ Restore asset from removed asset details page
     Generic.Verify your current page location contains      addtechnology
     TechnologyPage.Click technology brand input field
     TechnologyPage.Select parameter from brand dropdown list       QABrand555
-    TechnologyPage.Select parameter from technology dropdown list       Product_665995755
+    TechnologyPage.Select parameter from technology dropdown list       064866-E
 #    TechnologyPage.Add technology group information contract start date
 #    TechnologyPage.Add technology group information contract end date      12/12/2028
     TechnologyPage.Add assetID for technology lifecycle information random
@@ -2804,7 +2804,7 @@ Search with hostname on the technology search bar
     OCS.Get Value of Host-Name and compare it with    ${result}
 
 Compose reply and remove the message via technology details
-    [Tags]      NT        
+    [Tags]      NT        Email
     Generic.click on the tab	Login
     LandingPage.Fill the login Form  debut@cool.fr.nf   Test@123
     Generic.Verify your current page location contains      dashboard
