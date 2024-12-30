@@ -1190,7 +1190,6 @@ Search with invalid data on the search bar of Discovered And Existing Assets
     OCS.Enter text to search existing asset    457InvalidExisting
     OCS.Get the text of no records after searching with invalid data under existing assets      No records
 
-<<<<<<< HEAD
 Search with invalid data on the search bar of Discovered and Existing asset of Suggested Matches
     [Tags]    Negative
     Generic.click on the tab	Login
