@@ -1188,5 +1188,35 @@ Search with invalid data on the search bar of Discovered And Existing Assets
     OCS.Get the text of no records after searching with invalid mac address under newly discovery tab      No records
     OCS.Click on search icon of Existing assets
     OCS.Enter text to search existing asset    457InvalidExisting
-    OCS.Get the text of no records after searching with invalid data under exixting assets      No records
+    OCS.Get the text of no records after searching with invalid data under existing assets      No records
 
+Search with invalid data on search bar of Smart created asset and verify it
+    [Tags]      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     view-discovery
+    Generic.Verify your current page location contains    aad
+    OCS.Click on the Smart Created Asset under asset discovery
+    Generic.Verify your current page location contains    aad
+    OCS.Enter text to search invalid data on search bar of smart created asset    457InvalidSmart
+    OCS.Get the text of no records after searching with invalid data under smart created asset     No Records
+
+
+Search with invalid data on Search bar of By Computer and By Software under CVE Reporting
+    [Tags]      Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     view-discovery
+    Generic.Verify your current page location contains    aad
+    OCS.Click on the CVE Reporting under asset discovery
+    OCS.Enter text to search invalid data on search bar of By Computer under CVE Reporting      457InvalidComputer
+    OCS.Get the text of no records after searching with invalid data under CVE Reporting        No records
+    Generic.click on the tab        By Software
+    OCS.Enter text to search invalid data on search bar of By Computer under CVE Reporting      457InvalidSoftware
+    OCS.Get the text of no records after searching with invalid data under CVE Reporting        No records
