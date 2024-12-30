@@ -1190,3 +1190,22 @@ Search with invalid data on the search bar of Discovered And Existing Assets
     OCS.Enter text to search existing asset    457InvalidExisting
     OCS.Get the text of no records after searching with invalid data under exixting assets      No records
 
+Search with invalid data on the search bar of Discovered and Existing asset of Suggested Matches
+    [Tags]    Negative
+    Generic.click on the tab	Login
+    LandingPage.Fill the login Form       johns@mai.25u.com         Test@123
+    Generic.Verify your current page location contains      dashboard
+    LandingPage.Verify you are on dashboard page
+    Generic.Click on the profile name
+    Generic.Select option from profile list     view-discovery
+    Generic.Verify your current page location contains    aad
+    OCS.Click on the suggested matches tab
+    OCS.Click on search icon of discovery assets of Suggested Matches
+    OCS.Enter text to search discovery asset of suggested matches       457InvalidSuggestDiscovered
+    OCS.Get the text of no records after searching with invalid data under discovered asset of Suggested    No records
+    OCS.Click on search icon of Existing assets of Suggested Matches
+    OCS.Enter text to search existing asset of suggested matches        457InvalidSuggestExisting
+    OCS.Get the text of no records after searching with invalid data under existing assets      No records
+
+
+
