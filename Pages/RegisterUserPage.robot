@@ -167,14 +167,10 @@ Choose register user country
     click element   ${click_countryTag}
     wait until element is visible   ${contact_Country_search}
     click element   ${contact_Country_search}
-    ${StartTime1} =     Get Current Time in Milliseconds
     input text  ${contact_Country_search}   ${country}
     Generic.Select parameter      ${code}
     input text     ${phone}     ${phoneNo}
     Press Keys    ${phone}      ENTER
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  3  ${pageHeading}   RegisterUserPage - Select the option from country dropdown on register new member     3    ${pageTime}     ${ActualTime}    RegisterPage_Time
 
 
 Select the option from the personal details sidebar

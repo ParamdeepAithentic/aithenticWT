@@ -54,21 +54,13 @@ Activate and deactivate the location
     LandingPage.Fill the login Form       ${email}    ${valid_password}
     Generic.Verify your current page location contains      dashboard
     LandingPage.Verify you are on dashboard page
-    ${StartTime1} =     Get Current Time in Milliseconds
     Generic.select the option from the side menu    Location
     Generic.Verify your current page location contains      locationlist
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time    21  ${pageHeading}   Page Load - Total Page Load Time of Location Page      21    ${pageTime}     ${ActualTime}    PageLoad_Time
 
     LocationPage.Click on Location action button
 
-    ${StartTime1} =     Get Current Time in Milliseconds
     LocationPage.Click on add location button    Add New Location
     Generic.Verify your current page location contains      add-location
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time    22  ${pageHeading}   Page Load - Total Page Load Time of Add Location Page to location form      22    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 
     LocationPage.Select location country     United States
@@ -268,14 +260,10 @@ Click on the select status filter and verify it
     Generic.select the option from the side menu    Location
     Generic.Verify your current page location contains      locationlist
 
-    ${StartTime1} =     Get Current Time in Milliseconds
     LocationPage.Click on the status filter under location
     LocationPage.Select the option from status filter under location        Inactive
     LocationPage.Get the text of selected status filter under location      Inactive
     Generic.Wait until table get load for filters
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  9  ${pageHeading}   Filter Page - Data load time of filter inactive under location status      9    ${pageTime}     ${ActualTime}    Filter_Time
 
 
     PaginationPage.Fetch the total count for filter only

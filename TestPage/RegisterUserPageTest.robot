@@ -50,12 +50,8 @@ Test Teardown   Close Browser session
 *** Test Cases ***
 Register new user
     [Tags]      Smoke       Time
-    ${StartTime1} =     Get Current Time in Milliseconds
     Generic.click on the tab	Register
     Generic.Verify your current page location contains      register
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  25  ${pageHeading}   Page Load - Total Page Load Time of Register Page      25    ${pageTime}     ${ActualTime}    PageLoad_Time
     ReplaceDomainAPI.Replace Domain
     RegisterUserPage.Create random register first name
     RegisterUserPage.Create random register last name

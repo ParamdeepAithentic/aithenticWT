@@ -564,13 +564,9 @@ Edit brand and product via details
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
 
-    ${StartTime1} =     Get Current Time in Milliseconds
     TechnologyPage.Click on edit button on product details page        Edit
     Generic.Verify your current page location contains      edit-technology
     TechnologyPage.Click on the edit icon on the edit technology page
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  26  ${pageHeading}  Technology Listing - Total Page Load Time of clicking edit technology to edit technology form      26    ${pageTime}     ${ActualTime}    PageLoad_Time
 
 
     TechnologyPage.Click on cross icon of product while editing technology
@@ -863,12 +859,8 @@ Add New Support Partner and Assign that Partner
     TechnologyPage.Search by AssetId       ${generated_AssetID}
     TechnologyPage.Click on manage technology sub option       Technology List
 
-    ${StartTime1} =     Get Current Time in Milliseconds
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  27  ${pageHeading}   Technology Listing - Total Page Load Time of clicking first row of technology list to its details page       27    ${pageTime}     ${ActualTime}    PageLoad_Time
 
     TechnologyPage.Select tab under technology details      partners
     TechnologyPage.Click on assign partner button under technology details page        Assign Partner
@@ -2124,12 +2116,8 @@ Upload file: Image and document files while Clone the Technology
     TechnologyPage.Click on the first row of the technology table
     Generic.Verify your current page location contains     technology-details
 
-    ${StartTime1} =     Get Current Time in Milliseconds
     TechnologyPage.Click on clone button on techonology details page       Clone
     Generic.Verify your current page location contains      clone-addtechnology
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  28  ${pageHeading}   Technlogy Details Page Load - Total Page Load Time of clicking clone button of technology deatils to its clone form       28    ${pageTime}     ${ActualTime}    PageLoad_Time
 
     TechnologyPage.Add assetID for technology lifecycle information random
     Generic.Scroll Window To End
@@ -3181,13 +3169,9 @@ Click on the technology group filters and verify it
     TechnologyPage.Click on the filters under technology page       Technology Group
     Generic.Wait until table get load for filters
 
-    ${StartTime1} =     Get Current Time in Milliseconds
     TechnologyPage.Click on the value under the filters of technology page      Applications
     TechnologyPage.Get the text of selected filter under technology     Applications
     Generic.Wait until table get load for filters
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  6  ${pageHeading}   Filter Page - Data load time of filter Applications under technology group      6    ${pageTime}     ${ActualTime}    Filter_Time
 
     PaginationPage.Fetch the total count for filter only
 #    PaginationPage.Click on the pagination dropdown     technology
@@ -3203,13 +3187,9 @@ Click on the technology group filters and verify it
     TechnologyPage.Click on the filters under technology page       Technology Group
     Generic.Wait until table get load for filters
 
-    ${StartTime1} =     Get Current Time in Milliseconds
     TechnologyPage.Click on the value under the filters of technology page      ${Technology_group}
     TechnologyPage.Get the text of selected filter under technology    ${Technology_group}
     Generic.Wait until table get load for filters
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  7  ${pageHeading}   Filter Page - Data load time of filter Accessories under technology group      7    ${pageTime}     ${ActualTime}    Filter_Time
 
     PaginationPage.Fetch the total count for filter only
     PaginationPage.PaginationPage.Set pagination to max
@@ -3222,13 +3202,9 @@ Click on the technology group filters and verify it
     TechnologyPage.Click on the filters under technology page       Technology Group
     Generic.Wait until table get load for filters
 
-    ${StartTime1} =     Get Current Time in Milliseconds
     TechnologyPage.Click on the value under the filters of technology page       ${Technology_group1}
     TechnologyPage.Get the text of selected filter under technology    ${Technology_group1}
     Generic.Wait until table get load for filters
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  8  ${pageHeading}   Filter Page - Data load time of filter CRT under technology group      8    ${pageTime}     ${ActualTime}    Filter_Time
 
     PaginationPage.Fetch the total count for filter only
 #    PaginationPage.Click on the pagination dropdown     technology

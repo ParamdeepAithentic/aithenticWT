@@ -167,12 +167,8 @@ Select brand from list
     wait until element is enabled       ${enterAndSelect_Brand}     ${wait_time}
     click element   ${enterAndSelect_Brand}
     Clear Element Text      ${enterAndSelect_Brand}
-    ${StartTime1} =     Get Current Time in Milliseconds
     input text   ${enterAndSelect_Brand}     ${BrandName}
     Generic.Select parameter     ${BrandName}
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  3  ${pageHeading}   DashboardPage - Select brand from list      3    ${pageTime}     ${ActualTime}    DashboardPage_Time
 
 Select product from list
     [Arguments]    ${ProductName}
@@ -180,12 +176,8 @@ Select product from list
     wait until element is enabled       ${enterAndSelect_Brand}     ${wait_time}
     click element   ${enterAndSelect_Brand}
     Clear Element Text      ${enterAndSelect_Brand}
-    ${StartTime1} =     Get Current Time in Milliseconds
     input text   ${enterAndSelect_Brand}   ${ProductName}
     Generic.Select parameter     ${ProductName}
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  4  ${pageHeading}   DashboardPage - Select product from list      4    ${pageTime}     ${ActualTime}    DashboardPage_Time
 
 
 Select an option from company details side list
@@ -241,12 +233,8 @@ Add product brand name
     wait until element is visible       ${enterAndSelect_Brand}     ${wait_time}
     click element   ${enterAndSelect_Brand}
     Clear Element Text      ${enterAndSelect_Brand}
-    ${StartTime1} =     Get Current Time in Milliseconds
     input text   ${enterAndSelect_Brand}    ${option}
     Generic.Select parameter     ${option}
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  5  ${pageHeading}   DashboardPage - Select option from brand name dropdown via add product pop up of product page     5    ${pageTime}     ${ActualTime}    DashboardPage_Time
     sleep   ${search_sleep}
 
 Add product description
@@ -273,12 +261,8 @@ Select product status
     wait until element is visible       ${ProductStatus}     ${wait_time}
     click element   ${ProductStatus}
     Clear Element Text      ${ProductStatus}
-    ${StartTime1} =     Get Current Time in Milliseconds
     input text   ${ProductStatus}   ${option}
     Generic.Select parameter     ${option}
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  6  ${pageHeading}   DashboardPage - Select option from product status dropdown via add product pop up of product page      6    ${pageTime}     ${ActualTime}    DashboardPage_Time
 
 Select product status via link
     [Arguments]    ${option}
@@ -292,12 +276,8 @@ Select product status via link
 Select product technology type
     [Arguments]    ${option}
     wait until element is visible       ${select_technology_type}     ${wait_time}
-    ${StartTime1} =     Get Current Time in Milliseconds
     click element   ${select_technology_type}
     Generic.Select parameter     ${option}
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  7  ${pageHeading}   DashboardPage - Select option from product technology type dropdown via add product pop up of product page       7    ${pageTime}     ${ActualTime}    DashboardPage_Time
 
 Select product technology type via technology
     [Arguments]    ${option}
@@ -337,16 +317,12 @@ Verify product added
      wait until element is visible      ${search_productName}     ${wait_time}
      click element      ${search_productName}
      Clear Element Text      ${search_productName}
-     ${StartTime1} =     Get Current Time in Milliseconds
      input text   ${search_productName}   ${productName}
      sleep       ${search_sleep}
      Wait Until Element Contains    //td[normalize-space()='${productName}']      ${productName}     ${wait_time}
      ${get_productName} =    get text    ${fetch_productName}
      log to console     ${get_productName}
      should be equal    ${productName}     ${get_productName}
-     ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  8  ${pageHeading}   DashboardPage - Search the product on the add product listing page      8    ${pageTime}     ${ActualTime}    DashboardPage_Time
 
 
 Click add brand button
@@ -385,12 +361,8 @@ Add brand manufacturer country
     [Arguments]    ${country}
     click element   ${brand_country}
     Clear Element Text      ${brand_country}
-    ${StartTime1} =     Get Current Time in Milliseconds
     input text   ${brand_country}   ${country}
     Generic.Select parameter     ${country}
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  9  ${pageHeading}   DashboardPage - Select the option from brand manufacturer country dropdown via add new brand      9    ${pageTime}     ${ActualTime}    DashboardPage_Time
 
 
 Save added brand details
@@ -405,20 +377,15 @@ Click added brand main save button
 Verify Brand added
    [Arguments]    ${BrandName}
      wait until element is visible       css:thead tr       ${wait_time}
-
      wait until element is visible      ${search_brandName}     ${wait_time}
      click element      ${search_brandName}
      Clear Element Text      ${search_brandName}
-     ${StartTime1} =     Get Current Time in Milliseconds
      input text   ${search_brandName}   ${BrandName}
      sleep       ${search_sleep}
      Wait Until Element Contains    //td[normalize-space()='${BrandName}']      ${BrandName}     ${wait_time}
      ${get_brandName} =    get text    ${fetch_brandName}
      log to console     ${get_brandName}
      should be equal    ${BrandName}     ${get_brandName}
-     ${EndTime1} =     Get Current Time in Milliseconds
-     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-     Calculate Running time  10  ${pageHeading}   DashboardPage - Search the brand on the add brand listing page      10    ${pageTime}     ${ActualTime}    DashboardPage_Time
 
 select the option from the dashboard drawer
     [Arguments]     ${option}

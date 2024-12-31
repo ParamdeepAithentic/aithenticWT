@@ -94,12 +94,8 @@ Enter contract type
     Wait Until Element Is Not Visible       ${loaderIcon}    120
     Wait Until Element Is Enabled      ${contactType}   ${wait_time}
     click element       ${contactType}
-    ${StartTime1} =     Get Current Time in Milliseconds
     input text      ${contactType}      ${option}
     Generic.Select parameter    ${option}
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  3  ${pageHeading}   ContractPage - Select the option from contract type dropdown via add new contract      3    ${pageTime}     ${ActualTime}    ContractPage_Time
 
 
 Enter contract with
@@ -108,15 +104,11 @@ Enter contract with
     Wait Until Element Is Enabled      ${pdf_modal}     ${wait_time}
     click element       ${companyId}
     Clear Element Text      ${companyId}
-    ${StartTime1} =     Get Current Time in Milliseconds
     input text      ${companyId}      ${option}
     sleep       ${search_sleep}
     Wait Until Element Is Visible       //label[normalize-space()='Smart Share With:']//parent::div//span[normalize-space()='${option}']    ${wait_time}
     Wait Until Element Is Enabled      //label[normalize-space()='Smart Share With:']//parent::div//span[normalize-space()='${option}']     ${wait_time}
     Press Keys     ${companyId}       ENTER
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  4  ${pageHeading}   ContractPage - Select the business name option from contract with dropdown via add new contract       4    ${pageTime}     ${ActualTime}    ContractPage_Time
 
 
 
@@ -124,14 +116,10 @@ Enter contract brand
     [Arguments]    ${option}
     Wait Until Element Is Not Visible       ${pleaseWaitValidation}    ${wait_time}
     click element       ${Contract_brand}
-    ${StartTime1} =     Get Current Time in Milliseconds
     input text      ${Contract_brand}      ${option}
     Wait Until Element Is Visible       //ng-select[@labelforid='brand']//ng-dropdown-panel//span[normalize-space()='${option}']    ${wait_time}
     Wait Until Element Is enabled       //ng-select[@labelforid='brand']//ng-dropdown-panel//span[normalize-space()='${option}']    ${wait_time}
     click element       //ng-select[@labelforid='brand']//ng-dropdown-panel//span[normalize-space()='${option}']
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  5  ${pageHeading}   ContractPage - Select the option from brand dropdown via add new contract      5    ${pageTime}     ${ActualTime}    ContractPage_Time
 
 
 
@@ -140,12 +128,8 @@ Enter contract location
     Wait Until Element Is Enabled     ${location}       ${wait_time}
     click element       ${location}
     Clear Element Text      ${location}
-    ${StartTime1} =     Get Current Time in Milliseconds
     input text      ${location}      ${option}
     Press Keys      ${location}      ENTER
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  6  ${pageHeading}   ContractPage - Select the option from location dropdown via add new contract      6    ${pageTime}     ${ActualTime}    ContractPage_Time
 
 Enter contract permission
     [Arguments]    ${option}
@@ -176,13 +160,9 @@ Select contract function
     wait until element is visible    ${contractFunction}      ${wait_time}
     wait until element is visible   css:ng-select[placeholder='Select Contract Function'] span[title='Clear all']     ${wait_time}
     wait until element is enabled   css:ng-select[placeholder='Select Contract Function'] span[title='Clear all']     ${wait_time}
-    ${StartTime1} =     Get Current Time in Milliseconds
     click element       css:ng-select[placeholder='Select Contract Function'] span[title='Clear all']
     click element       ${contractFunction}
     Generic.Select parameter    ${option}
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  7  ${pageHeading}   ContractPage - Select the option from contract function dropdown via add new contract      7    ${pageTime}     ${ActualTime}    ContractPage_Time
 
 
 Click on generate contract button on select asset page
@@ -261,14 +241,10 @@ Search by contract BrandName
      wait until element is enabled      ${contractID_SearchBar}     ${wait_time}
      click element      ${contractID_SearchBar}
      Clear Element Text      ${contractID_SearchBar}
-     ${StartTime1} =     Get Current Time in Milliseconds
      input text   ${contractID_SearchBar}   ${BrandName}
      Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
      Fetch the contract Brand Name from the row   ${BrandName}
      should be equal    ${fetch_Contract_BrandName}     ${BrandName}
-     ${EndTime1} =     Get Current Time in Milliseconds
-     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-     Calculate Running time  8  ${pageHeading}   ContractPage - Search the contract Business Name on contract listing     8    ${pageTime}     ${ActualTime}    ContractPage_Time
 
 Click on the first tab row of contract list page table
     [Arguments]

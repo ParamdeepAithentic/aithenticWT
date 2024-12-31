@@ -233,15 +233,11 @@ Search by location name
      wait until element is visible       css:thead tr       ${wait_time}
      click element      ${search_LocationName}
      Clear Element Text      ${search_LocationName}
-     ${StartTime1} =     Get Current Time in Milliseconds
      input text   ${search_LocationName}   ${LocationName}
      sleep   ${search_sleep}
      Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
      Fetch the location Name from the row   ${LocationName}
      should be equal    ${fetch_locationName}     ${LocationName}
-     ${EndTime1} =     Get Current Time in Milliseconds
-     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-     Calculate Running time    3    ${pageHeading}   Location Page - Search location name on the location page listing    3    ${pageTime}     ${ActualTime}    LocationPage_Time
 
 Enter random cost center value
     ${random_string} =    Generate Random String       5      [NUMBERS]

@@ -64,13 +64,9 @@ Verify the drawer list
     [Tags]      Time     Smoke
     Generic.click on the tab	Login
     LandingPage.Fill the login Form      ${email}    ${valid_password}
-    ${StartTime1} =     Get Current Time in Milliseconds
     Generic.Verify your current page location contains      dashboard
     Generic.Verify your current page location contains      home
     LandingPage.Verify you are on dashboard page
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  24  ${pageHeading}   Page Load - Total Page Load Time of Home Page after login      24    ${pageTime}     ${ActualTime}    PageLoad_Time
 
     Generic.select the option from the side menu    Dashboard
     Generic.Verify your current page location contains      dashboard
@@ -2338,11 +2334,7 @@ Message Side bar filters
 #    PaginationPage.Select the value from the pagination drop down count    500
 #    PaginationPage.Check Pagination     inbox
 
-    ${StartTime1} =     Get Current Time in Milliseconds
     MessagePage.Fetch the country from location filter and click     Partner Type         End User    End User
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  16  ${pageHeading}   Filter Page - Data load time of filter select partner under message page      16    ${pageTime}     ${ActualTime}    Filter_Time
 
     Generic.Click on the reset filters link
     MessagePage.Select the filter from partner    Manufacturer
@@ -2484,11 +2476,7 @@ Click on the product filters via profile list
     Generic.Verify your current page location contains     product
     DashboardPage.Click on the status filter under product via profile
 
-    ${StartTime1} =     Get Current Time in Milliseconds
     DashboardPage.Select the option from the filters under product via profile      0
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  17  ${pageHeading}   Filter Page - Data load time of filter status under product page via profile list      17    ${pageTime}     ${ActualTime}    Filter_Time
 
     DashboardPage.Click on the added products heading
     DashboardPage.Get the text of selected status filter under product via profile
