@@ -1103,6 +1103,53 @@ Get the text of no records after searching with invalid data under existing asse
     set global variable   ${fetch_text_Existing_asset}
     should be equal    ${option}    ${fetch_text_Existing_asset}
 
+Click on the suggested matches tab
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible     css:#auto-matched-asset       ${wait_time}
+    wait until element is enabled      css:#auto-matched-asset    ${wait_time}
+    click element       css:#auto-matched-asset
+
+Click on search icon of discovery assets of Suggested Matches
+    wait until element is not visible   ${loaderIcon}        ${wait_time}
+    Wait Until Element Is Visible       //div[contains(@id,'auto-matched')]//i[@title='Search: Agent/Network - Discovered Assets']     ${wait_time}
+    Wait Until Element Is enabled       //div[contains(@id,'auto-matched')]//i[@title='Search: Agent/Network - Discovered Assets']     ${wait_time}
+    Click Element    //div[contains(@id,'auto-matched')]//i[@title='Search: Agent/Network - Discovered Assets']
+
+Enter text to search discovery asset of suggested matches
+    [Arguments]     ${option}
+    wait until element is not visible   ${loaderIcon}        ${wait_time}
+    Wait Until Element Is Visible    css:#aad-smartAssets       ${wait_time}
+    Wait Until Element Is enabled    css:#aad-smartAssets       ${wait_time}
+    Input Text     css:#aad-smartAssets    ${option}
+    Sleep    ${yop_sleep}
+    Wait Until Element Is Not Visible    ${loaderIcon}  ${wait_time}
+    wait until element is not visible       ${shadow}          60
+
+Get the text of no records after searching with invalid data under discovered asset of Suggested
+    [Arguments]         ${option}
+    Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
+    wait until element is visible     //div[contains(@id,'auto-matched')]//div[contains(@class,'qa-column-boxes-left')]//following-sibling::div//p       ${wait_time}
+    wait until element is enabled      //div[contains(@id,'auto-matched')]//div[contains(@class,'qa-column-boxes-left')]//following-sibling::div//p    ${wait_time}
+    ${fetch_text_Suggested_asset} =    get text  //div[contains(@id,'auto-matched')]//div[contains(@class,'qa-column-boxes-left')]//following-sibling::div//p
+    log to console     ${fetch_text_Suggested_asset}
+    set global variable   ${fetch_text_Suggested_asset}
+    should be equal    ${option}    ${fetch_text_Suggested_asset}
+
+Click on search icon of Existing assets of Suggested Matches
+    wait until element is not visible   ${loaderIcon}        ${wait_time}
+    Wait Until Element Is Visible       //div[contains(@id,'auto-matched')]//i[@title='Search: My Exiting Aithentic Assets']     ${wait_time}
+    Wait Until Element Is enabled       //div[contains(@id,'auto-matched')]//i[@title='Search: My Exiting Aithentic Assets']     ${wait_time}
+    Click Element    //div[contains(@id,'auto-matched')]//i[@title='Search: My Exiting Aithentic Assets']
+
+Enter text to search existing asset of suggested matches
+    [Arguments]     ${option}
+    wait until element is not visible   ${loaderIcon}        ${wait_time}
+    Wait Until Element Is Visible    css:#aad-smartExistingAssets       ${wait_time}
+    Wait Until Element Is enabled    css:#aad-smartExistingAssets       ${wait_time}
+    Input Text     css:#aad-smartExistingAssets    ${option}
+    Sleep    ${yop_sleep}
+    Wait Until Element Is Not Visible    ${loaderIcon}  ${wait_time}
+    wait until element is not visible       ${shadow}          60
 
 Click on the Smart Created Asset under asset discovery
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
@@ -1155,4 +1202,13 @@ Get the text of no records after searching with invalid data under CVE Reporting
     log to console     ${fetch_text_CVE_reporting}
     set global variable   ${fetch_text_CVE_reporting}
     should be equal    ${option}    ${fetch_text_CVE_reporting}
+
+Enter text to search invalid data on search bar of By Software under CVE Reporting
+    [Arguments]     ${option}
+    wait until element is not visible   ${loaderIcon}        ${wait_time}
+    Wait Until Element Is Visible    css:#searchbar-cveSoftware       ${wait_time}
+    Wait Until Element Is enabled    css:#searchbar-cveSoftware      ${wait_time}
+    Input Text     css:#searchbar-cveSoftware    ${option}
+    Sleep    ${yop_sleep}
+    Wait Until Element Is Not Visible    ${loaderIcon}  ${wait_time}
 
