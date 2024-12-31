@@ -251,13 +251,9 @@ Enter the input in the brand field of discovered asset
 
 Select parameter from brand dropdown list of OCS
     [Arguments]    ${option}
-    ${StartTime1} =     Get Current Time in Milliseconds
     Clear Element Text     //div[@class='full-width-field']//ng-select[@id='BrandName']//input[@type='text']
     input text    //div[@class='full-width-field']//ng-select[@id='BrandName']//input[@type='text']   ${option}
     Generic.Select parameter    ${option}
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  5  ${pageHeading}   Technology Page - Select parameter from brand dropdown list      5    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Click on save technology form button of OCS
     wait until element is visible       ${saveBTN1}       ${wait_time}

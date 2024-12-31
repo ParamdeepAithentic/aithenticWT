@@ -112,16 +112,12 @@ Search by brand name
     [Arguments]    ${BrandName}
     wait until element is visible       css:thead tr       ${wait_time}
     wait until element is visible       //input[@placeholder='Search by Brand Name']       ${wait_time}
-    ${StartTime1} =     Get Current Time in Milliseconds
     input text      //input[@placeholder='Search by Brand Name']     ${BrandName}
     sleep       ${search_sleep}
     wait until element is visible       //td[normalize-space()='${BrandName}']     ${wait_time}
     ${get_brandName} =    get text   //td[normalize-space()='${BrandName}']
     log to console     ${get_brandName}
     should be equal    ${BrandName}     ${get_brandName}
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  3  ${pageHeading}   PartnersPage - Search partner by brand name on partner listing page      3    ${pageTime}     ${ActualTime}    PatnersPage_Time
 
 
 Select partner type
@@ -140,12 +136,8 @@ Select partner type of new partner
     [Arguments]    ${partner}
     wait until element is visible      ${click_Partner}        ${wait_time}
     wait until element is enabled       ${click_Partner}        ${wait_time}
-    ${StartTime1} =     Get Current Time in Milliseconds
     click element   ${click_Partner}
     Select partner type     ${partner}
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  4  ${pageHeading}   PartnersPage - Select option from partner type dropdown on add new partner page      4    ${pageTime}     ${ActualTime}    PatnersPage_Time
 
 
 Create partner random business name
@@ -234,12 +226,8 @@ Select partner country
     wait until element is enabled       ${click_Country}        ${wait_time}
     click element   ${click_Country}
     Clear element text      ${click_Country}
-    ${StartTime1} =     Get Current Time in Milliseconds
     input text   ${click_Country}   ${country}
     Generic.Select parameter    ${country}
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  5  ${pageHeading}   PartnersPage - Select option from partner country dropdown on add new partner page      5    ${pageTime}     ${ActualTime}    PatnersPage_Time
 
 
 Click on contact person button
@@ -316,12 +304,8 @@ Enter contact location
     wait until element is enabled       ${location}     ${wait_time}
     click element   ${location}
     clear element text    ${location}
-    ${StartTime1} =     Get Current Time in Milliseconds
     input text  ${location}   ${loc}
     Press Keys     ${location}       ENTER
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  6  ${pageHeading}   PartnersPage - Select the option from location dropdown on add new contact popup module via add new partner screen      6    ${pageTime}     ${ActualTime}    PatnersPage_Time
 
 
 Save the new contact

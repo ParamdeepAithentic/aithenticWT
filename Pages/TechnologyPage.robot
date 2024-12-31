@@ -319,12 +319,8 @@ Click technology brand input field
 Select parameter from brand dropdown list
     [Arguments]    ${option}
     Clear Element Text      ${brand}
-    ${StartTime1} =     Get Current Time in Milliseconds
     input text    ${brand}   ${option}
     Generic.Select parameter    ${option}
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  5  ${pageHeading}   Technology Page - Select the option from brand dropdown list under add technology      5    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Click technology product input field
      wait until element is visible       ${product}        ${wait_time}
@@ -339,7 +335,6 @@ Select the first value of To dropdown of product
 
 Select parameter from technology dropdown list
     [Arguments]      ${option}
-    ${StartTime1} =     Get Current Time in Milliseconds
     Wait Until Element Is Not Visible    ${loaderIcon}      60
     wait until element is visible   //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input      ${wait_time}
     wait until element is enabled   //div[contains(@class,'full-width-field')]//label[normalize-space()="Product"]//following-sibling::input     ${wait_time}
@@ -350,9 +345,6 @@ Select parameter from technology dropdown list
     Click Element       //td[normalize-space()='${option}']
     sleep   ${search_sleep}
     Wait Until Element Is Not Visible    ${loaderIcon}      ${wait_time}
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  6  ${pageHeading}   Technology Page - Select the option from product dropdown list under add technology      6    ${pageTime}     ${ActualTime}    TechnologyPage_Time
     Wait Until Element Is not Visible    (//input[@id='brandselect']//parent::div//following::div[contains(@class,'spinner-loader')])[1]       ${wait_time}
 
 Click on add product link
@@ -572,12 +564,8 @@ Add payment partner of technology cost information
     wait until element is visible       ${paymentPartner}       ${wait_time}
     click element       ${paymentPartner}
     Clear Element Text      ${paymentPartner}
-    ${StartTime1} =     Get Current Time in Milliseconds
     input text      ${paymentPartner}       ${option1}
     Generic.Select parameter    ${option1}
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  7  ${pageHeading}   Technology Page - Add option from payment partner dropdown of cost information section under add technology     7    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Add cost type of technology cost information
     [Arguments]    ${option2}
@@ -585,11 +573,7 @@ Add cost type of technology cost information
     click element      ${costType}
     Clear Element Text      ${costType}
     input text      ${costType}       ${option2}
-    ${StartTime1} =     Get Current Time in Milliseconds
     Generic.Select parameter    ${option2}
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  8  ${pageHeading}   Technology Page - Add option from cost type of cost information section under add technology      8    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 
 Add payment type of technology cost information
@@ -598,25 +582,17 @@ Add payment type of technology cost information
     wait until element is enabled       ${paymentType}       ${wait_time}
     click element      ${paymentType}
     Clear Element Text      ${paymentType}
-    ${StartTime1} =     Get Current Time in Milliseconds
     input text      ${paymentType}       ${option3}
     wait until element is visible       //*[contains(text(), '${option3}')]     ${wait_time}
     click element      //*[contains(text(), '${option3}')]
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  9  ${pageHeading}   Technology Page - Add option from payment type of cost information section under add technology      9    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Add payment peroid of technology cost information
     [Arguments]    ${option4}
     wait until element is enabled       ${paymentPeroid}       ${wait_time}
     click element      ${paymentPeroid}
     Clear Element Text      ${paymentPeroid}
-    ${StartTime1} =     Get Current Time in Milliseconds
     input text      ${paymentPeroid}     ${option4}
     Generic.Select parameter    ${option4}
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  10  ${pageHeading}   Technology Page - Add option from payment peroid of cost information section under add technology      10    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 
 
@@ -647,12 +623,8 @@ Add expense type of technology cost information
     wait until element is visible    ${expenseType}      ${wait_time}
     click element       ${expenseType}
     Clear Element Text      ${expenseType}
-    ${StartTime1} =     Get Current Time in Milliseconds
     input text      ${expenseType}     ${option5}
     Generic.Select parameter    ${option5}
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  11  ${pageHeading}   Technology Page - Add option from expense type of cost information section under add technology      11    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 
 ################################### contract information ######################
@@ -680,12 +652,8 @@ Add chargeable basis of contract information self
     wait until element is visible    ${chargeable_basis}      ${wait_time}
     click element       ${chargeable_basis}
     Clear Element Text      ${chargeable_basis}
-    ${StartTime1} =     Get Current Time in Milliseconds
     input text      ${chargeable_basis}     ${option}
     Generic.Select parameter    ${option}
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  12  ${pageHeading}   Technology Page - Add chargeable basis of contract information self under contract information of add technology      12    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Add cost each of contract information random
     wait until element is visible       ${cost_each}        ${wait_time}
@@ -720,12 +688,8 @@ Add assignment information location
     wait until element is visible    ${locationName}      ${wait_time}
     click element       ${locationName}
 #    Clear Element Text      ${locationName}
-    ${StartTime1} =     Get Current Time in Milliseconds
     Generic.Enter value into field      ${locationName}     ${option1}
     Press Keys     ${locationName}       ENTER
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  13  ${pageHeading}   Technology Page - Select the location name from the dropdown under assignment information section under add technology      13   ${pageTime}     ${ActualTime}    TechnologyPage_Time
     Generic.Wait for the spinner to get disable
 
 Add assignment information department name
@@ -733,12 +697,8 @@ Add assignment information department name
 #    wait until element is visible    ${departmentName}      ${wait_time}
     click element       ${departmentName}
 #    Clear Element Text      ${departmentName}
-    ${StartTime1} =     Get Current Time in Milliseconds
     Generic.Enter value into field      ${departmentName}     ${option1}
     Press Keys     ${departmentName}       ENTER
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  14  ${pageHeading}   Technology Page - Select the department name from the dropdown under assignment information section under add technology      14    ${pageTime}     ${ActualTime}    TechnologyPage_Time
     Generic.Wait for the spinner to get disable
 
 Add assignment information assign to
@@ -756,25 +716,17 @@ Add assignment information assign to
 Add support partner of partners information
     [Arguments]    ${option1}
     wait until element is visible    ${supportPartner}      ${wait_time}
-    ${StartTime1} =     Get Current Time in Milliseconds
     click element       ${supportPartner}
     Clear Element Text      ${supportPartner}
     Generic.Select parameter    ${option1}
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  15  ${pageHeading}   Technology Page - Add the option from support partner dropdown of partners information section under add technology      15    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Add supplier of partners information
     [Arguments]    ${option1}
     wait until element is visible    ${supplierPartner}      ${wait_time}
     wait until element is enabled    ${supplierPartner}      ${wait_time}
-    ${StartTime1} =     Get Current Time in Milliseconds
     click element       ${supplierPartner}
     Clear Element Text      ${supplierPartner}
     Generic.Select parameter    ${option1}
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  16  ${pageHeading}   Technology Page - Add the option from supplier dropdown of partners information section under add technology      16   ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 
 Click on save technology form button
@@ -802,14 +754,10 @@ Search by AssetId
     wait until element is visible       css:thead tr       ${wait_time}
     wait until element is visible       ${asset_SearchBar}       ${wait_time}
     Clear Element Text      ${asset_SearchBar}
-    ${StartTime1} =     Get Current Time in Milliseconds
     input text      ${asset_SearchBar}     ${AssetID}
     sleep       ${search_sleep}
     wait until element is visible       css:thead tr       ${wait_time}
     Wait Until Element Contains    ${fetch_assetID}     ${AssetID}    ${wait_time}
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Calculate Running time  17  ${pageHeading}   Technology Page - Search the technology by AssetId on technology list page     17    ${pageTime}     ${ActualTime}    TechnologyPage_Time
     ${get_assetID} =    get text    ${fetch_assetID}
     log to console     ${get_assetID}
     should be equal    ${get_assetID}     ${AssetID}
@@ -822,16 +770,12 @@ Search by BrandName
      wait until element is visible      ${asset_SearchBar}     ${wait_time}
      click element      ${asset_SearchBar}
      Clear Element Text      ${asset_SearchBar}
-     ${StartTime1} =     Get Current Time in Milliseconds
      input text   ${asset_SearchBar}   ${BrandName}
      sleep      ${search_sleep}
      wait until element is visible      //td[normalize-space()='1']     ${wait_time}
      wait until element is visible       css:thead tr       ${wait_time}
      Fetch the Brand Name from the row   ${BrandName}
      should be equal    ${get_fetch_brandName}     ${BrandName}
-     ${EndTime1} =     Get Current Time in Milliseconds
-     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-     Calculate Running time  18  ${pageHeading}   Technology Page - Search the technology by BrandName on technology list page      18    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Search by ProductName
     [Arguments]    ${product}
@@ -839,7 +783,6 @@ Search by ProductName
      wait until element is visible      ${asset_SearchBar}     ${wait_time}
      click element      ${asset_SearchBar}
      Clear Element Text      ${asset_SearchBar}
-     ${StartTime1} =     Get Current Time in Milliseconds
      input text   ${asset_SearchBar}   ${product}
      sleep      ${search_sleep}
      wait until element is visible      //td[normalize-space()='1']     ${wait_time}
@@ -848,9 +791,6 @@ Search by ProductName
      ${get_productID} =    get text    ${fetch_productID}
      log to console     ${get_productID}
      should be equal    ${product}     ${get_productID}
-     ${EndTime1} =     Get Current Time in Milliseconds
-     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-     Calculate Running time  19  ${pageHeading}   Technology Page - Search the technology by ProductName on technology list page     19    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Search by SerialNo
     [Arguments]    ${assertId}  ${serialNo}
@@ -858,15 +798,11 @@ Search by SerialNo
      wait until element is visible      ${asset_SearchBar}     ${wait_time}
      click element      ${asset_SearchBar}
      Clear Element Text      ${asset_SearchBar}
-     ${StartTime1} =     Get Current Time in Milliseconds
      input text      ${asset_SearchBar}     ${AssetID}
      sleep      ${search_sleep}
      wait until element is visible      //td[normalize-space()='1']     ${wait_time}
      wait until element is visible       css:thead tr       ${wait_time}
      Wait Until Element Contains    ${fetch_assetID}     ${AssetID}    ${wait_time}
-     ${EndTime1} =     Get Current Time in Milliseconds
-     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-     Calculate Running time  20  ${pageHeading}   Technology Page - Search the technology by SerialNumber on technology list page      20    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 Search by assignee
      [Arguments]    ${assignee}
@@ -874,7 +810,6 @@ Search by assignee
      wait until element is visible      ${asset_SearchBar}     ${wait_time}
      click element      ${asset_SearchBar}
      Clear Element Text      ${asset_SearchBar}
-     ${StartTime1} =     Get Current Time in Milliseconds
      input text   ${asset_SearchBar}   ${assignee}
      sleep      ${search_sleep}
      wait until element is visible      //td[normalize-space()='1']     ${wait_time}
@@ -883,9 +818,6 @@ Search by assignee
      ${get_assignee} =    get text    ${fetch_assignee}
      log to console     ${get_assignee}
      should be equal    ${assignee}     ${get_assignee}
-     ${EndTime1} =     Get Current Time in Milliseconds
-     ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-     Calculate Running time  21  ${pageHeading}   Technology Page - Search the technology by assignee on technology list page      21    ${pageTime}     ${ActualTime}    TechnologyPage_Time
 
 
 Click on the first row of the technology table

@@ -265,15 +265,10 @@ open the browser with the url
     Generic.Fix the row number
     Generic.Fix the column number for new user in sorting
     Simulate Switch Case
-    ${StartTime1} =     Get Current Time in Milliseconds
     open browser    ${url}      ${browser_name}     #executable_path=E:/Aithentic/TestPage/resources
     wait until element is visible    //a[normalize-space()='Login']          60
     wait until element is enabled    //a[normalize-space()='Login']          60
     Maximize Browser Window
-    ${EndTime1} =     Get Current Time in Milliseconds
-    ${ActualTime}         Evaluate     ${EndTime1}-${StartTime1}
-    Log to console   Current Time in Milliseconds: ${ActualTime}
-    Calculate Running time  2  ${pageHeading}   Generic - open the browser with the url and maximize the page     2    ${pageTime}     ${ActualTime}    Load_Time_tracking
 
 Get Current Date and Time
     Generic.Fix the column number
@@ -283,12 +278,6 @@ Get Current Date and Time
     ${current_date}=    Evaluate    datetime.datetime.now().strftime("%Y-%m-%d")
     ${current_time}=    Evaluate    datetime.datetime.now().strftime("%H:%M:%S")
     ${current_Date_Time}=    Catenate  ${current_date}_${current_time}
-    Calculate Running time  1  ${pageHeading}   Generic - Module name      1    ${pageTime}     ${current_Date_Time}    Load_Time_tracking
-#    Calculate Running time  1  ${pageHeading}   Generic - Module name      1    ${pageTime}     ${current_Date_Time}    TechnologyPage_Time
-#    Calculate Running time  1  ${pageHeading}   Generic - Module name      1    ${pageTime}     ${current_Date_Time}    DashboardPage_Time
-#    Calculate Running time  1  ${pageHeading}   Generic - Module name      1    ${pageTime}     ${current_Date_Time}    PatnersPage_Time
-#    Calculate Running time  1  ${pageHeading}   Generic - Module name      1    ${pageTime}     ${current_Date_Time}    ContractPage_Time
-#    Calculate Running time  1  ${pageHeading}   Generic - Module name      1    ${pageTime}     ${current_Date_Time}    MessagePage_Time
 
 Close Browser session
     close browser
